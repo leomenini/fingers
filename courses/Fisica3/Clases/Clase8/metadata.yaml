@@ -1,0 +1,72 @@
+title: Clase 8
+id: fis3-2015-2-08
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:18:53"
+
+stats:
+  transcript_words: 9079
+  summary_words: 1249
+  diagrams_pending: 6
+  equations: 22
+
+topics:
+  - Unidades del potencial (Volt = Joule/Coulomb)
+  - Electronvolt (1 eV = 1,6×10⁻¹⁹ J) y escalas atómicas
+  - Múltiplos MeV y GeV en física de altas energías
+  - Potencial de un conjunto de cargas puntuales (V = 1/4πε₀ Σ Qᵢ/R₀ᵢ)
+  - Deducción del potencial a partir de la energía potencial
+  - Nivel de referencia (V = 0 en el infinito)
+  - Ejemplo: cuadrado de cargas (potencial en el centro)
+  - Potencial de un dipolo en un punto arbitrario
+  - Límite de dipolo puntual (V = p·r̂/4πε₀r², decae como 1/r²)
+  - Potencial de una distribución continua de carga (integral)
+  - Ejemplo: barra cargada (sustitución hiperbólica, arcsinh)
+  - Inversión del seno hiperbólico (arcsinh X = ln(X + √(X²+1)))
+  - Límite de gran distancia de la barra (carga puntual)
+  - Ejemplo: anillo cargado sobre su eje
+  - Ejemplo: disco cargado (suma de anillos)
+  - Continuidad del potencial y no derivabilidad en el disco
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "25"
+    verified: false
+
+prerequisites:
+  - Clase 7 (energía potencial eléctrica, definición de potencial)
+  - Clase 4 (distribuciones continuas, anillo y disco)
+  - Física I (energía, trabajo)
+  - Cálculo (desarrollo de Taylor, funciones hiperbólicas, cambio de variable)
+
+next_topics:
+  - Campo eléctrico a partir del potencial (gradiente) (Clase 9)
+  - Superficies equipotenciales
+  - Capacitores / condensadores
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

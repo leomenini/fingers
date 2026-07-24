@@ -1,0 +1,452 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 11: Dieléctricos, Condensador con Dieléctrico, \\
+        Ley de Gauss en Dieléctricos e Introducción a la Corriente}\\[0.3em]
+        \large{Polarización, constante dieléctrica, permitividad
+              y densidad de corriente}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Dieléctricos: polarización de un material lineal}
+% ===================================================================
+
+\textbf{Dieléctrico} es sinónimo de \textbf{aislante}. El objetivo es
+entender qué ocurre al aplicar un campo eléctrico externo a un aislante y
+cómo describirlo sin resolver su física microscópica en detalle.
+
+\subsection{Hipótesis sobre el material}
+
+\begin{itemize}[nosep]
+  \item \textbf{Homogéneo:} igual en todas sus partes (sin grumos ni
+        zonas más densas); sus propiedades no dependen del punto.
+  \item \textbf{Isótropo:} sin direcciones preferenciales (sin fibras ni
+        ejes cristalinos); igual en todas las direcciones.
+  \item \textbf{Moléculas polares:} el centro de carga positiva no
+        coincide con el de carga negativa. Cada molécula es un pequeño
+        dipolo.
+\end{itemize}
+
+\begin{notebox}[Por qué importan las hipótesis]
+  Son lo que da sentido a una \textbf{única} constante dieléctrica
+  escalar. Un material anisótropo respondería distinto según la
+  dirección y requeriría un tensor.
+\end{notebox}
+
+\subsection{Respuesta al campo: orientación molecular}
+
+\begin{itemize}[nosep]
+  \item \textbf{Sin campo} ($\mathbf{E}_0=0$): moléculas orientadas al
+        azar; el material no está polarizado en promedio.
+  \item \textbf{Con campo} ($\mathbf{E}_0\neq 0$): las moléculas tienden
+        a orientarse según el campo (las cargas negativas hacia la
+        positiva del sistema).
+\end{itemize}
+
+El alineamiento es \textbf{muy leve}: las vibraciones térmicas mantienen
+las moléculas casi desordenadas. El dibujo de moléculas
+\enquote{alineadas como soldaditos} es una idealización; lo que
+sobrevive al \textbf{promediar} el caos molecular es un pequeño efecto
+neto según $\mathbf{E}_0$.
+
+\subsection{Campo de polarización y constante dieléctrica}
+
+Aparecen \textbf{cargas de polarización} en las superficies (negativas
+junto a la placa positiva, y viceversa); el interior permanece neutro.
+Estas cargas generan un campo $\mathbf{E}'$:
+
+\begin{itemize}[nosep]
+  \item \textbf{Colineal con $\mathbf{E}_0$}: por isotropía, la única
+        dirección privilegiada es la de $\mathbf{E}_0$.
+  \item \textbf{Opuesto a $\mathbf{E}_0$}: las cargas de polarización se
+        oponen al campo aplicado.
+\end{itemize}
+
+Luego el campo total tiene módulo $E = E_0 - E'$. En un material
+\textbf{lineal}, $E'\propto E_0$, y por lo tanto $E\propto E_0$:
+
+\begin{keybox}[Constante dieléctrica]
+  \[
+  \boxed{E = \frac{E_0}{K_E}}, \qquad K_E \geq 1.
+  \]
+  \begin{itemize}[nosep]
+    \item \enquote{Lineal}: relación de \textbf{proporcionalidad} entre
+          $E$ y $E_0$; basta un número $K_E$ para caracterizar el
+          material.
+    \item $K_E>1$ porque $E'$ compensa parcialmente a $E_0$, luego
+          $E<E_0$.
+  \end{itemize}
+\end{keybox}
+
+% ===================================================================
+\section{Valores de la constante dieléctrica}
+% ===================================================================
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Material} & $K_E$ \\
+\midrule
+Vacío & $1$ \\
+Aire (normal) & $1{,}00059$ \\
+Poliestireno & $2{,}6$ \\
+Papel & $\approx 3{,}5$ \\
+Agua destilada & $78{,}5$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[nosep]
+  \item \textbf{Vacío:} $K_E=1$ (no se polariza, salvo un efecto cuántico
+        despreciable).
+  \item \textbf{Aire $\approx$ vacío:} está tan diluido que casi no se
+        polariza; equivalentes a los efectos del curso.
+  \item \textbf{Papel:} aproximado (material biológico, varía).
+  \item \textbf{Agua destilada:} $K_E$ enorme; debe ser destilada, pues
+        con sales sería \textbf{conductora}.
+\end{itemize}
+
+% ===================================================================
+\section{Comentarios sobre la linealidad}
+% ===================================================================
+
+\textbf{¿Por qué tantos materiales son lineales?} Los campos de
+laboratorio son \textbf{diminutos} frente a los campos microscópicos
+internos; el campo externo apenas perturba el sistema. La relación
+$E'(E_0)$ es el comienzo de un \textbf{desarrollo de Taylor}: como
+$E'=0$ en $E_0=0$, arranca en el término lineal, y los términos no
+lineales son despreciables para $E_0$ pequeño.
+
+\begin{itemize}[nosep]
+  \item \textbf{No lineales:} existen ($E$--$E_0$ no proporcional).
+  \item \textbf{Ruptura dieléctrica:} con campos muy grandes el material
+        se quema o se \textbf{perfora} (las cargas lo atraviesan; se
+        vuelve conductor abruptamente).
+  \item \textbf{Ferroeléctricos:} polarización \textbf{permanente} (muy
+        raro en lo eléctrico). El análogo magnético, la magnetización
+        permanente (\textbf{imanes}), sí es común.
+\end{itemize}
+
+% ===================================================================
+\section{Condensador con dieléctrico}
+% ===================================================================
+
+Placas paralelas a $\Delta V$ \textbf{fija}, cargas $+Q$, $-Q$, área $A$,
+separación $d$. (El resultado se generaliza a cualquier condensador.)
+
+\subsection{Repaso: el condensador en vacío}
+
+\[
+E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{\varepsilon_0 A},
+\qquad \Delta V = E\,d = \frac{Q\,d}{\varepsilon_0 A},
+\qquad C_{\text{vac}} = \frac{\varepsilon_0 A}{d}.
+\]
+
+\subsection{Carga de polarización}
+
+Con el dieléctrico relleno aparece $Q'$ ($Q'<0$ junto a $+Q$). Gauss con
+la carga \textbf{total} (libre $+$ polarización):
+\[
+E = \frac{Q + Q'}{\varepsilon_0 A}.
+\]
+
+Como además $E = E_0/K_E$ con $E_0 = Q/(\varepsilon_0 A)$, igualando:
+\[
+\frac{E_0}{K_E} = E_0 + \frac{Q'}{\varepsilon_0 A}
+\;\Longrightarrow\;
+Q' = \varepsilon_0 A\, E_0\left(\frac{1}{K_E} - 1\right).
+\]
+
+\begin{keybox}[Carga de polarización]
+  \[
+  \boxed{Q' = Q\left(\frac{1}{K_E} - 1\right)}
+  \]
+  Con $K_E>1$, el paréntesis es negativo: $Q'$ tiene signo opuesto a $Q$.
+\end{keybox}
+
+\subsection{Capacitancia y permitividad}
+
+Sustituyendo $Q'$ en el campo total:
+\[
+E = \frac{Q+Q'}{\varepsilon_0 A}
+  = \frac{Q}{\varepsilon_0 A}\left[1 + \left(\tfrac{1}{K_E}-1\right)\right]
+  = \frac{Q}{\varepsilon_0 K_E A},
+\]
+y con $\Delta V = E\,d$:
+
+\begin{keybox}[Capacitancia con dieléctrico y permitividad]
+  \[
+  \boxed{C = \frac{K_E\,\varepsilon_0\, A}{d} = \frac{\varepsilon\, A}{d}},
+  \qquad
+  \boxed{\varepsilon = K_E\,\varepsilon_0}
+  \]
+\end{keybox}
+
+\begin{itemize}[nosep]
+  \item La capacidad \textbf{aumenta} en un factor $K_E$ (por eso se
+        agregan dieléctricos).
+  \item \textbf{Un solo dieléctrico:} resolver como en el vacío
+        reemplazando $\varepsilon_0 \to \varepsilon$, olvidando la
+        polarización. El vacío es el caso $K_E=1$. $\varepsilon$ es la
+        permitividad del material; $\varepsilon_0$, la del vacío.
+  \item Solo funciona con un \textbf{único} dieléctrico.
+\end{itemize}
+
+\subsection{Carga fija vs.\ potencial fijo}
+
+\begin{notebox}[Ejercicio]
+  Arriba $\Delta V$ estaba fija y \textbf{aumentó $Q$}. Si en cambio se
+  carga el condensador, se \textbf{desconecta} (dejando $Q$ fija) y luego
+  se introduce el dieléctrico, entonces \textbf{disminuye $\Delta V$}
+  (factor $K_E$).
+\end{notebox}
+
+% ===================================================================
+\section{Ley de Gauss en presencia de dieléctricos}
+% ===================================================================
+
+\subsection{Motivación: la carga de polarización es inaccesible}
+
+La ley usual vale siempre, pero requiere toda la carga:
+\[
+\Phi_E = \frac{Q_{\text{libre}} + Q_{\text{pol}}}{\varepsilon_0}.
+\]
+$Q_{\text{libre}}$ y $\Delta V$ son medibles, pero $Q_{\text{pol}}$ es
+interna y difícil de acceder. Se busca una ley que use \textbf{solo la
+carga libre} (\enquote{barrer la mugre bajo la alfombra}: la polarización
+sigue ahí, pero no queremos ocuparnos de ella).
+
+\subsection{Deducción para un único dieléctrico}
+
+Con un solo dieléctrico $K_E$, partimos de:
+\begin{enumerate}[nosep]
+  \item $\displaystyle \Phi_E = \frac{Q_{\text{libre}} + Q_{\text{pol}}}{\varepsilon_0}$.
+  \item $E = E_0/K_E$ en todo punto $\Rightarrow$ flujos proporcionales:
+        $\Phi_{E_0} = K_E\,\Phi_E$, con
+        $\Phi_{E_0} = Q_{\text{libre}}/\varepsilon_0$.
+\end{enumerate}
+
+Despejando $Q_{\text{pol}}$ y sustituyendo en (1), el término de
+polarización se reabsorbe:
+\[
+K_E\,\Phi_E = \frac{Q_{\text{libre}}}{\varepsilon_0}.
+\]
+
+\begin{keybox}[Ley de Gauss con dieléctrico]
+  \[
+  \boxed{\Phi_E = \frac{Q_{\text{libre}}}{K_E\,\varepsilon_0}
+        = \frac{Q_{\text{libre}}}{\varepsilon}}
+  \]
+  Idéntica a la del vacío con $\varepsilon_0 \to \varepsilon$, usando
+  solo la carga libre.
+\end{keybox}
+
+\begin{warnbox}[Salvedad]
+  Usa que el material es \textbf{lineal} (hecho empírico, no deducido de
+  las ecuaciones microscópicas) y vale solo con un \textbf{único}
+  dieléctrico. La ley general (con la carga total) siempre vale, pero
+  obliga a considerar $Q_{\text{pol}}$.
+\end{warnbox}
+
+% ===================================================================
+\section{Ejemplos con varios dieléctricos}
+% ===================================================================
+
+Muchas configuraciones se \textbf{descomponen} en regiones de un único
+dieléctrico:
+\begin{itemize}[nosep]
+  \item \textbf{Lado a lado} ($K_1$, $K_2$, mismas placas): dos
+        condensadores en \textbf{paralelo} (mismo $\Delta V$); combinar
+        con $C_{\text{eq}}=C_1+C_2$.
+  \item \textbf{Apilados (sándwich):} dos condensadores en \textbf{serie}
+        (placa imaginaria en la interfaz).
+\end{itemize}
+
+\begin{warnbox}[Cuándo no se puede]
+  La descomposición vale porque la interacción entre regiones es
+  despreciable (efectos de borde despreciables). Si esa interacción es
+  del mismo orden que el problema de cada dieléctrico, no se puede
+  separar (se ve en Electromagnetismo).
+\end{warnbox}
+
+% ===================================================================
+\section{Corriente eléctrica}
+% ===================================================================
+
+Comienza el \textbf{capítulo 6}. Hasta ahora todo era electrostático;
+ahora las cargas se mueven de forma sostenida.
+
+\subsection{Conductor fuera del equilibrio}
+
+En equilibrio, un conductor tiene $\mathbf{E}=0$ dentro: las cargas se
+redistribuyen hasta compensar el campo aplicado. Si se agrega un
+\textbf{mecanismo de bombeo} que devuelva las cargas por el otro
+extremo, el sistema no llega al equilibrio y se mantiene una
+\textbf{corriente}. Requiere:
+\begin{enumerate}[nosep]
+  \item Un campo eléctrico aplicado.
+  \item Una fuente de energía que bombee las cargas, cerrando el
+        circuito.
+\end{enumerate}
+
+\begin{notebox}[Fuera del equilibrio]
+  Un sistema en equilibrio no tiene corrientes. Los portadores pueden ser
+  electrones (metal, sentido opuesto a la corriente convencional) o iones
+  (electrolito).
+\end{notebox}
+
+\subsection{Resistencia y efecto Joule}
+
+Sin oposición, un campo uniforme daría movimiento \textbf{uniformemente
+acelerado} (los electrones acelerarían sin fin). En realidad los
+electrones son como un \textbf{pinball}: acelerados por el campo, chocan
+con la red, le entregan su energía (que vibra) y arrancan de cero. El
+resultado es un \textbf{avance medio lento} y una \textbf{disipación} en
+forma de calor: el \textbf{efecto Joule} (por eso un conductor con
+corriente se calienta). En los aislantes casi no ocurre.
+
+\subsection{Superconductores}
+
+Bajo cierta temperatura crítica, algunos materiales tienen
+\textbf{resistencia cero} (p.\,ej.\ plomo a $\sim 3$\,K): una corriente
+en un anillo persiste indefinidamente. Es un efecto \textbf{cuántico},
+típicamente a $T<20$\,K; desde los 80 hay superconductores de alta
+temperatura (aún bajo cero). \textbf{Uso: electroimanes} sin pérdidas por
+efecto Joule (aceleradores, suspensión magnética), a costa de la
+refrigeración.
+
+\subsection{Definición de corriente}
+
+\begin{keybox}[Corriente eléctrica]
+  \[
+  \boxed{I = \lim_{\Delta t\to 0}\frac{\Delta Q}{\Delta t}}
+  \]
+  Unidad: $\text{Coulomb/segundo} \equiv \textbf{Ampere (A)}$.
+\end{keybox}
+
+Hay que \textbf{orientar} la superficie: corriente positiva cuando cargas
+positivas la cruzan en el sentido elegido. Los electrones hacia la
+derecha $\Rightarrow$ corriente hacia la derecha (opuesta al movimiento
+de los portadores negativos).
+
+\subsection{Densidad de corriente}
+
+La corriente es el \textbf{flujo} de un campo vectorial (se cuentan
+trayectorias de cargas en vez de líneas de campo). Comprobaciones:
+\begin{itemize}[nosep]
+  \item Área doble (portadores uniformes) $\Rightarrow$ doble carga por
+        unidad de tiempo: $I \propto A$.
+  \item Superficie paralela al movimiento $\Rightarrow$ $I = 0$.
+\end{itemize}
+
+Se define el vector densidad de corriente $\mathbf{J}$:
+
+\begin{keybox}[Densidad de corriente]
+  \[
+  \boxed{I = \iint_S \mathbf{J}\cdot\hat{\mathbf{n}}\, dS}
+  \]
+  Superficie pequeña perpendicular: $I = J\,A$, es decir $J = I/A$
+  (independiente del área: es local). $\mathbf{J}$ apunta en el sentido
+  del movimiento medio de cargas positivas.
+\end{keybox}
+
+Próxima clase: relación entre $\mathbf{J}$ y el campo aplicado
+(\textbf{Ley de Ohm}).
+
+\end{document}

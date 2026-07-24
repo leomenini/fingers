@@ -1,0 +1,75 @@
+title: Clase 13
+id: fis3-2015-2-13
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:28:46"
+
+stats:
+  transcript_words: 9830
+  summary_words: 2369
+  diagrams_pending: 7
+  equations: 18
+
+topics:
+  - Cierre del modelo de Drude (hipótesis)
+  - Deducción de la velocidad de deriva (v_d = eEτ/m)
+  - Conductividad microscópica (σ = e²nτ/m)
+  - Choques con impurezas y deformaciones de la red (efectos cuánticos)
+  - Resistividad y temperatura
+  - Efecto Joule (disipación en la red)
+  - Circuitos de corriente directa vs alterna
+  - Aproximación de circuito ideal (cables ideales, régimen estacionario)
+  - No acumulación de carga y cortocircuito
+  - Primera ley de Kirchhoff (ley de los nudos)
+  - Baterías y fuentes de energía eléctrica
+  - Fuerza electromotriz (FEM) y su nombre histórico
+  - Batería ideal vs resistencia interna
+  - Segunda ley de Kirchhoff (ley de mallas)
+  - Circuito de dos mallas (sistema lineal)
+  - Resistencias en serie (R_eq = R₁ + R₂)
+  - Resistencias en paralelo (1/R_eq = 1/R₁ + 1/R₂)
+  - Transferencia de energía en un circuito (P = ΔV·I)
+  - Potencia disipada en un resistor (RI²)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "27-28"
+    verified: false
+
+prerequisites:
+  - Clase 12 (modelo de Drude, resistividad, resistencia)
+  - Clase 10 (asociación de condensadores serie y paralelo)
+  - Clase 9 (potencial, diferencia de potencial)
+  - Nociones de álgebra lineal (sistemas 3x3)
+
+next_topics:
+  - Experimento de circuitos con resistencias y condensadores (Clase 14)
+  - Circuitos RC y procesos de carga/descarga
+  - Constante de tiempo
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

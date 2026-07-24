@@ -1,0 +1,69 @@
+title: Clase 4
+id: fis3-2015-2-04
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:26:00"
+
+stats:
+  transcript_words: 10224
+  summary_words: 1420
+  diagrams_pending: 4
+  equations: 18
+
+topics:
+  - "Dipolo eléctrico: campo sobre el plano bisector"
+  - Momento dipolar eléctrico (p = Qd)
+  - Límite de gran distancia del dipolo (E ∝ 1/r³)
+  - Campo eléctrico de distribuciones continuas (principio general)
+  - Barra con densidad lineal uniforme (repaso, líneas de campo)
+  - Anillo cargado uniformemente (campo sobre el eje)
+  - Disco cargado uniformemente (campo sobre el eje, integración por anillos)
+  - Límite de plano infinito (E = σ/(2ε₀))
+  - Desarrollo de Taylor para límite Z ≫ R
+  - Cascarón esférico (recordatorio)
+  - Movimiento de cargas en campos eléctricos (F = qE)
+  - Capacitor de placas paralelas (E = σ/ε₀)
+  - Movimiento parabólico en campo uniforme
+  - Tubo de rayos catódicos (aplicación tecnológica)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "22"
+    verified: false
+
+prerequisites:
+  - Clase 1 (Ley de Coulomb, superposición)
+  - Clase 2 (distribuciones continuas)
+  - Clase 3 (campo eléctrico, dipolo iniciado)
+  - Cálculo integral (cambio de variable, Taylor)
+
+next_topics:
+  - Ley de Gauss (Clase 5)
+  - Flujo eléctrico
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: in-progress
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: deepseek-v4-flash
+
+editorial_status: draft

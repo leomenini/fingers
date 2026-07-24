@@ -1,0 +1,74 @@
+title: Clase 15
+id: fis3-2015-2-15
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:29:53"
+
+stats:
+  transcript_words: 10497
+  summary_words: 2143
+  diagrams_pending: 8
+  equations: 18
+
+topics:
+  - Movimiento de una carga en campo magnético uniforme
+  - Regla de la mano derecha para el producto vectorial
+  - Movimiento circular uniforme y conservación de la rapidez
+  - Radio de la trayectoria (r = mv/qB)
+  - Período y frecuencia de ciclotrón (independientes de v)
+  - Entrada oblicua y movimiento helicoidal
+  - Límite no relativista
+  - Espectrómetro de masas
+  - El ciclotrón (acelerador de partículas)
+  - Energía de salida del ciclotrón
+  - Desviación en tubos de rayos catódicos
+  - Efecto Hall y signo de los portadores de carga
+  - Campo y voltaje de Hall (equilibrio eléctrico-magnético)
+  - Relación con el modelo de Drude
+  - Número de portadores por átomo y huecos
+  - Fuerza magnética sobre un cable rectilíneo (F = IL×B)
+  - Fuerza sobre un cable de forma arbitraria (integral)
+  - Ejemplo con segmentos y semicírculo
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "29"
+    verified: false
+
+prerequisites:
+  - Clase 14 (fuerza magnética, fuerza de Lorentz)
+  - Clase 12 (modelo de Drude, densidad de corriente)
+  - Física I (movimiento circular uniforme, aceleración centrípeta)
+  - Producto vectorial y regla de la mano derecha
+
+next_topics:
+  - Momento sobre una espira con corriente (Clase 16)
+  - Momento dipolar magnético
+  - Campo magnético generado por corrientes
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

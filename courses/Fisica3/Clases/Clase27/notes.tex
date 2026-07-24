@@ -1,0 +1,240 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 27: Efecto Doppler e Introducción a la Interferencia}\\[0.3em]
+        \large{Doppler acústico y relativista, corrimiento al rojo y
+              principio de superposición}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Efecto Doppler}
+% ===================================================================
+
+Cambio de la frecuencia percibida cuando fuente u observador se mueven respecto
+del medio. En ondas mecánicas (sonido) hay un referencial privilegiado: el
+medio en reposo.
+
+\subsection{Medición de la frecuencia}
+
+Contando frentes en un tiempo largo $t$: un observador en reposo cuenta
+$v\,t/\lambda$ frentes, así que
+\[
+f = \frac{v}{\lambda}.
+\]
+
+\subsection{Observador en movimiento}
+
+Con velocidad $v_0$ hacia la fuente, pasan los frentes en $(v+v_0)t$:
+
+\begin{keybox}[Observador en movimiento]
+  \[
+  \boxed{f' = f\left(1 + \frac{v_0}{v}\right)}
+  \]
+\end{keybox}
+
+Solo interviene la componente en la dirección de propagación.
+
+\subsection{Fuente en movimiento}
+
+La fuente avanza $v_0 T$ por período, así que $\lambda' = (v - v_0)T$:
+
+\begin{keybox}[Fuente en movimiento]
+  \[
+  \boxed{f' = \frac{f}{1 - \dfrac{v_0}{v}}}
+  \]
+\end{keybox}
+
+Coherente con la ambulancia (más aguda al acercarse).
+
+\begin{warnbox}[No coinciden]
+  Las dos fórmulas difieren: hay un referencial privilegiado (el medio). Válidas
+  para $v_0 < v$; si la fuente es supersónica, aparecen ondas de choque.
+\end{warnbox}
+
+\subsection{Doppler para la luz (relativista)}
+
+La luz no tiene medio: debe dar lo mismo mover fuente u observador. El resultado
+relativista (solo velocidad relativa $v_0$):
+
+\begin{keybox}[Doppler relativista]
+  \[
+  \boxed{f' = f\,\frac{1 + \dfrac{v_0}{c}}{\sqrt{1 - \dfrac{v_0^2}{c^2}}}}
+  \]
+\end{keybox}
+
+Para $v_0 \ll c$, a primer orden $f' \approx f(1 + v_0/c)$, que coincide con
+ambas fórmulas mecánicas.
+
+\subsection{Corrimiento al rojo y ley de Hubble}
+
+Las galaxias lejanas se alejan (más rápido cuanto más lejos): su frecuencia
+disminuye (corrimiento al rojo). Es la ley de Hubble (universo en expansión, sin
+centro), base empírica del Big Bang.
+
+\begin{notebox}[Aplicaciones acústicas]
+  Radar/sonar de velocidad, sonares de submarinos, ecografía Doppler (velocidad
+  de la sangre).
+\end{notebox}
+
+% ===================================================================
+\section{Interferencia de ondas}
+% ===================================================================
+
+\subsection{El principio de superposición}
+
+En el vacío sin cargas ni corrientes, Maxwell es lineal y homogénea:
+\[
+\oint \mathbf{E}\cdot d\mathbf{S} = 0, \quad
+\oint \mathbf{B}\cdot d\mathbf{S} = 0, \quad
+\oint \mathbf{B}\cdot d\mathbf{l} = \mu_0\varepsilon_0\frac{d\Phi_E}{dt}, \quad
+\oint \mathbf{E}\cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}.
+\]
+Una combinación lineal de soluciones es solución.
+
+\begin{keybox}[Principio de superposición]
+  Si $\mathbf{E}_1$ y $\mathbf{E}_2$ son soluciones, $\alpha\mathbf{E}_1 +
+  \beta\mathbf{E}_2$ también.
+\end{keybox}
+
+\begin{notebox}[Sorprendente]
+  Dos ondas EM que se cruzan no se afectan. No vale en un medio no lineal ni en
+  ondas mecánicas grandes.
+\end{notebox}
+
+\subsection{Interferencia constructiva y destructiva}
+
+Sumando dos ondas de igual amplitud: constructiva total ($2A$), destructiva
+total (se cancelan) o intermedia.
+
+\subsection{Interferencia en el plano}
+
+Dos fuentes circulares: donde se cruzan máximo con máximo (o valle con valle)
+hay interferencia constructiva; máximo con mínimo, destructiva. Aparecen líneas
+alternadas.
+
+\subsection{Condiciones de fase}
+
+Definiendo la fase con amplitud positiva delante:
+
+\begin{keybox}[Constructiva y destructiva (1D)]
+  \[
+  \boxed{\phi_2 - \phi_1 = 2\pi n} \quad(\text{constructiva}), \qquad
+  \boxed{\phi_2 - \phi_1 = \pi + 2\pi n} \quad(\text{destructiva}).
+  \]
+\end{keybox}
+
+Importa la diferencia de fases; $-A\sin(kx) = A\sin(kx + \pi)$.
+
+\subsection{Coherencia}
+
+Para ver interferencia, las fuentes deben ser \textbf{coherentes} (desfasaje
+constante en el tiempo). Dos lamparitas emiten incoherentemente (emisiones
+atómicas aleatorias) $\Rightarrow$ no hay zonas oscuras.
+
+\subsection{Preview: experimento de doble rendija}
+
+Onda plana monocromática sobre dos rendijas separadas $d$; a distancia $D$,
+franjas claras y oscuras alternadas (equiespaciadas cerca del centro).
+
+\begin{notebox}[Próxima clase]
+  Cálculo del experimento de doble rendija, difracción, coherencia e intensidad.
+  Cierre del curso.
+\end{notebox}
+
+\end{document}

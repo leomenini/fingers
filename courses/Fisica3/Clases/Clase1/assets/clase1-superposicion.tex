@@ -1,0 +1,23 @@
+% Clase 1 --- Superposición de fuerzas sobre Q1 (ejemplo numérico de la clase),
+% dibujada punta-a-cola: F12 desde Q1, F13 desde la punta de F12, y la
+% resultante F1 = F12 + F13 cerrando el triángulo.
+% Escala 0.9 unidades/N:  F12=(1.59,0) [1.77 N],  F13=(1.18,-1.89) [2.48 N],
+% resultante F1=(2.77,-1.89) [3.73 N].
+\begin{center}
+\begin{tikzpicture}[line width=0.9pt]
+  % carga Q1 (origen)
+  \filldraw[figblue] (0,0) circle (2.2pt) node[above left]{$Q_1$};
+  % F12 desde Q1
+  \draw[figblue,->] (0,0) -- (1.59,0)
+        node[midway,above]{$\vec F_{12}$};
+  % F13 desde la punta de F12 (traslación)
+  \draw[figblue,->] (1.59,0) -- (2.77,-1.89)
+        node[pos=0.55,right=1pt]{$\vec F_{13}$};
+  % resultante F1 desde Q1
+  \draw[figred,->,line width=1.3pt] (0,0) -- (2.77,-1.89)
+        node[pos=0.55,below left=1pt]{$\vec F_{1}$};
+\end{tikzpicture}\\[0.4em]
+{\small\itshape La fuerza neta $\vec F_1$ es la suma vectorial de
+$\vec F_{12}$ (atracción de $Q_2$, $1{,}77$~N) y $\vec F_{13}$ (repulsión de
+$Q_3$, $2{,}48$~N), dibujada punta-a-cola; su módulo es $3{,}73$~N.}
+\end{center}

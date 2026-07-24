@@ -1,0 +1,73 @@
+title: Clase 18
+id: fis3-2015-2-18
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:21:49"
+
+stats:
+  transcript_words: 9851
+  summary_words: 2220
+  diagrams_pending: 8
+  equations: 14
+
+topics:
+  - Ley de Ampère aplicada al toroide
+  - Simetría rotacional y curva amperiana
+  - Corriente encerrada y campo (B = μ₀NI/2πR)
+  - Campo nulo fuera del toroide
+  - Ley de inducción de Faraday (capítulo 10)
+  - Experimentos de Faraday (imán, electroimán, deformación, giro)
+  - Definición de flujo magnético (superficie abierta)
+  - FEM inducida en valor absoluto
+  - El coeficiente 1 y la elección de unidades (SI)
+  - Ejemplo: solenoide grande y bobina chica (rampa de corriente)
+  - Ley de Lenz y el signo de la corriente inducida
+  - Oposición a la variación del flujo (no al campo)
+  - Ejemplos con imán y espira (test de consistencia)
+  - Ley de Faraday con signos (regla de la mano derecha)
+  - Ejemplo: espira que sale de un campo uniforme
+  - Balance de energía y potencia (entregada = disipada)
+  - Frenos magnéticos como aplicación tecnológica
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "30-31"
+    verified: false
+
+prerequisites:
+  - Clase 17 (ley de Ampère, solenoide ideal)
+  - Clase 6 (Ley de Gauss, simetrías)
+  - Clase 15 (fuerza magnética sobre cables)
+  - Producto escalar, flujo de un campo vectorial
+
+next_topics:
+  - Corrientes parásitas (Clase 19)
+  - Generadores y motores de corriente alterna
+  - Campos eléctricos inducidos
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

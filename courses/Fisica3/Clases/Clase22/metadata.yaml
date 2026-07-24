@@ -1,0 +1,73 @@
+title: Clase 22
+id: fis3-2015-2-22
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:24:44"
+
+stats:
+  transcript_words: 10397
+  summary_words: 1493
+  diagrams_pending: 6
+  equations: 13
+
+topics:
+  - Régimen permanente sin resistencia
+  - Solución particular sinusoidal
+  - Amplitud de oscilación de la carga
+  - Frecuencia de resonancia (asíntota vertical)
+  - Frecuencia natural y de resonancia
+  - Analogía de la hamaca
+  - Límites de la resonancia infinita (resistencia y no linealidad)
+  - Aplicaciones (radio, celular, microondas, ictericia)
+  - Circuitos RLC por el método complejo
+  - Notación compleja y unidad imaginaria j
+  - Impedancia compleja del circuito
+  - Impedancias de resistencia, bobina y condensador
+  - Amplitud real (módulo) y desfasaje (argumento)
+  - Composición de impedancias (serie y paralelo)
+  - Resonancia con resistencia (amplitud finita)
+  - Corriente máxima en resonancia (E0/R)
+  - Variación del desfasaje con la frecuencia
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "32-33"
+    verified: false
+
+prerequisites:
+  - Clase 21 (circuito LC, régimen transitorio, RLC homogéneo)
+  - Números complejos, forma polar y fórmula de Euler
+  - Movimiento armónico forzado (Física 1)
+  - Ley de mallas y ley de Ohm
+
+next_topics:
+  - Circuitos RLC generales (práctico)
+  - Principio de superposición
+  - Potencia en corriente alterna
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

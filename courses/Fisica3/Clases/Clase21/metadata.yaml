@@ -1,0 +1,73 @@
+title: Clase 21
+id: fis3-2015-2-21
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:22:04"
+
+stats:
+  transcript_words: 9502
+  summary_words: 1562
+  diagrams_pending: 6
+  equations: 18
+
+topics:
+  - Energía almacenada en un cable coaxial
+  - Campo magnético por Ampère (simetría cilíndrica)
+  - Densidad de energía dependiente del radio
+  - Integración por cascarones cilíndricos
+  - Oscilaciones y circuito LC
+  - Ley de mallas y ecuación diferencial de segundo orden
+  - Analogía con el sistema masa-resorte
+  - Conservación de la energía eléctrica
+  - Solución por analogía y verificación
+  - Frecuencia natural (omega = 1/√LC)
+  - Solución por exponenciales complejas
+  - Fórmula de Euler y soluciones reales
+  - Oscilaciones forzadas con resistencia (RLC)
+  - Régimen transitorio y régimen permanente
+  - Ecuación homogénea y polinomio característico
+  - Casos sobreamortiguado y subamortiguado
+  - Solución amortiguada (envolvente exponencial)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "31-32"
+    verified: false
+
+prerequisites:
+  - Clase 20 (energía y densidad del campo magnético, RL)
+  - Clase 17 (ley de Ampère, cable cilíndrico)
+  - Movimiento armónico simple (Física 1)
+  - Números complejos y fórmula de Euler
+
+next_topics:
+  - Régimen permanente y resonancia (Clase 22)
+  - Impedancias complejas
+  - Circuitos de corriente alterna
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

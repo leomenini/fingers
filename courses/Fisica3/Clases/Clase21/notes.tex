@@ -1,0 +1,254 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 21: Energía en un Cable Coaxial, Oscilaciones LC \\
+        y Circuito RLC Amortiguado}\\[0.3em]
+        \large{Densidad de energía, analogía masa--resorte y régimen transitorio}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Energía almacenada en un cable coaxial}
+% ===================================================================
+
+Cable coaxial: conductor central (radio $A$) con corriente $I$ entrante y
+cascarón externo (radio $B$) con $I$ saliente. Vacío en el medio. Se supone la
+energía dominada por $A < r < B$.
+
+\subsection{Campo magnético por Ampère}
+
+Simetría cilíndrica. Fuera ($r > B$): corriente neta nula $\Rightarrow B = 0$.
+Entre $A$ y $B$:
+\[
+B\,(2\pi r) = \mu_0 I \;\Longrightarrow\; B = \frac{\mu_0 I}{2\pi r},
+\qquad u_B = \frac{\mu_0 I^2}{8\pi^2 r^2}.
+\]
+La densidad depende de $r$.
+
+\subsection{Integración por cascarones}
+
+Un cascarón entre $r$ y $r+dr$, largo $\ell$, tiene volumen $2\pi r\,\ell\,dr$:
+\[
+dU = u_B\,(2\pi r\,\ell\,dr) = \frac{\mu_0\,\ell\, I^2}{4\pi}\,\frac{dr}{r}.
+\]
+
+\begin{keybox}[Energía en un cable coaxial]
+  \[
+  \boxed{U = \frac{\mu_0\,\ell\, I^2}{4\pi}\,\ln\!\frac{B}{A}}
+  \]
+\end{keybox}
+
+% ===================================================================
+\section{Oscilaciones: el circuito LC}
+% ===================================================================
+
+\subsection{Planteo y ecuación}
+
+Condensador $C$ y bobina $L$, sin resistencia. Inicialmente $Q(0)=Q_0$,
+$I(0)=0$. Ley de mallas:
+\[
+\frac{Q}{C} + L\frac{dI}{dt} = 0 \;\Longrightarrow\;
+L\frac{d^2Q}{dt^2} + \frac{Q}{C} = 0.
+\]
+Ecuación lineal homogénea con coeficientes constantes.
+
+\subsection{Analogía con el sistema masa-resorte}
+
+$M\ddot x + Kx = 0$ corresponde a:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Mecánico & Eléctrico \\
+\midrule
+posición $x$ & carga $Q$ \\
+masa $M$ & inductancia $L$ \\
+constante $K$ & $1/C$ \\
+cinética $\tfrac12 M\dot x^2$ & magnética $\tfrac12 L I^2$ \\
+potencial $\tfrac12 K x^2$ & eléctrica $\tfrac12 Q^2/C$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Conservación de la energía}
+
+$U = \tfrac12 Q^2/C + \tfrac12 L I^2$; derivando y usando $\dot Q = I$:
+\[
+\frac{dU}{dt} = I\left(\frac{Q}{C} + L\frac{dI}{dt}\right) = 0.
+\]
+La energía se conserva, oscilando entre condensador y bobina.
+
+\subsection{Solución por analogía y verificación}
+
+\begin{keybox}[Frecuencia natural]
+  \[
+  Q(t) = Q_0\cos(\omega t + \varphi), \qquad \boxed{\omega = \frac{1}{\sqrt{LC}}}
+  \]
+\end{keybox}
+
+Verificando: $-L\omega^2 + 1/C = 0$. Con $I(0)=0$, $\varphi = 0$, y
+$Q(t) = Q_0\cos(\omega t)$.
+
+\subsection{Solución por exponenciales complejas}
+
+Buscando $Q = A\,e^{rt}$: $L r^2 + 1/C = 0 \Rightarrow r = \pm i\omega$
+(imaginarias puras). Solución general $Q = A_1 e^{i\omega t} + A_2 e^{-i\omega
+t}$. Como $Q$ es real, $A_2 = \overline{A_1}$; con Euler,
+\[
+Q(t) = 2|A_1|\cos(\omega t + \varphi) \equiv Q_0\cos(\omega t + \varphi).
+\]
+
+\begin{notebox}[Utilidad]
+  Este método sirve para casos más difíciles (a diferencia de solo
+  "adivinar" la solución).
+\end{notebox}
+
+% ===================================================================
+\section{Oscilaciones forzadas con resistencia (RLC)}
+% ===================================================================
+
+Generador $\varepsilon(t)$ forzando $R$, $C$, $L$ en serie:
+\[
+L\ddot Q + R\dot Q + \frac{Q}{C} = \varepsilon(t).
+\]
+Forzado periódico (analogía de la hamaca: tras un rato oscila con el periodo
+del empuje).
+
+\subsection{Régimen transitorio y permanente}
+
+Si $Q_1$, $Q_2$ son soluciones, $Q_H = Q_1 - Q_2$ cumple la homogénea, que con
+resistencia tiende a cero. Entonces
+\[
+Q(t) = Q_{\text{part}}(t) + Q_H(t).
+\]
+
+\begin{keybox}[Dos regímenes]
+  \textbf{Transitorio:} depende de condiciones iniciales, dura poco.
+  \textbf{Permanente:} para $t$ grande, toda solución se comporta como una
+  particular.
+\end{keybox}
+
+\subsection{Solución de la homogénea: caso subamortiguado}
+
+$Q_H = A e^{rt}$ da $L r^2 + R r + 1/C = 0$:
+\[
+r = \frac{-R \pm \sqrt{R^2 - 4L/C}}{2L}.
+\]
+
+\begin{itemize}[nosep]
+  \item $R$ grande (sobreamortiguado): raíces reales, no oscila.
+  \item $R$ chica (subamortiguado): raíces complejas, oscila decreciendo.
+\end{itemize}
+
+Subamortiguado: $r_\pm = -\gamma \pm i\omega'$, con $\gamma = R/(2L)$ y
+$\omega' = \sqrt{1/LC - R^2/4L^2}$. Imponiendo $Q_H$ real:
+
+\begin{keybox}[Homogénea subamortiguada]
+  \[
+  \boxed{Q_H(t) = Q_0\, e^{-\gamma t}\cos(\omega' t + \varphi)}
+  \]
+\end{keybox}
+
+Es el LC modulado por $e^{-\gamma t}$: las oscilaciones se amortiguan.
+$\omega' \to \omega$ cuando $R \to 0$.
+
+\begin{notebox}[Próxima clase]
+  Solución particular en régimen permanente, resonancia e impedancias complejas.
+\end{notebox}
+
+\end{document}

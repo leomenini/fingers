@@ -1,0 +1,328 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 18: El Toroide, la Ley de Inducción de Faraday \\
+        y la Ley de Lenz}\\[0.3em]
+        \large{Cierre de Ampère, flujo magnético, FEM inducida y sus signos}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Último ejemplo de Ampère: el toroide}
+% ===================================================================
+
+Cuarto ejemplo de la ley de Ampère, no calculado antes con Biot--Savart: el
+\textbf{toroide}, una bobina en forma de "rosca" con radio interno $A$, radio
+externo $B$ y corriente $I$. Se busca $\mathbf{B}$ entre los rollos.
+
+\subsection{Simetría y curva amperiana}
+
+El sistema es invariante ante rotaciones alrededor de su eje. Como las líneas
+de $\mathbf{B}$ son \textbf{cerradas} (sin monopolos), son circunferencias
+concéntricas: $\mathbf{B}$ tangente y de módulo constante sobre la curva
+amperiana $C$ de radio $R$. Entonces
+\[
+\oint_C \mathbf{B}\cdot d\mathbf{l} = B\,(2\pi R).
+\]
+
+\subsection{Corriente encerrada y resultado}
+
+Cada una de las $N$ espiras cruza la superficie una vez, en el mismo sentido:
+$I_{\text{enc}} = N I$.
+
+\begin{keybox}[Campo dentro de un toroide]
+  \[
+  \boxed{B = \frac{\mu_0\, N\, I}{2\pi R}}, \qquad A < R < B.
+  \]
+\end{keybox}
+
+No es uniforme: decrece como $1/R$. Se obtuvo sin integrales, por simetría.
+
+\subsection{Campo nulo fuera del toroide}
+
+\begin{itemize}[nosep]
+  \item $R > B$: toda la corriente que entra sale; neta encerrada $=0
+        \Rightarrow B=0$.
+  \item $R < A$: no pasa corriente $\Rightarrow B=0$.
+\end{itemize}
+El campo del toroide está \textbf{confinado} en su interior.
+
+% ===================================================================
+\section{La ley de inducción de Faraday}
+% ===================================================================
+
+Este es un curso de \textbf{electromagnetismo}: ya vimos que las corrientes
+generan campos magnéticos; ahora veremos que \textbf{situaciones magnéticas
+variables generan corrientes eléctricas}.
+
+\subsection{Los experimentos de Faraday}
+
+\textbf{Primer experimento (imán y espira).} Imán quieto: nada. Imán en
+movimiento: aparece corriente, que cambia de signo según el sentido y
+desaparece al detenerse. \emph{No es la presencia de $\mathbf{B}$, sino su
+variación.} Variantes: imán mayor $\to$ efecto mayor; invertir polaridad $\to$
+corriente invertida; deformar la espira (área) $\to$ efecto $\propto$ área y
+$dB/dt$; girar la espira $\to$ efecto $\propto \cos\theta$ (normal contra
+$\mathbf{B}$).
+
+\textbf{Segundo experimento (electroimán).} Al cerrar un interruptor la
+corriente crece y se induce; estabilizada, no hay inducción; al abrir, se
+induce con signo opuesto. Da igual la fuente del campo.
+
+\textbf{Variante clave.} Con el imán fijo y moviendo el circuito, también hay
+corriente: importa la variación del \textbf{flujo}, no la de $\mathbf{B}$.
+
+\subsection{El flujo magnético}
+
+\begin{keybox}[Flujo magnético]
+  \[
+  \Phi_B = \iint_S \mathbf{B}\cdot \hat{n}\, dS.
+  \]
+\end{keybox}
+
+\begin{notebox}[Superficie abierta]
+  A diferencia de Gauss (superficie cerrada), aquí $S$ es abierta y su
+  \textbf{borde} es la espira $C$ (cualquier superficie apoyada en el aro).
+\end{notebox}
+
+\subsection{La FEM inducida (valor absoluto)}
+
+\begin{keybox}[Ley de Faraday --- módulo]
+  \[
+  \boxed{|\varepsilon| = \left|\frac{d\Phi_B}{dt}\right|}
+  \]
+\end{keybox}
+
+El flujo engloba área, módulo de $\mathbf{B}$ y ángulo. La FEM existe esté o no
+cerrado el circuito (si está abierto, no circula corriente). Con $N$ vueltas
+iguales se multiplica por $N$.
+
+\subsection{¿Por qué el coeficiente es 1?}
+
+Por elección del \textbf{Sistema Internacional}: las unidades se definen para
+que el coeficiente sea 1 (como el $4\pi$ de Coulomb, puesto para que no
+aparezca en Gauss).
+
+% ===================================================================
+\section{Ejemplo: solenoide grande y bobina chica}
+% ===================================================================
+
+Solenoide ideal grande ($n$ espiras/longitud, corriente $I$) con una bobina
+chica coaxial de $N$ vueltas y sección $A$ dentro. Se la toma "chica" para
+despreciar la inducción mutua inversa. Campo dentro: $B = \mu_0 n I$. Flujo
+total en la bobina chica:
+\[
+\Phi_B = N\,(B\,A) = \mu_0\, N\, n\, I\, A.
+\]
+Se impone una \textbf{rampa} de corriente:
+\[
+I(t) = \begin{cases} 0, & t<0 \\ \dfrac{I_{\max}}{t_f}\,t, & 0<t<t_f \\
+I_{\max}, & t>t_f \end{cases}
+\]
+Como todo es constante salvo $I$:
+\[
+|\varepsilon| = \mu_0\, N\, n\, A\,\left|\frac{dI}{dt}\right|.
+\]
+
+\begin{keybox}[FEM inducida en la bobina chica]
+  \[
+  \boxed{|\varepsilon| = \begin{cases} 0, & t<0 \ \text{o}\ t>t_f \\[1mm]
+  \dfrac{\mu_0\, N\, n\, A\, I_{\max}}{t_f}, & 0<t<t_f \end{cases}}
+  \]
+\end{keybox}
+
+Reproduce a Faraday: hay FEM solo mientras la corriente cambia.
+
+% ===================================================================
+\section{Los signos: la ley de Lenz}
+% ===================================================================
+
+\subsection{Enunciado de Lenz}
+
+Imaginando la espira cerrada (real, o por una resistencia enorme como el aire):
+
+\begin{keybox}[Ley de Lenz]
+  El signo de la corriente inducida es tal que el campo magnético que ella
+  genera \textbf{se opone a la variación de flujo} que la provocó.
+\end{keybox}
+
+\begin{warnbox}[Dos matices]
+  (1) Se opone a la \textbf{variación} del flujo, no al campo. (2) La oposición
+  \textbf{no alcanza} a compensar del todo (no es inducción perfecta). Si
+  alimentara la causa, la corriente crecería sin límite.
+\end{warnbox}
+
+\subsection{Ejemplos con imán y espira}
+
+Con convención fija de $I$ y $\hat n$:
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Caso & $\Phi_B$ & ¿Crece/decrece? & $I$ inducida \\
+\midrule
+Imán acercándose, $\mathbf{B}\parallel\hat n$ & $+$ & crece & negativa \\
+Imán alejándose, $\mathbf{B}\parallel\hat n$ & $+$ & decrece & positiva \\
+Imán invertido, acercándose & $-$ & decrece & positiva \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Método:} (1) flujo con su signo; (2) ¿crece o decrece?; (3) corriente
+que se opone a la \emph{variación}.
+
+\begin{notebox}[Test de consistencia]
+  Al invertir el imán, la corriente debe cambiar de sentido.
+\end{notebox}
+
+\subsection{Ley de Faraday con signos}
+
+Ligando las convenciones de FEM y flujo por la regla de la mano derecha
+(orientación de $C$ $\to$ normal a $S$):
+
+\begin{keybox}[Ley de Faraday con signo]
+  \[
+  \boxed{\varepsilon = -\frac{d\Phi_B}{dt}}
+  \]
+\end{keybox}
+
+El signo menos codifica Lenz. Verificado en los ejemplos: flujo creciente
+($d\Phi/dt>0$) $\to$ FEM negativa; flujo decreciente $\to$ FEM positiva.
+
+% ===================================================================
+\section{Ejemplo: espira que sale de un campo (frenos magnéticos)}
+% ===================================================================
+
+Campo uniforme entrante $B$; espira rectangular (lado vertical $L$, horizontal
+$D$) con porción $x$ dentro, moviéndose hacia afuera con velocidad $v$;
+resistencia $R$. Flujo (normal entrante): $\Phi_B = B\,D\,x$. Como
+$dx/dt = -v$:
+\[
+\varepsilon = -\frac{d\Phi_B}{dt} = B\,D\,v.
+\]
+
+\begin{keybox}[Corriente inducida]
+  \[
+  \boxed{I = \frac{\varepsilon}{R} = \frac{B\,D\,v}{R}}
+  \]
+\end{keybox}
+
+\subsection{Balance de energía y frenos magnéticos}
+
+Potencia disipada: $P_{\text{dis}} = R I^2 = B^2 D^2 v^2/R$. Las fuerzas
+$\mathbf{F}=I\mathbf{L}\times\mathbf{B}$ sobre los lados horizontales se
+cancelan; la del lado interior se opone al movimiento:
+\[
+F_2 = I\,D\,B = \frac{B^2 D^2 v}{R}.
+\]
+La fuerza externa que mantiene $v$ constante entrega
+\[
+P_{\text{ext}} = F_{\text{ext}}\,v = \frac{B^2 D^2 v^2}{R} = P_{\text{dis}}.
+\]
+
+\begin{notebox}[Frenos magnéticos]
+  La potencia entregada iguala a la disipada (test de consistencia). Sin fuerza
+  externa, la fuerza magnética frena el sistema: es el principio de los frenos
+  magnéticos (sin contacto, no se gastan; la energía se pierde por Joule).
+\end{notebox}
+
+\begin{notebox}[Próxima clase]
+  Corrientes parásitas, generadores y motores, campos eléctricos inducidos.
+\end{notebox}
+
+\end{document}

@@ -1,0 +1,70 @@
+title: Clase 5
+id: fis3-2015-2-05
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:24:00"
+
+stats:
+  transcript_words: 9099
+  summary_words: 1320
+  diagrams_pending: 5
+  equations: 16
+
+topics:
+  - Movimiento parabólico de cargas en campo eléctrico uniforme
+  - Tubo de rayos catódicos (CRT) e impresoras de tinta
+  - Dipolo en campo eléctrico uniforme (fuerza neta cero, torque)
+  - Momento dipolar vectorial (p = Qd)
+  - Torque vectorial (τ = p × E)
+  - Líneas de campo eléctrico (Faraday)
+  - Propiedades de las líneas de campo
+  - Relación líneas de campo ↔ ley de Coulomb (E ∝ 1/r²)
+  - Definición de flujo de un campo vectorial
+  - Flujo para campo uniforme y superficie inclinada (Φ = v·A)
+  - Caso general: integral de superficie
+  - Convención de signo para superficies cerradas
+  - Ejemplo: prisma en campo uniforme (flujo neto cero)
+  - Anuncio de la Ley de Gauss
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "22-23"
+    verified: false
+
+prerequisites:
+  - Clase 1 (Ley de Coulomb)
+  - Clase 2 (conductores y aislantes)
+  - Clase 3 (campo eléctrico, dipolo)
+  - Clase 4 (movimiento de cargas, distribuciones continuas)
+  - Nociones de integrales de superficie
+
+next_topics:
+  - Ley de Gauss (Clase 6)
+  - Aplicaciones de la Ley de Gauss
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: in-progress
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: deepseek-v4-flash
+
+editorial_status: draft

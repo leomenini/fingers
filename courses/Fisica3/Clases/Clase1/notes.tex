@@ -1,0 +1,380 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Paquetes ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\geometry{margin=2.5cm}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+% ---- Colores ----
+\definecolor{keycolor}{HTML}{1a5276}
+\definecolor{warncolor}{HTML}{b03a2e}
+\definecolor{notecolor}{HTML}{2e86c1}
+\definecolor{refcolor}{HTML}{7d3c98}
+
+% ---- Entornos ----
+\newtcolorbox{keybox}[1][]{colback=keycolor!5!white,colframe=keycolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{warnbox}[1][]{colback=warncolor!5!white,colframe=warncolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{notebox}[1][]{colback=notecolor!5!white,colframe=notecolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{refbox}[1][]{colback=refcolor!5!white,colframe=refcolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Encabezados ----
+\titleformat{\section}{\Large\bfseries\color{keycolor}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.4pt}]
+\titleformat{\subsection}{\large\bfseries\color{notecolor}}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{notecolor!70!black}}{}{0em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Notas --- Clase 1}
+\fancyhead[R]{\small Física III --- Electromagnetismo}
+\fancyfoot[C]{\thepage}
+
+% ---- Título ----
+\title{\vspace{-1.5cm}\textbf{Clase 1: Introducción al Electromagnetismo y Ley de Coulomb}\\
+\large{Carga Eléctrica, Fuerzas Fundamentales, Principio de Superposición y Cuantización}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-0.5cm}
+
+% =========================================================================
+% ÍNDICE
+% =========================================================================
+\subsection*{Contenidos}
+\tableofcontents
+\vspace{0.5cm}
+
+% =========================================================================
+\section{Presentación del Curso}
+% =========================================================================
+
+\subsection{Bibliografía}
+
+\begin{refbox}[Bibliografía del curso]
+\begin{description}[nosep]
+  \item [\textbf{Resnick \& Halliday}] \textit{Física}, Vol. 2. Es el libro de texto principal. Claro, bien ordenado, seguido con bastante detenimiento.
+  \item [\textbf{Feynman, R.}] \textit{The Feynman Lectures on Physics}, Vol. II. Lectura complementaria recomendada. No sigue el orden del curso pero permite ``soñar y pensar'' la física más allá de las fórmulas.
+\end{description}
+\end{refbox}
+
+\subsection{Temario general}
+
+El curso de Física III es un curso de \textbf{electromagnetismo elemental}. Se divide en dos grandes bloques:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Electromagnetismo}: cargas en reposo (electrostática), cargas en movimiento (corrientes, campos magnéticos) y su interrelación.
+  \item \textbf{Óptica}: propagación de la luz como onda electromagnética (reflexión, refracción, formación de imágenes).
+\end{enumerate}
+
+\subsection{Unificaciones históricas}
+
+\begin{keybox}[Dos grandes unificaciones]
+\begin{enumerate}[nosep]
+  \item \textbf{Electricidad y magnetismo} (s. XIX): se descubre que las cargas en movimiento generan fenómenos magnéticos. Ambas fuerzas son manifestaciones de un mismo fenómeno.
+  \item \textbf{Maxwell y la luz} (1865): James Clerk Maxwell demuestra que la luz es una onda electromagnética, unificando el electromagnetismo con la óptica.
+\end{enumerate}
+\end{keybox}
+
+% =========================================================================
+\section{Las Cuatro Interacciones Fundamentales}
+% =========================================================================
+
+\subsection{Marco conceptual}
+
+La física moderna busca reducir todos los fenómenos observables al menor número posible de interacciones independientes. Al día de hoy se reconocen \textbf{cuatro interacciones fundamentales}:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Gravedad}
+  \item \textbf{Electromagnetismo}
+  \item \textbf{Interacción nuclear fuerte}
+  \item \textbf{Interacción nuclear débil}
+\end{enumerate}
+
+\subsection{Gravedad}
+
+Responsable de:
+\begin{itemize}[nosep]
+  \item Caída de los cuerpos y movimiento de planetas (atracción gravitatoria newtoniana).
+  \item Estructura de estrellas y galaxias (cosmología).
+  \item Fenómenos relativistas: desviación de la luz por campos gravitatorios (predicho por Einstein en 1916, confirmado por Eddington en 1919).
+\end{itemize}
+
+La fuerza gravitatoria entre dos masas puntuales es siempre \textbf{atractiva}:
+\[
+\mathbf{F}_g = -G\,\frac{m_1 m_2}{r^2}\,\hat{\mathbf{r}}.
+\]
+
+\subsection{Electromagnetismo}
+
+Responsable de:
+\begin{itemize}[nosep]
+  \item Interacción entre cargas eléctricas (atracción/repulsión).
+  \item Imanes y fenómenos magnéticos.
+  \item Corrientes eléctricas y transmisión de información (telecomunicaciones).
+  \item \textbf{Toda la química}: las reacciones químicas, la estructura de moléculas y cristales son fenómenos electromagnéticos a nivel microscópico.
+  \item \textbf{Toda la biología}: los procesos biológicos se basan en la química, y por tanto, en última instancia, en el electromagnetismo.
+  \item Elasticidad, sonido, fuerzas de contacto (rozamiento, tensión) son manifestaciones de interacciones electromagnéticas entre átomos y moléculas.
+  \item Aplicaciones tecnológicas: motores, generadores, computadoras, telecomunicaciones, Internet, fibra óptica, etc.
+\end{itemize}
+
+\subsection{Interacción nuclear fuerte}
+
+Mantiene unidos a protones y neutrones dentro del núcleo atómico. Sin ella, los protones (todos con carga positiva) se repelerían violentamente por la fuerza electromagnética y el núcleo sería inestable. Su nombre proviene de ser la más intensa de las cuatro.
+
+\begin{notebox}[Escalas del átomo]
+\begin{itemize}[nosep]
+  \item Radio atómico típico: $\sim 10^{-10}$ m.
+  \item Radio nuclear típico: $\sim 10^{-15}$ m (¡100\,000 veces más pequeño!).
+  \item Analogía: si un átomo tuviera el tamaño del Estadio Centenario, el núcleo sería del tamaño de una manzana.
+\end{itemize}
+\end{notebox}
+
+\subsection{Interacción nuclear débil}
+
+Responsable de la \textbf{desintegración beta} (radiactividad $\beta$). Es la interacción que permite la transformación de neutrones en protones (y viceversa) dentro del núcleo. El bosón de Higgs, descubierto en el LHC (CERN) en 2012, está estrechamente vinculado con esta interacción.
+
+\begin{refbox}[Referencia: interacciones fundamentales]
+\begin{tabular}{lll}
+\toprule
+\textbf{Interacción} & \textbf{Mediador} & \textbf{Ejemplo} \\
+\midrule
+Gravedad & Gravitón (hipotético) & Caída de cuerpos \\
+Electromagnetismo & Fotón ($\gamma$) & Atracción de cargas \\
+Fuerte & Gluón & Estabilidad nuclear \\
+Débil & Bosones W$^\pm$, Z$^0$ & Desintegración $\beta$ \\
+\bottomrule
+\end{tabular}
+\end{refbox}
+
+\subsection{Importancia relativa}
+
+La fuerza electromagnética es \textbf{muchísimo más intensa} que la gravitatoria (aproximadamente $10^{36}$ veces mayor entre dos protones). Sin embargo, la gravedad domina a escala macroscópica porque:
+\begin{itemize}[nosep]
+  \item La gravedad es siempre atractiva $\rightarrow$ los efectos se acumulan con la masa.
+  \item La electricidad puede ser atractiva o repulsiva $\rightarrow$ los objetos neutros tienen igual número de cargas positivas y negativas, por lo que los efectos se cancelan a larga distancia.
+\end{itemize}
+
+% =========================================================================
+\section{Carga Eléctrica}
+% =========================================================================
+
+\subsection{Experimentos de frotamiento}
+
+Desde la antigüedad se observó que al frotar ciertos materiales (ámbar, vidrio) con un paño, estos adquirían la capacidad de atraer objetos ligeros. Esto se debe a la transferencia de electrones entre los materiales, generando un \textbf{desequilibrio de carga}.
+
+\begin{warnbox}[Humedad ambiental]
+En Montevideo la alta humedad del aire dificulta estos experimentos porque el aire húmedo conduce parcialmente la electricidad, disipando las cargas acumuladas.
+\end{warnbox}
+
+\subsection{Dos tipos de carga}
+
+\begin{itemize}[nosep]
+  \item \textbf{Carga positiva} ($+$): la que adquiere el vidrio al frotarlo con seda.
+  \item \textbf{Carga negativa} ($-$): la que adquiere el ámbar al frotarlo con lana.
+\end{itemize}
+
+Leyes empíricas:
+\[
+\text{Cargas del mismo signo} \to \text{se repelen.}
+\]
+\[
+\text{Cargas de signo opuesto} \to \text{se atraen.}
+\]
+
+% =========================================================================
+\section{Ley de Coulomb}
+% =========================================================================
+
+\subsection{Enunciado}
+
+\begin{keybox}[Ley de Coulomb (1785)]
+La fuerza eléctrica entre dos cargas puntuales $Q_1$ y $Q_2$ en reposo, separadas una distancia $r$, es:
+\[
+\boxed{\mathbf{F}_{12} = k\,\frac{Q_1 Q_2}{r_{21}^2}\,\hat{\mathbf{r}}_{21}},
+\qquad k = \frac{1}{4\pi\varepsilon_0},
+\]
+donde:
+\begin{itemize}[nosep]
+  \item $\mathbf{F}_{12}$ = fuerza sobre $Q_1$ debida a $Q_2$.
+  \item $\hat{\mathbf{r}}_{21}$ = versor dirigido de $Q_2$ hacia $Q_1$.
+  \item $\varepsilon_0 = 8.8541878176\dots\times10^{-12}\ \text{C}^2/(\text{N·m}^2)$ es la \textbf{permitividad eléctrica del vacío}.
+\end{itemize}
+\end{keybox}
+
+El signo del producto $Q_1 Q_2$ determina el sentido:
+\begin{itemize}[nosep]
+  \item $Q_1 Q_2 > 0$ (mismo signo) $\to$ fuerza \textbf{repulsiva} ($\mathbf{F}_{12} \parallel \hat{\mathbf{r}}_{21}$).
+  \item $Q_1 Q_2 < 0$ (signos opuestos) $\to$ fuerza \textbf{atractiva} ($\mathbf{F}_{12} \parallel -\hat{\mathbf{r}}_{21}$).
+\end{itemize}
+
+\subsection{La constante $k$ y $\varepsilon_0$}
+
+La constante $k$ se escribe como $1/(4\pi\varepsilon_0)$ por convención. Esto se hace para simplificar la \textbf{ley de Gauss} (que se verá más adelante), evitando que aparezca $4\pi$ en esa ley. Es una elección: el $4\pi$ va en la ley de Coulomb o en la de Gauss.
+
+\subsection{Precisión del exponente 2}
+
+\begin{itemize}[nosep]
+  \item Coulomb (1785) midió el exponente con precisión limitada mediante una \textbf{balanza de torsión}.
+  \item \textbf{Henry Cavendish} (ca. 1770) realizó mediciones mucho más precisas 10--15 años antes que Coulomb, pero nunca publicó sus resultados. Fue descubierto póstumamente al revisar sus archivos.
+  \item Hoy se sabe que el exponente es $2$ con una precisión de $\pm 10^{-16}$ (16 cifras significativas). Este nivel de precisión no se obtiene por medidas directas, sino por experimentos indirectos que se verán más adelante en el curso.
+\end{itemize}
+
+\begin{refbox}[Referencia histórica]
+\begin{itemize}[nosep]
+  \item \textbf{Charles-Augustin de Coulomb} (1736--1806): físico francés, desarrolló la balanza de torsión y estableció la ley que lleva su nombre.
+  \item \textbf{Henry Cavendish} (1731--1810): aristócrata británico, científico excéntrico. Sus trabajos sobre electricidad fueron publicados póstumamente por Maxwell en 1879. También midió la constante de gravitación universal $G$ (experimento de Cavendish).
+\end{itemize}
+\end{refbox}
+
+\subsection{Unidades}
+
+En el Sistema Internacional (SI):
+\begin{itemize}[nosep]
+  \item Fuerza $F$: newton (N).
+  \item Distancia $r$: metro (m).
+  \item Carga $Q$: \textbf{coulomb} (C).
+\end{itemize}
+
+Un coulomb es una cantidad muy grande. En experimentos típicos se usan submúltiplos:
+\[
+1\ \mu\text{C} = 10^{-6}\ \text{C},\qquad
+1\ \text{nC} = 10^{-9}\ \text{C}.
+\]
+
+% =========================================================================
+\section{Principio de Superposición}
+% =========================================================================
+
+\subsection{Enunciado}
+
+Cuando hay más de dos cargas, la fuerza total sobre una carga $Q_1$ es la \textbf{suma vectorial} de las fuerzas ejercidas por cada una de las demás cargas:
+
+\begin{keybox}[Principio de superposición]
+\[
+\mathbf{F}_1 = \sum_{i=2}^{N} \mathbf{F}_{1i}
+           = \frac{1}{4\pi\varepsilon_0} \sum_{i=2}^{N} \frac{Q_1 Q_i}{r_{i1}^2}\,\hat{\mathbf{r}}_{i1}.
+\]
+\end{keybox}
+
+\noindent Esto es válido en el vacío porque no hay medio que se modifique por la presencia de las cargas. En medios materiales pueden aparecer efectos no lineales.
+
+\subsection{Explicación}
+
+\textbf{Datos:}
+\begin{align*}
+Q_1 &= -1.2\ \mu\text{C}, &
+Q_2 &= +3.7\ \mu\text{C}, &
+Q_3 &= -2.3\ \mu\text{C}, \\
+r_{12} &= 12\ \text{cm}, &
+r_{13} &= 10\ \text{cm}, &
+\theta &= 32^\circ.
+\end{align*}
+
+\textbf{Cálculo de módulos:}
+\[
+F_{12} = \frac{1}{4\pi\varepsilon_0}\,\frac{|Q_1 Q_2|}{r_{12}^2} = 1.77\ \text{N},
+\qquad
+F_{13} = \frac{1}{4\pi\varepsilon_0}\,\frac{|Q_1 Q_3|}{r_{13}^2} = 2.48\ \text{N}.
+\]
+
+\textbf{Componentes cartesianas:}
+\begin{align*}
+F_{1x} &= F_{12} + F_{13}\,\sen\theta = 1.77 + 2.48\cdot\sen32^\circ = 3.08\ \text{N}, \\
+F_{1y} &= 0 - F_{13}\,\cos\theta = -2.48\cdot\cos32^\circ = -2.10\ \text{N}.
+\end{align*}
+
+\textbf{Módulo resultante:}
+\[
+F_1 = \sqrt{F_{1x}^2 + F_{1y}^2} = \sqrt{3.08^2 + 2.10^2} = 3.73\ \text{N}.
+\]
+
+\input{assets/clase1-superposicion.tex}
+
+\begin{notebox}[Cuidado con la notación vectorial]
+Es común en estudiantes confundir vectores con escalares. En exámenes y parciales debe distinguirse claramente cuándo una cantidad es vectorial (tiene dirección y sentido) y cuándo es escalar (solo módulo).
+\end{notebox}
+
+% =========================================================================
+\section{Fuerza Eléctrica sobre Objetos Neutros}
+% =========================================================================
+
+\subsection{Comportamiento a larga distancia}
+
+Un objeto neutro tiene igual número de cargas positivas que negativas ($\sum Q_i = 0$). Cuando una carga de prueba $Q_0$ está \textbf{muy alejada}, todas las distancias $r_{i0}$ y los versores $\hat{\mathbf{r}}_{i0}$ son aproximadamente iguales. Entonces:
+
+\[
+\mathbf{F}_0 \approx \frac{Q_0}{4\pi\varepsilon_0}\,\frac{\hat{\mathbf{r}}}{r^2} \sum_i Q_i = 0.
+\]
+
+\subsection{Comportamiento a corta distancia}
+
+Cuando $Q_0$ está \textbf{cerca} del objeto neutro, las distancias a las distintas cargas internas no pueden aproximarse como iguales. Si las cargas positivas y negativas están separadas espacialmente (formando un \textbf{dipolo}), la fuerza neta no es nula. En general decae como $1/r^3$ (más rápido que la ley de Coulomb).
+
+\begin{warnbox}[Consecuencia importante]
+Un objeto neutro \textbf{sí} puede ejercer fuerza eléctrica sobre una carga cercana. La cancelación solo es exacta cuando todas las cargas internas están en la misma posición (objeto puntual neutro) o cuando la distancia es mucho mayor que el tamaño del objeto.
+\end{warnbox}
+
+% =========================================================================
+\section{Cuantización de la Carga}
+% =========================================================================
+
+\subsection{Carga elemental}
+
+Todos los experimentos realizados hasta la fecha demuestran que la carga eléctrica en la naturaleza está \textbf{cuantizada}:
+
+\begin{keybox}[Cuantización de la carga]
+\[
+\boxed{Q = N\,e},\qquad N \in \mathbb{Z},
+\]
+donde $e = 1.602\times10^{-19}\ \text{C}$ es la \textbf{carga elemental} (valor absoluto de la carga del electrón).
+\end{keybox}
+
+\subsection{Propiedades}
+
+\begin{itemize}[nosep]
+  \item La carga del \textbf{electrón} es $-e$.
+  \item La carga del \textbf{protón} es $+e$ (con precisión experimental, exactamente opuesta a la del electrón).
+  \item No se han observado cargas fraccionarias libres en la naturaleza (los quarks tienen carga $\pm e/3$ o $\pm 2e/3$, pero siempre están confinados dentro de hadrones).
+\end{itemize}
+
+\begin{refbox}[Referencias bibliográficas]
+\begin{itemize}[nosep]
+  \item \textbf{Resnick, R. \& Halliday, D.} \textit{Física}, Vol. 2. Cap. 21 (Carga eléctrica y ley de Coulomb).
+  \item \textbf{Feynman, R.} \textit{The Feynman Lectures on Physics}, Vol. II. Cap. 1 (Electromagnetismo en la naturaleza).
+  \item \textbf{Serway, R. \& Jewett, J.} \textit{Física para ciencias e ingeniería}, Vol. 2. Cap. 23.
+  \item \textbf{Purcell, E.} \textit{Electricidad y magnetismo}. Berkeley Physics Course, Vol. 2. Cap. 1.
+  \item \textbf{Griffiths, D.} \textit{Introduction to Electrodynamics}. Cap. 2 (Coulomb y superposición).
+  \item \textbf{Maxwell, J. C.} (1879). \textit{The Electrical Researches of the Honourable Henry Cavendish}. Cambridge University Press. (Publicación póstuma de los trabajos de Cavendish.)
+  \item \textbf{Experiment Eötvös y verificaciones modernas}: mediciones de precisión del exponente $2$ en la ley de Coulomb mediante experimentos de tipo ``ley del cuadrado inverso'' (ver \textit{Phys. Rev. Lett.} 26, 721, 1971).
+\end{itemize}
+\end{refbox}
+
+\end{document}

@@ -1,0 +1,371 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 5: Movimiento de Cargas, Dipolos en Campos, \\
+        Líneas de Campo y Flujo Eléctrico}\\[0.3em]
+        \large{Movimiento parabólico, torque sobre un dipolo,
+              líneas de Faraday y flujo de campos vectoriales}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Movimiento de cargas en campos uniformes}
+% ===================================================================
+
+\subsection{Carga puntual en campo uniforme}
+
+Retomando la Clase 4: dos placas paralelas generan un campo eléctrico
+uniforme $\mathbf{E}$ entre ellas. Una partícula de masa $m$ y carga
+$q$ entra con velocidad horizontal $v_0$ en la región entre las placas.
+
+\textbf{Ecuaciones de movimiento:}
+
+Eje $X$ (movimiento uniforme):
+\[
+x(t) = v_0 t .
+\]
+
+Eje $Y$ (fuerza constante $F = qE$, movimiento uniformemente
+acelerado):
+\[
+\ddot{y} = -\frac{q}{m} E,
+\qquad
+y(t) = -\frac{1}{2}\frac{q}{m} E \, t^{2}.
+\]
+
+\begin{keybox}[Trayectoria parabólica]
+  El movimiento es \textbf{parabólico} (análogo al tiro parabólico
+  gravitatorio). La dirección de curvatura depende del signo de $q$:
+  \begin{itemize}[nosep]
+    \item $q > 0$: aceleración hacia abajo (en dirección de
+          $\mathbf{E}$).
+    \item $q < 0$ (electrón): aceleración hacia arriba (opuesta a
+          $\mathbf{E}$).
+  \end{itemize}
+\end{keybox}
+
+\subsection{Aplicaciones tecnológicas}
+
+\begin{itemize}[nosep]
+  \item \textbf{Tubo de rayos catódicos (CRT):} filamento caliente
+        emite electrones; campos eléctricos desvían el haz para formar
+        imágenes en una pantalla fluorescente.
+  \item \textbf{Impresoras de tinta:} gotitas de tinta cargadas se
+        desvían mediante campos eléctricos hacia la posición deseada.
+\end{itemize}
+
+% ===================================================================
+\section{Dipolo en un campo eléctrico uniforme}
+% ===================================================================
+
+\subsection{Fuerza neta y torque}
+
+\textbf{Configuración:} dipolo con cargas $+Q$ y $-Q$ separadas por
+distancia $d$ (barra rígida), en campo $\mathbf{E}$ uniforme
+horizontal.
+
+\textbf{Fuerza neta:}
+\[
+\mathbf{F}_1 = +Q\mathbf{E},\quad \mathbf{F}_2 = -Q\mathbf{E}
+\;\Longrightarrow\; \mathbf{F}_{\text{total}} = 0.
+\]
+
+El dipolo \textbf{no se traslada}.
+
+\textbf{Torque:} para un ángulo $\theta$ entre el dipolo y el campo,
+\[
+\tau = -Q E d \sin\theta .
+\]
+
+\begin{keybox}[Torque sobre un dipolo]
+  \[
+  \boxed{\tau = -p E \sin\theta},
+  \qquad p = Qd .
+  \]
+\end{keybox}
+
+\subsection{Momento dipolar vectorial}
+
+\[
+\boxed{\mathbf{p} = Q \mathbf{d}}
+\]
+
+Es un vector que va de la carga negativa a la positiva.
+
+\subsection{Forma vectorial del torque}
+
+\[
+\boxed{\boldsymbol{\tau} = \mathbf{p} \times \mathbf{E}}
+\]
+
+\begin{itemize}[nosep]
+  \item \textbf{Dirección:} perpendicular al plano de $\mathbf{p}$ y
+        $\mathbf{E}$.
+  \item \textbf{Sentido:} regla de la mano derecha (de $\mathbf{p}$
+        a $\mathbf{E}$).
+  \item El dipolo \textbf{rota} para alinearse con el campo.
+\end{itemize}
+
+\begin{notebox}[Campo no uniforme]
+  Si el dipolo es muy pequeño comparado con las escalas de variación
+  del campo, la fórmula $\boldsymbol{\tau} = \mathbf{p} \times
+  \mathbf{E}$ sigue siendo una buena aproximación.
+\end{notebox}
+
+% ===================================================================
+\section{Líneas de campo eléctrico (Faraday)}
+% ===================================================================
+
+Faraday introdujo las \textbf{líneas de campo} para visualizar campos
+vectoriales sin usar matemática compleja.
+
+\subsection{Propiedades}
+
+\begin{enumerate}[nosep]
+  \item \textbf{Nacen en cargas positivas} y \textbf{mueren en cargas
+        negativas} (o se van al infinito). No pueden crearse ni
+        destruirse en el espacio libre.
+  \item $\mathbf{E}$ es \textbf{tangente} a las líneas en todo punto.
+  \item El \textbf{módulo} de $\mathbf{E}$ es proporcional al
+        \textbf{número de líneas por unidad de área transversal}:
+        \[
+        |\mathbf{E}| \propto \frac{N}{A}.
+        \]
+\end{enumerate}
+
+\subsection{Ejemplos de representación}
+
+\begin{itemize}[nosep]
+  \item \textbf{Campo uniforme:} líneas paralelas equiespaciadas.
+  \item \textbf{Carga puntual positiva:} líneas radiales salientes,
+        equiespaciadas angularmente.
+  \item \textbf{Dipolo:} líneas salen de $+Q$, entran en $-Q$.
+\end{itemize}
+
+\subsection{Relación con la ley de Coulomb}
+
+Para una carga puntual $Q$, tomando $N$ líneas radiales y una
+superficie esférica de radio $r$:
+\[
+|\mathbf{E}| \propto \frac{N}{4\pi r^{2}} \propto \frac{1}{r^{2}},
+\]
+que es precisamente la ley de Coulomb. El $4\pi$ surge naturalmente
+de la geometría esférica.
+
+\begin{warnbox}[Limitación]
+  La discretización en líneas introduce errores de conteo (efecto de
+  ``pixelado''). El \textbf{flujo} resuelve este problema al ser una
+  magnitud continua.
+\end{warnbox}
+
+% ===================================================================
+\section{Flujo de un campo vectorial}
+% ===================================================================
+
+\subsection{Motivación}
+
+Dar un \textbf{sentido matemático preciso} al conteo de líneas de
+campo, evitando los problemas de discretización.
+
+\subsection{Caso simple: campo uniforme, superficie perpendicular}
+
+Para $\mathbf{v}$ uniforme y superficie $A$ perpendicular:
+\[
+\Phi = v A .
+\]
+
+\subsection{Campo uniforme, superficie inclinada}
+
+Si la superficie forma un ángulo $\theta$ con el campo:
+\[
+\Phi = v A \cos\theta .
+\]
+
+\input{assets/clase5-flujo.tex}
+
+Definiendo el \textbf{vector área} $\mathbf{A} = A \hat{\mathbf{n}}$:
+\[
+\boxed{\Phi = \mathbf{v} \cdot \mathbf{A}} .
+\]
+
+\subsection{Caso general: campo no uniforme, superficie curva}
+
+Se divide la superficie $S$ en elementos infinitesimales $dS$:
+\[
+d\Phi = \mathbf{v}(\mathbf{r}) \cdot \hat{\mathbf{n}} \, dS
+      = \mathbf{v} \cdot d\mathbf{A}.
+\]
+
+\begin{keybox}[Definición general de flujo]
+  \[
+  \boxed{\Phi = \iint_S \mathbf{v} \cdot d\mathbf{A}
+         = \iint_S \mathbf{v} \cdot \hat{\mathbf{n}} \, dS}
+  \]
+\end{keybox}
+
+\begin{itemize}[nosep]
+  \item Cuenta neta de líneas con signo.
+  \item Positivo: líneas en dirección de $\hat{\mathbf{n}}$.
+  \item Negativo: líneas en dirección opuesta.
+\end{itemize}
+
+\subsection{Superficies cerradas y convención de signo}
+
+Para superficies cerradas:
+\[
+\Phi = \oiint_S \mathbf{v} \cdot d\mathbf{A}.
+\]
+
+\begin{keybox}[Convención del curso]
+  Para superficies cerradas, $\hat{\mathbf{n}}$ siempre apunta
+  \textbf{hacia afuera} (flujo saliente positivo).
+\end{keybox}
+
+% ===================================================================
+\section{Ejemplo: prisma en campo uniforme}
+% ===================================================================
+
+\textbf{Configuración:} prisma de base triangular en campo $\mathbf{v}$
+uniforme horizontal. Caras: $A_1$ (frontal, $\perp$), $A_2$ (tapa,
+$\parallel$), $A_3$ (inclinada), $A_4$, $A_5$ (triangulares).
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Cara} & \textbf{Flujo} & \textbf{Razón} \\
+\midrule
+$A_1$ (frontal) & $-v A_1$ & $\mathbf{v}$ opuesto a $\hat{\mathbf{n}}$ \\
+$A_2$ (tapa)    & $0$      & $\mathbf{v} \perp \hat{\mathbf{n}}$ \\
+$A_3$ (inclinada) & $+v A_1$ & $A_3\cos\theta = A_1$, saliente \\
+$A_4, A_5$ (triangulares) & $0$ & $\mathbf{v} \perp \hat{\mathbf{n}}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Flujo total:}
+\[
+\Phi_{\text{total}} = -v A_1 + 0 + v A_1 + 0 + 0 = 0 .
+\]
+
+Entran tantas líneas como salen (no hay fuentes ni sumideros dentro).
+
+% ===================================================================
+\section{Anuncio: Ley de Gauss}
+% ===================================================================
+
+\begin{keybox}[Ley de Gauss (clase siguiente)]
+  \[
+  \boxed{\oiint_S \mathbf{E} \cdot d\mathbf{A}
+         = \frac{Q_{\text{int}}}{\varepsilon_0}}
+  \]
+  El flujo del campo eléctrico a través de una superficie cerrada es
+  igual a la \textbf{carga neta encerrada} dividida por
+  $\varepsilon_0$.
+\end{keybox}
+
+Esta ley permitirá calcular campos eléctricos de distribuciones
+simétricas de forma mucho más simple que integrando la ley de Coulomb.
+
+\end{document}

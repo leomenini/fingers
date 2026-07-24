@@ -1,0 +1,582 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 2: Conservación y Cuantización de la Carga, \\
+        Conductores, Aislantes y Distribuciones Continuas}\\[0.3em]
+        \large Carga Eléctrica, Materiales y el Continuo de Coulomb}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Conservación y cuantización de la carga}
+% ===================================================================
+
+\subsection{Conservación de la carga}
+
+En un \textbf{sistema cerrado} (donde no entran ni salen cargas), la
+\textbf{carga total se conserva}: no se crea ni se destruye. Si se mide
+la carga hoy y se vuelve a medir mañana, da el mismo valor.
+
+Se trata de \textbf{dos fenómenos experimentales a priori
+independientes}:
+\begin{itemize}[nosep]
+  \item \textbf{Cuantización:} la carga viene en múltiplos enteros de
+        una unidad fundamental.
+  \item \textbf{Conservación:} la carga total de un sistema cerrado
+        permanece constante.
+\end{itemize}
+
+Podría existir uno sin el otro, pero en la experiencia cotidiana ambos
+se verifican simultáneamente.
+
+\begin{keybox}[Carga total]
+  \[
+  Q = e \times (N_p - N_e)
+  \]
+  donde $N_p$ es el número de protones y $N_e$ el número de electrones.
+\end{keybox}
+
+\subsection{Explicación atómica simple}
+
+Toda la materia está compuesta por \textbf{átomos} ($\sim 10^{-10}$\,m
+de tamaño), que consisten en un \textbf{núcleo} (protones $+$ neutrones)
+y una \textbf{nube de electrones}.
+
+Para los fenómenos de la vida diaria (química, biología, movimiento
+planetario, electromagnetismo ordinario):
+
+\begin{enumerate}[nosep]
+  \item No se crean ni destruyen protones, electrones ni neutrones.
+  \item El número total de estas partículas permanece constante.
+  \item El protón tiene carga opuesta a la del electrón (misma magnitud
+        $e$).
+  \item El neutrón tiene carga cero.
+\end{enumerate}
+
+\begin{notebox}[Imagen mental]
+  Para la vida cotidiana, la carga se comporta como un conjunto de
+  ``pelotitas indestructibles''. Se cuenta el número de protones, se
+  resta el número de electrones, se multiplica por $e$, y esa es la
+  carga.
+\end{notebox}
+
+\subsection{Fenómenos donde la explicación simple no basta}
+
+\subsubsection{Reacciones nucleares}
+
+En las reacciones nucleares (estrellas, reactores nucleares), el número
+de protones, neutrones y electrones \textbf{sí puede cambiar}.
+
+\subsubsection{Desintegración beta}
+
+\[
+n \longrightarrow p^{+} + e^{-} + \bar{\nu}_e
+\]
+
+Un neutrón ($Q = 0$) se transforma en protón ($Q = +e$), electrón
+($Q = -e$) y antineutrino ($Q = 0$). El número de protones y electrones
+cambia, pero la \textbf{carga total se conserva}.
+
+\subsubsection{Aniquilación de pares (electrón-positrón)}
+
+En el acelerador LEP (Large Electron-Positron, antecesor del LHC en
+Ginebra) se hacían chocar electrones con sus antipartículas
+(positrones):
+
+\[
+e^{-} + e^{+} \longrightarrow 2\gamma
+\]
+
+El electrón ($Q = -e$) y el positrón ($Q = +e$) desaparecen, produciendo
+dos rayos gamma ($Q = 0$). El número de electrones no se conserva, pero
+la \textbf{carga total sí}: $-e + e = 0$.
+
+\begin{keybox}[Mensajes clave]
+  \begin{enumerate}[nosep]
+    \item La \textbf{conservación} y \textbf{cuantización} de la carga
+          son \textbf{hechos experimentales universales}.
+    \item En la vida cotidiana se explican por la indestructibilidad de
+          protones y electrones.
+    \item En fenómenos más profundos (nucleares, relativistas) la
+          explicación es más sutil, pero ambas propiedades siguen
+          cumpliéndose.
+  \end{enumerate}
+\end{keybox}
+
+\subsection{Estado actual de la teoría}
+
+\begin{itemize}[nosep]
+  \item \textbf{Conservación:} se entiende perfectamente en el modelo
+        estándar (teorema de Noether aplicado a la simetría gauge
+        $U(1)$).
+  \item \textbf{Cuantización:} \textbf{no hay teoría totalmente
+        satisfactoria}. Existen modelos de Gran Unificación (GUT),
+        pero ninguno es completamente convincente. La cuantización
+        sigue siendo un hecho experimental sin explicación fundamental
+        definitiva.
+\end{itemize}
+
+\subsection{Curiosidad: los quarks}
+
+Se han detectado experimentalmente \textbf{quarks} con
+\textbf{fracciones de carga} ($+\frac{2}{3}e$ y $-\frac{1}{3}e$), pero
+nunca se observan libres. Están confinados en hadrones (paquetes de a
+dos o tres). Por ello, solo se observan cargas que son
+\textbf{múltiplos enteros de $e$} en la naturaleza.
+
+% ===================================================================
+\section{Conductores y aislantes}
+% ===================================================================
+
+\subsection{Definición general}
+
+Los materiales se clasifican por su capacidad de \textbf{permitir el
+movimiento de carga eléctrica}:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Tipo} & \textbf{Característica} & \textbf{Ejemplos} \\
+\midrule
+Conductores & La carga se mueve fácilmente & Metales (Cu, Fe),
+                                           agua con sales \\
+Aislantes   & La carga no circula & NaCl, goma, plástico,
+                                     madera seca, vidrio \\
+Semiconductores & Situación intermedia & (se verán más adelante) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Mecanismo microscópico en sólidos}
+
+En sólidos cristalinos, la conducción depende de si los electrones están
+o no fuertemente unidos a sus átomos:
+
+\textbf{Aislantes} (ej. NaCl): todos los electrones están fuertemente
+unidos a sus átomos. No hay electrones libres.
+
+\textbf{Conductores metálicos} (ej. cobre, hierro): existen
+\textbf{electrones de conducción} (1 o 2 por cada átomo) que pueden
+moverse con libertad dentro del material. La mayoría de los electrones
+permanecen fijos en la red cristalina, pero unos pocos móviles bastan
+para la conducción.
+
+\subsection{Seres vivos y efecto de la humedad}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Material} & \textbf{Condición} & \textbf{Comportamiento} \\
+\midrule
+Seres vivos  & Siempre & Buenos conductores ($\sim 80\%$ agua
+                           con sales) \\
+Madera       & Seca     & Buen aislante \\
+Madera       & Verde    & Conduce (fluidos internos) \\
+Agua         & Destilada & Buen aislante \\
+Agua         & Con sales & Buen conductor \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{warnbox}[Humedad en Uruguay]
+  La alta humedad ambiental dificulta los experimentos de electrostática
+  porque el aire húmedo disipa las cargas acumuladas.
+\end{warnbox}
+
+% ===================================================================
+\section{Electrolitos (conducción en líquidos)}
+% ===================================================================
+
+\subsection{Descripción del fenómeno}
+
+Los \textbf{electrolitos} son líquidos con \textbf{sales disueltas} que
+conducen mediante el movimiento de \textbf{iones}.
+
+\textbf{Ejemplo: agua con sal de cocina (NaCl)}
+
+En estado sólido (cristal), la sal está formada por iones Na$^{+}$ y
+Cl$^{-}$ fijos en una red cristalina. Al disolverse en agua, los iones
+se \textbf{separan} y adquieren libertad de movimiento. Al aplicar una
+\textbf{diferencia de potencial} (batería):
+\begin{itemize}[nosep]
+  \item Los Na$^{+}$ (positivos) se mueven hacia el electrodo negativo.
+  \item Los Cl$^{-}$ (negativos) se mueven hacia el electrodo positivo.
+  \item Ambos tipos de iones \textbf{contribuyen a la corriente en la
+        misma dirección}.
+\end{itemize}
+
+\subsection{Diferencia con la conducción metálica}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Característica} & \textbf{Metales} & \textbf{Electrolitos} \\
+\midrule
+Portadores & Electrones & Iones (átomos con carga) \\
+Naturaleza & Partícula elemental & Átomos o moléculas \\
+Movilidad  & Muy alta & Menor (iones más masivos) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Sentido de la corriente}
+
+Históricamente se definió la \textbf{corriente convencional} como el
+flujo de \textbf{cargas positivas}. Como los electrones son negativos,
+se mueven en \textbf{sentido opuesto} a la corriente convencional.
+
+\textbf{Corriente sostenida}: no basta con una diferencia de potencial
+inicial. Se necesita un mecanismo que ``bombee'' las cargas de vuelta
+(fuerza electromotriz), que se estudiará más adelante.
+
+% ===================================================================
+\section{Interacciones electrostáticas en objetos neutros}
+% ===================================================================
+
+\subsection{Experimento del peine y los papelitos}
+
+\textbf{Procedimiento:}
+\begin{enumerate}[nosep]
+  \item Cortar pequeños trozos de papel (livianos).
+  \item Frotar un peine de plástico (o ámbar) contra el cabello
+        $\to$ el peine arranca electrones y queda con exceso de carga
+        negativa.
+  \item Acercar el peine a los papelitos.
+\end{enumerate}
+
+\textbf{Observación:} los papelitos (neutros) \textbf{son atraídos} y se
+levantan. Al tocar el peine, algunos electrones pasan al papel $\to$
+ambos quedan con carga negativa $\to$ \textbf{se repelen} y caen.
+
+\begin{warnbox}[Condición importante]
+  El peine debe ser de \textbf{material aislante}. Si fuera de metal,
+  la carga se distribuiría por el peine y la persona, y el efecto sería
+  imperceptible (los humanos somos buenos conductores).
+\end{warnbox}
+
+\subsection{Polarización en aislantes (dieléctricos)}
+
+Los papelitos son \textbf{aislantes}: las cargas no pueden circular,
+pero las moléculas pueden \textbf{orientarse} sin desplazarse
+macroscópicamente.
+
+\textbf{Mecanismo molecular:}
+\begin{enumerate}[nosep]
+  \item Muchas moléculas son \textbf{dipolos eléctricos} (distribución
+        de carga no uniforme).
+  \item Al acercar el peine (negativo), las moléculas se
+        \textbf{orientan}: el extremo positivo apunta hacia el peine.
+        Esto es \textbf{polarización eléctrica}.
+  \item Las cargas positivas quedan, en promedio, ligeramente
+        \textbf{más cerca} del peine que las negativas.
+  \item Como la fuerza electrostática decrece con $1/r^{2}$, la
+        atracción sobre las positivas es ligeramente mayor que la
+        repulsión sobre las negativas.
+  \item \textbf{Efecto neto:} fuerza \textbf{atractiva}, aunque
+        \textbf{muy pequeña}.
+\end{enumerate}
+
+\begin{keybox}[Fuerza sobre objeto neutro]
+  Solo se nota cuando el peine está muy cerca; a grandes distancias la
+  diferencia de distancias es despreciable y la fuerza neta es casi
+  nula.
+\end{keybox}
+
+\subsection{Polarización en conductores}
+
+Experimento: barra de metal neutra y conductora, suspendida de un hilo,
+cerca de una barra de vidrio cargada positivamente.
+
+\textbf{Mecanismo:}
+\begin{enumerate}[nosep]
+  \item Los \textbf{electrones libres} del metal son atraídos por las
+        cargas positivas del vidrio y se acumulan en el extremo cercano.
+  \item El extremo cercano queda con \textbf{exceso de carga negativa}.
+  \item El extremo opuesto queda con \textbf{déficit de electrones}
+        (carga positiva neta).
+  \item La distancia promedio entre las cargas negativas y el vidrio es
+        menor $\to$ \textbf{fuerza atractiva neta}.
+  \item La barra \textbf{gira} para acercarse al vidrio.
+\end{enumerate}
+
+A diferencia de los aislantes (polarización \textbf{molecular}), en los
+conductores la polarización es \textbf{macroscópica} (las cargas se
+desplazan libremente).
+
+% ===================================================================
+\section{Distribuciones continuas de carga}
+% ===================================================================
+
+\subsection{Justificación del modelo continuo}
+
+Existe una aparente contradicción entre una distribución continua y la
+cuantización ($Q = N e$), pero:
+
+\begin{itemize}[nosep]
+  \item $e = 1.6 \times 10^{-19}$\,C.
+  \item Cargas típicas en experimentos macroscópicos: $10^{-9}$\,C
+        (nC) a $10^{-6}$\,C ($\mu$C).
+  \item Corresponden a $\sim 10^{10}$ a $10^{13}$ electrones.
+  \item Un electrón más o menos es \textbf{completamente indetectable}
+        en esas escalas.
+\end{itemize}
+
+\begin{notebox}[Analogía]
+  La masa también está discretizada (núcleos atómicos), pero usamos
+  densidad de masa sin problemas. Lo mismo ocurre con la carga.
+\end{notebox}
+
+\textbf{Excepción:} el experimento de Millikan (principios del s. XX)
+permitió observar directamente la cuantización midiendo cargas muy
+pequeñas.
+
+\subsection{Definiciones de densidad de carga}
+
+Se considera un elemento de volumen $\Delta V$ que sea
+\textbf{pequeño macroscópicamente} pero \textbf{grande comparado con la
+escala atómica}.
+
+\textbf{Densidad volumétrica:}
+\[
+\rho(\mathbf{r}) = \lim_{\Delta V \to 0} \frac{\Delta Q}{\Delta V}
+\]
+
+\textbf{Densidad superficial:}
+\[
+\sigma(\mathbf{r}) = \lim_{\Delta S \to 0} \frac{\Delta Q}{\Delta S}
+\]
+
+\textbf{Densidad lineal:}
+\[
+\lambda(\mathbf{r}) = \lim_{\Delta L \to 0} \frac{\Delta Q}{\Delta L}
+\]
+
+Todas pueden tener \textbf{signo positivo o negativo}.
+
+\subsection{Fuerza ejercida por una distribución continua}
+
+Se divide la distribución en elementos infinitesimales, cada uno se
+trata como carga puntual, se aplica Coulomb y se integra.
+
+\begin{keybox}[Fuerza sobre $q_0$ debida a distribución volumétrica]
+  \[
+  \boxed{
+  \mathbf{F}(\mathbf{r}) =
+  \frac{q_0}{4\pi\varepsilon_0}
+  \iiint_V \rho(\mathbf{r}')
+  \frac{\mathbf{r} - \mathbf{r}'}
+       {|\mathbf{r} - \mathbf{r}'|^{3}}
+  \,dV'
+  }
+  \]
+\end{keybox}
+
+\textbf{Para distribuciones superficiales:}
+\[
+\mathbf{F}(\mathbf{r}) = \frac{q_0}{4\pi\varepsilon_0}
+\iint_S \sigma(\mathbf{r}')
+\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^{3}}
+\,dS'
+\]
+
+\textbf{Para distribuciones lineales:}
+\[
+\mathbf{F}(\mathbf{r}) = \frac{q_0}{4\pi\varepsilon_0}
+\int_L \lambda(\mathbf{r}')
+\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^{3}}
+\,d\ell'
+\]
+
+\subsection{Ejemplo: barra cargada con densidad lineal uniforme}
+
+\textbf{Configuración:}
+\begin{itemize}[nosep]
+  \item Barra recta de longitud $L$, densidad lineal $\lambda$
+        uniforme y positiva.
+  \item Carga puntual $q_0 > 0$ sobre el \textbf{plano bisector},
+        a distancia $D$ del centro.
+\end{itemize}
+
+\textbf{Análisis de simetría:}
+\begin{itemize}[nosep]
+  \item Las componentes verticales se \textbf{cancelan} por simetría.
+  \item Fuerza resultante: solo \textbf{componente horizontal}.
+  \item Como $\lambda > 0$ y $q_0 > 0$, la fuerza es
+        \textbf{repulsiva}.
+\end{itemize}
+
+\input{assets/clase2-barra.tex}
+
+\textbf{Cálculo:}
+
+Elemento en posición $x$, ancho $dx$, carga $dq = \lambda\,dx$.
+Distancia hasta $q_0$: $r = \sqrt{x^{2} + D^{2}}$.
+
+\[
+dF = \frac{1}{4\pi\varepsilon_0}
+\frac{q_0 \lambda\,dx}{x^{2} + D^{2}}
+\]
+
+Componente horizontal ($\cos\theta = D/\sqrt{x^{2} + D^{2}}$):
+\[
+dF_x = \frac{1}{4\pi\varepsilon_0}
+\frac{q_0 \lambda D\,dx}{(x^{2} + D^{2})^{3/2}}
+\]
+
+Integrando:
+\[
+F_x = \frac{q_0 \lambda D}{4\pi\varepsilon_0}
+\int_{-L/2}^{L/2} \frac{dx}{(x^{2} + D^{2})^{3/2}}
+\]
+
+\subsection{Resolución de la integral}
+
+\textbf{Paso 1:} cambio $x = D\,y$, $dx = D\,dy$:
+\[
+\int_{-L/2}^{L/2} \frac{dx}{(x^{2} + D^{2})^{3/2}}
+= \frac{1}{D^{2}}
+\int_{-L/(2D)}^{L/(2D)} \frac{dy}{(y^{2} + 1)^{3/2}}
+\]
+
+\textbf{Paso 2:} cambio $y = \sinh z$ (usando
+$\cosh^{2} z - \sinh^{2} z = 1$):
+\[
+\int \frac{dy}{(y^{2} + 1)^{3/2}}
+= \int \frac{\cosh z\,dz}{\cosh^{3} z}
+= \int \frac{dz}{\cosh^{2} z}
+= \tanh z + C
+\]
+
+\textbf{Paso 3:} volviendo a $y$:
+\[
+\tanh z = \frac{\sinh z}{\cosh z}
+        = \frac{y}{\sqrt{1 + y^{2}}}
+\]
+
+\begin{keybox}[Resultado final]
+  \[
+  \boxed{
+  F_x = \frac{q_0 \lambda L}
+             {4\pi\varepsilon_0 \,
+              D \sqrt{D^{2} + (L/2)^{2}}}
+  }
+  \]
+\end{keybox}
+
+\subsection{Límites (a discutir en la clase siguiente)}
+
+\begin{itemize}[nosep]
+  \item \textbf{$D \gg L$}: la barra se comporta como
+        \textbf{carga puntual} $Q = \lambda L$:
+        \[
+        F_x \approx \frac{q_0 \lambda L}{4\pi\varepsilon_0 D^{2}}
+        \]
+  \item \textbf{$D \ll L$}: la barra se comporta como
+        \textbf{hilo infinito}:
+        \[
+        F_x \approx \frac{q_0 \lambda}{2\pi\varepsilon_0 D}
+        \]
+\end{itemize}
+
+\end{document}

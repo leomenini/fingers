@@ -1,0 +1,27 @@
+% Clase 4 --- Anillo cargado: cada elemento dq aporta dE en P (sobre el eje Z);
+% por simetría sólo sobrevive la componente axial dEz (las radiales se cancelan).
+\begin{center}
+\begin{tikzpicture}[line width=0.9pt]
+  % eje Z
+  \draw[figaux] (0,-0.9) -- (0,3.3);
+  % anillo (elipse en perspectiva)
+  \draw[figline] (0,0) ellipse (1.8 and 0.6);
+  \draw[figaux] (0,0) -- (1.8,0) node[midway,below,scale=0.75]{$R$};
+  % centro
+  \filldraw[figgray] (0,0) circle (1.2pt);
+  % elemento dq
+  \filldraw[figred] (1.62,0.26) circle (1.7pt);
+  \node[figred,scale=0.8,above right] at (1.62,0.26){$dq$};
+  % punto P
+  \filldraw[figgray] (0,2.6) circle (1.8pt) node[left]{$P$};
+  \node[scale=0.8,left] at (0,1.4){$Z$};
+  % r de dq a P
+  \draw[figgray,line width=0.6pt] (1.62,0.26) -- (0,2.6);
+  \node[scale=0.8] at (1.18,1.55){$r$};
+  % dE en P (a lo largo de dq->P prolongado) y su componente axial
+  \draw[figblue,->] (0,2.6) -- (-0.57,3.42) node[left,scale=0.8]{$d\vec E$};
+  \draw[figred,->] (0,2.6) -- (0,3.5) node[right,scale=0.8]{$dE_z$};
+\end{tikzpicture}\\[0.4em]
+{\small\itshape Cada elemento $dq$ aporta $d\vec E$ sobre el eje; sólo sobrevive
+la componente axial $dE_z$ (las radiales se cancelan de a pares diametrales).}
+\end{center}

@@ -1,0 +1,45 @@
+% courses/Fisica3/assets/tikzstyles.tex
+% ---------------------------------------------------------------------------
+% Estilos compartidos para los diagramas del curso Física III.
+% Fuente única del "look" visual (colores, grosores, escalas) para que todas
+% las figuras (TikZ / CircuiTikz / pgfplots) sean consistentes entre clases.
+%
+% Uso: la clase debe cargar antes `tikz`, `circuitikz` y `pgfplots`, y luego
+%      \input{../assets/tikzstyles.tex}
+% (compilar desde el directorio de la clase para que la ruta relativa resuelva).
+% ---------------------------------------------------------------------------
+
+% ---- Paleta (alineada con las cajas del preámbulo: keybox/notebox/warnbox) ----
+\definecolor{figblue}{HTML}{1F4E79}   % azul principal (líneas, keybox)
+\definecolor{figred}{HTML}{C0392B}    % rojo de énfasis (warnbox)
+\definecolor{figamber}{HTML}{B8860B}  % ámbar (notebox)
+\definecolor{figgray}{HTML}{555555}   % auxiliares, ejes, guías
+
+% ---- CircuiTikz: escala y grosor de los componentes ----
+\ctikzset{
+  bipoles/thickness=1,
+  resistors/scale=0.9,
+  capacitors/scale=0.9,
+}
+
+% ---- TikZ: estilos reutilizables ----
+\tikzset{
+  figline/.style={figblue, line width=0.9pt},
+  figaux/.style={figgray, dashed, line width=0.6pt},
+}
+
+% ---- pgfplots: estilo base de las gráficas ----
+\pgfplotsset{
+  fisfig/.style={
+    width=11cm, height=6.5cm,
+    axis lines=left,
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    tick label style={font=\footnotesize},
+    every axis plot/.append style={line width=1pt},
+    grid=major,
+    grid style={figgray!20},
+    legend cell align=left,
+    legend style={font=\footnotesize, draw=figgray!40},
+  },
+}

@@ -1,0 +1,29 @@
+% Clase 3 --- Dipolo sobre el plano bisector: los campos de +Q y -Q en P tienen
+% igual módulo; las componentes horizontales se cancelan y el neto apunta en -Y.
+\begin{center}
+\begin{tikzpicture}[line width=0.9pt]
+  % ejes
+  \draw[figaux] (0,-1.9) -- (0,1.9);
+  \draw[figaux] (-0.4,0) -- (3.4,0);
+  % cargas
+  \filldraw[figred] (0,1.3) circle (2.4pt) node[left]{$+Q$};
+  \filldraw[figblue] (0,-1.3) circle (2.4pt) node[left]{$-Q$};
+  % separación d
+  \draw[figaux] (-0.35,1.3) -- (-0.35,-1.3);
+  \node[scale=0.8,left] at (-0.35,0){$d$};
+  % punto P
+  \filldraw[figgray] (2.6,0) circle (1.8pt) node[above right]{$P$};
+  \node[scale=0.8,below] at (1.3,0){$x$};
+  % líneas r
+  \draw[figgray,line width=0.6pt] (0,1.3) -- (2.6,0);
+  \draw[figgray,line width=0.6pt] (0,-1.3) -- (2.6,0);
+  % campos en P
+  \draw[figred,->] (2.6,0) -- (3.59,-0.49) node[right,scale=0.85]{$\vec E_{+}$};
+  \draw[figblue,->] (2.6,0) -- (1.61,-0.49) node[left,scale=0.85]{$\vec E_{-}$};
+  \draw[figblue,->,line width=1.3pt] (2.6,0) -- (2.6,-0.98)
+        node[right,scale=0.85]{$\vec E$};
+\end{tikzpicture}\\[0.4em]
+{\small\itshape En el plano bisector, las componentes horizontales de
+$\vec E_{+}$ y $\vec E_{-}$ se cancelan; el campo neto $\vec E$ apunta en
+$-\hat{Y}$ (de la carga positiva a la negativa).}
+\end{center}

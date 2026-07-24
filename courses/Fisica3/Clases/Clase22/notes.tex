@@ -1,0 +1,281 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 22: Régimen Permanente, Resonancia \\
+        e Impedancias Complejas}\\[0.3em]
+        \large{Solución particular sinusoidal, resonancia y circuitos de CA}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Régimen permanente sin resistencia}
+% ===================================================================
+
+Se busca una solución particular (régimen permanente) para forzado sinusoidal,
+empezando por $R$ despreciable.
+
+\subsection{Solución particular sinusoidal}
+
+\begin{warnbox}[Ojo con $\omega$]
+  Aquí $\omega$ es la frecuencia del generador, arbitraria, no $1/\sqrt{LC}$.
+\end{warnbox}
+
+Con $\varepsilon = \varepsilon_0\cos\omega t$, se prueba $Q(t) = Q_0\cos\omega
+t$. Como $\ddot Q = -\omega^2 Q_0\cos\omega t$:
+\[
+-\omega^2 Q_0 L + \frac{Q_0}{C} = \varepsilon_0.
+\]
+
+\begin{keybox}[Amplitud de la carga]
+  \[
+  \boxed{Q_0 = \frac{\varepsilon_0}{\dfrac{1}{C} - \omega^2 L}}
+  \]
+\end{keybox}
+
+\subsection{Amplitud y resonancia}
+
+$\omega\to 0$: $|Q_0|\to\varepsilon_0 C$; $\omega$ grande: $\to 0$. El
+denominador se anula en $\omega = 1/\sqrt{LC}$: asíntota vertical (amplitud
+infinita), la \textbf{frecuencia de resonancia}.
+
+% ===================================================================
+\section{El fenómeno de resonancia}
+% ===================================================================
+
+\subsection{Frecuencia natural y de resonancia}
+
+\begin{keybox}[Resonancia]
+  \[
+  \boxed{\omega_{\text{res}} = \omega_{\text{natural}} = \frac{1}{\sqrt{LC}}}
+  \]
+\end{keybox}
+
+Analogía de la hamaca: la amplitud es máxima al forzar sincronizado con la
+frecuencia natural. Es general para todos los osciladores lineales; circuitos
+complicados tienen varias frecuencias de resonancia.
+
+\subsection{Límites de la resonancia infinita}
+
+\begin{itemize}[nosep]
+  \item $R > 0$: la amplitud en resonancia es grande pero \textbf{finita}.
+  \item Efectos no lineales (amplitudes grandes) también acotan la resonancia.
+\end{itemize}
+
+\begin{warnbox}[Se quema]
+  Sin resistencia suficiente, el circuito se quema en resonancia.
+\end{warnbox}
+
+\subsection{Aplicaciones tecnológicas}
+
+\begin{itemize}[nosep]
+  \item \textbf{Radio/celular:} el receptor se sintoniza (frecuencia natural
+        cercana a la del emisor); con poca $R$, capta señales diminutas.
+  \item \textbf{Microondas:} emite en la frecuencia que resuena con el agua.
+  \item \textbf{Ictericia (LEDs):} se emite concentrado en la frecuencia de
+        resonancia, curando sin deshidratar.
+\end{itemize}
+
+% ===================================================================
+\section{Circuitos RLC por el método complejo}
+% ===================================================================
+
+Circuito serie $\varepsilon_0\cos\omega t$, $R$, $L$, $C$.
+
+\subsection{El problema con la resistencia}
+
+El término $R\dot Q$ mete un seno; la solución simple no sirve. Se permite
+desfasaje: $I = I_M\cos(\omega t - \varphi)$, y se usan exponenciales
+complejas.
+
+\subsection{Notación compleja y la unidad imaginaria j}
+
+Se trabaja con la corriente (derivando la ecuación una vez) y se resuelve la
+ecuación compleja (derivar y tomar parte real conmutan), con $j$ la unidad
+imaginaria:
+\[
+L\ddot{\hat I} + R\dot{\hat I} + \frac{\hat I}{C} = j\varepsilon_0\omega\,
+e^{j\omega t}.
+\]
+Con $\hat I = \hat I_M e^{j\omega t}$, cada derivada agrega $j\omega$:
+\[
+\hat I_M\left(-L\omega^2 + Rj\omega + \frac{1}{C}\right) = j\varepsilon_0\omega
+\;\Longrightarrow\;
+\hat I_M = \frac{\varepsilon_0}{j\omega L + R + \dfrac{1}{j\omega C}}.
+\]
+
+\subsection{Impedancia compleja}
+
+\begin{keybox}[Impedancia compleja]
+  \[
+  \boxed{\hat Z = R + j\omega L + \frac{1}{j\omega C}
+        = R + j\left(\omega L - \frac{1}{\omega C}\right)}
+  \]
+\end{keybox}
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Elemento & Impedancia \\
+\midrule
+Resistencia & $R$ \\
+Bobina & $j\omega L$ \\
+Condensador & $1/(j\omega C) = -j/(\omega C)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Amplitud y desfasaje}
+
+\begin{keybox}[Amplitud real de la corriente]
+  \[
+  \boxed{I_M = \frac{\varepsilon_0}{|\hat Z|}
+        = \frac{\varepsilon_0}{\sqrt{R^2 + \left(\omega L -
+          \dfrac{1}{\omega C}\right)^2}}}
+  \]
+\end{keybox}
+
+\begin{keybox}[Desfasaje]
+  \[
+  \boxed{\varphi = \arg(\hat Z) = \arctan\frac{\omega L - \dfrac{1}{\omega C}}{R}}
+  \]
+\end{keybox}
+
+$Z = |\hat Z|$ es la impedancia real (el módulo, no la parte real). Luego
+$I(t) = I_M\cos(\omega t - \varphi)$.
+
+\subsection{Composición de impedancias}
+
+En serie se suman; en paralelo se suman los inversos (como números complejos).
+$\hat I_M = \varepsilon_M/\hat Z_{\text{eq}}$; módulo $\to$ amplitud, argumento
+$\to$ desfasaje.
+
+\begin{notebox}[Varias fuentes]
+  Requieren el principio de superposición (práctico).
+\end{notebox}
+
+% ===================================================================
+\section{Resonancia con resistencia}
+% ===================================================================
+
+\subsection{Amplitud de la corriente}
+
+$I_M$ máxima cuando la parte imaginaria de $\hat Z$ se anula: $\omega L =
+1/(\omega C) \Rightarrow \omega = 1/\sqrt{LC}$. Máximo finito:
+
+\begin{keybox}[Corriente en resonancia]
+  \[
+  \boxed{I_M^{\max} = \frac{\varepsilon_0}{R}}
+  \]
+\end{keybox}
+
+El pico se angosta al achicar $R$; las colas ($I_M \to \omega C\varepsilon_0$
+para $\omega\to 0$ y $\varepsilon_0/(\omega L)$ para $\omega\to\infty$) no
+dependen de $R$.
+
+\subsection{El desfasaje}
+
+Monótono: $\varphi \to -\pi/2$ ($\omega\to 0$), $\varphi = 0$ (resonancia),
+$\varphi \to +\pi/2$ ($\omega\to\infty$). Al achicar $R$, la transición se hace
+abrupta (casi discontinua en $R\to 0$).
+
+\begin{notebox}[Cierre]
+  El comportamiento de un circuito de CA queda descrito por la impedancia
+  compleja: su módulo da la amplitud y su argumento el desfasaje.
+\end{notebox}
+
+\end{document}

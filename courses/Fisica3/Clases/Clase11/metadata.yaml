@@ -1,0 +1,74 @@
+title: Clase 11
+id: fis3-2015-2-11
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:20:05"
+
+stats:
+  transcript_words: 9060
+  summary_words: 3154
+  diagrams_pending: 6
+  equations: 18
+
+topics:
+  - Dieléctricos (material homogéneo, isótropo, moléculas polares)
+  - Polarización y cargas de polarización
+  - Campo de polarización E' opuesto al campo aplicado E0
+  - Constante dieléctrica (E = E0/K_E, K_E ≥ 1)
+  - Materiales lineales y desarrollo de Taylor
+  - Ruptura dieléctrica y ferroeléctricos
+  - Valores de K_E (vacío, aire, poliestireno, papel, agua)
+  - Condensador con dieléctrico (carga de polarización Q')
+  - Capacitancia con dieléctrico (C = εA/d)
+  - Permitividad eléctrica (ε = K_E ε₀)
+  - Ley de Gauss en presencia de dieléctricos (Φ = Q_libre/ε)
+  - Ejemplos con varios dieléctricos (paralelo y serie)
+  - Corriente eléctrica y conductor fuera del equilibrio
+  - Mecanismo de bombeo y mantenimiento de corriente
+  - Resistencia y efecto Joule (modelo pinball)
+  - Superconductores (resistencia cero, aplicaciones)
+  - Definición de corriente (I = dQ/dt) y el Ampere
+  - Densidad de corriente (I = ∫ J·n dS)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "26-27"
+    verified: false
+
+prerequisites:
+  - Clase 10 (capacitores, energía almacenada, polarización)
+  - Clase 6 (Ley de Gauss)
+  - Clase 5 (flujo de un campo vectorial)
+  - Clase 2 (conductores, aislantes, polarización)
+
+next_topics:
+  - Ley de Ohm (relación J–E) (Clase 12)
+  - Resistencia y resistividad
+  - Efecto Joule y potencia disipada
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

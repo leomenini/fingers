@@ -1,0 +1,414 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 12: Velocidad de Deriva, Ley de Ohm, \\
+        Resistividad y Resistencia, y el Modelo de Drude}\\[0.3em]
+        \large{Densidad de corriente y velocidad de deriva, conductividad,
+              resistencia de conductores y conducción microscópica}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Velocidad de desplazamiento (deriva)}
+% ===================================================================
+
+De la Clase 11: $I = \iint_S \mathbf{J}\cdot\hat{\mathbf{n}}\,dS$. Para una
+superficie pequeña y plana de área $A$, despreciando la variación de
+$\mathbf{J}$:
+\[
+I = J\,A\cos\theta,
+\]
+con $\theta$ el ángulo entre $\mathbf{J}$ y $\hat{\mathbf{n}}$. Si la
+superficie es normal a $\mathbf{J}$: $I = J\,A$.
+
+\subsection{Dirección y sentido de J}
+
+La dirección de $\mathbf{J}$ es la del desplazamiento promedio de los
+portadores (su velocidad media $\mathbf{v}_d$). El sentido:
+\begin{itemize}[nosep]
+  \item Portadores \textbf{positivos}: $\mathbf{J}$ en el sentido de
+        $\mathbf{v}_d$.
+  \item Portadores \textbf{negativos}: $\mathbf{J}$ opuesto a
+        $\mathbf{v}_d$.
+\end{itemize}
+$\mathbf{v}_d$ es la \textbf{velocidad de desplazamiento} o de
+\textbf{deriva}.
+
+\subsection{Deriva vs.\ velocidad real; régimen estacionario}
+
+La velocidad \textbf{real} de los electrones es muchísimo mayor que
+$v_d$: se mueven rápido pero \textbf{en todas las direcciones}.
+$\mathbf{v}_d$ es solo el pequeño arrastre \textbf{promedio}:
+\begin{itemize}[nosep]
+  \item Sin campo: movimiento aleatorio, promedio nulo.
+  \item Con campo: se superpone un leve desplazamiento medio según el
+        campo.
+\end{itemize}
+
+\begin{notebox}[Estacionario $\neq$ equilibrio; velocidad límite]
+  Con corriente constante el sistema es \textbf{estacionario} pero no
+  está en equilibrio (equilibrio sería $\mathbf{E}=0$ dentro). No hay
+  aceleración constante sino \textbf{velocidad} constante: los choques
+  con la red actúan como una viscosidad efectiva, y el sistema alcanza
+  una velocidad límite (como un cuerpo en un medio viscoso).
+\end{notebox}
+
+% ===================================================================
+\section{Relación entre J y la velocidad de deriva}
+% ===================================================================
+
+\subsection{Deducción con el cilindrito}
+
+Cilindrito pequeño alineado con el campo, donde $\mathbf{E}$ y
+$\mathbf{J}$ son uniformes. Sean $A$ el área de la base, $L = v_d\,\Delta
+t$ el largo, y $n$ el número de portadores por unidad de volumen.
+
+\begin{keybox}[Idea clave]
+  En el intervalo $\Delta t$, los electrones que cruzan $A$ son
+  \textbf{todos} los del cilindrito: avanzan a $v_d$, así que los del
+  borde lejano recorren justo $L=v_d\,\Delta t$ y alcanzan a cruzar. (Es
+  un enunciado en promedio, válido porque los portadores son
+  muchísimos.)
+\end{keybox}
+
+Número de electrones $=n\,(A L)=n\,A\,v_d\,\Delta t$. Carga que cruza
+(carga $-e$ por electrón):
+\[
+\Delta Q = (-e)\, n\, A\, v_d\, \Delta t
+\;\Longrightarrow\;
+I = \frac{\Delta Q}{\Delta t} = -e\, n\, A\, v_d.
+\]
+
+Dividiendo por $A$:
+
+\begin{keybox}[Densidad de corriente y deriva]
+  \[
+  \boxed{J = -e\, n\, v_d}
+  \]
+\end{keybox}
+
+\subsection{Forma vectorial general}
+
+Con portadores de carga genérica $q$:
+\[
+\boxed{\mathbf{J} = q\, n\, \mathbf{v}_d}.
+\]
+Con varios tipos de portadores (p.\,ej.\ un electrolito):
+\[
+\mathbf{J} = \sum_i q_i\, n_i\, \mathbf{v}_{d,i}.
+\]
+
+% ===================================================================
+\section{Estimación de la velocidad de deriva en el cobre}
+% ===================================================================
+
+\subsection{El cálculo}
+
+Cable de cobre: $D = 1{,}8$~mm, $I = 1{,}3$~A. Densidad de corriente
+(sección circular, $J$ uniforme):
+\[
+J = \frac{I}{\pi D^2/4} \approx 51\ \frac{\text{A}}{\text{cm}^2}.
+\]
+
+Densidad de portadores (un electrón por átomo de cobre):
+\[
+n = \frac{\rho_{\text{masa}}}{M_{\text{molar}}}\, N_A
+  \approx \frac{8{,}96\times10^{3}}{63{,}5\times10^{-3}}\,(6{,}02\times10^{23})
+  \approx 8{,}49\times10^{28}\ \frac{\text{e}^-}{\text{m}^3}.
+\]
+
+Velocidad de deriva (módulo):
+\[
+\boxed{v_d = \frac{J}{e\, n} \approx 14\ \frac{\text{cm}}{\text{hora}}}
+\]
+(otros metales, del mismo orden: algunos cm/hora).
+
+\subsection{La analogía de la manguera y la señal eléctrica}
+
+A $14$~cm/hora un electrón tardaría más de un día en llegar a la lámpara,
+pero la luz se prende al instante. \textbf{Analogía de la manguera
+llena:} al abrir la canilla, sale agua por el otro extremo de inmediato
+aunque el agua avance lento — sale la que ya estaba del otro lado.
+
+\begin{keybox}[A retener]
+  La \textbf{señal eléctrica} viaja muchísimo más rápido que la velocidad
+  de deriva.
+\end{keybox}
+
+\subsection{Corrección cuántica: el principio de Pauli}
+
+\begin{warnbox}[La estimación está mal]
+  $v_d$ real es unas \textbf{$\sim$100 veces mayor}. El error: no
+  \textbf{todos} los electrones de conducción participan. Por el
+  \textbf{principio de exclusión de Pauli}, casi todos los estados están
+  ocupados y solo se mueven los electrones con estados libres al lado
+  ($\sim$1 centésimo a temperatura ambiente). Entonces el $n$ efectivo es
+  $\sim$100 veces menor y $v_d$, $\sim$100 veces mayor.
+\end{warnbox}
+
+\begin{notebox}[Dos ideas]
+  (1) $v_d \ll$ velocidad real de los electrones (enorme pero errática,
+  de promedio nulo sin campo). (2) La señal eléctrica viaja más rápido
+  que ambas.
+\end{notebox}
+
+% ===================================================================
+\section{Ley de Ohm (forma microscópica)}
+% ===================================================================
+
+\subsection{Conductividad y resistividad}
+
+En un material \textbf{homogéneo e isótropo}, $\mathbf{J}$ debe ser
+paralelo a $\mathbf{E}$ (no hay dirección preferencial). Se define la
+\textbf{conductividad}:
+
+\begin{keybox}[Conductividad y resistividad]
+  \[
+  \boxed{\mathbf{J} = \sigma\, \mathbf{E}}, \qquad
+  \boxed{\rho = \frac{1}{\sigma}} \quad (\mathbf{E} = \rho\,\mathbf{J}).
+  \]
+\end{keybox}
+
+$\sigma$ escalar: a igual $E$, mayor $\sigma$ da mayor $J$ (mide cuánto
+conduce el material).
+
+\begin{notebox}[Notación]
+  $\sigma$ ya se usó para la densidad superficial de carga; el contexto
+  distingue.
+\end{notebox}
+
+\subsection{Materiales óhmicos (lineales)}
+
+A priori $\sigma$ podría depender de $E$ (problema de mecánica
+estadística). Pero, como con los dieléctricos, muchos materiales son
+\textbf{lineales}: $\sigma$ es, en muy buena aproximación,
+\textbf{independiente de $E$} (constante del material). Entonces
+$\mathbf{J}=\sigma\mathbf{E}$ es proporcionalidad: la \textbf{Ley de
+Ohm}. Estos materiales se llaman \textbf{óhmicos} (metales, electrolitos,
+buenos conductores).
+
+\textbf{Unidades:} $[\sigma]=\text{Siemens/m}$ ($1\,\text{S}=1\,$A/V);
+$[\rho]=\Omega\cdot\text{m}$ ($1\,\Omega=1\,$V/A). El Ohm se usa mucho; el
+Siemens, casi nada.
+
+\subsection{Tabla de resistividades}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Material} & $\rho\ (\Omega\cdot\text{m})$ & \textbf{Tipo} \\
+\midrule
+Plata & $1{,}62\times10^{-8}$ & conductor \\
+Cobre & $\approx 1{,}7\times10^{-8}$ & conductor \\
+Aluminio & $2{,}75\times10^{-8}$ & conductor \\
+Silicio puro & $2{,}5\times10^{3}$ & semiconductor \\
+Silicio dopado (N) & $\ll$ puro & semiconductor \\
+Agua destilada & $2{,}5\times10^{5}$ & aislante \\
+Vidrio & $10^{10}$--$10^{14}$ & aislante \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[nosep]
+  \item \textbf{Cobre vs.\ plata:} el cobre conduce un poco peor, pero se
+        usa por costo-beneficio.
+  \item \textbf{Semiconductores:} $\rho$ muy sensible a impurezas; al
+        \textbf{dopar} (p.\,ej.\ fósforo) cae drásticamente (no ocurre en
+        metales).
+  \item \textbf{Conductor vs.\ aislante:} diferencia radical ($\sim
+        10^{13}$).
+  \item El vidrio no es realmente óhmico ($\rho$ depende del campo).
+\end{itemize}
+
+% ===================================================================
+\section{Resistencia y ley de Ohm macroscópica}
+% ===================================================================
+
+$\mathbf{J}=\sigma\mathbf{E}$ es propiedad del \textbf{material};
+$\Delta V=R\,I$, de un \textbf{cuerpo}.
+
+\subsection{Conductor filiforme: $R=\rho L/A$}
+
+Cable cilíndrico de área $A$, largo $L$, campo uniforme. Entonces
+$|\Delta V| = E\,L$, y como es óhmico ($E=\rho J$) con $J=I/A$:
+\[
+|\Delta V| = \rho\,L\,\frac{I}{A} = \left(\frac{\rho\,L}{A}\right) I.
+\]
+
+\begin{keybox}[Resistencia de un filiforme]
+  \[
+  \boxed{R = \frac{\rho\, L}{A}}
+  \]
+\end{keybox}
+
+\begin{itemize}[nosep]
+  \item $\rho$ depende solo del material; $R$, del material \textbf{y} la
+        forma.
+  \item Doble largo $\Rightarrow$ doble $R$; más ancho $\Rightarrow$
+        menos $R$ (analogía de la manguera).
+  \item $R$ no depende de la intensidad.
+\end{itemize}
+
+\subsection{Caso general: la resistencia depende de los bornes}
+
+La proporcionalidad $\Delta V = R\,I$ vale para \textbf{cualquier}
+conductor óhmico; la fórmula $R=\rho L/A$, \textbf{solo} para
+filiformes. En un cuerpo general, $R$ depende también de \textbf{dónde se
+ponen los bornes} (bornes cercanos $\Rightarrow$ trayecto corto
+$\Rightarrow$ $R$ pequeña).
+
+\begin{keybox}[Resumen]
+  \[
+  \boxed{\Delta V = R\,I \ \text{(general, óhmicos)}}, \qquad
+  \boxed{R = \frac{\rho L}{A} \ \text{(solo filiformes)}}
+  \]
+\end{keybox}
+
+% ===================================================================
+\section{Materiales óhmicos vs.\ no óhmicos: el diodo}
+% ===================================================================
+
+En la curva $I$ vs.\ $\Delta V$:
+\begin{itemize}[nosep]
+  \item \textbf{Óhmico:} recta por el origen (resistor/resistencia).
+  \item \textbf{No óhmico:} cualquier curva que no sea recta por el
+        origen.
+\end{itemize}
+
+Ejemplo no óhmico: el \textbf{diodo}. Curva asimétrica: para voltajes
+positivos la corriente crece muy rápido; para negativos permanece casi
+nula. Conduce fácil en un sentido y bloquea en el otro.
+
+% ===================================================================
+\section{Modelo microscópico de la conducción (Drude)}
+% ===================================================================
+
+Sección \textbf{6.4}. Modelo \textbf{clásico} de juguete (la descripción
+rigurosa es cuántica) para entender por qué los metales son óhmicos.
+
+\subsection{Velocidad real vs.\ velocidad de deriva}
+
+Sin campo, el electrón se mueve caóticamente, chocando y arrancando en
+direcciones aleatorias. Con campo, las trayectorias se corren
+\textbf{levemente}. La velocidad real tiene módulo casi fijo y enorme: en
+el cobre $v_e \approx 1{,}6\times10^{6}\ \text{m/s}$ (otros materiales,
+$\sim 10^{6}$~m/s). La deriva es una fracción diminuta.
+
+\subsection{Hipótesis del modelo}
+
+\begin{enumerate}[nosep]
+  \item \textbf{Mecánica clásica} (debería ser cuántica).
+  \item \textbf{Movimiento libre entre choques:} solo acelerado por
+        $\mathbf{E}$ (uniformemente acelerado).
+  \item \textbf{Choques con pérdida total de memoria:} arranca en
+        dirección aleatoria, misma rapidez, sin depender de la
+        trayectoria previa.
+  \item \textbf{Sin interacción electrón-electrón} (sorprendente, pero
+        buena aproximación).
+\end{enumerate}
+
+Se define el \textbf{tiempo libre medio} $\tau$ (tiempo promedio entre
+choques), que casi no depende de $E$ (el campo es diminuto frente al
+movimiento térmico).
+
+\begin{notebox}[Próxima clase]
+  Con estas hipótesis se calcula la velocidad de deriva (movimiento
+  uniformemente acelerado entre choques) y se deriva la conductividad.
+\end{notebox}
+
+\end{document}
