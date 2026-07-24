@@ -1,0 +1,357 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 13: Cierre del Modelo de Drude y Circuitos \\
+        de Corriente Directa}\\[0.3em]
+        \large{Conductividad microscópica, leyes de Kirchhoff, baterías
+              y FEM, asociación de resistencias y potencia}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Cierre del modelo de Drude}
+% ===================================================================
+
+Modelo clásico \enquote{de juguete} que justifica la ley de Ohm desde el
+movimiento microscópico. La descripción rigurosa es cuántica, pero da la
+imagen cualitativa correcta.
+
+\subsection{Repaso de las hipótesis}
+
+\begin{enumerate}[nosep]
+  \item Vale la mecánica clásica.
+  \item Los electrones no interactúan entre sí (correcta pero difícil de
+        justificar).
+  \item Movimiento libre con choques cada tiempo medio $\tau$.
+  \item Tras el choque, el electrón pierde memoria (arranca en dirección
+        aleatoria).
+  \item Velocidad promedio $\gg$ velocidad de deriva.
+\end{enumerate}
+
+\begin{notebox}[Números (hipótesis 5)]
+  Cobre: velocidad promedio $\sim 1{,}6\times10^{6}$~m/s vs.\ deriva
+  $\sim 14$~cm/hora. Escalas muy separadas.
+\end{notebox}
+
+\subsection{Deducción de la velocidad de deriva}
+
+Electrón que arranca en $t=0$ con velocidad aleatoria $\mathbf{v}_0$;
+única fuerza entre choques:
+\[
+\mathbf{F} = -e\,\mathbf{E} = m\,\mathbf{a}
+\;\Longrightarrow\;
+\mathbf{a} = -\frac{e}{m}\mathbf{E}
+\;\Longrightarrow\;
+\mathbf{v}(t) = \mathbf{v}_0 - \frac{e}{m}\mathbf{E}\, t.
+\]
+
+Promediando: $\langle\mathbf{v}_0\rangle = 0$ (aleatoria) y
+$\langle t\rangle = \tau$:
+
+\begin{keybox}[Velocidad de deriva]
+  \[
+  \boxed{v_d = \frac{e\,E}{m}\,\tau}
+  \]
+  El grueso $\mathbf{v}_0$ se cancela; sobrevive el arrastre según
+  $\mathbf{E}$. $\tau$ casi no depende de $E$ (propiedad del material).
+\end{keybox}
+
+\subsection{Ley de Ohm y conductividad microscópica}
+
+Con $J = e\,n\,v_d$:
+\[
+J = e\,n\cdot\frac{e\,E}{m}\,\tau = \frac{e^2 n\,\tau}{m}\,E,
+\]
+que es $J = \sigma E$ con
+
+\begin{keybox}[Conductividad de Drude]
+  \[
+  \boxed{\sigma = \frac{e^2 n\,\tau}{m}}
+  \]
+  La proporcionalidad $J\propto E$ vale porque $\tau$ no depende de $E$.
+\end{keybox}
+
+\subsection{Con qué chocan realmente los electrones}
+
+Drude imaginaba choques con todos los iones; en realidad los electrones
+atraviesan la red casi \textbf{transparente} y solo chocan con
+\textbf{impurezas} y \textbf{deformaciones} (efecto cuántico). Por eso
+chocan mucho menos de lo esperado.
+
+\begin{notebox}[Temperatura]
+  Al bajar $T$ disminuyen deformaciones y defectos, y baja la
+  resistividad ($\rho \propto T$ a bajas $T$ para un gas de electrones).
+\end{notebox}
+
+\subsection{Efecto Joule}
+
+En promedio los electrones no ganan energía: el trabajo del campo se
+entrega en cada choque a las \textbf{vibraciones de la red}
+(temperatura). La resistencia se calienta: \textbf{efecto Joule}.
+
+% ===================================================================
+\section{Circuitos de corriente directa}
+% ===================================================================
+
+\textbf{Corriente directa:} el sentido no cambia (a diferencia de la
+alterna, sinusoidal).
+
+\subsection{Aproximación de circuito ideal}
+
+\begin{itemize}[nosep]
+  \item \textbf{Cables ideales:} resistencia despreciable frente a los
+        resistores.
+  \item \textbf{Corriente estacionaria:} tras un transitorio $\sim
+        10^{-9}$~s, la corriente en cada punto no depende del tiempo.
+  \item \textbf{Corriente igual} a lo largo de un tramo (entre nudos).
+  \item \textbf{No se acumula carga:} todas las partes permanecen
+        neutras.
+\end{itemize}
+
+\begin{warnbox}[Cortocircuito]
+  Unir la batería solo con un cable da resistencia diminuta y corriente
+  enorme (saltan las llaves térmicas).
+\end{warnbox}
+
+\subsection{Primera ley de Kirchhoff (nudos)}
+
+\begin{keybox}[Ley de los nudos]
+  \[
+  \boxed{I_1 = I_2 + I_3}
+  \]
+  Toda la corriente que entra a un nudo sale (conservación y no
+  acumulación de carga).
+\end{keybox}
+
+% ===================================================================
+\section{Baterías y fuerza electromotriz}
+% ===================================================================
+
+\subsection{Fuentes de energía eléctrica}
+
+Una batería transforma energía en energía eléctrica:
+\begin{itemize}[nosep]
+  \item \textbf{Pila:} química $\to$ eléctrica.
+  \item \textbf{Generador (represa):} mecánica $\to$ eléctrica (efecto
+        dínamo).
+  \item \textbf{Térmica/nuclear:} combustión/reacción nuclear $\to$
+        calor $\to$ turbina $\to$ generador.
+  \item \textbf{Solar:} reacción química inducida por luz. \textbf{Eólica:} viento $\to$ turbina.
+\end{itemize}
+Los generadores realistas dan corriente alterna.
+
+\subsection{Fuerza electromotriz (FEM)}
+
+\begin{keybox}[FEM]
+  \[
+  \varepsilon = \frac{\text{trabajo entregado al circuito}}{\text{carga que circuló}}
+  \]
+  Constante, propiedad intrínseca de la batería ($\sim 1{,}5$~V las
+  comunes).
+\end{keybox}
+
+\begin{warnbox}[Nombre infeliz]
+  \enquote{Fuerza electromotriz} \textbf{no es una fuerza} (es energía por
+  unidad de carga; nombre histórico), y no coincide exactamente con la FEM
+  del curso de Electromagnetismo.
+\end{warnbox}
+
+\subsection{Batería ideal y resistencia interna}
+
+\textbf{Ideal:} $|\Delta V| = \varepsilon$. \textbf{Real:} pérdidas por
+efecto Joule (resistencia interna $r$):
+\[
+\Delta V = \varepsilon - r\,I < \varepsilon,
+\]
+modelada como pila ideal $\varepsilon$ en serie con $r$.
+
+\begin{notebox}[Convención]
+  Salvo aviso, todos los dispositivos son ideales.
+\end{notebox}
+
+% ===================================================================
+\section{Análisis de circuitos: ley de mallas}
+% ===================================================================
+
+\subsection{Circuito simple}
+
+Batería $\varepsilon$ con resistencia $R$. El cable ideal ($R=0$) no cae
+potencial:
+\[
+\varepsilon = R\,I \;\Longrightarrow\; \boxed{I = \frac{\varepsilon}{R}}.
+\]
+
+\subsection{Segunda ley de Kirchhoff}
+
+Dando la vuelta: subir $\varepsilon$ al atravesar la batería, bajar $R\,I$
+al atravesar la resistencia a favor de la corriente:
+
+\begin{keybox}[Ley de mallas]
+  \[
+  \boxed{\sum_{\text{malla}} \Delta V = 0}
+  \]
+\end{keybox}
+
+\begin{itemize}[nosep]
+  \item Dos resistencias en serie: $I = \varepsilon/(R_1+R_2)$.
+  \item Pila con resistencia interna en $R$: $I = \varepsilon/(R+r)$,
+        $\Delta V_R = \varepsilon R/(R+r)$; ideal si $R \gg r$.
+\end{itemize}
+
+\subsection{Circuito de dos mallas}
+
+Con varias FEM el sentido no es evidente. Estrategia:
+\begin{enumerate}[nosep]
+  \item Inventar un sentido para cada $I_i$ (si sale negativo, es al
+        revés).
+  \item Ley de mallas para cada malla independiente (resistencia a favor:
+        $-RI$; en contra: $+RI$; FEM según su flecha).
+  \item Ley de nudos ($I_3 = I_1 + I_2$).
+\end{enumerate}
+Queda un sistema lineal $3\times3$. Los signos dependen de las FEM
+relativas ($I \propto \varepsilon_1 - \varepsilon_2$).
+
+% ===================================================================
+\section{Resistencias en serie y en paralelo}
+% ===================================================================
+
+\textbf{Serie} (misma $I$):
+\[
+V_A - V_B = (R_1+R_2)\,I \;\Longrightarrow\; \boxed{R_{\text{eq}} = R_1 + R_2}.
+\]
+
+\textbf{Paralelo} (mismo $\Delta V$, $I = I_1+I_2$):
+\[
+\boxed{\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}}.
+\]
+
+\begin{warnbox}[Al revés que los condensadores]
+  En condensadores la suma directa era en paralelo; en resistencias, en
+  serie.
+\end{warnbox}
+
+% ===================================================================
+\section{Transferencia de energía en un circuito}
+% ===================================================================
+
+Para un dispositivo entre $A$ y $B$ con corriente $I$ y $\Delta V_{AB}$:
+$dW = \Delta V_{AB}\,dQ$, y dividiendo por $dt$:
+
+\begin{keybox}[Potencia entregada]
+  \[
+  \boxed{P = \Delta V_{AB}\, I}
+  \]
+\end{keybox}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Dispositivo} & $\Delta V_{AB}$ & \textbf{Potencia} \\
+\midrule
+Batería ideal & $\varepsilon$ & $P = \varepsilon I$ (entrega) \\
+Resistor & $-R\,I$ & $P = -R\,I^2$ (disipa $R\,I^2$) \\
+Condensador & $\pm Q/C$ & almacena o entrega \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{notebox}[Próxima clase]
+  Experimento con circuitos de resistencias y condensadores.
+\end{notebox}
+
+\end{document}

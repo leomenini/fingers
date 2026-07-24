@@ -1,0 +1,612 @@
+# Clase 26
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/26/
+
+Fecha de exportación: 7/6/2026, 7:20:40 PM
+
+
+Clase: 26
+Curso: F3
+
+Segmentos : 325
+Palabras  : 10820
+Caracteres: 58941
+
+
+0:17
+Hoy vamos a hablar primero que nada de reflexión y refracción de la luz en la frontera entre dos medios.
+0:27
+La vez pasada yo les había comentado que... que vamos a probar dos propiedades tienen dos medios acá uno, dos este tiene índice de refracción N1 y este tiene índice de refracción N2 y dijimos que vamos a considerar luz que incide con un ángulo theta1 Es un rayo de luz que incide por acá, ángulo θ1.
+1:06
+Es decir, estamos pensando en ondas planas y monocromáticas. ¿Qué son ondas monocromáticas? De un solo color. Monocromáticas, que es decir, de un solo color. Y las ondas de un solo color son las que tienen frecuencia bien definida, es decir, son sinusoidales en el tiempo.
+1:25
+El tipo de ondas que vimos es lo único que la dirección de propagación acá, los frentes de onda van a ser de este tipo y la dirección de propagación es para allá. Viene la luz y una parte va a rebotar en un ángulo θ2. Cuando pongo esta dirección, lo que estoy planteando es la dirección normal a los frentes de onda, si es la dirección de propagación. parte de la onda, típicamente si los dos medios son transparentes se va a transmitir y va a salir con un ángulo θ3 y lo que dijimos en la clase pasada es que la ley de la reflexión decía que θ2 es igual a θ1 y la ley de la refracción dice que n1 seno de θ1 es igual a n2 seno de θ3 digamos Acá queda un poco rara la fórmula porque ya metete a 3 al ángulo refractado, pero digamos, es N1 por el seno del ángulo incidente por N2, el ángulo del segundo miembro, el índice de refracción en el segundo medio, multiplicado por el seno del ángulo que forma el rayo con la normal a la...
+2:48
+a la frontera estoy pensando en una frontera plana pero si la frontera no fuera plana pueden pensar que estoy pensando en un cachito ¿verdad? si la frontera tiene una curvatura pueden pensar en un cachito suficientemente
+3:02
+chiquito ¿bien? ¿cómo?
+3:07
+claro, si tienen una curva si tienen una superficie curva acá pueden pensar que están en un cachito acá Esta es la normal y, yo qué sé, la misma figura en una pequeña región.
+3:24
+¿Bien? Entonces esto sería la tangente a la superficie.
+3:28
+¿Bien? El plano
+3:31
+tangente. Bueno, una de las consecuencias de esto, una cosa importante que yo les mencioné en la clase pasada, es que el índice de refracción... que es la velocidad de la luz, les recuerdo, el índice de refracción, es la velocidad de la luz en el vacío, dividido por la velocidad en el medio, depende de la longitud de onda, no es el mismo para todas las longitudes de onda. Entonces depende de la longitud de onda.
+4:05
+Quiere decir que esta fórmula hay que verla longitud de onda por longitud de onda. Para distintas longitudes de ondas, el ángulo θ3 en que sale la luz refractada no es el mismo, depende del lambda. Y eso en particular genera un fenómeno que ustedes conocen bien, que es el fenómeno de refracción de la luz cuando pasan de un medio a otro, tienen un... Un rayo de luz blanca. ¿Qué es la luz blanca? Es la luz que tiene esencialmente por igual todos los colores.
+4:36
+Uno obtiene blanco cuando combina todos los colores del
+4:40
+arco iris, digamos,
+4:41
+juntos. Tiene un rayo de luz blanca que viene por acá. Como las distintas longitudes de onda se refractan a ángulos distintos, al pasar por ejemplo acá del aire a un vidrio,
+4:55
+Fíjense en un prisma de vidrio. Entonces el ángulo con que se va a refractar el rojo va a ser distinto con el que se refracta el violeta y luego tienen lo mismo acá. Entonces van a ver aparecer acá el arco iris.
+5:15
+Lo único que les dice esto es que distintas longitudes de onda se refractan diferente, y eso es la principal consecuencia del fenómeno de refracción, que es una experiencia común de la vida
+5:28
+cotidiana, ya sea viendo un arcoíris propiamente dicho, que es
+5:31
+producto de la refracción de la luz del sol con las gotitas de agua en su pensión, cuando llueve y hay el sol al mismo tiempo, o si no, también lo ven, por ejemplo, cuando... Cuando tienen un vaso de agua, ven un objeto y si se fijan bien, no solo se cambia la posición del objeto, sino que además los colores se deforman ligeramente. Aparecen como medios manchados en los bordes con colores. Es una experiencia que uno cotidiana.
+6:01
+Entonces bueno, vamos a probar esas leyes, la ley de la reflexión y la refracción, pero antes de seguir les quiero dar algunos valores de índice de refracción para distintos medios, creo que no se los di la vez pasada, les di una tablita para las velocidades, pero esa velocidad les permite también hacer una tablita. Para el medio y el índice de refracción. Y acá nuevamente, como el índice de refracción depende de lambda, hay que darlo para algún lambda dado. Lo voy a tomar para un lambda particular que está en el amarillo, 589 nanómetros.
+6:36
+Y entonces acá el aire o el vacío es esencialmente lo mismo, tiene índice de refracción 1. Es simplemente la velocidad de la luz en el vacío, dividido la velocidad de la luz en el vacío, y eso da 1. ¿Estamos de acuerdo? Y en el aire es casi lo mismo. Agua, 1,33. Acetona, 1,36.
+7:08
+Alcohol da lo mismo. Entonces, yo que sé, vidrio. Bueno, el vidrio, hay muchos tipos de vidrio. Estoy usando un tipo de vidrio común. Yo usé sal. La sal es transparente, en estado cristalino. 1,54. Y acá pongo diamante.
+7:27
+2,54.
+7:34
+Bueno, como ven, mientras mayor sea el índice de refracción, mayor será el efecto de la refracción. Así que, el diamante tiene un efecto más grande que el vidrio, por decir algo.
+7:53
+Entonces lo primero que vamos a hacer es probar, bueno entonces repito, esta fórmula la vamos a probar para una longitud de onda dada. Entonces tienen luz acá, es una onda de luz plana y monocromática.
+8:15
+Porque quiero trabajar con un único índice de refracción y como el índice de refracción depende de lambda, tengo que tener una luz con una longitud de onda bien precisa. ¿Bien? Bueno, entonces vamos a hacer, entonces prueba de la ley de la refracción. Vamos a empezar probando la ley de la refracción. Prueba.
+8:45
+Bueno, una cosa que les quiero comentar es que estas leyes valen para ondas muy generales, no solo para ondas de luz. Por ejemplo, valen para ondas de sonido, valen también para las ondas, por ejemplo...
+9:01
+Por ejemplo, si piensan en una onda que se propaga en la superficie del agua, ahí la noción de refracción no se aplica. Pero de reflexión sí, si tienen una onda que viene, choca sobre un borde en el agua, se va a rebotar con el mismo ángulo con el que incidió. La idea de la reflexión se aplica. En realidad también se podría pensar una ley de la refracción, pero ahí hay que tener mucho cuidado de cómo es la frontera. Porque está claro que si yo tengo un borde que es un sólido y viene la onda super desplazándose en el agua, del otro lado esa onda ya no tiene ni sentido.
+9:35
+Tendría que tener como un borde entre dos líquidos. Pero eso es
+9:39
+muy complicado.
+9:41
+Para algunas ondas esto no se puede aplicar simplemente porque la frontera no es apropiada. Pero cuando tienen dos medios que permiten propagarse el mismo tipo de onda de un lado y del otro, esto va a ser general. Y de hecho, acá no me voy a ocupar. La onda electromagnética vimos que es una onda transversal y descrita por vectores, por el campo eléctrico y el campo magnético. Todos los aspectos vectoriales los voy a ignorar. Voy a pensar que está caracterizada la onda por un único número. Pongamos el campo eléctrico en una dirección. Entonces voy a ignorar todo lo que tiene que ver con lo que se llama la polarización de la luz.
+10:13
+El campo eléctrico podría oscilar en una dirección o en otra. Y eso influye acá. Cuando uno, por ejemplo, se interesa no solo en el ángulo en que se desvía, sino más preciso, por ejemplo, calcular qué fracción de...
+10:33
+de la luz atraviesa y qué fracción se refleja. Por ejemplo, calcular las intensidades incidentes y calcular las intensidades transmitidas y reflejadas. Ahí hay que tomar en cuenta los aspectos vectoriales, pero eso no me voy a ocupar hoy, porque solo me ocupo de los ángulos
+10:50
+de la propagación de
+10:51
+la luz. Entonces, lo que voy a hacer es dibujar frentes de onda. Voy a poner acá el medio
+10:57
+1,
+10:59
+acá el medio 2,
+11:04
+Tengo acá la dirección normal y voy a tener acá, dibujo acá la dirección incidente. Esto forma un ángulo θ1. Y ahora vamos a dibujar frentes de onda normales a esto.
+11:30
+X espaciado, porque estamos hablando de una onda...
+11:37
+La distancia entre dos frentes consecutivos, ¿cuánto es? ¿Cuánto vale?
+11:44
+Es lambda, la longitud de onda.
+11:47
+Esto que está acá es lambda, longitud de onda. Bien. Entonces ahora me voy a ocupar de la onda refractada. Entonces la onda refractada saldrá a otro ángulo, le llamo acá θ3.
+12:13
+Y fíjense que el campo eléctrico en la frontera es continuo. La onda es continua. En todo instante, la onda en la frontera es la misma de un lado y del otro. Uno podría decir, no, pero nosotros hemos visto situaciones en las cuales los campos eléctricos tienen discontinuidades. Por ejemplo, en la superficie de un metal. En la superficie de metal se concentra una densidad superficial de carga, y cuando tiene una densidad superficial de carga, entonces vimos que la componente normal del campo eléctrico era discontinua.
+12:50
+¿Se acuerdan de eso? La componente transversal era continua, pero la discontinua... ¿Se acuerdan? ¿Les suena cuando yo les digo que la componente normal es discontinua? ¿Cómo es adentro de un conductor?
+13:02
+En el caso electrostático es cero, ¿y afuera? No, afuera la componente normal es...
+13:09
+En el caso electrostático, la componente justo afuera de un conductor, ¿se acuerdan cómo era? Era perpendicular y ¿cuánto valía? ¿Se acuerdan? Sigma sobre epsilon cero, ¿no les evoca nada esto? Hace mucho, mucho tiempo, cuando hablábamos de electrostática, ¿sí? Fá, más les vale exonerar, porque no tienen que dar el examen, bueno. Porque miren que la primera parte del curso va para el examen.
+13:46
+La cuestión es que la componente normal podría tener una discontinuidad si hay una densidad superficial de carga concentrada. Entonces vamos a suponer que acá no hay carga concentrada. Es un borde tranquilo. Por ejemplo, el que hay entre aire y vidrio, por ejemplo. Ahí no hay acumulación de carga. Efectivamente, si uno de los dos medios fuera un conductor, ahí todo sería mucho más complicado. Pero los conductores normalmente no son transparentes, así que no nos tenemos que preocupar. Entonces vamos a dibujar ahora los frentes de onda perpendiculares a esto y continuos acá.
+14:22
+Entonces dibujo acá este frente de onda, el mismo frente de onda, el mismo frente de onda, el mismo frente de onda, el mismo frente. Y sigue por acá.
+14:35
+¿De acuerdo?
+14:42
+¿Por qué lo hice así? Porque tiene que ser continuo en el borde, pero tiene que ser siempre perpendicular a esta... Tienen que ser paralelas entre sí y tienen que ser perpendicular a la dirección de propagación.
+15:00
+Estos son los frentes de onda.
+15:03
+Frentes de onda. Incidentes. Y estos son los frentes de onda transmitidos.
+15:21
+No,
+15:27
+eso lo ven claramente en el dibujo. Fíjense que la distancia entre dos frentes de onda es distinta en
+15:33
+un lado y en
+15:34
+el
+15:34
+otro.
+15:36
+¿De acuerdo? Entonces llamémosle acá lambda prima. La longitud de onda, capaz que están lejos, no lo ven, acá dice lambda prima. ¿Está? Y la longitud de onda en el medio del otro lado. ¿Está?
+15:55
+Yo voy a agrandar un poco, voy a hacer un zoom de unos pocos frentes de onda. Entonces dibujo un frente de onda. Entonces tengo acá la dirección esta de incidente, θ1. Pongo acá dos frentes de onda consecutivos. Esta distancia dijimos es λ. Tengo acá la dirección θ3. Nuevamente tengo que hacer algo más diferente para que se vea bien.
+16:35
+Entonces acá hago esta dirección y esto acá es lambda prima.
+16:43
+Este ángulo es recto y este ángulo acá también es recto.
+16:49
+Bueno, entonces si bien lambda cambia, fíjense que esta distancia... la distancia de la intersección de dos frentes de onda en la superficie de frontera, esa distancia es la misma, mirada de un lado y del otro, es una única cantidad, que la podemos calcular en función de la longitud de onda de un lado y la geometría de un lado, o también de la longitud de onda del otro lado.
+17:21
+Entonces fíjense que acá este es un triángulo rectángulo,
+17:27
+Llamémosle D a esta distancia que está acá. A esta distancia acá le llamo D. Y quiero calcular D es esta distancia que está acá. Voy a marcarla en rojo para que se vea bien.
+17:39
+D. Quiero calcular D en función de lambda y
+17:45
+del
+17:46
+ángulo theta1. Pero fíjense que el ángulo theta1 es este pero también es igual a este.
+17:56
+¿De acuerdo?
+17:58
+Porque acá tenemos un ángulo recto, acá tenemos un ángulo recto, acá un ángulo recto. Entonces vemos que esto que está acá, que es la longitud de onda, lambda, es igual a D por seno de teta 1. ¿Sí? Lambda...
+18:25
+¿Estamos de acuerdo?
+18:29
+Fíjense, d acá, esto que está acá, es d por seno de teta 1.
+18:39
+Pero a su vez, la distancia entre dos frentes es lambda. Así que lambda es d por d seno de teta 1. ¿Se entiende? Levanten la mano los que entendieron este dibujo. Se está entendiendo. Entonces ahora podemos hacer el mismo razonamiento, pero del otro lado. Del otro lado, D es el mismo, como dijimos, entonces lambda prima será igual, todo es igual el dibujo, pero simétrico, D es el mismo, pero cambia en lambda y cambia en theta.
+19:12
+Perdón, se llama theta 3, dijimos.
+19:21
+Pero por otro lado, dijimos que lambda cambia, pero la frecuencia de oscilación no puede cambiar. Es la misma de un lado y del otro. ¿Por qué? Porque la frecuencia de oscilación es la misma.
+19:44
+Pensemos un poquito de eso.
+19:46
+Dicho de otra manera, ¿por qué la onda oscila de la misma manera de un lado que del otro? ¿Qué pasaría si no oscilara de la misma manera de un lado que del otro?
+19:59
+¿Cómo? Uno por vez. Pierde energía.
+20:07
+No, es que no se...
+20:09
+Periodo.
+20:10
+Se desfasan, agarren un punto acá, un punto dado. Tiene que oscilar igual de un lado, visto de un lado, que del otro. Pero de un lado, esto tiene un máximo cada tanto tiempo, un cierto periodo. Y del otro lado tiene que tener máximo cada mismo tiempo, porque si no, si en un lado tiene un máximo en un tiempo y en otro tiempo se están desfasados, no puede haber continuidad en todo instante en el borde, ¿verdad?
+20:35
+¿De acuerdo?
+20:36
+Entonces el punto, como dijimos, hay continuidad en el borde, entonces tiene que oscilar a la frecuencia de un lado, pero también tiene que oscilar a la frecuencia del otro, porque si no, de un lado estaría... no puede estar este teniendo un máximo cada 3 segundos y este... bueno, 3 segundos la luz es mejor... 3 por 10 a la menos 15 segundos. Y el otro lado, 4 por 10 a la menos 15 segundos. No puede ser, ¿verdad? Porque si no, no podría mantener la continuidad.
+21:07
+Si uno está oscilando así y el otro así, no pueden estar juntos, ¿verdad? Tienen que oscilar juntos. Entonces, por continuidad en el borde... En el borde...
+21:23
+La continuidad es en todo tiempo, para todo T. Entonces el período de oscilación en ambos medios es el mismo. Entonces la frecuencia es la misma. La frecuencia en el medio 1 es igual a la frecuencia en el medio 2.
+21:53
+La frecuencia la estoy marcando con la letra nu griega, pero si quieren lo podemos marcar con la letra f1. Yo no la marqué con la letra f porque se superponía con otras letras que usé, pero si quieren podemos usarla. Esta es la frecuencia. Uso las dos notaciones para que no haya frecuencia de oscilación. ¿Está bien?
+22:20
+Entonces la longitud de onda cambia, pero la frecuencia de oscilación no cambia. Bueno, entonces calculemos
+22:34
+las
+22:35
+velocidades en los dos medios. La velocidad en el medio 1, ¿cómo se calculaba la velocidad en términos de la longitud de onda y del periodo?
+22:50
+para cualquier onda velocidad es lambda sobre el periodo entonces el medio 1 es lambda sobre la frecuencia bueno, es la misma frecuencia así que ni siquiera le pongo 1 y 2 le pongo f porque es la misma de un lado y del otro así que es lambda sobre t que es lo mismo que lambda f y la velocidad en el medio 2 es la velocidad en el medio 1 Velocidad de la onda en medio 1.
+23:26
+Y ahora la velocidad en el medio 2 será lambda prima sobre el mismo periodo, lambda prima por F. Y esta es la
+23:33
+velocidad
+23:37
+en 2.
+23:40
+Pero fíjense acá, de esto podemos decir que la velocidad en cualquier medio es la velocidad de la luz en el vacío dividido el índice de refracción en ese medio.
+23:53
+Así que esto nos dice... Entonces de esto deducimos que C sobre el índice de refracción en 1 es igual a lambda por F...
+24:06
+Y C por el índice de refracción N2 es igual a lambda prima por F. ¿Están de acuerdo?
+24:24
+Y de esto deducimos que lambda por N1 es igual a lambda prima por N2. Es decir, la longitud de onda cambia, pero no de manera totalmente arbitraria. Podemos calcular cómo cambió la longitud de onda en función del índice de refracción. Bueno, ya estamos casi, porque hallamos la relación entre lambda y de seno de θ1.
+24:58
+Entonces, sustituyendo...
+25:07
+llamemosle a esta ecuación a estas ecuaciones a esta le llamamos asterisco, sustituyendo asterisco tenemos que d por seno de teta1 por n1 es igual a d por seno de teta2 de teta3, perdón, dijimos por n2 y esto es justo la ley de Snell podemos simplificar d y nos queda la ley de Snell Lo deducimos, la ley es la que N1 por seno de teta1 es igual a N2
+25:50
+por seno de teta3.
+25:52
+La manera en que escribí la fórmula no es muy cómoda el mutuadista de acordarse porque en un caso tiene un 1 y en el otro caso tiene un 2 y un 3, pero en realidad es N1 por el seno del ángulo en el mismo medio por N2 por el seno del ángulo en el mismo medio. No se mareen con los números, ¿verdad? Simplemente este es el medio, el segundo medio. Z3 corresponde al ángulo en el segundo medio.
+26:18
+Entonces vieron que la ley de Snell corresponde solo a dos cosas. A la continuidad de la onda en el medio y el hecho de que la onda es continua en todo tiempo. Y lo otro a lo que corresponde es a que los frentes de onda están espaciados a una distancia lambda. Y que la velocidad de la luz no es la misma en un lado y en el otro.
+26:44
+¿Se entiende?
+26:47
+¿Preguntas? Bueno, entonces ahora vamos a probar la ley de la reflexión. Alguien diría, pero la ley de la reflexión tiene que ser mucho más fácil que la ley de la reflexión. Y en algún sentido es verdad. Pero ¿saben lo que es más difícil para la ley de la reflexión? Hacer un dibujo que se entienda. Porque acá yo tenía los frentes de onda de un lado y luego los frentes de onda del otro lado. ¿Sí? Estaban separados. Pero ahora voy a tener que hacer un dibujo donde los frentes de onda incidentes y reflejados estén ambos en el mismo dibujo.
+27:19
+Y eso me va a generar un menjuje en el pizarrón. Pero si ustedes entendieron la ley de la refracción, por más que haya un menjuje en el pizarrón, en el dibujo, van a entender qué es lo que pasa. Esencialmente lo que pasa, ya se los adelanto, es que la ley es la misma, salvo que N1 es igual a N2, porque las dos ondas se están propagando en el mismo pizarrón. En el mismo medio. Entonces como N1 es igual a N2, los senos son iguales y todos los ángulos terminan siendo iguales. Conceptualmente es sólo esto lo que hay que hacer. Pero voy a hacer un dibujito más prolijo para mostrar.
+28:00
+Voy a dejar ese dibujo ahí. Esto es prueba de la ley... de la reflexión. Entonces tienen un medio acá 1, acá tienen medio 2, el medio 2 acá no va a jugar ningún papel, tienen la dirección normal, tienen un ángulo acá que está 1, incidente,
+28:41
+Pongo las ondas separadas, la longitud de onda es lambda. Esas son las ondas incidentes. Entonces ahora dibujo las ondas reflejadas. Entonces le pongo otro ángulo, que a priori no voy a suponer que es el mismo, voy a suponer que es un poco distinto. Sumamos que el ángulo de reflexión es este, θ2.
+29:15
+Entonces voy a dibujar frentes de onda.
+29:26
+Ni siquiera puedo dibujarlo de otra manera.
+29:29
+Tengo que hacer frente de onda. Que sean continuos acá en la frontera. ¿Sí? Con estos. ¿De acuerdo? Porque la onda es continua.
+29:43
+Pero por otro lado, necesito que sean perpendiculares a esto. Entonces... ¿Cómo hago para dibujar esto? Entonces acá...
+30:01
+voy a dibujar algunos más para acá arriba etcétera ¿de acuerdo?
+30:21
+Pero fíjense, esta distancia nuevamente, igual que este dibujo que hicimos acá, la puedo calcular de las dos maneras. Puedo decir que D es igual a lambda por seno de teta 1.
+30:37
+Y D también puedo decir que es lambda, es el mismo lambda ahora, porque se está propagando las dos ondas en el mismo medio, así que tiene la misma longitud de onda. La frecuencia es la misma. Por el mismo argumento que usamos hace un rato, por la continuidad.
+30:53
+La frecuencia es la misma. Y como el medio es el mismo, la longitud de onda también es la misma. Porque si tiene el mismo periodo y tiene la misma velocidad, pues está en el mismo medio. La velocidad solo depende del medio. Entonces la longitud de onda será también la misma. Así que D también lo podemos decir como lambda igual a lambda por seno de teta 2. Entonces estas dos cosas deduzco que seno de θ1 es igual a seno de θ2.
+31:22
+Pero estamos considerando ángulos θ1 y θ2 entre 0 y π sobre 2.
+31:30
+Entonces dos ángulos que coinciden, ambos entre 0 y π sobre 2 y cuyos senos coinciden, se hacen el dibujo del círculo trigonométrico. Tienen acá un ángulo θ1, tienen acá el seno. Fíjense que la función seno es una función monótona creciente entre 0 y π sobre 2. Así que si los dos senos coinciden, los ángulos coinciden. Entonces esto deducimos que θ1 igual a θ2.
+32:01
+Tal como está el dibujo, está claro que θ1 y θ2 varían entre 0 y π sobre 2. No, no pueden, no hay ángulos de otro. Entonces deducimos que θ1 es igual a θ2. Entonces fíjense que es mucho más simple, pero el dibujo es más enredado, porque están las dos ondas en el mismo lado. ¿Está
+32:27
+bien?
+32:32
+Bueno, insisto sobre que la ley de Snell vale sólo para ondas monocromáticas. Si las ondas no son monocromáticas, cada una...
+32:43
+Podemos pensar la luz no monocromática como compuesta de... La luz blanca está compuesta de luces de muchos colores. Cada color va a tener su ley de Snell con su índice de refracción, que depende de ese valor de la frecuencia de oscilación correspondiente a esa luz. Y entonces cada una verificará la ley de Snell, pero cada una se va a refractar un ángulo diferente, como
+33:06
+decíamos hace
+33:07
+un rato. Cuando tienen muchas ondas, no una onda monocromática, sino una onda que es una superposición de muchas ondas monocromáticas, pueden aplicar la ley de Snell, pero tienen que aplicarlo a cada componente y no a la luz como un todo.
+33:22
+El rojo tendrá su ley de Snell, el violeta tendrá su ley de Snell, el amarillo tendrá su ley de Snell. ¿Preguntas?
+33:34
+¿Puede ser ahí el D? ¿Cómo? ¿Puede ser ahí el D? El D es el mismo, el mismo que dibujé hace un rato. Es la distancia, es esta distancia, la distancia entre dos cruces de los frentes de onda con la superficie. Es el mismo D que hace un rato.
+33:59
+Bueno, entonces voy a hablar ahora, el resto de la clase, de dos cosas.
+34:06
+Una
+34:07
+es lo que se llama el principio de Higgins y otra es lo que se llama el principio de Fermat. Son dos cosas que se elaboraron en el siglo XIX para tratar de entender cómo se propaga la luz en situaciones un poco más complicadas. Supongamos que ustedes tienen un frente de ondas que no es plano. Por ejemplo, una emisión...
+34:29
+Piensen en lo siguiente, tienen una cubeta de agua, vamos a pensar en otro tipo de ondas, pero es la misma idea que podríamos hacer con ondas electromagnéticas. Tienen una cubeta de agua y la golpean periódicamente con un cuadrado, con un objeto con forma cuadrada. Eso va a generar frentes de onda que tienen que formar.
+34:55
+Algunos dicen cuadrados, otros circulares. Y en realidad la realidad está un poco en el medio entre las dos cosas. Porque lo que va a suceder es si yo estoy golpeando en un cuadrado acá regularmente, las frentes de onda cerca del punto de choque van a ser esencialmente cuadradas. Van a ser así.
+35:15
+Pero a medida que me voy alejando se van a ir suavizando.
+35:22
+Y lejos efectivamente se comportan como ondas circulares.
+35:28
+¿Están de acuerdo? Y la distancia entre dos frentes es constante, ¿verdad? Acá dibujé algunos que no están equiespaciados, ¿no?
+35:36
+Pero tendrán otro por acá y muchos por acá.
+35:42
+Entonces la pregunta es,
+35:43
+bueno, si quisiéramos calcular...
+35:47
+¿Cómo se va deformando el frente de onda? Si queremos dibujar cómo se van deformando los frentes de onda en una situación de este tipo. ¿Cómo hacemos? Bueno, esto se puede hacer partiendo de las ecuaciones de la luz. Posta, agarrar las ecuaciones del electromagnetismo, pero es muy complicado. Entonces, les voy a contar una cosa que tiene sentido común. Pero que no lo voy a probar rigurosamente, que es lo que se llama principio de Higgins, como si fuera una cosa independiente de todo lo anterior.
+36:18
+De hecho, esto fue formulado antes de que se supiera bien cuál era la naturaleza electromagnética de la luz. Y es una idea que vale realidad para cualquier onda.
+36:27
+Entonces les voy a contar cómo es el principio de Higgins, que les permite ir viendo cómo se deforman los frentes de onda.
+36:45
+El principio es el siguiente.
+37:04
+Entonces, es algo que formuló, en realidad, antes. Lo de Fermat es del siglo XIX, pero esto es muy anterior. 1678, siglo XVII.
+37:15
+Y en realidad no lo hizo pensando en las ecuaciones del electromagnetismo, porque no las conocía, sino en cualquier onda. Entonces, ¿cuál es la idea de Higgins? Es la siguiente.
+37:27
+En una onda, cualquiera...
+37:35
+Cada punto de un frente de ondas se comporta como una fuente puntual
+38:09
+que genera ondas esféricas. Un nuevo frente de ondas será la envolvente
+38:44
+de las ondas esféricas secundarias esto es lo que decía Higgins que no se entiende nada pero si les hago un dibujo van a ver que si se entiende Retomemos el ejemplo. En lugar de explicarlo así en general, veamos un ejemplo concreto y van a ver que es bien útil. Es un método gráfico, en realidad. ¿Qué es lo que dice la onda? Pensemos en un periodo, en un periodo de oscilación.
+39:18
+Supongamos una onda, repito, el ejemplo del cuadrado golpeando sobre una cubeta con agua. Genera una onda que acá, en este lugar, tiene la forma de esa cuadrada. Lo que dice Higgins es que cada punto de ese cuadrado genera una onda esférica.
+39:42
+Entonces ponemos acá
+39:46
+una onda esférica.
+39:50
+Cada punto genera una onda esférica.
+39:58
+¿Sí? ¿Sí?
+40:02
+etc.
+40:05
+Cada punto del frente de onda genera una onda de fe. La idea es que si ustedes tienen una onda oscilando, a su vez lo pueden pensar cada punto de esa onda oscilando como una fuente de otra onda. ¿Se entiende? Algo que oscila emite una nueva onda. Pero claro, tienen muchas cosas que están emitiendo ondas al mismo tiempo. Cada punto se comporta como una emisión de una nueva onda. Y la onda que ustedes efectivamente van a ver es la resultante de todas esas ondas que se produjeron por cada punto. que va a ser la envolvente.
+40:35
+¿Qué es la envolvente de una sucesión de cosas? Es lo que va por el exterior.
+40:42
+Entonces, si van considerando un tiempo dado, un intervalo de tiempo dado, en el intervalo de tiempo dado tendrán esta segunda onda entonces si quieren calcular por ejemplo el periodo siguiente emiten nuevamente ondas se dan cuenta con regla y compás esto se construye fácil calculan nuevo frente de onda sobre este otro que está acá
+41:09
+¿podrían ser frentes más grandes que el que está adentro?
+41:17
+No, a ver, cada onda va a tener la misma longitud de onda. Así que en un intervalo de tiempo, cada circulito es igual.
+41:29
+Cada punto del frente de onda va a emitir ondas que todas se propagan con la misma longitud de onda, el mismo periodo. Quiere decir que cada circulito es igual. Entonces se emiten, pero se dan cuenta que a medida que voy haciendo esto, Me va produciendo esto que yo les comentaba acá, que se me va curvando. ¿Me explico? Inicialmente teníamos una cosa con un cuadrado y a medida que voy avanzando tengo una cosa cada vez más redondeada. Y de esa manera Higgins podía calcular cómo... es laborioso, ¿no?
+42:01
+Pero en realidad si ustedes tienen la forma del borde en que va a rebotar algo, ponen por ejemplo una onda incidente plana, van haciendo los dibujitos, cuando tienen planos no les aporta nada, porque fíjense, si tienen una onda plana está claro que les va a decir que la onda siguiente es plana, porque si yo tengo un plano y me hago circulitos...
+42:26
+La envolvente, no hay historia, es otro plano. ¿De acuerdo? Así que para ondas planas, el principio de Higgins no nos agrega nada, porque simplemente nos dice, se van propagando en plano. Pero imagínense que viene la onda plana y tiene que rebotar en una superficie así. ¿Sí? Y bueno, entonces hacen así y luego emiten desde esta superficie y van a ver cómo se va deformando. ¿Se entiende? Así que con regla y con paz y mucha paciencia, estas personas sabían decir cómo se iba a ir reflejando la onda en cada lugar.
+43:04
+Incluso con un poco de habilidad uno puede transformar esto en fórmulas, en calcular, por ejemplo, deducir la fórmula de la refracción a partir de esto. ¿Cómo hace para deducir la onda de la refracción? Dice, bueno, este es el borde, supongo que el borde... Supongo que un borde está acá. Y decimos, bueno, a partir de acá voy a seguir aplicando el principio de Higgins, pero tomando en cuenta que la velocidad en este otro medio es diferente. Si la velocidad en el medio es diferente, puedo calcular la longitud de onda en este otro medio.
+43:36
+Entonces los circulitos que se emitan acá, de este lado, tienen otro radio. Y nuevamente pueden deducir la leyenda. No lo vamos a hacer, pero se puede hacer. Tal vez sea la misma idea. Nuevamente van a tener frentes de onda, pero van a estar más separados entre sí. Entonces, esencialmente, eso les da dibujitos como los que hicimos
+43:55
+ahí.
+43:57
+Para frentes planos no vale la pena esto. Pero lo interesante es que también les dice qué pasa cuando tienen frentes curvos. No les dicen fórmulas, pero sí pueden hacer los dibujos de qué es lo que va a pasar. ¿Se entiende? Este es el principio de Higgins que se los cuento más a modo de cuentito, pero que vale la pena saber.
+44:18
+¿La longitud de onda en los círculos sería el radio de los círculos? ¿Cómo? El radio
+44:23
+de los
+44:23
+círculos podría la longitud
+44:25
+de onda, ¿no? Sí, claro, el circulito es la longitud de onda. Sí, el radio. El radio es el lambda. Si están haciendo dibujitos, uno por periodo. Si pudieran hacer dibujitos cada un décimo de periodo, en cuyo caso tendrían lambda sobre 10. Hay que decir cada cuánto hacen los
+44:46
+dibujitos.
+44:54
+Bueno, y ahora... Entonces esto es simplemente a modo de cuantito. Una cosa que les quiero comentar es que uno se toma al pie de la letra el principio de Higgins, le genera un problema que es que dice, bueno, pero me tendría que estar propagando una onda para atrás también.
+45:08
+Acá uno podría decir, se me generó un freno de onda
+45:11
+también. Pero físicamente eso no es razonable. Por ejemplo, acá en el cuadrado la onda se va a propagar alejándose del cuadrado, no hacia adentro del cuadrado. Y la explicación de eso es que en realidad son ondas esféricas, pero no uniformes, tienen una dirección preferencial. Entonces, para saber efectivamente hacia dónde va y no sólo dónde está, uno tendría que saber cuál es la intensidad relativa para un lado y para el otro. En realidad no es uniforme. Está claro que la onda se está propagando para un lado y no para el otro. Entonces, ¿sí?
+45:44
+¿Cómo? No, pero es que la de atrás, no hay propagación para atrás, solo propagación para un lado.
+45:54
+Sí, también habría las que vienen atrás, pero independientemente de eso, la onda solo va para un lado. Y eso se podría formalizar, y de hecho la gente que trabajaba con Higgins sabía formalizar eso como un frente que no era uniforme, una
+46:10
+dirección preferencial.
+46:15
+Yo voy a hablar del principio de Fermat. Yo pensé que Fermat era del siglo XIX, pero estoy viendo acá mi cuaderno, que me equivoqué de pe a pa. Es muy anterior. Entonces, ¿han escuchado hablar de Fermat? Fermat era un matemático amateur. En realidad se dedicaba a otra cosa. No me acuerdo bien a qué se dedicaba. Pero ponele que era contador. Trabajaba en una empresa de la época, siglo XVII. Yo pensé que era el siglo XIX.
+46:45
+Estoy equivocadísimo con la fecha.
+46:48
+Bueno,
+46:49
+la cuestión es que Fermat...
+46:52
+¿Han escuchado los cuentos de Fermat? Hay anécdotas divertísimas.
+46:58
+Bueno, les voy a contar un aporte que hizo Fermat a la física. En realidad es un aporte más bien a la matemática. Es cómo describir estas cosas en términos de una ley simple, que en realidad tiene un contenido físico importante, pero no vamos a ver el contenido físico ahora porque llevaría a otros desarrollos. Pero les quiero contar una anécdota de Fermat que es divertida. Fermat no se dedicaba profesionalmente a la matemática, se dedicaba a otra cosa, pero le gustaba la matemática. Y entonces leía libros de matemática, de matemáticos profesionales, y como en realidad se dedicaba a otra cosa, lo hacía un poco para divertirse.
+47:37
+Y entonces un día estaba Fermat, Fermat de esa manera que les voy a escribir, hizo varios teoremas muy importantes de la matemática. Él lo que hacía era, leía los libros de matemática de los profesionales de la matemática, que no eran muchos, en aquel entonces estábamos hablando hace mucho tiempo, y en realidad eran unas poquitas personas, pero él leía los libros y en el margen del libro agregaba comentarios, que solían ser resultados matemáticos originales. Bueno, acá puedo probar tal cosa, puedo probar tal cosa... Y un día Fermat estaba probando lo siguiente.
+48:10
+Estaba leyendo un libro que decía lo siguiente. ¿Nunca escucharon hablar de esto? ¿No?
+48:27
+Principio de Fermat. ¿No?
+48:37
+Entonces, 1650. Le erré totalmente en la fecha, no se puede pensar, era muy posterior. Entonces, Fermat...
+48:49
+Usted es matemático no profesional, hizo aportes muy significativos a la matemática, pero uno de los aportes más conocidos, en realidad no es un real aporte, es una conjetura, él no probó ese resultado, por lo menos no tenemos registro de que lo haya hecho. Él encontró en el libro que alguien quería resolver esta ecuación, x a la n más y a la n es igual a z a la n, con x, y, z y n pertenecientes a los naturales.
+49:19
+Hallar soluciones de esta ecuación, que es una ecuación diofántica, son ecuaciones a valores en los enteros.
+49:28
+Entonces
+49:29
+Fermat, en el margen del libro, aparece esa ecuación y dice, bueno, para el caso n igual a 2 se debe resolver el caso, está bien conocido, las soluciones son tales y cuales. Cuando n es mayor que 2, si n es mayor que 2, no hay soluciones.
+49:51
+Esto es lo que se llama la conjetura de Fermat. Esto no tiene nada que ver con electromagnetismo, pero se los cuento porque es muy divertido. Describe eso en el margen. Dice, y tengo una prueba re linda y re simple, pero es un poco larga y no me entra acá en el margen del libro. Lo voy a anotar en otro lado. La cuestión es que ese libro de Fermat fue encontrado...
+50:19
+Pero las notas donde él supuestamente probaba el teorema de manera muy simple y muy elegante y muy divertida, nunca se encontraron. Así que durante muchos, muchos años, siglos, los matemáticos trataron de probar la conjetura de Fermat. Se le formó un gran problema de matemática. Y de hecho, recién se logró probar en el año 94, ¿qué? ¿1994? Sí, 1994. Recién se pudo probar...
+50:49
+En 1995. Y claro, la gente se ensañó tanto con este problema, porque si ahí viene un tipo que te dice, ah, yo tengo una prueba simple y divertida, pero no me entra acá en el margen del libro, así que lo anoto en otro lado. Claro, te morís de curiosidad. Mi pela bastante es que dedicaron su vida a probar El teorema de Fermat, o casos particulares del teorema de Fermat, hace poco tiempo, digamos, a fines del siglo XX, finalmente se logró probar y fue un resultado muy importante de la matemática, que usó todos los métodos más sofisticados y elaborados, nada de prueba simple y elegante, sino una prueba muy, muy, muy sofisticada que usa cosas muy elaboradas de matemática.
+51:36
+Es raro, porque es un problema muy fácil de formular, un problema que uno le puede plantear el problema a un niño de escuela, es decir... ¿Hay o no hay números enteros que verifican esto? Es un problema que se plantea muy fácil, lo puede entender cualquiera. Puede escribirse en un libro de cocina ese problema. Pero para resolverlo hay que usar métodos muy sofisticados de matemática. Salvo que Fermat efectivamente tuviera la prueba, pero nunca lo sabremos. Bueno, además de sus aportes a la matemática, tiene aportes de verdad.
+52:07
+Esta es solo una conjetura que escribió en un libro. Pero probó muchas cosas, Fermat, importantes. Pero le voy a contar ahora una cosa que hizo, un aporte que hizo en la física. Entonces, ¿qué es lo que hizo Fermat? Dijo lo siguiente, hizo la siguiente observación.
+52:35
+Principio de Fermat.
+52:42
+Lo voy a decir para la luz, pero en realidad vale para cualquier onda. La luz se propaga de un punto a otro en la trayectoria que requiere...
+53:11
+Menor tiempo. Fíjense, es como que la luz recorriera todas las trayectorias posibles, y un poco hace eso, porque la onda se desparrama por todos lados,
+53:30
+y finalmente elige como
+53:32
+buena solución aquella que le lleva menor tiempo. ¿Sí?
+53:40
+Y se puede probar que las ecuaciones del electromagnetismo, en cierta aproximación precisa, Se puede probar que tienen esto. Pero eso es muy importante porque en realidad después esto va a ser la base de muchos conceptos de física que se han vuelto muy fructíferos. En particular, cosas parecidas suceden en la mecánica. En la mecánica, en lugar de tener menor tiempo, tienen otra cosa que no van a ver ustedes en los cursos de física, pero que es muy importante, que se llama el principio de mínima acción. Que dice que las partículas, para ir de un lado a otro, se propagan de acuerdo con...
+54:13
+Otra cosa que no es el tiempo, y la minimizan. Para ir de un lado a otro, las partículas como que exploraran todos los caminos para ir de un punto a otro y eligen aquel que tiene menor acción. Un poco hace lo mismo la luz. La luz efectivamente se explora por medio de la onda y la trayectoria que favorece es la que tiene menor tiempo. Ahora, uno puede decir, las partículas no recorren. La verdad es que sí recorren. De acuerdo con la física cuántica, las partículas en realidad, en algún sentido que se puede precisar, no tienen una única trayectoria, sino que recorren todas las trayectorias.
+54:45
+Y la que uno ve desde el punto de vista macroscópico clásico, es como la más potente, que es la que tiene menor acción.
+54:52
+Potente no en el sentido de la potencia, sino la que suma más. Pero esto es más fácil de entender porque la onda uno la ve desparramada. Entonces vamos a ver que Fermat tiene razón. Dos ejemplos. No lo vamos a ver en general, pero vamos a ver en dos ejemplos.
+55:09
+El primero es la ley de la reflexión.
+55:13
+Vamos a ver que con el principio de Fermat podemos explicar la ley de la reflexión fácilmente. Tenemos acá una superficie que refleja, tenemos un medio, acá uno. Tienen una normal, tienen un punto A de partida y un punto B de llegada. La pregunta es, la luz va a venir a un cierto lugar. Vamos a borrar esto que por ahora no lo necesito. La luz va a venir a un cierto punto de llegada, aquí.
+55:43
+Y luego va a rebotar y va a ir hasta B. ¿Sí? La pregunta es, ¿cuál es el punto? ¿Sí? Si yo tengo acá esto a una distancia, llamémosle XA, y esto acá tengo a una distancia XB. Pregunta. Bueno, y estos dos están separados acá a una distancia que le llamaré Y. Le llamamos D esto. La pregunta es ¿cuánto vale Y?
+56:17
+Para que haya menor tiempo.
+56:21
+¿No tiene que ser B para el otro lado?
+56:25
+¿Cómo? ¿No tiene que ser B para el otro lado? No, no, por ahora no estoy haciendo refracción, solo estoy haciendo la reflexión. Tenemos esta frontera y una parte de la onda se refleja. La pregunta es, si yo pido que el tiempo sea mínimo, ¿qué es lo que estoy pidiendo? Dentro del mismo tiempo. Si yo estoy en un medio de un mismo medio, y digo que el tiempo sea mínimo, ¿qué es lo que estoy pidiendo en realidad, geométricamente? Que la distancia sea mínima. Entonces, en un único medio, tiempo mínimo es lo mismo...
+57:11
+¿Qué distancia mínima? En este caso el principio de Fermat queda bien simple. Bueno, calculemos la distancia, la longitud de la señal desde A hasta B. Se calcula bien fácil usando pitágoras. Es XA al cuadrado. Después vamos a la distancia al cuadrado. Porque si la distancia es mínima, la distancia al cuadrado es mínima.
+57:42
+Es XA al cuadrado más Y al cuadrado. Más XB al cuadrado más D menos Y al cuadrado. Simplemente dije que esto más esto... No, estoy diciendo mal. Estoy diciendo todo mal. Vamos a poner la distancia y la distancia es esto. Disculpenme, estoy diciendo para abajo.
+58:13
+Es la suma de las dos distancias. ¿Está? Sumé la distancia acá, pitágoras, es la otra. ¿De acuerdo? Y las posiciones de A y de B están fijos. ¿Está? La pregunta es, ¿cuál es el Y que hace que la distancia sea menor? ¿Está?
+58:33
+Entonces, ¿cómo hago para hallar el punto en el cual eso es mínimo?
+58:41
+Bien,
+58:48
+puedo hacerlo así, pero ahora voy a hacerlo más simple, sin geometría, análisis. ¿Qué hago? Si yo quiero hallar la distancia mínima. ¿Cómo? Si yo quiero decir que una cosa es mínima... Entonces calculamos la derivada de L con respecto de Y. Entonces en el primero me queda bien fácil. Me queda raíz cuadrada de Y al cuadrado más... Perdón, Y al cuadrado más... Tenía un 2 pero tengo un Y arriba.
+59:21
+Tendría un 2 abajo y un 2Y así me va. Ahora en el segundo hago... Más un medio de YB al cuadrado más D menos Y al cuadrado.
+59:40
+Y tengo un 2 de Y menos D. Y esto tiene que ser cero para que sea un mínimo. Una condición necesaria.
+59:55
+Bueno, pero esta, fíjense que se puede hallar, llamémosle a este ángulo θ1 y a este ángulo θ2. Y esta relación se puede escribir de la manera siguiente.
+1:00:10
+Esto que está acá, si yo lo quiero expresar en términos de Y1, ¿qué es? Este es θ1, pero este también es θ1, ¿verdad? Este es el cateto opuesto sobre la...
+1:00:25
+Hipotenusa.
+1:00:28
+Esto es cateto opuesto de este triángulo. Este es un triángulo rectángulo, cateto opuesto sobre hipotenusa. Así que es el seno de teta 1.
+1:00:41
+Y acá, fíjense, bueno esto lo puedo escribir como menos de, es lo mismo. Tengo este ángulo acá es teta2, pero este ángulo también es teta2, este es un triángulo rectángulo, así que esto le queda menos seno de teta2. Y esto es igual a cero. Entonces el principio de mínimos tiempos de Fermat, o en este caso la distancia mínima, nos dice que teta1 es igual a teta2.
+1:01:11
+Otra prueba de la ley de reflexión nos dice que la ley de decir que los ángulos son iguales es lo mismo decir que la luz escogió el camino más corto, rebotando, digamos. La manera, el camino de reflexión que la luz efectivamente toma es aquel que le lleva menos tiempo, en este caso menor distancia. ¿Bien? Alguien puede decir, bueno, matamos una mosca con un cañón, pero veamos ahora la refracción que es bien divertida.
+1:01:48
+En el caso de la refracción, tienen dos medios, uno y dos, tienen un punto A aquí.
+1:01:58
+La luz viene por acá, algún punto. Llámenle XA a esto. A este punto le llaman Y. Tienen otro punto B, pero ahora está en el medio 2. Llamémosle nuevamente a esta distancia acá, le llaman igual que antes D. Y ahora tienen esta distancia acá que le llaman XB. Y la luz sigue para allá. Busco acá la normal porque la vamos a usar en un momento.
+1:02:29
+Pero ahora, fíjense que tiempos mínimos sigue siendo lo mismo que distancias mínimas.
+1:02:37
+No, ¿por qué? Calculemos el tiempo.
+1:02:44
+Porque la velocidad no es la misma, entonces el tiempo es... ...distancia...
+1:02:53
+Sobre velocidad, entonces será raíz cuadrada, entonces tiempo será igual a la distancia en el medio 1, que es y al cuadrado más xa al cuadrado, pero hay que dividir por la velocidad en el medio 1.
+1:03:09
+Más la velocidad en el medio 2 por la distancia en el medio 2, que dijimos que es xb al cuadrado más d menos y al cuadrado.
+1:03:36
+Pero dijimos que C sobre B es lo mismo que el índice de refracción.
+1:03:42
+Así que 1 sobre B es lo mismo que el índice de refracción por la velocidad de la luz. Así que esto lo pueden escribir como... Índice de refracción sobre la velocidad de la luz en el vacío por raíz cuadrada de I cuadrado más XA al cuadrado más el índice de refracción 2 sobre la velocidad de la luz. xb al cuadrado más d menos y al cuadrado así que este es el tiempo que le lleva la luz para ir del punto A al punto B suponiendo que cruzó en el punto Y y esto es un problema que lo pueden plantear en relación con el principio de Fermat pero este es un problema matemático que también se llama el problema del salvavidas ¿por qué este problema se puede llamar el problema del salvavidas?
+1:04:39
+Le corre el aire
+1:04:42
+y el agua. Bueno, no, no, correr en el aire es dificilísimo. Este es el agua y esta será la arena, digamos. Entonces está el salvavidas acá en su puesto. Acá es la persona que empieza a gritar, que se está ahogando. Y el salvavidas, ¿qué tiene que hacer? Tiene que llegar lo más pronto posible. No tiene que ir al camino más corto. Tiene que llevarlo lo más pronto posible. Pero está claro que el salvavidas va mucho más rápido en la arena, corriendo, que después cuando llegó al agua, que va a avanzar más lento.
+1:05:12
+Entonces uno puede decir, ah, como va mucho más rápido, entonces lo mejor que le puede venir es correr, correr, correr hasta el punto justo que está enfrente. y luego meterse. Pero no, no es verdad, porque ahí perdiste un poco de tiempo, porque en realidad es cierto que va más lento en el agua, pero tampoco es cierto que te convenga ir justo al punto enfrente y luego meterte para adentro.
+1:05:33
+Te va a corresponder, te va a convenir algo que está un poco en el medio entre ir por la línea recta y esta trayectoria que dijimos. Algo está en el medio. ¿Cuál es la trayectoria que conviene? La trayectoria de tiempos mínimos, que es justo lo que estamos calculando acá. ¿Cuál es la trayectoria? Es como la luz.
+1:05:54
+El salvavidas tiene que aplicar la fórmula de Nen, pero yo nunca vi un salvavidas que se ponga a hacer las cuentas. Tienen una cierta experiencia ya y más o menos. Bueno, entonces calculemos, calculemos qué da esto.
+1:06:18
+Entonces tiempo mínimo. Entonces toman la derivada de T con respecto de Y. Entonces tienen el primer término, será N1 sobre C por... Y sobre Y al cuadrado más Y al cuadrado. Y el segundo les queda N2 sobre C, el mismo cálculo que hace un rato, por Y menos D sobre raíz cuadrada de XB al cuadrado más Y menos D al cuadrado.
+1:07:02
+Pero nuevamente, llamémosle a este ángulo TETA1... A este ángulo le llamamos teta 3.
+1:07:13
+Y vemos,
+1:07:14
+nuevamente, este es teta 1, este es teta 3. Y nuevamente vemos que lo que tenemos acá, y sobre x al cuadrado más y al cuadrado, la misma fórmula que tenemos ahora, hace un rato, es el seno de teta 1. Así que esto es igual a n1 sobre c por el seno de teta 1. Y esto que está acá, igual que antes, es menos seno de teta 2. Así que les queda menos n2 sobre c por seno de teta 3, el ejemplo.
+1:07:43
+Si es mínimo, si te mínimo.
+1:07:48
+Entonces, N1 por seno de θ1 es igual a N2 por seno de θ2. Así que esto les da una interpretación de qué es lo que quiere decir la ley de Snell. La ley de Snell les dice que la luz elige el camino más corto para ir de un punto a otro. Y eso es la observación de Fermat. Que en realidad todas esas fórmulas de geometría y de óptica geométrica se pueden hallar pidiendo que la luz recorra el camino más corto posible. El camino más corto posible, no. El tiempo más corto posible.
+1:08:22
+Una pregunta. Sí. ¿Cómo? No. Fíjate, si vos derivás acá, bajás, ¿no? Luego tendrías que poner 2 veces d menos i. Pero luego tenés que derivar menos i. ¿Te parece un signo más? ¿Está? Otra manera de pensarlo es d menos i al cuadrado. Es más cómodo escribirlo como i menos d al cuadrado. Cuando derivás ahí no tenés tantos signos. ¿Se entendió?
+1:08:56
+El seno de teta 3 sí es d menos i. ¿Está? Disculpa, el seno sí es de menos i, por eso puse acá menos seno de teta 3. La fórmula que aparece en la derivada es
+1:09:08
+esa.
+1:09:11
+¿Esto lo probó? No, esto sí, esto sí. Esto es bien fácil. Pero
+1:09:14
+tiene que mostrar para todos, no solo para...
+1:09:18
+Ah, ¿probar en general? No, no, ni idea. No, no, lo que hizo la observación es esa, de que las cosas que se sabían de óptica geométrica en aquel entonces, en realidad se podían entender fácilmente, suponiendo que la luz.
+1:09:35
+De hecho la prueba en términos del electromagnetismo se deduce a partir de las ecuaciones Maxwell. No es realmente muy difícil lo que se llama la aproximación de Iconal. Se sabe probar.
+1:09:46
+Es una cierta aproximación de las ecuaciones de
+1:09:48
+Maxwell. En las cuales la luz se comporta realmente como rayos que se propagan.
+1:09:57
+Bueno,
+1:09:58
+antes de terminar la clase, les quiero hablar de una última cosa vinculada con la refracción, que es lo que se llama la reflexión total interna.
+1:10:39
+Fíjense, tienen acá el medio 1, acá tienen el medio 2, índice de refracción 1, índice de refracción 2. Y tienen una luz, un rayo de luz que viene muy rasante.
+1:10:56
+Tienen un teta 1.
+1:11:01
+Acá, y bueno, tendrán un teta 2.
+1:11:09
+Perdón, el teta 2 se mide a partir de la normal. Llamaron el teta 3. Entonces dijimos que n1 por seno de teta 1 es igual a n2 por seno de teta 3.
+1:11:24
+Pero fíjense que el seno de teta 3... Podría pasar, a ver, podemos plantearnos la pregunta, de si siempre hay solución. Puede ser que θ3 no exista. Puede ser que exista un ángulo suficientemente grande para el cual θ3 se vuelva π sobre 2. ¿Se dan cuenta? A medida que yo voy abriendo θ1, θ3 también va creciendo. La pregunta es, ¿quién llega primero hasta acá? Si primero llega θ1... Si primero llega a θ1, entonces para todo valor de θ1 tenemos un θ3 y también.
+1:11:56
+Pero supongamos que θ3 llega primero,
+1:11:58
+que cuando θ1 todavía no llegó hasta π sobre 2, θ3 ya llegó hasta π
+1:12:01
+sobre 2.
+1:12:04
+Entonces a partir de ese ángulo, no, no hay ángulo, hay límite. Yo puedo hacer incidir con mayor ángulo, pero lo que sucede es que la luz no se transmite, toda se refleja. Es lo que se llama el ángulo de reflexión interna total. A partir de ese ángulo, la luz se refleja para adentro toda. Si tengo luz muy rasante acá, no se va a reflejar una parte, sino toda la luz. Entonces, calculemos cuándo puede pasar eso.
+1:12:34
+Puede pasar que θ3 sea igual a π sobre 2...
+1:12:45
+Un θ1 menor que π sobre 2. Entonces veamos cuándo es así. Entonces veamos
+1:12:52
+cuándo.
+1:12:56
+Entonces nos planteamos n1 por seno de θ1 tiene que ser igual a n2 por seno... Ese sería el θ1 máximo para el cual hay refracción. A partir de ese θ1 ya no hay onda transmitida. Entonces sería seno de π sobre 2 y seno de π sobre 2 vale 1.
+1:13:22
+Entonces seno de θ1 máximo. Entonces ese es el
+1:13:28
+ángulo
+1:13:34
+máximo para el que hay...
+1:13:40
+Onda transmitida.
+1:13:45
+Repito, todas estas cosas les estoy hablando de la luz, pero lo mismo se puede hacer para otros tipos de ondas. Y esto les queda N2 sobre N1. La pregunta, ¿esta ecuación tiene solución? ¿Cuándo esta ecuación tiene solución? ¿Qué se necesita? ¿Qué? ¿Qué? Entonces tiene solución si N2 es menor que N1.
+1:14:22
+Y ese ángulo se llama el ángulo de reflexión interna total.
+1:14:37
+Theta1 igual al arcoseno de N2 sobre N1 se le llama ángulo de reflexión interna total.
+1:15:08
+A partir de ese ángulo, toda la luz queda en el medio 1. Y eso tiene importancias bastante grandes desde el punto de vista tecnológico. ¿Tienen alguna idea de aplicaciones tecnológicas de esto? No.
+1:15:27
+¿Han escuchado hablar de esto? ¿De la reflexión interna total?
+1:15:31
+Claro, entonces la más conocida es esa, la fibra óptica. La fibra óptica es una fibra... Bueno, la fibra óptica sí escucharon hablar. Es para transmitir señales, típicamente, por ejemplo, de Internet...
+1:15:47
+En lugar de usar cables eléctricos, los cables eléctricos tienen un defecto, tienen muchos defectos, pero uno de ellos es que se calientan, tienen una cantidad de impurezas, es decir, la señal no se transmite con tan buena calidad como si uno pudiera transmitirlas por luz. Pero el problema de la luz es que la luz no... Cuando uno transmite una señal eléctrica, puede hacerla seguir un cable de cobre. Pero la luz, ¿cómo hacemos para que haga una forma así?
+1:16:19
+Entonces, hay una gente que se le ocurrió una idea que está muy buena, que es usar la reflexión interna total. Dicen, tomo un... voy a dibujarlo grande, ¿no? Un caño de vidrio, ¿sí?
+1:16:36
+Entonces, si solo pongo vidrio y afuera aire, no funciona. ¿Por qué? Porque, ¿cómo es el índice de refracción? ¿Cómo es el índice de refracción? Entonces sí, podría funcionar con vidrio y afuera aire, pero en realidad no es así que se hace. Supongamos que voy a hacer el más simple. Un cacho de vidrio y viene un rayo de luz, bueno, de buena calidad, por ejemplo una luz láser que viene por acá. Entonces viene, como el índice está por adentro, como el índice de refracción del vidrio es mayor que el del aire, del vidrio es 1,3, 1,4, 1,5, depende del tipo de vidrio, y el aire es 1, Entonces cuando llega acá va a ir de un medio con mayor índice de refracción a un medio con menor índice de refracción.
+1:17:25
+Entonces si la luz es suficientemente rasante, rebota acá.
+1:17:35
+Rebota toda, no se pierde nada. Entonces en una fibra óptica, una cosa que no hay que hacer con las fibras ópticas es doblarlas mucho, porque si doblan mucho el ángulo empeora y al final pasa la luz. Pero si el cable está bastante recto, no lo curvan demasiado, lo pueden curvar un poquito. la luz se va reflejando y no hay pérdidas, no se pierde nada. No es como en los cables eléctricos, se pierde, hay resistencia y todo lo demás, y es un objeto relativamente sucio. Esto es algo re prolijo y la onda se mantiene con mucha precisión por distancias muy muy grandes.
+1:18:08
+Y de hecho no solo se usa para telecomunicaciones, también se usa ahora para muchas operaciones. Vieron que hay unas cosas que, por ejemplo, te meten, te hacen un agujero en algún lado, te meten un caño, que en realidad son una cantidad de tubitos de fibra óptica, y en realidad adelante tiene una entrada entonces entra la luz por esos cañitos de fibra óptica va la luz a través de unos caminos repito, no hay que deformarlo mucho porque si no deja de valer pero si uno no lo deforma mucho sale del otro lado la misma imagen que entró porque se va manteniendo a lo largo y de esa manera hacen esas operaciones con la paroscopía y pueden mirar por adentro Con ese sistema, con la fibra óptica.
+1:18:54
+Así que la aplicación de esto es de la fibra óptica. Las fibras ópticas reales no son así. En realidad tienen un núcleo adentro con un cierto índice, tienen dos tipos de vidrio. Un vidrio con mayor índice de refracción adentro y un vidrio con una capa adentro con un índice de refracción más alto y una capa afuera con un índice de refracción más bajo. Eso es un poco mejor. Es un poco mejor porque acá la refracción justo se le da en el momento que si se pasa, se la perdieron.
+1:19:27
+En cambio, en realidad, en las fibras ópticas reales, lo que tienen es un núcleo acá y otro núcleo afuera con un índice de refracción menor. Y entonces va por adentro. Y entonces si se pasa un poco, en realidad se curva y vuelve para adentro. Tiene como más margen.
+1:19:48
+Es un poquito mejor.
+1:19:50
+En realidad, el de afuera tiene como un degradé de índice de refracción y entonces realmente asegura que se vuelve una cosa mucho más robusta. Y no como esto que apenas uno lo curva un poquito y ya se va la luz para afuera. No, esto banca bastante
+1:20:02
+más.
+1:20:11
+Y lo último que quiero decirles antes de terminar la clase de hoy, nos vemos después el lunes, es hablar de la...
+1:20:21
+de la reflexión interna total frustrada. ¿Qué es eso? En realidad, cuando yo les digo que no se transmite nada, no es cierto. De este lado se transmite un poquito, lo que no hay es una onda que
+1:20:37
+se propague.
+1:20:38
+En realidad tiene lo que se llama una onda evanescente que decrece exponencialmente con la distancia acá. A medida que uno avanza en el material, decrece exponencialmente la señal y de hecho no hay señal sinusoidal, es una señal de otro tipo.
+1:20:53
+No hay una señal sinusoidal en el espacio que oscile, sino que es una cosa, la fórmula es una fórmula de una exponencial decreciente. ¿Qué? No, es luz, pero lo que no es es una onda de luz. Cuando uno puede generar, hacer reaparecer esa onda, si pone otro medio muy pegadito al primero. Entonces supongamos que tiene una onda incidente acá que le generaría reflexión interna total.
+1:21:26
+Acá tienen una zona muy chiquitita con onda evanescente, la onda decrece muy rápido acá, pero si antes que se haya esfumado totalmente ponen otro medio en el que pueda continuar, continúa la onda. Entonces pierde intensidad bastante, porque depende exponencialmente del grosor de esto, pero si el grosor de esto es bien finito, la onda continúa. Esto para que tengan idea simplemente de que... Acá la idea simple de que no pasa nada es un poco esquemática. En realidad es un poquito más complicado. Lo que sucede es que no hay transmisión de una onda si esto siguiera para infinito.
+1:21:59
+Pero si tienen esto de ancho finito, puede generarse una transmisión que es pequeña, que decrece exponencialmente con el ancho de esto, pero que puede existir.
+1:22:09
+Y eso también se puede usar para algunas cosas.
+1:22:15
+Bueno,
+1:22:15
+entonces seguimos el
+1:22:16
+lunes.
+

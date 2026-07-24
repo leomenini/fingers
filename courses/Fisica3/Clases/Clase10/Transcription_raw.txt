@@ -1,0 +1,664 @@
+# Clase 10
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/10/
+
+Fecha de exportación: 7/23/2026, 9:47:52 PM
+
+Clase: 10
+Curso: F3
+
+Segmentos : 244
+Palabras  : 10411
+Caracteres: 59873
+
+0:16
+Enzo Spera
+Bueno, la primera configuración que tenemos acá es de dos líneas de carga, lo que sería el equivalente a dos líneas de carga, que en este caso tenemos conectados a una fuente a 5 voltios. Entonces, como pueden ver, tenemos dos rejillas y las equipotenciales que se forman están dibujadas en el papel que está colocado debajo. Cuando tenemos dos placas, se forma un campo eléctrico entre ellos y las equipotenciales son perpendiculares al campo. lo que tenemos conectado son cada uno de los dos alambres a la fuente y tenemos un tester para medir voltaje conectado desde el lado negativo al cero del tester y con la otra punta vamos a medir sobre las equipotenciales para comprobar que el potencial es constante
+1:08
+Enzo Spera
+Entonces, por ejemplo, este extremo, que es el que está conectado al lado negativo, tiene conectado con este cable el común del tester. Por lo tanto, deberíamos medir cero de potencial. Lo cual se observa. No sé si tapo el tester ahí. Bueno, el otro lado tendría que estar a 5 voltios.
+1:30
+Enzo Spera
+Ahí tenemos 5 voltios. Y entre medio están las equipotenciales. A ver si puedo, sin tapar, empezar a medir en alguna.
+1:47
+Enzo Spera
+Bueno, dejando de lado que tengo un poco de Parkinson, se puede ver que es bastante constante el potencial sobre la línea.
+1:56
+Enzo Spera
+Acá cambiamos de línea y tenemos un nuevo potencial, pero que también se mantiene constante sobre la línea. Si me mantuviera sobre la línea, sería constante.
+2:13
+Enzo Spera
+Acá tenemos otra que... El potencial cambió al cambiar de línea, pero sobre la línea se mantiene casi constante. ¿Está bien? Si yo me muevo hacia uno de los alambres, cambio el potencial, como ven ahí. En la dirección contraria decrece, pero sobre las líneas el potencial no cambia. Tenemos otra línea más.
+2:44
+Enzo Spera
+Las luces...
+2:46
+Enzo Spera
+¿Se ve?
+2:49
+Enzo Spera
+El tester no se ve.
+2:54
+Enzo Spera
+Tenemos que hacer una lamparita, papá. Para la próxima no tenemos cuenta. Bueno, entonces, teníamos las equipotenciales y el potencial que cambia en esta dirección, en la dirección que apunta el campo eléctrico. También tenemos otras configuraciones que vamos a cambiar para mostrarles. Vamos a seguir con esta, que está compuesta por aros concéntricos en las líneas de potencial.
+3:29
+Nicolás Wschebor
+¿Entienden lo que están haciendo?
+3:41
+Enzo Spera
+En la configuración que estamos armando ahora tenemos un alambre circular y otro que vendría a ser un círculo pero muy pequeño, digamos. Entonces la idea... Vamos a usar el otro que era más largo.
+4:08
+Enzo Spera
+La idea es que el potencial se va a distribuir de forma pareja entre círculos concéntricos que van desde el aro exterior al aro central.
+4:24
+Enzo Spera
+En este caso tenemos lo que sería el equivalente a una carga central y una esfera con carga exterior. Entonces tenemos un campo eléctrico que va desde el centro hacia el disco exterior, lo que significa que vamos a tener equipotenciales circulares.
+4:59
+Enzo Spera
+Ahí está, dale tranquila. Nuevamente tenemos a 5 voltios, entonces tenemos equipotenciales circulares.
+5:28
+Enzo Spera
+bueno, cada uno de estos círculos tiene un potencial constante y es lo que estamos viendo en el tester en este momento 1.2 sobre todo el círculo exterior si cambiamos de círculo tenemos 1.5 de voltaje pero también se mantiene constante ¿está bien? y el último círculo tenemos un potencial de 1.8
+6:01
+Enzo Spera
+Que se mantiene casi constante. Bueno, esto es equivalente a tener dos aros concéntricos, ¿está bien? Solo que simplemente decidimos usar una punta para que hubiera más espacio entre el círculo exterior y el interior de forma que se pudieran observar más las equipotenciales. Solamente eso. Bueno, una configuración más. Tenemos acá que... Tenemos dos configuraciones más, una que mezcla dos círculos pero de muy pequeño tamaño que vamos a representar con estas puntas que tenemos acá.
+6:47
+Enzo Spera
+Vamos a cambiar ahora la configuración.
+6:54
+Enzo Spera
+lo que tenemos ahí dibujado son lo que serían las líneas potenciales de un dipolo con una carga positiva y una carga negativa tendríamos líneas de campo que ya deben haber visto qué forma tienen sí y los potenciales son perpendiculares a esas líneas de campo están dibujados ahí
+7:20
+Enzo Spera
+Y ahora vamos a tratar de confirmar que sobre las líneas dibujadas el potencial se mantiene constante. ¿Van entendiendo, sí? El campo eléctrico siempre es perpendicular a los equipotenciales. ¿Bien? Ah sí, la doblé un poco.
+7:50
+Enzo Spera
+Ahí está. Bien, este es el tester. Ahí. Ahí.
+8:18
+Enzo Spera
+¿Está bien?
+8:28
+Enzo Spera
+Sí, está bien. Dale, tranqui. Bueno, como ven, las líneas deberían curvarse cada vez más a medida que se acerca uno a las cargas, ¿está bien? Bien sobre las cargas, la forma es casi un círculo. Pero entre medio tienen esta forma que vemos acá. Exactamente en la zona media tenemos una línea recta.
+8:49
+Enzo Spera
+para el potencial ahí ven tenemos una de las equipotenciales y tenemos un potencial constante de 2.1 todas las medidas las estamos haciendo a 5 voltios entre una punta y la siguiente
+9:24
+Enzo Spera
+¿Está bien? ¿Alguna pregunta? La línea del medio debería ser 2,5, pues está en el punto medio. Exactamente. Y casi lo es.
+9:44
+Enzo Spera
+Agarralo más vertical, capaz. ¿Por qué le ponen agua? El agua para que se pueda conducir mejor, es decir, el potencial se determina dentro del líquido, porque si no es como tener simplemente los enchufes, no podés medir sobre el aire, ¿está bien? El agua con sales disueltas, vimos en clase que es un conductor, no es un conductor muy bueno, pero es un... Y el agua sola también, como en este caso. En realidad no llegamos a ponerle sal.
+10:14
+Enzo Spera
+Si fuera destilada, es verdad, no conduciría.
+10:20
+Enzo Spera
+no fue fácil nos guiamos un poco porque sabemos más o menos como es la forma pero como ven está hecho con papel cuadriculado entonces íbamos midiendo en un punto y anotando en que lugares estaba el mismo valor de potencial y después íbamos uniendo los puntos también hicimos unas simulaciones que vamos a tratar de mostrárselas después sobre como quedan estos mismos potenciales las líneas calculadas numéricamente
+10:52
+Enzo Spera
+¿Está bien? ¿Una pregunta sobre este caso?
+10:56
+Enzo Spera
+No. Bueno, entonces vamos a pasar al último, un poco más extraño y que fue el más difícil de medir.
+11:14
+Enzo Spera
+Esa es la que vamos a usar. Esa es la que vamos a usar y la usamos a través de esta. Sí. Colocamos esa, la de la caresta.
+11:25
+Carla Yelpo
+con el lado doblado para arriba
+11:52
+Enzo Spera
+Apertale después lo ajustaste. Ahí está. Bueno, esta es una configuración que tiene lo que sería el equivalente a un plano cargado y una carga puntual, ¿está bien?
+12:25
+Enzo Spera
+Entonces, se forma un campo eléctrico que saliendo de la placa es perpendicular a esta, pero llega radial a lo que sería la carga puntual. Entonces se forman equipotenciales con esas formas que ven ahí, cerca de la placa, son paralelas a la placa, pero más cerca sobre la carga puntual son curvadas, casi un círculo en torno a la carga.
+13:08
+Enzo Spera
+Les decía que estas fueron las más difíciles de dibujar porque es difícil determinar el punto a partir del cual dejan de ser tan rectas las equipotenciales y empiezan a curvarse, ¿está bien?
+13:24
+Enzo Spera
+Bastante bien quedaron, estamos ahí en 4 con 7 clavados.
+13:34
+Enzo Spera
+¿Son 4 o es un 1? Un 1. Un 1, bueno. Pero con la constante, que es lo importante. Ahí estamos en dos.
+14:09
+Enzo Spera
+Excelente. Bueno, ¿alguna pregunta? ¿No? Bueno, acá tuvimos cuatro configuraciones diferentes, está bien. Y ahora vamos a, mientras desarmamos esto, vamos a tratar de mostrarles cómo quedan estas mismas equipotenciales simuladas. Sí.
+14:39
+Enzo Spera
+Bien, para simularlas numéricamente lo que hicimos fue suponer que teníamos, por ejemplo en este caso, un plano y una carga puntual y finalmente lo que agarrábamos era decir, bueno, yo fijo el potencial de una a cero, el otro a 5 voltios, determino el límite de lo que sería mi cubeta, estas redondas, Y lo que decíamos era, bueno, el potencial varía de forma continua. Entonces lo que hacíamos era modelarlo diciendo, fijo los bordes de mi potencial, o sea 0 y 5, con las configuraciones que teníamos.
+15:13
+Enzo Spera
+Y decíamos, bueno, el punto contiguo va a ser el promedio de los más siguientes. Dividíamos todo en una planilla con coordenadas x y y en cada punto calculamos el potencial promediando los valores más contiguos. Repetíamos esto una y otra vez hasta que la diferencia entre un punto y el siguiente determinamos un coeficiente que lo hiciera suficientemente chico. Entonces, repetíamos una y otra vez el cálculo numérico de estimar cada valor como el promedio de los que están alrededor hasta lograr que la diferencia entre dos puntos contiguos fuera muy chica.
+15:49
+Enzo Spera
+Acá podemos ver una simulación, como les había explicado, definiendo cada una de las líneas a un potencial, uno a cero, el otro a cinco, y estimando el potencial como el promedio de los puntos más próximos. Se le dio forma circular para que coincida con el experimento que hicimos con una cubeta redonda. Entonces ahí se puede ver los potenciales y tenemos un código de colores que indica de más a menos potencial. Quedó más bien una especie de difuminado pero porque está un poco fuera de foco en realidad lo que, capaz que por acá se puede ver hay líneas, acá donde se ve el cambio de color, se ve una línea de potencial y se ve como en realidad es una especie de óvalo alrededor de nuestra línea, de nuestro plano cargado, está bien, lo que sería nuestro plano cargado.
+16:42
+Enzo Spera
+El otro extremo lo mismo, y se ve que el potencial tiene una forma mucho más curvada y aguda en los extremos, como era esperarse, Tal vez acá logren ver una línea. Entonces tenemos líneas que si bien acá son totalmente curvas, acá se vuelven completamente rectas entre las dos placas. Completamente verticales en esta zona. Y entre medio tenemos una zona de potencial constante. Totalmente recto.
+17:15
+Carla Yelpo
+Si pasamos... Básicamente lo que hace el código, nosotros calculamos el potencial punto a punto a lo largo de toda la grilla, imponiendo las condiciones de borde, y lo que le pedimos al programa es que grafique los puntos que están, o sea, que una los puntos que están a igual potencial. Por eso lo que está dibujando son potenciales, o sea, esa es la idea del código. Gracias.
+17:43
+Enzo Spera
+No, eso simplemente es la configuración para la que habíamos considerado como dos cargas puntuales, en definitiva, ¿no? Y se ve que son círculos concéntricos. Claro, a medida que se va acercando al borde de la cubeta se van deformando un poco, ¿no? Justamente porque también tenemos una condición de borde que tenemos que imponer ahí.
+18:08
+Carla Yelpo
+Pero no, eso es la configuración. ¿Qué más?
+18:11
+Enzo Spera
+Esa es la configuración que corresponde a una línea a potencial 5 y a una punta a potencial 0. ¿Se acuerdan que era la que tenía la configuración más rara? Bueno, justamente en realidad en este caso nosotros nos basamos en esto para poder saber a qué altura más o menos iban a terminar de ser líneas rectas y iban a empezar a ser más curvas.
+18:39
+Carla Yelpo
+Y por último, ahí tenemos la configuración que era un aro a potencial 0 y la punta a potencial 5.
+18:48
+Carla Yelpo
+Fíjense que al imponer bien las condiciones de borde, entonces no importa que uno no esté centrado en el otro, justamente la idea es que vamos a ver círculos concéntricos en el interior de la configuración y por fuera, bueno, va a pasar cualquier cosa hasta que llegue al borde de la cubeta, pero no es la parte que nos importaba. La idea de hacerlo no concéntrico era para que se pareciera más al experimento. En el experimento no nos quedó centrado, pero de todas formas lo quisimos llevar a la simulación para que vieran lo más parecido posible.
+19:18
+Enzo Spera
+¿Está bien? Bueno, vamos a tratar de repetir esta idea de dar ejemplos con experimentos en la clase a lo largo del semestre.
+19:40
+Nicolás Wschebor
+Mientras tanto voy a retomar lo que vimos la clase pasada. La vez pasada introdujimos la noción de condensador o capacitor y empezamos a ver cómo calcular las propiedades de un condensador y en particular una propiedad que caracteriza cómo la diferencia potencial entre los bornes de un condensador es proporcional a la carga. Y vimos que eso era una constante que se llamaba... uno sobre la capacitancia y vimos cómo calcular la capacitancia de un condensador de placas paralelas yo les voy contando cómo funciona un condensador de otro tipo que es un condensador de placas
+20:38
+Nicolás Wschebor
+Los vamos a considerar un condensador que tiene esta forma, tiene una esfera, un cascarón esférico, un conductor esférico cargado positivamente adentro con un rayo que le llamamos A y otro A.
+21:02
+Nicolás Wschebor
+Otra placa cargada negativamente con carga opuesta. Acá habrá una carga más Q y acá una carga menos Q. Afuera. ¿Bien? Da toda la vuelta, pero me aburrí de hacer las crucecitas.
+21:23
+Nicolás Wschebor
+Uniforme, ¿no? Porque como hay simetría esférica, todo está repartido uniformemente. Entonces la idea, digamos, esto lo podemos haber cargado conectando esto a los bornes de una batería. ¿Bien? Calculemos la capacidad. Entonces para calcular la capacidad, ¿cómo hacemos en este caso?
+21:44
+Nicolás Wschebor
+O en cualquier caso, ¿cómo dijimos? Primero que nada que había que calcular.
+21:49
+Nicolás Wschebor
+El campo eléctrico. Entonces, para calcular el campo eléctrico de una geometría simple como esto, ¿qué vamos a usar? Gauss, la ley de Gauss. Entonces, tomamos una superficie gaussiana que tenga la misma geometría que el problema, en este caso una esfera de radio R, y vamos a calcular el campo ahí adentro. ¿Cómo es el campo a lo largo de una superficie de radio R ahí?
+22:17
+Nicolás Wschebor
+Constante en módulo. Está claro que siempre es radial, no va a ser constante en dirección, pero sí es constante en módulo. Entonces, llamémosle a esta superficie S. En S, el módulo de E es constante. Y E es radial.
+22:41
+Nicolás Wschebor
+Entonces, el flujo del campo eléctrico en S será... digamos, la integral en S de E escalar N por DS, como E es radial, E escalar N no es otra cosa que E, como E es constante, sale para afuera, nos queda E por la superficie de la esfera, que es 4 pi por R al cuadrado. Y por Gauss, el flujo eléctrico es igual a la carga adentro, que es Q, sobre epsilon cero.
+23:16
+Nicolás Wschebor
+Así que en toda la zona interna, el campo eléctrico es como si toda la carga Q estuviera concentrada en un punto. Tomé R entre A y B. Entonces tenemos que el campo eléctrico es igual a Q sobre 4 pi epsilon cero R al cuadrado, si R, si A es menor que R, que a su vez es menor que B. Y ahora queremos calcular la diferencia de potencial entre las dos placas.
+23:47
+Nicolás Wschebor
+¿Cómo hacemos para calcular la diferencia de potencial entre las dos placas?
+23:56
+Nicolás Wschebor
+¿Cómo hacíamos para calcular la diferencia de potencial en términos del campo eléctrico?
+24:01
+Nicolás Wschebor
+Hacemos la integral de línea, ¿verdad? Dijimos que la diferencia de potencial entre A y B es menos la integral entre A y B de EB. ...de L en una curva que va de una placa a la otra... ...nos conviene tomar como curva simplemente un segmento radial... ...¿sí?... ...entonces esto no será otra cosa... ...entonces tomamos... ...tomamos... ...la curva... ...un segmento radial... ...así que...
+24:39
+Nicolás Wschebor
+...E... ...escalar de L... No será otra cosa que e por dr.
+24:47
+Nicolás Wschebor
+Así que si sustituyo nos queda menos la integral entre a y b de q sobre 4pi epsilon 0 r al cuadrado por dr.
+25:06
+Nicolás Wschebor
+Y esta integral la podemos calcular. Fíjense, es bien fácil. Nos queda el Q sobre 4 pi epsilon 0 afuera. Y la integral de 1 sobre R cuadrado, la primitiva es 1 sobre R. Así que les queda menos 1 sobre R. Entonces les queda 1 sobre R evaluado entre B y A. Es decir que si tomo el valor absoluto, siempre es el valor absoluto lo que cuenta de la diferencia de potencial, será igual a Q sobre 4 pi epsilon 0 cuadrado.
+25:38
+Nicolás Wschebor
+¿Quién es mayor? ¿Uno sobre B o uno sobre A? Uno sobre A, porque A es más chico, entonces uno sobre A es más grande. Entonces uno sobre A, porque tomé valor absoluto, ¿verdad? Si no, nos hubiera quedado al revés. ¿Bien?
+25:55
+Nicolás Wschebor
+Y entonces ahora, de esto que deducimos la capacitancia, fíjense que nuevamente encontramos que el valor absoluto de la diferencia de potencial es proporcional a la carga positiva, y entonces la capacitancia será el inverso de lo que está ahí adelante. Entonces va a quedar 4 pi epsilon cero dividido 1 sobre a menos 1 sobre b. Entonces, capacitancia del condensador
+26:29
+Nicolás Wschebor
+de placas esféricas. Bueno, pregunta sobre el cálculo de la capacitancia que hice recién del condensador de placas esféricas. ¿Entendió cómo hice? Fíjense, siempre igual.
+26:52
+Nicolás Wschebor
+Calculo el campo eléctrico Si lo puedo calcular analíticamente, bárbaro en general, eso es para situaciones con geometría simple como acá. Si no, tengo que recurrir a algún programa informático como el que nos mostraron recién. Calculamos el campo eléctrico, luego calculamos la diferencia de potencial entre los bornes, que está acá. Y luego usamos la definición de capacitancia, tomando uno sobre la diferencia de potencial dividido de la carga.
+27:23
+Nicolás Wschebor
+Entonces, con la misma lógica podemos calcular ahora la capacitancia de un condensador... Muchas gracias. De un condensador de placas cilíndricas.
+27:51
+Nicolás Wschebor
+Entonces, ¿cómo vamos a hacer? Vamos a tomar dos... placas que son cilindros concéntricos bueno créanme que son cilindros vamos a suponer que el largo del cilindro es grande Y vamos a llamar el radio del cilindro adentro A y el de afuera B.
+28:23
+Nicolás Wschebor
+Vamos a suponer largo, quiere decir L es mucho más grande que B. Que su S es más grande que A. Suponemos que el cilindro es muy largo para poder ignorar condiciones de borde. Vamos a ignorar las condiciones de borde en las tapas. Vamos a suponer que el borde está muy alejado y que no influye. Entonces nuevamente tenemos una geometría muy simple. ¿Y cómo hacemos para calcular el campo eléctrico en esta situación? Perdón, nuevamente no lo dije, pero vamos a colocar una carga Q en el cilindro de adentro, más Q, y una carga menos Q en el cilindro de afuera.
+29:02
+Nicolás Wschebor
+Que por la geometría del problema, despreciando el efecto de borde, se va a repartir de manera uniforme. ¿Cómo hacemos para calcular...? El campo eléctrico entonces entre los cilindros.
+29:19
+Nicolás Wschebor
+Gauss. Aplicamos Gauss nuevamente con una superficie que sea apropiada para la geometría del problema. Entonces nos vamos a tomar una superficie gaussiana que sea un cilindro con radio entre A y B. Tomamos entonces un cilindro. Tomamos...
+29:43
+Nicolás Wschebor
+Una superficie S cilíndrica con radio entre A y B.
+29:57
+Nicolás Wschebor
+Bien, el radio este acá será R. Y entonces, ¿cuánto vale el flujo en esa superficie?
+30:10
+Carla Yelpo
+El área del...
+30:12
+Nicolás Wschebor
+Entonces primero, por la geometría del problema, el campo es radial siempre, ¿sí? Y uniforme en la superficie lateral. ¿Y en las tapas cuánto vale el flujo? Cero porque las tapas, el campo eléctrico es paralelo a las tapas, entonces no hay flujo. Entonces solo influye la superficie lateral y el flujo eléctrico en la superficie S será, nuevamente siempre, ¿no? Es la integral sobre la superficie de E. solo interviene en la superficie lateral en la superficie lateral escalar E no es otra cosa que E sin vector y como es constante sale para afuera así que nos queda E por el área lateral llamémosle A área lateral del cilindro ¿y cuánto vale el área lateral del cilindro?
+31:07
+Nicolás Wschebor
+llamémosle H a la altura esta que tomamos acá
+31:16
+Nicolás Wschebor
+Esto vale 2 pi R por H. ¿Sí?
+31:24
+Nicolás Wschebor
+¿De acuerdo?
+31:28
+Nicolás Wschebor
+Así que esto vale 2 pi R H por E. Y si aplicamos Gauss, ¿cuánto vale el flujo S?
+31:48
+Nicolás Wschebor
+¿Cuánto vale el flujo aplicando Gauss? Por Gauss. El flujo es eléctrico, ¿cuánto vale?
+32:01
+Nicolás Wschebor
+Entonces Q, ojo, no es Q, es Q adentro sobre epsilon cero. ¿Y cuánto es la carga que hay adentro del cilindro este marcado por la superficie S?
+32:19
+Nicolás Wschebor
+Es Q por H dividido L, ¿verdad? Es regla de tres. Si en todo el largo hay carga Q, en el cilindro de altura H hay carga QH sobre L. Así que esto es igual a Q por H sobre epsilon cero por L. ¿Está? Q es la carga total en todo el cilindro. Entonces concluimos que E... por 2 pi r por h es igual a q por h sobre epsilon 0 por L y entonces E vale q sobre 2 pi r epsilon 0 por L que es lo mismo que tendrían si tuvieran una línea cargada en el eje.
+33:13
+Nicolás Wschebor
+En lugar de tener cilindros, si tuvieran solo una línea cargada con carga Q en el eje, ya hemos calculado la línea infinita de carga con carga uniforme, nos da esto mismo. ¿Se acuerdan? Tenemos lambda sobre 2 pi epsilon cero, pero lambda no es otra cosa que Q sobre L. ¿Bien? ¿Se entiende? Y ahora queremos calcular la diferencia de potencial. ¿Cuánto vale la diferencia de potencial entre A y B? Es menos la integral yendo de AB, DE, producto escalar con DL. Y nuevamente, ¿qué curva conviene tomar para ir de AB?
+33:49
+Nicolás Wschebor
+Un segmento de recta radial. Entonces, con un segmento de recta radial nos queda menos la integral de AB, DE, DR, porque DL por E será el producto, será E por DR, dividido...
+34:06
+Nicolás Wschebor
+No, dividido nada. Y ahora sustituyo E por lo que es, nos queda menos la integral entre A y B de Q de R sobre 2 pi R epsilon 0 por L. Y puedo hacer la integral. La integral de R sobre R, ¿cuánto vale?
+34:30
+Nicolás Wschebor
+Logaritmo nepeleano. Entonces podemos escribir esto como Q sobre 2 pi R.
+34:37
+Nicolás Wschebor
+Epsilon cero L, tengo un menos acá adelante, el logaritmo de B sobre A. Porque el logaritmo de B menos el logaritmo de A es el logaritmo de B sobre A. Acá nuevamente, no se olviden de tomar el valor absoluto. Entonces el valor absoluto de B a B será Q sobre 2 pi A. Epsilon 0 por L por el logaritmo de B sobre A.
+35:10
+Nicolás Wschebor
+Y vemos una vez más que la diferencia potencial es como es con respecto a la carga.
+35:19
+Nicolás Wschebor
+Si multiplicamos la carga por 2, la diferencia potencial es proporcional. Entonces nuevamente podemos calcular el coeficiente de proporcionalidad y nos da que la... La capacidad es 2 pi, hay que tomar el inverso, ¿verdad? Se acostumbra a llamar esto Q sobre C. Hay una costumbre histórica de poner el C en el denominador. Entonces queda 2 pi epsilon cero sobre logaritmo de B sobre A. Fíjense que cuando tomé el valor absoluto se fue el menos, porque el logaritmo de B sobre A es positivo.
+35:54
+Nicolás Wschebor
+Y esto es la capacitancia.
+36:02
+Nicolás Wschebor
+del condensador de placas cilíndricas. Para ser más preciso, de placas cilíndricas muy largas, ¿no? Si no fueran muy largas, hay efectos de borde extra, ¿verdad? Entonces estoy suponiendo que L es mucho más grande que el radio. ¿Preguntas? ¿Se entiende cómo hago? Calculo el campo eléctrico.
+36:33
+Nicolás Wschebor
+¿Cómo calculo el campo eléctrico? Y bueno, como puedan. Si la geometría es simple, usan Gauss y lo logran calcular analíticamente. Si la geometría es complicada, tendrán que usar algún método numérico. Usar integrales complicadas usando la ley de Coulomb. En fin, como ustedes puedan arreglárselas, calculan el campo eléctrico. Y luego, la diferencia potencial. Y ven que la diferencia potencial es proporcional a la carga. Dividen por la carga y eso les da 1 sobre la capacidad.
+37:06
+Enzo Spera
+¿Sí? Una pregunta. Ahí en BDH, ¿podías tomar L y daría lo mismo? ¿Saben por qué no tomé? Podíamos tomar L y daría lo mismo. ¿Por qué yo tomé esto? Porque en realidad, esto que dije acá, no vale cerca de los bordes. Entonces, quise referirme a un cilindro en el cual las aproximaciones estuvieran bien. Que es un cilindro en el medio. ¿Verdad? Tenías que aclarar que estás pisando los bordes y tomás el L. Sí, en realidad todo este cálculo vale lejos de los bordes. Si no, también valdría, pero entonces me tengo que poner a discutir porque en realidad esta aproximación que está acá solo vale en la región interna.
+37:42
+Nicolás Wschebor
+Entonces voy a decir que en realidad la contribución del borde a la integral es chico. Podría haberlo hecho así también, ¿se entiende? Podría haber tomado todo el cilindro, pero yo para limitarme una región en que sé que las aproximaciones están bien, me tomé una región en el medio. Pero si no podía haberlo hecho con todo y decir, bueno, en realidad el pedazo que contribuye de manera significativa al integral no es el borde porque es chiquitito, sino es el grueso del cilindro y el resultado valdría igual. ¿Bien? ¿Alguna otra pregunta?
+38:14
+Nicolás Wschebor
+¿Se está entendiendo entonces?
+38:21
+Nicolás Wschebor
+Bueno, entonces lo que vamos a ver ahora es una cosa que ustedes probablemente... ¿Vieron capacitancia en el liceo? Sí. Levanten la mano los que vieron capacitancia en el liceo. ¿Los que no vieron capacitancia en el liceo? Está medio parejo.
+38:40
+Nicolás Wschebor
+Voy a ver ahora una cosa que es... ¿Para qué sirven los capacitores, los condensadores? Se usan dentro de circuitos, ¿sí? Entonces, muchas veces cuando tienen un circuito, tienen una cantidad de capacitores. Y en algunos casos, un conjunto grande de condensadores o capacitores los pueden reemplazar por uno solo que es equivalente a todos los demás. En algunos casos se puede hacer. No siempre. Entonces vamos a ver una regla para cuando tienen varios condensadores conectados de ciertas maneras particulares, cómo los puede reemplazar por uno solo.
+39:14
+Nicolás Wschebor
+Y eso simplifica las cuentas, porque en lugar de tener que trabajar con muchos condensadores, tienen una cosa que es un solo condensador. Eso es importante porque a medida que va avanzando el curso, vamos a ir viendo cómo estas propiedades eléctricas se aplican en los circuitos eléctricos. Y uno de los ingredientes que va a aparecer en los circuitos eléctricos son los condensadores. Bien. Entonces, vamos a ver la sección que se llama 5.4.
+39:56
+Nicolás Wschebor
+Condensadores en serie.
+40:03
+Nicolás Wschebor
+Y paralelo. Entonces, en un circuito, los condensadores pueden estar conectados de algunas maneras que hacen que grupos de condensadores se comporten como un solo condensador. Y vamos a ver dos ejemplos de eso. Entonces, consideremos un segmento
+40:33
+Nicolás Wschebor
+de un circuito eléctrico con dos condensadores conectados en paralelo.
+40:55
+Nicolás Wschebor
+¿Qué quiere decir conectados en paralelo? Que van a tener cables que los unen así.
+41:05
+Nicolás Wschebor
+Bueno, de hecho ya les comento que este simbolito de dos placas paralelas es el símbolo que se usa cuando uno representa circuitos, es el símbolo que se utiliza para representar los condensadores. Y eso independientemente de que sean condensadores de placas paralelas o cualquier condensador, siempre se representa así. Y cada condensador tendrá una capacitancia, digamos C1 esta y C2 esta. Esto tienen que verlo como un pedacito de un circuito. Estos bornes A y B se conectan a A y B.
+41:42
+Nicolás Wschebor
+Se conectan al resto del circuito. ¿Bien? Y lo que vamos a probar es que todo este conjunto se comporta como un solo condensador. ¿Qué quiere decir esto? Que la diferencia potencial entre A y B es proporcional a la carga que suministremos por el lado A. Tomemos que la carga que suministramos por el lado A es la positiva. Vamos a ver que la diferencia potencial es proporcional. Y vamos a calcular el coeficiente de proporcionalidad. ¿Bien?
+42:14
+Nicolás Wschebor
+Bueno, estos están unidos por cables y vamos a suponer que son cables ideales, cables que son muy, muy buenos conductores. Y que el sistema, vamos a suponer por ahora, que se encuentra en equilibrio, que está en equilibrio electrostático. Entonces, ¿cómo es el potencial en toda esta zona?
+42:41
+Nicolás Wschebor
+Claro, toda esta zona es un equipotencial porque vimos que un conductor en equilibrio forma un equipotencial. Toda la zona, toda la parte unida por un mismo conductor será un equipotencial. Entonces el potencial acá y acá es el mismo. Llamémosle VA y es el mismo acá, VA. Y lo mismo acá, este es VB y este es VB. Y acá vamos a tomar que entró por acá una carga... más Q, y que todo el procedimiento es neutro y que por acá entra una carga menos Q.
+43:15
+Nicolás Wschebor
+¿Sí? Suministramos una carga desde afuera de esta zona. ¿Bien? Entonces, la diferencia de potencial, la diferencia de potencial, B a B, bueno, primero que nada, la diferencia de B a B, ¿será positiva o negativa? ¿Cuál potencial es más grande? ¿B a o B b? VA, porque por acá entró la carga positiva. ¿Sí? Entonces VAB es negativo. ¿Sí? Entonces voy a tomar valor absoluto, que es una cantidad positiva.
+43:48
+Nicolás Wschebor
+¿Sí? VAB, ¿cómo será? ¿Cómo será en relación con...? Bueno, perdón. Y esta carga que entra acá se reparte en dos partes. Una parte vendrá para acá, Q1, y otra parte vendrá por acá, Q2. Se reparte. ¿Sí? ¿Cómo es la relación entre Q1, Q2 y Q3?
+44:10
+Nicolás Wschebor
+Claro, la carga se conserva, quiere decir que cuando metes la carga en un circuito no se crea ni se destruye carga. Quiere decir que la carga entró por acá o fue para allá o fue para allá. Quiere decir que Q vale Q1 más Q2. Eso es simplemente la conservación de la carga.
+44:34
+Nicolás Wschebor
+¿Y cómo será la relación en este condensador, la diferencia de potencial en relación con Q1?
+44:45
+Nicolás Wschebor
+La diferencia potencial en un condensador es proporcional a qué cosa? A la carga en ese condensador. ¿Y cómo se llama el coeficiente de proporcionalidad? 1 sobre la capacitancia. Esa es la convención fea que se toma. Entonces, delta B, si miro este condensador, B a B, será Q1 dividido C1. ¿Están de acuerdo?
+45:12
+Nicolás Wschebor
+En este condensador, la diferencia potencial en el condensador es Q1 dividido la capacitancia del condensador. Eso es la definición misma de capacitancia de ese condensador. Pero ahora veamos el otro condensador. Tomemos nuevamente delta VA en valor absoluto. ¿Cómo es en relación con Q2?
+45:33
+Nicolás Wschebor
+Es Q2 sobre S2. Mismo razonamiento. ¿Está bien?
+45:39
+Nicolás Wschebor
+Pero entonces ahora tomemos Q. Q dijimos es Q1 más Q2.
+45:45
+Nicolás Wschebor
+Entonces, usando estas relaciones podemos escribir que Q1 es valor absoluto de B a B por C1. Y Q2 es valor absoluto de B a B por C2. ¿No es cierto? Les pongo el valor absoluto de la diferencia potencial en factor. Valor absoluto de B a B por C1 más C2.
+46:21
+Nicolás Wschebor
+Entonces vemos que la diferencia potencial entre los bornes AB es proporcional a la carga que pusimos. A la carga total que entra. Todo este bicho... En todo este bicho entra una carga Q, y la diferencia de potencial que se produce entre sus bornes es proporcional a Q. Quiere decir que se comporta como un condensador, porque un condensador es justamente eso, un dispositivo cuya diferencia potencial es proporcional a la carga que le hacemos entrar de un lado, del otro lado tiene que entrar la carga opuesta.
+46:55
+Nicolás Wschebor
+Entonces, ¿cuánto vale la capacidad de todo el bicho?
+47:01
+Nicolás Wschebor
+La suma de las dos, porque esto que está acá es lo que llamaremos capacidad equivalente. Recuerda, la relación es valor absoluto de delta B es igual a Q sobre C. Entonces también pueden decir Q es igual a valor absoluto de delta B por C. Entonces esto lo llamaremos capacidad equivalente de todo el sistema por delta B.
+47:27
+Nicolás Wschebor
+Entonces, comparando las dos cosas, deducimos que la capacidad equivalente de dos capacitores en paralelo es la suma de los dos condensadores en paralelo. Paralelo es obvio porque se les llama, porque están los puestos uno al lado del otro. ¿Se entiende esto?
+47:55
+Nicolás Wschebor
+Dos capacitores juntos, puestos en paralelo, conectados de esta manera, se comportan como un solo capacitor, cuya capacitancia es la suma. A ver, ¿y qué pasa si yo en lugar de haber puesto 2, hubiera puesto 27? condensadores todos en paralelo. Si se hubiera hecho una cosa así.
+48:38
+Nicolás Wschebor
+Cada uno con su capacitancia. ¿Cómo hubiera sido la capacitancia equivalente de todo eso?
+48:44
+Nicolás Wschebor
+La suma, porque puedo reagrupar, por ejemplo, estos dos primero, me da la suma, luego reagrupo con este más, voy sumando cada vez y al final sumo todos. ¿De acuerdo? O haga el razonamiento de entrada, que la carga acá se reparte entre todos los condensadores. El mismo razonamiento. Así que los condensadores en paralelo suman sus capacitantes. ¿Bien? Entonces ahora veamos otra situación, que son los condensadores puestos en serie. ¿Sí? Condensadores... Condensadores en serie.
+49:20
+Nicolás Wschebor
+¿Qué quiere decir esto? Que tomamos acá el borne A, tomamos el primer condensador de capacidad C1 y luego, por el mismo cable, colocamos el segundo condensador con capacidad C2. ¿Bien? Bueno, entonces por acá entra una carga más Q y por acá entra una carga menos Q. Y a este punto, a un punto que está en el medio, le llamaré el punto C.
+49:51
+Nicolás Wschebor
+¿De acuerdo?
+49:56
+Nicolás Wschebor
+Y fíjense que la zona que está acá en el medio, está desconectada del resto del universo. A la zona del medio no le entra carga. ¿La verdad?
+50:08
+Nicolás Wschebor
+Porque entra por acá, pero por acá esto está desconectado. Quiere decir que la carga de estos inicialmente era cero, después cuánto vale. Cero. La carga acá adentro se mantiene cero. Pero si acá se me acumula una carga más Q, esto es un condensador, ¿qué carga se me va a acumular acá, de este lado? Menos Q. Pero si se me acumuló menos Q acá, como la carga total es cero, ¿qué carga se me acumula acá? Más Q.
+50:36
+Nicolás Wschebor
+Bueno, acá también dijimos menos Q. Y está bien, es coherente. Este condensador también se me conformó de manera que... Digamos, podríamos haber dicho, como acá hay más Q, acá tiene menos Q, como acá hay menos Q, acá hay más Q, y eso dice que no quedó carga bollando ahí en el cable. Se va a alguna placa de alguno de los condensadores. Bárbaro. Bien. Este punto no le voy a llamar C, porque C estamos usando la letra para el condensador. Perdonen, me voy a cambiar de traducción. Le voy a llamar el punto... para no confundir con las letras ahora, la diferencia de potencial entre A y B ¿cómo es con respecto a la diferencia de potencial entre estos bornes y estos bornes?
+51:23
+Nicolás Wschebor
+la suma, ¿verdad? diferencia de potencial BAB es BB menos BA y esto también lo pueden escribir como BB menos BK más BK menos BA. Es decir, esto es delta BKB más delta BAK. ¿Sí?
+51:57
+Nicolás Wschebor
+A ver, esta zona que está en el medio no tiene carga, porque inicialmente no tenía carga. Como no está conectado a lo de afuera, no le entra carga. Como la carga se conserva, si inicialmente era cero, después sigue siendo cero. Ahora, en un condensador las cargas que están opuestas... Si yo me coloco una carga más cuba acá, esto me va a polarizar el conductor que está acá adentro. Y en la placa que está enfrente va a venir carga para neutralizar este condensador. Entonces me va a colocar una carga menos cuba. Y de este lado también más Q.
+52:27
+Nicolás Wschebor
+Y es coherente porque la suma de las dos siguen dándose. ¿De acuerdo? Bueno, entonces ahora... Teniendo en cuenta los signos, ¿no? Delta B a B... Bueno, vamos a tener en cuenta los signos.
+53:02
+Nicolás Wschebor
+Delta B, primero llamémosle AK, la diferencia potencial en este borne. ¿Cuánto vale? La diferencia potencial aquí.
+53:20
+Nicolás Wschebor
+Es Q... Q dividido C1 a menos de un signo. Porque recuerden que la carga, el potencial más alto está de este lado. Así esto les queda menos Q sobre C1. Y la diferencia de potencial BKB será lo mismo. Será menos Q sobre C2.
+53:45
+Nicolás Wschebor
+Entonces la diferencia de potencial delta BAB... Es menos Q sobre C1 menos Q sobre C2.
+53:58
+Nicolás Wschebor
+Me ocupé del signo, ¿verdad? ¿Qué? Ah, bueno. Siempre puse valor absoluto porque no me quería ocupar de los signos. Pero siempre. El potencial está más alto donde está la carga positiva. Así que si yo tomo la diferencia de potencial entre acá menos acá, queda menos. Bien. Bien.
+54:18
+Nicolás Wschebor
+El potencial siempre es más alto donde está la carga positiva. Bueno, entonces acá puedo sacar el factor menos Q, me queda menos Q, factor de 1 sobre C1 más 1 sobre C2.
+54:32
+Nicolás Wschebor
+Y esto es lo que llamaremos, por definición, menos Q sobre la capacidad equivalente de todo ello.
+54:44
+Nicolás Wschebor
+Entonces, ¿qué nos dice? Nos dice que 1 sobre capacidad equivalente es igual... Primero que nada, se comporta como un condensador porque efectivamente la diferencia de potencial es proporcional a la carga en una de las placas. La carga que entró por acá es Q y efectivamente la diferencia de potencial en todo este bicho es proporcional a la carga que entra de un lado. ¿De acuerdo? Justo como se comportan los condensadores. Y además vemos que la capacidad no es otra cosa que 1 sobre la capacidad equivalente es 1 sobre C1 más 1 sobre C2.
+55:26
+Nicolás Wschebor
+Entonces es condensadores en serie.
+55:38
+Nicolás Wschebor
+¿Se entiende?
+55:41
+Nicolás Wschebor
+¿Y qué pasa si yo en lugar de tener 2 tuviera 27?
+55:48
+Nicolás Wschebor
+Vamos sumando los inversos. El inverso de la capacidad equivalente sería la suma de los inversos de todas las capacidades equivalentes. Es el mismo razonamiento. Lo único que en lugar de tener 2 términos en la suma tendremos 27 términos. Es el mismo razonamiento.
+56:04
+Nicolás Wschebor
+Y esto es cómodo. Porque ustedes van a la ferretería y piden un condensador de tantos pico farad. ¿Sí? ¿Y qué le va a decir normalmente el tipo de la ferretería? No tengo.
+56:18
+Nicolás Wschebor
+No, no, no sé. De ese no me vino. ¿Entonces qué hacen? Pero yo el circuito que necesito construir, necesito un condensador de tantos pico farad. Entonces, si necesitan varios... Si necesitan aumentar la capacidad, lo que hacen es conectan en paralelo. Si quieren disminuir la capacidad con respecto a lo que les da el tipo de la ferretería, los conectan en serie. Vamos a convencernos que la capacidad equivalente acá es menor que cualquiera de las capacidades.
+56:54
+Nicolás Wschebor
+Es más chica. Entonces esto sirve para armar un condensador. Si en la ferretería no les daban el condensador que querían, pueden fabricar un dispositivo que se comporta como un condensador, pero con una capacidad más grande. Y si quieren una capacidad más chica, los colectan en serie. Bueno, de una u otra manera pueden aumentar o disminuir la capacidad. Veamos en un momento que la capacidad les queda más chica.
+57:28
+Nicolás Wschebor
+Es observación.
+57:39
+Nicolás Wschebor
+Si C1 y C2 en serie, la capacidad equivalente a la menos 1 es 1 sobre C1 más 1 sobre C2. Ambas cantidades son positivas. Así que esto es mayor o igual, por ejemplo, que 1 sobre C1. Si yo a una cantidad positiva le agrego otra, me queda algo más grande. Pero eso implica que C equivalente es menor o igual que C1.
+58:11
+Nicolás Wschebor
+También podría haber hecho el razonamiento con C2. La capacidad equivalente es menor que cualquiera de las que tenía. De hecho tiene este valor preciso, pero podemos comenzar con ese valor más chico. que cada una de las capacidades. Entonces es una manera, si necesitan una fracción de capacitancia de lo que les ofrecen en la ferretería, esta es la manera de conseguir el capacitor que ustedes deseen. ¿Se entiende?
+58:47
+Nicolás Wschebor
+Entonces veamos algún ejemplo. Ejemplo. Ejemplo.
+58:52
+Nicolás Wschebor
+Supongamos que ahora en lugar de tener condensadores en serio en paralela tienen una cosa más complicada. Por ejemplo, tienen una cosa así, después se divide en una cosa así, después sigue con otro condensador y después sigue hasta acá. ¿Quieren ver? ¿Quieren saber? Digamos, a este le llaman C1, a este le llaman C2 y a este le llaman C3. Quieren plantearse si todo este bicho es equivalente a un condensador y en caso de que lo sea, ¿cuál es su capacidad equivalente?
+59:25
+Nicolás Wschebor
+¿Cómo hacemos? Puedes tomar la capacidad equivalente de los paralelos y ahí lo tomas uno solo. Claro. Y te quedan dos en serio. Claro. Primero que nada, hacemos por... por partes ¿no? agarramos este primer pedazo dijimos que dos condensadores en paralelo se comportan como un solo condensador entonces esto que está acá es equivalente a un solo condensador con una capacidad que le llamaré C12 que es junta C1 y C2 con el segundo condensador que tiene la capacidad C3 y C12 ¿cuánto vale?
+1:00:11
+Nicolás Wschebor
+Son dos en par... C1 más C2.
+1:00:15
+Nicolás Wschebor
+¿Bien? Y entonces la capacidad... Este tiene una capacidad... Es equivalente a un solo condensador con una capacidad que le llamaré C equivalente. Que la podemos calcular porque ahora es como dos condensadores en serie.
+1:00:29
+Nicolás Wschebor
+¿Sí? Pueden nacer por etapas. Ahora es como una en serie. Entonces C equivalente será 1 sobre... 1 sobre C1, 2, que es C1 más C2, más 1 sobre C3.
+1:00:43
+Nicolás Wschebor
+Y ahí calculan la capacidad equivalente de todo el bicho. ¿Sí? ¿Se entiende?
+1:01:01
+Nicolás Wschebor
+¿Cómo estamos, Deborah? ¿Preguntas?
+1:01:04
+Nicolás Wschebor
+En el práctico ya deben haber visto o van a ver esta semana ejercicios de este tipo, de calcular la capacidad equivalente de un conjunto de condensadores.
+1:01:17
+Nicolás Wschebor
+Pero la idea siempre es esta, ¿no? Es decir, no siempre se puede, ¿eh? No cualquier dispositivo...
+1:01:26
+Nicolás Wschebor
+A veces es más complicado, porque por ejemplo, si tuvieran baterías en el medio, resistencias en el medio, otros dispositivos que no sean condensadores, ya no pueden hacer esto. Se pueden hacer otras cosas que verán los que hagan el curso de electro, pero así, como estamos haciendo acá, no se puede. Pregunta si no paso a la sección siguiente.
+1:02:08
+Nicolás Wschebor
+Entonces 5.6, 5.5, energía almacenada en un condensador. Bueno, todo este capítulo arrancó diciendo que los condensadores eran una manera de almacenar energía eléctrica, ¿verdad?, Entonces, calculemos cuál es la energía potencial que se almacena en un condensador.
+1:02:48
+Nicolás Wschebor
+Entonces, tomemos un condensador C que ya tiene una carga Q. Bueno, Q menos Q, ¿verdad? ¿Sí? ¿Sí?
+1:03:05
+Nicolás Wschebor
+Y ahora, ¿cuál es la diferencia de potencial entre los bornes?
+1:03:19
+Nicolás Wschebor
+No, ¿cómo vas a hacer? La diferencia de potencial, si tiene la carga Q, ¿cuál es la diferencia de potencial entre los bornes de un condensador?
+1:03:27
+Enzo Spera
+Q sobre C. Entonces, delta B... Voy a tomar el delta B como la cantidad positiva. Es decir, lo estoy tomando del menos al más. Será Q sobre C. ¿De acuerdo? Entonces yo ahora quiero ver cuál es el trabajo que necesito para traer desde acá una carga extra de Q.
+1:03:59
+Nicolás Wschebor
+Carga extra.
+1:04:03
+Nicolás Wschebor
+¿Cuál es el trabajo que tengo que hacer? Si yo tengo la diferencia de potencial y agrego una carga de Q, ¿cuál es el diferencial de trabajo?
+1:04:14
+Nicolás Wschebor
+Claro, en realidad va a ser menos eso, pero en realidad lo que me va a interesar en realidad es la variación de la energía potencial para agregar una carga Q del mismo signo que esta. Voy a tener que hacer... al agregar esta carga va a aumentar la energía potencial acumulada. ¿Y cuánto va a agregar? Va a variar. DQ por delta B. Es decir, Q de Q sobre C. Esto es la variación de energía potencial acumulada.
+1:04:55
+Nicolás Wschebor
+al agregar la carga de Q. Entonces ahora, como siempre, la energía potencial hay que dar un nivel de referencia. Hay que decir cuándo decimos que la energía potencial es 0. Y diremos que la energía potencial de un condensador es 0 cuando está descargado. Entonces tomemos U igual a cero cuando Q vale cero.
+1:05:34
+Nicolás Wschebor
+Siempre el nivel cero de la energía potencial es arbitrario, les recuerdo. Siempre la energía potencial está definida a menos de una constante aditiva. Pero entonces U lo podemos ver como la integral en Q desde cero hasta Q de Q'.
+1:05:53
+Nicolás Wschebor
+Delta B prima. Delta B prima es la diferencia potencial con carga Q prima. Es decir, esto es lo mismo que la integral entre 0 y Q de Q prima sobre C. ¿Y cómo es esa integral? La primitiva de Q.
+1:06:26
+Nicolás Wschebor
+Si tengo la primitiva de X, ¿cuánto es? X cuadrado sobre 2. Así que la primitiva de esto será Q cuadrado, tengo el C que no me lo tengo que olvidar, sobre 2C. Y bueno, esto lo tengo que hablar en los límites de integración. Arriba me da esto y abajo me da cero. Así que concluimos que la energía potencial en un condensador
+1:06:54
+Nicolás Wschebor
+La energía potencial eléctrica almacenada es un medio de Q al cuadrado sobre C. Como siempre, acá se eligió un nivel de referencia. ¿Cuál es el nivel de referencia? Decimos que es cero cuando el condensador está descargado, cuando no tiene carga.
+1:07:14
+Nicolás Wschebor
+Efectivamente, cuando hacen Q igual a cero, esto les da cero.
+1:07:20
+Nicolás Wschebor
+Así que esta es la energía potencial... almacenada en un condensador.
+1:07:49
+Nicolás Wschebor
+Bueno, y a los físicos nos gusta imaginar que esta energía se almacena en la presencia de un campo eléctrico. Es decir, alguien puede decir, ¿dónde está almacenada la energía en un condensador? Se puede hacer muchas descripciones. Una descripción dice, bueno, está en la energía porque yo tengo una distribución de cargas. Entonces, fíjense, tengo unas cargas más Q y otras cargas menos Q. Si esas cargas no pueden pasar, porque tienen un aislante entre las dos placas del condensador.
+1:08:24
+Nicolás Wschebor
+Para pasar tienen que dar la vuelta, tienen que conectarlo por otro lado. Pero si pudieran pasar, eso me libera energía. Las cargas quieren pasar de acá. Les pusimos una barrera en el medio, pero si pudieran pasar, eso me liberaría energía. ¿Están de acuerdo? Yo tengo el condensador, lo conecto a una lamparita, ¿qué va a pasar?
+1:08:45
+Nicolás Wschebor
+Se va a prender la lamparita por un ratito mientras la carga circula. ¿Sí? Me entrega energía. ¿Sí? La lamparita transforma esa energía en forma de luz. Bien. Entonces una manera de pensar es simplemente, bueno, tengo las cargas separadas, las cargas quisieran estar pegadas porque son opuestas.
+1:09:05
+Nicolás Wschebor
+Quiere decir que eso, si lo logran hacer, me desprende energía. Pero a los físicos nos gusta imaginar que esa energía está almacenada en algo, en algo local. Y de hecho, lo que estaría almacenado acá es por la presencia del campo eléctrico.
+1:09:24
+Nicolás Wschebor
+Voy a mostrarles ahora, en un ejemplo medio facilongo, que la energía del condensador se puede ver como... almacenada en el campo eléctrico. Entonces, lo que les voy a decir es medio cuentito, pero los que hacen el curso de electromagnetismo, esto se ve en más detalle. Se los voy a hacer ahora como cuentito para que tengan una idea. Si quieren ver eso en más detalle, se puede hacer en un curso así.
+1:09:52
+Nicolás Wschebor
+Entonces, veamos que esta energía puede pensarse...
+1:10:06
+Nicolás Wschebor
+Como almacenada en el campo eléctrico. Entonces, ¿cómo vamos a hacer eso? Bueno, voy a hacerlo en un caso particular. Ejemplo. Voy a hacerlo solo en un ejemplo, que es el condensador más simple de todos, el condensador de placas paralelas. Condensador de placas
+1:10:37
+Nicolás Wschebor
+En el condensador de placas paralelas vimos que C vale epsilon 0 por A sobre D. ¿No? Por otro lado, esto que está acá lo puedo escribir de otra manera porque como Q... vale C por delta B esto lo puedo escribir como un medio de C por delta B al cuadrado si quiero, es lo mismo, son las dos expresiones simplemente sustituyo Q entonces U del condensador lo pueden escribir como un medio escribo C que es epsilon 0 por A sobre D Y delta B, esto por delta B al cuadrado.
+1:11:34
+Nicolás Wschebor
+Y si yo quiero escribir delta B en un condensador de placas paralelas en términos del campo eléctrico, ¿cuánto vale delta B en relación con el campo eléctrico? Sí, pero en un condensador de placas paralelas, ¿cómo es el campo eléctrico?
+1:11:58
+Nicolás Wschebor
+Tienen dos placas paralelas así. ¿Cómo es el campo eléctrico? No, pero antes, ¿qué propiedad cómoda tiene? A lo largo de... Me muevo acá adentro como... Es uniforme. Es uniforme. Quiere decir que delta B es bien fácil. Bueno, no hay que hacer ningún integral. Es E por D. Recuerda que tomé el delta B en la cantidad positiva. Si no, esto acá habría en signos. Entonces, si sustituyo, esto me queda un medio de epsilon cero por A dividido por D por E por D al cuadrado o lo que es lo mismo 1 sobre Epsilon un medio de Epsilon E al cuadrado por A por D A les recuerdo que es la superficie lateral y D es la distancia entre las placas y A por D que es?
+1:12:57
+Nicolás Wschebor
+el volumen dentro del condensador. Esto es igual a volumen del condensador.
+1:13:11
+Nicolás Wschebor
+Así que lo que se suele pensar esto es de la manera siguiente. Entonces, se suele... Me voy a escribir lo del otro lado.
+1:13:37
+Nicolás Wschebor
+Esto se suele pensar diciendo que la energía potencial es la integral sobre un volumen de U, que es la densidad volumétrica de energía potencial.
+1:14:10
+Nicolás Wschebor
+Es como que la energía estuviera distribuida en el espacio. ¿Sí? En el caso en que E es constante, esto es constante, y esto es simplemente el volumen. Entonces, para el caso de una energía constante, simplemente sale para afuera y es el volumen. Entonces, en el caso que tenemos allá, entonces U sería un medio de epsilon cero por E al cuadrado.
+1:14:39
+Nicolás Wschebor
+Sería la densidad volumétrica de energía potencial eléctrica.
+1:14:58
+Nicolás Wschebor
+yo no probé esta fórmula, porque se las estoy dando en un caso muy particular, que es el del condensador de placas paralelas, y ahí vemos que es consistente, pero no más que eso, pero se puede probar, pero va más allá de los propósitos de este curso, se puede probar, eso se hace en el curso de electromagnetismo, que en el vacío, ¿Por qué en el vacío?
+1:15:29
+Nicolás Wschebor
+Porque acá, entre el condensador de placas paralelas, estamos suponiendo que hay vacío. No metí ningún plástico, no metí ningún otro material. Podía haber aire, aire que es casi igual que el vacío. El aire está súper diluido, casi como el vacío. Pero no metí otro aislante, yo qué sé, un pedazo de plástico, un pedazo de madera. Podría haber metido otro aislante y eso cambia la capacidad, cambia una cantidad de cosas. Pero se puede probar que en el vacío, esta fórmula, esta expresión,
+1:15:59
+Nicolás Wschebor
+Siempre es cierta. Es decir, yo no la probé realmente, vi que es coherente en este caso, pero se puede probar que la densidad volumétrica de energía potencial eléctrica siempre se puede escribir de esta manera. Así que si ustedes quieren calcular la energía potencial total, lo que pueden hacer es calcular el campo eléctrico en las distintas zonas y sumar, hacer la integral. Ah, siempre. Bueno.
+1:16:35
+Nicolás Wschebor
+A ver cómo estamos de ahora. ¿Preguntas?
+1:16:42
+Nicolás Wschebor
+¿Estoy yendo muy rápido? Algunos me ponen cara que sí. ¿Esto se entendió?
+1:16:52
+Nicolás Wschebor
+Acá lo que hicimos es calcular la energía acumulando cachitos sucesivos de carga. Arrancamos con energía cero. La variación de la energía al agregar una carga más es simplemente, eso lo habíamos visto antes, es la diferencia potencial por la carga que agregamos. Y si quieren calcular la energía acumulada total, integran. Y eso les da esa integral que es fácil de hacer. Y ahora lo que acabamos de ver, un poco a nivel de cuentito, es que esto se lo puede pensar de la manera siguiente.
+1:17:22
+Nicolás Wschebor
+Es como que la energía estuviera almacenada en el campo eléctrico y nos da lugar a una densidad volumétrica de energía que es un medio de epsilon cero por i al cuadrado. En el caso de un condensador en placas paralelas, esa densidad de energía es constante porque el campo eléctrico es uniforme. Entonces, la energía del condensador es simplemente esa energía por el volumen. ¿Sí? Y efectivamente es coherente. Y lo que les comento, pero sin probarles, es que eso en realidad vale siempre.
+1:17:55
+Nicolás Wschebor
+O sea, en el vacío, ¿no? Siempre vale que la densidad volumétrica de energía eléctrica siempre vale un medio de epsilon cero por el cuadrado. Y si quieren calcular la energía de todo un sistema, tienen que integrar. ¿Sí? Esa era la pregunta. Si integrabas y obtenías toda la energía. Claro. Tienen que integrar en toda la región en que el campo eléctrico no sea nulo. ¿Sí? ¿Alguna otra pregunta?
+1:18:21
+Nicolás Wschebor
+Bueno, entonces lo que voy a arrancar ahora y voy a terminar la clase que viene es ver qué pasa. Hasta ahora todo era en el vacío. ¿Qué pasa si en lugar de poner el vacío pongo algún otro tipo de aislante? En un condensador, pero los problemas eléctricos más en general. Primero lo vamos a ver para un condensador, pero en realidad la idea vale para cualquier sistema.
+1:19:03
+Nicolás Wschebor
+La sección se llama... Un aislante en un campo...
+1:19:29
+Nicolás Wschebor
+Bueno, entonces fíjense, vamos a pensar el caso más simple de todos. Pensemos que yo tengo un condensador de placas paralelas. De este lado lo cargo positivamente.
+1:19:42
+Nicolás Wschebor
+Tengo una carga más Q. De este lado lo cargo con carga negativa. Tengo una carga menos Q. Pero ahora, en lugar de poner en el medio aire o vacío, voy a poner otro material. Voy a rellenarlo entero con otro material. Pero el material tendrá que ser un aislante. ¿Por qué no puede ser un conductor?
+1:20:08
+Nicolás Wschebor
+Porque dejaría de ser un conductor. Claro, se me descarga. Si es conductor, la carga va a atravesar y entonces no pasa nada, no almacena nada. Entonces tengo que poner acá algún aislante.
+1:20:23
+Nicolás Wschebor
+aislante pero que no es vacío el vacío es un buen aislante pero vamos a poner otro aislante rellenando todo entonces al principio del curso dijimos qué es lo que pasa si yo pongo un material aislante en un campo eléctrico qué le va a pasar se polariza voy a hacer un dibujo muy esquemático las cosas son mucho más complicadas pero voy a hacer un dibujo muy esquemático supongamos que el aislante de esto está conformado de moléculas
+1:21:05
+Nicolás Wschebor
+polares que si que moléculas que tienen su carga eléctrica no distribuida de manera uniforme sino que tienen un lado más positivo que el otro entonces lo que va a pasar es que las partes más positivas se van a querer acercar a las cargas negativas y las partes más negativas de la molécula se van a querer acercar a las cargas positivas entonces voy a ser muy esquemático entonces sin entonces
+1:21:29
+Nicolás Wschebor
+el primer caso que voy a poner acá es cuando Q vale 0 cuando no hay carga externa en ese caso las moleculitas del material están orientadas al azar son moléculas que tienen una parte más negativa y otra parte más positiva y van a estar orientadas un poco
+1:21:55
+Nicolás Wschebor
+De cualquier manera. Con una orientación que alguna está apuntando para un lado, otra está apuntando para el otro. Y en promedio no tienen ninguna dirección preferencial. ¿Bien? Estaban así, quedaron así, nada de las orientaciones. Entonces esto es con Q igual a cero. Ahora supongamos que estoy en la situación en que Q es distinto de cero.
+1:22:16
+Nicolás Wschebor
+Entonces ahí, dijimos la carga positiva la puse del lado de arriba.
+1:22:23
+Nicolás Wschebor
+Entonces las moléculas van a tender a orientarse. Voy a hacer una cosa muy esquemática, porque en realidad no es así. Pero supongamos que se orientaran perfectamente, quedaran totalmente como unos soldaditos, obedeciendo órdenes, orientando según el campo eléctrico. Entonces, van a quedar las moléculas así. Y lo mismo...
+1:22:58
+Nicolás Wschebor
+Esto es muy esquemático.
+1:23:08
+Nicolás Wschebor
+Supongamos que se alinearan perfectamente. Aplicamos un campo eléctrico. El campo eléctrico que estamos poniendo es un campo que va de arriba para abajo. Entonces las moléculas se me van a orientar. según el campo eléctrico, en realidad no se orientan así. Lo que sucede es que las moléculas, si pongo un campo eléctrico realista, las moléculas siguen estando básicamente desordenadas. Pero levemente, en promedio, quedan un poquito más orientadas. ¿Se entiende? Porque las moléculas no sólo experimentan la fuerza eléctrica, experimentan una cantidad de fuerzas internas del campo.
+1:23:40
+Nicolás Wschebor
+Es decir, no sólo experimentan la fuerza viva del campo eléctrico externo que uno le aplica, sino que hay una cantidad de fuerzas internas dentro del material, porque el material es un material rígido. No se puede mover como quieran. Entonces van a seguir básicamente como están, pero ligeramente se orientan y en promedio es como que pasará esto. ¿Se entiende? Bien. Entonces, el efecto neto es que en el medio, fíjense que sigue siendo neutro, porque esta carga más queda pegada a una carga menos. Siempre va a tener una carga más pegadita a una carga menos. Pero el efecto neto, entonces, efecto neto,
+1:24:17
+Nicolás Wschebor
+es que voy a tener las cargas más en las placas del condensador arriba, las cargas menos en la placa del condensador abajo, pero además se me generan unas cargas extras, menos en el aislante del lado de adentro y unas cargas más en el aislante del lado de abajo.
+1:24:48
+Nicolás Wschebor
+El efecto neto es ese. ¿Se entiende? Si yo me tomo una región acá en el medio, fíjense que tengo tantas cargas positivas como negativas. Pero me queda un sobrante de cargas negativas del lado de arriba y un sobrante de cargas positivas del lado de abajo. ¿Sí? Las cargas no se desplazaron, no hubo conducción. Estas cargas no pueden pasar de acá para acá. Es el efecto de la polarización. Entonces esto es el aislante...
+1:25:19
+Nicolás Wschebor
+se polariza el problema es que nosotros Típicamente no sabemos cuánto se polariza. De hecho, calcular cuánto se polariza un material es un problema complicado de física, porque tiene que ver no sólo con la interacción de las distintas moléculas con el campo eléctrico externo que le aplicamos, sino también con las interacciones internas del material. Y es un problema de una rama de la física que se llama la mecánica estadística, que es para calcular las propiedades de un cuerpo macroscópico en relación con las interacciones microscópicas.
+1:25:53
+Nicolás Wschebor
+No siempre eso se puede hacer fácilmente. Entonces lo que vamos a ver en la clase que viene es, aún sin saber exactamente cuánto se polariza, decir cómo podemos describir este material, por lo menos en algunos casos, en presencia de polarización. Seguimos el lunes.
+

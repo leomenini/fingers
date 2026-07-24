@@ -1,0 +1,73 @@
+title: Clase 6
+id: fis3-2015-2-06
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:22:18"
+
+stats:
+  transcript_words: 9242
+  summary_words: 1922
+  diagrams_pending: 8
+  equations: 22
+
+topics:
+  - Flujo del campo eléctrico (superficie orientada, flujo saliente)
+  - Flujo de campo uniforme a través de un cilindro (flujo neto cero)
+  - Flujo de carga puntual a través de esfera centrada (Q/ε₀)
+  - Superficie cerrada exterior a la carga (flujo cero)
+  - Ángulo sólido (Ω = S/r², esfera entera = 4π)
+  - Superficie arbitraria sin la carga (descomposición en esferas)
+  - Superficie arbitraria que encierra la carga (Q/ε₀)
+  - Deducción por superposición para un conjunto de cargas
+  - Ley de Gauss (Φ = Q_int/ε₀) y su carácter fundamental
+  - Equivalencia Coulomb ↔ Gauss en electrostática
+  - Superficies gaussianas y consideraciones de simetría
+  - Rol del 4π y convención de ε₀
+  - Aplicación: línea infinita cargada (E = λ/2πε₀r)
+  - Aplicación: plano infinito cargado (E = σ/2ε₀)
+  - Aplicación: cascarón esférico uniformemente cargado
+  - Discontinuidad del campo y espesor real del cascarón
+  - Ley de Gauss y conductores en equilibrio (E = 0, Q_neta = 0 en el interior)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "24"
+    verified: false
+
+prerequisites:
+  - Clase 1 (Ley de Coulomb)
+  - Clase 2 (conductores y aislantes)
+  - Clase 5 (líneas de campo, flujo de un campo vectorial)
+  - Nociones de integrales de superficie y simetría
+
+next_topics:
+  - Más propiedades de conductores en equilibrio (Clase 7)
+  - Campo en la superficie de un conductor
+  - Aplicaciones adicionales de la Ley de Gauss
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

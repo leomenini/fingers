@@ -1,0 +1,444 @@
+# Clase 4
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/4/
+
+Fecha de exportación: 7/23/2026, 11:16:08 AM
+
+
+
+Clase: 4
+Curso: F3
+
+Segmentos : 240
+Palabras  : 10224
+Caracteres: 55769
+
+
+
+0:16
+de cálculo del campo eléctrico que era el siguiente toman el origen acá toman una carga más q acá y una carga menos q acá la distancia entre ambas le llamamos d acá este eje le llaman x este eje le llaman y y colocan una carga Q0 aquí a una distancia que le llamamos, bueno, X.
+0:49
+Y estábamos calculando el campo eléctrico producido por esas dos cargas.
+0:55
+Entonces le habíamos dicho el campo eléctrico producido por la carga A. Entonces tomamos Q0 y Q, ambas positivas. Habíamos visto que para calcular el campo eléctrico, el campo eléctrico en este punto no va a depender del valor de Q0, ni en magnitud, ni en signo. Así que podemos, sin pérdida de generalidad, tomar Q0 y vamos a tomar también Q positivas. Bien. Y habíamos visto que el campo este que producía la carga positiva, que le llamamos E+, es así.
+1:31
+Y el campo... ...producido por la carga negativa es para aquí... ...bueno el dibujo no es muy feliz pero... ...es así... ...e menos... ...y el campo total es la suma vectorial de ambos... ...y dijimos que era según... ...el eje paralelo al eje OY... ...porque dijimos... La distancia entre Q0 y más Q y Q0 y menos Q es la misma, ¿sí?
+2:04
+Porque estas dos distancias son iguales. Q0 está en el plano bisector del segmento que va de más Q a menos Q. Entonces la distancia es la misma, quiere decir que el módulo de los campos E más y E menos es el mismo y por las direcciones que tiene, las componentes horizontales se compensan y solo queda una componente según la vertical y para abajo. Y lo que dijimos es que íbamos a calcular hoy el módulo de E total.
+2:36
+Bien. Bueno, para empezar podemos calcular el módulo de E más que es igual al módulo de E menos. Son iguales los módulos y son iguales a la carga de esta Q sobre 4 pi epsilon cero, ¿verdad? La fuerza sería el producto de las cargas, pero cuando vamos a calcular el campo eléctrico dividimos por la carga de prueba, así que no aparece Q cero. Y luego hay que multiplicar por la distancia al cuadrado entre Q0 y más Q o menos Q, es lo mismo.
+3:12
+Y la distancia podemos usar Pitágoras.
+3:15
+Esta distancia no es X, es esto lo que vale X. Y queremos calcular cuánto mide la hipotenusa. La hipotenusa al cuadrado medirá X al cuadrado más esta distancia al cuadrado que nos queda D sobre 2 al cuadrado.
+3:35
+Y eso es el campo, el módulo del campo E más. ¿Sí? ¿Preguntas? ¿Se entiende? Pero lo que nos interesa no es el módulo del campo E más, sino su proyección sobre la vertical. Llamémosle a este ángulo theta. Lo que queremos es E más componente Y, ¿verdad? que será igual a menos E más, pues va para abajo, por eso explico el signo menos, por el coseno de teta.
+4:14
+¿Verdad? Porque este ángulo teta es también igual a este. Lo que nos interesa es la componente según... el cateto adyacente. Así que le puse el menos para explicitar. E más es el módulo, como E más Y va para abajo, le expliqué el signo menos. Y por otro lado podemos calcular fácilmente el coseno de teta.
+4:41
+Lo podemos ver acá en este triángulo. Coseno de teta es igual a D sobre 2... sobre la hipotenusa que dijimos es x al cuadrado más d sobre 2 al cuadrado ¿de acuerdo? ¿se está entendiendo?
+5:10
+entonces tenemos que e más que e más pero e total componente y Será igual a la suma de E más Y con E menos Y. ¿Cuánto vale E menos Y? Igual, lo mismo, porque la componente Y es la misma en ambos casos. Así que será igual a menos 2 E más por coseno de teta, que es lo mismo que menos 2... Y ahora reemplazo todo.
+5:43
+Q... sobre 4 pi epsilon 0, por x al cuadrado, y ahora esto ya lo escribo como d al cuadrado sobre 4, y ahora multiplico por el coseno, que lo tengo ahí arriba, que me queda d sobre 2, por raíz cuadrada de x al cuadrado, más d al cuadrado sobre 4.
+6:16
+Y esto todavía lo podemos escribir de la manera esta. E total, componente Y es igual a menos Q por D sobre 4 pi epsilon 0, X al cuadrado más D al cuadrado sobre 4 a la 3 medios.
+6:50
+de E más Q en Q0 no no, no, no cuando queremos calcular el campo en Q0 la carga que hay que poner es la carga que genera el campo porque les recuerdo que la fuerza sería el producto la fuerza sería el producto de acá aparecería Q por Q0 pero cuando vas a calcular el campo eléctrico tenés que dividir por el valor de la carga al cual se le aplica la fuerza en este caso Q0, así que no depende de Q0 bien el campo eléctrico normalmente depende de todas las cargas salvo la carga de prueba en cuestión bien así que este resultado bueno una observación es que normalmente a la cantidad a la cantidad que se suele bueno acá tenemos un problema que es que el número de letras es finito y se usa la misma letra p que se usa para la cantidad de movimiento, pero esto no tiene nada que ver con la cantidad de movimiento, Q por D es lo que se llama el momento dipolar eléctrico.
+8:06
+Es el valor de una de las cargas del dipolo a esta combinación de dos cargas opuestas, separadas a una cierta distancia, se le suele llamar un dipolo eléctrico.
+8:20
+Simplemente porque va para abajo. Estoy tomando el eje I para arriba. E más es el módulo. Es una cantidad positiva. Y esto va para abajo. No hay nada profundo. ¿Alguna otra pregunta?
+8:35
+Entonces, en términos del momento dipolar eléctrico, podemos escribir esto como menos P... sobre 4 pi epsilon cero x al cuadrado d al cuadrado sobre 4 para 3 medios. Y ahora nos podemos hacer la pregunta de cómo se comporta este campo eléctrico cuando estamos muy lejos del dipolo, cuando tomamos el límite en que
+9:08
+X, esta distancia, es mucho más grande que el tamaño del dipolo, que tiene tamaño D. ¿Qué pasará si vemos una distribución de carga muy lejos de la misma? Estamos mirando una distribución de carga y nos ubicamos muy lejos de esa distribución de carga. ¿Cómo se comportará un sistema cuando uno lo observa de muy lejos?
+9:37
+En este caso, si el sistema fuera cargado, se comporta como una carga puntual. Pero en este caso no es un sistema cargado. Es un sistema neutro, porque la carga total es cero. Más Q menos Q da cero. Entonces no se va a comportar como una carga puntual. Tiene que decrecer su campo eléctrico más rápido que qué velocidad.
+10:00
+Si tuviéramos una carga neta y miramos muy lejos, ¿cómo decrece el campo eléctrico?
+10:07
+A gran distancia. Como la distancia al cuadrado, ¿verdad? Si tenemos un objeto cargado, con carga neta, y lo miramos muy lejos, se comporta como una carga puntual, y una carga puntual genera un campo que decrece como 1 sobre r al cuadrado. En este caso, la carga neta es 0, así que tiene que decrecer más rápido que eso. Verifiquemos eso. Entonces, comportamiento... Para... X mucho más grande que D. ¿Bien?
+10:40
+Entonces fíjense. Cuando X es mucho más grande que D. Puedo despreciar D con respecto a X acá. ¿Sí? Entonces. Para.
+10:52
+X mucho más grande que D. E total. Según Y. Se comporta como. Menos P. Sobre 4P. Epsilon 0. Y acá podré reemplazar todo esto por x al cuadrado. x al cuadrado a la 3 medios me da x a la 3.
+11:15
+Entonces en lugar de decrecer como 1 sobre la distancia al cuadrado, decrece como 1 sobre la distancia al cubo. Entonces en lugar de tender...
+11:34
+a 0 como 1 sobre x al cuadrado, decrece más rápido.
+11:44
+Más rápido, pues la carga total, pues la carga neta del dipolo es nula. El dipolo como un todo es neutro.
+12:07
+¿Bien? ¿Se entiende? Este es un ejemplo de cálculo de campo eléctrico en una situación relativamente simple. De hecho, en el práctico van a ver otros cálculos de campos eléctricos en situaciones más elaboradas. Inclusive el dipolo lo van a ver para configuraciones más generales que estar simplemente sobre el plano bisector.
+12:40
+Entonces ahora vamos a otra sección que es cálculo del campo eléctrico para distribuciones continuas de carga.
+13:15
+¿Bien?
+13:17
+Entonces acá es la misma idea. ¿Se acuerdan que habíamos dicho? Bueno, distribuciones continuas de carga realmente no hay porque la carga está cuantizada. ¿Se acuerdan que decíamos eso al principio del curso? Pero, como para objetos macroscópicos realmente la carga eléctrica de un electrón puede ser considerada como realmente muy, muy, muy chiquita, podemos ignorar la cuantización de la carga y podemos pensar, del punto de vista macroscópico, en distribuciones continuas de carga. ¿Bien?
+13:50
+Entonces, vimos, tenemos una distribución acá de carga, distribución de carga.
+14:05
+Por ejemplo, sumamos una distribución volumétrica de carga. Vimos que el campo, si me coloco en un punto acá P y coloco una carga de prueba Q0, la fuerza acá... La fuerza resultante la podré escribir como una integral sobre las fuerzas generadas por cada pedacito. Cada pedacito me genera un elemento de fuerza chiquito, ¿verdad?
+14:37
+DF.
+14:39
+Y tengo que sumar vectorialmente sobre todo los DF. Esto lo habíamos escrito de la manera siguiente. Bueno, no importa. Los detalles no vienen al caso. Pero lo que sí importa es que DF es proporcional a Q0. DF lo podemos escribir como Q0 por DE. Por el campo eléctrico generado por este pedacito.
+15:05
+Entonces Q0 sale de la integral y el campo eléctrico... que es igual a F sobre Q0, será igual a la suma de los campos eléctricos producidos por cada pedacito de la distribución de carga.
+15:22
+Es decir... Básicamente es lo mismo que vimos para el campo eléctrico producido por una distribución de cargas discretas. Lo único que en lugar de hacer sumas discretas, tendrán que hacer integrales. Pero es el mismo concepto. El campo eléctrico total de una distribución de carga es la suma de los campos eléctricos producidos por cada pedacito. ¿Se entiende eso? En un caso es una suma discreta y en otro caso es una suma continua, una integral.
+15:54
+En lugar de discutir eso en mucho detalle, capaz que lo que mejor conviene para entender esto es ver algunos ejemplos concretos.
+16:13
+Puede ser electrónica o de otro tipo. Hay una densidad de carga por unidad de volumen. ¿Cómo hicimos? ¿Se acuerdan que cuando calculamos el campo eléctrico producido por una barra, ahí tenía una densidad lineal de carga? Pero en lugar de que fuera sobre una recta, puede ser distribuida en un volumen o sobre una superficie. ¿Bien? Esta es lo que habíamos llamado DQ sobre DB. ¿Verdad? El elemento de carga en un volumen dividido por uno.
+16:46
+¿Está? Esto es la densidad de carga. La densidad volumétrica de carga. ¿Bien? Entonces, antes de ir a ejemplos más complicados, veamos un ejemplo bien simple, que en realidad ya lo estuvimos tratando casi completamente. Ejemplo... Retomemos el ejemplo, vamos a ver varios ejemplos, retomemos el ejemplo que habíamos visto para la fuerza, tomamos una barra de largo L, con densidad lineal de carga, esto es dq sobre dl, es la densidad lineal de carga, Vamos a tomarlo uniforme, como lo hicimos la otra vez.
+17:47
+Tomamos sobre el plano bisector a la barra, a una distancia, llamémosle a esta distancia acá Y, un punto de observación P y le colocamos una carga Q0 acá, y a este eje le llamamos Y. Y habíamos calculado cuánto era esa fuerza, o sea, habíamos visto que la fuerza, acá, tomemos Q0 y lambda positivo, tomemos, para fijar ideas, para simplificarnos la vida, lambda positivo para hacer los dibujos y Q0 positivo, pero podríamos considerar otros signos también, pero consideremos ese caso, en ese caso la fuerza es repulsiva y habíamos visto que era sobre el eje negativo.
+18:32
+F es así, tiene solo componentes según Y. ¿Se acuerdan? Calculamos eso el otro día. Y calculamos el módulo. Calculamos el módulo el otro día y nos dio que F, componente Y, es la única componente en realidad, es el producto de las cargas. Q es la carga total. Q es igual a lambda por el largo total. ¿Está bien?
+19:01
+La carga total de la barra, ¿no?
+19:05
+Dividido 4 pi epsilon 0 por Y por raíz cuadrada de Y al cuadrado más L al cuadrado sobre 4.
+19:17
+Eso es lo que habíamos calculado el otro día, ¿se acuerdan? ¿Sí? Lo deben tener todos en el cuadro. Entonces, si yo ahora quiero calcular... el campo eléctrico. Esta es la componente Y y habíamos visto que la componente X es cero y que la componente en Z es cero. Hay una sola componente de la fuerza. Si yo ahora quiero calcular la componente del campo eléctrico sobre este eje, ¿cómo tengo que hacer?
+19:51
+Ah, ah. Estamos hablando del campo eléctrico acá. Si yo quiero calcular el campo eléctrico acá y ya sé la fuerza que experimenta la carga Q0, ¿qué es lo que tengo que hacer? Dividir por Q0. No hay que tomar ningún elemento. Q0 ya es puntual. Dividen por Q0. ¿Se entiende? En este caso es fácil porque ya habíamos hecho la cuenta, ¿verdad?
+20:22
+Entonces... E va a valer simplemente F dividido Q0. Y entonces E sub Y vale Q sobre 4 pi epsilon 0 Y por raíz cuadrada de Y más L al cuadrado sobre 4. Y E sub X igual a E sub Z igual a 0. Ahí calculamos el campo eléctrico. En este caso, fíjense que es bien simple porque ya habíamos hecho la cuenta.
+20:56
+Si yo quiero pensar ahora el campo eléctrico no solo en ese punto, sino en un punto cualquiera de esta distribución. Supongamos que yo acá dibujo la barra y voy a mirar cómo es el campo eléctrico en todo el plano que bisecta la barra. Si yo tomo un punto acá, ¿cómo será? Y quiero dibujar el campo eléctrico, ¿cómo será?
+21:24
+No. ¿Para dónde sale el campo eléctrico? ¿Qué dirección tiene acá? ¿Cómo? Sí, el perpendicular a la barra. Es un campo eléctrico que es así. Si toman el eje este, sale para allá. Y si lo tomo en otra dirección, en todas las direcciones, será... Saliente, ¿verdad? Es un campo que en todos lados sale. ¿Bien? ¿Se entiende? Y además decrece con la distancia, como vimos ahí arriba.
+21:59
+Sí, sí, está claro. Tomamos el caso en que lambda es positivo. Si lambda fuera negativo, cambian todos los signos. Para hacer los dibujos me elegí un lambda positivo para que hubiera un único signo. Pero es verdad, si la densidad lineal de la carga fuera negativa, la línea de campo serían entrantes y en lugar de salientes. ¿Se entiende? Así que esto nos da también un dibujito de cómo es el campo eléctrico en todas esas direcciones.
+22:31
+¿Preguntas?
+22:34
+Así que en realidad no lo calculamos solo en un punto del cuerpo, lo ponemos en cualquier punto en esa bisectriz. Entonces ahora veamos un segundo ejemplo, más interesante porque este ya lo hicimos en realidad, simplemente había que dividir por Q0.
+22:58
+Entonces segundo ejemplo, un anillo...
+23:04
+cargado uniformemente. Entonces vamos a calcular el campo eléctrico. Tomamos un anillo en un plano, digamos, horizontal. Tomo el centro en el centro del anillo. Es un círculo, ¿verdad? Lo estoy dibujando de perspectiva. No es una elipse, ¿eh? Es un círculo, pero lo estoy dibujando en perspectiva.
+23:37
+Tiene un plano acá, así, donde está la elixir. Y tomo acá un eje perpendicular al anillo. Y coloco un punto acá de observación P0. P, acá voy a poner una carga Q0. Voy a suponer que es un anillo con densidad lineal, lambda, densidad lineal.
+24:06
+de carga uniforme y quiero calcular la pregunta es ¿cuánto vale el campo eléctrico aquí? ¿qué les parece?
+24:35
+¿Cómo hacemos esto? ¿Se entiende? ¿Entonces? Entonces vamos a tomar un segmentito acá.
+24:57
+¿Sí? Con un ángulo acá que le llamo Dθ. ¿Sí? ¿Sí?
+25:04
+Entonces, ¿cuál es el largo de este pedacito de L? ¿Cuánto será si tengo un Dθ?
+25:11
+Será R por Dθ. Tomo θ medido en radianes. Le llamo R al radio R. Entonces el elemento de carga de Q será igual a lambda por DL. Así que R de θ.
+25:34
+Pero antes de ponerme a calcular, una pregunta.
+25:40
+¿Cómo será la resultante? Cuando yo sumo sobre todo el disco, ¿cuál será la dirección del campo eléctrico? Te voy a poner a calcular el módulo. ¿Cómo? Claro, va a ser así, vertical. ¿Por qué?
+26:00
+Está claro. Fíjense, si yo tomo este y tomo el diametralmente opuesto, uno viene el campo eléctrico chanfleado para un lado, otro viene el campo chanfleado para el otro, tienen el mismo módulo porque la distancia entre un punto y el diametralmente opuesto va a ser el mismo porque esto está sobre el eje. Así que el módulo de los dos son... pero las componentes, según el plano horizontal, se compensan. Solo queda la componente vertical. Así que el campo eléctrico resultante va a ser para allá.
+26:31
+Cada componente no, ¿verdad? Pero el campo resultante es así. Solo nos interesa la componente según...
+26:39
+Pero por ahora, antes de calcular una componente, calculemos el módulo, el elemento de campo eléctrico producido por este pedacito de carga. Va a ser igual a cuánto? A? DF sobre Q0. Bueno, si quieren lo escribimos así, DF sobre Q0. ¿Y cuánto valdrá DF? Ponemos 1 sobre Q0 acá en factor.
+27:10
+1 sobre 4 pi epsilon 0 por el producto de las cargas. El producto de las cargas será q0 por dq. La tenemos allá. Es lambda r por d theta.
+27:21
+Dividido. ¿Qué cosa? La distancia entre el punto y este. Que hay que usar pitágoras. ¿Cuál será? Por pitágoras, fíjense, acá tenemos un ángulo recto. Así que tenemos... La distancia al cuadrado, así que nos queda R al cuadrado más esta altura, que no dije cuánto vale, le llamamos Z. Es como una carga puntual.
+27:54
+Si tomo un arco con un... Claro, muy chiquitito. Para poder aplicar... Después vamos a sumar sobre todo. Bueno, y como tiene que ser, Q0 se nos va acá, ¿verdad? Así que DE nos queda lambda R de teta sobre 4 pi epsilon cero por R cuadrado más Z al cuadrado. Pero lo que nos interesa no es DE, sino la componente vertical de DE.
+28:28
+Bueno, ahí yo tomé, por cierto, tomé E alejándose, lo que supone que alejándose del disco, lo que supone que la densidad lineal del disco obtiene ¿qué signo? positivo podría hacer todo esto mismo con lambda negativo y lo que cambiaría es que el sentido de este vector en lugar de ser para arriba sería para abajo pero en lo que hace al módulo no cambia nada entonces para simplificar considero lambda positivo pero podríamos también tratar el caso lambda negativo bien, entonces ahora lo que me interesa no es DE sino DE según Z ¿Cómo es la proyección?
+29:06
+Vamos a dibujar esto en un plano. Tomo un corte. Entonces acá está el disco y tomo acá el eje. Este es el centro O, este es P. Estoy tomando un plano en el cual pasa el punto que estoy integrando. Acá tenemos Z. Bien. Bien.
+29:29
+Y entonces tenemos el eje que va del punto que tenemos y nos genera DE. Y lo que queremos es DEZ, que es la proyección acá. ¿Sí? Entonces, ¿por qué hay que multiplicar DEZ? ¿De qué ángulo?
+29:59
+Este ángulo, teta. Así que dz es d por coseno de teta. Y coseno de teta, bueno, este ángulo es también lo mismo que este. ¿Cuál otro? Ah, no, no lo llamemos teta. Totalmente razón, porque este es otra cosa. Llamémosle fi. Gracias.
+30:22
+Coseno de fi. Es otro, no tiene nada que ver con este ángulo que está acá. ¿Verdad?
+30:28
+¿Bien? Son dos ángulos diferentes. ¿Cuánto vale coseno de phi? Cateto adyacente sobre hipotenusa. Y fíjense, esto es igual a DE, el cateto adyacente es Z, y la hipotenusa es raíz cuadrada de Z al cuadrado más R al cuadrado. Esta distancia acá es R, porque estamos tomando la línea de corte. ¿Se entiende el dibujo?
+30:59
+Bueno, entonces tenemos que dz, que es lo que me interesa, sustituyo ahora, es igual a lambda r de teta por z, dividido 4pi epsilon cero, y ahora voy a multiplicar esto por esto, y me queda z al cuadrado más r al cuadrado a la 3 medios.
+31:30
+¿Se entiende? Y ahora, ¿qué hay que hacer? Ahora vimos cuál es la componente Z del campo eléctrico que nos genera un pedacito de disco.
+31:45
+Y ahora hay que sumar sobre todos los pedacitos, que es lo mismo que integrar. Entonces, E sub Z será igual a lambda RZ. Todo esto no depende de Z, ¿no? 4 pi epsilon cero... Tampoco depende. Z al cuadrado más R al cuadrado a la tres medios tampoco depende. Lo que hay que hacer es integrar entre cero y dos pi, porque teta varía entre cero y dos pi, de teta. Es un integral medio fácil. ¿Cuánto basta integrar? 2 pi, porque, a ver, esto nada depende de teta, así que era bien fácil.
+32:18
+Es muy fácil darse cuenta porque se dan cuenta que cada pedacito va a contribuir igual la componente z porque el sistema es invariante girando. Entonces cada pedacito va a contribuir lo mismo. Y entonces el resultado es lambda rz sobre 2 epsilon 0 z al cuadrado más r al cuadrado a la 3 medias.
+32:42
+No, EZ es la suma de todos los DZ. ¿Y qué es sumar sobre todo DZ? Sobre todo los SDZ es sumar sobre todo las contribuciones que generan EZ, que son sumar sobre todo los pedacitos. Y cada pedacito está caracterizado por un ancho DZ. ¿Bien? Tengo que sumar sobre las contribuciones para todos los tetas diferentes.
+33:17
+Entonces ahí llegamos al resultado. EZ es igual a lambda R por Z dividido 2 epsilon 0 Z al cuadrado más R al cuadrado a la 3 medios.
+33:36
+Bueno, por cierto, si lambda fuera negativo, el dibujo cambiaría, pero la fórmula igual es correcta, porque estoy no hablando del módulo de E. Cuando lambda es positivo, el módulo de E es igual a EZ. Cuando lambda es negativo, el módulo de E es menos EZ. Pero EZ siempre vale esto.
+33:56
+Se dan cuenta que si lambda cambia de sentido, EZ también cambia de signo. Así que ya está incluido ese efecto. Y es esta distancia. Hicimos esta cuenta en una clase anterior. No estoy rehaciendo la cuenta. Creo que la clase anterior, no sé si usé las mismas notaciones. Creo que a esto le había llamado D. ¿Sí? Pero bueno, es la misma fórmula. Hay que cambiar donde decía D, hay que poner Y. Pero no estoy rehaciendo la cuenta. Simplemente, esto no lo deduje ahora. Simplemente usé un resultado de una clase anterior.
+34:30
+¿Bien? Es decir, no traten de ver de dónde salió este resultado porque lo que tienen que hacer es mirar su cuaderno unas clases para atrás. ¿No?
+34:38
+¿Otras preguntas? ¿Y el X y el Z ahí? ¿Dónde? Perdón. No, acá es la componente según Y, pero obviamente podrían preguntarse cómo es la componente de la fuerza según X y sobre las otras direcciones perpendiculares. Pero dijimos que era cero, que la única componente era para allá. Eso lo habíamos hecho... la clase anterior, habíamos calculado la fuerza y visto cuál era su dirección, sentido y módulo.
+35:17
+Ah, bueno, no, esta cuenta es más complicada. En ese caso se puede hacer la cuenta, pero la integral es mucho más complicada, se puede hacer la cuenta. Acá calculamos para ser simple, solo sobre el eje. Pero obviamente, estoy usando ejemplos simples, pero no se preocupen que en el práctico ya van a tener problemas, ejemplos difíciles.
+35:36
+No muy difíciles, porque enseguida... A ver, normalmente, ¿qué es lo que pasa? Cuando uno considera un sistema realista, normalmente lo que pasa es que estas integrales no se pueden hacer analíticamente y no es grave. Eso simplemente significa que hay que ponerlas en una computadora y calcularlas numéricamente. Eso es estándar, no es complicado. Pero si uno quiere hacer un calculito que se puede hacer en el pizarrón, necesita integrales, problemas relativamente simples que uno pueda calcular analíticamente. ¿Alguna otra pregunta?
+36:08
+Bueno, entonces veamos otro ejemplo.
+36:24
+Ah, perdón, antes de ir a otro ejemplo, quiero comentarles qué pasa. Otra manera de escribir este mismo resultado, se puede escribir de otra manera, que es lambda, digamos, la carga total acá es lambda, por 2 pi por r ¿verdad? porque la longitud de la circunferencia la medida de la circunferencia es 2 pi r así que la carga total es la densidad lineal de carga por la longitud entonces este resultado también lo podrían poner como q por r perdón, por q por z dividido 4 pi epsilon 0 Z al cuadrado más R al cuadrado a la tres medios, donde Q es la carga total del disco.
+37:20
+Del aro, perdón. ¿Sí? Las dos expresiones son iguales.
+37:29
+Pregunta. Si yo voy muy lejos, me ubico... con Z mucho más grande que el radio, es decir, me coloco muy muy lejos del disco. ¿Cómo se comporta esto? Como una carga puntual. Como una carga puntual, porque fíjense, cuando Z es mucho más grande que R, puedo despreciar R acá, Z al cuadrado a la 3 medios me queda Z al cubo, tengo un Z al cubo, decimos, ah, esto no es como Coulomb, sí es como Coulomb porque tengo un Z arriba, así que me queda 1 sobre Z al cuadrado, me queda como una carga puntual.
+38:02
+Por otro lado, en este caso también es interesante ver el límite opuesto. ¿Qué pasa si yo pongo Z acá? Z igual a cero.
+38:09
+Me da cero, porque obviamente esto me da cero y es razonable, porque ahí fíjense, todos los campos eléctricos vienen opuestos y se matan entre sí y el resultado es cero. ¿Se entiende? un consejo siempre que terminan un cálculo estudien los casos límites porque en general los casos límites son fáciles de adivinar lo que tiene que dar entonces ustedes terminan un ejercicio en el parcial o en su vida mejor porque el parcial es una vez la vida continúa continúa mucho tiempo más Entonces, cuando terminen un cálculo, estos cálculos son simples, porque a veces son cálculos complicados.
+38:47
+Lo mejor es testear todos los casos particulares donde uno se da cuenta, sin hacer ninguna cuenta, lo que tiene que dar, ¿verdad? Y entonces... Bueno, si todos los casos evidentes pasan la prueba, eso no es garantía que el cálculo esté bien, pero si no pasan la prueba, se garantía que está mal. Así que es una manera, por lo menos, de asegurarse si uno... Mientras más test evidentes uno le haga pasar un cálculo, más chances tiene de haberlo verificado bien. ¿Se entiende? En general, eso es más fácil que ponerse a rehacer las cuentas.
+39:19
+Bueno, entonces, un tercer ejemplo. Disco cargado...
+39:28
+uniformemente. Antes habíamos visto un aro, ¿verdad? Entonces el dibujo que voy a hacer ahora es igual al anterior, pero en real sentido es distinto porque todo el disco está cargado, con una densidad Densidad superficial de carga uniforme.
+40:13
+Y bueno, para hacer los dibujos, nuevamente voy a suponer que sigma es positiva, para fijar ideas, para poder hacer un dibujo. Y si sigma es positiva, el campo eléctrico va a ser nuevamente uniforme. así según el eje verdad porque va a ser según el eje podemos dividir este disco en muchas muchas maneras pero una manera de definirlo de dividirlo en muchos aritos verdad concéntricos cada arito me da un campo según en ese eje así que cuando uno suma sigue siendo sobre ese eje entonces la dirección y el sentido es fácil ¿Cómo hacemos para calcular el módulo?
+41:12
+El doble no, es más complicado. Hay que hacer, bueno, podríamos hacer una integral doble, pero en realidad no vale la pena hacer la integral doble, porque una de las dos integrales ya la hicimos acá. La integral en el ángulo teta ya la hicimos, solo hay que integrar en el radio. Entonces, eso es equivalente a decir, tengo el disco, lo miro de arriba el disco, ¿no? Miro de arriba el disco, ¿sí? Visto de arriba. Acá tengo en el medio... agarro a una distancia R chiquita, bueno, el radio del disco total es llamado R grande, pero agarro a una distancia R un anillito.
+41:55
+¿Qué va a ser en realidad? Así, una cosita así.
+42:01
+Bien. Bueno, el dibujo es horrible, pero me parece que se entiende. Y acá, este pedacito de acá le llamo DR.
+42:10
+Así que es un anillito que está a una distancia R del centro y que tiene ancho DR. ¿De acuerdo? Pero si DR es chiquitito, eso se parece a un aro. Aro es justamente eso, es una bandita tan finita que podemos no ocuparnos de su ancho. Entonces si quiero calcular cuál es el área, el elemento de área de ese anillito.
+42:48
+No. Radio al cuadrado por pi es el área de un disco. Si yo quiero calcular el área total del disco, efectivamente, es radio R al cuadrado por pi. Pero yo lo que quiero calcular es no el área acá adentro, sino el área de lo que está acá adentro. Entre los dos. ¿Se entiende?
+43:11
+Podríamos restar, pero más fácil. Fíjense, yo puedo imaginar que es tan finito, que yo agarro una... Primero hice una tijera así. Otra tijera. Y después hago así. Y lo estiro. No lo tiro, simplemente lo pongo derecho. Entonces va a parecerse a qué cosa.
+43:36
+A un rectángulo. ¿Un rectángulo de qué largo? De R por 2 tíos.
+43:42
+El largo va a ser 2 pi r, ¿verdad? Y el ancho, dr. Entonces el área va a ser simplemente 2 pi r por dr. ¿Se entiende? Esto nos da lo mismo que lo que decía acá la compañera, que es tomar el área de afuera menos el área de adentro y restarla en el límite en que delta r es muy chiquitito. Que dr es muy chiquitito. Esto vale porque dr es chiquitito.
+44:19
+¿Sí? ¿Sí? ¿De acuerdo? Y entonces si yo quiero saber el elemento de carga, ¿cuánta carga hay en esa bandita? ¿Cuánto es? Sigma por el área. ¿Bien?
+44:32
+Sigma es la cantidad de carga por unidad de superficie. Así que al revés, si quiero calcular la carga en la superficie de A, es sigma por dA. Así que es 2 pi r de r por sigma. ¿Bien? Y entonces ahora, una vez que llegamos a esa instancia, podemos aplicar qué cosa. Llegado a este punto, ¿sabemos cómo es el campo eléctrico producido por este arito?
+45:06
+Sí, lo que calculamos recién. Entonces lo que vamos a hacer es Pero ahora, antes, ese campo eléctrico era el total. Ahora es solo un pedacito. Entonces vamos a decir, D, E, Z. D, E, Z no es el D, E, Z de antes. Antes el arito era el todo. Ahora el arito es una parte. Entonces le llamo D, E, Z. Va a ser la fórmula que tenemos allá. Es esta.
+45:38
+Entonces es Z. En lugar de poner Q, Q es el área del arito. Voy a poner DQ. Porque es el área del pedacito que está generando el campo eléctrico. Dividido 4 pi epsilon 0 por...
+46:03
+Ah, no, perdón. Sí, está bien. Por... Y fíjense, acá que Z al cuadrado está bien. ¿Y qué tengo que poner? Tengo que poner R mayúscula o R minúscula al cuadrado.
+46:20
+Escuché todas las versiones. R mayúscula, R minúscula, y el número también produjo de R. ¿Qué va? ¿Qué es este acá? R mayúscula acá, ¿quién es?
+46:31
+El radio de quién?
+46:33
+del arito ¿verdad? entonces yo acá estoy calculando el elemento el campo eléctrico producido por este arito ¿y cuál es el radio de ese arito?
+46:44
+R chica no es el disco de afuera estoy calculando lo que calcula este arito que está a distancia R chica del centro ¿bien? entonces no se confundan con las letras no se mezclen con las letras así que acá es R al cuadrado a la 3 medias Y esto lo podemos calcular como Z, usando aquella fórmula que está allá, ¿no? 2 pi R de R por sigma, dividido 4 pi epsilon cero, Z al cuadrado, más R al cuadrado, a la 3 medios.
+47:21
+Y esa es la contribución al campo eléctrico de un cachito de disco, no es todavía el disco entero. Pero una cosa que es cómoda es que acá ya no hay que proyectar nada. Acá nos da directamente la componente que nos interesa. En el otro caso había que ponerse a proyectar. Acá no hay necesidad de proyectar porque solo hay una componente producida por el arito.
+47:44
+Y ahora voy a calcular EZ. Para calcular EZ. El EZ total producido por todo el disco. ¿Qué tengo que hacer?
+47:54
+Claro, entonces tengo que integrar de 0 a R mayúscula, es decir, R chica va a variar entre 0 y R mayúscula, vamos a tener que sumar sobre todos los aritos de Z, bueno, simplifico acá un poquito, R de R sigma, me queda 2 epsilon 0, Z al cuadrado más R al cuadrado a la 3 medios.
+48:23
+Te voy variando R. Entonces, fíjense, hay cosas que salen para afuera. Puedo escribir Z sobre 2 epsilon 0, sigma también lo puedo sacar para afuera y me queda la integral de 0 a R, de R de R, dividido Z al cuadrado más R al cuadrado a la 3 medios. Bueno, entonces este problema tenía una simplificación con respecto a la anterior, que es que no había necesidad de proyectar en nada, directamente ya teníamos la componente que queríamos. En cambio tiene una complejidad extra con respecto a la anterior, que es que ahora la integral hay que hacerla, antes era una integral boluda.
+49:03
+Pero esta integral se sabe hacer fácil, ¿cómo se hace? ¿Qué cambio de variable? La u es la u, lo que está dentro de la u. ¿Quieren llamarle U a todo lo que está acá adentro? Bien. Es una posibilidad. Llamémosle U a R al cuadrado más Z al cuadrado. ¿Quieren hacer eso? Entonces, de U... Z está fijo, ¿verdad? Entonces, cuando escribo de U me queda 2R de R. ¿Sí?
+49:37
+Entonces, esto que está acá lo puedo escribir como... sigma, perdón, z por sigma dividido 2, epsilon 0. Voy a tener un medio extra porque arriba no tengo 2RDR, sino, así que tengo un medio acá abajo.
+49:56
+Bueno, entonces cuando R vale 0, U vale... ¿Cuánto vale? Cuando R vale 0, ¿U cuánto vale? Z cuadrado. Z cuadrado. Y cuando R vale R mayúscula, arriba tenemos R cuadrado más Z al cuadrado. Entonces arriba nos quedó el DU y abajo nos quedó U a la 3 medios.
+50:25
+Y esta integral la sabemos hacer. Una manera astuta de escribir esto es escribirlo como U por U a la menos 3 medios. Entonces ahora pueden escribir esto como Z sigma sobre 4 epsilon 0.
+50:43
+Y la primitiva de esto es U a la menos 1 medio. Si yo tengo U a la menos 1 medio, cuando derivo me quedan menos 3 medios, pero me falta un menos 1 medio. Entonces tengo que poner menos 2. Entonces cuando derivo, se me va el menos 1 medio con el menos 2. Y esto está bien. Y tengo que evaluarlo entre r al cuadrado más z al cuadrado. Y z al cuadrado. Así que el resultado... Bueno, el 2 se me va con el 4. Entonces me queda z sigma sobre 2 epsilon 0.
+51:17
+Y entonces, en lugar de poner el menos, evalúo primero en el de abajo. Me queda 1 sobre valor absoluto de z. Menos... 1 sobre raíz cuadrada de r al cuadrado más z, z al cuadrado. Tomemos z positivo para no complicar una idea. Tomamos z del lado de arriba, así valor absoluto de z es lo mismo que z.
+51:54
+Está claro que el campo eléctrico para allá, del lado de arriba es para arriba y del lado de abajo es para abajo.
+52:02
+Voy a tomar Z positivo para simplificar un poquito la expresión.
+52:15
+Tomemos Z positivo para simplificar. Entonces, EZ nos va a quedar sigma sobre 2 epsilon 0 por 1 menos Z sobre raíz cuadrada de Z al cuadrado más R al cuadrado.
+52:49
+Entonces, campo eléctrico...
+52:55
+producido por un disco cargado uniformemente sobre su eje.
+53:27
+¿Entiende?
+53:44
+¿Preguntas?
+54:00
+¿Cómo? ¿Este menos? ¿Cuál? ¿Este menos 2? ¿Este menos 2 viene de la primitiva de u a la menos 3 medios? Acá simplemente evalué. Evalué u en los límites de integración.
+54:29
+z al cuadrado a la 1 medio me queda valor absoluto de z pero en lugar de poner el menos di vuelta es decir, sería el de arriba menos el de abajo con un signo menos en lugar de eso puse el de abajo menos el de arriba ¿otras preguntas?
+54:57
+bueno, fíjense
+54:59
+Yo les digo, cuando terminan un cálculo, conviene testearlo en las situaciones límite. ¿Cuál es una situación límite que acá uno tendría que poder adivinar fácilmente el resultado?
+55:14
+A ver, ¿les parece que queda cero? Uno menos uno, tienen que ir al orden siguiente del desarrollo. Si quieren saber el equivalente. A ver, cuando van a Z mucho más grande que R, el campo eléctrico tiende a cero. Sí, seguro que tiende a cero. La pregunta es cómo tiende a cero. Tienen que ver cómo tiende a cero. Y tiende como uno sobre Z al cuadrado, pero hay que hacer una cuenta, porque tienen que hacer el desarrollo de Taylor de esta expresión.
+55:46
+Así que ahí da un poco de trabajo el hallar el límite. Entonces hagámoslo, vale la pena hacerlo. Entonces, comportamiento para Z mucho más grande que R. Entonces ahí lo que podemos decir es que raíz cuadrada de Z al cuadrado más R al cuadrado, lo pueden escribir como Z por raíz cuadrada de 1 más R al cuadrado sobre Z al cuadrado.
+56:21
+Y lo que queremos hacer es el desarrollo de Taylor, pero no nos podemos quedar con el primer orden, porque el primer orden es como decía por ahí un compañero, da cero. Pero lo que nos interesa no es el cero, es cómo tiende a cero. Entonces acá necesitamos ir un poquito más lejos, no basta con tomar la situación límite, hay que ir un poquito más. Entonces tomamos Z y desarrollamos esto. Esto es como Z por 1 más R al cuadrado sobre Z al cuadrado a la 1 medio. ¿Se acuerdan cómo es el desarrollo de Taylor de 1 más X a la alfa?
+56:57
+¿Se acuerdan lo que es un desarrollo de Taylor?
+57:05
+¿Saben qué? Una vez me pasó. Antes este curso no se llamaba física 3, se llamaba física general 2. Y en lugar de estar en el tercer semestre, estaba en el segundo semestre. Y me pasó que al principio del curso, más o menos a esta altura del curso, un estudiante vino a preguntarme un ejercicio práctico. Creo que el segundo práctico del primero no me acuerdo. Entonces le puse a hacer el ejercicio y había que hacer el desarrollo de Taylor al primero. Me dijo, no, hay que usar el desarrollo de Taylor. Qué terrible.
+57:31
+Digo, ¿pero por qué? No, porque yo ya probé cálculo 1. Pensé que nunca más en mi vida iba a tener que hacer un desarrollo de Taylor. Entonces dije, no, lamento decirte que, bueno. Entonces, 1 más x a la alfa. ¿Se acuerdan cómo es el desarrollo de Taylor? Es 1 más alfa x más algo del orden de x al cuadrado. ¿Se acuerdan? ¿Esta anotación orden de x al cuadrado la conocen? ¿Sí? ¿La han visto? Es algo que tiende a cero a la misma velocidad que x al cuadrado.
+58:04
+¿Está? Bueno, entonces acá apliquemos esa fórmula donde alfa vale un medio. Entonces tenemos uno más alfa, que es un medio, por la variable esta que tiende a cero, que es r al cuadrado sobre z al cuadrado, y sigue con cosas que son, que decrecen como uno sobre z a la cuarta, que no nos interesa. ¿Está?
+58:26
+Entonces sustituimos el desarrollo de Taylor allá arriba. Y nos queda 1.
+58:58
+vamos a hacerlo diferente bueno, no importa, ya lo hice así entonces queda z bueno, el z se nos va nos queda 1 sobre 1 más 1 medio de r al cuadrado más z al cuadrado más orden de 1 sobre z a la cuarta y ahora podemos desarrollar 1 sobre entonces nos queda z sobre 2 epsilon 0 por 1 menos 1 menos 1 medio r al cuadrado sobre z al cuadrado, más etc.
+59:43
+Sí, sí, sí, puse solo, está bien si quieren R a la cuarta, pero simplemente para decir la velocidad con la que tiende a cero con Z, pero obviamente por razones dimensionales tiene que ir un R a la cuarta o Z a la cuarta por un número, un número que no dije cuál era. Bueno, entonces acá se nos van los unos y nos queda sigma sobre 4 epsilon cero por R al cuadrado, por Z al cuadrado.
+1:00:16
+Más cosas que tienden a cero más rápido. Este es el comportamiento cuando... Y efectivamente, fíjense, decrece como la distancia al cuadrado. Y veamos que, más que eso, es bien la fórmula de Coulomb, porque sigma es igual, digamos, la carga total... Carga total...
+1:00:43
+¿Es sigma por cuánto? Por el área, que es pi por r al cuadrado, ¿verdad? Así que si yo escribo esto en términos de la carga total, me queda q sobre 4pi, epsilon 0, z al cuadrado. ¿Acá arriba?
+1:01:11
+A ver, 1 sobre 1 más x... es igual a 1 menos x más algo de orden x al cuadrado. 1 sobre 0,99 es como 1,01 más algo chiquito. ¿Se acuerdan de esto? Es la misma fórmula en realidad, pero usando en lugar de alfa un medio, usar alfa igual menos 1. Es lo mismo.
+1:01:38
+Bien, y les da Coulomb. En este caso, el test no era muy útil, porque da casi tanto trabajo hacer el test como el cálculo original. Es simplemente para nosotros verificar, no como test del cálculo, sino para ver que toda la fórmula cierra con la física.
+1:01:56
+Este es el comportamiento para Z mucho más grande que R. Entonces, en este caso también interesa, es bastante interesante ver cómo es el límite opuesto, el límite en que Z es mucho más chico que R.
+1:02:31
+Comportamiento para Z mucho más chico que R. Entonces fíjense, cuando Z es mucho más chico que R, ¿a qué tiende esto? Cuando Z tiende a cero con respecto a R. Z tiende a cero. Entonces lo de abajo tiende como a R. ¿Y arriba?
+1:02:51
+A cero. Así que todo esto tiende a una constante. De hecho podemos calcular la primera corrección. Podemos decir, en sub Z... Es como sigma sobre 2 epsilon 0 por 1 menos algo que es como z sobre r. De hecho se comporta como una constante, ¿verdad? E z se comporta como una constante. ¿Cuál es el límite? Este límite muchas veces se le llama el límite de plano infinito cargado.
+1:03:25
+Porque yo acá lo hice con un disco. Pero está claro que yo tengo un plano cargado uniformemente y me coloco muy cerquita. Yo no sé cuál es su forma. Si yo estoy re cerquita, podría ser un círculo o podría ser un cuadrado. Cuando estoy... muy pegado a una superficie, la veo así, no logro darme cuenta si es un círculo o es un rectángulo o cualquier otra forma. ¿De acuerdo? Entonces en ese límite obtenemos el valor del campo eléctrico para un plano infinito cargado.
+1:04:03
+Entonces para... En ese límite... Entonces EZ igual a sigma sobre 2 epsilon 0... es la expresión para un plano infinito, porque decir que Z es pequeño, podemos pensar que en lugar de pensar que tomamos que Z es chiquito, podemos pensar que tomamos Z fijo y lo que tomamos en realidad es R muy grande.
+1:04:34
+Podemos verlo de las dos maneras, ¿verdad? Entonces la expresión para un plano infinito cargado
+1:04:43
+Uniformemente. Y fíjense que esta expresión, en ese límite, va a valer en el eje... A ver, todo lo que calculamos varía solo en el eje. ¿Sí? Solo en el eje del disco. Pero ese resultado... ¿Sí? Cuando el plano es muy grande, no vale solo sobre el eje. Vale en cualquier punto, salvo cerca del borde. Porque... Porque efectivamente, como no depende de la forma, en lugar de poner un disco centrado, podría poner un disco descentrado.
+1:05:15
+Y como igual no veo el borde y no depende del borde, si el disco no está centrado no pasa nada. ¿Me explico? Esa expresión vale para cualquier punto cerca del plano. ¿Se entiende por qué? Porque no depende del borde. Entonces, que el borde esté centrado o esté descentrado no cambia nada. Entonces, en realidad, en ese límite... En ese límite...
+1:05:39
+Solo en ese límite. La expresión vale para cualquier punto cerca del plano. Salvo lejos del borde.
+1:06:10
+De hecho, si dibujamos el campo eléctrico cerca de un plano cargado, tomemos un plano acá, lo veo de canto, plano cargado uniformemente, el campo eléctrico será... perpendicular al plano y uniforme fíjense que esto no depende de la distancia no depende de nada, es uniforme todo lo largo del plano salvo en el borde, en el borde se empieza a deformar entonces lejos del borde sacando esos efectos de borde cuando uno se acerca al borde En toda la parte de adentro, el campo es uniforme.
+1:07:04
+Obviamente, si nos vamos a distancias que son comparables con el tamaño del plano, ahí ya no es así. Tenemos que tomar a distancias mucho más chiquitas que el tamaño del plano. Y si yo lo dibujo en este otro lado, ¿cómo es el campo eléctrico? Es simétrico. Acá, fíjense, yo solo calculé para Z positivo. Cuando calculo para Z negativo, el signo cambia. Entonces, va a ser así.
+1:07:35
+Me molé. Sigue por acá. ¿Bien? Este mismo cálculo lo vamos a hacer por otra forma de cálculo un poquito más adelante. Pero, bueno.
+1:08:02
+Y ahora voy a hacerles un cuarto ejemplo. Preguntas antes de seguir adelante. Taylor. ¿Hasta acá estás de acuerdo? Sí, saqué el Z. Sí, saqué el Z y me quedan. Y acá digo, esto le llamo X y es chiquito. Eso es X y es chiquito. infinito z es mucho más grande que r esto es chiquito y el exponente es alfa igual a un medio es igual que esto pero con alfa igual a un medio porque la raíz cuadrada es lo mismo que elevar a un medio entonces tengo esta expresión entonces tengo el z que está de factor pues tengo un 1 más alfa por x es esta expresión que está acá ¿cómo?
+1:08:56
+¿cómo?
+1:08:59
+Más cero no, más algo del orden de x al cuadrado. No, no es cero. ¿No conocen esta expresión? ¿No han usado esta expresión? ¿Orden de x al cuadrado? Levanten la mano los que han visto esta expresión.
+1:09:14
+Pero no todos, ¿no? Levanten los que no la han visto.
+1:09:19
+Fá, misterio, ¿cómo puede ser que...? Creo que se usa la ochica de x. La ochica. Bueno... Hay dos expresiones que se usan mucho. Una es poner uno mayúscula, que quiere decir algo del mismo orden que X al cuadrado. O si no, uno chica, que quiere decir algo que crece, que tiende a cero más rápido que algo. Se puede hacer de las dos maneras. Esto es un poco más cómodo porque ya digo explícitamente de qué tamaño es el error cometido. No digo simplemente es un error que puedo ignorar. El error es de este orden.
+1:09:51
+Se usan las dos cosas.
+1:09:53
+Bueno, y antes de terminar les comento otro ejemplo más, un cuarto ejemplo, que es el cascarón esférico uniformemente cargado. Yo les dije, pero sin probarlo, cómo era la fuerza. Digamos, toman un cascarón esférico R con carga total Q, Q carga total,
+1:10:26
+Y este es el origen, nos tomamos un punto de observación a una distancia r chica del origen, P. Tenemos una carga Q0. Y habíamos visto que la fuerza era, digamos, si Q es positivo, la fuerza era para allá. Bueno, si las dos eran positivas, si Q y Q0 eran positivas, la fuerza era para allá.
+1:10:48
+Y entonces el campo eléctrico, y habíamos dicho que el módulo de la fuerza era igual a cero si... R es menor que R mayúscula y era igual a la expresión para una carga puntual si estábamos para R mayor que R mayúscula. ¿No? ¿Acuerdan que vimos esto? ¿Sí? ¿Sí?
+1:11:21
+Sí, sí, esto es en un cascarón. No está relleno. Está distribuido sobre la superficie, no sobre el volumen.
+1:11:29
+¿Alguna otra pregunta?
+1:11:32
+Bueno, entonces el campo eléctrico es bien fácil, porque el campo eléctrico es simplemente dividir. Para tener el módulo hay que dividir por el módulo de Q0. ¿Y será saliendo? Ay, no, perdón. Acá.
+1:11:56
+entonces el campo eléctrico simplemente dividir por Para tener el módulo del campo eléctrico va a ser simplemente dividir por módulo de Q0.
+1:12:31
+Así que les queda 0 si R es menor que R grande y valor absoluto de Q sobre 4 pi epsilon 0 sobre R al cuadrado si R chica es mayor que R grande. Aquí nuevamente, este paso es evidente, pero deducir esto todavía no lo hicimos, no hicimos la deducción de esto. Lo vamos a hacer un poquito más adelante en el curso, les vengo prometiendo, pero les aseguro que voy a cumplir.
+1:13:02
+Pero hacer la cuenta con Coulomb da mucho trabajo y es una exageración de dificultad para lo que es, porque en realidad por otro método se hace mucho más fácil.
+1:13:15
+¿Preguntas?
+1:13:20
+Bueno, entonces ahora voy a empezar a hacer trampa. ¿Por qué voy a hacer trampa? Porque yo les dije que todo lo que estamos viendo hasta ahora es para fenómenos electrostáticos. Cargas quietas. Pero en realidad, el mundo quieto es un mundo muy aburrido. Es mucho más interesante ver cómo las cosas se mueven. Pero, si las cosas se mueven muy lentamente, suficientemente lentamente, ¿cuán lentamente? Todavía no se va a saber.
+1:13:53
+Pero supongan que las cargas se mueven suficientemente lentamente, está claro que las expresiones para las fuerzas, que hemos visto del punto de vista electrostático, seguirán siendo buenas aproximaciones. Entonces lo que vamos a hacer es empezar a usar las fórmulas electrostáticas para cargas que se mueven suficientemente lentamente. Entonces, como sabemos las fuerzas, ¿cómo hacen para conocer las fuerzas? Conocer la ley de movimiento.
+1:14:20
+Claro, calculan la aceleración por medio de la ley de Newton. Entonces vamos a empezar a usar cómo es la...
+1:14:32
+El movimiento conocido el campo eléctrico y suponiendo que vale la electrostática. Es decir, vamos a suponer que las fuerzas son suficientemente, los movimientos son suficientemente lentos como para que solo hay que ocuparse de eso. Que no hay otro fenómeno. Aparecen otros fenómenos cuando la velocidad empieza a ser grande, pero si la velocidad no es grande, está todo bien. Entonces, la sección 2.4, 2.5, 2.5.
+1:14:57
+Entonces, 2.5, movimiento...
+1:15:06
+de una carga puntual en un campo eléctrico entonces supongamos
+1:15:36
+que la carga se mueve suficientemente lento como para aplicar electrostática.
+1:16:10
+Si les dicen cuánto vale el campo eléctrico... Si les dicen el campo eléctrico vale tanto... Entonces podrán calcular la fuerza. Si conocemos... E... E de R... Entonces... En cada instante...
+1:16:41
+La fuerza que sentirá la carga eléctrica será Q, el valor de la carga, por el campo eléctrico.
+1:16:52
+Está claro que la carga se mueve y si el campo eléctrico no es uniforme, habrá que en cada instante usar el campo eléctrico en el punto en que está la carga. La carga se va moviendo, el campo eléctrico no tiene por qué variar lo mismo de un punto a otro, y entonces en cada instante hay que usar el campo eléctrico en la posición de la carga.
+1:17:10
+¿Bien? Y entonces podemos, conocida la fuerza, podemos aplicar Newton. Y determinar el movimiento.
+1:17:42
+Entonces vamos a ver un ejemplo. Un ejemplo vale más que mil palabras.
+1:17:56
+El ejemplo es así. Vamos a tomar dos placas muy grandes. ¿Sí? ¿Sí?
+1:18:12
+Cargadas uniformemente. Esta está cargada con carga positiva. Entonces, sigma positivo uniforme. Y del lado de abajo vamos a tener menos sigma. La misma densidad superficial de carga pero con el signo opuesto. También uniforme, ¿no?
+1:18:48
+Bueno, como las placas son muy grandes, ¿cómo será el campo eléctrico acá? Uniforme, ¿por qué?
+1:18:58
+Porque va del positivo al negativo. Va del positivo al negativo, pero podría no ser uniforme. ¿Por qué es uniforme? ¿Por qué vale lo mismo en todo punto acá adentro?
+1:19:08
+Las dos van en el mismo sentido, sí. Está claro, esta genera un campo para acá, saliente de este, y este un campo para acá, entrante de este.
+1:19:17
+Claro, porque dijimos, estamos en la situación aquella en que dijimos, estoy cerca de un plano muy grande con una densidad uniforme de carga. Entonces dijimos, el campo eléctrico es perpendicular al plano y uniforme. Y de hecho, ¿cuánto valdrá este campo eléctrico acá? Entonces, E uniforme. Va a valer sigma sobre epsilon. ¿Por qué no sigma sobre 2 epsilon? Porque hay dos.
+1:19:48
+El que me genera el de arriba, va de arriba para abajo. Le llamo E más. Y vale, tiene módulo, el módulo de E más es sigma sobre 2 epsilon cero. Y el que me genera E menos, ¿para dónde va? ¿Para arriba o para abajo?
+1:20:06
+También para abajo. Es igualito. E menos vale igual a E más. El que me genera la carga de abajo es el mismo porque uno me genera un campo saliente a esta placa y el de abajo me queda un campo entrante a la placa. Así que los dos van para el mismo lado y los dos tienen el mismo módulo porque las dos densidades de carga son iguales a menos del signo. Entonces cuando sumo el E total, E total es sigma sobre epsilon cero.
+1:20:40
+Entonces tenemos un campo que es uniforme, perpendicular a las placas y vale sigma sobre elección cero. ¿Sí? ¿Una pregunta? ¿Pero eso es donde vos estás en todo punto de las placas? ¿Y también sirve para un plan muy cercano de agua? Esto vale, si las dos, estoy en la hipótesis de que las placas son muy grandes comparadas con la distancia. Estoy suponiendo que el tamaño este es mucho más grande que esta distancia. Eso en el dibujo no es muy así, pero supongamos que las placas son grandes con respecto a la distancia que las separa.
+1:21:12
+Entonces en todo punto acá adentro puedo considerar que estoy cerca de la placa. Cerca de la placa quiere decir una distancia mucho más cercana a la placa que la distancia que tengo a un borde, digamos.
+1:21:28
+No, del lado de arriba no. Estoy hablando del... Muy pegadito. Va a valer lo mismo en cualquier... La única región donde no es vale esto es cerca del borde. Si yo estoy cerquita del borde, está claro que hay una zona cerca del borde donde esto ya deja de ser cierto. El campo eléctrico lo que sucede es que se comba. Hace una... Venía así derechito y empieza a torcerse para afuera. Como se torcía allá en este dibujo. Si ponen la otra placa va a ser lo mismo, lo único que las líneas, el campo eléctrico va a ser una cosa así.
+1:22:05
+¿Bien? Bueno, entonces vamos a estudiar cómo es el movimiento así, en un campo eléctrico uniforme. ¿Sí? ¿Estoy con tiempo todavía? Sí, todavía unos minutos. Entonces, movimiento...
+1:22:34
+Entonces supongamos que yo tengo acá las dos placas, un campo eléctrico uniforme.
+1:22:49
+Y por acá tengo, por ejemplo, un pedazo de metal caliente. Cuando uno calienta un pedazo de metal, emite electrones. Entonces van a aparecer partículas cargadas, acá típicamente electrones, que surgen con una cierta velocidad.
+1:23:07
+Vamos a tomar la velocidad inicialmente horizontal. Eso en realidad no emite en todas las direcciones, pero se puede poner lo que se llama un colimador. ¿Saben lo que es un colimador? Nada, un colimador es un agujerito. Es una pared con un agujerito. Entonces, si yo pongo una pared con un agujerito o dos paredes con agujeritos alargados, todos los electrones que no venían justo en esa dirección no pasaron. Entonces, puedo seleccionar los electrones que van solo en una dirección o casi solo en una dirección. Así que voy a tomar selecciones acá.
+1:23:39
+Esto es una fuente de electrones que típicamente es un hierro caliente.
+1:23:46
+Entonces la pregunta es, cuando esto es un electrón, ¿cómo es el movimiento del electrón en ese campo eléctrico? No me va a dar el tiempo para hacer las cuentas ahora, pero sin hacer las cuentas, ¿cómo es ese movimiento? Parabólico. Es un movimiento parabólico, ¿por qué?
+1:24:04
+La fuerza va a ser para abajo. ¿La fuerza va a ser para abajo?
+1:24:09
+Se trae... No, el electrón está cargado negativamente, así que va a curvarse para arriba. Pero va a ser un movimiento parabólico. ¿Por qué?
+1:24:22
+Porque la fuerza es constante, porque el campo es uniforme y como la fuerza es constante, ustedes saben que un movimiento en una fuerza constante es un movimiento parabólico. ¿Cómo la gravedad? Es hacer igual que la gravedad, lo único que en lugar de cubrirse para abajo se va a cubrir para arriba. Y está claro que la gravedad acá no juega ningún papel. Les recuerdo siempre que cuando tienen objetos cargados así, la gravedad es insignificante. Antes de terminar la clase, porque creo que todavía tengo un par de minutos, no me hagan trampa.
+1:24:51
+Antes de hacer la cuenta, ¿para qué sirve esto? Del punto de vista tecnológico. Si ustedes quisieran fabricar un aparato con esto. Aparatos que se fabrican o algunos se fabricaban usando esto.
+1:25:07
+Sí, se fabricaban en ese campo. Antes los televisores viejos, lo que tenían era una fuente de electrón, rayos catódicos era el nombre antiguo, era una fuente de rayos eléctricos, y tenían en realidad no solo campos eléctricos, tenían también campos magnéticos, pero lo esencial es un campo eléctrico que según... Como uno cargue estas placas, las podía elegir cómo estaban cargadas, podía decidir cuánto se desviaban los electrones. Entonces lo que hacía el aparato era ir apuntando para dónde iban los electrones, los hacía llegar a un punto iluminado, había una pantalla que se iluminaba cuando llegaban los electrones o no.
+1:25:45
+Otro aparato así.
+1:25:48
+Bueno, el selector de velocidades necesitas un campo magnético. Si vos asumís que tirás la carga bastante cerca del campo eléctrico entre las dos chapas, no tenés problema. Vamos a tener un problema. Si no es eficiente. Pero lo seguimos el lunes.
+

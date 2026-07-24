@@ -1,0 +1,71 @@
+title: Clase 10
+id: fis3-2015-2-10
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:25:53"
+
+stats:
+  transcript_words: 10411
+  summary_words: 1046
+  diagrams_pending: 7
+  equations: 20
+
+topics:
+  - Demostración experimental de equipotenciales (cuba electrolítica)
+  - Simulación numérica de potenciales por relajación
+  - Capacitor de placas esféricas (C = 4πε₀/(1/A − 1/B))
+  - Capacitor de placas cilíndricas (C = 2πε₀L/ln(B/A))
+  - Cálculo del campo por Ley de Gauss en geometrías simples
+  - Condensadores en paralelo (C_eq = C₁ + C₂)
+  - Condensadores en serie (1/C_eq = 1/C₁ + 1/C₂)
+  - Capacidad equivalente menor en serie
+  - Ejemplo combinado serie-paralelo
+  - Uso práctico (aumentar/disminuir capacidad)
+  - Energía almacenada en un condensador (U = Q²/2C)
+  - Energía almacenada en el campo eléctrico
+  - Densidad volumétrica de energía (u = ½ε₀E²)
+  - Aislante en un campo eléctrico (dieléctricos)
+  - Polarización de moléculas polares y cargas de polarización
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "26"
+    verified: false
+
+prerequisites:
+  - Clase 9 (capacitancia, capacitor de placas paralelas)
+  - Clase 6 (Ley de Gauss, línea infinita cargada)
+  - Clase 7 (energía potencial eléctrica)
+  - Clase 2 (polarización, conductores y aislantes)
+
+next_topics:
+  - Dieléctricos y constante dieléctrica (Clase 11)
+  - Descripción del capacitor con dieléctrico
+  - Vector desplazamiento eléctrico
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

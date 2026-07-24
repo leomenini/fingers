@@ -1,0 +1,74 @@
+title: Clase 7
+id: fis3-2015-2-07
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:26:18"
+
+stats:
+  transcript_words: 9101
+  summary_words: 1820
+  diagrams_pending: 8
+  equations: 24
+
+topics:
+  - Repaso de conductores en equilibrio (carga en superficie, E = 0)
+  - Conductor aislado con cavidad (carga en la superficie externa)
+  - Densidad superficial interna nula y rol de la estabilidad del equilibrio
+  - Campo eléctrico justo afuera de un conductor (E = σ/ε₀)
+  - Argumento erróneo de Resnick sobre la componente normal
+  - Continuidad de la componente tangencial del campo
+  - Paradoja plano conductor (σ/ε₀) vs plano cargado (σ/2ε₀)
+  - Reparto de carga en las dos caras (σ' = σ/2)
+  - Prueba experimental de la Ley de Gauss (experimento de la caja)
+  - Medida indirecta del exponente de Coulomb (|δ| < 10⁻¹⁵)
+  - Experimento propuesto por Priestley (1767)
+  - Fuerzas conservativas (trabajo independiente del camino)
+  - La fuerza electrostática es conservativa
+  - Energía potencial eléctrica (U = Q₀Q/4πε₀r)
+  - Constante aditiva y convención U = 0 en el infinito
+  - Energía potencial de un conjunto de cargas puntuales
+  - Definición de potencial eléctrico (V = U_Q1/Q1)
+  - Diferencia de potencial y campo eléctrico (V_B - V_A = -∫E·dl)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "24-25"
+    verified: false
+
+prerequisites:
+  - Clase 1 (Ley de Coulomb, trabajo y energía)
+  - Clase 5 (líneas de campo, flujo)
+  - Clase 6 (Ley de Gauss, conductores en equilibrio)
+  - Física I (fuerzas conservativas, energía potencial)
+
+next_topics:
+  - Potencial eléctrico y superficies equipotenciales (Clase 8)
+  - Relación campo-potencial mediante el gradiente
+  - Potencial de distribuciones continuas de carga
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

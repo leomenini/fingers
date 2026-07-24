@@ -1,0 +1,492 @@
+# Clase 13
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/13/
+
+Fecha de exportación: 7/23/2026, 11:54:21 PM
+
+Clase: 13
+Curso: F3
+
+Segmentos : 266
+Palabras  : 9830
+Caracteres: 56639
+
+0:16
+La vez pasada habíamos empezado a hablar de cómo justificar la ley de Ohm a partir de las propiedades microscópicas del movimiento de los electrones. Yo les comenté que en realidad para hacer eso bien se necesita usar otra cosa que la mecánica clásica, se necesita usar la mecánica cuántica. y que algunas de las propiedades de hecho no se entienden bien sin usar la mecánica cuántica.
+0:53
+Pero para tener una idea cualitativa empezamos a armar un modelo basado en la mecánica clásica, es un modelo que se llama el modelo de Drude. Y lo que estuvimos viendo, entonces supusimos, hicimos una serie de hipótesis y les voy a mostrar que esas hipótesis llevan a la existencia de la conducción y la aparición de una velocidad de desplazamiento. Entonces esas hipótesis eran, primero que, hipótesis del modelo de Drude.
+1:39
+Entonces la primera es que vale la mecánica clásica.
+1:59
+Esa hipótesis, como les decía, no está bien justificada. Es simplemente porque la necesitamos porque es la mecánica que ustedes conocen. Si yo no supongo esto, no podemos hacer ningún cálculo. Lo segundo que voy a suponer es que los electrones no interactúan entre sí.
+2:28
+Esta hipótesis es correcta, pero es muy difícil de justificar. A priori uno diría, los electrones que son partículas cargadas, que experimentan interacción de Coulomb, que es una interacción muy, muy importante. Es muy difícil entender si tenemos una densidad alta de electrones, cómo puede ser que no estén interactuando entre sí. Resulta ser correcto, pero llevó mucho tiempo a los físicos entender bien por qué esto era correcto. Pero vamos a suponerlo ahora. Tres, vamos a suponer que los electrones se mueven libremente en el metal, salvo que cada tanto chocan
+3:27
+con elementos de la red, de la red cristalina. ¿Cada cuánto? Bueno, vamos a suponer que el tiempo medio entre colisiones
+3:55
+Es tau, una propiedad intrínseca al movimiento. Y lo último que vamos a suponer es que luego de un choque, los electrones pierden memoria.
+4:28
+de su movimiento previo.
+4:35
+Es decir, los electrones se venían moviendo, chocan, es como que ustedes se irán contra la pared y luego arrancan de nuevo. Y lo de darse contra una pared no está tan mal la idea, porque la red cristalina es rígida, es bastante rígida, y es muy pesada con respecto a los electrones. Son objetos livianos que chocan con respecto a una red pesada. Entonces no es tan disparatado pensar que cuando chocan, arrancan de nuevo.
+5:09
+Entonces...
+5:14
+Bueno, perdón, y una última cosa que voy a suponer es que la velocidad... La velocidad... Promedio... De los electrones... Es mucho mayor que la velocidad de desplazamiento.
+5:37
+Es decir, que los electrones tienen un movimiento muy muy rápido... y que en realidad al agregar un campo eléctrico agregamos una pequeña velocidad de desplazamiento, pero que es muy pequeña con respecto a la velocidad con la que se mueven típicamente los electrones. Lo único normalmente es que tiene una velocidad muy grande, pero aleatoria. Entonces a veces van para un lado, a veces van para el otro, así que en promedio no se mueven. Cuando tenemos campo eléctrico aplicado cero, los electrones se están moviendo muchísimo, Pero al cabo, si promediamos en un intervalo de tiempo cortito, digamos una décima de segundo, no se movieron porque se movieron tanto tiempo para un lado como para el otro.
+6:14
+Entonces, con este modelito tratemos de entender bien cómo es el... Bueno, pero entonces, esta última hipótesis quiero darles números porque es realista. Esta última hipótesis es, fíjense que velocidad promedio... digamos en el cobre, para tener idea, pero es parecido en otros metales, es como 1,6 por 10 a las 6 metros por segundo.
+6:41
+Y vimos que la velocidad de desplazamiento, para una corriente razonable, la habíamos calculado la vez pasada, era algunos centímetros por hora. Hicimos 14 centímetros por hora. Entonces se dan cuenta que esta hipótesis está muy bien justificada. En realidad no es obvio por qué la velocidad de los electrones es tan grande. Es enorme. Eso no es obvio. Pero sí es esperable que las velocidades típicas, microscópicas, sean mucho más grandes que esta.
+7:23
+Entonces, veamos cómo es el movimiento de un electrón. Supongamos que en T igual a cero, un electrón chocó. Chocó con algo, con algo en la red.
+7:54
+Acaba de chocar. Entonces dijimos, perdió memoria. Acaba de chocar, está quieto.
+8:02
+Hasta el próximo choque, ¿cuál es la fuerza que experimenta el electrón?
+8:10
+La que le genera el campo eléctrico externo.
+8:16
+Apenas choca, el electrón se venía moviendo. Apenas choca, se queda quieto. Arranca quieto.
+8:27
+El movimiento que tenía anteriormente lo perdió. En realidad no es necesario suponer que arranca quieto. Lo que es necesario suponer, pero vamos a suponer que arranca quieto, pero podríamos suponer una hipótesis un poco más débil, que es que arranca con una velocidad completamente...
+8:52
+En realidad no arranca aquí. Vamos a decirlo bien. Vamos a hacer las cosas bien. Arranca con alguna velocidad. ¿Sí? Vamos a hacerlo así. Arranca con alguna velocidad. ¿Está? Con una dirección aleatoria. ¿Sí? ¿Sí? Que va a ser de este tipo. ¿Está? Entonces, arranca con una velocidad...
+9:21
+Inaleatoria, es decir, completamente al azar, independiente del campo eléctrico aplicado. Una velocidad, chocó y arranca, chocó y arranca. Entonces no vamos a suponer que arranca de reposo. Pero ¿cuál es la única fuerza que experimenta con estas hipótesis? Entre choque y choque, hasta el choque siguiente, ¿cuál es la única fuerza que experimenta el electrón?
+9:52
+La que le genera el campo eléctrico. Entonces, hasta el choque siguiente... ¿Sí? Fuerza.
+10:10
+Es la fuerza total. ¿Sí?
+10:15
+sobre el electrón, no es otra cosa que la carga del electrón, que es menos E por el campo eléctrico.
+10:25
+¿Está? Y esto va a ser igual a la masa del electrón por la aceleración del electrón. Pero como el campo eléctrico es constante, la carga del electrón es constante y la masa del electrón es constante, entonces la aceleración que experimenta el electrón entre choque y choque es constante. ¿Sí? Entonces, A... Es igual a menos E por E sobre la masa del electrón. ¿Está? Entonces llamémosle esta velocidad V0.
+10:58
+V0. Que es aleatoria, les recuerdo, ¿no? Entonces ahora calculemos cómo es la velocidad en función del tiempo entre choque y choque. ¿Cuánto será? Si tengo una aceleración constante, ¿cuánto será la velocidad?
+11:14
+Sí, la primitiva, pero la primitiva de una constante es bien fácil. Es eso por el tiempo más la velocidad inicial. Entonces B de t igual a B0, que es aleatoria, les recuerdo, más una cosa que es determinista, que no depende del azar, que es esta que está acá. ¿Sí? Por t. ¿Por t?
+11:45
+¿De acuerdo? Hasta el choque siguiente. Esa es la expresión de la velocidad hasta el choque siguiente. Y ahora tomemos promedios. Entonces promediemos.
+12:00
+Porque no nos interesa un electrón si no nos interesa el promedio. Entonces, cuando tomamos el promedio, el promedio de B0...
+12:10
+Este es cero porque a veces la velocidad va para un lado, a veces va para el otro. En promedio, la velocidad esta que no depende del campo eléctrico se anula. Y nos queda menos E por E sobre M, M del electrón. Todas esas cosas no dependen de T. Y sí tenemos un tiempo promedio entre choque y choque. ¿Sí? ¿Cómo le llamamos al tiempo promedio entre choque y choque? Tau.
+12:41
+Entonces esto, en módulo, es la velocidad de deriva. Entonces la velocidad de deriva, es decir, el módulo de la velocidad promedio será igual a E por el módulo de E sobre la masa del electrón por tau. ¿Cómo?
+13:06
+Perdón. Esa es exactamente la velocidad de deriva o de desplazamiento. Se le llama de las dos maneras. La velocidad de desplazamiento es la velocidad promedio con la que se mueve. Tomé el módulo, ¿verdad? ¿Verdad? Velocidad de desplazamiento o deriva también se le llama.
+13:38
+Ven que el grueso de la velocidad está acá. Este es un número mucho más grande. Pero cuando lo promediamos, nos da cero, porque a veces va por un lado y se para el otro. En cambio, esta velocidad siempre apunta para el mismo lado. De hecho, tiene dirección de E. En el caso de los electrones tiene sentido opuesto. Fíjense que tiene sentido opuesto acá, por el signo menos. Y el tiempo...
+14:07
+Entonces el tiempo depende de cada material. Pero lo importante es que el tiempo casi no depende de él. Entonces, importante. Como el movimiento de los electrones casi no depende de E... Entonces tau casi no depende de...
+14:46
+El movimiento de los electrones es casi igual con o sin campo eléctrico. Es un movimiento totalmente aleatorio y que está determinado más bien por las propiedades de la red sin campo eléctrico. Le agregamos el campo eléctrico y en promedio se van corriendo los electrones, pero el movimiento, el tiempo típico de choque entre electrones y electrones casi no cambió. Les recuerdo que el movimiento es básicamente un movimiento a esta velocidad y lo que cambiamos de movimiento es solo una pequeña proporción chiquitita. Entonces los electrones casi no se ven afectados por el campo E, salvo en esta velocidad de deriva.
+15:18
+Bueno, pero habíamos encontrado la relación entre la velocidad de deriva y la corriente. La clase pasada vimos que la densidad de corriente es igual al número de portadores por unidad de volumen por la velocidad de desplazamiento. por la carga de un portador. En este caso, E.
+15:48
+Estoy hablando de módulos. Entonces, si calculamos allá, vemos que la densidad de corriente será igual a E al cuadrado por el número de portadores por tau dividido por la masa de electrón por E.
+16:10
+Y esto no es otra cosa que la ley de Ohm. Ley de Ohm. Y vemos que la conductividad es E al cuadrado por N por tau sobre la masa del electrón. Y es importante que obtenemos la ley de Ohm porque tau casi no depende de E. Entonces esto es una constante. Es una propiedad del material en ausencia del campo eléctrico. Es una constante. Entonces tau depende...
+16:40
+del material pero no de E, en una excelente aproximación.
+16:56
+Y además esto nos da una expresión de la conductividad en términos de las propiedades microscópicas del material.
+17:08
+Y esto es la justificación con un modelito, un poquito de juguete, pero que permite entender qué es lo que pasa. Los electrones, entre choque y choque, se van acelerando, pero después golpean y arrancan de cero, pierden su aceleración, la velocidad de deriva que habían ganado en el medio la perdieron, arrancan de nuevo con una velocidad aleatoria, pero cuando promediamos esas velocidades aleatorias dan cero. Quiero comentarles algunas cosas.
+17:39
+Yo les dije que los electrones chocan con cosas en la red cristalina. Originalmente, Drude pensaba que los electrones básicamente chocaban con todos los iones de la red cristalina. Lo cual es muy razonable, porque la red cristalina está cargada positivamente. Los electrones están cargados negativamente, experimentan la interacción de Coulomb, que es una interacción muy fuerte, y entonces uno esperaría que estén todo el tiempo chocando. En realidad, los electrones no chocan con la red cristalina.
+18:12
+Pasan a través, casi como si fuera transparente. No exactamente, pero casi así.
+18:21
+En realidad los electrones lo que chocan es con las impurezas de la red cristalina y con las deformaciones de la red cristalina. La red cristalina no es una red perfecta, es una red que tiembla, ¿verdad? Por ejemplo, el sonido que se propaga en la red genera pequeñas deformaciones en la red. Entonces la red no es exactamente una red periódica ideal, perfecta, no. Tiene pequeños defectos, tiene impurezas y tiene deformaciones. Los electrones con lo que pegan no es con la red misma, sino con las deformaciones o defectos de la red.
+18:57
+Entonces, choca mucho menos seguido de lo que uno esperaría a priori. Están bastante libres los electrones. Eso es un efecto de la mecánica cuántica. Y de hecho, cuando la temperatura baja, el número de deformaciones y defectos disminuye y también disminuye la resistividad. La resistividad es proporcional... a bajas temperaturas es proporcional a la temperatura para un gas de electrón.
+19:29
+También debido a efectos cuánticos. Si no fuera por los efectos cuánticos, uno esperaría que los electrones estén golpeando todo el tiempo con la red. Pero no es eso. Lo que pasa es que choca muchísimo menos. Entonces la mecánica cuántica permite en realidad hacer que algunas cosas que no estarían bien en este modelo terminen estando bien. Como el hecho de que los electrones interactúan poco entre sí y también el hecho de que los choques con la red son mucho menos frecuentes de lo que uno esperaría.
+20:00
+¿Se entendió esto? ¿Cuál es la idea que se tiene que dar? Vienen los electores, chocan, después de chocar arrancan en cualquier dirección, pero se van curvando un poquitito debido a la presencia de la aceleración generada por el campo eléctrico. Luego vuelven a chocar y arrancan de cero, y arrancan de cero, y arrancan de cero. Esa energía que el campo eléctrico les fue suministrando, ¿dónde va a parar?
+20:28
+Está claro que los electrones no van ganando energía. Vuelven en promedio siempre a la misma velocidad.
+20:36
+Se disipa. La energía se conserva. Así que va a algún lugar. ¿Dónde va? A las vibraciones de la red cristalina, que es lo que llamamos temperatura. Genera un aumento de la temperatura de la red cristalina. Todos sabemos que una resistencia, cuando pasa corriente, se calienta. Es eso. Los electrones al pasar hacen vibrar la red cristalina y eso es la temperatura que genera. Si cuando van chocando, cada electrón no hace nada, pero como son muchísimos, terminan.
+21:07
+¿Preguntas? Digo que los electrones en promedio no van ganando energía cinética. Quiere decir que el trabajo que les hace la fuerza... uno tiene que preguntarse dónde va. Y bueno, en una resistencia a ese trabajo, lo que sucede es que se disipa, como decían ahí. ¿Qué significa que se disipa? Que se pierde como energía mecánica y se transforma en calor.
+21:38
+No, instante a instante le están transmitiendo energía electrónica, pero cuando llega el choque... La pierde y ¿dónde la pierde? Las vibraciones en la red. Instante a instante gana, pero en promedio no gana. Porque gana, la pierde toda. Gana, la pierde toda. Y entonces eso es lo que se llama liberación de energía por efecto Joule. Preguntas, por si no arrancamos con el capítulo siguiente.
+22:10
+Circuitos.
+22:14
+Gracias.
+22:47
+Circuitos de corriente directa. Corriente directa quiere decir lo siguiente. Vamos a suponer que son circuitos en los cuales el sentido de la corriente no está cambiando de signo. Más adelante en el curso vamos a ver... Circuitos de corriente alterna. Los circuitos de corriente alterna son aquellos en los cuales el sentido de la corriente de un instante a otro cambia. Ahora no.
+23:18
+Vamos a considerar los circuitos primero más simples, en los cuales el sentido de la corriente se mantiene a lo largo del tiempo. El valor absoluto de la corriente puede ir cambiando, pero no su signo. ¿Por qué es que el signo del ciclo esté cambiando y es en diferencia de que sea el signo del ciclo?
+23:38
+No, a ver, cuando tenemos cambio de corriente, vamos a poder... La mayoría de los circuitos de corriente alterna que vamos a ver son circuitos que varían sinusoidalmente. Y entonces ahí podemos hacer una cantidad de propiedades específicas para esos circuitos que varían sinusoidalmente. Por ahora vamos a suponer que no es así, entonces eso...
+24:07
+va a permitir ocuparnos de menos signos, y aparte tener preocupaciones un poco diferentes, porque en el caso del circuito de corriente alterna, uno se interesa menos por lo que pasa instante a instante, porque la corriente está variando muy rápido en el tiempo, sino más bien en cantidades promedio que toma en intervalos largos, o largos comparado con el tiempo de oscilación. Entonces, más bien el tipo de preguntas que uno se hace son un poco diferentes. Muchas de las cosas que vamos a aprender ahora igual siguen valiendo después.
+24:37
+Entonces, primero corriente en un circuito. Entonces, pongamos que yo acá tengo un circuito. Por ahora voy a pensarlo solo de la manera siguiente. Vamos a suponer que tenemos... resistencias, resistencias son dispositivos, son resistores, son dispositivos que tienen la resistencia que calculamos en la clase pasada.
+25:16
+Un conjunto de resistencias, vamos a pensar por ahora en un circuito solo con resistencias, unidas por cables, los cables los vamos a pensar como cables ideales. ¿Qué quiere decir cables ideales?
+25:32
+Son cables en los cuales la resistencia es muy chiquitita, es despreciable, comparada con la resistencia de los resistores de los que explicitamos. Obviamente todos los cables tienen una resistencia. Ustedes saben muy bien que si quieren transmitir energía de salto grande a Montevideo, hay una pérdida de energía en transportar la energía en el cable. Todos los cables, aún los cables, esos que están pensados para transmitir mucha energía con poca pérdida, tienen una pérdida.
+26:04
+Pero vamos a suponer que esa resistencia que tienen los cables es muy chiquita comparado con las resistencias que explicitamos en el circuito. Entonces vamos a considerar cables ideales con resistencia despreciable. Y vamos a suponer que a esta malla de resistencias la conectamos a una batería. La batería la vamos a representar así. Entonces cuando supongamos que para hacer esto ponemos acá un interruptor.
+26:30
+Entonces en el instante t igual a cero cerramos el interruptor y ¿qué pasa? ¿Sí? Un circuito así. En un intervalo de tiempo súper, súper, súper, súper, súper, súper chiquitito, que es del orden de 10 a la menos 9 segundos, algo totalmente, es muy, muy difícil de detectar, incluso experimentalmente con los experimentos más finos, en un instante muy, muy, muy chiquitito, el sistema se acomoda. Aparece lo que se llama un transitorio. Los distintos puntos del material se va transmitiendo la señal eléctrica, ¿sí?, Pero después de ese intervalo, el sistema llega a lo que se llama una situación estacionaria, en la cual la corriente que pasa por cada lugar no depende del tiempo.
+27:12
+¿Sí? Si el circuito fuera un poco más complicado y además de tener resistencia tuviera otros objetos, por ejemplo un condensador. ¿Sí?
+27:25
+Entonces el sistema no llega a un estado estacional. La corriente no llega rápidamente a una situación independiente del tiempo. Pero sí pasa que ese régimen en el cual se van acomodando las cargas para que la corriente sea la misma en toda parte del cable, ese también dura 10 a la menos 9 segundos. ¿Se entiende? Entonces, sacando un intervalo
+27:55
+de tiempo muy corto, realmente muy corto, del orden de 10 a la menos 9 segundos, la corriente a lo largo de un cable será la misma.
+28:31
+Obviamente, si llegamos a un nudo acá, la corriente que tenía acá se reparte entre uno y otro. Pero dentro de un tramo de cable es la misma. Obviamente, no llamo mismo cable este y este, porque en realidad acá hubo un nudo y la corriente se repartió. Pero en este tramo la corriente es la misma. No voy a suponer que tenga una corriente más grande acá que una corriente acá. Se dan cuenta que en el instante súper, súper cortito probablemente pasa eso, porque yo prendí el interruptor, empieza a circular la corriente y al principio pasa por acá y todavía no llegó acá.
+29:04
+¿Se entiende? Pero eso demora muy, muy, muy, muy poquito. Enseguida la corriente es la misma a lo largo del cable. Vamos a ignorar este efecto que realmente es ignorable. Es un efecto muy, muy chiquitito. Inobservable en un experimento de mes.
+29:19
+Entonces eso es lo primero que vamos a hacer. Y lo segundo que vamos a suponer es que la corriente es la misma independiente de la sección. Porque uno podría decir, podría suceder el cable fuera más ancho acá. Y dice, ah, bueno, pero entonces acá va a haber más corriente que acá. No, porque la carga se conserva. Entonces todo lo que entra por un lado, si yo tengo un DQ que entra por acá, es el mismo DQ que sale por allá. No se está acumulando carga en ningún lado.
+29:46
+No se está acumulando carga en ningún lugar de los cables.
+30:06
+¿Por qué no se está acumulando carga? Porque los objetos cargados cuestan mucha energía. Entonces la naturaleza tiende a repartir la carga de tal manera que no se generan partes cargadas. Lo cual es un poco antiintuitivo porque uno dice, bueno, pero la carga salió de acá. En algún momento la carga había más acá que acá. Es verdad, pero eso sucede en un intervalo muy cortito. Enseguida se acomoda todo para que todo permanezca neutro. Todas las partes del circuito van a permanecer neutras.
+30:49
+Esto tiene un caso particular que es lo que pasa en un nudo.
+30:55
+Como la carga no se está acumulando en ningún lado, en particular no se está acumulando en los nudos.
+31:03
+No se está acumulando en puntos intermedios de los cables, a lo largo del cable siempre la misma corriente y en los nudos toda la carga que entra
+31:23
+sale entonces si tenemos un lugar donde tenemos una corriente que entra acá I1 y tenemos acá dos corrientes I2 e I3 entonces I1 es igual a I2 más I3
+31:48
+Toda la corriente que entra es igual a la corriente que sale. Esto significa dos cosas. Primero la conservación de la carga. Ya sabemos que la carga se conserva. No se está creando carga en el nudo. Pero más que eso, tampoco se está acumulando carga. Podría suceder que estuviera entrando la carga y se fuera depositando acá. Y lo que entra fuera más que lo que sale. ¿Verdad? Pero no pasa eso. No se están volviendo cargadas las partes del circuito. ¿Está bien? Bueno, a esta propiedad se le da un nombre que se llama la primera ley de Kirchhoff.
+32:25
+Se le llama ley de los nudos. Mejor así. De los nudos. Que dice eso. Que toda la corriente que entra a un nudo es la que sale. Y también se le llama primera ley de Kirchhoff. Y déjenme leer Kirchhoff porque es muy difícil de escribir. Primera ley de Kirchhoff.
+32:51
+Doble H. Nunca me acuerdo la ortografía del pobre Kirchhoff. Es más fácil acordarse como la ley de los nudos. ¿Qué dice eso? Que la corriente no se está acumulando en ningún lado del circuito y en particular no se está acumulando en los nudos.
+33:22
+Eso nos dirá, por ejemplo, en este circuito, si tenemos acá una corriente I, y acá a esta le llaman I1 y a esta le llaman I2, ¿qué les dirá? ¿Cómo es la relación entre I, I1 e I2?
+33:40
+I es igual a I1 más I2. O dicho de otra manera, y como es la misma a lo largo de todo el cable, la corriente que pasa por esta resistencia... más la corriente que pasa por esta resistencia, es igual a la corriente que pasa por esta resistencia.
+33:55
+¿Bien? Entonces vamos a hacer esas suposiciones. Primero, que los cables tienen resistencia despreciable, son cables ideales. Segundo, que la corriente a lo largo de un cable es la misma, en un tramo, entre nudo y nudo es la misma, y que no se está acumulando carga en ningún nudo. Eso es la aproximación de circuito eléctrico. Son aproximaciones excelentes.
+34:21
+Realmente es una buenísima aproximación. Suele suceder, salvo que tengan resistencias muy chiquititas en el circuito, que realmente el cable tenga resistencia muy chiquitita. De hecho, cuando ustedes tienen solo el cable y no tienen otro dispositivo como un resistor, y lo unen a la batería, se dice que el sistema está en...
+34:43
+Unen con un cable estos dos lados.
+34:48
+Un cable así directo. Cortocircuito. Cortocircuito. ¿Entonces ahí normalmente qué pasa? ¿En la casa de ustedes se ve un cortocircuito? Bueno, si no hubiera llave térmica se quemaba la instalación de la casa porque pasa una corriente gigantesca. ¿Verdad? Bien, por suerte, para que eso no suceda, ponemos las llaves o los tapones, en fin, para que lo que se queme o salte sea la llave y no toda la instalación.
+35:23
+¿Por qué pasa eso? Bueno, porque si la resistencia es muy, muy chiquitita en el cable y esa es la producción que estamos haciendo, pasa una corriente enorme porque no resiste nada, no hay ninguna resistencia, pasa totalmente la corriente, pasa enorme. Entonces, en ese caso sí hay que tomar en cuenta la resistencia del cable, pero es muy chiquitita y la corriente es muy grande. Entonces ahora hablemos un poco de las baterías.
+35:56
+Baterías. Entonces las baterías son dispositivos que transforman energía de algún tipo... energía eléctrica.
+36:09
+Son dispositivos que transforman energía de algún tipo en energía eléctrica.
+36:36
+Entonces, ejemplos. Entonces, el más común es, a ver, las pilas que compran en la ferretería o en el supermercado. ¿Qué es lo que hacen? ¿Qué tipo de energía transforman en energía eléctrica?
+36:55
+Entonces, por acá dice energía química, la transforman en energía eléctrica. ¿Todos están de acuerdo? Sí, en realidad yo diría transforman energía eléctrica en energía eléctrica, porque yo les dije que todas las interacciones químicas en realidad son interacciones electromagnéticas.
+37:15
+Entonces, lo que estamos haciendo es transformar la energía eléctrica almacenada a nivel de las moléculas presentes en la pila, en energía disponible para uso eléctrico. Porque nosotros esa energía que está almacenada, que es eléctrica a nivel de las moléculas, no tenemos acceso a ella. Pero lo que sucede en la batería es que se da una reacción química que libera energía en forma de... que le entrega energía a los electrónicos en un cable conectado a la pila.
+37:46
+Entonces, energía química, pongo entre comillas...
+37:56
+en energía eléctrica. Esto es lo que llamamos la pila. Otros ejemplos.
+38:15
+¿Cómo? Bueno, a ver, en una represa, dicen, en una represa se genera energía eléctrica. ¿Cuál es el origen de esa energía eléctrica? Es una energía mecánica, básicamente la energía cinética que tiene el agua cayendo por la central, tiene una represa, en esa represa se cae el agua, esa caída le genera una energía cinética al agua y esa energía se desgira a una turbina. que con un procedimiento, con un efecto que veremos un poquito más adelante en el curso, el efecto dínamo, podemos transformar ese movimiento de las aspas de la turbina en energía eléctrica.
+38:56
+Entonces, eso se llama un generador normalmente. Generador.
+39:04
+Energía mecánica en energía eléctrica.
+39:16
+¿Qué más? Otros ejemplos. Otras maneras de generar energía eléctrica. ¿Sí? Claro, otra manera es, tienen combustible, queman algo. Pero en realidad es más o menos lo mismo. Porque ¿qué hacen las centrales térmicas? Queman algo, generan combustible.
+39:46
+genera también movimiento mecánico que se transforma. Entonces, un poco el mismo principio, lo único que el origen del movimiento no es la caída del agua, sino el efecto producido por la quema.
+40:06
+Como los motores de los autos, también lo que se produce son reacciones químicas que hacen pequeñas explosiones que hacen mover la... Si eso en lugar de conectarlo a la rueda de un auto, lo conectan a una turbina, generan energía. ¿Algún otro ejemplo?
+40:25
+Bueno, tienen las pilas solares, que ahí también es una reacción química, pero inducida por la luz. Hay una reacción química que se produce en las pilas solares, fruto de la llegada de rayos de luz del sol, digamos. ¿Económica? La eólica también es mecánica. El viento hace girar las aspas del molino que mueven una turbina. Pero la solar es un poco distinta.
+40:56
+Solar, entonces luz, que también es una forma de energía eléctrica, por cierto, pero es otra forma, no la que tenemos en los circuitos, en energía eléctrica. Acá estoy usando la energía eléctrica en un sentido muy específico, que es la energía disponible en un circuito eléctrico. Pero hay muchas otras formas de energía eléctrica. Entonces acá dice energía nuclear. La energía nuclear también lo que hacemos es vía generadores.
+41:31
+Lo que hacen las centrales nucleares es generar reacciones que no son químicas, son nucleares. Generan muchísima energía. Generan calor, hacen hervir agua, esa agua hace girar unas turbinas, entonces también pasa por un generador. Pero el origen del movimiento en ese caso pasa previamente por... Así como en las centrales térmicas primero se hizo una reacción química que produce el movimiento de las turbinas, acá lo que se hace es una reacción nuclear, pero es un poco la misma idea.
+42:02
+En algún sentido, separar entre centrales nucleares y centrales térmicas es un poco un abuso de lenguaje, porque funcionan bajo la misma idea de que calientan algo, eso genera movimiento y luego eso turbina. Lo único en un caso es la reacción que se produce, es una reacción de combustión, que es un proceso químico, y en el otro es un proceso nuclear.
+42:27
+No. Entonces acá dicen con imanes. En realidad los imanes, yo les voy a contar, los generadores tienen imanes adentro. Vamos a ver eso un poco adelante.
+42:40
+Sí, por eso estoy diciendo, en las represas lo que hay son generadores que mueven una turbina, tienen imanes. Entonces los imanes juegan un papel, pero no como fuente de energía, sino... ¿Se entiende? ¿Se entiende?
+42:55
+Bueno, todos estos son algunos ejemplos. Entonces, ¿cómo es esa energía que se aporta por la batería? Ahora, en las próximas clases voy a pensar sobre todo en pilas. Las pilas tienen algunas simplicidades comparado con estas otras. En particular, el generador, los generadores realistas que se pueden fabricar cómodamente, no generan corriente directa, generan corriente alterna, porque básicamente van, más adelante en el curso vamos a ver, pero generan a veces corriente para un lado y a veces corriente para el otro, están alternando todo el tiempo.
+43:34
+Básicamente alternan en función del tiempo que demora en dar una vuelta al generador. Entonces se pueden hacer generadores de corriente directa, es decir, dispositivos que transforman energía mecánica en corriente eléctrica de un solo signo, pero son muy ineficientes desde el punto de vista tecnológico. Entonces voy a dedicarme por ahora a las pilas, pero no me importa realmente. Es algún dispositivo que me está aportando energía eléctrica al sistema.
+44:13
+Vamos a pensar por ahora...
+44:21
+en las pilas. Entonces tiene la propiedad siguiente, las pilas que aportan una energía por unidad de carga aproximadamente
+44:56
+Y de hecho a esa energía por unidad de carga se le da un nombre.
+45:09
+Vamos a llamarle, se escribe con una letra E, este es el trabajo entregado.
+45:24
+al circuito por unidad de carga que hicieron circular. Y a esto se le suele llamar fuerza electromotriz de la batería. ¿Está bien?
+45:52
+La nomenclatura esta es muy infeliz. Fuerza electromotriz es muy infeliz por varias razones. La primera razón por la cual es infeliz esta nomenclatura es que no es una fuerza. No tiene nada de fuerza. Esto es una energía por unidad de carga. No tiene nada que ver con una fuerza. Se le sigue llamando fuerza electromotriz porque es una expresión que se usa mucho. Y eso tiene un origen histórico. Pero guarden bien en mente que esto no tiene nada que ver con una fuerza. Pero además hay otro motivo por el cual esta expresión no es...
+46:25
+Muy feliz. Que es que no coincide exactamente con el uso que le damos en otros cursos.
+46:33
+Yo voy a usar esta anotación y esta expresión porque es la que usa el libro y la que está muy establecida en este curso. Pero en otros cursos, en particular el curso de electromagnetismo, el segundo curso, le llamamos fuerza electromotriz a una cosa ligeramente diferente. Que es casi lo mismo, pero no es lo mismo. Entonces, guarden en mente que la expresión fuerza electromotriz a veces se le llama FEMM. van a ver muchas veces esas iniciales, que a veces se les llama cosas que son parecidas pero no exactamente igual.
+47:06
+Simplemente les digo esto para que cuando, capaz que yo mismo les doy el curso de electromagnetismo, cuando definamos FEM en el curso de electromagnetismo, le vamos a llamar una cosa que no es exactamente loco. Para que guarden en mente. Lo que único tienen que ustedes guardar a los efectos de este curso es que la FEM en una batería, la energía aportada por unidad de carga, es constante.
+47:49
+Entonces en una pila la FEM es constante. Cuando digo constante quiere decir... Que es una propiedad intrínseca de la batería. Cada pila tiene su valor de la FEM. Por ejemplo, las pilas que ustedes compren en el supermercado suelen tener una FEM de 1,5 voltios.
+48:19
+Algunas son un poco más grandes y tienen 9 voltios. Algunas de 9 voltios. Pero la mayoría son de 1,5 voltios. Bien. Entonces, ahora vamos a hacer la aproximación de pila ideal. Batería ideal. Aproximación.
+48:40
+Si toda esa energía por unidad de carga es entregada a los portadores de carga que
+49:12
+pasan a través de la batería, entonces la diferencia de potencial entre los bornes de la batería es igual a E. Por ahora no me ocupo del signo, puse el valor absoluto. Esto es lo que llamaríamos batería ideal.
+49:39
+Es decir, es una batería que no tiene pérdidas, que toda la energía que se generó en la reacción química se entregó a los portadores de carga. Como la energía que entrega por unidad de carga es constante y como el trabajo entregado a los electrones por unidad de carga es justamente lo que llamamos diferencia de potencial, entonces la diferencia de potencial es constante. Y es lo que uno normalmente supone, que entre las bornes de una pila el voltaje es constante, ¿está?
+50:12
+¿Sí? Pero eso es una aproximación, porque en realidad... ¿Por qué es una aproximación? A ver si alguien se da cuenta. ¿Cómo?
+50:26
+Claro, porque todo dispositivo eléctrico tiene algunas pérdidas. Por ejemplo, lo que suele llamarse la resistencia interna de la batería. Entonces, los portadores de carga que atravesan la batería les pasa dos cosas. Por un lado, les aportan energía debido a la transformación de energía química en energía eléctrica. Pero por otro lado, también las baterías se calientan. También tienen el efecto Joule. Pierdan parte de la energía que entregaron. se pierde en disipación.
+50:57
+Entonces, la situación real es que delta B es menor que E porque parte de la energía...
+51:22
+se pierde, entre comillas, no se pierde, ¿verdad? Por efecto Joule. Lo que sí suele suceder es que son iguales cuando la corriente que pasa es muy pequeñita. Dicho de otra manera, si agarramos una carga... una carga muy chiquitita y atraviesa la batería, muy poca carga por unidad de tiempo.
+51:57
+¿Sí? Entonces ahí es cierto que la diferencia de potencial es E. Pero si empezamos a hacer una corriente más grande, se disipa más. Ustedes saben, de hecho, vimos que para una resistencia, la diferencia de potencial asociado con la resistencia es proporcional a la corriente. Si tenemos la diferencia de potencial a corriente nula, es igual a la FEM, pero cuando aumentamos la corriente, va a ir disminuyendo la diferencia de potencial porque una parte corresponde a una resistencia interna. ¿Está bien?
+52:28
+Entonces, cuando no les digamos nada, vamos a pensar en una batería ideal. Si dicen una batería de FEM tanto, es una batería ideal e ignoran su resistencia interna. Cuando querramos referirnos a su resistencia interna, que capaz que veo un ejemplo concreto, si me da el tiempo hoy, no sé.
+52:49
+probablemente vea un ejemplo ahora en un ratito, en ese caso lo vamos a decir explícitamente. Cuando no digamos nada en el curso, vamos a suponer que todo es ideal, que las resistencias son ideales, que los cables son ideales y que las baterías son ideales. ¿Bien? Que en general es una buena aproximación de lo que pasa ahora mismo. ¿Preguntas? Entonces, si no le decimos nada, la diferencia potencial entre los bornes de la batería es delta B.
+53:19
+Entonces veamos unos ejemplos.
+53:22
+Entonces vamos a tomar algún ejemplo, vamos a empezar por algún ejemplo bien simple. Entonces vamos a suponer siempre, salvo que se diga explícitamente lo contrario...
+53:53
+Dispositivos ideales.
+54:01
+Entonces tomemos ejemplos. Vamos a ver ejemplos. El primero es el ejemplo más simple de todos. Tienen acá una batería conectado a una resistencia. Este es el símbolo de las baterías en...
+54:21
+En los circuitos, supongamos que acá hay una resistencia R, vamos a suponer que acá hay una FEM E. Esto es lo que nos dice que el potencial es mayor en la placa grande que en la placa chica. ¿De acuerdo? Y vamos a... Bueno, como el potencial es más grande acá, los electrones van a... los electrones van a querer ir hacia allá ¿verdad?
+54:52
+pero entonces la corriente ¿para dónde va? para el otro lado la corriente siempre va opuesta a los electrones entonces la corriente va a estar circulando para allá en este caso es obvio para qué lado va la corriente la dibujamos corriente ¿está? y entonces ahora lo que vamos a usar es que la diferencia de potencial como este cable es ideal ¿sí? dijimos que un cable ideal ¿cuánta resistencia tiene? Cero. Y es un cable, es un dispositivo ómico. Un dispositivo ómico con resistencia a cero, ¿cuál es la diferencia potencial entre acá y acá?
+55:28
+Cero. Es decir, un cable ideal se comporta como un conductor y equilibrio, en el cual todos los puntos están en igual potencial. Entonces, la diferencia potencial entre acá y acá tiene que ser igual que la diferencia potencial acá y acá. ¿Sí?
+55:48
+Entonces esto nos dice que E, que es la diferencia de potencial entre acá y acá, es igual a R por I. Entonces esto nos dice que la corriente es simplemente la FEM sobre la resistencia. Bueno, alguien me puede decir, bueno, chocolate por la noticia, ya sabíamos. Otra manera de pensar esto es la siguiente. Cuando atravieso en la dirección de la flecha de la FEM, el potencial aumenta. ¿Cuánto aumenta? Aumenta E. y cuando atravieso la resistencia, pierdo potencial.
+56:27
+¿Cuánto pierdo? R por I. Entonces puedo arrancar por este punto, llamo A, B, C, bueno, el potencial en B y acá es el mismo. Entonces la diferencia, puedo escribir que arranco acá y doy la vuelta. Puedo escribir que E... Porque subí menos R por I y vuelvo al potencial del punto de partida y me da cero. Es la misma ecuación. Entonces, eso a veces se lo formula también como una segunda ley de Kirchhoff.
+56:59
+¿Qué es la segunda ley de Kirchhoff?
+57:02
+Que la suma de las diferencias de potenciales a lo largo de una malla cerrada da cero. ¿Bien? Pero eso es simplemente decir que existe una diferencia de potencial. Si el potencial tiene sentido, van sumando diferencias. Entonces, lo enuncio así, pero es una ley un poco rimbombante. A veces se le llama ley de mallas o segunda ley de Kirchhoff. Ley de mallas o segunda ley de Kirchhoff.
+57:41
+A ver si me sale Kirchhoff.
+57:49
+La suma de diferencias de potencial en una malla cerrada con signos, hay que tener en cuenta los signos,
+58:13
+Da cero. Entonces veamos un segundo ejemplo. ¿Está? El segundo ejemplo es este. Una resistencia acá R1 y acá una resistencia R2.
+58:40
+Y acá una FEM E. Entonces ahora podemos repetir, llamamos I nuevamente a la corriente así. Entonces hacemos el mismo razonamiento. Arrancamos de acá. Al atravesar la batería aumentamos el potencial en E. Y cada vez que atravesamos la resistencia en el sentido de la corriente, perdemos potencial. El potencial es más alto acá que acá. Entonces tendremos menos R1I.
+59:11
+por I, menos R2 por I, y al haber hecho eso, volvimos al punto de partida y nos da cero. Entonces, la corriente es la FEM sobre la suma de las resistencias.
+59:40
+Veamos un tercer ejemplo. Ejemplo 3.
+59:52
+Pila con resistencia interna.
+1:00:05
+Entonces una pila real... Pila...
+1:00:12
+El potencial dijimos es menor, la diferencia potencial en una pila real es menor que la FEM, en realidad. Entonces esto será aproximadamente igual. Y el efecto principal dijimos es el efecto Joule. Entonces vamos a aproximarla, la pila, imaginar, es una buena aproximación de hecho, a reemplazarla por una pila ideal más una pequeña resistencia R chica, en serie. Y esto es lo que se llama la resistencia Joule.
+1:00:43
+de la batería.
+1:00:51
+El voltaje de una batería no es exactamente así, pero esto es una muy buena aproximación.
+1:00:57
+Entonces veamos cómo se comporta esto cuando lo conectamos a una resistencia R mayúscula. Entonces tienen E, tienen acá la resistencia R chica, acá ponemos la corriente, y acá nuevamente, ahora una vez que descompusimos de esta manera, podemos tratar esto como habíamos hecho hasta ahora.
+1:01:29
+Entonces arrancamos acá, tenemos E menos la caída de potencial acá en la resistencia grande, ahora menos R chica por I es igual a cero.
+1:01:44
+Se dan cuenta que es parecido a lo que teníamos ahora, pero donde una de las dos resistencias, en realidad, corresponde a la resistencia interna de la batería. Entonces, la corriente es igual a E sobre la suma de las resistencias. Y si yo ahora les pregunto, ¿cuál es la diferencia potencial en esta resistencia? Delta B en la resistencia, C... Será la corriente, la resistencia R por la corriente, que será E por R sobre R más R chica.
+1:02:29
+Esa es la caída de potencial en la resistencia. Pregunta, ¿cuándo esto va a estar bien aproximado?
+1:02:37
+¿Cuándo la batería real se va a comportar como una batería ideal?
+1:02:46
+Cuando el R chica sea despreciable, pero despreciable con respecto a quién? Al R grande. Entonces se dan cuenta que una batería se comporte como una batería ideal, no es una propiedad intrínseca de la batería, depende con qué la conectamos. Si yo tengo una batería que la conecto a una cosa que tiene una resistencia mucho más grande que la resistencia interna de la batería, entonces la resistencia interna de la batería es despreciable y se comporta como una batería ideal. En cambio... Si yo conecto la batería, la uno con la cortocircuito, ¿qué pasa?
+1:03:20
+Si yo agarro dos cables conectados a la punta de una batería y hago... ¿Cómo que no? Una intensidad enorme, porque la resistencia es chiquitita, la única resistencia que hay, la resistencia del cable es casi cero, lo que importa ahí más es la batería interna de la batería, tiene una chispa, una pila de corriente, y en ese caso no van a poder despreciar la resistencia del cable, es mucho más chiquita, es el límite opuesto.
+1:03:50
+Entonces, se comporta como... una batería real, una batería ideal, si R mayúscula es mucho más grande que R minuto. Bueno, y ahora pasemos a ejemplos más divertidos.
+1:04:22
+Entonces ahora empecemos a ver Circuito con más de una malla. Entonces coloco una batería acá.
+1:04:37
+Voy a hacer el mismo circuito que tengo en el cuaderno para no... Entonces eso le voy a llamar E1.
+1:04:49
+Después voy a poner una resistencia acá R1.
+1:04:55
+Después voy a tener otra resistencia acá R2.
+1:05:01
+Después voy a colocar acá una FEM para allá E2. Otra resistencia acá, la tomaré igual que la de allá arriba, será R1 nuevamente. Es otra resistencia pero con mismo valor. Otro resistor pero con mismo. Y acá voy a colocar una resistencia R1 también.
+1:05:22
+Y voy a colocar otra FEM acá R2. También que valga E2. Finalmente, otra resistencia acá, R1. Bueno, ¿cómo hago para resolver este problema? ¿Sí?
+1:05:54
+Entonces tenemos la ley de los nudos, la ley de las mallas. Pero antes de arrancar, ¿para dónde va la corriente? Por ejemplo, si yo quiero llamarle I1 a la corriente que va por acá.
+1:06:06
+Entonces el problema es que, fíjense, hasta ahora era evidente para dónde iba la corriente. Si yo tenía una diferencia de potencial mayor acá que acá, la corriente iba a ir así. Pero ahora no es evidente porque esta batería me empuja a circular para allá, pero esta me empuja a circular para allá y esta también para allá. Depende de los valores de E2 con respecto a E1, acá la corriente estará circulando para un lado o para el otro. No sabemos para dónde está. ¿Lo podés hacer y entonces...?
+1:06:31
+Entonces, lo que dice el compañero acá está bien. Nos inventamos un sentido. Y a ese sentido le llamaremos positivo. Si hacemos la cuenta y nos da negativo, quiere decir que en realidad estaba circulando para el otro lado.
+1:06:43
+Entonces, elijo una convención de signos. Por ejemplo, I1 acá. I3 para allá.
+1:06:52
+Y I2 para allá. ¿Bien? Bueno, entonces circula por acá. Así que acá también va I1. Y acá está pasando también I3, ¿verdad? Porque mantengo la corriente a lo largo de un tramo de circuito. Entonces, ahora voy a usar la ley de mallas, pero en lugar de tener una malla, tengo dos mallas independientes. Fíjense que alguien me podría decir, profesor, tiene tres mallas, porque tenemos esta, tenemos esta, pero alguien también puede decir, tenemos esta.
+1:07:24
+¿Está claro? Pero está claro que la tercera no es independiente de las otras dos. La información está en cada una de estas dos mallas. Entonces escribimos la ley de las mallas para cada una de las mallas. Entonces arranquemos con esta. Entonces arranco con este punto que está acá. Entonces subo. Cuando subo tengo E1 porque atravesé la batería en el sentido de la flechita de la ferma. Ahora acá, ¿me aparecerá menos R1 por I1 o más R1?
+1:07:57
+¿Se entiende? ¿Se entiende lo que digo? Cuando atravesamos la resistencia en el sentido de la corriente, nos aparece una caída de potencial. Pero si la atravesamos en sentido opuesto, como acá, en principio, si I1 fuera positivo, este potencial sería mayor que este. No sabemos si I1 es positivo. Pero si es negativo, también es consistente, porque simplemente se acomodará el signo con el signo de I1. ¿Pero no es un punto de 2 o de 2 para que son iguales? Pues son iguales. Lo mismo acá, R1, R1, pues son iguales.
+1:08:29
+Entonces acá queda más R1 por I1. Ahora sigo por acá. ¿Acá es más R2 por I2 o menos R2 por I2? Menos, porque estoy recorriendo en el sentido de I2. Así que menos R2 por I2. Y ahora acá, ¿es más E2 o menos E2? Menos, porque lo atravieso en el sentido opuesto de la flecha. Menos E2. Y acá este nuevamente será más R2. R1 por I1 porque estoy yendo en sentido opuesto a la corriente.
+1:09:01
+Y ahí volví al punto de partida, así que esto es igual a 0. Bueno, y ahora hagamos este circulando así. Arranco de acá. Entonces tenemos E2...
+1:09:23
+porque atravesé el sentido de la flecha, ahora voy en sentido de I3, así que me queda menos R1 por I3.
+1:09:32
+Ahora nuevamente recorro la resistencia en el sentido de I2, así que me queda menos R2 por I2. Atravieso en sentido opuesto de E2, así que me queda menos E2.
+1:09:46
+Y luego vuelvo por acá y me queda menos R1 por I3.
+1:09:55
+Bueno, las incógnitas de este problema son I1, I2 e I3. Y por ahora tengo dos ecuaciones.
+1:10:02
+Me falta señalar que las tres corrientes no son independientes porque en este nudo entra I3 y sale I1 más I2. Así que tengo que I3 es igual a I1 más I2. Entonces tengo un sistema lineal con segundo miembro y las incógnitas son I1, I2 e I3.
+1:10:23
+Sistema 3x3... Lo sé resolver. Ustedes saben resolver un problema de álgebra lineal fácil, ¿verdad? Así que les ahorro las cuentas. Les digo cuál es el resultado.
+1:10:41
+Queda I2. No importa mucho el resultado. Lo importante es que hayan entendido cómo se hace. Es E1 menos E2 sobre 2R1 más R2. Y 1 es E2 menos E1 sobre 2 por R1 más R2.
+1:11:06
+Por 1 más R2 sobre 2R1. Bueno, y 3 lo calculan como la suma. Sumando esas dos expresiones.
+1:11:32
+Y esto le muestra claramente que los signos de I1 e I2 no se pueden saber a priori, porque dependen de los signos del valor relativo entre I1 e I2. Si E1 es mayor que E2, va para un lado, y si E1 es mayor que...
+1:11:53
+Fíjense acá, acá. Esto es intuitivo, ¿no? Si E2 es suficientemente grande, la corriente I1 va para allá. Y está bien lo que dice acá, I1. Si E2 es mayor que E1, queda positivo. Y si no, quedaría negativo. Así que, a priori no podíamos saber el signo, pero no importa. Nos inventamos un signo, calculamos, y al final el resultado nos puede dar ese signo del signo opuesto. ¿Bien? Así que, ¿sí?
+1:12:30
+Bueno, sí, en realidad uno puede obviar esto y llamar a la corriente de malla y en el medio pasan las dos. Pero es más intuitivo esto al principio. Cuando uno se acostumbra es lo mismo, pero... Vos decís, no, en realidad está I2, en realidad es la suma, suponete que las dos la corrieras, I1 la hicieras correr para allá, I3 para allá, I2 es la suma, y entonces acá contás las de las dos mallas. Podés hacer eso también, pero es lo mismo.
+1:13:10
+¿Cómo estoy de tiempo? ¿Tengo 15 minutos todavía? Bueno, entonces vamos a ver ahora... La otra vez vimos que cuando juntábamos condensadores, podía suceder que un grupo de condensadores se comportaran como un solo condensador equivalente. ¿Se acuerdan? Lo mismo pasa con las resistencias. Si juntamos resistencias, se pueden comportar como una única resistencia. Ahí nuevamente vamos a estudiar el caso en que las conectamos en serie o en paralelo, igual que lo que hicimos para los condensadores.
+1:13:47
+Bueno, entonces...
+1:14:19
+Al igual que los condensadores, grupos de resistencias pueden comportarse como una resistencia equivalente.
+1:14:56
+Entonces veamos primer caso, resistencias en serie.
+1:15:10
+Entonces tomo la situación esta, tomo una corriente para allá y una resistencia R1 y ahora otra resistencia R2. Bien.
+1:15:25
+Bien.
+1:15:31
+Entonces ahora escribo las caídas de potencial. Escribo la caída de potencial acá, delta B. ¿Cómo será la caída de potencial entre este punto y este otro? Llamémosle A, B y C. Entonces, diferencia de potencial.
+1:15:51
+Diferencia de potencial. Si la corriente va para allá, escribiré que BA menos BB es igual a BA menos BC más BC menos BB.
+1:16:06
+Fíjense que puse al revés. Le voy a poner BB menos BA, puse BA menos BB. Así es la caída de potencial, incluyendo el signo. Y BA menos BC, ¿cuánto vale?
+1:16:18
+La caída de potencial acá. R1 por I. R1 por I.
+1:16:23
+Y en BC menos BB, R2 por I. Bueno, entonces ya está, porque fíjense, esto les queda R1 más R2 por I. Quiere decir que todo este bicho junto se comporta como una única resistencia, con resistencia equivalente... R1 más R2. La resistencia equivalente es R1 más R2. La diferencia de potencial... La caída de potencial es la suma de la resistencia por la corriente.
+1:16:57
+Resistencias...
+1:17:02
+En serie. Voy rápido porque fíjense que es muy parecido a lo que ya vimos con los condensadores.
+1:17:10
+Lo único que fíjense es que está al revés. Porque los condensadores... La que era la suma era cuando era en paralelo, mientras que las resistencias es cuando son en serie.
+1:17:22
+Entonces ahora segundo caso, resistencias en paralelo.
+1:17:33
+Entonces vamos a considerar esta situación.
+1:17:39
+R1...
+1:17:42
+R2. Y supongamos que acá entra una corriente I. Entonces la pregunta es si todo este bicho se puede comportar como una única resistencia. Obviamente la respuesta es sí. Pero ¿cómo hacemos?
+1:17:58
+Para analizarlo. Se divide en dos partes. Claro, dividimos la corriente, entonces tenemos, llamémosle I1 a la de arriba y I2 a la de abajo.
+1:18:13
+La caída potencial, llamémosle A a este punto y B a este punto, BA menos BB, lo podrán escribir por arriba o por abajo. Por arriba, ¿cuánto les da? R1 por I1. Y abajo también les da...
+1:18:35
+También lo pueden calcular por abajo, tiene que dar lo mismo. Porque no estoy escribiendo B, B menos B, A, sino B, A menos B, B. Para escribir la caída, cuánto cayó. Y entonces, por abajo, ¿cuánto queda? R2 por I2.
+1:18:57
+Y bueno, ¿qué falta ahora?
+1:19:01
+Que I, ¿cómo se relaciona con I1 y I2? Es la suma. Entonces tenemos que I es igual a I1 más I2. Pero I1, como vemos acá arriba, es BA menos BB sobre R1. E I2 es BA menos BB sobre R2.
+1:19:27
+Entonces esto nos dice que I es igual a 1 sobre R1 más 1 sobre R2 por VA menos BB.
+1:19:41
+Pero esto que está acá entonces sería 1 sobre la resistencia equivalente.
+1:19:46
+Les recuerdo que si tienen que delta B es R por I, I es delta B sobre R. Tenemos que 1 sobre la resistencia equivalente será igual a 1 sobre R1 más 1 sobre R2. La resistencia equivalente de resistores en paralelo.
+1:20:41
+¿Se está entendiendo?
+1:20:50
+Y ahora en los minutos que me quedan de clase, pero son muchos, pero arranco con la sección siguiente.
+1:21:05
+4.5, perdón, 7.5.
+1:21:17
+Es transferencia de energía en un circuito.
+1:21:41
+Entonces tomemos un dispositivo cualquiera.
+1:21:50
+Un dispositivo eléctrico cualquiera. Es decir, ahí adentro puede haber un condensador, puede haber una resistencia, puede haber una batería, lo que ustedes quieran. Llámenle A a este punto, a este punto le llaman B. Y por acá pasa una corriente I.
+1:22:24
+¿Sí? ¿De acuerdo? Entonces, el trabajo... Si un elemento de carga... DQ...
+1:22:49
+pasa a través del dispositivo. Este le... Esperá, de A a B. ¿Sí? Este le entregará
+1:23:26
+...un trabajo... ...le hará un trabajo... ...un trabajo... ...un trabajo, elemento de trabajo... ...¿sí? ...para la carga Q... ...sabiendo que la diferencia potencial es... ...BB menos BA... ¿Cuánto será el trabajo que el dispositivo le entrega a la carga?
+1:24:00
+Será la diferencia potencial por la carga.
+1:24:05
+¿De acuerdo? Entonces, si todo...
+1:24:26
+sucede en un intervalo de tiempo dt, entonces dividamos por dt. El elemento de trabajo por unidad de tiempo, ¿qué es? El trabajo suministrado por unidad de tiempo. Es la potencia entregada. Potencia entregada.
+1:24:53
+Y eso será igual a la diferencia de potencial entre A y B por dQ sobre dt. ¿Cuánto vale dQ sobre dt?
+1:25:02
+La intensidad.
+1:25:06
+Y esto es general. La potencia entregada será igual a la diferencia de potencial por la corriente. Donde tomamos la corriente en dirección de A a B.
+1:25:17
+Y podemos ver algunos casos particulares.
+1:25:26
+El primero es la batería. La batería, ¿cuánto vale delta B?
+1:25:36
+Delta BAB.
+1:25:40
+Es la FEM. Entonces en ese caso, diferencia entre A y B. Supongamos que la FEM, vamos a tomar la batería así, ¿no?
+1:25:52
+Estamos recorriendo en el sentido de la FEM. En ese caso será la potencia entregada por la batería, será la FEM por la corriente que pasa por ella. Batería ideal. Dos, resistencia, resistor. En ese caso delta, perdón, acá delta vivo es la FEM, entonces dije mal. Entonces la potencia entregada.
+1:26:20
+Es E por I. Había puesto dos cosas juntas. Delta B es E, entonces la potencia entregada es E por I. Sustituyo delta B acá. En el resistor, la diferencia de potencia entre A y B, ¿cuánto vale?
+1:26:35
+Menos R por I. R por I es la caída, así que menos R por I. Entonces la potencia entregada...
+1:26:46
+Es menos R por I al cuadrado. ¿Se entiende el signo menos? ¿Porque la batería entrega potencia al circuito? No. ¿Qué hace la potencia? El resistor. La disipa. El resistor no le está entregando potencia al circuito, se la está sacando, ¿verdad? Entre comillas. La transforma en calor. Así que, esto es... Entonces la potencia disipada...
+1:27:17
+Es el opuesto, es R por I al cuadrado. Que es lo que ya hemos visto en efecto de luz. Y bueno, pero podemos seguir también. Por ejemplo, condensador. El delta B a B, ¿cuánto vale?
+1:27:40
+¿Cuál es la diferencia potencial entre los bornos de un condensador?
+1:27:45
+Menos Q sobre C.
+1:27:48
+Bueno, hay que tener cuidado acá, con un poco de cuidado, a ver a cuál placa tiene Q y cuál tiene... Perdón, es Q sobre C, estoy nuevamente haciendo lo mismo hace un rato. Entregada es...
+1:28:20
+Y esto lo que pasa es que el condensador es tan energía que lo está almacenando en realidad. Entonces la chupa del circuito porque está almacenando energía. El condensador, según como sea el signo relativo entre Q y I, puede estar almacenando o entregando. Eso puede tener los dos signos.
+1:28:46
+Así que esto les permite hacer un análisis de quién entrega, quién reparte energía y quién se la lleva. Entonces, por acá termino hoy. Les cuento, antes de que se vayan, que la clase que viene vamos a tener un segundo experimento en clase. ¿Sí? Sobre circuitos que hacen intervenir resistencias y condensadores. ¿Está bien?
+

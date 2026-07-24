@@ -1,0 +1,74 @@
+title: Clase 16
+id: fis3-2015-2-16
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:26:31"
+
+stats:
+  transcript_words: 9513
+  summary_words: 1957
+  diagrams_pending: 8
+  equations: 16
+
+topics:
+  - Par sobre una espira con corriente en campo uniforme
+  - Análisis de las fuerzas sobre los lados de la espira
+  - Torque sobre una espira (τ = IAB sinθ)
+  - Vector área y regla de la mano derecha para espiras
+  - Forma vectorial del torque (τ = IA×B)
+  - Momento dipolar magnético
+  - Torque sobre una bobina de N vueltas
+  - Motor eléctrico de corriente continua y conmutador
+  - Galvanómetro y resorte de torsión
+  - Amperímetro (serie) y voltímetro (paralelo)
+  - Campo magnético generado por una carga en movimiento
+  - Dificultad experimental (dominio de la fuerza eléctrica)
+  - Ley de Biot-Savart para una carga puntual
+  - Permeabilidad magnética del vacío (μ₀)
+  - Comparación con la ley de Coulomb y validez (v ≪ c)
+  - Ley de Biot-Savart para un cable con corriente
+  - Campo de un segmento rectilíneo (integral)
+  - Decaimiento como dipolo magnético (1/r³) e hilo infinito
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "29-30"
+    verified: false
+
+prerequisites:
+  - Clase 15 (fuerza magnética sobre cables)
+  - Clase 5 (dipolo eléctrico, torque τ = p×E)
+  - Clase 8 (campo/potencial de una barra, integrales)
+  - Producto vectorial y regla de la mano derecha
+
+next_topics:
+  - Campo del hilo infinito y fuerza entre corrientes (Clase 17)
+  - Ley de Ampère
+  - Solenoide y toroide
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

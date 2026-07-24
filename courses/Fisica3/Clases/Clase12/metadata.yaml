@@ -1,0 +1,75 @@
+title: Clase 12
+id: fis3-2015-2-12
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:14:01"
+
+stats:
+  transcript_words: 8511
+  summary_words: 2755
+  diagrams_pending: 6
+  equations: 20
+
+topics:
+  - Velocidad de desplazamiento o de deriva (v_d)
+  - Dirección y sentido de la densidad de corriente J
+  - Deriva vs velocidad real de los electrones
+  - Régimen estacionario vs equilibrio (analogía viscosa)
+  - Relación J = n q v_d (deducción con el cilindrito)
+  - Suma sobre varios tipos de portadores
+  - Estimación de v_d en el cobre (~cm/hora)
+  - Número de portadores por volumen (densidad, masa molar, Avogadro)
+  - Analogía de la manguera y velocidad de la señal eléctrica
+  - Corrección cuántica (principio de exclusión de Pauli)
+  - Ley de Ohm microscópica (J = σE)
+  - Conductividad y resistividad (ρ = 1/σ)
+  - Materiales óhmicos o lineales
+  - Tabla de resistividades (conductores, semiconductores, aislantes)
+  - Semiconductores y dopaje
+  - Resistencia de un conductor filiforme (R = ρL/A)
+  - Ley de Ohm macroscópica (ΔV = RI) y dependencia de los bornes
+  - Materiales óhmicos vs no óhmicos (diodo)
+  - Modelo microscópico de Drude e hipótesis
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "27"
+    verified: false
+
+prerequisites:
+  - Clase 11 (corriente, densidad de corriente, dieléctricos lineales)
+  - Clase 9 (potencial, diferencia de potencial y campo)
+  - Nociones de química (mol, número de Avogadro, masa molar)
+  - Física I (velocidad límite en medios viscosos)
+
+next_topics:
+  - Cálculo de v_d y conductividad en el modelo de Drude (Clase 13)
+  - Efecto Joule y potencia disipada
+  - Circuitos de corriente continua
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

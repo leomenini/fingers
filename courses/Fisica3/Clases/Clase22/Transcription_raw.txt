@@ -1,0 +1,401 @@
+# Clase 22
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/22/
+
+Fecha de exportación: 7/24/2026, 12:05:26 AM
+
+Clase: 22
+Curso: F3
+
+Segmentos : 221
+Palabras  : 10397
+Caracteres: 57431
+
+Bueno, la vez pasada empezamos a hablar de un circuito de este tipo, un circuito con un generador, con una señal periódica, una resistencia, una bobina y un condensador. entonces vimos que la solución general de un problema de este tipo este es un caso particular en realidad porque estamos pensando en un circuito de una sola malla en serie una sola malla pero los métodos que vamos a ver ahora en realidad se van a poder generalizar a circuitos más complicados con varias mallas las ideas van a ser similares entonces lo que vimos la vez pasada es que Podemos resolver la ecuación homogénea de este circuito, y que la solución general del problema este se va a escribir como una solución particular del problema homogéneo, es decir, el problema sin generador, más una solución particular del problema con el generador.
+1:41
+Y ahora lo que me voy a dedicar... Es hallar soluciones en presencia de un generador, hallar soluciones particulares.
+1:51
+Vimos que las soluciones de la homogénea, cuando esperamos mucho tiempo, ¿qué les pasa?
+1:56
+Tienden a cero. Quiere decir que después de un rato, todas las soluciones se comportan igual, independientemente de las condiciones iniciales. Es lo que se llama alcanzar el régimen permanente, o a veces se le llama alcanzar el régimen a secas. Entonces lo que nos vamos a interesar ahora en esta clase es en el régimen permanente, tratar de llegar a soluciones particulares. Y eso no lo podemos hacer sin decir cómo es la FEM acá. Entonces nos vamos a limitar a un caso importante que son aquellas en que la FEM oscila de manera sinusoidal.
+2:40
+Atención, acá omega no es 1 sobre raíz de LC. Omega es una frecuencia arbitraria en la que oscila la fuente.
+2:56
+Bien.
+2:58
+Ahora, si yo, volvamos a la analogía con la maca que yo les he mencionado la vez pasada. Supongamos que yo amaco, estoy empujando la maca una vez por segundo y espero suficiente tiempo. Después de esperar suficiente tiempo, la maca, ¿cada cuánto oscila? Si yo la estoy empujando regularmente, periódicamente, una vez por segundo, ¿cada cuánto oscila la maca? ¿Cada cuánto tiene un periodo la maca? Un segundo.
+3:30
+Es decir, la maca se va a poner a oscilar después de un rato. Está claro que la condición inicial no, porque puede, por ejemplo, partir de reposo y entonces poco a poco va armando su oscilación. Pero una vez que se estabiliza y que la cosa ya no depende de las condiciones iniciales, está claro que la maca se va a poner a oscilar más o menos... parecido a lo que nosotros le empujamos y de hecho cuando la fuente es sinusoidal la maca va digamos la maca no el circuito va a oscilar de manera sinusoidal la maca también en realidad eso lo podemos las oscilaciones son pequeñas si no tenemos efectos no lineales también va a pasar eso y
+4:15
+Y entonces vamos a empezar por el caso más simple. Entonces supongamos que esperamos mucho rato para alcanzar el régimen permanente.
+4:46
+Pero que luego, está claro que para alcanzar el régimen permanente necesitamos que haya una resistencia, porque es la resistencia la que va disipando la energía asociada con las soluciones de la homogénea. Si no hubiera resistencia, las soluciones de la homogénea no tienden a ser. Pero supongamos que después de esperar suficiente rato como para que el régimen permanente se haya alcanzado, supongamos que estamos en una situación en la cual la resistencia es relativamente pequeña.
+5:18
+Está claro que si la resistencia es cero, es no nula, pero pequeña, igual si esperamos suficiente rato la homogénea tiende a cero. Lo explico. Tendrá con una exponencial más lenta, pero las exponenciales, aunque sean lentas, son funciones que decaen bastante rápido. Así que esperando después un rato ya no va a jugar ningún papel. Y vamos a suponer que luego, igual estamos en una situación que la resistencia es pequeña y la podemos apreciar. Pero que luego R es despreciable.
+5:51
+Más adelante en la clase vamos a ver el caso general en que vamos a incluir también R. Pero para empezar vamos a ver el caso en que tenemos un oscilador forzado con una sinusoide y R es despreciable. Entonces buscaremos una solución particular.
+6:20
+De la ecuación, digamos, E0 coseno de omega t igual a L por la derivada segunda de Q más Q sobre C. Bueno, y yo les decía, si estamos oscilando, ¿qué uno esperaría? Que la solución la carga, ¿cómo se comporte? Si yo lo estoy haciendo oscilar sinusalmente, ¿cuál va a ser la solución? ¿Qué les parece? ¿Q cómo se va a comportar? Un candidato de solución particular.
+6:53
+También, una sinusóide. Entonces, probemos, busquemos una solución del tipo... Les recuerdo que solo necesitamos una solución particular. Quiere decir que si tenemos un ojo de buen cubero, suficientemente bueno, y logramos encontrar una solución... Es decir, no estamos buscando la solución general. Puede ser que así con un poco de olfato encontremos la solución correcta.
+7:23
+Si lo hacemos, ganamos, porque solo necesitamos una. ¿Se acuerdan? Necesitamos una solución particular y la solución general de la homogénea. De la solución general de la homogénea nos ocupamos la clase pasada. Ahora solo lo que necesitamos es una solución particular. Entonces, si tenemos un buen olfato, podemos decir, bueno, esto sí nació industrialmente, hay chance de que la solución sea una solución industrial. Entonces buscamos una solución del tipo Q de T igual a un Q0 que habrá que determinar por coseno de omega T. Busquemos una solución de ese tipo.
+7:55
+Veamos si hay. Capaz que no hay, pero probemos. Entonces, si la solución es así, Q punto de T será igual a menos omega por seno de omega T. Bueno, está el Q0, no me lo tengo que olvidar. Porque la derivada del coseno es menos seno y después tengo que derivarlo de adentro y me parece un omega extra.
+8:16
+¿No es cierto?
+8:18
+Y ahora derivo, porque la ecuación aparece en la derivada segunda del t. Derivo nuevamente, me queda menos omega cuadrado por q seno por coseno de omega t. Porque la derivada del seno es coseno. Bueno, y fíjense que hay chance de que funcione porque todos los tres términos, este, este y este, son los tres proporcionales a coseno de omega t. ¿Sí? Entonces sustituimos y nos queda menos omega cuadrado por Q0 por L más Q0 sobre C. Simplifiqué el coseno de omega T porque esto tiene que valer para todo T. Es igual a E0.
+9:03
+Entonces acá vemos que en principio hay una solución. Es Q0 igual... el Q0 queda determinado queda E0 dividido menos omega cuadrado sobre L más 1 sobre C esta es la amplitud lo que se llama la amplitud de oscilación oscilación de la carga bien
+9:41
+Vemos que hay, entonces, en resumen, hay una solución, condición para que haya solución, para solución, y vemos que la solución es de esta forma.
+10:00
+Entonces encontramos una solución particular así que tenemos ya todo. Fíjense que si tenemos una fuente sinusoidal, la solución para la carga es sinusoidal y podemos calcular la amplitud. Se le llama amplitud porque está claro que mientras más grande sea Q0, mayor es la amplitud de la oscilación, más amplia es la oscilación, varía entre más y menos.
+10:33
+Bueno, veamos un poco, representemos esta curva. en función de omega para un E0 fijo, U0. Entonces fíjense, cuando omega tiende a 0, este término es despreciable y les queda aquí, les queda E0 por C. Y cuando omega es muy grande, esto...
+11:10
+Entonces lo que voy a representar acá es el valor absoluto de Q0.
+11:15
+Cuando esto es muy grande, esto decrece como 1 sobre... Proporcional a 1 sobre... Digamos, E0 sobre omega cuadrado por L. ¿De acuerdo? Así decrece para omegas grandes. Y de hecho, fíjense que esto tiene un punto de divergencia. Diverge en... 1 sobre raíz de 1 sobre raíz del S cuando omega vale 1 sobre raíz del S el denominador se anula ¿si?
+11:51
+así que acá hay una en este punto hay una una asíntota vertical ¿ya?
+12:09
+¿De acuerdo?
+12:14
+Entonces, este punto juega un papel muy particular. ¿A qué corresponde la frecuencia 1 sobre raíz de LC? ¿Les suena algo 1 sobre raíz de LC? ¿De la clase pasada? Natural de... Es la frecuencia... Bueno, acá me dicen dos cosas. Las dos son verdad. Uno dice frecuencia de resonancia y el otro me dice frecuencia natural. Las dos son verdad. La frecuencia natural, ¿qué quiere decir? Si el sistema... Bueno, estamos despreciando la resistencia. Si tuviéramos el circuito solo LC, sin fuente... 1 sobre raíz de LC es lo que vimos en la clase pasada, que sería la frecuencia en la que oscila solo el sistema.
+12:47
+Si no lo fuerzan, si lo dejan oscilar solo, la clase pasada vimos la oscilación LC, ¿se acuerdan? Justo oscilaba la frecuencia 1 sobre LC. ¿Esto qué nos dice? Nos dice que, piensen en la maca. Yo suelto la maca, no la esfuerzo más, la dejo oscilar. Ella tiene su periodo de oscilación. ¿No es verdad? ¿Cuándo es óptima la manera de empujar la maca? La manera óptima de empujar la maca es de manera sincronizada con la frecuencia con la que ella quiere oscilar por sí misma. Si ella quiere oscilar, si la dejamos oscilar y oscila una vez cada 2 segundos, no es una buena idea empujarla una vez cada 28 segundos.
+13:26
+No es óptimo. ¿Verdad? Porque haciendo la misma fuerza... puedo empujar mejor cada vez que viene la hamaca, la empujo. Cada vez que está yendo, voy para allá y cada vez que viene... Así que la manera en la cual voy a tener una amplitud máxima es empujando la maca a la frecuencia a la que ella quiere oscilar por sí sola. ¿Me explicó? ¿Se entiende eso? Pero además tampoco conviene empujar de más, porque supongamos que la maca quiere oscilar una vez cada dos segundos y que yo la empujo una vez por segundo, el doble.
+14:02
+Entonces ahí tampoco es óptimo, porque a veces la voy a estar empujando cuando va para allá, pero a veces la voy a estar empujando cuando viene hacia mí. Y entonces ahí la enlentesco, ¿se entiende? En lugar de agregarle energía, le voy a sacar, ¿se entiende? Entonces lo mejor es seguir sincronizado. Y esto es lo que nos dice acá. ¿Cuándo la amplitud va a ser máxima, de hecho infinita?
+14:25
+Cuando yo... fuerza el sistema a la misma frecuencia que el que ría oscilar solo y ese fenómeno se llama el fenómeno de resonancia se llama frecuencia frecuencia angular digamos angular de resonancia entonces la amplitud es máxima
+14:57
+De hecho, infinito, ¿no?
+15:03
+De hecho, tiene infinito. Cuando omega es igual a lo que se llama omega de resonancia, que es 1 sobre raíz de LC. ¿Está? Y esto es justo igual, que es igual a lo que se llama la frecuencia natural.
+15:24
+Que es la frecuencia...
+15:29
+a la que oscila el circuito sin omega de t, sin e de t. Si no le aplico nada, es la frecuencia que le oscilaría a sol. Y esto es una propiedad general. Cuando tienen sistemas con resistencias chiquitas, ¿sí?, No solo este de una malla así. Es un circuito muy muy general. Y de hecho ni siquiera tiene que aplicarse solo a los circuitos.
+15:59
+Todas las formas de oscilación lineal. Siempre que tengan osciladores lineales. y ustedes quieren obtener amplitudes muy grandes de oscilación, lo que conviene es forzarlos a la frecuencia a la que él querría oscilar si nadie lo estuviera forzando. Y eso le da la frecuencia máxima. En general, si tienen circuitos complicados, no tienen una frecuencia de resonancia, sino varias frecuencias de resonancia, que son las posibles soluciones del sistema si uno no lo estuviera forzando.
+16:36
+Y lo que yo... bueno, comentarios, ¿no? ¿Qué pasaría si yo acerco la frecuencia acá? ¿Les parece que realmente va a explotar? ¿Va a ser infinita? ¿Esto es real o hay una aproximación atrás?
+17:00
+subimos que la resistencia es chiquita y de hecho si la resistencia es no nula la curva lejos de la resonancia efectivamente si la resistencia es chiquita pero no nula la curva lejos es esencialmente la misma pero si yo pongo una resistencia se curva por acá entonces si R es mayor que cero No diverge, alcanza un valor muy grande, que es cada vez más grande a medida que achico R, pero con cualquier sistema real alguna resistencia tiene, por lo menos tiene la resistencia interna de la bobina.
+17:33
+¿Me explico? Será muy chiquitita, ¿tá? La oscilación podrá ser muy grande. De hecho, las oscilaciones pueden ser muy grandes, ¿tá? pero no va a ser infinita entonces el primer comentario es ese si R es positivo si R es positivo entonces Q0 no tiende a infinito cuando omega tiende a la omega de resonancia pero es muy grande pero si R es pequeña Q0 en resonancia es muy grande
+18:15
+Este no es el único factor que puede hacer que no haya resonancia infinita. Por ejemplo, en la maca hay otro factor que es importante. La maca tiene resistencia, ¿está? Supongamos que tuviera una maca súper aceitada, ¿sí? Casi sin resistencia, ¿sí?
+18:40
+¿Qué pasaría si yo empiezo a empujar de manera súper sincronizada con la frecuencia natural de la maca?
+18:50
+Sí, pero antes, es verdad, primero que nada empieza a gritar el sobrinito. Pero antes de eso, y antes de dar la vuelta, lo que sucede es que las oscilaciones se ponen a ser grandes y ahí ya no vale la aproximación lineal. Aparecen lo que se llaman efectos no lineales. Los efectos no lineales también eliminan las resonancias infinitas.
+19:13
+De hecho, la amplitud de oscilación para un péndulo no puede ser infinita porque lo máximo que puede oscilar es... 2 pi, después ya no es una oscilación, después es otra cosa. Entonces cuando salimos del régimen lineal, también está aproximado. Así que hay varias aproximaciones que hicimos acá. Una es despreciar las resistencias y otra es suponer que el oscilador es lineal. Cuando tenemos amplitudes muy grandes, los osciladores dejan de ser lineales. Y de hecho, si no tuviéramos una resistencia suficiente, lo que va a pasar acá es que el circuito se... Ahí lo era quemado, de hecho.
+19:44
+¿No? Bueno, capaz que empiece a sonar la alarma en cualquier momento. Y les iba a decir justamente eso, que el circuito se quema si efectivamente no hay resistencia. ¿Entonces comentarios? Bien.
+20:12
+Y antes de pasar al capítulo siguiente, donde vamos a ver el caso con resistencia no nula, les pregunto. Yo les digo siempre, ustedes son estudiantes de ingeniería, ¿qué ejemplo de aplicación se les ocurre de este fenómeno, del fenómeno de la resonancia? Además de asustar a su sobrinito. ¿Cómo? ¿Sí? ¿Sí?
+20:36
+Son resonancias electromagnéticas. ¿Qué fenómeno tienen que usemos frecuentemente todos los días? Fenómenos de resonancia electromagnética. La radio. Cuando dicen la radio, en realidad la radio es medio old fashion. Todas las telecomunicaciones están basadas en que hay alguien que emite y yo tengo un aparato que recibe, digamos, en un celular. Y el celular... Está claro que la señal que les llega es una señal súper chiquitita porque fue emitida aún si tuvieron un relevo cerca.
+21:14
+Es una señal... Si las señales fueran muy grandes serían muy peligrosas para la salud de los humanos. Son señales que en realidad son efectos electromagnéticos muy chiquititos. Entonces un aparato le va a costar ser sensible a esa señal. Entonces para hacerla sensible, ¿qué es lo que hacen? Ponen el aparato, en lugar de modificar... la frecuencia
+21:37
+del emisor sobre el cual mi celular no tiene ningún control, no tiene ningún control sobre la frecuencia del emisor. Lo que hacen es diseñar el celular para que tenga una frecuencia propia, natural, cercana a la frecuencia de los emisores.
+21:54
+El emisor y el receptor oscilan, el aparato receptor tiene una frecuencia natural cercana a la de los emisores. Está sintonizada, se dice. Entonces, por más que el E0, lo que está excitando el circuito, es muy chiquitito, hay un efecto electromagnético que va a excitar el circuito, pueden pensar que tienen campos electromagnéticos oscilando en un circuito acá adentro, y eso les va a generar un fenómeno de inducción y todo lo demás, va a excitar el circuito.
+22:27
+Pero el E0 es muy chiquitito. Sin embargo, para tener un efecto apreciable que uno puede escuchar con el oído, además de que tiene batería para amplificar eso, para que el celular pueda ser sensible a eso, ajustan omega para estar muy cerca de las luces. Así que con un E0 muy chiquitito, pero con un circuito de buena calidad, es decir, con poca resistencia, puede tener una amplitud muy grande y de esa manera ser sensible a señales muy pequeñas. ¿Se entiende? No es el único aplicación tecnológica. ¿Qué otra? Muchas. Está lleno de aplicaciones.
+22:57
+Pensemos en una segunda. Porque esa es muy... Bueno, en la radio, ¿qué es lo que no hace? En las viejas radios eran radios con dial. ¿Qué era el dial? Y bueno, había una resistencia variable o un condensador variable. Uno... o una bobina, podían ser cualquiera de las tres cosas, uno se movía, al variar, típicamente variaba el largo de una bobina o la posición de un condensador, y de esa manera iba variando. L o C y de esa manera variaba la frecuencia natural del oscilador de la radio hasta estar justo en la frecuencia del emisor entonces cuando uno está lejos hay puro ruido y cuando llega a la frecuencia central de oscilación de la emisión empieza a ver claro porque la señal es mucho más grande que el ruido un poco pasa lo mismo acá esto sintoniza
+23:53
+Pero otras aplicaciones, cosas que ustedes, otras que conocen. Está lleno de aplicaciones, la resonancia. Yo sin pipí una segunda, porque la radio aparece en todos los libros, entonces... ¿Médicas no hay? Bueno, pila médicas, a ver si... No, no soy yo, acá hay médicas. Sí, sí. A ver, ustedes tienen una señal y quieren hacer que eso afecte de manera... Entonces, antes de ir a la médica, que es parecida a la que voy a contar, microondas.
+24:28
+¿Qué es lo que hace microondas? Emite ondas electromagnéticas en la frecuencia de las microondas, en un cierto tipo de frecuencia. ¿Por qué emiten esa frecuencia? Porque hay algunos enlaces químicos, muy presentes en las cosas con agua, de hecho, ¿sí? Y la comida en general tiene agua. Agua no tiene por qué ser agua líquida, puede ser agua mezclada ahí, yo qué sé, todos los seres biológicos tienen mucha agua y en general comemos cosas... Digo, no, casi todo lo que comemos son plantas o animales o cosas simples, ¿no?
+24:59
+Entonces, tienen mucha agua. Entonces, si ponemos una cosa que emite ondas electromagnéticas, pueden pensar... que tiene un oscilador, ya no es un oscilador eléctrico sino un oscilador químico, si quieren tienen dos moléculas que pueden oscilar una con respecto a la otra, excitan esa oscilación y de esa manera le transmiten mucha energía desde el oscilador a la oscilación de la frecuencia. Y quien dice poner a oscilar moléculas es lo mismo que... Calentar, es transmitir calor.
+25:32
+De esa manera funciona el horno de micrón. Y en realidad las aplicaciones médicas también funcionan con ese criterio. Tienes alguna señal que está adecuada a algún fenómeno biológico particular y, por ejemplo, quieren quemar algo, pero no quieren quemar a la persona, quieren quemar a una cosa en particular, entonces emiten en ese... A veces no es quemar, a veces es favorecer una reacción química. Por ejemplo... ¿Ustedes han escuchado hablar de la ictericia? ¿Saben lo que es la ictericia?
+26:04
+Es una enfermedad que lo más común es entre los niños, no tiene por qué ser solo entre los niños, pero lo más común es entre los recién nacidos. Los recién nacidos a veces, como están dentro de la barriga de la mamá durante todo el embarazo, salen y no estuvieron, obviamente no estuvieron en contacto con la luz. Y hay algunas reacciones, hay algunas moléculas tóxicas en la sangre que el cuerpo las elimina por reacciones químicas que son estimuladas por la presencia de la luz. De hecho, se estimulan porque la sangre pasa por vasos muy pequeños y la luz llega a penetrar hasta los vasos más chiquititos periféricos.
+26:49
+Entonces lo que se hacía antes, entonces se sabe que eso está estimulando, muchas veces los bebés nacen con icteris y se ponen como amarillos, ¿está bien? Entonces, puede ser incluso grave. En general no es nada grave, es re poquito y se les va solo y no hacen nada. Pero cuando está medio fuerte, los médicos lo que hacían era los ponían en un horno. No, en realidad no. lo ponían en una lámpara, pero las lámparas normalmente calientan, entonces era un problema, porque por un lado querían sacarle la ictericia, entonces había que iluminar mucho al chiquilín, pero por otro lado no lo querían deshidratar, porque es lo que hacían, lo ponían ahí en una lámpara grandota, no sé cuántos pobres bichos que acaban de nacer.
+27:28
+Entonces, ¿cómo hacer para...? Para provocar la reacción química sin estar quemando al pobre chiquilín. Bueno, eso es una cosa interesante porque Horacio Failache, un investigador del Instituto de Física de acá, inventó un aparato para resolver ese problema.
+27:53
+Lo que hace es que la reacción química que se produce, que elimina la toxina en la sangre... Es estimulada por la luz, pero no toda la luz. De hecho, una luz que oscila en una cierta frecuencia de resonancia es la que estimula mejor la reacción. Mientras más la luz esté concentrada, es también un fenómeno de resonancia. Mientras la luz esté más concentrada en una cierta frecuencia, que es como una frecuencia de oscilación de moléculas, también es la frecuencia natural de oscilación que hay adentro, mientras más uno está ahí, más se oscila y se rompen unos enlaces y destruyen las moléculas.
+28:30
+Pero entonces dicen, no tiene sentido iluminar con una lámpara así nomás, porque una lámpara le emite en la frecuencia que nos interesa y en todas las demás. Entonces lo que vamos a hacer es poner bastante potencia, o ni siquiera es mucha, la misma que poníamos antes, pero solo ahí. Y todo el resto no emitimos nada. Entonces lo que se propuso entonces es, fabricó un aparato basado en LEDs, los LEDs emiten en... ¿conocen? ¿sí? que emiten en frecuencias bastante concentradas y lo que se trataba era conseguir un LED que emitiera en esa frecuencia.
+29:06
+Entonces ahí está una parte de investigación más sofisticada, pero logró diseñar un aparato que permitía, sobre la base de LEDs, emitir en esa frecuencia. Entonces el aparato emite, pero la cantidad de calor que emite en total es casi nada, los LEDs en general no calientan casi nada, pero en esa frecuencia emitía tanto como antes, entonces permitía curar la ictericia sin deshidratar a los pobres chiquitines. Entonces, esto para decirle, el fenómeno de resonancia es muy importante y tiene muchas aplicaciones tecnológicas, porque básicamente lo que consiste es, con el mismo esfuerzo,
+29:42
+Obtener grandes oscilaciones. Y les estoy dando todos ejemplos electromagnéticos o químicos, pero en realidad uno podría pensarlo también en fenómenos mecánicos. Entonces, forzando poco, obtener grandes amplitudes.
+29:59
+¿Se ha entendido? ¿Preguntas?
+30:03
+Bueno, entonces voy a empezar con el capítulo siguiente, que ahora lo que vamos a hacer es abordar, ver los circuitos RLC en general. En realidad no voy a tratar en general, en el práctico van a haber casos mucho más generales que los que voy a ver en el teórico, pero sí lo que vamos a hacer ahora es ver qué pasa con las resistencias. Y las resistencias, meterlas, nos van a dar algunos dolores de cabeza por la razón siguiente. Fíjense que el término con la resistencia, si yo lo hubiera puesto acá, más R por la derivada de Q,
+30:34
+Este era con coseno, este era con coseno, este era con coseno. Pero esta solución que busqué ya no hubiera sido solución, porque además de cosenos me hubiera parecido... La derivada primera, que ya no es un coseno, es un seno. Así que este método simple y cómodo que encontré para el caso sin resistencia ya no funciona en el caso con resistencia. Voy a tener que... esta solución simple no es la correcta. Voy a tener que escarbar un poco la cabeza para ver cómo hacer para encontrar una solución que siga siendo.
+31:13
+Entonces el capítulo creo que 14, ¿ya estamos en el capítulo 14? Sí. Circuitos de corriente alterna.
+31:43
+Entonces, lo voy a hacer todo sobre la base de un ejemplo, que es este circuito que está acá.
+31:54
+Pero van a ver que los métodos que voy a ver se generalizan para cualquier circuito RLC. Es decir, circuitos con condensadores, bobinas, resistencias. Y voy a poner un generador... Que va a ser E0 por coseno de omega T. ¿Está? Voy a limitar al forzado sinusoidal. ¿Está? Y repito, omega I es la frecuencia del oscilador.
+32:26
+No tiene nada que ver con la frecuencia natural. Puede ser cualquier cosa. ¿Está?
+32:36
+Bueno, lo que me interesa, ya la solución general de la homogénea ya la hallamos. Lo que me interesa es hallar una solución particular. Queremos encontrar una solución particular.
+32:59
+En régimen permanente...
+33:08
+Es todo lo que necesitamos.
+33:16
+Esto es lo que necesitamos porque vimos que todas las soluciones, todas, tienden a una particular. Porque como la homogénea tiende a cero, y todas las soluciones son como una particular más una solución de la homogénea, como todas las soluciones de la homogénea tienden a cero, con encontrar una particular ya tenemos para el régimen permanente todo. Si quisiéramos interesarnos en el transitorio, además hay que encontrar una solución de la homogénea, pero ya vimos cómo resolver la homogénea. Bien, la clase pasa. Bueno, entonces digamos la misma pista. Esta solución así tal cual, como acabo de decirles, no funciona.
+33:48
+Pero sí funciona la idea general de que si yo estoy oscilando a una frecuencia omega, el sistema va a responder a una frecuencia omega. Lo que no va a pasar más es que esté sincronizada. Es decir, fíjense que acá cuando yo iba, cuando E iba, Q iba. En realidad no es totalmente cierto. A veces va para el otro lado, porque fíjense que Q0 a veces es negativo. pero en todo caso están bien sincronizados o bien van juntos o bien opuestos pero no totalmente desfasados lo que va a pasar es que vamos a buscar soluciones entonces vamos a buscar a buscar soluciones de la forma IDT igual a un IM
+34:46
+Acá le voy a poner coseno o seno, hay dos opciones, coseno, coseno omega t menos phi. Así que va a ser una solución sinusoidal, pero desfasada, a priori desfasada. Me voy a permitir un poco más de libertad que la que busqué aquí. Fíjense que lo voy a hacer en términos de la corriente, pero la corriente no es otra cosa que la derivada de la carga, así que es un poco equivalente. Y M va a ser el máximo, porque esto oscila entre Y M y menos 100.
+35:27
+Bueno, entonces fíjense, yo podría hacer el cuenterío infame de sustituir esta ecuación. acá, pero agregando este término y usar trigonometría para ver cuál tiene que ser el valor de im y el valor de phi ¿de acuerdo? a priori eso fíjense tiene fuertes chances de marchar de funcionar porque el coseno este lo puedo descomponer en un coseno omega t por un coeficiente más un seno de omega t por un coeficiente coseno de a menos b es coseno de a menos b
+36:06
+coseno de a más b es coseno de a por coseno de b menos seno de a por seno de b ¿se acuerdan de eso? entonces yo puedo descomponer eso y voy a tener una combinación lineal de senos y cosenos voy a tener dos ecuaciones y dos incógnitas que son im y fi Una que está en coeficiente de seno de omega t y otra en coeficiente de coseno de omega t. Y eso no da mucho trabajo en este caso particular. Podemos hacer la cuenta. Nos lleva 20 minutos y lo resolvemos. ¿Por qué no lo voy a hacer así?
+36:38
+No lo voy a hacer así porque eso es súper particular para este circuito en concreto. Si queremos hacer el mismo razonamiento con un circuito más complicado que ya tenga dos mallas o tres mallas, imposible. Entonces voy a tratar de usar un método más astuto. Que funcione de manera cómoda en general. Entonces fíjense, acá vamos a seguir utilizando el mismo truco que yo les mencioné en clases anteriores. Los senos y cosenos son primos hermanos de las exponenciales. El coseno tiene la propiedad de que si yo lo derivo dos veces, es proporcional a sí mismo.
+37:16
+La exponencial tiene esa propiedad con la primera derivada. La derivada de un exponencial es proporcional a la exponencial. Solo con la primera derivada. Entonces es más cómodo trabajar con exponenciales. Y además los cosenos y los senos los podemos ver como combinaciones de exponenciales. Entonces la idea es que vamos a tratar este sistema, pero escribiéndolo en términos de exponenciales complejas. Entonces dicen, ah, pero los complejos me dan dolores de cabeza y todo.
+37:50
+Pero van a ver que en realidad las cuestas son mucho más simples. Y no tienen que saber nada de trigonometría, no tienen que empezar a usar fórmulas de trigonometría. No, todo es súper natural. Entonces, buscamos una solución particular y ahora tengo esta ecuación completa que les escribo acá.
+38:10
+para escribirla en términos de I voy a derivarla una vez si yo la derivo una vez esto me queda menos E0 omega por seno de omega T es igual a L por derivada segunda de I Con respecto al tiempo.
+38:43
+Más I sobre C. Más R por I. Por derivada de I. Con respecto a I. ¿Está? Derivé una vez.
+39:04
+¿Bien? Lo hice esto. Podríamos no hacer esto. Y trabajar directamente con Q. Pero como... Del punto de vista de las... De los procedimientos eléctricos es mucho más cómodo medir la corriente, mucho más fácil medir la corriente que la carga en el condensador. La gente suele trabajar con la corriente. Bueno, entonces la idea es, en lugar de trabajar con esta ecuación, decir, esta ecuación es una ecuación real, ¿verdad? Todos los coeficientes acá son reales, ¿sí? Pero yo la puedo pensar como...
+39:38
+caso particular de una solución compleja. Yo podría, en lugar de buscar soluciones reales acá, buscar soluciones complejas. Y en realidad, pueden pensar esta ecuación de otra manera también, que es como parte real de una ecuación compleja. Pueden decir que I de t, entonces I de t igual a I m por coseno de omega t menos phi, lo pueden escribir como la parte real Y m es una cantidad positiva de y m por e a la i omega t menos phi.
+40:14
+¿Se acuerdan que el desarrollo de esto tiene un coseno más i por el seno? Si toman la parte real.
+40:23
+Pero fíjense que lo mismo pasa para la... Si yo derivo acá. Tomar parte real y derivar, conmutan.
+40:36
+Son dos operaciones que las puedo hacer en el orden que yo quiera. Fíjense que la derivada, vamos a verlo con este ejemplo. Si yo tomo la derivada con respecto de t, de este, me queda menos im por omega por seno de omega t menos phi.
+41:01
+Pero también, fíjense que si yo calculo la parte real de la derivada de esto, me queda I m por la exponencial de I omega t menos phi por I m, I omega.
+41:20
+Pero bueno, puedo escribir esto como parte real de IM por IM. Bueno, acá ya empiezamos a ver que la idea de usar un I acá está complicadísima porque hay dos Is. Tenemos la corriente que aparece por todos lados y la I que es el... Entonces no, así no va a funcionar. Entonces, ¿qué hacemos?
+41:47
+Bueno, sí, los ingenieros tienen la costumbre, en lugar de usar I para el elemento imaginario, la unidad imaginaria, le ponen una J. J no va a ser más en toda esta parte del curso. La unidad imaginaria no va a ser I, sino J. Simplemente cambiamos de notación para no entreverarnos. Así que si será J, acá J. Y acá tengo I, S y M, si está bien. Y ahora seguimos con J. J, omega.
+42:20
+Y ahora escribo la exponencial, la puedo escribir como coseno de omega T menos phi, más I por seno de omega T menos phi. Y lo que quiero es la parte real. Fíjense, perdón, acá es J. Como yo no soy ingeniero, sino soy físico, me cuesta mantener lo de la J, así que cada tanto me voy a olvidar, pero créanme que es lo que hay que hacer. Entonces, acá, esta parte me da 0, porque si yo desarrollo acá, esto me da una cosa que es imaginaria pura con este j que está acá adelante. En cambio, esta parte me da real.
+42:52
+Me queda j por j, me queda menos 1, me queda menos im por omega por seno de omega t menos phi. Que, o casualidad, haber derivado esto...
+43:10
+Me dio lo mismo que haber derivado. Las dos operaciones conmutan. Puedo tomar parte real y luego derivar. O derivar y tomar parte real.
+43:21
+Entonces, eso me va a venir comodísimo.
+43:26
+Porque entonces puedo... Puedo inventarme una cantidad compleja. Y le pondré sombrerito a las cantidades complejas. Que será... IM por E a la I omega t menos phi. I de t. ¿Bien? Todas las cantidades que le ponga sombrerito van a ser cantidades complejas. Y repito, cada tanto me voy a olvidar, pero es un J lo que tengo que poner arriba.
+43:59
+Entonces, esto que está acá, lo podemos escribir, el lado izquierdo, el lado derecho de la ecuación, lo podemos escribir como la parte real de L, derivada segunda de I sombrero, con respecto al tiempo, más R por la derivada de I sombrero con respecto al tiempo, más I por la derivada... Es como una intensidad compleja.
+44:28
+Y del otro lado, fíjense que esto también lo puedo escribir, fíjense que se parece mucho a esta expresión que tenemos acá. El otro lado lo puedo escribir como la parte real de JEM por E a la I omega T.
+44:57
+Fíjense que la cuenta es idéntica a la que acabamos de hacer acá. ¿Por qué tomaste I compleja allí? Acá J. ¿Cómo? ¿Has sabido por qué te la hiciste como compleja? A ver, el I normal va a ser real. Y me define otra cantidad compleja cuya parte real es I. Parte real de I con sombrero de T es...
+45:30
+Pero defino una cantidad cuya proyección en el eje real me da la corriente que me interesa. Entonces tengo una ecuación. ¿De acuerdo? Entonces en lugar de resolver esta ecuación, voy a resolver la ecuación compleja. Entonces en lugar de resolver la ecuación real, resuelvo...
+46:01
+...la ecuación compleja... ...y al final toma parte real... ...porque como las dos cosas conmutan... ...como todas las operaciones son lineales... ...trabajar con complejos... ...y luego tomar parte real... ...es lo mismo que... ...trabajar con parte real... ...entonces vamos a tratar de resolver... ...esta ecuación... ...derivada segunda de I... ...con respecto al tiempo... ...más R por derivada de I...
+46:32
+Más I sobre C igual a J es M por E a la I omega T. Esta es la ecuación que vamos a tratar de resolver. Una ecuación compleja y al final tomaremos parte real. No se olviden nunca que lo que realmente nos interesa no es la solución compleja, sino la solución real, que es la parte real.
+47:04
+Bueno, ¿y cuál es la ventaja de esto? La ventaja de esto es, como yo les decía, que derivar... J, J, J, perdón. Ya les dije, me voy a olvidar muchas veces.
+47:35
+Márbaro. ¿Sí? Sí, me falta, me falta. Me falta, acá está, me estoy olvidando del omega. Gracias. Me estaba olvidando del omega.
+48:00
+Entonces la idea es que ahora podemos utilizar que las exponenciales, ya sean reales o imaginarias, sus derivadas son proporcionales a sí mismas. Entonces podemos tener un candidato de solución para IDT.
+48:29
+Que tendrá esta forma que pusimos acá. Y de hecho voy a escribirlo de esta manera. Voy a escribirlo como im complejo por e a la j omega t. Donde im complejo será im, la parte real, por e a la menos j phi. Así que menos phi será el argumento del j complejo. Lo voy a escribir como un coeficiente complejo por e a la j omega t. Entonces, bueno, derivamos ahora.
+49:05
+Derivada con respecto de I complejo con respecto a T es I M sombrero por E a la J omega T por J omega.
+49:17
+Después hago la derivada segunda.
+49:21
+Es igual, nuevamente, a la amplitud de esta compleja por e a la j omega t. Y derivo nuevamente, así que me queda j omega al cuadrado. Las operaciones de derivar con los complejos son iguales, ¿verdad? No cambia nada. Entonces sustituyo todo allá. Me queda l...
+49:47
+A ver, los tres términos van a ser proporcionales a IM sombrero en factor. Así que eso lo pongo en factor de todo el mundo. El primer término va a tener un L. Ah, bueno, también voy a tener, todos van a ser proporcionales a J omega t. Fíjense que la derivada primera y la derivada segunda y la función misma, todas son proporcionales a J omega t. Así que el L me queda esto por... menos omega al cuadrado ¿bien?
+50:22
+¿se entendió acá? tengo im menos omega j al cuadrado me da un menos tengo esto y me falta el l que tengo acá ¿si? ahora veamos el r el r escribo acá r y después tengo Tengo que poner la derivada primero. Entonces tengo el IM, que ya lo saqué en factor, la exponencial que ya puse en factor, y me queda un j omega.
+50:53
+¿Sí? Y por último me queda el término en 1 sobre c, que tengo el 1 sobre c, que hay que ponerlo, tengo el IM, que ya lo saqué en factor, y la exponencial de j omega t, que ya lo saqué en factor. No tengo nada más para sacar en factor. Y esto va a ser igual a j... por em por e a la j omega t y acá tengo otra frecuencia entonces ustedes como capaz que no están muy duchos con los números complejos todo esto les parece difícil pero fíjense que en realidad las cuentas son re fáciles es agarrar la ecuación original escribirla como la parte real de algo
+51:40
+escribiese algo complejo que en lugar de tener un coseno tiene un exponencial las exponenciales son funciones mucho más fáciles de tratar que los cosenos y luego dicen la solución va a ser una amplitud compleja por la misma exponencial como cada derivada de una exponencial me da algo proporcional a la exponencial todas las exponenciales se me van en factor y entonces llega una ecuación que es una ecuación puramente algebraica me dice que im sombrero es igual a A j omega por m, dividido de esto que está acá.
+52:16
+L menos l omega al cuadrado, más r j por omega, más 1 sobre c. ¿Dónde? No entendí.
+52:31
+¿Esto acá? Sí. Esto acá lo que dice, dije que este término que está acá es la parte real de eso que está allá. Fíjense que es la misma cuenta que habíamos hecho acá. Pero el único lugar de IM tenemos es E. Ah, y le puse E. En un lado escribí E0. Vamos a ponerle EM en todos lados para no confundirme. Discúlpenme.
+53:02
+En un lado le puse E0 y en otro EM. Es lo mismo. Simplemente usé dos notaciones diferentes.
+53:10
+Entonces ahí hallamos la... Bueno, y esta amplitud compleja uno suele escribirla en realidad de otra manera.
+53:18
+Lo que se suele hacer es factorizar en el denominador un JM, para que no quede un JM en el numerador. Entonces queda EM por JM y voy a factorizar un JM... J omega, perdón. Voy a factorizar un J omega en el denominador. Voy a poner JM, J omega. Entonces el primer término me queda L por J omega. El segundo me queda R y el último me queda 1 sobre j omega por C. Porque si yo multiplico por j omega, el primer término me queda menos L por omega al cuadrado.
+53:53
+El segundo me queda R y el tercero me queda L. ¿Bien? Así que puedo simplificar el j omega y me queda EM dividido j omega por L...
+54:10
+Más R más 1 sobre J omega C. Esto es una fórmula que vale la pena encuadrar.
+54:42
+Fíjense que si L, si solo tuviéramos una resistencia, si no tuviéramos ni este término ni este término, esto sería, se parecería, si no tuviéramos ni el término con L ni el término con C, esto se parecería a la ley de Ohm. Nos dice que la amplitud es el voltaje aplicado dividido la resistencia. Entonces vemos que cada uno de estos bichitos, cada uno de esos bichos, es como una generalización compleja de una resistencia.
+55:22
+Y de hecho eso tiene un nombre, se llaman impedancias complejas. Impedancia compleja asociada con la bobina, impedancia compleja que resulta ser simplemente real, pero es la resistencia, y la impedancia compleja asociada con un condensador.
+55:38
+entonces entonces a la cantidad le voy a poner un Z con un sombrero
+56:07
+jω por L más R más 1 sobre jω por C, se le denomina impedancia compleja del circuito.
+56:32
+En realidad, esta expresión que estoy dando es solo para el circuito preciso que estoy... ¿Sí? ¿Pregunta?
+56:42
+No, no, simplifique el j omega que estaba arriba con el... ¿Dónde? ¿Dónde?
+56:58
+A ver, j omega, repito. Si yo multiplico j omega acá, el j por j me queda un menos, omega por omega me queda un omega al cuadrado, que es este que está acá. ¿De acuerdo? j omega de arriba por ahora no lo toqué. Estoy simplemente factorizando un j omega abajo. ¿Se entendió? Bien.
+57:21
+Bueno, entonces esta expresión que estoy dando de la impedancia compleja, solo válida para el circuito preciso que estamos mirando.
+57:29
+Pero de manera general, siempre podremos definir una impedancia compleja por pedacitos. Después vamos a ver cómo componemos todo un circuito. Pero vemos que para ese circuito, que es una malla, podemos ver la impedancia compleja total como suma de impedancias complejas de cada una de las componentes. Entonces... R es la impedancia... ...compleja, en realidad no es compleja, pero... ...de la resistencia... ...J omega por L... ...impedancia compleja de la bobina... ...y 1 sobre J omega por C...
+58:19
+impedancia compleja del condensador y vemos que la impedancia compleja de todo este circuito es un circuito que está en serie la impedancia compleja de elementos en serie nos queda en este ejemplo concreto que acabamos de ver y de hecho es general cuando tienen elementos en serie las impedancias complejas se suman se suman como números complejos
+58:47
+Bueno, y ahora cómo terminamos esto, ¿no? Porque, fíjense, ya tenemos IM sombrero. Pero lo que nos interesa no es eso. Lo que nos interesa es el I real. ¿Dónde lo tengo por ahí? El I real está acá. Que va a ser esta parte real acá. Queremos reconstruir el I real. ¿De acuerdo?
+59:11
+Entonces vamos a tratar de reconstruir...
+59:15
+el I real ahora que tenemos la amplitud compleja a eso voy lo que vemos es que el I M la amplitud real de oscilación Es el módulo del IM complejo.
+59:51
+¿Está? Entonces, lo que tenemos que hacer ahora es extraer el IM real y la fase. ¿Sí? Bueno, pero eso fíjense que es muy fácil. Porque yo tengo allá la expresión IM. Entonces, IM real es el módulo del IM complejo. Entonces, M es una cantidad real. Y después tengo que llamar el módulo de lo de abajo. Que es J omega por L... Más R más 1 sobre j omega C. ¿El IM no es la parte real del complejo o es el módulo?
+1:00:26
+No, el IM es el módulo. Fíjense acá, el IM, yo determiné que el IM complejo es IM real por exponencial de menos j phi. Si yo tomo módulos a ambos lados de esta ecuación, el módulo de e a la menos j phi, ¿cuánto es? Es 1, ¿verdad? El módulo. ¿Se dan cuenta que esto es un vector de módulo 1? ¿Les suena eso?
+1:00:56
+Esta es la representación compleja del número IM complejo. Donde acá va el módulo y acá va el argumento.
+1:01:07
+Bueno, pero entonces ahora yo sé hallar, es muy fácil hallar el módulo de esto que está en el denominador. Fíjense, yo lo escribo como M módulo de R más, y voy a escribir bien la parte imaginaria, voy a escribirlo como J por omega L menos 1 sobre omega C. El menos viene... ¿Sí? Lo escribo acá aparte. 1 sobre J omega C. Puedo multiplicar arriba... quiero pasar el j en lugar de tenerlo en el numerador entonces multiplico arriba y abajo por j entonces me queda j por j al cuadrado omega c pero j al cuadrado es menos uno entonces me queda menos j sobre omega c que es lo que usé allá bien
+1:02:08
+Bueno, hallar el módulo, entonces acá es bien fácil, porque si yo conozco parte real y parte imaginaria, ¿cuánto es el módulo? Y raíz de... Pitágoras. R al cuadrado más omega L menos 1 sobre omega C al cuadrado. Entonces... Amplitud real.
+1:02:43
+Real de oscilación. Entonces, por el método complejo, fíjense que sale muy rápido. Pero para tener la oscilación completa, les recuerdo que IDT es IM. por coseno de omega t menos phi para tener esta expresión entera ya llegué al im pero me falta el phi necesito dos cosas el phi se le llama el desfasaje nos dice como están desfasadas en la corriente con el voltaje entonces tengo que calcular el phi pero nuevamente puedo venir acá como se relaciona phi con im es el argumento queremos hallar phi
+1:03:49
+Entonces, menos phi es el argumento de IM complejo. Entonces tomamos el argumento de IM complejo. Pero el argumento de un cociente, ¿cómo era? ¿Se acuerdan?
+1:04:17
+¿No? ¿No? ¿Se acuerdan? Fíjense, si tienen dos números complejos, Z1 y Z2, ¿sí?
+1:04:28
+Lo pueden escribir el de arriba como módulo de Z1 por exponencial de Y fi1, el argumento de Z1, dividido el módulo de Z2 por el Y fi2, el argumento de fi2. Y ahora toman el argumento. Esto también lo pueden escribir como el cociente de los módulos,
+1:04:48
+por e a la i phi1 menos phi2 porque las exponenciales complejas tienen las mismas propiedades que las exponenciales reales entonces el argumento de un cociente lo que tienen que hallar es phi1 menos phi2 que no es otra cosa que la diferencia de los argumentos pero el argumento es z1
+1:05:19
+¿Sí? Si no se acuerdan de la fórmula del cociente de los argumentos, es muy fácil. Acá lo que tienen que hallar es el argumento de todo esto. Entonces lo que van a hacer es escribir lo de arriba como un módulo por una fase, pero acá no hay fase, es un número real, así que el número es igual a su módulo. Y lo de abajo lo van a tener que escribir como un módulo, que ya lo hallamos ahí, por una fase. Entonces lo que tenemos que hallar, entonces esto va a ser, el argumento de M va a ser el argumento de M...
+1:05:50
+Menos el argumento de lo que está abajo, que es la impedancia compleja.
+1:05:58
+Entonces vemos, deducimos, que phi es igual al argumento de la impedancia.
+1:06:08
+El desfasaje es el argumento de la impedancia. Entonces lo que tenemos que hacer es el argumento de la impedancia.
+1:06:24
+De la impedancia compleja. Bueno, si tienen un vector, a ver, tienen un número complejo, se puede expresar como un vector en un plano, ¿verdad? Entonces acá tienen Z, acá está el módulo de Z, y este ángulo que está acá es phi.
+1:06:50
+¿Sí? ¿Sí?
+1:06:53
+Como conocida parte real y parte imaginaria de Z, como tenemos acá. ¿Cómo hago para hallar el argumento? Arco tangente de la parte imaginaria de la parte real. Entonces fíjense. Si el ángulo está entre menos pi sobre 2 y pi sobre 2. Ojo. Cuando está para el otro lado es diferente. Pero cuando está en este lado. Entonces si... Digamos, si la parte real de Z es positiva, el argumento de Z es el arco tangente de parte imaginaria de Z sobre parte real.
+1:07:46
+Si la parte real es negativa, si estamos de este lado hay que hacer un poco de trigonometría. Y usar pi para... Digamos, si tuvieran una cosa acá, tienen que tener un poco de cuidado porque el ángulo que les interesa es este, no este. ¿De acuerdo? Entonces ahí tienen que usar que el ángulo... Que este que es acá es... Pi menos este. Y luego calculan este.
+1:08:17
+Usando el arcotángel. ¿Cómo? Ah, perdón, perdón. Imaginario dividido parte real. Gracias. Bueno, entonces, acá tenemos parte real. Vimos que la parte imaginaria es esta que está acá. Y esta es la parte real. Así que tenemos que el argumento que fi... Igual al argumento de la impedancia compleja, no es otra cosa que el arco tangente de L omega menos 1 sobre C omega dividido la resistencia.
+1:09:02
+Eso se le llama el desfasaje. Porque les dice, fíjense, cuánto está desfasado... La corriente con respecto al voltaje aplicado. El voltaje aplicado dijimos que era em por coseno de omega t. Así que esto les dice cuánto está desfasado uno con respecto del otro. Está claro que conociendo im y fi determinaron la corriente.
+1:09:40
+¿Se entendió esto? Levanten la mano los que entendieron esto.
+1:09:45
+Entonces todos los otros tienen preguntas para formular. ¿Dónde? ¿Dónde? ¿Acá? No, está bien. ¿Dónde?
+1:10:18
+¿Sí? ¿Está bien? La parte imaginaria. Esto lo puedo escribir acá como r más j por l omega menos 1 sobre c omega. No, no, no hay signo. Está bien. ¿Bien? Bueno, y una vez que tuvieron y m y phi, ya saben que la solución es esto. Y m por coseno omega t. Está en un circuito más complicado. A ver si se dan cuenta. ¿Qué es lo que va a haber que hacer? Es un circuito más complicado.
+1:10:51
+Imagínense que yo tengo un circuito con una fuente acá y después empiezo a poner una resistencia por acá, otra por acá, un condensador, una bobina y acá soy bien malo y pongo otro condensador.
+1:11:11
+Si quiero saber, por ejemplo, la corriente que pasa por acá, ¿cómo hago?
+1:11:17
+Entonces la idea es que las impedancias tienen las mismas propiedades que las resistencias. Cuando están en serie, las sumo. Y cuando están en paralelo, el inverso de la impedancia equivalente es la suma de los inversos de las impedancias. Entonces puedo, sumando complejos, hallar la impedancia equivalente de todo este bicho y ya sé entonces que la solución del problema tendrá la forma y M complejo será el M dividido la impedancia equivalente.
+1:12:02
+Entonces, como sé la impedancia de cada uno de los elementos del circuito, sumo, multiplico, complejo, no sé cuánto, hay que operar como complejos, y luego llegué hasta acá. Y luego es muy fácil. Para tener la amplitud real de oscilación, tomo el módulo, y para tener el desfasaje, tomo el argumento de acá. Así que cualquier circuito, en realidad no es cierto, porque todo esto es cierto... Les dije que cualquier circuito, pero todo esto supone que hay una única fuente.
+1:12:35
+Si ya les pongo dos fuentes, hay que usar algún otro truco. Pero van a haber trucos para ver. Para continuar en varias fuentes, lo que se usa es un truco que se llama el principio de superposición, que lo van a ver en el práctico.
+1:12:50
+Bueno, entonces ahora veamos un poco cómo queda la resonancia ahora en presencia de la resistencia. Esperen a ver que no me haya olvidado de decir nada. Ah, una cosa que creo que no les dije.
+1:13:06
+Perdón. Una cosa que no les dije es que al módulo de Z se le llama impedancia real. ¿Está? Entonces... Z, sin sombrerito, que es el módulo de Z complejo, se le llama, es la impedancia real.
+1:13:32
+Atención, la impedancia real no es la parte real de la impedancia, es el módulo de la impedancia.
+1:13:43
+¿Qué otra cosa me puedo haber olvidado decirles? Esperen un poquito. A ver si me olvidé de alguna otra cosa. No, no. Vamos a hablar ahora un poco, a ver cómo queda la resonancia en presencia de la resistencia.
+1:14:08
+Entonces, resonancia.
+1:14:14
+Entonces veamos cómo varían el módulo, la impedancia real, el módulo de la impedancia compleja en función de omega y cómo varía el disfasaje también. Entonces veamos cómo varía IM en función de omega. Tenemos acá el IM real, ¿no?
+1:14:40
+¿Cómo va a variar? A ver, la pregunta es, ¿sigue teniendo, explota para algún valor de la frecuencia? ¿Se vuelve infinito? ¿Como teníamos para resistencia nula?
+1:14:55
+No. ¿Cuál es el valor máximo que adquiere IM?
+1:14:59
+Si yo hago variar en frecuencia acá. ¿Cuánto elevador está más chido en este? Claro, el valor máximo es cuando el denominador está fijo. Así que el valor máximo es cuando el denominador es lo más chico posible. ¿Y cuándo el denominador es lo más chico posible?
+1:15:18
+Cuando esto se anula, porque R está fijo. Así que si esto se anula, será lo más chico posible. Porque la suma de cuadrados es mayor o igual que cada uno de los términos. Entonces, el valor máximo... Entonces, IM será máxima.
+1:15:36
+si omega L es igual a 1 sobre C omega que esto es lo mismo que decir que omega es 1 sobre raíz de LC así que la frecuencia a la cual es máximo sigue siendo la frecuencia de resonancia que habíamos calculado antes pero el valor máximo allí entonces IM en omega igual a 1 sobre raíz de LC en lugar de tender a infinito fíjense esto se anula y me queda EM sobre R
+1:16:07
+Entonces es cierto que esto diverge cuando r tiende a 0. Es coherente con lo que habíamos encontrado antes. Pero mientras r sea positivo no diverge. Entonces esto llega a un valor máximo acá que será m sobre r. Y tiene una curva que es una curva así. Si hago variar r, la curva tiene esta forma.
+1:16:37
+Esto es así. R se achica. El máximo sigue estando en el mismo lugar, pero la curva de hecho no es exactamente así, la curva se vuelve un poco más angosta. ¿Bien?
+1:16:58
+Pero sobre las colas no cambia, porque eso lo pueden ver. Fíjense, cuando omega L es muy grande o cuando nos acercamos acá, esto es despreciable. Nos alejamos de la zona grande. Cuando omega tiende a cero o cuando omega es muy grande, siempre domina esto con respecto a esto. cuando omega es muy grande domina este término y se vuelve mucho más grande que este y cuando omega es muy chico domina este término en todos los casos yo creo que hoy me equivoqué esta curva en este caso particular no va a una constante disculpenme cuando omega tiende a cero creo que hoy cuando le hice la gráfica y ahora de nuevo me estoy equivocando cuando omega tiende a cero Si omega tiende a 0, m tiende a m sobre, domina el término de 1 sobre omega c, así que les queda 1 sobre omega c. Así que esto se comporta como omega cm.
+1:18:15
+Hoy cuando les dije el caso sin resistencia, les dije, esta curva no va acá sino que tiende a 0. Disculpenme. Eso no sucede para todos los circuitos RLC, pero para este circuito en particular sí. No siempre tiene por qué pasar eso, pero para este circuito en particular sí. Así que lo que les dije hoy estaba ligeramente mal, creo que me morfé un factor omega hoy en el caso sin resistencia.
+1:18:43
+Así que aquí se comporta como omega CEM y acá se comporta, fíjese que no depende de R, y en la otra cola se comporta como EM sobre omega L.
+1:19:08
+Ah, no, no, no, debe estar bien lo que dije. No, porque hoy, no, está bien. Lo que dije hoy estaba bien porque no era para IM, sino para la carga, para la amplitud de la carga. Lo que les dije estaba bien porque lo había hecho para la carga, no para IM. Estaba bien lo que dije. Bien.
+1:19:28
+Fíjense que estas dos ramas de la curva no dependen casi de R. ¿Está bien? Bien. Tiene una zona en el medio acá con ancho R, que tiende a cero con R y que en esa zona tiene que tomar en cuenta la resistencia. Bueno, eso es para ver cómo es la amplitud, pero podemos también preguntarnos cómo es la fase, cómo es el desfasaje cerca de la resonancia. Entonces dijo acá la expresión del desfasaje, lo voy a usar en un momento.
+1:20:07
+Entonces veamos cómo es el desfasaje. ¿Cómo es el desfasaje cuando omega tiende a infinito? Si omega tiende a infinito, ¿fi a cuánto tiende?
+1:20:28
+A ver, el argumento del arco tangente, ¿a cuánto tiende? Si omega tiende a infinito.
+1:20:37
+¿A cuánto tiende el argumento?
+1:20:41
+Si omega tiende a infinito. Tiende a más infinito. ¿Bien? Pero si se acuerdan la forma de la curva del arco tangente, de la tangente, perdón, si tienen un ángulo acá, teta, y acá ponen la tangente de teta, esto tiene una... Una asíntota vertical en pi sobre 2. Y esto acá en menos pi sobre 2.
+1:21:08
+Entonces la curva se comporta así. ¿Recuerdan de eso? Entonces, si el argumento tiende a infinito, quiere decir que phi va a tender a pi sobre 2.
+1:21:25
+Porque cuando el ángulo tiende a pi sobre 2, la tangente tiende a más infinito. Ahora veamos el caso si omega tiende a cero. Si omega tiende a cero, ¿a qué tiende el argumento del arco tangente?
+1:21:47
+Esta parte tiende a cero. ¿Y esta? Tiende a menos infinito. Fi tiende a menos infinito. Entonces, si el argumento tiende a menos infinito, ¿la fase a cuánto va a tender?
+1:22:06
+A menos pi sobre 2. Bueno, y es fácil convencerse de que es una función monótona. Veamos cuánto vale en omega igual a cero. Perdón, en el omega de resonancia. Fi en omega igual a uno sobre raíz de LC, ¿cuánto vale?
+1:22:24
+0 ¿verdad? porque se anula el numerador y el arcotangente de 0 es 0 bueno de hecho nos podemos convencer entonces que la curva tiene esta pinta el desfasaje acá tenemos la frecuencia de resonancia entonces en 0 arranca en menos pi sobre 2 tenemos la respuesta acá, pi sobre 2
+1:22:55
+Y tiende a pi sobre 2 es más infinito. ¿Y si achicamos R? ¿Qué pasa si R se vuelve muy chiquitito?
+1:23:10
+Si achico R, ¿cómo va a ser la curva de la variación del desfasaje?
+1:23:28
+fíjense que acá cuando dije omega esto tiene infinito en realidad lo que estoy suponiendo es que l omega l omega sobre r es mucho más grande que 1 y acá lo que estoy suponiendo en realidad es que 1 sobre c omega r es mucho más chico que 1
+1:23:57
+Porque estoy suponiendo que el argumento es grande o chico.
+1:24:12
+¿No es cierto? Entonces, cierre muy chico, apenas nos separamos de la resonancia para un lado o para el otro, ya estamos en la situación muy grande. Si R es muy chiquito, apenas yo esté de un lado, ya estoy casi en el límite. Así que cuando R es muy chiquitito, la curva de esta se vuelve así. Esto es si R es muy pequeño.
+1:24:44
+Y de hecho en el límite en que R tiende a 0 hay como una discontinuidad. Tienen una fase menos pi sobre 2 para frecuencias chicas y una fase más pi sobre 2 para frecuencias grandes. ¿Está bien?
+

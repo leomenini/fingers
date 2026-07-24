@@ -1,0 +1,312 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 16: Par sobre una Espira, Motores y Galvanómetro, \\
+        y el Campo Magnético de las Corrientes (Biot--Savart)}\\[0.3em]
+        \large{Torque sobre una espira, instrumentos de medida y campo
+              generado por cargas y corrientes}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Par sobre una espira con corriente}
+% ===================================================================
+
+\subsection{Configuración}
+
+Espira rectangular con corriente $I$ en un campo $\mathbf{B}$
+\textbf{uniforme}, que gira sobre un eje. Versor normal $\hat{\mathbf{n}}$
+y ángulo $\theta$ con $\mathbf{B}$.
+
+\begin{notebox}[Campo no uniforme]
+  Si el campo no es uniforme pero la espira es muy pequeña, se lo trata
+  como uniforme.
+\end{notebox}
+
+\subsection{Análisis de las fuerzas}
+
+Fuerza sobre cada lado $\mathbf{F} = I\,\mathbf{L}\times\mathbf{B}$:
+\begin{itemize}[nosep]
+  \item \textbf{Lados horizontales:} fuerzas verticales opuestas, se
+        anulan; líneas de acción sobre el eje, no hacen par.
+  \item \textbf{Lados laterales:} $\mathbf{F}_3, \mathbf{F}_4$ opuestas
+        (resultante nula) pero a distinto lado del eje: generan
+        \textbf{par}.
+\end{itemize}
+Resultante cero, pero \textbf{torque} neto. (Con campo no uniforme
+habría también resultante.)
+
+\subsection{El torque y su módulo}
+
+Lados $a$, $b$ ($A=ab$). Torque de $\mathbf{F}_3$ (brazo
+$\tfrac{a}{2}\sin\theta$), con $F_3 = IbB$; sumando $\mathbf{F}_4$:
+
+\begin{keybox}[Torque sobre una espira]
+  \[
+  \boxed{\tau = I\,A\,B\,\sin\theta}
+  \]
+  Nulo en $\theta=0$ (normal $\parallel$ campo): equilibrio alineado.
+\end{keybox}
+
+\subsection{Forma vectorial: vector área y momento}
+
+Vector área $\mathbf{A} = A\,\hat{\mathbf{n}}'$ con $\hat{\mathbf{n}}'$
+por la regla de la mano derecha (dedos $=$ corriente, pulgar $=$ normal):
+
+\begin{keybox}[Torque vectorial]
+  \[
+  \boxed{\boldsymbol{\tau} = I\,\mathbf{A}\times\mathbf{B}}
+  \]
+  (orden $\mathbf{A}\times\mathbf{B}$ para el sentido correcto).
+\end{keybox}
+
+\begin{notebox}[Momento dipolar magnético]
+  $\boldsymbol{\mu} = I\,\mathbf{A}$, así $\boldsymbol{\tau} =
+  \boldsymbol{\mu}\times\mathbf{B}$, análogo a $\boldsymbol{\tau} =
+  \mathbf{p}\times\mathbf{E}$.
+\end{notebox}
+
+\subsection{Bobina de N vueltas}
+
+\[
+\boxed{\boldsymbol{\tau} = N\,I\,\mathbf{A}\times\mathbf{B}}
+\]
+
+\begin{notebox}[Consejo]
+  Calcular el módulo con la fórmula y el sentido pensando las fuerzas.
+\end{notebox}
+
+% ===================================================================
+\section{Aplicaciones}
+% ===================================================================
+
+\subsection{Motor de corriente continua}
+
+Sin más, la espira oscila (el torque se invierte al pasar la alineación).
+Un \textbf{conmutador} (escobillas) invierte la corriente cada media
+vuelta, manteniendo el giro: \textbf{motor de corriente continua}. El de
+corriente alterna es igual, pero la corriente ya oscila sola.
+
+\begin{notebox}[Torque variable]
+  Como $\tau\propto\sin\theta$ no es constante, se agregan dispositivos
+  estabilizadores.
+\end{notebox}
+
+\subsection{Galvanómetro: amperímetro y voltímetro}
+
+Como $\tau\propto I$, con un \textbf{resorte de torsión} (torque
+$\propto$ ángulo) se mide la corriente en la posición de equilibrio:
+\textbf{galvanómetro}.
+
+\begin{itemize}[nosep]
+  \item \textbf{Amperímetro:} en \textbf{serie}, resistencia
+        \textbf{pequeña} (no alterar la corriente).
+  \item \textbf{Voltímetro:} en \textbf{paralelo}, resistencia
+        \textbf{grande} (desviar poca corriente); $\Delta V = RI$.
+\end{itemize}
+
+\begin{keybox}[Principio de medición]
+  Todo instrumento perturba; se lo diseña para perturbar lo menos
+  posible.
+\end{keybox}
+
+% ===================================================================
+\section{Campo magnético de una carga en movimiento}
+% ===================================================================
+
+Capítulo \textbf{9}: cómo las cargas en movimiento \textbf{generan}
+campo.
+
+\subsection{Dificultad experimental}
+
+Una carga de prueba sentiría fuerza eléctrica \textbf{y} magnética, pero
+la magnética es muchísimo menor: queda oculta. En la práctica se mide el
+campo de una \textbf{corriente} (cable neutro). La carga puntual se
+estudia por ser más fácil de describir.
+
+\subsection{Descripción del campo}
+
+En un círculo en el plano $\perp\mathbf{v}$ que pasa por $q$: $|\mathbf{B}|$
+constante, tangente al círculo (mano derecha). Además $B\propto 1/r^2$,
+$\propto v$, $\propto |q|$, $\propto \sin\theta$.
+
+\subsection{Ley de Biot--Savart para una carga puntual}
+
+\begin{keybox}[Campo de una carga en movimiento]
+  \[
+  \boxed{\mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi}\,
+         \frac{q\,\mathbf{v}\times\mathbf{r}}{r^3}}
+  \]
+  $\mu_0$: permeabilidad magnética del vacío (análoga a $\varepsilon_0$).
+\end{keybox}
+
+\subsection{Comparación con Coulomb y validez}
+
+Se parece a Coulomb ($\propto 1/r^2$, $\propto q$), pero con
+\textbf{estructura vectorial} ($\perp\mathbf{r}$) y \textbf{dependencia de
+la velocidad}.
+
+\begin{warnbox}[Validez $v \ll c$]
+  La fórmula es instantánea; en realidad las señales viajan a $c$. Si $v
+  \sim c$, deja de valer.
+\end{warnbox}
+
+% ===================================================================
+\section{Ley de Biot--Savart para un cable}
+% ===================================================================
+
+\subsection{Deducción}
+
+Elemento $d\mathbf{s}$ con corriente $I$; con $dQ\,\mathbf{v}_d = I\,d\mathbf{s}$
+(pues $d\mathbf{s} = \mathbf{v}_d\,dt$, $I = dQ/dt$):
+\[
+d\mathbf{B} = \frac{\mu_0}{4\pi}\,\frac{I\,d\mathbf{s}\times\mathbf{r}}{r^3}.
+\]
+
+\begin{keybox}[Ley de Biot--Savart]
+  \[
+  \boxed{\mathbf{B} = \frac{\mu_0}{4\pi}\,I\int_C
+         \frac{d\mathbf{s}\times\mathbf{r}}{r^3}}
+  \]
+  Da el campo conocidas las fuentes (corrientes).
+\end{keybox}
+
+\subsection{Ejemplo: segmento rectilíneo}
+
+Cable de largo $L$, corriente $I$; campo en $P$ a distancia $X$ en el
+plano bisector. Todas las contribuciones $d\mathbf{B}$ son entrantes y
+\textbf{paralelas} $\Rightarrow$ se suman los módulos. Con $\sin\theta =
+X/\sqrt{X^2+Y^2}$, $r^2 = X^2+Y^2$:
+\[
+dB = \frac{\mu_0 I}{4\pi}\,\frac{X\,dy}{(X^2+Y^2)^{3/2}}
+\;\Longrightarrow\;
+B = \frac{\mu_0 I X}{4\pi}\int_{-L/2}^{L/2}\frac{dy}{(X^2+Y^2)^{3/2}}.
+\]
+
+\begin{notebox}[Cálculo]
+  Mismo tipo de integral que la barra cargada (Clase 8). Se resuelve con
+  $Y = Xu$ y un truco de integración por partes (sumar y restar
+  $1 = (1+u^2) - u^2$).
+\end{notebox}
+
+\subsection{Límites: dipolo magnético e hilo infinito}
+
+\textbf{Lejos ($X \gg L$):} el segmento da $B\sim 1/X^2$, pero el circuito
+cerrado completo decrece como $1/r^3$.
+
+\begin{keybox}[Dipolo magnético]
+  Sin monopolos magnéticos, un circuito visto de lejos es un
+  \textbf{dipolo}: $B \sim 1/r^3$ (como el dipolo eléctrico, no como la
+  carga puntual $1/r^2$).
+\end{keybox}
+
+\textbf{Cerca ($X \ll L$):} campo del hilo infinito:
+\[
+\boxed{B = \frac{\mu_0 I}{2\pi X}}.
+\]
+
+\begin{notebox}[Dirección]
+  Líneas de $\mathbf{B}$ circulares cerradas alrededor del cable,
+  tangentes, orientadas por la mano derecha (pulgar $=$ corriente).
+\end{notebox}
+
+\begin{notebox}[Próxima clase]
+  Hilo infinito, fuerza entre corrientes y ley de Ampère.
+\end{notebox}
+
+\end{document}

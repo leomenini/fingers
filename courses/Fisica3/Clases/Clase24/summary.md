@@ -1,0 +1,419 @@
+Tenemos un problema cuando vamos a aplicar Ampere sin el término de Maxwell, porque si tomamos una curva acá, amperiana, C, entonces podemos tomar dos superficies diferentes, una superficie acá S1, ya vemos esta superficie acá rayada, S1, y si no tenemos el término de Maxwell... Entonces, si tomamos la corriente medida en S1, es distinta que la corriente si uno toma una superficie con esta forma, que pasa por dentro de las placas del condensador.
+0:58
+Porque, ¿cuál es la corriente que pasa dentro de las placas del condensador? ¿Cuál es la corriente que está pasando por acá, por el medio? Cero. Y eso está asociado con que el sistema este no es estacionario, porque está llegando una corriente. Podemos suponer que la corriente, por ejemplo, es independiente del tiempo. Si es independiente del tiempo, quiere decir que acá se me está acumulando carga. La carga no se mantiene constante, está cambiando con el tiempo, se está acumulando carga en la placa del condensador. Entonces el problema no es estacionario. Y eso se traduce con el hecho de que el flujo eléctrico dentro del condensador está cambiando con el tiempo.
+1:38
+Entonces veamos cómo se traduce. Ahora, si incluimos el término este de la corriente de emplazamiento, veamos qué pasa. Calculemos qué pasa. Vamos a ver que ahora la ecuación es coherente.
+1:56
+Entonces, vamos a calcular en las dos superficies. Tenemos S1 y esta otra que le llamamos S2.
+2:02
+Veamos que da lo mismo.
+2:09
+Fíjense que en esta zona estamos fuera del condensador y el campo eléctrico es despreciable.
+2:15
+Acá no hay cargas acumuladas en esta zona que nos esté generando un campo eléctrico. Acá vamos a tener un campo eléctrico fruto de que tenemos las cargas en el condensador, pero acá no hay campo eléctrico. Entonces en S1, E vale cero, entonces el flujo eléctrico vale cero y entonces la corriente de desplazamiento vale cero. Entonces, si aplicamos Ampere en la superficie S1, es el Ampere usual, sin el término de Maxwell.
+2:49
+Entonces, la circulación del campo magnético no es otra cosa que Mu0 por I. Entonces, no hay modificación. Acá, esto en S, esto calculado con la superficie S1. No hay modificación.
+3:16
+Entonces ahora, esto es en S1, y ahora calculemos en S2.
+3:21
+En S2, en cambio, lo que no hay es corriente.
+3:26
+Y vale cero, no hay corriente eléctrica por acá. ¿La verdad?
+3:33
+Pero calculemos la corriente de desplazamiento, esa la podemos calcular, porque vamos a suponer que la carga se nos distribuye uniformemente, tenemos un condensador de placas paralelas, ¿sí? Sí, cómo no.
+3:53
+En I2 la corriente vale cero, la corriente normal, digamos, pero podemos calcular la corriente de desplazamiento porque, fíjense, tenemos una carga, llamemos Q a la carga del condensador en este lado, Q, y sabemos que el campo eléctrico en un condensador de placas paralelas es igual a la densidad superficial de carga, es decir, a Q sobre A, ¿sí?,
+4:23
+Dividido de epsilon cero.
+4:26
+Ese es el campo eléctrico, entonces condensador de placas paralelas.
+4:39
+Si calculamos el flujo eléctrico, ¿en qué zona hay campo eléctrico? En la zona en que hay campo eléctrico es esta que está acá. ¿No verdad? En esta zona dijimos que no hay campo eléctrico. Entonces el flujo eléctrico será igual al campo eléctrico por el área de la zona en la que hay campo eléctrico. ¿Cuál es el área de la zona en la que hay campo eléctrico?
+4:59
+S2. Ah, también.
+5:02
+Este es A. Fijen, en S2 hay campo eléctrico, pero no en todo S2. Solo en esta zona que está acá que tiene área A. ¿Verdad? En todo el resto vale C. Así que el flujo eléctrico es E por A. ¿Qué les queda? Este no es un producto vectorial, es un producto normal, digamos. Es Q sobre epsilon cero. Ese es el flujo eléctrico.
+5:25
+Y entonces la corriente de desplazamiento, que es epsilon cero por la derivada del flujo eléctrico con respecto al tiempo...
+5:38
+Será epsilon cero por la derivada con respecto al tiempo de Q sobre epsilon cero.
+5:46
+Entonces nos van los epsilon cero y la derivada de Q con respecto al tiempo que es I.
+5:59
+Entonces, en S2 nos queda que la circulación del campo magnético...
+6:08
+va a ser igual a mu sub cero por la corriente de desplazamiento, que no es otra cosa que mu sub cero por I. Por el I calculado en S1, digamos. Entonces calcular en S2 o en S1 nos da lo mismo, cosa que no nos pasaba sin el término de desplazamiento. ¿Se dan cuenta? Viene la corriente por acá...
+6:34
+Y acá se nos interrumpe la corriente y la corriente de desplazamiento de Maxwell toma el relevo. Continúa, tomemos una superficie de este lado o una superficie de este lado, nos da lo mismo, porque si bien acá adentro no tenemos corriente, sí tenemos corriente de desplazamiento que nos arregla el asunto. ¿Se entiende? Entonces esta incoherencia que tenía la ley de Ampere no la tiene la ley de Ampere modificada por Maxwell.
+7:08
+No, repito. La corriente de desplazamiento en general está asociada simplemente a una variación del flujo eléctrico en una zona. Pero justo se ocupa, una de las cosas que deben haber visto con Daniel, es que la ley de Ampere es como incoherente, porque uno podría elegir cualquier superficie con borde de C, pero si elige una superficie de un lado les da una cosa y si les da una superficie del otro lado les da otra cosa. Y lo que muestra esto es que en este ejemplo concreto...
+7:44
+Ese problema ya no lo tenemos más, incluimos la corriente de desplazamiento, porque justo en esta zona no hay carga eléctrica, no hay corriente eléctrica, pero hay un cambio del campo eléctrico que justo se ocupa de tomar el relevo. Entonces, en la realidad, en la práctica, si bien I vale una cosa en un lado y desplazamiento vale otra en el otro lado, la suma de los dos términos, lo calculemos con la superficie S1, la superficie S2 nos da lo mismo. Entonces, no solo la ley de Ampere tiene una cosa linda, estética, es una cosa interesante, en física muchas veces ha pasado que criterios estéticos, Lleven a los físicos a desarrollar leyes.
+8:33
+Maxwell, una de las cosas que le molestaba es que la ecuación era simétrica. Era un campo magnético variable. Puede inducir un campo eléctrico, pero parecía que un campo eléctrico no podía inducir un campo magnético. Y eso le molestaba a Maxwell, inventó ese término por esos motivos estéticos. Pero está claro que la naturaleza no tiene por qué compartir nuestros gustos. O los gustos en particular de Maxwell. Porque alguien puede decir, no, a mí este término no me gusta porque me complica la vida, tengo un término más, no quiero más, yo mientras menos términos más lindo me gusta. Pero Maxwell no era el caso y se ve que su sentido estético coincidía con el de la naturaleza, porque resulta que hace ese término, ese término resuelve una incoherencia matemática, pero más importante que eso para los físicos es que la ley resultante, Es una ley que se correcta al punto de vista de los experimentos, porque la ley de verdad no es la coherencia matemática, es la coherencia con los experimentos.
+9:25
+Entonces vamos a ver ahora en esta clase que esa ley, además de tener el buen gusto de hacer la ecuación más simétrica y además eliminar la incoherencia matemática que tenía la ley de Ampere, tiene el buen gusto de predecir un hecho muy importante. ¿Cuál es ese hecho muy importante que ya les mencionó Daniel?
+9:44
+¿No? La existencia de ondas electromagnéticas. Maxwell, con ese término, predijo la existencia de ondas electromagnéticas y calculó la velocidad de esas ondas que resultan ser la velocidad de la luz. ¿Sí? Entonces, si yo calculé en S2, me queda esto igual a mu sub cero por la corriente de desplazamiento. La corriente de desplazamiento probé que era igual a la corriente que venía por acá.
+10:13
+Que es la corriente que medí en I1. Si tomo una superficie acá, mido la corriente I1. ¿Está claro? Y probé que las dos cosas eran iguales, porque la corriente de emplazamiento es epsilon 0 por la derivada del flujo. Sí, sí, pero incluso te digo, igual 0 al principio. Claro, y en S2 vale 0. ¿Se entiende? Por acá no pasa corriente. ¿Sí? Pero la corriente de desplazamiento acá es igual a la corriente normal, pura y silvestre, acá.
+10:50
+¿Se entendió? ¿Alguna otra pregunta? Antes de seguir quiero decirles una cosa que me estoy olvidando. Creo, si todo sale bien... no les va a gustar, pero la vida es así, que vamos a recuperar una clase teórica este sábado. Les voy a confirmar el miércoles que viene. El pasado mañana les confirmo. Pero si todo sale como esperado, tengo que recuperar esa clase. Saben que estamos generando desfasaje con el práctico porque muchos feriados o cosas o paros, todos cayeron el lunes.
+11:23
+Y los prácticos, hay uno el lunes, que de hecho ha recuperado. Pero la mayoría de los prácticos no tienen el lunes, entonces nos vamos desfasando. Entonces hay que recuperar el teórico.
+11:34
+Así que les confirmo bien el miércoles, pero les voy adelantando para que se vayan haciendo la idea.
+11:41
+Mi peso. ¿Qué más? Bueno, no. No.
+11:51
+Entonces, voy a resumir. Resumir. Este es un momento importante de la física, ¿verdad? De los cursos de física es un momento que tienen que retener como fundador, porque es un momento muy importante, que es cuando voy a escribir las ecuaciones fundamentales del electromagnetismo, que son las leyes de Maxwell, ¿no? En resumen, ¿no?
+12:22
+No, no, no. La superficie tiene que ser una superficie que tenga por bordes C. Así que hay que hacerla arrancar siempre acá.
+12:41
+Siempre hay que tener una superficie. Ah, no. Decís tomar acá. También podías haberlo hecho así. Podés tomar en cualquier lado.
+12:52
+A ver, no, la circulación del campo magnético acá... Está igual. Bueno, en resumen, la ley de Maxwell. Entonces, la primera dice que la integral sobre una curva cerrada del campo eléctrico... El flujo saliente del campo eléctrico en la superficie cerrada es igual a la carga adentro dividido por el silón cero. ¿Está? Ley de Gauss.
+13:24
+Parecida a esta tienen la ley de Gauss para el campo magnético, que le dice que la integral del campo magnético en una superficie cerrada es cero. Es parecida, entonces esta es la ley de Gauss para el campo magnético. Que les da cero porque no hay monopolios magnéticos. Es la ley que anuncia que no hay monopolios magnéticos. Después tienen la ley de inducción de Faraday, que les dice que la circulación del campo eléctrico en una curva cerrada es igual a menos la derivada con respecto al tiempo del flujo magnético a través de la superficie limitada por la curva C. Entonces, esta es la ley de Faraday.
+14:18
+Y por último, tienen la ley de Ampere modificada por Maxwell, que les dice que la circulación del campo magnético es igual a Mu0 por I más Mu0 por Epsilon0 por la derivada del flujo eléctrico con respecto al tiempo. Esto es Ampere más Maxwell.
+14:47
+Y este es un momento de la ciencia triunfante, ¿verdad? Fines del siglo XIX, segunda mitad del siglo XIX, Maxwell escribe las leyes del electromagnetismo, que son leyes que van a tener un impacto brutal porque es una teoría determinada, ¿verdad? Logró unificar el electromagnetismo, la teoría eléctrica, la teoría magnética en una sola y además predecir las propiedades de la luz, ¿está bien? Y les quiero contar que estas leyes han sobrevivido hasta el día de hoy.
+15:21
+Hasta el día de hoy no hemos encontrado experimentos que las contradigan. Son leyes que consideramos dentro de las interacciones fundamentales. La única modificación que hay que hacerles es cuando vamos a la física muy microscópica hay que tener en cuenta los efectos cuánticos. Esa versión cuántica del electromagnetismo se terminó de desarrollar digamos, sobre el final de la segunda mitad del siglo XX, en el año 48-49, y dio lugar a lo que se llama la electrodinámica cuántica, que dio lugar a un premio Nobel importante de Feynman, Schwinger y Tomonaga.
+16:02
+¿Feynman, el de los libros de Feynman? Bueno, ese es el premio Nobel, es un Nobel... Es el físico más importante de la segunda mitad del siglo XX, además de ser un muy buen docente. Y él modificó esta teoría para tener en cuenta los efectos cuánticos, él y otra gente. Pero sacando los efectos cuánticos, esta teoría está terminada. Hasta el día de hoy no la hemos tenido que tocar de nuevo.
+16:33
+Así que es importante. Hay unas remeras para nerds, no sé si las han visto, que dice... Y Dios dijo, y está escrito esto, y se hizo la luz, dice abajo, ¿no lo han visto? No, esto es para decirles que son leyes suficientemente importantes como para que a alguien se les ocurra imprimirlas en una remera.
+17:12
+Entonces ahora quiero empezar a hablarles... Este curso tiene muchos finales. ¿Ustedes vieron la película Brasil?
+17:23
+Es la única película que conozco que tiene tres finales, termina tres veces la película. Y este curso es un poco así, tiene tres finales. Un primer final lo tuvieron con Daniel, la clase pasada, en que llegó a las ecuaciones de los circuitos.
+17:41
+Todo lo que tiene que ver con circuitos de corriente alterna, poder tratar una impedancia cualquiera, potencia y demás. Eso es el primer final de este curso, toda la parte de circuitos, muy importante. Un segundo final lo estamos teniendo ahora, que es que hemos llegado a las ecuaciones del electromagnetismo, que fuimos construyendo de a poquito a lo largo del curso.
+18:00
+Y va a haber un tercer final, porque ahora casi todo final es el comienzo de otra cosa. Y esto es el comienzo de lo que vamos a ver ahora en lo que queda del curso, que es la parte de la luz y de las ondas electromagnéticas. Entonces vamos a ver primero... Algo de ondas en general, voy a empezar con ondas mecánicas, que son más simples, más fáciles de visualizar. Luego vamos a ver que estas ecuaciones dan lugar a las ondas electromagnéticas. Y el resto del curso vamos a ver las ondas electromagnéticas que tienen como caso particular la luz. Vamos a ver la óptica, que es una rama de la física que se ocupa de la propagación de la luz.
+18:35
+Pero antes de ver las ondas electromagnéticas vamos a hacer una cosa. Ustedes no han visto nada de ondas mecánicas, ¿no? Levanten la mano los que han visto algo de ondas mecánicas.
+18:45
+Algunos han visto algo de ondas mecánicas.
+18:49
+Pero vamos a hacer un pequeño entonces repaso, por lo menos, de ondas mecánicas, porque voy a usar diferentes conceptos de ondas mecánicas para ahora después. Entonces, capítulo 13, y es la sección 13.2.
+19:11
+repaso repaso de onda mecánica y si no es un repaso no se preocupen porque porque no lo que voy a dar lo voy a dar de cero como si no lo supiera pero necesito que tengan un poco noción de ondas para poder hablar de ondas electromagnéticas entonces ¿qué es una onda? ¿qué es una onda?
+19:43
+Si no tienen idea de una definición general, denme ejemplos de ondas. ¿Cómo? Bueno, es una manera de propagar energía, es verdad, pero hay muchas maneras de propagar energía. Así que es una definición demasiado general porque está lleno de maneras de propagar energía. ¿Algo más específico?
+20:06
+Por ejemplo, las partículas propagándose propagan energía y no son ondas. ¿No?
+20:13
+Un ejemplo de onda. El sonido. El sonido es una propagación. Bien, ¿algún otro ejemplo? Bueno, la luz es una onda electromagnética, justamente. El movimiento... Oscilatorio de una cuerda también es una onda. De manera general, las ondas son movimientos oscilatorios que se propagan en general en un medio. Entonces son señales oscilatorias, señales oscilantes, que se propagan.
+20:57
+Entonces, ondas, ¿no? Que se propagan.
+21:01
+Y generalmente en un medio. Cuando las ondas se propagan en un medio decimos que son ondas mecánicas.
+21:17
+Y ese medio, cuando hay un medio, vamos a describir las ondas, conviene describir las ondas en el referencial en que ese medio está en reposo. Dicho de otra manera, cuando la onda no hay onda, cuando está quieto, ese medio juega un rol privilegiado, porque ahí decimos que está quieto con relación al referencial de ese medio. Entonces vamos a ver cómo se mueve. Las partes de ese medio, digamos, por ejemplo, en una cuerda, tienen la cuerda estirada, sin movimiento, eso les determina un referencial en reposo.
+21:51
+Tomaran otro referencial, por ejemplo, un referencial en que la onda se estuviera moviendo uniformemente, sería otro referencial inercial, pero en ese otro referencial inercial la cuerda no estaría en reposo. Entonces conviene, como punto de partida, tomar el referencial en que la cuerda no se mueve. Y vamos a mover los desplazamientos con respecto a ese referencial. Así que las ondas, cuando son ondas mecánicas que se propagan en un medio, tienen asociado un referencial preferencial que es el referencial en que el medio está en reposo.
+22:23
+Para ondas en un medio, tomaremos como referencial...
+22:39
+en que el medio está en reposo. ¿Bien? Entonces, ejemplo de ondas. Entonces dijimos el sonido. En el sonido, ¿qué es lo que oscila?
+23:07
+Sí, el medio. ¿Cuál es la cantidad que está oscilando?
+23:21
+Cuando tenemos una onda de sesonía, se propaga por ejemplo en el aire. ¿Qué es lo que está oscilando? El precio. Sí, es la presión o la densidad en cada punto está oscilando. Sube y baja ligeramente, muy poquitito, alrededor de su valor en reposo. Entonces son oscilaciones de presión y densidad. Un segundo ejemplo que vimos es la onda en una cuerda.
+23:58
+Y es la oscilación, digamos, de la altura de la cuerda. Y después vimos el ejemplo de la luz, que todavía no lo hemos probado, pero son oscilaciones de E y B.
+24:44
+Entonces diremos que una onda es viajera cuando mantiene, al menos de manera aproximada, su forma, pero se desplaza.
+25:14
+Entonces, para ser concreto, ejemplo, una cuerda, una onda en una cuerda. Pueden tener la onda, esto es, digamos, en t igual a cero acá. Y se está desplazando para allá y tiene la misma forma un instante más tarde. Digamos, en t igual a un segundo.
+25:36
+Y fíjense, si yo dibujara bien, la forma esta sería esta misma forma que está acá, pero... desplazada a una cierta distancia cierta distancia x y x ¿cuánto va a ser esa distancia? va a ser igual a la velocidad de la onda por el tiempo transcurrido velocidad y este es el tiempo transcurrido
+26:14
+Esto es un poco simple porque estamos pensando en ondas unidimensionales que se propagan en una dirección. Pero tenemos también ondas que en lugar de desplazarse en una dimensión, se propagan, por ejemplo, en el espacio. Por ejemplo, un sonido. Yo grito acá y el sonido se va a ir desparramando en todas las direcciones, no en una dirección. Si estoy en un tubo, sí, se va en una sola dirección. Pero si hay un tubo así. Pero si no hay un tubo, se propagan en todas las direcciones. Entonces, esta idea unidimensional... En realidad no se aplica cuando es en el espacio porque en realidad esta misma señal se va a ir desparramando en el espacio.
+26:48
+Pero pensemos por ahora en el caso unidimensional que es más simple. ¿Se entiende esto? ¿Sí? ¿Preguntas? Ni sí, ni no, ni todo lo contrario, ni sabe, ni no contesta, nada.
+27:06
+¿Se entiende? Bueno, entonces veamos un poco una descripción matemática de las ondas unidimensionales. Entonces, para una onda viajera unidimensional, supongamos, pueden pensarlo siempre, esto es la cuerda, ¿no?
+27:38
+Pueden pensar que la cantidad que está oscilando, ya sea la presión para el sonido o la altura de la cuerda, esa cantidad, llamémosle F, F es una función del tiempo y de la posición. En cada posición pueden medir la altura de la cuerda y eso va cambiando con el tiempo. ¿De acuerdo?
+28:03
+Por ejemplo, altura... voy a usar otra letra voy a usar la letra Y como si fuera bien la altura en T igual a 0 en un instante dado eso tendrá una cierta forma Y en T igual a 0, X tendrá una cierta formal y se llamó F de X.
+28:48
+¿Sí? ¿Sí? Entonces para todo T... Mayor que 0, la forma se desplaza hacia la derecha. Supongamos que la onda se está moviendo hacia la derecha, se podría mover también hacia la izquierda. Entonces, Y en T y X será la misma forma, F de X, pero evaluada en otro punto, X'. ¿De acuerdo? Es la misma forma, pero desplazada. Con X', será X menos B por T.
+29:22
+Este signo hay mucha gente que lo confunde. Alguien dice, no, tengo que agregarlo, se movió hasta la derecha. No, no. Fíjense. Hay que poner un menos.
+29:33
+Vamos a repetir este dibujo. Fíjense. Si yo tengo acá, tomen el origen en el máximo de esta posición. Este es X. En T igual a 0, el máximo está en X igual a 0. ¿Está bien?
+29:53
+Si en t igual a 0 el máximo está en x igual a 0, en t mayor que 0, esta función tiene el máximo en x' igual a 0.
+30:22
+Porque es la misma forma, simplemente se desplaza, pero es la misma forma, ¿verdad? El máximo está en x' igual a 0, pero que corresponde a un x positivo. Entonces x vale, digamos, x' dijimos que es x menos bt. Entonces si es 0, entonces x del máximo está efectivamente en una posición hacia la derecha. ¿De acuerdo? ¿Se entendió eso?
+30:54
+Así que efectivamente, para que el X se vaya corriendo hacia la derecha, tenemos esta combinación. También podríamos tener una onda desplazándose hacia la izquierda, en cuyo caso, en lugar de tener esta forma, así F de X menos BT, también podrían considerar una onda con X más BT. Y es lo mismo, pero una onda desplazándose hacia la izquierda. ¿De acuerdo? Y en realidad una cuerda puede tener superposición de las dos cosas. Podría tener una onda, una señal moviéndose para la derecha y otra para la izquierda.
+31:25
+Incluso se pueden superponer a hacer cosas raras. ¿Bien? Pero a priori uno podría tener la suma de una onda yendo hacia la derecha con una onda yendo hacia la izquierda. ¿Bien? ¿De acuerdo? Y ve lo que llamamos la velocidad de la onda. Entonces hay algunas ondas...
+31:49
+idealizadas, que son muy cómodas para muchos propósitos, que son lo que llamamos ondas sinusoidales. Entonces, ondas sinusoidales. Entonces son ondas ideales.
+32:14
+idealizadas ¿por qué idealizadas? porque está claro que si yo digo f de x igual a a por seno de 2 pi x sobre lambda voy a tomar una onda de este tipo está claro que eso no puede ser desde menos infinito a más infinito el seno está definido en menos infinito a más infinito pero nosotros eventualmente podemos tener esa forma en un cacho pero no para todo x ¿verdad? ¿verdad? Entonces en realidad uno podría tener esta fórmula, pero no para todo X.
+32:49
+Normalmente uno le puede tener una zonita, esa forma sinusoidal. Pero vamos a imaginarnos que tenemos una onda que va de menos infinito a más infinito. Ondas idealizadas de menos infinito a más infinito. Con esta forma. Entonces representémosla gráficamente.
+33:15
+¿Cuánto vale en X igual a 0? 0, ¿verdad? Acá vale 0. ¿Cuál es el valor máximo al que llega esta forma? A. ¿Y cuándo llega a A? ¿Cuándo X vale cuánto?
+33:38
+¿El seno cuándo llega a su valor máximo? ¿Cuándo seno vale 1? Cuando el ángulo vale... entonces X vale lambda sobre 4 entonces vemos acá lambda sobre 4 entonces acá esto sale así y llega a su máximo acá y el máximo dijimos que es A después baja ¿cuándo vuelve a cero?
+34:03
+en lambda sobre 2 entonces en lambda sobre 2 para acá por abajo ¿cuál es el valor mínimo al que llega?
+34:15
+y llega ahí en 3 lambda sobre 4 el dibujo es un poco cualquier cosa pero créanme que llega ahí y luego en lambda vuelve para acá y después repite todo es una función periódica y tiene periodo espacial ¿cuál es el periodo espacial de la onda?
+34:45
+Entonces, es una función f de x, es una función periódica con periodo espacial lambda. ¿Sí? Es decir... F de X más lambda es igual a F de X.
+35:18
+Y también su derivada. Y F' de X más lambda es igual a F' de X. El primer punto en el que la función y su derivada se repiten es lambda. Porque la función se vuelve a repetir antes, pero en realidad no la derivada. Por ejemplo, este punto vuelve a tener el mismo valor acá, mucho antes. Pero la derivada en un caso positivo y en otro caso negativo.
+35:45
+Bueno, y este periodo espacial tiene un nombre, se le llama longitud de onda.
+35:56
+¿Por qué? Bueno, porque justamente es el largo de un tramo de onda que después se va a repetir. Longitud de onda. ¿Sí? ¿De acuerdo? ¿Está fotogopiando la clase o mirando el correo?
+36:11
+Perdón. Me parecía así. Entonces eso es la estructura espacial de la onda sinusoidal. Entonces ahora veamos un poco... ¿Se entiende esto? ¿Lo han visto esto? Levanten la mano los que han visto esto. Ah, claro. Entonces realmente un repaso. Entonces veamos ahora...
+36:41
+¿Qué pasa con la dependencia temporal?
+36:45
+Entonces, y igual a y de x menos bt va a ser igual a a por seno de 2pi sobre lambda por x menos bt. ¿De acuerdo? Y esta función, fíjense, también es una función periódica de t. ¿Sí?
+37:12
+Si yo me tomo un punto fijo, entonces en un X fijo, Y de X menos BT es una función periódica de T. ¿Y cuál es el periodo de oscilación? ¿Cada cuánto oscila?
+37:48
+En términos de lambda y de B. Lambda. Fíjense, ¿cuándo esta función vuelve? ¿Cuándo esto vuelve a tomar el mismo valor en T? Es decir, quiero... Es decir... Quiero que y de x menos bt más un t sea igual a y de x menos bt. Y lo mismo para la derivada. Derivada de y con respecto de, digamos, por ejemplo, con respecto de t. Derivada con respecto de t. Vamos a hacerlo con respecto de x, pero es lo mismo.
+38:29
+En x menos b de t más t sea igual a derivada de y con respecto de t. ¿Cuál es el período?
+38:40
+¿En cuánto hay que moverse en T para volver a la onda original?
+38:50
+¿Cuánto vale T? El T más chico posible.
+38:56
+Es lambda sobre B. Exactamente. Entonces el período de oscilación...
+39:07
+Es T igual a lambda sobre B. ¿Por qué? Bueno, porque fíjense. Acá, Y en X menos B de T más lambda sobre B es igual a Y de X menos BT más lambda. Y dijimos que lambda era el periodo espacial, así que esto es Y de X menos BT. Y lo mismo para la derivada.
+39:39
+Otra, una manera cómoda de acordarse de esta ecuación es, pero es media tramposa, es decir, velocidad es distancia sobre tiempo. Entonces B es la distancia, es el periodo espacial dividido por el periodo temporal. Eso funciona, pero es un poco tricky.
+40:09
+bueno y lo último, fíjense estoy haciendo estas definiciones, lo último que quiero definir son dos cantidades que son muy cómodas una es la velocidad angular de oscilación entonces se suele definir omega perdón, a partir del periodo se suele definir la frecuencia Entonces la frecuencia de oscilación, la anotaré como F. Ah, no, porque F le llamé otra cosa.
+40:54
+La voy a llamar NU. Es 1 sobre T.
+41:10
+Y otra cosa que uno hace frecuentemente es escribir eso de otra manera. Escribirlo de otra manera que se suele escribir es como a por seno de kx menos omega t. Se suele escribir así también.
+41:28
+Entonces eso podemos identificar. Entonces k vale 2pi sobre lambda. Y se le llama el número de ondas.
+41:44
+Y una cantidad asociada, pero con respecto al tiempo, si comparan allá, es omega igual a 2pi V sobre lambda, o lo que es lo mismo, 2pi sobre T. Esto se le llama la frecuencia angular.
+42:09
+Y ven que la frecuencia normal es omega sobre 2pi. Todo esto lo han visto... Bueno, el pasaje de frecuencia a frecuencia angular lo han visto en el movimiento... Yo creo que es el momento armónico simple o el momento circular uniforme, eso lo han visto.
+42:40
+El periodo también. Y lo único que acá aparecen también cantidades asociadas no al tiempo sino al espacio, que son las análogas. El análogo de la frecuencia angular es el número de ondas y el análogo del periodo es la longitud de onda. Está por acá. Y aparece la velocidad de desplazamiento del ojo. Estos son diferentes conceptos que quería recordar con miras a poder ahora aplicarlos a las ondas electromagnéticas. ¿Preguntas?
+43:18
+¿Se entiende todo esto? Bueno, entonces ahora veamos, vamos a... En el curso de electromagnetismo ven cómo son las ondas electromagnéticas en general. Ahora no vamos a hacer eso. Vamos a agarrar un caso particular de ondas y vamos a probar que hay algunas ondas. Y vamos a calcular su velocidad. Voy a encontrar una cierta familia de ondas electromagnéticas y voy a calcular su velocidad. Pero no me voy a ocupar de buscar la onda electromagnética más general.
+43:50
+Solo voy a buscar algunas en particular. ¿Está bien?
+44:12
+ondas electromagnéticas entonces vamos a probar que las ecuaciones de Maxwell
+44:45
+tienen soluciones con forma de onda.
+44:57
+Entonces no vamos a buscar las ondas más generales,
+45:21
+sino que simplemente vamos a buscar probar que una cierta forma es solución de las ecuaciones de Maxwell y la idea es resolver las ecuaciones de Maxwell en el vacío es decir una zona donde no haya cargas ni corrientes por ejemplo imagínense que consideran el espacio que hay desde el sol hasta la tierra ahí en toda esa zona prácticamente no hay nada en particular no hay cargas ni corrientes el sol emite luz emite una onda electromagnética que luego se desplaza y se mantiene a sí misma hasta que llega a la tierra Al llegar a la Tierra, yo qué sé, llega una planta y genera fotosíntesis o lo que sea.
+46:03
+Pero en todo caso, esa onda se desplazó durante buen tramo en una zona donde no había ni cargas ni corrientes. Y es en esa zona donde nos vamos a ocupar. Entonces nos vamos a limitar a ondas en el vacío.
+46:27
+Entonces no hay medio y además Q igual a 0 y la corriente vale C. No hay nada. Y acá alguien me puede decir, pero ¿en qué referencial vamos a trabajar? Porque ¿cuál es el medio en que se propagan las ondas electromagnéticas estas?
+46:50
+El vacío. Pero el vacío no es realmente un medio. En particular, ¿cuál sería el referencial preferencial acá? ¿Cómo? No, no. Entre la Tierra y el Sol no hay aire. Esencialmente no hay nada. Y ahí hay ondas electromagnéticas. No hay necesidad de medio para propagar las ondas electromagnéticas. No es como el sonido, que necesita un aire para desplazarse. Las ondas electromagnéticas se propagan en el vacío.
+47:16
+Entonces, ¿cuál es el referencial?
+47:20
+¿Cómo? Hay ondas, hay ondas. Bueno, no, puede no haber, pero digamos, se pueden propagar las ondas en el vacío. ¿Cómo? No, no, realmente donde no hay nada pueden propagarse ondas. Pero además, fíjense que eso es rarísimo, porque a la gente del siglo XIX, esto les molestaba tanto, de que las ondas electromagnéticas... eran soluciones de la ecuación de Maxwell y no había referencial evidente, preferencial, que inventaron un referencial.
+47:53
+Dijeron que en realidad las ecuaciones de Maxwell no eran válidas en general. El propio Maxwell decía eso. En realidad no lo dijo con estas palabras. Pero las ecuaciones que yo escribí no valen en general. Valen solo en un referencial preferencial de un medio, un medio muy difícil de detectar que se llama el éter. Se propagan las ondas electromagnéticas en un medio que es el éter. Y en realidad estamos calculando sus propiedades en el referencial preferencial que es el referencial del éter.
+48:23
+Y si nos moviéramos con respecto al éter... En realidad, esto que estamos calculando no sería correcto. Eso era lo que pensaban los físicos del siglo XIX. Y de hecho hicieron experimentos, por ejemplo, para ver a qué velocidad la Tierra se desplazaba con respecto al éter. Dijeron, si hay un referencial preferencial, podemos... Ver a qué velocidad se mueve la Tierra con respecto a la letra. Y calcularon, como la velocidad de la luz es muy grande, en realidad podían suponer que la velocidad de la Tierra con respecto a la letra era muy chiquita con respecto a la velocidad de la luz.
+48:55
+Calcularon en un desarrollo en velocidad de la Tierra sobre velocidad de la luz. Eso es un parámetro chiquitito. Y calcularon, hicieron experimentos que eran precisos con un nivel de precisión B sobre C, pero después con una imprecisión del orden B al cuadrado sobre C al cuadrado. Como ve sobre ese chiquito, esa corrección era re chiquita y se la podía olvidar. Hicieron el experimento y les dio que no había velocidad de la Tierra con respecto al éter. Nada, cero. Pero era rarísimo, porque la Tierra se está moviendo alrededor del Sol.
+49:30
+¿Cómo puede ser que cuando va para allá tenga velocidad cero y cuando vuelve para allá también está cero? ¿El éter qué está haciendo? Entonces se les ocurrió que en realidad la Tierra cuando se mueve puede arrastrar el éter. El éter era uno o dos, pero la Tierra se lo mueve. Entonces medíamos cero porque el éter se está moviendo con la Tierra.
+49:50
+Fisó hizo el experimento y la idea de arrastre del éter también viene de esa época.
+49:55
+pensaban que todo lo que les estoy contando está mal no crean nada de lo que les estoy contando no todo el curso, este pedacito pero les cuento como pensaban Tenían tantas ganas de que hubiera un medio que decían, cuando le dio cero dijeron, lo que pasa es que la Tierra está arrastrando el éter. Entonces hicieron experimentos más precisos.
+50:22
+Hicieron los cálculos y si la Tierra arrastraba el éter, imaginen el éter como una especie de fluido. Que al orden b cuadrado, c cuadrado, el arrastre del éter no iba a alcanzar. Hicieron el experimento. A ver, unos tipos inventaron un experimento súper preciso, súper preciso, súper preciso, que es el experimento de Michelson y Morley. ¿Escucharon hablar del experimento de Michelson y Morley? Bueno, es un experimento muy importante, en que midieron con muchísima precisión ese efecto, y en particular podían medir efectos de orden b cuadrado sobre c cuadrado.
+50:55
+Y dio... cero. ¿No? Entonces, empezaron a rascarse la cabeza y apareció un tipo muy importante, Lorentz, que dijo, bueno, lo que debe pasar es que hay un efecto mecánico que hace que los cuerpos, cuando se propagan con respecto al éter a velocidad muy grande, se contraen en la dirección de propagación. Y hizo los cálculos de cómo se tenían que contraer exactamente para que no se viera efecto. Pero no se entendía mucho por qué podía suceder esto. Y... Y entonces hay mucha gente que empieza a pensar que en realidad no hay éter.
+51:29
+En particular hay un texto famoso de Poincaré, un matemático y físico francés, que dice, bueno, los experimentos primero de B sobre C dieron cero, después B cuadrado sobre C cuadrado dieron cero. ¿Qué idea loca tendríamos que inventar los físicos teóricos, dice, cuando se logra hacer el experimento con precisión B al cubo sobre C al cubo y vuelve a dar cero? porque ya el recauchutaje de la mecánica no funciona. Y el que resuelve el problema es Einstein, en el año 1905, con la teoría de la relatividad, en la que dice que no hay éter, que la luz se propaga en el vacío, y que todos los referenciales y inerciales son equivalentes aún para el electromagnetismo.
+52:08
+Y que en realidad la velocidad de la luz es la misma medida en todos los referenciales. Y eso es contradictorio con nuestra intuición, porque alguien puede decir... Si la velocidad es la misma en todos los referenciales inerciales, miren toda la locura a la que lleva esto. En Uruguay no hay tren, pero esto siempre, no sé por qué, se usan trenes para explicar esto, así que lo voy a hacer con tren. Entonces tomamos un tren acá, el tren que se propaga acá, estas son las vías del tren.
+52:40
+Ustedes capaz que no lo saben, nunca vieron un tren, pero se propagan.
+52:46
+Y acá tienen una persona arriba del tren. El tren se propaga a la velocidad B. Es un tren muy, muy rápido, que va a una velocidad parecida a la de la luz. Bueno, y acá tienen otra persona que está en la estación. Bien. Bien.
+53:07
+Y el 3 se mueve a velocidad B, movimiento rectilíneo uniforme. Así que si este es un referencial inercial, este también es un referencial inercial. Entonces acá este prende una lucecita, que sale una señal de luz para allá. Este mide la velocidad de la luz y este mide la velocidad de la luz.
+53:29
+Uno diría, si este mide la velocidad C, ¿qué velocidad va a medir este? C menos B. Ah, porque C. ¿Bien? Pero no, porque tiene que ser la misma. Eso es lo que los mortificaba a los físicos del siglo XIX. Y eso es lo que resolvió Einstein, que en realidad lo que hay que modificar no es el electromagnetismo. El electromagnetismo está bien y la velocidad de la luz que vamos a calcular ahora es la misma en todos los referenciales y sinerciales. Lo que hay que modificar es la mecánica. Y no vale más... Cuando las velocidades son comparables a la de la luz, no vale más la ley de adición de velocidades.
+54:01
+No es cierto que la velocidad que va a medir este sea C menos B. Y eso es la idea de Einstein, pero es complicado. No les voy a contar la teoría de la relatividad, pero simplemente les cuento que la teoría de Maxwell, la teoría del electromagnetismo, ya verifica la teoría de Einstein antes de la teoría de Einstein. Ya tiene la propiedad de ser la misma en todos los referenciales y inerciales, pero no verifica la ley de adición de velocidad. Y eso resuelve el problema y entonces a partir de ahí no se habló más de Ether.
+54:36
+Y eso resolvió el problema. Esto se los cago como un cuentito, pero es importante que tengan en presente que vamos a hacer una cosa rara. Vamos a calcular la velocidad de la luz, y esa velocidad de la luz es la misma en todos los referenciales inerciales, pero alguien dice, bueno, pero si me pongo en otro referencial tendría que ser diferente. No, es la misma. Pero eso... ¿Cómo? Sí, claro, está re verificado experimentalmente. Súper bien verificado. La teoría de la relatividad de las teorías mejor verificadas experimentalmente.
+55:06
+Esto incluso se puede hacer con aparatos que se mueven así. Yo qué sé. Cohetes. O aviones que van muy rápido. Hay que tener aparatos muy, muy chiquititos porque el efecto es súper chiquitito. Pero si no, con partículas que van muy rápido, eso se mide todos los días en los aceleradores con muchísima precisión.
+55:30
+Bueno, entonces veamos cómo calcular...
+55:37
+Entonces, una cosa que sucede, que no voy a probar, ¿no? Entonces, se puede probar que las ondas electromagnéticas son transversales. ¿Qué quiere decir eso? Vamos a tomar ondas...
+56:07
+Que se propagan en una dirección.
+56:12
+Vamos a tomar esta dirección X. Ondas en la dirección X. ¿Y qué quiere decir eso? Que si la onda se propaga en la dirección X, vamos a tener la velocidad de la luz, velocidad de la onda, quiere decir que los campos eléctricos y magnéticos son perpendiculares al desplazamiento. Y además son perpendiculares entre sí. Es decir, E es perpendicular a B y B es perpendicular a B y E es perpendicular a B.
+56:55
+Nosotros esto no lo vamos a probar. No vamos a probar que siempre vale esto. Pero si las ondas que vamos a encontrar, el caso particular de onda que vamos a encontrar tiene esta propiedad. Pero no vamos a verificar que no hay otra posibilidad. De hecho no hay otra posibilidad, pero eso no lo vamos a verificar. Vamos a ver que hay una que verifica esto. Pero podría haber otras formas, pero no, no hay. Y lo otro que vamos a tomar, vamos a tomar ondas.
+57:24
+ondas planas sinusoidales entonces acá este es el eje Y y este es el eje Z vamos a tomar E sub Y es la única componente que vamos a tener va a ser igual a un E0 por seno De K por X menos omega T. ¿Qué quiere decir eso?
+58:02
+No depende de Y y de Z. Y en X es sinusoidal.
+58:18
+Es decir, son ondas que en un plano cualquiera perpendicular a X, en todo el plano están oscilando juntas. En realidad, está claro que eso es una idealización, porque no pueden tener un plano infinito oscilando todo el tiempo junto. No va a pasar eso. Pero sí pueden pensar que eso es una buena aproximación de una región donde aproximadamente el campo es uniforme. ¿Se entiende?
+58:44
+Pueden pensar que una región donde una sección perpendicular a X tiene un campo relativamente uniforme. Es lo que vamos a suponer, que el campo es aproximadamente uniforme en una región alrededor del eje de propagación. ¿Bien? ¿Se entiende? Entonces, eso no simplifica porque es como un problema unidimensional. Solo depende de X y de T y no hay dependencia en Y y Z.
+59:26
+Vamos a ver ahora. Claro, el campo eléctrico, y de hecho va a pasar lo mismo con el campo genético, van a ser uniformes en el plano perpendicular. ¿Está bien?
+59:47
+Entonces, físicamente, ¿a qué corresponde el hecho de que la onda es electromagnética? Bueno, tienen que pensar, tienen que pensar por qué es perpendicular. Les voy a dar el concepto físico de por qué es transversal. ¿Por qué es transversal la onda electromagnética? Porque pueden imaginarse, no hay cargas eléctricas, ni hay cargas magnéticas. Estamos en una zona del vacío. Entonces, ¿cómo van a ser las líneas de campo eléctrico?
+1:00:11
+Si tenemos una zona sin cargas eléctricas, ¿cómo son las líneas de campo eléctrico?
+1:00:17
+¿Agua arriba? ¿De dónde salen las líneas de campo eléctrico? De las cargas positivas. ¿De dónde van? Y si no hay, ¿qué pasa? ¿Cómo tienen que ser las líneas?
+1:00:27
+Cerradas. Entonces, imaginemos una línea de campo eléctrico que hace así. Entonces, estará oscilando. Entonces, cuando oscila esto, me genera un campo magnético, digamos, perpendicular a la figura. ¿Está bien?
+1:00:46
+Entonces el campo eléctrico hará así. Y entonces me genera un campo magnético perpendicular, que también oscila. Entonces voy a tener luego otra zona de campo eléctrico también en esta figura, girando para el otro lado, así.
+1:01:10
+Y el campo magnético, estoy diciendo las líneas que hacen cualquier cosa, así. Y luego el campo magnético también tendrá líneas cerradas, pero que ahora son perpendiculares y hacen así. Entonces por acá entra. No, depende de cómo esté variando. Depende si está creciendo o decreciendo. Eso con una foto no lo puedo decir. pero lo importante es que me quedan líneas de campo magnético así y líneas de campo eléctrico así y entonces en cada zona son perpendiculares unos a los otros el campo eléctrico está en este plano y el campo magnético perpendicular ¿se entiende?
+1:01:47
+esto es idea cualitativa idea cualitativa del porqué de B perpendicular a E bien
+1:02:07
+Bueno, entonces dijimos, vamos a tomar un campo eléctrico X, que es una función de X y de T, que será E sub Y, que va a ser E0, por seno de KX menos omega T. Y vamos a tomar un campo magnético B sub Z, de X y de T, que será un B0, por... seno de kx menos omega t entonces acá estoy haciendo otra hipótesis más les repito no estoy hallando la onda más general sino un caso particular voy a hallar onda de este tipo en que fíjense que los dos campos están yendo en fase cuando uno se anula el otro también campos en fase cuando uno se anula el otro también y esto no es el caso más general
+1:03:11
+Y bueno, por lo que vimos hace un rato, la velocidad de la luz B... En el caso de la velocidad de la luz tiene un nombre, todo el mundo le llama C. C es la velocidad de la luz. Vimos hace un rato que la velocidad de una onda siempre es ω sobre K. Esto porque ω es 2π sobre T... Y K es 2 pi sobre lambda.
+1:03:46
+Así que esto que está acá es lambda sobre T, que dijimos que era la velocidad de la onda. Así que si sabemos calcular omega sobre K, podemos calcular la velocidad de la luz.
+1:03:58
+En términos de las propiedades electromagnéticas. Entonces lo que voy a hacer es sustituir esta forma en las ecuaciones de Maxwell. Voy a sustituir esto en las ecuaciones de Maxwell.
+1:04:16
+Entonces, ¿cómo voy a hacer eso? Voy a tomar, tengo acá X, tengo acá Y, y me voy a tomar un rectángulo, acá una curva, así, C, C, una curva así, curva C, y a esta curva le voy a aplicar la ley de Faraday.
+1:04:47
+Entonces aplicamos, vamos a tomar acá este gancho chiquitito, ¿sí? Lo voy a llamar delta X pequeño. ¿Sí? Y voy a aplicarle a esa curva, le voy a aplicar Faraday. ¿Sí? Apliquemos Faraday.
+1:05:15
+¿No? Faraday les recuerdo que nos dice que la circulación del campo eléctrico es igual a menos la derivada del flujo magnético. ¿Sí? ¿De acuerdo? ¿Se acuerdan de eso? Bueno, entonces calculemos. ¿Sí? ¿Cuánto es la circulación del campo eléctrico?
+1:05:46
+Ahí.
+1:05:51
+Primero, en estos cachitos que están acá, ¿cuánto vale?
+1:05:55
+Cero, porque ¿cómo es el campo eléctrico? ¿Cómo dijimos? Tiene la dirección Y. Y por otro lado, en toda esta línea dijimos que es uniforme, no depende de Y, así que esto va a ser igual. E sub Y evaluado en X más delta X, este le llamamos X.
+1:06:18
+Menos E sub Y en X. Y todo esto multiplicado por la altura esta. Llamémosle H a esta altura. ¿Están de acuerdo? Es el campo acá por H menos el campo acá. Y acá señalé que uno está evaluado en X más Y y otro en Y.
+1:06:50
+Está todo en el mismo tiempo. Voy a explicitar el tiempo.
+1:06:56
+Estoy aplicando esto en un instante. ¿Bien?
+1:07:02
+¿Sí? ¿Hasta ahí están de acuerdo? Entonces ahora, flujo magnético. Flujo magnético en esta superficie.
+1:07:15
+Estamos diciendo que delta X es chiquitito. Así que esto va a ser esencialmente.
+1:07:21
+Hay que tener un poco de cuidado cómo orientamos. Entonces Z está saliente acá. Y es justo la orientación que queremos para el flujo magnético para que sea coherente con esta curva. Así que el flujo magnético va a ser B en X y T por delta X... Por h. Y alguien me puede decir, ah no, no, pero en realidad b varía en esta zona. Pero como delta x es chiquitito, esto podemos suponer, si delta x es suficientemente chiquitito, que podemos despreciar la variación de b.
+1:07:53
+Acá no podíamos hacer eso, porque si despreciamos la variación, simplemente nos da cero. En realidad nos va a quedar algo que va a ser acá proporcional a qué cosa, cuando tomemos delta x chiquitito. La derivada. Entonces sustituimos.
+1:08:16
+Entonces acá vale la pena aclarar, pues delta X pequeño. Así que si sustituimos en Faraday nos queda H por E sub Y en X más delta X. Perdón. T menos E sub Y por XT es igual a menos, no hay que olvidarse el signo menos de Faraday, menos la derivada de esto.
+1:09:00
+Pero la derivada con respecto al tiempo, así que acá nos va a quedar una derivada parcial, porque solo estamos derivando con respecto al tiempo. Entonces nos queda menos delta X por H por la derivada de B en X y de T respecto de T.
+1:09:20
+Entonces, tomando en el límite delta X tendiendo a 0, bueno, H se nos va. Entonces, si delta X tiende a 0, nos queda, pasamos el delta X dividiendo, y nos queda que la derivada de E sub Y en X y T, la derivada con respecto a X, es igual a menos la derivada de B, es B sub Z, es el único B que hay, pero lo explico, es B sub Z,
+1:09:51
+respecto de T esto es Faraday Faraday para la onda plana ¿bien? fíjense que acá todavía no usé la forma sinusoidal lo único que usé es que la onda es plana que no depende de las direcciones laterales
+1:10:22
+¿Preguntas?
+1:10:28
+Bueno, entonces ahora voy a sustituir con la forma aquella.
+1:10:32
+Vamos a ver qué nos da para esta forma. Entonces sustituyamos. Demosle un nombre a esto, esto lo llamamos asterisco.
+1:10:46
+Sustituimos eso. La derivada de E sub Y con respecto a X... La derivada parcial. Así que solo hay que derivar con respecto a X y nos queda K por E0. La derivada del seno nos queda coseno. Coseno de KX menos omega T. Y acá nos queda menos. Y ahora tomamos la derivada con respecto a omega. Nos queda menos omega por B0 por coseno de KX menos omega T. Y esto para todo T y X.
+1:11:21
+Entonces como eso vale para todo T y X, concluimos, acá se nos van los signos, nos queda que B0 es igual a K sobre omega por E0.
+1:11:37
+Y esto es justo la velocidad, 1 sobre la velocidad de luz. Entonces B0 es igual a E0 sobre C. Primera relación que obtenemos. No nos dice nada sobre la velocidad de la luz. Nos dice solo, establece una relación entre las amplitudes de oscilación de los campos magnéticos y eléctricos. Pero tenemos otra ecuación para usar.
+1:12:10
+¿Cuál es la otra ecuación que vamos a usar?
+1:12:12
+Que sabemos que sin esa ecuación nada de esto tiene sentido.
+1:12:19
+La de Ampere con el término de Maxwell. Porque dijimos que Maxwell al agregar ese término agregó las ondas electromagnéticas. Sin ese término no había ondas electromagnéticas. Pero fíjense que... Como yo les mencionaba hace un rato, Ampere con el término de Maxwell se parece mucho a Faraday. Así que este cálculo que hicimos ahora, casi tal cual lo vamos a poder hacer en el otro caso. ¿Se entendió este cálculo? Entonces ahora voy a repetir el mismo cálculo, pero para Ampere.
+1:12:58
+¿Cómo vamos a hacer? Bueno, fíjense. Nuevamente. X para allá, Y para arriba. Acá está el origen, acá está Z. Y voy a tomar un rectángulo ahora en el plano OZ. Un rectángulo de altura H. Nuevamente está en la posición X y esto es un ancho delta X. Y voy a aplicar Ampere.
+1:13:31
+Ampere más...
+1:13:33
+más Maxwell pero con I igual a 0 estamos en una zona sin corrientes entonces les queda que la integral de línea del campo magnético de la curva C la vamos a tomar ¿cómo la voy a tomar?
+1:14:00
+quiero tomar de modo que esto me quede para allá así que la voy a tomar así
+1:14:05
+la curva C del campo donativo es igual a menos menos el flujo para arriba ahora ya no hay menos nos queda mu sub cero por epsilon cero por la derivada del flujo eléctrico con respecto a T fíjense que se parece muchísimo a menos del signo y a menos de este factor mu cero epsilon cero entonces repitamos el razonamiento La circulación del campo magnético en ese plano, en esta curva que está acá, les va a quedar B en X más delta X, T menos B en X, T multiplicado por H. Eso es igual, el mismo cálculo que hace un rato.
+1:15:00
+En realidad es mentira lo que estoy diciendo, porque fíjense, si hago en la dirección Z, cuando está más grande va para valores chicos, y cuando está más grande va para valores chicos, así que hay un signo menos. Estoy morfando un signo menos porque el campo magnético va en... ¿Se entiende? Acá el más grande lo tomaba para arriba y el más chico para abajo. Pero acá el de X más grande lo tomaba para acercándome al eje y el más chico alejándome. Así que va un signo menos.
+1:15:33
+¿Sí? Bien. Y lo otro que hay que calcular es el flujo eléctrico en la dirección acorde con esta curva. Así el flujo eléctrico para arriba. El flujo eléctrico para arriba les va a quedar... E en XT por delta X por H. Igual que eso un rato.
+1:15:53
+Entonces si sustituyo... Ah, borré esta ecuación que no la tendría que borrar. La voy a tener que escribir ahora en un momento. Entonces si sustituyo... Estoy sustituyendo...
+1:16:15
+En Ampere más Maxwell les queda H por B de X más Delta X T menos B de X T
+1:16:37
+Es igual, acá hay un signo menos, es igual a delta x por h por la derivada de e con respecto de t de x. Ah, bueno, no, me olvido el mu cero y el epsilon cero, importante.
+1:17:00
+Bueno, h nuevamente se nos va, tomamos el límite delta x teniendo a cero.
+1:17:09
+obtenemos menos la derivada de B con respecto de X en X y T, es igual a Mu0, Epsilon0, la derivada de E con respecto de T en X y T. Bien, entonces esto es Ampere más Maxwell para onda plana.
+1:17:45
+Y ahora sustituimos en la forma que tenemos. ¿Sí? Entonces sustituimos. Escribo nuevamente asterisco. Asterisco era E de X y de T era igual a E0 por seno de KX menos omega T. Y B de X. Este es B sub Y. Ah, perdón. Me he olvidado de los índices. Este es Z todo el tiempo. Es B sub Z y este es E sub Y. Son las únicas componentes.
+1:18:16
+Por eso me olvido. Pero en realidad es importante ponerlo. E sub Y y estos son B sub Z. ¿Está? Y acá este es B sub Z en X. Y este es B0 por seno de KX cuadrado.
+1:18:38
+Y ahora sustituimos, tomamos las derivadas. Entonces de este lado les queda menos b0 por k por coseno de kx menos omega t. Y del otro lado les queda mu0 por epsilon0 por menos omega por e0 por coseno de kx menos omega t.
+1:19:07
+¿bien? ¿se entiende? y esto para todo X y para todo T entonces esto deducimos como vale para todo X y para todo T que B0 es igual a
+1:19:36
+Mu cero epsilon cero por E cero y acá les queda omega sobre K. Y omega sobre K nuevamente dijimos es C. Les queda mu cero epsilon cero por C E cero. Esta es la otra relación. B cero es igual a mu cero epsilon cero por C por E cero. Pero fíjense, ahora sustituimos esta en aquella.
+1:20:05
+Entonces... E0 sobre C es igual a Mu0 Epsilon0 por C por E0. Pero queremos una señal que no sea nula. Está claro que si E0 fuera 0, entonces B0 también es 0 y entonces no hay onda. Es simplemente la situación sin campo. Eso es una posibilidad, que no haya nada. Pero queremos una solución con E0 distinto de 0, para que haya onda. ¿Bien? Entonces, ¿cómo...?
+1:20:35
+E0 es distinto de 0 para que haya onda. Entonces C cuadrado es igual a 1 sobre mu0 sobre epsilon0.
+1:20:46
+Entonces la velocidad de la luz C es 1 sobre raíz cuadrada de mu0 epsilon0. Velocidad de las ondas...
+1:21:02
+que es la velocidad de la luz. Fíjense que todas las ondas electromagnéticas se propagan, por lo menos todas estas que hemos visto, yo les conté que esto es general, todas se propagan a esta misma velocidad. Fíjense que estas son propiedades, hemos calculado la velocidad de las ondas electromagnéticas, y en particular la velocidad de la luz, A partir de propiedades puramente electromagnéticas. No hay nada que sea otra cosa que electromagnético. Pero pueden calcular ahora cuánto les da. Pueden sustituir porque esas propiedades se saben muy bien. Medir con...
+1:21:36
+En experimentos de laboratorio esto les queda que C vale 3,0 por 10 a la 8 metros por segundo. Es la velocidad de la luz.
+1:21:50
+Que ya se había medido en la época de Maxwell de manera independiente. Habían hecho experimentos de un rayo de luz moviéndose y experimentos astutos. Estaba el experimento de Fissot. ¿Saben cómo es el experimento de Fissot para medir la velocidad de la luz?
+1:22:04
+No sé si me dan tiempo, pero capaz que ya les cuento ahora o la clase que viene. Tengo tres minutos y me alcanza en realidad. Lo que hicieron es, ponen dos montañas, digamos, dos elevaciones bastante alejadas. Y ponen dos engranajes que rotan. ¿De acuerdo? Que van rotando con la velocidad angular. Entonces la luz va, tiene un espejo, rebota en el otro engranaje y si justo...
+1:22:35
+El tiempo de rotación de los engranajes, es decir, del otro lado no tiene engranaje, tiene un espejo, tiene un engranaje acá, está rotando. La velocidad va, la luz va, rebota en el espejo y vuelve. Si justo la velocidad angular de rotación, la velocidad angular corresponde al tiempo que le lleva para pasar de un engranaje a otro, es justo un múltiplo, de lo necesario para que la luz vaya y venga, justo ahí, se dan cuenta que si rota ligeramente, rota mucho, cuando vuelve cae en una zona oscura.
+1:23:10
+¿Se entiende? El engranaje va a tener una forma de este tipo. Tiene un círculo con rendijas. Rendijas finitas. X espaciada, mi dibujo no lo muestra, pero es una X espaciada. Y está rotando, una velocidad angular, omega. Omega que no tiene nada que ver con esto que estamos haciendo. Está rotando. Entonces sale la luz por acá, por una rendija, y tiene que pasar que cuando va y vuelve, justo caiga en otra rendija. Si la distancia es suficientemente grande, por más que la velocidad de la luz es muy rápida, justo pueden ajustar la velocidad de la luz para medir con precisión la velocidad de la luz.
+1:23:43
+Así que en la época de Maxwell sabían medir la velocidad de la luz con mucha precisión y, oh casualidad, coincide con lo que Maxwell calculó. con métodos electromagnéticos lo cual fue todo nos vemos el miércoles

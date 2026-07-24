@@ -1,0 +1,394 @@
+# Clase 2
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/2/
+
+Fecha de exportación: 7/23/2026, 10:45:35 AM
+
+
+Clase: 2
+Curso: F3
+
+Segmentos : 217
+Palabras  : 10006
+Caracteres: 57711
+
+¿Qué significa que la carga se conserva? Significa que si ustedes toman un sistema cerrado, en el cual no entran ni salen cargas, no entran ni salen nada, la carga se conserva. Es decir, la carga no se crea ni se destruye.
+0:33
+Miden la carga al día de hoy, la vuelven a medir al día de mañana y da el mismo valor. En un sistema...
+0:52
+La carga se mantiene constante. La carga total, ¿no? La carga total. ¿Cómo podemos entender esto? ¿Cómo podemos...? entender estos dos fenómenos son dos fenómenos experimentales a priori independientes podría suceder que hubiera cuantización de la carga y que no hubiera conservación de la carga o al revés podría haber conservación de la carga y no cuantificación de la carga pero en nuestra experiencia cotidiana este fenómeno se explica de manera muy simple por lo que se denomina la teoría atómica ¿qué quiere decir la teoría atómica?
+1:38
+bueno, o el hecho atómico el hecho atómico es que Toda la materia que nosotros conocemos está compuesta de átomos. ¿Qué son átomos? Son pequeñas porciones de materia con un tamaño, como yo les decía la vez pasada, en la clase pasada les decía que el tamaño típico de un átomo es del orden de 10 a la menos 10 metros. Y esos átomos, como yo les decía, están compuestos de un núcleo donde hay protones y neutrones y de una nube de electrones.
+2:07
+Entonces, el hecho clave que permite entender estos dos fenómenos en la vida normal, de este lado hay sillas, es que los electrones y los protones, de hecho los neutrones pasa lo mismo, para todos los fenómenos normales que nosotros conocemos, todos los fenómenos gravitatorios y todos los fenómenos... electromagnéticos normales de la vida cotidiana, no crean ni destruyen protones ni electrones.
+2:43
+El número total de protones y de electrones no cambia.
+2:48
+Para todos los fenómenos que yo mencionaba en la clase pasada, ni hablar del movimiento de los planetas, pero también todos los fenómenos de la química, de la biología, de las cosas que nosotros vemos normalmente en la superficie de la Tierra, Para todos esos fenómenos, esencialmente los electrones y los protones, el número no cambia. Aparecen como pelotitas indestructibles. Entonces, como el número total de electrones, eso más el hecho que el protón tiene la carga opuesta que el electrón, todas las cargas son simplemente contar el número de protones, restarle el número de electrones, multiplicar por la carga, por el valor este de carga, y eso les da...
+3:33
+¿Cuánto vale la carga? Usted tiene que pensar la carga para todos los fenómenos normales como un conjunto de pelotitas. Hay una unidad indestructible de la carga, que es el valor absoluto de la carga de electrones, la carga del protón. Cuentan el número de protones, le restan el número de electrones, multiplican por este valor y eso es la carga. Y como los protones y los electrones normalmente no se pueden destruir ni crear, Entonces, por un lado, toda la carga es múltiplo de esa, porque ya está, porque toda la carga es esa, y por otro lado, se conserva, porque como no se crearon ni se destruyeron, el sistema puede estar abierto, pueden estar saliendo electrones o entrando electrones, pero si el sistema está cerrado, ¿se entiende?
+4:15
+Así que para los experimentos en la vida cotidiana, estos dos fenómenos, la cuantización de la carga y también la conservación de la carga, se entienden de manera muy simple. ¿Se entendió? Entonces, para la mayoría de los fenómenos usuales esto se entiende de la manera siguiente.
+4:59
+Está compuesto de tres elementos. Uno, toda la materia usual está compuesta de electrones, carga negativa, protones, es la abreviación, carga positiva,
+5:29
+y neutrones carga igual a cero ese es el primer elemento segundo la carga del protón es igual a menos la carga del electrón y es igual a e el segundo fenómeno que tienen protones y neutrones tienen cargas opuestas bien y el tercer fenómeno es que en los fenómenos usuales física de la materia química biología caída de los cuerpos
+6:32
+no se crean ni se destruyen protones, electrones o neutrones.
+6:50
+Entonces, como no se crean ni se destruyen, entonces la carga es simplemente E por el número de protones... menos el número de electrones entonces esto explica de manera simple estos dos fenómenos simplemente la cuantización de la carga simplemente porque es el múltiplo de un ladrillito básico y la conservación también porque como esas cosas no se destruyen ya está ahí no vas a ver nada pero por allá en el fondo por ahí también bien
+7:33
+Así que esta es la explicación, para los fenómenos normales esta es la explicación de la conservación de la carga y de la cuantificación de la carga.
+7:41
+¿Sucede siempre así? ¿Qué les parece? ¿Esta es la explicación final de la cuantización de la carga y de la conservación de la carga? ¿O hay fenómenos? Porque, a ver, les doy una pista. En todo esto estuve diciendo para los fenómenos de la vida normal, etc. Quiere decir que hay fenómenos que no son así.
+8:10
+¿Alguien tiene idea de fenómenos en los cuales estas cosas no pasan? ¿En la estrella? Por ejemplo, en las estrellas. Sí, está bien, las estrellas. Las estrellas se producen lo que se llaman reacciones nucleares. Cuando se producen reacciones nucleares, ya no pasa esto. Puede pasar que se... En las reacciones químicas no, pero en las reacciones nucleares el número de protones y el número de electrones no se mantiene. Es decir, puede cambiar el número de protones y puede cambiar el número de electrones y puede cambiar el número de neutrones también.
+8:42
+Cambian.
+9:02
+Entonces, existen fenómenos, sin embargo, en que electrones, protones y neutrones sí se crean o se destruyen.
+9:33
+Entonces, daban un ejemplo de las estrellas.
+9:38
+Ahí hay reacciones nucleares. De hecho, en los reactores nucleares pasan estas cosas. Cuando tienen reacciones nucleares, típicamente no pasa esto. En algunos casos sí, en otros no. No tiene por qué pasar esto. Lo segundo es que...
+10:02
+es que pueden haber fenómenos en los cuales no hay reacción nuclear, pero tienen lo que se llama aniquilación. Hay fenómenos que no son nucleares, que son, por ejemplo, electromagnéticos, y en los cuales no se conserva el número de electrones o el número de protones. Por ejemplo, bueno, entonces, perdón, antes de ir a esos ejemplos, quiero mencionar otro fenómeno que sí se da normalmente, poco, pero un poco se da en la superficie de la Tierra, que es la radioactividad.
+10:35
+La reactividad beta, por ejemplo, no mantiene el número de neutrones, el número de protones y el número de electrones. Y también pueden haber fenómenos que se llaman aniquilación de pares. ¿Sí?
+10:56
+Por ejemplo, en los aceleradores, ¿se acuerdan que yo les hablé la vez pasada del acelerador gigante este que está en Suiza, en Ginebra, el LHC? Antes, hace una generación, había otro acelerador que funcionaba en ese mismo lugar, que se llamaba el LEP. large electron positron que era una en lugar de hacer chocar protones como hace el acelerador actual lo que hacía chocar era Un electrón con la antipartícula de electrón.
+11:30
+La antipartícula no es una cosa de ciencia ficción. Los físicos producen antipartículas en los aceleradores todo el tiempo. Y hay una partícula que se llama el antielectrón, o normalmente en realidad se le llama el positrón. Y lo que hacía el LEP era hacer chocar en grandes cantidades y con muchísima energía electrones con positrones. Y, por ejemplo, podía pasar que un electrón... chocara con un positrón, este es el positrón. El positrón es una partícula que es esencialmente idéntica al electrón, pero con carga opuesta.
+12:01
+Y una reacción que se daba muy a menudo es que el electrón en positrón producía dos rayos gamma. Son dos rayos de luz. Pero no les servía de nada para buscar nuevas partículas, eso sí. Sí, sí, sí, sí. Se encontraron una cantidad de partículas nuevas con el... Pero tipo materia con antimateria no se genera solo energía... No, no, no, puede producir. Por ejemplo, se producía mucho en el LEP unas partículas que se llaman bosones Z. Y en realidad es una máquina que fue diseñada para eso, para descubrir el Z. Bueno, pero para no introducir partículas que ustedes no conocen, les digo acá simplemente electrón, positrón, bueno, sí introduje una que es el positrón, pero no importa, y gamas que son rayos de luz.
+12:45
+Entonces fíjense, en este proceso... El número de electrones no se mantiene. Acá tenían un electrón y después no tienen ninguno. ¿Sí? Entonces, la idea simple de conservación de la carga por conteo de electrones y protones, en este caso, no funciona. Pero, sin embargo, sí se conserva la carga. Porque, fíjense, de este lado, pongan la carga de este lado. La carga de este lado, fíjense, tiene un sistema con una carga más uno, otro con menos uno. La carga total vale cero. Y de este lado tiene luz. La luz no tiene carga y también vale cero.
+13:18
+Y por otro lado vemos también que sigue valiendo la cuantificación de la carga, porque acá tienen una partícula que tiene un múltiplo de carga del electrón que es más uno, acá menos uno, y entonces sigue valiendo. Entonces sigue valiendo la conservación y cuantificación de la carga.
+13:50
+pero por motivos más sutiles, pero de manera más sutil. ¿Está? Otro ejemplo es el que yo les decía, la desintegración beta. La desintegración beta esencialmente corresponde a una reacción nuclear en la cual un neutrón se transforma en un protón más un electrón, Más una partícula que se llama antineutrino. No importa el nombre de la partícula.
+14:25
+Neutrino. ¿Está? Y fíjense que acá nuevamente el número de electrones y el número de protones no se conservó porque de este lado no teníamos ningún protón, ningún electrón. ¿Sí?
+14:37
+Y de este lado generamos un protón y generamos un electrón. ¿Sí? Pero sin embargo la carga se conservó porque el neutrón tiene carga cero, el protón tiene carga más E, el electrón tiene carga menos E y el neutrino es neutro también, como su nombre lo indica. Entonces también se conserva la carga y también tenemos cuantificación de la carga. Esto para decirles que en la vida cotidiana la conservación de la carga y la cuantificación de la carga se entiende de manera muy simple.
+15:07
+Es contar protones menos electrones multiplicados por la carga. Y ya está. en fenómenos más sofisticados de la naturaleza, sigue valiendo. Todos los fenómenos que conocemos experimentalmente verifican esas dos propiedades experimentales, que son la cuantificación de la carga y la conservación de la carga.
+15:25
+Pero... Pero no con esta explicación simple que yo les di hace un rato, sino el fenómeno es más complicado. De hecho, al día de hoy, los físicos teóricos entendemos perfectamente, en el modelo estándar de la física de partículas, por qué se conserva la carga, pero no hay ninguna teoría satisfactoria que explique por qué hay cuantificación de la carga. O mejor dicho, hay muchas teorías, pero ninguna totalmente satisfactoria. entonces sabemos bien hoy porque hay conservación de la carga pero la cuantificación de la carga es simplemente un hecho experimental se observa experimentalmente que es así pero no se lo sabe probar hay modelos que explican eso pero tienen no son muy satisfactorios se llaman modelos de gran unificación ¿se entiende?
+16:17
+entonces tienen que retener dos cosas uno Los hechos experimentales, se conserva la carga y hay cuantificación.
+16:25
+Esa es la primera cosa que tienen que retener. La segunda cosa que tienen que retener es que en la vida normal, eso se entiende muy simple, porque es simplemente que los protones y los neutrones no se crean ni se destruyen. Y la tercera cosa que tienen que retener es que, en realidad, el hecho es más general que esto, porque no siempre pasa eso de que los protones y los electrones no se pueden crear ni destruir, pero la conservación de la carga y la cuantificación de la carga sigue valiendo.
+16:49
+¿preguntas?
+16:52
+ahí no ves nada pero por allá al fondo hay lugares más cómodos ¿preguntas?
+17:14
+Les cuento una curiosidad, un paréntesis fuera de tema, lleva dos minutos. En realidad, se conocen... Quiero insistir sobre el hecho de que la conservación de la cuantificación de la carga vale para cargas que se observen libres en la naturaleza.
+17:32
+Pero, los físicos han detectado algunas partículas curiosas que se llaman quarks, ¿sí?, están bien detectadas experimentalmente, pero que no se logran separar, que siempre viven juntas.
+17:45
+No son separables entre sí, siempre están en paquetitos de a dos o de a tres. Y esas partículas que se llaman quarks tienen en realidad fracciones de la carga del electrón, típicamente dos tercios o menos un tercio. Así que se conocen partículas que tienen carga más chica, una fracción entera de la carga del electrón, una fracción entera no, una fracción racional de la carga del electrón, pero esas partículas no son separables, no logran vivir solas en la naturaleza, entonces siempre vemos múltiplos entero del electrón, pero en realidad se han visto objetos como los protones que adentro tienen varios quarks, y los quarks no tienen una carga entera, tienen fracciones.
+18:24
+Eso es una curiosidad. Bueno, conductores y aislantes. ¿Se entienden de todo esto o no?
+19:04
+Bueno, en la naturaleza hay materiales que permiten que la carga eléctrica se pueda mover fácilmente y otros que no permiten que la carga eléctrica se mueva fácilmente. Típicamente vamos a empezar por el caso más simple. Hay materiales cristalinos, pensemos en la sal, la sal de cocina, ¿sí?, Que tienen todos sus electrones, les dije, la materia está constituida de átomos, ¿verdad?
+19:37
+Y resulta que puede pasar dos cosas diferentes. O que en cada átomo los electrones estén muy, muy unidos en una materia, ¿no? O, por el contrario, que existan algunos electrones que puedan moverse con bastante libertad en el material. Entonces, ¿cuáles son los dos casos extremos? Bueno, por ejemplo, les decía la sal. En la sal, todos los electrones están fuertemente unidos a algún átomo.
+20:09
+Entonces, no se pueden desplazar. Entonces, los electrones, eso es lo que se llama un material aislante. Los electrones, básicamente, que están acá adentro, están fijos y la carga no se puede mover dentro de un aislante. Y la situación extrema opuesta, pueden pensar en un cable de cobre, en un cable de cobre existen electrones asociados a cada átomo, pero que en realidad pueden saltar con bastante facilidad de un átomo a otro. Esos electrones se llaman electrones de conducción. Y los materiales, como el cobre o casi todos los metales, pueden conducir con muy buena propiedad.
+20:44
+De hecho, todos los metales es así. Es una propiedad en la cual si uno les da un poquito de energía, los electrones pueden circular distancias macroscópicas dentro del material. Esto es un poco esquemático, porque en realidad en casi todas las cosas en la naturaleza, las cosas no son blanco y negro, no es aislante o conductor. Hay situaciones intermedias de las que vamos a hablar un poquito más a lo largo del curso, como por ejemplo los semiconductores. Los semiconductores son materiales que no son realmente ni conductores ni realmente aislantes, sino que son una situación un poco intermedia.
+21:19
+Para la mayor parte de los materiales, esto es una buena descripción. Es decir, o bien permiten que las cargas se muevan, o bien no permiten que las cargas se muevan. Entonces, esquemáticamente... En la naturaleza... Tenemos...
+21:48
+...dos tipos de materiales.
+21:57
+Los aislantes... ...que no permiten... ...que la carga... ...circule por ellos... ...y los conductores...
+22:22
+que permiten que la carga se mueva fácilmente por ellos. ¿Bien? Entonces, ejemplos, ejemplos. Vamos a dar ejemplos de cada uno.
+23:00
+ejemplos ejemplos primero aislantes entonces yo le decía el cloruro de sodio la sal de cocina bien otros ejemplos de materiales que sean aislantes la goma, los plásticos la mayoría de los plásticos son aislantes la goma plástico bueno
+23:31
+Madera. ¿Estamos de acuerdo con la madera? ¿Madera?
+23:38
+¿Toda la madera? ¿Alguna madera? Levante la mano los que piensan que la madera es un aislante.
+23:47
+Levante la mano los que piensan que la madera no es un aislante.
+23:53
+Si yo fuera un encuestador, estaba rascándome la cabeza.
+23:59
+¿Cuándo la madera es un aislante y cuándo no es un aislante?
+24:04
+Exactamente. Si ustedes agarran un árbol recién cortado, digamos que lo cortan verde, entonces tienen una cantidad de líquidos en el árbol, que permiten en realidad que la electricidad circule bastante bien. Los seres vivos suelen ser buenos conductores.
+24:37
+Un ejemplo son los seres vivos.
+24:41
+Esa es una cosa que ustedes pueden verificar fácilmente en su casa. Agarran dos cables eléctricos, los ponen en un enchufe de la pared y van a verificar fácilmente que son buenos conductores. Pero es un experimento que no conviene, bueno, no se puede hacer muchas veces en la vida. Bien.
+25:06
+Y lo mismo pasa con la madera. Cuando la madera está seca, sí, efectivamente es un buen aislante, pero cuando todavía está húmeda y todavía está un poco con fluidos que pueden circular, entonces no es un buen aislante. ¿Otros ejemplos?
+25:24
+Entonces, el agua... El problema es que es una situación un poco ideal. Entonces, si tenemos el agua así súper pura, es un buen aislante. Pero lo que sucede es que normalmente el agua que nosotros conocemos siempre tiene... Sales disueltas, ¿verdad? A ver, los seres vivos son básicamente agua con sales disueltas. En un 80% de proporción es eso. Entonces, por eso somos buenos conductores. Porque el agua con sales disueltas es un excelente conductor. Excelente no, pero muy buen conductor.
+25:56
+Entonces, agua con sales disueltas. ¿Verdad? Pero es verdad que el agua destilada, si uno lo hace muy bien, es un aislante. ¿Algún otro ejemplo?
+26:30
+Bueno, sí, los metales, por supuesto. Los metales son los mejores conductores. y acá podemos agregar algunos materiales tipo por ejemplo el vidrio algunos materiales cristalinos como el cloruro de sodio muchas sales cristales son aislantes pero también materiales que son lo que se llaman sólidos amorfos como el vidrio que no tiene una estructura bien cristalina También suelen ser.
+27:01
+Lo mismo pasa un poco con el plástico. La goma del plástico también es un sólido amorfo. No es un verdadero sólido. Es una cosa intermedia entre el sólido y el líquido. Y son buenos ahí. Entonces ahí tenemos ejemplos. Las formas de conducción en estos distintos ejemplos son variadas. Acá en estos ejemplos que están acá. En estos dos ejemplos que están acá, lo que hay... Ahora voy a ir sobre cómo se produce la conducción acá, pero voy a hablar primero cómo se produce la conducción en los metales.
+27:43
+Entonces, primero voy a pensar en cómo se produce la conducción o no se produce la conducción en materiales que son sólidos, que no son líquidos. En materiales sólidos la conducción se produce en función de que los electrones estén muy unidos o no a los átomos de los que forman parte. Entonces, en los sólidos... En los sólidos, la propiedad de conducir o no depende de en qué medida todos los electrones
+28:43
+de los átomos están o no muy unidos a ellos. Entonces, dos casos, aislante como el cloruro de sodio, todos los electrones muy unidos.
+29:16
+y el conductor, conductor típicamente por ejemplo un metal algunos electrones pueden circular algunos porque por ejemplo
+29:37
+El hierro, el hierro es un buen conductor. El hierro, cada átomo de hierro tiene una cantidad de electrones, no me acuerdo cuántos, 50 y pico, una cantidad grandota. Casi todos esos electrones, casi todos esos electrones, creo que el total menos uno, están muy unidos al núcleo. La mayoría están ahí fijos y no circulan. Esos electrones están quietos, forman parte de la red cristalina y no se mueven. Y es un electrón por cada átomo que circula. Es decir, cuando decimos que los electrones se pueden mover bastante bien en los metales, no son todos los electrones.
+30:12
+Son uno o dos por átomo. Eso igual es una cantidad. Pero la mayoría están quietos y unos pocos se pueden mover. ¿Se entiende? Entonces la pregunta es si todos, todos están quietos o... Ahí no ves nada. Te estás imaginando el pizarrón. Pero me da no sé qué por vos, porque hay lugares por ahí donde... Bien. Este es un mecanismo de conducción. ¿Se entiende esto?
+30:42
+¿Preguntas?
+30:46
+Ya saben todo, ¿no? ¿Puedo dar la clase por culminada?
+30:52
+Está todo clarísimo. ¿No? Ni siquiera me contestan eso, ¿no?
+31:03
+¿Se está entendiendo? Bien. Esto es conductor. Después les dije que hay otro tipo de conductor. El otro tipo de conductor es lo que se llaman electrolitos. Otro tipo de conductor común. Son los electrolitos.
+31:30
+que son líquidos con sales disueltas. Entonces, por ejemplo, un ejemplo es, toman una cubeta con agua, agua con sal.
+31:43
+Y entonces la sal, cuando está en estructura cristalina, está en realidad compuesta no por átomos, sino por lo que se llaman iones. Los átomos que componen la sal normalmente tienen un exceso de un electrón o un déficit de un electrón. Pero aún ese exceso o déficit queda pegado al electrón, no se puede mover. Esos iones tienen un electrón de más o un electrón de menos, pero ese electrón no se puede mover, queda pegadito a la estructura cristalina. Pero cuando los ponen en el agua... Voy a dibujar grandotes los iones, los iones no se pueden ver, son chiquititos.
+32:15
+Los iones se separan, quedan rodeados por el agua y algunos son positivos y otros son negativos.
+32:28
+Muchos, ¿no? Ya no están juntos. Se dan cuenta que normalmente quieren estar juntos porque son cargas opuestas y se pegan. Y de hecho en la red cristalina están todos separados. Al lado de cada sodio tiene una cantidad de cloros y al lado de cada cloro tiene una cantidad de sodios para que cada pedacito quede neutro. Pero cuando están en el líquido se empiezan a mover, se pueden mover fácilmente porque esa es la característica del líquido. Y si uno le aplica, le da alguna fuente de energía, por ejemplo... pone acá, conecta esto a una batería genera lo que se llama una diferencia de potencial todavía no lo vimos en el curso, pero ustedes saben lo que es poner una batería eso va a generar lo que se llama una corriente eléctrica si por ejemplo tienen un exceso de cargas positivas acá las cargas estas, los sodios van a estar rechazados por el exceso de cargas positivas y se van a mover para allá y los cloros se van a mover para acá y eso les genera una corriente corriente si acá tienen más y acá tienen menos una corriente Y la corriente, los dos tipos de iones aportan corriente para el mismo lado, porque sodio moviéndose para allá aporta una corriente para allá, y cloro moviéndose, que es negativo, moviéndose para allá, también aporta una corriente para allá.
+33:45
+¿Se entiende? Así que todos suman para el mismo lado. En el caso de los metales, lo que se mueven son electrones. Así que si los electrones van para allá, la corriente para dónde va.
+34:03
+Si los electrones se mueven para allá, como son negativos, tienen carga negativa, la corriente va para el otro lado. La corriente, a ver, históricamente no se sabía si los electrones eran positivos o negativos, así que convencionalmente se llamó corriente positiva la que estaba asociada a las cargas positivas. Resultó que los electrones tenían carga negativa, pero eso se descubrió mucho más tarde. Entonces la fuente normal de corriente en realidad se mueve en el sentido opuesto a la corriente. Los electrones van para allá y la corriente va para allá.
+34:35
+¿Se entiende? Porque tienen carga negativa. Bien. Sí. Sí.
+34:53
+Sí, sí.
+35:01
+Bueno, son muchísimos los electrones. El problema no es que se te acaben los electrones. Si vos no estás suministrando una corriente, es decir, lo que me dice el compañero es, si uno solo pone unas cargas acá para atraerlos de un lado para el otro, lo que va a pasar es que los que eran positivos se van para allá, los que eran negativos para allá, y después de un rato eso se estabiliza. No porque se te acaben las cargas, sino porque se neutraliza. Ya no va a haber diferencia potencial. Esto se va a volver neutro porque vas a tener muchos sodios por acá, esto se va a volver neutro porque vas a tener muchos pluros por acá, y entonces ya nada mueve, nada.
+35:36
+Para que efectivamente se mantenga una corriente, no alcanza con poner una diferencia de potencial, sino algo extra que vamos a ver un poquito después en el curso, que es bombear las cargas. Una vez que llegan los odios por acá, tiene que haber un mecanismo que les suministre energía para subirlos de nuevo para acá y ponernos para acá y vuelven a caer. Y ahí se produce lo que se llama una corriente eléctrica. Por ahora no me estoy metiendo en eso, pero efectivamente no alcanza solo con poner una diferencia potencial, sino que además tiene que haber un mecanismo que los vuelva a subir para el otro lado para mantener la corriente.
+36:09
+¿Alguna otra pregunta? Ah bueno, una cosa, lo puse acá, lo dije, algunos electrones se llaman electrones de conducción.
+36:29
+¿Más preguntas?
+36:43
+Bueno, hay una diferencia entre lo que se llama en química electrones de valencia. Los electrones de valencia para los cristales son los que no conducen. Son los que están fijos al material. Pero eso es medio contraintuitivo porque normalmente en química se les llama electrones de valencia los que están en los orbitales más externos. Entonces uno diría, esos son los que conducen. En realidad sí, pero entonces se les llama electrones de valencia los que quedaron más externos pero unidos al material. ¿Se entiende? Se les llama de valencia a los otros.
+37:15
+¿Alguna otra pregunta? Pero eso es un asunto de nomenclatura, digamos. Entonces, lo otro que les quiero comentar, es una cosa de las que ya hablé un poquito en la clase pasada, pero quiero volver sobre ello, es que hay materiales
+37:36
+que las fuerzas electrostáticas todo esto que estamos viendo por ahora esas cargas se movían pero básicamente lo que estamos pensando es en cosas que se mueven poco o nada puede suceder que objetos neutros sean atraídos electrostáticamente yo ya les mencioné eso un poco pero vale la pena insistir sobre eso entonces eso es una cosa que vale la pena tener en presente objetos neutros pueden experimentar
+38:11
+interacciones electrostáticas. Los experimentos electrostáticos, como les decía, en el Uruguay suelen no funcionar debido a la humedad. Pero si ustedes vivían en otro país podrían hacer este experimento fácilmente. Coloquen un conjunto de papelitos chiquititos en una mesa.
+38:43
+¿Está? Papel. Pedacitos chiquititos, para que sean livianitos. Agarran un peine, se frotan el pelo, bastante. Frotan el pelo. ¿Sí? Cuando se frota mucho el pelo, lo que hace el peine, además de peinarlos, es arrancar algunos electrones al pelo. ¿Sí? depende del material típicamente los los los peines son de plástico antes se decía de ámbar porque hay unos materiales unos viejos peines de ámbar pero con el plástico funciona igual entonces el peine que voy a dibujar acá muy mal ustedes lo acercan a los pedacitos de papel
+39:31
+Y tiene en sus puntas un exceso de cargas eléctricas. Como el peine es de ámbar o de plástico, es un aislante. Esos electrones quedan ahí y no se pueden mover. Si se pudieran mover, este experimento no se podría hacer con un peine de metal. Porque nosotros somos buenos conductores. Entonces, si uno toca el peine, los electrones van a repartirse entre el peine y nosotros mismos. ¿Verdad? Entonces, en realidad, la carga que va a quedar en la punta del peine es re poquita.
+40:06
+Tiene que ser un peine de un material aislante. Entonces, ustedes acercan el peine a los papelitos. Y los papelitos no están cargados, son neutros. La pregunta es, ¿qué va a pasar? ¿Cómo? Se levantan. Se acercan, se levantan un poquito. ¿Por qué?
+40:29
+Muchas veces cuando se levantan y lo tocan, cae de nuevo. ¿Por qué? Las dos cosas hay que entender. Porque los papelitos tienden a levantarse y que apenas tocan el peine normalmente caen de nuevo. ¿Por qué?
+40:47
+Lo que sucede es que, claro, más que en equilibrio, cuando llegan a tocar el peine, las cargas están en la superficie del peine, algunas de esas cargas pasan al papel y entonces ahí pasan a repelerse. Porque el papel pasa a estar cargado con el mismo tipo, con el mismo carga negativa que el peine. Entonces se repele y caen. Ahí ya no están atraídos. Pero antes, ¿por qué se levantan? ¿Por qué son atraídos siendo que son neutros? Se reparten los cargos positivos y negativos del papel. ¿Y cómo se reparten? Porque dijimos que el papel, ¿cómo es?
+41:18
+¿Es un material conductor o un material aislante? Es aislante, entonces no puede circular la carga eléctrica ahí. Entonces, ¿qué le está pasando? Se polariza. Se polariza. A ver, vamos a hacer un zoom acá. Agarramos un pedacito de papel y hacemos un zoom. Entonces tenemos un pedacito de papel... Y acá dibujo una punta del peine negativo. Entonces, ¿qué va a pasar? Lo que va a pasar es que la carga no puede circular en el papel. Pero, el papel está hecho de moléculas y esas moléculas típicamente son moléculas que no tienen la carga distribuida uniformemente, sino que tienen, son cargas que...
+42:00
+Son moléculas que tienen un lado cargado negativamente y otro lado cargado positivamente. Estoy siendo un poco esquemático, pero básicamente es eso lo que pasa. Y esas moléculas no se pueden mover en el papel, porque el papel tiene una estructura rígida, pero sí se puede deformar un poquito. Entonces, esos dipolos que están en el material se orientan. Entonces, microscópicamente dentro del papel, voy a dibujar las moléculas de una manera gigantesca, en realidad no se pueden ver, pero esto sucede a nivel microscópico, se van a alinear todas las moléculas para estar la parte positiva, voy a dibujarlo más grande porque si no, ustedes no ven nada.
+42:34
+Pero tengan en mente que esto es una exageración porque las moléculas son microscópicas, ¿verdad? Lo que va a suceder es que las moléculas se van a orientar. Si bien las cargas no se pueden circular, sí pueden orientarse sin moverse. Es decir, pueden desplazarse a una distancia microscópica de la escala atómica. Y ahí sí hay unos pequeños desplazamientos en los cuales las cargas positivas quedan todas más cerca, todas no, pero en promedio quedan más cerca del peine.
+43:07
+¿Sí? Entonces, el efecto neto es que Las cargas positivas están en promedio más cerca o más lejos del peine. Más cerca. Y como la interacción electrostática decrece con la distancia, la fuerza neta que experimenta el papel es de atracción, porque las cargas positivas van a experimentar una fuerza un poquitito más grande que las negativas. Las negativas se repelen, las positivas se atraen con el peine.
+43:40
+Pero como las positivas están ligeramente más cerca que las negativas, en promedio, entonces el efecto neto es de atracción. Entonces, efecto neto... neto... atractivo. Ah, pero es un efecto muy chiquitito. El papel... es atraído... por el peine... porque... se polariza todo esto lo estoy haciendo a nivel de cuentito pero después lo vamos a ver un poco más en detalle en el curso pero es importante retener que el efecto es muy pequeño efecto muy pequeño de hecho yo les comenté la clase pasada Que un objeto neutro visto de muy lejos se comporta, es un objeto que no experimenta fuerza eléctrica.
+44:50
+Lo mismo pasa acá, si ustedes tienen el peine muy lejos, en realidad la pequeña diferencia de distancias es casi despreciable y en realidad la fuerza es cero. Solo esto se ve cuando uno acerca bastante el peine para que se note la diferencia entre la distancia media de las cargas positivas y la distancia media de las cargas negativas. Bueno, esto es un fenómeno de polarización a nivel microscópico, a nivel molecular. Pero pueden haber otros mecanismos de polarización. Por ejemplo, pueden hacer el experimento siguiente.
+45:28
+Coloquen un... Acá tiene un soporte, tiene un hilo y tiene una barra de metal neutra.
+45:45
+Bien. Y acercan una punta acá de vidrio cargada positivamente. El vidrio es aislante. Bien. Bien.
+46:03
+Entonces, si colocan cargas positivas, ¿por qué no las arrancaron? Supongamos que frotaron el vidrio con un pañuelo. El pañuelo se lleva las cargas negativas, se lleva los electrones y queda un exceso de carga positiva acá. Un déficit de electrones hace una... ¿Sí? ¿Por qué es así que, o capaz que no tiene un porqué, pero que el pañuelo se lleva las cargas negativas? Eso es sutil. Hay que ver bien cómo es. Uno podría pensar que es al revés. Podría ser el vidrio el que le saca las cargas al pañuelo.
+46:36
+Eso depende de cómo se dan las interacciones de contacto entre los materiales. Hay materiales que cuando uno los frota tienden a cargarse eléctricamente de manera negativa y otros de manera positiva. y eso depende de cada material, no hay una explicación que se pueda decir así súper simple pero el hecho es que sucede así, que hay materiales que tienden a arrancar electrones y otros que tienden a bueno entonces ¿qué pasa? la barra de metal es neutra pero la barra de metal es neutra pero es conductora cuando acercamos estas cargas positivas ¿Sí?
+47:15
+Los electrones de acá van a querer acercarse acá. ¿Sí? Entonces, ¿qué pasa? Los electrones se van a poner a circular por acá, se van a acumular acá. Como se movieron los electrones para este lado, en este lado me queda un déficit de electrones. Así que se carga positivamente. Y acá pasa lo mismo. La distancia media de las cargas eléctricas con el vidrio... de las cargas eléctricas negativas es más chica que la electricidad positiva entonces ¿qué le va a pasar a la barra?
+47:47
+si, va a girar para puede rotar con este hilo va a rotar para acercarse lo más posible al vidrio siendo que es neutra así que este es un fenómeno también de polarización pero en lugar de darse la polarización a nivel de moléculas se da la polarización del objeto como un todo nuevamente este efecto es muy chiquitito se puede observar experimentalmente pero es muy chiquitito ¿está bien?
+48:11
+¿Se entiende? ¿Por qué no se da con moléculas en este caso? Porque hay una cosa muy... No se da con moléculas por dos razones. Primero porque es un metal. La estructura de los metales no está realmente compuesta por moléculas, sino que tienen un sólido cristalino y los electrones que se pueden mover fácilmente. Y segundo, que acá, contrariamente acá, que era un aislante donde las cargas realmente no se podían desplazar, acá las cargas realmente se desplazan, son los electrones que pueden viajar. Los protones quedan fijos, todos los iones que componen el metal, la parte positiva, digamos, esa no se mueve.
+48:52
+¿Otras preguntas? ¿Otras?
+48:58
+Es decir, en algunos materiales podrían haber los dos fenómenos al mismo tiempo. Podría haber. Pero no es lo que sucede en los metales. Los metales no tienen esa posibilidad. ¿Más preguntas?
+49:20
+Bueno, entonces ahora vamos a hablar de otro tema.
+49:33
+Vamos a hablar de distribuciones continuas de carga.
+50:04
+A ver, ¿les molesta esta expresión, distribución continua de carga? ¿Les rechina un poco?
+50:12
+¿Les genera algún tipo de contradicción con lo que hemos venido hablando en este curso?
+50:30
+A ver, tal como hice la pregunta, ¿cuál es la única respuesta posible?
+50:35
+Obviamente sí, tiene que haber algún problema. ¿Cuál es el problema? Esa es la pregunta difícil. ¿Por qué es complicado hablar de una distribución continua de carga?
+50:46
+Porque acabamos de ver que la carga está cuantizada. No podemos dividirla infinitamente. Tenemos un ladrillito mínimo de carga, que es la carga del electrón. ¿Saben qué? Hay lugar por allá en el fondo. no pueden dividir arbitrariamente la carga eléctrica. Entonces, hablar de carga continua es medio raro, porque no podemos dividir arbitrariamente la carga. Sin embargo, en la práctica sí, porque dijimos que la carga mínima es la carga de un electrón.
+51:17
+Bueno, el valor absoluto de la carga mínima es la carga del electrón. Y esa carga, dijimos, que es como 10 a la menos 19 coulomb. ¿Sí?
+51:27
+Yo les dije, las cargas típicas que uno observa en el laboratorio, en experimentos de electrostática, varían, pero las más chicas son del orden de 10 a la menos 9 coulomb. O pueden tener, ya van a tener típicamente cargas de 10 a la menos 6 coulomb. Pero en cualquier caso, tienen un número de electrones gigantesco, gigantesco, es un número gigantesco, 10 a la 10 electrones. Entonces, el hecho de que la carga tenga un valor mínimo, cuando uno lo observa macroscópicamente es indetectable. En cualquier pedacito macroscópico de materia vamos a tener un volumen enorme de electrones y el hecho de que si alguien me dice, ah no, no, esperá por un poquito, no puede ser que tengas 10 a la 10, capaz que tenés 10 a la 10 más 1.
+52:15
+tener uno más, uno menos, cuando uno tiene 10 a la 10, no cambia nada. Entonces la cuantificación de la carga, cuando uno mira objetos macrojópicos, normalmente no juega ningún papel. Entonces, si bien la carga está cuantizada, Q es igual a N por E, con n entero, es del orden de 1,6 por 10 a la menos 19 coulomb.
+52:55
+Y en un objeto macroscópico, uno suele observar
+53:13
+cargas del orden de o mayores a 10 a la menos 9 coulomb lo que decir del orden entonces entonces a todos los efectos prácticos
+53:52
+de los experimentos macroscópicos, podemos ignorar que la carga es discreta.
+54:19
+A ver, ustedes están acostumbrados a este tipo de razonamientos. Por ejemplo, ustedes hablan de densidad de carga. Ustedes han tenido cursos en los cuales tenían densidades de carga. ¿No es verdad? Pero alguien puede decir, no, no, pero la noción de densidad de carga es un disparate. Es un disparate porque la carga... si donde está en los átomos pero la que tiene densidad de masa pero estoy diciendo ustedes tienen cursos que han hablado de la densidad de masa pero en si no densidad de masa no puede ser porque la masa está concentrada en contar el número de protones y neutrones que existen en los núcleos atómicos toda la masa está ahí entonces la masa en un sentido discreta también está compuesta por átomos y moléculas de discreta entonces uno no puede decir usar el cálculo diferencial porque no puede tener masas arbitrariamente chicas.
+55:06
+Pero eso, como los átomos son tan chiquititos, en cualquier objeto macroscópico tienen un número gigantesco de átomos y entonces pueden olvidar del problema de que en realidad los átomos... tienen valores discretos posibles de la masa. Entonces es lo mismo. Así como para hablar de densidad de masa ignoramos la naturaleza discreta de la materia, para hablar de densidad de carga vamos a ignorar la naturaleza discreta de la carga de electrón.
+55:37
+Obviamente existen experimentos donde uno observa la discretización. Por ejemplo, los experimentos que permitieron medir la carga de electrón. Hay un experimento muy famoso que se llama el experimento de Millikan, en el cual a principios del siglo XX mostró por primera vez que todas las cargas eran múltiples de la carga del electrón. Entonces hay experimentos macroscópicos muy sofisticados, o no tan sofisticados, porque este experimento ya tiene más de un siglo, en los cuales uno puede ver la discretización de la carga, pero normalmente no es el caso. Para eso tiene que tener cargas muy, muy chiquititas, comparables con la carga del electrón.
+56:11
+Cuando uno tiene cargas muy, muy, muy chiquititas, no puede ignorar el efecto de la cuantización. Pero cuando tiene cargas del orden de los nanocoulomb o los microcoulomb, ahí puede olvidarse de que en realidad hay una carga mínima. Entonces, cuando tiene esa situación, uno puede tomar un elemento de volumen. Entonces, podemos tomar...
+56:42
+Un elemento... De volumen... Delta B... Que sea... Pequeño... Del punto de vista macroscópico... Pero con... un número muy grande, digamos, con una carga, carga delta Q adentro, mucho mayor que la carga del electrón.
+57:32
+Este símbolo lo conocen, mucho mayor. ¿Lo han visto ya?
+57:37
+Entonces definimos, entonces, La densidad volumétrica de carga se define como ρ, como el límite, entre comillas el límite, ¿verdad? Delta B tendiendo a cero de delta Q sobre delta B.
+58:12
+Y pongo el límite entre comillas porque ese es el límite que uno toma para volúmenes muy chiquititos, del punto de vista macroscópico, pero que siguen siendo grandes comparados con la escala atómica. Así que volúmenes en los cuales sigue habiendo un número grande de cargas. ¿Se entiende? Uno, por ejemplo, si quiere estudiar la densidad de carga, cómo está distribuida en un objeto que mide 10 centímetros, podría tomar un volumen que fuera de una micra al cubo, Ese volumen es súper chiquitito desde el punto de vista macroscópico, pero aún así tiene una cantidad gigantesca de electrones adentro.
+58:50
+Entonces hay margen. Uno puede tomar un volumen chiquitito desde el punto de vista macroscópico y aún así contener muchísimos electrones. Y poder entonces olvidarse de la cuantificación del electro. Y esto lo dije para una densidad volumétrica de carga. Pero si las cargas de los electrones en lugar de estar distribuidas en un volumen estuvieran muy concentradas en una superficie. Podríamos definir una densidad superficial de carga. ¿Cómo haríamos? Tomamos un área, vemos la carga que está ahí adentro, hacemos el cociente y lo mismo.
+59:25
+De la misma forma...
+59:33
+...se define... ...la densidad... ...superficial... ...de carga... ...sigma... ...será el límite... ...cuando delta S tiende a 0... ...de delta Q... ...sobre delta S... ...entonces esta es la carga...
+1:00:04
+En la superficie delta S. ¿Sí? Y bueno, podemos seguir, podemos definir también la densidad... La densidad lineal de carga. Y también... Ah, entendieron la idea, ¿no? También la densidad lineal de carga...
+1:00:35
+Lambda, el límite, cuando delta L tiende a cero, de delta Q sobre delta L. Entonces carga en el segmento delta L. ¿Bien? Y obviamente todas esas cosas pueden tener signos positivos o negativos. ¿Sí?
+1:01:10
+Porque la carga encerrada en esos volumencitos puede ser positiva o negativa. Así que la densidad de carga, volumétrica, superficial o lineal, siempre puede tener un signo u otro. Entonces una vez que uno tiene ese material, supongamos que tenemos un material acá, pongamos en un volumen, en este volumen B, tienen en cada lugar un delta Q, acá tenemos este volumencito delta B, Y nos podemos preguntar, si ponemos una carga puntual por acá, Q0, ¿cuál será la fuerza que genera este objeto con una carga distribuida en un volumen?
+1:01:47
+¿Cómo será la fuerza que produce sobre la carga Q0? ¿Qué les parece? Claro, podemos decir, bueno, si dividí en pedacitos muy chiquititos, cada pedacito muy chiquitito lo puedo imaginar como una carga puntual. ¿Verdad? Y ya vimos cómo hacer para calcular la fuerza producida por muchas cargas puntuales. ¿Qué se hace? Se suman las fuerzas generadas por cada una de esas.
+1:02:18
+Entonces, en este caso, en el límite en que hagamos delta B tender a cero, esa suma se va a transformar en una integral. En el límite en que delta B tender a cero. Entonces, la fuerza acá, la fuerza total, ¿sí?
+1:02:40
+...de las... ...delta fuerzas... ...y... ...producidas... ...por... ...cada... ...elemento de volumen delta VI... ...ponemos un índice acá porque... ...¿no? ...entonces... ...cada delta FI... ...será igual... ...a... ...1 sobre 4 pi epsilon... ...bueno, son vectores ¿verdad? ...será... 4 pi epsilon cero por q cero por la carga que hay en este volumen, que es delta qi, que no es otra cosa que ro en ese punto por delta bi, ro i le pongo, dividido r cero i al cuadrado.
+1:03:34
+Y acá le ponemos un vector r i cero sombrero.
+1:03:40
+Y sumamos como de costumbre.
+1:03:45
+Es la misma fórmula que vimos de la ley de Coulomb. Lo único que ahora vamos a pasar al límite. Cuando pasemos al límite, en lugar de tener una suma discreta, vamos a pasar a tener una integral. Bueno, esta integral capaz que los asusta, porque en lugar de ser una integral... normal como hemos visto como han visto ustedes en cálculo 1 sobre una línea es una integral sobre el volumen pero conceptualmente no hay mucha diferencia es simplemente integrar sobre el volumen que 1 sobre 4 pi epsilon 0 bueno esto lo vamos a sacar para afuera todas las constantes las sacamos para afuera vamos a poner q0 sobre 4 pi epsilon 0 la integral sobre el volumen ...de la densidad... ...en cualquier punto... ...del volumen... ...pongamos la fuerza en el punto R... ...llamemos R la posición de Q0... ...llamemos... ...tomemos un origen acá... ...llamémosle R la posición de Q0... ...y llamémosle R' a la posición que está acá... ...esto lo vamos a llamar... ...dvR'... ...y acá hay que dividir por la distancia entre...
+1:05:06
+El módulo al cuadrado por este vector que está acá.
+1:05:13
+Pero este vector fíjense que es R menos R'.
+1:05:19
+Así que tenemos módulo de R menos R' al cuadrado por un versor en la dirección R menos R'. Así que ponemos R sobre R' dividido módulo de R menos R'.
+1:05:39
+Esta es la integral sobre el volumen donde la densidad vale. Acá supuse, fíjense que no supuse que la densidad tuviera que ser uniforme. Puse que rho depende a priori, en cada punto podrían tener una densidad diferente. Podrían tener una densidad mayor arriba o abajo, en fin. Podría estar la carga más concentrada de un lado que del otro. O incluso podría ser positiva de un lado y negativa del otro. Esta fórmula capaz que les parece rara, pero no se compliquen. Es simplemente la distancia entre el punto de observación y el punto donde está la densidad de carga por el versor que va...
+1:06:15
+Acá lo puse al revés. Es R' menos R. Tiene que ser el versor que va para el otro lado. A ver si estoy diciendo bien. Tiene que ser el versor... No, está bien, lo había puesto bien. R menos R'.
+1:06:34
+Y esto puede parecer un poco abstracto, pero no lo es. Fíjense, vamos a hacer un cálculo concreto y a veces un cálculo concreto vale más que mil palabras. Ejemplo.
+1:06:45
+Entonces, para no complicarnos con volúmenes, vamos a suponer un segmento, vamos a una barra.
+1:06:54
+¿Sí? Barra cargada con densidad...
+1:07:05
+Lineal, lambda, uniforme. Entonces voy a tomar, pongamos que el largo de la barra lo llamamos L, y tomo un punto sobre el plano bisector de la barra, digamos punto P acá, y acá voy a poner una carga Q0.
+1:07:28
+Y supongo que está a una distancia que le llamamos D, del centro de la barra.
+1:07:39
+Entonces, la pregunta es cuánto vale la fuerza. Supongamos, para no complicarnos la vida con signos, que Q0 es positivo y que lambda es, dijimos, uniforme positivo. Así que, ¿cómo será la fuerza que experimenta esta carga Q0? Antes de calcular el módulo, ¿cómo es la dirección y el sentido?
+1:08:03
+A ver, primero es repulsiva, porque dijimos... Si lambda es positivo y q0, todas las fuerzas que generan los pedacitos acá tienden a alejar q0, ¿verdad? Así que va a ser repulsivo. Segundo, bueno, si tuviéramos una densidad lineal negativa o una carga negativa, simplemente hay que ocuparse de los signos. Sabemos que es para el otro lado. Para lo que voy a hacer no importa nada porque simplemente hay que cambiar el signo. Lo hago así, positivo, para no tener que andar arrastrando signos negativos. Pero si no, sería todo lo mismo cambiando algún signo.
+1:08:35
+¿Bien? Segundo, dirección. Dijimos, es repulsiva. ¿Pero en qué dirección? ¿Va para allá la fuerza? ¿Cómo? Va a ser horizontal, ¿verdad? ¿Por qué va a ser horizontal? La fuerza va a ser así, horizontal. ¿Cómo? ¿Y entonces? ¿Pueden volver el argumento preciso?
+1:09:02
+Claro, agarran un pedacito de carga acá y agarran el simétrico. Entonces esta le va a generar un delta F para allá. Pero esta otra, la simétrica, le genera un delta F para arriba. Opuesto, ¿verdad? Entonces las componentes que no son horizontales se compensan entre sí, porque es la suma vectorial lo que cuenta. En cambio las componentes horizontales se suman.
+1:09:33
+¿De acuerdo? Y por otro lado, lo que no agregué es que no puede haber... Obviamente no va a haber fuerza para perpendicular al pizarrón, porque todo es un problema plano. Todos los vectores son planos. Entonces no puede aparecer ningún vector para afuera. Así que, en definitiva, en este caso, solo tenemos una componente de la fuerza, que es la componente horizontal. ¿Sí? No nos tenemos que ocupar de todas las otras componentes. Bueno, entonces hagamos el cálculo. ¿Cuál? Primero calculemos... Llamemos X a esta distancia, llamamos delta X acá al ancho de este cachito, y calculemos delta F, el módulo de delta F. ¿Cuánto vale el módulo de delta F?
+1:10:21
+Vamos, arriba, ley de Coulomb.
+1:10:29
+1 sobre 4 pi epsilon 0 por Q0, el producto de las cargas. ¿Cuánto vale la carga que está acá adentro?
+1:10:41
+La carga que está... Como la densidad de carga es uniforme, dijimos que lambda vale delta Q sobre delta X. Lambda es uniforme, así que delta Q es simplemente lambda por delta X. Así que la carga en el pedacito es lambda por delta X. ¿Y por qué tenemos que dividir?
+1:11:02
+Por esta distancia que está acá, ¿verdad? Esta distancia que está acá la calculamos por Pitágoras. Esta distancia al cuadrado, lo que aparece es X al cuadrado más D al cuadrado. Así que esta es la fuerza, el módulo de la fuerza que genera este cachito de barra.
+1:11:30
+La distancia es la raíz. Pero te recuerdo que en la ley de Coulomb aparece la distancia al cuadrado. Así que ya nos queda más fácil. Bien. Pero lo que nos interesa no es delta F. ¿Tenés un ratito? Sí. Porque Gregory me pidió para decir unas palabras ahora en un ratito. Termino este cálculo y... ¿Cómo estoy? ¿Cómo estoy?
+1:12:01
+Entonces dijimos que lo único que me interesa es la componente horizontal. Entonces vamos a calcular la componente horizontal. Delta F, componente X. Entonces va a ser delta F. ¿Y por qué hay que multiplicar delta F? Para proyectar en la horizontal.
+1:12:17
+Lo que quiero es proyectar delta F acá en la horizontal.
+1:12:21
+Por el coseno de este ángulo. Pero el coseno de este ángulo... Fíjense, coseno es...
+1:12:31
+cateto, este ángulo es el mismo que este, ¿verdad? Entonces el coseno es el cateto adyacente dividido la hipotenusa. Así que esto es por coseno de teta y esto no es otra cosa que delta F por D dividido raíz cuadrada de D cuadrado más X al cuadrado. Ahí sí tenemos que poner la raíz como decían por ahí.
+1:12:57
+Porque ahí sí aparece la hipotenusa, que es la raíz cuadrada de la suma de los catetos. De los cuadrados de los catetos. Entonces...
+1:13:16
+Entonces, la f total será la suma de todos esos... La f total sub x. Solo nos interesa la componente horizontal. Será la suma de todos estos. Entonces sumo. Es 1 sobre 4 pi. Epsilon 0 pongo para afuera todo lo que es constante. Q0 es constante. Lambda es constante. Y ahora integro en X. Delta X en el límite en que voy a tomar pedacitos muy chiquititos se transforma en DX. Voy a tener que sumar entre menos L sobre 2 y L sobre 2. Porque vemos que X varía entre menos L sobre 2 y L sobre 2.
+1:13:52
+La distancia total es L y estamos con la mitad para cada lado. Y luego tenemos...
+1:14:01
+Ah, tenemos este d, que me lo estoy olvidando. También sale para afuera. Y tenemos 1 sobre x al cuadrado más d al cuadrado.
+1:14:11
+Y hay que multiplicar esto por esto.
+1:14:17
+Me queda 3p. Entonces ahora el cálculo en principio está terminado, pero lo que falta ahora es calcular esa integral.
+1:14:29
+Entonces...
+1:14:31
+No voy a calcular la integral ahora, porque si no, no me da el tiempo para que hable. Bueno, calculo la integral. Entonces, calculo la integral. Entonces, esto alguien puede decir, bueno, voy y miro una tabla. Pero es importante que ustedes se ejerciten, ¿no? Porque muchas veces es bueno saber calcular los integrales fáciles. Y esta es una integral fácil. Entonces, lo que voy a hacer ahora es un paréntesis matemático. ¿Cómo calcular este tipo de integrales? Les voy a enseñar algunos trucos. ¿Saben que yo empecé siendo... Calculo 1, así que me gustaba hacer esta cosa.
+1:15:04
+Entonces, queremos tener la primitiva de x al cuadrado más d al cuadrado a la 3 medios. Entonces, este tipo de integrales que tienen cosas a la 3 medios, hay un truco que siempre funciona, que es... Primero vamos a hacer análisis dimensional. Fíjense, todo acá depende de d.
+1:15:31
+Entonces voy a usar un cambio de variables diciendo x es igual a d por y.
+1:15:37
+Entonces dx, el d se me confunde, vamos a usar a acá para que no se me confunde el d con el diferencial. Entonces dx es a por dy. Entonces esto es igual, fíjense, arriba me genera un a y abajo me genera un a al cubo. Me queda dy por y más 1 a la 3 medios. Entonces ahí ya puedo simplificar acá y me queda 1 sobre a al cuadrado.
+1:16:13
+Entonces no me tengo que ocupar más de ese a y solo tengo que calcular esta integral. Y estas integrales donde aparece 1 más algo al cuadrado siempre se hacen de la misma manera. Conviene usar el cambio variable siguiente que es y igual al seno hiperbólico. ¿Saben lo que es el seno hiperbólico? De Z, digamos. Entonces, ¿por qué uno hace este cambio? Porque tiene la fórmula siguiente de trigonometría exponencial, que es el coseno hiperbólico menos el seno hiperbólico de Z, vale 1.
+1:16:46
+Entonces, Y al cuadrado más 1, que es seno hiperbólico cuadrado de Z, más 1, les queda el coseno hiperbólico cuadrado de Z.
+1:16:58
+¿Se sigue?
+1:17:03
+Entonces, raíz cuadrada, o digamos, i al cuadrado más 1 a la 3 medios, les queda coseno hiperbólico a la 3 de z. Porque el 1 medio se me va con el cuadrado y me queda... Y luego tengo que aplicar la fórmula de cambio de variables. De Y me queda la derivada del seno hiperbólico, que es coseno hiperbólico, por DZ.
+1:17:33
+Entonces la integral les queda 1 sobre A al cuadrado por DZ sobre coseno hiperbólico de Z.
+1:17:45
+¿Saben? Las fórmulas de los cosenos y los senos hiperbólicos se parecen mucho, y de ahí el nombre, a las fórmulas para los senos y cosenos normales. ¿Se acuerdan cuál es la primitiva de 1 sobre coseno al cuadrado? La tangente y la tangente. Y en este caso pasa lo mismo. Entonces, la derivada de la tangente...
+1:18:13
+La derivada de la tangente hiperbólica es el seno hiperbólico sobre el coseno hiperbólico. Y también vale que la derivada de la tangente hiperbólica es 1 sobre el coseno hiperbólico al cuadrado. ¿No? Eso se puede calcular ahí arriba. Fíjense, si derivan, les queda el denominador al cuadrado. La derivada del de arriba les queda coseno hiperbólico de Z por el de abajo. Les queda al cuadrado menos la derivada del de abajo... por el de arriba. Y esto es 1, así que les queda esto.
+1:18:45
+Entonces vamos a hallar la primitiva de esto, porque ya tienen que eso es la tangente hiperbólica. Pero, pero, pero, queremos volver a expresar todo, no en términos de esa variable complicada, sino en términos de nuestras variables originales. Entonces volvemos acá arriba.
+1:19:10
+...tangente hiperbólico de Z... ...es igual al seno hiperbólico de Z... ...divido el coseno... ...y dijimos que el coseno... ...lo puedo escribir... ...si tomo la raíz acá... ...como raíz cuadrada... ...de 1 más seno hiperbólico de Z... ...al cuadrado. Y acá tenemos... ...cuánto vale el seno hiperbólico de Z. Así que tienen que la primitiva... ...de DX... sobre x al cuadrado más a al cuadrado a la 3 medios no es otra cosa que 1 sobre a al cuadrado, este que está acá.
+1:20:06
+Claro, y abajo me queda el cubo.
+1:20:09
+No, no queda acá. Pero además te podés dar cuenta por análisis dimensional. Bueno, ahora volvemos por análisis dimensional. Y entonces ahora simplemente falta sustituir Y, que es X sobre A. Así que les queda X sobre A. Y acá abajo raíz cuadrada de 1 más X sobre A al cuadrado. Entonces ahí tienen. Volvemos a la fórmula original y nos queda que la fuerza, la componente horizontal, que era la única componente, es 1 sobre 4 pi epsilon 0.
+1:20:38
+Q0 lambda. D. Y ahora, esta primitiva evaluada en los límites de integración. Tenemos un 1 sobre A al cuadrado. A al cuadrado en realidad es lo que antes se llamaba D. D al cuadrado.
+1:20:55
+Y L sobre 2A dividido raíz cuadrada de 1 más L al cuadrado sobre 4A al cuadrado.
+1:21:10
+menos, y fíjense que menos, pero se nos va el menos, porque cuando evalúo en menos L sobre 2, acá aparece otro menos, así que me va a dar la misma expresión que esta, pero multiplicada por 2. Así que simplemente saco este 2. Y este es el resultado. Y voy a comentar más de la física de este resultado en la clase que viene, porque ya estamos sobre la hora y así le doy a... Así que queda un poco interrumpido ahora porque quiero hablar después de cómo son los distintos límites de esta fórmula, cómo se comporta cuando estamos lejos de la barra, cuando estamos cerca de la barra, pero eso lo discutimos bien el lunes que viene.
+

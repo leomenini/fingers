@@ -1,0 +1,438 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 4: Campo Eléctrico de Distribuciones Continuas \\
+        y Movimiento de Cargas}\\[0.3em]
+        \large{Dipolo eléctrico, anillo, disco, plano infinito y
+              movimiento de cargas en campos uniformes}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Dipolo eléctrico: campo sobre el plano bisector}
+% ===================================================================
+
+Retomando el cálculo iniciado en la Clase 3. Configuración:
+\begin{itemize}[nosep]
+  \item Carga $+Q$ en $(0, +d/2)$ y $-Q$ en $(0, -d/2)$.
+  \item Punto de observación sobre el \textbf{eje $X$} (plano
+        bisector), a distancia $x$ del origen.
+\end{itemize}
+
+Por simetría:
+\begin{itemize}[nosep]
+  \item $|E_+| = |E_-| =
+        \dfrac{Q}{4\pi\varepsilon_0 (x^{2} + d^{2}/4)}$.
+  \item Las componentes horizontales se cancelan.
+  \item Solo sobrevive la componente $Y$, hacia abajo.
+\end{itemize}
+
+Cálculo de la componente $Y$:
+\[
+E_y = -2 E_+ \cos\theta
+     = -2 \cdot \frac{Q}{4\pi\varepsilon_0 (x^{2} + d^{2}/4)}
+       \cdot \frac{d/2}{\sqrt{x^{2} + d^{2}/4}}
+\]
+
+\begin{keybox}[Campo de un dipolo sobre el plano bisector]
+  \[
+  \boxed{
+  E_y = -\frac{Qd}{4\pi\varepsilon_0 \,(x^{2} + d^{2}/4)^{3/2}}
+  }
+  \]
+\end{keybox}
+
+\subsection{Momento dipolar eléctrico}
+
+Se define el \textbf{momento dipolar eléctrico} como:
+\[
+\boxed{p = Qd},
+\]
+un vector que apunta de la carga negativa a la positiva. En términos
+de $p$:
+\[
+E_y = -\frac{p}{4\pi\varepsilon_0 \,(x^{2} + d^{2}/4)^{3/2}}.
+\]
+
+\subsection{Límite de gran distancia}
+
+Para $x \gg d$:
+\[
+E_y \approx -\frac{p}{4\pi\varepsilon_0 \, x^{3}}.
+\]
+
+\begin{warnbox}[Decaimiento rápido del dipolo]
+  El campo de un dipolo decrece como $1/x^{3}$, más rápido que el de
+  una carga puntual ($1/x^{2}$). Esto se debe a que el dipolo tiene
+  \textbf{carga neta cero}: a grandes distancias los campos de las dos
+  cargas casi se cancelan, dejando solo el efecto de la separación
+  finita.
+\end{warnbox}
+
+% ===================================================================
+\section{Campo eléctrico de distribuciones continuas}
+% ===================================================================
+
+\subsection{Principio general}
+
+Al igual que para cargas discretas, el campo de una distribución
+continua se obtiene por \textbf{superposición}. La suma se reemplaza
+por una integral:
+
+\[
+\mathbf{E}(\mathbf{r}) =
+\frac{1}{4\pi\varepsilon_0}
+\iiint \frac{\rho(\mathbf{r}')}
+           {|\mathbf{r} - \mathbf{r}'|^{2}}
+        \hat{\mathbf{r}} \, dV'.
+\]
+
+Para distribuciones lineales ($\lambda$) o superficiales ($\sigma$),
+se usan integrales de línea o superficie respectivamente.
+
+% ===================================================================
+\section{Ejemplo 1: Barra con densidad lineal uniforme}
+% ===================================================================
+
+Retomando el resultado de las Clases 2 y 3: barra de longitud $L$ con
+$\lambda$ uniforme, sobre el plano bisector a distancia $Y$:
+
+\[
+E_y = \frac{Q}{4\pi\varepsilon_0 \,
+              Y \sqrt{Y^{2} + L^{2}/4}},
+\qquad E_x = E_z = 0
+\]
+
+donde $Q = \lambda L$ es la carga total.
+
+\begin{itemize}[nosep]
+  \item $\lambda > 0$: líneas de campo \textbf{salen} radialmente
+        (campo repulsivo).
+  \item $\lambda < 0$: líneas de campo \textbf{entran} hacia la barra.
+\end{itemize}
+
+% ===================================================================
+\section{Ejemplo 2: Anillo cargado uniformemente}
+% ===================================================================
+
+\subsection{Cálculo del campo sobre el eje}
+
+\textbf{Configuración:}
+\begin{itemize}[nosep]
+  \item Anillo de radio $R$ en el plano $XY$, centrado en el origen.
+  \item Densidad lineal $\lambda$ uniforme.
+  \item Punto de observación sobre el eje $Z$, a distancia $Z$ del
+        centro.
+\end{itemize}
+
+\input{assets/clase4-anillo.tex}
+
+Por simetría: solo hay componente $Z$.
+
+Elemento de arco: $d\ell = R\,d\theta$, $dq = \lambda R\,d\theta$.
+Distancia: $r = \sqrt{R^{2} + Z^{2}}$.
+
+\[
+dE = \frac{1}{4\pi\varepsilon_0}
+      \frac{\lambda R\,d\theta}{R^{2} + Z^{2}}
+\]
+
+Componente $Z$ (proyectando con $\cos\phi = Z/\sqrt{R^{2} + Z^{2}}$):
+\[
+dE_z = \frac{1}{4\pi\varepsilon_0}
+       \frac{\lambda R Z\,d\theta}{(R^{2} + Z^{2})^{3/2}}
+\]
+
+Integrando ($\theta$ de $0$ a $2\pi$):
+
+\begin{keybox}[Campo de un anillo sobre su eje]
+  \[
+  \boxed{E_z = \frac{\lambda R Z}{2\varepsilon_0 \,
+                (R^{2} + Z^{2})^{3/2}}}
+  \]
+  O en términos de la carga total $Q = \lambda \cdot 2\pi R$:
+  \[
+  \boxed{E_z = \frac{Q Z}{4\pi\varepsilon_0 \,
+                (R^{2} + Z^{2})^{3/2}}}
+  \]
+\end{keybox}
+
+\subsection{Límites}
+
+\begin{itemize}[nosep]
+  \item \textbf{$Z \gg R$}: $E_z \approx \dfrac{Q}{4\pi\varepsilon_0
+        Z^{2}}$ (se comporta como \textbf{carga puntual}).
+  \item \textbf{$Z = 0$}: $E_z = 0$ (en el centro, los campos se
+        cancelan por simetría).
+\end{itemize}
+
+% ===================================================================
+\section{Ejemplo 3: Disco cargado uniformemente}
+% ===================================================================
+
+\subsection{Cálculo del campo sobre el eje}
+
+\textbf{Configuración:}
+\begin{itemize}[nosep]
+  \item Disco de radio $R$, densidad superficial $\sigma$ uniforme.
+  \item Punto de observación sobre el eje $Z$.
+\end{itemize}
+
+\textbf{Método:} dividir el disco en \textbf{anillos concéntricos} de
+radio $r$ y ancho $dr$. Cada anillo tiene $dA = 2\pi r\,dr$ y
+$dq = \sigma \cdot 2\pi r\,dr$.
+
+Usando el resultado del anillo:
+\[
+dE_z = \frac{Z \, dq}{4\pi\varepsilon_0 (r^{2} + Z^{2})^{3/2}}
+     = \frac{\sigma Z}{2\varepsilon_0}
+       \frac{r\,dr}{(r^{2} + Z^{2})^{3/2}}.
+\]
+
+Integrando de $r = 0$ a $r = R$:
+\[
+E_z = \frac{\sigma Z}{2\varepsilon_0}
+      \int_0^R \frac{r\,dr}{(r^{2} + Z^{2})^{3/2}}.
+\]
+
+Cambio de variable: $u = r^{2} + Z^{2}$, $du = 2r\,dr$:
+\[
+E_z = \frac{\sigma Z}{4\varepsilon_0}
+      \int_{Z^{2}}^{R^{2}+Z^{2}} u^{-3/2} \, du
+    = \frac{\sigma Z}{4\varepsilon_0}
+      \bigl[-2 u^{-1/2}\bigr]_{Z^{2}}^{R^{2}+Z^{2}}.
+\]
+
+\begin{keybox}[Campo de un disco sobre su eje]
+  \[
+  \boxed{
+  E_z = \frac{\sigma}{2\varepsilon_0}
+        \left(1 - \frac{Z}{\sqrt{Z^{2} + R^{2}}}\right)
+  }
+  \]
+\end{keybox}
+
+\subsection{Límite de gran distancia ($Z \gg R$)}
+
+Desarrollo de Taylor:
+\[
+\sqrt{Z^{2} + R^{2}} = Z\sqrt{1 + R^{2}/Z^{2}}
+                     \approx Z\left(1 + \frac{R^{2}}{2Z^{2}}\right),
+\]
+\[
+\frac{Z}{\sqrt{Z^{2} + R^{2}}} \approx 1 - \frac{R^{2}}{2Z^{2}}.
+\]
+
+Sustituyendo:
+\[
+E_z \approx \frac{\sigma}{2\varepsilon_0}
+          \left(1 - \left(1 - \frac{R^{2}}{2Z^{2}}\right)\right)
+        = \frac{\sigma R^{2}}{4\varepsilon_0 Z^{2}}.
+\]
+
+Como $Q = \sigma \pi R^{2}$:
+\[
+\boxed{E_z \approx \frac{Q}{4\pi\varepsilon_0 Z^{2}}}.
+\]
+
+El disco se comporta como una \textbf{carga puntual} a grandes
+distancias.
+
+\subsection{Límite de plano infinito ($Z \ll R$)}
+
+Cuando $Z \ll R$, $\dfrac{Z}{\sqrt{Z^{2} + R^{2}}} \to 0$:
+
+\[
+\boxed{E_z \approx \frac{\sigma}{2\varepsilon_0}}.
+\]
+
+\begin{keybox}[Plano infinito cargado uniformemente]
+  El campo es \textbf{uniforme} (constante), perpendicular al plano,
+  independiente de la distancia y de la forma del plano (mientras se
+  esté lejos de los bordes).
+\end{keybox}
+
+\begin{notebox}[Verificación de cálculos]
+  Siempre que se obtiene un resultado, conviene testear los casos
+  límite evidentes. Si un cálculo no pasa un test simple, está
+  definitivamente mal. Si los pasa, es más probable que esté correcto.
+\end{notebox}
+
+% ===================================================================
+\section{Ejemplo 4: Cascarón esférico}
+% ===================================================================
+
+Recordatorio del resultado anunciado en Clase 3 (demostración
+pendiente con ley de Gauss):
+\begin{itemize}[nosep]
+  \item \textbf{Dentro} ($r < R$): $E = 0$.
+  \item \textbf{Fuera} ($r > R$):
+        $E = \dfrac{Q}{4\pi\varepsilon_0 r^{2}}$ (carga puntual).
+\end{itemize}
+
+% ===================================================================
+\section{Movimiento de cargas en campos eléctricos}
+% ===================================================================
+
+\subsection{Fuerza sobre una carga en un campo}
+
+Si una carga $q$ se encuentra en una región con campo eléctrico
+$\mathbf{E}$, la fuerza que experimenta es:
+
+\[
+\boxed{\mathbf{F} = q \mathbf{E}}.
+\]
+
+\begin{itemize}[nosep]
+  \item Si el movimiento es \textbf{suficientemente lento}, se usan
+        expresiones electrostáticas como aproximación (régimen
+        \textbf{cuasi-estático}).
+  \item Conocida la fuerza, se aplica la \textbf{segunda ley de Newton}
+        para determinar el movimiento.
+\end{itemize}
+
+\subsection{Ejemplo: capacitor de placas paralelas}
+
+Dos placas paralelas muy grandes (comparadas con su separación), con
+densidades $+\sigma$ y $-\sigma$.
+
+\textbf{Campo de cada placa individual} (plano infinito):
+$E = \sigma/(2\varepsilon_0)$. Como ambos campos apuntan en la misma
+dirección (de $+$ a $-$):
+
+\[
+\boxed{E = \frac{\sigma}{\varepsilon_0}}.
+\]
+
+El campo es \textbf{uniforme} en toda la región entre las placas,
+salvo cerca de los bordes.
+
+\textbf{Movimiento de una carga $q$:}
+\begin{itemize}[nosep]
+  \item Fuerza constante: $\mathbf{F} = q\mathbf{E}$.
+  \item Movimiento: \textbf{parabólico} (análogo al tiro parabólico
+        gravitatorio).
+  \item La dirección de curvatura depende del signo de la carga.
+\end{itemize}
+
+\subsection{Aplicación tecnológica: tubo de rayos catódicos}
+
+En los televisores antiguos (CRT):
+\begin{itemize}[nosep]
+  \item Una \textbf{fuente de electrones} (filamento caliente) emite
+        electrones.
+  \item Un \textbf{colimador} selecciona electrones con una dirección
+        inicial específica.
+  \item Los electrones atraviesan un campo eléctrico que los desvía.
+  \item El haz impacta en una \textbf{pantalla fluorescente},
+        creando una imagen.
+\end{itemize}
+
+\begin{notebox}[Nota sobre la gravedad]
+  La gravedad es completamente despreciable frente a la fuerza
+  eléctrica en estos dispositivos ($F_e/F_g \sim 10^{39}$, visto en
+  Clase 3).
+\end{notebox}
+
+\end{document}

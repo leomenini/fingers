@@ -1,0 +1,250 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 20: Materiales Magnéticos, Circuitos RL \\
+        y Energía en el Campo Magnético}\\[0.3em]
+        \large{Constante magnética, transitorio RL y densidad de energía}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Materiales magnéticos en una bobina}
+% ===================================================================
+
+Como un dieléctrico en un condensador, un material magnético (núcleo de hierro)
+cambia las propiedades de una bobina.
+
+\begin{warnbox}[No lineales]
+  A diferencia de los dieléctricos (lineales), la mayoría de los materiales
+  magnéticos interesantes (hierro) son \textbf{altamente no lineales}. Esto
+  permite la magnetización espontánea (imanes). No se trata aquí.
+\end{warnbox}
+
+Para materiales aproximadamente lineales:
+
+\begin{keybox}[Constante magnética]
+  \[
+  \boxed{L = K_m\, L_{\text{vacío}}}
+  \]
+\end{keybox}
+
+$L$ depende de la geometría de la bobina y del material.
+
+% ===================================================================
+\section{Circuitos RL}
+% ===================================================================
+
+\subsection{Planteo y ecuación diferencial}
+
+Batería $\varepsilon$, resistencia $R$ y bobina $L$ en una malla, interruptor de
+dos posiciones (A conecta, B desconecta). En $t=0$ se pone en A. Ley de mallas:
+\[
+\varepsilon - R I - L\frac{dI}{dt} = 0 \;\Longrightarrow\;
+L\frac{dI}{dt} + R I = \varepsilon.
+\]
+Ecuación lineal de primer orden con segundo miembro.
+
+\subsection{Analogía con el circuito RC}
+
+Misma estructura que $\varepsilon = Q/C + R\,dQ/dt$: $R \leftrightarrow L$,
+$1/C \leftrightarrow R$, $Q \leftrightarrow I$. Solución idéntica en forma.
+
+\subsection{Resolución: solución particular y homogénea}
+
+Particular: $I_0 = \varepsilon/R$ (estacionaria). Restándola, la homogénea
+$L\,di/dt + R i = 0$ tiene solución exponencial $i = i_0 e^{rt}$ con
+$r = -R/L$. Imponiendo $I(0)=0$:
+
+\begin{keybox}[Corriente al conectar (posición A)]
+  \[
+  \boxed{I(t) = \frac{\varepsilon}{R}\left(1 - e^{-Rt/L}\right)}
+  \]
+\end{keybox}
+
+\begin{warnbox}[Test físico]
+  Para $t\to\infty$, $I\to\varepsilon/R$. Una exponencial creciente indicaría un
+  error de cuentas.
+\end{warnbox}
+
+\subsection{Conexión (A) y desconexión (B)}
+
+Al pasar a B (sin batería), la corriente decae:
+\[
+i(t) = i_0\, e^{-Rt/L}.
+\]
+
+\subsection{Tiempo característico}
+
+\begin{keybox}[Constante de tiempo RL]
+  \[
+  \boxed{\tau = \frac{L}{R}}
+  \]
+\end{keybox}
+
+Bobina grande $\to$ $\tau$ grande (tarda en almacenar energía); resistencia
+grande $\to$ $\tau$ chico (domina la disipación).
+
+% ===================================================================
+\section{Experimentos de inducción}
+% ===================================================================
+
+Tres experimentos (ley de Faraday); el flujo varía por módulo, área o ángulo.
+
+\begin{itemize}[nosep]
+  \item \textbf{Ángulo:} imán girando en una bobina enciende una lamparita
+        (generador); alimentado con corriente, funciona como motorcito.
+  \item \textbf{Módulo:} anillo de aluminio sobre una bobina con CA y núcleo de
+        hierro levita (anillo de Thomson); cortado, no levita; sin núcleo,
+        tampoco.
+  \item \textbf{Corrientes parásitas:} péndulo de bronce macizo que se frena
+        entre bobinas encendidas; con cortes (peine), oscila libre. Principio de
+        los núcleos laminados de transformadores.
+\end{itemize}
+
+% ===================================================================
+\section{Energía almacenada en una bobina}
+% ===================================================================
+
+\subsection{Balance de potencia}
+
+Con $\varepsilon = R I + L\,dI/dt$, la potencia entregada:
+\[
+P = \varepsilon I = R I^2 + L I \frac{dI}{dt}.
+\]
+$R I^2$ es la disipada; el resto es la energía almacenada por unidad de tiempo:
+$dU_B/dt = L I\,dI/dt$.
+
+\subsection{Energía magnética}
+
+Con $I\,dI/dt = \tfrac12 \,d(I^2)/dt$:
+
+\begin{keybox}[Energía en una bobina]
+  \[
+  \boxed{U_B = \frac{1}{2}L\,I^2}
+  \]
+\end{keybox}
+
+Constante elegida para $U_B=0$ si $I=0$. Análoga a $U_E = \tfrac12 Q^2/C$.
+
+% ===================================================================
+\section{Densidad de energía del campo magnético}
+% ===================================================================
+
+Tomando el solenoide ideal ($B = \mu_0 n I$, sección $A$, largo $l$, volumen
+$lA$, $L = \mu_0 N^2 A/l$) y dividiendo la energía por el volumen, con
+$I = Bl/(\mu_0 N)$:
+
+\begin{keybox}[Densidad de energía magnética]
+  \[
+  \boxed{u_B = \frac{B^2}{2\mu_0}}
+  \]
+\end{keybox}
+
+Probada para el solenoide, vale en general (en el vacío).
+
+\begin{notebox}[Analogía]
+  $u_E = \tfrac12 \varepsilon_0 E^2$ y $u_B = \tfrac{1}{2\mu_0}B^2$: ambas
+  proporcionales al cuadrado del campo; $\mu_0$ aparece en el denominador por
+  convención histórica de Biot--Savart.
+\end{notebox}
+
+\begin{notebox}[Próxima clase]
+  Cable coaxial, circuito LC, analogía masa--resorte y resonancia.
+\end{notebox}
+
+\end{document}

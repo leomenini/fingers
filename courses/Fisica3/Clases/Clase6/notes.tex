@@ -1,0 +1,471 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 6: Flujo del Campo Eléctrico, Ley de Gauss \\
+        y Conductores en Equilibrio}\\[0.3em]
+        \large{Flujo eléctrico, ángulo sólido, deducción y carácter
+              fundamental de la Ley de Gauss, aplicaciones y conductores}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Flujo del campo eléctrico}
+% ===================================================================
+
+Retomando la Clase 5 (donde se definió el flujo de un campo vectorial,
+pensado como un campo de velocidades para tener una imagen mecánica),
+la misma noción se aplica \textbf{idénticamente} al campo eléctrico,
+que también es un campo vectorial.
+
+Para una superficie $S$ \textbf{orientada} (con un versor normal
+$\hat{\mathbf{n}}$ definido en cada punto, que varía por continuidad),
+el flujo del campo eléctrico a través de $S$ es
+\[
+\Phi = \iint_S \mathbf{E} \cdot \hat{\mathbf{n}} \, dS
+     = \iint_S \mathbf{E} \cdot d\mathbf{A},
+\qquad d\mathbf{A} = \hat{\mathbf{n}}\, dS .
+\]
+
+\begin{keybox}[Convención para superficies cerradas]
+  Para una superficie cerrada se toma el \textbf{flujo saliente}
+  ($\hat{\mathbf{n}}$ siempre hacia afuera) y se anota con un círculo:
+  \[
+  \Phi = \oiint_S \mathbf{E} \cdot d\mathbf{A}.
+  \]
+\end{keybox}
+
+\begin{notebox}[Interpretación]
+  El flujo es una \textbf{medida del número de líneas de campo} que
+  atraviesan la superficie, \textbf{contadas con signo}: positivas si
+  cruzan en el sentido de $\hat{\mathbf{n}}$, negativas en sentido
+  opuesto.
+\end{notebox}
+
+% ===================================================================
+\section{Ejemplos electrostáticos de flujo}
+% ===================================================================
+
+Todos estos ejemplos son \textbf{consecuencia directa de la ley de
+Coulomb}; todavía no se introduce ninguna ley nueva.
+
+\subsection{Campo uniforme a través de un cilindro}
+
+Campo $\mathbf{E}$ uniforme y un cilindro con las tapas normales al
+campo. Numerando las tapas $1$ (entrante) y $2$ (saliente), de área
+$A$:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Superficie} & \textbf{Flujo} & \textbf{Razón} \\
+\midrule
+Lateral            & $0$    & $\hat{\mathbf{n}} \perp \mathbf{E}$ \\
+Tapa 1 (entrante)  & $-EA$  & $\hat{\mathbf{n}}$ opuesto a $\mathbf{E}$ \\
+Tapa 2 (saliente)  & $+EA$  & $\hat{\mathbf{n}}$ paralelo a $\mathbf{E}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\[
+\Phi_{\text{total}} = -EA + 0 + EA = 0 .
+\]
+
+Entran tantas líneas como salen (no hay fuentes dentro).
+
+\subsection{Carga puntual y esfera centrada}
+
+Carga puntual $Q$ (positiva) y superficie esférica $S$ de radio $r$
+centrada en ella. En todo punto $\mathbf{E}$ es \textbf{radial}
+(paralelo a $\hat{\mathbf{n}}$) y de \textbf{módulo constante} (por
+Coulomb, $E$ solo depende de $r$):
+\[
+\Phi = E \iint_S dS = E \cdot 4\pi r^{2}
+     = \frac{Q}{4\pi\varepsilon_0 r^{2}} \cdot 4\pi r^{2}.
+\]
+
+\begin{keybox}[Flujo de una carga puntual]
+  \[
+  \boxed{\Phi = \frac{Q}{\varepsilon_0}}
+  \]
+  El resultado \textbf{no depende del radio}. Se parece a la ley de
+  Gauss, pero aquí es todavía solo una consecuencia de Coulomb.
+\end{keybox}
+
+\subsection{Carga puntual y superficie cerrada exterior}
+
+Carga puntual $Q$ y una superficie cerrada que \textbf{no la contiene}:
+un cascarón recortado por un cono con vértice en la carga, entre dos
+esferas de radios $a < b$. Las caras laterales tienen
+$\hat{\mathbf{n}} \perp \mathbf{E}$ (flujo nulo). Quedan la cara
+exterior $S_1$ (radio $b$) y la interior $S_2$ (radio $a$):
+\[
+\Phi_1 = +E(b)\, S_1 = \frac{Q}{4\pi\varepsilon_0 b^{2}}\, S_1,
+\qquad
+\Phi_2 = -E(a)\, S_2 = -\frac{Q}{4\pi\varepsilon_0 a^{2}}\, S_2 .
+\]
+
+Como las tapas son homotéticas, cada área es proporcional al cuadrado
+de su radio:
+\[
+\frac{S_1}{b^{2}} = \frac{S_2}{a^{2}}
+\;\Longrightarrow\; \Phi_1 = -\Phi_2
+\;\Longrightarrow\; \Phi_{\text{total}} = 0 .
+\]
+
+Conceptualmente: toda línea que entra por una cara sale por la otra.
+
+\subsection{Ángulo sólido}
+
+La cantidad $\Omega = S/r^{2}$ (área de un trozo dibujado sobre una
+esfera, dividida por el radio al cuadrado) se llama \textbf{ángulo
+sólido}.
+
+\begin{itemize}[nosep]
+  \item Es \textbf{invariante ante el tamaño de la esfera}: al inflar
+        un globo esférico, el área crece como $r^{2}$ pero el ángulo
+        sólido no cambia.
+  \item Ángulo sólido de la \textbf{esfera entera}:
+        $\dfrac{4\pi r^{2}}{r^{2}} = 4\pi$.
+\end{itemize}
+
+\begin{notebox}[Cultura general]
+  No es imprescindible para la deducción, pero aparece con frecuencia
+  en los libros.
+\end{notebox}
+
+\subsection{Superficie arbitraria sin la carga}
+
+Carga puntual $Q$ y \textbf{cualquier} superficie cerrada que no la
+contiene. Sin cálculo, $\Phi = 0$. Para hacerlo preciso se
+\textbf{descompone} la superficie con muchas esferas concéntricas en la
+carga: los flujos laterales son despreciables (superficie muy delgada)
+y cada trozo exterior cancela al interior (mismo ángulo sólido). Todos
+los pares se simplifican:
+\[
+\Phi_{\text{total}} = 0 .
+\]
+
+\subsection{Superficie arbitraria que encierra la carga}
+
+Carga puntual $Q$ y una superficie arbitraria cerrada $S$ que
+\textbf{sí} la encierra. Se construye una pequeña esfera $S'$ centrada
+en $Q$ (con $\Phi_{S'} = Q/\varepsilon_0$). La superficie compuesta
+$S \setminus S'$ es cerrada y \textbf{no} contiene la carga, así que su
+flujo es cero; como las orientaciones salientes son opuestas en cada
+cara,
+\[
+\boxed{\Phi_S = \Phi_{S'} = \frac{Q}{\varepsilon_0}} .
+\]
+
+Vale también para carga negativa: solo cambia el signo
+($\Phi < 0$).
+
+% ===================================================================
+\section{Deducción para un conjunto de cargas}
+% ===================================================================
+
+Para un problema electrostático con cargas puntuales
+$Q_1, Q_2, \dots$ y una superficie cerrada $S$ que deja algunas dentro
+y otras fuera, se usa el \textbf{principio de superposición}: el campo
+total es la suma de los campos de cada carga, luego el flujo total es
+la suma de los flujos,
+\[
+\Phi = \sum_i \Phi_i,
+\qquad
+\Phi_i =
+\begin{cases}
+Q_i/\varepsilon_0, & Q_i \text{ dentro de } S \\
+0, & Q_i \text{ fuera de } S .
+\end{cases}
+\]
+
+\begin{keybox}[Flujo en términos de la carga encerrada]
+  \[
+  \boxed{\Phi = \oiint_S \mathbf{E}\cdot d\mathbf{A}
+         = \frac{Q_{\text{int}}}{\varepsilon_0}}
+  \]
+  con $Q_{\text{int}}$ la carga total encerrada por $S$
+  (\enquote{los de afuera son de palo}).
+\end{keybox}
+
+% ===================================================================
+\section{Ley de Gauss}
+% ===================================================================
+
+\subsection{Enunciado y carácter fundamental}
+
+La expresión anterior se probó \textbf{en el caso electrostático},
+partiendo de Coulomb. La \textbf{Ley de Gauss} afirma algo más fuerte:
+la misma fórmula vale \textbf{siempre}, también fuera del caso
+electrostático, y es un \textbf{resultado experimental}.
+
+\begin{keybox}[Ley de Gauss]
+  \[
+  \boxed{\oiint_S \mathbf{E}\cdot d\mathbf{A}
+         = \frac{Q_{\text{int}}}{\varepsilon_0}}
+  \qquad \text{(válida en general)}
+  \]
+  Propuesta por Gauss ($\approx$1835).
+\end{keybox}
+
+\begin{notebox}[Intuición fuera de la electrostática]
+  Si las líneas de campo solo nacen y mueren en las cargas, cuando una
+  carga se mueve las líneas se deforman, pero el \textbf{número} de
+  líneas que atraviesa la superficie no cambia. El flujo solo depende
+  de cuántas líneas salen de las cargas encerradas. Por eso Gauss se
+  considera \textbf{más fundamental} que Coulomb: Coulomb vale solo en
+  electrostática; Gauss vale siempre.
+\end{notebox}
+
+\subsection{Equivalencia Coulomb \texorpdfstring{$\leftrightarrow$}{<->}
+            Gauss en electrostática}
+
+En el caso electrostático ambas leyes son \textbf{equivalentes}:
+\begin{itemize}[nosep]
+  \item \textbf{Coulomb $\Rightarrow$ Gauss:} demostrado en las
+        secciones anteriores.
+  \item \textbf{Gauss $\Rightarrow$ Coulomb:} para una carga puntual se
+        toma una \textbf{superficie gaussiana} esférica de radio $r$.
+        Solo por \textbf{simetría} (invariancia por rotaciones),
+        $\mathbf{E}$ es radial y de módulo constante, luego
+        $\Phi = E\, 4\pi r^{2}$. Igualando con Gauss:
+        \[
+        E \cdot 4\pi r^{2} = \frac{Q}{\varepsilon_0}
+        \;\Longrightarrow\;
+        E = \frac{Q}{4\pi\varepsilon_0 r^{2}} .
+        \]
+\end{itemize}
+
+\begin{warnbox}[Por qué solo en electrostática]
+  Para afirmar que $\mathbf{E}$ es radial la carga debe estar
+  \textbf{quieta}. Si se mueve, hay direcciones preferenciales y el
+  campo deja de ser radial: Gauss sigue valiendo, pero ya no implica
+  Coulomb.
+\end{warnbox}
+
+\subsection{El \texorpdfstring{$4\pi$}{4pi} y
+            \texorpdfstring{$\varepsilon_0$}{epsilon0}}
+
+El factor $4\pi$ se colocó en la ley de Coulomb precisamente para que
+la ley considerada \textbf{más fundamental} (Gauss) quede escrita de la
+forma \textbf{más simple} (sin $4\pi$). Es una convención sobre la
+definición de $\varepsilon_0$; existen sistemas de unidades que ponen
+el $4\pi$ en la ley de Gauss.
+
+% ===================================================================
+\section{Aplicaciones de la Ley de Gauss}
+% ===================================================================
+
+Estrategia: elegir una \textbf{superficie gaussiana con la misma
+simetría del problema}, de modo que el flujo se calcule fácilmente y
+se despeje $E$.
+
+\subsection{Línea infinita cargada}
+
+Línea infinita con densidad lineal uniforme $\lambda$. Por simetría,
+$\mathbf{E}$ es \textbf{radial} y de módulo constante a distancia fija.
+Superficie gaussiana: \textbf{cilindro} de radio $r$ y altura $h$.
+
+\begin{itemize}[nosep]
+  \item Carga encerrada: $Q_{\text{int}} = \lambda h$.
+  \item Flujo: las tapas no contribuyen
+        ($\mathbf{E}\perp\hat{\mathbf{n}}$); solo la lateral:
+        $\Phi = E\,(2\pi r h)$.
+\end{itemize}
+\[
+E\,(2\pi r h) = \frac{\lambda h}{\varepsilon_0}
+\;\Longrightarrow\;
+\boxed{E = \frac{\lambda}{2\pi\varepsilon_0 r}} .
+\]
+
+Coincide con el resultado obtenido antes por Coulomb, pero aquí el
+cálculo es de una sola línea.
+
+\subsection{Plano infinito cargado}
+
+Plano infinito con densidad superficial uniforme $\sigma$. Por
+simetría, $\mathbf{E}$ es \textbf{perpendicular al plano}, saliente,
+con igual módulo a ambos lados. Superficie gaussiana: \textbf{cilindro}
+que atraviesa el plano, con tapas de área $S$ paralelas al plano.
+
+\begin{itemize}[nosep]
+  \item Carga encerrada: $Q_{\text{int}} = \sigma S$.
+  \item Flujo: la lateral no contribuye; \textbf{ambas tapas} dan
+        flujo saliente: $\Phi = 2 E S$.
+\end{itemize}
+\[
+2 E S = \frac{\sigma S}{\varepsilon_0}
+\;\Longrightarrow\;
+\boxed{E = \frac{\sigma}{2\varepsilon_0}} .
+\]
+
+El campo \textbf{no depende de la distancia}: es uniforme mientras la
+distancia sea pequeña frente al tamaño del plano.
+
+\subsection{Cascarón esférico uniformemente cargado}
+
+Cascarón esférico de radio $R$ con carga total $Q$ distribuida
+uniformemente. Por simetría, $\mathbf{E}$ es radial y de módulo
+constante sobre cualquier esfera concéntrica $S$ de radio $r$; luego
+$\Phi = E\, 4\pi r^{2}$. Por Gauss, la carga encerrada depende de si
+$S$ está dentro o fuera:
+\[
+\boxed{E =
+\begin{cases}
+\dfrac{Q}{4\pi\varepsilon_0 r^{2}}, & r > R \\[2mm]
+0, & r < R .
+\end{cases}}
+\]
+
+\begin{itemize}[nosep]
+  \item \textbf{Fuera:} se comporta como una carga puntual $Q$ ubicada
+        en el origen.
+  \item \textbf{Dentro:} campo nulo.
+\end{itemize}
+
+\begin{warnbox}[Discontinuidad en $r = R$]
+  El salto abrupto es un artefacto de suponer el cascarón de ancho
+  nulo. Si el cascarón tiene un ancho real $a$ (pequeño), el campo no
+  salta: vale $0$ dentro, \textbf{sube rápidamente} a través del
+  espesor $a$, y luego decae como $1/r^{2}$ afuera. A nivel clásico no
+  hay saltos abruptos en la naturaleza.
+\end{warnbox}
+
+% ===================================================================
+\section{Ley de Gauss y conductores en equilibrio}
+% ===================================================================
+
+Para un \textbf{conductor} de forma arbitraria en situación
+\textbf{electrostática (equilibrio)} valen dos propiedades:
+
+\begin{enumerate}[nosep]
+  \item \textbf{No hay carga neta en el interior:} cualquier volumen
+        interno tiene carga neta nula; la carga neta se distribuye
+        sobre la \textbf{superficie}. (Intuición: cargas de igual signo
+        se repelen y se alejan lo más posible.)
+  \item \textbf{El campo interior es nulo:} $\mathbf{E} = 0$ en todo
+        punto interno. (Menos intuitiva.)
+\end{enumerate}
+
+\textbf{Prueba (usando Gauss):}
+
+\begin{itemize}[nosep]
+  \item \textbf{Paso previo:} al menos una debe cumplirse, porque si
+        hubiera \textbf{carga y campo simultáneamente} dentro, la carga
+        se movería, contradiciendo el equilibrio.
+  \item \textbf{(1) Si $\mathbf{E} = 0$ dentro $\Rightarrow$ no hay
+        carga:} para cualquier superficie $S$ interna, $\Phi = 0$, y
+        por Gauss $Q_{\text{int}} = \varepsilon_0 \Phi = 0$. Como vale
+        para toda $S$, no hay carga neta en ningún punto interior.
+  \item \textbf{(2) Si no hay carga dentro $\Rightarrow$
+        $\mathbf{E} = 0$:} por absurdo, si $\mathbf{E}\neq 0$, las
+        líneas no pueden empezar ni terminar en el interior (no hay
+        carga), así que lo atraviesan de lado a lado, naciendo/muriendo
+        en \textbf{cargas de la superficie}. Esas cargas superficiales
+        sentirían un campo que las movería, contradiciendo el
+        equilibrio.
+\end{itemize}
+
+\begin{keybox}[Conductor en equilibrio]
+  \[
+  \boxed{\mathbf{E} = 0 \quad\text{y}\quad Q_{\text{neta}} = 0
+         \quad\text{en todo el interior del conductor}}
+  \]
+\end{keybox}
+
+\end{document}

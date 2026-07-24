@@ -1,0 +1,73 @@
+title: Clase 9
+id: fis3-2015-2-09
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:20:29"
+
+stats:
+  transcript_words: 8534
+  summary_words: 1384
+  diagrams_pending: 7
+  equations: 23
+
+topics:
+  - Campo eléctrico a partir del potencial (E = -∇V, derivadas parciales)
+  - Necesidad de conocer el potencial en una región
+  - Ejemplo: campo del dipolo derivando el potencial
+  - Superficies equipotenciales (definición, función implícita)
+  - El campo eléctrico es normal a las equipotenciales
+  - Espaciado de equipotenciales ↔ intensidad del campo (E ∝ 1/Δs)
+  - Dirección de máxima variación del potencial
+  - Ejemplos: carga puntual, placas paralelas, dipolo
+  - Distinción equiespaciado en voltaje vs en distancia
+  - Conductor en equilibrio como volumen equipotencial
+  - Continuidad de la componente tangencial del campo (prueba)
+  - Potencial de un cascarón esférico (continuo, derivada discontinua)
+  - Capacitores: dispositivo para almacenar energía en el campo eléctrico
+  - Capacitancia y proporcionalidad ΔV ∝ Q (superposición)
+  - Unidad de capacitancia (Farad = Coulomb/Volt)
+  - Método general de cálculo de capacitancia
+  - Capacitor de placas paralelas (C = ε₀A/d)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "25-26"
+    verified: false
+
+prerequisites:
+  - Clase 8 (potencial de cargas puntuales y distribuciones)
+  - Clase 7 (potencial, conductores en equilibrio)
+  - Clase 6 (Ley de Gauss, cascarón esférico)
+  - Cálculo (derivadas parciales, gradiente)
+
+next_topics:
+  - Cálculo de capacitancias (cilíndrico, esférico) (Clase 10)
+  - Energía almacenada en un capacitor
+  - Combinación de capacitores y dieléctricos
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

@@ -1,0 +1,435 @@
+# Clase 7
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/7/
+
+Fecha de exportación: 7/23/2026, 8:57:12 PM
+
+
+Clase: 7
+Curso: F3
+
+Segmentos : 237
+Palabras  : 9101
+Caracteres: 52026
+
+0:18
+A ver, lo último que habíamos estado viendo eran las aplicaciones de la ley de Gauss a los conductores. Hemos visto cómo era un conductor en equilibrio, qué propiedades tenía usando la ley de Gauss y habíamos probado que si tienen un conductor de una forma cualquiera, la carga neta en el conductor se ubica en la superficie.
+0:54
+Y lo otro que hemos visto es que el campo eléctrico adentro del conductor era cero.
+1:04
+Probamos esto la vez pasada utilizando la ley de Gauss. Y ahora, digamos, en un ratito en la clase voy a empezar a hablar de potencial eléctrico, pero antes de eso quiero terminar algunas cosas más vinculadas con la ley de Gauss y los conductores. Vamos a ver una segunda propiedad. Segunda propiedad.
+1:33
+En el caso de un conductor...
+1:38
+Aislado, aislado quiere decir lejos de todo otro objeto cargado, en este caso, en equilibrio electrostat. En equilibrio y electrostat. Entonces, la propiedad que vamos a ver en el caso este...
+2:09
+Es la siguiente, supongamos, dijimos que el conductor está nuevamente en equilibrio, es una situación electrostática, pero además suponemos que no hay ninguna carga cercana, ¿sí? Entonces se da la propiedad siguiente, que si el conductor tiene un hueco, si tiene, este es el conductor y adentro hay un agujero, el agujero no forma parte del conductor, supongamos que tiene un pedazo de metal con un agujero adentro, ¿sí?,
+2:40
+Entonces la propiedad dice que en ese caso, vimos que la carga se ubicaba en la superficie del conductor, acá el conductor tiene dos superficies, una externa y una interna. ¿Bien? Entonces la propiedad nos dice que la carga, en ese caso, la carga se ubica en la superficie externa.
+3:15
+No en la interna. ¿Bien? La carga neta en la superficie interna es cero. ¿Sí? Pero es más, la densidad superficial de carga en la superficie interna es cero. ¿Cómo podemos darnos cuenta de eso?
+3:43
+Primero, que la carga neta en la superficie interna es cero. ¿Cómo nos podemos dar cuenta?
+3:54
+¿Se entiende el enunciado? El conductor tiene una carga neta. Lo que vimos la vez pasada es que la carga se ubica en una superficie. Supongamos que tiene una superficie externa y otra superficie interna y que no hay cargas cercanas al conductor. En particular no hay cargas dentro del agujero. si estuviera dentro del agujero es bien cercano entonces como podemos hacer para probar que toda la carga está del lado de afuera una esfera o una superficie cualquiera una superficie cerrada cualquiera que deje el agujero adentro tomamos una superficie S cerrada dentro del conductor Esa superficie cerrada dentro del conductor que contiene el hueco.
+5:07
+Entonces, ¿qué pasa con el flujo eléctrico a través del... Bueno, entonces dijimos, como el conductor está aislado, no hay carga dentro del conductor. No hay cargas en el hueco.
+5:23
+Porque está aislado.
+5:27
+Entonces, ¿cómo es el flujo eléctrico a través de S?
+5:37
+Cero, ¿verdad? ¿Por qué? Ah, no, no sabemos. No hay carga en el hueco, pero podría haber en la superficie. ¿Cómo podemos saber que el flujo es cero? Porque el campo es cero, ¿verdad? El campo en toda esta superficie es cero. ¿No es verdad? Dijimos que esta propiedad sigue variando. Estamos en un caso particular de la propiedad anterior. Entonces, este flujo es cero, pues, e igual a cero...
+6:07
+en todo ese entonces como no hay cargas en el hueco entonces la carga neta esto es para cualquier superficie la carga neta en la superficie interna es cero
+6:40
+No hay carga neta. La superficie interna. Pero esto no nos asegura que no haya una densidad superficial de carga, porque podría haber en una zona una densidad superficial de carga positiva y en otra zona una densidad de carga superficial negativa.
+7:03
+¿Cómo nos convencemos que eso no pasa?
+7:09
+No estaría en equilibrio. ¿Por qué?
+7:17
+Claro. Supongamos, entonces, si sigma no fuera cero, entonces lo que sigma adentro, ¿no?
+7:32
+Entonces tendríamos esta situación, tendríamos el agujero acá y tendríamos en algunas zonas cargas positivas y en otras zonas cargas negativas. Y tanto, habría tantas unas como otras. El campo eléctrico en el conductor es cero, así que las líneas de campo irían por adentro. ¿Está? Por dentro del hueco. Pero esto ¿por qué no puede ser?
+8:03
+Una superficie que toma parte del conductor y el agujero, pero ya ahora no es cero el flujo. No, si tomás toda una superficie por dentro del conductor, el flujo es cero, porque todo lo que entra acá sale acá y nada cruza la superficie.
+8:30
+Porque la carga neta es cero. Hay tanta positiva como negativa. ¿Y por qué no es tan equilibrio?
+8:40
+Sí, pero esto es el agujero. Esto puede ser aire. Ahí no es conductor.
+8:47
+Y entonces, sí, está bien. Viene bien la mano. Entonces...
+8:53
+Claro, en algún lado termina la carga positiva y empieza la carga negativa. Está claro que la carga se va a mover por la superficie y va a ir a la carga negativa. Pero esto no es totalmente cierto. Podemos construir contraejemplos, que son situaciones inestables, pero posibles. Imagínense, para que vean que en realidad este resultado requiere que el equilibrio sea estable. Imagínense que yo tuviera una situación de este tipo. Un conductor, y tengo un hueco con esta forma.
+9:25
+Y acá pongo unas cargas positivas. Y acá una carga negativa. Entonces, mecánicamente, esta situación es de equilibrio. Porque estas dos se atraen. Quieren estar lo más cerca posible. Entre ellas quedan atoradas. Y...
+9:52
+Este sistema es posible. ¿Se entiende? Acá puse una puntita, pero no tiene por qué ser una puntita. Podría ser una superficie suave. Podría tener un mínimo acá, una cubeta de este lado y una cubeta de este otro. Y la carga localmente no se mueve. Pero esta situación, si bien es localmente estable, es inestable. Porque si yo la sacudo un poco, la carga va a terminar encontrando que le viene mejor venirse para este lado. ¿Se entiende?
+10:22
+Entonces puede haber una situación de equilibrio local posible en el cual las caras se quedan naturales. En la práctica eso no sucede, porque tienen que pensar que a nivel microscópico siempre hay agitación térmica y el electrón siempre va a encontrar una manera de escaparse y llegar hasta acá. Pero si fueran bolitas, si fueran objetos macroscópicos, esta situación sería posible. Para los electrones eso no es posible, encuentran el camino. Un electrón siempre encuentra el camino. Pero para objetos macrocópicos podrían quedar atorados así.
+10:53
+¿Se entiende? Entonces, esta situación no se da porque los portadores de carga...
+11:14
+es decir, le hace los electrones en un metal, pero si fuera un electrolito pasa lo mismo, siempre encuentran el camino para acercarse.
+11:35
+Entonces lo que probamos con Gauss es que la carga neta adentro es cero. Pero además hay que agregar algo relativo a la estabilidad del equilibrio para decir que las cargas siempre encuentran la manera de las positivas juntarse con las negativas. Que uno puede inventar formas del agujero en el cual quedan trabadas en otras situaciones. Pero eso no pasa, los electrones se encuentran en el camino. Acá juega un papel importante...
+12:03
+No, nada, no voy a entrar en detalles, pero los electores siempre encuentran el camino. ¿Se entendió esto? Entonces, hay dos razones. Una primera razón es que la carga neta es cero y eso es por Gauss. Pero hay otra razón que es el equilibrio de que los electores encuentran la manera, aunque estén atorados, de recorrer, de escaparse.
+12:29
+Después, ahora voy a hablar de, esto tampoco está discutido por el Resnick y es importante tenerlo en mente. Después, una tercera propiedad es qué pasa con el campo eléctrico justo afuera de un conductor.
+13:00
+justo afuera del conductor entonces ahora nuevamente tengo un conductor hay una densidad superficial de carga en la superficie y quiero preguntar cuánto vale el campo eléctrico adentro es cero pero cuánto vale justo afuera
+13:33
+¿Como si fuera qué? Una lámina cargada. No, no podemos verlo porque van a ver que no es lo mismo. No es como una lámina cargada. Primero porque la lámina cargada que habíamos visto era infinita y en la lámina cargada el campo eléctrico sale para los dos lados. Pero acá solo sale para un lado.
+13:51
+¿De acuerdo? El campo eléctrico solo sale para afuera. Bueno, si la densidad de carga es positiva. Si es negativa, el campo eléctrico entra desde afuera. Pero adentro no hay nada. Así que no es como una lámina de carga. Es un poco diferente. Podrías verlo como si miramos un cilindro suficientemente pequeño...
+14:28
+No, no, no. No, porque... A ver... Sí, el resultado final es que sí. Pero no es fácil verlo. Lo vamos a ver más adelante en el curso y vamos a probar que eso es así. Pero no es obvio. El razonamiento que dice el compañero es que si toman un cilindrito muy chiquitito, lo pueden ver no como un plano, sino como un semiplano.
+15:10
+Digo porque si estamos hablando de una esfera que tiene radio de 10 centímetros, para un electrón estoy plano.
+15:14
+Sí, sí. Pero te explico cuál es la dificultad. Lo que habría que asegurarse es que el radio de curvatura acá, ¿sí? Es muy chico, perdón, muy grande con respecto al tamaño del cilindro. Y eso no tiene por qué pasar. ¿Bien? Así que no... El resultado es que finalmente se comporta así, pero no es obvio.
+15:41
+Lo primero que voy a hacer es darles un resultado que vamos a admitir. Resnick les da un argumento en esa altura del libro de por qué eso es así, pero el argumento está mal. Entonces, ejercicio, leer el argumento de Resnick y encontrar el error. Busque el error. Lo que dice Resnick es que el campo eléctrico fuera del conductor...
+16:10
+pero cerca, inmediatamente al lado del conductor, fuera pero justo afuera, es perpendicular, es normal a la superficie del conductor.
+16:35
+Esto que acabo de denunciar está bien. Esto lo dice Resnick y está bien. Lo que está mal es la prueba de por qué es así. La prueba que da Resnick, se las digo, y está mal. Capaz que discutimos ahora por qué está mal. Dice que el argumento de Resnick es el siguiente. Supongamos que no fuera normal, que estuviera chanfleado, que el campo eléctrico fuera así. Dice entonces, las cargas que están en el conductor se moverían porque habría una componente del campo eléctrico... a lo largo de la superficie, y eso haría que las cargas que estén acá se muevan.
+17:10
+¿Se entiende el argumento? Dice, dentro del conductor no voy a tener densidad superficial de carga, como tengo una componente del campo eléctrico tangencial, si tuviera una componente tangencial, estas cargas se moverían para allá. ¿Por qué ese argumento está mal?
+17:36
+El campo se comporta radial, pero queremos probarlo. No pueden usar lo que queremos probar para hacer la prueba. ¿Sí? Razonamos por el absurdo. Supongamos que tuviera una componente tangencial, dice Renick. Entonces las cargas que hay en la superficie del conductor se moverían. ¿Sí? ¿Por qué ese razonamiento está mal? Porque el campo es fuera del conductor y las cargas están dentro. Claro, porque está aplicando el razonamiento con el campo afuera a las cargas que están adentro. Entonces, ¿qué es lo que está pensando implícitamente Resnick sin decirlo?
+18:08
+Sí, en realidad él sabe eso, pero ha actuado un poco de mala fe. Él lo que usa es que la componente tangencial del campo eléctrico es continua, en la misma afuera que adentro. ¿Está? Entonces sí puede aplicar el razonamiento. ¿Está?
+18:27
+¿De acuerdo? Pero si podemos aplicar que la componente tangencial es continua, ya está, porque ya sabemos que adentro es cero. Entonces no hay nada más que probar. ¿Me explico? De hecho, la componente de adentro es cero porque si no, las cargas se moverían, efectivamente, las de adentro. Pero no hay ninguna garantía de que el campo eléctrico sea continuo. De hecho, la componente normal no es continua. Salta de cero a un valor no nulo. Entonces, si admitimos que la componente normal no es continua, tenemos que explicar por qué la componente tangencial sí lo es.
+19:00
+Y lo es. El resultado es correcto. Ojo con el argumento del resnico.
+19:15
+Ahora, el resultado es correcto. Esto será probado más adelante. Por ahora lo vamos a admitir. Más adelante es en el capítulo que viene. Enseguida lo vamos a probar. No es difícil de probar. Pero esto requiere probar que la componente tangencial del campo eléctrico es continua. Como adentro es cero, entonces afuera es cero y justo al lado es cero.
+19:47
+Pero la componente normal no es continua. Entonces si admitimos que solo hay componente normal, podemos calcular el campo eléctrico justo afuera. ¿Cómo haremos para calcular el campo eléctrico justo afuera?
+20:03
+¿Cómo? ¿Cómo? Sí, sí, sí, pero la idea es, ¿cómo haces el cálculo? Si tienen la superficie, tienen el campo eléctrico, que dicen es normal, lo tienen que calcular acá afuera, de este lado de adentro es cero, ¿cuánto valdrá el campo eléctrico afuera? ¿Cómo hacemos para calcular? Sabemos la densidad superficial, conocemos sigma, la densidad superficial de carga en la superficie. ¿Cómo haremos? ¿Cómo haremos?
+20:33
+¿Qué herramientas tenemos para calcular? Gauss. Estamos en un capítulo que se llama Ley de Gauss. Así que, con fuertes chances, vamos a la Ley de Gauss. ¿Qué vamos a usar? ¿Cómo podemos usar la Ley de Gauss? ¿Sí? Tomamos una superficie gaussiana. ¿Qué forma conviene tomar una superficie gaussiana acá?
+20:57
+Un cilindrito. Un cilindrito bien achatado. Así. ¿Sí?
+21:05
+¿Bien? Con una parte adentro y una parte afuera. ¿Sí? Para aprovechar la simetría, porque sabemos que es normal. Entonces, ¿cuánto es el flujo a través de la superficie lateral? Cero, porque es normal. ¿Cuánto es el flujo en la tapa del cilindro del lado de adentro? Cero, porque no hay campo. Entonces, solo tenemos flujo en la parte exterior. Entonces, el flujo lateral... es igual a cero, pues E normal a la superficie.
+21:45
+Primero. Segundo, el flujo tapa de adentro es cero, pues E igual a cero adentro.
+22:00
+Entonces, el flujo eléctrico total...
+22:06
+Es igual al flujo afuera. Y si tomé un cilindrito chiquitito, puedo despreciar la variación del campo eléctrico a lo largo del cilindrito. Entonces esto es aproximadamente igual a E por S. Llamémosle a la superficie esta S. Esto es así si se cumplen dos cosas. Primero que S es pequeña.
+22:35
+Si no fuera pequeña, habría una integral acá. ¿De acuerdo? Pero si tomo eso muy chiquitito, puedo despreciar la variación de... Entonces me queda ahí por la superficie. Y lo otro que necesitamos es que sigma sea positivo, porque si no, aparecería un signo menos. ¿Sí? Si la densidad superficial de carga fuera negativa, acá vendría un signo menos. ¿Está? Se puede repetir el cálculo cuando sigma es negativo, simplemente aparece un signo menos. ¿Está? Pero por otro lado, usamos Gauss. ¿Gauss qué nos dice? ¿Qué nos dice? Que el flujo eléctrico ahí, ¿cuánto vale?
+23:11
+La carga encerrada en el cilindrito sobre épsilon. Pero ¿cuánto es la carga? Sigma por S. Sobre épsilon. ¿De acuerdo? Entonces estas dos cosas concluimos que el campo eléctrico afuera...
+23:33
+afuera, inmediatamente afuera, es sigma sobre epsilon cero.
+23:39
+El módulo, ¿no? Y además la dirección, la dirección es perpendicular. Pero lo de que la dirección es perpendicular, todavía no lo probamos. Entonces campo justo afuera de un conductor.
+23:59
+En realidad, sigma puede cambiar de un punto a otro y la fórmula vale, pero para calcular el campo eléctrico en cada punto, tienen que usar el sigma en ese punto. ¿Se entiende?
+24:10
+Si la densidad superficial de carga no es uniforme, para calcularla en cada punto, tienen que usar la densidad superficial justo ahí.
+24:22
+Bueno, pero... Sí, pero lo que dice es una superficie tangente...
+24:50
+No, pero tiene que ser una superficie cerrada para aplicar Gauss. Claro. Ese es importante. Un cilindrito porque tengo que hacer una... La idea... Gauss vale para una superficie cerrada. Entonces tengo que tomar una superficie que tiene una tapa medio tangente, pero tengo que rellenarla por adentro. ¿Se entiende? Claro, claro. Claro, pero importante es el cilindro para que pueda fácilmente ver que el flujo en la superficie lateral es cero, porque es normal. Si no, hubiera sido más complicado justificar eso. Igual se podría justificar, porque si yo tomo una tapita muy muy finita, en la medida que el campo no explote, el flujo en el borde, en la tapa lateral es cero.
+25:29
+¿Se entiende? Si no tengo un campo que sea infinito, entonces cuando hago tender a cero la altura del cilindrito... Igual valdría. Y después usó que adentro es cero. Pero está claro que adentro yo podría haber tomado cualquier forma. No me importa la forma porque adentro es cero.
+25:52
+Bien. Bueno, y fíjense que este resultado... Les voy a mostrar una paradoja a ver si se dan cuenta cómo se resuelve. Una aparente... No hay real paradoja. Una aparente paradoja.
+26:06
+Nosotros habíamos visto que cuando tienen una...
+26:11
+...un plano infinito... ...en un plano infinito... ...toman un plano infinito cargado... ...uniformemente... ...habíamos visto que... ...acá vale sigma... ...habíamos visto que E... ...¿cuánto valía?
+26:36
+¿Cuál es el campo producido por un campo infinito? Sigma... sigma era sobre 2 epsilon 0 y ahí tenemos sobre epsilon 0 pero que pasa si el campo ese fuera producido por un plano infinito conductor cargado imagínense que este plano infinito sea un conductor tendrían que poder aplicar esta fórmula y también aplicar aquella fórmula a priori pareciera haber una contradicción ¿por qué no hay contradicción?
+27:06
+no lo hay
+27:11
+Bueno, toda cosa tiene un volumen. Supongamos que... Pero por ahí viene la mano. Supongamos que hago un zoom. Veo esto de canto y lo agrando. El plano este infinito lo agrandé. Le veo el ancho. El ancho A. Muy chiquito el ancho, pero hay un ancho. Y tiene un sigma. ¿Cómo se va a repartir este sigma que está acá? Se va a repartir en una parte que está de un lado...
+27:43
+Pongamos que es positivo, pero podría ser negativo. Cualquiera de las dos opciones sirve. Y otra parte del otro lado.
+27:52
+Y por simetría ambas densidades superficiales de carga van a ser iguales. ¿No es verdad? Entonces de este lado tenemos una densidad superficial de carga sigma prima, que será sigma sobre 2. Y de este otro lado otra densidad superficial de carga sigma prima, que es sigma sobre 2.
+28:11
+¿Pero cuál es el sigma que yo tengo que usar acá en esta fórmula?
+28:20
+Claro, es el que está en la superficie al lado de la cual vamos a calcular el campo eléctrico. ¿Sí? Entonces... Como todo conductor tiene algún ancho, el sigma que tengo que usar acá es el sigma prima. No es el sigma que yo tengo si yo hago una cosa así. Si yo tengo una cosa que es acá, tomo una superficie, cuento la carga total que está acá adentro y esa es, y divido por el área, eso es sigma. Pero si en lugar de hacer eso yo quiero calcular la densidad superficial que está en la carga, en la cara del conductor que está de este lado, esa es la mitad.
+28:55
+Y es esa la que cuenta para esa fórmula. Es la densidad superficial que está en la cara justo al lado. ¿Me explico? Y esa es la mitad. Entonces acá no hay contradicción porque E es igual... Entonces este es... Acá es sigma sobre... Pero E también es igual a sigma prima sobre epsilon cero. Son coherentes las dos fórmulas. Entonces esta es la densidad superficial en la cara...
+29:26
+En una de las caras.
+29:32
+Y es eso lo que nos interesa para la fórmula de carga. Es la densidad en una de las caras. ¿Sí? Si vos tenés un plano con un vector, podés verlo como si tuvieras dos planos muy finitos cargados, superpuestos, uno al lado del otro. Y como ambos tienen densidad de carga positiva, tipo, para un lado ahora se van a sumar los dos, y en el medio se van a... Sí, no me estoy ocupando de lo que pasa por el medio, me estoy ocupando de lo que pasa afuera. Sí, por eso, pero eso te dice también que en el medio no va a haber distribución de carga.
+30:12
+Te coincide con lo que pasa en tu computador. Sí, sí, lo que estamos viendo es justamente las dos cosas son coherentes. La densidad superficial de carga se me reparte en mitad y mitad y la que tengo en una de las caras es la mitad. Entonces es coherente las dos cosas. Lo que pasa, la paradoja es que lo que llamamos sigma en un caso no es lo mismo que lo que llamamos sigma en el otro. En un caso llamamos sigma a toda la densidad de carga que hay en una superficie, en todo el plano, Y en el otro llamamos sigma a lo que está en la superficie justo pegada a donde estoy midiendo el campo eléctrico.
+30:46
+En un caso, una es la mitad de la otra. ¿Se entiende? ¿Y vos no tenés que sumar el otro lado de la placa que le hacen a un campo? No. Para la ley de Gauss, les recuerdo que solo hay que usar, en esta fórmula, yo solo usé la densidad de carga que está en la superficie justo pegada a donde estoy midiendo el campo eléctrico. Ah, pero el otro lado tenés que sumar igual.
+31:10
+En la ley de Gauss, solo se mide la carga que está adentro. Eso muchas veces resulta paradojal. Pero las cargas que están... Les recuerdo, los de afuera son de palo.
+31:20
+Sí, es verdad. Si yo pienso en términos de Coulomb, tengo que sumar el efecto de este con el efecto de este. Y me dan lo mismo. De hecho, este cálculo lo hicimos también con Coulomb. Nos dio lo mismo. Si yo sumo las dos... Para Coulomb tengo que sumar todas las cargas. Para Gauss, solo sumar las cargas que están dentro de la superficie. Y da lo mismo, son coherentes. Pero a veces resulta sorprendente. ¿Alguna otra pregunta?
+31:59
+Y por último, quiero comentarles sobre otras pruebas experimentales. 3.7 para terminar el capítulo. Pruebas experimentales de la ley de Gauss.
+32:23
+Y por lo tanto de la ley de Coulomb, porque vimos que en el caso electrostático las dos eran equivalentes. Vimos que matemáticamente... Gauss y Coulomb son equivalentes desde el punto de vista matemático en el caso electrostático. Entonces, si yo logro probar experimentalmente la ley de Gauss, es una prueba de la ley de Coulomb. Una prueba indirecta. No es como las pruebas que vimos en el experimento de Coulomb o de Cavendish, que es medida directa de interacción entre cargas. Es una prueba que es distinta. Entonces, miren qué consiste el experimento.
+32:54
+Toman una cubeta, una caja metálica.
+33:02
+Parte número uno del experimento. Entonces, caja metálica. ¿Sí? ¿De acuerdo? Parte número dos. Tenemos nuestra caja metálica.
+33:24
+Y agarramos una bolita cargada. Una bolita cargada. ...también metálica... ...bolita... ...conductora... ...cargada... ...y la metemos para adentro... ...parte número 2... ...el experimento sigue... ...llevamos la bolita... ...hasta el fondo... ...toca... ...acá abajo...
+34:01
+no, perdón antes la dejamos acá colgando un hilito, supongamos un hilo aislante tenemos la carga acá bueno, este se nos va a polarizar pero por ahora no me importa acá se me va a dar una polarización de carga de este lado se me va a formar una densidad superficial de carga negativa y del otro lado una carga superficial positiva pero tengo esto y le pongo una tapa acá metálica ¿Sí?
+34:33
+¿De acuerdo? Con un agujerito muy, muy chiquitito que lo puedo despreciar. ¿Sí? Para que pase el hilo.
+34:45
+Y ahora, etapa número cuatro, dejamos que la bolita, ahora esto se comporta como una caja, y dejamos que la bolita toque el fondo.
+34:58
+¿Qué pasó con la carga? Usando gauss. ¿A dónde se fue? La carga ya no está más. Acá pasa a haber carga cero. Seguimos teniendo el hilo. Carga cero. Y tenemos la carga que se nos fue para la superficie exterior del conductor. ¿La verdad? Por Gauss. ¿No es cierto? Y ahora una vez que hicimos eso, abrimos la tapa y sacamos la bolita.
+35:33
+¿Cuánta carga viene la bolita? ¿Ahorriba? ¿Qué pasó con la carga de la bolita? Se fue. Ahora la saco, ¿cuánta carga me queda en la mano? Cero. Mido la carga. Y medir blanco o negro, es decir, hay carga cero, es algo que se puede hacer con muchísima mayor precisión que medir la fuerza entre dos cargas. Es mucho más difícil. Pero en cambio, tengo una bolita y medir con muchísima precisión si tiene carga o no tiene carga, es algo que se puede hacer con muchísima precisión.
+36:07
+¿Se entiende? Entonces mido, parte número 5, mido la carga en la bolita.
+36:20
+Y es cero. Esta es una predicción de Gauss. Entonces testeamos una predicción de Gauss y nos da muy bien. Y es con este... Y les recuerdo que Gauss y Coulomb son equivalentes a nivel de electrostático. Con experimentos de este tipo, no con medida directa entre fuerzas. Yo les dije en las primeras clases que las medidas que dan una medida muy precisa del exponente de Coulomb no son medidas directas, son medidas indirectas. Son medidas de este tipo. Con medidas de este tipo se logra probar que la fuerza electrostática es proporcional a 1 sobre r a la 2 más delta con valor absoluto de delta menor a 10 a la menos 15.
+37:17
+Es así que se logra esto es proporcional a se logra probar que el exponente es tan cercano a 2, no se hace con medidas directas de fuerza, que eso es muy impreciso, hay medidas mucho más precisas que las de Coulomb o la de Cavendish, eso es bien entendido, eso se sabe con mucha precisión, pero las medidas realmente muy precisas se hacen usando este test de la ley de Gauss. Esto testea la ley de Gauss, como son equivalentes, es lo que se llama una medida indirecta.
+37:50
+Y esa se hace con mucha, mucha precisión. ¿Se entendió el principio? Es muy, muy simple. Tan simple este principio de medida, que había sido ideado antes, a alguien se le había ocurrido testear esa idea, antes que Coulomb. Veinte años que Coulomb, creo, ahora les veo bien la fecha, Prisley propuso este experimento
+38:17
+En 1767. Experimento propuesto, pero no ejecutado.
+38:34
+por lo menos no con precisión, por Prisley en 1767. Es un experimento tan simple que a la gente se le ocurrió hacerlo aún antes que el experimento de Coulomb. Ya Prisley se había dado cuenta de que si uno obtenía eso, de que la carga era cero, en realidad significaba que la fuerza tenía que ir como uno sobre R al cuadrado. Eso lo había entendido Prisley hacía mucho tiempo. Pero no hizo el experimento.
+39:07
+O por lo menos no convenció a su colega. No hay registro de que efectivamente ese experimento haya sido hecho. ¿Sí? Y es cero. Claro, porque vieron la carga y por Gauss la carga se va a la superficie exterior del conductor. Ahora es como un solo conductor porque están pegados. O sea, para afuera, cuando luego sacamos la carga, la bolita, no hay carga. Es una manera muy, muy precisa de medir porque simplemente es medir si hay o no hay carga. Y decir que no hay carga se puede medir con muchísima precisión.
+39:40
+¿Me explico? Bueno, ¿qué hacemos? Podemos hacer muchas maneras. Una manera medio torpe, no es la más conveniente, es hacer un experimento después al oculón. en donde ya no me interesa exactamente cómo decrece si no hay fuerza o no hay fuerza. Y eso es mucho más fácil de medir. ¿Me hace fuerza o no me hace fuerza? Y eso puede dar cotas en que no hay fuerza muy buenas. ¿Me explico? En realidad hay maneras mucho mejores para medir la carga.
+40:07
+Medidas más de tipo eléctrico. Pero bueno, en el peor de los casos uno puede hacer una medida tipo Coulomb y ver que no me hace fuerza. ¿Se entendió?
+40:20
+Y con esto terminamos el capítulo. Les pregunto si hay dudas, porque si no voy a arrancar con el capítulo siguiente. Ah, acá me preguntan, ¿qué pasa si en la cavidad, si hay un conductor con una cavidad adentro y hay carga adentro? Ah, si tienen carga adentro, entonces este razonamiento no vale. Y de hecho, típicamente sí va a haber superficie, carga en la densidad, superficie, va a haber... densidad superficial de carga en la superficie interna, incluso por polarización uno espera eso, ¿verdad?
+40:56
+Si uno tiene una cavidad acá, un agujero, y pone una carga cuba acá adentro, espera que se me forme una densidad superficial de carga de signo opuesto en la superficie interna. Pero puede aplicar Gauss para calcularla. Ahí puede repetir el razonamiento con Gauss para calcular cuánto es esa carga. Entonces ya no va a ser cero, va a ser otra cosa. ¿Otras preguntas? La carga queda en la superficie exterior de la caja, ¿no?
+41:28
+Claro. ¿Cómo se mueve hacia el exterior? ¿Porque estabas en el interior y la caja cerrada? Cerraste todo, ¿no? Entonces, cuando entran en contacto, tenés un solo conductor, porque los electrones pueden pasar de un lado al otro sin problema. Tenés un solo conductor y dijimos que en un solo conductor, que no está con ninguna otra carga cercano, la carga se ubica en la superficie exterior del conductor.
+41:50
+Porque toca. Ah, pero la carga puede moverse. Claro, son dos conductores. Ponés dos metales uno al lado del otro, los electrones pueden pasar de uno al otro. Claro, pero la carga no queda adentro, queda afuera. Claro, se va para afuera porque vimos que recién, que una de las consecuencias de Gauss es que la carga se ubica en la superficie exterior, no interior. Acá tienen, pueden pensar ahora la bolita como formando parte de un mismo conductor que la caja. Y tienen una superficie interior, que es esta, y una superficie exterior. Pero la carga se va a ubicar en la superficie exterior.
+42:22
+¿Se entiende? Y pasa por el punto de contacto acá. Claro, lo que va a pasar, básicamente, es que acá se polariza, si quieren verlo de esta manera, se polariza.
+42:36
+Cuando llega al punto de contacto, esta carga se compensa con esta, y la que va del conductor... La caja no estaba cargada, la que era producto de la polarización, esa sobrevive.
+42:49
+O es lo mismo que decir que la carga que estaba adentro se corrió y se fue para afuera. Las dos cosas son equivalentes. ¿Se entiende?
+42:58
+Esta carga compensa la de adentro y...
+43:08
+Bueno, ¿qué pasa si la caja estuviera cargada? No cambia nada. Simplemente, si la caja está cargada... acá las cargas que hay negativas no son iguales a la positiva. Supongamos que fuera cargada positivamente, hay más cargas positivas. Pero eso no cambia nada, porque igual sabemos que la carga se va a ubicar en la exterior. Así que una de las ventajas de este experimento es que no depende de que la carga, de que nos tengamos que asegurar que la caja esté totalmente descargada. Podría haber alguna carga que se nos haya escapado.
+43:43
+¿La carga puede pasar del lado exterior a la exterior? Cuando los ponés en contacto, sí, ustedes saben, ponen dos...
+43:48
+Y claro, se pueden mover libremente en el conductor. De hecho, vimos que la situación estable es esa, con el cargazo. Claro, se alojan en la superficie de afuera. ¿Se entendió? ¿Alguna otra pregunta? Bueno, entonces vamos a arrancar con el capítulo 4 que se llama potencial eléctrico.
+44:48
+Energía y potencial eléctrico. Empecemos por la energía.
+45:16
+Bueno, ustedes ya han tenido cursos de física, no tengo que explicarles la importancia y la utilidad de las consideraciones energéticas. Suele ser conveniente para problemas de mecánica o de cualquier rama de la física, analizar las situaciones energéticas. Eso es particularmente cierto cuando tienen fuerzas que son conservativas. ¿Fuerzas conservativas qué son?
+45:46
+¿Qué son las fuerzas conservativas? Que el trabajo de la fuerza no depende del camino o que el trabajo en una curva cerrada es cero. Bien. Entonces, vamos a ver ahora en un momento que eso es una propiedad que tiene la fuerza electrostática. Entonces... Como la fuerza electrostática, vamos a probar en un momento, que es conservativa, es muy cómodo, es muy conveniente usar las consideraciones energéticas para el caso electrostático.
+46:28
+Entonces, suele ser útil hacer consideraciones energéticas
+46:50
+Esto es particularmente cierto para fuerzas conservativas. Para fuerzas conservativas. Y vamos a probar. Vamos a probar. a probar que la fuerza electrostática es conservativa.
+47:47
+Bueno, y tal como lo vieron ustedes en el curso de Física 1, cuando una fuerza es conservativa tiene asociada una energía potencial. Y entonces, como vamos a probar que la fuerza electrostática es conservativa, va a haber asociada a la fuerza electrostática una energía potencial eléctrica. Vamos a poder definir una energía potencial eléctrica utilizando que la fuerza electrostática es conservativa. Entonces vamos a probar eso.
+48:28
+Entonces, una fuerza es conservativa si el trabajo de esta para llevar un sistema...
+48:58
+de un punto a otro no depende del camino ¿bien? entonces si tenemos una partícula electric una partícula cargada tenemos un punto de partida inicial y va hasta un punto de llegada final tenemos un camino C1
+49:29
+y un camino C2, lo que tiene que pasar es que el trabajo para ir de I a F por la curva C1 sea igual al trabajo para ir de la posición inicial a la posición final por la curva C2, sean iguales para todos C1 y C2.
+49:50
+O lo que es lo mismo, ustedes vieron en física 1 que son equivalentes, a que el trabajo en cualquier curva cerrada es cero. Bueno, entonces vamos a calcular el trabajo generado sobre una partícula por una carga puntual.
+50:45
+Entonces, consideremos el trabajo experimentado, no, el trabajo entregado, el trabajo ejercido sobre una carga Q0 para ir de una posición a otra por parte de la fuerza electrostática producida por una carga puntual.
+51:55
+Entonces tenemos una carga Q acá.
+51:59
+Tenemos acá una posición inicial. Tenemos una posición acá final C. Y tenemos Q0 que se mueve yendo de la posición inicial a la posición final. ¿Sí? Llamemos R al vector que va de Q a Q0. Y que se va moviendo.
+52:27
+Entonces el trabajo para ir de I a F será la integral sobre la curva C de la fuerza electrostática por DL, por el elemento de la curva. Toman un vectorcito de curva y DL es un vectorcito a lo largo de la curva.
+53:02
+Pero esto lo pueden escribir como Q0 por Q sobre 4 pi epsilon 0 por la integral sobre la curva C de R versor sobre R al cuadrado producto escalar con DL.
+53:35
+¿de acuerdo? pero fíjense, tomen una curva acá tomen acá el origen o tomen una curva acá tomen un punto acá tienen acá R y acá van a tener DL ¿cuánto vale el producto escalar R versor con DL?
+54:13
+Es DL por el coseno del ángulo que forma DL con la dirección esta, ¿verdad? O dicho de otra manera, si hago un zoom... Acá tienen DL. Hago DL grande. DL es chiquito, pero lo hago grande para que se dibuje. Bien. Acá tienen R... Entonces lo que quieren es la proyección de DL, esto es DL, producto escalar con R. Es la proyección según...
+54:59
+Pero en el límite no son perpendiculares esos factores. No, no, no pueden ser chanfleados. Imagínate incluso el caso extremo, que te estás moviendo alejándote de Q. Podés moverte a lo largo de Q. De hecho, esto, DL, escalar DL, escalar D, el reversor, no es otra cosa que DR. Es la distancia, cuánto cambió la distancia radial a U. ¿Se dan cuenta? Es el cambio. Cuando este movimiento, lo único que cambió es cuánto cambió la distancia.
+55:30
+Así que esto que está acá es la integral, es Q0 por Q, esto sigue todo igual. Epsilon 0 por la integral de DR sobre R al cuadrado. Y hay que integrar entre qué. Fíjense, solo depende del radio escalar. Y depende del radio en la posición inicial hasta el radio en la posición final.
+55:54
+Pero esta integral se hace. Ahora ya no es una integral de línea, es una integral convencional. Una integral usual.
+56:02
+De hecho, una integral usual fácil.
+56:13
+Entonces, el trabajo para ir de I a F es otra cosa que Q0 por Q sobre 4 pi epsilon 0... por la primitiva de aquello que es menos 1 sobre r, está claro que la primitiva de 1 sobre r al cuadrado es menos 1 sobre r, evaluado entre r final y r inicial. Y esto lo pueden escribir como q0, q sobre 4pi epsilon 0, por 1 sobre r inicial menos 1 sobre r final.
+56:51
+Entonces trabajo...
+56:56
+...el trabajo... ...de la fuerza... ...electrostática... ...de una carga sobre otra.
+57:22
+Entonces de esa manera vimos... que la fuerza electrostática generada... por una carga... sobre otra... es conservativa. Porque fíjense que no dependió del camino. Solo depende de la distancia inicial y de la distancia final entre las cargas. ¿Sí? Entonces... Entonces... esta fuerza... es conservativa...
+57:57
+Pues no depende, el trabajo para ir de I a F no depende del camino.
+58:08
+Fíjense que el resultado solo depende de las posiciones iniciales y finales, pero no de por qué camino fuimos de uno a otro.
+58:27
+Entonces, el tener una fuerza así, conservativa, nos permite definir una energía... Bueno, perdón, antes de seguir, quiero comentarles que no vamos a probar, pero que es muy intuitivo, que en realidad no sólo la fuerza electrostática generada por una carga sobre otra es conservativa, sino las fuerzas electrostáticas en un sistema cualquiera. ¿Se entiende?
+58:58
+Eso es muy intuitivo porque podemos pensar en un sistema cualquiera como compuesto por muchas cargas y podemos pensar que el trabajo que se ejerce sobre una carga es la suma de los trabajos generados por todas las otras cargas. ¿Entienden? Por la fuerza que ejercen sobre todas las cargas. ¿Está? Entonces, de manera general, general,
+59:28
+La fuerza electrostática, no sólo en este caso particular, es conservativa. Entonces, como la fuerza es conservativa, podemos definir una energía potencial.
+59:49
+Entonces...
+1:00:00
+Claro, este trabajo que acabamos de ver es el trabajo de la fuerza eléctrica generada por una carga Q sobre otra carga Q0 que se mueve. Pero está claro que yo podría, de hecho vamos a ver ahora en un rato, que el trabajo en un sistema más general es más complicado.
+1:00:18
+Vamos a verlo en un momento. Entonces, podemos definir una energía...
+1:00:31
+Potencial eléctrica.
+1:00:44
+U. Entonces será que la variación de U, lo mismo que U final menos U inicial, será igual a menos el trabajo para ir de I a F. Esta es la definición usual de energía potencial.
+1:01:06
+Y como de costumbre, lo que está definido no es la energía potencial absoluta. sino las diferencias de energías potenciales, ¿verdad? Fíjense que lo que tenemos bien definido es el trabajo, y el trabajo nos determina la variación de energía potencial entre una situación inicial y una situación final. Pero el valor absoluto de energía potencial es una cantidad convencional. Ustedes lo saben muy bien, para energía potencial gravitatoria, eligen a partir de qué punto miden la altura, y según a partir de qué punto miden la altura, les da una energía potencial gravitatoria diferente.
+1:01:41
+Entonces, comentario.
+1:01:49
+U depende de una constante aditiva arbitraria correspondiente...
+1:02:17
+a fijar un nivel de un punto de referencia hay un punto que decimos ese es el punto en el cual considero que la energía potencial es cero y voy a medir todas las energías potenciales con respecto a ese punto Como en el caso gravitatorio, digo, a una cierta altura la energía potencial gravitatoria la considero cero y voy a medir la energía potencial con respecto a ese punto.
+1:02:52
+Entonces las alturas más altas tendrán mayor energía potencial gravitatoria y las más bajas, negativas, digamos. Eso se entiende. Bueno, y hay una definición conveniente. una convención común se suele no siempre pero se suele tomar como nivel u igual a cero la configuración en que todas las cargas
+1:03:41
+están muy alejadas entre sí. Si todas las cargas están todas muy alejadas entre sí, se suele tomar como convención llamar a esa situación la situación de energía potencial eléctrica cero. Pero es una convención. ¿Se entiende esto? Muchas veces, por ejemplo, lo mismo con la energía potencial gravitatoria, pero no del peso, sino de la ley universal de gravidad.
+1:04:24
+Entonces, con esa convención, para dos cargas, para dos cargas, con esa convención...
+1:04:38
+U de R les queda Q0 por Q sobre 4 pi epsilon 0 por R. Y fíjense que si las dos cargas son positivas, supongan que las dos cargas son positivas o las dos negativas, igual signo.
+1:05:07
+La situación en que las cargas están a una cierta distancia no infinita, es una situación con energía positiva o negativa. Positiva. Quiere decir que para llegar a esa situación, cuando las dos cargas son positivas... Un agente externo tiene que hacer un trabajo positivo para llevar la segunda carga desde el infinito hasta ahí. Y es razonable porque se repelen. Entonces yo para llegar a esa situación tuve que agregar energía.
+1:05:41
+¿Se entiende? Si yo dejo un sistema con dos cargas positivas a una cierta distancia y lo suelto, ¿qué va a pasar con esas cargas?
+1:05:51
+Se van a repeler, se van a alejar, van a tender a un sistema con menor energía. ¿Cuál es el sistema que va a tener menor energía?
+1:06:00
+Cuando están infinitamente alejadas. Y eso es coherente con esta expresión. ¿Se entiende? En cambio, cuando las cargas son opuestas, Q0 por Q es negativo, si yo dejo dos cargas en un lugar, ¿qué es lo que les va a pasar? Van a acercarse y van a tender al lugar con menor energía. ¿Cuál es el nivel con menor energía?
+1:06:20
+Cuando se pegan. Y efectivamente, como esto es negativo, digamos, para... Cuando Q0 por Q es positivo, la energía potencial tiene esta forma.
+1:06:36
+Entre dos cargas. Y cuando Q0 por Q es negativo, tiene esta forma. La curva está acá abajo. Y entonces está claro, si yo dejo dos cargas acá, van a tender a alejarse... Cuando las cargas se repelen y van a tender a acercarse, cuando las cargas son opuestas. Y eso es coherente, coherente con la expresión que tenemos de la energía.
+1:07:07
+Y esto sale directo de acá, ¿no?
+1:07:19
+Pero por ahora vemos la energía potencial solo entre dos cargas, en un sistema con dos cargas. Pero ahora nos podemos plantear cómo es la energía potencial en un sistema con un número arbitrario de cargas.
+1:07:40
+Energía potencial...
+1:07:48
+de un conjunto de cargas puntuales. ¿Cómo haremos para calcular? Tengo un conjunto de cargas así, Q1, Q2, Q3... Q4, etc. ¿Cómo puedo hacer para calcular la energía asociada con ese sistema?
+1:08:18
+Está claro que la energía va a estar asociada con todo el sistema, no con una carga. ¿Sí? ¿Y la suma de todas las energías? ¿De todas las energías de quiénes?
+1:08:30
+No, pero las energías no están asociadas. Fíjense, cuando tienen dos, están asociadas en una pareja. ¿La suma de quiénes?
+1:08:39
+En todas las parejas, ¿verdad? Pero convenzámonos, ¿sí?
+1:08:45
+Vamos a tomar como punto de referencia ese que dijimos ahora. Vamos a considerar que la energía potencial es cero cuando están todas infinitamente alejadas. ¿Cómo podemos hacer para calcular la energía potencial con todas estas cargas a una distancia dada?
+1:09:04
+Una a una. Entonces agarramos la primera. Vamos a calcular. Le dijimos, la energía potencial es menos el trabajo... Para traerlas desde el infinito. Si tomamos... U igual a cero... Con las cargas... Infinitamente alejadas...
+1:09:34
+La energía potencial será menos el trabajo... Desde el infinito... Cargas...
+1:09:43
+infinitamente alejadas... de F... hasta la configuración que nos interesa. ¿De acuerdo? Entonces... Como la fuerza es conservativa, podemos traer las cargas por el camino que querramos. Podríamos irlas trayendo todas al mismo tiempo o una tras otra.
+1:10:16
+Entonces primero podemos hacer, como decía algún compañero por ahí, una por una. Traemos la primera carga desde el infinito. ¿Cuál es el trabajo que hace la fuerza eléctrica para traer una fuerza... El trabajo que tiene que entregársele a una carga, una primera carga, por la fuerza eléctrica, va a traerla desde el infinito hasta una posición dada.
+1:10:40
+Una sola, cuando tiene una sola. Cero. Porque todavía no hay ninguna otra. Entonces no hay nadie que le haga trabajo. No experimenta fuerza eléctrica hasta que... Si la primera... Entonces la primera la trajimos gratis. Ahora traemos la segunda. ¿Cuál es el trabajo... ¿Qué tenemos que hacer? Bueno, para la segunda ya tenemos la fuerza ahí. ¿Bien? Ahora, ¿qué pasa si traigo la tercera? ¿Cómo?
+1:11:11
+Va a experimentar dos fuerzas. Va a experimentar dos fuerzas. Quiere decir que la energía que el trabajo va a tener que hacer es la suma del trabajo que genera la primera y la segunda. Entonces, la primera... Esto es Q1...
+1:11:27
+viene hasta su posición con trabajo nulo Q2 llega
+1:11:57
+...hasta su posición... ...con trabajo... ...entonces trabajo... ...Q2... ...será igual a menos... ...Q1 por Q2... ...sobre 4 pi... ...epsilon 0... ...por R12 que es la distancia... ...distancia... entre 1 y 2 dejo esa fórmula ahí al costado fíjense la distancia inicial es infinita quiere decir que no cuenta nada así que el trabajo es menos el producto de las cargas dividido por la distancia dividido la distancia entre las cargas entonces ahora Q3
+1:12:56
+Q3 experimenta las fuerzas generadas por Q1 y Q2. Entonces, el trabajo correspondiente a traer a Q3 desde el infinito será igual a menos Q3 por Q1 sobre 4 pi... ...epsilon 0 por R13... ...que R13 es la distancia entre 1 y 3... ...menos Q3 por Q2... ...sobre 4 pi... ...epsilon 0 por R1... ...perdón, R23.
+1:13:45
+Y así sucesivamente. Entonces... ...el trabajo...
+1:13:55
+total para formar este sistema será trabajo desde el infinito hasta la situación final será menos 1 sobre 4 pi epsilon 0 por sumatoria de i menor que j de q sub i por q sub j sobre, perdón, dividido R y J R1, R2 es la distancia entre 1 y 2 no entendí, creo que no entendí la pregunta el R inicial acá es 0 Porque viene desde el infinito.
+1:14:53
+Solo cuenta la posición al llegar. Que es R final es R1, R2. Lo mismo acá. El R final va a contar la distancia de 3 con 1 y la distancia de 3 con 2. Entonces, de esta manera concluimos que la energía potencial eléctrica es menos esto. Será 1 sobre 4 pi epsilon cero. Por la suma de I menor que J de Q sub I, Q sub J, dividido R I sub J. Es la suma sobre todas las parejas.
+1:15:29
+Pero cada pareja la cuento una sola vez. No, no, no cuento. Uno y dos, y dos y uno. Por eso I menor que J.
+1:15:44
+Entonces energía potencial eléctrica de un sistema de cargas puntuales.
+1:16:05
+Aquí utilicé que la fuerza es conservativa porque elegí un camino particular para conformar el sistema que es ir trayendo las cargas de a una. No probé que si hubiera tomado otro camino raro, por ejemplo, que todas vinieran homotéticamente así a la suposición, da lo mismo. Pero es muy intuitivo porque como la fuerza entre dos cargas, con solo dos cargas presentes es conservativa, es intuitivo que si tengo un sistema cualquiera también lo va a hacer. Pero estrictamente hablando no lo probamos.
+1:16:40
+¿Bien? ¿Se entendió esto?
+1:16:43
+Así que en el sistema tienen que pensar todas las interacciones entre todas las cargas y sumar las energías de todas las parejas.
+1:16:56
+Entonces ahora vamos a definir lo que se llama el potencial electrostático.
+1:17:10
+Entonces, 4.2 potencial eléctrico. Entonces, en la expresión de la energía potencial eléctrica, ¿sí?
+1:17:35
+me puedo interesar en la dependencia de la energía potencial eléctrica en la posición de una de las cargas.
+1:17:44
+Está claro que hay una cantidad de términos acá que no dependen de la posición de la carga Q7. Si yo solo muevo Q7 y dejo todas las demás fijas, hay una cantidad de términos acá que no depende de ello. ¿Están de acuerdo? ¿Sí? Así que tienen algunos términos que dependen de la posición de Q7 y otros que no. ¿Sí? Lo que vamos a hacer es interesarnos en los términos que dependen de la posición de una carga. ¿Sí?
+1:18:15
+Entonces, en la energía potencial eléctrica podemos interesarnos
+1:18:34
+en la parte que depende de la posición de una de las cargas.
+1:18:55
+Por ejemplo, tomemos la carga Q1. Por ejemplo, UQ1. UQ1 no es toda la energía potencial eléctrica, sino la parte que depende de la posición de Q1. ¿Qué cuánto será? Será 1 sobre 4 pi epsilon 0. Fíjense que todos los términos que dependen de la posición de Q1 son proporcionales a Q1, así que voy a sacar Q1 acá en factor. Por la suma de todas las cargas I distintas de Q1,
+1:19:24
+De QI sobre R1I. ¿De acuerdo? Esto no es toda la energía. Es solo la parte de la energía que depende de la posición de Q1.
+1:19:57
+Entonces, esta parte es proporcional a Q1.
+1:20:17
+Entonces, se suele definir el potencial...
+1:20:30
+Estamos en el caso electrostático, así que potencial eléctrico es el mismo que electrostático, como, se usa la letra D, es el potencial electrostático experimentado por Q1 como U1.
+1:20:59
+Un sub Q1 dividido por Q1. Y es independiente de Q1.
+1:21:25
+Nuevamente, así como la energía, acá esta expresión de la energía potencial que tomé, está asociado con el nivel de referencia que elegí en el cual todas las partículas, la energía potencial es cero cuando todas las partículas están infinitamente alejadas. Pero está claro que puedo elegir otros niveles de referencia y entonces si... Si tomo otro nivel de diferencia, esta expresión va a cambiar. Y entonces, así como la energía potencial está definida a menos de una constante aditiva, el potencial también estará definido a menos de una constante aditiva.
+1:21:59
+Esta expresión que di acá es sólo para una convención dada de la energía, pero si hubiera tomado otra, también cambiaría el potencial.
+1:22:17
+Entonces, así como U depende de una constante aditiva, B también depende.
+1:22:41
+B también depende de la constancia. Lo que está bien definido son diferencias de potencial, pero no el potencial como un todo. Entonces podemos definir en general, entonces podemos definir la diferencia de potencial entre A y B,
+1:23:12
+como U en la configuración B menos en la configuración A dividido Q0 donde V menos UA estará asociado al desplazamiento de la carga Q0 y las otras fijas.
+1:24:06
+Dejamos todas las cargas fijas, desplazamos solo la carga Q0 y podemos definir la diferencia de potencial como... Diferencia de energías potenciales dividida por Q0. Pero quien dice diferencia de energías potenciales, eso también lo podemos expresar en términos del trabajo, ¿verdad? Pero V menos UA es menos el trabajo para ir de A a B.
+1:24:43
+Entonces de esta manera podemos relacionar el potencial o la diferencia de potencial con el campo eléctrico.
+1:24:54
+Entonces la diferencia de potencial entre A y B es igual a menos 1 sobre Q0 por el trabajo para ir de A a B de la fuerza eléctrica y esto será igual a menos 1 sobre Q0 ...por la integral de línea... ...entre A y B... ...de F... ...de L... ...siendo F... ...la fuerza... ...que... ...experimenta... ...Q0.
+1:25:34
+Es la única carga que se está moviendo... ...quiere decir que solo nos tenemos que ocupar... ...del desplazamiento de la carga Q0. Pero la fuerza eléctrica... Sobre Q0, ¿cómo la podemos expresar?
+1:25:46
+Como Q0 por el campo eléctrico. Así que esto lo podemos escribir como menos 1 sobre Q0 por la integral, yendo de A a B, por cualquier trayectoria, porque es conservativa, de Q0 por E, escalar de L. Los Q0 se nos van y llegamos a una expresión de la diferencia potencial entre A y B, que es menos la integral entre A y B, por cualquier trayectoria, porque dijimos que la fuerza es conservativa, de el campo eléctrico.
+1:26:18
+Relación entre delta B y el campo eléctrico. Bueno, como el campo eléctrico no depende de Q0, es normal que delta B no dependa de 0, tal como habíamos visto hace un momento.
+

@@ -1,0 +1,444 @@
+# Clase 9
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/9/
+
+Fecha de exportación: 7/23/2026, 9:39:56 PM
+
+Clase: 9
+Curso: F3
+
+Segmentos : 242
+Palabras  : 8534
+Caracteres: 4898
+
+0:16
+Hoy vamos a terminar el capítulo referido a potencial eléctrico y vamos a arrancar la parte que tiene que ver con condensadores. Así que vimos cómo calcular el potencial a partir del campo eléctrico. Les recuerdo que la diferencia de potencial entre dos puntos... en menos la integral desde A hasta B por cualquier curva del campo eléctrico.
+0:51
+Y lo que vamos a ver ahora, para arrancar la clase, es la relación inversa. Es cómo calcular el campo eléctrico a partir del potencial.
+1:04
+Si el campo... A ver, silencio por favor.
+1:10
+Si todo fuera unidimensional, la relación sería evidente, porque en el caso unidimensional sabemos que la relación de integrar y derivar son relaciones inversas. Entonces, si el potencial es menos la integral del campo eléctrico, el campo eléctrico va a ser menos la derivada del potencial. Pero como acá lo que aparece no es una integral normal, sino una integral de línea, hay que hacer un poquito más de esfuerzo. Pero conceptualmente es lo mismo, ¿se entiende? Lo que tenemos que ver es que la diferencia potencial es menos la integral del campo eléctrico, entonces seguramente, en un sentido que vamos a precisar en un instante, el campo eléctrico es menos la derivada del potencial.
+1:46
+Lo voy a decir, no es más profundo que eso, pero hay que tener cuidado con los aspectos vectoriales. Entonces, la sección se llama 4.5...
+1:58
+Cálculo del campo eléctrico a partir del potencial. Una cosa que yo les comenté en la clase pasada es que normalmente calcular el potencial es más fácil. Porque el potencial es una cantidad escalar. ¿Bien? Entonces si nosotros aprendemos cómo calcular el campo eléctrico a partir del potencial, es doble ganancia porque por un lado el potencial es más fácil de calcular, es una cantidad escalar en lugar de una cantidad vectorial, no nos tenemos que ocupar de ángulos, de proyecciones, de nada, es una cantidad puramente escalar.
+2:46
+Entonces tenemos una manera más fácil de calcular una cantidad como el potencial y además... Como yapa tenemos automáticamente el campo eléctrico es una cantidad más complicada. Entonces vamos a ver cómo se hace eso. Y la idea es la siguiente. A ver, silencio.
+3:04
+Tenemos esa relación que está ahí arriba. Pero, entonces tomemos dos puntos. Tomemos A y B cercanos.
+3:18
+Entonces tomamos el punto A, el punto B y tomamos una recta de uno al otro. ¿Sí?
+3:29
+La curva en que estamos integrando es una recta. Como son cercanos, como... Entonces llamémosle a este vector que está acá, al vector que va de A a B, le llamamos... Delta S. Entonces, como A y B cercanos, podemos despreciar E en ese intervalo. Lo que en matemáticas llaman el teorema del valor medio.
+4:02
+Toman un punto en el medio, pero bueno, E podemos despreciar su valor a lo largo de acá. Entonces, delta... D a B será aproximadamente igual, cuando ese intervalo es chico, a E por el vector que va a B, así que delta S. Entonces despreciamos la variación de E.
+4:40
+a lo largo de la curva.
+4:54
+Y eso lo puedo hacer para cualquier, todo esto vale para cualquier curva y en particular cualquier delta S. Entonces ahora podemos elegir el delta S que nos plazca. Por ejemplo, podemos tomar un delta S paralelo a un eje de coordenadas. Entonces, tomemos delta S igual a un delta X según el versor Y.
+5:25
+¿Sí? Siempre podemos hacer eso porque esto vale para todo delta S. ¿Ya? Entonces, delta BX será, en este caso, será que B en X, llamémosle R a la posición de A. Tomamos el origen acá y le llamamos R a la posición de A. Entonces esto será B en R más delta x por y, esto es b, esto es la posición de b, posición de b, menos b de r, es igual a menos, producto escalar de y con e, me da e sub x, me da e sub x por delta x.
+6:21
+Entonces es aproximadamente igual y esa aproximación se vuelve exacta en el límite en que delta X tiende a cero. Entonces paso dividiendo delta X igual a cero y obtengo que E sub X es aproximadamente igual a menos B de R más delta X por Y menos B de R dividido delta X.
+6:53
+¿De acuerdo? ¿Sí? Y ahora tomo el límite delta X tendiendo a cero. Y eso tiene nombre. Ustedes saben lo que es. Entonces se llama la derivada parcial. Entonces, en el límite delta X tendiendo a cero, es VX es igual a menos la derivada de B, derivada parcial, con respecto a X. ¿Sí?
+7:24
+Derivada parcial. Respecto... ¿Qué es la derivada parcial? Es derivar con respecto a X, fíjense, cambiar la coordenada de X sin cambiar las otras coordenadas. Las coordenadas Y y Z de estos dos puntos son las mismas. Así que tomar una derivada parcial es derivar con respecto a una coordenada dejando a las otras fijas.
+7:54
+¿Han visto ya todos? Bueno, y de la misma forma, de manera análoga...
+8:10
+Este razonamiento lo hice con la coordenada de X, pero acá la coordenada de X no juega ningún papel privilegiado. Podemos deducir de la misma manera que E sub Y es menos la derivada del potencial con respecto a Y y también que E sub Z es menos la derivada de B con respecto de Z. Cada coordenada del campo eléctrico se calcula tomando derivadas parciales.
+8:45
+Obvio, una cosa interesante, si ustedes quieren calcular el campo eléctrico, No les basta con tener el potencial en un punto. Necesitan el potencial en una región. Porque para poder derivar, necesitan poder comparar el potencial en puntos cercanos. ¿De acuerdo? Entonces, si tienen potencial en un solo punto, no pueden calcular el campo eléctrico. Necesitan el potencial en una región. Entonces, veamos un ejemplo. Ejemplo es... Campo...
+9:26
+eléctrico producido por un dipolo sobre su plano bisector.
+9:53
+Retomemos este ejemplo que ya lo hemos visto.
+9:57
+Una parte la vimos hace ya unas clases, otra parte la vimos el sábado. Tienen este vector D acá, que es el origen, y tomen un punto P acá a una distancia X. Entonces, el sábado vimos, en la clase pasada, que B de P... Se escribe como 1 sobre 4 pi epsilon 0, por p, p es q por d, por y sobre... A ver, lo habíamos escrito así, p por coseno, llámenle a un punto cualquiera acá, p'.
+10:53
+llámale a esta distancia r y a este ángulo teta habíamos visto que esto era p por coseno de teta dividido de r al cuadrado entonces tomemos un punto p que está en el plano digamos, tomamos un plano de coordenadas x y que pase por el dipolo que contenga el dipolo de esta manera Entonces, coseno de teta no es otra cosa que la proyección acá dividido la hipotenusa.
+11:41
+Así que el coseno de teta nos queda Y sobre R. Y por otro lado R nos queda raíz cuadrada... De X cuadrado más Y al cuadrado.
+11:54
+Entonces, no estoy... Estoy tomándolo en este plano. No estoy agregando una coordenada. Así que esto que está acá arriba lo podemos escribir como P por Y sobre 4P epsilon 0 por X cuadrado más Y al cuadrado a la 3 medios. ¿Sí? Ese es el potencial del dipolo. Los que no vinieron el sábado, créanme, esto lo vimos el sábado. ¿Sí? Si no... Y lo que voy a verificar es que esta fórmula da el mismo campo eléctrico sobre este plano que ya habíamos calculado antes.
+12:30
+D es el vector que va de la carga menos Q a la carga Q. Bueno, entonces calculemos el campo eléctrico. Lo voy a calcular en todo ese plano, pero después me voy a limitar al caso que ya calculamos antes. Fíjense que el campo eléctrico, por cálculo directo, solo lo calculamos sobre este eje.
+13:03
+Pero ahora lo voy a calcular en cualquier punto del plano.
+13:08
+Lo voy a calcular en cualquier punto del plano y luego voy a limitarme este eje para comparar el caso. Así que en realidad puse acá, sobre el plano bisector, esto entre comillas porque en realidad lo voy a calcular en todos lados. Voy a comparar ahí, pero voy a calcular en todos lados. Entonces, calculemos la coordenada X, por ejemplo, del campo electro. El menos lo pongo en factor de todo porque si no es fácil olvidarse. ¿Está? Les recuerdo que es menos la derivada. Y ahora tengo que derivar aquella expresión con respecto a X.
+13:42
+¿Sí?
+13:46
+¿Sí? Entonces tengo PY sobre 4PY0. Les recuerdo que es una derivada parcial. Así que derivo con respecto a X dejando a Y fijo. No toco Y. ¿Sí?
+14:02
+Y tengo que derivar aquello. Entonces eso es como una potencia a la menos 3 medios. Así que baja un menos 3 medios. Menos 3 medios por la misma potencia...
+14:15
+Nos queda 5 medios, ¿verdad? Le agrego 1. A la menos 5 medios. Por 2X. Bien, todavía no terminé. Y ahora falta derivar lo de adentro, regla de la cadena. ¿Sí? Entonces falta un 2X. Entonces queda 3PY sobre 4PY0.
+14:47
+Por X.
+14:55
+Sí, esperen un poquito. Por X dividido 1 sobre X cuadrado más Y al cuadrado a la 5 medios. ¿Sí? ¿Pregunta?
+15:13
+No, creo que está bien. R cuadrado me daría... Un 1. Y tengo que agregar un 1 medio extra. 1 más 1 medio, queda 3 medios. Creo que está bien. Bueno, E sub X, entonces nos queda esto. ¿Y cuánto vale E sub X en el plano bisector? Cuando evalúo en Y igual a 0.
+15:41
+Si yo evalúo esa expresión en Y igual a 0, ¿cuánto nos da? Y efectivamente, les recuerdo que cuando hicimos el cálculo directo del campo vectorial, nos habíamos convencido de que el campo eléctrico era así.
+15:56
+¿Se acuerdan? Básicamente porque habíamos hecho el razonamiento de que teníamos un campo para allá, este otro viene para allá, se suman y queda una cosa que es un Y. ¿Verdad? Así que efectivamente la coordenada en un punto genérico no es cero. Fíjense que lo calculamos en un punto genérico, no es cero. Entonces es igual a cero en y igual a cero.
+16:34
+Es coherente con lo que habíamos obtenido antes. Pero ahora el resultado es más general porque lo calculamos en cualquier punto. Vayamos al otro que es más interesante, es sub y.
+16:46
+Es un Y, nuevamente, tenemos un menos en factor de todo el mundo que lo pongo adelante antes de olvidarme. Es re fácil olvidarse de este signo. Consejo, sin que pongan un menos, abran un corchete y después se ponen a derivar. Porque si no es re fácil. Dicen, ah, no, yo lo voy agregando. No, se lo ponen en el primero y después se olvidan en el segundo término. Es la típica. A mí también me pasa. Entonces, hagan eso como yo les digo. Entonces derivamos. Podemos derivar en dos lugares. O bien derivamos arriba. Empiezo por derivar arriba. Me queda p sobre 4pi epsilon 0 por x cuadrado más y cuadrado a la 3 medios.
+17:27
+O bien derivamos abajo. Y el derivar abajo es muy parecido a la fórmula que está ahí arriba. Lo único que estoy derivando con respecto a x. Así que tengo... un menos 3 medios también, un PY, un 4PY0 abajo, voy a tener un X cuadrado más Y al cuadrado a la menos 5 medios, y ahora en lugar de tener 2X tengo 2Y. ¿Bien?
+18:02
+Entonces, en Y igual a 0... Es uy, nos queda menos... Fíjense, este término se nos va en y igual a cero. Nos queda menos p sobre 4pi epsilon cero x cuadrado más y al cuadrado... Bueno, el y ya ni lo pongo porque me queda x al cubo.
+18:26
+Que es justo, que es exactamente...
+18:35
+Lo que ya habíamos calculado. Pero fíjense que el resultado es más general. Pudimos calcular el campo eléctrico en cualquier punto del espacio. De hecho, es más cómodo para calcular el campo eléctrico. Ahí no vas a ver nada. Ahí no están viendo nada. Hay algunos lugares por ahí. Hay unos pocos lugares por ahí.
+19:04
+El resultado es más general porque no solo calculamos el campo eléctrico en el plano, sino que lo pudimos calcular en cualquier punto del espacio. Y de hecho en cualquier punto del espacio, porque le dije en un plano, antes habíamos dicho en el plano bisector, pero fíjense, ahora es todo este plano, pero como este problema es invariante por rotaciones alrededor del eje, siempre puedo elegir un sistema de coordenadas de este tipo, para cualquier punto que me interese. Y alguien me puede decir, no, pero no calculó el campo eléctrico según Z. Pero ¿cuánto es el campo eléctrico según Z?
+19:35
+No vale ni calcularlo. ¿Cuánto vale? Cero. Es obvio porque si suman vectores en un plano, les da vectores en un plano. Los campos eléctricos producidos por estados cargas están en este plano. ¿Se entendió? ¿Se entendió? Así que, consejo, cuando quieren calcular el campo eléctrico en un punto genérico, conviene primero calcular el potencial. Y luego derivar. Porque derivar es una operación re simple. ¿Se entendió esto?
+20:14
+¿Preguntas? Así que la elección es... Conviene calcular el potencial y luego para calcular el campo eléctrico es muy fácil. Para cada una de las coordenadas toman la derivada parcial del potencial y le cambian el signo. ¿Se entiende? A ver, levanten la mano los que entienden lo que acabo de decir. A los otros les va a dar bueno. Es la típica. Pero más o menos se está entendiendo.
+20:44
+Entonces... Vayamos a... Ahora vamos a definir lo que se llaman las superficies equipotenciales.
+21:19
+Superficies equipotenciales. A ver. El nombre lo dice. ¿Qué quiere decir equipotencial?
+21:27
+Que tiene el mismo potencial. Entonces, una superficie equipotencial es un conjunto de puntos en los cuales el potencial permanece constante. Es un conjunto de puntos en que El potencial permanece constante.
+21:59
+¿Y por qué le decimos superficie? ¿Por qué es una superficie? ¿Por qué se espera que es una superficie? ¿Eh? ¿Cómo? ¿Cómo?
+22:18
+¿Por qué pensamos que una equipotencial normalmente es una superficie? ¿Por qué se le llama superficies equipotenciales? Ese conjunto podría no ser una superficie, podría ser una región. ¿Por qué? Una región con volumen. ¿Por qué se espera normalmente que sean superficies? ¿Y entonces?
+22:43
+A ver, fíjense, la ecuación es de tipo, es potencial de XYZ... Vale un cierto valor, B0. ¿Sí? Es como el teorema de la función implícita. Normalmente, si tienen un espacio de tres dimensiones y le agregan una ecuación, eso normalmente es la ecuación para una superficie. ¿Han visto el teorema de la función implícita?
+23:07
+Sí, ¿no? Pero no importa. A ver, olvídense, típicamente... Si tienen tres coordenadas y ponen una condición, les quedan dos coordenadas libres. No siempre tiene que ser así. De hecho, dentro de un rato vamos a ver un contraejemplo. Pero normalmente uno espera que si tiene tres coordenadas y pone una condición, le queda una superficie. Típicamente es una superficie en la cual V de R vale V0. Superficie. En general, es una superficie.
+23:44
+¿Se entiende, no? Si yo tengo una ecuación que dice x cuadrado más y cuadrado más z cuadrado vale 7, que es una esfera de radio raíz de 7. Normalmente si ponemos una condición, nos queda una superficie de dimensión 2. Eliminamos una dimensión con una condición. Para cada valor de B0 tendremos una equipotencial diferente. Cada valor del potencial nos da una equipotencial diferente.
+24:16
+Cada superficie está indizada por eso. Entonces veamos cómo es la equipotencial en relación con el campo eléctrico.
+24:38
+Vamos a ver más cosas de la psiquipotencial. Primero que nada, propiedades, ¿no?
+24:50
+Si tenemos, la primera, ¿no? Si tenemos dos superficies...
+25:04
+dibujemos dos superficies equipotenciales el delta B entre las dos no depende de los puntos
+25:33
+que tomemos en cada una.
+25:41
+Y eso es obvio, ¿verdad? Porque, fíjense, yo tomo un punto acá, A, en una superficie, y tomo una curva que va hasta B, hasta la otra superficie. Y ahora tomo otro punto A' y otra curva que va hasta otro punto B'. A está en una superficie, A' está en la superficie y B' en la otra. El dibujo no es obvio, pero se lo pueden imaginar. Está claro que la diferencia potencial es simplemente el potencial en uno menos el potencial en el otro. Y como es el mismo acá y acá, la diferencia potencial es la misma. Así que pueden tomar cualquier par de puntos en una superficie y la otra, y cualquier camino que vaya a la otra, la diferencia potencial siempre es la misma.
+26:19
+Eso es fácil. Punto 2. Veamos cómo es la relación del campo eléctrico con la superficie equipotencial. ¿Sí? Tomemos...
+26:31
+Dos puntos A y B en la misma superficie, en la misma equipotencial.
+26:47
+Cercanos. ¿Sí? Entonces tomamos una superficie equipotencial acá y tomo A y B cercanos. A este vector le llamamos hace un rato delta S. ¿Bien? Vimos que cuando A y B eran cercanos, eso era general, aunque no fuera en un equipotencial, E, producto escalar con delta S, es menos delta B a B.
+27:25
+Eso lo vimos hace un ratito y era general. Solo suponía que los puntos eran cercanos. Si los puntos son cercanos, podemos sacar E de la integral y nos queda esto. Pero si estamos en un equipotencial, ¿cuánto vale delta de AB?
+27:41
+Cero. Esto es general. General si A y B cercanos.
+27:51
+Y esto es pues A y B cercanos. En la misma equipotencial.
+28:04
+Entonces, ¿qué concluimos con el campo eléctrico en relación con la equipotencial?
+28:13
+Sí, perpendicular, normal, ¿verdad? Fíjense, E... el producto escalar de E con cualquier vector sobre la superficie da cero. Quiere decir que E tiene que ser perpendicular a la superficie. Los únicos vectores que tienen esa propiedad son los vectores que son normales a la superficie. Entonces E, lo podemos dibujar, en la superficie es normal a la superficie. Entonces E es siempre normal
+28:49
+a las superficies equipotenciales.
+29:04
+Es una propiedad interesante.
+29:13
+Ahora, tercera propiedad. Voy a borrar acá y voy a poner una tercera propia. Tercera propia. Tomemos dos equipotenciales cercanas. ¿Sí?
+29:45
+Tomemos...
+29:49
+Dos equipotenciales cercanas.
+30:13
+Entonces, si tenemos dos equipotenciales cercanas...
+30:24
+Y dijimos que el campo eléctrico es normal.
+30:36
+Entonces, tomen dos puntos A y B que siguen el campo eléctrico.
+30:50
+No tomen dos puntos que estén así, alejados, sino dos puntos, uno que está acá, A, y el otro que está justo enfrente, B. ¿Sí? Alineados. Entonces tomemos... Tomemos... Delta S paralelo a E. ¿Sí? Entonces... la diferencia de potencial VAB en valor absoluto será el módulo DE por Delta S como escalar, el módulo.
+31:37
+Entonces Delta S, la distancia entre las equipotenciales será igual a la diferencia de potencial
+31:48
+Dividido el campo eléctrico. ¿Eso qué quiere decir? Que si toman un conjunto de equipotenciales equiespaciadas, tomen un conjunto de... Voy a ver una cantidad de superficies que las veo como de canto, las veo de costado.
+32:14
+Todas tienen igual delta B. Imaginen un... Un volt. La estoy viendo en la superficie de costado. Tienen un volt. Supongamos que esto tiene un volt. Esto tiene un volt. Esto tiene un volt. Pregunta, ¿dónde el campo eléctrico es más grande?
+32:40
+Cuando delta S es chico. Cuando delta S es chico, porque fíjense que delta S es... A delta B fijo es inversamente proporcional al campo eléctrico. Si fijan el espaciado entre las equipotenciales, las zonas en que tienen las equipotenciales más pegaditas entre sí, son las zonas con mayor campo eléctrico. Así que, a mayor... Más preciso, no solo a mayor, digo...
+33:11
+En un conjunto...
+33:15
+de equipotenciales equiespaciadas e es proporcional a 1 sobre la distancia entre ellas, en tres superficies.
+33:44
+¿Se entiende? Así que si ustedes dan una familia de equipotenciales, pueden también intuir dónde hay mayor campo eléctrico. Y de hecho, la dirección del campo eléctrico es normal al equipotencial, pero tiene otro sentido. Es la dirección en la cual el potencial varía más. ¿Cómo se dan cuenta con eso?
+34:15
+Tienen potencial. En un punto, toman un punto, la dirección del campo eléctrico es la dirección en la cual el potencial varía más de todo. ¿Cómo se pueden dar cuenta de eso? No, pero eso es simplemente usar una escritura matemática, pero geométricamente.
+34:37
+Toman este punto. Lo que yo digo es que la dirección en la cual varía más el potencial, que varía más rápido, es la dirección del campo eléctrico. ¿Cómo se pueden dar cuenta de eso?
+34:49
+Claro, si toman, fíjense, están pegaditos, no toman una dirección en este sentido. Tienen que ir más lejos para que el potencial varíe lo mismo. La dirección en la que varía más rápido el potencial es justo la que va de acuerdo con el campo eléctrico. Si tenemos una dirección chanfleada, el campo eléctrico va más... El potencial varía más lentamente. Tienen que recorrer una distancia más grande para llegar al mismo potencial. ¿Se entiende? ¿Cuál es la distancia que tienen que recorrer en esta dirección?
+35:19
+Y bueno, ahí hay un coseno extra, ¿verdad? Uno sobre coseno extra. ¿Se entiende esto? Entonces la dirección que va al campo eléctrico es la que el potencial está variando más rápido. Si va en una dirección chanfleada varía más lento. Bien. Entonces además... Pongamos eso, vale la pena escribirlo.
+35:54
+Además...
+35:58
+E indica la dirección de mayor variación de B para cada punto.
+36:21
+Entonces veamos algunos ejemplos. Vamos a hacer algunos ejemplos Ya habíamos visto una manera cómoda de representar el campo eléctrico, que eran las líneas de campo eléctrico. Ahora vemos que las equipotenciales, las líneas de campo son líneas. Las equipotenciales son superficies. Y vemos que las dos son maneras cómodas de representar el campo eléctrico. Y veamos cómo se representan ambas. Ejemplos. El ejemplo que ya vimos. Empecemos por la carga puntual.
+36:54
+Más simple de todos.
+36:58
+Entonces tiene una carga acá Q positiva. Las líneas de campo ya vimos cómo son, son radiales. Nuevamente dibujo en un plano por comodidad, pero en realidad esto sucede en todo el espacio.
+37:19
+Y cómo son las superficies equipotenciales acá.
+37:26
+Son circunferencias, bueno, esferas, el corte en el plano son circunferencias, pero son esferas, las superficies son esferas. Entonces acá dibujo una. Entonces esto es un equipotencial. Si yo dibujo equipotenciales equiespaciadas, es decir, que la diferencia de potencial entre una y la siguiente es siempre la misma. Yo dibujo, por ejemplo, esta, digamos que la equipotencial acá esté por acá.
+37:54
+Si yo dibujo la equipotencia que está del lado de adentro, ¿estará la distancia entre esta y la siguiente? ¿Será más grande o más chica la siguiente? ¿Se entiende? La diferencia potencial entre esta y esta va a ser lo mismo en valor absoluto que entre esta y la de adentro. La pregunta de las de adentro, ¿estará más pegada a esta o menos pegada? Más pegada, ¿por qué?
+38:19
+Porque a medida que nos acercamos a la carga, el campo eléctrico es más grande. Así que, efectivamente, acá las superficies equipotenciales, a medida que nos acercamos a la carga, están todas más pegaditas. Si seguimos para adentro, será todavía... El dibujo estoy haciendo lo cualitativo, no es cuantitativo lo que estoy haciendo. Pero cualitativamente, a medida que nos acercamos, las equipotenciales se pegan entre sí. Y vemos, además, eso que decíamos, ¿no?
+38:51
+En cada punto el campo eléctrico es normal el equipotencial. ¿Está? Bueno, en mi dibujo, más o menos. Imagínense que el dibujo estuviera bien hecho. ¿Sí? ¿De acuerdo? Y vemos también lo que yo decía, ¿no? El campo eléctrico tiene la dirección en la cual el potencial varía más. De hecho, el potencial no varía en las laterales, solo varía para allá. Primer ejemplo. Segundo ejemplo.
+39:29
+Entonces, campo entre dos placas. Entonces, tomamos una placa muy grande acá, otra placa muy grande acá. Esta tiene densidad de carga sigma positiva y esta tiene densidad menos sigma negativa. ¿Cómo es el campo eléctrico? ¿Cómo dijimos que era el campo eléctrico...?
+40:00
+¿Sí? De arriba para abajo. ¿Y cómo es en módulo?
+40:07
+Vale, sigma sobre epsilon cero y es uniforme en toda la región interna. Cerca de los bordes no, pero en toda la región interna el campo eléctrico es uniforme. Entonces las líneas de campo, si dibujamos las líneas de campo, son paralelas. ¿Sí?
+40:22
+De arriba para abajo y equiespaciadas. Porque dijimos que el campo eléctrico, el número de líneas de campo por unidad de superficie... Medía la intensidad del campo eléctrico. ¿Y cómo serán las equipotenciales? ¿Cómo? ¿Cómo serán las superficies equipotenciales acá?
+40:44
+Son paralelas entre sí, son planos y son perpendiculares a esto. Entonces, en el corte que estoy haciendo, las equipotenciales son así. Y están equiespaciadas, ¿verdad? Si tomamos potenciales equiespaciados, las líneas también estarán equiespaciadas. Porque el campo eléctrico es uniforme. ¿De acuerdo? Dijimos que las líneas se pegan en las zonas de campo eléctrico más intenso. Como en el campo eléctrico no hay zonas donde sea más intenso, no se pegan en ningún lado. Siempre permanecen a igual distancia entre sí. Eso lo pueden ver acá.
+41:16
+Si el campo es uniforme, el intervalo entre superficies a igual... diferencia de potenciales, igual intervalo. Entonces superficies... superficies...
+41:31
+Equipotenciales.
+41:35
+Planas.
+41:38
+Y equiespaciadas.
+41:47
+¿Bien? Bueno, el tercer ejemplo es un dipolo eléctrico.
+41:52
+Que esto va a ser todavía más cualitativo.
+41:57
+Dipolo.
+42:00
+Entonces tendrán, pongamos una carga acá más Q, acá otra carga menos Q. Vimos que las líneas de campo tenían esta pinta.
+42:28
+Y cómo serán las equipotenciales.
+42:33
+Sí, claro. En el ejemplo 1, entonces, no son equispaciadas. A ver, son equispaciadas. Estoy usando la palabra equispaciada en dos sentidos. Hay una precisión. Acá son equispaciadas en distancia.
+42:48
+Pero todas son equispaciadas en voltaje. Es decir, lo que digo es que si este voltaje acá vale V1 y este voltaje vale acá V2 y este voltaje vale V3... V3 menos V2 es igual a V2 menos V1.
+43:07
+Todas son equiespaciadas en voltaje, pero acá estas además son equiespaciadas en distancia. ¿Se entiende?
+43:21
+Sí, equiespaciadas en voltaje. Gracias.
+43:26
+O en potencial.
+43:30
+Bien, gracias por la aclaración porque es verdad que está usando la misma palabra para dos cosas diferentes.
+43:37
+¿Y acá cómo serían las líneas?
+43:43
+A ver, primero, cerca de las carguitas, ¿cómo van a ser las superficies?
+43:49
+Esferas. Cerquita se parecen a cargas puntuales, entonces acá van a ser esferas.
+43:56
+Bien. ¿Alguna otra que sea evidente en este dibujo?
+44:03
+En el plano bisector es un equipotencial, está claro, porque en cualquier punto que estoy acá, el potencial es el mismo. Con la definición que hemos tomado de potencial, con referencia a cero e infinito, ese tiene potencial cero en todos los puntos. Porque tienen igual distancia de una carga a la otra. Así que este es un equipotencial.
+44:27
+Y después, bueno, tendrán una cosa, se va deformando entre una cosa y la otra y siempre son normales al campo eléctrico.
+44:37
+Para que tengan idea de cómo son las equipotenciales. Son superficies, en este caso es un plano, cerquita acá se parecen esferas y después es una cosa, se va deformando entre una y la otra. ¿Preguntas? Y polo eléctrico. A ver si me falta algo más para decir antes de terminar la sección. Ah, sí, sí. Por último, vamos a retomar algunas cosas relativas a los conductores.
+45:18
+Potencial en un conductor...
+45:27
+en equilibrio entonces tomemos un conductor en equilibrio este es un un conductor en equilibrio tomo dos puntos acá A y B ¿cómo será la diferencia de potencia entre A y B?
+45:58
+Dos puntos adentro, ¿verdad? Cero, ¿por qué? Como el campo es cero, fíjense que esto es menos la integral yendo de A a B del campo eléctrico. Pero dijimos que el potencial, perdón, que el campo eléctrico en un conductor en equilibrio es cero.
+46:20
+Así que la diferencia de potencial es cero. Quiere decir que todo el volumen de un conductor en equilibrio es un equipotencial.
+46:29
+Todo el volumen de un conductor es una equipotencial.
+46:51
+Y esto es contrario a lo que decíamos hace un rato de que típicamente son superficies. Las situaciones que típicamente son superficies. Pero si tenemos una situación excepcional como una región entera en la que el campo eléctrico se anula, ahí tenemos una excepción en la cual no una superficie sino un volumen entero es un equipotencial. Todos los puntos en un conductor en equilibrio están a mismo potencial. Primera cosa que quiero decir de los conductores.
+47:29
+Segunda cosa que quiero comentarles es la siguiente.
+47:35
+Entonces, consideremos ahora la superficie del conductor.
+47:51
+Entonces, tienen acá la superficie, la miro de canto, ¿sí?, Y hay un resultado que yo les mencioné la clase pasada, no la anterior, que era que la componente tangencial al borde, esto es dentro, digamos, del conductor, y esto es afuera. Yo les comenté que la componente tangencial a la superficie era continua. No así la componente normal, que vimos que la componente normal pasaba de cero a una cosa no nula. Pero les dije que la componente tangencial era continua.
+48:24
+¿Cómo podemos probar este resultado ahora con los elementos nuevos que tenemos?
+48:34
+¿Cómo podemos hacernos convencer de que la componente a lo largo de la superficie es la misma adentro que afuera?
+48:59
+Pista. Estamos hablando de potenciales... Bueno, una manera de hacerlo es decir que el potencial es constante en la superficie. Entonces, como el potencial es constante en la superficie, entonces el campo eléctrico tiene que ser normal. Y como el campo eléctrico es normal, entonces la componente tangencial vale cero afuera. Y como valía cero adentro, es continuo. Es una manera de hacerlo. Bárbaro. Les digo otra que es equivalente. Toman una superficie rectangular muy achatadita, de esta forma.
+49:37
+Con un pedazo adentro y un pedazo afuera. Muy achatadita. ¿Cuánto vale la integral de línea del campo eléctrico en la curva cerrada? Cero. Vimos que la integral de línea del campo eléctrico vale cero porque la fuerza, ¿cómo es?
+49:57
+¿Esto es balicero por qué? La fuerza es... Conservativo. Pero bueno, si tenemos esta forma que está ahí, tenemos un rectángulo chiquito, si... Entonces, si... El rectángulo... Es pequeño... Y achatado... Entonces... Achatado en el sentido de que es más largo que ancho, porque es un abuso de lengua.
+50:36
+Entonces llámenle E1 al campo acá y E2 al campo afuera. Y llámenle delta S a este vector. Entonces tienen que E1 por delta S es igual a E2 menos... E2 por delta S vale 0. Desprecie la parte de acá porque es chiquitita. ¿Bien? Porque estamos haciendo un rectángulo bien echado.
+51:12
+¿Está? Perdón, acá esto no es E1. E1 lo voy a dibujar. Pongamos un vector así. Acá vale 0, de hecho, pero no importa. E2. Esos son los campos. En realidad lo que aparece acá es la proyección de E1 sobre el vector delta S. Así que es la componente tangencial. Y acá lo mismo, E2 tangencial. Porque es la componente según un vector a lo largo de la superficie. Entonces concluimos de esto que E1 tangencial es igual a E2 tangencial.
+51:42
+Pero como es 1 tangencial, habíamos visto que era 0 porque en realidad todo el campo adentro es 0. Entonces la componente tangencial a lo largo de la superficie afuera es 0. Que era el resultado que nos estaba faltando. Que la componente tangencial era continua. ¿Se acuerdan que habíamos dicho que el campo eléctrico era normal pero que había que terminar de probarlo? Bueno, esta es la prueba.
+52:13
+Bueno, y antes de arrancar un nuevo capítulo veamos un ejemplo de esto.
+52:28
+Ese ejemplo.
+52:34
+Cascarón esférico cargado uniformemente.
+52:48
+Tiene acá el origen, acá tiene una esfera y tiene una densidad superficial de carga sigma uniforme. ¿Sí? ¿Cómo habíamos dicho que era el campo eléctrico en este sistema? Si era R menos K y que paramos. Claro, habíamos dicho, llamémosle Q a la carga total, Q carga total.
+53:21
+Habíamos dicho que el campo eléctrico era 0 si R era menor, llamémosle R a este radio, si R es menor que R, y Q sobre 4 pi epsilon 0 por R al cuadrado si R es mayor que R.
+53:50
+Entonces la representación tiene esta forma, ¿no? R, acá tenemos R, el campo eléctrico va a ser 0 acá, tiene una discontinuidad acá, digamos, y luego va proporcional a 1 sobre R al cuadrado.
+54:10
+Y ahora hagamos lo mismo con el potencial. ¿Cómo será el potencial como función de R?
+54:22
+¿Adentro 0? La potencia está definida en una constante, pero tomemos la convención de que el potencial tiende a 0 en el infinito. ¿Cómo será afuera del cascarón?
+54:35
+¿Cómo variará afuera del cascarón? Claro, va a ser una curva afuera que va a ser una cosa proporcional a 1 sobre R. De hecho, podemos decir cuánto vale. Acá vale... Q sobre 4 pi epsilon 0 por R. Y adentro... Constante, y vale esta constante que está acá, ¿verdad?
+55:08
+Así que el valor en toda esta zona es Q sobre 4 pi epsilon 0 por R.
+55:16
+Entonces, el potencial es continuo, pero tiene una derivada discontinua. Lo cual no es sorprendente porque vimos que el campo eléctrico se calcula a partir de las derivadas del potencial. Así que si el campo eléctrico tiene una discontinuidad, la derivada del potencial es razonable que tenga una discontinuidad. Y adentro es uniforme porque dijimos que es un equipotencial. ¿Preguntas?
+56:10
+Bueno, entonces vamos a empezar el capítulo 5.
+56:26
+Capítulo 5. Condensadores.
+56:44
+Bueno, ustedes ya han visto en el liceo los condensadores. ¿Qué es un condensador? O un capacitor se le llama a veces también.
+56:56
+Entonces por acá, les digo en voz alta lo que decía el compañero, es un elemento eléctrico que tiene dos patas y que permite almacenar energía eléctrica. Bien, vamos a ver exactamente cómo lo hacemos. Entonces, 5.1.
+57:27
+Entonces, primero empecemos por ahí. Es un dispositivo eléctrico que permite...
+57:42
+Almacenar energía. ¿Sí? Hay muchos dispositivos eléctricos que permiten almacenar energía. Ahora, el condensador es uno de ellos. Ahora vamos a ver exactamente qué dispositivo permite hacer.
+58:03
+¿Tienen una idea para qué se usan los aparatos eléctricos? ¿Para qué se usan mucho los condensadores? Se usan para muchas cosas. Por ejemplo... ¿Para? Sí. Claro, exactamente. ¿Cuál es el uso específico de la densidad?
+58:24
+Bueno, acá me comentan, en el arranque de muchos dispositivos eléctricos aparecen condensadores. ¿Por qué? Más generalmente, el uso que se le da es para evitar que haya saltos muy grandes de, por ejemplo, la corriente. Por ejemplo, acá también aparecen condensadores que lo que hacen es tratar de regularizar, vamos a ver que ese es el rol que juega más adelante, hacer que la corriente sea más suave.
+58:59
+¿Sí? Que no tenga tan... Porque no se descargan siguiendo la ecuación. Más allá de las ecuaciones, lo que sucede es que almacena energía y cuando el sistema... Por ejemplo, si el condensador está inicialmente descargado, enchufamos y el condensador se va cargando de a poco. ¿Me explico? Y impide que se den saltos, ¿entiende? Sirve para eso. Ese es uno de los usos que se le da.
+59:28
+Decimos que es un dispositivo para almacenar energía eléctrica, pero no son baterías. Lo que uno usa realmente para almacenar energía para uso eléctrico son baterías, ¿verdad? Pero lo que pasa es que las baterías no guardan realmente energía en forma eléctrica macroscópica. Lo que hacen es la transforman en energía. Cuando uno carga una batería, las baterías que son recargables, lo que hace es una reacción química, que almacena energía en forma química. Y lo que hace la batería es transformar la energía química en energía eléctrica.
+59:59
+El condensador estamos pensando en algo que guarda la energía directamente de manera eléctrica como objeto macroscópico.
+1:00:07
+Yo les dije que los procesos químicos son procesos eléctricos, así que almacenar energía en procesos químicos también es un proceso eléctrico. Pero es un proceso eléctrico que se da a nivel microscópico. La idea es un objeto que guarda energía en un proceso eléctrico macroscópico. El ejemplo más conocido que ustedes conocen, ya lo ven conocer del liceo, me imagino, es tomar dos placas paralelas grandes.
+1:00:35
+Este es un objeto, le ponen un cable acá, dos placas conductoras. Placas conductoras.
+1:00:49
+paralelas y grandes. Entonces si ustedes conectan esto a una batería, por ahora no nos ocupamos mucho de lo que es una batería, pero es algo que suministra carga y que asegura que la diferencia potencial sea un valor dado. Entonces todo es neutro inicialmente pero se carga y nos aparece una densidad de carga positiva de un lado y una densidad opuesta, menos sigma de este lado.
+1:01:25
+El objeto sigue siendo neutro pero aparece una separación de cargas y por lo tanto aparece un campo eléctrico adentro. Y por lo tanto... Hemos visto que eso tiene una energía potencial eléctrica y entonces estamos almacenando energía en el campo eléctrico y la energía potencial eléctrica. Bien. Esto tiene que estar a una cierta distancia de.
+1:01:57
+Entonces almacena energía potencial eléctrica.
+1:02:08
+La batería básicamente lo que hace es, por un mecanismo químico, bombea carga, bombea electrones desde esta superficie y los bombea para el otro lado y mantiene esa separación de carga. Entonces veamos un poco cómo es esto de manera más precisa.
+1:02:41
+Entonces, tomemos dos conductores A y B aislados. Aislados, no entre sí, aislados del resto del universo. digamos, lejos de todo otro... de otros.
+1:03:21
+No tienen por qué ser placas paralelas, pueden tener cualquier forma. Pero sí vamos a suponer que están lejos de cualquier otro que esté en la vuelta. No hay otros efectos eléctricos cerca de ellos. No. Cualquier forma...
+1:03:38
+El ejemplo de las dos placas paralelas es un ejemplo que uno ve mucho en el liceo porque permite hacer cuenta de manera fácil. Pero lo que voy a decir no depende de la forma. Son dos conductores, lo único sí que voy a suponer es que están lejos de los demás. Entonces, por algún mecanismo los cargo de tal manera que acá tengo carga más Q y acá tengo carga menos Q. Cargas opuestas.
+1:04:12
+Típicamente para hacerlo lo que hago es lo que hice allá, conectarlos a una batería, la batería me genera una diferencia de potencial, los conductores son equipotenciales, así que todo el potencial en A va a ser el mismo y todo el potencial en B va a ser el mismo, pero diferentes entre sí. Y esa diferencia de potencial va a ser igual a la diferencia de potencial que nos da la batería. Por ejemplo, las baterías que compran en el supermercado tienen una diferencia de potencial normalmente de un voltio y medio. Conectan ahí y cada conductor va a adquirir un potencial y la diferencia potencial será un voltio y medio.
+1:04:54
+Ahora bien. Vamos a probar que delta B a B... Es proporcional al valor absoluto de Q. De hecho, Q la tomamos positivo. No pongo nada de valor absoluto.
+1:05:28
+Vamos a probar eso. ¿Tienen idea de cómo probar esto? Fíjense. Tomemos... Tomemos...
+1:05:44
+B igual a 0 para puntos lejanos. ¿Sí? Esa es la convención usual para el nivel 0 del potencial que hemos tomado. Entonces hemos visto que el potencial se puede escribir como una integral sobre todas las regiones donde haya carga de DQ sobre 4 pi epsilon 0 por la distancia que nos separa del lugar donde está la carga al punto de observación. ¿Sí?
+1:06:16
+¿De acuerdo? ¿Pero qué pasa si yo ahora multiplico todas las cargas presentes por 2? ¿Qué pasa con el potencial? ¿Cómo? ¿Cuánto? El doble, claro. Si cambio todas las cargas por un factor...
+1:06:48
+Así paso de dq a lambda por dq. No voy a usar lambda porque lambda le hemos dado un sentido. Por alfa por dq.
+1:07:00
+Entonces el potencial cambia a alfa por el potencial. ¿Por qué? Cuando yo reemplazo dq por alfa por dq me parece un alfa acá que lo puedo sacar para afuera de la integral. Todas las cargas las aumente por el mismo factor. Entonces la diferencia de potencial... también va a cambiar por el factor alfa. Eso quiere decir que la diferencia potencial es proporcional a la carga que yo tenga. Si yo multiplico la carga por 2, la diferencia potencial cambia por 2.
+1:07:41
+Entonces se define...
+1:07:46
+Bueno, ¿cuánto va a ser el factor de proporcionalidad? Y bueno, el factor de proporcionalidad depende de una cantidad de cosas. Depende de la forma de los conductores. Depende de la distancia entre los conductores. Depende... Si tienen algún material que no sea el vacío o el aire en el medio, también eso va a cambiar las propiedades eléctricas. Pero no va a depender del valor de Q. Porque justamente es la misma noción de proporcionalidad. Entonces se define... Bueno, y ese factor de proporcionalidad caracteriza el condensador.
+1:08:21
+Esto es lo que llamaremos un condensador. Condensador. A veces se le llama también capacitor. Pero si van a una ferretería y preguntan por un capacitor, les va a llamar la atención. Al tipo de la ferretería no lo va a llamar capacitor. Pero bueno, en los libros de texto de física a veces se le llama capacidad. Y se le llama capacidad al factor de proporcionalidad. Se define la capacidad del condensador o capacitancia, capacidad o capacitancia del condensador como...
+1:09:17
+El valor absoluto de la diferencia de potencial es el valor absoluto de la carga en una de las placas dividido C. C es la capacitancia. Así que capacitancia se define con un signo positivo. Tomas la diferencia de potencial... ¿Sí? Toman el valor absoluto de la carga.
+1:09:47
+A ver, en una de las cargas es positiva y en otra carga es negativa. Entonces hay que tomar una convención de signos. Para evitar las convenciones de signos, tomo valores absolutos. Así sabemos, tenemos seguro de que la capacitancia es una cantidad positiva. ¿Bien? Y de hecho, ¿cuál va a ser el capacitor que va a estar en un potencial más alto?
+1:10:06
+¿El que tiene la carga positiva o el que tiene la carga negativa? ¿El que tiene la carga negativa?
+1:10:16
+¿Cómo? No, el potencial no es el mismo. El potencial, claramente, hay una diferencia potencial entre acá y acá. ¿Qué potencial es más alto, este o este? El de positivo. El de positivo, porque recuerden que la diferencia potencial es menos la integral del campo eléctrico. El campo eléctrico va del positivo al negativo. Quiere decir que si van de acá para acá, cayó el potencial. Así que este es un potencial más alto.
+1:10:46
+Potencial va de carga, decrece desde las cargas positivas hacia las cargas negativas. Así que otra manera de hacer es definir la diferencia potencial como la del mayor menos la del menor y poner la carga positiva. Pero si no, para no equivocarse los signos, hacen así.
+1:11:14
+Entonces, unidades. Unidades. La unidad de capacitancia, como pueden ver, esto es equivalente a decir que la capacitancia es igual a... Valor absoluto de Q sobre valor de delta. Ven que la capacitancia es como la unidad será en el sistema internacional...
+1:11:48
+Será coulomb por volt. Coulomb. Por volt. Y eso tiene un nombre, se le llama el farad.
+1:12:04
+Así que la unidad en el sistema internacional de la capacitación es el farad. Pero el farad es una... Una unidad gigantesca, gigantesca, gigantesca. Cuando ustedes van a comprar un condensador en la ferretería normalmente, los más grandes de todos son tipo de micro farad. Y los más chiquitos normales pueden ser de pico farad o de nano farad. Los condensadores normales tienen...
+1:12:42
+Capacidades que van de pico farad, es decir, 10 a la menos 12 farad, a micro farad, 10 a la menos 6 farad. Un condensador con un farad sería un condensador gigantesco, gigantesco, gigantesco. No se construyen condensadores así. ¿Está bien?
+1:13:11
+Y ahora en los minutos que me quedan de clase vamos a calcular la capacitancia del condensador más fácil de todos, que es el de placas paralelas. Y la vez que viene vamos a ver cómo calcular capacitancia de condensadores más complicados.
+1:13:38
+Cálculo de la...
+1:13:47
+Bueno, vale la pena decirlo. Si ustedes toman dos placas conductoras con estas formas así raras que yo les dibujé, normalmente no van a poder hacer la cuenta. La cuenta va a necesitar una computadora para hacerla porque es una cuenta complicada. Así que para hacer la cuenta realmente cuánto vale la capacitancia, tienen que tener una geometría relativamente simple donde puedan hacer los cálculos analíticamente. Si no, se puede calcular, pero tienen que usar métodos numéricos. De hecho va a ser siempre complicado con los métodos del curso que están haciendo, el curso de física 3.
+1:14:22
+Va a ser complicado porque ustedes ponen una carga Q y saben que en el conductor se va a colocar sobre la superficie, pero ni siquiera saben bien cómo se va a colocar. ¿De acuerdo? Se va a colocar de alguna manera. Y ya ubicar dónde está la carga es un problema en sí mismo. Hay métodos estándares, de hecho, que se ven en el curso siguiente, el curso del electromagnetismo. Explicamos cómo hacer eso y después... Pero para resolver el problema realmente en una geometría rara, necesitan una computadora. Si no, no se puede. Pero bueno, cuando tienen situaciones simples, pueden calcularlo.
+1:14:53
+Entonces, ¿cómo lo hacen? Dice, fijen la geometría del problema...
+1:15:01
+que tiene que ser simple para cálculos analíticos una vez conocido donde están las cargas pueden calcular el campo eléctrico calculen
+1:15:28
+El campo eléctrico, si conocen dónde están las cargas, saben dónde está el campo eléctrico, deduzcan delta B, pueden calcular delta B como menos la integral del campo eléctrico, pero al principio cuando fijaron la geometría también tenían que decir cuánta carga había en cada condensador. Entonces fijen la geometría y también la carga en cada placa.
+1:16:01
+Ah, no lo dije, perdón. A estos conductores se les llaman placas, aunque no tengan forma de placas. Se les llama las dos placas del condensador. ¿Por qué? Porque siempre se piensan los condensadores esos planos, pero en realidad si tienen otra forma se les sigue llamando placa, pero ya no son. Deducen delta B y dividen, una vez que saben cuánto vale delta B, pueden dividir por Q y eso les da 1 sobre C. Entonces, C vale... Como está allá, Q dividido delta.
+1:16:35
+Entonces, esto es general, pero en la práctica solo lo van a poder hacer para geometrías simples, para poder calcular el campo eléctrico, sino no lo van a saber calcular. Entonces, veamos el caso más simple de todos. Y la vez que viene sigo con otros ejemplos. Ejemplo. Entonces, tomamos dos placas. A esta le ponemos carga más Q. A esta menos Q. Tiene una distancia D. Y supongan que el área acá, área, igual a A.
+1:17:12
+En el medio hay aire. Aire o vacío. Después, más adelante en el curso, nos haremos la pregunta de qué pasa, por ejemplo, si meten un plástico acá adentro. Pero mientras tanto, vacío. Bueno, ¿cuál es el campo eléctrico acá adentro?
+1:17:28
+Dijimos ya, ya lo hemos calculado, ¿vale? El campo acá es así, es perpendicular a las placas, es uniforme y vale E, vale, entonces, uniforme, y vale sigma sobre epsilon cero. ¿Se acuerdan que ya lo calculamos esto? Y sigma, ¿cómo se escribe en términos de Q?
+1:17:58
+sigma es Q sobre el área entonces ahora podemos calcular la diferencia de potencial valor absoluto de la diferencia de potencial ¿cuánto valdrá? entre una placa y la otra ¿tiene un campo uniforme? ¿cuánto vale la diferencia de potencial?
+1:18:19
+no, eso es una carga puntual tiene un campo uniforme delta B ¿cuánto valdrá?
+1:18:27
+E por la distancia, ¿verdad? Delta B es menos la integral entre un lado y el otro del campo eléctrico.
+1:18:38
+Pero esto es igual a menos E por la distancia. Distancia entre las placas. Porque es uniforme. Entonces el valor absoluto de delta B les queda E por D.
+1:18:57
+Y ahora esto es igual a QD sobre epsilon cero por A. Entonces usando lo que... Bueno, valor absoluto de Q, porque estamos... Bueno, sí, no. Sí, Q dijimos que era la positiva. Entonces, concluimos que C será epsilon cero por A dividido por D. La capacitancia...
+1:19:27
+de un condensador de placas paralelas.
+1:19:47
+Sí, pero son dos placas ahora, ¿verdad? Tienen una placa, esta le genera un campo E más para allá y un campo E más para allá. Y la otra le genera un campo de menos para allá y un campo de menos para allá.
+1:20:06
+Afuera se anulan los campos, pero adentro se suman. Así que queda el doble, queda sigma sobre epsilon cero. ¿Alguna otra pregunta?
+1:20:21
+En la función de sigma, q era la positiva, ¿no? q siempre tomamos la positiva, sí. Si no digo nada, es la positiva.
+1:20:29
+En realidad después vamos a ver que podemos definir una relación con delta B y Q de signos cualesquiera, pero bueno, porque si tomamos la convención correcta de cuál potencial medimos con respecto a cuál. Pero mientras tanto, por ahora, cargas positivas y valor absoluto de la diferencia. La vez que viene vamos a ver cómo calcular otras capacidades. Gracias.
+

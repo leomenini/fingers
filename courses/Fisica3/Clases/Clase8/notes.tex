@@ -1,0 +1,342 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 8: Unidades de Potencial, el Electronvolt, \\
+        y Potencial de Cargas Puntuales y Distribuciones Continuas}\\[0.3em]
+        \large{Volt y electronvolt, potencial de un dipolo,
+              y potencial de barra, anillo y disco}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Unidades del potencial: el Volt}
+% ===================================================================
+
+El potencial y la diferencia de potencial tienen unidades de
+\textbf{energía dividida por carga}. En el SI:
+\[
+[V] = \frac{\text{J}}{\text{C}} \equiv \text{Volt} \;(\text{V}).
+\]
+
+% ===================================================================
+\section{El electronvolt}
+% ===================================================================
+
+Dando vuelta la relación, el Volt permite definir una \textbf{unidad de
+energía}: el \textbf{electronvolt} (eV) es la energía que gana una
+partícula de carga $e$ al desplazarse entre dos puntos con
+$|\Delta V| = 1\,\text{V}$:
+\[
+1\,\text{eV} = e \cdot (1\,\text{V}) = 1{,}6\times10^{-19}\,\text{J}.
+\]
+
+\begin{notebox}[Escalas del electronvolt]
+  Unidad muy pequeña, adecuada a la escala atómica y de partículas:
+  \begin{itemize}[nosep]
+    \item Energía de ligazón más fuerte electrón--núcleo (hidrógeno):
+          $\sim 13\,\text{eV}$.
+    \item Procesos químicos: fracciones de eV.
+    \item Altas energías: múltiplos \textbf{MeV}, \textbf{GeV}. Como $e$
+          aparece por todos lados, estas unidades simplifican las
+          expresiones.
+  \end{itemize}
+\end{notebox}
+
+% ===================================================================
+\section{Potencial de un conjunto de cargas puntuales}
+% ===================================================================
+
+\subsection{Deducción a partir de la energía potencial}
+
+Para cargas $Q_1,Q_2,\dots$ más una carga de prueba $Q_0$ en $\mathbf{r}$
+(convención $U=0$ con cargas infinitamente alejadas):
+\[
+U = \frac{1}{4\pi\varepsilon_0}\sum_{i<j}\frac{Q_i Q_j}{R_{ij}}.
+\]
+
+Separando la parte que depende de $Q_0$:
+\[
+U = \frac{Q_0}{4\pi\varepsilon_0}\sum_{i\geq 1}\frac{Q_i}{R_{0i}}
+  + \frac{1}{4\pi\varepsilon_0}\sum_{1\leq i<j}\frac{Q_i Q_j}{R_{ij}}.
+\]
+
+El potencial es esa parte por unidad de carga (se cancela $Q_0$):
+
+\begin{keybox}[Potencial de cargas puntuales]
+  \[
+  \boxed{V(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\sum_{i}\frac{Q_i}{R_{0i}}}
+  \]
+  Independiente de $Q_0$. Nivel de referencia: $V\to 0$ con $Q_0$
+  infinitamente alejado ($R_{0i}\to\infty$).
+\end{keybox}
+
+\subsection{Ejemplo: cuadrado de cargas}
+
+Cuadrado de lado $A$ con cargas en los vértices; potencial en el centro
+$O$. La distancia del centro a cada vértice (media diagonal) es
+$d = A/\sqrt{2}$, y como las cuatro son iguales:
+\[
+V(O) = \frac{1}{4\pi\varepsilon_0}\cdot\frac{\sqrt{2}}{A}\sum_{i=1}^{4} Q_i.
+\]
+
+% ===================================================================
+\section{Potencial de un dipolo}
+% ===================================================================
+
+\begin{notebox}[Por qué el potencial]
+  Es una cantidad \textbf{escalar}: evita ángulos, componentes y
+  productos vectoriales. Suele ser mucho más fácil de calcular que el
+  campo, y el campo se recupera a partir de él (próxima clase).
+\end{notebox}
+
+\subsection{Expresión exacta}
+
+Cargas $+Q$ y $-Q$ separadas por $\mathbf{d}$; punto $P$
+\textbf{arbitrario} a distancias $r_+$ y $r_-$:
+\[
+V(P) = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{r_+} - \frac{1}{r_-}\right),
+\qquad
+r_\pm^2 = r^2 \mp \mathbf{r}\cdot\mathbf{d} + \frac{d^2}{4}.
+\]
+
+\subsection{Límite de dipolo puntual (Taylor)}
+
+Para $r \gg d$, el término de carga puntual se cancela (carga neta cero);
+con $(1+x)^\alpha \approx 1+\alpha x$:
+\[
+\frac{1}{r_\pm} \approx \frac{1}{r}\left(1 \pm \frac{1}{2}\frac{\mathbf{r}\cdot\mathbf{d}}{r^2}\right).
+\]
+
+Restando y con $\mathbf{p} = Q\mathbf{d}$:
+
+\begin{keybox}[Potencial de un dipolo puntual]
+  \[
+  \boxed{V(P) = \frac{1}{4\pi\varepsilon_0}\frac{\mathbf{r}\cdot\mathbf{p}}{r^3}
+        = \frac{1}{4\pi\varepsilon_0}\frac{p\cos\theta}{r^2}}
+  \]
+  Decae como $1/r^2$ (más rápido que una carga puntual, $1/r$).
+\end{keybox}
+
+Con el mismo esfuerzo que el campo (hecho solo sobre el plano bisector),
+se obtuvo el potencial en \textbf{cualquier} punto.
+
+% ===================================================================
+\section{Potencial de una distribución continua}
+% ===================================================================
+
+Dividiendo en elementos $\Delta Q_i = \rho(\mathbf{r}_i)\Delta V_i$
+tratados como cargas puntuales, la suma de Riemann tiende a:
+
+\begin{keybox}[Potencial de una distribución continua]
+  \[
+  \boxed{V(P) = \frac{1}{4\pi\varepsilon_0}\int_{\text{vol}}
+         \frac{\rho(\mathbf{r}')}{r}\, dV'}
+  \]
+  Análogo con $\lambda\,d\ell$ o $\sigma\,dS$. Al ser escalar, no hay que
+  proyectar vectores.
+\end{keybox}
+
+% ===================================================================
+\section{Ejemplo: barra cargada}
+% ===================================================================
+
+Barra de largo $L$, densidad lineal uniforme $\lambda$ sobre el eje $z$;
+punto $P$ a distancia $y$ perpendicular, en el centro:
+\[
+V(P) = \frac{1}{4\pi\varepsilon_0}\int_{-L/2}^{L/2}\frac{\lambda\, dz}{\sqrt{y^2+z^2}}
+     = \frac{\lambda}{2\pi\varepsilon_0}\int_{0}^{L/2}\frac{dz}{\sqrt{y^2+z^2}}.
+\]
+
+\subsection{Integral por sustitución hiperbólica}
+
+Con $z = y\sinh w$: $\sqrt{y^2+z^2} = y\cosh w$ y $dz = y\cosh w\, dw$,
+todo se simplifica:
+\[
+V(P) = \frac{\lambda}{2\pi\varepsilon_0}\operatorname{arcsinh}\!\left(\frac{L}{2y}\right).
+\]
+
+Invirtiendo el seno hiperbólico (cuadrática en $u=e^{w}$) se obtiene
+$\operatorname{arcsinh}(X) = \ln\!\big(X + \sqrt{X^2+1}\big)$:
+
+\begin{keybox}[Potencial de una barra]
+  \[
+  \boxed{V(P) = \frac{\lambda}{2\pi\varepsilon_0}
+         \ln\!\left(\frac{L}{2y} + \sqrt{\frac{L^2}{4y^2}+1}\right)}
+  \]
+\end{keybox}
+
+\subsection{Límite de gran distancia}
+
+Para $y \gg L$, con $\ln(1+x)\approx x$:
+\[
+V(P) \approx \frac{\lambda}{2\pi\varepsilon_0}\cdot\frac{L}{2y}
+     = \frac{Q}{4\pi\varepsilon_0\, y}, \qquad Q = \lambda L,
+\]
+el potencial de una carga puntual, como debía ser.
+
+\begin{notebox}[Ejercicio]
+  Analizar el límite opuesto $y \ll L$ (muy cerca de la barra).
+\end{notebox}
+
+% ===================================================================
+\section{Ejemplo: anillo cargado}
+% ===================================================================
+
+Anillo de radio $R$, densidad lineal uniforme $\lambda$; punto $P$ sobre
+el eje a distancia $z$. Cada arco tiene $dQ = \lambda R\, d\theta$ a
+distancia constante $\sqrt{R^2+z^2}$; como nada depende de $\theta$
+($\int_0^{2\pi}d\theta = 2\pi$):
+
+\begin{keybox}[Potencial de un anillo sobre su eje]
+  \[
+  \boxed{V(P) = \frac{\lambda R}{2\varepsilon_0\sqrt{R^2+z^2}}}
+  \]
+\end{keybox}
+
+Para $z \gg R$ tiende al potencial de una carga puntual.
+
+% ===================================================================
+\section{Ejemplo: disco cargado}
+% ===================================================================
+
+Disco de radio $R$, densidad superficial uniforme $\sigma$; punto $P$
+sobre el eje a distancia $z$. Se divide en anillos de radio $r$ y ancho
+$dr$ ($dQ = \sigma\,2\pi r\, dr$) y se \textbf{suman los potenciales}:
+\[
+V(P) = \frac{\sigma}{2\varepsilon_0}\int_0^{R}\frac{r\, dr}{\sqrt{z^2+r^2}}.
+\]
+
+Con $u = r^2+z^2$:
+
+\begin{keybox}[Potencial de un disco sobre su eje]
+  \[
+  \boxed{V(P) = \frac{\sigma}{2\varepsilon_0}\left(\sqrt{R^2+z^2} - |z|\right)}
+  \]
+\end{keybox}
+
+Para $|z| \ll R$: $\;V(P) \approx \dfrac{\sigma}{2\varepsilon_0}(R - |z|)
++ \mathcal{O}(z^2/R)$.
+
+\subsection{Continuidad del potencial y no derivabilidad}
+
+\begin{itemize}[nosep]
+  \item El potencial es \textbf{continuo} en $z=0$ (tiende a
+        $V_0 = \sigma R/2\varepsilon_0$ por ambos lados).
+  \item \textbf{No es derivable}: la dependencia $-|z|$ da un pico en
+        $z=0$.
+\end{itemize}
+
+\begin{warnbox}[Anticipo: $V$ y el campo]
+  La derivada del potencial es (menos) el campo eléctrico. El campo de
+  un disco es \textbf{discontinuo} al cruzarlo (apunta hacia arriba de un
+  lado y hacia abajo del otro), lo que se corresponde con el salto de la
+  derivada de $V$. El potencial es continuo, pero su derivada no.
+\end{warnbox}
+
+% ===================================================================
+\section{Anuncio: campo desde el potencial}
+% ===================================================================
+
+Próxima clase:
+\begin{enumerate}[nosep]
+  \item Campo eléctrico a partir del potencial (el \textbf{gradiente}).
+  \item \textbf{Superficies equipotenciales}.
+  \item Comienzo de \textbf{capacitores / condensadores}.
+\end{enumerate}
+
+\end{document}

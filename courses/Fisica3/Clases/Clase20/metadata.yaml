@@ -1,0 +1,74 @@
+title: Clase 20
+id: fis3-2015-2-20
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:05:00"
+
+stats:
+  transcript_words: 8180
+  summary_words: 1665
+  diagrams_pending: 7
+  equations: 15
+
+topics:
+  - Materiales magnéticos dentro de una bobina
+  - No linealidad y magnetización espontánea
+  - Constante magnética del material (L = Km·L)
+  - Circuitos RL (sección 11.3)
+  - Ecuación diferencial lineal de primer orden
+  - Analogía con el circuito RC
+  - Solución particular y ecuación homogénea
+  - Método de solución exponencial
+  - Corriente al conectar y al desconectar
+  - Tiempo característico (τ = L/R)
+  - Experimentos de inducción (ángulo, módulo, corrientes parásitas)
+  - Anillo de Thomson y péndulo de Foucault
+  - Núcleos laminados de transformadores
+  - Energía almacenada en una bobina (sección 11.4)
+  - Balance de potencia (entregada, disipada, almacenada)
+  - Energía magnética (U = ½LI²)
+  - Densidad de energía del campo magnético (B²/2μ₀)
+  - Analogía con la densidad de energía eléctrica
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "31"
+    verified: false
+
+prerequisites:
+  - Clase 19 (autoinductancia, campos eléctricos inducidos)
+  - Clase 12 (circuitos RC, ecuaciones diferenciales)
+  - Clase 18 (ley de Faraday y de Lenz)
+  - Energía cinética y potencial (Física 1)
+
+next_topics:
+  - Energía en un cable coaxial (Clase 21)
+  - Circuito LC y oscilaciones
+  - Analogía masa-resorte y resonancia
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

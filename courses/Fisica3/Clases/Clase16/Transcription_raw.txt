@@ -1,0 +1,443 @@
+# Clase 16
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/16/
+
+Fecha de exportación: 7/23/2026, 11:56:59 PM
+
+
+Clase: 16
+Curso: F3
+
+Segmentos : 241
+Palabras  : 9513
+Caracteres: 52459
+
+0:16
+Vamos a ver, continuamos con el campo magnético y ahora voy a ver qué pasa cuando una espía de corriente se ubica en un campo magnético uniforme.
+0:30
+Par, espira con corriente.
+0:45
+Entonces, la idea es, colocan un campo magnético, se colocan en un campo magnético uniforme y vamos a ubicar una espira. Entonces, imagínense, están dentro de un imán, un imán muy particular, porque vamos a suponer que el campo es uniforme, digamos, y colocan una espira, que la vamos a tomar rectangular, que puede girar, acá tiene un soporte y puede girar libremente acá.
+1:17
+Es un rectangulito y por este rectangulito circula una corriente I. ¿Se entiende lo que está pasando? Tiene la espira sostenida, puede girar libremente por un eje perpendicular acá. Vamos a tomar el campo magnético uniforme. En realidad, si tuviera un imán así, el campo magnético no sería uniforme. Pero se pueden armar configuraciones para generar un campo magnético uniforme.
+1:52
+Y de hecho, si el campo no es uniforme, pero la espira es muy chiquitita, podemos considerar igual el campo uniforme, porque el tamaño de la espira es mucho más chica que las escalas características de variación del campo magnético, ahí también podremos considerar el campo uniforme. Entonces voy a dibujar esto visto desde arriba.
+2:13
+Visto desde arriba... Visto desde arriba... Tienen acá el campo magnético.
+2:26
+Y tienen la espira que estará chanfleada. Esta es la espira vista desde arriba. Se ve como un segmento vista desde arriba. Este es el eje de rotación. Eje de rotación.
+2:45
+Y no lo voy a poner a 45 grados porque eso siempre da trabajo después para... Para estar rotando, supongamos, sobre la mitad de... Sobre un eje que pasa por la mitad. Y... Y vamos a llamar... Tomemos acá un vector normal a la espira, que es una espira plana rectangular. Y llamémosle teta al ángulo que forma ese vector normal con el campo magnético.
+3:19
+¿Bien? Entonces veamos... ¿Cómo son las fuerzas? La vez pasada vimos que si tienen un segmento de corriente, la fuerza que se genera sobre ese segmento, vimos la vez pasada, era I por un vector a lo largo del cable con la dirección de I, producto vectorial con B. Esto es la fuerza magnética...
+3:53
+sobre un segmento de cable. Por cierto, lo de un segmento de cable siempre es medio raro, porque la carga se conserva, así que no puede aparecer de pronto en un cable, recorrer y luego desaparecer. No pasa eso. Así que tienen que pensar esto como una de las contribuciones más a otro segmento, porque la carga no puede aparecer en un lugar y luego desaparecer. ¿Se entiende lo que digo? Tiene un cable. No puede ser que tiene la corriente y antes de ahí no hay nada.
+4:27
+No puede ser. La carga llegó por algún lado. Entonces, esto piensen que es la fuerza que se genera sobre un segmento de cable, pero después eso lo tendrán que juntar con otro segmento de cable, así como acá. Acá tienen un segmento acá, otro segmento acá, otro segmento acá, otro segmento acá. Cada segmento experimenta una fuerza así, pero no es consistente considerar un segmento solo porque la corriente que entra en este tiene que venir de otro. ¿Me explico? Entonces veamos cómo son... Digamos, si yo lo dibujo en perspectiva...
+5:00
+Acá tienen el eje. Supongamos que esta es la que está... El dibujo más gorda, la que está más para este lado. Supongamos que la corriente va, por decir algo, así. Y luego vuelve por acá. Y sube por acá. ¿Sí? ¿Sí? Entonces veamos, hay cuatro fuerzas a priori, ¿no? Vamos a ver las fuerzas sobre cada uno de los segmentos.
+5:31
+Entonces primero veamos los segmentos que son, que están en el plano, digamos, de estos dos, los que están en planos horizontales. ¿Cómo son esas fuerzas?
+5:52
+A ver, estos segmentos no son paralelos a B.
+5:56
+Pero ¿cómo van a ser las fuerzas? Fíjense, van a ser... Tienen un cable así, L. Tienen B que va para allá. ¿Sí? Y les genera una fuerza que... ¿En qué plano está? ¿Entienden? Tanto el segmento como el campo magnético están en un plano horizontal. Quiere decir que la fuerza en qué plano estará. Será una fuerza vertical. La que genera este acá será, fíjense, L vector B y me queda F acá apuntando para abajo.
+6:33
+Entonces llámenle este F1. Y ahora la fuerza que genera sobre el de abajo. ¿Cómo será?
+6:46
+Tiene igual módulo, igual dirección, pero va para arriba.
+6:50
+F2. Así que esas dos fuerzas se anulan entre sí. Entonces F1 más F2 es cero.
+7:05
+Y además se van a aplicar, no lo dibujé así, pero están en el centro del segmento, por simetría, quiere decir que tampoco hacen par con respecto a este eje. Ni contribuyen a la sumatoria de fuerzas, ni hacen par con respecto a este eje, porque ambas tienen línea de aplicación sobre el eje. Entonces, no contribuyen.
+7:33
+ni a la resultante, ni a la fuerza resultante, ni a un par respecto del eje. Bien. Y ahora pensemos en las fuerzas que generan los lados laterales.
+8:05
+Por ejemplo, pensemos por este lado. Tienen la corriente que va para abajo, el campo magnético va para allá. Así que lo dibujamos acá. Fíjense, este corresponderá a una corriente que está bajando ahí, I. Entonces tienen I, les va a generar una fuerza como, para acá.
+8:35
+O sea, que podemos llamar fuerza 3. ¿Estoy diciendo bien? ¿De acuerdo? Y acá, en este... ¿Bien? Entonces, esta fuerza, fíjense, genera para allá. Y esta que está, la que vendría por acá, tiene ahora una corriente que va para arriba. ¿Cómo será la fuerza que genera?
+9:03
+Para arriba, ¿verdad? Y tiene igual módulo.
+9:08
+Entonces tiene F4. Entonces nuevamente F3 más F4 es cero.
+9:17
+Entonces no contribuyen a la fuerza resultante.
+9:29
+Pero, ¿qué pasa con relación al par respecto a este eje? ¿Generan un par? Sí, ambas suman para el par, porque fíjense que si tienen una cosa así y hacen una fuerza así, van a hacer girar. Pero, generan un torque. Un torque, un par. No sé cómo le han llamado en los cursos anteriores, pero de las dos maneras. Un par de fuerzas.
+9:56
+Entonces, la resultante sobre la espira es cero.
+10:07
+Bueno, también habrá alguna fuerza reactiva acá, debido a que tiene este eje que lo mantiene fijo, pero eso no genera ni par ni nada. Supongamos que no hay...
+10:22
+Que no hay rozamiento. Entonces, la resultante sobre la espira generada por el campo magnético es cero. por cierto, si el campo magnético no fuera uniforme esto no sería así porque entonces los módulos de estas fuerzas no serían iguales porque en cada lado dependería del campo magnético en ese punto y si el campo magnético no es igual a un punto en el otro no se compensarían exactamente ¿se entiende?
+11:03
+y en cambio se genera un par se genera un torque
+11:21
+Entonces veamos cómo es ese torque.
+11:31
+Entonces este ángulo que está acá es teta.
+11:37
+Y siempre el torque es igual, vamos a calcularlo por ahora sin consideraciones vectoriales, simplemente el módulo. El torque es igual a la fuerza... Digamos, el torque de la fuerza 3 es igual a la fuerza 3 por el brazo de palanca. Fíjense, llamémosle a este largo que está acá A. Este también es A. Y a este le llamamos B. ¿Sí?
+12:07
+Así que este largo que está acá es A sobre 2.
+12:14
+Pero lo que interviene no es... A sobre 2 sino A sobre 2 por el seno de teta que es el brazo de palanca ¿se acuerdan de eso? el torque es la fuerza por el brazo de palanca ¿está? así que es F3 por A sobre 2 por el brazo de palanca por seno de teta ¿está? Y T4 dará lo mismo, bueno, perdón, sustituyo F3 por lo que vale.
+12:45
+F3 vale la corriente por el largo de este cable, que es B.
+12:56
+Fíjense que aquí este cable es perpendicular al campo magnético. Quiere decir que el producto vectorial en módulo es el producto de los módulos. Cuando tienen dos vectores perpendiculares, el módulo es el productor de los módulos. Así que acá simplemente F3 va a ser I por B por el campo magnético y lo voy a multiplicar por A sobre 2 por seno de teto.
+13:26
+¿De acuerdo? Y lo mismo, y T4 valdrá igual, van los dos, suman los dos. Así que el torque resultante es I por B por el seno de teta por A por B. ¿De acuerdo? Y esto lo ponen, entonces el torque...
+13:59
+Es igual a B por el seno de teta por I por A, donde A es el área de la espira. Acá estoy hablando, no me estoy ocupando de los signos por ahora, estoy hablando solo de...
+14:24
+No, está bien. ¿Por qué en el punto de la espira no? Sí, todo esto tiene que ver con el torque con respecto al eje. Con el torque respecto al eje. Respecto al eje de rotación. Bien. Y se dan cuenta que la situación en la cual no se genera torque es cuando el ángulo teta... vale cero, quiere decir cuando la espira está alineada, digamos, la normal a la espira es paralela al campo magnético.
+15:01
+La fuerza favorece a colocar la espira orientada según el campo magnético. Pero por ahora no me ocupé de los signos, vamos a ocuparnos un poquito de los signos. Fíjense, el torque, ¿para dónde va a ser este torque? Va a ser un torque que va a favorecer una rotación para allá.
+15:22
+¿De acuerdo? ¿Sí? Y fíjense que el... Así que... tiende a desfavorecer, tiende a achicar teta. Así que, si quisiéramos orientar las cosas en un eje, acá pondríamos un torque, le pondríamos un signo negativo. Yo solo estoy hablando de valores absolutos, por eso no explico el signo. Pero es un torque que tiende a disminuir.
+15:50
+No, tal como lo dicen. No, porque tiende a agrandar. Fíjense lo que va a tender a hacer. Va a tender a dar la vuelta y poner la espira para el otro lado. ¿Se entiende?
+16:03
+Si la corriente está circulando así, la posición de equilibrio estable es que la espira gire y quede orientada con el vector N para allá.
+16:19
+¿De acuerdo? Acá va a aumentar la fuerza, pero si doy toda la vuelta, si estos giran y queda...
+16:32
+la normal paralela a b pero con el sentido para el otro lado entonces ahí la fuerza va a entender a favorecer que se achique teta entonces pareciera que la elección que hicimos de n no es la más conveniente de hecho Lo que nos va a convenir es tratar de ver esto como un producto vectorial.
+17:03
+Cuando tiene un seno de un ángulo, conviene ver esto como un campo. Acá tiene un campo, acá tiene un ángulo y acá conviene ver esto como un vector área. Pero le vamos a poner dirección, la de N, pero el signo opuesto. Entonces vamos a tomar acá, en lugar de tomar N para allá, vamos a tomar... Un N' para el otro lado. ¿Sí? Este es θ. Este es θ.
+17:37
+Y fíjense que esto corresponde a la regla de la mano derecha para las espiras. ¿Cómo es esto? Fíjense, vamos a tomar los dedos de la mano que van a circular a lo largo, como la corriente. La corriente está haciendo así. ¿De acuerdo? Y el pulgar les indica cómo orientan...
+17:57
+El sentido de la normal a la espira. Entonces vamos, N' está orientada, entonces esto es entrante y esto es saliente, según la regla de la mano derecha.
+18:25
+Entonces N' según el pulgar y los otros dedos según I.
+18:41
+Entonces definimos el vector A, vector área, como A por N'.
+18:48
+Entonces podemos escribir que tau es igual a I por B'. Producto vectorial con A. Verifiquemos que los signos están bien. Fíjense, ¿cómo va a ser el torque de esta fuerza destacada? Va a ser un torque para afuera, para arriba. ¿De acuerdo? Va a ser un torque que va a favorecer una rotación así. Y veamos que el producto vectorial ese lo hicimos bien.
+19:18
+Entonces, fíjense, tienen B, B para allá. Tienen A, está mal el signo.
+19:28
+Fíjense que está mal el signo porque yo pongo B, producto vectorial, con el A que viene para... B que está para allá. El A está para allá y nos va a quedar el torque para el sentido opuesto. Bueno, pero eso es muy fácil de arreglar porque el producto vectorial es anticomutativo. Así que podemos cambiar A por B y ahí queda el signo correcto, incluyendo el sentido.
+19:58
+Torque resultante como vector. Así que incluye la norma que calculamos aquí, pero también incluye la dirección que es perpendicular al plano. La dirección va a ser, dijimos, para afuera. El torque va a ser perpendicular al plano para arriba. Y además el... También incluye el sentido.
+20:30
+Así que esta fórmula resume todo.
+20:36
+Tienen que tener cuidado de tomar N, el vector normal, en este caso N', orientado según la regla de la mano derecha.
+20:53
+Bueno, ¿qué pasa si en lugar de tener una espira, una vuelta de corriente, tuviéramos una bobinita con N vueltas? ¿Cómo sería el torque?
+21:13
+multiplicadas por el número de vueltas, porque todas van a contribuir igual, supongamos que están bien pegaditas una con respecto a la otra, todas contribuyen igual, así que el torque total es N veces el torque de una espira. Entonces si hubiera N espiras, es decir, una bobina,
+21:39
+que daría torque igual a N por I por A producto vectorial con B. Equivocarse los signos en esto es bien fácil, pero si uno usa fórmulas así, pero calcular el módulo no es difícil, y no equivocarse en el sentido es más fácil pensar cómo están orientadas las fuerzas. Usan esta fórmula, ven para dónde están orientadas las fuerzas, y eso les indica para dónde está el torque, porque ustedes ya saben cómo calcular el torque.
+22:16
+¿Qué más? Bueno, entonces una aplicación de esto que acabamos de ver. Que, normalmente lo que siempre les digo, ustedes están estudiando ingeniería, si quisieran usar esto para fabricar un aparato, un aparato, una aplicación tecnológica de este principio físico, ¿qué harían? Bueno, entonces una cosa, una posibilidad es esa, tienen una corriente aquí, que circula tiene un campo magnético externo esto fíjense que genera un movimiento pero no es muy eficiente porque fíjense que da la vuelta y después el torque va a ir para el otro lado así que va a ser un motor pero medio aburrido porque en lugar de dar vueltas hace así entonces lo que hay que hacer para que funcione es eso es Cada media vuelta hay que dar vuelta el sentido de la corriente.
+23:15
+Entonces, si damos vuelta... ¿Eso saben cómo se hace? Tienen acá... Van a tener la corriente que va a venir así. Les cuento un poco cómo se hace. Tienen un cable que viene por acá, otro cable que viene por acá. Esto está unido a una batería. ¿Sí? ¿Sí? Y tienen acá la espira.
+23:43
+Entonces lo que pasa es que cuando gira, se conecta al revés. Acá tienen típicamente unas escobillitas para que haga contacto. Pero cuando se da vuelta, contacta al revés. Entonces la corriente acá siempre viene igual, porque es difícil estar cambiando el signo de la corriente. Pero al darse vuelta, también cambia la manera en que se da vuelta y cómo está conectado. Entonces cambia el sentido de la corriente y cambia el sentido del torque. Entonces en lugar de volver para atrás sigue para adelante. Y esto es lo que se llama... motor eléctrico de corriente continua porque la corriente que está entrando acá no está oscilando los motores que se usan normalmente no son así son motores de corriente alterna que lo que hacen es la propia corriente está cambiando de hecho oscila sinusoidalmente eso lo vamos a ver más adelante pero si no tuvieran una corriente que alguien le suministró que oscila sinusoidalmente igual pueden hacer un motor con este sistema en el cual cuando se da vuelta
+24:41
+cambia el sentido de la conexión y entonces es como que la corriente circula para el otro lado. De hecho sobre la espira circula para el otro lado y entonces sigue dando vueltas. Da una vuelta, eso cambia el sentido de la conexión, entonces vuelve a girar y así se cierra. ¿Se entiende? Bueno, eso es importante. Estos motores hay que agregarles algunas cosas que los estabilicen. ¿Por qué? Porque hacen como la fuerza, no es como el torque, fíjense, depende del seno de teta. Entonces no es constante en el tiempo. Entonces a veces tiene más torque, a veces menos torque, a veces más torque.
+25:13
+Entonces hay que generar algún dispositivo mecánico para que no haga tuc, tuc, tuc. ¿Se entiende? Para que la fuerza se mantenga, el torque se mantenga constante, no que esté oscilando. ¿Se entiende? Pero eso se puede instrumentar. El principio básico es este que les acabo de contar. Bárbaro. Entonces aplicaciones.
+25:36
+Borro por acá.
+25:45
+Las aplicaciones. Entonces la primera es el motor de corriente continua. Bien. Alguna otra.
+26:26
+Les repito, el motor de corriente alterna funciona esencialmente igual, lo único que en lugar de ir cambiando las conexiones, lo que se cambia es cómo se conecta, que la corriente oscila. La corriente oscila incluso de signo.
+26:43
+Otra aplicación. ¿Cómo?
+26:47
+Bueno, todavía no lo hemos visto, pero alguien puede intuir, pero por ahora no hemos visto los principios físicos que está basado en eso, es que este aparato capaz que es reversible, pero eso lo vamos a ver más adelante. En lugar de poner una corriente acá que lo hace girar, con un aparato mecánico lo hacemos girar y eso genera una corriente, pero por ahora no hemos visto ese fenómeno. Cómo un flujo variable de campo magnético a través de una espira genera, Es un fenómeno que vamos a ver en los capítulos posteriores, el fenómeno de inducción.
+27:18
+Pero en realidad, intuitivamente, uno puede pensar que eso funciona así porque no es el mismo principio físico. Es como el principio físico que va para el revés, para el otro lado. Pero eso todavía no lo vimos. Pero para este mismo principio físico, otra aplicación. ¿Sí? Bueno, fíjense, esto se puede usar para medir corrientes.
+27:46
+¿De acuerdo? Porque el efecto, el par, es proporcional a la corriente. Entonces lo que tienen que hacer es poner un resorte, de hecho les conviene un resorte de torsión. ¿Sí? ¿Se acuerdan de lo que es un resorte de torsión? ¿Está? Colocan un resorte de torsión. Y entonces, mientras más grande sea el torque, la posición de equilibrio va... El torque, el resorte de torsión es proporcional al estiramiento angular.
+28:16
+Entonces pueden poner una agujita y según cuánto se estira angularmente, ven cuánto es el torque del resorte de torsión. Pero si le ponen alguna cosa para que llegue al equilibrio, porque en general hay algún tipo de rozamiento, llega al equilibrio y ven la posición de equilibrio de la agujita. Entonces en la posición de equilibrio el torque producido por la fuerza magnética es igual en módulo al torque del resorte de torsión.
+28:47
+¿De acuerdo? Entonces es una manera de medir el torque este con un ángulo. ¿De acuerdo? Entonces quien mide este torque también mide la corriente, porque si dejan fijo la espira, es decir, A, lo dejan fijo, y dejan fijo B mide la corriente entonces agregando un resorte de torsión en la posición de equilibrio
+29:33
+podemos medir tau, entonces medir I. Es lo que se llama un galvanómetro.
+29:51
+Galvanómetro es el núcleo duro de muchos aparatos de medida. Esto que les acabo de relatar es la medida de corriente, así que en este caso sería un amperímetro.
+30:07
+pero en lugar de conectar, como uno mide una corriente, uno podría conectar esa corriente a una resistencia, hacer circular, colocar una resistencia aquí, y medir el potencial, y sabemos la resistencia, entonces sabemos la resistencia, ¿qué sabemos?
+30:36
+Supongan que esto lo conectan a un circuito. Quieren saber, entre dos bornos del circuito, cuál es la diferencia potencial. Lo que hacen, le ponen una resistencia muy... Tienen un circuito. Este circuito. Tienen acá R1, R2. Tienen un E acá. Y quieren saber la diferencia potencial entre acá y acá. ¿Qué es lo que hacen?
+31:03
+Colocan un galvanómetro... pero con una resistencia muy grande. ¿Por qué por una resistencia muy grande? Porque no quieren que la corriente se... quieren que poca corriente se vaya por acá. Porque si hay mucha corriente por acá, están modificando el circuito. Quieren prácticamente no modificar el circuito. Pero cuando ustedes van a medir algo, tienen que afectar. ¿Me explico? Para medir algo, tienen que extraer... desequilibrar un poco el aparato entonces un poquito de corriente viene por acá le pone una resistencia muy grande y por R es la resistencia es la diferencia potencial que pasa por acá y de esa manera pueden medir la diferencia de potencial que está por acá y si esta resistencia es mucho más grande que las resistencias presentes en el circuito miden el potencial que habría aún sin colocar el voltímetro entonces esto también permite entonces agregando resistencias agregando resistencia grande
+32:00
+Así que esto también sirve como dispositivo para hacer aparatos de medida. ¿Esto se entendió? ¿Sí? Entonces medir, el que mide una corriente, ¿sí? Permite, por ejemplo, medir una resistencia. Si la corriente también es la corriente que pasa por una resistencia muy grande, ¿sí? Entonces estamos midiendo la diferencia de potencia entre los bornes de la resistencia y por lo tanto el voltaje.
+32:37
+¿Preguntas? Bueno, el voltímetro se pone, fíjense, en paralelo. Pero el amperímetro se pone en serie porque si ustedes quieren medir la corriente que pasa por acá... lo que van a hacer es que la corriente esta, la corriente esta, sea justo la que pasa por acá, porque la corriente que quieren medir es esa.
+33:07
+Ustedes quieren que al colocar el amperímetro, afecten poco... el resto del circuito quiere decir que van a tratar de que la resistencia de la bobina esta sea bien chiquitita porque si la resistencia de la bobina es comparable con las otras resistencias que tiene el circuito modifican el circuito entonces van a tratar de que la resistencia del amperímetro sea bien chiquitita ¿de acuerdo? entonces el voltímetro le pone una resistencia muy grande y el amperímetro trata de poner una resistencia de lo más chiquitita en un caso quieren afectar poco llevarse poca corriente, y en otro caso quieren generar poca diferencia de potencial, aunque tengan igual corriente.
+33:51
+¿Me explico? En un caso le ponen una resistencia grande y lo ponen en paralelo, y en otro caso una resistencia chica y lo ponen en serio. ¿Se entendió esto? Y el núcleo duro del aparato es esto que se llama galvanómetro.
+34:19
+¿Preguntas?
+34:22
+Bueno, entonces arranco con el capítulo siguiente Capítulo 9
+34:57
+o generación de un campo magnético por una carga de movimiento.
+35:30
+Por... Cargas y muertos. Vamos a ver también lo que pasa con una corriente. Vamos a empezar por una carga. A ver, vamos a empezar. Primero, yo les dije, no tenemos monopolios magnéticos. Entonces no podemos hacer, como en el caso eléctrico, que veíamos... Una carga producía un campo eléctrico y el campo eléctrico generaba una carga.
+36:02
+Acá tenemos que pensar, cargas en movimiento generan un campo magnético y ese campo magnético a su vez actúa sobre cargas en movimiento. Lo que estuvimos viendo hasta ahora era más bien la segunda parte. Suponíamos que conocíamos el campo magnético, no sabemos cómo calcularlo, pero alguien nos dice el campo magnético vale tanto y vemos cuál es el efecto de eso sobre cargas en movimiento.
+36:28
+Ahora vamos a hacer, si se quiere, la primera parte, que es cómo cargas en movimiento generan un campo magnético. ¿Bien? Entonces, en realidad, lo que sucede es que si ustedes tienen cargas en movimiento, tienen una carga acá en movimiento, Q, con una velocidad B.
+36:49
+Lo que suele suceder es que ustedes van a tener otra carga de movimiento por acá que van a usarla para medir el campo magnético. Nosotros ya vimos con la carga de movimiento como al menos en principio medir un campo magnético. En otra carga Q' con una velocidad B'.
+37:10
+El tema es que normalmente esto no se puede hacer en la práctica porque esta carga para velocidades razonables...
+37:19
+Va a experimentar dos fuerzas generadas por esta. Una es la fuerza eléctrica, la fuerza electrostática.
+37:28
+Y otra es la fuerza magnética. Pero resulta que para velocidades razonables, velocidades de la vía corriente, la fuerza magnética es muchísimo, muchísimo, muchísimo más chica que la fuerza eléctrica. Entonces este experimento en la práctica no se puede hacer. Porque esta no solo genera una fuerza magnética, sino que además genera una fuerza eléctrica. Y la fuerza eléctrica es mucho más grande. Entonces, si hay que ir a buscar una aguja en un pajar, tiene una fuerza enorme que es la eléctrica, y además de esa fuerza enorme en la eléctrica, tiene una pequeña parte que depende de la velocidad de esta partícula, pero que es muy chiquitita, entonces es muy difícil de medir, porque queda escondida en esa otra fuerza enorme que es la fuerza eléctrica.
+38:10
+Entonces, en la práctica, para hacer los experimentos, no se hace esto que voy a contarles ahora, que es de ver el campo magnético generado por una carga que se mueve, sino lo que se hace es tratar de ver el campo magnético generado por una corriente. ¿Por qué? Porque la corriente, un cable con una corriente, es un objeto neutro. No genera fuerza eléctrica. Fuerza eléctrica que genera es indetectable. En cambio, son un conjunto de cargas en movimiento que... Se dan cuenta, se están moviendo de tal manera que en todo momento todo el cable permanece neutro, pero hay una corriente neta.
+38:49
+Entonces, en la práctica los experimentos que realmente se hacen no son de cargas en movimiento, calcular el campo magnético que generan, medir el campo magnético que generan, sino generar, tener una corriente y ver qué campo magnético genera.
+39:07
+Pero bueno, entonces alguien me podrá decir, entonces ¿por qué va a hablar del campo magnético generado por una carga puntual? La razón es que eso es mucho más fácil de describir, no de medir, pero mucho más fácil de escribir. Entonces una vez que veamos qué es lo que le pasa a una carga, vamos a pensar que es lo que le pasa a una corriente sumando los efectos de todas las cargas que se mueven en ella. ¿Se entiende? Entonces, la primera sección se llama campo producido por una carga puntual.
+39:42
+Entonces esto genera campo magnético. Entonces campo producido por una carga en movimiento. Entonces
+40:13
+En los experimentos reales es muy difícil medir la fuerza magnética
+40:44
+producida por una carga de movimiento. Pues queda oculto por la fuerza eléctrica.
+41:16
+Bien. Entonces, vamos a presentar eso ahora sí por motivos pedagógicos, porque en realidad es más fácil de explicar. Y luego veremos el caso realista, que es el caso cuando tienen una corriente, como efecto acumulado de muchas cargas en movimiento. Entonces... El experimento que uno querría hacer es el siguiente. Ya vimos, dado el campo eléctrico, cómo calcular la fuerza. O podemos hacer al revés.
+41:48
+Dada la fuerza, ver cuál es el campo eléctrico punto por punto. El campo magnético punto por punto. Entonces la idea es que vamos a tomar una carga Q, que se mueve a una velocidad B, y vamos a medir el campo. Ya aprendimos en el capítulo pasado cómo medir el campo magnético. Tenemos que poner carguitas. Podemos poner imanes o carguitas en movimiento, punto por punto, y de esa manera ver el campo magnético en todos los puntos del espacio. Y el resultado es complicadísimo, pero básicamente se los voy a tratar de dibujar.
+42:23
+Tomen acá la carga, esta Q, que se mueve a velocidad B. Y ponen imancitos todo alrededor. Van a ver que en un círculo... en un círculo en un plano perpendicular al movimiento de la A toman un plano que pasa por Q perpendicular al movimiento de la carga Q y toman un círculo y van a ver que el círculo tiene radio R entonces el módulo el módulo de B en ese círculo
+43:07
+es constante y además si pueden poner imancitos para ver la orientación y pueden ver que va haciendo así el campo magnético va rotando en ese círculo tiene la dirección del círculo y y tiene el sentido de la regla de la mano derecha, es decir, el polo norte va a estar según los dedos. El polo norte de los imágenes.
+43:40
+Es decir, el campo magnético va a estar orientado así.
+43:45
+Ahora supongamos que en lugar de poner el círculo en el mismo plano que la carga Cusino, que lo ubican en otro plano.
+44:03
+Bueno, ahí resulta que, además, bueno, otra cosa que no mencioné es que B en este plano es proporcional a 1 sobre el radio al cuadrado.
+44:19
+También B es proporcional al módulo de la velocidad y también B es proporcional al valor absoluto de la carga.
+44:36
+De la carga esta. Bueno, y B es esto. Si es perpendicular, fíjense, en este plano va a ser perpendicular al... Es decir, va a estar en el plano perpendicular al movimiento de B. ¿De acuerdo? Y recorriendo círculos.
+45:02
+Y el sentido, de acuerdo con la regla de la mano derecha, como les decía, va a la velocidad según el pulgar y el campo magnético va recorriendo como los otros dedos. Y por último, si en lugar de poner un círculo que está en el mismo plano que Q, ponen en otro plano, entonces una posición acá que esté acá y que forme un ángulo teta acá, van a tener que acá el campo magnético también es proporcional al seno de teta.
+45:39
+Esto en principio, en la práctica no, pero en el principio se podría hacer todas estas medidas experimentalmente.
+45:46
+Y calculando el campo magnético en cada puntito. Se dan cuenta que es un lío bárbaro porque tienen que ir cambiando. Se dan cuenta que medir el campo magnético en cada uno de estos puntos ya de por sí da trabajo, como yo les expliqué en el capítulo anterior.
+46:00
+Pero se podría hacer todo. Y lo interesante es que todo esto se puede resumir en una única fórmula vectorial. Se resume...
+46:13
+en una fórmula vectorial entonces tomen R el vector que va de la carga Q al punto de observación ¿si?
+46:49
+Entonces, B en la posición R será proporcional a Q por B, producto vectorial con R, dividido R módulo al cubo.
+47:21
+Experimentalmente. ¿Cómo lo determino? Experimentalmente. Ahora, ¿cómo da? Es así. Pone el dedo según la dirección de B. El campo magnético recorre círculos en este plano, círculos cerrados, y el sentido va según cómo van los dedos. Esto que estoy haciendo es para cargas Q positivas. Vamos a hacer esto con una carga Q positiva. Si no, los signos cambian al revés. Si invierte en el sentido de B o de Q, cambian los signos. Entonces, si la velocidad va para allá...
+48:00
+Pero acá no hay corriente. Acá lo que tienen es una carga moviéndose... No hay corriente. Tienen una carga que se está moviendo para allá. Sí, una carga moviéndose, uno puede decir que es una corriente, pero es una carga moviéndose así y el campo magnético hace círculos así. Bien. Bien. Si todo este vergenal de dedos haciéndose así les resulta horrible, en realidad es más fácil acordarse de esto.
+48:27
+Bueno, y de hecho el precoeficiente se puede calcular, se puede medir, digamos. Y bueno, entonces la expresión se suele escribir de esta manera. ¿Sí? Se escribe de la manera siguiente.
+49:00
+B igual mu sub cero sobre 4 pi por Q por B, producto vectorial con R, perdón, dividido el módulo de R al Q.
+49:19
+donde Musero, ahora les hablo de Musero. Esto se llama la ley de Biot y Savart para una carga puntual.
+49:55
+Bueno, y mu cero es una constante. Los mu cero se les llama permeabilidad magnética del vacío. ¿Cuál es la calidad del cargador de tensión? ¿Sería desde el centro de círculo a la frecuencia de unos... El R es, va, es este vector que está acá.
+50:28
+Si yo voy a medir el campo magnético acá, es este vector que está acá, yendo de acá. Es el vector que va de la carga que genera el campo magnético al punto de observación. Si yo estuviera observando acá, R está orientado así. Y en ese caso, fíjense, en el caso en que R está para allá, el producto vectorial B con R, tengo B con R, tengo acá B con R claro, ahí es que es máximo fíjense que acá es proporcional al seno de teta pero quiero ver un poco lo de lo de la dirección tengo B imagínense que tengo acá me tendría que dar el campo magnético orientado a lo largo del círculo, claro, si está bien, porque es perpendicular a este... y es perpendicular a B.
+51:34
+Fíjense, el campo magnético les queda perpendicular a la velocidad B y también al radio vector. Si justo estamos en el plano por el que está la carga, es perpendicular a la velocidad, que es perpendicular al plano, y perpendicular a R, así que les queda tangente al círculo, que es lo que vemos acá.
+51:54
+Y además le determina todo, el sentido, todo. Y fíjense, perdón, permeabilidad magnética, fíjense, juega un poco el papel para el campo magnético de lo que la permitividad eléctrica jugaba como papel para el campo eléctrico. Lo único que, por razones históricas, no sé por qué, de hecho, en el caso eléctrico habían puesto el épsilon cero, lo pusieron abajo. Y acá, en este caso, el musero lo ponen arriba.
+52:26
+Pero es una cuestión de costumbre, digamos. Una cosa que les quiero señalar es que se parece un poco a la ley de Coulomb. De hecho, juega para el campo magnético el mismo rol que la ley de Coulomb juega para el campo eléctrico. Fíjense.
+52:42
+Decrece como 1 sobre r al cuadrado. ¿Sí? Porque, bueno, tiene un r arriba y un r al cubo abajo. Así que a grandes distancias decrece como 1 sobre r al cuadrado. es proporcional a la carga, como la ley de Coulomb también. La diferencia fundamental es que tiene una estructura vectorial complicada y que depende de la velocidad. Esa es la diferencia fundamental con la ley de Coulomb. La ley de Coulomb, el campo eléctrico que genera una carga va en la misma dirección que R, y acá es perpendicular a R y perpendicular a otra cosa que es la velocidad.
+53:17
+¿Qué más les tengo que decir? Ah, bueno, otra cosa importante que tengan en mente es que esto vale... como todo lo que hemos visto, en realidad, vale cuando la velocidad es mucho más chica que la velocidad de la luz. ¿Todo esto? En realidad todo el curso vale así, pero en este caso es particularmente importante. Es válido si B es mucho más chico que la velocidad de la luz.
+53:52
+¿Vale?
+53:57
+Mucho más chicas, realmente mucho más chicas. Bueno, obviamente, a medida que se acerquen a la velocidad de la luz, esto es progresivamente cada vez una menor, una menos buena aproximación de la velocidad. Pero es como siempre. ¿Cuál es el rol que juega la velocidad de la luz? Se los adelanto. Es que las señales electromagnéticas no se propagan más rápido que la velocidad de la luz. Y esto está puesto como una ley instantánea, como que el efecto de esta carga aquí... se propaga instantáneamente.
+54:28
+Y en realidad no se propaga instantáneamente, se propaga a la velocidad de la luz. Entonces, si la velocidad B es comparable a la velocidad de la luz, la señal que llega acá no es lo que le pasaba a la carga Q en ese instante, sino lo que le estaba pasando un rato antes. ¿Me explico? Y ese efecto no está incluido acá. Pero no está incluido en casi nada de lo que vemos en el curso, así que no se preocupen. Pero en este caso es particularmente importante.
+54:58
+Bueno, yo les decía que en realidad... Lo que era realmente interesante no era cómo se generaba... Ah, bueno, perdón, otra cosa que les quería decir, me olvidé. La ley de Biot y Zavart no formularon la ley de estos términos, sino que la formularon en los términos que les voy a presentar ahora. Es decir, no lo formularon en términos de la fuerza que genera una carga puntual, que como les digo, es algo muy difícil de medir, sino que lo formularon como el campo magnético que genera un hilo de corriente, porque ahí tienen muchas cargas moviéndose, Y no hay campo eléctrico generado porque el cable es neutro, eléctricamente neutro.
+55:41
+Entonces veamos ahora lo que efectivamente realmente midieron Yotizabar. Entonces, campo producido.
+56:06
+por un cable con corriente. Entonces tomemos un cable por el que circula una corriente.
+56:28
+Un cable tiene por acá una corriente que circula y tomen un pedacito del cable pequeño, le llamamos DS.
+56:53
+Entonces, si tomamos acá un punto P en el cual vamos a medir el campo magnético, veamos cuál es el campo magnético que generan las cargas que están por aquí, en este intervalo DS, en P entonces a este vector le llamamos R entonces veamos cuánta carga cuánta carga se mueve llamémosle DQ a la carga que atraviesa DS en un intervalo de T DQ es la carga la carga
+57:37
+que cruza, tomen acá una sección, llamen A, cruza A en un intervalo de tiempo de T. Entonces el campo magnético que se genera acá será la suma de los campos magnéticos generados por todas las cargas que cruzan esa seccióncita en ese intervalo de tiempo dt.
+58:17
+Entonces veamos cuánto es. B va a ser igual. Bueno, tienen el mu cero sobre 4pi, ese queda igualito.
+58:26
+Tienen dq, que por ahora no decimos cuánto vale. B será la velocidad de desplazamiento, en promedio, ¿verdad? Porque en realidad, nuevamente, las cargas que están acá adentro no se están moviendo todas así según DC, van yendo para todos lados, pero en promedio, podemos promediar porque son muchísimas, será BD y producto vectorial con R dividido R al Q. Pero ahora queremos expresar DQ en términos de cosas que podamos medir como la corriente.
+59:10
+Entonces dijimos, en el intervalo de tiempo DT cruza por esta sección la carga DQ. Así que la corriente I es DQ sobre DT. Entonces ahora tomemos, veamos cuánto vale DQ por BD.
+59:44
+Entonces va a ser igual, reemplazo acá, me queda I por DT por BD.
+59:55
+Pero fíjense, DT por BD es DS, porque dijimos que cuánto es... DQ es la carga que está en este volumen, pero también es la carga que atraviesa la superficie A en el intervalo DT. Pero ¿cuánto es este largo? Es BD por DT. Porque si toda la carga que atraviesa Q, esta superficie en el interior de DT, es la que está acá BD, entonces DS es BD por DT.
+1:00:27
+Pero DS es igual a BD por DT. Así que esto que está acá arriba es igual a I por DS.
+1:00:44
+Y esto es un poco más cómodo porque DQ, cuánta es la carga que atraviesa en el área A, en el intervalo DT, es algo difícil de imaginar. Y BD tampoco, uno tiene acceso macroscópico. Pero en cambio DS es el vectorcito que caracteriza el tramo del circuito y es la corriente, que es algo que se mide fácil. Entonces B lo podemos escribir también como Mu0 sobre 4Pi. por I por dS vectorial R dividido R al Q.
+1:01:21
+Esto es, perdón, puse B, pero habría que poner dB, porque es el campo generado por este tramito. Campo generado por dQ que está en dS. Entonces si queremos, este es el dB, si queremos el campo magnético total... B de todo el cable, generado por todo el cable, será la integral, será mu sub cero sobre 4 pi por I, por la integral sobre la curva que caracteriza el cable, de S, producto vectorial con R, dividido R al cubo.
+1:02:09
+Bien.
+1:02:13
+Y esta sí es la ley que determinaron experimentalmente Biot y Zavart. Bien. Bien.
+1:02:42
+Y esta sí es fácil de medir experimentadamente porque fíjense, la corriente es fácil de medir.
+1:02:49
+Esto, digamos, imagínense que cuando tienen toda una curva es complicado, pero imagínense que en lugar de tener un hilo curvado tienen un cable, entonces esto se puede extraer la expresión, de hecho la vamos a hacer ahora en un momento, y pueden medir entonces campo magnético y determinar esto.
+1:03:12
+¿Se entendió? Esta ley juega para el campo magnético un rol similar que el que la ley de Coulomb genera para el campo eléctrico.
+1:03:28
+Es la ley que permite allá el campo magnético conocidas las fuentes de campo magnético que son o bien las corrientes o bien las cargas en movimiento.
+1:03:42
+Entonces veamos algunos ejemplos concretos para ver cómo funciona esto, cómo se calcula. Entonces, ejemplos.
+1:04:13
+Entonces el primero es un segmento de cable rectilíneo con corriente I. Mismo comentario utilizado hace un rato. Entonces tenemos acá un cable, pongamos largo L,
+1:04:43
+Acá entra una corriente Y y vamos a poner un punto de observación a una distancia X en el plano bisector del segmento. Mismo comentario que les hacía hace un rato. No tiene sentido acá que aparezca la corriente acá y desaparezca acá. Esto tiene que verlo como la contribución al campo magnético en P hecho por este segmento.
+1:05:14
+Pero seguramente este segmento está unido a otro segmento porque como la carga se conserva, la carga no puede estar apareciendo acá. ¿Se entiende? Entonces seguramente esto se une a otros segmentos y habrá que sumar los campos magnéticos producidos por cada uno de los segmentos. Entonces, ojo, ojo, es solo un tramo. La carga se conserva.
+1:05:47
+¿Bien? Bueno, y a este eje que está acá le llamaré Y, ¿verdad?
+1:05:55
+Entonces tomemos ahora acá un punto de altura Y, un tramito de ancho de Y, de largo de Y, y veamos cuál es el campo magnético que genera este tramito de largo de Y a altura Y sobre el punto P.
+1:06:31
+Entonces fíjense, el vector R es este que está acá.
+1:06:43
+Y el vector DS será este vector que está acá.
+1:06:56
+Entonces, ¿cuál será la dirección del campo magnético?
+1:07:10
+Bueno, fíjense. DS y R ambos están en este plano. Y por aquella fórmula que está acá, digamos DB. DB es perpendicular a DS y a R. Quiere decir que es perpendicular al plano definido por DS y R. Así que DB es perpendicular al plano. Y ahora veamos un poco su dirección. Entonces DS lo tomo en la dirección de la corriente. Entonces tengo DS, producto vectorial con R, nos va a quedar entrante al plano.
+1:07:46
+Entonces DB es entrante al plano. Pongo DS, primer vector, segundo vector en el segundo dedo, que va a ser un R, y el producto vectorial...
+1:08:10
+Claro, también lo podemos ver así. Pongo la corriente para... Esa es otra manera de pensarlo. Pongo la corriente para arriba, el campo magnético acá entra para arriba. Las dos cosas dan lo mismo. Bien. Bien, entonces ahora calculemos cuánto vale... Eso está bueno porque fíjense, todas las contribuciones de todos los DS, todas van a ser paralelas entre sí, todas son perpendiculares al plano, aquí... Y todas son... Todas tienen la misma dirección.
+1:08:44
+Entonces, cuando queramos sumar todas las contribuciones, no tenemos que sumar vectorialmente. Todas son paralelas entre sí. El B total, podremos calcularlo sumando todos los módulos de los campos magnéticos generados por pequeños tramitos. Entonces, calculemos ahora...
+1:09:10
+Entonces llamémosle este ángulo teta.
+1:09:14
+Calculemos dv, dv en módulo.
+1:09:17
+Entonces dv será... Siempre está el mu sub cero sobre 4pi. Tienen el i. Van a tener dy. Y van a tener... La distancia esta... Dividido al cuadrado.
+1:09:43
+R al cuadrado. Pero hay que agregar un ángulo. ¿Sí? Porque es el producto vectorial. ¿Sí? ¿Cuánto será el ángulo en relación con teta?
+1:10:16
+Fíjense, es producto vectorial de S por R, por el ángulo que forma de S con R, con este, ¿no?
+1:10:29
+Por el seno de ese ángulo.
+1:10:32
+¿Sí? Y entonces fíjense, para darse cuenta, cuando están en teta igual a cero, ¿sí?
+1:10:45
+Les queda, ángulo de este otro, les queda 90. Así que, en un caso tienen un seno y en el otro tienen un coseno. Así que... Está bien. Entonces... Entonces hagamos así. En lugar de llamarle a este teta, le llamamos a este teta. Y nos va a quedar seno de teta. Y ahora calculamos bien cuánto vale seno de teta.
+1:11:22
+Fíjense, si tienen un dibujito que sea con un ángulo acá, teta.
+1:11:40
+Lo que tienen que calcular es esto que está acá. La proyección de R con esto. Entonces, seno de teta...
+1:11:56
+Les va a quedar... X dividido raíz cuadrada... De R... De Y al cuadrado más X al cuadrado. Entonces cuando... Cuando... Cuando estamos acá... El ángulo vale pi sobre 2.
+1:12:29
+El seno vale 1. Y está perfecto. Entonces, escribamos todo. De B entonces les queda mu sub 0 por I sobre 4 pi. por dy, por el seno que está puesto allá es x sobre raíz cuadrada de x al cuadrado más y al cuadrado, y r al cuadrado no es otra cosa que x al cuadrado más y al cuadrado.
+1:13:03
+Así que el b total será igual a mu sub cero por y sobre 4pi por x que está fijo, por la integral en Y entre menos L sobre 2 y L sobre 2 de Y sobre X al cuadrado más Y al cuadrado a la 3 menos. Fíjense que todo el procedimiento se parece mucho al que teníamos, salvo por estos productos vectoriales que nos dan un poco de dolores de cabeza, salvo por los productos vectoriales, es muy parecido a lo que teníamos cuando calculábamos campos eléctricos producidos por ejemplo una barra de carga uniforme usando la ley de Coulomb es el mismo tipo de cálculo y ahora como en aquel caso también nos pasa que el problema se reduce finalmente a calcular una integral típicamente
+1:14:12
+Esta integral se parece a la que teníamos en aquel entonces, ¿se acuerdan? Bueno, pero entonces no voy a hacerla otra vez de la misma manera. Les enseño otro truco para calcular esta integral. Ahora la vamos a calcular de otra manera. Entonces vamos a calcular esta integral. La que hemos calculado está primitiva. dy de x al cuadrado más y al cuadrado a la 3 medios. Entonces yo les enseñé un truco con un cambio de variable. Ahora les voy a enseñar otro truco.
+1:14:41
+Bien. Entonces el truco es el siguiente.
+1:14:53
+Voy a escribir esto de la manera siguiente.
+1:14:58
+Voy a sacar... Primero que nada me voy a deshacer de los X haciendo el cambio de variable. Y igual a X por U. Así que esto me queda 1 sobre x al cuadrado de u por u al cuadrado más 1 a la 3 medios. Eso primero para no andar arrastrando x. ¿Está?
+1:15:25
+Eso no es nada.
+1:15:27
+Seguimos. Ahora lo que voy a hacer es este truco, fíjense. Miren esta pisadita. Voy a escribir la integral... de du de u cuadrado más 1 a la 3 medios y arriba voy a escribir esto como 1 más u al cuadrado menos u al cuadrado ¿cómo?
+1:15:53
+u es esta hice el cambio real y x igual entonces fíjense nos queda 1 sobre x al cuadrado la integral de du Toda la primera parte me queda dividido raíz cuadrada de u al cuadrado más 1. Y la segunda parte me queda menos la integral de du por u al cuadrado sobre raíz cuadrada de u al cuadrado más 1.
+1:16:30
+Ah, perdón, a la 3 medias.
+1:16:45
+¿Se entiende lo que estoy haciendo? Llegamos, resolvimos el problema, llegamos hasta acá, y ahora lo que nos queda es hacer esta integral. Para hacer este tipo de integrales, yo ya les enseñé un truco basado en los senos hiperbólicos. ¿Se acuerdan? Bueno, ahora les enseño otro truco para no hacerlo dos veces de la misma manera. Entonces... Habiendo hecho esto, llego a esta integral acá, y a esta integral le voy a aplicar la fórmula de integración por partes.
+1:17:17
+Voy a decir, du por u al cuadrado, por u al cuadrado más 1 a la 3 medios.
+1:17:27
+Entonces voy a tomar la función f' que es u sobre u al cuadrado más 1 a la 3 medios.
+1:17:37
+Y esta tiene una primitiva evidente, ¿verdad? ¿Sí? ¿Les resulta evidente la primitiva? Va a ser F, fíjense, es como U al cuadrado más 1 a la 1 medio, casi. Vamos a ver los factores. Si yo derivo esto, ¿sí? Derivo esto, todo. ¿De acuerdo? Si yo derivo U al cuadrado más 1 a la 1 medio...
+1:18:11
+Entonces es como esto a la menos 1 medio. Así que tengo menos 1 medio, de esto le agrego 1, así que queda u cuadrado más 1 a la 3 medios, y luego tengo que derivarlo de adentro.
+1:18:25
+Lo de adentro me queda 2u. Se me van los dos, y fíjense que me quedó justo lo que teníamos acá, menos de un signo. Me faltaba un signo.
+1:18:37
+Y lo otro que me queda es G vale 1, y si lo derivo, G' vale 1.
+1:18:48
+Entonces la fórmula de integración por partes me queda menos U sobre raíz cuadrada de U cuadrado más 1, más la integral de U del producto de estas dos cosas. Entonces me queda raíz cuadrada de U cuadrado más... Ya cambié el signo acá.
+1:19:11
+Entonces volvamos a aquella fórmula que está acá abajo.
+1:19:16
+Me queda 1 sobre x al cuadrado de u sobre raíz cuadrada de u al cuadrado más 1. Y le resto eso que está allá arriba. Entonces cuando le resto este signo me queda un más. Me queda más u sobre raíz cuadrada de u al cuadrado más 1. Como estoy restando aparece un menos. Menos de u sobre raíz cuadrada de u al cuadrado más 1.
+1:19:42
+Y ahora, ¡chachán! Tenemos la integral, la primitiva. 1 sobre x al cuadrado por u sobre... Este es otro truco que se usa mucho. Sumar y restar acá. Y luego integrar por partes.
+1:20:07
+Bueno, entonces volvamos a la expresión aquella. Tenemos la primitiva. Podemos calcular. Bueno, la integral esta es par en Y. Así que en lugar de integrar entre menos L sobre 2 y L sobre 2, puedo multiplicar por 2. Integrar entre 0 y L sobre 2. ¿Está? Así que nos queda que B total será mu sub 0. En lugar de 4pi pongo 2pi.
+1:20:38
+Porque... Estoy multiplicando por 2. Tengo Y por X.
+1:20:45
+Y tengo que... Tengo 1 sobre X al cuadrado.
+1:20:52
+Y tengo que evaluar... Esto... En... X... En L sobre 2...
+1:21:03
+En L sobre 2X. Porque fíjense que la relación entre Y y X es esta. Así que me queda...
+1:21:11
+L sobre 2X dividido por raíz cuadrada de 1 más L sobre 2X al cuadrado. Así que podemos simplificar. B total es igual a mu sub 0 por Y sobre 4Pi.
+1:21:47
+O no, voy a meter este 2x acá abajo. Entonces me queda un 2pi por x al cuadrado. Tengo un L. Y acá abajo tengo un 4x al cuadrado más L al cuadrado. ¿Dónde? ¿Dónde? ¿Acá en este? No, tengo acá el u cuadrado.
+1:22:20
+Acá tengo 1 más u cuadrado. Dividido u cuadrado más 1 a la 3 medios, me queda 1 sobre raíz cuadrada.
+1:22:38
+Bien. A ver, déjenme verificar que no me equivoquen las cuentas.
+1:22:50
+Ah no, acá este x al cuadrado está mal porque acá había un x y un x al cuadrado. Había un cuadrado de más acá. Y lo otro está bien.
+1:23:05
+Entonces, dos límites interesantes. Si x es mucho más grande que L, si estamos muy lejos...
+1:23:18
+del pedacito este de cable, B total, fíjense, podemos apreciar acá, esto nos queda mu sub cero I por L sobre 2 pi por X al cuadrado, cuando X es muy grande, y perdón, me queda un 2 más, me queda un 4 pi, y decrece como X al cuadrado, que es lo que hemos visto, un pedacito chiquitito, una distribución acotada de carga, De hecho va a decrecer más rápido porque acá no estoy usando todavía que la carga se... ¿Sí?
+1:23:59
+L sobre 2.
+1:24:01
+Así. ¿Dónde? Pongo acá adentro y me queda 4X al cuadrado. ¿Sí? Bien.
+1:24:17
+Pero este, fíjense, les daría la sensación de que el efecto del campo magnético decrece como 1 sobre X al cuadrado. Pero en realidad decrece más rápido, porque acá, esta es la contribución de un cachito de cable. Pero fíjense, la carga se conserva, así que voy a tener un circuito cerrado. Imaginemos el más simple de todos, que es el cable subiendo para acá y un cachito después bajando por el otro lado. Entonces el campo magnético, las dos contribuciones se me van a ir a X grande y se me van a compensar. De hecho, el campo de una distribución acotada de corriente decrece como 1 sobre la distancia al cubo, no como 1 sobre la distancia al cuadrado.
+1:24:58
+Eso porque no hay monopolio magnético, no existe el equivalente de la carga magnética. Entonces si miramos un circuito muy lejos, en lugar de crecer a la misma velocidad que una carga puntual, que es 1 sobre R al cuadrado, decrece 1. Más rápido, como un dipolo. ¿Se entiende?
+1:25:18
+Un dipolo, el campo eléctrico de un dipolo, decrece como uno sobre la distancia al cubo. ¿Bien? Y acá, en realidad, los circuitos magnéticos siempre decrecen como uno sobre R al cubo a gran distancia, porque no hay monopolos magnéticos. No hay el equivalente de la carga eléctrica. Bueno, y otro régimen que es interesante es cuando X es mucho más chico que L. Entonces acá podemos despreciar X y nos queda que el B total es igual a mu sub 0 por Y sobre 2 pi por X.
+1:25:58
+Es la hora... Bueno, pero antes de irse, una última cosa. ¿Qué pasa si yo... Hablé todo del módulo, pero veamos un segundito cómo es la dirección y el sentido. Y bueno, regla de la mano derecha. Lo que van a hacer son círculos cerrados. Yo les recuerdo que las líneas de campo son círculos cerrados. El campo magnético es tangente a los círculos en todo punto. Y la... Orientación lo hacen con la regla de la mano derecha. El cable va según el pulgar y los dedos recorren como el campo magnético.
+1:26:31
+Y ahí tiene el campo magnético dando vueltas de esta manera.
+

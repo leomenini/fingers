@@ -1,0 +1,469 @@
+# Clase 3
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/3/
+
+Fecha de exportación: 7/23/2026, 11:08:31 AM
+
+
+Clase: 3
+Curso: F3
+
+Segmentos : 254
+Palabras  : 10491
+Caracteres: 58846
+
+0:18
+Bueno, vamos a arrancar la clase. Repito mi pregunta hace un momento, dudas que puedan haber quedado de las clases anteriores.
+0:44
+Bueno, la vez pasada habíamos empezado a analizar este problema. Es el problema de una barra de largo L cargada con una densidad lineal de carga uniforme. Y la pregunta era cómo era la fuerza eléctrica que experimentaba una carga Q0 a una distancia D del centro de la barra sobre el eje, sobre el plano bisector.
+1:11
+Y ahí hemos hecho la cuenta, había que hacer una integral que era un poco complicada. Conceptualmente no era muy complicado el problema, pero la integral da un poco de trabajo. Y llegamos a este resultado, no sé si lo escribí exactamente de esta manera, pero la expresión que usé era equivalente a esta. Llegamos a esta expresión al final de la clase pasada. ¿Bien? Esto también, fíjense que lambda por L, ¿qué es? La densidad lineal de carga por el largo total, ¿qué es? ¿Cuánto? La carga total, así que esto también lo podemos escribir como Q0 por Q, que es la carga total de la barra.
+1:56
+¿Sí? Dividido 4 pi epsilon 0 por D por raíz cuadrada de D al cuadrado sobre L al cuadrado sobre 4. ¿Bien? ¿Se entiende esto? ¿Se entendió el cálculo? ¿Les resultó complicada la integral o más o menos se entendió?
+2:18
+Bueno, lo planteo así. Levanten la mano los que lograron después en su casa rehacer el cálculo en detalle. Dos. Levanten la mano los que lo intentaron y no lo lograron.
+2:35
+Tres. Es decir, el grueso no ha vuelto a mirar su cuaderno desde el miércoles pasado. Entonces les propongo para la próxima clase traten de rehacer el cálculo. Si tienen dudas me las presentan y las vemos acá. Pero no tiene sentido que yo rehaga el cálculo si ustedes no han hecho el esfuerzo de ver si salió. Los que ya tengan preguntas podemos irlas viendo al final de la clase. Bueno, entonces una cosa que me quiero interesar ahora es... ver ver algunos casos límite casos límite de este problema no me interesa en dos situaciones básicamente una en el cual la carga está muy alejada de la barra si es dicho de otra manera el primer caso sería que de la distancia entre la carga y la barra es mucho más grande que el tamaño de la barra Entonces, ¿qué tiene que pasar?
+3:34
+Si yo miro una distribución de carga como esta desde muy lejos, si yo pongo un cusero muy, muy lejos, a una distancia mucho más grande que el tamaño de la barra, ¿cómo se tiene que comportar la barra?
+3:51
+Como si fuera una carga puntual. Cuando uno tiene un objeto cargado y lo mira desde muy lejos, no logra ver el tamaño. En este dibujo confunde, pero imagínense que la carga Q0 está de este lado del pizarrón. Entonces, en realidad, aquello parece bastante puntual. Y si en lugar de ser este pizarrón, es el salón del lado todavía más.
+4:12
+Entonces, en ese régimen tenemos que encontrar que la barra se comporta como una carga puntual. Bueno, veamos que esto es así. Fíjense que en ese régimen... Raíz cuadrada de D al cuadrado más L al cuadrado sobre 4, ¿a qué se parece?
+4:33
+Cuando D es mucho más grande que L. ¿A? A D. Fíjense que podemos despreciar L cuadrado sobre 4 con respecto a D al cuadrado, entonces nos queda raíz cuadrada de D al cuadrado, que no es otra cosa que D. ¿Sí?
+4:50
+Entonces si sustituimos arriba, vemos que la fuerza se comporta como Q0 por Q sobre 4 pi epsilon 0. Y acá tenemos D y aparece otro D y nos queda D al cuadrado. Que esto es la misma fórmula que la ley de Coulomb. Fíjense, es el producto de las cargas dividido 4 pi epsilon 0 por la distancia entre los objetos al cuadrado. Entonces en ese límite...
+5:21
+la barra se comporta como una carga puntual.
+5:41
+Bueno, podemos hacer el límite opuesto. Podemos suponer ahora que estamos cerquita de la barra. Que Q0 está muy cerquita. Esto es lo que podemos llamar el límite de una barra infinita. Una barra muy muy grande. Nos ponemos muy cerquita y es como que la barra fuera infinita. Con densidad uniforme. Entonces podemos hacer el límite opuesto. El límite D mucho más chico que L.
+6:07
+Entonces ahí ¿qué pasa? En ese régimen raíz cuadrada de D al cuadrado más L al cuadrado sobre 4, ¿como qué se comporta?
+6:17
+Como L sobre 2, ahí podemos despreciar L al cuadrado y la raíz cuadrada de L al cuadrado sobre 4 se comporta como L sobre 2. Entonces si sustituimos, en ese caso nos conviene usar más esta expresión, fíjense, entonces F sub X sustituyendo se comporta como Q0 por lambda sobre L dividido 4 pi epsilon 0 por D por L sobre 2. Entonces fíjense, en el límite de una barra muy muy larga, es mejor expresar las cosas en términos de la densidad de carga y no en términos de la carga misma.
+6:54
+Se nos va L, ya no depende de L, hay un límite en ese sentido y nos queda Q0 sobre lambda dividido 2 pi epsilon 0 por D. Y fíjense que acá se da una cosa un poco extraña, que es que esta fuerza no decrece como la distancia al cuadrado. normalmente la fuerza electrostática decrece al menos como la fuerza al cuadrado.
+7:27
+Pero la razón por la cual acá no decrece como la distancia al cuadrado es que estamos hablando de una distribución infinita de cargas. En el límite en que hacemos L muy grande con respecto a D, estamos pensando en una distribución de carga que va hasta el infinito. Y cuando tienen cargas así que van hasta el infinito, puede pasar que la fuerza no decaiga tan rápido. Ambos límites son incompatibles. El límite en que vemos las cosas de lejos y el límite en que vemos la distribución infinitamente larga son límites que no se pueden dar al mismo tiempo. Así que por eso es consistente el resultado. ¿Se entiende?
+8:07
+¿Esa puede ser el movimiento armónico? ¿Cómo? ¿Esa puede ser el movimiento armónico? No, no. No, porque fíjate que en el movimiento armónico la fuerza es proporcional a la distancia. Acá es inversamente proporcional a la distancia.
+8:17
+¿Alguna otra pregunta?
+8:26
+Bien.
+8:30
+Vamos a, ahora, antes de terminar este capítulo, estoy ya terminando el capítulo, pero quiero, ah no, perdón, antes quiero hablar de otra cosa también vinculada con las cargas distribuidas. Es una cosa que les voy a decir ahora en carácter de cuentito y después lo vamos a tratar de hacer bien el cálculo, pero hacer el cálculo con la ley de Coulomb se puede hacer, pero da mucho trabajo. Hay que hacer unas integrales que dan un poco de trabajo, así que no las vamos a hacer. Y después vamos a hacer el cálculo de esto que voy a contarles ahora.
+9:00
+Lo vamos a hacer por otro método. Y por el otro método es re fácil hacer la cuenta. Entonces no voy a perder el tiempo haciendo las integrales. Porque ahí da mucho trabajo. Y si les digo lo que da. Y más adelante dentro de dos o tres clases volvemos sobre este tema. Y les cuento cómo se hace la cuenta. Entonces un caso importante.
+9:28
+Entonces el caso que les voy a contar es el siguiente.
+9:39
+Este es un cascarón esférico.
+9:49
+Es decir, la carga está sobre la superficie con densidad...
+9:57
+de carga... superficial... uniforme. Es importante. La carga está distribuida acá. Acá tomamos el origen. Acá tomo un punto de observación P, que está a una distancia R del origen, del centro de la esfera. Tenemos una esfera. Dentro de la esfera es hueca, no hay nada. Y tienen un cascarón... Y la carga está distribuida uniformemente sobre el cascarón.
+10:30
+Y acá ponemos una carga Q0. Entonces se puede probar, y lo vamos a probar un poco más adelante en el curso, o se podría hacer haciendo estas integrales, pero da un poco de trabajo, porque ahora en lugar de tener integrales sobre un segmento, tiene integrales sobre una esfera, da un poco de trabajo hacer la cuenta, pero se puede hacer. Y el resultado da lo siguiente, que la fuerza... Bueno, primero que nada, algunas cosas sí podemos hacer sin hacer cuentas. Supongamos que la densidad superficial acá, que la carga esta total, Q fuera positiva y que Q0 fuera positivo.
+11:02
+¿Cómo sería la fuerza? entre el cascarón esférico y la carga puntual Q0.
+11:10
+Primero, ¿qué dirección tiene?
+11:13
+Tiene sentido para acá, voy a poner Q0 dibujado más abajo, va a tener sentido para acá y además por simetría, tiene que ser sobre el eje, porque está claro que la fuerza que me genera este pedacito, me genera una fuerza hacia abajo, pero este otro pedacito me genera una fuerza que se le compensan las partes que no son según el eje. Entonces, tiene que tener esa dirección y como las dos cargas son iguales, perdón, de igual signo, entonces es repulsiva.
+11:44
+Entonces, lo que se puede probar es que el módulo se puede probar
+11:55
+lo haremos más adelante, que F, el módulo, es igual, fíjense, a cero, si, llamémosle R mayúscula al radio de la esfera. Si R minúscula es menor que R mayúscula. Cuando estamos adentro, El cascarón no hace fuerza.
+12:28
+Lo cual es muy sorprendente porque fíjense, uno podría decir, si yo estoy acá, esta parte está mucho más cerca, así que me va a rechazar más que esta, que está más lejos. Pero el problema es que se termina compensando de manera muy sorprendente el hecho de que esta está más cerca con el hecho de que hay mucha que está lejos. Y cuando uno hace bien la cuenta da que adentro no hay fuerza. Una carga que pusiéramos acá en el medio no estaría traída hacia ningún lado.
+13:01
+Y fuera se comporta exactamente como una carga puntual. Q0 por Q sobre 4 pi epsilon 0 por R al cuadrado, donde R es la distancia no a la esfera, sino al centro de la esfera. Así que una esfera cargada... en esfera hueca, un cascarón, se comporta fuera del cascarón exactamente como una carga puntual.
+13:31
+Entonces esto es si R es mayor que R. Esto lo vamos a probar, vamos a hacer la cuenta por otro método dentro de un par de clases. Por ahora se los digo como cuentito, es bueno saberlo, después lo vamos a probar bien.
+13:52
+Y antes de terminar el capítulo, ahora sí, voy a hablarles... Yo les comenté al principio del capítulo que había fuerzas que eran mucho más grandes unas que otras. Y ahora vamos a hacer la cuenta precisa en exactamente qué queríamos decir con eso. Entonces, 1.6, la magnitud de tres fuerzas.
+14:20
+Entonces yo les comenté en las primeras clases que la fuerza eléctrica normalmente era muchísimo más grande que la fuerza gravitatoria. La pregunta es...
+14:37
+¿Cómo podemos transformar esa aseveración imprecisa en algo preciso? Está claro que hay situaciones, los objetos neutros, la fuerza de la gravedad puede ser mucho más grande que la fuerza eléctrica. Por ejemplo, la interacción que nosotros tenemos con la Tierra es una interacción gravitatoria y el efecto que nosotros tenemos de interacción eléctrica con la Tierra es insignificante normalmente. En cambio, la atracción del peso es importante. Está claro que hay casos en que no es así. Pero el punto es, tomemos dos objetos cargados... que sean fundamentales de la naturaleza y comparemos su interacción eléctrica con su interacción gravitatoria.
+15:15
+Entonces voy a tomar un ejemplo que es el átomo de hidrógeno. Primero comparación, gravedad, fuerza eléctrica.
+15:37
+Entonces, vamos a hacerlo, hay que comparar dos objetos, voy a comparar, perdón, hay que comparar un objeto en las dos fuerzas. Entonces voy a tomar como ejemplo el átomo de hidrógeno.
+16:04
+¿Por qué tomo como ejemplo el átomo de hidrógeno? Porque es el átomo más simple de todos, donde hay sólo un protón, vamos a ponerlo acá, es un protón con un electrón.
+16:19
+Y tienen ambos la carga fundamental, la carga mínima que existe libre en la naturaleza. El electrón está orbitando, no es una palabra adecuada, hay una nube de electrones, ahí no podemos hablar muy bien en términos clásicos, pero no importa. Tiene una distancia típica, un radio típico, promedio, que se los puedo dar, que es del orden de 5,3 por 10 a la menos 11 metros. No es que un electrón esté siempre a esa distancia, no.
+16:51
+En realidad, a veces está más cerca, a veces está más lejos. Simplemente, esa es la distancia promedio en la cual el electrón está del protón. Y podemos dar algunos datos. Podemos decir que la masa del protón vale... Voy a ver la masa del protón, que todavía no se la sé dado. Vale... 9,11... por 10...
+17:22
+No, perdón, ¿estoy diciendo mal?
+17:29
+Es 1,67 por 10 a la menos... Vamos a poner bien los números. 1,67 por 10 a la menos 27 kilogramos. Esa es la masa del protón. Y les doy la masa del electrón, que van a ver que es muchísimo más chiquita. Vale 9,11 por 10 a la menos 31 kilogramos.
+18:01
+Básicamente, el electrón es, fíjense, 4 ordens de magnitud más liviano que el protón. Es mucho más liviano. ¿Se acuerdan cuando yo les dije que la masa de los átomos está toda concentrada en los núcleos? Bueno, es por eso, porque los electrones son súper livianitos y los protones son mucho más pesados. De hecho, los neutrones pesan esencialmente igual que un protón.
+18:34
+Casi pesan lo mismo. Bueno, entonces calculemos la fuerza eléctrica y la fuerza gravitatoria entre estos dos objetos.
+18:47
+Empecemos por la fuerza eléctrica.
+18:53
+Entonces fuerza eléctrica.
+19:01
+La fuerza eléctrica será 1 sobre 4 pi epsilon 0... por la carga del... estamos hablando del módulo, entonces la carga del protón por la carga del electrón, ambas tienen en módulo el mismo valor, tienen E, son opuestas, pero estamos hablando del valor absoluto, así que aparece aquí al cuadrado, sobre esta distancia que dijimos ahí, al cuadrado. Y si sustituyen valores...
+19:31
+Si sustituyen valores les da... Sustituyen el valor de la carga eléctrica que ya les di y la distancia y el valor de epsilon cero. Esto les da 8,2 por 10 a la menos 8 newton.
+19:52
+Y alguien puede decir, bueno, pero esa fuerza, usted, profesor, me dijo que la fuerza eléctrica era mucho más grande que la fuerza aleatoria. Pero esta fuerza es súper, súper, súper chiquitita. Pero eso es normal, porque es la fuerza entre dos objetos que tienen cargas muy chiquititas.
+20:06
+Es normal que la fuerza eléctrica sea chica porque son objetos microscópicos. Pero calculemos ahora la fuerza gravitatoria. La fuerza gravitatoria va a ser igual a G, la constante de gravitación universal, por la masa del protón, por la masa del electrón, dividido esa distancia R al cuadrado, la misma distancia al cuadrado, y sustituyen y eso les da 3,6 por 10 a la menos 47 N·m.
+20:42
+Entonces cuando yo les digo que la fuerza gravitatoria es mucho más chiquita que la fuerza eléctrica, acá esto toma todo su sentido. Fíjense que la fuerza esta es como 40 órdenes de magnitud más chicas una que la otra.
+20:59
+Así que normalmente uno nunca debería ver la integración gravitatoria porque diría, es realmente...
+21:06
+Imposible es totalmente indetectable. De hecho, para los fenómenos atómicos, la fuerza gravitatoria no juega ningún papel porque es 40 horas. Ustedes se dan cuenta, yo para que esto pudiera tener alguna importancia, tendría que haber calculado este número con 40 cifras significativas. Y esto empezaría a jugar un papel en esa. Se dan cuenta que esta es totalmente despreciable. La razón por la cual, insisto, ya les comenté varias veces, terminamos muchas veces viendo la fuerza gravitatoria, es que esto es una fuerza entre objetos cargados.
+21:37
+Pero en la naturaleza muchos objetos están neutros. Y cuando los objetos son neutros, las fuerzas eléctricas son mucho más chiquitas. Yo les comenté, es cierto que un peine puede atraer unos papelitos por polarización, pero ese efecto es muy chiquitito. Muy, muy chiquitito. Y ahí la gravedad puede empezar a jugar. De hecho, ustedes saben que si los papeles son medio grandes, ya el peine no los logra levantar. Quiere decir que para los papelitos, la gravedad y la fuerza electrostática está casi pareja.
+22:12
+¿Verdad? Si el papelito es un poquito chiquito puede ganar la fuerza electrostática, si es medio grande ya gana la fuerza gravitatoria. Así que estamos ahí borderline. Bueno, esto para tener una idea de por qué digo que la fuerza eléctrica es mucho más grande que la fuerza gravitatoria. Y lo otro que les voy a comparar es la fuerza eléctrica... Fuerza eléctrica...
+22:40
+No, por ahora fuerzas magnéticas no vamos a hablar. ¿Sí? ¿Alguna pregunta?
+22:45
+Fuerza eléctrica en el núcleo atómico. Entonces ahora planteémonos lo siguiente. Planteémonos un núcleo de hierro. Tomemos un núcleo.
+23:10
+de hierro, que tiene un radio con radio que es del orden de 4 por 10 a la menos 15 metros.
+23:26
+Nuevamente, insisto sobre esto, el núcleo, aún de un núcleo grande como el de hierro, El núcleo es muchísimo más chiquitito que el tamaño de los átomos. Fíjense, tienen que comparar 10 a la menos 15 con algo que es como 10 a la menos 10, porque 5 por 10 a la menos 11 es 1 medio por 10 a la menos 10. Así que hay 5 órdenes de magnitud. Repito la comparación que hice en una clase anterior. Si un átomo ocupa el estado centenario, el núcleo ocupa una naranja.
+24:02
+Un poquito más, un pomelo.
+24:04
+Es re chiquito. Fíjense que es muy sorprendente porque toda la masa está ahí. Es como que ustedes tuvieran todo el estado centenario, lo pudieran mover así como un globo y en cambio agarran el núcleo y ese pesa todo. Toda la masa está ahí. Piensen que toda la masa del estado centenario estuviera en el tamaño de un pomelo. Toda la masa está ahí.
+24:29
+Bueno, entonces son mucho más chiquititos los núcleos que los átomos y calculemos la repulsión electrostática entre dos protones. Repulsión entre dos protones. Fíjense, a ver, esta fuerza que voy a calcular ahora, es una fuerza eléctrica, ¿va a ser más grande o más chica que esta?
+24:59
+Más grande, mucho más grande. ¿Por qué?
+25:03
+Las cargas son iguales en módulo, porque los protones tienen en módulo igual carga que los electrones, pero están muchísimo más cerquita, así que va a ser una fuerza mucho más grande. Va a ser 1 sobre 4 pi epsilon cero por e al cuadrado por el radionúcleo al cuadrado.
+25:27
+Y si hacen números con esto, les da una fuerza enorme, les da 14 newton. 14 newton es una fuerza como las que vemos en los experimentos de laboratorio, pero es algo que sucede a escalas de 10 a la menos 15 metros. Hay dos objetos súper, súper chiquititos que tienen una fuerza como la que podemos nosotros ejercerle sobre una masa de un kilo. ¿Se dan cuenta? Es una fuerza muy, muy grande.
+25:51
+Y yo les comentaba la vez pasada, si solo hubiera fuerza eléctrica, ¿qué le pasaría al núcleo entonces?
+25:59
+Se rompería, todos los protones saldrían disparados uno para el otro, pero no pasa. Entonces tiene que haber otra fuerza de mismo orden que esta, que es la fuerza nuclear fuerte. Se dan cuenta que la fuerza nuclear fuerte es muchísimo más grande que las otras. Es decir, el núcleo tiene ese tamaño, más o menos, porque es el tamaño en el cual más o menos son del mismo orden. Lo que digo no es totalmente cierto, porque el tamaño del núcleo está determinado por dos cosas, más o menos.
+26:38
+Una es el tamaño de un protón y de un neutrón. Los protones y los neutrones quedan como... como empaquetados dentro del núcleo así que lo que determina realmente el tamaño del núcleo es el tamaño típico del núcleo pero resulta que para la fuerza nuclear fuerte el tamaño típico de los protones es comparable un poco más chico pero comparable al tamaño de los núcleos así que lo que determina es eso y justo sucede que para núcleos muy grandes También pasa una cosa que es diferente en la fuerza nuclear fuerte que en las otras dos, que es que esta fuerza, que es muy muy grande, decrece muy rápido con la distancia.
+27:18
+Entonces, en un núcleo, cuando tienen algunos protones medio alejados, solo experimentan esencialmente fuerza electrostática y ya casi nada de fuerza fuerte porque crece muy rápido, aún a la distancia del núcleo atómico. Entonces por eso es que los núcleos más grandes son inestables, tienen desintegraciones radiactivas, porque ahí la fuerza eléctrica puede terminar dominando y se disparan pedazos de núcleo, debido a la repulsión eléctrica.
+27:52
+Bueno, esto es lo último que quería comentarles sobre el primer capítulo, es para que tengan idea de los ordenes de magnitud. Acá vale la pena entonces aclarar, se compensa por la interacción fuerte.
+28:17
+No, no, no. Es totalmente distinto. Es un cálculo mucho más complicado. ¿Preguntas? ¿Sí? Ah, bueno. Puse... Es aproximado para tener un orden de magnitud, pero este es el radio del protón, del núcleo. Entonces, dos protones en el núcleo estarán típicamente a esa distancia.
+28:51
+Puede ser la mitad o el doble. Es decir, si resulta que son dos protones, están pegaditos uno al lado del otro, la fuerza va a ser mayor que esta. Y si están... Acá calculé los que están de un lado y del otro, pero es verdad que pueden... Para estimar el tamaño típico de la fuerza. Pero está claro que algunos van a ser más grandes, otros van a ser más chicos. ¿Otras preguntas?
+29:18
+Sobre esto, sobre este capítulo que está terminando en este momento, voy a arrancar el capítulo 2.
+29:42
+Campo eléctrico. ¿Qué es un campo? A ver, saben que yo me dedico a la teoría, como investigador me dedico a la teoría de campos. Y una vez me pasó que estaba con un libro de teoría de campos en un ómnibus y alguien me dijo, yo también me dedico a lo mismo, yo soy agrónomo.
+30:18
+No estamos hablando en ese mismo sentido de la palabra campo. Así que si yo pregunto qué es un campo, no me contesten por ese lado porque no es esa la idea.
+30:32
+¿Qué es un campo? Información en el espacio. A ver, acá dicen información en el espacio. Por ahí hay una... ¿Qué? Deformación. Deformación del espacio. Bueno, ahí una primera respuesta, ¿sí? ¿Qué más? Un intermediario entre dos cuerpos. Un intermediario entre dos cuerpos, dicen por allá. ¿Se dan cuenta que las dos cosas no quieren decir lo mismo? ¿Otras opiniones? Una función de RN en RN. Una función de RN en RN. También, sí. ¿Quién da más? ¿Quién da más?
+31:00
+Se dan cuenta que las tres respuestas hablan de cosas completamente diferentes. Una habla de... la deformación del espacio, otra de un mecanismo para hacer fuerzas o interacciones entre cuerpos y otra es una definición más vinculada con lo matemático que es una función que está de un espacio que ni siquiera es el espacio que tiene que ser real porque el espacio usual es R3 digamos y acá están diciendo Rn en Rn o Rm podríamos haber dicho Rn en Rk ¿verdad?
+31:36
+Entonces, todas estas respuestas están bastante correctas. La que no es correcta es pensar que el campo es una deformación del espacio. Mejor dicho, hay algunos campos que corresponden a eso, pero otros que no. Los campos que vamos a ver en este curso no son deformación del espacio, sino cosas que viven en el espacio. Tenemos una propiedad física... que está distribuida, que está en distintos puntos del espacio y tiene valores distintos para distintos puntos. En ese sentido se parece a la definición matemática.
+32:06
+Es una función del espacio en un conjunto de variables. Por ejemplo, podrían ser variables reales. Podríamos tener en cada punto del espacio un cierto número, que se llama un escalar. ¿Qué ejemplo conocen ustedes de campo, es decir, una función del espacio en un número que sea escalar?
+32:28
+Temperatura, ¿verdad?
+32:33
+Ahora vemos bien la definición. Entonces, ejemplos.
+32:41
+Temperatura.
+32:45
+Que es un campo escalar.
+32:50
+Quiere decir que para cada posición del espacio, ustedes tienen una temperatura. Y efectivamente, imagínense que yo tengo acá este salón, pongo acá una estufa, pongamos una estufa bastante potente, pongamos una estufa, un quematuti grandote así, perfecto. Está claro que de este lado la gente se va a sacar los buzos y del lado del fondo de la clase la gente capaz que todavía está usando campera.
+33:22
+¿Por qué? Porque de este lado la temperatura va a ser más grande. Si vamos paseándonos con un termómetro por el salón, en cada punto del salón habrá una temperatura distinta. Por eso decimos que es un campo. Si la temperatura fuera uniforme en todo el salón, no es necesario hablar de campo, porque basta con un único número que describe la temperatura en todo el salón. En cambio, si la temperatura es distinta de un lado a otro, es necesario describirlo en términos de campo, porque cada punto tiene su propia temperatura. ¿Se entiende?
+33:52
+Otros ejemplos. De campos que sean escalares o de otro tipo. ¿Sí? Presión. Otro campo escalar, la presión. Lo mismo, podemos usar algún dispositivo para pedir presión, ir midiendo la presión. La comparación que acabo de decir no va a servir para la presión porque a las escalas en que nosotros nos movemos, en realidad la presión es simplemente la presión atmosférica y es casi la misma en todo el salón.
+34:27
+Pero hay situaciones físicas en las cuales la presión varía mucho de un punto a otro y entonces hay que hablar de campo de presión. Entonces, presión.
+34:37
+Una cosa por vez. También es un campo escalar, podemos decir la presión como función de la posición. Y por ahí decían velocidad. ¿Velocidad de qué?
+34:49
+Velocidad del aire. Si pensemos en un fluido, un fluido puede tener un campo de velocidades. Por ejemplo, el aire o el agua. Fluido. Entonces, campo de velocidades...
+35:08
+Este ya no es un campo escalar, ¿verdad? Porque en cada punto del fluido, piensen por ejemplo, vamos a hacer un dibujito, piensen el agua circulando bajo un puente, acá tienen una columna del puente, vienen acá en cada lugar, pueden decir la velocidad del fluido y está claro que la velocidad se va a comportar de esta manera.
+35:40
+En fluido, va a esquivar el objeto. Estoy viendo lo de arriba, ¿verdad? Entonces, en cada punto del espacio tendremos una velocidad. ¿Y la velocidad qué es? ¿Una cantidad de qué tipo? Vectorial. Así que este no es un campo escalar, sino un campo vectorial.
+36:09
+Otros ejemplos. Bueno, la densidad, ¿verdad? Podemos ir con las variables termodinámicas. También pasa lo mismo, no lo escribo, pero podemos poner acá, idem densidad.
+36:26
+Y podemos hablar de densidad de masa o también de densidad de carga, ¿verdad? El otro día hablamos de la densidad volumétrica de carga. También podemos pensar la densidad volumétrica de carga como un campo escalar. En cada punto tendremos una densidad de carga. ¿Bien? Otros ejemplos.
+36:52
+Claro, está escrito en el pizarrón. Sí, a ese le vamos a dedicar toda la clase. Otro. ¿Qué es campo de fuerza? Un campo de fuerza. Bueno, el campo eléctrico está asociado con un campo de fuerza que es la fuerza eléctrica, ¿verdad? Pero en realidad podemos hablar de campo de fuerzas en general porque hay muchos objetos, muchas situaciones en las cuales hay un objeto que genera una fuerza a muchos objetos que están en la vuelta. Por ejemplo, pueden pensar en la fuerza gravitatoria.
+37:23
+Tienen el Sol, ¿sí? A cada objeto que se ubique a una cierta distancia del Sol, ustedes saben que si lo colocan ahí va a experimentar una cierta fuerza gravitatoria. ¿No es verdad? Entonces podemos decir que el Sol genera un campo de fuerza gravitatorio. Parece una cosa media de ciencia ficción, pero no tiene nada de ciencia ficción. Eso lo podría haber escuchado en una película. Pero no. ¿Está? Cuatro. Una pregunta. Si yo escribo acá abajo, ¿en el fondo llegan a ver? Sí, se llega a ver. Campo... De fuerzas.
+37:56
+También es un campo vectorial.
+38:03
+Y tendremos una fuerza en cada posición. Y el ejemplo típico es la fuerza gravitatoria. En cada posición tenemos una fuerza diferente. ¿Bien? ¿Qué es un campo? Es una propiedad física...
+38:26
+que depende de la posición.
+38:35
+Y eventualmente también del tiempo. Podría ser que no solo fuera función de la posición, sino también función del tiempo. Y eventualmente...
+38:59
+Entonces, esto tiene como casos particulares algunas cosas que dijeron acá. Alguien dijo, podemos hablar del campo como una deformación del espacio. Acá no estamos viendo el campo como una deformación del espacio. Pero en la teoría moderna de la gravedad, ¿sí? No en la teoría de Newton, en la teoría de Einstein, se ve al campo gravitatorio como una deformación del espacio. ¿Está bien? No vamos a hacer eso en este curso, ni en ningún curso probablemente que usted vaya a ver nunca. Pero efectivamente eso es una manera.
+39:30
+Y lo otro es que alguno dijo, podemos ver el campo como una manera de mediar interacciones entre dos cuerpos. Eso no vale para cualquier campo, pero sí vale para el campo de fuerzas. El campo de fuerzas va a jugar ese papel de mediar las interacciones entre dos cuerpos. Eso lo vamos a ver ahora en un momento. Pero vemos que hay otros campos, en física, que también son interesantes. Por ejemplo, la temperatura no está realmente, en algún sentido sí, pero no es realmente el mediador entre la interacción entre los cuerpos, es algo más de otra naturaleza.
+40:06
+Pero todas estas forman parte, como un caso particular, de la definición matemática de campo, que es una función de un cierto espacio. Por ejemplo, Rn decían por ahí. En este caso estamos hablando de R3 o de R4. R3 si estamos hablando del espacio o R4 si es una función del espacio y del tiempo. En algo, por ejemplo, en R si es una variable escalar o en R3 si es un vector. ¿Bien? Y podrían ser, hay funciones, propiedades físicas que son otra cosa.
+40:40
+Por ejemplo, existen lo que se llaman campos tensoriales. Por ejemplo, ustedes pueden agarrar un objeto de material. ¿Sí? Yo qué sé. Un material con alguna propiedad elástica. Pongamos un pedazo de hierro. Y ustedes supongan que son muy fuertes. ¿Está bien? Son muy fuertes. Y entonces hacen así. ¿Está bien? Lo tuercen. Entonces, dentro del material se va a generar lo que se llama un campo de tensiones. Bueno, si no son tan fuertes, pueden agarrar una morsa, lo agarran y con algo hacen palanca y lo deforman.
+41:17
+Tienen dos tipos, digamos, un campo de deformaciones. y un campo de tensiones en el material y eso no es ni un escalar ni un vector, eso es un objeto más complicado que se llama tensor. Hay objetos que no son ni escalares, objetos físicos interesantes que no son ni escalares ni vectores y que aparecen en la física y pueden ser también campos de esa naturaleza. Por ejemplo, este campo es un campo tensorial.
+41:42
+Primero vimos qué es un campo, pero ahora podemos preguntarnos para qué sirve un campo.
+41:50
+Tengo que escribir más grande y así se llega a leer al fondo del salón. ¿Se ve bien? Capaz que allá no.
+42:00
+¿Para qué sirve un campo? ¿Qué es un campo? ¿Para qué sirve? Entonces, ahí la respuesta viene más, en general, por lo que le decía uno de los compañeros de ustedes, que un campo sirve para mediar interacciones entre dos objetos. ¿Sí? Y eso, en realidad, lo que tratamos de hacer los físicos, y en realidad es una cosa que trata de hacer todo el mundo, porque es más fácil lidiar con la vida, que es que las cosas no dependan de lo que sucede en otro lado o cosas que pasaron en otro momento, sino poder describir las cosas con lo que pasa aquí y ahora.
+42:41
+Por ejemplo, Vuelvo al ejemplo de la estufa, pero ahora no es un quematuti porque si fuera un quematuti me daría mucho trabajo. O un quematuti con unas buenas ruedas. ¿Tenemos el quematuti? Lo pongo acá. Esperamos un rato.
+43:00
+Nos paseamos con un termómetro y tenemos un campo de temperaturas en todo el salón.
+43:09
+El campo se estabilizó, tenemos lo que podemos llamar un campo estático de temperaturas. Como ya llegó al equilibrio, es un campo que no depende del tiempo. Bárbaro. Entonces podemos pensar, cada una de las personas que están en el salón, que están interactuando con el quematute. Dicen, el que está cerca dice, a mí el quematuti me está calentando mucho. Y el que está allá al fondo dice, a mí el quematuti casi no me llega nada calor. No interactúo con el quematuti. Cuando tiene un campo estático, como un quematuti quieto, No necesitan hablar de campo de temperatura.
+43:46
+Pueden hablar simplemente de, yo tengo una relación directa con el quematuti. El quematuti está ahí, es un dato de la realidad, está ahí desde siempre. No tengo que andarme ocupando de nada en el medio. ¿Para qué me voy a andar ocupando de un campo de temperatura si lo que yo tengo que saber es dónde está el quematuti? Si es la fuente de calor. Tengo que saber dónde está la fuente de calor. Entonces, cuando ustedes tienen campos estáticos así, los campos no son muy útiles. Sí, pueden ser igual útiles, pero no son tan útiles. ¿Sí? ¿Bien? Porque en realidad simplemente tiene que decir quién es la fuente de ese campo, quién lo está generando.
+44:20
+Si la fuente está quieta para siempre, entonces uno simplemente interactúa directamente con la fuente y no tiene que andar mediando. Eso es lo que hicimos. Con la interacción eléctrica o lo que se hace también con la interacción gravitatoria. Entre dos cuerpos, dicen, tengo interacción entre dos cargas. Si tengo un problema electrostático, tengo una carga acá que me hace una fuerza acá. Punto. Yo no tengo que andarme ocupando de nada que medie la fuerza, porque yo simplemente voy de acá a allá y ya está. Lo que se llama interacción a distancia entre cargas. Eso tiene dos defectos.
+44:52
+Primero que no es local. No me estoy ocupando de lo que sucede aquí y ahora. Tengo que saber dónde están las cargas en otro lugar. ¿Bien? Para saber la interacción tengo que saber, yo quiero saber mi fuerza acá, tengo que saber dónde están todas las otras cargas que interactúan conmigo. Lo mismo con el quematuti. Yo tengo que saber, cualquier persona en esta sala tiene que saber dónde está el quematuti. Pero bueno, no es muy grave. Si uno está, para el caso del estático, no vale la pena introducir los campos. Ahora, yo les planteo el problema siguiente. Ahora, al quematuti, alguien le pone ruedas, saquemos la...
+45:25
+la tarima acá, porque me va a complicar la vida, y empezamos a mover el quematuti a lo largo del salón. Avanza un rato, lo dejamos por acá, volvemos para el otro lado, y va para allá, y así lo hacemos oscilar durante un rato. Entonces, ahí ya se me complicó para hacer una interacción directa con el quematuti. ¿Por qué? Porque el que está allá, en un momento recibió poca... poco calor del quematuti, porque estaba lejos, pero después de un rato sí recibe bastante calor.
+46:02
+Pero además el calor no se propaga instantáneamente de acá hasta allá, sino que se va difundiendo. Entonces yo no necesito solo saber dónde está el quematuti en el instante en que me interesa saber mi temperatura, sino que necesito saber dónde estuvo el quematuti en todo instante pasado, saber toda la historia pasada del quematuti. Porque en realidad, ¿cómo va a pasar? El calor que sale de allá se va difundiendo y mientras tanto va saliendo de este otro lado, después sale por acá, después se empieza a alejar de nuevo. Entonces la situación se vuelve un infierno.
+46:34
+Si yo tengo una fuente que se está moviendo, es mejor, en lugar de andarme ocupando de lo que pasa con toda la fuente, que es la temperatura, es una fuente de temperatura. La temperatura ella misma se difunde a través de la propagación del calor hacia distintos lugares de la sala. Y entonces yo tengo en cada punto del espacio un campo de temperaturas. Y para saber cómo me siento allá en el rincón de la sala, yo lo único que necesito saber es mi temperatura aquí y ahora.
+47:14
+Y en el medio hago todo un proceso de difusión de la temperatura sabiendo que ella es generada por el quematuti. Dicho de otra manera, el calor lo genera localmente el quematuti y luego se propaga y entonces tengo dos dinámicas. Una, la del quematuti, que es un dato, y otra, la de propagación del calor, que es mi problema, que es un problema distribuido en el espacio. Se dan cuenta que cuando tienen problemas así que dependen del tiempo, no es adecuado...
+47:44
+No es adecuado pensar en términos de causa directa con el efecto, sino que es mejor pensar en... Otro ejemplo es este. Acá este es un problema que puede ser estático, que puede ser estacionario. El fluido está circulando y el campo de velocidades... Ahí no está estático porque el fluido sí se mueve, pero el campo de velocidades puede estar quieto, puede no estar cambiando. Pero igual, alguien puede decir, este es un problema muy complicado de tratar si no introduzco el campo de velocidades. Alguien puede decir, ah no, no me interesa el campo de velocidades.
+48:19
+Yo digo, mi columna está interactuando con alguien que está haciendo con la cascada que generó el agua a 10 kilómetros. Entonces tengo una interacción directa, columna, cascada. Está claro que eso no es una buena idea. lo mejor es que la columna veamos cómo interactúa con la velocidad que tiene alrededor y esa velocidad se fue propagando y cada lugar vemos es mucho más fácil tratar la dinámica de la velocidad como se fue propagando y cómo después interactúa con la columna que andar haciendo una interacción directa entre la columna y la cascada que generó el río eso no es una buena idea se entiende entonces por esos dos motivos introducimos campos porque es más cómodo hacer El análisis aquí y ahora, se dice local, es la expresión que usamos los físicos.
+49:07
+Localmente, ver qué es lo que está pasando. Y si queremos ver lo que pasa localmente, alguien se tiene que ocupar de trasladar la información o trasladar la dinámica de lo que nos interesa. ¿Se entiende el propósito? ¿Sí? Levanten la mano a los que entienden por dónde viene la mano. Con esto alcanzó. Entonces, el propósito va a ser un campo para poder describir la física de un problema con información
+50:01
+Es decir, aquí y ahora. Entonces, ejemplo... Si tenemos dos cargas... Y Q2...
+50:25
+Podemos... Hacer... ...una descripción... ...carga... ...carga... ...directa, ¿verdad? Esto es lo que llamaremos... ...interacción a distancia. O... ...alternativamente...
+51:07
+podemos hacer esto es lo que hicimos hasta ahora en el capítulo 1 lo que hacíamos en la interacción entre dos cada carga genera una fuerza otra carga no hay nada en el medio y esa distancia la fuerza no depende de sólo lo que está pasando ahí cerquita sino también donde están las otras cargas pueden estar lejos alternativamente podemos hacer una descripción
+51:37
+carga... genera un campo... que a su vez interactúa con otra carga. Y de esa manera podemos hacer el efecto local. La carga genera un campo acá, el campo se propaga, llega hasta la otra carga y ahí le genera una fuerza.
+51:59
+Esto no es muy útil...
+52:09
+para las interacciones electrostáticas. Aunque más o menos. Para algunas cosas sí. No es muy útil porque en realidad podemos hacer la interacción entre cargas. Pero les voy a dar un ejemplo en un ratito que no es un ejemplo de las cosas que vemos en este curso. Pero sí es una cosa en la cual si uno no introduce los campos es un dolor de cabeza.
+52:39
+Entonces, no es muy útil, pero vamos a introducir el campo en la situación electrostática. ¿Por qué? Por razones pedagógicas. Porque conviene, primero, entender la situación del campo en la situación más simple de todas, en una situación que ya entendimos sin necesidad de campo, que es la interacción colombiana. Ahí podemos introducir el campo eléctrico. Y luego, más adelante en el curso, aparecerán campos en situaciones más útiles, donde el campo realmente... Realmente es muy difícil hacer una descripción que no incluya campos.
+53:10
+Por ejemplo, cuando las cosas dependen del tiempo. Sin embargo... Vamos a introducir... El campo eléctrico... En el caso...
+53:38
+Electrostático primero, para comenzar por el caso más simple.
+54:05
+Supongo que tienen acá una distribución de carga.
+54:22
+Tienen acá una distribución de carga. Y ahora agarro una pequeña carga, Q0, y la ubico acá, Q0. ¿Sí?
+54:35
+¿Y qué le pasa a una carga Q0 que la coloco cerca de una distribución de carga?
+54:43
+Sí, experimenta una fuerza, ¿verdad? Acá, supongamos que estamos en el caso, repito, estático, es todo electrostático, la carga está fija. Ponemos la carga Q0 y experimenta una cierta fuerza, digamos así, fuerza eléctrica. ¿Verdad?
+55:05
+De acuerdo, entonces ahora uno observa un agente externo, es decir, nosotros agarramos esta carguita y la movemos. En lugar de ubicarla acá, la ubicamos en este otro punto que está acá. ¿Qué va a pasar? ¿Qué le va a pasar ahí?
+55:24
+Va a generar otra fuerza, que podrá ser más grande o más chica, en todo caso con otra dirección también, otra fuerza. Si ubicamos Q0 acá, todavía tendremos otra fuerza y así sucesivamente.
+55:37
+Moviendo Q0 en los distintos puntos del espacio podemos ir midiendo la fuerza en los distintos puntos y tendremos para cada posición una fuerza. Entonces tenemos un campo de fuerzas...
+56:06
+Es decir, a cada posición R le asignamos una fuerza electrostática, que es una función de R. ¿Sí? ¿Sí? ¿Todo el mundo está de acuerdo? Ahora, ¿qué pasa si en lugar, si repito el experimento, pero en lugar de usar la carga Q0, uso otra carga? Pongamos una carga que fuera dos veces Q0, el doble. ¿Sí?
+56:36
+Hago nuevamente las medidas, pero en lugar de medir las fuerzas paseando una carga Q0, voy a pasear una carga que valga dos veces Q0. ¿Qué va a pasar cuando haga las medidas?
+56:53
+Las fuerzas que mida van a tener misma dirección y mismo sentido, pero van a tener módulo doble, porque ¿cómo es la fuerza electrostática?
+57:03
+Es proporcionar a Q0 por... Cosas que dependen del resto de las cargas. ¿Verdad? Entonces, si en lugar... Si repetimos... El experimento... Con otra carga... Q0' le ponemos... Entonces, el... Campo de fuerzas va a cambiar.
+57:33
+Será diferente.
+57:43
+¿Cómo será el campo de fuerzas? El campo nuevo con la carga Q0'.
+57:49
+Le pongo prima porque es el campo medido con Q0' en lugar de Q0'. ¿Valdrá cuánto? Valdrá Q0' dividido Q0 por el campo anterior.
+58:08
+En cada punto. Entonces podemos medir de nuevo el campo de fuerzas con otra carga. Y el tema es que el campo que estamos definiendo de fuerzas no solo depende de lo que había antes de poner Q0, sino también depende del propio Q0. Y eso no es muy agradable, porque uno querría que el campo fuera algo que no dependiera con qué lo medimos. Es algo que está generado por esta distribución de cargas y que está ahí independientemente de cómo lo medimos.
+58:45
+¿Me explico? Si lo medimos con una carga Q0, con otra. El campo de fuerzas depende de Q0, pero querríamos definir una cantidad que no dependiera de Q0. Entonces, ¿qué cantidad se les ocurre que podamos definir?
+58:59
+Bueno, una manera sería eso, agarrar una carga fija, una carga de referencia, la del electrón, la del protón o alguna, y medir siempre con esa. Eso está bien, eso es una posibilidad.
+59:12
+Pero, ¿por qué esa? Podríamos haber tomado cualquier otra. Tenemos que tomar una carga de referencia. Eso es lo mismo que decir que en lugar de medir la fuerza, dimos la fuerza fija.
+59:27
+Todo el mundo ahora espontáneamente... Lo que queremos es medir la fuerza por unidad de carga. ¿Verdad? ¿Se entiende? Tomamos la fuerza por unidad de carga y esa no depende de con qué la medimos. Si medimos la fuerza por unidad de carga, entonces si tomamos una carga doble, la fuerza por unidad de carga no cambiará. ¿Se entiende?
+59:51
+Si yo multiplico la carga por 2, la fuerza se multiplica por 2. Si yo en lugar de medir la fuerza, mido la fuerza por unidad de carga, cuando multiplico la carga por 2, la fuerza se multiplica por 2, pero al dividirla por el doble, me da lo mismo. ¿Se entiende? Entonces...
+1:00:25
+Entonces querríamos... querríamos definir un campo que no dependa de la carga Q0 con la que lo medimos.
+1:01:01
+Entonces, se define el campo eléctrico como E de R es la fuerza medida con una cierta carga, fuerza eléctrica, en esa posición, dividido Q0. Entonces, esta es la fuerza, la fuerza...
+1:01:32
+medida en R sobre la carga Q0 que es independiente
+1:01:58
+La realidad es independiente con un cierto bemol que les voy a decir ahora en un ratito. Pero es básicamente independiente.
+1:02:07
+¿Se entiende esto? Si yo mido la fuerza por unidad de carga, entonces si yo multiplico la carga por 2, la fuerza se multiplica por 2, pero el denominador también se multiplica por 2 y el campo eléctrico no cambia. Esa carga tiene que ser mucho más chica que la... Ahora voy al tema de que la carga, a ver, acá me están comentando, esa carga tiene que ser mucho más chica, mucho más chica que las otras que están en la vuelta, porque lo que puede pasar es que si Q0 es muy grande, supongamos que esto fuera, por ejemplo, un conductor, un conductor cargado. Entonces, si yo tengo una carga muy grande, voy a tener dos efectos.
+1:02:41
+El efecto original de las cargas que estaban acá antes de que pusiera Q0, que me va a generar una fuerza, pero Q0 a su vez va a polarizar las cargas estas, si Q0 es grande, entonces me va a perturbar el campo y lo que voy a medir no es lo que yo realmente quería. Entonces, para definir el campo eléctrico en realidad se toman cargas chiquitas para no afectar. Pero sobre eso voy a venir en un momento. Pueden haber efectos que no son proporcionales, que son un poco más complicados. En eso voy en un momento.
+1:03:12
+¿Sacando eso se entiende la idea? ¿Preguntas?
+1:03:18
+Y esto nos permite entonces definir el campo eléctrico. Entonces, un ejemplo para que tengan idea de cuál es la utilidad real de esto. Supongan que tienen acá una carga eléctrica.
+1:03:50
+que la mueven para arriba y para abajo acá. Se mueve. Ustedes todavía no lo saben, pero cuando tiene una carga que mueve, La señal eléctrica, en realidad, en el caso electrostático, todo está quieto y tenemos todo el tiempo del mundo y no hay tiempo de propagación. Pero cuando las cosas se mueven muy rápido, en realidad la señal, que se llama electromagnética, se propaga con una velocidad que es la velocidad de la luz.
+1:04:22
+Eso lo vamos a ver al final del curso. Pero el punto es que el campo eléctrico, entonces, se va a poner a mover y si yo mido a una cierta distancia, X... La fuerza que experimenta una carga Q2 no depende de dónde está la carga hoy, ahora, no es una buena idea, perdón, Q2, dije, sino que es mejor pensar que esta carga genera un campo eléctrico acá, que luego se va propagando, y en realidad esta experimenta la fuerza no hoy, sino después.
+1:04:56
+No con dónde está la posición de Q1 ahora, sino dónde estaba antes. Para no tener que andar sabiendo dónde estaban todas las cargas antes, lo mejor es generar el campo eléctrico y el campo eléctrico se va desparramando, así como el campo de temperatura se va difundiendo. Y lo que nos interesa es cómo es el campo en el momento y en el lugar este. ¿Se entiende? Pero eso claramente es un problema no electrostático. Entonces ahí es muy útil el campo eléctrico. Ahora en un momento les voy a decir una situación electrostática en que realmente es muy importante el campo, pero por ahora no les mencioné.
+1:05:34
+Entonces ahora vamos a ser un poco más precisos sobre la definición del campo eléctrico. ¿Cómo estamos de hora?
+1:05:56
+entonces definiremos el campo eléctrico en un punto
+1:06:29
+Como 1 sobre Q0 por la fuerza eléctrica en R que experimenta Q0. ¿Está? Como dijimos recién. En realidad... Hay que tomar...
+1:06:58
+suficientemente pequeño como para que no afecte a las otras cargas presentes
+1:07:30
+¿Qué quiero decir? Entonces, en realidad, muchas veces en los libros van a ver que en realidad lo que toman es el límite para Q0 tendiendo a 0. ¿Sí?
+1:07:51
+Esto tiene todo tipo de cosas delicadas. Porque, por ejemplo, está claro que no pueden tomar el límite Q0 teniendo al 0. Porque la carga es discreta. La carga está cuantizada. Así que eso ya de por sí es un problema. Pero omitiendo ese problema, fíjense. Imagínense que yo tengo acá un conductor descargado.
+1:08:19
+¿Sí? ¿Sí?
+1:08:26
+Sí, sí, todo es electrostático. Por ahora, hasta nuevo aviso, este curso es electrostático. En realidad no es verdad, a veces voy a hacer un poquito de trampa y las cargas se van a mover, pero cuando se muevan voy a suponer que la velocidad es chiquitita para poder seguirlas tratando como casi estáticas. Tiene un conductor descargado y agrega una carga acá Q0.
+1:08:46
+¿Cuál es la fuerza que genera el conductor este descargado sobre la carga Q0?
+1:09:00
+Bueno, uno querría que fuera cero. Y de hecho, si Q0 es bastante chiquita, la fuerza por unidad de carga es cero. ¿Verdad? Es muy chiquitita. Pero fíjense que no es totalmente proporcional. Porque cuando yo pongo una carga Q0 en un conductor, ¿qué le va a pasar al conductor?
+1:09:21
+Se va a polarizar. Lo que va a pasar es, si sumamos que Q0 es positiva, acá me van a aparecer cargas negativas y de este lado me van a aparecer cargas positivas. Si yo tengo una carga positiva acá, las cargas se pueden mover en el conductor, van a ir, las cargas, los electrones van a tender a acumularse de este lado y va a haber un déficit de electrones de este lado y se me va a generar una polarización. Y por lo tanto, al haber una distribución de carga, Q0 no va a sentir una fuerza cero, va a tener una fuerza que no es cero.
+1:09:56
+En cambio, si yo calculo la fuerza y la divido por Q0, eso sí, cuando Q0 es chiquitito, los efectos de la polarización son pequeños y puedo despreciar. ¿Se entiende? De hecho ese efecto no es proporcional a Q0, sino que la fuerza esa va a ser proporcional a Q0 al cuadrado aproximadamente. Entonces cuando fuerza sobre Q0 y te hago tender Q0 a 0, tiende a 0. ¿Se entiende? Pero hay que tener un poco de cuidado.
+1:10:25
+Entonces, si Q0 no es pequeña, no podemos...
+1:10:39
+despreciar la polarización del material. Entonces por eso es que se dice que se toma el límite Q0 teniendo en cuenta que para poder despreciar el hecho de que las cargas que generan fuerza sobre Q0 ellas también se pueden reacomodar. Para evitar esos efectos, poder ignorar esos efectos de reacomodamiento suponemos Q0 chiquitito.
+1:11:12
+Está claro que si las otras cargas están fijas y no se pueden mover y no tienen posibilidad, entonces tomar el límite de Q0 teniendo A0 no tiene ninguna importancia. Si la posición de las otras cargas es dato, no se pueden mover, entonces ya está. Poner una carga o el doble, acá da lo mismo, no tiene sentido tomar el límite. Pero cuando las otras cargas se pueden reacomodar, entonces hay necesidad de tomar un Q0 chiquitito. ¿Se entiende? Entonces ahora empecemos a ver cómo es el campo eléctrico generado por distintas distribuciones de carga.
+1:11:48
+Entonces veamos cómo es el campo eléctrico producido por una carga puntual. Entonces tomemos primero una única carga puntual. Tomemos una carga puntual...
+1:12:09
+Miren acá, una carga Q. Toman otra carga Q0 de prueba a una distancia R. ¿Sí? Entonces, el módulo de la fuerza eléctrica, ¿cuánto va a valer?
+1:12:34
+Claro, el vehículo. Q0 por Q... Dividido 4 pi epsilon 0 por R al cuadrado. ¿De acuerdo? Y va a estar, va a tener por dirección, una dirección que está en el eje de las cargas. Entonces puede ser, la fuerza eléctrica puede ser para allá o para allá. Entonces ¿cuándo es para allá?
+1:13:05
+¿Cuándo es repulsiva?
+1:13:08
+Entonces es así si Q0 por Q es positivo y de este lado si Q0 por Q es negativo.
+1:13:20
+¿De acuerdo? Entonces veamos los distintos casos. Entonces, casos. ¿Sí? Primer caso, vamos a suponer que Q es positivo y Q0 es positivo.
+1:13:41
+¿Sí? Entonces primero... Perdón, antes de ver los distintos casos. El módulo del campo eléctrico, ¿cuánto será?
+1:13:51
+Perdón, acá hay que tomar valores absolutos, ¿no? Para el módulo. Hay que tomar valores absolutos. El módulo del campo eléctrico, ¿cuánto será?
+1:14:00
+Hay que dividir por el valor absoluto de Q0. Así que nos queda valor absoluto de Q sobre 4 pi... Epsilon 0 por R al cuadrado. Así que el módulo del campo eléctrico ya está fijo antes que veamos el tema de los signos. ¿Sí? Campo eléctrico vale eso. Entonces, supongamos que la carga de la cual está generando el campo eléctrico Q... Este es el campo eléctrico en el punto en que está Q0.
+1:14:36
+El campo producido por Q. Entonces, si las dos son positivas, dijimos que la fuerza es repulsiva. Entonces, el campo eléctrico, ¿cómo será?
+1:14:52
+En sentido.
+1:14:55
+¿Cómo será con respecto a Q? ¿Hacia Q o alejándose de Q?
+1:15:04
+Alejándose, porque fíjense que la definición del campo eléctrico es E, la fuerza dividida sobre Q0. Q0 estamos en el caso en que Q0 es positivo. Entonces, en este caso, E tiene mismo sentido que F, y F es saliente. Entonces, F es saliente, digamos, E igual a F sobre Q0 es saliente de Q. sale de Q.
+1:15:44
+Segundo caso. En el segundo caso, Q sigue siendo el mismo, es positivo, pero tomamos una carga de prueba Q0 negativa.
+1:16:03
+Entonces, en ese caso, E, ¿cómo es?
+1:16:08
+¿Es saliente o entrante? A ver, levanten la mano los que piensan que es entrante. Y levanten la mano los que piensan que es saliente.
+1:16:21
+Estoy teniendo una receptividad en las encuestas.
+1:16:29
+Si fuera Bottinelli me muero de hambre. A ver...
+1:16:34
+F, en este caso, ¿cómo es? ¿Saliente o entrante? F es entrante, porque Q es positivo, Q0 es negativo, se atraen. Pero Q0 es negativo, quiere decir que E, ¿cómo es? Entonces, este es entrante, este es negativo, entonces E es saliente.
+1:17:03
+Y eso está bueno porque, fíjense, queremos que el campo eléctrico no dependa de con qué carga lo medimos. Entonces, si hubiera sido entrante, hubiera querido decir que si lo medíamos con una carga positiva nos daba para un lado y si lo medíamos con una carga negativa nos daba para el otro. Y acá vemos que lo midamos con una... Si Q está fijo...
+1:17:26
+midamos el campo eléctrico con una carga positiva o con una carga negativa, siempre nos da igual en módulo, en dirección y también en sentido. ¿Bien? Porque los dos signos se compensan. ¿Bien? Así que Q0, en la definición de E, no solo se compensa en módulo, sino también en sentido. ¿Bien? En dirección, todo. Bueno, sigamos. Hay dos casos más, ¿no?
+1:18:03
+Tercer caso, tomamos Q negativo y Q0 positivo. Entonces en ese caso, F como es, saliente o entrante?
+1:18:16
+Entrante. Entrante. Entonces F es entrante, porque la fuerza es atractiva. Y E, y E, y E. que es F sobre E, ¿cómo será? F sobre Q, ¿cómo será? ¿Entrante o saliente?
+1:18:41
+Entrante, porque Q0 es positiva. También entrante. Pues Q0 positivo. Y por último, el último caso es Q0 negativo, pero la medimos con una carga negativa. Entonces F, ¿cómo es?
+1:19:05
+Es saliente.
+1:19:09
+Pero E es nuevamente entrante.
+1:19:20
+Así que confirmamos en este segundo caso que el sentido del campo eléctrico no depende del signo de la carga con que lo midamos. Y tenemos entonces una regla general.
+1:19:35
+Los campos eléctricos salen de las cargas positivas...
+1:19:52
+Y entran en las cargas negativas.
+1:20:08
+Los campos salen de las cargas positivas para llegar a las cargas negativas. Tenemos todavía unos minutos más.
+1:20:19
+Bueno, ¿qué pasa si tenemos varias cargas? Si en lugar de tener una carga puntual, tenemos una familia de cargas puntuales. Si hay varias cargas puntuales, entonces la fuerza sobre Q0 será igual... ¿Sí?
+1:20:50
+a la suma de las fuerzas que generan cada una de las cargas. Acá dibujamos varias cargas. Q1, Q2, Q3. Y acá ponemos Q0. Cada una, esta será F1, la fuerza que hace... Antes lo habíamos anotado como FI0, creo, o F0I, no me acuerdo. Entonces pongamos FI0, la fuerza que la carga Q1 hace sobre 0. Cada una de ellas será igual a Q0 por el campo I0, que es el campo eléctrico generado...
+1:21:39
+por la carga I y entonces podemos sacar Q0 para afuera y entonces el campo eléctrico total será igual a la suma de los campos digamos, dividimos por Q0 así que es la suma de los campos eléctricos producidos por cada una de las cargas Si tenemos varias cargas puntuales, los campos eléctricos se suman vectorialmente.
+1:22:14
+¿Vean? Como las fuerzas. Se simplifica en el numerador y en el denominador el campo eléctrico. Entonces veamos un ejemplo, a ver cómo estamos de tiempo. Sí, me da todavía para hacer... Ejemplo, lo que se llama un dipolo eléctrico.
+1:22:39
+En el práctico van a ver bastantes cosas de dipolos eléctricos. Acá ahora voy a hacer una cosa bien simple que es vamos a colocar una carga más Q acá sobre un eje. Acá pongo una carga menos Q y vamos a calcular el campo eléctrico sobre el plano bisector.
+1:23:02
+Entonces llamémosle a este eje X y a este eje Y A esta distancia acá le llamamos D y colocamos una carga Q0 acá a una distancia X del origen. Entonces la pregunta es el campo eléctrico acá.
+1:23:40
+¿Cómo será? Entonces la fuerza... Como vimos que el campo eléctrico no depende de si la carga es positiva o es negativa, no nos compliquemos la vida, tomamos Q0 positivo, ¿verdad? Porque igual el campo eléctrico no va a depender de eso, ¿está bien? Y tomemos Q positivo. Entonces esta carga acá es positiva y esta carga es negativa.
+1:24:17
+¿Cómo será el campo eléctrico producido por esta carga?
+1:24:22
+Va a estar sobre esta línea y va a ser tipo así. ¿De acuerdo? Esto le podemos llamar E1. ¿Y el campo eléctrico producido por esta?
+1:24:36
+Es sobre esta línea...
+1:24:39
+Pero para allá, E2.
+1:24:43
+¿Y cómo son en módulo uno y el otro?
+1:24:46
+Son iguales, porque fíjense, E1, llámenle a esta distancia R, E1 en módulo no es otra cosa que Q sobre 4 pi epsilon 0 por R al cuadrado, y esto es igual a E2 porque la distancia es la misma. La distancia entre cada una de estas cargas y esta, porque estamos en el plano bisector. Si no estuviera en el plano bisector es un poco más complicado y eso van a tener que hacer cosas así en el práctico.
+1:25:19
+Pero en este caso es bien simple. Los dos módulos son iguales. Quiere decir que si tomo la suma vectorial de los dos, ¿qué dirección tendrá?
+1:25:28
+Será según el eje OZ, paralelo a OZ y para abajo. Así que el campo resultante... Ya no tengo ni donde dibujarlo, voy a poner acá Q0 positiva. Y el campo resultante será para abajo, de acuerdo con la regla del paralelogramo.
+1:25:48
+¿Bien?
+1:25:52
+Entonces, si me da el tiempo calculo incluso el módulo. Pero no, ya estamos en hora. Entonces la clase que viene... Arrancamos, retomamos esto. Ya vimos cómo es la dirección y el sentido del campo eléctrico. Lo vamos a calcular.
+1:26:07
+Pueden ir adelantándose, haciendo el ejercicio. Es muy fácil de hacer.
+

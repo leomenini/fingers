@@ -1,0 +1,501 @@
+# Clase 15
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/15/
+
+Fecha de exportación: 7/23/2026, 11:56:10 PM
+
+
+Clase: 15
+Curso: F3
+
+Segmentos : 270
+Palabras  : 10497
+Caracteres: 60130
+
+0:18
+La vez pasada empezamos a ver cómo era el efecto de un campo magnético en partículas cargadas eléctricamente en movimiento. Entonces, por ahora lo vimos un poco en general. Vimos que la descripción se daba en términos de lo que se llama la fuerza de Lorenz. que cuando no hay campo eléctrico tiene esta forma, es Q, la carga de la partícula, por B, la velocidad de la partícula, producto vectorial con el campo magnético.
+0:54
+Y ahora vamos a tratar de verlo un poco más de manera concreta, en el caso de un campo magnético uniforme. Entonces voy a tomar un campo magnético, voy a tomar una región del espacio, acá,
+1:13
+en que tenemos un campo magnético uniforme o aproximadamente uniforme.
+1:21
+Voy a dibujarlo así. Esto representa campos magnéticos perpendiculares al pizarrón y salientes. Cuando tenga un campo entrante lo voy a poner con una crucecita y cuando tenga un campo saliente lo pondré con un punto así. Esto es saliente y esto es entrante.
+1:44
+Y en toda esta zona tendré un campo magnético de este tipo. B. Uniforme. Vamos a hacer el caso más simple que es el campo uniforme. Entonces, vamos a suponer también que entra a esta región, viene por acá una partícula de carga Q y velocidad B. que entra a esta región.
+2:17
+Vamos a suponer que fuera no hay campo magnético y dentro de ese rectángulo que dibujé hay un campo magnético uniforme.
+2:25
+Bien. Entonces vamos a suponer B perpendicular al campo magnético.
+2:32
+¿Sí? Esta es la velocidad de incidente.
+2:44
+Es la velocidad con la que se entra en esa región. Entonces vamos a tratar de describir el movimiento que experimenta esa partícula de carga curva. Vamos a ponerle también el valor de la masa, M, cuando se desplaza en esa región de campo magnético uniforme.
+3:09
+¿Cómo hacemos?
+3:13
+Si quieren hallar el movimiento de una partícula, ¿qué usan? Entonces, en esta región, bueno, el peso obviamente es totalmente despreciable.
+3:30
+Perdón. Entonces, la única fuerza relevante acá es la fuerza magnética. Y dijimos, como dice allá arriba, que es Q por B producto vectorial con B.
+3:45
+Entonces, supongamos, por decir algo, que la carga Q es positiva. Tomamos la carga Q positiva.
+3:55
+Podríamos hacer un análisis similar en el caso de una carga negativa.
+4:01
+Entonces, al entrar a la región, acá tenemos el campo magnético B.
+4:08
+Al entrar a la región, inmediatamente después de entrar, ¿cómo es la fuerza?
+4:18
+Entonces hay que hacer la regla de la mano derecha, ¿no? La regla de la mano derecha les dice que este producto vectorial les colocan en el índice el primer vector, en el, no sé cómo se llama, el del medio, el grande, el segundo, y el pulgar les indica la dirección y el sentido del producto vectorial. Y además si Q es positivo, es el mismo sentido. Entonces Q, B, les queda una fuerza que es para abajo.
+4:51
+¿Esa no era la mano izquierda? Hay una regla de la mano izquierda y una regla de la mano derecha. La que es cómoda es la regla de la mano derecha, por lo menos para mí. Hay otra regla que da el mismo resultado pero que es diferente con la mano izquierda. La que es más fácil para mí es primer vector, este. Segundo vector, este. Y el producto vectorial es este. La manera de acordarse es que el dedo fuerte, que es el gordo, es donde les da la fuerza. Entonces, bien fácil. El primero es el primero, el segundo es el segundo y el fuerte es la fuerza.
+5:23
+¿Bien? No hay cómo equivocarse. ¿Bien? Eso es en el...
+5:45
+Silencio. Eso es en el instante inicial. ¿Y luego? ¿Qué va a pasar? ¿Por qué? ¿Por qué? Entonces ahí dicen que el movimiento tiene que ser circular. Entonces, ¿por qué la aceleración es para adentro? No sé qué quiere decir para adentro. Pero en todo caso, lo que es seguro es que la aceleración es perpendicular a la fuerza.
+6:17
+Quiere decir que es perpendicular a la velocidad. ¿De acuerdo? Quiere decir una aceleración que es perpendicular a la velocidad. Y además, la aceleración... Fíjense, vamos a calcular el módulo de F. Mientras...
+6:40
+B sea de módulo... Vamos a ir paso por paso. Primero que nada, la aceleración, la fuerza es perpendicular a la velocidad.
+6:57
+En todo instante...
+7:04
+La fuerza es perpendicular a la velocidad. Entonces, ¿cuál es el trabajo? ¿Cuál es el trabajo aportado por la fuerza magnética? Cero. Entonces, no trabaja.
+7:17
+Entonces, ¿qué pasa con la energía cinética de la partícula?
+7:21
+Se conserva. Entonces, un medio de mv al cuadrado se mantiene constante.
+7:35
+Es decir, el módulo de la velocidad es constante. No la dirección, pero el módulo es constante. Constante a lo largo del movimiento.
+7:52
+Eso es lo primero. Lo segundo, la fuerza y la velocidad, ambas, están en el plano perpendicular a B. ¿De acuerdo? Porque la fuerza también está en este plano. La fuerza es perpendicular a B porque el producto vectorial es perpendicular a B. Y B inicialmente era perpendicular. Pero como B inicialmente, como la fuerza está en el plano perpendicular a B y la velocidad inicialmente está en el plano también perpendicular a B, como la velocidad y la aceleración están en el plano perpendicular a B, entonces en todo instante posterior B también está en ese plano.
+8:31
+B se mueve en este plano. No va a salir de este plano, no hay fuerza en la dirección perpendicular al pizarrón. Por lo tanto, como la velocidad inicialmente está en este plano, sigue en este plano. Entonces, además, B perpendicular a B en todo instante.
+8:54
+Instante, pues, F perpendicular a B.
+9:01
+Y perpendicular a B inicialmente. Bien. Entonces, podemos calcular el módulo de la fuerza. El módulo de la fuerza, como B y B son perpendiculares en todo instante, será igual al valor absoluto de Q por la norma de B por la norma de B. Bien.
+9:36
+¿De acuerdo?
+9:40
+Entonces la norma de B es constante.
+9:44
+Se mantiene constante. En módulo, ¿no? La fuerza va a ir cambiando en dirección. Pero no en módulo. Porque dijimos que B era constante. B es constante. Q obviamente es constante. Así que la fuerza en módulo no cambia.
+10:05
+Entonces ahora tenemos un movimiento que es uniforme en sentido que el módulo de la velocidad se permanece constante. Tenemos una aceleración que en todo instante es perpendicular a la velocidad porque vemos que F es perpendicular a la velocidad. F perpendicular a B. Entonces la aceleración que es F sobre M perpendicular a B. Entonces ya conocemos cómo es un movimiento en el cual la fuerza siempre es perpendicular a la velocidad y tiene módulo constante.
+10:42
+Como ustedes ya saben, es un movimiento circular uniforme. Un movimiento circular uniforme tiene esa característica. La fuerza siempre es perpendicular a la velocidad y permanece constante.
+10:55
+Entonces, eso ya lo vieron en física 1. Aceleración siempre perpendicular al movimiento y permanece. Constante en módulo, entonces el movimiento es circular y uniforme. Uniforme es esto, ¿no? Módulo de B constante. Entonces ya saben, ustedes ya conocen cómo es el movimiento circular uniforme.
+11:25
+Saben que la fuerza, que la aceleración va a ser lo que se llama la aceleración centrípeta. ¿Sí? Entonces, la aceleración es centrípeta. ¿Sí? Y vale que el módulo de la aceleración es B cuadrado sobre el radio del círculo. Es radio de la trayectoria.
+12:02
+Entonces ahora ya tenemos todo, fíjense. Tenemos que M por el módulo de A es igual, como vemos ahí, al valor absoluto de Q por B por B.
+12:23
+Y entonces M por B al cuadrado sobre R es igual a... Pongo Q sin valor absoluto porque dijimos que habíamos tomado Q positivo. Si no, habría que tener cuidado con los signos. B por B. Y acá podemos despejar el radio. Entonces el radio del círculo... Pasamos R para allá y lo otro dividiendo. Nos queda MD sobre Q por B.
+12:55
+Entonces radio es esto, ¿no? Podemos calcular el radio. Va a ser un movimiento circular uniforme. Fíjense que la velocidad es la velocidad inicial porque no cambió la velocidad a lo largo del tiempo. En módulo lo que va cambiando es su dirección. Se va a ir moviendo como en todo movimiento circular uniforme. ¿Sí? ¿Sí?
+13:30
+Entonces podemos calcular la frecuencia... Bueno, entonces fíjense, en este movimiento, tal como yo lo hice, hace un círculo y sale de la región. ¿Sí? No da una vuelta entera. ¿De acuerdo? Porque tal como dijimos, venía la velocidad acá, se empieza a curvar, ah, no, se curva para abajo, ¿no? Mirá, es así, se curva y sale. Pero supongamos que en lugar de eso estamos en una región donde la partícula inicialmente se mueve dentro del campo magnético. Entonces va a ser círculos enteros.
+14:01
+¿Sí? Entonces...
+14:21
+Si la partícula puede recorrer un círculo entero dentro del campo uniforme,
+14:49
+¿Cuánto llevará dar una vuelta entera? ¿Cuánto le llevará dar una vuelta entera a la partícula?
+15:07
+Un periodo, sí, pero justamente ¿cuánto vale ese periodo?
+15:12
+Bueno, ¿cuál es el largo de la circunferencia? 2 pi r la circunferencia entonces la distancia que tiene una vuelta, distancia recorrida en una vuelta esa distancia es 2 pi r y esto será igual a la velocidad por el tiempo que demora, lo llamamos un periodo, periodo de revolución.
+15:54
+El periodo en que demora es dar una vuelta, entonces podemos calcular T será igual a 2πR dividido la velocidad.
+16:04
+Pero la velocidad la tenemos allá... Perdón, el radio lo tenemos allá calculado. Nos queda 2 pi sobre B y sustituyo la expresión de R que calculamos que nos da MB sobre Q por B. Entonces se da una cosa bastante mágica que es que se va la velocidad. Todas las partículas, independientemente de con qué velocidad entran, demoran el mismo tiempo en dar una vuelta. T es igual a 2 pi... M sobre QB.
+16:40
+El periodo es independiente de B. Recuerden que B depende de con qué velocidad hicimos entrar la partícula a la región de campo magnético. ¿De acuerdo? Entonces a priori, digo, distintas partículas podrían entrar con distintas velocidades. Lo interesante es que todas giran, todas demoran al mismo tiempo en dar una vuelta.
+17:10
+Se mueven a velocidades diferentes, pero cuando la velocidad es más grande... Fíjense, el radio también es más grande, es proporcional a B. Entonces, si multiplica la velocidad por 2, va el doble de velocidad, pero por otro lado la distancia que tiene que recorrer también es el doble, porque el radio que recorre es doble, entonces el periodo es el mismo. De hecho, a veces esto se escribe, no en términos del periodo, sino lo que se llama la frecuencia. La frecuencia es 1 sobre el periodo. Entonces, la frecuencia será...
+17:46
+F igual 1 sobre el periodo, la frecuencia es el número de veces que se da una vuelta entera por unidad de tiempo. Es 1 sobre el periodo. Entonces les queda QB sobre 2 pi por M. Y esto se le suele llamar, por motivos que vamos a ver ahora en un ratito, frecuencia de ciclotrono.
+18:19
+Lo interesante es que no depende de la velocidad. Si la carga fuera negativa, en lugar de tener Q acá, tienen valor absoluto de Q. Si yo hubiera mantenido el valor absoluto que tenía hasta acá, puedo mantener el valor absoluto.
+18:47
+Entonces, esto nos queda acá. Es que da valor absoluto. La frecuencia, es decir, vale tanto para cargas positivas como para cargas negativas. Lo que cambia para cargas positivas o cargas negativas es que en un caso las partículas se desvían para un lado y en otro caso se desvían para el otro lado. Ahora pregunta, a ver si entendieron bien esto. Supongamos que la partícula en lugar de entrar perpendicular al campo magnético, ¿sí? ¿Vieron cómo era acá? Tenían la región del campo magnético, el campo magnético era saliente.
+19:19
+Y dijimos la partícula entraba perpendicular y hacia un círculo. Supongamos que en lugar de entrar perpendicular, entra chanfleada, entra así. ¿Cómo va a ser el movimiento de la partícula?
+19:34
+Una hélice. Se dan cuenta porque si la partícula entra chanfleada va a tener dos componentes. Una componente en la dirección del campo magnético y otra en el plano perpendicular al campo magnético. En el plano perpendicular al campo magnético sucede todo esto que acabamos de ver. Pero donde lo que influye no es la velocidad total, sino la velocidad, la componente de la velocidad en el plano perpendicular al campo magnético. Pero ¿cómo es la fuerza en el plano magnético? En la dirección del campo magnético.
+20:07
+Cero. Porque dijimos que la fuerza es el producto vectorial de B con Q por B por B. Quiere decir que es perpendicular a B. Quiere decir que en la dirección de B no hay fuerza magnética. Quiere decir que la componente que tiene la velocidad en la dirección de B, ¿qué le pasa? se mantiene constante. Quiere decir que en esa dirección tienen un movimiento, en esa dirección, la componente esa es un movimiento rectilíneo, uniforme, digamos. Entonces, ¿qué va a pasar? Va dando vueltas en el plano perpendicular, pero en paralelo eso se compone con un movimiento uniforme en la dirección perpendicular y entonces va haciendo cosas así, un tirausón.
+20:45
+¿Se entiende? Así que todo esto que dije, si la velocidad no fuera perpendicular a B inicialmente, vale, pero solo en el plano perpendicular a B. A eso le tienen que agregar un movimiento uniforme en la dirección de B. ¿Se entiende? Y eso les da una hélice. ¿Se entiende? ¿Preguntas?
+21:10
+Bueno, una observación es que acá todo esto que estamos usando es la mecánica que ustedes aprenden en los cursos de acá de la Facultad de Ingeniería. Entonces, en particular, acá los efectos, en esto que hicimos, normalmente los efectos cuánticos no juegan ningún papel, pero sí pueden jugar un papel importante los efectos que se llaman relativistas. Cuando la velocidad es comparable a la velocidad de la luz, deben haber escuchado, cambia un poco la mecánica, parece la mecánica relativista de Einstein. Y entonces, algunas de las cosas que vimos acá dejan de ser ciertas.
+21:40
+Y en particular, lo más importante es que la frecuencia ciclotron deja de ser independiente de la velocidad. Empieza a ser dependiente de la velocidad.
+21:51
+Esto va a ser importante por una cosa que voy a hacer ahora en un momento. Entonces, esto vale... Esto vale...
+22:01
+en la aproximación no relativista. Quiere decir, con las velocidades mucho más chicas que la velocidad de la luz. Entonces, si la velocidad es comparable a la de la luz, entonces F depende de B.
+22:27
+Bueno, obviamente eso está por fuera de los límites del curso, pero es importante para lo que voy a ver ahora en un momento.
+22:35
+Esta propiedad del movimiento circular de las partículas en campo magnético uniforme tiene varias aplicaciones tecnológicas importantes. Recuerden, ustedes están estudiando ingeniería, cuando aprenden algo de física o de lo que sea, tienen que decir, ¿qué aparato se puede fabricar con esto? ¿Qué cosa podemos hacer interesante con esto?
+22:58
+¿Para sacar la masa de partículas? Bueno, una de las aplicaciones es esa. Es lo que se llama el espectrómetro de masas. Si ustedes tienen una cosa y quieren descomponerla, quieren saber de qué está compuesto. Entonces lo que hacen, lo primero que hacen es la vaporiza. Lo ponen muy caliente para que largue el vapor. Entonces las distintas partículas que lo componen, las producen, entonces para las partes neutras no vamos a poder hacer nada. Pero todas las componentes cargadas, por ejemplo, si están compuestos de iones, esos iones están cargados.
+23:33
+Típicamente las cargas de los iones son E o menos E. Están cargados positivos o negativos. Lo ponen en una región de campo magnético uniforme con una cierta velocidad inicial para darle la velocidad inicial que hacen, o sea, le quieren asignar una velocidad.
+23:50
+Le aplican un pequeño campo eléctrico para acelerarlos hasta una cierta velocidad. ¿Saben la velocidad? Los hacen entrar en la región del campo magnético y... ¿Cómo se mueven? Un círculo. ¿Y el círculo de qué depende? depende de la carga que como les digo normalmente siempre la misma de la carga del electrón a veces el doble pero bueno es un múltiplo entero del electrón pero fíjense que depende del campo magnético que ya lo conocen de por sí pero depende de la masa entonces distintas partículas según el radio que tengan van a poder identificar la masa entonces pueden identificar los iones y de esa manera pueden determinar la composición química del material Es una cosa, por ejemplo, si quieren saber si hay contaminantes en cierta cosa, se usan estos espectrómetros de masa.
+24:37
+Es un aparato muy sofisticado para medir la composición química de un material. ¿Con la densidad? ¿Cómo? ¿Con la densidad? No, porque el espectrómetro de masa lo que mide son partículas sueltas. Entonces la noción de densidad no se amplía. Entonces lo que miden son partículas sueltas. Y lo que van a ver, por ejemplo, en un espectrómetro real, lo que va a suceder es que... Pongo acá un dibujo, entra acá todo el gas, las distintas partículas recorren distintas circunferencias y para saber cuál es la composición relativa ven el tamaño de las manchas.
+25:17
+¿Se entiende? En las regiones donde hay mucha mancha es que había muchas partículas de ese tipo. Y acá tienen una película que se va a volver más oscura en la región donde llegan muchas partículas. Entonces dicen, ah, había tantos iones de tal... Según las masas pueden identificar los iones. Dicen, ah, había tantos iones de tal tipo, tantos de tal otro. Entonces el espectrómetro de masa es una aplicación de esto. Y después ahora voy a hablarles de otra aplicación que justamente es esto, el ciclotrón.
+25:48
+El ciclotrón es un acelerador de partículas. Es un dispositivo que hace dos cosas. Acelerar partículas nosotros sabemos cómo hacer. ¿Qué hacen? Agarran una partícula, ponen la diferencia potencial, la hacen entrar a un lado, la partícula cargada se acelera y ya está. Acelerar partículas cargadas sabemos hacerlo. Pero eso no es muy útil. Porque ahí las aceleraste y se acabó el juego. Supongan que ustedes llevan, ustedes no están en general en edad de tener hijos, pero supongan que llevan un sobrino o un hermano menor a la calecita.
+26:25
+¿Sí? ¿Sí? Llevan a la calecita. Si ustedes tuvieran calecitas en línea recta, ¿qué pasa? ¿Cuál es el problema?
+26:36
+¿Eh? ¿Cuál es el problema de las calecitas en línea recta? Cerrar. Que se terminan enseguida, se te acabó. Salvo que tengas una línea larguísima, pero es re difícil. Entonces, ¿qué es lo que se hace? Se hacen calecitas de movimiento circular. Entonces, la idea, el ciclotrón es un acelerador en que acelera, pero para que las partículas no se te escapen, como te pasaría en una calecita de... Si te escapa el hermano o el sobrino, estás en problema. Pero para que no se te escapen las partículas, las hacés girar.
+27:06
+Entonces las acelerás, pero en lugar de que tengan que seguir en movimiento rectilíneo, las vas curvando. Y esto permite curvarla. Entonces las mantenés almacenadas, dando vueltas, y les vas agregando energía. ¿Se entiende? Entonces básicamente, a medida que vamos agregando energía, aumenta la velocidad. Y a medida que aumenta la velocidad, se mueven en radios más grandes. ¿Sí? Entonces van creciendo de radio y bueno, depende del tamaño del acelerador que tengan, hasta qué velocidad pueden ir. Pero si tienen un acelerador medianamente grande, pongamos de 1 o 2 metros de radio, pueden llegar a tener velocidades bastante grandes.
+27:50
+Entonces los aceleradores posta van rapidísimo. Sí, sí. Si quieren tener velocidades realmente muy grandes, hacen como hicieron en Ginebra, un acelerador que tiene 30 y pico de kilómetros de circunferencia.
+28:04
+Pero ahí ya no son ciclotrones. ¿Por qué? Porque esos son aceleradores ultra relativistas. Entonces ya no vale esto. Hay que pensar en otra tecnología. Entonces lo que les voy a contar es para hacer aceleradores de los viejos, old fashion, los primeros, de antes de la Segunda Guerra Mundial. Los primeros aceleradores son como yo les voy a contar. Hoy en día no se hace experimentación en física de partículas con aceleradores así, porque las velocidades a las que se llegan son a velocidades rechumingas.
+28:36
+Son a velocidades mucho más grandes. Pero, pero, sí se usa mucho para aplicaciones médicas. Esa radiación de... bueno... aceleran mucho las partículas, ustedes todavía no lo saben, pero las partículas cargadas, aceleradas, generan radiación electromagnética y esa radiación de ciclotrón puede ser utilizado por distintos tratamientos de distintas cosas. O para... No lo voy a lograr decir. Para hacer imágenes del cuerpo. Tiene un rayo de luz muy focalizado y pueden, por ejemplo, detectar cosas en el cuerpo humano con gran precisión.
+29:15
+Típicamente tumores o cosas así. ¿Qué?
+29:21
+Incluso cosas que originalmente no se denominaban rayos X porque están allá, pero son rayos muy ultravioletas. Entonces se usan esas cosas tanto para tratamientos como para detección. También se usan para... Lo mismo, tener esos rayos súper colimados y súper acelerados permite también estudio de materiales. Se usan los ciclotrones para, no ya en investigación física de partículas, sino estudio de materiales. Porque también mandan esos rayos, ven sobre un material y ven cómo el material los desvía y entonces pueden estudiar la estructura interna del material con gran precisión.
+30:00
+Entonces, hoy en día, lo que les voy a... Originalmente se usaban para investigación en física de partículas. Hoy en día no, hoy en día los ciclotrones no se usan más para eso, pero sí se usan para estas otras cosas que les cuento. ¿Está? Entonces veamos cómo funciona el ciclotrón.
+30:28
+Entonces, ejemplos de aplicaciones.
+30:48
+Bueno, perdón, fuimos a aplicaciones súper sofisticadas, pero sin ir tan lejos.
+30:53
+Otra cosa para la cual se usa esto, yo les comenté cuando vimos campo eléctrico que con el campo eléctrico podemos desviar partículas, por ejemplo, para los televisores viejos, para orientar los electrones, tienen un tubo de rayos catódicos, orientan los electrones. En realidad los aparatos de televisor real tienen dos cosas, tienen un campo eléctrico y también un campo magnético. Porque con el campo magnético, variando la intensidad del campo magnético, también pueden desviar, pueden ver cuánto... ¿Cuánto lo desvían? La manera en que se desvía con el campo eléctrico y con el campo magnético son diferentes, pero en ambos casos pueden desviar el haz.
+31:32
+Y de hecho, en los televisores solía haber un campo eléctrico y un campo magnético. Las dos cosas.
+31:39
+Así que bueno, todas estas cosas de desviar partículas son útiles. Entonces, un primer ejemplo es el espectrómetro de masas.
+31:57
+que es lo que yo les decía, tienen acá una entrada, tienen iones, tienen distintos radios, acá tienen el campo magnético uniforme, entonces según el radio se determina la masa del ión.
+32:29
+Ese es el primer ejemplo y el segundo que voy a tratar en detalle es el ciclotrón. Entonces, ¿cómo funciona el ciclotrón? Bueno, voy a hacerles dos dibujos porque me cuesta hacer todo en un solo dibujo. Un primer dibujo es visto desde arriba. Entonces, el ciclotrón está formado por lo que se llaman dos Ds. Se le llaman Ds porque tienen forma de D. que son como dos cajas metálicas, ¿sí?
+33:07
+Son dos cajas metálicas que están puestas a una diferencia de potencial. Acá tienen una diferencia de potencial acá. Diferencia de potencial.
+33:24
+¿Bien? Entonces tienen una cierta distancia acá chiquita de... y cada una de las placas metálicas tiene un radio R y se les aplica un campo magnético uniforme perpendicular. Bien.
+34:03
+Voy a dejar esa fórmula que está por ahí a mano porque la vamos a usar en un momento. Entonces, ¿cuál es la idea? La idea es que arrancan de acá del centro con un conjunto de partículas cargadas. ¿Sí? ¿De acuerdo? Ah, perdón. Una cosa que no dije. Las Ds permiten la entrada. Tienen una ranura para que las partículas puedan pasar de un lado a otro. ¿Está bien? ¿De acuerdo? Tienen una ranura en el medio, así pueden pasar.
+34:35
+¿De acuerdo? Entonces tienen partículas que inicialmente arrancan acá. Como acá hay una diferencia de potencial, ¿qué hacen las partículas? Se mueven. Entonces voy a hacer primero un dibujo de una de las Ds y una primera parte del movimiento. Entonces tiene una partícula que está acá, tiene una diferencia de potencial acá, delta D, tiene una partícula cargada, Arranca del centro, bastante cerca del centro.
+35:06
+Entonces supongamos que se acelera para allá y llega con una cierta velocidad acá. Ganó velocidad en ese pedacito.
+35:14
+Cuando entra, entra en un movimiento circular y sale de nuevo. ¿Y ahora qué pasa? Si la diferencia de potencial... sigue siendo la misma que teníamos hace un rato, no sirvió de nada esto, porque lo que ganó de energía para acá, lo va a perder yendo para el otro lado. Entonces, ¿qué es lo que se hace? Tienen una cosa que, en lugar de tener una diferencia potencial constante, tiene una diferencia potencial que cambia de signo. Entonces, lo que se hace es que cuando pasa por el otro lado, delta B cambió de signo.
+35:49
+Entonces, nuevamente esto se acelera y llega a la otra D.
+35:54
+Pero ahora tiene una velocidad más grande, porque se aceleró. Entonces recorre otro semicírculo, pero con un radio un poco más grande, porque si la velocidad es más grande... ¿De acuerdo?
+36:07
+Entonces ahora vuelve para acá, tenemos que haber cambiado de signo nuevamente la diferencia potencial y va para este lado. Entonces se acelera nuevamente, entonces hace un círculo más grande. Y después viene para acá, se acelera, un círculo más grande. Y después se acelera, un círculo más grande. Un círculo más grande hasta que al final sale para afuera. ¿Está? En realidad, bueno, sale para afuera por aquí. No, no se acelera.
+36:34
+Como son circulares, dentro de este movimiento se acelera solo en este pedacito. Lo interesante es que se puede fabricar este aparato. Porque nosotros sabemos fabricar señales que van cambiando de signo con un cierto periodo. Es lo que se llama corriente alterna. Todavía no la vimos en el curso, pero se sabe hacer corriente alterna. Pero queremos hacer una señal que sea periódica con qué periodo.
+37:04
+Con este. Con este que está acá. Basta con tener una señal que vuelve a su valor inicial. Es decir, en un periodo cambia dos veces. Una vez cambia para un lado y otra vez vuelve. Entonces, si ajustamos la frecuencia de oscilación
+37:38
+de delta v con el tiempo para que sea f y fíjense que eso no dependió de la velocidad inicial lo interesante es que si la frecuencia esta dependiera de v estamos complicados porque a medida que se va a ir acelerando tendríamos que ir cambiando la frecuencia ¿Se entiende? Porque tendríamos... Si F fuera cambiando, a medida que la partícula, y en general no va a ser una, va a ser muchas partículas, y algunas se aceleraron un poquito, otras...
+38:15
+No podríamos tener una frecuencia general que les permita hacer eso, porque distintas partículas van a estar con distintas velocidades en un instante dado. Algunas ya se aceleraron bastante, otras un poco. Entonces, si tenemos una frecuencia que no es esa... Que depende de B. Entonces, en un lado estamos acelerando una, pero en el otro lado no estamos acelerando las otras. ¿Se entiende? En cambio, si F no depende de B, a todas le aplicamos lo mismo y todas las estamos acelerando juntas. Este aparato va acelerando y a la vez conserva las partículas sin que se escapen.
+38:47
+Hasta que llegan al borde. Entonces, todas las partículas...
+39:02
+Se acelera.
+39:05
+Y la velocidad final, la velocidad final, la velocidad al salir, la velocidad al salir, por acá, damos vuelta a la fórmula, ¿no? Será B igual a valor absoluto de Q por B dividido M por R.
+39:27
+Donde R es el radio este. El radio de todo el D. La D. Acá, como puse acá. R. ¿No? Van recorriendo radios más chicos. A medida que van ganando velocidad, van más grandes. Y cuando llegan, cuando la velocidad llega a este valor con el radio este exterior, ahí salen para afuera. Esa es la velocidad con la que se escapan.
+39:51
+Y fíjense que todas salen con la misma velocidad. Todas las que tienen igual masa, igual calor.
+39:58
+Entonces esto permite acelerar mucho las partículas. Realmente mucho. Los primeros aceleradores eran así. El tema es que, como les digo, a medida que uno las acelera mucho, puede llegar a tener velocidades que ya son comparables con las de la luz. Si llega con velocidades comparables a las de la luz, ya este razonamiento ya no vale. Y hay que mejorar, hay que hacer un aparato más sofisticado. Porque ahí...
+40:26
+Las partículas que están yendo a velocidades comparables con la luz no tienen una única frecuencia de ciclotrón. Cada una va a tener una frecuencia diferente.
+40:38
+Bueno, a partir de esto se puede calcular la energía cinética. Entonces, la energía cinética de salida...
+40:55
+será un medio de M por B al cuadrado, que esto lo pueden calcular, esto es un medio de M por Q al cuadrado, por B al cuadrado, por R al cuadrado, dividido M al cuadrado, tenía un M arriba, me queda uno sobre M. Y con este procedimiento se pueden acelerar partículas bastante. Entonces acá les doy algunos ejemplos. Entonces, con esta tecnología se puede llevar electrones... Quiero decirles bien los números.
+41:46
+Permite llevar electrones hasta 10 MeV...
+41:59
+electrones a hasta 10 megaelectronvolts y protones hasta 40 MeVs para un radio del orden de un metro. También se pueden acelerar iones hasta energías un poco más altas, de hecho.
+42:35
+Y la limitante es esta, ¿no? Hay dos limitantes. Una es el tamaño del acelerador. Mientras más grande el acelerador, llegan a energías más grandes.
+42:45
+Fíjense que es proporcional al radio al cuadrado. Esa es una limitante, así que si el laboratorio de ustedes puede hacer entrar un aparato de radio 3 metros, podrán acelerar más, salvo que llegue un momento en que ya no tiene sentido tener ciclotrones más grandes que un cierto tamaño, típicamente 1 metro, 2, 3 metros, porque entonces la limitante empieza a ser esta, que empiezan a aparecer... los efectos relativistas y en ese caso ya no tiene sentido ir más lejos porque igual ya el dispositivo, el aparato ya no funciona.
+43:20
+Entonces los ciclotrones típicamente tienen ese tamaño, algunos metros de radio. Los aceleradores gigantescos que ustedes deben haber escuchado de kilómetros de radio no funcionan con esta tecnología.
+43:36
+Preguntas?
+43:49
+Claro, si estas son las energías, pueden llevar electrones hasta la energía esta. ¿Cómo? ¿Se acuerdan? Electrón volt que dimos.
+44:00
+Y el mega es 10 a la 6. 10 a la 6 electron volt. ¿Se acuerdan? Un electron volt es 1,6 por 10 a la menos 19 joules. Un electrón que va a 10 megaelectrón volt es un electrón que va rápido. Ejercicio. Calcular la velocidad de un electrón con energía cinética 10 megaelectrón volt.
+44:43
+Van a ver que la velocidad está potente. ¿Alguna otra pregunta?
+44:58
+¿Cómo? Bueno, yo les decía, genera una radiación...
+45:07
+relaciones de dos tipos primero pueden generar iones acá acelerados que tienen un uso en sí mismo y si no además partículas girando muy rápido generan también una radiación electromagnética que también tiene mucho uso y se usa para estudiar materiales propiedades internas de materiales o si no para algunos tratamientos médicos también
+45:40
+¿Alguna otra pregunta?
+45:44
+Bueno, entonces lo que vamos a hacer ahora, voy a hablar de un efecto importante. Fíjense que hasta ahora no hemos visto nada. que desde el punto de vista macroscópico nos permita saber si las cargas que se mueven en un metal son negativas o positivas. Porque la corriente, estamos de acuerdo, iría para un lado si las cargas son positivas, iría para el otro, perdón.
+46:20
+La corriente siempre va para el mismo lado. Pero en un caso quiere decir que las cargas negativas están yendo para el lado opuesto o también puede decir que las cargas positivas están yendo para el mismo. Pero entonces macroscópicamente lo que disponemos es la corriente y no logramos saber si son cargas eléctricas positivas yendo al mismo lado de la corriente o cargas eléctricas negativas yendo para el otro. ¿Se entiende? Entonces, ¿cómo podríamos detectar... el signo de las cargas, saber si el electrón tiene carga positiva o negativa.
+46:51
+Entonces vamos a ver un efecto que se llama el efecto Hall, que permite determinar cuál es el signo y también la abundancia, de hecho, de cargas en un conductor.
+47:06
+Es decir, que hace la diferencia entre las corrientes con cargas, corrientes que se producen con cargas eléctricas negativas y con cargas eléctricas positivas. ¿Han escuchado hablar del efecto Hall?
+47:20
+No, bueno, a ver, no es muy complicado. 8... 8.4 creo que es.
+47:48
+De hecho, la razón por la cual se le asignó un signo negativo al electrón... A ver, fíjense. Como los electrones son los que producen la mayor parte de la conducción eléctrica, lo lógico hubiera sido asignarles una carga positiva. Es decir, esa es la carga positiva y la corriente va como ellos. Pero se adoptó la convención inversa. Porque en realidad...
+48:17
+En realidad, cuando se empezó a hablar de corriente eléctrica, no se tenía ni idea de cuál era el signo de los portadores. Entonces se eligió un sentido convencional, para un lado, y solo muchos años después se supo cuál era el signo de las cargas que efectivamente se movían. ¿Me explico? De hecho, eso se encontró en el año 1800, casi final del siglo XIX, no recuerdo, 1879, ¿eh? En 1869 se descubrió un efecto que permite diferenciar entre portadores de carga Positivos y negativos.
+49:17
+¿Está? Midiendo solo la carga. Obviamente, si ustedes tienen un electrón aislado, ahí ya es muy fácil. Pero si no tienen un electrón aislado, tienen un electrón aislado. Unos años más tarde aparece lo que se llama el experimento de Millikan, que fue el que permitió detectar que la carga estaba cuantizada. Y lograba detectar cargas individuales. Tenían unas gotitas que tenían una carga de electrón o lo opuesto. Entonces es muy fácil, porque lo ponen acá en un campo eléctrico y van para donde se mueven. Pero mientras tienen corrientes macroscópicas, eso no es evidente.
+49:50
+Entonces fíjense lo que observó Hall. Hall dice lo siguiente. Colocan una corriente en un cable grueso, un cable medio grueso.
+50:04
+Entonces tienen una corriente que la hacen entrar por acá abajo.
+50:10
+La corriente I que entra por acá abajo. Y colocan esto en un campo magnético uniforme.
+50:22
+Bien, el campo está en toda esta región, pero no lo dibujo para que no me contamine el dibujo. Entonces, lo que dice John es lo siguiente. No sabemos, hay dos escenarios. Voy a repetir con los dos escenarios.
+50:40
+Corriente. La corriente entra por acá abajo. Siempre, corriente por acá. Campo magnético, este es un campo magnético acá. B, entrante.
+50:52
+Y Hall dice, bueno, no sabemos. Hay dos posibilidades. O bien las cargas que están acá, que están entrando, son cargas eléctricas positivas, en cuyo caso tienen una velocidad que va para allá.
+51:07
+¿Sí? O bien son cargas eléctricas negativas, en cuyo caso tienen una velocidad de desplazamiento que va para el otro lado. Las dos cosas pueden ser posibles. ¿Sí? ¿De acuerdo? Pero, fíjense, las fuerzas, veamos cómo son las fuerzas que experimentan cada uno de esos portadores. Entonces, si la carga es positiva, veamos la fuerza magnética, es Q, es positiva, así que no cambia el signo, ¿está?
+51:39
+B, el campo magnético es entrante, ¿sí? ¿De acuerdo? Entonces me genera una fuerza para allá, fuerza magnética.
+51:51
+Pongo índice B para señalar que está asociada con el campo magnético. Ahora veamos... ¿Qué pasa?
+52:00
+Regla de mano derecha. Primer vector es B. Segundo vector es el campo magnético que va para adentro. Y el pulgar me indica el sentido de la fuerza.
+52:14
+A ver, hay muchas reglas. Tienen que elegir una y atenerse a ella. No mezclen reglas. No apliquen la regla de la mano derecha con la mano izquierda. O la regla de la mano izquierda usando... No. Agarren una y usen siempre la misma. Una vez que se acostumbran, usan esa y no otra. Yo uso esta. Hay otras en el mercado. Ustedes eligen la que les resulte la mejor relación calidad-precio. Pero una vez que agarran una, no anden cambiando. Porque si no, se van a confundir. ¿Sí?
+52:45
+Voy a la carga negativa. Un segundito. En el caso de la carga negativa, primero vamos a hallar el producto vectorial B con B. B para abajo, B para abajo, B para adentro y me daría un vector para allá. Pero como la carga es negativa, la fuerza, ¿para dónde va? En sentido opuesto. Así que en ambos casos, ya sea... que la carga es positiva o que la carga es negativa, en ambos casos la fuerza magnética empuja las cargas para el mismo lado.
+53:18
+¿De acuerdo? En ambos casos. Entonces, ¿qué dijo Hall? ¡Pah! Pero esto está buenísimo. Porque dijo, después de un rato, ¿qué va a pasar? Se me van a venir las cargas, las cargas en lugar de venir derecho se me van a correr. Entonces se me van a acumular, supongamos que las cargas fueran positivas, se me van a acumular cargas positivas de este lado, voy a tener un déficit de cargas positivas de este lado, voy a tener cargas negativas de este lado, eso me va a generar una diferencia de potencial entre los bornes laterales del cable.
+53:53
+Si yo mido esa diferencia de potencial, y en particular su signo, podré saber si el potencial es mayor de este lado o mayor de este lado. Del lado en que sea mayor es donde están las cargas positivas. Si tenía cargas positivas de este lado, quiere decir que los portadores de carga eran positivos. Si tengo cargas negativas acumuladas de este lado, quiere decir que los portadores de carga son negativos. Y de esa manera puedo saber cuál es el signo de los portadores de carga. Más que eso, ahora vamos a ver si se pueden calcular más cosas.
+54:24
+¿Se entiende? Está buena la idea. Entonces, hagamos el cálculo. Entonces, en ambos casos, en ambos casos,
+54:53
+con Q positivo y con Q negativo la fuerza magnética tiene igual dirección y sentido entonces Voy a hacer el cálculo suponiendo lo siguiente.
+55:23
+Supongamos la corriente uniforme.
+55:37
+Uniforme. Es decir, en toda la sección vamos a suponer que la corriente es igual.
+55:48
+Y lo otro que voy a suponer es que, y también supongamos que el sistema llegó a un estado estacionario. ¿Qué quiere decir esto? Que al principio está claro que cuando recién empieza la corriente, de este lado no hay cargas acumuladas. ¿Está bien? Entonces ahí tienen un transitorio en el cual se les empieza a acumular cargas.
+56:20
+Pero después de un rato ya se les acumularon las cargas y las que vienen después siguen, tienen un movimiento que va de abajo para arriba. ¿Se entiende? Una vez que las cargas laterales ya se acumularon, después las cargas siguen de largo. Y de hecho, lo que tiene que suceder en ese momento cuando las cargas ya van de largo, es que la fuerza total sobre esas cargas sea cero. ¿De acuerdo? Pero la fuerza magnética no suma cero. ¿Qué otra fuerza apareció en el medio? Una eléctrica, porque si yo tengo cargas acumuladas acá y las cargas opuestas acumuladas de este lado, me va a aparecer un campo eléctrico lateral.
+56:53
+¿De acuerdo? Entonces, en ese régimen, la fuerza que será la fuerza eléctrica más la fuerza magnética será cero, porque las partículas ahí tienen... Una velocidad constante. Entonces esto será igual a Q por E más QV, producto vectorial con B, es cero.
+57:29
+Y esto nos dice que el campo eléctrico producido por el efecto Hall será menos V, producto vectorial con B.
+57:39
+Donde B, ahora acá es la velocidad de desplazamiento. Velocidad...
+57:45
+de desplazamiento.
+57:49
+Como pueden ver en el dibujo, como el campo magnético es perpendicular a esto, B de desplazamiento y el campo magnético son perpendiculares, entonces
+58:12
+Ah, pero una cosa que no les mencioné. Campo eléctrico, fíjense, no depende de Q. Sí, dependiente de Q. ¿Está? Y entonces la norma del campo eléctrico de Hall es igual a la norma de B por la norma del campo magnético, pues B perpendicular a B.
+58:45
+Entonces, si llamamos, llamémosle, pongámosle un nombre a este ancho, W, acá es velocidad de desplazamiento. Como la velocidad de desplazamiento es constante, B es constante, entonces el campo eléctrico es constante.
+59:07
+Y entonces, la diferencia potencial... Será igual a esto por W. Será igual a B por B por W. Y el signo... Entonces, diferencia de potencial Hall.
+59:30
+Hall. Y el signo... Esto es en valor absoluto, ¿no? El signo... De delta B...
+59:39
+Permite...
+59:43
+determinar el signo de Q. Bueno, en realidad Hall no tenía acceso a la velocidad de desplazamiento. Entonces lo que usó es el modelo de Drude para relacionar Vd con, se acuerdan del modelo de Drude que vimos el otro día?
+1:00:16
+Modelo de conducción. Modelo de Drude es el que explica la ley de Ohm. Entonces habíamos visto en el modelo de Drude una relación entre la densidad de corriente y la velocidad de desplazamiento habíamos visto que era el número de portadores por unidad de volumen por la carga de sus portadores por Vd. Entonces la corriente será igual
+1:00:45
+Al área lateral. Entonces acá vamos a decir que la altura, la altura perpendicular al plano, porque la sección va a ser W por la altura. Entonces la altura, altura H. Perpendicular al plano. Entonces la corriente va a ser igual a J por W por H. Y esto es igual a W por H por N por valor absoluto de Q por BD. Entonces podemos sustituir de arriba y nos dice que el valor absoluto de delta B es igual a B por W. El W ya se me va, no lo escribo porque voy a escribir W por B. Dividido H por N por valor absoluto de Q.
+1:01:37
+Todo esto por la corriente.
+1:01:44
+Y esto sí está escrito en términos de cosas que podía medir Hall. Acá pongo Hall. Todo esto es Hall.
+1:02:01
+Diferencia de potencial.
+1:02:10
+En el caso de los electrones, acá el valor absoluto de Q es E. Entonces fíjense que la diferencia de potencial Hall no solo permite hallar el signo, sino también permite saber cuántos portadores de carga tienen por unidad de volumen. Porque calculando acá, pueden medir esto, el campo magnético lo conocen, pueden medir la corriente, la altura del cable es bien fácil de medir. Tenían un problema porque no se sabía en aquel entonces el valor de la carga E. de los portadores.
+1:02:42
+Así que Hall en realidad solo pudo hallar el producto del valor de los portadores por el número de portadores por unidad de volumen. Pero poco tiempo más tarde Millikan logra medir la carga del electrón.
+1:02:58
+No, incluso antes está Thomson Thompson que mide el... Tengo que reconstruir la historia, tengo que revisar bien la historia. Pero se fueron, más o menos en esa misma época, a fines del siglo XIX, principios del siglo XX, se fueron detectando todas las cosas. El valor de la carga del electrón, el valor de su masa, etc. Primero se detectó, en realidad, el cociente E sobre M. Entonces, no tengo claro si a esa altura ya se sabía el valor de la carga del electrón o se supo más tarde, inmediatamente después. Pero a partir de eso se puede entonces, y así es un buen método, para medir el número de portadores por unidad de volumen.
+1:03:32
+Entonces puedo hacerles acá una tablita, material.
+1:03:38
+Acá les voy a poner el signo, signo de portadores.
+1:03:43
+Que eso se mide no con el valor absoluto de delta B, sino con su signo. Y acá N dividido el número de átomos.
+1:03:54
+Les voy a poner el número de portadores por átomo. Entonces les paso algunos acá. Sodio. Les queda con portadores negativos. El sodio es un metal. Y les queda 0,99 portadores por átomo. El potasio. Les queda también carga negativa. Y acá les queda 1,1. El cobre. Portadores negativos. Y 1,3 por átomo. La plata negativa. 1,3 y aluminio 3,5 fíjese que el aluminio da una cantidad de portadores por átomo pero sin embargo no es tan buen conductor por otros motivos que
+1:04:39
+que no les voy a explicar ahora, pero que son reales. Ya les conté que el aluminio tiene mayor resistividad que la plata o que el cobre, pero fíjense que esto no se debe a su número de portadores. Quiere decir que hay otros efectos que se mezclan. Entonces ahora les pongo el berilio. y el zinc, y en el berilio y en el zinc, que también son metales, aparecen portadores positivos.
+1:05:14
+¡Ja! Eso no se lo esperaba. 2 con 2. Y de hecho Hall tampoco se lo esperaba. Hall no esperaba que hubieran... Hall no tenía idea si eran positivos y negativos. Él descubrió que la mayoría de las veces es negativo. Pero lo que no se esperaba es que algunos metales dan para el otro lado. ¿Está? Y eso demoró en entenderse, porque a veces los portadores son negativos y a veces son portadores positivos. Ahora les digo en tono cuentito por qué es así. Ahora, el silicio, que es un semiconductor, les queda negativo, pero con un número de portadores súper chiquitito, que es 3 por 10 a la menos 3.
+1:05:52
+Este es silicio puro y silicio dopado.
+1:05:58
+Yo les conté que dopado no tiene nada que ver con el consumo de estupefacientes. Cambia radicalmente el número de portadores. Sigue siendo poquito con respecto a un conductor, pero son igual mucho más que en un silicio. Les cuento en dos palabras, en tono cuentito, qué es lo que pasa acá. ¿Por qué hay portadores positivos? Vengo diciéndoles todo el curso que son los electrones, lo que se mueven... Me dicen, profesor, ¿nos mintió?
+1:06:29
+Bueno, sí, les mentí, les mentí. Tengo que confesarlo. En realidad, en general son los electrones que se mueven. Pero a veces se mueven otros objetos que aparecen en los metales, no solo en los metales, en los cristales, que se llaman agujeros. En realidad a veces lo que sucede, lo que realmente se mueve en los metales, para entender esto bien es un fenómeno mecánico cuántico, pero les cuento que en los metales a veces lo que se mueve realmente son faltas de electrones.
+1:07:06
+son déficit de electrones que aparecen en algunos lugares y son esos los que se mueven. Entonces se comportan como, por eso se llama agujeros, un lugar donde quedó un agujero y faltaba un electrón. Y son los déficit de electrones que se mueven. Y eso se comporta como si fueran electrones que se mueven pero para el otro lado. ¿Se entiende? como si fueran cargas eléctricas opuestas al electrón moviéndose en dirección opuesta. Y eso en general no sucede en los metales, pero en algunas veces sí. Así que hay ejemplos. Así que el modelo de Drude que yo les conté, les dije, ojo, es un modelo a tomar con la punta de los dedos, porque la idea de los electrones moviéndose en una caja y rebotando en la cajita, es muy linda, muy divertida, no sé cuánto, pero...
+1:07:50
+Hay que tener cuidado porque uno no puede escribir realmente los electrones moviéndose en un metal con los métodos de la mecánica clásica.
+1:07:57
+No puede olvidarse de que la mecánica cuántica juega un papel fundamental y ahí lo vemos.
+1:08:04
+De hecho, ese efecto, la comprensión de por qué acá aparecen más, demoró como 50 años entenderse. Es decir, desde el momento que Hall vio esto hasta que lo... La gente que entendió la mecánica acuática y la aprendió a resolver, 50 años estoy exagerando, 40 años. 40 años demoraron a entender por qué había, cómo se producían los agujeros.
+1:08:31
+Pero bueno, hoy en día es algo estándar que se aprende, lo físico lo aprendemos al final de la licenciatura.
+1:08:39
+No es algo que haya que... Es algo estándar, pero no es algo que se aprenda en los cursos de primeros años de facultad.
+1:08:50
+Un estudio de tiempo. ¿Sí? ¿Esto está de acuerdo? Bueno, y lo que hice fue reemplazar J por esto que está acá arriba.
+1:09:08
+Entonces tengo la relación entre I y BD. Y luego acá arriba reemplacé BD en términos de I. ¿Alguna otra pregunta? ¿Alguna otra pregunta?
+1:09:22
+Bueno, tengo todavía unos minutos. Entonces, en estos minutos que quedan, voy a arrancar a ver cómo es la fuerza sobre un cable. Porque, a ver, muy lindo todo esto de la fuerza sobre cargas aisladas. Pero en realidad... La aposta es que para cargas aisladas, aún en cargas en movimiento, suele suceder que es muy difícil detectar la fuerza magnética pura y dura. Porque en general hay cargas eléctricas.
+1:09:54
+Fíjense en este problema, originalmente uno arranca sin campo eléctrico y se te genera un campo magnético solo, enseguida. ¿Me explico? Enseguida que uno pone en campo magnético se te distribuyen las cargas eléctricas, te aparecen diferencias de potenciales y ya enseguida el campo eléctrico se transformó en la fuerza eléctrica y se volvió del mismo orden que la fuerza magnética. Entonces en fenómenos reales se puede calcular la fuerza magnética y se puede observar la fuerza magnética sobre cargas individuales, pero es mucho más fácil observar la fuerza magnética sobre cables por los que pasa corriente, porque los cables por los que pasa corriente...
+1:10:32
+tienen un número enorme de cargas circulando, pero son neutros eléctricamente. Entonces los efectos eléctricos son totalmente inexistentes, totalmente despreciables, pero los efectos magnéticos no son nada despreciables. Entonces cuando uno tiene un conductor macroscópico, por el que pasan muchas cargas en movimiento, pero que como objeto es neutro, entonces ahí el efecto eléctrico es muy chiquito, o 0 esencialmente, pero el efecto magnético es importante. Entonces ahora vamos a pasar a ver la fuerza... Fuerza magnética sobre un cable.
+1:11:09
+Este es el punto 5. 8.5.
+1:11:37
+Y voy a empezar por un caso particular bien simple y después veamos cómo generalizarlo para un cable cualquiera. Entonces, lo que voy a poner es, voy a poner dos rieles, ¿sí? Dos rieles. Voy a poner una barrita de metal apoyada sobre ellos.
+1:12:01
+voy a suponer que tienen esencialmente el mismo largo, la distancia entre los rieles. Tiene que desbordar un poquito para que no se caiga, pero nada más. Son del mismo largo. Confundo L, L es la distancia entre los rieles y también el largo de la barra. Y pongamos que por acá entra una corriente I, viene por acá, baja por ahí, esto es una barra metálica,
+1:12:31
+Supongamos que el apoyo no tiene rozamiento, que la barra puede deslizar sin rozamiento. Y viene la corriente por acá y vuelve para allá. Y supongamos que todo esto está ubicado en un campo magnético externo constante. Entonces estamos teniendo una... Una...
+1:13:04
+Una barra por la que pasa corriente, ¿sí? Que está en un campo magnético. Pero quien dice que pasa corriente, lo que está diciendo es que hay cargas en movimiento circulando por acá.
+1:13:17
+¿De acuerdo? Hay cargas en movimiento a través del cable. ¿Sí? Entonces, cada una de esas cargas va a experimentar una fuerza. ¿Sí? ¿De acuerdo? Cuando sumamos todas esas fuerzas, entonces el cuerpo como tal experimenta la suma de fuerzas que experimentan todas las cargas que circulan por él. ¿De acuerdo? Entonces vamos a calcular la fuerza sobre la barra como la suma de las fuerzas que sienten cada uno, la suma de todos sus portadores.
+1:13:54
+Entonces, ¿cómo va a ser la fuerza magnética? La fuerza magnética será igual.
+1:14:03
+Entonces, llamémosle N al número de portadores. Entonces, supongamos que son electrones, cargas eléctricas negativas. ¿Está bien? Pero en realidad lo podríamos hacer con cualquier carga que esté circulando por ahí. Entonces, la fuerza magnética sobre un electrón será menos E, que es la carga del electrón, por la velocidad de desplazamiento por el campo magnético.
+1:14:40
+Entonces la fuerza sobre todo el cuerpo, la fuerza sobre la barra, será igual a menos E por N, que es el número total de electrones moviéndose, los electrones de conducción, por BD, producto vectorial con B.
+1:15:12
+Pero el número total de electrones lo podemos escribir como el número de electrones por unidad de volumen, por A, llamémosle, esta es el área de la sección de la barra, por el largo de la barra.
+1:15:46
+Entonces, tenemos que la fuerza magnética sobre la barra será igual a menos E. Entonces voy a agrupar algunos factores. Voy a agrupar el factor menos E por N. Bueno, por ahora no voy a agrupar nada, perdón. A por L por BD, producto vectorial con B.
+1:16:14
+Pero si se recuerdan, J, la densidad de corriente, es igual a menos E por N por BD.
+1:16:36
+Así que la fuerza sobre la barra, la pueden escribir como... J por A por L, J producto vectorial con B, por A y por L. Pero J en valor absoluto, en módulo, J por A, ¿cuánto es?
+1:17:09
+¿A qué llamábamos? La densidad de corriente por A. Y es la intensidad. Pero queremos guardar los aspectos vectoriales.
+1:17:18
+Porque fíjense que acá fuimos guardando todos los aspectos vectoriales. Entonces, definamos... Definamos... El vector... L. Tal que... L... El módulo de L es L, ¿está más bárbaro? Y L tiene la dirección y el sentido de J, de la densidad de corriente.
+1:17:58
+Entonces JL lo podemos escribir como módulo de J por L vector.
+1:18:11
+Entonces la fuerza sobre la barra, fuerza magnética sobre la barra, será igual a J por A por L vector B.
+1:18:28
+Y J por A dijimos, como J es perpendicular a la sección, esto es I. Así que esta es una fórmula que se usa mucho.
+1:18:37
+Es la corriente por el largo del hilo... El largo como vector y apuntando, en este caso el L sería este vector así. Es el largo, pero en la dirección de la corriente.
+1:19:10
+Bien, entonces esto es la fuerza magnética sobre un cable rectilíneo.
+1:19:34
+También un cable rectilíneo en un campo magnético uniforme, en B uniforme.
+1:19:45
+Y ahora, como siempre, si nos queremos plantear qué pasa si el cable no es rectilíneo, tiene una forma cualquiera, y B no es uniforme, ¿qué vamos a hacer?
+1:19:57
+Vamos a dividir el cable ese en muchos pedacitos chiquititos. Los pedacitos muy chiquititos los podemos imaginar como rectilíneos porque podemos confundir el cable con su tangente. Y podemos despreciar, cuando es muy chiquitito, podemos despreciar que el campo magnético varíe. Ahí. Entonces, en el caso general...
+1:20:28
+Entonces, en el caso general, la fuerza magnética será la integral sobre la curva que representa la curva del cable, y sale para afuera porque en un cable siempre circula la misma corriente, la carga se conserva, así que en un cable siempre va a haber la misma corriente, pero lo que van a tener que escribir es BL producto vectorial con B.
+1:20:58
+Si tienen la curva acá del cable, tienen los DL y multiplicar por el campo magnético en ese punto. Un campo magnético B, entonces DL, acá tendrá un DF. ¿Bien? Entonces irán sumando, en este caso, si B sigue para adentro, será la fuerza para adentro.
+1:21:26
+Y suman vectorialmente.
+1:21:37
+No, el B no es diferencial. El B es como la función integrada. Lo que es un diferencial es el cablecito. Tiene un cablecito chiquitito. Lo que sí B puede, a priori podría variar de un punto a otro. Podría tener un campo magnético B1 acá y un campo magnético B2 acá. No tendría por qué ser el mismo. Porque igual, como dividieron en pedacitos muy chiquititos, en cada pedacito pueden despreciar cuánto varía el campo eléctrico y vale esta fórmula. Y luego suman y obtienen la integral.
+1:22:12
+¿Alguna otra pregunta?
+1:22:16
+¿Se está entendiendo?
+1:22:24
+Bueno, entonces capaz que vemos un ejemplo antes de terminar. Quiero ver si me da el tiempo. Sí, sí, sí. Ejemplo, para que no quede esto colgado. Entonces vamos a hacer este ejemplo.
+1:22:46
+Todo está en un campo magnético uniforme, B uniforme.
+1:22:52
+Y acá es un cable que tiene esta forma. Tiene un segmento acá de largo L, después una curva semicircular de radio R y después otro segmento de radio L. Siempre va la corriente por acá. Pregunta, ¿cuál es la fuerza que experimenta ese cable? El cable es rígido. La pregunta es, ¿qué fuerza experimenta?
+1:23:25
+Tienen tres tramos, ¿verdad? Este, este y este. ¿Cómo será la fuerza en cada uno de esos tramos? Podés simplificar los dos tramos rectos como el doble de uno, ¿no? Bueno, en los dos tramos rectos va a ser igual, pero bárbaro, calculemos el de uno de ellos. Fíjense, como el campo magnético es entrante, entonces la fuerza va a ser acá. El L viene así, el campo magnético así, tiene una fuerza acá, que le podemos llamar F1, donde F1 es para arriba y tiene módulo, como L es perpendicular a B, es simplemente el producto, entonces quedará I...
+1:24:06
+por L, por B.
+1:24:10
+Usando esta fórmula acá. Como el vector L es perpendicular al vector B, el módulo de la fuerza, el módulo del producto vectorial es el producto de los módulos, en este caso, porque son perpendiculares. Y esto será igual, llamémosle, acá a este otro le llamamos F2, valdrá lo mismo, F2.
+1:24:33
+Hasta ahí era fácil. Ahora, se complica la cosa con el círculo. ¿Cómo hacemos con el círculo?
+1:24:40
+Vamos a tener que hacer una integral. Bien. Entonces, fíjense. En el círculo. Me limito al círculo ahora, ¿no? Bien.
+1:25:06
+El círculo de radio R toma en una posición acá, este ángulo le llaman teta, y acá tienen un elemento de arco acá. Entonces esto le llaman DL.
+1:25:22
+¿Cómo será el elemento de fuerza que se genera sobre DL?
+1:25:29
+Quiere ser perpendicular a DL y a B. Quiere decir que viene así, así, el DL, el DF será radial.
+1:25:40
+¿Sí? Y el DF será igual a I por DL por B y DL como es el largo de un elemento de arco de circunferencia.
+1:26:02
+No. R por D theta. I por R por D theta por B. ¿De acuerdo? Ese es el elemento de la fuerza. En módulo.
+1:26:15
+Pero vieron que la dirección va cambiando. La dirección va cambiando.
+1:26:20
+¿Cuál es la componente que... ¿Cómo son las distintas componentes? Si sumo todas las componentes, ¿cuánto va a dar? ¿Cuál va a ser la dirección de todo?
+1:26:29
+Para arriba. ¿Por qué? ¿Por qué?
+1:26:33
+Claro, si yo tomo dos puntos simétricos con respecto acá, este otro me queda para allá, la componente horizontal se me va, pero la componente vertical se me suma. ¿De acuerdo? Entonces, las componentes horizontales se compensan
+1:27:02
+...entre las dos mitades... ...del semicírculo. Entonces... ...solo nos interesa... ...la componente vertical...
+1:27:31
+Entonces dijimos, a esto le llamamos X, a esto le llamamos Y. Entonces calculemos DF sub Y. ¿Qué tengo que hacer? Conocido el módulo allá, ¿cómo calculo DF sub Y?
+1:27:50
+Tengo que descomponer. Entonces, usando este ángulo... Seno...
+1:27:58
+A ver, fíjense, si yo lo pongo acá, este es el ángulo teta, ¿verdad?
+1:28:08
+Cuando teta vale cero, ¿cuánto vale la componente vertical?
+1:28:13
+Cero. Así que tiene que ser proporcional al seno del ángulo, con esta definición que tomamos acá. Entonces nos va a quedar f es igual a df de y será df por el seno de teta. ¿Verdad?
+1:28:27
+con teta variando entre cero y pi. Entonces esto nos queda, I por R por B por seno de teta, por d teta. Entonces vamos a, el F total, la Y del semicírculo, será la integral entre cero y pi de eso que estamos sumando, que es IRB seno de teta, por dtheta y esto nos queda IRB que sale para afuera y la primitiva del seno es menos coseno entre pi y cero entonces esto nos queda un 2 2 IR por B entonces la fuerza total fuerza total todas van para arriba Entonces nos quedará 2IL por B más 2IR por B.
+1:29:37
+Y además, F total como vector será F total por el versor J. Llamémosle J al versor en esta dirección. J.
+1:29:53
+Fíjense que lo único que intervino del semicírculo es la proyección sobre la horizontal. Otra manera de pensarlo es así. El semicírculo contó como si fuera un tramo de línea recta proyectada en la horizontal, como si siguiera todo el largo. Bueno, dejamos por acá y continuamos el miércoles.
+

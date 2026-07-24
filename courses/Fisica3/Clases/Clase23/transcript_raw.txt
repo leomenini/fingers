@@ -1,0 +1,590 @@
+1
+Carga Eléctrica, Ley de Coulomb
+2
+Carga Eléctrica, Ley de Coulomb (segunda parte)
+3
+Campo Eléctrico
+4
+Campo Eléctrico (segunda parte)
+5
+Ley de Gauss
+6
+Ley de Gauss (segunda parte)
+7
+Energía y Potencial Eléctricos
+8
+La vez pasada estuvimos viendo cómo calcular... la corriente en un circuito RLC, tratamos con cierto detalle el caso de un circuito de RLC en serie con una sola malla pero vimos un método general que nos permite introduciendo el concepto de impedancia tratar un circuito de corriente alterna en régimen permanente básicamente con el mismo nivel de dificultad que un circuito de corriente directa con resistencias.
+1:07
+Vimos que las impedancias se comportaban igual que las resistencias, salvo que en lugar de darnos lugar a la verdadera corriente, lo que nos da lugar es a una cantidad que se llama un fasor. asociado con la corriente, a partir del cual después, calculando el módulo y la fase, podemos reconstruir la verdadera corriente, que es una función real que depende del tiempo. Y vimos eso, lo vimos en general y vimos el caso concreto del circuito de corriente alterna en serie.
+1:43
+Ahora vamos a seguir con los circuitos de corriente alterna, pero vamos a abordar los problemas de las cuestiones energéticas en un circuito de corriente alterna.
+2:00
+Entonces potencia en un circuito de corriente
+2:13
+alterna.
+2:15
+Bueno, Buena parte de lo que vimos en la clase pasada no se aplica a esto, porque una clave de lo que estuvimos haciendo es que estamos trabajando con ecuaciones lineales y cantidades lineales. Básicamente calculamos la corriente, que es la derivada de la carga, y la ecuación que está dada por un circuito de corriente alterna es una ecuación que es lineal. Pero el problema es que cuando uno va a calcular cantidades como la potencia, la potencia no es una expresión lineal de la corriente.
+2:51
+Por ejemplo, ¿cómo es la potencia disipada en una resistencia?
+2:58
+Potencia instantánea disipada en una... R por I al cuadrado es una cantidad cuadrática de la resistencia. Eso es muy importante porque cuando... Fíjense que si ustedes... Entonces eso es lo primero, ¿no? Los métodos basados en los fasores no se aplican de manera directa a las propiedades de potencia.
+3:48
+Los que se dediquen a esos temas más adelante van a ver que en realidad sí, los métodos de fasores se pueden pasar a cantidades no lineales como el cálculo de la potencia, pero no lo vamos a ver en este curso porque requiere un pequeño ejercicio extra que no vamos a hacer hoy. Vamos a hacer algo más simple.
+4:10
+¿Por qué no se aplican? Y bueno, porque... Fíjense, la parte real...
+4:20
+Cuando ustedes tienen una ecuación diferencial, ustedes tenían la ecuación diferencial siguiente, ¿no? Ustedes tenían la ecuación diferencial L derivada de I con respecto de T, más R por I, más Q sobre C, igual a epsilon de T. ¿Bien? Entonces lo que nosotros dijimos es que I de T es la parte real de un fasor... Le pusimos I sombrero por E a la j omega t. ¿Bien?
+4:54
+Entonces, tomar parte real de esto.
+4:58
+¿Sí?
+5:01
+Esto era igual a E0 por E a la j omega t. Perdón, coseno omega t. Entonces, tomar parte real de la ecuación y pasar a una ecuación compleja con muta... con resolver la ecuación compleja y luego tomar parte real, porque son todas operaciones lineales.
+5:24
+Tanto la operación tomar parte real como la operación de resolver la ecuación son todas operaciones lineales. En cambio, para la potencia no vale problema la potencia no suele No es, perdón, no es una cantidad lineal en I.
+5:58
+Por ejemplo, la potencia en la resistencia, la potencia disipada, es R por I cuadrado de T. Entonces, esto es diferente, esto es igual a R por la parte imaginaria, por la parte real, perdón, de I e a la j omega t todo al cuadrado, pero esto es diferente, esto no es igual a R por parte real de I e a la j omega t
+6:40
+al cuadrado.
+6:41
+¿Se entiende? Tomar parte real del cuadrado no es lo mismo que tomar el cuadrado de la parte real.
+6:48
+Entonces hay que tener un poco de cuidado con eso. No podemos simplemente aplicar los métodos fasores ciegamente. Ese es un error común que cometen frecuentemente ustedes en los parciales y en los exámenes. Cuando van a tomar... calcular las propiedades de potencia, hay que volver un poco para atrás, salvo que uno ya esté muy ducho con los fasores, que ustedes todavía no están duchos, la vez pasada cuando yo se los explicaba me ponían cara de preocupación. Pero poco a poco en el práctico van a ir agarrando la mano y en los cursos futuros aprenderán a utilizar esas técnicas también para propiedades de potencia, pero no en este.
+7:26
+Entonces vamos a volver para atrás y vamos a calcular las propiedades de potencia, pero suponiendo que volvimos ya a la cantidad real que es la
+7:34
+corriente con fusión de
+7:35
+T que ya la calculamos. Entonces veamos el cálculo. Primero que nada, cálculo de la potencia disipada.
+7:51
+Entonces, lo primero es que, como acabo de poner, la potencia disipada es la resistencia, la potencia disipada es Ri al cuadrado. Dijimos que I de t era igual a I máxima por coseno de omega t menos phi. Así que la potencia disipada no es otra cosa que R por I máxima al cuadrado por coseno cuadrado de omega t menos phi. Esto hasta acá es cierto y también no es muy útil.
+8:27
+¿Por qué? Porque estamos hablando de circuitos de corriente alterna en régimen permanente.
+8:35
+Normalmente nuestros aparatos de medida tienen una resolución de algunos segundos o de algunas décimas de segundo, pero la corriente alterna asociada con... con los voltajes que salen de la pared, oscila 50 veces por segundo. En algunos países 50 veces por segundo, como acá, en otros 60 veces por segundo, pero en todo caso, muchas veces por segundo. Y nosotros, eso no nos interesa mucho bien qué le pasa a la corriente instante a instante, ¿verdad? Porque, por ejemplo, si uno va a comprar una heladera o un lavarropa, te dice, consume tanta potencia, ¿sí?, No te interesa que en un instante consume eso, en una fracción de segundos, después cero, después el doble, después diez veces más.
+9:22
+Lo que te interesa es cuánto consume la lavadora o la heladera por hora o por minuto, si uno quiere ser muy preciso. Entonces, lo que nos interesa no es la potencia instantánea disipada por el aparato, sino la potencia... Promedio en muchos períodos. ¿Se entiende? Promediar en muchos períodos es lo mismo que promediar en un solo período, porque es lo mismo, pero después todos los períodos se repiten. Es un fenómeno periódico.
+9:55
+¿No es verdad? Entonces, esta es la potencia instantánea. Potencia instantánea disipada.
+10:09
+Pero no es eso lo que nos interesa, lo que nos interesa es la potencia media. Lo que realmente nos interesa es la potencia media.
+10:33
+Obviamente instante a instante toda la potencia entregada por la fuente, una parte se disipará en energía y otra parte se estará almacenando en la bobina o el condensador o la bobina o los condensadores, suponiendo que fuera un circuito RLC más complicado. Entonces tenemos Potencia entregada va a ser igual a la suma de las potencias disipadas instante a instante en las resistencias y las potencias que instante a instante se están almacenando en las bobinas o los condensadores.
+11:11
+Esas potencias que se están almacenando pueden ser positivas o negativas porque en cada instante la bobina puede estar absorbiendo energía o devolviendo energía. Pero eso no nos interesa mucho, porque lo que nos interesa es el promedio en un periodo. Entonces, por ejemplo, ¿cuánto es el promedio, sin hacer ninguna cuenta, cuánto es el promedio de energía almacenada en un condensador, en un circuito de corriente alterna?
+11:44
+¿Cuánto es la potencia que almacenamos en un periodo?
+11:49
+Sin hacer cuenta.
+11:57
+No importa, es conocida la capacitancia. ¿Cuánto se almacena de energía en un periodo, en un circuito de corriente alterna? Sin hacer cuenta.
+12:16
+No. ¿Eh? Nada, ¿por
+12:17
+qué?
+12:20
+Pero ¿por qué? Sí, tanto lo que gana en un momento lo pierde en otro, pero ¿por qué? ¿Por qué?
+12:26
+Sí, ¿y
+12:31
+por qué? ¿Por qué tiene que ser así? ¿Por qué no se podría estar acumulando energía? Fíjense que estamos en un fenómeno periódico. Si se estuviera acumulando energía en el condensador, quiere decir que el condensador tiene en promedio cada vez más carga. Pero vimos que La carga promedio es cero. Así que no pasa que de un periodo en otro la carga va a ser cada vez más grande en el condensador. Lo mismo va a pasar con la energía almacenada en la bobina. No va aumentando. El sistema tiene que ser periódico. Cada tanto tiene que volver a su situación inicial.
+13:02
+Si se estuviera almacenando, si hubiera una energía almacenada neta en alguno de los lugares, el fenómeno no es periódico, se está acumulando. Y eso enseguida explota, no funciona. Para que el sistema permanezca estable... Tiene que todo el tiempo entrar y salir igual energía. Instante a instante no. En algunos instantes se está almacenando, en otros se suelta. Pero por periodo, todo lo que entra sale. Quiere decir que toda la potencia disipada tiene que ser igual a toda la potencia...
+13:29
+Todo lo que disipamos en promedio tiene que ser igual a la potencia
+13:34
+entregada en
+13:34
+promedio. Entonces vamos a ver eso. Veamos entonces la potencia disipada promedio. Yo voy a usar corchetes, así, esto... como manera de indicar promedio. Energía disipada promedio o media.
+14:03
+Entonces, bueno, podemos decir esto es r y m al cuadrado, esto sale para afuera, y el promedio de coseno cuadrado de omega t menos phi. ¿Y cuánto será el promedio en un período de coseno cuadrado? ¿Qué les parece? ¿Se dan cuenta? Hagamos un dibujito. Vamos acá a t. Y entonces acá, primero que nada, voy a representar la función coseno de omega t. Voy acá a usar m, omega t. Entonces, en pi sobre 2 se anula, entonces arranca acá en 1.
+14:47
+En pi llega a menos 1.
+14:56
+Después en 3pi sobre 2 se anula nuevamente. En 2pi
+15:05
+vale 1 y sigue oscilando.
+15:09
+Esa es la función coseno de omega t.
+15:17
+Entonces ahora podemos representar la función coseno cuadrado. Fíjense cómo es coseno cuadrado. Arranca en 1 acá también.
+15:29
+Cuando llega a pi sobre 2 se anula pero ahora sube y en pi vuelve a tener un máximo. Y acá se anula
+15:38
+y acá
+15:39
+vuelve. ¿Bien?
+15:41
+Y así sucesivamente.
+15:42
+¿Bien? Entonces fíjense que está oscilando. ¿Alrededor de qué valor?
+15:50
+¿Cómo? ¿Sí? ¿Dijeron muchas cosas?
+15:57
+Ocila entre 0 y 1. ¿Y cuál será el valor promedio? ¿Qué les parece? Un medio, ¿verdad? A ojo de buen cubero. Veamos... Transformamos eso en un cálculo preciso. Fíjense. Bueno, si en lugar de tener el valor promedio de coseno de omega t, tenemos coseno de omega t menos phi, es lo mismo. Porque agregar phi simplemente nos corre la gráfica un poco, pero el valor promedio en un periodo va a ser el mismo. Me explico, si corremos la gráfica es lo mismo. Veamos un poco eso.
+16:29
+Veamos eso. Si yo escribo coseno de... coseno de 2x lo puedo escribir como coseno al cuadrado de x menos seno al cuadrado de x. ¿Se acuerdan de esta fórmula del
+16:44
+liceo? ¿Sí? No, no se acuerdan. Ahora vemos en un momentito cómo se prueba esa fórmula si no se
+16:52
+acuerdan. Pero también saben que 1 es igual a coseno al cuadrado de x más seno al cuadrado de x. Entonces si suman las dos cosas... Concluyen que 1 más coseno de 2x es igual a 2 coseno cuadrado de x. O dicho de otra manera, coseno cuadrado de x lo pueden escribir como un medio de 1 más coseno de 2x. Dicho de otra manera, acá arriba esto lo pueden escribir como r y m al cuadrado.
+17:25
+Tienen un medio que lo saco para afuera y el valor medio de 1 más coseno de 2x. 2 omega t menos phi. Entonces, ¿qué nos dice esta fórmula? Fíjense que el coseno cuadrado, que es esta fórmula que estamos acá, es como un coseno...
+17:50
+De periodo doble, fíjense que el periodo doble lo vemos, perdón, periodo mitad, estoy diciendo al revés. Fíjense que cuando el coseno oscila una vez, el coseno cuadrado oscila dos veces. Eso lo vemos en el número 2 acá. Y además de tener ese coseno está corrido para arriba hasta un medio.
+18:11
+Pero ¿cuánto es el promedio de coseno de 2 omega t en un periodo?
+18:17
+Esta función, si yo le sacara el 1 medio, está oscilando alrededor de 0.
+18:25
+Entonces, esto que está acá no es otra cosa que R por IM al cuadrado por el promedio de 1. ¿Y cuánto es el promedio de 1?
+18:37
+1. Entonces ahí tenemos la potencia media. La potencia media va a ser igual...
+18:43
+a la resistencia por la amplitud de la corriente que pasa por esa resistencia al cuadrado, pero hay que agregar un factor 1 medio. Fíjense que se parece a la potencia disipada en un circuito de corriente directa. En un circuito de corriente directa la potencia disipada es simplemente R por I al cuadrado. Acá la potencia media disipada es casi igual, lo único que en lugar de poner I hay que poner la amplitud y no hay que olvidarse de poner un factor 1 medio. La única diferencia es el factor 1 medio y que en lugar de poner la verdadera amplitud, la verdadera corriente, ponemos la amplitud de la corriente.
+19:24
+No, lo que pasó con el coseno es que su promedio es cero. El valor medio de 2 coseno de omega t menos phi es cero.
+19:36
+Porque si yo le saco el 1 medio, esto queda centrado acá y es algo que está oscilando alrededor de 0. Tiene tanto por arriba como por abajo. ¿Verdad? Bueno, bárbaro. Ahí tenemos la potencia media disipada en un circuito
+19:56
+RLS.
+19:57
+Ahora nos podemos plantear cuánto es la potencia... Entonces, es importante que la corriente que pone acá es la que va por esa... por esa resistencia en particular. Si tienen un circuito en una sola malla, la corriente es una sola, pero si tienen varias mallas, cada potencia disipada está asociada con la corriente que pasa por esa resistencia, ¿verdad? Por la amplitud en esa. Podemos seguir adelante y podemos calcular la potencia media entregada por una fuente.
+20:29
+Potencia entregada.
+20:36
+Entonces fíjense, si yo tengo acá la fuente, la fuente tiene una FEM, que es E0 por coseno omega t, y pasa una corriente, y de t acá será la corriente por la FEM, Si tenemos un circuito de una sola malla es la misma que la de la resistencia, pero si tenemos un circuito de varias mallas puede ser diferente. Entonces esta nuevamente la escribiré IM por coseno de omega t menos phi.
+21:13
+Entonces la potencia entregada, la potencia de la fuente, ¿cuánto es la potencia entregada de la fuente? La instantánea.
+21:21
+Potencia entregada instantánea.
+21:35
+¿Cuánto es la potencia entregada? Eso ya lo aprendimos. ¿Cuánto es la potencia que está entregando la fuente instante a instante? Es igual que antes. ¿Cuánto era la potencia en un circuito de corriente directa?
+21:48
+¿Cómo?
+21:51
+R no aparece R. Va a ser E por I.
+21:59
+Es
+21:59
+EDT por IDT. O lo que es lo mismo, en este caso, es 0 por IM por coseno de omega t por coseno de omega t menos phi. Pero nuevamente, esa es la potencia instantánea. Y lo que nos interesa es la potencia media. Entonces vamos a hallar el promedio. El promedio, entonces potencia media entregada.
+22:37
+Potencia
+22:38
+media entrega. ¿Por qué la FEM y el de la corriente no tienen el mismo
+22:46
+desfasaje? No, el desfasaje es justamente el desfasaje respecto a la FEM. La FEM era dato. Era dato. ¿Se acuerdan? La FEM siempre tenía la... Cuando decimos el desfasaje, es el desfasaje justamente respecto a la FEM. ¿Se entiende lo que digo? ¿Está bien? Si no, no habría desfasaje, si todo estuviera en menos, no tendría sentido hablar de desfasaje. Están desfasados entre sí. Bueno, entonces el valor promedio acá será E0 por IM por el valor medio de coseno de omega t por coseno de omega t menos phi.
+23:29
+¿Sí? Bueno, ¿y ahora cómo hallamos este valor promedio? ¿Qué les parece? ¿Qué les parece?
+23:47
+¿Cómo hacemos eso?
+23:52
+¿Y esos cosenos, los dos son cosas que oscilan entre 1 y menos 1? ¿Entonces la multiplicación oscila entre 0 y
+24:04
+1? No, puede cambiar de signo también, depende de cómo sea el... Pero bueno, lo que podemos hacer es tratar de reducirnos a funciones como las que tenemos allá. ¿Cómo hago para reescribir esto en términos de cosenos y senos sin desfasaje? ¿Se acuerdan? Coseno de A más B. ¿Se acuerdan la fórmula de coseno de A más B?
+24:28
+No se acuerdan mucho de trigonometría, ¿verdad? Coseno de uno, coseno del otro, menos seno de uno, seno del otro.
+24:43
+Fíjense, la que escribimos allá es un caso particular.
+24:47
+Cuando A y B son iguales, les queda coseno de 2A es igual a coseno cuadrado de A menos seno cuadrado de A, que es la fórmula que
+24:54
+pusimos. Entonces, usando esta fórmula,
+25:00
+les voy a tener que enseñar un truco para acordarse las fórmulas trigonómicas por S de que no se acuerden.
+25:04
+Ahora en un ratito les
+25:05
+enseño un truco. Entonces... Esto que está acá, el valor medio, la potencia entregada media, será igual a E0 por IM y voy a desarrollar este coseno. Entonces tengo coseno de omega t en factor y entonces voy a llamarle a esto A y a esto le voy a llamar B. B es menos phi.
+25:35
+Entonces tengo coseno de omega t... por coseno de menos phi, pero coseno de menos phi es lo mismo que coseno de phi, porque la función coseno es una función par.
+25:45
+Y después tengo menos seno de omega t por seno de menos phi, pero la función seno es una función impar, así que me queda seno de phi. Y cierro acá esto. ¿Bien? Entonces tengo dos términos. Tengo el término E0 IM por coseno de phi por el valor medio de coseno cuadrado de omega t más E0 por IM por seno de phi por el producto de coseno de omega t por el seno de omega t. Bueno.
+26:34
+El coseno cuadrado, el valor promedio, ¿cuánto es? Ya lo calculamos hace un ratito. ¿Cuánto vale? Un medio, ¿verdad?
+26:45
+Ese ya lo calculamos recién. ¿Cuánto será el valor medio del producto de coseno con seno?
+26:58
+Cada año... Cada año un estudiante encuentra un nuevo argumento para dar este resultado. No, cada año no, pero de vez en cuando. Coseno de X por seno de X, ¿a qué se parece?
+27:22
+Realmente trigonometría no...
+27:26
+Se lo rifaron.
+27:32
+Y
+27:34
+volvés para atrás. No, no, no. Coseno de X por seno de X ¿a qué es igual? ¿No se acuerdan? ¿No? Seno de 2X ¿a qué era igual? ¿A qué era igual?
+27:57
+¿No le suena nada? Sí, pero eso te da 2 seno de x por coseno de x. ¿No se acuerdan de eso? Bueno, entonces esto que está acá, entonces el valor medio de coseno de omega t por el seno de omega t es igual a un medio... del valor medio de seno de 2 omega t. ¿Y cuál es el promedio del seno de 2 omega t?
+28:36
+Cero. ¿Por qué? Porque si es un seno, pero con más frecuencia. Claro, con doble frecuencia. En un periodo sí la dos
+28:44
+veces.
+28:45
+Pues es una función sinusoidal. Fíjense que si el seno de... acá pongo omega t, seno de omega t, de 2 omega t, en pi, en 0 vale 0, en pi sobre 4 llega a 1, en pi sobre 2 vale 0, después, acá llegamos a pi,
+29:26
+Y acá esto es 2pi. ¿A ver, dije bien? Pi, esto es 3pi sobre 2.
+29:34
+No, acá llegamos a 2pi.
+29:37
+Fíjense, en un periodo osciló dos veces enteras. Entonces vale cero. Y tiene tanto por arriba como
+29:47
+por
+29:47
+abajo. Entonces, esto que está acá tiene promedio cero.
+29:54
+Entonces el resultado...
+29:57
+El resultado es que la potencia media entregada por la fuente es igual a E0 por IM sobre 2 por coseno. ¿Bien? Entonces, fíjense que esto nuevamente...
+30:27
+se parece
+30:29
+a lo que teníamos en un circuito de corriente directa, donde la potencia entregada por la fuente era el producto de la FEM por la corriente. Entonces nuevamente tenemos el factor 1 medio, este que está acá, pero tenemos un factor extra que es acá, el coseno de phi que está asociado con el desfasaje. A ese factor se le llama, se le da un nombre, al factor...
+30:59
+al factor coseno de phi, se le denomina factor de potencia.
+31:11
+No es nada muy profundo, es simplemente el coseno del desfasaje entre la corriente por la fuente y la fem de la fuente. Entonces fíjense que tenemos una regla, a menos del coseno de phi, lo que intervienen... Siempre son los productos que aparecerían en los circuitos de corriente directa a menos de un factor 1 medio.
+31:36
+Por eso se suele definir cantidades en las cuales no aparece el factor medio. La gente no les gusta ese factor medio para no tener que acordarse de cosas extras. Y entonces se definen cantidades cuadráticas medias. Se definen las corrientes...
+31:59
+y fem cuadráticas medias ¿qué es la corriente rms?
+32:18
+rms por las siglas en inglés root mean square es simplemente la máxima dividido por raíz de 2 Y lo mismo para la FEM. La FEM RMS es la máxima, que es E0 dividido raíz de 2.
+32:39
+Les digo esto porque aparece mucho, tanto en lo práctico, después que ustedes como ingenieros una cosa aparece todo el tiempo. son los voltajes RMS o las corrientes RMS, que son las máximas divididas por raíz de 2. Entonces, en términos de las RMS, la potencia media disipada tiene la misma forma que para un circuito de corriente directa, les queda R por la corriente RMS al cuadrado.
+33:11
+Es idéntica a la forma de un... de un circuito de corriente directa, pero donde tienen que, en lugar de poner la corriente posta, ponen la amplitud RMS, que es la máxima de 2 raíz de 2. Y lo mismo pasa con la potencia entregada por la fuente, que les queda ERMS... y RMS, pero acá aparece un factor extra, que es el coseno de phi, que es el factor de potencia. Así que no todo es lindo en el mundo, tenemos que lidiar con este factor extra, coseno de phi, asociado con el
+33:47
+desfasaje. ¿Sí? Ahí, o sea, si metes en esta fórmula RMS, te queda S0 sobre raíz de 2, ¿no?
+34:05
+No, porque tenés acá raíz de 2 y acá raíz de 2. Y tenés dos veces raíz de 2. ¿Bien? Bueno, y acá vimos la potencia entregada y la potencia disipada. La potencia entregada por la... Disipada en la fuente, en la resistencia y entregada por la fuente. Les pongo como ejercicio...
+34:35
+La potencia almacenada en el condensador, la potencia instantánea en el condensador, potencia del condensador, será igual, siempre la diferencia potencial, que es Q sobre C, por la corriente. ¿De acuerdo?
+35:03
+Esto es Q de T y de T.
+35:06
+¿De acuerdo?
+35:10
+Ejercicio.
+35:15
+Probar que el valor medio de la potencia en el condensador es cero.
+35:32
+Y lo mismo pueden hacer idem para la bobina.
+35:41
+Nosotros vimos que siempre la potencia instantánea es el voltaje entre los bornes por la corriente. Con la bobina, la potencia instantánea será el voltaje en la bobina, que será L derivada de I respecto de T, por I de T. Y nuevamente el valor medio de PL es el ejercicio.
+36:16
+Entonces, antes de terminar con este asunto de potencia, quiero ver, verifiquemos en el circuito RLC de una malla, el más simple de todos, tiene que pasar que esta potencia disipada y esta potencia entregada, ¿cómo tienen que ser?
+36:36
+Iguales. Verifiquemos eso.
+36:40
+Entonces, caso del circuito RLC.
+36:47
+RLC de una malla. Y bueno, ahí ya lo resolvimos la vez pasada, es el circuito este. ¿Sí?
+37:15
+Y vimos que I de t era igual a I m por coseno de omega t menos phi.
+37:28
+¿Se acuerdan? Y calculamos I m y phi. Calculamos que I m era igual a E0 dividido raíz cuadrada de R cuadrado más L omega menos 1 sobre C omega t. ¿Se acuerdan que calculamos esto la vez pasada?
+37:47
+Y también calculamos que phi es el arcotangente de omega L menos 1 sobre omega C dividido por R. Eso lo calculamos la vez pasada.
+38:12
+y ahora tratemos de convencernos de que ambas cosas son iguales entonces fíjense y m entonces de esto deducimos que la tangente de phi Es igual a omega L menos 1 sobre omega C sobre R. Y entonces esto también lo podemos escribir como, podemos decir que 1 más tangente al cuadrado de phi será igual a 1 más todo esto al cuadrado.
+39:09
+Omega L menos 1 sobre Omega C sobre R todo al cuadrado. Y esto también lo puedo escribir como 1 sobre R al cuadrado por R al cuadrado más Omega L menos 1 sobre Omega C al cuadrado. ¿De acuerdo?
+39:35
+Pero ustedes se acuerdan que 1 más tangente cuadrado lo pueden relacionar al coseno cuadrado. ¿Se acuerdan que están relacionadas las dos cosas?
+39:46
+¿Cuál es el vínculo entre 1 más tangente cuadrado y el coseno cuadrado? ¿Se acuerdan? ¿Cuál es la derivada de tangente de x?
+40:08
+1 sobre coseno cuadrado. Bien. Respuesta 1. ¿Alguien conoce otra expresión simpática para la derivada de la tangente? 1 más tangente al cuadrado. Entonces, 1 más tangente al cuadrado de x. Son las dos expresiones equivalentes.
+40:28
+Quiere decir que esto no es otra cosa que 1
+40:31
+sobre coseno cuadrado
+40:33
+de phi.
+40:37
+O de otra manera, coseno de phi lo puedo escribir como r sobre raíz cuadrada de r al cuadrado más omega L menos 1 sobre omega C al cuadrado. Esto es así para el circuito. Entonces este es el factor de potencia.
+40:58
+Factor de
+41:01
+potencia.
+41:03
+¿Cómo lo podemos hacer de otra manera? Y bueno, fíjense, hagamos el diagrama fasorial. En el diagrama fasorial dijimos que en el eje horizontal podíamos dibujar la impedancia de la resistencia, que es R. ZR. En la vertical, para arriba, dibujamos la impedancia... de la bobina y para abajo la impedancia de el capacitor entonces la diferencia entre estas dos cosas acá podemos dibujar en este lugar ZL menos ZC entonces la impedancia total Z
+42:04
+es esto que está acá, y habíamos dicho que la fase de la impedancia no es otra cosa que phi.
+42:13
+Entonces, el coseno de phi, lo podemos ver como la parte, es cateto adyacente sobre hipotenusa. Cateto adyacente es r, y la hipotenusa es la raíz cuadrada de... Esto que está acá es R al cuadrado, el cuadrado de esto, y esto que está acá es omega L menos 1 sobre omega C. Esta es otra manera de llegar a la misma ecuación usando el diagrama de Fasol.
+42:45
+Fíjense que el diagrama de Fasol es extremadamente cómodo para
+42:52
+detectar esas cosas.
+42:54
+Bueno, entonces ya estamos casi, porque fíjense...
+43:02
+Esto es el factor de potencia en circuito RLC de una malla.
+43:14
+No es una fórmula general, ¿verdad?
+43:18
+Esto es sólo para ese circuito particular. Pero fíjense, nosotros tenemos esto que está acá y esto que está acá es RLC. E0 IM sobre 2 por coseno de phi. Comparemos ambas cosas. Entonces queremos calcular IM E0 por coseno de phi.
+43:47
+Entonces reemplazo coseno de phi por lo que es. Me queda IM por R...
+43:57
+dividido raíz cuadrada de r al cuadrado más omega l menos 1 sobre omega c al cuadrado, ahí reemplacé el coseno de phi, me queda l0.
+44:11
+Pero fíjense, esta combinación que está acá es im, así que me queda r por im al cuadrado.
+44:23
+Entonces concluimos que la potencia media entregada es igual a la potencia media disipada, como tenía que ser. ¿Se entendió la manera en que calculé? Bueno, esto nos permitió además ejercitar un poco, porque vimos un diagrama de fasores, calculamos el factor de potencia para ese circuito particular, y vemos que...
+45:00
+Entonces, antes de pasar al capítulo que viene... Quiero hablar de dos cosas. Primero, estoy preocupado por sus carencias básicas en trigonometría. Así que les voy a decir cómo reconstruir todos los libritos de trigonometría con una sola fórmula.
+45:16
+Todo lo que saben de trigonometría, todo lo que no saben de trigonometría pero tendrían que saber, cabe en una sola fórmula. que es esta. Entonces vamos a hacer un pequeño paréntesis de matemática por su futuro. Sirve mucho para el curso de física 3, pero más le va a servir para la vida de ingenieros en el futuro, para mil cosas. Entonces la fórmula que les voy a enseñar, ustedes ya la saben, pero les voy a enseñar cómo usarla.
+45:49
+Entonces breve paréntesis.
+45:56
+De trigonometría. La única fórmula de trigonometría que ustedes tienen que saber en su vida es esta. Es coseno. No, no es verdad. Tienen que saber otras porque si no se van a... Pero tiene que saber que todo sale acá. De e a la ix es igual a coseno de x más i seno de x. Como ahora pasé un paréntesis matemático, eliminé las jotas.
+46:27
+Les dije que íbamos a usar jotas, pero ahora ya no es algo de física 3, es algo general. Así que vuelvo a la i. Y ahí tienen todas las fórmulas que quieren. Por ejemplo, hoy vimos una fórmula para el coseno cuadrado. Entonces para hacer la fórmula del coseno cuadrado lo que hacemos es, quiero sacar el coseno cuadrado, así que voy a elevar esta fórmula al cuadrado. Entonces le elevo al cuadrado. E a la y a la x al cuadrado es igual a coseno de x más y seno de x al cuadrado.
+47:03
+¿Está?
+47:06
+Pero ahora voy a simplificar cada una de estas dos, porque de este lado coseno e a la yx al cuadrado es coseno a la 2yx. Esto es coseno a la 2yx, ¿verdad?
+47:18
+Que esto se escribe como coseno de 2x más y seno de 2x.
+47:28
+Usando la misma fórmula, pero en lugar de usar x, acá puse y dos veces, perdón, en lugar de poner x uso 2x, ¿está bien? Y del otro lado uso la fórmula del cuadrado. Me queda coseno al cuadrado.
+47:42
+Cuando elivo el y al cuadrado me queda un menos, así que me queda menos seno al cuadrado. Y después tengo el doble producto, así que me queda 2y coseno de x por seno de x.
+47:58
+Pero ahora comparando las dos fórmulas, de esto deducimos que las partes reales y partes imaginales tienen que ser iguales. ¿Verdad? ¿No es cierto? Entonces coseno de 2x es coseno cuadrado de x menos seno al cuadrado de x, como usamos hace un rato. Así que si no se acuerdan, lo acabamos de deducir. Esta sí la conocen, ¿verdad? Esta es la única que tiene que... Esta tiene varios nombres, la fórmula de Euler, la fórmula de Moivre, hay varios...
+48:33
+Y acá también la otra que usamos hoy, seno de 2x, la parte imaginaria, es igual a 2 seno de x, coseno de x.
+48:45
+Todas las fórmulas de trigonometría salen de esta. Porque ustedes después saben manejar exponenciales. Por ejemplo, otra. e a la i a más b. Esto lo pueden escribir... de dos maneras diferentes una es coseno de a más b más i seno de a más b o también la pueden escribir como e a la i a por e a la i b esto lo pueden escribir como coseno de a más i seno de a por coseno de b más i seno de b Y desarrollando, les queda coseno de A, coseno de B, menos seno de A, seno de B, más I, coseno de A, seno de B, más seno de A, coseno de B. Identificando los dos miembros, tienen la fórmula de la suma, coseno de A más B, es coseno de A, coseno de B, menos seno de A, seno de B, que es la que usamos hoy.
+49:59
+Y también tienen una para el seno de A más B.
+50:06
+Que es coseno de A, seno de B, más seno de A,
+50:12
+coseno
+50:14
+de B. Chiche. Todas las fórmulas de trigonometría las tienen en una sola. Entra en el bolsillo del caballero o en la cartera de la
+50:23
+dama. Como dicen en los
+50:27
+ómnios. ¿Sí? ¿Se entendió esto? ¿Se entendió cómo se hace? Lo único que hay que saber es operar con exponenciales, saber que la exponencial de la suma es el producto de las exponenciales, y saber esta fórmula que me relaciona la exponencial compleja con cosenos y senos. Ya está, ahí tienen toda la trigonometría. Toda la trigonometría se reduce a esto. ¿Bien? ¿Preguntas? ¿Se entendió por qué esto es útil?
+51:00
+Así que si alguien les pide calcular el coseno de 3x, lo saben hacer enseguida. Por ejemplo, yo se los puedo preguntar y ustedes lo hacen en ejercicio en su caso. Coseno de 3x. Capaz que eso va para el parcial. Sigamos. Otra cosa más ahora sí de física 3 que quiero hacer... Es un poco a cuentito, esto se ve mucho mejor en el curso de Electro, pero me parece importante no dejar de hablar un poquito de esto, antes de pasar al capítulo siguiente, que es el transformador.
+51:42
+Vamos a ver un poco el transformador, pero de manera un poco de juguete, pero vale la pena mencionarlo. Entonces, transformador.
+52:02
+Entonces el transformador está también asociado con circuito de corriente alterna, pero en lugar de tener un circuito tenemos dos circuitos. Entonces tenemos un circuito donde hay una fuente de corriente alterna.
+52:25
+Después, este circuito de corriente alterna está unido a una bobina, Entonces vamos a poner un núcleo de hierro acá. Lo voy a hacer así.
+52:41
+Se puede hacer de muchas maneras pero vamos a hacerlo de esta manera. Y esto está enrollado. Con NP vueltas. Este primer circuito donde está la fuente se le llama el circuito primario.
+53:07
+Y esto es lo que se llama un núcleo de hierro. Es decir, es una cosa que une los dos circuitos donde hay un buen material magnético. ¿Por qué queremos un buen material magnético? Porque queremos que todo el campo magnético... A ver, si yo tengo acá una fuente de corriente alterna, esto va a hacer que circule una corriente por acá y acá se me va a generar debido a la corriente alterna, se me genera un flujo magnético.
+53:40
+El flujo magnético normalmente no va a estar solo en el núcleo, se va en principio a ir un poco por el aire, pero como...
+53:49
+Como el hierro tiene muy buenas propiedades para transmitir en los campos magnéticos, prácticamente nada de campo magnético se me va al aire. Todo circula dentro del núcleo. Vamos a suponer que no hay pérdidas. Es decir, que las líneas de campo magnético hacen todas así. Líneas
+54:14
+de B.
+54:16
+Y luego voy a poner lo que se llama el circuito secundario, en que tengo una segunda bobina, también enrollada en el mismo núcleo de hierro. Y esto estará conectado a algo. Pongamos una resistencia, por decir algo. Normalmente no lo ponemos en una resistencia, sino que lo ponemos en algún aparato. Por ejemplo, acá esto puede ser el enchufe de la pared. Y acá podemos estar conectando el celular.
+54:48
+¿Bien? De un lado tenemos esto que está a 220 voltios y queremos que la salida esté en 12 voltios. Entonces acá tenemos un conjunto de vueltas que será en principio diferente del de la entrada NS. ¿Bien? Bien.
+55:10
+Entonces queremos saber cómo es la diferencia de voltajes, acá con acá. Acá el voltaje este oscila con esta amplitud, es cero, ¿verdad? Porque el voltaje acá es igual a este. Pero queremos ver cómo es el voltaje a la salida, ese es el circuito secundario.
+55:33
+vamos a suponer que el núcleo de hierro hace que todo el flujo magnético que pasa por todo el campo magnético pasa por un lado sea el campo magnético pasa por el otro entonces pensemos cómo es entonces el flujo magnético en una espira
+56:01
+en el primario de este lado será igual al flujo magnético en una espira en el secundario.
+56:12
+Todo el flujo que pasa por acá también pasa por allá. Se conserva el flujo magnético. Quiere decir que si yo derivo la derivada con respecto al tiempo de este lado, una espira, el primario será igual a la derivada del flujo magnético en una espira en el secundario.
+56:52
+Pero fíjense, la FEM, la diferencia de potencial delta B en el primario será igual a
+57:02
+hay un signo menos, voy a poner signo menos adelante, al número de vueltas en el primario por la derivada del flujo de una espira en el primario. Y lo mismo, la diferencia potencial en el secundario será igual al número de vueltas en el secundario por la derivada del flujo magnético de una espira
+57:34
+En el secundario. Entonces, ¿esto qué me dice? Ah, porque te acordás que la FEM inducida es menos... Entonces, si yo divido por el número de vueltas, esto me dice que... Delta B del primario dividido el número de vueltas en el primario es Delta B del secundario dividido el secundario.
+58:16
+Entonces, si yo tengo una diferencia potencial de 220 voltios acá y quiero sacar una diferencia potencial de 12 voltios acá, ¿qué hago?
+58:36
+Claro, por ejemplo, de este lado puedo poner 220 espiras y de este lado poner 12 espiras, por decir algo. Entonces, la diferencia potencial que yo tenga será la que quiero. ¿Se entiende? Entonces, esto permite regular o elegir
+59:03
+el delta
+59:04
+B.
+59:04
+en el
+59:05
+secundario. Este es el procedimiento por el cual se fabrican los transformadores. Obviamente acá hice muchas idealizaciones.
+59:18
+La primera es que no hay pérdida de flujo magnético. Eso es lo que se llama la aproximación de circuito magnético, que es una muy buena aproximación porque básicamente la permeabilidad magnética en el hierro es miles, tipo cuatro mil veces más que en el aire, así que el flujo magnético se pierde, es uno en cuatro mil, por decir algo, una fracción muy chiquitita. Eso es una buena aproximación.
+59:49
+Pero bueno, acá no me ocupé de otras cosas en el circuito, no me ocupé de cómo esto está funcionando, en fin. Pero básicamente, sacando de ese aspecto, esto es lo que se llama el transformador ideal. Más en detalle van a ver cómo funcionan los transformadores en el circuito de electro, los que cursan esa materia, pero este es el concepto básico que les permite calcular la diferencia potencial de un lado y del otro. ¿Se entendió?
+1:00:20
+Preguntas?
+1:00:24
+Bueno, esto es el primer final de este curso. Este curso termina varias veces. Acá hemos terminado con una parte muy importante que es la parte de circuitos eléctricos. Circuito de corriente alterna. Acabamos de llegar al final de lo que queríamos ver. Ahora vamos a pasar a hablar del segundo final del curso. Porque el segundo final del curso tiene que ver con todo lo que estuvimos aprendiendo de las ecuaciones fundamentales del electrometismo. Vimos la ley de Gauss, vimos la ley de Ampere, vimos la ley de Faraday.
+1:00:58
+Son todas leyes fundamentales del electrometismo.
+1:01:02
+Vamos a llegar ahora al final del curso, hoy no, pero el miércoles sí, con la forma final... de la que se sabe hasta el día de hoy, de lo que son las ecuaciones del electromagnetismo. Van a hoy saber la frontera del conocimiento en el electromagnetismo. Mentira, no, perdón. Pero siguen lo que tiene que ver con las ecuaciones del electromagnetismo. ¿Por qué no es la frontera final? Porque, primero, porque no estamos en Star Trek. Y segundo, porque... Las ecuaciones, hoy como entendemos, del electromagnetismo requieren la comprensión no de la mecánica clásica, sino de la mecánica cuántica.
+1:01:39
+Y todos los aspectos cuánticos, obviamente, no los incluimos en
+1:01:43
+este curso.
+1:01:45
+Pero sacando eso, vamos a tener una versión moderna de lo que son las ecuaciones del electromagnetismo. Y empiezo a hablar de eso ahora. Eso es lo que se llaman las ecuaciones de
+1:01:55
+Maxwell. ¿No hace el ejemplo del electromagnetismo?
+1:02:01
+No, no, no, porque eso sí, hacerlo bien requeriría otras aproximaciones que no... que trascienden un poco.
+1:02:20
+Entonces capítulo 13 me parece, ¿no? Capítulo 13, ecuaciones de Maxwell.
+1:02:48
+Bueno, a ver, vamos por ahora a escribir todas las ecuaciones que ya aprendimos. Entonces, para el campo eléctrico aprendimos la ley de Gauss. Primero que nada, que nos dice que la integral sobre una curva cerrada del campo eléctrico por la normal por ds es igual a la carga adentro dividida por epsilon cero.
+1:03:16
+Entonces, la ley de Gauss.
+1:03:28
+Después otra ecuación que tenemos para el campo eléctrico es que nos dice que la integral sobre una curva cerrada del campo eléctrico es igual a menos la derivada con respecto al tiempo de la integral sobre la superficie de B escalar N
+1:03:48
+de
+1:03:48
+S. Donde S es una curva que bordea C. Y esto es lo que llamamos la ley de Faraday.
+1:04:05
+Estas son las dos leyes que conocemos del campo eléctrico. Fíjense que una ya se intervinió en el campo magnético, así que escribamos el equivalente de esta, de la ley de Gauss, para el campo magnético. Esta ustedes la conocen, capaz que no la tienen muy presente, pero la hemos visto. ¿Cuál es el flujo saliente de una superficie cerrada del campo magnético?
+1:04:32
+Dijimos que los monopolos eléctricos eran las cargas. Los monopolos magnéticos, ¿qué son? No, eso es para la circulación acá. Eso es la ley de Ampere. ¿Qué? No tienen campos magnéticos. Entonces el flujo de una superficie cerrada es... Agarro una superficie cerrada. ¿Cuántas líneas de campo entran y cuántas salen?
+1:05:04
+Cero. Agarro una superficie cerrada y todas las líneas que entran salen. ¿De acuerdo? No hay monopolios magnéticos. Entonces, esto es lo que podemos llamar ley de Gauss para el magnetismo. O lo que podemos llamar ausencia de monopolios magnéticos.
+1:05:30
+A veces se le llama ley de Gauss para el magnetismo, pero bueno. Y esta otra nos dice que la integral sobre una curva de EDL es igual a mu sub cero por la corriente adentro. Esto es la ley de Ampere. ¿Bien? ¿Sí? ¿Todo el mundo está de acuerdo?
+1:06:02
+Me están mirando con cara de preocupación.
+1:06:06
+Ah,
+1:06:08
+sí, sí, esto es una distracción. Gracias. Dije una cosa y después escribí. ¿Bien? ¿Preguntas?
+1:06:24
+Bueno, entonces hasta acá es donde ya aprendimos. Pero lo que vamos a ver ahora es que esta última ley, la cuarta, la ley de Ampère, Tiene algunos problemas.
+1:06:34
+Entonces vamos a abordar dos problemas. Un primer problema es de índole estética, que es un problema que le molestaba mucho al señor Maxwell. Maxwell vivió en el siglo XIX y es el que formuló la versión actual de las leyes de electromagnetismo, basándose en lo que ya se conocía hasta ese momento, que era todo esto. Y lo que hizo él es corregir esta ley que tiene un pequeño problema. Entonces, ¿cuál es el razonamiento? ¿Qué es lo que le molestó a Maxwell? Y dice, bueno, supongamos que estamos en una zona lejos de las cargas y de las corrientes.
+1:07:08
+La materia genera campos eléctricos, pero supongamos que estamos lejos. Si estamos lejos, acá da cero igual que acá. Así que estas dos son simétricas. Si estamos lejos, vemos que un flujo magnético variable me induce un campo eléctrico. Pero sin embargo, un flujo eléctrico variable no me induce un campo magnético. Y eso le molestaba mucho a Maxwell. Dice, ¿por qué va para un lado y no para el otro? Se dan cuenta que eso es una pavada.
+1:07:41
+Porque la naturaleza no tiene por qué respetar nuestros criterios estéticos. Lo que a nosotros nos parece lindo, a la naturaleza puede hacerle ni fu ni fa. O puede la naturaleza decir, no, yo quiero una ley fea. ¿Por qué va a ser linda la ley? ¿Por qué la naturaleza tiene por qué ser linda? No, puede ser fea. Los criterios estéticos no tendrían que pesar, pero para Maxwell sí eso era importante. Para muchos físicos quiero decir que eso es importante.
+1:08:12
+Bien, entonces fue una primera cosa que le molestaba a Maxwell. Pero como les digo, ese no es un argumento muy convincente. Ahora vamos a hacer un argumento realmente convincente de por qué tiene que haber un problema con la ley de Ampere.
+1:08:33
+Entonces, fíjense.
+1:08:36
+Imagínense que tenemos acá un cable que llega, entra una corriente por acá, y llega a un condensador que lo voy a dibujar acá. Esta es una placa del condensador y acá está la otra placa del condensador. Y luego tenemos acá el cable que sigue.
+1:08:55
+Por acá sigue la corriente. ¿De acuerdo? ¿Sí?
+1:09:02
+Entonces, queremos aplicar Ampere a una curva C, una curva amperiana, que esté por acá.
+1:09:17
+Entonces, ¿qué pasa? Que para aplicar Ampere tenemos que agarrar una superficie que esté bordeada por C. ¿Sí?
+1:09:29
+Acá en Ampere, tengo que agarrar una superficie para decir, una superficie bordada por C y ver cuál es la corriente que atraviesa acá. Y puedo elegir esa superficie como quiera. Por ejemplo, puedo tomar una primera superficie, que es la más natural, que es esta S1.
+1:09:46
+Entonces, si tomo S1, S1, Ampere dice...
+1:10:01
+Que la circulación del campo magnético por C no será otra cosa que mu sub cero por I.
+1:10:11
+¿Verdad? La carga que atraviesa
+1:10:14
+acá la superficie pasa por ahí, pasa a la corriente I. ¿Verdad? ¿Todo el mundo está de acuerdo?
+1:10:22
+Pero dice Maxwell. Pero si yo decido no hacer eso, sino tomar esta otra superficie.
+1:10:35
+Esta superficie también, le llamaré S2. Esta otra superficie también está bordeada por la curva C. ¿Está cierto? Pero ¿cuál es la corriente que atraviesa la superficie S2?
+1:10:56
+Es una superficie que está bordeada por C y hace una cosa así y se mete entre las dos placas del condensador. ¿Se entiende esta S2? S2 es esta que está toda así. Está bordeada acá y hace todo así.
+1:11:15
+Y se mete entre las placas del
+1:11:16
+condensador. ¿Cuál es la corriente que pasa por dentro de las placas del condensador?
+1:11:22
+Cero.
+1:11:24
+Entonces si utilizo la... Si tomo S2... Ampere...
+1:11:35
+dice que la integral de la curva del campo magnético en la curva C es cero. Y acá tenemos un problema, porque el resultado nos puede depender de la superficie que tomemos. Es decir, lo que nos está diciendo esto es que la noción de corriente que atraviesa una curva es ambigua, porque depende con qué superficie yo limito eso. ¿Se entiende?
+1:12:01
+¿Cuál es el origen del problema? El problema es que dijimos que Ampere es válido cuando todo varía suavemente con el tiempo. Lo que tiene que pasar es que no tengamos fuertes variaciones de la carga. Pero fíjense que acá, como viene la corriente acá, se nos está acumulando carga en el condensador. Entonces...
+1:12:30
+El problema viene, la diferencia viene de que se nos está acumulando carga en el condensador.
+1:12:59
+En situaciones estacionarias no hay problema, la ley de Ampere no tiene dificultades. Pero acá esta no es una situación estacionaria porque si I no depende del tiempo, entonces Q está dependiendo del tiempo, está creciendo con el tiempo. Entonces esta no es una situación estacionaria. Si I no depende del tiempo, Q sí depende del tiempo. Entonces esta no es una situación estacionaria. Cuando estamos en una situación estacionaria pueden aparecer estas incoherencias en la ley de Ampere. Y ahí ya no es un problema estético. Ahí es un problema de consistencia matemática y hay que resolverlo.
+1:13:34
+Entonces, ¿cuál fue la pista de Maxwell? La pista de Maxwell es una pista estética. Es decir, lo que está jugando acá el papel de la corriente...
+1:13:49
+Es la presencia de un campo eléctrico variable. ¿Sí? Inspirado de acá, de la ley de Faraday. Un campo magnético variable me genera un campo eléctrico. Entonces, un campo eléctrico variable me va a generar un campo magnético. Entonces, lo que voy a hacer es, inspirado con eso, voy a agregar... Es lo que propone el señor Maxwell. Vamos a escribirlo acá. Propone agregar una constante, más una constante... por la derivada con respecto al tiempo de el flujo eléctrico en la superficie.
+1:14:30
+Entonces, si la carga fuera constante, el campo eléctrico sería constante. Entonces el flujo eléctrico sería constante y este término no jugaría ningún papel.
+1:14:43
+La razón por la cual aparece un término extra es porque tenemos una situación no estacionaria. En la situación estacionaria este término no jugaría ningún papel. Entonces ahora nos vamos a hacer la pregunta, ¿cuál tiene que ser la constante para que los dos cálculos den igual? ¿Sí? Tiene que dar igual, no tiene que depender. Entonces, ¿cuál tiene que ser la constante? Y bueno, fíjense. De este lado, ¿sí? No hay campo eléctrico.
+1:15:13
+El campo eléctrico está dentro de las placas del condensador. Fuera de las placas del condensador, el condensador no genera campo eléctrico. Así que de este lado la ecuación no cambia.
+1:15:25
+¿Sí? Donde va a cambiar es acá. Pero calculemos el campo eléctrico.
+1:15:35
+Nosotros tenemos que el campo eléctrico, ustedes saben que el campo eléctrico, el módulo del campo eléctrico entre las placas de un condensador, un condensador de placas paralelas... Es igual a sigma sobre epsilon cero, ¿se acuerdan de esto? O lo que es lo mismo, llamémosle a a la superficie acá, a. Esto es lo mismo que q sobre epsilon cero por a. ¿Sí?
+1:16:06
+Y el campo eléctrico está entre las placas del condensador. Fuera de eso, vamos a expresar el efecto de borde, fuera de eso no hay nada. Entonces el flujo eléctrico, entonces la integral sobre la superficie del flujo eléctrico, no es otra cosa que esto por A. Nos queda Q sobre epsilon cero. ¿De acuerdo? El flujo eléctrico solo está entre la parte esta, que está entre las placas del condensador. Afuera no tenemos flujo eléctrico.
+1:16:36
+Pero entonces, eso nos dice que, usando el término de Maxwell, nos dice que la integral de B... Ah, bueno, por otro lado, acá adentro no tenemos corriente, así que el único término que nos sobrevive es el segundo. Entonces tenemos B de L tiene que ser igual a C, a la constante C, que no sabemos cuánto vale, por... la derivada con respecto al tiempo de esto. Tenemos el épsilon cero acá, por la derivada con respecto al tiempo de Q.
+1:17:10
+¿Pero quién es la derivada con respecto al tiempo de Q?
+1:17:16
+Es la intensidad que está llegando, ¿verdad? La intensidad llega acá y se acumula en la carga. Entonces, esto es igual a C sobre épsilon cero por I.
+1:17:26
+Pero queremos que los dos resultados sean equivalentes.
+1:17:29
+Tienen que ser el mismo resultado. Entonces concluimos que C sobre epsilon cero tiene que ser igual a mu sub cero.
+1:17:42
+Para que sean equivalentes, para tener el mismo resultado. Para que no dependa de la superficie.
+1:17:55
+Entonces acá vamos a escribirlo. Esta constante es... Mu cero, epsilon cero. Vamos a ponerlo ya prolijo para que quede lindo. Para la posteridad, porque son ecuaciones que quedan para la posteridad.
+1:18:19
+Entonces acá tengo la ecuación de la ley de Ampere con la corrección de Maxwell.
+1:18:32
+Y fíjense, ahora hemos escrito las leyes de electromagnetismo tal como se las conoce hoy. ¿Qué nos dice? Que si estamos en una zona sin fuentes, sin cargas ni corrientes, no sólo un campo magnético variable me induce un campo eléctrico, sino también un campo eléctrico variable me induce un campo magnético. Y aparece una constante característica del vacío, que es el producto de estas dos cosas.
+1:19:04
+El producto de mu cero con epsilon cero. Que va a jugar un papel muy importante en un ratito. O el miércoles. Bueno, Maxwell le gustaba, y es una expresión que se sigue usando hasta ahora, reagrupar todo esto de la manera siguiente. Maxwell lo escribe así.
+1:19:34
+Escribe que la circulación del campo magnético es igual a mu sub cero por I más otra corriente que le damos I de desplazamiento. Corriente de desplazamiento.
+1:20:02
+Y vemos que entonces la corriente de desplazamiento se puede escribir en términos del flujo del campo eléctrico. Entonces la corriente de desplazamiento es igual a epsilon cero por la integral sobre la superficie de, perdón, de la derivada con respecto al tiempo de la integral sobre la superficie de E escalar N.
+1:20:24
+¿Está
+1:20:27
+bien?
+1:20:32
+corriente de desplazamiento de Maxwell. Y es el hecho de que lo que aparece no es I sino la suma de I más la corriente de desplazamiento lo que hace que
+1:20:59
+no importa la superficie. Cuando en un caso teníamos un I y teníamos corriente de desplazamiento cero en la superficie de C1 y en la superficie de C2 teníamos I igual a cero y ID que era igual a la corriente que teníamos en la superficie de C1. Nosotros hemos visto que las corrientes tienen asociada una densidad de corriente. La corriente de desplazamiento también.
+1:21:27
+La corriente.
+1:21:32
+de desplazamiento tiene asociada una densidad de corriente.
+1:21:50
+La densidad de corriente es J de desplazamiento es igual a epsilon cero por la derivada del campo eléctrico
+1:21:59
+respecto del tiempo.
+1:22:02
+Así que fíjense que sólo aparece cuando tienen campos eléctricos variables.
+1:22:11
+Con esto hemos llegado entonces al, si se quiere, segundo final de este curso. Hoy tenemos dos finales, casi casi, porque... hemos llegado a la versión definitiva de las ecuaciones de electromagnetismo, que tienen no sólo inducción de campos eléctricos a raíz de flujos magnéticos variables, sino también inducción de campos magnéticos eléctricos.
+1:22:41
+a raíz de campos eléctricos variables. Una cosa que vale la pena señalar es que esto unifica de manera total el electromagnetismo. Al principio del curso yo les mencioné que los físicos intentamos tratar de explicar distintos fenómenos como partes, distintas partes de fenómenos en común. Tratar de no tener una ley para cada cosa, sino una única ley que explique muchas cosas. Bueno, Maxwell logró uno de los primeros éxitos grandes en este sentido logrando que dos fenómenos que parecían completamente diferentes que eran los imanes o las cargas eléctricas se vieran como dos cosas que se tienen que entender de manera unificada y formuló por primera vez las leyes de lo que entendemos el electromagnetismo donde vieron que todo está vinculado pero más que eso porque esa unión del electromagnetismo de lo eléctrico con lo magnético además dio lugar a un hijo Eso es lo más poderoso, cuando uno unifica leyes y de pronto entiende algo más que las distintas partes, entonces es un gran éxito.
+1:23:49
+Y Maxwell, al hacer esto, logró entender que estas ecuaciones tienen soluciones en forma de ondas. Sin este término nuevo, estas ecuaciones no tienen forma de ondas. Hay que agregar este término para que aparezcan soluciones en forma de ondas. Y esas ondas que se pueden propagar en el vacío tienen un nombre que ustedes conocen bien, que es la luz. Maxwell entendió, gracias a estas ecuaciones, que...
+1:24:22
+Un tipo de onda electromagnética es la luz. De hecho, lo que hizo fue calcular la velocidad con la que se propagan las ondas electromagnéticas y vio que era igual que la velocidad de la luz que ya se había medido con cierta precisión en aquel entonces. Entonces, lo que vamos a hacer en el resto del curso, hasta final del curso, es hablar de las ondas electromagnéticas. ver que estas ecuaciones tienen soluciones en forma de onda, calcular la velocidad de la luz, compararla con los resultados experimentales, y luego ver distintas cosas que tienen que ver con la propagación de la luz, que es lo que se llama, una rama de la física se llama la óptica.
+1:24:57
+Entonces vamos a ver las primeras cositas chiquitas de óptica hasta el final del curso. Muchas gracias.

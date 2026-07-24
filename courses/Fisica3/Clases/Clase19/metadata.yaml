@@ -1,0 +1,73 @@
+title: Clase 19
+id: fis3-2015-2-19
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:19:16"
+
+stats:
+  transcript_words: 8606
+  summary_words: 1681
+  diagrams_pending: 8
+  equations: 20
+
+topics:
+  - Varilla conductora que rota en un campo magnético
+  - FEM por suma de segmentos en serie
+  - FEM por Faraday sobre un circuito cerrado
+  - Generador de corriente alterna (espira girando)
+  - FEM sinusoidal y corriente alterna
+  - Torque necesario y balance de energía
+  - El motor como generador invertido
+  - Necesidad de corriente alterna y conmutador
+  - Campos eléctricos inducidos
+  - Ley de Faraday en términos del campo eléctrico
+  - El campo E ya no deriva de un potencial
+  - Ejemplo de campo B uniforme y variable
+  - Inductancia y autoinductancia (capítulo 11)
+  - Autoinductancia de un solenoide ideal
+  - Caso general (flujo proporcional a la corriente)
+  - Unidades (henry) y signos
+  - Autoinductancia de un toroide
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "31"
+    verified: false
+
+prerequisites:
+  - Clase 18 (ley de Faraday, ley de Lenz)
+  - Clase 17 (solenoide, ley de Ampère)
+  - Clase 16 (torque sobre una espira)
+  - Movimiento circular y velocidad angular
+
+next_topics:
+  - Circuitos RL (Clase 20)
+  - Materiales magnéticos
+  - Energía almacenada en el campo magnético
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

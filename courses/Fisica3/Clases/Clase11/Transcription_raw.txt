@@ -1,0 +1,382 @@
+# Clase 11
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/11/
+
+Fecha de exportación: 7/23/2026, 10:34:09 PM
+
+Clase: 11
+Curso: F3
+
+Segmentos : 211
+Palabras  : 9060
+Caracteres: 52647
+
+0:17
+Bueno, estamos tratando de mejorar un poco el OpenFink de Física 3. Había algunas cosas que habían quedado mal grabadas o con algún problema, entonces las estamos filmando de nuevo. Hoy en particular voy a contarles de un pedazo que quedó mal filmado, que refiere a qué pasa cuando un campo eléctrico externo es aplicado a un material dieléctrico es decir un material aislante pero vamos a restringirnos a un caso particular que es el caso de los materiales en los cuales primero materiales es homogéneo e isotrópico que quiere decir un material homogéneo es un material que es igual en todas sus partes que no tiene por ejemplo partes más densas que otras que no tiene grumos digamos que sea un una cosa que esté igual en todas partes.
+1:03
+E isotrópico quiere decir que no tiene direcciones preferenciales, que es igual en todas las direcciones, que no tiene, por ejemplo, fibras que indiquen una dirección preferencial. Eso es lo primero que vamos a pedirle. Y lo segundo que vamos a pedirle al material es que esté compuesto de moléculas polares. ¿Qué quiere decir una molécula polar? Quiere decir una molécula en la cual la parte cargada positivamente no coincide exactamente con la parte negativamente. Son moléculas que pueden tener una elongación digamos y la parte más cargada positivamente no coincide exactamente con la parte más cargada negativamente.
+1:41
+Vamos a pensar que el sistema está compuesto entonces homogéneo isotrópico compuesto de moléculas polares y primero que nada supongamos que no hay un campo eléctrico externo aplicado, en ese caso las moléculas van a estar orientadas al azar, las distintas direcciones estarán orientadas de maneras aleatorias y no habrá una dirección clara que indique hacia dónde apuntan las moléculas. En cambio, si aplicamos un campo eléctrico externo,
+2:20
+un campo eléctrico externo distinto de 0, las moléculas tenderán a orientarse según el campo eléctrico. Supongamos que el campo eléctrico es de abajo para arriba, por decir algo, las moléculas seguirán orientadas principalmente al azar, porque los fenómenos moleculares, las vibraciones, y yo que sé, hacen que las moléculas estén orientadas de todas maneras, pero de manera esquemática y cualitativa, esto no se lo tiene que tomar como una cosa exacta, sino como una cosa cualitativa, las moléculas tenderán a orientarse según el campo eléctrico, de esta manera, siendo que las cargas, si el campo litio es así, quiere decir que vamos a tener cargas aplicadas positivas abajo y cargas negativas para arriba, quiere decir que las cargas negativas van a tender a apuntar hacia abajo para acercarse a las cargas positivas que las atraen y las cargas negativas estarán, las cargas positivas para arriba.
+3:16
+Entonces, grosso modo, las moléculas van a estar orientadas de esta manera. Esto es muy grosso modo. En realidad las moléculas siguen orientadas básicamente al azar y este efecto del campo eléctrico es solo un pequeño efecto que yo acá les estoy mostrando como si fuera total, pero eso solo para que lo vean claramente en el dibujo, porque si yo dibujara realmente una foto de cómo estarían las moléculas no verían nada, porque seguirían esencialmente rotas. aleatorias y sólo el efecto de promediar todos los efectos aleatorios hacen que este caos molecular desaparezca y sólo sobreviva ese efecto medio fruto del campo eléctrico aplicado al pasar esto si uno considera un material por ejemplo en un condensador supongamos que estamos en un condensador de placas paralelas en el que tenemos una carga de este lado aplicada más q positiva y de este lado una carga menos q negativa entonces el efecto de estas moléculas será orienta de este campo eléctrico aplica perdón voy a poner voy a poner al revés para que se parezca como esto vamos a poner menos q arriba y más q abajo para que sea el campo eléctrico externo aplicado como aquí de abajo hacia arriba
+4:38
+entonces nuevamente tendremos que las moléculas están orientadas como pusimos en el dibujo con las cargas más para arriba y las cargas menos para abajo ¿cuál es la consecuencia de esto? la consecuencia de esto es que si paso en limpio esto que está acá tendremos el condensador con la carga externa aplicada de este lado negativa
+5:06
+en las placas del condensador y además una carga de neta fíjense que en las regiones internas tenemos tantas cargas positivas como negativas pero tenemos un sobrante de cargas de polarización que son las cargas que producto de este movimiento de las moléculas que se van a depositar cerca de la placa positiva pero con un signo opuesto al de la carga que generó el campo eléctrico entonces el efecto es que tenemos el campo eléctrico aplicado E0 que va de abajo para arriba y tenemos otro campo extra de arriba para abajo E' que compensa parcialmente el campo E0 Entonces el resultado es que, bueno, una cosa importante es que si el material es homogéneo e isotrópico, E' será paralelo a E0 porque como el sistema no tiene direcciones preferenciales,
+6:17
+No hay ninguna dirección en la que pueda apuntar E' que no sea E0. Todo queda determinado por E0. E' no tendría para dónde apuntar porque todas las otras direcciones son equivalentes. Porque el sistema es isotrópico. Así que lo único que genera una dirección preferencial es el E0 aplicado y por lo tanto E' es paralelo a E0. Pero además E' es opuesto a E0. Entonces el campo eléctrico total E, que es E0 más E', que es la suma del campo eléctrico aplicado externamente más el campo producto de la polarización entonces esto serían las cargas de polarización y este es el campo eléctrico producto de la polarización
+7:21
+hacen que el campo eléctrico total sea la suma del campo eléctrico aplicado externamente E0 más el campo producto de la polarización y por lo tanto como ambos vectores son colineales pero con sentidos opuestos el módulo del campo E no es otra cosa que E0 menos E' en muchos sistemas que se llaman lineales muchos aislantes muchos dieléctricos los aislantes y dieléctricos son sinónimos se les llama muchas veces dieléctricos a los aislantes en muchos dieléctricos el módulo de E' es proporcional a E0 entonces si el material es lineal
+8:17
+el módulo de E' es proporcional a E0, y por ende, como este es proporcional a E0 y E', entonces el módulo de E también es proporcional a E0.
+8:33
+Y de hecho se define la constante dieléctrica...
+8:51
+K sub E del material, como E igual a E0 sobre K sub E. Estos materiales se llaman materiales lineales.
+9:21
+Lineal es por eso, porque tiene una relación lineal entre E' y E0. E' es proporcional a E0, hay una relación lineal de proporcionalidad. al doble de 0, el doble de E. Si multiplican E0 por 2, E se multiplica por 2. No tendría por qué ser así. De hecho hay materiales que son no lineales, en que la relación entre E y E0 no es una relación de proporcionalidad. Pero esos materiales son muy simples, porque simplemente para caracterizar sus propiedades eléctricas, lo único que uno tiene que dar es el valor de K, a nivel, por lo menos de propiedades de equilibrio.
+10:01
+¿Sí? Bueno, y cae, ¿cómo será? ¿Cómo será con respecto a 1? ¿Será mayor o menor que 1? Mayor que 1. ¿Por qué?
+10:15
+Porque... Claro, fíjense que E' tiende a compensar E0. Quiere decir que el módulo de E es más chico que el de 0. Así que tenemos que cae mayor que 1. Como...
+10:30
+E menor que E0, entonces cae menor o igual.
+10:41
+Y podemos dar los valores para varios materiales. Ah, bueno, una cosa que quiero comentarles, la palabra dieléctrico. Es sinónimo de aislante. Entonces, aislante, acá, dieléctrico.
+10:59
+La palabra dieléctrico es un sinónimo en la literatura de aislante. Entonces veamos una tablita. Entonces material, ahí tengan idea, material, valor de la constante dieléctrica. Entonces primero el vacío, ¿cuál es la constante dieléctrica del vacío?
+11:22
+¿Cuánto se polariza el vacío?
+11:25
+Va a ser 1 porque no hay polarización... En realidad hay un poquito de polarización del vacío, pero eso no se lo cuenta nadie.
+11:35
+Después aire. El aire es casi lo mismo que el vacío. Las propiedades eléctricas del aire son casi iguales que las del vacío. Casi no se polariza el aire. Y de hecho si se mide la constante eléctrica da lo siguiente. 1 con 0, 0, 0 son 3 o 4 ceros. 3 ceros. 59. El aire en condiciones atmosféricas normales. Fíjense que casi no tenemos problemas que abordemos en este curso con más de dos o tres cifras significativas.
+12:05
+Así que a todos los efectos prácticos, aire y vacío para este curso es lo mismo. Entonces tomemos otro, poliestireno. Un plástico, 2,6. papel 3,5 esto es aproximado porque el papel hay de muchos tipos como es un material de origen biológico puede variar un poco agua destilada ¿por qué destilada?
+12:42
+¿se acuerdan? si no si no, no sería un dieléctrico entonces ahí es re grande 78,5 ¿no?
+13:15
+¿Se entendió esto? Entonces vamos a ver cómo esto se usa para calcular las propiedades, por ejemplo, de un condensador con un dieléctrico. Quiero hacerle algunos comentarios. Primero, que no todos los materiales son lineales. Segundo, ¿por qué muchos materiales son lineales? ¿Por qué muchos materiales son lineales? Porque este dibujo está mal. La razón por la cual muchos materiales son lineales es porque este dibujo está mal. Porque en realidad, los campos eléctricos que sabemos producir en un laboratorio normal...
+13:47
+son muy, muy, muy, muy chiquititos con respecto a los campos que aparecen a nivel microscópico en un material. A nivel microscópico tenemos campos muy grandes para un lado, muy grandes para el otro, que se compensan. Cuando nos acercamos mucho a un electrón, el campo es gigantesco, cuando nos alejamos... y lo que vemos son un efecto promedio y en realidad cuando replicamos el E0 el efecto que generamos realmente en las moléculas es un efecto que en realidad yo acá se los puse como que fuera total como que las moléculas anduvieran todas derechitas pero no es eso lo que pasa apenitas en promedio se deforman entonces en realidad pueden pensar que esta relación es el comienzo de un desarrollo de Taylor cuando E0 es 0 E' es cero.
+14:36
+Si no hay campo de estorno aplicado, no hay polarización. Así que el desarrollo arranca con cero. Acá tendrían el primer término de desarrollo, el término lineal, y habrían términos cuadráticos, cúbicos y demás, pero ni los escribimos porque como el efecto de cero lo tienen que pensar como un efecto chiquitito... a los efectos del material, los efectos no lineales son totalmente despreciables. Así que pueden pensar eso, que a los efectos de un material normal, los E0 que podemos fabricar en un laboratorio normalmente, son campos muy chiquititos.
+15:14
+Entonces los efectos no lineales no aparecen.
+15:18
+Primera cosa. Segundo, hay materiales no lineales. Y tercero, si uno aplica un campo muy grande, muy grande, muy grande, normalmente aparece efecto no lineal, pero también aparece otro efecto. ¿Cuál es?
+15:29
+Si uno le aplicamos a un condensador con un dieléctrico un campo gigantesco, ¿qué es lo que pasa?
+15:37
+Normalmente. Agarran un cacho de plástico y lo ponen en un campo eléctrico gigantesco, ¿qué es lo que va a pasar? Se funde, se quema. Entonces hay otro fenómeno también, que es que tampoco podemos levantar mucho los campos eléctricos para la mayor parte de los materiales, porque aparece otro fenómeno que es que el sistema se quema. Se quema, o a veces no se quema, sino que se perfora. Se vuelven, se aparecen, el sistema se vuelve, las cargas eléctricas logran penetrar, se polariza, pero de una manera más radical que permite que la corriente se...
+16:13
+Entonces, bueno, ese es el motivo por el cual hay materiales lineales. Otra cosa que les quiero comentar es que algunos materiales tienen lo que se llama campos eléctricos polarizaciones permanentes. Eso es muy poco común. Es muy poco común, pero existe. Materiales en los cuales uno les aplica un campo eléctrico, los polarizó, ¿sí? Luego apaga el campo eléctrico y la polarización sigue ahí.
+16:47
+No se despolariza. Eso es muy, muy poco frecuente. A nivel eléctrico eso es una cosa re poco común. Existe, se llaman ferroeléctricos. Existen, pero es re poco común. Sí existe un fenómeno muy común de ese tipo para los fenómenos magnéticos. Dentro de poco en el curso vamos a empezar a hablar de los efectos magnéticos. Y ahí los efectos del equivalente de la polarización para el efecto magnético que se llama magnetización, ahí sí es común. Y todos conocemos los imanes. Los imanes son materiales que están magnetizados de manera espontánea, aún sin que le apliquemos un campo magnético externo.
+17:22
+El equivalente de la polarización se queda ahí aunque uno no lo aplique. Pero en el caso eléctrico no es común eso y por eso normalmente de prima es proporcional. Perdón, tiende a cero. Cuando el cero es cero, el prima también tiende a cero. Pero eso en este curso no lo vamos a ver. Les comento que existe. Bueno, entonces veamos ahora qué pasa con un condensador cuando agregamos un dieléctrico.
+17:57
+5.7 creo. El condensador con dielectro. Entonces coloquemos...
+18:28
+El condensador, acá le aplicamos una diferencia de potencial, delta B.
+18:42
+Tenemos acá una carga Q, acá una carga menos Q. Entonces primero consideramos el caso sin dieléctrico, en el vacío. ¿Sí? ¿Sí? Entonces en ese caso ya vimos cómo funciona, en ese caso ya lo calculamos. El campo eléctrico que se produce es sigma sobre epsilon cero, sigma vale Q sobre A, A es el área de la placa. Lo estoy haciendo para un condensador de placas paralelas, pero estas cosas se pueden generalizar para cualquier condensador.
+19:18
+Pero hagámoslo en este caso simple que es bien fácil. Bien, entonces la diferencia potencial, delta B, dijimos, es E por D, y entonces es Q por D sobre epsilon cero por A.
+19:34
+Y entonces concluimos que C con el vacío es igual a epsilon cero por A sobre D. Bien. Entonces ahora repitamos el cálculo.
+19:52
+para un condensador en presencia de polarización. Un condensador, pero con un material lineal. Entonces, vamos a repetir lo mismo. Ahora le metemos acá en el medio un dieléctrico homogéneo.
+20:23
+isotrópico y lineal. Bueno, van a ver que en el práctico, muchas veces ni les dicen esto, ¿está? Suponen, ya expliqué, si les dicen que la constante dieléctrica, vale, cae,
+20:41
+decir que la constante dieléctrica es KE, ya presupone todo lo demás. Porque si no, hablar de la constante dieléctrica ya no tiene sentido. Hablar de una constante dieléctrica solo tiene sentido si el material es isotrópico, homogéneo y lineal. ¿Bien? Entonces, nuevamente, sometemos a esto a una diferencia potencial, delta B, y nos preguntamos cómo será, qué pasará acá. Entonces, vamos a tener nuevamente... Una carga Q, aquí.
+21:13
+Una carga menos Q. Pero tendremos acá también una carga Q' de polarización. O le llamamos ya... Sí, Q' le voy a llamar. Y ahora una carga menos Q' de polarización. En realidad voy a poner... Está bien. Q' es negativo. Lo escribo así, pero Q' es negativo. ¿Sí? ¿De acuerdo? Entonces, podemos... Podemos repetir...
+21:40
+en nuestro cálculo anterior podemos calcular aplicar Gauss tenemos esta situación en la que arriba tendremos una carga Q más Q' y abajo una carga menos Q menos Q' con dos placas muy grandes y entonces vamos a aplicar Gauss agarramos un cilindrito acá Como habíamos hecho antes, afuera el campo es cero, adentro va de acá para abajo, E.
+22:22
+Pero hay que usar toda la carga, la carga total, que es la carga libre más la carga de polarización. Esta es la carga de polarización. Cargas de polarización.
+22:38
+¿Cómo?
+22:42
+Bueno, tal como lo hice está bien, pero entonces Q' es negativo. Si Q es positivo, Q' es negativo. Q positivo, entonces Q' es negativo. Lo hice así para que acá quede la suma, pero hay que pensar que al lado de una carga libre positiva va a haber una carga de polarización negativa. Entonces podemos continuar, podemos decir... Mismo razonamiento, fíjense, el razonamiento que nos llevó a esto es idéntico al que está allá, lo único que donde antes teníamos Q ahora tenemos Q más Q'.
+23:17
+Entonces concluimos que E es Q más Q' sobre A por epsilon cero.
+23:38
+¿De acuerdo?
+23:45
+Pero dijimos que E va a ser igual a E0 sobre KE, donde E0 es el campo que tendríamos si no hubiera polarización. ¿Sí? ¿De acuerdo? Esto también lo podemos escribir acá como E0 más Q' sobre A sobre epsilon 0.
+24:24
+Entonces sustituyendo tenemos que E0 sobre KE es igual a E0 más Q' sobre A sobre epsilon 0.
+24:51
+Entonces despejando, Q' lo podemos calcular como A por epsilon 0 por E0 sobre KE menos E0.
+25:07
+Pero dijimos también que Q es igual a A epsilon 0 por E0.
+25:19
+Entonces yo acá puedo escribir esto como A epsilon 0 por E0 por 1 sobre Ke menos 1 y esto que está acá es Q. Entonces Q' la carga de polarización será igual a Q por 1 sobre Ke menos 1. Esto es la carga de polarización.
+25:50
+Y ahora dijimos que la diferencia potencial que habíamos aplicado acá era la misma. Entonces, calculemos el campo eléctrico. La diferencia potencial, nuevamente, podemos aplicar el mismo razonamiento, es E por D. Y...
+26:19
+Entonces, si sustituyo ya delta B sobre D es igual a E, que lo puedo escribir como E0 más, ahora utilizo Q', Q' va a quedar...
+26:50
+sustituyo Q', me queda Q por 1 menos KE menos 1, dividido A sobre epsilon 0, y esto que está acá no es otra cosa que E0.
+27:06
+Q sobre esto es E0.
+27:10
+Entonces nos queda E0 más E0 por 1 sobre KE menos 1. Y esto es lo mismo... Se nos va este con este. Y nos queda E0 sobre KD que es E... Bueno, como podíamos haber previsto. Perdón, estoy haciendo un razonamiento circular.
+27:45
+¿Uno podría llegar a esta vez? No, delta B es un dato. Lo que quiero hallar es la relación entre delta B y Q. Pero bueno, vamos a retomar. Perdón, estoy haciendo mal. Disculpenme. Acá. E es delta B sobre D. Vuelvo acá. Es Q sobre A sobre epsilon 0 más Q'.
+28:10
+Entonces es Q sobre A sobre epsilon cero por uno sobre K E menos uno. Disculpenme, no tenía que haber sustituido en términos del campo eléctrico. Ahora se nos va esto y nos queda Q sobre A epsilon cero por K E. Ahí quedó bien. Y ahora tengo la relación entre delta B y Q. Entonces nos dice que el condensador con dieléctrico es igual al que teníamos en el vacío, pero donde teníamos epsilon cero, tenemos epsilon cero por K E.
+28:52
+Nos queda epsilon cero por K E por A dividido de E.
+29:12
+¿Por qué hay más? No, simplemente porque le llamé Q' a la carga que está acá. Pero comenté que si Q es positiva, Q' es negativa. Simplemente para que quedaran sumadas. Pero si les simplifica las ideas y quieren solo pensar en cargas positivas, pueden poner un menos ya tomando en cuenta que es negativa. Pero eso es una cuestión puramente convencional. Opté por llamarle carga de polarización a la que está acá y entonces va con un más. Entonces... El punto importante es que la capacidad acá aumenta como cada dispositivo, si ponemos un dieléctrico podemos hacer condensadores con mayor capacidad, de hecho los condensadores para aumentar su capacitancia se les agrega dieléctricos por este motivo.
+30:00
+Acá en este ejemplo que yo tomé el potencial no disminuye, yo tomé el potencial fijo y lo que cambió es la carga. ¿Bien? Pero podrían haber hecho al revés. Les dejo como ejercicio y piensen al revés. Cargan un condensador, le ponen una carga fija, queda fija, lo desconectan, queda cargado, con una carga Q que ahora está fija, y luego le meten un dieléctrico. ¿Qué pasa? Lo que va a pasar es que va a aumentar, perdón, va a disminuir la diferencia de potencia. Acá yo dejé la diferencia de potencia fija, entonces tiene que aumentar la carga.
+30:35
+No, no, el potencial lo tomé fijo, es delta B.
+30:47
+Lo que cambió fue la carga. La carga Q acá no tiene el mismo valor que allá. Pero pueden hacerlo también, porque yo tomé diferencia potencial fija. Pero en lugar de eso pueden desconectar el condensador, tienen la carga fija y ver qué le pasa a la diferencia potencial.
+31:07
+¿Se entendió esto? Perdón, estuve un poco enredado en las cuentas. Lo que es importante resaltar es que el resultado final es igual al que teníamos inicial, pero cambiando. Donde había épsilon, cambiamos por épsilon por K. Cuando hay un solo... Cuando hay un solo...
+31:39
+dieléctrico todo el problema concierne un solo dieléctrico entonces todo se resuelve como en el vacío
+32:00
+Es decir, ignoramos la carga de polarización. Si tuviéramos un solo dieléctrico como acá, fíjense, todo el material es un solo dieléctrico. El problema no depende... Bueno, afuera hay vacío. Y alguien decía, bueno, pero no hay una sola constante dieléctrica, porque tiene constante dieléctrica uno acá y un valor distinto uno adentro. Pero en realidad lo que pasa afuera para este problema no juega ningún papel. Todo sucede acá adentro. Así que, como todo tiene una única constante dieléctrica... Podemos resolver el problema acá adentro sin olvidarnos, pensando que todo es una única constante eléctrica.
+32:34
+Y todo sucede como en el vacío, pero... Donde teníamos epsilon cero, ahora pasamos a tener a epsilon cero por K. ¿Sí? Todo sucede igual. Podemos olvidarnos de la carga de polarización. Todo es igual que antes, pero... Donde teníamos epsilon cero, ahora tenemos epsilon cero por Ke. Y de hecho a esto se le da un nombre, se le llama epsilon, pero sin el cero. Y se piensa epsilon cero como un caso particular de epsilon. Y a epsilon se le llama permeabilidad.
+33:12
+No, permitividad, perdón. Permitividad eléctrica del material.
+33:28
+Y a epsilon cero le llamamos la permitividad eléctrica del vacío.
+33:33
+Como un caso particular. Es decir, cuando están en el vacío, KE vale 1 y epsilon se transforma en epsilon cero. Pueden pensar que el vacío es un caso particular de un material aislante general. Un material aislante general tiene permitividad eléctrica epsilon. Y el vacío es un caso particular donde en lugar de epsilon tienen epsilon cero. ¿Se entiende? Si hacen así, se pueden olvidar de la carga de polarización. Es como que no hubiera carga de polarización, solo se tienen que ocupar de la carga Q.
+34:06
+Pero eso solo lo pueden hacer si hay un solo dieléctrico. Porque obviamente, cuando tienen varios, tienen que ocuparse. En algún lado tienen que poner Epsilon, en otro tienen que poner Epsilon 0. Y así no es obvio darse cuenta en qué lugar tienen que poner Epsilon 0. Pero si hay un único dieléctrico que juega, pueden hacer esto. Y de hecho, vamos a... a formalizar esto... con... una ley de Gauss... en presencia de eléctricos... ley de Gauss... en presencia...
+34:58
+de dieléctricos. Bueno, a ver, la ley de Gauss que vimos hasta ahora, ¿vale también en presencia de dieléctricos o no? La ley que vimos hasta ahora. Sí. ¿Y entonces por qué voy a construir una nueva ley de Gauss? Si la que ya tenemos vale en presencia de dieléctrico.
+35:28
+¿Por qué habríamos de escribir otra nueva ley de Gauss para dieléctrico? Bueno, va a ser una consecuencia, pero ¿por qué nos vamos a dar el trabajo de ver una nueva? ¿Qué cantidad yo calculé acá que en realidad no es muy fácil de acceder experimentalmente? ¿Sí? Experimentalmente, ¿a qué voy a tener acceso? A la diferencia de potencial. Puedo medir la carga también. ¿La carga? ¿Cuál carga? Q. Pero fíjense que Q' a la carga de polarización es una cosa que sucede dentro del material y al cual no tenemos mucho acceso.
+36:03
+Entonces uno querría... Poder formular la ley de Gauss sin ocuparse de las cargas de polarización. Decir, bueno, el material se las arregla, algo hace. No me quiero ocupar qué es lo que pasa dentro del material. Quiero imaginar, trabajar con el material como antes trabajaba con el vacío. Olvidándome de la polarización. ¿Se entiende?
+36:24
+¿Sí? Entonces, podemos tratar de construir una ley de Gauss cuando tenemos un solo dieléctrico, ¿sí?,
+36:33
+en la cual no nos tengamos que ocupar de que haya polarización. Entonces, la ley de Gauss, vista hasta ahora, vale siempre con o sin dieléctricos.
+37:05
+Pero requiere usar toda la carga.
+37:18
+Toda la carga que tiene dos. Q libre.
+37:23
+Pero también necesitamos la Q de polarización.
+37:29
+Esta tenemos acceso fácil. Pero esta no tenemos acceso fácil. Queremos tratar de... barrer la mugre abajo de la alfombra, ¿verdad? Es algo que nos molesta, queremos esconderlo. Entonces podemos escribir, flujo eléctrico es igual a Q libre, vamos a hacer explícito, libre, más Q de polarización, dividido epsilon cero. Esto siempre lo podemos escribir.
+38:00
+¿Está bien? Y entonces ahora me voy a limitar al caso en que el problema solo tiene un dieléctrico. No tengo varios dieléctricos. El problema lo puedo tratar sin ocuparme del hecho de que tengo varios dieléctricos. Entonces, si solo un dieléctrico de constante...
+38:33
+cae... juega un papel... veremos... cómo... deshacernos... de Q'.
+38:52
+Que es lo que hicimos recién. Vamos a generalizar el cálculo que hicimos recién. Entonces... ¿Sí? ¿Sí? Acá es el campo eléctrico total. ¿Qué pasa si en lugar de considerar el campo eléctrico total, consideramos el campo que habría sin polarización?
+39:13
+Si tapo acá, me queda lo que llamábamos antes E0. El campo que habría en el vacío. ¿No es cierto? ¿De acuerdo? Entonces, podemos calcular...
+39:29
+como podemos escribir mejor dicho escribir Gauss si no hubiera polarización entonces sería el flujo eléctrico de E0 es igual a Q libre sobre E0
+40:01
+Si estamos en el vacío, eso es toda la información porque no hay polarización. Pero la situación que nos interesa, más complicado. Pero entonces podemos despejar acá la carga de polarización. Podemos restar las dos ecuaciones y nos da phi sub e menos phi sub e0.
+40:23
+Se nos va el término libre y nos queda q de polarización...
+40:30
+sobre epsilon cero. A ver, el compañero me hace una pregunta que es muy importante, me dice acá hay que poner epsilon cero o hay que poner epsilon? Hay que poner épsilon cero. Esta es la ecuación que vale siempre. Que dice, tengo el campo total y uso la carga total. Y en ese caso tengo que usar épsilon cero. Pero no es eso lo que queremos hacer.
+41:02
+Queremos poder calcular usando solo la carga libre. Si yo pongo todas las cargas, tengo que poner épsilon cero. Cuando dijimos hoy que podemos hacer épsilon cero, reemplazarlo por épsilon, es sin carga de polarización. Vamos a ver qué es eso de lo que da. Entonces yo acá... Calcule una expresión para la carga de polarización. Pero como estamos en una situación en que hay un único dieléctrico, ¿cuál es la relación entre E y E0?
+41:31
+Claro. Si hubieran varios dieléctricos no podríamos hacer eso, porque en una región tendríamos E0 sobre K1 y en otra tendríamos E0 sobre K2, con constantes diferentes. Pero como hay una única constante dieléctrica, como hay una... única KE, entonces tenemos que E en todo punto vale E0 sobre KE, en todo punto.
+42:09
+Si tuvieran varias constantes eléctricas tendrían una relación de este tipo diferente en cada región. Típicamente es lo que pasa, porque normalmente tienen una zona donde tienen vacío, otra tiene dieléctrico, pero estamos pensando en un problema donde solo tienen que calcular el campo eléctrico en una región donde solo juega un papel un único dieléctrico.
+42:28
+Entonces, en ese caso, ¿qué pasa con el flujo de E? ¿Cómo lo relaciono con E0? O al revés, ¿cómo es el flujo de E0 en relación con el flujo de E? ¿Cómo se relacionan estas dos cosas?
+42:47
+¿Cómo? Sí, eso si las comparamos acá. Pero si yo quiero establecer una relación directa entre estas dos. Si los campos eléctricos son proporcionales, ¿qué pasa con los flujos? También. Entonces el flujo eléctrico del campo E no es otra cosa que 1 sobre K E del flujo eléctrico con E0.
+43:20
+¿De acuerdo?
+43:28
+Entonces escribo... No me interesa el flujo en E0. E0 era el flujo que tendríamos si no hubiera carga de polarización. Y tampoco quiero polarización. Entonces voy a calcular la carga de polarización toda escrita en términos de Fie. ¿Sí? Entonces voy a escribir. Sustituyo, ¿no? Entonces esto me dice que el flujo eléctrico de E0 es Ke por el flujo eléctrico de E.
+43:52
+Sustituyo ahí y me queda flujo eléctrico de E menos KE por el flujo eléctrico de E es igual a la Q de polarización sobre epsilon cero. Entonces, de esta manera yo puedo calcular la carga de polarización en términos del flujo del campo eléctrico total, que es el que realmente me interesa. Cuando quiero calcular una diferencia de potencial, lo que interviene no es el E0, es el campo neto, E.
+44:27
+Entonces, reemplazo. Puedo reemplazar en la ecuación general y me dice, flujo de E, en esta que está acá, tengo Q libre...
+44:43
+sobre epsilon cero y ahora reemplazo q de polarización sobre epsilon cero que me queda más phi e menos ke por phi e.
+45:00
+Me deshice de la carga de polarización. Barrí la mugre abajo de la alfombra. La mugre sigue ahí. La carga de polarización que me complica la vida es real, existe. Yo simplemente no me quiero ocupar de ella. Y fíjense que ahora, bueno, se me simplifica acá, paso este término para el otro lado y me queda que el flujo eléctrico del campo neto total por Ke es igual a la carga libre sin ocuparme de la carga de polarización sobre épsilon cero. O pasando el KE para el otro lado, me queda que el flujo eléctrico es igual a la carga libre sobre KE por epsilon cero.
+45:41
+Y esto es epsilon.
+45:47
+Entonces ahora pude formular una ley de Gauss que es idéntica a la que teníamos originalmente, la ley de Gauss en el vacío, que lo único que cambió es que en lugar de tener epsilon cero tengo epsilon cero por kae, que es lo mismo que epsilon. ¿Bien? Y esto es lo que se suele llamar ley de Gauss en presencia de dieléctrico.
+46:27
+Pero está claro que esta otra ley de Gauss también vale en presencia de dieléctrico. Lo único que hace intervenir un objeto, que es la carga de polarización, que es un objeto del que no queremos ocuparnos. Es una cosa que le pasa internamente al material. Y a veces dicen, no, no, no me cuentes qué le pasa dentro del material. Yo quiero ver qué es lo que pasa de afuera. Yo pongo una carga tanto y cuál es el campo que se me produce. No quiero saber cuáles son los mecanismos internos. Quiero ver cómo es relación entre la carga que pongo de afuera, la libre, y el campo eléctrico. En el medio del material le pasan cosas, pero yo no quiero saber nada. Bueno, esta nos resuelve el problema.
+47:03
+En realidad es un poco de trampa, porque usamos que el material es lineal, que eso en realidad no lo supimos deducir a partir de las ecuaciones microscopicas. Pero no importa, es una información útil. En general hay muchos materiales que se sabe que son lineal. Si esa información la tenemos, mejor usarla. ¿Bien? ¿Se entendió?
+47:24
+Teníamos esta ecuación. Sí. Reemplacé Q de polarización sobre epsilon cero. Acá puse. Fie es igual a Q libre sobre epsilon cero más Q de polarización. Sí, sí. Acá reemplazo en Gauss.
+47:46
+Reemplazo en Gauss y me queda esto. ¿Bien? ¿Alguna otra pregunta? ¿Se entendió? Lo más importante es el resultado, que es que pueden hacer, si tienen un único dieléctrico con papel, pueden hacer como si fuera a calcular igual que en el vacío, pero en lugar de usar epsilon cero, usan epsilon poli. Pregunta. ¿Qué pasa, por ejemplo, si yo tengo un problema? Ejemplo.
+48:19
+Si yo tengo un problema en el cual tengo una diferencia potencial acá, una diferencia potencial delta B... Y tengo un condensador de placas paralelas en que en una zona tengo una constante eléctrica 1 y en otra zona tengo una constante eléctrica 2. ¿Podré utilizar esto para este problema o no?
+48:40
+Levanten la mano los que opinan que no.
+48:44
+Levanten la mano los que opinan que sí. Tengo un condensador... De placas paralelas, con unas placas grandes. En una zona tengo un dieléctrico constante K1. Constante dieléctrica K1. En el otro tengo una zona con una constante dieléctrica K2. Pregunta, ¿podré usar esto o no podré usar esto?
+49:13
+Claro. Esto que acabamos de ver tiene aplicaciones muy chiquititas, porque solo un diélectro no son problemas muy comunes. En general tiene más de uno. Pero muchas veces, cada parte la pueden tratar por separado. Acá pueden pensar este condensador como dos condensadores en paralelo. Cada uno de los condensadores en paralelo lo tratan por su lado. ¿Sí? Una vez que lo trataron, cada uno hace intervenir un solo dieléctrico, pudieron aplicar lo anterior, en lo cual todo se hace muy simple, y luego usan la fórmula para...
+49:48
+Dos condensadores en paralelo. ¿Se entiende por qué esto es como dos condensadores en paralelo? Porque, fíjense, acá tenemos una región chiquitita de borde que suponemos despreciable, ponemos los efectos de borde despreciables. Ya habíamos despreciado los efectos acá, así que podemos despreciar también los efectos acá. Ya cometido el pecado, sigamos adelante. Entonces, estas dos placas están igual potencial y estas dos placas están igual potencial. Y justo lo que llamamos dos condensadores en paralelo. ¿Se entendió?
+50:19
+Y entonces cada uno de ellos tiene una única constante dieléctrica y pueden aplicar lo que vimos hasta ahora. ¿Se entiende? ¿Preguntas? Digo, este condensador entero lo pueden pensar como dos condensadores en paralelo. Uno acá y otro acá. Se comporta como si fueran dos condensadores en paralelo. Entonces cada uno lo tratan por separado. Y cada uno tiene una única constante dieléctrica. Si fuera así, no sería así. No, si está conectado así, donde es una misma placa, están en paralelo.
+50:54
+Están a igual potencial. Es como, el dibujo de esto sería así.
+51:05
+Eso es paralelo. El hecho que se estén tocando acá, si los efectos de borda son despreciables, no juega a ningún papel. ¿Me explico? Que los pongan bien separados, uno al ladito del otro, no juega a ningún papel.
+51:19
+¿Sí? ¿Cómo? Ahí también, porque ahí son en serie. Puede imaginarse que hubieran condensado... Pero ¿cuándo no se puede aplicar esto? Y bueno, por ejemplo, si tuvieran una... Por decir algo. Tienen un problema en el cual tienen un dieléctrico acá... Otro dieléctrico acá, constante K1, constante K2.
+51:52
+Y acá tienen una carga más Q. Yo qué sé, acá otra carga menos Q. Anda a separar esto. Es decir, aquí pudimos hacerlo porque los efectos de borde eran despreciables. Entonces la interacción entre las dos partes era despreciable. Acá la interacción entre las dos partes es del mismo orden que tratar K1 por separado. Se sabe lo que hacer, no es muy difícil. En el curso de electro se ve como generalizar esto que acabamos de ver. Pero tal como lo hicimos, tienen que tener un único dieléctrico.
+52:24
+¿Se entiende? ¿Alguna otra pregunta? Pero así que, la pregunta es válida. El compañero dice, ¿qué pasa si estudia un dieléctrico como un sándwich? Uno arriba del otro. Ahí también pueden hacer, porque se pueden imaginar que tienen una placa imaginaria en el medio y es como dos condensadores en serie. Ahí nuevamente pueden aplicar problemas en el que tienen un único dieléctrico. ¿Alguna otra pregunta?
+52:58
+Bueno, estoy re atrasado. Arranco con el capítulo siguiente, capítulo 6, corriente eléctrica.
+53:08
+Puedo borrar acá, ¿no?
+53:38
+Bueno, hasta ahora estamos en una situación en la que todo era electrostático o... Todo era electrostático o... O casi, ¿verdad? Hemos visto algunos electrones moviéndose, pero suponíamos que todo lo podíamos calcular como si fuera electrostático. Ahora las cargas empiezan a mover y retomo la noción de conductores y aislantes.
+54:20
+Entonces, les recuerdo una cosa que dije al comienzo del curso, que es que La separación entre conductores e aislantes es una separación esquemática. Existen materiales que están en el medio, como por ejemplo, yo les mencioné, los semiconductores. Los semiconductores no conducen tan bien como los conductores, tienen propiedades de conducción un poco diferentes que la de los conductores, pero conducen. Hay otras situaciones todavía más esotéricas,
+54:55
+Como por ejemplo, la situación de... Ahora hay otra situación que voy a hablar, pero les voy a hablar en un momento. Antes de eso quiero comentarles que aún los conductores, cuando están en equilibrio, dijimos no hay campo eléctrico dentro de un conductor. Pero supongamos que el conductor no está en equilibrio. Uno le aplica un campo eléctrico, tiene un campo eléctrico no nulo, ¿qué es lo que va a pasar?
+55:22
+las cargas se van a mover. Y si logramos encontrar alguna manera en que las cargas que lleguen a un lado del conductor se bombeen para entrar por el otro lado, se mantiene lo que se llama una corriente eléctrica. Para mantener una corriente eléctrica tenemos que hacer dos cosas. Mantener un campo eléctrico aplicado y segundo, encontrar un mecanismo que bombee las cargas que llegan de un lado para el otro lado. Ahora, aún... los conductores cuando uno les aplica un campo eléctrico generan una resistencia a el movimiento es decir en las cargas cuando pasen por el conductor se van a van a parte de la energía que uno le suministra para moverlas
+56:10
+se disipa en forma de calor en la resistencia. Ustedes saben muy bien, un aparato metal que le aplican una diferencia de potencial, se calienta. Fíjense que eso es esperable, porque imagínense que los electrones que atravesan el material no experimentaran ninguna resistencia, pasaran de largo. ¿Cómo sería el movimiento de los electrones?
+56:37
+Tienen un campo eléctrico, una partícula cargada que se mueve en un campo eléctrico uniforme. ¿Cómo será el movimiento?
+56:46
+No, pero la ley horaria de movimiento de un electrón.
+56:52
+¿Un movimiento de qué tipo? Tiene un campo eléctrico constante. ¿Cómo es la fuerza eléctrica? Un movimiento uniformemente acelerado. Los electrones estarían acelerando, acelerando, acelerando, explota, ¿no? ¿No? ¿De acuerdo? No pasa eso. ¿Por qué? Porque los electrones van siendo acelerados, pero al mismo tiempo, tienen que pensarlo como un pinball. ¿Saben lo que es un pinball? ¿Sí? Bien, los electrones están en realidad golpeando con cosas que hay adentro del material. Hacen pum, pum, pum, pum, pum, pum.
+57:22
+En realidad, el movimiento real de los electrones no es avanzando así. Es haciendo pum, pum, pum, pum, pum. Pero en promedio, si uno les aplica un campo eléctrico, en promedio va poco a poco avanzando de a poquito. ¿Se entiende? ¿De acuerdo? Y en promedio avanza. Cada vez que golpea con el objeto con el que golpea en la red. pierde su energía, arranca de cero. Entonces se va acelerando, cada vez más rápido golpea, pierde la energía y esa energía se la entrega a las vibras. La red cuando la golpea se pone a temblar y ese temblor de la red se manifiesta en forma de calor.
+57:59
+Yo les he hablado, ya lo deben haber visto en cursos anteriores, que la temperatura es una manifestación de la energía cinética microscópica de los objetos. ¿Eso lo han visto? Y bueno, lo que pasa es eso, los electrones van golpeando y entonces cada vez la energía que le habíamos suministrado a través del campo eléctrico, lo habíamos acelerado, golpea y esa energía la entrega a la red y arranca de cero. Entonces la energía en lugar de ir utilizándose en movimiento del electrón, una parte se usa en movimiento del electrón, pero otra se disipa en lo que se llama efecto Joule.
+58:33
+¿Se entiende lo que digo? Por ahora es cuentito.
+58:36
+En los aislantes eso no pasa, o pasa muy, muy poquito. Algunos aislantes no son aislantes perfectos y logran conducir un poquititito, pero en realidad básicamente no pasa. Entonces, lo que tenemos que decir es eso, ¿no?
+59:09
+Ejemplo semiconductor.
+59:18
+Fuera del equilibrio, si aplicamos un campo eléctrico a un conductor,
+59:43
+se genera una corriente. Para que la corriente se mantenga, les recuerdo que no basta con eso, sino que además hay que hacer ese proceso de bombeo. Así que, cuando hay una corriente eléctrica, el sistema está fuera del equilibrio, no está equilibrado. Un sistema equilibrado no tiene corrientes.
+1:00:22
+Entonces, aún en un conductor, el movimiento de las cargas
+1:00:50
+...no se produce... ...libremente... ...hay una resistencia... ...y esto da lugar... ...esto... ...da lugar... ...a... ...energía...
+1:01:23
+disipada. Eso se llama efecto Joule. Vamos a ver todo esto. Esto es cuentito por ahora, pero vamos a verlo todo a lo largo del capítulo.
+1:01:42
+Todo esto que les digo tiene un bemol, que es esos materiales que les decía que eran más originales, que es que hay algunos materiales que a muy, muy, muy baja temperatura de algunos Kelvin, en realidad algunos no hay que bajar tanto la temperatura, pero... Empecemos por lo simple. Si bajan algunos materiales, pongamos el plomo, el plomo lo bajan a temperaturas de 3 Kelvin, casi cero absoluto. ¿Sí? por debajo de una cierta temperatura el plomo no tiene ninguna pero cero cero cero resistencia algunos materiales por debajo de cierta temperatura tienen resistencia cero quiere decir que usted genera una corriente eléctrica arma un anillo de ese material genera una corriente eléctrica sacan la fuente de corriente eléctrica dejan eso ahí pero tienen que mantener la temperatura de 3 kelvin vuelven un año después Miden la corriente, no se perdió nada, la corriente siguió funcionando.
+1:02:47
+Esos materiales, que son muy particulares, se llaman superconductores, y es un efecto que no se puede entender a nivel clásico, es un efecto que tiene su origen en la mecánica cuántica, y normalmente son materiales a temperaturas muy muy bajas, por debajo de 20 Kelvin. Pero en los años 80 se encontraron materiales que se llaman superconductores de alta temperatura, que siguen siendo superconductores a temperatura mucho más alta, pero igual es temperatura por debajo de cero, tipo 150 bajo cero, 200 bajo cero.
+1:03:20
+Pero es muy alta temperatura comparado con los 20 Kelvin. Incluso en un momento hubo la esperanza de poder llegar a construir superconductores a temperatura ambiente, pero nunca se logró. ¿Saben para qué es muy importante esto, desde el punto de vista tecnológico?
+1:03:40
+Bueno, el acelerador usa eso, pero los aceleradores grandes usan eso. ¿Pero por qué? ¿Qué es lo que usan? ¿Por qué fabrican con esto?
+1:03:52
+¿Qué es lo que fabrican con esto? ¿Electroimanes? Y un bobinado de ese material para producir campos magnéticos. Después en el curso vamos a ver cómo un bobinado puede permitir generar campos magnéticos. Pero lo importante es que si ustedes tienen un bobinado, un cable que da muchas vueltas así, genera... mucha resistencia, pierden mucha... Si ustedes quisieran fabricar un campo magnético muy, muy intenso, así con un bobinado, normalmente perderían mucha energía que se disiparía en calor.
+1:04:26
+Entonces tendríamos problemas de mantener la... de que todo no se quemara, sería ya un problema de por sí, problemas de refrigeración grande, pero además problemas de pérdidas colosales de energía. Casi toda la energía que ustedes utilizarían no seguiría en el campo magnético, sino en el... en lo que se pierde porque se calienta el cable. Entonces lo que se hace es que se baja muchísimo, si uno quiere poder conducir la corriente por unos cables sin pérdida, usa superconductores.
+1:05:00
+Ojo, tiene un costo energético igual porque tiene que mantener el sistema de refrigeración para mantener el sistema a muy baja temperatura. Pero en algunos casos, cuando uno tiene que hacer circular corrientes muy, muy, muy, muy grandes, le sale más barato energéticamente tener un sistema de refrigeración para mantenerlo a temperaturas bajísimas que lo que perdería en disipación por efecto Joule.
+1:05:28
+Bueno, pero con los superconductores a alta temperatura querían hacer cosas más ambiciosas. Como por ejemplo, no sé si escucharon hablar, suspensión magnética. ¿Sí? Tener trenes que no tocaran, que fueran flotando. Bueno, entonces veamos cómo se produce la conducción en un conductor. ¿Este es capítulo 6? Sí, capítulo 6.
+1:06:25
+Entonces, coloquemos acá un conductor y le aplicamos un campo eléctrico, E0.
+1:06:40
+Entonces, si estuviera en equilibrio, si el sistema está en equilibrio, si esperamos un rato y llega al equilibrio, ¿qué es lo que pasa?
+1:06:52
+dijimos que es un conductor en equilibrio, ¿cómo es su campo eléctrico adentro? Cero. Entonces, si le aplicamos un campo eléctrico afuera, lo que va a pasar es que... Fíjense, el campo es para allá, esto va a hacer que las cargas positivas se muevan para allá, nos va a generar unas cargas positivas acá, unas cargas negativas acá, por el déficit de carga que se generan. En realidad es al revés. Si es un metal, los electrones van para allá y se ubican acá, y nos queda un déficit de carga positiva acá. Esa polarización del material compensa el campo eléctrico que le propinamos y adentro qué campo eléctrico queda.
+1:07:28
+Cero. En equilibrio no hay campo eléctrico adentro. Ahora supongamos que en lugar de llegar las cargas acá y quedar depositadas acá, generamos algún mecanismo de bombeo que haga que las cargas vuelvan por el otro lado.
+1:07:46
+Tiene que haber, está claro, alguna fuente de energía que mantenga esto. Entonces se moverán las cargas positivas, imagino que fueran cargas positivas que se mueven, se moverán por acá, vuelven por el otro lado y continúan.
+1:08:02
+Entonces, movimiento de cargas positivas. Si las cargas son negativas, en realidad el movimiento se produce para el otro lado. Si es un metal, las cargas van a ir para el otro lado, pero si por ejemplo fuera un electrolito, puede ser que haya cargas moviéndose así. ¿De acuerdo? Y esto es lo que se llama una corriente eléctrica.
+1:08:30
+Está claro que el sistema este está fuera del equilibrio. No lo dejamos llegar al equilibrio. Para equilibrarse, para mantenerlo fuera del equilibrio, hay un agente externo que está bombeando todo el tiempo cargas de un lado para el otro. El sistema no lo dejamos llegar al equilibrio. El equilibrio es con campo eléctrico cero. Entonces, ¿cómo vamos a medir la corriente eléctrica? Entonces, tomamos un trozo del material... Tomamos una superficie en el material.
+1:09:09
+Puede ser la superficie de toda la sección del material o un pedazo. La superficie A. Y tiene la corriente que viene por allá. Así. Tiene las cargas que se mueven así. Movimiento de las cargas.
+1:09:23
+Movimiento de cargas...
+1:09:26
+Positivas. Si las cargas son negativas, van para... Si las cargas son positivas, van en el mismo sentido que la corriente. Si las cargas son negativas, si las cargas van para allá, diremos que la corriente va para el otro lado. Entonces, ¿cómo se define la corriente eléctrica? Y bueno, toman... miden... midamos... la carga...
+1:09:55
+Delta Q que atraviesa el área A en un tiempo delta T.
+1:10:28
+Entonces, la corriente por A será I igual al límite, cuando delta T tiende a cero, de delta Q sobre delta T. A la corriente eléctrica.
+1:11:16
+¿Entiende? ¿Preguntas?
+1:11:23
+Ojo. Ojo. Si son electrones, entonces, tomamos la superficie A, tomamos los electrones que se están moviendo para allá, electrones,
+1:11:45
+Entonces, la corriente positiva para la izquierda.
+1:11:59
+Si los electrones van para la derecha, diremos que la corriente es positiva para la derecha. Fíjense que tenemos que determinar un sentido de la corriente. Cuando decimos que la carga delta Q tiene un sentido, cuando decimos que la carga atraviesa, tenemos que orientar la superficie. Tenemos que decir que consideraremos una corriente positiva cuando las cargas positivas atraviesan la superficie A para allá. Entonces, cuando es una carga negativa que la atraviesa para allá, estaremos considerando que es una contribución negativa a la corriente.
+1:12:34
+Esto es como el flujo. De hecho, podemos pensar la corriente eléctrica como el flujo de un campo vectorial. Es igual. ¿De acuerdo?
+1:12:46
+¿Se acuerdan cómo era el flujo? Tomábamos una sección, veíamos cuánto pasaba un campo vectorial y demás. Acá podemos pensar lo mismo.
+1:12:55
+Entonces vamos a definir una cantidad de la cual la corriente se puede ver como un flujo.
+1:13:12
+Entonces la corriente
+1:13:24
+eléctrica puede ser vista, puede ser pensada como un flujo.
+1:13:44
+Fíjense que si yo multiplico la superficie por 2, supongamos que el que la cantidad de electrones que pasan están distribuidos uniformemente en la superficie. Si yo tomo una superficie doble, ¿qué va a pasar con la corriente que pasa? Si tomo una sección doble, el número de electrones que pasa por unidad de tiempo, ¿qué va a pasar? Se va a multiplicar por 2. Quiere decir que si yo tomo una superficie transversal, el número de electrones que pasan por unidad de tiempo, y la carga que pasa por unidad de tiempo, se multiplica por 2.
+1:14:18
+Quiere decir que I es proporcional a A. ¿Me explico? Por otro lado, supongamos que en lugar de tomar la superficie perpendicular al movimiento de los electrones, la tomo paralela a los electrones. ¿Cuántos son los electrones que pasan por unidad de tiempo? Cero. Es bien como el flujo, es lo mismo. Entonces, en lugar de contar líneas de campo, acá lo que cuentan es líneas de trayectorias de electrones. ¿Me explico? Miran la trayectoria del movimiento de un electrón, o de la carga que quieran. Bien, la carga que se esté moviendo. Y cuentan cuántas cargas pasan por unidad de tiempo.
+1:14:50
+Es exactamente igual. Entonces podemos definir... Entonces podemos... Definir... Un vector...
+1:15:06
+denominado densidad de corriente eléctrica tal que la corriente en una superficie A a través
+1:15:37
+a través de S, de una superficie S, sea la integral sobre la superficie S de J, escalar N por DS. J es la densidad de corriente. ¿Sí? Y está claro que J no depende, si yo tomo un flujo uniforme, J no depende si yo tomo un área doble o la mitad, porque si yo tomo una superficie perpendicular al flujo, J será I sobre A.
+1:16:21
+¿Sí? Entonces, J... ¿Cómo? Ah, un vector normal, a ver, como habíamos hecho en el flujo siempre, ¿no? Tomamos un vector normal a la superficie, en todo punto... Claro, ese es la superficie y acá tengo las líneas de las trayectorias de las partículas cargadas que cruzan.
+1:16:52
+Es contar lo mismo. Es la cantidad de carga que atraviesa la superficie por unidad de tiempo. ¿No entendí cómo? ¿Cómo?
+1:17:05
+No, no, ya aparece acá. Vos decís, tengo el conductor, agarro un área dentro del conductor y cuento cuánta carga atraviesa esa área por unidad de tiempo. Lo mismo. Entonces J tendrá la dirección y el sentido del movimiento...
+1:17:39
+promedio de cargas positivas o sentido opuesto si cargas negativas y si A es pequeña superficie plana
+1:18:13
+perpendicular, digo, normal a J, entonces la corriente a través de A será J por A. Si ustedes toman una región chiquitita, pueden despreciar cuánto varía J en la región y la corriente a través de esa superficie chiquitita es la densidad de corriente por el área. ¿Bien?
+1:18:44
+O pueden pensar al revés, la densidad de corriente lo pueden pensar como la corriente que atraviesa la superficie, dividido en la superficie, porque cuando la superficie es chiquita, la corriente será proporcional a la superficie. ¿Se entiende esto? Si multiplico por 2 el área, la corriente se multiplica por 2, así que si divido la corriente que pasa por la superficie por el área que la atraviesa, les queda una cantidad que no depende del tamaño del área. ¿Bien? Y eso es lo que se llama el vector densidad de corriente.
+1:19:17
+Entonces unidades.
+1:19:23
+Entonces las unidades en el sistema internacional la unidad de corriente será Coulomb
+1:19:42
+por segundo.
+1:19:45
+Y esto tiene un nombre, se le llama el Ampere. Se le anota A.
+1:20:05
+¿Cómo estamos de tiempo? Está, es la hora. Entonces el miércoles vamos a ver cómo calcular cómo relacionar J con el campo eléctrico aplicado. Eso se llama la ley de Ohm. O lo que es lo mismo, calcular la corriente en relación con la diferencia potencial entre los bornes de un conducto.
+

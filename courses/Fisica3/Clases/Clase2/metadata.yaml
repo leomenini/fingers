@@ -1,0 +1,67 @@
+title: Clase 2
+id: fis3-2015-2-02
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:21:00"
+
+stats:
+  transcript_words: 10006
+  summary_words: 1260
+  diagrams_pending: 3
+  equations: 12
+
+topics:
+  - Conservación de la carga (sistemas cerrados, explicación atómica)
+  - Cuantización de la carga (carga elemental e, quarks)
+  - Reacciones nucleares, desintegración beta, aniquilación de pares
+  - Estado actual de la teoría (simetría U(1), GUT)
+  - Conductores y aislantes (mecanismo microscópico en sólidos)
+  - Electrolitos (conducción iónica en líquidos)
+  - Polarización en objetos neutros (dieléctrica y conductora)
+  - Distribuciones continuas de carga (λ, σ, ρ)
+  - Fuerza de distribución sobre carga puntual (integral de Coulomb)
+  - Ejemplo: barra con densidad lineal uniforme
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "21"
+    verified: false
+  - title: Feynman Lectures
+    chapter: "1"
+    verified: false
+
+prerequisites:
+  - Clase 1 (Ley de Coulomb, principio de superposición, cuantización)
+  - Nociones de estructura atómica
+  - Cálculo integral básico
+
+next_topics:
+  - Campo eléctrico (Clase 3)
+  - Ley de Gauss
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: in-progress
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-23
+
+llm:
+  model: deepseek-v4-flash
+
+editorial_status: draft

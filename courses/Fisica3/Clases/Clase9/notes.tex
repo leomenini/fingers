@@ -1,0 +1,363 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 9: Campo Eléctrico desde el Potencial, Superficies \\
+        Equipotenciales, Conductores y Capacitores}\\[0.3em]
+        \large{El gradiente, equipotenciales, conductores en equilibrio
+              y capacitancia}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Campo eléctrico a partir del potencial}
+% ===================================================================
+
+Se conoce $V_B - V_A = -\int_A^B \mathbf{E}\cdot d\mathbf{l}$; ahora se
+busca la relación inversa: obtener $\mathbf{E}$ de $V$. En 1D, integrar y
+derivar son inversas, así que $\mathbf{E}$ es \enquote{menos la derivada}
+de $V$; falta precisar lo vectorial.
+
+\begin{notebox}[Doble ganancia]
+  El potencial es escalar (más fácil de calcular, sin ángulos ni
+  proyecciones) y, derivándolo, se obtiene gratis el campo (vectorial).
+\end{notebox}
+
+\subsection{Deducción: el gradiente}
+
+Para $A,B$ cercanos unidos por $\Delta\mathbf{s}$, despreciando la
+variación de $\mathbf{E}$ (valor medio):
+\[
+\Delta V_{AB} \approx -\,\mathbf{E}\cdot\Delta\mathbf{s}.
+\]
+
+Con $\Delta\mathbf{s} = \Delta x\,\hat{\mathbf{x}}$:
+\[
+V(\mathbf{r}+\Delta x\,\hat{\mathbf{x}}) - V(\mathbf{r}) \approx -E_x\,\Delta x,
+\]
+y en el límite $\Delta x\to 0$ aparece la derivada parcial. Repitiendo
+para cada eje:
+
+\begin{keybox}[Campo como gradiente del potencial]
+  \[
+  \boxed{E_x = -\frac{\partial V}{\partial x},\quad
+         E_y = -\frac{\partial V}{\partial y},\quad
+         E_z = -\frac{\partial V}{\partial z}}
+  \qquad \mathbf{E} = -\nabla V.
+  \]
+\end{keybox}
+
+\begin{notebox}[Se necesita $V$ en una región]
+  Para calcular $\mathbf{E}$ no basta $V$ en un punto: hay que comparar
+  puntos cercanos y derivar.
+\end{notebox}
+
+\subsection{Ejemplo: campo del dipolo desde el potencial}
+
+Potencial del dipolo (Clase 8), en el plano $xy$ que lo contiene, con
+$\cos\theta = y/r$ y $r=\sqrt{x^2+y^2}$:
+\[
+V = \frac{p\,y}{4\pi\varepsilon_0\,(x^2+y^2)^{3/2}}, \qquad p = Qd.
+\]
+
+\textbf{Componente $x$} (regla de la cadena):
+\[
+E_x = -\frac{\partial V}{\partial x}
+    = \frac{3p\,x\,y}{4\pi\varepsilon_0\,(x^2+y^2)^{5/2}}
+    \;\xrightarrow{\,y=0\,}\; 0 \quad\checkmark
+\]
+
+\textbf{Componente $y$:}
+\[
+E_y = -\frac{\partial V}{\partial y}
+    \;\xrightarrow{\,y=0\,}\; -\frac{p}{4\pi\varepsilon_0\,x^3},
+\]
+exactamente el resultado del cálculo directo sobre el eje.
+
+\begin{keybox}[Regla práctica]
+  Con el mismo esfuerzo se obtuvo $\mathbf{E}$ en cualquier punto (y por
+  simetría de rotación, en todo el espacio; $E_z=0$). Para el campo en un
+  punto genérico: calcular primero $V$ y luego derivar.
+\end{keybox}
+
+% ===================================================================
+\section{Superficies equipotenciales}
+% ===================================================================
+
+\subsection{Definición}
+
+Conjunto de puntos con potencial constante: $V(x,y,z) = V_0$.
+
+\begin{notebox}[¿Por qué \enquote{superficie}?]
+  Por el teorema de la función implícita: en 3D, una condición deja 2
+  coordenadas libres $\Rightarrow$ superficie 2D. Cada $V_0$ da una
+  equipotencial. (Hay excepciones, ver §3.1.)
+\end{notebox}
+
+\subsection{Propiedades}
+
+\begin{enumerate}[nosep]
+  \item $\Delta V$ entre dos equipotenciales \textbf{no depende} de los
+        puntos elegidos.
+  \item $\mathbf{E}$ es \textbf{normal} a la equipotencial: para $A,B$
+        cercanos en la superficie, $\Delta V_{AB}=0 \Rightarrow
+        \mathbf{E}\cdot\Delta\mathbf{s}=0$ para todo $\Delta\mathbf{s}$
+        tangente.
+  \item \textbf{Espaciado $\leftrightarrow$ intensidad:} con
+        $\Delta\mathbf{s}\parallel\mathbf{E}$,
+        \[
+        \Delta s = \frac{|\Delta V|}{E} \;\Longrightarrow\; E \propto \frac{1}{\Delta s}.
+        \]
+        En equipotenciales equiespaciadas en voltaje, el campo es más
+        intenso donde están más juntas. $\mathbf{E}$ apunta en la
+        dirección de máxima variación de $V$.
+\end{enumerate}
+
+\subsection{Ejemplos}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Sistema} & \textbf{Líneas de campo} & \textbf{Equipotenciales} \\
+\midrule
+Carga puntual & radiales & esferas (más juntas cerca de la carga) \\
+Placas paralelas & paralelas, equiespaciadas & planos equiespaciados \\
+Dipolo & de $+Q$ a $-Q$ & esferas cerca; plano bisector $V=0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{notebox}[Vocabulario]
+  \enquote{Equiespaciadas en voltaje} ($V_3-V_2=V_2-V_1$) no es lo mismo
+  que \enquote{en distancia}. Coinciden solo donde el campo es uniforme.
+\end{notebox}
+
+% ===================================================================
+\section{Potencial en conductores en equilibrio}
+% ===================================================================
+
+\subsection{El conductor es un volumen equipotencial}
+
+Como $\mathbf{E}=0$ dentro, para $A,B$ internos:
+\[
+V_B - V_A = -\int_A^B \mathbf{E}\cdot d\mathbf{l} = 0.
+\]
+
+\begin{keybox}[Conductor equipotencial]
+  \[
+  \boxed{\text{Todo el volumen de un conductor en equilibrio es equipotencial.}}
+  \]
+  Excepción a \enquote{una condición $\to$ una superficie}: aquí una
+  región 3D ($\mathbf{E}\equiv 0$) es equipotencial.
+\end{keybox}
+
+\subsection{Continuidad de la componente tangencial}
+
+Se completa la prueba (Clase 7) de que $\mathbf{E}$ es \textbf{normal} a
+la superficie del conductor:
+\begin{itemize}[nosep]
+  \item \textbf{Vía potencial:} $V$ constante en la superficie
+        $\Rightarrow \mathbf{E}$ normal $\Rightarrow$ tangencial nula
+        afuera; adentro era 0, luego es continua.
+  \item \textbf{Vía circuito rectangular:} rectángulo delgado a caballo
+        de la superficie; como la fuerza es conservativa,
+        $\oint\mathbf{E}\cdot d\mathbf{l}=0$, y despreciando los lados
+        cortos, $E_{1,\text{tang}} = E_{2,\text{tang}}$. Como adentro
+        $\mathbf{E}=0$, afuera la tangencial es cero.
+\end{itemize}
+
+\subsection{Ejemplo: cascarón esférico}
+
+Cascarón de radio $R$, carga $Q$ uniforme. Campo (Clase 6):
+\[
+E = \begin{cases} 0, & r<R \\[1mm] \dfrac{Q}{4\pi\varepsilon_0 r^2}, & r>R. \end{cases}
+\]
+
+Potencial (con $V\to 0$ en el infinito):
+
+\begin{keybox}[Potencial de un cascarón]
+  \[
+  \boxed{V = \begin{cases}
+    \dfrac{Q}{4\pi\varepsilon_0 R}, & r\leq R \;(\text{constante}) \\[2mm]
+    \dfrac{Q}{4\pi\varepsilon_0 r}, & r>R.
+  \end{cases}}
+  \]
+\end{keybox}
+
+$V$ es continuo pero con derivada discontinua (coherente con
+$\mathbf{E}=-\nabla V$ y el salto de $\mathbf{E}$ en $r=R$); adentro es
+constante (equipotencial).
+
+% ===================================================================
+\section{Capacitores}
+% ===================================================================
+
+\subsection{Qué es un capacitor}
+
+Un \textbf{capacitor} (condensador) almacena energía eléctrica de forma
+macroscópica, guardándola en el \textbf{campo eléctrico}. Se distingue de
+una \textbf{batería} (que almacena energía química). Ejemplo: dos placas
+conductoras conectadas a una batería que separa cargas ($+\sigma$ /
+$-\sigma$).
+
+\begin{notebox}[Usos]
+  Suavizar/regularizar la corriente, evitar saltos bruscos (arranque de
+  dispositivos), almacenamiento de energía.
+\end{notebox}
+
+\subsection{Capacitancia: $\Delta V$ proporcional a $Q$}
+
+Dos conductores aislados con $+Q$ y $-Q$. Por superposición, como
+\[
+V = \frac{1}{4\pi\varepsilon_0}\int \frac{dQ}{r},
+\]
+multiplicar todas las cargas por $\alpha$ multiplica $V$ (y $\Delta V$)
+por $\alpha$. Se define:
+
+\begin{keybox}[Capacitancia]
+  \[
+  \boxed{C = \frac{|Q|}{|\Delta V|}}
+  \]
+  Depende de la geometría, la distancia y el material, \textbf{no} de
+  $Q$. La placa positiva está a mayor potencial.
+\end{keybox}
+
+\subsection{Unidad: el Farad}
+
+\[
+[C] = \frac{\text{Coulomb}}{\text{Volt}} \equiv \text{Farad (F)}.
+\]
+
+\begin{notebox}[Escala]
+  El Farad es enorme: los capacitores reales van de picofarad
+  ($10^{-12}$ F) a microfarad ($10^{-6}$ F).
+\end{notebox}
+
+\subsection{Método general de cálculo}
+
+\begin{enumerate}[nosep]
+  \item Fijar geometría simple y carga $\pm Q$ en cada placa.
+  \item Calcular el campo $\mathbf{E}$.
+  \item Obtener $\Delta V = -\int \mathbf{E}\cdot d\mathbf{l}$.
+  \item $C = Q/\Delta V$.
+\end{enumerate}
+
+\begin{warnbox}[Geometrías arbitrarias]
+  En formas complicadas ni se sabe \emph{dónde} se distribuye la carga en
+  la superficie; requiere métodos numéricos. Solo geometrías simples
+  admiten solución analítica.
+\end{warnbox}
+
+\subsection{Capacitor de placas paralelas}
+
+Placas de área $A$ separadas $d$, con $+Q$ y $-Q$, vacío en el medio.
+Campo uniforme:
+\[
+E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{\varepsilon_0 A},
+\qquad
+|\Delta V| = E\,d = \frac{Q\,d}{\varepsilon_0 A}.
+\]
+
+\begin{keybox}[Capacitancia de placas paralelas]
+  \[
+  \boxed{C = \frac{\varepsilon_0 A}{d}}
+  \]
+\end{keybox}
+
+La próxima clase: cálculo de capacitancias en otras geometrías.
+
+\end{document}

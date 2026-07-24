@@ -1,0 +1,291 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 17: Campo de una Espira Circular, el Solenoide \\
+        y la Ley de Ampère}\\[0.3em]
+        \large{Campo sobre el eje, dipolo magnético, solenoide ideal
+              y la ley de Ampère}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Espira circular: campo sobre el eje}
+% ===================================================================
+
+Espira circular de radio $R$, corriente $I$; campo en $P$ sobre el eje a
+distancia $Z$.
+
+\subsection{Planteo y dirección del campo}
+
+Por simetría, el elemento \textbf{diametralmente opuesto} tiene igual
+componente axial pero componentes horizontales invertidas: al sumar,
+\textbf{solo sobrevive la componente axial} $B_z$ (sentido por la mano
+derecha).
+
+\subsection{Cálculo de la componente axial}
+
+Como $\mathbf{r}\perp d\mathbf{s}$:
+\[
+dB = \frac{\mu_0 I}{4\pi}\,\frac{ds}{r^2}, \qquad r^2 = Z^2 + R^2.
+\]
+Proyectando con $\sin\alpha = R/\sqrt{Z^2+R^2}$:
+\[
+dB_z = \frac{\mu_0 I R}{4\pi}\,\frac{ds}{(Z^2+R^2)^{3/2}}.
+\]
+
+\subsection{Resultado}
+
+Nada depende del ángulo; $\int ds = 2\pi R$:
+
+\begin{keybox}[Campo de una espira sobre su eje]
+  \[
+  \boxed{B_z = \frac{\mu_0\, I\, R^2}{2\,(Z^2+R^2)^{3/2}}}
+  \]
+\end{keybox}
+
+\subsection{Casos límite: centro y dipolo magnético}
+
+\textbf{Centro ($Z=0$):} $B_z = \mu_0 I/(2R) \neq 0$ (a diferencia del
+anillo cargado). Las líneas son cerradas y atraviesan la espira.
+
+\textbf{Lejos ($Z\gg R$):} $B_z \approx \dfrac{\mu_0 I R^2}{2|Z|^3} \sim
+1/Z^3$.
+
+\begin{keybox}[Dipolo magnético]
+  Sin monopolos magnéticos, la espira vista de lejos es un \textbf{dipolo}
+  ($1/r^3$, como el dipolo eléctrico), no una carga puntual ($1/r^2$). Se
+  define el momento dipolar:
+  \[
+  \boxed{\mu = I\,A}, \qquad A = \pi R^2.
+  \]
+\end{keybox}
+
+\begin{notebox}[Cuadrupolo]
+  Si el dipolo se anula (dos espiras opuestas), sobrevive el efecto
+  cuadrupolar ($1/r^4$).
+\end{notebox}
+
+% ===================================================================
+\section{El solenoide}
+% ===================================================================
+
+\subsection{Definición y planteo}
+
+Bobina cilíndrica con espiras \textbf{muy compactas}. Largo $L$, número
+total $N$, densidad $n = N/L$ (espiras por unidad de longitud). Se calcula
+$\mathbf{B}$ sobre el eje.
+
+\begin{notebox}[Por qué compactas]
+  Separadas serían hélices; pegadas, cada una se aproxima por una espira
+  circular. El cable está barnizado (aislado) para que la corriente dé
+  vueltas.
+\end{notebox}
+
+\subsection{Suma de espiras: la integral}
+
+Una espira en $y$ (punto en $x$) aporta el resultado anterior con $Z \to
+y-x$. En $dy$ hay $n\,dy$ espiras; integrando:
+\[
+B_z = \frac{\mu_0 I R^2 n}{2}\int_{-L/2}^{L/2}
+      \frac{dy}{[(y-x)^2 + R^2]^{3/2}}.
+\]
+Con $u = y-x$ y la primitiva $\dfrac{u}{R^2\sqrt{u^2+R^2}}$:
+
+\begin{keybox}[Campo de un solenoide sobre el eje]
+  \[
+  \boxed{B_z = \frac{\mu_0 n I}{2}\!\left[
+    \frac{L/2 - x}{\sqrt{(L/2-x)^2 + R^2}} +
+    \frac{L/2 + x}{\sqrt{(L/2+x)^2 + R^2}}\right]}
+  \]
+\end{keybox}
+
+\subsection{El solenoide ideal}
+
+$L \gg R$ con el punto \textbf{lejos de los bordes}: $|L/2 \mp x| \gg R$.
+Tomando $L\to\infty$ con $x$ fijo, los cocientes tienden a $\pm 1$.
+
+\subsection{Campo dentro y fuera}
+
+\begin{keybox}[Solenoide ideal]
+  \textbf{Dentro:} $\boxed{B_z = \mu_0\, n\, I}$ (constante a lo largo del
+  eje). \textbf{Fuera (eje):} $B_z = 0$.
+\end{keybox}
+
+Líneas intensas y paralelas dentro; se abren al salir (alcance externo
+$\sim R$).
+
+\begin{notebox}[Solo sobre el eje]
+  Este cálculo (Biot--Savart) es sobre el eje; la uniformidad en toda la
+  sección se prueba con Ampère (\S3.4).
+\end{notebox}
+
+% ===================================================================
+\section{Ley de Ampère}
+% ===================================================================
+
+\subsection{Enunciado}
+
+Análogo magnético de Gauss (equivalencia con Biot--Savart no probada
+aquí). Para una curva cerrada $C$:
+
+\begin{keybox}[Ley de Ampère]
+  \[
+  \boxed{\oint_C \mathbf{B}\cdot d\mathbf{l} = \mu_0
+         \sum_{k\ \text{a través de } C} I_k}
+  \]
+\end{keybox}
+
+\begin{notebox}[Analogía con Gauss]
+  Solo cuentan las corrientes que \textbf{atraviesan} $C$ (las exteriores
+  generan campo pero no contribuyen a la circulación). Orientar las
+  corrientes con la mano derecha según $C$. Útil solo con mucha simetría.
+\end{notebox}
+
+\subsection{Ejemplo: hilo infinito}
+
+Simetría de rotación y traslación $\Rightarrow$ líneas circulares,
+$\mathbf{B}$ tangente y de módulo constante. Con $C$ un círculo de radio
+$R$:
+\[
+B\,(2\pi R) = \mu_0 I \;\Longrightarrow\; \boxed{B = \frac{\mu_0 I}{2\pi R}}.
+\]
+(Una sola línea de cálculo; para un segmento finito hay que usar
+Biot--Savart.)
+
+\subsection{Ejemplo: cable cilíndrico}
+
+Cable de radio $R$, corriente $I$ uniforme. Con $\oint = B\,(2\pi r)$ y
+la corriente encerrada:
+
+\begin{keybox}[Cable cilíndrico]
+  \[
+  \boxed{B = \frac{\mu_0 I}{2\pi}\times
+  \begin{cases}
+  \dfrac{r}{R^2}, & r < R \\[2mm]
+  \dfrac{1}{r}, & r > R
+  \end{cases}}
+  \]
+\end{keybox}
+
+Crece linealmente hasta $r=R$ (máximo $\mu_0 I/2\pi R$), luego decrece
+como $1/r$.
+
+\subsection{Ejemplo: solenoide ideal}
+
+$\mathbf{B}$ paralelo al eje dentro, nulo fuera. Curva: rectángulo con un
+lado (largo $a$) dentro y el opuesto lejos (fuera):
+\begin{itemize}[nosep]
+  \item Lados perpendiculares: $\mathbf{B}\perp d\mathbf{l}$, no aportan.
+  \item Lado exterior: $B=0$.
+  \item Lado interior: $\oint = B\,a$.
+\end{itemize}
+Corriente encerrada $I(n\,a)$:
+\[
+B\,a = \mu_0\, I\,(n\,a) \;\Longrightarrow\; \boxed{B = \mu_0\, n\, I}.
+\]
+
+\begin{keybox}[Vale en todo el interior]
+  No se supuso estar sobre el eje: $B = \mu_0 n I$ vale en \textbf{cualquier
+  punto interior} (lejos de los extremos), no solo sobre el eje.
+\end{keybox}
+
+\begin{notebox}[Próxima clase]
+  Más aplicaciones de Ampère y materiales magnéticos.
+\end{notebox}
+
+\end{document}

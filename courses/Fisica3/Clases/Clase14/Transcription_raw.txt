@@ -1,0 +1,656 @@
+# Clase 14
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/14/
+
+Fecha de exportación: 7/23/2026, 11:55:38 PM
+
+
+Clase: 14
+Curso: F3
+
+Segmentos : 241
+Palabras  : 10215
+Caracteres: 59583
+
+0:16
+Nicolás Wschebor
+Bueno, vamos a continuar. Lo que voy a hacer ahora es... Vamos a ver, para terminar el capítulo, los circuitos RC.
+0:34
+Nicolás Wschebor
+7.6, creo. Circuitos RC. Los circuitos RC son circuitos que incluyen tanto resistencias... como condensadores y vamos a ver el más simple de todos que es el siguiente vamos a considerar acá una una FEM acá un cable así acá vamos a colocar un interruptor y después una resistencia R Y un circuito y un condensador C. Obviamente, podemos construir circuitos RC más complicados.
+1:27
+Nicolás Wschebor
+Un circuito RC es cualquier circuito que tiene fuentes, resistencias y condensadores. Y podemos hacer uno con varias mallas, varios condensadores, varias resistencias. Este es el más simple de todos. Entonces, circuito RC más simple.
+1:47
+Nicolás Wschebor
+Entonces vamos a pensar que inicialmente está el interruptor abierto, el condensador está descargado, no hay corriente, nada está pasando. Y le llamamos A a esta posición y B a esta posición. Entonces supongamos que en el instante T igual a cero, yo cierro. Entonces inicialmente, entonces, inicialmente... Y... I en T igual a cero, digamos, vale cero.
+2:19
+Nicolás Wschebor
+Y Q, la carga en el condensador, vale cero. Vamos a llamarle I a esta corriente y Q en la carga de este condensador, de esta placa del condensador. Quiere decir que, fíjense, si la corriente es positiva, si la corriente fuera positiva, si está entrando carga por acá, ¿qué pasa con Q? ¿Cómo Q se relaciona con I?
+2:47
+Nicolás Wschebor
+Pero de manera precisa, ¿cuál es la relación entre I y Q?
+2:51
+Nicolás Wschebor
+Claro, mi pregunta no es tan inocente, ¿por qué? Lo que va a valer es que I de T vale DQ sobre DT. No es tan inocente porque si hubiéramos llamado Q no a la carga de este lado, sino a la carga de este lado, ¿y cómo se relacionaría con Q? Sería menos la derivada. Así que hay que tener cuidado bien cómo uno elige las convenciones de signos. Con esta convención de signos, la corriente es la derivada de la carga de este lado. Bien.
+3:22
+Nicolás Wschebor
+Entonces cerramos el interruptor entre igual a cero. ¿Y qué va a pasar?
+3:29
+Nicolás Wschebor
+Inicialmente el condensador está descargado. Quiere decir, si está descargado, ¿cuál es la diferencia potencial entre los bornes del condensador? Cero. Cero. Así que inicialmente el condensador se comporta como un cable. No hay diferencia de potencial. ¿Sí? Y entonces inicialmente, ¿qué sucede? Funciona como una resistencia con una FEM. ¿Qué corriente se nos genera?
+3:55
+Nicolás Wschebor
+E sobre R. ¿Está? Como si no hubiera condensador inicialmente. Pero a medida que entra carga, el condensador se va cargando. ¿Y qué pasa con la diferencia de potencial entre los bornes del condensador? ¿Cómo? No va a ser cero, va creciendo, va aumentando la diferencia de potencial entre los bornos del condensador y por lo tanto, como la suma de la diferencia de potencial entre la resistencia, la suma de esta diferencia de potencial y esta es esta, y esto está fijo, a medida que el condensador se va cargando, la diferencia de potencial acá es más grande y por lo tanto esta es más chica y por lo tanto la corriente es más chica.
+4:32
+Nicolás Wschebor
+Y llega un momento que ¿qué pasa? Cuando esperamos mucho rato. Se cargó totalmente y entonces I vale cero. Después de un rato es esto, I es cero, así que esto ya no tiene diferencia potencial acá, y esto queda totalmente cargado. Y podemos pensar en un circuito donde solo tenemos condensador en presencia de I. Eso es lo que se llama el proceso de carga de un condensador. Después vamos a hacer las cuentas bien de... Esto es en el plano cualitativo. Pero después vamos a hacer bien las cuentas de cómo es el proceso de carga, bien hallar cuánto vale la carga como función del tiempo.
+5:08
+Nicolás Wschebor
+¿Bien?
+5:11
+Nicolás Wschebor
+Primera cosa. Segunda cosa. Supongamos que ya cargamos el condensador totalmente. Ya está totalmente cargado. ¿Bien? Y entonces ahora el interruptor... Ah, esperen, esperen que puse el interruptor mal. Espérenme. Está mal. A está acá y voy a poner el interruptor acá. Disculpenme. A era así. Disculpenme. Estaba mal dibujado. A está acá. Después de que está totalmente cargado, pasamos a la posición B. ¿Sí?
+5:40
+Nicolás Wschebor
+Había dibujado mal. Estaba mal puesto el interruptor. Pasamos a la posición B. El concesor está totalmente cargado. Entonces, una vez que hacemos eso, ya no hay... La batería queda descolgada, ¿verdad? Si ponemos el interruptor en la posición B... Ya no hay diferencia potencial. Entonces, ¿qué le va a pasar al condensador?
+6:01
+Nicolás Wschebor
+Se va a descargar. Entonces, ¿qué va a pasar? La carga que está acumulada acá va a querer circular por la corriente y venir para el otro lado. Está claro que esa situación tiene menos energía. A medida que la corriente va pasando, la carga entre los dos bornes La diferencia potencial va disminuyendo y la carga va disminuyendo y llega al final, al final ya no hay ni carga ni corriente. ¿Está? Es el proceso de descarga de un condensado. ¿Sí? ¿Se entiende? En el programa cualitativo. Entonces, para ver esto concretamente, vamos a mostrar un experimento.
+6:35
+Nicolás Wschebor
+¿Está pronto el experimento? No, aquí vamos a estar a pantalla.
+6:42
+Nicolás Wschebor
+Entonces vamos a conectar la pantalla. Vamos a mostrar entonces un experimento de carga y descarga del condensado.
+6:56
+Carla Yelpo
+Bueno, la idea es que nosotros lo que queremos visualizar es la carga y descarga del condensador. Entonces lo que queremos armar es el circuito como para cargarlo. Eso creo que ya lo comentaste ahí. Para cargar el condensador tenemos que poner la resistencia, la capacitancia y una fuente de voltaje continuo. Para descargarlo lo único que tendríamos que hacer sería sacar la fuente y cerrar el circuito. Nosotros la forma que tenemos de simular eso en realidad... Permiso. es conectar la resistencia, la capacitancia y conectarla a una fuente de onda cuadrada.
+7:29
+Carla Yelpo
+¿Cuál es la idea? Esta es la resistencia, la capacitancia y este potencial depende del tiempo. Y depende del tiempo de esta manera.
+7:43
+Carla Yelpo
+Va a valer un valor b durante un cierto tiempo y después va a valer cero. Y va a ser una función periódica de esa forma. ¿Ok? Entonces, ¿cuál es la idea? En este tramo es como si tuviéramos conectada la fuente y en este tramo es como si no hubiese fuente. Y eso es lo que estamos haciendo. Conectamos y desconectamos la fuente sucesivamente. Entonces, vamos a ver qué pasa con eso. Bien. Lo que está en verde, lo de arriba, estamos midiendo lo que sale de la fuente para asegurarnos que es justamente lo que nosotros queremos.
+8:15
+Carla Yelpo
+Y lo que está abajo es el potencial entre los bornes del condensador. O sea, estamos como si estuviésemos midiendo esto. Esto es lo que estamos midiendo. Que como bien saben, sabemos que la carga va a ser proporcional al potencial, por lo tanto el potencial entre los bornes del condensador va a ser proporcional a la carga del condensador. Es decir, eso que estamos viendo ahí es como si fuera la carga que está acumulada en el condensador.
+8:45
+Nicolás Wschebor
+Entonces, cuando estamos acá, está conectada la fuente, el capacitor empieza descargado y termina de cargarse. Y fíjense que el potencial máximo al que llega, estos están los dos, están los dos a la misma escala. El potencial máximo al que va a llegar va a ser justamente el potencial de la fuente. ¿Bien? Después esto va a empezar en ese mismo potencial y cuando sacamos la fuente, se descarga y termina en cero. Y así sucesivamente.
+9:18
+Nicolás Wschebor
+Ahí va. ¿Estamos en la imagen? Bien. ¿Me pueden mostrar el circuito más de cerca? No se puede mover.
+9:50
+Carla Yelpo
+Ahí va. Esta sería la fuente de onda cuadrada. Este es el osciloscopio con el que estamos midiendo todo. Una salida del osciloscopio está conectada a la salida de la fuente y la otra salida está conectada a los bornes del condensador, que no se ve mucho, pero está acá.
+10:04
+Carla Yelpo
+Ahí va. Acá tenemos la resistencia, también fuera de foco, y el condensador. Y entre los bornes del condensador es que conectamos una de las salidas del osciloscopio. Y eso es lo que estamos midiendo. Están los dos en serie conectados a la fuente. Ahí va.
+10:28
+Carla Yelpo
+Bueno, lo que va a hacer ahora es medir el potencial en la resistencia. Es decir, ahora cambiamos esta medida. En vez de medir esto, vamos a hacer como que midiéramos acá.
+10:49
+Carla Yelpo
+Ahora, lo que nosotros sabemos es que el potencial en la resistencia va a estar dado por esta ecuación, ¿verdad? O sea, el voltaje en la resistencia va a ser proporcional a la intensidad. Lo que vamos a tratar de ver ahora entonces va a ser qué pasa con la intensidad cuando se carga y descarga el condensador. Que lo esperable... Sería justamente que en ambos casos, es decir, uno conecta la fuente y empieza a circular corriente. Y cuando termina de estar completamente cargado, ya la intensidad es cero, ¿verdad? Ya no circula intensidad por ahí.
+11:20
+Carla Yelpo
+Y lo mismo va a pasar cuando se descargue. Es decir, va a empezar a circular corriente mientras se está descargando y cuando ya no hay carga en el condensador, ya no va a haber intensidad. Entonces, ahí va. En los dos casos, la intensidad siempre debería terminar en cero. En este caso, ¿qué pasa? Empieza en un valor negativo y termina en cero. Lo cual tiene sentido, ¿no? Porque en realidad, si el condensador cuando se cargó, por ejemplo, supongamos que la corriente circulaba en sentido antihorario, va a quedar carga positiva, digamos, acumulada a este lado y negativa del otro.
+11:52
+Carla Yelpo
+Cuando sacamos la fuente, entonces la carga va a empezar a moverse en el sentido contrario. Entonces tiene sentido que la corriente tenga signo menos cuando se está descargando el condensador. Y bueno, lo que vemos es eso. Lo que vamos a hacer ahora es mostrar la carga y descarga con medidas concretas. Bueno, mientras montan un segundo experimento que vamos a mostrar ahora en un ratito, hacemos las cuentas de esto.
+12:29
+Nicolás Wschebor
+Entonces lo que vamos a hacer es calcular... La carga como función del tiempo para este circuito. Y luego calcular la corriente. Entonces, fíjense. Vamos a aplicar la ley de mallas, ¿no? Entonces, coloquemos en la posición A. Posición A. Carga del condensado.
+13:00
+Nicolás Wschebor
+En esa posición tenemos que, vamos a circular la malla de esta manera. Entonces tenemos que E es igual a, digamos E menos R por I, porque estamos recorriendo la resistencia en el sentido de la corriente, así que el potencial cae. Luego, fíjense que el potencial acá, como estoy llamando Q a esta carga, la considero positiva. Si estoy considerando I positiva por acá, Q la considero positiva. La carga Q...
+13:31
+Nicolás Wschebor
+El potencial de este lado es mayor que el potencial en este. ¿De acuerdo? Porque el potencial del lado de la carga positiva es más grande. Así que nuevamente tenemos una caída de potencial. Menos Q sobre C. Y volvemos a la posición original, así que es cero. Así que tenemos la ecuación que es, la podemos escribir así. R por la derivada de Q con respecto al tiempo más Q sobre C es igual a E. ¿Está? Entonces carga, ecuación de carga...
+14:03
+Nicolás Wschebor
+de un condensador ¿bien? ¿todo el mundo de acuerdo? fíjense que esta ecuación es una ecuación diferencial no solo hace intervenir la variable q sino su derivada en este caso su derivada primera y es lo que se llama una ecuación lineal porque no aparece por ejemplo q al cuadrado o la derivada al cuadrado solo aparecen expresiones lineales de q de q y sus derivadas ¿bien?
+14:35
+Nicolás Wschebor
+y después también es una ecuación que se llama con segundo miembro porque no está igualada a cero sino igualada a una constante ¿bien? Entonces lo primero es preguntarnos si podemos encontrar una solución evidente de esta ecuación. Además, tratemos de encontrar una solución evidente de esta que está acá. Y la solución evidente es lo que pasa cuando esperamos mucho tiempo. ¿Qué dijimos que pasaba cuando esperamos mucho tiempo?
+15:00
+Nicolás Wschebor
+El condensador se cargaba totalmente y después, cuando se cargaba totalmente, ¿qué pasaba con la intensidad? Así que cuando esperamos mucho rato, una solución evidente del problema, que no corresponde con estas condiciones iniciales, ¿verdad?
+15:13
+Nicolás Wschebor
+No va a verificar estas condiciones iniciales, pero es solución de esta ecuación, es el caso en que dq sobre dt vale 0. Entonces solución particular...
+15:27
+Nicolás Wschebor
+Simple. ¿Sí? Es el caso en que dq sobre dt igual a cero. No todas las ecuaciones diferenciales tienen esta solución. En este caso sí porque es constante. Entonces tenemos una solución que le podemos llamar q particular, que es q particular sobre c vale e. Es decir, q particular es una constante que es e por c. Esta es la solución que va a corresponder al condensador completamente cargado, cuando ya la carga se volvió una constante.
+16:02
+Nicolás Wschebor
+Pero en realidad queremos hacer más, queremos ver cómo es la curva de Q como función del tiempo. Entonces, para ver eso, vamos a considerar la diferencia, vamos a llamar Q grande, Q de T, le vamos a llamar a Q chica de T, menos la solución particular, Q particular.
+16:20
+Nicolás Wschebor
+¿Sí? Vamos a restarle la solución evidente.
+16:27
+Nicolás Wschebor
+¿Sí? ¿Sí? Entonces escribamos... Esto es lo mismo que decir que Q chica de T se escribe como Q grande de T más Q particular. Y sustituyamos esto en la ecuación para ver cómo nos queda la ecuación para Q grande. Tenemos esperanzas de que la ecuación para Q grande sea más simple porque Q particular ya es solución. Quiere decir que cuando Q grande vale cero, esto ya es la solución. Entonces podemos esperar que este cambio de variables nos simplifique la ecuación. Y de hecho, la derivada de Q chica de t con respecto del tiempo, fíjense que como Qp es una constante, es simplemente la derivada de Q grande con respecto del t.
+17:07
+Nicolás Wschebor
+Entonces sustituyamos en la ecuación, nos queda R por la derivada de Q grande con respecto a T, más 1 sobre C, y ahora sustituyo esto por Q de T, más la particular, la particular la tengo escrita allá, E por C es igual a E.
+17:32
+Nicolás Wschebor
+¿Bien? Y ahí vemos que se nos simplifica este término con este término. Por eso fue que hicimos esto de restar la particular. Entonces la ecuación para Q grande de T queda más simple porque no tiene E. Es simplemente esta que está acá. ¿Bien? De hecho, fíjense que estas dos ecuaciones se parecen mucho.
+18:03
+Nicolás Wschebor
+Sí, para los que ya han visto algo de ecuaciones diferenciales, esto es lo que se llama la ecuación homogénea asociada a esta. Es la misma, pero matando los términos que no dependen de Q. Los cambiamos por cero. Esto es lo que se llama la ecuación homogénea. Pero no, lo que quiero comentar es que la solución general de la ecuación que nos interesa, esta que está acá, la ecuación de la carga del condensador, es... la suma de una solución particular, que ya hallamos, más una solución de la homogénea.
+18:41
+Nicolás Wschebor
+Si logramos resolver la homogénea, podemos resolver la otra, porque la solución de la que nos interesa es la suma de la homogénea con la particular. Pero la homogénea es un poquito más simple. ¿Bien? ¿Alguien sabe cómo resolver esta ecuación? ¿Han visto eso en cálculo 1? ¿O en cálculo 2? ¿Se acuerdan?
+19:05
+Nicolás Wschebor
+Hace mucho, mucho tiempo en una galaxia muy lejana. Bueno, les recuerdo cómo es. Esta ecuación es muy simple porque es lo que se llama de variables separables. Hay dos métodos muy cómodos para resolver ecuaciones de este tipo. Uno es porque uno ya sabe la solución, sabe que tiene soluciones exponenciales. Entonces, cuando ya sabe que tiene solución... Es re fácil. Pero supongamos que no sabemos eso. Entonces se puede resolver igual porque es de variables separables. ¿Qué quiere decir de variables separables? Que podemos poner de un lado todo lo que es Q y del otro lado todo lo que es T. Hagamos eso.
+19:38
+Nicolás Wschebor
+Escribamos R de Q sobre de T es igual a menos Q sobre C y ahora voy a pasar dividiendo Q y multiplicando de T. Entonces va a quedar esto es equivalente a R de Q sobre Q Es igual a dt sobre c. Esto lo hace todo el mundo, pero a los matemáticos esto les puede poner los pelos de punta.
+20:03
+Nicolás Wschebor
+Ellos también lo hacen, pero a escondidas.
+20:06
+Nicolás Wschebor
+No lo hacen en público. Y acá el menos, perdón. Gracias. Y ahora integramos de un lado y de otro. ¿Sí? Integramos de un lado y de otro. Entonces tenemos r...
+20:21
+Nicolás Wschebor
+Podríamos pasar la R viendo, no hagamos nada porque integrar con un factor... Entonces podemos integrar entre un cierto valor Q0 y Q de T de DQ sobre Q es igual, bueno la integral de esta es bien fácil, es T sobre C. Estamos integrando entre T igual a 0 y T. Si quieren lo podemos llamar así, Q en 0 y Q en T. Pero la integral de DQ sobre Q es bien fácil, ¿cuánto vale? ...el logaritmo, así que tenemos... ...vamos a pasar R como decía el compañero... ...dividiendo, entonces queda logaritmo... ...de Q de T... ...sobre logaritmo de Q... ...de 0, es una constante... ...es igual... ...a... ...menos T sobre RC... ...o lo que es lo mismo... ...es decir que Q de T... ...es igual a Q en 0...
+21:22
+Nicolás Wschebor
+por exponencial de menos T sobre RC.
+21:28
+Nicolás Wschebor
+Y esto es lo que llamamos solución general de la homogénea.
+21:42
+Nicolás Wschebor
+Hemos resuelto la ecuación homogénea. Y fíjense que la ecuación homogénea hace lo que queremos que haga. Porque ¿qué pasa cuando pasó mucho tiempo? Cuando hacemos t tender a infinito. ¿Sí? Levanten la mano. Cuando esperamos mucho rato, ¿qué pasa con esta solución?
+22:03
+Nicolás Wschebor
+Tiende a cero, ¿verdad? Porque es un exponencial, pero con un signo negativo. Y entonces, ¿qué quiere decir? Que Q de T, como Q grande de T tiende a cero, ¿tiende a qué cosa? A Q particular, que era lo que esperábamos. Esperábamos que cuando esperáramos mucho rato, la carga tendiera a la del condensador completamente cargado. ¿Sí? ¿Bien? Y ahí tenemos, podemos escribir ahora cuánto vale la carga entera.
+22:39
+Nicolás Wschebor
+Entonces, Q de T, dijimos, vale, la solución particular, que es E por C, más una constante, llamémosle Q0, por exponencial de menos T sobre RC.
+22:55
+Nicolás Wschebor
+Y podemos ahora imponer las condiciones iniciales. ¿Cuánto dijimos que valía la carga inicialmente? Cero. Entonces, en t igual a cero... Fíjense que las soluciones de las ecuaciones diferenciales normalmente no son únicas. Esta solución depende de un parámetro libre q cero que no sabemos cuánto vale.
+23:13
+Nicolás Wschebor
+¿Bien? Entonces, para que sean únicas hay que imponer condiciones en el instante inicial o en algún instante. Entonces vamos a imponer que en t igual a cero, q en t igual a cero vale cero. Entonces impongamos eso allá arriba, nos da qué. Si evalúo aquello en t igual a 0, me da qué.
+23:29
+Nicolás Wschebor
+0, que es lo mismo que q en t igual a 0, es igual a e por c más q0. Y la exponencial, ¿cuánto vale en t igual a 0? 1. Entonces acá despejamos que... con la condición inicial que teníamos, Q0 vale menos E por C. Esto depende de la condición inicial. Si el condensador inicialmente no estuviera descargado, sino tuviera cierta carga, hay que imponer lo que haya que imponer. Si inicialmente la carga no era cero, sino que era tantos coulomb, entonces sustituyendo nos queda Q de T es igual a E por C por 1 menos la exponencial de menos T sobre RC.
+24:16
+Nicolás Wschebor
+esta es la expresión de la carga de un condensador carga durante la carga bueno, valga la redundancia del condensador ¿bien? ¿se entendió? No se tienen que acordar estas fórmulas, tienen que acordarse del procedimiento.
+24:46
+Nicolás Wschebor
+¿El procedimiento cuál es? Primero restan la solución evidente, la solución evidente en este caso es cuando no hay corriente. La restan, les llega a una ecuación homogénea, resuelven la ecuación homogénea, en este caso se puede hacer separando de un lado todo lo que depende de Q y poniendo del otro todo lo que depende de T, resuelven, les da exponenciales y luego sustituyen, imponen las condiciones iniciales.
+25:12
+Nicolás Wschebor
+Veamos cómo queda la corriente. La corriente es la derivada de Q. ¿No es cierto? Entonces si derivo el primer término, ¿cuánto me da?
+25:24
+Nicolás Wschebor
+Cero porque es una constante. Entonces voy a derivar el segundo. El segundo me queda menos E por C por la derivada de la exponencial. ¿Cuánto vale la derivada de la exponencial?
+25:35
+Nicolás Wschebor
+Queda la exponencial, la misma exponencial, dividido lo que hay adentro de la exponencial, que en este caso es menos T sobre RC, estoy derivando con respecto a T, así que tengo que multiplicar por menos 1 sobre RC.
+25:48
+Nicolás Wschebor
+Entonces esto me queda E sobre R por la exponencial de menos T sobre RC. que es justo lo que observamos en el experimento hace un ratito. Lo que observamos en el experimento es que la corriente arrancaba en t igual a cero con un cierto valor, vieron que la corriente tenía un salto, pasaba de cero a un valor distinto de cero, y luego decrecía y tendía cero, que es lo que vemos acá. Y de hecho tenemos ahora la forma como decrece, decrece exponencialmente.
+26:24
+Nicolás Wschebor
+Y ahora vamos a ver... esto es todo lo que tiene que ver con la carga del condensador veamos ahora que pasa en la posición B en la posición en la cual el condensador se está descargando posición B descarga
+26:55
+Nicolás Wschebor
+Entonces, en ese caso, el circuito nos quedaba de esta manera. Nos quedaba el condensador, la resistencia.
+27:04
+Nicolás Wschebor
+E inicialmente, en T igual a cero, la carga no vale cero, sino que vale un cierto valor. Llamémosle Q sub cero. No, voy a usar más... Q minúscula sub cero. Esa es la carga en el instante inicial. Y ahora nuevamente... A ver, si inicialmente la carga es cero, acá no pasa nada. Si inicialmente está descargado, sigue descargado. Este circuito es muy aburrido si no hay una condición inicial. Una condición inicial no trivial. Pero ahora podemos aplicar la misma ecuación que teníamos antes. Fíjense que es igual, salvo que ahora no tenemos batería.
+27:36
+Nicolás Wschebor
+Así que la ecuación nos queda R por I más Q sobre C igual a cero.
+27:49
+Nicolás Wschebor
+¿De acuerdo? Es la misma ecuación, salvo que ya no tengo batería. Pero ¿a qué es igual? ¿A qué ecuación que ya hemos visto es igual? Es la homogénea. Entonces, descarga. Descarga. Entonces, como es la misma ecuación que la homogénea, fíjense, son iguales las dos ecuaciones, lo único que acá teníamos Q mayúscula y acá tenemos Q minúscula, tenemos la solución.
+28:25
+Nicolás Wschebor
+Ya aprendimos cómo resolver esa ecuación. Nos queda Q de T es igual a una cierta constante, llamémosle A mayúscula, por E a la menos T sobre RC. Esa es la solución general de la homogénea. Es una constante por la exponencial. ¿Bien? ¿Por qué más Q sobre C? Bueno, fíjate. Dijimos que la corriente la hacíamos pasar para allá.
+28:57
+Nicolás Wschebor
+Y dijimos que I es DQ sobre DT. ¿Cuál es el Q que corresponde a eso? Es este Q que está acá. ¿Sí? ¿De acuerdo? Entonces voy a hacer circular, voy a hacer recorrer el circuito en la dirección de I. Entonces como voy en la dirección de I, acá tengo una caída de potencia. Si querés le pongo un menos RI. Pero luego nuevamente acá también tengo una caída de potencial, menos Q sobre C. Porque este potencial es positivo y este es negativo. Entonces hay una caída de potencial las dos veces.
+29:32
+Nicolás Wschebor
+Si no, fíjense, eso es una cosa importante para que ustedes sepan, un test para ver si se equivocaron los signos. Si resuelven la ecuación y les queda con un más, es que en algún lugar se equivocaron, porque no puede ser que la carga se ponga a crecer sola. La carga va o permanecer constante o tender a cero, pero no puede ponerse a explotar. ¿Me explico? Espontáneamente, así sin que nadie suministre algo. ¿Bien? Entonces falta imponer la condición inicial. ¿Qué nos dice la condición inicial? Nos dice que en t igual a cero... Esto es Q en T igual a 0.
+30:05
+Nicolás Wschebor
+En T igual a 0 tenemos Q0 de este lado y de este otro lado tenemos A. Entonces A no es otra cosa que Q0. Entonces la solución nos queda la carga a la que habíamos llegado por exponencial de menos T sobre RC.
+30:29
+Nicolás Wschebor
+Bueno, y ahora por último calculemos la derivada para ver cómo es la corriente. Es la derivada de Q con respecto al tiempo. Y esto nos queda Q0 por exponencial de menos T sobre RC por lo que hay adentro de la exponencial que es menos 1 sobre RC.
+30:48
+Nicolás Wschebor
+Entonces, si la carga Q0 es positiva, vemos, como vimos recién en el experimento, que la corriente les queda negativa durante el proceso de descarga. Que es como decía Carla, es razonable. Si se estuvo cargando para este lado, en el momento de descarga, se descarga para el otro lado. La corriente va para el otro lado. ¿Se entiende? ¿Preguntas?
+31:17
+Nicolás Wschebor
+Bueno, entonces vamos a interrumpir nuevamente la parte de pizarrón para mostrar otro experimento. Ahora después, no voy a borrar, tapa un segundito, pero ya está.
+31:50
+Nicolás Wschebor
+Carla.
+32:05
+Carla Yelpo
+Bueno, la idea ahora, lo que hicimos hoy al principio, fue ver la carga y descarga del condensador con medidas concretas. La idea ahora es verlo de una forma un poco más visual. Entonces, lo que vamos a hacer es agarrar este condensador que está acá. No sé si lo ven todos. Bastante potente. Está en pantalla. Está en pantalla. Muy bien. ¿Cómo se ve mejor? ¿Con la luz o sin la luz? Bien.
+32:28
+Carla Yelpo
+Y lo que vamos a hacer es cargarlo con una fuente de continua. O sea, ahora ya no nos importa que sea una onda cuadrada porque no queremos cargarlo y descargarlo sucesivamente. Solamente lo vamos a cargar. Entonces ahí lo va a conectar a la fuente y le va a subir el potencial para cargarlo bastante.
+32:45
+Carla Yelpo
+Es la mamada de todos los condensadores. Y la idea sería, una vez que esperamos que se cargue un rato, vamos a sacarlo de la fuente y vamos a tener en nuestras manos, entonces, Las puntas de dos cables cargados con mucha carga y con signos opuestos. Entonces, si los acercamos, ¿qué es lo que tendría que pasar? Una chispa. Eso es lo que vamos a ver. Ahí se estaría descargando el condensador.
+33:16
+Carla Yelpo
+¿Ven? ¿Ven?
+33:28
+Carla Yelpo
+Vamos a repetirlo. Repetimos. ¿Entendió? Bueno, acá se llega a ver porque el condensador es bien grande, ¿no? Claro. Y son 30 voltios.
+34:00
+Nicolás Wschebor
+Fíjense que el tiempo típico que demora en cargarse es proporcional a la capacitancia del condensador.
+34:26
+Nicolás Wschebor
+lo último que quiero hacer es representar entonces en el pizarrón lo que vimos en el osciloscopio hace un rato durante la descarga voy a representar acá la carga Q como función de T durante la descarga en T igual a 0 arranca
+34:55
+Nicolás Wschebor
+tienen acá la expresión y arranca con Q igual a cero y llega en tiempos largos a E por C entonces es una cosa así y el tiempo característico acá es del orden de R por C esto es la carga del condensador
+35:26
+Nicolás Wschebor
+Y por otro lado, el segundo tramo, el tramo de descarga, arranca con un cierto valor, digamos la carga Q de T, arranca con un cierto valor Q0. Gracias. Y tiende a 0 también con una escala del orden R sobre C. Esto es la descarga.
+36:10
+Nicolás Wschebor
+¿Preguntas?
+36:16
+Nicolás Wschebor
+¿Se entendió esto?
+36:20
+Nicolás Wschebor
+Bien. Entonces lo que vamos a pasar es a... Si no hay preguntas voy a pasar a arrancar un capítulo nuevo. Campo magnético. ¿Preguntas? ¿Se está entendiendo? ¿Se está entendiendo?
+36:42
+Nicolás Wschebor
+Bueno, una pregunta recurrente es hasta qué práctico va para el parcial. Eso se los vamos a decir hasta último momento. No sabemos. Es hasta donde llegue el práctico que llegue menos lejos.
+37:15
+Nicolás Wschebor
+Campo magnético.
+37:18
+Carla Yelpo
+Una pregunta. Sí. El experimento que hicieron recién, lo primero que hicieron sería cuando iba nada y después cuando lo conectaron era corriente. Entonces, me están haciendo la pregunta, en el experimento que hicieron recién, ¿cómo era? Entonces, lo que hicieron era, como les explicó Carla, esto retomo, antes de arrancar con el campo magnético, entonces, en lugar, el experimento tal como lo tenían ellos, era acá, una onda cuadrada. Una señal cuadrada, tenían un condensador y una resistencia.
+37:53
+Nicolás Wschebor
+En lugar de prender y apagar, tienen un potencia...
+37:59
+Nicolás Wschebor
+Ah, en la segunda, cuando hicieron el condensador grande, primero cargaron, lo pusieron, esperaron mucho rato para cargarlo, cuando estábamos cargando, la situación A. Y luego, una vez que lo tuvieron cargado, desconectaron la fuente y lo unieron, pero con una resistencia muy chiquitita. ¿De acuerdo? Porque unieron directamente los cables. Los cables tienen una resistencia muy chiquitita. Entonces, cuando la resistencia es muy chiquitita, les genera... Fíjense que el tiempo, dijimos, el tiempo de descarga es proporcional a la capacidad, pero también a la resistencia.
+38:35
+Nicolás Wschebor
+Quiere decir que si la resistencia es chiquita, la descarga se hace muy rápido. Entonces se produce un pasaje rapidísimo de carga en muy poco tiempo y eso es lo que se llama un cortocircuito. Entonces cortocircuitaron y generó... Una chispa. ¿Qué quiere decir la chispa? Que la carga logró pasar no solo por los cables, sino un poquito antes por el aire.
+38:58
+Nicolás Wschebor
+Por eso genera esa luz, porque el aire se ioniza y eso es lo que genera la luz. ¿Se entiende? Así que fue un proceso de descarga muy rápido, con una resistencia muy chiquitita.
+39:14
+Nicolás Wschebor
+Entonces, por más que el condensador tenía una capacitancia muy grande, como R era realmente muy chiquitito este número, un número muy chiquitito, estaba descargándose rapidísimo.
+39:25
+Nicolás Wschebor
+¿Alguna otra pregunta?
+39:29
+Carla Yelpo
+¿Sí? ¿Qué pasa si no tuviera el condensador y solo conecta los cables? ¿No se genera ahora? No, no, porque la resistencia no acumula carga. Entonces, si vos conectaste primero la fuente a una resistencia, ahí se te genera una corriente, una diferencia potencial, pero que es proporcional a la corriente. Cuando desconectás la fuente, la corriente vuelve a ser cero.
+39:58
+Nicolás Wschebor
+Para generar la chispa, necesitas que algo haya almacenado la energía, ¿verdad? ¿Alguna otra pregunta?
+40:09
+Nicolás Wschebor
+Bueno, entonces vamos a arrancar con el capítulo de campo magnético. Campo magnético es como una segunda parte importante del curso.
+40:19
+Nicolás Wschebor
+Hasta ahora vimos todos procesos eléctricos, fundamentalmente procesos electrostáticos. Y ahora vamos a empezar a ver un efecto que es específico a las cargas en movimiento. De hecho, cuando la gente pensaba... El fenómeno del magnetismo es un fenómeno conocido desde la antigüedad. La gente sabía que algunas piedras, si uno las colgaba de un hilo, apuntaban siempre en la misma dirección. Y así se hacían brújulas. Se conocían piedras.
+40:50
+Nicolás Wschebor
+magnetitas se llaman, que uno las coloca en un lugar donde puedan moverse fácilmente, por ejemplo colgadas de un hilo o aguantadas en un soporte de manera que puedan moverse, girar libremente y apuntaban siempre para el mismo lado.
+41:07
+Nicolás Wschebor
+Y entonces, bueno, primero obviamente pensaban que eran cosas de brujería, pero una brujería muy útil porque era lo que les permitía a los navegantes orientarse. Los navegantes se orientaban sobre todo mirando las estrellas, pero a veces estaba nublado, entonces necesitaban otra ayuda y entonces las brújulas eran de mucha ayuda.
+41:30
+Nicolás Wschebor
+fue mucho más recientemente que se entendió como esos fenómenos magnéticos estaban relacionados con los fenómenos eléctricos entonces en este curso vamos a hablar un poco voy a empezar a hablar ahora de los imanes y vamos a ir viendo como se relaciona el fenómeno del magnetismo con el fenómeno de cargas eléctricas en movimiento y eso es lo que arrancamos hoy entonces lo primero que voy a comentar la sección es introducción
+42:03
+Nicolás Wschebor
+y entonces lo primero que digo es eso desde la antigüedad se sabe que algunas piedras típicamente óxidos de hierro se orientan
+42:38
+Nicolás Wschebor
+Y uno de sus lados apunta siempre hacia el norte.
+42:56
+Nicolás Wschebor
+Bueno, y el otro lado hacia el sur, ¿no? Entonces, ¿qué pasa cuando ponemos esas piezas? Esos se llaman imanes, imanes. ¿Qué pasa cuando...? Así que un imán tendrá siempre dos lados. Uno le vamos a llamar norte y al otro le vamos a llamar sur. Y le llamamos norte al que cuando la ponemos colgando apunta en la dirección del polo norte.
+43:28
+Nicolás Wschebor
+¿Bien? Y sur es el otro lado.
+43:31
+Nicolás Wschebor
+¿Bien? ¿Qué pasa si en lugar de dejarla suelta ubicamos dos imanes juntos? ¿Sí? Cuando colocamos dos imanes juntos, vemos que el polo sur de uno es atraído por el polo norte del otro. Cuando colocamos dos imanes cerca, el polo norte de uno es atraído...
+44:08
+Nicolás Wschebor
+por el polo sur del otro. Quiero insistir sobre que esto no son atracciones eléctricas.
+44:26
+Nicolás Wschebor
+Los imanes son neutros, realmente neutros. Acá esto no es un fenómeno eléctrico. Por lo menos no es un fenómeno electrostático. No están siendo atraídos porque acá haya cargas positivas y al otro lado hay cargas negativas. No es ese el fenómeno. Lo primero que quiero dejar bien claro es que se saquen con peine fino. Eso no es que haya unas cargas, pongamos, positivas acá y negativas acá y que se estén... No es ese el fenómeno. Es otro.
+44:54
+Nicolás Wschebor
+Suena parecido porque las cargas supuestas se atraen, pero no es eso. Entonces, por ejemplo, ¿qué pasa si yo ubico un imanzote acá, un imán grandote? Por ejemplo, un imán grandote puede ser la tierra. La tierra es un imán grandote. Entonces pongo el polo norte acá y el polo sur acá. Y ubico una cantidad de imancitos livianitos alrededor. Lo que va a pasar... es que se van a ubicar así. Sur, norte.
+45:27
+Nicolás Wschebor
+Sur, norte.
+45:30
+Nicolás Wschebor
+Sur, norte. Y del otro lado al revés. Norte, sur.
+45:36
+Nicolás Wschebor
+Norte, sur. Es decir, este casi no se mueve porque es muy pesado, lo tengo apoyado en la mesa, no se mueve. Y los otros los dejo en una situación en la que se puedan mover fácilmente, porque son livianitos, se orientan de acuerdo con la fuerza magnética. Y el polo norte de los imancitos se va a querer acercar al polo sur.
+45:57
+Nicolás Wschebor
+De hecho, si yo lo ubico al revés, este gira. Entonces eso quiere decir que el polo norte de la Tierra, ¿cómo es como imán? Como elemento de un imán.
+46:09
+Nicolás Wschebor
+Es un polo sur. El polo norte, terráqueo, es un polo sur en tanto imán. ¿Se entiende? ¿Se entiende? ¿Se entiende?
+46:22
+Nicolás Wschebor
+Los polos nortes de las brújulas se orientan hacia el polo norte. Pero como quieren acercarse hacia el polo sur del imán grandote, en realidad en el polo norte de la Tierra hay un... Entonces lo primero que uno podría decir es, bueno, voy a separar los polos de un imán. Voy a agarrar una sierra, es un pedazo de hierro típicamente, así que agarro una buena sierra, cerrucho, y quiero separar el polo norte del polo sur. ¿Sí?
+46:50
+Nicolás Wschebor
+Entonces, ¿qué pasa? Cuando me quedé con dos pedazos de imán y como cuando los arruché, lo que me quedan son dos imanes. No me quedan un polo norte y un polo sur. Entonces, no hay monopolos magnéticos. ¿Qué quiere decir eso? Si tengo...
+47:19
+Nicolás Wschebor
+un polo norte y un polo sur, acá un imán, y lo parto, cortamos, me quedan dos imancitos más chiquititos, este con un norte y un sur, y el otro con un norte y un sur.
+47:37
+Nicolás Wschebor
+Al partirlo por la mitad, se me forman... dos imanes, no logro separar los polos de un imán. Experimentalmente, han habido muchas búsquedas experimentales para intentar buscar lo que se llaman monopolos magnéticos. Y algunas teorías físicas predicen la existencia de monopolos magnéticos, pero nunca se ha detectado ninguno. De hecho les cuento como curiosidad que si hubieran monopolos magnéticos, algunos monopolos magnéticos, aunque fueran poquitos, Hay teorías relativamente simples que permiten entender que la carga eléctrica está cuantizada.
+48:16
+Nicolás Wschebor
+Si hay monopolios magnéticos, entonces la carga eléctrica tiene que estar cuantizada. Pero bueno, entonces mucha gente dijo, bueno, entendimos por qué hay cuantización de la carga, por qué deben haber monopolios magnéticos. Pero lamentablemente cuando uno va a mirar experimentalmente nunca los encuentra. Entonces esa explicación que mucha gente pensó, ah, entendimos la cuantización de la carga, no, no funciona porque en realidad no hay monopolios magnéticos. Por lo menos hasta el día de hoy no se han observado experimentalmente. Y les puedo decir que han habido muchos esfuerzos experimentales para encontrar monopolos magnéticos. ¿Bien?
+48:48
+Nicolás Wschebor
+Entonces, esta es una primera cosa. No hay monopolos magnéticos.
+48:53
+Nicolás Wschebor
+Y los imanes, los polos norte se atraen a los polos sur y demás. Ahora, en el siglo XIX se empezaron a hacer algunos experimentos para ver cómo estaba vinculado el magnetismo con la electricidad. ¿Sí?
+49:10
+Nicolás Wschebor
+Entonces, en lugar de poner un imán grandote acá, lo que Earth, esencialmente creo que fue el primero, lo que hizo fue puso un cable con una corriente eléctrica. ¿Sí?
+49:25
+Nicolás Wschebor
+Puso un cable para allá.
+49:28
+Nicolás Wschebor
+¿Sí? Pongan que esto está acá en una mesa, el cable pasa perpendicular a la mesa. ¿Sí?
+49:37
+Nicolás Wschebor
+Y coloca una cantidad de imancitos sobre la mesa.
+49:42
+Nicolás Wschebor
+¿Sí? Entonces va a ubicar a los... Los imancitos se van a ubicar así. Entonces, no quiero equivocarme en el sentido, van así. Van a ir ubicándose rotando.
+50:02
+Nicolás Wschebor
+¿Está? Entonces, las corrientes... las corrientes eléctricas generan efectos similares a los efectos magnéticos similares efectos magnéticos
+50:39
+Nicolás Wschebor
+similares a los imanes. Entonces, esta fue la primera vez que se entendió que tenía que haber una Un vínculo entre la electricidad y el magnetismo. Les repito una y otra vez, ese vínculo no es el vínculo inocente que uno podría decir, bueno, acá tiene que haber cargas positivas a cargas negativas o al revés. No es ese. ¿Está? Y de hecho, fíjense que el efecto magnético se produce por una corriente, por cargas en movimiento.
+51:14
+Nicolás Wschebor
+Cuando las cargas están quietas, no hay efecto magnético.
+51:19
+Nicolás Wschebor
+¿Está?
+51:29
+Nicolás Wschebor
+Los efectos magnéticos los generan cargas en movimiento.
+51:50
+Nicolás Wschebor
+Las cargas estáticas no generan efectos magnéticos. Todo esto es experimental, ¿no?
+51:58
+Nicolás Wschebor
+No solo esto es así, sino que no solo las cargas en movimiento pueden generar efectos magnéticos, sino que sucede al revés. Si colocamos una espirita, una espirita por la que pasa corriente, cerca de un imán, se comporta como un imán. Además, una espira en un campo magnético...
+52:33
+Nicolás Wschebor
+Una espira con corriente.
+52:39
+Nicolás Wschebor
+En un campamento energético se comporta como un imán.
+52:50
+Nicolás Wschebor
+Bien, hago un dibujo, polo norte, polo sur, y tengo acá una espirita unida...
+52:58
+Nicolás Wschebor
+Entonces por acá viene una corriente, sigue la corriente por acá, da la vuelta, vuelve por el otro lado.
+53:05
+Nicolás Wschebor
+una de las dos caras de la espira va a ser atraída por el polo norte. De hecho, si la ponemos así, va a girar, ¿o no? Para que el dibujo... Supongamos que este es el cable que va más por adelante. Quiere decir que está así, circulando así. Entonces se va a alinear así. Es decir, la parte esta va a estar atraída por el polo norte.
+53:36
+Nicolás Wschebor
+¿Se entiende? Quiere decir que si yo la pusiera para el otro lado, se me va a girar. Así que no solo las corrientes generan efectos magnéticos, sino que además las espiras con corriente eléctrica experimentan efectos magnéticos. Entonces, las cargas eléctricas
+54:05
+Nicolás Wschebor
+En movimiento, importante, en movimiento, también experimentan fuerzas cerca de un imán. Bueno, y podemos hacer la cosa total, podemos... Sentir, podemos ver si una espira por la que circula corriente genera una fuerza en otra espira por la que circula corriente.
+54:44
+Nicolás Wschebor
+La respuesta es sí. Es decir, dicho de otra manera, las espiras por las que circulan corrientes son lo que se llaman electroimanes.
+54:52
+Nicolás Wschebor
+Tienen las mismas propiedades que los imanes. Agarramos una bobinita por la que está pasando corriente, se comporta como un imán. Igual. Y de hecho, les cuento que los imanes...
+55:06
+Nicolás Wschebor
+Funcionan bajo ese mismo principio. Funcionan debido a que a nivel no macroscópico, no son corrientes macroscópicas, pero sí a nivel molecular, hay pequeñas circulaciones de corriente eléctrica. Todas alineadas entre sí. Normalmente lo que sucede para la mayor parte de los materiales es que tienen pequeñas corrientes eléctricas, pero orientadas al azar. Entonces no generan efecto magnético, porque unas van para un lado y otras van para el otro. Es como si tuvieran una cantidad de imancitos, pero todos orientados al azar. Entonces no genera efecto macroscópico.
+55:36
+Nicolás Wschebor
+En cambio, en los imanes, lo que pasa es que todas esas corrientecitas están orientadas para el mismo lado. Y entonces generan un efecto macroscópico que uno puede observar. Así que, en definitiva, todos los efectos magnéticos provienen de cargas en movimiento, por lo menos de corrientes eléctricas. ¿Se entiende? Así que estas dos cosas no son diferentes. En realidad, en un imán no vemos las corrientes porque suceden a nivel microscópico, pero hay corrientes. Las fuentes de los efectos magnéticos, lo que vamos a llamar campo magnético, son las cargas de movimiento o por lo menos las corrientes eléctricas.
+56:14
+Nicolás Wschebor
+Y... Y recíprocamente, y además, los objetos que experimentan la fuerza magnética son las cargas en movimiento, o por lo menos las corrientes eléctricas. Hago la diferencia entre cargas en movimiento y corrientes magnéticas porque a nivel molecular existen algunas corrientes eléctricas que no están asociadas con cargas que se mueven, sino con otra cosa. Pero no importa, conceptualmente es lo mismo. Básicamente, por ejemplo, los electrones pueden tener una especie de movimiento sobre sí mismos, una especie, lo de la especie es a resaltar, porque realmente no hay nada que esté girando, por lo menos nada que se conozca que esté girando, y sin embargo es como que tuviera una corriente circulando por adentro los electrones.
+57:03
+Nicolás Wschebor
+Últimas.
+57:08
+Nicolás Wschebor
+Entonces, bueno, vamos a querer ahora tratar de dar la ley que determina, así como dimos la ley de Coulomb, vamos a querer ver cómo son los efectos magnéticos sobre las cargas.
+57:24
+Nicolás Wschebor
+El tema es que para el caso eléctrico teníamos una cosa que era cómoda, que teníamos cargas eléctricas. Entonces, las cargas eléctricas son lo que podemos llamar monopolos eléctricos. Tenemos una cosa que genera el campo eléctrico que es sentida por otra, aún quietas. No existe el equivalente magnético. Acabamos de ver que no hay monopolos magnéticos. No puedo agarrar un polo norte y ver cuál es el efecto sobre un polo norte. Eso no lo puedo hacer porque no hay. Entonces vamos a tener que sustituir los monopolos magnéticos por objetos que generen campo magnético y que experimenten campo magnético.
+58:00
+Nicolás Wschebor
+Y esas son las cargas en movimiento. Entonces vamos a hacer una descripción, vamos a introducir el campo magnético de la manera siguiente.
+58:18
+Nicolás Wschebor
+Entonces para el caso eléctrico establecimos una descripción carga campo eléctrico
+58:48
+Nicolás Wschebor
+En el caso magnético, no tenemos monopolos magnéticos.
+59:19
+Nicolás Wschebor
+Entonces, en lugar de poner monopolio magnético, campo magnético, monopolio magnético, vamos a poner cargas en movimiento, campo magnético, cargas en movimiento.
+59:50
+Nicolás Wschebor
+Bien.
+59:52
+Nicolás Wschebor
+Entonces lo que vamos a hacer en este capítulo no es tanto... En este capítulo no nos vamos a ocupar de cómo las cargas en movimiento generan campo magnético. Eso lo vamos a ver en el capítulo siguiente. Lo que vamos a ver es, supongamos conocido... Primero vamos a ver cómo describir el campo magnético. Y segundo vamos a decir, supongamos conocido el campo magnético, veamos cómo es la fuerza que experimentan cargas en movimiento. ¿Se entiende?
+1:00:21
+Nicolás Wschebor
+Entonces vamos a decir, vamos a ubicarlos en una región en la cual hay efectos magnéticos. Vamos a ubicar cerca de un imán. Vamos a tratar de caracterizar en cada punto cómo describir la fuerza que ese imán le genera a una carga de movimiento. ¿Bien? Es lo que vamos a hacer ahora. ¿Se entiende? ¿Preguntas? A ver si no me estoy olvidando de decir nada.
+1:00:53
+Nicolás Wschebor
+Bien.
+1:00:56
+Nicolás Wschebor
+¿Arranco? Entonces lo que vamos a tratar de hacer es una descripción local. Igual que acá, ¿no? Acá decíamos, la carga me genera un campo y en otro punto hay otra carga que interactúa con ese campo que fue generado por la otra. Acá lo que vamos a decir es, bueno, algo me generó un campo magnético que todavía ni siquiera sabemos bien lo que es. veamos cómo es la fuerza que experimenta una carga de movimiento ubicada en un cierto lugar. Vamos a tratar de hacer una descripción local de cómo es la fuerza que experimenta una carga de movimiento en un cierto lugar donde hay un efecto magnético.
+1:01:40
+Nicolás Wschebor
+¿Se entiende? Capítulo 8, dijimos, ¿no? 8...
+1:01:47
+Nicolás Wschebor
+8.2 fuerza magnética sobre una carga en movimiento.
+1:02:08
+Nicolás Wschebor
+Entonces nos da un poco más de trabajo, porque para la fuerza de Coulomb era muy fácil. Ubicábamos la carga en un cierto lugar y veíamos qué fuerza experimentaba. Pero acá es más complicado, porque no solo hay que ubicar la carga, sino darle una velocidad. Entonces la fuerza no solo va a depender de la carga, sino de la velocidad. Es seguro que depende de la velocidad, porque si la velocidad es cero, la fuerza es cero. Entonces la fuerza depende de la velocidad. Tiene que depender de la velocidad. Entonces la idea va a ser así. Ubiquemos un imán, ¿sí?
+1:02:39
+Nicolás Wschebor
+Y colocamos por acá una carga Q con una cierta velocidad. Para evitar mezclarse con problemas eléctricos, voy a suponer que esto es totalmente neutro. Eso es una desgracia, porque en realidad las fuerzas eléctricas suelen ser muchísimo más grandes que las fuerzas magnéticas. Si yo tengo una carga así pelada... La probabilidad de que tenga alguna carguita por ahí, algún déficit de carga, hace que en general las fuerzas electrostáticas dominan. Para evitar ese problema, uno no suele tomar una carga moviéndose, sino una corriente.
+1:03:14
+Nicolás Wschebor
+La corriente es neutra, no tengo efecto eléctrico y solo tengo efecto de carga en movimiento. ¿Me explico? Pero sin tener ningún lugar carga en exceso. Pero eso es muy complicado, eso lo vamos a ver más adelante, pero desde el punto de vista conceptual da más trabajo. Entonces vamos a decir, bueno, vamos a suponer que todos los efectos eléctricos son cero, no hay ninguna carga, me voy a ocupar solo de los efectos magnéticos. Solo tengo esta carga. Todo lo otro es neutro. No hay efecto eléctrico, solo me voy a ocupar de los efectos magnéticos. Entonces, tengo que tratar de ver cómo el imán, cómo describo el efecto del imán, o acá en lugar del imán podría haber puesto una bobina con corriente, hace lo mismo, cómo describo el efecto del imán sobre la carga de movimiento.
+1:04:02
+Nicolás Wschebor
+Entonces, ¿qué es lo que hay que hacer? Hay que cerrar un imán, ubicar el imán, lo dejamos fijo,
+1:04:08
+Nicolás Wschebor
+Me tomo un punto y en ese punto primero voy a agarrar una carga. Pongamos una carga de un microculón. Y esa carga... Voy a hacer una cosa que da mucho trabajo. De hecho este experimento así es un experimento ideal. No se puede hacer este experimento tal como se los voy a escribir ahora. Se da muchísimo trabajo. Se hacen otros experimentos que son equivalentes. Pero les pido que imaginen este experimento porque es fácil de imaginar. Los experimentos reales son conceptualmente un poquito más complicados. Después vendremos sobre eso. Entonces lo que hacemos es colocamos la carga, ¿sí?
+1:04:42
+Nicolás Wschebor
+Con una cierta velocidad.
+1:04:44
+Nicolás Wschebor
+Y esa carga con cierta velocidad le tengo que poner algo para medir, mientras se está moviendo, por eso da trabajo, una fuerza. Pongamos un resorte, ¿está? Y mido... Y justo en el instante donde quiero medir, veo cuánto se estiró el resorte. Se dan cuenta que en la práctica eso da mucho trabajo a hacer. No se hacen así las cosas, se hacen de otra manera. Pero no importa. Conceptualmente, cuando pasa justo por este punto con cierta velocidad, miro de la fuerza. ¿Sí? Y repito el experimento cambiando las direcciones de la velocidad y cambiando el valor de la carga Q.
+1:05:15
+Nicolás Wschebor
+¿Sí? Repetimos el experimento, hay que hacerlo muchas veces. ¿Qué se observa? Se observa, primero...
+1:05:25
+Nicolás Wschebor
+que hay una dirección de la velocidad, de todas las direcciones que uno puede tener en el espacio, hay una dirección de la velocidad en la cual no hay fuerza. Si la carga en movimiento pasa en esa dirección, no experimenta fuerza.
+1:05:40
+Nicolás Wschebor
+Así que en todas las otras direcciones experimenta una fuerza. Pero hay una dirección, la misma carga, con el mismo módulo de la velocidad, no experimenta fuerza. Hay una dirección preferida en la cual no hay fuerza. Segunda cosa, si uno hace pasar la carga con velocidad doble, experimenta una fuerza doble.
+1:06:00
+Nicolás Wschebor
+Ahí donde hay fuerza. Si no la ubica en esa dirección, la ubica en otra dirección, si hace con fuerza doble, experimenta fuerza doble. Tercera cosa, si hace pasar ahora otra carga, por ejemplo una carga doble, pero con la misma velocidad, también la fuerza se multiplica por 2. Así que la fuerza es proporcional al módulo de la velocidad y es proporcional al valor absoluto de la carga. ¿Sí? ¿Bien? Y además depende de la dirección. Y lo último que se observa es que la fuerza es proporcional al seno del ángulo que la velocidad forma con esa dirección en la cual no hay fuerza.
+1:06:40
+Nicolás Wschebor
+Y por último, la última cosa que se observa es que la fuerza es perpendicular. La fuerza que experimento en la carga eléctrica es perpendicular a su velocidad y es perpendicular a esa dirección. Dijimos que hay una dirección preferencial en la cual si la velocidad va para ahí... En esa dirección no experimenta fuerza. La fuerza va a ser perpendicular a la dirección de la velocidad y de esa dirección preferencial.
+1:07:13
+Nicolás Wschebor
+Entonces es un conjunto de cosas que uno la puede resumir en una única ecuación vectorial que es re simple. Entonces toda la medida experimental...
+1:07:33
+Nicolás Wschebor
+que es ideal, los experimentos no se hacen realmente así, pero de cargas, de diferentes cargas, a diferentes velocidades, bueno, de varias cargas, a varias velocidades,
+1:08:01
+Nicolás Wschebor
+...se resumen... ...en... ...una expresión vectorial.
+1:08:20
+Nicolás Wschebor
+Es decir, la fuerza en un cierto punto... ...va a ser... ...proporcional a la carga... ...proporcional a la velocidad... ...producto vectorial con algo... que llamaremos campo magnético. ¿Por qué campo? Bueno, porque dije todos los experimentos hechos en un punto, pero ahora podemos repetir los experimentos en otro punto. Y típicamente los efectos magnéticos en puntos diferentes son diferentes, así que B va a depender de la posición.
+1:08:54
+Nicolás Wschebor
+Depende de la posición.
+1:09:02
+Nicolás Wschebor
+Depende de la posición tanto en módulo como en dirección y sentido. Y fíjense que esto resume todo lo que dijimos. El módulo de la fuerza es proporcional al valor absoluto de la carga, es proporcional a la norma de la velocidad. Hay una dirección preferencial en la cual la fuerza es cero. ¿Cuál es? Cuando la velocidad es paralela a este vector B, que le llamamos campo magnético... no hay fuerza. Y si la velocidad no es paralela, sino que forma un ángulo, el módulo de la fuerza es proporcional al seno del ángulo entre B y esa dirección preferencial, que es justo lo que llamamos las propiedades del producto vectorial.
+1:09:43
+Nicolás Wschebor
+Así que todo se resume de manera muy fácil. Y esto... lo pueden ver como un resultado experimental de cómo son los efectos magnéticos sobre una carga en movimiento cerca de algo que genera un efecto magnético cuando estamos en una región cerca de algo que genera un efecto magnético como un imán en cada punto la fuerza se va a poder describir en términos de un único vector que es que le llamamos campo magnético en algunos libros a B no le llaman campo magnético, le llaman de otras maneras pero en este curso le vamos a llamar campo magnético que es la denominación, cada vez se le llama más así.
+1:10:22
+Nicolás Wschebor
+En algunos libros se le sigue llamando de otra manera. ¿Bien? Entonces, observación.
+1:10:40
+Nicolás Wschebor
+Observación.
+1:10:45
+Nicolás Wschebor
+Esto quiere decir...
+1:10:49
+Nicolás Wschebor
+Que 1, F es perpendicular a B. 2, F, hay una dirección. La dirección, la de B.
+1:11:14
+Nicolás Wschebor
+Tal que si B es paralelo a B, entonces F vale 0.
+1:11:27
+Nicolás Wschebor
+3.
+1:11:32
+Nicolás Wschebor
+El módulo de la fuerza es proporcional al módulo de la velocidad. 4. El módulo de la fuerza es proporcional al valor absoluto de la carga. 5.
+1:11:44
+Nicolás Wschebor
+5F es perpendicular a B, así era esa dirección preferencial. Y por último, el módulo de F es proporcional al seno de teta, donde teta es el ángulo entre B y B.
+1:12:13
+Nicolás Wschebor
+Así que esa ley vectorial resume todo esto, que son cosas que se pueden medir experimentalmente, al menos en principio. Otra cosa que les quiero comentar es que, fíjense, la fuerza esta es perpendicular en todo instante a la velocidad.
+1:12:40
+Nicolás Wschebor
+¿Sí? Así que si yo tengo, sumamos que tuviera un campo magnético uniforme, ¿sí?
+1:12:46
+Nicolás Wschebor
+¿Cómo es el trabajo que entrega la fuerza magnética?
+1:12:54
+Nicolás Wschebor
+Una fuerza que es perpendicular en todo instante a la velocidad. ¿Cuál es el trabajo que entrega? Cero, porque recuerden que la potencia entregada es el producto escalar de la fuerza con la velocidad. Si ambas son perpendiculares, no hay potencia entregada, la fuerza magnética no ejerce trabajo, al menos cuando B es uniforme.
+1:13:16
+Nicolás Wschebor
+Cuando B se pone a depender del tiempo, aparecen otros efectos de los que vamos a hablar al final del curso. ¿Qué otra cosa más les quiero comentar? Bueno, unidades.
+1:13:42
+Nicolás Wschebor
+Unidades. Como de costumbre en el sistema internacional. Entonces la unidad del campo magnético en el sistema internacional la pueden ver de acá. Fíjense, es el Newton por Coulomb por metro segundo. Dividido segundo. Es decir, Newton dividido Coulomb dividido metro por segundo. Y esto tiene un nombre que se le llama el Tesla.
+1:14:09
+Nicolás Wschebor
+Tesla. ¿Está bien?
+1:14:16
+Nicolás Wschebor
+Y otra unidad que van a ver a veces en el curso, que se usa a veces, otra unidad, el Gauss.
+1:14:28
+Nicolás Wschebor
+Y un Tesla es 10 a la 4 Gauss.
+1:14:42
+Nicolás Wschebor
+Se usa a veces eso, a veces lo van a ver por ahí. Pero la unidad tipo es el Tesla. Normalmente, en los experimentos reales, el Tesla es una unidad de campo magnético gigantesca. Hay algunos experimentos con algunos Teslas, con experimentos con campos magnéticos gigantescos. Pero normalmente son fracciones chicas del Tesla que hay en los experimentos. Entonces, tenemos un campo vectorial, que es un campo magnético.
+1:15:15
+Nicolás Wschebor
+¿Sí? Vemos que ese campo magnético tiene las propiedades usadas de un campo magnético y resulta que podemos usar todas las ideas de líneas de campo que introdujimos para el campo eléctrico, también las introdujimos para un campo de velocidades, también las podemos aplicar para el campo magnético. Entonces, comentario.
+1:15:39
+Nicolás Wschebor
+Todas las ideas...
+1:15:45
+Nicolás Wschebor
+de líneas de fuerza pueden aplicarse al campo B pero dijimos que no hay monopolios magnéticos los monopolios magnéticos jugarían el rol como de cargas magnéticas que no hay quiere decir que como son las líneas de campo magnético Cerradas, no empiezan ni terminan en ningún lado.
+1:16:19
+Nicolás Wschebor
+Una línea que no empieza ni termina en ningún lado, o bien va de infinito a más infinito, o bien se cierra sobre sí misma. Entonces, las líneas de B no empiezan ni terminan.
+1:16:48
+Nicolás Wschebor
+son cerradas pues no hay monopolios magnéticos por ejemplo si tenemos un imán acá polo norte, polo sur las líneas van a tener esta pinta van a salir de por acá Van a dar la vuelta y vuelven por adentro.
+1:17:22
+Nicolás Wschebor
+Entonces, cuando uno está del lado inmediatamente de fuera del polo norte, diría que las líneas salen del polo norte. Pero en realidad es un poco más complicado. Hacia afuera del imán salen del polo norte, pero después vuelven por el otro lado. Entonces, un imán va a tener líneas de este tipo. Son líneas cerradas.
+1:17:48
+Nicolás Wschebor
+Líneas cerradas.
+1:17:51
+Nicolás Wschebor
+Bueno, alguien puede decir, no, pero pueden ir al infinito. Bueno, pero si van al infinito, quiere decir que en algún lado habrá otro imán, porque esa línea, si no se evapora, es que llega algo y será otro imán y nuevamente ahí la línea va a terminar siendo cerrada. Y por último, ¿qué pasa si además de tener una fuerza magnética tenemos una fuerza eléctrica?
+1:18:25
+Nicolás Wschebor
+Entonces cuando hay, cuando tenemos campos E y B eléctrico y magnético al mismo tiempo,
+1:18:52
+Nicolás Wschebor
+tendremos las dos fuerzas. Entonces la fuerza electromagnética en este caso será Q por E más B producto vectorial con B.
+1:19:04
+Nicolás Wschebor
+Y a esto se le suele llamar la fuerza de Lorentz.
+1:19:13
+Nicolás Wschebor
+Que no es otra cosa que decir que la fuerza electromagnética siempre se puede escribir en términos de un campo eléctrico y de un campo magnético.
+1:19:25
+Nicolás Wschebor
+Escritos de esa manera. Hasta acá llegamos por hoy. Continuamos el lunes que viene.
+1:19:35
+Nicolás Wschebor
+Vamos a seguir con el campo magnético.
+

@@ -1,0 +1,374 @@
+# Clase 12
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/12/
+
+Fecha de exportación: 7/23/2026, 10:58:34 PM
+
+Clase: 12
+Curso: F3
+
+Segmentos : 207
+Palabras  : 8511
+Caracteres: 48787
+
+0:17
+Bueno, velocidad de desplazamiento. La vez pasada habíamos visto que podíamos escribir la corriente eléctrica como la integral sobre una superficie de un vector que llamamos densidad de corriente eléctrica por la normal a la superficie por elemento de superficie. Es decir, si tenemos una superficie así, S...
+0:46
+En cada punto definimos una normal que define un sentido para la superficie. Tenemos una superficie S orientada. Y bueno, sobre esa superficie tendremos un campo vectorial que se llama densidad de corriente. Yo qué sé, J por allá.
+1:06
+Y la corriente es el flujo del vector J. Bien. Bien.
+1:16
+Ahora, supongamos que la superficie es chiquitita. Tomemos S pequeña y plana.
+1:32
+Tenemos una superficie S así, con área A, y en ella un vector normal, N, y vamos a dibujar J, que como S es pequeño, podemos despreciar la variación de J a lo largo de la superficie. Entonces en ese caso, I no es otra cosa que J por A por el coseno de teta, siendo el coseno de teta el ángulo que forma J con la normal a la superficie.
+2:08
+En particular, si justo tomamos la superficie normal a J, Simplemente nos queda J por A. Si J normal a la superficie y no es otra cosa que J por A. ¿Bien? Ahora, la dirección de J tiene un sentido.
+2:40
+Tiene un sentido físico que yo les comenté brevemente en la clase pasada. Es... La dirección es la dirección de desplazamiento promedio de las partículas en el lugar donde uno está midiendo. La dirección de J es la dirección de la velocidad promedio
+3:22
+de los portadores de carga y el sentido si los portadores de carga tienen carga positiva entonces el sentido
+3:52
+Entonces vamos a ponerle un nombre a esta velocidad, le vamos a poner BD. ¿Sí? Ahora digo bien quién es.
+4:02
+Entonces, si los portadores de carga tienen sentido, son positivos, el sentido de J es el de BD. Si los portadores...
+4:24
+tienen carga negativa, entonces el sentido de J es opuesto al de B. Y a este de B se le da un nombre, se le llama velocidad negativa.
+4:53
+de desplazamiento también se le llama a veces velocidad de deriva así que la D puede servir o para desplazamiento o para deriva quiero señalarles que la velocidad por ejemplo si toman un metal la velocidad de los electrones que se está moviendo en el metal normalmente es muchísimo más grande que BD. Los electrones van súper rápido, pero van en todas las direcciones.
+5:24
+Van súper rápido un ratito para allá, pero golpean con algo en la red y después van casi para el otro lado o en cualquier dirección. Esto lo que mide no es la velocidad de los electrones, sino la velocidad promedio en la que se mueven los electrones, que es mucho menos. Los electrones están haciendo un movimiento completamente aleatorio, pero si aplicamos un campo eléctrico, ese movimiento... Completamente aleatorio se superpone con un movimiento leve en la dirección del campo eléctrico si tienen cargas positivas o en la dirección opuesta si tienen cargas negativas.
+5:56
+¿Se entiende? Esto no mide el movimiento de los electrones, sino el leve movimiento promedio que se va generando fruto del campo eléctrico. Los electrones básicamente están moviéndose al azar.
+6:17
+Lo otro que vale la pena mencionar, yo les dije brevemente en la clase pasada, es que si el campo eléctrico es uniforme, el sistema llega a un régimen estacionario, estacionario no es lo mismo que de equilibrio, es decir, tiene una batería que está haciendo circular los electrones en el conductor, eso no es una situación de equilibrio, porque la situación de equilibrio es la situación de campo eléctrico nulo dentro del conductor, así que se están moviendo, hay una corriente, pero supongamos que es estacionaria, que la corriente no depende del tiempo. Entonces uno podría decir, yo les comentaba en la clase pasada, que uno no esperaría que en esa situación, si los electrones fueran como un gas moviéndose en una caja, uno no esperaría que uno llegara a una velocidad límite, sino una aceleración límite, porque a campo eléctrico constante tenemos fuerza constante sobre los portadores de carga y uno diría, entonces, aceleración constante.
+7:12
+Pero la situación real no es que los electrones son como... en un conductor como moviéndose en una caja, sino que están, como les decía, golpeando completamente todo el tiempo a una red, entonces se aceleran un poco, pero esa energía que acumulan se la entregan a la red, la golpean y luego arrancan de nuevo. Entonces, en promedio lo que se genera no es una aceleración constante, sino... Una velocidad constante. Es como que puedan pensarlo como si estuviera en un sistema viscoso. ¿Se acuerdan? La velocidad... Que en un sistema viscoso el sistema adquiere una velocidad final y no una aceleración final.
+7:45
+¿Se acuerdan de eso? De física 1. ¿Cuerpo en caída libre? ¿Sí?
+7:52
+¿Cómo es el movimiento?
+7:56
+Uniformemente acelerado. Si tienen en cuenta la fuerza viscosa del aire... aparece una fuerza extraviscosa que hace que cuando esperan mucho rato, el sistema alcanza una velocidad límite. ¿Se acuerdan de eso? Bueno, acá es un poco lo mismo.
+8:15
+El golpeteo con la red genera como una viscosidad para los electrones y en realidad cuando llegan sistemas estacionales van a una velocidad constante. Que es esta velocidad de desplazamiento en promedio.
+8:28
+Entonces ahora tratemos de relacionar De calcular BD. En términos de los... Calcular BD, establecer bien una relación cuantitativa entre J y BD. Entonces, para ello, tomemos un conductor con un campo E aplicado.
+9:02
+Entonces tenemos acá el conductor y acá tienen un campo E.
+9:12
+El campo a priori depende de las distintas partes del conductor. Pero voy a tomarme un pedacito chiquito del conductor, un cilindrito.
+9:24
+Supongo que el cilindrito lo tomo en la dirección del campo en ese lugar.
+9:32
+dibujé el conductor así, pero podría tener cualquier forma, podría ser, estoy pensando como en un cable, pero podría tener cualquier forma. Lo importante es que me tomo un cilindrito en la dirección del campo eléctrico, bueno, ya no tengo más celular, y tomo el cilindrito a lo largo, chiquito, a lo largo del campo eléctrico. Y lo tomo chiquito para poder suponer que el campo eléctrico en esa pequeña región es aproximadamente uniforme.
+10:03
+es aproximadamente uniforme en el cilindro ahora a este cilindrito le voy a hacer un zoom no me voy a ocupar de todo el cable sino de ese cilindrito chiquitito esto es un zoom El cilindro ahora que dibujo grande no es todo el cable, es solo el pedacito de cable donde puedo considerar el campo eléctrico uniforme.
+10:38
+Entonces si es uniforme, seguramente tengamos un J uniforme. Y como el material es isotrópico, J tendrá esta dirección. Y vamos a suponer por un momento que son electrones, si son... los electrones se moverán, la velocidad promedio de los electrones será para allá. ¿Sí? Y J será para allá.
+11:11
+Queremos relacionar una cosa con la otra. Entonces llámenle A al área de este cilindrito acá. A. ¿Sí?
+11:35
+y tomen el largo del cilindrito, voy a llamar el largo del cilindrito, el largo del cilindrito va a ser L, y lo voy a tomar ese largo igual a BD por un intervalo de tiempo. Defino el intervalo de tiempo de esta manera. Entonces para simplificar...
+12:07
+¿De acuerdo? Entonces esta superficie de acá también es A.
+12:13
+Pregunta.
+12:16
+Si N es igual al número de electrones por unidad de volumen.
+12:31
+¿Sí? ¿Cuánta será la carga que pasa... Por esta superficie, en el intervalo de tiempo delta T. ¿Cuánta carga pasa por la superficie A en el intervalo de tiempo delta T?
+13:02
+¿Sería N sobre L? ¿Sería N sobre L?
+13:11
+N es el número de electrones por unidad de volumen. Lo que hay que calcular es cuántos electrones hay acá. Cuántos electrones hay en este volumen. ¿Por qué hay que calcular cuántos electrones hay acá? ¿Qué le pasa a todos los electrones que están en este volumen?
+13:30
+Se están moviendo. ¿Y qué parte de esos electrones son los que atraviesan la superficie A en el intervalo delta T?
+13:48
+Sí, sí, pero de los que yo tenía acá adentro, ¿cuántos atraviesan esta superficie en el intervalo delta T?
+13:55
+Todos, ¿por qué?
+14:01
+Porque L es BD, a ver, en promedio, en realidad no es así, porque como les dije, la velocidad de los electrones es así, chun, chun, chun, se pasan, pero en promedio, y son muchísimos, así que podemos hacer un promedio, porque son muchísimos, ¿Cuántos pasan por acá? Bueno, todos los electrones que están en este volumen. Porque los que están acá ya no llegan a pasar porque tienen velocidad BD. En el tiempo de delta T llegan a ir hasta acá, pero no llegan a atravesar la superficie. Pero todos los que están acá justo les da el tiempo para cruzar en ese intervalo de tiempo esta superficie.
+14:33
+Entonces, en el intervalo delta T... los electrones que cruzan el área A son todos los del volumen todos los del cilindro esta es una idea en promedio importante entonces calculemos cuantos son entonces ¿Cuántos hay?
+15:13
+Hay N. ¿Cuántos van a ser?
+15:21
+Si yo quiero calcular el número de electrones en este volumen, ¿cuántos son? Claro, N chico por el volumen. ¿Y el volumen cuánto vale?
+15:31
+A por L o A por BD por delta T. ¿Bien?
+15:43
+Entonces, ¿cuánto es la carga que atraviesa A? Entonces, la carga delta Q a través de A en el intervalo delta T, ¿cuánto será?
+16:12
+N por E. Y en realidad, con un menos. Entonces, delta Q será igual a la carga de un electrón por el número de electrones, por N. Entonces, esto queda menos E por, dijimos, A por BD por delta T y hay que multiplicar por el N chico. ¿Sí? Entonces, la corriente...
+16:44
+a través de la superficie A es I igual a delta Q sobre delta T. Estoy pensando que tomo, dijimos el cilindrito es chiquito, así que delta T es chiquito, así que esto es lo mismo que el límite, ¿no? Y esto es igual al límite porque delta T es chiquito, ¿sí? Entonces dividimos por delta T y esto nos queda menos E por A por BD por N. ¿De acuerdo?
+17:32
+Y entonces la corriente J, ¿qué hay que hacer para calcular la densidad de corriente J?
+17:41
+Dividir por A, ¿verdad? Para pasar de la corriente a la densidad de corriente hay que dividir por el área. ¿Por qué? Porque la superficie que tomamos es normal a la densidad de corriente, ¿verdad? Entonces nos queda menos E por BD por N. Y esto de hecho lo podemos escribir vectorialmente, ¿no? De hecho podemos escribirlo como vectores.
+18:11
+Entonces, densidad de corriente como función de Vd. Si los portadores de carga no hubieran tenido carga menos E, hubieran tenido una carga Q, ¿cómo hubiera quedado esta fórmula? ¿Qué hay que hacer ahí?
+18:42
+hay que simplemente reemplazar el menos E por Q. Y si tienen varios tipos de portadores de carga, piensen en un electrolito, tienen varios tipos de iones que se mueven, hay que sumar sobre las contribuciones de cada uno de los iones. ¿Está claro? Teniendo en cuenta la velocidad de deriva de cada uno de los iones, no todos los iones tienen por qué tener la misma velocidad de deriva, y la carga de cada uno de los iones. ¿Se entiende?
+19:17
+Entonces ahora, para hacernos una idea, calculemos una estimación, aunque sea grosera, de cuánto vale BD.
+19:37
+Entonces, estimación... Estimación...
+19:44
+De cuánto vale en un conductor. Entonces vamos a hacer algunos números.
+19:54
+Tomemos un alambre de cobre.
+19:57
+Tomemos un alambre de cobre con diámetro...
+20:12
+1 con D igual a 1 con 8 milímetros.
+20:20
+Y por el que pasa una corriente, una corriente típica de un amperi pico, I igual a 1 con 3 amperi, corriente común y silvestre. Entonces la densidad de corriente será I dividido de la superficie, la superficie es pi, pensemos que es un cable con sección circular, voy a hacer la aproximación de que la densidad de corriente es uniforme, eso no tendría por qué ser exactamente así, pero lo que no me interesa no son los números precisos, sino una estimación grosera del orden de magnitud de BD, para tener idea de qué tamaño tiene.
+21:05
+Entonces sería pi por radio al cuadrado, pi por radio al cuadrado es pi por diámetro al cuadrado sobre 4. Porque el diámetro es dos veces el radio. Así que al cuadrado... Y esto nos da 51 amperes por centímetro cuadrado. Ahí tenemos la densidad de corriente. Entonces ahora podemos tratar de calcular...
+21:36
+N. N. Entonces, para calcular N, tenemos que hacer una suposición de cuántos electrones son aportados por cada átomo de cobre.
+21:49
+¿Sí? Entonces, vamos a ver cuántos electrones de conducción tiene cada átomo de cobre. Normalmente tiene uno. ¿Está? Pero... Pero... Bueno, entonces vamos a hacer la suposición de que todos ellos participan en la conducción. Vamos a hacer esa estimación. Supongamos...
+22:08
+Supongamos, para tener una estimación, supongamos que tenemos un electrón por átomo de cobre. Entonces podemos calcular cuántos, cuál es la densidad de electrones por unidad de volumen. ¿Cómo hacemos eso? Decimos N...
+22:38
+El número de electrones, si tenemos un electrón por átomo de cobre, el número de electrones por unidad de volumen será el número de átomos de cobre por unidad de volumen. ¿De acuerdo? Porque estamos diciendo que cada átomo aporta un electrón. Entonces tenemos tantos electrones por unidad de volumen como átomos por unidad de volumen.
+23:07
+Bueno, entonces esto normalmente no es el dato que uno tiene, uno normalmente lo que tiene es la densidad de masa del cobre, densidad volumétrica de masa, de masa del cobre, eso está en las tablas que uno ve en los libros, Tiene lo que se llama la masa molar del cobre. Que nos dice cuánto pesa un mol.
+23:45
+¿Se acuerdan de química del liceo? ¿Se acuerdan cuánto es? ¿Se acuerdan lo que es un mol? Es una cierta cantidad de materia. Y la masa molar es cuánto pesa esa cantidad de materia. ¿Sí? ¿De acuerdo? Bueno, esto lo pueden sacar de las tablas. Esto vale 8,96 por 10 a la 3 kilos por metro cúbico. Y esto lo pueden sacar también de las tablas que les da 63,5 gramos por mol.
+24:22
+Entonces, esta es la densidad volumétrica de masa. Esta es la masa molar de un mol. Pero si queremos el número de átomos, ¿por qué hay que multiplicar? Por el número de elementos de un mol. ¿Cuántos átomos hay en un mol? El número de abogado. Hay que multiplicar por el número de abogado. Número de abogado. Que vale un número grandote que es 6,02 por 10 a la 23.
+24:53
+¿Está bien?
+24:58
+Entonces, si sustituyen todo eso, pueden calcular el número de átomos que hay por unidad de volumen.
+25:11
+Y eso les da N, vale 8,49 por 10 a la 28 electrones por metro cúbico.
+25:34
+Pero entonces pueden calcular BD, BD va a ser igual a J, estoy calculando los módulos, ¿no? A J dividido la carga del electrón y dividido N. La carga del electrón lo sabemos, J ya lo calculamos recién, sustituyen y eso les da 14 centímetros por hora. Entonces, estimación de la velocidad...
+26:05
+de desplazamiento. Si cambian de metal, estos números cambiarán un poco, porque la masa molar del material va a cambiar, la densidad volumétrica de masa también va a cambiar, pero en realidad, sustancialmente, esto les da el orden de magnitud, no será para otro material, en lugar de ser 14 centímetros, será 7 centímetros por hora, en otro será... 24, pero de ese orden de magnitud, algunos centímetros por hora.
+26:39
+¿Sí?
+26:41
+Y eso no les resulta sorprendente, dice que los electrones avanzan en promedio en un cable, en la conducción eléctrica, algunos centímetros por hora.
+26:50
+¿Les resulta sorprendente? Sí, ¿por qué? ¿Cómo? ¿Cómo? Bueno, los electrones ellos mismos se mueven rapidísimo. Plan, plan, plan. Pero en promedio se mueven de a poquito porque en realidad el movimiento es básicamente aleatorio, pero el movimiento es neto. Pero ¿por qué uno pensaría que van rapidísimo? Cuando se prende la luz enseguida se prende.
+27:21
+Fíjense, entre llegar de acá a esa lámpara va a demorar más de un día el electrón en promedio. No, hay algo que está mal, ¿no? Claro, tiene que pensarlo como una manguera llena. Ustedes tienen una manguera llena, ¿sí? Llena. Las curvan un poquito para arriba que no se les salga el agua. La ponen en la canilla. Abren la canilla. La velocidad en la que avanza el agua no es mucho, pero sin embargo instantáneamente ya sale agua por el otro lado, ¿se entiende?
+27:52
+La que está saliendo no es la que está justo en la canilla, es la que está ya del otro lado, ¿se entiende? Entonces van todas juntas. Entonces la velocidad de transmisión de la señal eléctrica es mucho mayor que la velocidad de desplazamiento. Guarden eso en mente. Ojo, ojo, la señal eléctrica va mucho más rápida.
+28:31
+Entonces pensar en una manguera llena. ¿Bien? Otro comentario. El cálculo que hicimos en realidad está mal. ¿Está? ¿Está? Les digo por qué. En realidad la velocidad de desplazamiento es chiquita, pero no tan chiquita. Es como 100 veces más grande en realidad.
+29:02
+Pero si en vez de ser más grande, igual sigue siendo muy sorprendente, porque si en lugar de ser 14 centímetros, es 10 metros por hora, igual, para llegar de... Esto igual sería sorprendente, porque en lugar de ir de allá a allá en un día, igual les lleva como casi una hora, digamos, o capaz que 10 minutos, pero igual, no pasa eso, ¿no? La señal va muchísimo más rápida. ¿Por qué está mal la estimación? La estimación es que si bien el número de electrones de conducción del cobre por átomo es uno, efectivamente cada átomo aporta un electrón para la conducción, hay efectos que no son clásicos, que no les puedo explicar, que hacen que los electrones, la mayoría de los electrones no participen en la conducción.
+29:53
+La mayoría de los electrones no participan en la conducción, solo una pequeña proporción de los electrones participan en la conducción. Y a temperatura ambiente, esa proporción es más o menos un centésimo. Solo un centésimo de los electrones que están capacitados a conducir, es decir, los electrones que no están pegados al átomo, los electrones que pueden moverse libremente, La mayoría de ellos no pueden participar. Y les puedo decir en dos palabras cuál es el fenómeno. Ustedes conocen del liceo de química el principio de exclusión de Pauli.
+30:24
+¿Se acuerdan del principio de exclusión de Pauli? ¿Qué dice? Se acuerdan de la palabra, pero no qué es qué. Les dice que en un átomo no pueden tener dos electrones en el mismo estado. En el que tienen que encontrar el estado orbital y el estado de spin. ¿Se acuerdan de eso? Sí. Eso se ve en química. Bueno, eso no se da solo en los átomos, se da también en la conducción. Y lo que sucede es que los electrones están ocupando todos los estados posibles. Entonces, los únicos electrones que se pueden mover son aquellos que se pueden mover en estados que no están ocupados.
+30:58
+Como casi todos los estados están ocupados, la mayoría de los electrones no tienen cómo moverse porque tienen todos estados ocupados. Se entiende alrededor y no tienen cómo moverse. Entonces, solo una pequeña proporción de los electrones tienen al lado de ellos otros estados que no están ocupados.
+31:14
+No, lo de valencia es otra cosa. Lo de valencia son los electrones que están unidos al núcleo. Esto estamos hablando de todos los electrones que son de conducción. Pero la mayoría de ellos no se pueden mover, pero por razones que no son clásicas, que tienen que ver con el principio de exclusión de Pauli. Entonces, en realidad, este número, el número correcto, Este que está acá. En realidad, los que participan realmente son como 100 veces menor y la velocidad de desplazamiento, por lo tanto, es 100 veces menor.
+31:45
+Entre 10 y 100. Es un número que... ¿Qué?
+31:50
+No, porque depende de la temperatura. Si cambian la temperatura, cambian esas cosas. Y depende también, depende de una cantidad, lo estoy haciendo para el cobre, pero si cambian los materiales, hay una cantidad de cosas que cambian. Entonces, depende de la geometría de la red cristalina, depende de una cantidad de cosas. Entonces, depende justamente de cuántos, cada electrón, cuántos estados cerquita tiene libres. Y eso es una cosa que depende mucho de la geometría. En general, la mayoría están ocupados. ¿Qué proporciones están desocupados?
+32:20
+Depende de la temperatura y de la geometría de la estructura de las bandas de conducción. Entonces, uno de cada 100 átomos aporta un electrón. No, todos los átomos aportan un electrón.
+32:40
+Básicamente, en el cobre, uno por electrón. Lo único es que la mayoría no se pueden mover, están apretados. apretados porque sus vecinos están todos ocupados. Recuerden que solo pueden tener un electrón... Eso, solo pueden tener un electrón por estado cuántico, como en los átomos. Entonces, como todos están ocupados, no tienen cómo moverse. Simplemente tienen que pensar que hay como una especie de rigidez por eso. Y eso hace que, si bien todos están... teóricamente dispuestos a conducir, no están ligados fuertemente a los átomos, en la práctica no se pueden mover porque están rodeados de otros que los aprisionan.
+33:20
+Pero eso se los cuento para su cultura general, pero para que sepan que en realidad los números reales no son exactamente eso. Sí tienen que retener dos cosas. Que la velocidad de desplazamiento es chiquita, es muchísimo más chiquita que la velocidad con la que se mueven realmente los electrones. Los electrones se mueven a una velocidad muchísimo más rápida, pero rebotando de un lado para el otro, así que en promedio, si no hubiera campo eléctrico, no se moverían para ningún lado. Se estarían moviendo rapidísimo para un lado y para el otro, pero en promedio no se mueven. Si aplican un campo eléctrico, empieza a haber una velocidad de deriva o de desplazamiento, pero esa diferencia es chiquitita, la velocidad de desplazamiento es chiquita.
+33:55
+No tan chiquita como esta, pero igual es re chiquita.
+34:01
+Eso es lo que tienen que retener. Y lo otro es que la señal eléctrica en realidad es muy rápida. Esto no es la velocidad que se propaga la señal eléctrica. Entonces ahora voy... Vamos a ver la ley de Ohm.
+34:34
+6.3. Entonces, la ley de Ohm es una ley que nos permite establecer una relación entre J y el campo eléctrico aplicado. Entonces, primero que nada, si el material a nivel macroscópico es un material homogéneo e isotrópico, Pasa lo mismo que nos pasaba con la polarización en el campo eléctrico.
+35:07
+Lo que va a pasar es que J es un vector, como el material no tiene ninguna dirección intrínseca preferencial, entonces J es paralelo a E. Entonces, en un material homogéneo,
+35:32
+J es paralelo a E. Entonces podemos definir la conductividad del material.
+36:02
+Esto es solo una definición como J igual a sigma por E. Conductividad sigma. Sigma es la conductividad. Esto es la definición de la conductividad.
+36:28
+¿Qué dice esto? Bueno, conductividad es una cantidad escalar, sigma. Fíjense que tengo un problema que se me acaban las letras. Si ustedes, además de conocer el alfabeto románico y el griego, conocieran algún otro, yo que sé, el hebreo, yo que sé, usarían otras letras, pero no saben esas otras letras. Entonces, tengo que repetir. Y sigma ya la usamos en este curso para otra cosa, que era la densidad superficial de carga. Pero está, se me acaban las letras, así que mala suerte. Según el contexto, se tienen que dar cuenta si estoy hablando de la densidad superficial de carga o de la conductividad.
+37:01
+Fíjese, esto nos dice que si yo duplico, a ver, esto me dice que a igual campo eléctrico, algunos materiales tienen mayor densidad de corriente. Mientras mayor sea la conductividad, mayor es la corriente a igual campo. ¿De acuerdo? Entonces, la conductividad es una medida de cuánto el material quiere conducir dado un campo eléctrico. Así que el nombre es apropiado.
+37:29
+Ahora, a priori, cómo depende E del campo eléctrico no es obvio. Entonces, a priori, es difícil saber cómo depende E.
+38:00
+sigma del módulo D. Es decir, la pregunta es, si yo duplico el campo eléctrico, ¿la corriente se duplicará o se multiplicará por 4, por 7? Eso depende de cómo, sigma depende del módulo D. Y hay materiales de todo tipo. Por suerte, a ver, calcular la conductividad en términos del campo eléctrico es nuevamente un problema de mecánica estadística. Tienen un conjunto muy grande de electrones que interactúan con la red cristalina, que en principio también tendrían que considerar que interactúan entre sí.
+38:37
+Entonces a priori es complicado. Afortunadamente nos pasa lo mismo que nos pasaba para las propiedades dieléctricas. Que muchos materiales son lo que se llaman materiales lineales. ¿Qué quiere decir? Que sigma es en muy buena aproximación independiente de E. Afortunadamente hay muchos materiales
+39:11
+En que... Sigma... Es independiente... Del módulo D. En una muy buena aproximación. Capaz que no es exacto. De hecho no es exacto. Pero es una muy buena aproximación. Entonces... Sigma es una constante.
+39:47
+Una constante que depende del material. Cada material tendrá su sigma. ¿Sí? ¿De acuerdo?
+39:54
+Entonces, J es igual a sigma por E. Es una relación de proporcionalidad.
+40:13
+estos materiales que tienen esa propiedad, se les llama lineales, o también se les llama ómicos. Ómicos. ¿Está? Cuando uno quiere decir que la linealidad, la está referida a la linealidad en la conducción, porque muchas cosas se les llama lineal, por ejemplo, el otro día hablamos de los dieléctricos lineales, ¿verdad? ¿Sí? ¿Sí?
+40:43
+Pero si uno quiere decir específicamente, me refiero a la linealidad en la conducción, se le llama ómicos. Y en ese caso se le llama la ley de Ohm. Ley de Ohm. Que le dice que la corriente en todos los materiales lineales, ómicos, la densidad de corriente es proporcional al campo eléctrico aplicado. Y sigma depende del material.
+41:29
+Entonces, les voy a dar una tablita. Ah, bueno, también vale la pena definir. Entonces, se define también la resistividad, que es simplemente ρ igual a 1 sobre sigma. ¿Está bien? Bueno, es razonable el nombre, ¿no? A mayor resistividad... Es decir, lo inverso de la conductividad.
+42:06
+A mayor resistividad, con un campo eléctrico dado, la densidad de corriente será menor. Y las unidades. Entonces, el...
+42:25
+El sigma tiene unidades de lo que se llama Siemens por metro. Con un Siemens. Siemens es una unidad que no van a usar casi nunca. Pueden olvidarla inmediatamente. Es un amper por volt.
+42:44
+Pero en cambio hay otra unidad que van a usar más, que es la unidad que aparece en el Rho. La unidad de la resistividad es el Ohm. por metro, no dividido metro, por metro, donde el ohm, un ohm, que se anota con la letra griega omega mayúscula, es igual a un volt por ampera.
+43:18
+Entonces un ohm es lo inverso de un Siemens. Pero el ohm se usa mucho y el Siemens no se usa casi nada. Así que retengan el ohm. Pero capaz que es bueno que lo sepan porque a veces en los libros aparece o capaz que en algún ejercicio de práctico perverso se les da por usar esa unidad. Pero lo más común es usar ohm. Entonces veamos una tablita de valores de la resistividad.
+43:50
+Distintos materiales tendrán distintas resistividades.
+43:57
+Entonces, material. Para que esto tenga sentido, el material tiene que ser homogéneo, isotrópico y lineal.
+44:09
+Voy a hacer un poco... Lo que voy a decir, entonces, es un poco... No, perdón, no tiene por qué ser. Porque esto es la... Dijimos que siempre podemos definir la conductividad, aún en los casos no lineales. Lo único que en los casos no lineales, sigma depende de... La relación no es... Sigma varía. Entonces, materiales... Bueno, ¿qué materiales son? Perdón, no lo dije. ¿Qué materiales son lineales? Bueno, por ejemplo, los metales. Los buenos conductores, los metales, los electrolitos, todos esos son materiales lineales.
+44:45
+La relación de conducción en un metal... Es una relación de proporcionalidad. Sigma no depende del campo eléctrico aplicado con una excelentísima aproximación. Ahora en un momento vamos a hacer una estimación de por qué eso es así. Entonces veamos cuánto vale esto. Voy a escribir la resistividad en ohm multiplicado por metro. Entonces en la plata, metal, plata, no en un billete.
+45:17
+Es 1,62 por 10 a la menos 8. El número absoluto no les dice nada, porque en realidad muchas veces tenemos que las unidades adecuadas no son las que uno conoce, sino un múltiplo. Veamos ahora el cobre. El cobre tiene una resistividad muy parecida, un poquito mayor. Quiere decir que el cobre conduce un poquito peor que la plata. Si la plata en el planeta Tierra fuera tan abundante como el cobre... Primero, la plata valdría menos.
+45:50
+Y segundo, los cables serían de plata, no de cobre. La razón por la que hacemos los cables de cobre no es que sea el mejor conductor. Es que hay una relación costo-beneficio, porque es casi igual de buen conductor que la plata, pero sale muchísimo menos. Es aluminio. 2,75... Por 10 a la menos 8. Ven que los metales están todos más o menos por ahí. Ahora, silicio puro.
+46:21
+El silicio no es un metal, no es un conductor, es lo que se llama un semiconductor. Y cuando está en estado puro, vale 2,5 por 10 a la 3 la resistividad. Tiene una resistividad muchísimo mayor. ¿De acuerdo? Entonces...
+46:40
+Esto muestra que la diferencia entre un conductor y un semiconductor está salada. Pero los semiconductores tienen una propiedad que es que su resistividad es muy sensible, muy muy muy sensible a las impurezas que tiene el material. Entonces, les doy un ejemplo, silicio, silicio... tipo N con impurezas de tipo N se le dice que está dopado no porque no está drogado le agregan unas impurezas para favorecer la conductividad entonces dopado con fósforo entonces ahí cambia el número de portadores y la conductividad es muchísimo menor perdón, la resistividad es muchísimo menor
+47:33
+Sigue siendo una resistividad mucho más grande que la de los metales, pero igual es muchísimo menor que la que tendría. Aquí tenés un 10 a la 3 y acá un 10 a la menos 4. Así que se dan cuenta que... Eso no pasa con los metales. Los metales, si ustedes les agregan algún tipo de impureza, la conductividad más o menos no cambia mucho. En cambio, los semiconductores tienen esa propiedad de que pasan muy fácilmente entre conducir bastante bien o conducir muy, muy mal.
+48:12
+Buena pregunta. Creo que no, pero mi respuesta no es categórica. Creo que no. Creo que los semiconductores dopados siempre conducen mejor. Pero voy a averiguarlo porque no estoy seguro. No sé si hay algún ejemplo. No tengo ninguno en mente, pero capaz que lo hay. Voy a averiguarlo. Bueno, entonces sigo. Agua pura. Agua destilada.
+48:34
+Que es un aislante. Bueno, pero dijimos que la noción de aislante... Bueno, entonces acá vale 2,5 por 10 a la 5. ¿No? Quiere decir que si ponen agua destilada... podrían generar una pequeñísima corriente con un campo eléctrico, pero se dan cuenta que la diferencia acá es que la corriente será 10 a la 13 veces menor que en un... Así que la diferencia entre un aislante y un conductor es muy real, porque con un campo eléctrico aplicado el número de cargas que lo atraviesan no tiene nada que ver.
+49:10
+Ahí voy al vidrio. Bueno, acá depende de muchas cosas, depende del tipo de vidrio, pero también la relación esta, este no es realmente un material ómico, así que va a depender del campo eléctrico que le apliquen y demás, pero acá varía entre 10 a la 10 y 10 a la 14.
+49:28
+Entonces se dan cuenta que la clasificación entre conductores y aislantes está bastante bien, porque es bastante blanco-negro. Yo les dije que no es blanco-negro, pero es bastante blanco-negro, porque es radical la diferencia. Para un campo eléctrico delgado es radical, las corrientes son completamente diferentes. ¿Bien?
+49:58
+¿Se entiende esto? ¿Preguntas?
+50:07
+Bueno, esta no es la ley de Ohm que ustedes vieron en el liceo, ¿verdad? ¿Cuál es la ley de Ohm que vieron en el liceo? Ustedes en el liceo vieron una que dice que diferencia de potencial en los bornes de un conductor es igual a una constante que se llama la resistencia por la corriente. ¿De acuerdo? Entonces vamos a relacionar esta ley de Ohm con la otra ley de Ohm. Una es consecuencia de la otra.
+50:48
+Resistencia de...
+50:58
+Un conductor filiforme. Conductor filiforme es simplemente un conductor con forma de hilo. Filiforme es con forma de hilo. Entonces toman un cable, pongámoslo cilíndrico, tiene un área acá, A. y tiene un largo L y supongan que tienen un campo eléctrico acá uniforme ¿no?
+51:45
+¿de acuerdo? entonces ahora calculemos la diferencia potencial entre los bornes de este cable la diferencia potencial en valor absoluto ¿cuánto valdrá?
+52:00
+Es menos la integral de línea del campo. Estoy tomando el valor absoluto, así que el menos nos podemos olvidar. Pero como el campo es uniforme, entonces ¿qué les da?
+52:15
+E por L. Bien. Pero ahora dijimos que el material es un conductor ómico.
+52:23
+Entonces ¿qué sabemos de E? Bien.
+52:27
+Es J sobre sigma. O lo que... Con la resistividad podemos decir también que E es Rho por J. ¿Bien? Si pasan para el otro lado, les queda uno sobre sigma que es Rho. ¿No? O bien piensan J es proporcional a E, o bien pueden decir E es proporcional a J. En un caso aparece sigma, en otro Rho. Así que acá yo voy a escribir esto como Rho por L por J. ¿De acuerdo? Y J, si yo lo quiero relacionar con la corriente que pasa por el cable, ¿cuánto vale?
+53:03
+Acá van a tener un J, ¿verdad?
+53:07
+Es I sobre A. Así que esto lo pueden escribir como Rho por L sobre A por I. Entonces, en un conductor ómico,
+53:33
+Delta B es igual a una cierta constante R por I. ¿Está? Y a la constante... Bueno, voy a tomar el valor absoluto de I. Tomé I... ¿Está? No estoy ocupando los signos por ahora. ¿Sí? Entonces el módulo de la corriente... El valor absoluto de la corriente es proporcional al valor absoluto de la diferencia de potencial. Y el coeficiente se le llama... a R se le llama resistencia del conductor entonces para un conductor filiforme R es L por la resistividad dividida del área fíjense que la resistividad depende solo del material pero la resistencia no depende solo del material sino de la forma del cuerpo fíjense un cable más largo tendrá una resistencia a igual material ¿cómo será la resistencia?
+54:56
+si yo tengo un cable doble de tamaño Sí, de hecho el doble. Si multiplico el cable por dos, tengo el doble de resistencia. Pero por otro lado, si agrando el ancho, se divide la resistencia. Pueden pensarlo como una manguera nuevamente. Mientras más grande la manguera, más agua puede pasar por ella. ¿Está? Esto es medio abusivo lo que acabo de decir, pero básicamente es eso.
+55:26
+¿Está?
+55:28
+No, R no depende de la intensidad. Fíjense que delta B les queda una constante por I. Y adelante les queda R que no depende de la intensidad.
+55:39
+Así que esto muchas veces se le llama la ley de Ohm. Ley de Ohm para resistencias, resistores o resistencias. no es una ley que relaciona características del material, sino de un cuerpo conductor. Esta depende de un material dado.
+56:05
+Y sigma depende solo del material, no de la forma que tenga, si el cuerpo es más grande o si es un óvalo, eso no cambia, solo depende del material. En cambio allá es una relación que vale resistor por resistor, dispositivo que hace una resistencia por dispositivo que hace una resistencia. ¿Se entiende? Y ahí depende no solo del material, sino de la forma.
+56:28
+Una cosa que les quiero comentar es que esto lo probamos, esta relación de proporcionalidad, la probamos solo en el caso de los conductores filiformes, pero en realidad es general. Si ustedes toman un conductor cualquiera, toman un conductor cualquiera, ¿sí?
+56:47
+Le unen una diferencia potencial, lo unen a una batería en dos puntos. El conductor cualquiera. Agarran dos puntos. Siempre la diferencia potencial entre esos dos puntos, la corriente que pasa de un lado a otro, será proporcional a la diferencia potencial. O al revés, la diferencia potencial es proporcional a la corriente. Y el factor se llama resistencia. Pero cuando el cuerpo no es filiforme, la resistencia no depende... sólo de la geometría, sino también del punto en que lo conectan.
+57:22
+Tienen un conductor medio raro, hagamos un dibujo. Entonces toman un conductor con cualquier forma.
+57:47
+Conductor. Conductor ómico.
+57:54
+Entonces toman dos bornes. Toman un borne acá en A y toman otro borne en B. Entonces la diferencia de potencial entre A y B será... Y la corriente entra por acá. Entra una corriente ahí. Será igual a una resistencia por el valor absoluto de A.
+58:17
+Pero, en este caso, R no solo depende de la forma y del material del conductor, sino también de los bornes, de dónde ponen los bornes. Eso es evidente, porque si yo pongo los bornes uno al lado del otro, ¿cómo va a ser la resistencia?
+58:34
+Chiquitita, porque en realidad el trayecto real que tienen que hacer los electrones para ir de un lado a otro es un trayecto chiquitito. Eso incluso lo podemos ver en el filiforme. Yo puse el filiforme de tal manera que la corriente tenía que atravesar todo el bicho. Pero si yo lo hubiera conectado así, la resistencia es mucho más chiquita. ¿Se entiende? Así que para un objeto material, la resistencia no solo depende del material y de la forma, sino de dónde lo conectamos. Así que esto es para el conductor finiforme conectado por sus extremos. ¿Verdad? El cable, lo ponen de un lado del cable y del otro.
+59:07
+Si agarran el cable y lo cortan por la mitad, cambia la resistencia. ¿Se entiende? No, es como, en ese caso es bien fácil. Porque si lo ponen acá y acá, solo cuenta esto. ¿Bien? Entonces es importante retener eso. La ley de Ohm.
+59:22
+La ley de Ohm. Para... resistores resistores es un dispositivo de este tipo es general pero la expresión R igual a L Rho sobre A solo vale para filiformes
+59:57
+Siempre tendrán una relación de proporcionalidad, pero el factor de proporcionalidad, bueno, depende de una cantidad de cosas que hay que calcular. En general es difícil de calcular. Los que hagan el curso de Electro, en Electro se ven técnicas para calcular la resistencia de un cuerpo más general. Que no tengan por qué ser filiformes. ¿Se entiende? En el práctico de Física 3, a veces van a calcular resistencia de objetos más complicados usando truquitos. Haciendo un truquito se puede llegar a, conocido esto, calcular la resistencia de objetos más complicados.
+1:00:28
+Con geometría relativamente simple. ¿No? Capaz que ya vieron algún ejercicio así. Vengo medio atrasado con el teorema. Entonces lo van a ver esta semana, probablemente. O la que viene. ¿Se entendió esto? Y esta es la ley que ustedes vieron en el liceo. Delta B es R por I. ¿Sí? En el caso de un control filiforme, cuando es un cable así, además pueden calcular cuánto vale R en términos de la resistividad. R vale Rho por L sobre A.
+1:01:02
+Bueno, seguimos con algunos retoques de las clases de OpenFink para mejorarlas un poco. Quiero referirme a dos tipos de materiales conductores diferentes. Uno son los materiales ómicos, son los materiales en los cuales hay una relación de proporcionalidad entre la corriente y el voltaje aplicado. Entonces, un material ómico es un material que tiene una curva de este tipo. Si tienen un voltaje aplicado delta B de este tipo, Y la corriente resultante va a estar dada por una relación de proporcionalidad.
+1:01:35
+Es decir, cuando la corriente es cero, cuando el voltaje aplicado es cero, la corriente es cero. Cuando el voltaje aplicado es positivo para un lado, la corriente va para ese lado. Cuando el voltaje es positivo para el otro, es negativo. Esto es una recta, por más de que mi pulso es un desastre. Así que esto es lo que llamaremos un material ómico.
+1:01:58
+Material o dispositivo ómico.
+1:02:03
+ómico. Son los que tienen una relación de proporcionalidad entre la corriente y la diferencia de potencial aplicada. Estos son los que normalmente llamamos una resistencia o un resistor. hay otros materiales que si bien conducen la corriente eléctrica lo hacen de maneras más complicadas y acá les voy a dar sólo un ejemplo un ejemplo importante es el siguiente consideren un material en el cual la diferencia potencial es así en cero es cero pero después para valores positivos crece muy rápido mientras que para valores negativos permanece muy pequeño Esto no es solo una imaginación, hay materiales concretos, dispositivos concretos que se llaman diodos, que tienen este comportamiento, en el cual si el voltaje es aplicado para un lado, la corriente circula muy fácilmente, mientras que si se aplica para el otro lado, la corriente prácticamente no circula.
+1:03:04
+Estos materiales tienen otra relación entre la corriente y la diferencia de potencial y se llaman no ohmicos.
+1:03:15
+Bueno, en lo que me queda de clase, voy a intentar fundamentar cómo es el... a nivel cuentito, porque hacer esto bien requiere cosas muy sofisticadas de mecánica cuántica, pero por lo menos para tener una idea cualitativa de por qué, de cómo es el proceso de conducción en un metal. Es un modelo muy antiguo, que es el modelo del siglo XIX, o no, principio del siglo XX, se llama el modelo de Drude, y...
+1:03:46
+Y se los voy a contar a nivel cuentito, pero para que tengan idea cualitativa de cómo se da el proceso de conducción. Entonces, punto 6.4. Modelo microscópico de la conducción
+1:04:19
+en un metal. Sí, un segundito. ¿Cómo? No, no, no. Este es un ejemplo.
+1:04:33
+No, no. No todo dispositivo nómico es un diodo. Un diodo es el que tiene esta curva especial, que tiene el I solo para un lado y que es grande la corriente de un lado y casi cero del otro. Pero hay otros, no tiene por qué ser así.
+1:04:49
+Pueden haber otras curvas. Todas curvas que no les quedan en una recta es no ohmico.
+1:04:55
+Una recta por el origen.
+1:04:59
+Bueno, entonces, primero que nada, si he aplicado E0, el movimiento de un electrón será una cosa así.
+1:05:20
+Básicamente, estoy siendo esquemático, pero el electrón se mueve para todos los lados, está golpeando contra objetos en la red, y hace trayectos, se golpea contra algo y arranca de nuevo en una nueva dirección, básicamente aleatoria. No hay campo eléctrico aplicado, no hay dirección preferencial.
+1:05:44
+¿Qué pasa si yo le aplico un campo eléctrico para allá?
+1:05:48
+Cuando le aplico el campo eléctrico para allá, las curvas levemente, pero muy levemente, lo voy a exagerar porque el efecto es mucho más chiquito, se corren, bueno, si son electrones en realidad se corren para el otro lado. Voy a poner el campo eléctrico para allá. Las curvas se mueven, se van corriendo todas levemente en la dirección del campo eléctrico. Las curvas siguen siendo un relajo. pero en promedio levemente se va moviendo para allá. ¿Se entiende?
+1:06:19
+En realidad el efecto es mucho más chiquitito que este que yo muestro. Es un efecto muchísimo más chiquitito que este que yo muestro. Pero lo importante cualitativamente es que la curva sigue siendo básicamente un relajo, pero que levemente se va desplazando. ¿Sí? ¿Había una pregunta? ¿Se entiende lo que digo? Esto es un electrón. Trayectoria... esquemática de un electrón.
+1:06:53
+Y la negra es sin campo eléctrico y la azul es con campo eléctrico. Entonces básicamente las dos son un relajo, pero una se va corriendo con respecto a la otra levemente. En realidad es mucho más leve que lo que yo puse en el pizarrón, pero si lo hiciera tan leve como sucede, no verían nada. ¿Está? De hecho, la velocidad, casi todos los electrones, por ejemplo en el cobre, se mueven a, pero cualquier material, se mueven a una velocidad con módulo que está esencialmente fijo.
+1:07:30
+A temperatura ambiente, el módulo de la velocidad de los electrones de los electrones, que no es la velocidad de desplazamiento, es la velocidad con la que se está moviendo, es el movimiento este balístico, así, pum, pum, movimiento que se movió de acá a acá, la velocidad de deriva es cuanto se va moviendo en promedio, pero esto es la velocidad con la que se desplazó acá, que es muchísimo más grande, B vale como 1,6 por 10 a la 6 metros por segundo, les doy el número para el cobre.
+1:08:16
+Si no es el cobre, es otra velocidad que también es otro número, pero cosas del orden de 10 a las 6 metros por segundo. Fíjense que es una velocidad enorme. Los electrones se están moviendo súper rápido. Y entonces la observación es que VE es muchísimo más grande, pero realmente es muchísimo más grande que la velocidad de deriva. Es decir, lo que perturbamos la velocidad en este tramito es solo una fracción chiquitísima.
+1:08:46
+Entonces, para describir esto, como les decía recién, con propiedad, habría que usar la mecánica cuántica. Y bueno, pero vamos a hacer un modelo mucho más de juguete, si se quiere, pero para que tengan una idea cualitativa, vamos a hacer un modelo clásico del electrón y vamos a ver cómo se establece la relación entre... cómo se calcula la velocidad de desplazamiento. Entonces, la idea cuál es. Vamos a hacer la aproximación siguiente. Que los electrones... Entre choque y choque, ¿sí?
+1:09:18
+¿Sí? Entre choque y choque, se mueven acelerados por el campo eléctrico. Entonces vamos a hacer hipótesis, hipótesis. Hipótesis del modelo.
+1:09:35
+¿Está? Entonces la primera, vamos a usar la mecánica clásica.
+1:09:41
+Usamos... El modelo se llama Drude, el modelo de Drude. ¿Está?
+1:09:45
+Usamos la mecánica clásica.
+1:09:52
+En realidad deberíamos usar la mecánica cuántica, porque la física microscópica requiere la mecánica cuántica. Deberíamos usar mecánica cuántica. La segunda es que los electrones se mueven
+1:10:16
+libremente libremente quiere decir solo acelerados por el campo eléctrico por E entre choque y choque y 3 que cada tanto tiempo cada tanto tiempo chocan con objetos en el material ¿si?
+1:11:12
+chocan con objetos en el material y pierden totalmente la memoria es decir luego del choque el electrón arranca de nuevo en otra dirección cualquiera completamente al azar golpeó y luego arranca de nuevo pero la nueva trayectoria no depende de lo que venía anteriormente es un choque muy brutal y luego arranca con velocidad cero no, con velocidad con la misma velocidad esta pero en otra dirección y lo último que voy a suponer que es una hipótesis que también parece temeraria es que vamos a suponer que podemos despreciar las interacciones de los electrones entre sí vamos a despreciar las interacciones
+1:12:16
+entre los electrones lo cual fíjense que es medio sorprendente porque el punto de vista de la conducción uno diría hay digamos un electrón por átomo ¿si? quiere decir que los electrones están súper cerquitas bastante cerquitas unos de otros en promedio ¿si? Súper cerquita uno de otro en promedio y además tienen interacción colombiana, así que es una interacción enorme. Así que decir que los electrones interactúan más con la red que entre ellos es algo raro.
+1:12:49
+Al final del día termina estando bien esa aproximación, pero no es nada obvio a priori. Demoró mucho tiempo entenderse por qué eso finalmente era una buena aproximación. Pero no importa, hagamos ese modelito para tener una idea esquemática de cómo se produce la conducción. A ver si tengo unos minutos más. No. Bueno, pero les cuento básicamente lo que voy a hacer es, en cada una de estas trayectorias, el movimiento va a ser uniformemente acelerado.
+1:13:24
+Voy a calcular cuál es la velocidad que se genera ese movimiento y voy a decir que cada tanto tiempo... Ah, perdón, una cosa que quiero... Voy a agregar acá que el tiempo promedio entre choques se llama el tiempo libre medio, pero no importa. le llamaremos será tau.
+1:14:01
+Y que casi no depende de E. Que casi no depende de E es bastante razonable, porque si estamos diciendo que el efecto del campo eléctrico es súper chiquitito, el tiempo medio que demora entre chocar con estos objetos casi no fue afectado por E. Entonces el tiempo libre... El tiempo libre entre choques, en promedio, casi no depende de él. Bueno, el lunes terminamos esto. Y ya arrancamos con el capítulo siguiente.
+

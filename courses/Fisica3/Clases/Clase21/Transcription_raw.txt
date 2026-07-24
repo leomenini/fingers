@@ -1,0 +1,465 @@
+# Clase 21
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/21/
+
+Fecha de exportación: 7/24/2026, 12:04:44 AM
+
+Clase: 21
+Curso: F3
+
+Segmentos : 252
+Palabras  : 9502
+Caracteres: 53149
+
+
+0:19
+En realidad esta fórmula, como les comentaba la vez pasada, la probamos solo en un caso particular, muy particular, que es el caso de un solenoide ideal. Pero yo les comenté que vale en general. Es una fórmula general cuando hay materiales en el vacío, digamos. Si uno tuviera materiales con propiedades magnéticas particulares que fueran imantables, sería un poquito más complicado.
+0:50
+Pero, por lo pronto, para este tipo de materiales, cuando tenemos cables que están en el vacío o en el aire, esta fórmula vale. Y vamos a ver un ejemplo. Un ejemplo de aplicación suponiendo que vale en todas estas situaciones por más que no lo probamos.
+1:13
+Entonces el ejemplo es el siguiente, es un cable coaxial. Entonces es eso. Tienen un cable chiquito por el que entra corriente y tienen otro cable que es como un cascarón, como un cascarón cilíndrico.
+1:42
+Por el que sale corriente. Entonces tienen la corriente saliendo por acá y la corriente entrando por acá. Y en el medio vacío. En realidad es un cable coaxial real. Lo que tienen acá no es vacío, sino un plástico. Algún material aislante. Que sostenga, que no solo aislé, sino que sostenga la parte de afuera para que no colapse. Pero las propiedades magnéticas de esos materiales son casi iguales que las del vacío. Así que poner uno de esos materiales o el vacío da lo mismo.
+2:19
+No cambia nada. Entonces vamos a suponer que la energía acá está dominada por la zona esta. Es decir, que el radio A es muy chiquito.
+2:26
+Y que el cascarón es finito. Entonces vamos a suponer...
+2:37
+Que la energía está dominada por la región con R entre B y A. ¿Está bien? En realidad se podría hacer un análisis más general, pero bueno, con esto nos va a alcanzar. ¿Está bien? Está claro que la región de afuera no cuenta, porque ¿qué pasa? ¿Cómo es el campo magnético afuera del cable coaxial?
+3:11
+Es cero. Es cero, ¿verdad? Porque para calcular el campo magnético vamos a aplicar amper, vamos a tomar una curva amperiana, ¿sí?, El problema tiene simetría cilíndrica, es decir, tiene invariancia por traslaciones en esta dirección, invariancia por rotaciones en esta dirección, en la dirección del eje. Es decir, como el cable lo suponemos muy largo, es lo mismo que yo lo mida acá o acá, y por otro lado, como es cilíndrico, lo mismo rotando.
+3:44
+Entonces puedo aplicar, supongamos que por acá adentro va una corriente de I, Y por afuera sale la misma corriente I.
+3:55
+Entonces el problema tiene invariancia por rotaciones. Y entonces la integral de B de L no es otra cosa que B por 2 pi R. Y esto es igual por amperes.
+4:15
+a mu sub cero por la corriente encerrada dentro de la curva pero si R es más grande que B la corriente total encerrada es cero porque por acá entra I y por acá sale I pero para el otro lado es la misma corriente que va por un lado y para el otro pero en un caso va para un lado y otro para el otro entonces si yo pongo una curva por acá afuera la corriente total encerrada es cero porque todo lo que entra por acá sale por acá Lo mismo.
+4:46
+Pero acá adentro solo pasa esta I. Entonces tenemos un subcelo por I. Entonces el campo magnético adentro entre B y A vale esto. Dentro de A todavía tendríamos que hacer otro análisis, viendo cómo está distribuida la corriente dentro del cable A dentro, ¿verdad? Pero no me voy a ocupar de eso. Fíjense que este campo es igual al que tendríamos solo si tuviéramos un cable, un único cable circulando por el eje.
+5:26
+¿Bien? Bueno, entonces podemos usar esta fórmula. Entonces, calculemos la energía... Energía en el cable colexial. Entonces primero calculamos la energía, la densidad de energía. La densidad de energía será 1 sobre 2 mu cero por este campo que calculamos al cuadrado. Así que nos queda mu cero al cuadrado por I al cuadrado sobre 4 pi al cuadrado por R al cuadrado.
+5:56
+Esta es la densidad de energía y fíjense que depende de R.
+6:01
+Entonces ahora, esta es la densidad de energía.
+6:13
+Depende de R. No es uniforme, no es una densidad uniforme. No es como en el caso del solenoide, donde la densidad era uniforme. Acá depende. A R más chicos tenemos mayor densidad de energía. ¿Sí? ¿Sí?
+6:32
+Y entonces ahora si queremos la energía total... Habrá que integrar en toda esa zona entre RA y RB. Pero para integrar eso, fíjense, pueden usar lo siguiente.
+6:54
+Tienen el radio grande acá, B.
+6:57
+Y el radio chico, A. Y toman un cascarón...
+7:07
+Un cascarón que estará entre R y R más de R. El ancho este es de R. ¿Cuál será la energía en un cascarón? Primero vamos a considerar dB, que es la energía en un cascarón.
+7:32
+Entre R y R más de R.
+7:40
+¿Cuánto será la energía en ese cascarón?
+7:53
+Primero, en ese cascarón, ¿cómo es la densidad de energía? En cualquier punto de ese cascarón. Uniforme, porque a una distancia, bueno, la distancia varía levemente entre R y más DR, pero es re chiquita, así que es uniforme. Entonces la energía en ese cascarón va a ser la densidad de energía por el volumen de ese cascarón. ¿Y cuál es el volumen de ese cascarón?
+8:27
+DR por 2PR no es un volumen, tiene unidades de área. Para ser volumen hay que multiplicar por el largo, ¿verdad? Entonces, esto va a ser V por el área de la sección, que es 2PR por DR por el largo. Este es el largo del cable.
+8:52
+¿De acuerdo? Largo es perpendicular al pizarro.
+8:59
+Entonces eso, si sustituimos, nos queda. Vamos a sustituir todo. Nos queda 2 pi r por L por dr por... Y ahora, fíjense, un mu cero allá se nos fue. Queda un mu cero por I al cuadrado...
+9:22
+solo en el anillo la zona que está acá adentro esto que estoy marcando acá en el relleno esa zona estoy marcando solo eso estoy marcando porque la superficie es 2 pi R fíjense esto es 2 pi R es el largo por D R es el ancho este Es la superficie que está ahí. ¿Bien? Como es muy finito, pueden recortarlo, extenderlo y les queda como un rectángulo largo que es 2 pi r por dr.
+9:59
+Entonces sigo sustituyendo musero, me queda por un 4 pi r al cuadrado. Ya está. Entonces pi cuadrado, perdón, pi cuadrado. Entonces el 2 se me va con el 2, un pi se me va con el cuadrado, un r se me va con el cuadrado y me queda L de r por mu cero por i al cuadrado dividido 4 pi r.
+10:35
+¿Bien? ¿Pero por dónde se fue el musero cuadrado? Porque acá tenía un musero cuadrado arriba y un musero abajo. Ya, ya se simplificó. Y entonces si quiero la energía total... Energía total...
+10:56
+Habrá que sumar todas estas, sumando en R entre A y B. Entonces será la integral entre A y B de aquello que está arriba. Queda L de R, mu cero I al cuadrado, sobre 4 pi cuadrado. Bueno, y casi todo sale para afuera. Mu cero L I al cuadrado sobre 4 pi sale para afuera. Y me queda la integral entre A y B de DR sobre R, que la conocemos. Nos queda que V es mu sub cero L I al cuadrado sobre 4 pi por logaritmo de B sobre A.
+11:43
+Entonces la energía almacenada en un cable coaxial. ...
+12:13
+Este es un ejemplo concreto de lo que vimos al final de la clase pasada, que no me daba tiempo de hacer el ejemplo en la clase, antes de terminar la vez pasada. Y eso les da la energía almacenada. Pero de manera general, cuando ustedes tienen un sistema donde logran calcular el campo magnético, pueden calcular la energía almacenada del sistema, integrando esta densidad de energía en la zona en que haya campo magnético.
+12:40
+En realidad aquí despreciamos la energía almacenada, porque acá adentro hay un campo magnético, ¿verdad? Despreciamos ese campo magnético ahí. Eso se podría calcular también si quisiera.
+12:53
+No ofrece mayor dificultad, salvo que ahí les tienen que decir cómo está distribuida la corriente dentro del cable que va por adentro. ¿Preguntas?
+13:16
+¿Se está entendiendo?
+13:19
+Entonces lo que vamos a empezar a ver ahora es sistemas eléctricos que oscilan. Hasta ahora vimos sistemas de corriente continua, donde la corriente era una constante. O por lo menos algo que... Constante o a veces cosas que variaban exponencialmente, donde la corriente decrecía exponencialmente. Por ejemplo, en la carga y descarga, o decrecía o crecía exponencialmente, ¿no? Crecía y saturaba, ¿verdad?
+13:49
+Porque como cuando vimos la carga de un condensador, o vimos también el sistema LR, donde tienen corrientes que varían como una exponencial más una constante, básicamente. ¿Está bien? Ahora vamos a empezar a ver sistemas en los cuales la corriente oscila sinusoidalmente. Entonces antes de ver el caso general, me voy a concentrar un poco, para terminar este capítulo, en...
+14:22
+en un tipo de circuito relativamente simple que son los circuitos LC entonces fíjense vamos a suponer lo siguiente tienen un condensador y una bobina
+14:54
+Este es el circuito, ¿qué es un circuito LC? Bueno, ya por su nombre lo ven. Es un circuito que tiene bobinas y condensadores. Y vamos a suponer que despreciamos las resistencias. Suponemos que se pueden despreciar las resistencias. ¿No? ¿No?
+15:22
+Pero fíjense que este sistema así pelado, normalmente no le va a pasar nada, porque tenemos que haberle aportado energía inicialmente de alguna manera. Típicamente lo que uno hace es primero carga el condensador con una batería, el condensador está cargado, lo desconecta la batería y luego lo conecta con la bobina. Y en realidad despreciar la resistencia no es una muy buena aproximación porque generar una bobina no se le puede despreciar mucho la resistencia. Pero podemos imaginarnos que quienes vinieron a la ingeniería de muestra.
+15:57
+No muchos, pero los que vinieron, capaz que vieron, hubo un stand en que hablaban, yo ya les hablé en este curso, de los superconductores. Superconductores son materiales que no tienen resistencia, cero, cero. Entonces, pueden imaginar que tiene una bobina superconductora, una situación un poco ideal. O una situación más, pero físicamente realizable, una situación en la cual no hay nada de resistencia. O si no, pueden pensar que la resistencia no es cero, pero que miran el primer tramo de tiempo.
+16:27
+¿Cuál va a ser el rol de la resistencia? Bueno, va a ser perder la energía eléctrica del sistema. La energía eléctrica se va a ir convirtiendo en calor y la energía eléctrica del sistema se va a ir perdiendo. Pero si miran un rato, un rato corto antes de que se haya perdido la energía por la resistencia, por un rato se comporta así como vamos a describir ahora. Y después, más adelante, la clase de hoy o la clase del miércoles, vamos a ver qué pasa cuando agregamos las resistencias.
+16:55
+Entonces, inicialmente, supongamos que en T igual a cero no hay corriente y el condensador está cargado.
+17:20
+Lo cargamos antes. Q en T igual a 0 vale un cierto Q0. El procedimiento es este que les digo. Lo pueden haber puesto antes de conectar a la bobina. Ponen una batería, esperan que se cargue y luego conectan el condensador a la bobina y ven qué pasa. Primero que nada podemos hallar la ley de mallas. La ley de Maya nos dice que Q por C más R derivada de I con respecto de T vale cero.
+18:02
+O también, esto es equivalente a decir que R por la derivada segunda de Q con respecto al tiempo más Q sobre C vale cero. Ah, sí, sí, perdón, disculpe, gracias. Gracias, no hay R. Muchas gracias. Entonces, circuito LC de una malla.
+18:36
+Bien. Entonces...
+18:46
+Eso primero. Pero además, si no hay resistencia, no hay procedimiento de perder energía. No hay batería, así que no estamos aportando energía. Pero si no hay resistencia, no se pierde energía eléctrica. ¿Está? Perder. La energía nunca se pierde, se transforma en otra cosa. Lo que hace la resistencia es transformar energía eléctrica en energía térmica. ¿Bien? Pero acá no, no hay nada que esté perdido. Entonces, la energía eléctrica se tiene que conservar en este sistema. Lo vamos a ver ahora en un momento. Pero...
+19:18
+¿Qué otro es? A ver, este es un sistema que va a oscilar. Vamos a verlo en un momento. Fíjense que la ecuación que está satisfecha es una ecuación diferencial. Nuevamente, así termina el Q y la derivada segunda de Q es lineal, porque aparece Q linealmente y la derivada segunda de Q también linealmente. Los coeficientes son unas constantes y no hay segundo miembro. No hay nada que no dependa de Q.
+19:44
+Entonces estamos nuevamente en lo que se llaman las ecuaciones homogéneas lineales con coeficiente constante. Entonces eso siempre hay una manera de resolverlo que la vamos a ver en un momento. Pero antes de hacerlo, ustedes ya conocen un sistema que se parece a esto. ¿Qué sistema que ustedes en los cursos de física que han visto hasta ahora? Sistema que oscila, también con ecuaciones lineales. ¿Cómo? Un sistema que da lugar al movimiento armónico simple, pero que es un sistema físico que verifique el movimiento armónico simple. Un sistema masa-resorte o un péndulo para ángulos chicos.
+20:17
+¿Verdad? Entonces podemos hacer una analogía.
+20:25
+Entonces podemos establecer una analogía con el sistema...
+20:37
+Masa-resorte. Entonces tienen un resorte lineal.
+20:45
+Supongan que no tienen rozamiento. Despreciar el rozamiento es una aproximación similar a la, en este caso, despreciar la resistencia. Tienen un resorte constante K. Miden la posición desde la posición de equilibrio. Y tienen una masa K. Y ustedes saben que la ecuación satisfecha es K por X... Más M derivada segunda de X con respecto al tiempo.
+21:12
+Igual a cero.
+21:14
+¿Verdad? Masa por aceleración es igual a menos la constante de resorte por X. ¿Se acuerdan de esto? ¿Sí? Bueno, pero fíjense. Hay una relación. Podemos hacer una tablita. Comparación.
+21:32
+Podemos establecer una comparación, porque tenemos sistema mecánico, sistema eléctrico. En el sistema mecánico lo que jugará el lugar de la variable que estamos estudiando es X, mientras que en el sistema eléctrico lo que estamos estudiando es la carga, Q. Lo que aparece en coeficiente de la derivada segunda de X acá es la masa, lo que determina la inercia, ¿sí?, Y lo que juega el mismo papel allá en el caso eléctrico, ¿qué es?
+22:10
+El análogo de esta ecuación allá. ¿Qué es lo que juega el papel de M? L. Y lo que juega el papel de K, de la constante de resorte, es 1 sobre C. Entonces tiene una analogía total entre las dos ecuaciones. Y ecuaciones con la misma forma tienen las mismas soluciones. ¿Sí?
+22:41
+Pero además tenemos más cosas para comparar.
+22:47
+Más analogía.
+22:54
+Fíjense. El sistema mecánico. Dijimos que el sistema mecánico, este lo conocemos, conserva la energía mecánica. Y el sistema eléctrico, dijimos, va a conservar seguramente la energía eléctrica. Lo vamos a ver ahora en un momento.
+23:07
+¿Sí?
+23:10
+Vamos a verificar en un momento que la energía eléctrica se conserva. Pero fíjense, el sistema mecánico, ¿cuáles son las formas de energía que tiene en este sistema mecánico? La energía cinética, un medio de m por x punto al cuadrado.
+23:29
+Esto es energía cinética.
+23:36
+Y tiene la energía potencial de resorte, energía... Potencial elástica.
+23:44
+Ustedes ya saben que vale un medio de K por X al cuadrado. ¿No es cierto? ¿Se acuerdan de física 1?
+23:53
+Levanten la mano los que no se acuerdan de esto.
+23:57
+Por suerte, porque si no los hubieran sacado de la clase. Gracias.
+24:03
+Bueno, no, sigamos con esto, la analogía. ¿Qué sería el equivalente eléctrico de esto? Y bueno, vamos a hacer la sustitución que está allá. Sería un medio de L por la derivada de Q.
+24:21
+La derivada de Q con respecto al tiempo. ¿Quién es la derivada de Q con respecto al tiempo? Y al cuadrado. ¡Pah! Esto me suena a algo. ¿Qué es esto? ¿Qué es esto?
+24:31
+la energía magnética energía magnética en la bobina bueno y ahora hagamos lo mismo acá nos queda Q medio, Q dijimos que es 1 sobre C y X es Q al cuadrado y este también suena a algo ¿verdad? ¿quién era esto? La energía eléctrica almacenada en el condensador.
+25:08
+Entonces es razonable esperar que esas dos formas de energía se vayan transformando una en otra. pero que la energía total se conserve. Verifiquemos eso. Entonces, energía eléctrica total será igual a un medio de Q al cuadrado sobre C, más un medio de L por I al cuadrado.
+25:40
+Entonces, ¿qué les parece? ¿Cómo podemos hacer para ver si se conserva o no? ¿Cómo queremos ver si eso se conserva? la derivamos con respecto al tiempo entonces calculemos la derivada de la energía eléctrica con respecto al tiempo entonces empiezo por este término me queda 1 sobre 2C y tengo que derivar Q al cuadrado si derivo Q al cuadrado me queda 2Q por la derivada de Q ¿quién es la derivada de Q?
+26:09
+Q punto que es I ¿bien?
+26:13
+Y ahora derivo el segundo miembro, me queda un medio de L y ahora derivo I al cuadrado. Derivado de I al cuadrado me queda 2I por la derivada de I. ¿De acuerdo? Pero ahora puedo sacar de factor I.
+26:33
+Bueno, un medio se me va con los dos y saco I en factor y esto me queda Q sobre C más... L por DI sobre DT. ¿Y esto qué es que está acá? Cero, es la ley de Maya.
+26:53
+Es esto que está acá. ¿Está? Entonces... Igual a cero. Entonces todo a cero. Entonces la energía eléctrica se conserva. No es sorprendente porque son todas las ecuaciones iguales. Sabíamos que en el otro caso se conservaba la energía mecánica total. No es raro que acá se conserve la energía eléctrica. Nadie le sorprende eso. Y por otro lado, la ecuación de Maya ya habíamos visto que la podíamos pensar también en términos de energía. De quién le aportaba tanta energía. Y acá no hay nadie aportando ni nadie sacando.
+27:23
+Entonces se tiene que conservar.
+27:29
+Por otro lado, por la analogía, ¿cuál era la solución de este problema?
+27:35
+Ustedes saben, ¿cómo oscila?
+27:42
+Por otro lado, el sistema mecánico, acá esto es energía eléctrica, se conserva.
+27:59
+por otro lado vimos que el sistema mecánico sabemos del curso de física 1 mecánico tiene solución la solución es x de t es igual a un x0 por coseno de omega t más un cierto desfasaje donde omega se acuerdan cuanto valía
+28:33
+¿Cómo? ¿No se acuerdan?
+28:38
+Raíz de K sobre M. ¿Se acuerdan? Sí, les recuerdo, la frecuencia angular.
+28:44
+Entonces, por analogía, la solución del sistema eléctrico será...
+29:04
+Q de t igual a un Q0, que ahora hay que determinar, coseno de omega t más phi, donde omega ¿cuánto valdrá?
+29:15
+Raíz de 1 sobre LC, porque donde tenemos la masa pongo L y donde tengo K pongo 1 sobre C. ¿Bien? Pero alguien dice, pero esto es una fantasmada porque... Pruébelo. Vamos a probarlo de dos maneras. Una que es simplemente para quedarnos contentos y otra que sirve para algo. Quedarse contentos es importante.
+29:49
+Lo primero que vamos a hacer, lo más fácil, que nos va a dejar contentos, que es verificar que eso es solución.
+29:57
+Ah, bueno, perdón, perdón, perdón. Este Q0 que está acá no tendría por qué ser este. A priori este Q0 no es aquel, ¿no? Porque todavía no impuse condiciones iniciales. Podríamos ponerle otro nombre, un Q0 mayúscula para estar seguro de que no estamos haciéndonos trampa al solitario. Porque todavía no impuse condiciones iniciales, así que una cosa no tendría por qué estar relacionada con la otra. Así que por ahora no impuse. Por lo tanto voy a ver que eso siempre es solución. Entonces verificación.
+30:28
+Para verificar, calculo... Voy a sustituir acá. Calculo Q punto de T. Va a ser igual a la derivada de lo que está allá. Entonces, tengo Q0. La derivada del Q0 me queda menos seno. Menos seno de omega T más phi. Y ahora tengo que derivar lo que está adentro acá. ¿Cuánto me da la derivada de lo que está adentro? Omega.
+30:52
+Y ahora necesito también la derivada segunda. Fíjense, acá aparece la derivada segunda. Entonces, derivada segunda... Este es Q0.
+31:01
+Deriva nuevo, la derivada del seno es coseno, así que me queda menos Q0 por coseno de omega T más phi. Y acá nuevamente tengo un omega que tenía por acá y te voy a multiplicar nuevamente por lo de adentro. Así que me parece otro omega. ¿Sí? Así que para verificarlo, simplemente voy a calcular todas las cosas que están acá, meter adentro y verificar qué solución. ¿Va? Hagámoslo, sustituimos. Entonces nos queda menos Q0 por omega cuadrado por coseno de omega t más phi.
+31:39
+Sustituyendo, ¿no? En ecuación de Maya.
+31:49
+¿No? Queda esto más... Ah, perdón, por L. Aparece multiplicado por L. Entonces menos L por todo eso, más 1 sobre C por la ecuación de Q que la tengo por allá. Que queda Q0 por coseno de omega T más phi. Y todo esto igual a 0.
+32:10
+Igual a 0 y tiene que ser cierto para todo T. ¿De acuerdo? Pero si es cierto para todo T, se tienen que simplificar los cosenos, porque los cosenos hay muchos valores de T en los cuales no se anulan. ¿Vale? En todo tiempo. Entonces tiene que valer, en los Q0, queremos un Q0 distinto de 0, porque si Q0 fuera 0, lo que estamos hallando es simplemente la solución nula. Hay una solución nula, si ponemos Q idénticamente 0, esto da 0, pero no es esa la solución que nos interesa, ¿verdad?
+32:41
+Entonces, podemos simplificar por Q0, por el coseno de omega T, y nos queda... Menos L por omega al cuadrado más 1 sobre C igual a 0. Y ahora podemos despejar, esto es equivalente a omega, omega tiene que ser positivo, ¿verdad? Es 1 sobre raíz de LC, que es lo que habíamos dicho.
+33:07
+Así que esta forma que está allá es siempre solución.
+33:13
+¿Va? Lo único que tiene que cumplirse es esta relación de omega con... Esto se entiende, es igual que lo que ustedes vieron en el sistema masa-resorte en física 1. ¿Preguntas? Levanten la mano los que están entendiendo esto. Entonces no voy a insistir más. Pero ahora vamos a hacer otra solución que es más útil... Bueno, perdón, antes de seguir viendo cómo resolver de otra manera, voy a imponer condiciones iniciales.
+33:51
+Puedo imponer distintas condiciones iniciales, ¿verdad? Acá estoy imponiendo una particular, que es corriente 0 inicialmente y carga valiendo Q0. Pero podría haber puesto otra condición inicial. Por ejemplo, podría suceder que inicialmente hubiera una corriente, ¿está bien? Entonces condiciones iniciales. Primero que nada impongo que Q punto en T igual a cero vale cero. Entonces Q punto en T igual a cero, dijimos esta es la corriente, en T igual a cero, dijimos que esto vale cero.
+34:25
+Pero lo podemos calcular, nos queda, esto es igual a menos Q cero por omega por el seno de omega en T igual a cero, así que me queda cero, seno de phi.
+34:41
+Y esto es 0. Entonces Q0 no es 0, omega no es 0, entonces seno de phi es 0 y seno de phi es 0 tiene dos soluciones. Bueno, en realidad tiene infinitas soluciones si le agregan 2pi, pero en el intervalo 0, 2pi tiene 2, que es phi igual a 0 o phi igual a pi.
+35:05
+Dejo la ecuación acá para tenerla siempre a la vista.
+35:13
+Y sigo con la otra condición.
+35:18
+Que es la condición de que Q en T igual a 0... Bueno, perdón, una observación. Si yo tomo Fi igual a Pi...
+35:30
+Si Fi igual a Pi... Entonces, Q de T... Es igual a Q0 por coseno de omega t más pi. Pero el coseno de omega t más pi, fíjense, si miran el círculo trigonométrico, ustedes le agregan, tienen un ángulo acá fi. Y le agregan pi, es este ángulo que está acá. Entonces el coseno, ¿este a qué es igual? Menos, esto es igual a menos Q0 por coseno de omega t.
+36:05
+Así que si yo me puedo limitar a φ que estén entre 0 y π, por ejemplo. En general se usa entre menos π sobre 2 y π sobre 2. Porque si yo agrego π no aporto nada, porque simplemente es cambiar el signo de Q0. Entonces puedo limitarme a Q0 positivos, por ejemplo. Y de esa manera... ¿Se entiende? Entonces, el caso φ igual a π no agrega nada, porque lo único que hace es cambiarme el signo de Q0. Es la misma solución que con phi igual a cero, salvo que con el signo opuesto.
+36:41
+Como yo todavía no dije quién es q cero, phi igual a pi no agrega nada. Entonces no agrega nada. Entonces nos vamos a concentrar en el caso phi igual a cero.
+36:55
+Si phi igual a cero... Que corresponde a... Fino tiene por qué ser siempre 0, es solo porque elegimos que la corriente inicial era 0. Si la corriente inicial no es 0, fino vale 0. Es como en el sistema masa-resorte, si ustedes arrancaban de una cierta elongación con velocidad nula. Entonces ahí les queda un coseno. Pero si arrancan con otra velocidad, no vale eso. Entonces si Fi igual a Pi, entonces tenemos que Q de T vale Q0 por, perdón, Q0 mayúscula, por coseno de Omega T. Y entonces en T igual a 0, tenemos que Q0 vale Q0 mayúscula por esto en 0 que vale 1.
+37:39
+Entonces determinamos cuánto vale Q0. Entonces Q de T, para las condiciones iniciales que habíamos fijado, es Q0 por coseno de Omega T.
+37:54
+solución imponiendo condiciones iniciales bueno pero ahora quiero esta manera de resolver no es muy satisfactoria porque esto es muy útil si uno tiene una conexión directa con algún ser sobrenatural Que si uno levanta el teléfono y puede hablar con Dios, le dice, bueno, ¿cómo es la solución?
+38:24
+Te pasan el dato, eso, o internet, no sé. Pero le das la solución y después verificás. Y ahí está, te quedás contento. Pero no te permite, si no supieras la solución, hallar la solución. ¿Me explico? No te da ninguna pista de cómo hacer para hallarla. ¿Me explico? En física 1, en realidad, ustedes ven una pista. Porque lo que ven es que la ecuación es la misma. ¿Se acuerdan del movimiento circular uniforme? Lo proyectan.
+38:50
+¿Se acuerdan de eso? ¿Ven que la ecuación del movimiento armónico simple es la misma que la del movimiento circular uniforme proyectada en la horizontal? Bueno, vamos a usar esa misma idea, pero escrita de otra manera.
+39:02
+Vamos a ver que el movimiento armónico simple está relacionado con movimientos circulares.
+39:08
+Cambiando las variables. Entonces vamos a hacer lo siguiente.
+39:17
+Entonces, truco. Otro truco para resolver. Para hallar esto, para probar esto. Esto que está acá. ¿Sí? El truco es el siguiente. Las ecuaciones lineales, ecuaciones diferenciales lineales con coeficientes constantes, tienen siempre por soluciones, siempre tienen soluciones que son exponenciales. ¿Está bien?
+39:49
+¿Tú para resolver? Todas las ecuaciones diferenciales lineales homogéneas tienen soluciones exponenciales.
+40:14
+Pero alguien puede decir, pero no, pero no estamos buscando exponenciales, estamos hablando... Pero ustedes saben que las exponenciales y los cosenos son primas hermanas, ¿sí? Bueno, vamos a ver un momento. Entonces, vamos a buscar soluciones...
+40:32
+Entonces, esto lo prueban en algún curso de ecuaciones diferenciales. Lo prueban. Pero si no, no importa. Sépanlo. Es un buen dato. Y saben, sin hacer toda una prueba rigurosa matemática, el concepto es muy simple. ¿Qué les dice una ecuación esta? Les dice que la derivada segunda es proporcional, a menos de un signo, a la función. Pero eso es justo la propiedad de las exponenciales. Las exponenciales tienen la propiedad de que las derivadas es lo mismo que multiplicar por una constante. La derivada de una exponencial sin coeficiente les queda justo la exponencial.
+41:06
+Pero si ponen la exponencial de R por T les queda algo proporcional. Esto simplemente les dice que la derivada segunda, que es lo mismo que derivar dos veces, les queda la derivada segunda proporcional a la función. Entonces las exponenciales siempre tienen esa propiedad. Y eso es muy cómodo, es la manera más cómoda de resolver la ecuación. Esto le está diciendo que hay una combinación lineal de derivadas que vale cero. Entonces, vamos a buscar soluciones de la forma Q de T, una constante, por E a la RT.
+41:51
+Bien. Bien. Entonces derivamos dos veces. Vamos a buscar soluciones de esa forma. Entonces Q punto será igual a A por E a la RT. Fíjense que derivar esto es bien fácil, simplemente multiplicar por R. Y ahora deriva una segunda vez Q dos puntos es A por E a la RT por R al cuadrado. Cada vez que derivamos agregamos un R. Más fácil imposible. Entonces ahora sustituimos esa ecuación en la ecuación que nos interesa.
+42:22
+Nos queda L por R al cuadrado por la exponencial de RT por A, más 1 sobre C por A por E a la RT. Igual a 0 y esto tiene que valer para todo tiempo.
+42:39
+Dejo por ahí la solución.
+42:51
+Esto es lo que queremos probar. Bueno, pero si queremos que esto suceda para todo tiempo, podemos simplificar A y podemos simplificar la exponencial. Entonces nos queda que L por R al cuadrado más 1 sobre C vale 0. Y ahora podemos despejar de acá R. Esto nos dice que R al cuadrado será menos 1 sobre LC cuadrado.
+43:21
+estamos complicados, ¿por qué? porque de este lado tenemos algo positivo y de este lado algo entonces son números complejos, de hecho imaginarios puros entonces esto nos dice, entonces equivalente a decir que R es igual a más menos I sobre raíz de LC ¿de acuerdo?
+43:47
+Chiche. Entonces tenemos dos soluciones. Una con más y otra con menos. Pero la ecuación es lineal. Ejercicio. Verifiquen que si tienen dos soluciones, una combinación lineal de soluciones también es solución. Entonces la solución será combinación lineal.
+44:18
+De las soluciones encontradas.
+44:28
+Entonces esto les queda Q de T, les va a quedar un A1 por E a la I, llamémosle a esto más menos I omega, ¿está? Para simplificar, para no andar arrastrando eso. Porque ya vimos que omega es eso, ¿está? Así que tenemos E a la más I omega T más un A2 por E a la menos I omega T. Con A1 y A2 constantes, que normalmente son números complejos, ¿está bien? Pero alguien dice, pero profesor, esto no se parece a aquello.
+45:01
+Pero vamos a ver que sí. Porque no nos interesan todas las soluciones. Nos interesan solo las soluciones. Q es una variable real, ¿verdad? Entonces solo nos interesan las soluciones que sean reales. Estas son todas las soluciones, pero sin haber pedido que Q fuera un número real. Q podría ser algo complejo. Pero ahí me salí de mi problema físico. Mi problema físico es con un Q real. Entonces, imponemos que Q de T sea real. Pero, Q de T es real.
+45:33
+Es un número real. Entonces, el complejo conjugado de Q de T es lo mismo que Q de T. ¿Verdad? O sea, la característica de los números reales. Entonces tomemos el complejo conjugado de Q, nos queda A1, complejo conjugado, por e a la menos i omega t, más A2, complejo conjugado, por e a la i omega t. Entonces fíjense que tomando el complejo conjugado se me intervierten A1 y A2 y se me complejo conjugan.
+46:16
+¿De acuerdo? Entonces eso quiere decir que a1 es igual a a2 complejo conjugado.
+46:27
+Entonces tiene que variar para todo t. Entonces para que estas dos cosas sean iguales para todo t, necesitamos que el coeficiente de la exponencial de menos i omega t sea el mismo arriba y abajo. Pero la otra condición no nos da nada nuevo, porque el complejo conjugado del complejo conjugado es lo original, ¿verdad? Así que si yo tomo el complejo conjugado acá, me da la otra relación.
+46:59
+Bueno, sigamos.
+47:05
+Entonces sabemos que a 1 y a 2 son complejos jugados. Entonces llamémosle a 1, escribamos a 1 la representación polar. ¿Se acuerdan de la representación polar de los números complejos? ¿Están duchos con números complejos? Si le digo no, son números reales pero más difíciles. Por eso se llama complejo. Pero no, ¿se acuerdan de la representación polar? Todo número complejo se escribe como un número real positivo, llamémosle valor absoluto, es la norma, ¿verdad?
+47:38
+O el módulo, por e a la i fi. ¿Se acuerdan de eso? ¿Sí? ¿Se acuerdan de eso? Y entonces, a1, complejo conjugado, ¿cómo es?
+47:52
+¿Cuál es el módulo del complejo conjugado? El mismo. Tiene el mismo módulo. ¿Y cómo es la fase? Menos. Fíjense, esto lo podemos ver en un dibujo acá.
+48:10
+Tomen acá este número que va a ser, en el plano complejo, esta es la parte real, esta es la parte imaginaria, a este número es A1. El complejo conjugado es el simétrico con respecto al eje real. Entonces es A1 complejo conjugado. El módulo es la norma del vector, tiene que ser la misma, pero el ángulo este en un caso es phi y en este otro caso es menos phi.
+48:36
+¿Se acuerdan de eso? ¿Es chino básico lo que estoy diciendo? No. Inglés antiguo. Entonces si sustituyo, queda Q de T...
+48:54
+Sustituyo aquello que encontré. Queda módulo de A1 por e a la i fi por e a la i omega t más módulo de A1 por e a la menos i fi por e a la menos i omega t. ¿Sí? ¿De acuerdo? ¿De acuerdo? Entonces esto lo puedo escribir como módulo de A1, factor de e a la i omega t más phi, porque las exponenciales tienen esa propiedad cómoda, por eso estoy usando las variables exponenciales, más e a la menos i omega t más phi.
+49:41
+¿Y esto que está acá qué es? ¿Se acuerdan? Coseno de un número imaginario puro más e. La exponencial de un número imaginado puro más el subcomplejo conjugado.
+49:56
+La parte real. ¿Y cuál es la parte real? Coseno. ¿Se acuerdan de esta fórmula? E a la ix es igual a coseno de x más seno de x. ¿Se acuerdan? ¿No? ¿No?
+50:17
+Fórmula de Euler. ¿No? Lo ven acá también en el... Si X es real, fíjense que esto les dice que E a... Tienen que proyectar en la horizontal y en la vertical. E a la Y es un número complejo de módulo 1. Si lo proyectan en la horizontal les queda el coseno y en la vertical les queda el seno. ¿Sí? ¿Sí? Bueno, entonces acá esto les queda la parte imaginaria.
+50:51
+Escribámoslo. El primero les queda coseno de omega t más fi más i seno de omega t más fi. Y ahora el segundo. Usan que el coseno es par, así que les queda coseno de omega t más fi. Y el seno es impar, así que les queda menos i seno de omega t más fi. Entonces las partes imaginarias se nos van.
+51:20
+Esto era un paréntesis. Así que tenemos que Q de T es igual a dos veces el módulo de A1 por coseno de omega T más phi. ¿Bien? Bueno, y ahora llamando a esto le llaman Q0. Tienen la solución que habíamos obtenido. Le llaman a esto Q0.
+51:45
+Si esto les resultó difícil, bueno, tienen la otra solución, la de quedarnos tranquilos.
+51:52
+Pero por lo menos esto es útil porque les permite abordar otros casos más difíciles, que son los que vamos a ir abordando a partir de ahora. Entonces, les mostré en un caso fácil... Una técnica que es muy general. Es cómo resolver ecuaciones diferenciales con coeficientes constantes lineales.
+52:21
+Y homogéneas. Entonces llamémosle a esto Q0. Y entonces vimos cómo era la solución.
+52:41
+¿Sí? ¿Por qué uno tiene que ser a dos complejos conjugados? Porque dijimos que Q de T es una variable real, así que tiene que ser igual a su complejo conjugado. Y eso en todo tiempo. Pero mirá el coeficiente. Estas dos funciones son linealmente independientes. Quiere decir que los coeficientes tienen que ser los mismos. Esta y esta son linealmente independientes. ¿Está bien? Entonces, tomás tiempos diferentes y llegás a la conclusión de que lo que oscila como e a la i omega t tiene que ser lo mismo arriba y abajo.
+53:17
+Y acá vale a 1, acá vale a 2, complejo 1. Y lo mismo... Claro, pero eso no nos da nada nuevo, porque si yo escribo a 2 igual a 1, complejo conjugado, es simplemente esta misma ecuación compleja o conjugada. Entonces no agrega nada. La misma información.
+53:39
+Bueno, entonces, ¿se entendió esto? Prepárense porque ahora viene la parte difícil.
+53:48
+Todavía esto era lo fácil. Entonces vamos a ver. 11.6 creo. ¿6? Sí.
+54:09
+Oscilaciones forzadas o con y con resistencia. Bueno, entonces supongamos ahora que yo tengo... Un generador, acá, que está forzando un circuito que va a tener una resistencia, ya no despreciamos mal la resistencia, un condensador y una bobina.
+54:57
+Bien, esto es un generador. Bien. Este es el circuito más simple. Después tenemos un capítulo entero que se llama circuitos RLC. Los circuitos RLC son circuitos que tienen resistencias, condensadores y bobinas.
+55:17
+Este es el más simple de todos porque es una sola malla. Entonces acá tendremos una FEM, que a priori depende del tiempo. Entonces escribimos, la FEM esta es igual. A L por la derivada de I con respecto de T, más R por I, más Q sobre C. ¿Bien?
+55:50
+Y queremos plantearnos, bueno, cómo resolver esa ecuación.
+55:54
+Una ecuación nuevamente es una ecuación diferencial con coeficientes constantes. Es lineal porque aparece la función linealmente. La derivada linealmente y la derivada segunda de Q linealmente. ¿Vean? Queremos resolverlo.
+56:13
+Entonces, lo primero que vamos a suponer, vamos a hacer alguna suposición de cómo es el forzado. Lo primero que vamos a suponer es que el forzado es periódico. Es decir, que se repite. Cada tanto tiempo empiezo de nuevo. Por ejemplo, podría ser una sinusoide. Pero podría ser, por ejemplo, escalones. Prendo, apago. Prendo, apago. Prendo, apago. Podría ser también eso. O triángulos. Subo, bajo. Subo, bajo. Lo único que pido es que sea periódico.
+56:46
+¿De acuerdo? Entonces, ahí van a pasar dos cosas. Imagínense que yo... Vimos que esto tiene una analogía fuerte con... Un sistema mecánico, por ejemplo, una hamaca, si ustedes llevan, ustedes todavía no tienen hijos, la mayoría supongo, pero pueden tener capaz que sobrinitos o algo así, los llevan al parque, ¿está? Los suben a una hamaca, ¿está? Y los hacen oscilar, ¿sí?
+57:17
+Entonces, ustedes en este caso son la FEM, ¿está? Lo hacen oscilar periódicamente, cada tanto empujan, ¿está? Supongan que empujan regularmente, ¿sí?
+57:28
+Y bueno, ¿ustedes se acuerdan que el péndulo, cuando es para ángulos chicos, se parece a la ecuación de movimiento armónico simple? ¿Se acuerdan de eso? Bueno, y va a haber además alguna resistencia. No sabemos bien cómo es. Entonces, está claro que... Cuando empujan, al principio la hamaca no se mueve. Entonces tienen un primer régimen en que la hamaca hace un movimiento que no es periódico, que hace un movimiento que depende de las condiciones iniciales.
+58:00
+Pero llega un momento que si ustedes están aplicando una fuerza periódicamente, el movimiento de la hamaca es periódico.
+58:08
+Y de hecho tiene el mismo periodo en que ustedes empujan. ¿De acuerdo? ¿De acuerdo? Después de un rato, no muy largo, la hamaca oscila con ustedes. ¿De acuerdo? Básicamente va y vuelve cada vez que ustedes empujan, más o menos. Entonces, cuando uno quiere estudiar las oscilaciones, lo mismo pasa en el caso eléctrico, se separan en dos situaciones, dos regímenes.
+58:42
+Lo que se llama el régimen transitorio, que es el régimen inicial, que depende de las condiciones iniciales, en el cual el sistema arranca de una condición inicial y se va ajustando. Y después hay lo que se llama el régimen permanente, en el cual alcanzó un movimiento periódico que depende de la oscilación y que ya no es sensible a las condiciones iniciales. ¿Está bien? Nos vamos a interesar en los dos regímenes. El régimen transitorio y el régimen permanente.
+59:09
+¿Se entiende? Entonces... Entonces... Podemos clasificar... Vamos a suponer esto periódico.
+59:36
+Podemos clasificar las oscilaciones lineales. Porque la ecuación es lineal. Tiene un segundo miembro pero es lineal. En dos regímenes.
+59:59
+Entonces el primero es lo que se llama el régimen transitorio.
+1:00:10
+que depende de las condiciones iniciales y dura un intervalo corto. Y luego lo que se llama el régimen permanente,
+1:00:43
+En que la oscilación se vuelve periódica... ...e independiente... ...insensible, digamos, de las condiciones iniciales...
+1:01:14
+Veamos por qué esto es así. ¿Veamos por qué esto es así? Prueba.
+1:01:46
+Bueno, prueba de lo físico, ¿no? Los matemáticos no van a considerarse una prueba. Entonces tomen dos soluciones.
+1:01:55
+Tomemos... Lo que voy a hacer, lo voy a hacer para esta ecuación en particular, pero en realidad es un argumento muy muy general. Tomemos dos soluciones.
+1:02:08
+Q1 de T y Q2 de T. Sabemos que las ecuaciones diferenciales normalmente tienen muchas soluciones. ¿Bien? Entonces, verificamos. Tenemos dos ecuaciones. E de T es igual a L por la derivada segunda de Q1 con respecto al tiempo, más R por la derivada de Q1 con respecto al tiempo, más Q1 sobre C. Y también tenemos que Q2 es una solución...
+1:02:50
+Entonces también verifica esto, la misma ecuación. Las dos son soluciones. Está claro que podemos tener varias soluciones porque podemos tener distintas condiciones iniciales. Por ejemplo, al sobrinito en la hamaca lo pueden hacer arrancar del reposo y empujándolo. Le dan una velocidad inicial. Pero el ángulo inicial es cero. O pueden levantar la maca y soltarlo desde el reposo a un ángulo nulo. Son dos condiciones iniciales diferentes para el mismo problema.
+1:03:24
+Pero lo interesante es qué pasa si yo resto estas dos ecuaciones.
+1:03:31
+Restemos. Resta. Entonces el miembro este, ¿cuánto da? Si resto esto menos esto. Cero. Esa cuenta no es difícil.
+1:03:44
+Si yo resto acá, ¿qué me queda?
+1:03:51
+Estos dos términos. L por la derivada segunda de la diferencia. Me queda L derivada segunda con respecto al tiempo de Q1 menos Q2. Fíjense que ahí estamos usando la linealidad. Si apareciera la derivada segunda al cuadrado no valdría eso. No es lo mismo derivada segunda... Derivada al cuadrado de uno menos la derivada al cuadrado del otro que la derivada de los cuadrados.
+1:04:22
+Se da cuenta que no es lo mismo. Pero cuando son operaciones lineales sí vale. Está claro que la derivada de la resta es la resta de las derivadas. Es eso lo que estoy usando. Y acá, sigo con este otro término. Son todas combinaciones lineales. Vale lo mismo. Derivada acá de Q1 menos Q2 con respecto al tiempo.
+1:04:43
+¿Sí? Y acá también vale lo mismo. Vale 1 sobre C por Q1 menos Q2. ¿De acuerdo? Entonces, ¿qué cumple Q1 menos Q2? ¿Qué? Q1 menos Q2 cumple una ecuación diferencial que tiene un nombre. ¿Se acuerdan cómo se llama esa ecuación?
+1:05:11
+Entonces, llamémosle... QH a Q1 menos Q2.
+1:05:18
+Verifica la ecuación siguiente. L derivada segunda de QH con respecto al tiempo más R derivada de QH con respecto al tiempo más QH sobre C vale 0. Esta ecuación tiene un nombre. ¿No han escuchado ese nombre por ahí? La ecuación homogénea.
+1:05:49
+Fíjense, la ecuación homogénea es igual que la ecuación original, salvo que apague... Es un caso particular, si quieren, sin nadie forzando.
+1:06:00
+¿De acuerdo? Nadie está suministrando energía. Pero, ¿qué pasa con la maca del sobrinito si yo la dejo de amacar? Claro, porque hay rozamiento y acá tenemos una resistencia. Entonces, siempre en cualquier sistema que tengan resistencia, y los sistemas reales son así, si ustedes esperan suficientemente, un rato suficiente, la oscilación se va a ir apagando y al final tiende a cero. ¿De acuerdo? Entonces, todavía no vimos cómo resolver la ecuación de la homogénea, pero sí ya sabemos antes de resolverla que tiende a cero.
+1:06:39
+entonces sabemos dos cosas de esto que acabamos de ver sabemos dos cosas primero que nada entonces cualquier solución cualquier solución QDT se escribe como una solución particular Una que ustedes elijan más una solución de la homogénea.
+1:07:15
+Entonces, solución particular. Y esta solución de la homogénea.
+1:07:31
+Porque vimos que si restamos dos soluciones, son solución de la homogénea. Quiere decir que yo tomo una cualquiera, le resto una en particular que yo encuentre. Imagínense que yo encuentro una solución, se la resto. La diferencia, acabamos de ver, es solución de la homogénea. Así que esto verifica, cualquier solución va a ser una en particular que yo encuentre, más una solución de la homogénea. Pero, si hay resistencias...
+1:08:02
+En este caso 1, si hay resistencia, la solución de la homogénea tiende a 0 cuando el tiempo es largo. Simplemente porque la oscilación se va apagando.
+1:08:16
+Se va perdiendo la energía eléctrica.
+1:08:19
+Entonces, cualquier solución...
+1:08:27
+de T se comporta cuando T es grande como una solución particular dada. Entonces esto es lo que se llama el régimen permanente.
+1:08:45
+Y ese régimen está buenísimo porque uno no tiene que resolver toda la ecuación diferencial. Basta con que encuentre una. Normalmente uno para resolver una ecuación diferencial tiene que encontrar todas las soluciones. Esto es mucho más fácil porque si encuentro una ya resolví el problema porque sé que todas las soluciones se comportan de la misma manera para tiempos muy largos. Entonces el problema se reduce a dos cosas. A saber resolverla homogénea, si me intereso en los tiempos iniciales. Es decir, los tiempos en los cuales la homogénea todavía no tendió a cero.
+1:09:18
+Una parte del problema. Y la otra parte es lograr encontrar una solución. Una solución particular.
+1:09:24
+Entonces el problema... El problema... Se reduce... A dos partes.
+1:09:38
+Entonces, encontrar...
+1:09:43
+Una solución particular. Primero. Y segundo, resolver la homogénea. Son dos problemas. Separamos el problema entero en dos problemas. Uno que es en lugar de hallar la solución general, encontrar una solución. Y otra es... hallar una solución de la homogénea. Pero la homogénea es mucho más fácil que la ecuación general.
+1:10:21
+Entonces, en los minutos que me quedan de clase, que son como 20...
+1:10:27
+No, si me dejan 10 minutos, perdimos 15 minutos al comienzo. Me dejan pasarme 5 minutos de clase, perdimos 15. No les pido los 15, les pido 5. Vamos a ver cómo resolverlo homogéneamente. Empecemos por ahí.
+1:10:57
+O no, hagamos al revés. Vamos a empezar por la otra parte. Vamos a tratar de hallar una solución particular. Empecemos por ahí. Régimen permanente.
+1:11:11
+Bueno, una cosa que les quiero comentar, una cuestión de nomenclatura. El régimen permanente es lo que a uno se interesa más frecuentemente, porque normalmente en los circuitos el régimen transitorio es muy cortito. Entonces hay un tiempo muy cortito que uno no llega a ver y luego el sistema... Enseguida alcanza el régimen permanente. Y eso es tan así que al régimen permanente se le termina llamando el régimen. Pero en realidad hay dos régimenes. Llegó, alcanzó el régimen, pero hay dos régimenes. Cuando digan alcanzó el régimen, en realidad se refiere al régimen permanente.
+1:11:43
+Y el régimen permanente tiene el problema de que uno depende de la forma de ley concreta.
+1:11:50
+Para distintos E...
+1:11:57
+Estoy pensando que no me va a dar ni ahí la clase para resolver. Sí, pero arrancamos. Voy a arrancar con la homogénea. Voy a arrancar con la homogénea porque eso lo hago en estos 10 minutos y esto otro me va a llevar media hora. Entonces vamos a empezar con el régimen transitorio. Regimen transitorio. Regimen transitorio homogéneo.
+1:12:27
+En el régimen transitorio también uno necesita una particular, pero no vamos a resolver la particular. Vamos a hallar la homogénea. Fíjense que la homogénea es una ecuación lineal. Una ecuación diferencial lineal con coeficientes constantes y homogénea. ¿Y qué dijimos hace un rato? ¿Cómo son las soluciones de esas ecuaciones?
+1:12:51
+Exponenciales. A veces son senos y cosenos, pero no siempre. En general son exponenciales. Si ligamos son senos y cosenos, pero en general no tienen por qué ser senos y cosenos. Y en este caso no lo van a hacer. Entonces busquemos soluciones. Buscamos soluciones exponenciales.
+1:13:16
+Entonces buscamos Q de la homogénea, una constante por E a la RT. Entonces nuevamente derivo. Una vez me queda A por R por E a la RT. Y si derivo otra vez, me queda A por R al cuadrado por E a la RT. Sustituyo. Me queda L por A por R al cuadrado por E a la RT más R por A por R por E a la RT más A sobre C por E a la RT.
+1:13:56
+Y esto es igual a cero.
+1:14:02
+Bueno, tiene que valer para todo tiempo. Entonces A es distinto, y nos interesan soluciones que no sean nulas, así que A es diferente de 0. Entonces, fíjense que nos queda la ecuación, podemos simplificar A y las exponenciales, nos queda L por R al cuadrado más R por R chica más 1 sobre C igual a 0. Bueno, entonces los matemáticos se llaman polinomios característicos.
+1:14:29
+Polinomios característicos de la ecuación. Pero es muy fácil porque ahora redujimos el problema de una ecuación diferencial a resolver una ecuación normal, una ecuación algebraica, de segundo grado además, muy fácil de resolver. Entonces resolvámosla. Entonces esta solución es igual. R es igual a menos R más menos raíz cuadrada de R al cuadrado...
+1:15:04
+Menos 4L sobre C dividido 2L.
+1:15:13
+Bien. Entonces ahí que tienen varias situaciones porque depende del signo de lo que está acá adentro. ¿Bien? Hay varios casos. No voy a estudiar todos los casos. Pero ustedes capaz que en Física 1 vieron los casos.
+1:15:45
+¿Se acuerdan? Sobreamortiguado, subamortiguado, crítico. ¿Sí? ¿Vieron eso? Bueno, les cuento. La resistencia es muy muy grande, ¿sí? ¿Cómo es la raíz? Es lo que está detrás de la raíz. ¿Es positivo o negativo si la resistencia es muy grande? Positivo. Positivo. Quiere decir que estas soluciones, ¿cómo van a ser?
+1:16:08
+Reales. En ese caso el sistema no oscila. Nada. Simplemente va hacia la posición de equilibrio. A veces se pasa y va por abajo, pero no se pone a oscilar. ¿Está bien?
+1:16:21
+Y después tienen la situación opuesta, en la cual la resistencia es chiquitita. Que es el caso que nos vamos a interesar ahora. El caso en que la resistencia es re chiquita. Cuando la resistencia es re chiquita, ¿cómo es lo que está dentro de la raíz?
+1:16:35
+Negativo. Negativo. Quiere decir que la solución es compleja. Fíjense que en el caso R igual a 0, tenemos que llegar a la ecuación que vimos hace un rato, que era el sistema que oscilaba, sin perder nada. En este caso no va a ser eso, va a ser una cosa que no va a ser imaginaria pura, va a tener una parte real y una parte imaginal. Entonces consideremos el caso que se llama subamortiguado.
+1:17:09
+Subamortiguado quiere decir que R al cuadrado menos 4L sobre C es menor que 0.
+1:17:18
+Entonces, acá son dos soluciones. R más y menos será igual a menos R sobre 2L más menos algo que llamaré I omega' donde omega' es igual a 1 sobre 2L
+1:17:41
+Raíz de 4L sobre C menos R al cuadrado. Fíjense que cambié el signo de lo de adentro para sacar un I. De hecho a esto también le voy a poner un nombre. A esto que está acá le voy a llamar gamma. Así que esto va a ser menos gamma más menos I omega prima.
+1:18:12
+Bueno, esto se puede simplificar un poco, puedo meter el 4L dentro de la raíz y me queda, si meto esto para acá dentro me queda 1 sobre LC, nuestro famoso 1 sobre LC de hace un rato, menos R al cuadrado sobre 4L al cuadrado. Es otra manera de escribirlo. Esto nos muestra claramente que cuando R se vuelve muy chiquitito, el omega prima se acerca al omega que habíamos calculado hoy. ¿Se acuerdan?
+1:18:41
+Entonces la solución, entonces las soluciones serán Q homogénea de T se escribe como un Q1, llamémosle A1. A1 por E a la menos R, perdón, E a la menos R, o llamémosle más, más menos, RA más, será... menos R más por T, más A menos por E a la menos R menos por T, o sustituyendo por lo que está allá arriba, nos queda A más por E a la menos gamma T, menos I omega... A ver, perdón, estos menos no van, perdón, discúlpenme, estos menos no van.
+1:19:36
+Así que queda... Menos gamma, acá, más I omega prima T más A menos por E a la menos gamma T menos I omega prima T. Y ahora podemos sacar el factor E a la menos gamma T y nos queda A más por E a la I omega prima T más A menos por E a la menos I omega prima T.
+1:20:29
+Y termino. Fíjense que lo que nos interesa son las soluciones reales.
+1:20:35
+Pero esto que está acá es real. Quiere decir, aplicando lo mismo que aplicamos hoy, todo esto que está acá lo podemos escribir. Si la solución es real...
+1:20:51
+Esto es igual a un Q0. Es el mismo cálculo que hicimos hoy. Esta es la misma presión que teníamos en el caso sin resistencia. La única diferencia en el caso con resistencia es que tenemos omega prima en lugar de omega y tenemos el exponencial está adelante. Pero el resto del cálculo es igual. Si ponemos que la solución sea real, esto les queda coseno de omega prima T más un phi. Así que la solución... Hagamos como antes, pongamos un Q0 mayúscula.
+1:21:23
+Nos queda la solución general de la homogénea. Nos queda Q de la homogénea es Q0 por e a la menos gamma t por coseno de omega prima t más phi. La solución general de la homogénea.
+1:21:52
+Y fíjense que es igual que la solución que teníamos sin resistencia, con la diferencia de que tiene esta exponencial adelante, que es una exponencial que le pasa cuando T tiende a infinito.
+1:22:04
+Tiende a cero. Que es lo que esperábamos, que las oscilaciones con resistencia se fueran aminorando. Efectivamente, gamma es proporcional a la resistencia. Mientras mayor sea la resistencia, más rápido tiende a cero. Bueno, la seguimos el miércoles.
+

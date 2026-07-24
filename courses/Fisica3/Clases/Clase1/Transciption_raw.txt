@@ -1,0 +1,508 @@
+# Clase 1
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/1/
+
+Fecha de exportación: 7/6/2026, 9:48:48 PM
+
+
+0:18
+Buenos días. Yo voy a ser su profesor de teórico de física 3 este semestre. Me llamo Nicolás Yebor.
+0:40
+Como el apellido es difícil, pueden decirme simplemente Nicolás, que es más fácil. El curso de física 3 este semestre, además de este teórico, va a tener 6 grupos de prácticos. Si se fijan bien en la página del curso, van a ver que no solo hay 4 prácticos como el año pasado, sino 6. Los prácticos en... de los lunes y los miércoles, justo después del teórico, hemos agregado un práctico más porque constatamos que anteriormente se llenaban demasiado de esos prácticos y para que puedan tener un contacto más directo con el docente de práctico, hemos agregado unos prácticos complementarios en ese horario.
+1:26
+Así que fíjense bien en la página, hay más horarios que lo que estaba previsto originalmente. Bueno, este semestre vamos a tener de visita a la gente de OpenFin que va a estar filmando el curso. Les pido que no les pase lo mismo que a mí, que eso no les perturbe mucho la clase. En particular, yo incentivo mucho a que los estudiantes hagan preguntas, no se autocensuren.
+1:57
+En general, piensen que si ustedes tienen una pregunta para hacer... Deben haber varias decenas de compañeros de ustedes que tienen la misma pregunta, pero capaz que no se animan a hacerla o que no saben cómo formularla. Así que, de verdad, que cuando tengan una pregunta, háganla. Eso está bueno. Y también está bueno no solo una clase normal, sino también una clase filmada, porque cuando los compañeros de ustedes miren la clase filmada, también tienen esas preguntas que pueden esclarecer cosas. En general, cuando hay un estudiante que quiere hacer una pregunta, es porque hay algo que no fue bien expresado o no suficientemente bien expresado.
+2:29
+Y así que está bueno que la... Eso es lo primero. Segunda cosa.
+2:37
+Curso. La bibliografía. Bueno, como todos los cursos de Física 1, 2 y 3, seguimos el Resnick y Halliday. Es un libro, una colección que ustedes conocen. Es un libro muy prolijo, que tiene pocos errores. No tiene muchas ideas, no es un libro que hace soñar, pero es un libro claro y bien ordenado y lo seguimos con bastante detenimiento. Así que si un día por motivos X ustedes faltan una clase, en general pueden pedirle a un compañero sus apuntes o directamente ir a mirar al Resnick porque seguimos en bastante detenimiento lo que dice ahí.
+3:17
+El curso de Física 3 es un curso de electromagnetismo elemental. Es decir, es el primer curso de electromagnetismo que tienen en la facultad. ¿Qué es el electromagnetismo? Ustedes capaz que ya vieron algo de eso en el liceo. ¿Preguntas? ¿Qué es el electromagnetismo?
+3:43
+Bueno, como hay demasiada gente que quiere intervenir, voy a responder yo. El electromagnetismo es una teoría física que ha permitido unificar dos fenómenos físicos que, varios fenómenos físicos, pero en particular, dos fenómenos que se conocían desde la antigüedad, que eran los fenómenos del magnetismo, es decir, algunas piedras se sabían, se pensaba en la antigüedad que eran mágicas y que tenían el buen gusto de apuntar siempre al norte y con eso se hacían brújulas, ¿verdad?
+4:16
+Es el fenómeno del magnetismo. Sabía que algunos tipos de piedras, magnetitas, tenían esa propiedad de ser imanes, ¿verdad? Y eso se conocía desde la antigüedad. Y después se conocía también otro fenómeno en el cual algunos objetos, cuando uno los frota, adquieren una propiedad que hoy en día se llama carga eléctrica, y cuando dos objetos cargados se acercan uno al otro, pueden atraerse o repelerse, según el caso.
+4:49
+Y hasta el siglo XIX se pensaba que estos dos fenómenos eran fenómenos completamente independientes. En realidad, alguna gente pensaba que era lo mismo, pero de manera equivocada. Mezclaban una cosa con la otra. Pero cuando quedó claro que eran dos fenómenos diferentes, la gente pensó que eran independientes. Y en realidad, durante el siglo XIX, progresivamente quedó más claro que ambos fenómenos están interrelacionados. El fenómeno de la... Digamos, básicamente... Lo que se logró entender, y vamos a ir viendo a lo largo de este curso, es cuando las cargas eléctricas se mueven, generan fenómenos, además de eléctricos, fenómenos magnéticos.
+5:27
+Hay asientos por allá en el fondo. Gracias. mezcla la electricidad con el magnetismo es un tema que se va a ir viendo a lo largo de este curso. Primero vamos a ir viendo fenómenos en los cuales las cargas no se mueven, es lo que se llama la electrostática, luego cuando se mueven poquito y luego cuando se mueven un poco más rápido. Eso va a ser básicamente toda la primera parte del curso. Se produce una segunda unificación. La primera unificación es de la electricidad con el magnetismo.
+5:59
+Y hay una segunda unificación que se produce, que es que en la segunda mitad del siglo XIX, Maxwell, un físico muy importante de esa época, logra entender que los fenómenos electromagnéticos, además de explicar los imanes, las atracciones entre cargas, entre objetos cargados y algunos otros fenómenos de corrientes eléctricas y cosas así... permitían entender otro fenómeno que era bien conocido de la naturaleza que era la propagación de la luz.
+6:31
+Maxwell logra entender que la luz es un fenómeno electromagnético. Eso también lo vamos a explicar en este curso.
+6:39
+Y luego de haber llegado a ese punto vamos a ver algunas propiedades de la física de la luz. De manera un poco elemental, pero vamos a ver las primeras propiedades de la propagación de la luz en lo que es una rama de la física que se llama la óptica. Entonces vamos a ver algunos elementos de óptica al final del curso. Así que el curso básicamente tiene esos dos temas. Entonces temario... Esencialmente, pueden ver el programa detallado en la página web, no tiene sentido que yo lo especifique acá, pero es presentación elemental del electromagnetismo.
+7:30
+Y ve...
+7:33
+algunos elementos de óptica. Entonces, el electromagnetismo es efectos eléctricos,
+7:58
+Efectos magnéticos.
+8:06
+Su interrelación, cómo están relacionados. Y como hijo de este casamiento, la luz.
+8:23
+No es el único hijo, vamos a ver otros hijos que están por ahí, pero... Ese es uno de los que vamos a tratar. Así que esta es la presentación básica. Una última cosa que quiero mencionar, que no dije hace un momento acerca de la bibliografía. El RENIC, como yo decía, es un libro muy ordenado, muy prolijo. Es el que seguimos. Un libro fácil de entender. Ahí no ven nada, ¿verdad? Más allá atrás van a ver mucho mejor. Pero hay otro libro que no seguimos en este curso.
+8:57
+y que es el complemento ideal del RENIC. Es un libro que no les va a permitir, no es el libro que seguimos, no está ordenado el curso siguiendo ese libro, es un libro cuyo nivel no coincide exactamente con el del curso, pero que sí es un libro que permite soñar un poco, pensar un poco, ver qué hay atrás de las cosas. Si tienen tiempo y quieren divertirse un poco con los temas del curso, les recomiendo leer el libro... el volumen correspondiente de las lecturas de Feynman.
+9:30
+Probablemente el premio Nobel más importante del segunda mitad del siglo XX. Es un tipo muy, muy importante de la física. Y además era un muy buen docente. Y hay un curso basado, un texto basado en los cursos que él daba en Caltech. Les recomiendo la lectura. Es muy agradable y muy interesante. No solo el del electromagnetismo, también los de mecánica. Valen la pena leerlos. Si tienen tiempo y energías, es un buen complemento del curso. Bueno. Y habiendo dicho esto, preguntas. Si no, ya arranco con el capítulo 1.
+10:01
+¿Tienen claro los horarios? El teórico es lunes y miércoles en este horario, lunes en este salón y el miércoles es en otro salón, en el salón C22. ¿Preguntas? ¿Todo en orden? ¿Clarísimo? Entonces arrancamos con el capítulo 1.
+10:34
+Gracias.
+11:04
+Bueno, lo primero es, ¿cuál es la ubicación del electromagnetismo en nuestra comprensión general de la naturaleza? Los físicos tratamos... En realidad toda la ciencia, pero en particular la física, trata de reducir todos los fenómenos que nosotros observamos de manera controlada, en experimentos o en observaciones directas de la naturaleza, tratamos de reducirlos al menor número posible de interacciones.
+11:39
+Ver el mundo de una manera tal que vemos todos los objetos que lo componen como interactuando entre sí y queremos que estas interacciones se puedan interpretar en términos del menor número posible independiente de cosas, de tipos de interacción. Entonces, ustedes no es así que aprenden la física, ¿verdad? Ustedes aprenden la física de una manera completamente diferente. Por ejemplo, cuando tienen que estudiar la interacción entre una masa y una pared mediada por un resorte, tienen una ley para el resorte.
+12:12
+Cuando tienen que estudiar... La interacción entre un objeto sobre una mesa que está deslizando con rozamiento tiene una ley para el rozamiento. Y si el rozamiento es dinámico, tiene una ley. Si el rozamiento es estático, tiene otra ley. Si quieren estudiar la caída de los cuerpos, tienen el peso. Y así de simple. Tienen una ley para cada fenómeno. Pero eso no es lo que hacemos los físicos. Los físicos tratamos de hacer una cosa completamente distinta, que es que todas esas leyes que parecen independientes, tratemos de describirlas en términos de cosas que son lo mismo. Por ejemplo...
+12:44
+La interacción, la ley del resorte es una ley electromagnética. ¿Qué es lo que sucede? Hay interacciones electromagnéticas entre las moléculas que conforman el resorte a nivel microscópico que favorecen fuerzas, son fuerzas que son de naturaleza electromagnética, que favorecen que la posición, la distancia relativa entre los átomos que componen el metal del que está hecho, El resorte es tener a cierta distancia y no a otra, cuando uno aparte los coloca en otra distancia, hay un fenómeno electromagnético que tiende a favorecer, no es solo electromagnético, hay otros efectos mezclados, relacionados con la física microscópica, se llaman efectos cuánticos, pero esencialmente es un fenómeno electromagnético.
+13:27
+Lo mismo pasa con el rozamiento. El rozamiento no es una cosa radicalmente diferente. Sí, cuando uno lo ve en la experiencia cotidiana es radicalmente diferente, pero la interacción subyacente que hay también es electromagnética. Está ligado a pequeñas interacciones entre los átomos que están entre una superficie y la otra. También hay efectos cuánticos importantes asociados. No es una cosa que se pueda entender en términos de los fenómenos de la mecánica clásica que aprendemos en estos cursos, pero sí es un fenómeno que subyacentemente es electromagnético.
+14:01
+Entonces, los físicos tratamos de entender toda la naturaleza en términos de pocas cosas. ¿Por qué? Porque si uno tiene que dar una explicación independiente para cada cosa, no está haciendo... mucho mejor que lo que hacían los griegos en la antigüedad de asignar un dios a cada fenómeno. Un dios para la lluvia, un dios para el sol, un dios para el amor y otro dios para la guerra. No. Queremos que haya el menor número posible de interacciones independientes. ¿Cuál es nuestra comprensión al día de hoy de cuántas son las interacciones independientes, lo que llamamos los físicos, las interacciones fundamentales?
+14:38
+Hasta hoy hemos logrado reducir todo a cuatro interacciones fundamentales.
+14:51
+Entonces, el electromagnetismo... Una de las cuatro interacciones... ¿Cuáles son estas cuatro interacciones fundamentales? Bueno, una ustedes la conocen, que es la gravedad.
+15:16
+La segunda es el electromagnetismo. La tercera... Hay otras dos que no se dan en la vida cotidiana, prácticamente no se dan en la vida cotidiana, sino en fenómenos que casi no se observan a nivel cotidiano, que son la interacción nuclear fuerte y por último lo que se llama la interacción nuclear débil.
+15:54
+Hay dos interacciones nucleares.
+16:04
+¿Bien? Entonces, pensemos un poco. A ver, ¿qué cosas están asociadas con cada una de estas interacciones? Entonces, la gravedad. Ustedes ya han visto en curso anterior, ¿de qué es responsable la gravedad?
+16:20
+Caída de los cuerpos, dice alguno.
+16:26
+Algunos dicen, por ahí está asociado con que los cuerpos tienen masa. Sí, pero no es la responsable que los cuerpos tengan masa. Es una interacción que se da porque. Entonces, atracción de los cuerpos masivos.
+16:45
+Entonces, en realidad, este es un caso particular de este. Porque cuando decimos que la caída de los cuerpos, ¿qué es? Tenemos los cuerpos acá, caen, ¿por qué? Porque están atraídos hacia quién. hacia la Tierra como un conjunto, es un objeto muy masivo, entonces caen así. Otros ejemplos de cosas en las cuales interviene la gravedad.
+17:09
+Uno a la vez. Los planetas, el movimiento de los planetas.
+17:17
+Y ahí nuevamente es una atracción de los cuerpos, ¿verdad? Piensen la atracción de la... de la Tierra por el Sol, la Tierra está permanentemente, entre comillas, cayendo hacia el Sol, no termina de caer porque además de tener la interacción, tiene lo que se llama un fenómeno de inercia, gira alrededor del Sol en un movimiento que no es exactamente, pero se parece mucho a un movimiento circular uniforme. No es exactamente, es más bien elíptico, pero aproximadamente parece un movimiento circular. Ustedes saben que con un movimiento circular uniforme, ustedes pueden siempre tener una fuerza aplicada, y si la fuerza es radial, entonces el objeto no cae, gira.
+17:55
+Y eso es lo que le pasa a la Tierra, y lo que le pasa básicamente a todos los planetas. Algunos tienen un movimiento más alargado que la Tierra, más elíptico que la Tierra. Bien. ¿Y algo más? ¿La gravedad es responsable
+18:10
+de otras cosas? Sí.
+18:12
+Bueno, hay fenómenos de la gravedad muy sutiles, que son fenómenos que no son de la gravedad que ustedes han aprendido, sino de otra gravedad, que es que la gravedad es capaz de desviar la luz. Eso fue descubierto por Einstein en 1916 y luego detectado experimentalmente más tarde, en 1919. Es cierto, hay fenómenos sutiles. ¿Sí? ¿Es verdad? ¿Otros fenómenos? Todos podemos decir. Fenómenos sutiles...
+18:43
+Como desviación de la luz. ¿Otro fenómeno?
+18:50
+La desviación de la luz se da en campos gravitatorios muy fuertes como el del Sol. Si no, el efecto es muy chiquitito. ¿Qué más?
+19:02
+La gravedad responsable de muchas otras cosas. Por ejemplo, de la estructura de las estrellas. ¿Sí?
+19:08
+La estructura de las estrellas depende fundamentalmente de las propiedades, no solo, depende también de otras propiedades. De hecho intervienen en la estructura de las estrellas todas las interacciones de manera importante. Pero la gravedad juega un papel importante. Pero además la gravedad juega un papel importante en la estructura general del universo, en lo que se llama la cosmología.
+19:32
+En toda la estructura general del universo, cómo están compuestas las galaxias, cómo evolucionan las galaxias en el universo que vemos, cómo evolucionaban en el universo hace muchos, muchos millones de años también. Todo eso está bien explicado por la gravedad en su versión moderna. Su versión moderna no es la de Newton que ustedes aprenden, es una versión posterior que fue formulada Por Einstein. Esta misma teoría de la desviación de la luz es una teoría que explica la cosmología.
+20:07
+Bien, entonces vemos que con una sola interacción se explican muchas cosas. Muchas cosas que a priori uno podía pensar que no tienen nada que ver entre sí.
+20:16
+Ahora hagamos el mismo jueguito con el electromagnetismo. ¿Qué explica el electromagnetismo? Entonces, no repitan las dos cosas que yo les decía. Interacción entre cargas. Interacción entre... Objetos cargados. Bien. Tenemos también los imanes, es un fenómeno electromagnético. ¿Qué más?
+20:40
+¿Qué otros fenómenos electromagnéticos?
+20:44
+¿Sí? La transmisión de distinción. La transmisión de distinción.
+20:47
+Sí, la transmisión de información, por ejemplo, a través de corrientes eléctricas o a través de ondas electromagnéticas. Podemos transmitir a través de cables o a través de... Fibra óptica. También, bueno, ahí es luz, ¿verdad? Entonces, podemos decir, entonces, corrientes, luz... Bueno, además acá hay aplicaciones, ¿no? Telecomunicaciones, bien.
+21:20
+Porque está el fenómeno físico, pero ustedes están estudiando ingeniería, así que además uno se puede preguntar cuál es la contraparte tecnológica de esta cosa, que la hay y es abundante, ¿verdad? Las corrientes eléctricas, la luz, bueno, podemos empezar a hablar de otros fenómenos, el láser... Los electroimanes, bueno, es un caso particular de esto que está acá. Pero bueno, los electroimanes son interesantes porque establecen la relación entre la corriente eléctrica y los imanes. Porque hay imanes en los cuales uno no ve la corriente eléctrica.
+21:52
+Siempre hay una corriente eléctrica, pero a veces uno no la ve. En los electroimanes se ve clarísimo.
+21:59
+Otros ejemplos de fenómenos electromagnéticos.
+22:08
+Bueno, el sonido es un fenómeno electromagnético porque todos los fenómenos elásticos son fenómenos electromagnéticos. Los fenómenos elásticos de la vida corriente son todos electromagnéticos. Así que así como el resorte que yo les comentaba es un fenómeno electromagnético porque está asociado con las interacciones, los fenómenos elásticos suelen ser, y el sonido está asociado con propiedades, fíjense. ¿Cómo se da el sonido? Son variaciones de la densidad del aire o de lo que se esté propagando el sonido. Y esas variaciones están asociadas con algunos fenómenos de inercia y también con las interacciones entre las moléculas y esas interacciones típicamente son electromagnéticas.
+22:45
+Y a eso es lo que quiero ir. Las interacciones entre las moléculas y los átomos, la química, es un fenómeno electromagnético.
+22:53
+Todas las interacciones que hay en la química son electromagnéticas. No son colombianas, no es la interacción simple entre dos partículas cargadas. Muchas veces es incluso un objeto más sutil, una relación más sutil que es el producto de una interacción residual entre objetos que tienen cargas totales. Cero, pero tiene una distribución nula de carga. Entonces toda la química está asociada con el electromagnetismo, no con la versión del electromagnetismo que vemos en este curso, porque la química se produce por reacciones que se dan a nivel muy microscópico.
+23:25
+Y a nivel muy microscópico uno no puede olvidarse de otra versión de la física, que se llama la mecánica cuántica, no es la que aprendemos en los cursos de... de facultad, de los primeros años de facultad, los fenómenos cuánticos intervienen de manera muy importante en la química, pero la interacción que hay El soporte en el cual trabaja el electromagnetismo de la química es la mecánica cuántica, pero la interacción que trabaja ahí arriba es la electromagnética. Toda la química se reduce a la comprensión de los fenómenos electromagnéticos.
+23:56
+La estructura de los átomos, de las moléculas, cómo interactúan entre sí, todo eso es electromagnético. Toda la estructura de la materia que conocemos es electromagnética, pues está basada en la química. Esto es la formación de cristales, es electromagnética... las reacciones químicas, la tasa de reacción de tal o cual elemento con tal otro, todo eso es electromagnético. Claro, explicar eso en términos de las interacciones colombianas entre los electrones que están en las moléculas, es una locura, es dificilísimo.
+24:28
+No sabemos cómo hacer la cuenta, ¿verdad? Pero sabemos cuáles son las interacciones en juego, son complicadísimas, pero bien entendidas, y son todas electromagnéticas. Y entonces decimos que la química es una consecuencia del electromagnetismo. ¿Qué otra cosa es? ¿Qué se explica importante que hay en esta sala en términos de la química?
+24:51
+No, la radiación no tiene por qué venir de la química.
+24:57
+Por ejemplo, ustedes cuando salgan de esta clase seguramente vayan a ir a almorzar.
+25:03
+Agarran un sándwich o lo que sea, lo ponen en la boca y después ¿qué pasa? Lo digieren. Hay un proceso biológico que es un proceso químico en realidad. ¿Y qué procesos biológicos no son químicos?
+25:24
+Ninguno. Ninguno. La biología. Toda la biología... que conocemos se explica a partir de la química. Y como la química la sabemos explicar a partir del electromagnetismo, lo que está en la base de todos los fenómenos biológicos es el electromagnetismo. Entonces fíjense, de la vida que ustedes conocen, caída de los cuerpos, movimiento de los planetas, la existencia del sol, ¿sí? Todo eso está fuertemente implicado por la gravedad.
+25:56
+¿Bien?
+26:00
+Y después todo lo que vemos acá en la superficie de la Tierra, sacando el peso, todo es electromagnético. Así que entre estas dos, si supiéramos calcular todo a partir de la gravedad del electromagnetismo, entendemos casi todo lo que pasa en nuestra vida corriente. Y eso es para darles un poco la idea de la importancia del electromagnetismo en lo que vemos. Y hablé de la importancia para la comprensión de los fenómenos, pero apenas esbozamos la importancia tecnológica. La importancia tecnológica es total.
+26:30
+Todos los aparatos eléctricos que vemos en nuestras casas o que llevamos en el bolsillo ahora, o las computadoras, las telecomunicaciones como pusimos ahí, Las lavadoras, los televisores. Los televisores están por vida desaparecidos, van a ser reemplazados por otras cosas. Pero los viejos televisores antiguos, pero también los televisores plasma. Todo eso es electromagnético. ¿Bien? Todo eso es electromagnético. Así que aplicaciones tecnológicas infinitas. No tiene sentido ni detallarlas.
+27:01
+A ver, microondas. ¿Alguien? ¿Sigamos? Podemos hacer una subasta. ¿Quién da más? Otro ejemplo de aplicación tecnológica del electromagnetismo.
+27:13
+Lavarropa, decíamos, ¿qué? La radio.
+27:24
+Sí, sí, esto del acelerador, sí, sí. El acelerador tiene más interés para lo físico que para el resto de la humanidad, pero sí es verdad.
+27:32
+Internet, ahí decían fibra óptica, podemos seguir. Así que, del punto de vista de nuestra comprensión de la naturaleza, es clave el electromagnetismo. Pero del punto de vista de las aplicaciones tecnológicas, ustedes que van a ser ingenieros, también, súper clave. ¿Y estas dos pobres, qué les queda? Empecemos por la interacción fuerte nuclear. Interacción fuerte nuclear, para mí es importantísimo porque trabajo en eso. Pero para ustedes, ¿para qué es importante?
+28:03
+Ustedes saben cómo están compuestos los átomos. ¿Cuál es la estructura básica de un
+28:09
+átomo?
+28:12
+Tienen un núcleo chiquito. Vamos a hacer un dibujo acá. Un dibujo muy esquemático. Dibujar un átomo siempre es un problema porque... Entonces, átomo. Es medio simbólico lo que voy a hacer. Un átomo tiene un radio típico.
+28:32
+Más o menos de 10 a la menos 10 metros.
+28:39
+¿Está? Más o menos, para que tengan el orden de magnitud. Y dentro, todo ese espacio está cubierto por una nube de electrones. Electrones.
+28:51
+Que son partículas cargadas negativamente. Carga negativa. Todavía no vimos bien lo que es la carga, pero lo vamos a ver un rato. Ustedes ya han escuchado hablar de la carga eléctrica. No es una novedad para ustedes. Y dentro de esa enorme nube hay un pequeño cosito que yo lo pongo acá para que ustedes puedan llegar a verlo. Pero en realidad en este dibujo no se tendría que ver. Que es el núcleo que tiene un radio del orden de 10 a la menos 15 metros.
+29:24
+Muchísimo más chiquito. Y en el núcleo hay partículas que son los protones que tienen carga positiva y los neutrones que tienen carga nula. ¿Bien? Para que tengan idea, si... El núcleo, si un átomo tuviera el tamaño del estadio centenario, perdón, si un átomo tuviera el tamaño del estadio centenario, el tamaño del núcleo sería el tamaño más o menos de una manzana o de un pomelo.
+30:05
+Eso para que vean la diferencia, esencialmente el núcleo es súper, súper, súper chiquitito. Pero toda la masa, o casi toda la masa, después vamos a ver bien los números, del átomo está en el núcleo. Los electrones son súper livianitos y ocupan todo el espacio. Y los protones y neutrones son mucho más pesados y están todos concentrados. Pero ¿quién dice muy concentrados? Ustedes saben, cargas iguales, ¿qué les pasa por el electromagnetismo? Se repelen. Tienen una interacción de repulsión los protones que están acá adentro, súper pegaditos unos con respecto al otro, gigantesca.
+30:39
+Gigantesca, gigantesca, gigantesca. Entonces si solo fuera por el electromagnetismo... Bueno, la gravedad es totalmente despreciable, ahí ni nos ocupemos de la gravedad. Si fuera solo por el electromagnetismo, el núcleo sería inestable, explotaría, porque por las interacciones electromagnéticas los protones querrían saltar. A los neutrones no les pasa nada, pero los protones querrían explotar. Entonces hay otra fuerza, muy, muy, muy potente, por eso de ahí el nombre fuerte, que es capaz de mantener a los protones pegados en el núcleo y compensar la repulsión electromagnética.
+31:15
+de electromagnética las cargas eléctricas de igual signo pegaditas una con respecto a la otra el electromagnetismo intenta repelerlas pero hay otra fuerza que compensa eso muy muy muy potente que es la interacción fuerte nuclear y entonces esta es la responsable de la estabilidad de los núcleos
+31:46
+Bueno,
+31:50
+vamos a no hablar de las aplicaciones tecnológicas de eso, que las pueden imaginar.
+31:59
+La interacción fuerte nuclear aparece en otros fenómenos, siempre a nivel nuclear. Pero no quiero detallar más de esto. Tiene otras muchas consecuencias.
+32:12
+Por ejemplo, en el funcionamiento de las estrellas. Pero quiero referirme a otra interacción que es la interacción nuclear débil. Ustedes deben haber visto en el liceo, deben haber escuchado hablar de la radiactividad. ¿Sí? ¿Sí? Levanten la mano los que escucharon hablar de radiactividad. Hay un tipo de radiactividad que se llama de tipo beta. ¿Se acuerdan? Alfa, beta, gamma. Radiación es alfa, radiación es beta. Bueno, la radiactividad de tipo beta, la radiación beta, es una radiación asociada con la interacción débil nuclear.
+32:44
+Así que sin interacción débil no habría desintegración beta. Así que el fenómeno más común asociado con la interacción nuclear débil es la desintegración beta.
+33:00
+Es el más común. Pero la interacción nuclear débil tiene otras cosas importantes. ¿Ustedes escucharon hablar del acelerador, el LHC este que estuvo de moda hace unos años? ¿Sí? El que está en Ginebra, un acelerador gigantesco. ¿Sí? Bueno. Ese acelerador está fundamentalmente construido para entender bien la interacción débil y en particular una partícula que está muy asociada, muy vinculada con la interacción débil que se llama la partícula de Higgs, que fue descubierta en ese acelerador en el año 2012.
+33:31
+¿Escucharon hablar de eso? Fue titular de muchos diarios.
+33:35
+Entonces cuando uno va a la física muy muy microscópica, en la vida corriente no, pero cuando uno va a estudiar la física a lo muy muy muy chiquitito, la interacción débil se vuelve importante, juega un papel importante para entender esos fenómenos. Y les quiero comentar que estas son las cuatro interacciones que ustedes pueden leer en los libros de texto, pero hay fuertes indicaciones todavía, no conclusivas, pero muy muy fuertes indicaciones de que en el LHC, en este acelerador, se acaba, se está detectando otro tipo de interacción.
+34:07
+Una interacción nueva, que no es tan estralista.
+34:10
+Que es una interacción asociada justamente con el Higgs. El Higgs tendría una autointeracción. Los Higgs interactuarían consigo mismos por un mecanismo que no es ninguno de estos. Eso no está aún confirmado, pero existen fuertes indicaciones de que eso es así. Así que además de este menú, hay un quinto que anda por ahí.
+34:33
+Todo eso para poner un poco el electromagnetismo en contexto, en el contexto general de la física.
+34:45
+Entonces, supongamos que ustedes supieran bien, controlaran bien la gravedad, controlaran bien el electromagnetismo y supongamos que conocieran bien la mecánica cuántica, cosa que no es el caso, entonces casi todos los fenómenos de la vida corriente estarían acá. No mencioné acá, importantísimo, todo lo que es los fenómenos de la estructura de la materia, la formación de cristales, lo mencioné creo al pasar, estructura de los cristales... La existencia de semiconductores. Los semiconductores no les tengo que explicar la importancia tecnológica, ¿no?
+35:16
+Transistores, diodos, todo lo que es la física de los microcomponentes y todo eso, todo está asociado con fenómenos electromagnéticos. ¿Preguntas?
+35:38
+Bueno, entonces vamos a empezar a hablar de la ley de Coulomb y de la carga eléctrica.
+36:03
+Gracias.
+36:26
+Bueno, lo primero que quiero señalar es que la interacción eléctrica entre cargas es una interacción muchísimo, pero muchísimo, pero muchísimo, pero muchísimo más grande que la interacción gravitatoria.
+36:42
+Después vamos a hacer, hoy no, pero en la clase que viene vamos a hacer cuentas de cuánto más grande es el electromagnetismo que la interacción gravitatoria. Muchísimo más grande. A pesar de esa diferencia, tienen una cosa en común. ¿Cómo es la interacción entre dos masas, de las cuales podemos, puntuales, podemos despreciar el volumen, que están alejadas de una distancia r? ¿Cómo de qué? Primero, es atractiva la interacción gravitatoria. ¿Y qué más? ¿Cómo depende de r?
+37:17
+Claro. Entonces, la fuerza gravitatoria...
+37:27
+¿Sí? La gravedad. El módulo, ¿no? Estoy hablando solo del módulo. Es igual a una constante por la masa de una partícula por la masa de la otra, dividido la distancia entre las partículas al cuadrado. ¿Está? Distancia entre M
+37:50
+y
+37:50
+M'. ¿Está?
+37:55
+Y tiene esa propiedad que mencionaban recién, F es siempre
+38:03
+atractiva.
+38:08
+Por efecto de la gravedad, siempre se atrae. Y eso es lo que hace que a veces veamos la gravedad, porque la gravedad siendo tan chiquita no la deberíamos ver, siempre tendría que ser totalmente despreciable. ¿Por qué vemos la gravedad? Porque como siempre es atractiva, siempre acumula. Entonces cuando ustedes tienen muchas masitas juntas y forman una masa grandota como el planeta Tierra o el Sol, entonces los objetos que están cerca de ese objeto grandote son atraídos por todos los otros. Y como siempre es atractiva, siempre suma.
+38:39
+Y al final termina siendo grande, no porque la interacción entre dos partecitas sea grande, que no lo es, sino porque cuando uno empieza a sumar todas cosas que siempre van para el mismo lado, termina siendo un objeto grande. En el caso electromagnético, la situación es diferente.
+38:57
+La fuerza... Entonces, una cosa que quiero señalar...
+39:02
+Fuerza
+39:03
+eléctrica puede ser atractiva o repulsiva. No tiene por qué ser atractiva.
+39:26
+Entonces eso es lo que hace que muchas veces... no domine la fuerza eléctrica por ejemplo cuando vemos la caída de los cuerpos no domina la fuerza eléctrica porque lo que sucede es que la mayoría de los cuerpos que vemos en la naturaleza son neutros tienen tantas cargas positivas como cargas negativas entonces los efectos de la fuerza electromagnética sobre ellos se compensan un objeto que tiene tantas cargas positivas como cargas negativas, cuando está en presencia de otro objeto similar, casi no tiene fuerza eléctrica porque las fuerzas que eran atractivas se compensaron con las repulsivas y el resultado neto termina siendo mucho más chico.
+40:04
+Y ese es el motivo por el cual a veces, en muchos casos, en nuestra vida corriente, domina la fuerza gravitatoria en lugar de la fuerza eléctrica. Entonces, desde la antigüedad, la gente observó que los cuerpos podían cargarse. ¿Qué quiere decir cargarse? Agarraban, por ejemplo, un pedazo de material aislante, pongamos vidrio, y lo frotaban y notaban que el objeto con lo que lo habían frotado, digamos un trapo, agarran un vidrio, una barrita de vidrio, la frotan bastante, la cuelgan de una cuerdita, la dejan colgada y luego acercan el pañuelo con que lo flotaron.
+40:51
+Y ven que el pañuelo genera una interacción con la barrita que no hubiera tenido lugar si no lo habían flotado. Es decir, el objeto adquirió una propiedad que se le llama carga eléctrica. El objeto, los dos, ¿no? El pedazo de vidrio y también el pañuelo. Esos experimentos no funcionan bien en Uruguay. ¿Saben por qué? ¿Cómo? Por la humedad, porque el aire húmedo, que es una de las características de Montevideo, conduce bastante las cargas eléctricas.
+41:24
+Entonces lo que pasa es que si ustedes tienen un ambiente muy seco, las cargas quedaron ahí, frotaron, básicamente arrancan electrones cuando frotan. y entonces queda un déficit de cargas de un lado y un exceso en el otro y quedan ahí, pero cuando el aire puede conducir rápidamente ese fenómeno desaparece porque las cargas se escapan el exceso se acumula de nuevo y el otro se va entonces cuando la gente observó eso detectó que había dos tipos de cargas y que podían clasificarse siempre de tal manera que Un tipo de cargas que se denominó positivas, cuando las ponían cerca unas de otras se repelían.
+42:11
+Otro tipo de cargas que se denominó negativas, cuando las ponían cerca se repelían. Y cuando ponían cargas positivas y negativas cerca se atraían. Entonces las cargas que llamaremos positivas son un tipo...
+42:35
+Las cargas que llamaremos negativas son otro tipo y cargas opuestas se atraen y las de igual signo se repelen.
+43:11
+Y además, tienen el buen gusto de hacerlo con una ley que se parece mucho a la ley de gravitación universal de la gravedad que escribimos ahí. Entonces, no solo la carga tendrá un signo, sino que pueden haber cargas positivas grandes o cargas negativas grandes o chicas también. Y de hecho, a la cantidad de cargas se le va a asociar un número, un número real.
+43:45
+Entonces,
+43:47
+dos cuerpos con cargas Q1 y Q2, de signos cualesquiera...
+44:05
+Así como a los cuerpos le asignamos una masa, también les asignaremos una carga. Experimentan una fuerza cuando están estáticos entre sí.
+44:31
+Es decir, cuando la distancia entre ellos no cambia, en el referencial que lo están observando están los dos quietos.
+44:39
+Entonces experimentan una fuerza que tiene módulo, fuerza eléctrica, que será una constante por el valor absoluto de Q1, por el valor absoluto de Q2, dividido por R al cuadrado, donde R es la distancia...
+45:01
+entre R1 y, perdón, entre Q1 y Q2. Ah, entonces hagamos un dibujito, ponemos acá 1, acá ponemos 2, vamos a dibujar, vamos a llamar F12
+45:32
+La fuerza que uno experimenta a raíz de la interacción con dos. Pero vamos a ver si el dibujo está bien hecho. Vamos a hacer la línea que los une. Vamos a dibujar acá F1,2. Esta es la fuerza eléctrica que dos le hace a uno. Bien. Bien.
+46:04
+Entonces tenemos que F12 es igual a una cierta constante, que ya veremos quién es, por Q1 por Q2 por R21, versor, este es un vector unitario, a ver si está bien, que va...
+46:35
+de 2 a 1 dividido por r21 al cuadrado esta es la distancia entre 2 y 1 y fíjense que tomamos k positivo con k positivo fíjense cuando q1 y q2 tienen el mismo signo ¿si? Si Q1 y Q2 tienen el mismo signo, todo acá es positivo.
+47:09
+Y este es un versor que va de 2 a 1. Así que cuando todo es positivo, ¿qué sentido tiene la fuerza?
+47:19
+¿Cómo apunta R21? ¿Apunta para allá o apunta para allá? Para abajo, ¿verdad? Vamos a dibujarlo acá.
+47:32
+R2 1 versor. Entonces cuando todo es positivo, cuando el producto de las cargas es positivo, ¿cómo es la fuerza? ¿Como la dibujé o para el otro lado?
+47:51
+¿Cómo tiene que ser la fuerza cuando las cargas, cuando las dos cargas son positivas? Tiene que ser para allá. Así que, este es F1, 2. Si... Q1 por Q2 es negativo. Y de este lado, este es el caso Q1, Q2 positivo. Y hagamos otro dibujo por acá. Similar. Vamos a agarrar todos los marcadores.
+48:16
+Entonces, cuando Q1, Q2 es negativo, F12 es opuesto a R21. ¿Sí? Porque esto es negativo. Quiere decir, tiene la misma dirección, misma dirección, pero sentido es opuesto. Ahora...
+48:33
+Hagamos el mismo dibujo, pero en el caso en que... Vamos a dibujar F1,2 acá.
+48:48
+Y en este caso, si Q1 por Q2 es positivo, F1,2 tiene el mismo sentido que R2,1 sombrero.
+49:05
+Y fíjense que de esta manera incluimos en esta escritura vectorial toda la información. La información que viene del módulo, porque como este vector tiene módulo 1, cuando tomamos módulo no importa, cuando tomamos módulo queda el valor absoluto del producto de las cargas y la distancia al cuadrado. Pero además nos da la dirección que es sobre el eje que une las cargas. ¿Sí?
+49:35
+Y además nos da el sentido según el signo que tenga Q1 por Q2. Nos da la ley de esta que dice que las cargas supuestas se atraen y las cargas de igual signo se repelen. Tiene toda la información. Esta ley se le suele llamar la ley de Coulomb. Vamos a escribirlo en un momento de este lado. Vamos.
+50:04
+Entonces, vamos a escribirlo de este lado, F12. Es igual a K por Q1 por Q2 por R21 versor por R21 al cuadrado. Esta ley se le suele llamar la ley de Coulomb.
+50:44
+Y Coulomb la propuso y la verificó experimentalmente en 1785.
+50:53
+una ley del siglo XVIII. Bueno, para guardar un poco de registro histórico real, en realidad Coulomb ya conocía la ley de gravitación universal, ya la aburré, pero ustedes la tienen, es igual que esta, salvo que aparecen las masas Y también la distancia al cuadrado.
+51:25
+Es muy parecida a la ley. Entonces, para la gente de la época de Coulomb, él no era el primero que decía, bueno, tenemos las cargas de interacción, debe ser parecido a la interacción gravitatoria. Tenían la intuición de que se parecía. Habían observado varios que decrecía con la distancia y Coulomb dijo, debe decrecer como el radio al cuadrado. En realidad el experimento de Coulomb no permitía medir este exponente con gran precisión. El exponente Coulomb lo medió aparentemente con un error bastante grosero.
+51:57
+No se sabe bien cuál era la presión de su experimento, pero aparentemente no era muy preciso. Ahora voy a hablar un poquito del experimento de Coulomb, pero aparentemente en aquella época no era muy preciso.
+52:08
+Entonces, básicamente, en la época de Coulomb, era una idea que lo que está bien establecido es que las cargas opuestas se atraen, las de igual signo se repelen, que es proporcional a la cantidad de carga de cada uno de los lados, y que decrece con la distancia con un exponente que se parece a 2. Ese es el estatuto real que tenía esta ley en aquel entonces. Pero hay un físico...
+52:37
+británico Cavendish que había hecho experimentos 15 años probablemente 10 o 15 años antes que Coulomb Cavendish tipo muy importante pero que era una persona con serios problemas de relacionamiento social un tipo que vivía metido en su casa tenía el laboratorio en su casa hacía sus experimentos tenía unos experimentos de una calidad muchísimo mejor que la de Coulomb muchísimo mejor que la de Coulomb
+53:07
+pero realmente mucho mejor que Coulomb. Cavendish aparentemente sí pudo medir el exponente 2 con una precisión razonable, 10 o 15 años antes que Coulomb, pero como era un tipo medio tímido, no sé si es la palabra, capaz que incluso tenía algún tipo de patología, Lo cierto es que nunca publicó sus resultados y la gente, todo el mundo la llama Lady Coulomb porque fue el que lo hizo, lo que habló del tema en público y mostró sus experimentos en público y demás. Y Cavendish se lo llevó a la tumba, se murió y después la gente se dio cuenta cuando estuvo revisando los archivos de sus experimentos que había hecho el experimento bastante antes que Coulomb y mejor.
+53:44
+¿Por qué se los cuento? Primero porque es una curiosidad histórica divertida, pero segundo porque también es importante entender que los avances de la ciencia no dependen sólo de tener buenos científicos que hacen bien su trabajo, sino también de que comuniquen bien el trabajo, que lo difundan. Si uno hace un buen experimento y se lo deja en su casa y no le cuenta a nadie, en realidad el avance de la ciencia no existe. Entonces es un poco justo que se le llame, aunque Cavendish haya descubierto primero, es en realidad medio justo que se le llame la ley de Coulomb, que fue el que convenció a sus colegas de que esa ley estaba bien.
+54:18
+No basta con hacer el experimento, sino también hay que convencer a los otros. Unidades. ¿Quién no ha visto la ley de Coulomb? ¿Quién ha visto la ley de Coulomb? Entonces, estoy lloviendo sobre mojado. Esténse tranquilos porque probablemente en las primeras clases les resulten medio cosas que ya han visto y eso está bueno porque así el curso no arranca demasiado rápido, pero a medida que avance van a ver que las cosas se van a ir complicando.
+54:53
+Quédense tranquilos que se van a complicar. Entonces, unidades. Ah, bueno. Unidades. Unidades.
+55:08
+Entonces, en todos los cursos...
+55:15
+En todos los cursos de física en esta facultad, usamos el sistema internacional de unidades. Sistema... Internacional... De unidades. Entonces, en el sistema internacional de unidades... La fuerza está medida en newtons. La distancia está medida en metros o múltiplos.
+55:46
+Y la carga, la unidad base de carga se mide en el sistema internacional en coulombs.
+56:01
+Se le dio el nombre, la unidad de...
+56:11
+La unidad de carga se le dio el nombre por el descubridor, mentor de la carga de la ley asociada. Bien, pero en los experimentos normales uno no ve la unidad, un Coulomb es una unidad gigantesca que en realidad no se mide en ningún experimento, es una cosa gigantesca. Se mide en fracciones muy chiquititas como nanocoulombs o microcoulombs. Los experimentos reales que se ven en un laboratorio razonable son fracciones muy pequeñitas del Coulomb.
+56:48
+Coulomb tiene que guardar la idea de que es una cantidad enorme. Y lo otro es que se suele... se suele escribir K, se lo suele escribir de otra manera, por motivos que van a quedar claros en el curso de no mucho tiempo, K se lo suele escribir como 1 sobre 4 pi epsilon 0. En lugar de poner K, se le pone acá 1 sobre 4 pi epsilon 0, y a epsilon 0 se le llama la permitividad 0.
+57:25
+Eléctrica del vacío.
+57:34
+¿Por qué del vacío? Bueno, porque todos estos experimentos que estamos diciendo es con cargas que están sin nada en el medio, ¿verdad? O aire, algo muy diluido. Si hicieran el mismo experimento sumergido, por ejemplo, en algún líquido... Aislante, no, porque si es conductor es otra historia. Pero si lo meten en un líquido aislante, en glicerina, pongan, el resultado es diferente, cambia. Todo esto está hecho en el vacío o en el aire. Ponerlo en el aire o en el vacío para estos efectos es esencialmente lo mismo.
+58:04
+Y el valor de la permitividad del vacío, les digo el valor conocido al día de hoy, es 8,854187... 8, 1, 7, 6, 2, por 10 a la menos 12. Bueno, creo que se conocen algunas cifras más, pero es necesario solo que retengan estas cifras.
+58:34
+No, es importante, eso siempre va para el parcial. No, no, esto simplemente para decirles que las propiedades eléctricas se conocen con mucha precisión. Es la teoría que está mejor testeada experimentalmente, la teoría electromagnética. Así que se conocen las cantidades con muchísimas cifras.
+59:00
+¿Bien? Comentarios. Algunos ya se los dije, pero antes de seguir. ¿Preguntas? ¿Están entendiendo esto? ¿Sí? ¿Voy más rápido? ¿No pongo fast forward?
+59:13
+¿Sí?
+59:21
+Bueno, sí y no. ¿Por qué se le pone 1 sobre 4 pi epsilon 0? Esto es simplemente una convención. Se ha elegido hacerlo así. ¿Por qué se hace así? Porque después vamos a ver en este curso otra ley, que se llama la ley de Gauss, que está relacionada con la ley de Coulomb, pero es otra ley, tan vinculada. Y en realidad, debido a la geometría de la carga puntual, la ley de Gauss queda más simple, escribiendo las cosas en términos de epsilon cero, y se ha preferido hacer una ley de Gauss simple y no una ley de Coulomb simple.
+59:55
+Entonces queda... Si no pusiéramos el 4pi, habría un 4pi en la ley de Gauss, lo ponemos en la ley de Coulomb y entonces no está. Hay que elegir donde uno pone el 4pi. Pero a este nivel es simplemente una convención. Elegimos escribir las cosas en términos de epsilon 0 y no en términos de Coulomb.
+1:00:25
+Bueno, dos comentarios. Un comentario ya se los dije.
+1:00:32
+El primer comentario es que Coulomb no conocía el exponente 2 con gran precisión.
+1:00:55
+¿Son las
+1:00:56
+2 y media? No me asusten. Entonces, él simplemente sabía que eran más o menos 2. Hoy sabemos que es 2 más menos algo del orden de 10 a la
+1:01:21
+menos 16. ¿Está bien?
+1:01:24
+Ese exponente 2 hoy se conoce con 16 cifras significativas. Es 2,00000016. Y después hay un error chiquitito, que es el error experimental. No se ha detectado ninguna desviación con respecto al 2, solo hay cotas. Así que en principio estamos, o es 2 o es cerquita de 2.
+1:01:47
+Lo segundo es cómo fue el experimento de Coulomb. Coulomb, en realidad es el mismo diseño experimental que hizo Cavendish. Cavendish es un experimento esencialmente igual.
+1:01:59
+Hizo un experimento que se llama una balanza de torsión. Usó una balanza de torsión.
+1:02:13
+Entonces, básicamente, ¿qué consiste una balanza de torsión? Bueno, ponen un un soporte arriba tienen un cable un cable metálico elástico entonces elástico pero no lo van a usar elástico en subida y bajada sino en ángulo entonces lo que hacen es ponen una masa acá fija esférica y ponen un palito perpendicular acá y otra más acá Y las cargan, entonces carga y también carga.
+1:02:55
+Entonces la atracción de las dos esferas hace que este cable se gire un poquito, se gire para allá y lo que hace Coulomb es medir este ángulo.
+1:03:11
+Y en realidad para la época era mucho más preciso eso que medir estiramientos. De hecho, creo que sigue siendo el caso. Que la gente mide mucho mejor movimiento de ángulos que estiramiento. Entonces por eso usaba una balanza de torsión y una balanza de estiramiento. ¿Se entiende? Mi dibujo es horrible, pero se logra entender igual.
+1:03:37
+Así que este es el experimento típico, incluso hasta muy recientemente las medidas directas. A ver, este número que está acá, el 10 a la menos 16, no se hace con medidas directas. Las medidas directas son mucho más imprecisas. Para obtener el 2 con esta precisión, no se hace una medida directa de carga entre carga. Eso es muy difícil de medir con muchísima precisión. Igual se conoce hoy con varias diferencias. No me acuerdo cuánto, 4, 5, 6, capaz que 8. Pero para llegar a 16 cifras significativas se hacen otro tipo de experimentos, a los cuales de hecho me voy a referir más adelante en
+1:04:10
+el
+1:04:11
+curso. El tipo de experimentos que se hace para llegar a ese nivel de precisión. Pero aún hoy cuando se hacen experimentos de precisión para tratar de hacer medidas directas de interacción entre cargas, se usan balanza de torsión o cosas muy similares.
+1:04:26
+Y después me estoy olvidando de algún comentario, ¿qué era lo otro que quería comentar?
+1:04:34
+Ah, bueno, no, y lo otro que les decía es que Cavendish, hay que hacer justicia con la historia, Cavendish ya había hecho la medida en la década previa, pero no lo publicó.
+1:05:16
+¿Preguntas? No. Miren que lo de hacer preguntas lo digo en serio. Es importante. Capaz que ahora no me hacen preguntas porque estas son cosas que ya han visto y todo, pero es verdad que es importante que me detengan porque además me permite fijar el ritmo de la clase. Una cosa que no les comenté.
+1:05:46
+Es que R21 lo pueden escribir como un vector R21 que es dividido el módulo del vector R21. R21 es el vector que va de 2 a 1.
+1:06:17
+Bueno, hasta ahora vimos qué pasa con la interacción entre dos cargas eléctricas estáticas. Entonces se le llama la interacción electrostática. ¿Qué pasa si en lugar de tener dos cargas tenemos más?
+1:06:58
+Supongamos que tenemos acá una carga 1 y varias acá, 2, 3, 4, etc. ¿Cómo será la fuerza 1? Es la fuerza electrostática total sobre... La carga 1. ¿Cómo será la fuerza electrostática total sobre la carga 1? ¿Qué pasa cuando ustedes tienen un cuerpo que experimenta muchas fuerzas?
+1:07:33
+¿Cómo es la fuerza
+1:07:37
+total?
+1:07:40
+Entonces... ¿Cómo fue que le llamé F21 o F12? Que no me acuerdo. F12. Entonces, F1 será igual a F12 más F13... más F14, más etcétera, sumando en todas las cargas posibles.
+1:08:02
+Cuando tienen varias cargas, la fuerza que experimenta una de ellas es la suma vectorial. Importante, se suman como vectores, como de costumbre, es lo que ustedes aprendieron en Física 1. Pero acá hay una cosa que es importante señalar, que es que estamos suponiendo que es que cuando tienen varias cargas no se producen fenómenos nuevos. Podría suceder que cuando yo agrego una tercera carga, el sistema experimenta una nueva fuerza que no depende de... de parejas y nos da otro fenómeno.
+1:08:34
+Y de hecho, cuando ustedes están en un medio pueden pasar esas cosas. Cuando ustedes, por ejemplo, están en un medio complicado, en los medios más simples no, pero en los medios más complicados puede pasar que con tres cargas haya un fenómeno nuevo. Porque básicamente lo que puede suceder es que ustedes... pone una primera carga modifica el medio pone una segunda carga además de interactuar con la primera también modifica el medio entonces cuando viene la tercera no solo ve las dos cargas originales sino también las modificaciones del medio que produjeron las dos primeras pero cuando están en el vacío eso no hay porque no hay lo que modificar entonces en el vacío o en el aire simplemente se suma porque no hay otra cosa que uno esté modificando ¿se entiende lo que digo?
+1:09:14
+y entonces la fuerza es simplemente 1 sobre 4 pi epsilon 0 por Q1, Q2, por R21, sobre R21 al cuadrado, más Q1, Q3, R31, versor, por R31 al cuadrado, más Q1, Q4, R, versor, 4, 1, sobre R41 al cuadrado, más etc.
+1:09:48
+Simplemente suman las fuerzas colombianas.
+1:09:57
+Para ser concreto, vamos a hacer un ejemplo.
+1:10:31
+Vamos a hacer un ejemplo tal cual lo tengo acá. Vamos a tomar la carga Q1 en el origen. Lo pongo todo en un plano. Voy a poner tres cargas, así que siempre las puedo poner en un plano. Pongo la carga Q1 acá en el origen. Esta es la coordenada de X y esta es la coordenada de Y. Pongo la carga Q2 sobre el eje X, acá. Q2.
+1:10:58
+Y pongo la carga Q3 y la voy a poner acá atrás. Y voy a tomar los valores siguientes. Bueno, este ángulo, el ángulo que forma esto con la vertical, le llamo teta. Y tomo los valores siguientes. Tomo los valores Q1, será igual a menos 1,2 microcoulombs. Q2 será 3,7 microcoulombs. Q3... Será menos 2 con 3 microcoulomb.
+1:11:34
+Y voy a tomar las distancias siguientes. R12 será 12 centímetros. R13, 10 centímetros. Y R23... No, eso ya no lo necesito, perdón. Y teta, el ángulo aquel que señalé, 32 grados.
+1:11:58
+Entonces la pregunta es cómo es la fuerza resultante. Entonces primero que nada, ¿cómo es la fuerza entre Q1 y Q2?
+1:12:16
+Tienen cargas opuestas, así que es atractiva. Así que la fuerza F12 será para allá.
+1:12:24
+Está en el eje que va de 1 a 2 y va de 1 a 2 porque es atractivo.
+1:12:30
+Después la fuerza que... Me voy a ocupar de la fuerza sobre Q1, así que no me ocupo de la fuerza entre Q2 y Q3. Entonces, ¿cómo será la fuerza entre Q1 y Q3? ¿Cómo? Se repelen, ¿verdad? Porque tienen igual carga Q1 y Q3. Así que está también sobre este eje, pero para abajo, F1, 3. ¿No?
+1:12:55
+Y este ángulo es teta. Entonces calculemos los módulos primero. F1, F2. El módulo, ¿verdad? Cuando no pongo la flechita es el módulo. Ah, una cosa que les quiero decir. Los estudiantes suelen hacer cualquier mezcolanza entre vectores y escalares. Les pido por favor que tengan cuidado cuando hagan los parciales, los exámenes. No mezclar, ¿verdad? Cuando es un vector, es un vector.
+1:13:26
+Porque nos pasa pila de veces que tenemos un escalar igual a un vector y eso no puede ser porque una cosa tiene dirección y sentido y la otra no. Sean cuidadosos en esas cosas. ¿Verdad?
+1:13:37
+Entonces F1,2. F1,2 es valor absoluto de Q1 por valor absoluto de Q2 dividido 4 pi epsilon 0 por R1,2 al cuadrado. Y eso lo pueden calcular, pueden reemplazar los valores y les da 1,77 newtons. Y pueden lo mismo hacer con F1,3. F1,3 es valor absoluto de Q1 por valor absoluto de Q3. Q3,3. dividido 4 pi epsilon 0 por R13 al cuadrado, y eso si sustituyen los valores les da 2,48 newton.
+1:14:17
+Estos son los módulos de las fuerzas. Pero si ahora uno quiere calcular las componentes de la fuerza resultante, F1 según X, tiene que sumar la componente según X de F1,2. ¿Cuál es la componente según X de F1,2?
+1:14:37
+Es la única, es F1,2. Además, como va para allá, es positiva, F1,2.
+1:14:45
+Y ahora la componente según X de F1,3, primero que nada, también es positiva, apunta para la derecha. Entonces, más F1,3, pero hay que proyectar por el seno, ¿verdad? Porque queremos esto que está acá, que es el cateto opuesto. Así que seno de teta.
+1:15:07
+Y por otro lado F1 según Y. F1,2 no nos dará componente. Y F1,3 sí nos da, pero fíjense que es negativa porque va para abajo. Así que tenemos menos F1,3 por coseno de teta. Y si los calculan, esto les da 3,08 newtons. Y acá les da... Menos 2 con 10 newton.
+1:15:41
+Y por último pueden hallar el módulo de F1, que es igual a la raíz cuadrada de F1X más F1Y.
+1:15:52
+Pueden calcular, sustituir con la calculadora, les da 3 con 73
+1:15:55
+newton.
+1:16:00
+Acá, me olvidé los cuadrados. Gracias.
+1:16:07
+¿bien? ¿se entiende? ¿preguntas?
+1:16:35
+Bueno, también podrían hallar el ángulo que forma F1 con la horizontal, hallando... A ver, la tangente del ángulo sería el cociente de estas dos
+1:16:47
+cosas.
+1:17:00
+Claro, tomé el origen en Q1... Elegí el eje X según el eje que va de Q1 a Q2. Y como tres puntos siempre está ahí un plano, elegí el plano que incluye las tres cargas y la coordenada de Q3.
+1:17:16
+¿Cómo
+1:17:21
+decidiste cargas en el ámbito? No, no lo elegí. Es datos. Esto forman los datos del problema, las ubicaciones de las cargas. ¿Cuánto vale cada una de las cargas y dónde están ubicadas?
+1:17:29
+Los cifras.
+1:17:35
+Ah, no. Te pueden dar el ángulo. El dato puede ser el que quieran. Te podrían haber dado directamente las coordenadas. Te podrían haber dicho la coordenada de X de Q3 es tanto y la coordenada de Y es tanto. O te podrían haber dado el ángulo con la horizontal también. ¿Cómo se ve cuando el ángulo es horizontal? En la letra el problema te dibuja cuál es el ángulo. En este caso te decían el ángulo es ese.
+1:17:57
+Claro,
+1:18:05
+es todo igual salvo que se intervierte en senos y cosenas. Hay que tener cuidado con los signos. ¿Alguna otra pregunta?
+1:18:19
+Bueno, una consecuencia importante de la ley de adición de fuerzas...
+1:18:28
+Es que los objetos neutros prácticamente no generan fuerza eléctrica.
+1:18:45
+Consecuencia.
+1:18:54
+Importante.
+1:18:57
+Tomen...
+1:18:58
+Tomen un objeto. A ver. Tomen un conjunto de cargas. A ver, un poco de silencio.
+1:19:09
+Tomen un conjunto de cargas acá. Las voy a pensar como puntuales. ¿Está? Tienen muchas cargas ahí. QI. QI. Y tienen otra carga acá que le llamemos Q0.
+1:19:26
+¿Sí? ¿De acuerdo? ¿De acuerdo? Y tienen que el objeto este entero es un objeto neutro. Entonces supongamos que la suma en I de las QI vale cero. Entonces el objeto es neutro.
+1:19:51
+Neutro de carga, ¿verdad? Es decir, van a haber tantas positivas como negativas. Cuando suman todas las cargas positivas y suman todas las cargas negativas, son iguales en módulo y tienen signos opuestos. Entonces ahora nos queremos preguntar cómo es la fuerza... Cuando sumo no incluía Q0. Q0 no forma parte del sistema en el que estoy sumando. Y ahora me voy a preguntar cómo es la carga sobre Q0. Fuerza sobre...
+1:20:21
+q0
+1:20:21
+entonces cada uno de estos objetos hará una fuerza sobre el eje acá esta la llamamos fi la fuerza que hace la carga bueno puse qi acá pero supongamos que es este qi y este es lo que llamamos ri0 el vector ri0 que va de la carga i a 0 Entonces la fuerza sobre Q0, F, será 1 sobre 4 pi epsilon 0, podemos sacar Q0 en factor, por Q1 por R10 pi.
+1:21:09
+sobre R1, 0 al cuadrado, más Q2 por R2, 0 sobre R2, 0 al cuadrado, más etc.
+1:21:22
+Pero, ahora supongamos que este objeto está muy alejado de este. Entonces supongamos ahora, supongamos Q0 alejado.
+1:21:40
+¿Qué quiere decir alejado? Que puedo confundir todos los... Puedo no hacer la diferencia entre los R y 0 y la distancia, digamos, desde el centro del objeto hasta Q0.
+1:21:53
+Entonces, ¿cómo será? Será Q0 está de factor, sobre 4 pi epsilon 0 está de factor, pero puedo no hacer la diferencia. Todas las distancias, todos los versores son casi iguales. En este dibujo no lo es porque si no tendría que ponerme muy lejos, el dibujo queda feo. Pero está claro que si yo me pongo lejos no hago la diferencia. El objeto es muy chiquitito y lo veo como puntual. Todos los versores que salen de ahí se parecen. Entonces, todos serán... q1 por r sombrero sobre r al cuadrado, más q2 por r sombrero, esto es aproximadamente igual, no es exacto, ¿verdad?
+1:22:30
+Sobre r al cuadrado, más etc. Y entonces ahora puedo sacar todo para afuera y escribir q0 sobre 4pi epsilon 0 por r sombrero sobre r al cuadrado, está en factor de todos, y les queda la suma en i de qi. Te da la suma de las cargas. ¿Y cuánto dijimos que era la suma de las cargas en el objeto? Cero. Esto vale cero. Así que la fuerza es aproximadamente nula.
+1:23:03
+Casi no hace efecto. Cuando estamos lejos. ¿De acuerdo? Un objeto neutro, lejos de él... Prácticamente no hace efecto, no hace efecto eléctrico. Pero ojo, si estamos cerca no es cierto esto que acabo de decir.
+1:23:33
+Ojo, cerca, esto no es cierto.
+1:23:45
+Es decir, si yo tengo acá Q0 que está pegadito a un objeto acá y tiene una cantidad de cargas acá.
+1:23:54
+En este caso, F distinto de 0.
+1:24:05
+Es decir, la fuerza. Lo que realmente sucede es que cuando nos alejamos de un objeto neutro, la fuerza decrece más rápido que 1 sobre r al cuadrado. Decrece en general como 1 sobre r al cubo. En algunos casos todavía más rápido, pero normalmente como 1 sobre r al cubo. ¿Bien? La idea de que los objetos neutros no generan... fuerza eléctrica es sólo correcta cuando estamos lejos del objeto. Cuando estamos pegaditos, si tienen la carga mal distribuida, supongamos que ustedes tienen un objeto que tienen un objeto acá que tiene, supongamos, todas las cargas positivas acá y todas las cargas negativas acá.
+1:24:47
+Está claro que si yo pongo una carga Q0 positiva, ¿cómo será la interacción? ¿Será repulsiva o atractiva?
+1:24:58
+Levanten la mano. Repulsiva. ¿Por qué repulsiva?
+1:25:02
+¿Sí? Alguien podría decir, no, pero tengo tantas fuerzas atractivas como fuerzas repulsivas. ¿Pero son iguales?
+1:25:10
+Claro, fíjense, las cargas positivas están más pegaditas. Entonces la fuerza, como la fuerza es proporcional a 1 sobre R al cuadrado, las fuerzas estas son mucho más grandes que estas, o por lo menos más grandes. Entonces la repulsión que me genera es más grande que la atracción. Entonces el efecto neto es repulsivo. así que los objetos neutros también pueden generar interacciones electromagnéticas lo único que normalmente decrece más rápido cuando estamos a distancia grande va más rápido que uno sobre real cuadrado típicamente como uno sobre real cubo en situaciones típicamente es eso a ver si me damos para decir alguna cosa más hoy si, una última cosa Pero es una idea que vamos a retomar la clase del miércoles.
+1:26:02
+Cuantificación de la carga.
+1:26:20
+Todos los experimentos que se han hecho hasta el día de hoy, y hay experimentos con enorme precisión sobre esto, observan que todas las cargas que observamos libres en la naturaleza todas las cargas que observamos libres en la naturaleza son múltiplos enteros de la carga del electrón entonces resultado experimental todas
+1:26:54
+Todas las cargas observadas libres
+1:27:04
+en
+1:27:05
+la naturaleza son múltiplos enteros de la carga del electrón.
+1:27:28
+Es decir, Q vale N, que es un entero, positivo o negativo, entero, por un número que se le llama E, que en realidad es el valor absoluto de la carga del electrón, que les voy a dar el número, cuánto vale, y con eso tenemos la clase por hoy, con E, un número positivo, no se toma la carga del electrón, en realidad se toma el valor absoluto de la carga del electrón, E es 1,6... 0,2 por 10 a la menos 19 coulomb.
+1:27:59
+Fíjense que es una carga muy chiquitita. Yo les dije que las cargas suelen ser fracciones como nano coulomb o micro coulomb. Esto es todavía mucho más chiquitito. Pero lo cierto es que las cargas no pueden tomar valores arbitrarios. Experimentalmente solo se observan cargas que toman valores o la del electrón, o el doble, o el triple, o 7, o menos 24 veces. Pero no un medio de la del electrón. Por ejemplo, la del protón es la carga opuesta a la del electrón, exactamente opuesta. Con muchísima precisión.
+1:28:31
+Toda la precisión experimental que conocemos da que la carga del protón es exactamente opuesta a la del electrón. Y por acá dejamos hoy y retomamos el miércoles.
+

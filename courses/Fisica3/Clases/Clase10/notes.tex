@@ -1,0 +1,316 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 10: Capacitores Esférico y Cilíndrico, Asociación \\
+        Serie/Paralelo, Energía Almacenada y Dieléctricos}\\[0.3em]
+        \large{Capacitancia por geometría, capacidad equivalente,
+              energía en el campo y polarización}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Demostración experimental: equipotenciales}
+% ===================================================================
+
+Dos estudiantes muestran una \textbf{cuba electrolítica} (agua como
+conductor débil) a 5\,V, midiendo el potencial con un tester sobre curvas
+en papel cuadriculado. Se verifica que el potencial es constante sobre
+cada equipotencial y que $\mathbf{E}$ es perpendicular a ellas.
+Configuraciones:
+
+\begin{itemize}[nosep]
+  \item \textbf{Dos líneas de carga} ($\approx$ placas): equipotenciales
+        rectas paralelas.
+  \item \textbf{Aros concéntricos} ($\approx$ carga central + cascarón):
+        equipotenciales circulares.
+  \item \textbf{Dipolo}: plano bisector a potencial medio; esferas cerca
+        de cada carga.
+  \item \textbf{Plano + carga puntual}: rectas cerca del plano,
+        curvándose cerca de la carga.
+\end{itemize}
+
+\begin{notebox}[Simulación numérica (relajación)]
+  Fijar el potencial en los bordes y reemplazar iterativamente cada punto
+  por el \textbf{promedio de sus vecinos} hasta converger.
+\end{notebox}
+
+% ===================================================================
+\section{Capacitor de placas esféricas}
+% ===================================================================
+
+Cascarón conductor interno de radio $A$ ($+Q$) y externo de radio $B$
+($-Q$). Receta general: campo $\to \Delta V \to C$.
+
+\textbf{Campo (Gauss)}, esfera de radio $r$ ($A<r<B$):
+\[
+E\cdot 4\pi r^2 = \frac{Q}{\varepsilon_0}
+\;\Longrightarrow\;
+E = \frac{Q}{4\pi\varepsilon_0 r^2}.
+\]
+
+\textbf{Diferencia de potencial} (segmento radial):
+\[
+|\Delta V| = \int_A^B \frac{Q}{4\pi\varepsilon_0 r^2}\,dr
+           = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{A}-\frac{1}{B}\right).
+\]
+
+\begin{keybox}[Capacitor esférico]
+  \[
+  \boxed{C = \frac{4\pi\varepsilon_0}{\dfrac{1}{A}-\dfrac{1}{B}}}
+  \]
+\end{keybox}
+
+% ===================================================================
+\section{Capacitor de placas cilíndricas}
+% ===================================================================
+
+Cilindros concéntricos de radios $A$ ($+Q$) y $B$ ($-Q$), largo
+$L \gg B$ (se desprecian bordes).
+
+\textbf{Campo (Gauss)}, cilindro de radio $r$ y altura $H$; las tapas no
+contribuyen y la carga encerrada es $Q\,H/L$:
+\[
+E\cdot 2\pi r H = \frac{Q\,H/L}{\varepsilon_0}
+\;\Longrightarrow\;
+E = \frac{Q}{2\pi\varepsilon_0 L\, r} = \frac{\lambda}{2\pi\varepsilon_0 r},
+\]
+idéntico al de una línea infinita con $\lambda = Q/L$.
+
+\textbf{Diferencia de potencial:}
+\[
+|\Delta V| = \int_A^B \frac{Q}{2\pi\varepsilon_0 L\, r}\,dr
+           = \frac{Q}{2\pi\varepsilon_0 L}\ln\!\frac{B}{A}.
+\]
+
+\begin{keybox}[Capacitor cilíndrico]
+  \[
+  \boxed{C = \frac{2\pi\varepsilon_0 L}{\ln(B/A)}}
+  \]
+\end{keybox}
+
+\begin{notebox}[Bordes]
+  Las aproximaciones valen lejos de los bordes; cilindros cortos tienen
+  efectos de borde adicionales.
+\end{notebox}
+
+% ===================================================================
+\section{Condensadores en serie y en paralelo}
+% ===================================================================
+
+Ciertos grupos de condensadores equivalen a uno solo. Se supone
+equilibrio electrostático y cables ideales (cada tramo conductor es un
+equipotencial).
+
+\subsection{Paralelo}
+
+Comparten $|\Delta V_{AB}|$; la carga se reparte: $Q = Q_1 + Q_2$. Con
+$Q_i = |\Delta V_{AB}|\,C_i$:
+
+\begin{keybox}[Paralelo]
+  \[
+  \boxed{C_{\text{eq}} = C_1 + C_2}
+  \qquad (\text{se suman las capacitancias})
+  \]
+\end{keybox}
+
+\subsection{Serie}
+
+La zona intermedia está aislada: su carga neta es cero, forzando la misma
+$Q$ en ambos. Las diferencias de potencial se suman:
+\[
+\Delta V_{AB} = \Delta V_{AK} + \Delta V_{KB} = -\frac{Q}{C_1} - \frac{Q}{C_2}.
+\]
+
+\begin{keybox}[Serie]
+  \[
+  \boxed{\frac{1}{C_{\text{eq}}} = \frac{1}{C_1} + \frac{1}{C_2}}
+  \]
+\end{keybox}
+
+\begin{notebox}[Consecuencia]
+  En serie $C_{\text{eq}} \leq C_1$ (y $\leq C_2$): la capacidad
+  equivalente es \textbf{menor} que cualquiera de las individuales.
+\end{notebox}
+
+\subsection{Ejemplo combinado}
+
+$C_1$ y $C_2$ en paralelo, en serie con $C_3$. Por etapas:
+$C_{12} = C_1 + C_2$, luego
+\[
+\frac{1}{C_{\text{eq}}} = \frac{1}{C_1 + C_2} + \frac{1}{C_3}.
+\]
+
+\begin{warnbox}[No siempre se puede]
+  Si hay baterías, resistencias u otros elementos entre medio, este método
+  de reducción no aplica.
+\end{warnbox}
+
+\subsection{Uso práctico}
+
+Para ajustar una capacidad no disponible: \textbf{paralelo} para
+aumentar, \textbf{serie} para disminuir.
+
+% ===================================================================
+\section{Energía almacenada en un condensador}
+% ===================================================================
+
+Con carga $Q'$ ($\Delta V' = Q'/C$), agregar $dQ'$ aumenta la energía:
+\[
+dU = \Delta V'\, dQ' = \frac{Q'}{C}\,dQ'.
+\]
+
+Con $U=0$ descargado, integrando:
+
+\begin{keybox}[Energía de un condensador]
+  \[
+  \boxed{U = \frac{Q^2}{2C} = \frac{1}{2}C\,\Delta V^2 = \frac{1}{2}Q\,\Delta V}
+  \]
+\end{keybox}
+
+% ===================================================================
+\section{Energía almacenada en el campo eléctrico}
+% ===================================================================
+
+Para placas paralelas ($C = \varepsilon_0 A/d$, $\Delta V = E d$):
+\[
+U = \frac{1}{2}C\,\Delta V^2
+  = \frac{1}{2}\frac{\varepsilon_0 A}{d}(E d)^2
+  = \frac{1}{2}\varepsilon_0 E^2\,(A d),
+\]
+donde $A d$ es el volumen interior. La energía está distribuida en el
+campo, con densidad volumétrica:
+
+\begin{keybox}[Densidad de energía del campo eléctrico]
+  \[
+  \boxed{u = \frac{1}{2}\varepsilon_0 E^2}, \qquad U = \int u\, dV
+  \]
+\end{keybox}
+
+\begin{notebox}[Validez]
+  Deducida solo para placas paralelas, pero vale siempre en el vacío
+  (demostración en Electromagnetismo). Para la energía de un sistema:
+  integrar $u$ sobre toda la región donde $\mathbf{E}\neq 0$.
+\end{notebox}
+
+% ===================================================================
+\section{Anuncio: aislante en un campo (dieléctricos)}
+% ===================================================================
+
+¿Qué pasa si se rellena el condensador con un \textbf{aislante}
+(dieléctrico)? No puede ser conductor (descargaría el capacitor).
+
+\textbf{Polarización:} un aislante de moléculas polares responde al
+campo:
+\begin{itemize}[nosep]
+  \item $Q=0$: moléculas orientadas al azar.
+  \item $Q\neq 0$: se orientan \textbf{levemente} en promedio (fuerzas
+        internas del material se oponen a una alineación total).
+\end{itemize}
+
+\textbf{Efecto neto:} \textbf{cargas de polarización} en las superficies
+del aislante (negativas junto a la placa positiva, positivas junto a la
+negativa). El interior sigue neutro; las cargas no se desplazan (no hay
+conducción).
+
+\begin{warnbox}[Dificultad]
+  Normalmente no se sabe cuánto se polariza un material (problema de
+  \textbf{mecánica estadística}). La próxima clase: cómo describir el
+  dieléctrico sin calcular la polarización exacta.
+\end{warnbox}
+
+\end{document}

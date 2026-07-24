@@ -1,0 +1,470 @@
+# Clase 17
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/17/
+
+Fecha de exportación: 7/23/2026, 11:57:46 PM
+
+
+Clase: 17
+Curso: F3
+
+Segmentos : 255
+Palabras  : 9923
+
+0:18
+Bueno, hace mucho, mucho tiempo, antes del receso, empezamos a ver cómo era el campo magnético generado primero por cargas eléctricas en movimiento y luego por cables por los que circulaba corriente eléctrica. Y vimos la ley de Biot y Savart que dice lo siguiente.
+0:46
+Tomen...
+0:51
+Tomen un cable que recorre una curva C, toman un punto P de observación, toman un elemento de arco DS, aquí, por aquí circula una corriente I y llaman R al radio vector I.
+1:13
+que va de un punto dado al punto en el cual vamos a observar el campo magnético. Y nos dice que el campo magnético es igual a I a mu sub cero sobre 4 pi Y la integral sobre la curva C. Normalmente va a ser una curva cerrada. Porque la carga se conserva. Así que vamos a tener un circuito. Pero podría ser un cable que fuera de menos infinito más infinito.
+1:47
+Podría ser también. De DS.
+1:53
+Producto vectorial con R. Dividido por R al cubo. Eso fue lo que vimos anteriormente. que se llama la ley de Biot-Isabar. Y vimos un ejemplo concreto, la ley de Biot-Isabar para cables. Ley de Biot-Isabar.
+2:20
+Y vimos un ejemplo concreto la vez pasada, que era el caso más simple de todos, que era un segmento, un tramo de cable que fuera un segmento rectilíneo. ¿Se acuerdan de eso? Calculamos el campo magnético sobre el plano rectilíneo. que corta por la mitad ese segmento. Y eso tiene como caso particular el caso de un cable rectilíneo infinitamente largo, en que vimos cómo era el campo magnético en cualquier punto, digamos, porque en ese caso cualquier punto que no esté a una distancia, digamos, vamos a hacer un dibujo, vimos un primer ejemplo, ejemplos, En la vez pasada, vimos un ejemplo que no voy a repetir, pero que se los enumero, que los recuerdo, tienen un cable por el que pasa una corriente I, que tiene largo L, toman un punto en el plano bisector, y la pregunta es cuánto vale el campo magnético acá.
+3:22
+Y eso es lo que calculamos la vez pasada.
+3:27
+Y eso tiene como caso particular el caso en que... Bueno, una cosa que yo les comenté es que un segmento de cable... La carga no se puede estar creando acá y desapareciendo acá. La carga se conserva. Quiere decir que esto solo lo pueden ver como la contribución de un segmento de cable. que habrá que sumar con otros segmentos de cable, porque la carga no puede estar apareciendo acá. Pero si pueden imaginar que hace entender L infinito dejando a esta distancia, llámenle a esta distancia R, y en ese caso tienen el campo magnético producido por un cable infinito que vimos que tiene módulo mu sub cero sobre 2 pi R,
+4:15
+es el módulo y vimos que si tenían el cable así y tomaban un plano perpendicular el campo magnético las líneas de campo eran círculos con centro en el punto de intersección del plano con el cable por acá pasa la corriente y que el campo magnético entonces era tangente
+4:47
+al círculo entero describe curvas cerradas bien, hasta ahí llegamos la vez pasada me parece que eso es todo lo que vimos y voy a empezar a ver un segundo ejemplo un segundo ejemplo de aplicación de la ley de Biot-Isabard que es, vamos a tomar una espira circular espira circular de corriente
+5:19
+Entonces pasa una corriente I por acá. Esto está en un plano y vamos a tomar el eje perpendicular a la espira. Y vamos a tomar un punto P aquí a una distancia Z del centro. Y la pregunta es cuánto vale el campo magnético aquí.
+5:54
+Entonces, tomemos un punto cualquiera acá.
+6:02
+Tenemos un elemento de arco DS, el R será este vector que va de acá a acá.
+6:22
+Entonces lo primero es tratar de identificar cuál es la dirección y el sentido del campo magnético. ¿Qué les parece? ¿Cómo va a ser la dirección y el sentido? Empecemos por la dirección. ¿Cómo va a ser la dirección del campo magnético sobre el eje?
+6:42
+Antes de ponernos a hacer cuentas.
+6:48
+Digamos, según el eje, ¿verdad? Y la dirección... Acá siempre tenemos un problema de perspectiva cuando uno dibuja en el plano. Supongamos que este es el cable que... Pongo más gordo el cable que va por adelante. Porque este dibujo se puede ver de dos maneras.
+7:03
+Entonces estoy pensando que la corriente se circule así y de hecho el campo magnético va a quedar de acuerdo con la regla de mano derecha yendo para arriba. Así que vamos a tener un campo magnético vertical... y para arriba. Entonces, para convencernos de que es vertical, fíjense, si toman el punto opuesto con respecto al centro acá, ¿cuál va a ser el campo magnético que me va a generar, antes de dibujar el campo, dibujo en rojo el campo producido, el dB, producido por este pedacito. Fíjense, va a ser Tienen que calcular el producto vectorial de DS con R. R viene para allá.
+7:42
+Entonces les va a quedar un campo magnético chanfleado para allá. DB. Este es el DB producido por el DS. Pero si toman el del lado opuesto, va a quedar la componente vertical, va a quedar la misma, pero las componentes en el plano horizontal van a quedar invertidas. Quiere decir que las componentes en cualquier dirección que no sea la vertical se anulan. Entonces... Solo hay resultante según el eje Z. Entonces solo nos interesa calcular B sub Z. Los otros componentes, cada D sub B tiene una componente que es...
+8:34
+Cada DB tiene una componente que tiene todas las componentes, que tiene la componente vertical, pero también componentes horizontales. Pero cuando suman sobre todo el disco, las componentes horizontales se compensan. Y solo nos queda la componente vertical. Entonces calculemos la componente DB primero. El módulo del campo magnético producido por este pedacito que está acá. Entonces usamos aquella fórmula. Fíjense que este vector R es perpendicular a dB en todo punto.
+9:10
+Tienen el círculo, el círculo así, y tienen un radio que va allá. Ese radio, ¿qué tiene? Tiene dos componentes. Una según la vertical, que obviamente es proporcional al arco, porque el arco está en el plano horizontal, y la vertical... Está en el plano perpendicular. Y después tiene una componente que es radial. Ambas son perpendiculares al elemento de arco. ¿Se entiende? Así que vamos a tener un R que es perpendicular a DS. DS es perpendicular a R. Entonces, acá como lo que tenemos es un producto vectorial, el módulo del DB va a ser el producto de los módulos.
+9:48
+¿De acuerdo? Les recuerdo que el módulo de un producto vectorial es el producto de los módulos por el seno del ángulo. Si el ángulo es 90 grados, el seno vale 1. Así que el dB será igual a mu sub 0 sobre 4pi, hay un i y hay un ds dividido r al cuadrado. Donde r es este vector que está acá. Entonces llamémosle R mayúscula al radio de la espira y esto es Z. Así que tenemos que R al cuadrado no es otra cosa que Z al cuadrado más R al cuadrado por Pitágoras.
+10:44
+Así que esto nos queda Mu sub cero... por i por ds sobre 4 pi por r al cuadrado más z al cuadrado. Y este es el módulo del campo producido por este segmentito chiquitito. Pero lo que nos interesa no es el módulo, sino la componente según z. Debemos proyectar según z. ¿Cómo hacemos para proyectar según z?
+11:16
+Fíjense, para proyectarse un Z lo mejor es tomar un plano que pasa por R. Voy a hacer un dibujo que ahora es un corte. Entonces tenemos acá el eje. Acá tenemos el punto P. Esta es una distancia Z. Voy a tomar el DS entrante acá. No se ve en la figura, queda perpendicular al plano.
+11:42
+Esto que está acá...
+11:45
+es el vector R que está en el plano. El vector R es cualquiera, es este que está acá.
+11:56
+Este es R. Entonces fíjense. Voy a hacer un dibujo que no parezca 45 grados. Estoy haciendo un corte, ¿no? Entonces tomo el plano tal que DS es perpendicular al plano. Tiene acá el punto P. Tiene acá el vector R. Que va del segmentito al punto de observación.
+12:27
+¿Bien? Y DS por R, el campo magnético va a estar apuntando para allá.
+12:43
+y acá tienen un ángulo recto entonces si llaman a este ángulo alfa fíjense que alfa también aparecerá acá ¿de acuerdo? entonces si quieren la componente z ¿por qué tendrán que multiplicar?
+13:18
+por el seno, entonces esto va a ser igual, dvz, dvz va a ser dv por el seno de alfa. Y el seno de alfa, lo pueden calcular también, ¿cuánto vale el seno de alfa? Si esto es r y esto es zeta.
+13:50
+r sobre la raíz cuadrada de z al cuadrado más r al cuadrado. Cateto opuesto sobre la hipotenusa. Entonces concluimos de aquello que está allá arriba, que dv sub z es igual a mu sub 0 por i, dividido 4pi, tienen el ds que todavía está por ahí, tienen un z al cuadrado más r al cuadrado, todo eso es lo que habíamos puesto acá arriba y tienen que multiplicar por esto que está acá. Entonces les queda un R en el numerador.
+14:20
+Y en lugar de tener la potencia 1, acá tienen la potencia 3 medios.
+14:36
+Así que eso es la contribución del campo magnético de un pedacito de arco. ¿Y qué pasa si yo ahora quiero...
+14:45
+La componente entera. A ver, prendo una cosa que quiero estar seguro de haber puesto el signo correcto. Sí, el signo es coherente con... Está bien orientado, ¿verdad? Tenía miedo de si fuera más o menos, pero está bien. Porque fíjense que la componente va a ser... Si la corriente va para allá, la componente va a ser vertical. Así que está bien el dibujo. Si la corriente fuera para el otro lado, acá aparecería un signo menos. ¿De acuerdo?
+15:13
+Y ahora si yo quiero calcular el campo magnético entero, no la componente de un elementito de arco, ¿cuánto será? ¿Qué habrá que hacer? Sumar sobre todo los intervalitos. Pero fíjense que acá tenemos una buena noticia, que es la siguiente, que es que nada de esto... Nada de esto depende del ángulo. Solo de S, digamos. De S es R por D theta. Pero simplemente cuando quieren integrar, simplemente tienen que reemplazar de S por qué cosa.
+15:51
+La circunferencia que es 2 pi R. Entonces podemos escribirlo así. Esto es mu sub cero por I sobre 4 pi R.
+16:01
+Y ahora tienen la integral de 0 a 2 pi, ¿sí? El arco de S no es otra cosa que R por D theta, así que pongo D theta por R, y por lo otro que tenemos allá, que es R dividido Z al cuadrado más R al cuadrado a la 3 medios. Bueno, ya está, entonces B sub Z... ...va a ser igual... ...a mu sub cero... ...habría que multiplicar... ...todo esto... ...esto es una integral... ...nada depende de teta... ...simplemente esto queda dos pi... ...el dos pi se me compensa con el cuatro pi... ...me queda un medio acá... ...por... ...y... ...por r al cuadrado... ...sobre... ...z al cuadrado... ...más r al cuadrado... ...a la... ...tres medios...
+16:51
+...¿no?... ...esto es campo... ...generado...
+16:58
+Por una espira circular... Campo magnético, ¿no?
+17:06
+Por una espira circular... Sobre su eje. ¿Bien? ¿Cómo? Bueno, podríamos haber integrado directamente con ds y haber puesto acá la integral de ds entre 0 y 2 pi r. Pueden usar cualquier, la variable que ustedes quieran, ¿me explico?
+17:36
+Es lo mismo. Claro, lo que dice el compañero acá es que en lugar de haber pasado por el ángulo teta, directamente acá podríamos haber integrado, es decir, tengo que integrar ds sobre un círculo, eso me da 2 pi r y ya está, sin pasar por el ángulo. Es lo mismo. Tienen que sumar sobre todos los arcos. Lo importante es que todo esto es independiente del ángulo. Entonces ahora, como viene a haber algunos casos límites, como hacemos de costumbre.
+18:13
+Entonces primero ver qué pasa cuando estamos cerca del centro de la espira. ¿Sí? Recuerden el caso eléctrico. Teníamos un caso eléctrico similar en el que teníamos un aro cargado. ¿Cómo era el campo eléctrico en el centro? Cero, ¿verdad? Porque los campos eran todos radiales y se nos anularon en el centro. Fíjense que acá no pasa eso. Si toman Z igual a cero, el campo no es cero.
+18:47
+Es observación. Entonces primero uno, el campo...
+18:51
+no se anula para z igual a 0. De hecho, si hacemos un dibujito de las líneas de campo, van a ser una cosa así.
+19:15
+No se cruzan, ¿eh?
+19:20
+Pero si se colocan acá en el centro, no da cero. ¿Da una cosa el campo? Fíjense, las líneas de campo tienen una forma completamente distinta que en el caso eléctrico. Son líneas que hacen así. ¿Y de hecho cómo son las líneas de campo magnéticos siempre? Cerradas. Así que esta en algún lugar va a dar la vuelta por acá. Entonces la primera observación es esa. La segunda observación es qué pasa si tomamos Z mucho más grande que R.
+19:55
+Si tomamos... Z... Bueno, sí, es razonable que el campo muy lejos de la fuente de campo, en este caso la espira, tiende a cero. Pero ¿cómo? ¿A qué velocidad tiende a cero?
+20:17
+Claro, y elevado a la 3 medios nos queda Z a la 3. Entonces, si tomamos Z mucho más lejos, nos queda B sub Z... que es mu sub cero por i por r al cuadrado sobre 2 por módulo de z al cubo. Así que decrece no como la distancia al cuadrado, sino como la distancia al cubo. ¿Por qué les parece que decrece como la distancia al cubo y no la distancia al cuadrado?
+20:50
+En el caso eléctrico, si tenía un aro cargado, si va muy lejos, ¿cómo que decrecía? Como 1 sobre r al cuadrado, ¿verdad? Porque lejos como que se comporta un aro cargado.
+21:02
+Como una carga puntual. Pero fíjense que esto no se... Las cargas puntuales, el campo eléctrico decrece como 1 sobre r al cuadrado. Pero fíjense que el objeto este, un poco equivalente acá, no decrece como 1 sobre la distancia al cuadrado, decrece como una distancia al cubo. ¿Por qué les parece que la distancia... que va a depender como la distancia al cubo? ¿Qué es lo que no hay en el caso magnético que teníamos en el caso eléctrico? Monopolos. En el caso eléctrico tenemos carga eléctrica. La carga total de un aro cargado, uniforme, cuando no es uniforme no es así, creo que están en conocimiento de causa.
+21:40
+Cuando la carga total es distinta de cero, se comporta lejos como una carga puntual. Pero acá no existe el equivalente de un monopolio puntual. Entonces, siempre decrece más rápido que 1 sobre r al cuadrado. Decrece como 1 sobre r al cubo. Y ese campo que decrece como 1 sobre r al cubo, en el caso eléctrico, ¿cómo le llamamos? El campo de qué objeto. ¿Qué objeto tenía un campo que decrecía como 1 sobre r al cubo?
+22:09
+El dipolo eléctrico, un objeto que tiene carga neta cero pero que tiene una distribución un poco estirada. Acá pasa lo mismo, esto crece como una sobre real cubo y por eso se le llama a una pequeña espira de corriente, se le llama un dipolo magnético.
+22:35
+Se suele decir...
+22:37
+Que este... Es... Un campo... Dipolar... Magnético... Y de hecho se define un dipolo magnético... Se define... El dipolo magnético... De una espira... De una espira plana... Como... Mu...
+23:09
+Voy a hacerlo como un escalar, pero se le puede dar un vector también, pero no me voy a ocupar del vector. Se le define como la corriente que circula por la espira plana por el área de la espira. De hecho, si quisieran definirlo como un vector, ya saben, porque ustedes para una superficie plana saben definir un vector asociado al área. Que es, de acuerdo con la regla de la mano derecha, un vector que tiene módulo del área, es normal a la superficie, y tiene sentido de acuerdo con la regla de la mano derecha.
+23:43
+Pero no nos ocupemos de eso, simplemente, digamos acá, entonces en este caso, el área es pi por el radio al cuadrado.
+23:57
+entonces BZ lo podemos escribir fíjense esa expresión o esta misma que está acá entera I por radio al cuadrado en este caso I por radio al cuadrado será igual a I por el área dividido pi así que esto es igual al momento dipolar dividido pi
+24:26
+Entonces, si vamos allá, vemos que eso nos queda mu cero por el momento... Ah, momento dipolar, ¿qué letra usé? No debo de usar mu. Sí, sí, usé mu. Mu cero por mu... Disculpen la redundancia de anotación. Mu cero y mu no es lo mismo, son cosas diferentes. Mu es el momento dipolar, ¿no? Momento dipolar magnético.
+24:51
+Se define el momento... Disculpen, acá está mal. El momento...
+24:58
+dipolar magnético acá queda mu sub cero por mu dividido por 2 pi por z al cuadrado más r al cuadrado a la 3 bien si si
+25:29
+Sí, sí, sí, sí. Cualquier objeto, cualquier espirita, cuando ustedes las miran de lejos dirán que se comporta como un momento dipolar. Todas las espiras cerradas, casi todas las espiras cerradas, se comportan a gran distancia igual, como un campo que decrece como uno sobre el radio a la distancia. Pero existe otro caso en sí que no sea tipo. Sí, sí, podría suceder que el momento dipolar fuera cero.
+26:00
+Pueden construir un sistema en el cual el momento dipolar es cero. Sí, entonces en lugar de crecer como unos sobre R al cubo, decrece como unos sobre R a la cuarta, podría pasar. Eso es como, fíjense, en el caso eléctrico, si la carga neta es distinta de cero, el campo eléctrico decrece como uno sobre el radio al cuadrado. Pero si justo se da que la carga da cero, entonces no decrece como uno sobre el radio al cuadrado, sino como uno sobre el radio al cubo. Se comporta como un dipolo. Cuando la carga neta es cero, se comporta como un dipolo.
+26:30
+Pero también podría pasar que el dipolo eléctrico también se anulara. Cuando tienen solo dos carguitas no hay posibilidad. Pero, por ejemplo, si ustedes tienen cuatro cargas, ¿sí?
+26:43
+Cuatro cargas y las toman así cruzadas, con carga neta cero. El dipolo se anula. ¿Sí? Creo que sí, tengo que hacer la cuenta, pero creo que sí. Se anula el dipolo. No, no se anula el dipolo. Pero pueden tomar... dos dipolos, uno apuntando para arriba y otro para abajo. A gran distancia los efectos de los dipolos se van y lo que queda es un efecto neto más chico que se llama el efecto cuadrupolar. Y acá en el caso magnético pasa lo mismo. Puede suceder que justo, un ejemplo muy fácil, les toman dos espiras, una girando para allá y otra girando para el otro lado, los efectos a gran distancia se compensan, entonces el efecto dipolar se va y queda un efecto neto más chico que se llama el efecto cuadrupolar.
+27:27
+Así que podría pasar eso.
+27:31
+¿Se entendió esto? ¿Sí? Bueno. Entonces ahora voy a ver un tercer ejemplo.
+27:42
+Un tercer ejemplo.
+27:49
+De cálculo de campo eléctrico. En un caso que es bastante útil en la práctica. Que es el caso de una bobina solenoidal.
+28:01
+Es solenoide. Entonces es una bobina. Pero no cualquier bobina se le llama solenoide. Vamos a precisar qué tipo de bobina se llama solenoide. Entonces va a ser así. Vamos a tomar un cilindro.
+28:24
+Con...
+28:33
+con un cable dando vueltas alrededor, por acá pasa una corriente. Eso es una bobina. Hay muchas vueltas y después de muchas vueltas, no las dibujo todas porque son pilas, sale por el otro lado. Va dando vueltas así.
+28:58
+Entonces, ¿cuándo diremos que es un solenoide? Diremos que es un solenoide cuando tiene esta forma cilíndrica y además las espiras, contrariamente a lo que puse acá en el dibujo, porque si lo hiciera así no se vería nada, están todas pegaditas unas contra la otra. ¿Se entiende? Entonces un solenoide es una bobina.
+29:28
+con espiras muy compactas.
+29:41
+Entonces tomemos el largo del solenoide, le llamamos L, digamos que el número total, número de espiras, N, número de espiras,
+29:55
+N mayúscula vamos a llamar a N chico a el número de espinas por unidad de longitud. ¿Está? Y vamos a calcular el campo magnético en el eje del solenoide. ¿Sí? ¿Sí?
+30:26
+Bien.
+30:30
+Dejo esto por ahora porque lo voy a usar ahora en un momento. Entonces, ¿qué les parece? ¿Cómo vamos a hacer para calcular el campo producido por un solenoide sobre su eje?
+30:52
+Y sumamos. El campo producido por una, ya lo tengo acá. ¿Por qué esta es una buena aproximación del campo producido por una espira en el solenoide?
+31:03
+¿Dónde usé las propiedades del solenoide para decir que esta es una buena descripción de la espira?
+31:09
+Porque están muy juntas. ¿Por qué? Porque si no estuvieran muy juntas, cuando yo doy una vuelta, es una forma de hélice. Entonces no se comporta como una espira circular. Es como una casi circular, pero se va torciendo la corriente, ¿no? Pero si están muy juntas, puedo despreciar el pasito que dio de subir en una vuelta y puedo aproximar cada espira como una espira circular.
+31:39
+¿Cómo? ¿Cómo? No entiendo la pregunta. ¿Cómo?
+31:56
+Interacciones entre.
+32:02
+Si tienen una corriente variable, puede pasar lo que vos decís. Pero nosotros por ahora no hemos visto... Las espinas están quietas, están fijas. Hay fuerzas de contacto. Pueden pensar que esto tiene un tubo de plástico, por ejemplo, con un cable barnizado. ¿Por qué el cable tiene que estar barnizado?
+32:24
+Claro, porque nosotros queremos que la corriente dé vueltas así, pero están todas pegaditas entre sí. Entonces, si no estuviera barnizado, el barniz es un aislante, la corriente podría pasar a través de costado. No, no queremos. Queremos que la corriente dé vueltas así. Entonces, tiene que ser un cable barnizado. Vieron que las bobinas siempre tienen esos cables con el color medio raro. Es porque tienen barniz. Y entonces en ese caso no hay interacción. Una espira podría generar una fuerza sobre otra, pero como están sostenidas, eso no tiene ningún... Sí, después pueden haber otros efectos de una espira sobre otra, que los vamos a ver más adelante en el curso, que son los efectos de inducción, pero no suceden cuando la corriente es constante.
+33:10
+Entonces, como las espiras están compactas,
+33:20
+Cada espira es casi circular.
+33:32
+¿Bien? Entonces hagamos un dibujo de costado. La del rectángulo. Entonces voy a tomar el origen en el centro.
+33:43
+Voy a llamar a la posición donde voy a observar el campo magnético, le voy a llamar X acá. este es el punto en que voy a observar el campo magnético y voy a considerar las espiras producidas por puntos que están en coordenadas vamos a poner todo positivo para que no haya voy a poner acá esta distancia acá le voy a llamar Y y esto que está acá le voy a llamar DY
+34:23
+entonces el campo el radio voy a poner un cilindro acá de radio R entonces el campo producido por una espira
+34:50
+en posición Y sobre un punto, en un punto, de posición X es, ¿cuánto será el campo Z de una espira?
+35:12
+Tenemos acá, tenemos mu sub cero por Y sobre 2, por radio al cuadrado, y acá ¿qué tengo que poner en lugar de Z?
+35:29
+Algunos dicen Y, otros dicen X, no es ni lo uno ni lo otro.
+35:38
+Y menos X, la distancia, la espira está en la posición Y y lo que cuenta acá es la distancia entre el punto de observación y el centro de la espira. Así que va Y que es menos Y o Y menos X porque igual aparece al cuadrado. Entonces pongamos Y menos Y al cuadrado más R al cuadrado, todo a la tres medios. ¿Está? Eso es una espira.
+36:05
+¿Está?
+36:11
+Ahora consideremos en lugar de una espira, vamos a considerar todas las espiras que están en un cachito de ancho de Y. ¿Sí? Entonces de BZ producido por las espiras entre Y y Y más de Y. ¿Cuánto será el campo magnético producido por ellas?
+36:46
+Un cachito así.
+36:51
+Piensen que están muy compactas. En dy va a haber una gran cantidad de espiritas. ¿Cuántas va a haber? N minúsculas multiplicado por... ¿Cuál distancia? El número de espiras es el número de espiras por unidad de longitud por la longitud del cachito, que es de Y. Así que esto va a ser igual a mu sub cero por Y sobre 2.
+37:26
+Es decir, lo de una espira. Y tengo que multiplicar por el número de espiras, que es el n chico por de Y.
+37:40
+Este es el número de espiras entre Y más Y. Disculpen, este Y no tiene nada que ver, este Y es un Y del idioma español.
+37:59
+Yo creo que esto es totalmente lineal, así, o sea, tenés una espira, tenés tal campo, tenés dos espiras, tenés el mismo. Claro, cada una contribuye más. En realidad, si el ancho es muy grande, si la Y es muy grande, no podés hacer eso más porque tenés que empezar a ocuparte de que la Y de uno no es exactamente igual a la Y del otro. ¿Sí? En un punto de posición X.
+38:27
+Calculamos el campo acá, que tiene coordenada X, por producir una espira que está en coordenada Y. ¿Sí?
+38:36
+Entonces, todo esto es puramente lineal, simplemente sumar cosas iguales, salvo que estamos aproximando todas las posiciones de todas las espiras como iguales, porque como están en un intervalo muy chiquitito, eso es una buena aproximación. Pero ahora que vamos a sumar sobre todo, ya no podemos hacer más, si queremos calcular el campo magnético total, vamos a tener que integrar en Y, tenemos mu sub 0 por Y que sale para afuera, R al cuadrado que sale para afuera, el 2 que sale para afuera, y tenemos que integrar en Y, bueno, el n chico también sale para afuera,
+39:08
+Y tenemos que iterar el Y. El Y varía entre menos L sobre 2 y L sobre 2 de Y de aquello. De Y menos X al cuadrado más R al cuadrado. Todo a la 3 medios.
+39:27
+Ese es el campo total. Y como siempre nos pasa esta desgracia de que en el mundo hay que hacer integrales. Cuando uno va a hacer cálculos... capaz que me quedó todo muy compactado vamos a hacer un dibujo más grande a ver si se ve más claro no, el ancho de una regioncita donde hay muchas espiras entonces hago un dibujo más grande para que se vea más claro entonces el centro está más o menos por acá o Y es la posición de un segmentito El segmentito tiene ancho de Y.
+40:11
+Y estamos calculando las posiciones... Los campos magnéticos generan todas las espiras que están acá adentro sobre otro punto P que está en coordenada X. Y es esto. ¿Se entiende? Y acá en este intervalito, es chiquito, pero está lleno de espiras, porque dijimos que es muy compacto. Está lleno de espiras, calculamos la contribución de todas las espiras que hay en ese intervalito. ¿Cuántas espiras hay en ese intervalito? Hay n chica, que es el número de espiras por unidad de longitud, multiplicado por la longitud del intervalito, que es de y.
+40:45
+¿Se entiende? Bueno, y ahora hay que hacer esta integral. Pero esta integral es una amiga conocida, ¿no? ¿Se acuerdan? No. Primero, muchos me dirán, de amiga, nada.
+40:57
+Segundo, sí, ya la hemos visto, pero si no se acuerdan, vamos a verlo ahora. Pero antes que nada, antes de complicarnos la vida, un cambio variable evidente que conviene simplificar ahí, ¿cuál es? Claro, llamémosle u igual a y menos x. Así que du no es otra cosa que dy, porque x acá está fijo. Así que esto es igual a mu sub cero por i por radio al cuadrado por n, dividido 2.
+41:33
+Entonces acá tendremos l sobre 2 menos x. L sobre 2, perdón, menos L sobre 2 menos X, de U dividido U al cuadrado más R al cuadrado a la 3 medios. Entonces tenemos que hallar la primitiva de ese bicho.
+41:53
+¿Cómo hacemos esta integral? A ver, vimos dos maneras para hacer esta integral ya en este curso. ¿Cuáles eran las dos maneras?
+42:07
+Una con el seno hiperbólico o el coseno hiperbólico y otra haciendo interacción por partes, ¿se acuerdan? Entonces no voy a rehacer la cuenta, ya la hicimos varias veces. Revisen en su cuaderno, les voy a decir cómo es la primitiva. La primitiva de du sobre u al cuadrado, revisen su cuaderno porque ya la hemos visto anteriormente, es igual a u sobre u al cuadrado más r al cuadrado a la un medio.
+42:41
+Verifiquemos. Eso ya lo vimos varias veces. Ya lo vimos. Vimos dos métodos. Uno integrando por partes y otro usando un cambio variable u igual a seno hiperbólico de z. Pero, ahora que ya sabemos el resultado, verifiquémoslo. Si no nos acordamos, verifiquémoslo. Para verificarlo es bien fácil. Tomemos la derivada de esto. Verificación. Entonces, tomemos la derivada de u con respecto a u cuadrado, estamos derivando con respecto a u, ¿verdad?
+43:17
+Perdón, a u medio. Entonces hay dos posibilidades, o bien derivamos arriba, esto es la derivada, o bien derivamos arriba, entonces nos queda 1 sobre u al cuadrado más r al cuadrado a la u medio, o bien derivamos abajo. Entonces, si derivamos abajo tengo que dejar el u, es como la... Y derivo lo de abajo. Lo de abajo es una potencia a la menos 1 medio. Así que tengo menos 1 medio de lo que derivé. Tengo que agregarle una potencia a 1 en el denominador.
+43:49
+Me queda 3 medios. Y tengo que derivar con respecto a lo de adentro. La derivada con respecto a lo de adentro, ¿cuánto me da? Si estoy derivando con respecto a U.
+44:01
+2U. Por 2U.
+44:07
+Entonces el 2 se me va con el 2 acá y puedo hacer un denominador común u cuadrado más r al cuadrado a la 3 medios. Entonces puedo hacer un denominador común u cuadrado más r al cuadrado a la 3 medios. Acá es lo mismo, salvo que me falta un u al cuadrado más r al cuadrado en el numerador. Y en este tengo que restar un u por u, que es u al cuadrado.
+44:36
+Ah, fíjense, me había equivocado. Entonces acá falta un R al cuadrado. En el de miedo. ¿Bien? Si yo derivo esto dividido por R al cuadrado, me queda esto que está acá. Que es lo que quería. ¿Bien? Así que es una tercera manera de hacer la integral. Si ya sabemos el resultado, bueno, podemos verificar que está bien derivando.
+45:07
+Pero alguien nos tiene que haber pasado el dato. Si no, ya lo vimos varias veces. Entonces volvamos aquí. Entonces b sub z es igual a mu sub 0 por i por n por r al cuadrado, dividido 2... ...por... ...esto que está acá... ...entonces 1 sobre R al cuadrado... ...por U... ...sobre... ...U al cuadrado más R al cuadrado... ...a la U medio... ...evaluado entre... ...L sobre 2... ...menos X... ...y L sobre 2... ...perdón, menos L sobre 2 menos X... ...entonces este R al cuadrado se nos va con este... ...sustituimos...
+45:57
+Y nos queda mu sub 0 por i por n sobre 2.
+46:04
+Y nos queda L sobre 2 menos x dividido raíz cuadrada. Elevar a la 1 medio es lo mismo que tomar la raíz, ¿no? L sobre 2 menos x al cuadrado más r al cuadrado. Menos, menos por menos, bueno, voy a escribirlo así en detalle para que no haya dudas.
+46:26
+entonces L sobre 2 más X al cuadrado más R al cuadrado entonces esto es una raíz ¿bien? y de hecho fíjense que acá tengo una cantidad de signos que los voy a eliminar porque acá tengo dos signos en el numerador tengo un signo en factor así que voy a poner todo más más lindo
+46:56
+¿Se entendió? Y este es el campo magnético.
+47:09
+Campo magnético en un solenoide.
+47:22
+Pero ustedes vieron en el liceo el campo magnético de un solenoide, ¿verdad? No esta expresión, otra.
+47:30
+Levanten la mano los que han visto, han escuchado la palabra solenoide en el liceo.
+47:36
+Y vieron el campo magnético, porque si no vieron el campo magnético no tiene sentido hablar de solenoide. Pero no es esa la expresión que vieron, vieron una mucho más simple. ¿Cómo era?
+47:48
+¿Cómo era?
+47:50
+Era mu sub cero n por i. n chica por i. Esa es la expresión que vieron. Pero fíjense que no coincide con esta, porque ¿cuál es el solenoide que vieron en el liceo?
+48:03
+¿Recuerdan? Es un solenoide muy, muy largo. Muy, muy largo. Entonces, esto vale para cualquier bobina solenoidal, pero... acá hicimos la aproximación de que estaban pegaditas las espiras pero es la única aproximación que hicimos sobre el eje hicimos el cálculo preciso pero suponiendo que las espiras están pegaditas es la única aproximación que hicimos pero ahora vamos a hacer el límite de lo que se llama el solenoide ideal ¿cuál es el solenoide ideal? es un solenoide infinitamente largo ¿está?
+48:35
+¿de acuerdo? entonces ¿qué pasa si yo tomo L tendiendo infinito?
+48:46
+Sí, más que... Sí, podemos... Esto podemos apreciar. Así que esto nos queda... Y esto... También 1. Se nos va... 1 más 1 se nos va a poner 2. Nos queda 1 sub 0 por n. ¿Está? Es cuando el... Pero en realidad hice un poco de trampa. Hice un poco de trampa. Porque la situación física es que L es muy grande. Pero además tengo que pedir algo más. Porque si yo tengo L muy grande, pero el X que tomo está acá... Eso no es una buena aproximación porque lo que necesito suponer es que L sobre 2 menos X es mucho más grande que R. Y también tengo que suponer que esto es mucho más grande que R. Entonces lo que tengo que suponer es que la distancia de X al borde es mucho más grande que el radio.
+49:38
+¿De acuerdo? Entonces vamos a poner un solenoide muy grande. Para que eso suceda, L tiene que ser mucho más grande que R. Pero además necesito que el punto de observación no esté justo en el borde. Entonces, si... ¿Cómo? Sí, pero en el mundo real las cosas no son infinitas. Dicho de otra manera, sí, voy a tomar el límite de L tiendo infinito, pero tengo que tomar el límite de L tiendo infinito dejando X fijo.
+50:08
+Es decir, alargo este, pero X no lo... Si X se me va moviendo con L, no sirve. ¿Me explico?
+50:15
+O dicho de otra manera, ¿con quién voy a comparar? Tengo que decir, cuando L es una cantidad con dimensiones, cuando digo que voy a hacerla tender infinito, tengo que hacerla comparar con alguien más, con otra cosa con las mismas dimensiones. ¿Con quién la voy a comparar? ¿Con X o con R? No. El solenoide infinito es cuando L es mucho más grande que R. Pero hay que tener cuidado, el límite hay que tomarlo para puntos de observación que no están en el borde. Claro, voy a...
+50:46
+En esta zona, en una zona con ancho del orden de R, por más que L sea muy grande, el campo magnético no va a ser... Entonces, si L es mucho más grande que R, solenoide ideal. ¿Listo? ¿Sí? Es que Z sería... El eje Z. Todo lo estamos calculando todo sobre el eje. Entonces solenoide ideal.
+51:16
+Y lo que vamos a suponer es que L sobre 2 menos X en valor absoluto es mucho más grande que R. Y además que L sobre 2 más X es mucho más grande que R. Es decir, que el punto de observación está a una distancia de los bordes, en la posición de este, en menos L sobre 2. Estoy suponiendo que si esto es de orden R, excluyo estas regiones de observación.
+51:47
+¿Sí? De hecho, las excluyo adentro y afuera también. ¿No?
+51:54
+Vamos a tomar X de este tipo. Entonces, X lejos de los extremos.
+52:04
+Cuando digo lejos, estoy diciendo una distancia mucho más grande que el radio del solenoide. Entonces, en ese caso, puedo despreciar R con respecto a esto y R con respecto a esto. Entonces, B sub Z me queda...
+52:23
+Mu sub 0 por ni sobre 2. Y entonces el primero me queda... L sobre 2 menos x sobre el valor absoluto de L menos 2 menos x. Y el segundo me queda L sobre 2 más x sobre el valor absoluto de L. Y ahí se ve, pero ¿por qué perdió el tiempo poniendo valor absoluto? Entonces ahora vamos a considerar el campo adentro del solenoide ideal.
+52:58
+Es decir, cuando X está acá, en esta región.
+53:05
+Entonces, si P dentro del solenoide... Entonces L sobre 2 menos X es positivo y L sobre 2 más X es positivo... ¿Sí? Entonces, B sub Z es igual a mu sub cero N por I, que es la fórmula que ven en el liceo. Solenoide campo magnético en el eje dentro del solenoide de área.
+53:51
+Y ahora veamos el campo. ¿Qué pasa si yo, en lugar de colocarme acá, me pongo en un punto que está en X acá? Sobre el eje, pero lejos. ¿Sí? No pegado, ¿no? Pero estoy suficientemente lejos. ¿Cuánto me va a dar si yo tomo acá? Miren acá la expresión. Si tomo L menos... O acá, en esta.
+54:15
+Tomo X suficientemente grande. ¿Qué pasa con esto? ¿Qué signo tiene? ¿Qué signo tiene?
+54:19
+Negativo. Así que esto ya no es 1, es menos 1. Esto sigue siendo 1, pero esto es menos 1. Así que si estamos fuera del solenoide, fuera del solenoide, B sub Z igual a 0.
+54:45
+Sobre el eje.
+54:52
+Entonces, ¿cómo es el campo en un solenoide? Se los dibujo.
+55:01
+Van a ser un campo, las líneas de campo van por acá.
+55:27
+Entonces si nos colocamos acá, el campo magnético es cero. Las líneas de campo se abren rapidísimo. Y no vemos campo. Bien. Bien.
+55:54
+Y sobre el eje, fíjense que una cosa interesante es que sobre el eje, a lo largo del eje, el campo magnético no cambia. Yo me coloco en cualquier punto que no esté cerca del borde, el campo magnético a lo largo del eje es constante, no depende de la posición.
+56:13
+Vamos a probar un poco más adelante con otros métodos. Esperaba hacerlo hoy, pero no sé si llego. Que... Esto no solo vale sobre el eje, sino sobre todo el solenoide. Sí, pero eso todavía no lo vimos.
+56:43
+Por ahora todo lo único que hemos hecho es sobre el eje. Todo el cálculo que hemos hecho es sobre el eje. Entonces...
+56:50
+Digo esto para explicarles cómo puede ser cero afuera y no cero adentro, porque en una región del orden de R se desvía el campo así. El alcance del campo magnético es una cosa del orden del radio.
+57:04
+Afuera. ¿Se entendió esto? ¿Preguntas?
+57:11
+Así que este es el campo que ustedes conocen del liceo y ven un poco qué aproximaciones hubo que hacer. Hubo que suponer que las espiras estaban compactas y que el largo del solenoide era mucho más grande que el radio. Entonces, lo que voy a hacer ahora es hablar de la ley de Ampere.
+57:37
+Entonces, el capítulo 9. 9.4.
+57:44
+Ley de Ampere. Entonces, al principio del curso, nosotros vimos la ley de Coulomb. Para la electrostática. Para el cálculo de campos eléctricos. Más adelante en el curso vimos una ley que yo les conté que en realidad era más general que la ley de Coulomb, que era la ley de Gauss. Y que en el caso electrostático eran equivalentes. ¿Se acuerdan que vimos que la ley de Coulomb en el caso electrostático es equivalente a la ley de Gauss?
+58:19
+Ahora, para ver campos magnéticos, vimos la ley de Biot y Savart. Y podemos preguntarnos si no hay una ley que sea el equivalente de la ley de Gauss. Y la respuesta es sí. Pero contrariamente al caso eléctrico en que yo me di el trabajo de probarlo, probar que las dos cosas son equivalentes, acá no lo voy a hacer porque da bastante más trabajo desde el punto de vista matemático. Se puede hacer, no hay nada profundo. De hecho, en el curso de electromagnetismo eso se ve, pero no lo vamos a hacer ahora. Simplemente les voy a enunciar el equivalente magnético de la ley de Gauss, que van a ver que es un poco distinto.
+58:53
+Entonces, hay una ley...
+59:01
+que juega el papel para B de la ley de Gauss se llama la ley de Ampere entonces las voy a enunciar entonces dice lo siguiente entonces espera no la vamos a probar no vamos a probar la equivalencia con Biot y Zabarco.
+59:47
+Entonces, la ley dice lo siguiente. Toman una espira. Toman una curva. Una curva cerrada.
+59:57
+Tienen cables.
+1:00:00
+En un cable por acá pasa una corriente I1, por acá pasa una corriente I2, en otro pasa una corriente I3, en otro pasa una corriente I4. ¿Sí? Entonces I3 y I4 pasan por dentro de la curva C e I1 y I2 pasan por fuera. ¿Sí? ¿Bien? Entonces la ley de Ampère dice...
+1:00:29
+Dice así. Que la circulación del campo magnético en la curva cerrada... ¿Sí? Es como... Es como un trabajo sobre... No es un trabajo porque B no es una fuerza. Pero si B fuera una fuerza sería como un trabajo sobre una curva cerrada. ¿No? Es igual a mu sub cero... Por la suma de las corrientes... I sub k... Con k... Los cables...
+1:01:01
+que pasan a través de C. Dicho de otra manera, los cables con corrientes I3 e I4 cuentan en esta suma, y los cables con corrientes I1 e I2 no cuentan. Un poco como en la ley de Gauss, ¿se acuerdan de la ley de Gauss? Solo había que considerar las cargas dentro de la superficie gaussiana.
+1:01:34
+Acá es lo mismo, solo tienen que contar las corrientes que pasan a través. Al igual que en la ley de Gauss, en la ley de Gauss solo había que considerar las cargas que están adentro. Eso no quiere decir que las cargas que estén afuera no generan campo magnético. Lo que quiere decir es que para el flujo magnético en la superficie cerrada, ellas no dan flujo. Acá lo que dice es que las corrientes I1 y I2 generan un campo magnético en cualquier punto de esta curva, pero no contribuyen a la circulación.
+1:02:07
+De efecto neto, cuando integran sobre todo la curva es cero. Es bien parecido. En un caso teníamos cargas, en el otro teníamos corrientes, en un caso tenían superficies cerradas y en este tienen una curva cerrada. Pero es la misma idea. ¿Bien? Para ver bien cómo funciona, vamos a ver ejemplos. Ejemplos de aplicación.
+1:02:41
+En el caso de la ley de Gauss fuimos mucho más precisos, nos dimos el trabajo de establecer la relación, la equivalencia con el caso de la ley de Coulomb en el caso electrostático. Ahora no vamos a hacer eso porque es mucho más complicado desde el punto de vista matemático. Básicamente es más complicado porque en el caso de la ley de Biotisabar tienen toda esa cantidad de productos vectoriales y entonces hay que usar más matemática. Entonces veamos el caso... Bueno, ¿cómo en la ley de Gauss?
+1:03:13
+¿Cuándo la ley de Gauss la podíamos aplicar directamente y era útil?
+1:03:18
+Cuando tenían un sistema con muchas simetrías. Acá pasa lo mismo. En realidad, si no tienen muchas simetrías, tienen que usar la ley de Biot y Zabart y hacerla integral. Cuando tienen muchas simetrías, en general la ley de Ampere es más cómoda. Entonces veamos un ejemplo. El ejemplo más cómodo es línea infinita de corriente.
+1:03:41
+tienen un cable infinito por el que pasa una corriente toman un plano perpendicular y quieren calcular a una distancia r el campo magnético ¿cómo haremos?
+1:04:09
+¿Cómo hacemos para poder calcular el campo magnético a una distancia R sin hacer integrales?
+1:04:20
+Bueno, entonces bien, entonces hacemos un circulito perpendicular al eje y centrado en el centro, ahí en el punto de cruce. Bien, ¿qué más?
+1:04:34
+La circulación por ahí...
+1:04:37
+Eso es, la secuestración por ahí va a ser mu cero por I. Bárbaro. Y del otro lado, ¿qué sabemos de la integral? Es decir, la única corriente que pasa acá es I. Y esa pasa. B es uniforme a lo largo de la espira. ¿Por qué? De la curva. ¿Y qué orientación tiene?
+1:04:59
+¿Cómo? Ese es el sentido, pero ¿cuál es la orientación? Entonces, algunos dicen que B va para allá. ¿Todo el mundo está de acuerdo? Levante la mano los que piensan que B es así. Es así. Está en el plano.
+1:05:19
+Pero antes del sentido, la dirección. ¿Cómo es la dirección? Primero que nada, ¿cómo son las curvas de campo magnético?
+1:05:32
+Son cerradas. ¿Y el problema qué simetría tiene? Tiene dos simetrías importantes. ¿Qué operación le podemos hacer al sistema para que siga siendo igual a sí mismo? A ver, la primera cosa que tiene simetría importante es que este sistema si lo rotamos...
+1:06:05
+Alrededor del eje, que pasa por la línea de corriente, el sistema permanece igual a sí mismo. Quiere decir que las líneas de campo magnético también tienen que permanecer iguales a sí mismas. ¿Sí? Y tienen que ser líneas cerradas. Las únicas líneas cerradas que permanecen iguales a sí mismas son círculos concentros. Quiere decir que el campo magnético tiene que seguir... La línea de campo tiene que ser así. El campo magnético tiene que ser... Dar vueltas... ¿No?
+1:06:37
+¿De acuerdo?
+1:06:39
+Y además es invariante el sistema, si nos trasladamos, tomamos un plano, como la línea es infinita, si nos tomamos un plano acá o acá, tiene que ser igual, porque estamos muy lejos del borde, no influye que estemos acá a una altura u otra. ¿De acuerdo?
+1:06:54
+Tangente. Son líneas de campo, así que el campo magnético siempre es tangente a las líneas de campo. ¿Bien? El sentido es como decían por ahí, de acuerdo con la regla de la hermana derecha. Ponemos el pulgar en la corriente y los dedos van como el campo magnético. ¿Bien? Ahora, otra cosa es que si yo tomo otra altura, el campo magnético será el mismo. ¿Está de acuerdo? ¿Y si no tomamos un n que elegimos nosotros? ¿No hay que elegir uno para la altura de esa altura? Por ejemplo, en Gauss dijimos que N era saliente.
+1:07:29
+Muy, muy, muy bien. Todavía no hablé de las convenciones de signos, pero a eso voy en un momento. Fíjense que acá me dice, bueno, pero acá la corriente, ¿cómo la tomamos? ¿La tomamos para allá o para allá? Entonces, el asunto es que si tomamos la corriente orientada para allá, las corrientes que pasen de abajo para arriba, acá las vamos a tomar positivas. Y las que pasen de arriba para abajo, las vamos a tomar negativas. ¿De acuerdo? Así que en esta ley, para que esté coherente, hay que tener cuidado con el signo. Hay que orientar las corrientes de acuerdo con la regla de la mano derecha en función de cómo orientamos la curva.
+1:08:08
+Bien. Bárbaro. Prosigamos. Como el sistema es inmediatamente por rotación, el campo magnético va girando en dirección, pero el módulo del campo magnético no depende. Va a ser el mismo, porque si yo roté el que estaba acá, pasó acá. Entonces, módulo de B es constante en C. ¿Bien? Y B tangente a C en todo punto.
+1:08:43
+Entonces, la integral, ¿cuánto valdrá?
+1:08:51
+Primero, el producto escalar de B con DL, ¿qué da?
+1:08:59
+Primero que nada, el producto B con DL es el módulo de B por el módulo de DL. Porque son paralelos. Y además, lo que vos decís, como B es constante, sale para afuera. Así que esto queda B por la integral sobre la curva del módulo de DL. ¿Y esto cuánto vale? 2 pi R. Así que B por 2 pi R.
+1:09:23
+Y bueno, por otro lado, por amper, eso también es igual a mu sub cero por I. Entonces, B vale mu sub cero por I sobre 2 pi R. Que es la expresión que habíamos encontrado para la línea infinita de carga mu. usando Biot y Savart. Infinita de carga no, infinita de corriente.
+1:09:53
+Línea infinita de corriente, habíamos obtenido esta misma expresión usando Biot y Savart. Fíjense que el cálculo acá, bueno, lo hice detallado, pero en realidad es una línea de cálculo. Es mucho más fácil. Pero si en lugar de tener una línea infinita hubiéramos tenido un segmento, ahí tenemos que volver a Biot y Savart porque no hay simetría. ¿Me explico? Es más complicado. ¿Se entiende? Sí.
+1:10:23
+Sí, sí, sí, claro que se puede. Pero ahí en ese caso no puedes considerar el cable como un cable ideal finito. Tenés que ver el ancho. Hay que ver el ancho. Sí, sí. La pregunta era si se puede hablar del campo magnético dentro de un cable. Sí, pero entonces hay que ver el ancho del cable. Bueno, primer ejemplo. Segundo ejemplo que vamos a hacer es el del...
+1:10:57
+Entonces, vamos a hacer el ejemplo siguiente. Mirá, te vamos a dar el gusto. Vamos a hacer un cable cilíndrico. Entonces tomemos un cable de radio R por el que cruza una corriente I.
+1:11:26
+una corriente de I uniforme entonces hay una corriente que va a atravesar, lo estoy mirando una sección del cable la pregunta es, si yo estoy a una distancia un punto que está a una distancia re chica del centro, ¿cuánto vale el campo magnético? ¿cómo hacemos? ¿cómo hacemos?
+1:11:55
+tengo acá el cable la corriente por todo el cable lo dibujé grande el cable y quiero ver el campo magnético adentro ¿cómo hacemos?
+1:12:14
+¿entro de quién?
+1:12:18
+bueno, tengo que definir qué cosa para aplicar amper ¿cómo? ¿cómo?
+1:12:26
+entonces me voy a tomar efectivamente una curva voy a tomar una curva C acá si dijimos que era homogénea la corriente tomamos la curva ahí y entonces como es el campo magnético en esa curva
+1:12:56
+Es igual, es la misma cosa, lo único que acá tomamos la corriente para allá, así que el campo magnético circula así. ¿Me siento bien? Sí. Es un campo que da vueltas así, tangencial a la curva. Entonces nuevamente, la circulación en esa curva, BDL, podemos hacer la misma cuenta que antes, es idéntica, es B por 2 pi R. Pero ahora vamos a aplicar Ampere. ¿Y qué corriente hay que poner para Ampere? Por Ampere...
+1:13:27
+¿Cuál es la corriente que hay que usar?
+1:13:39
+Un sub cero. ¿Por qué corriente? Hay que poner una corriente. ¿Qué corriente es? La que pasa por dentro del círculo este. Entonces le llamamos I dentro. Dentro de C. Entonces calculemos I dentro de C.
+1:14:01
+No es la razón de los radios, pues por superficie.
+1:14:06
+La corriente es proporcional a la superficie que hay. ¿Cuánto será? ¿Cuánto es la superficie? Será el I total por el cociente de las superficies. ¿Cuál es la superficie del círculo este? ¿Qué hay adentro de este? Pi por R minúscula al cuadrado. Y tengo que dividir por la superficie total, que cuánto vale.
+1:14:29
+pi por r mayúscula al cuadrado ¿está? esto si si r chica es menor que r ¿verdad? estamos en un punto adentro si si tomáramos el caso en que r chica es mayor que r ¿cuánto vale i? si tomáramos un punto acá es i en el caso pasado Que eso es igual a lo que ya habíamos calculado. Fíjense, si tenemos un cable así, en cualquier punto que está fuera, es como si el cable fuera infinitamente angosto y estuviera en el eje.
+1:15:08
+Entonces esto nos va a dar igual a mu sub cero por I por R al cuadrado sobre R al cuadrado. Si R...
+1:15:21
+Menor que R. Y. Si R. Mayor que R. Y entonces. Calculemos el campo magnético.
+1:15:41
+Entonces B. Será igual. A mu sub cero. Sobre dos pi. Por.
+1:15:50
+Y R sobre R al cuadrado, si R es menor que R, y EI sobre R chica, si R es mayor que R. Y dentro de C, dentro de la curva C.
+1:16:14
+Entonces fíjense, si estamos afuera del cable, es como que toda la corriente pasara toda por el eje. Y estamos exactamente en la misma situación que allá. Nos queda mu sub cero sobre 2 pi, mu sub cero por I dividido por 2 pi R. ¿Está? Como allá. Pero si estamos adentro, fíjense que el campo magnético, el campo hace una curva así, digamos, ¿no? Función de R, B sub B, tenemos R acá, va a crecer linealmente hasta acá y luego decrece.
+1:16:46
+Y llega el valor máximo que es mu sub 0 por I sobre 2 pi R. ¿Bien? ¿Puedo poner ahí I dentro de C encima de I?
+1:16:59
+Claro, cuando estamos, si R es mayor que R, vale esto. Si la curva está afuera, la es la corriente total. Tenemos dos casos.
+1:17:12
+¿Se entendió eso? Dos casos. Si está adentro, por la curva no pasa toda la corriente, solo una parte proporcional a la superficie. En cambio, si estamos afuera, pasa toda. Y vemos que el campo magnético tiene esta curva que está acá.
+1:17:34
+Entonces ahora veamos un tercer ejemplo que es el solenoide ideal. Cuando la corriente pasa por así. Claro. Podríamos hacer también la cuenta en lugar de con un cable macizo, podríamos hacer con un cascarón también. Perfecto. Si la corriente pasa así.
+1:18:08
+Entonces solenoide, dale. Entonces ahora voy a tomar un solenoide muy largo.
+1:18:15
+Tiene un radio acá R. Vamos a tomar L, mucho más grande que R. Y la pregunta es ¿cuánto va el campo magnético adentro del solenoide? En un punto que no esté cerca del borde.
+1:18:31
+Son curvas las que hay que tomar. Entonces vamos a tomar un rectángulo que arranque de algún punto para adentro y vaya muy lejos.
+1:18:45
+Primero que nada, si el cable es muy largo, si el solenoide es muy largo, ¿cuál va a ser la dirección del campo magnético?
+1:18:56
+Entonces acá va a ser, digamos así.
+1:19:01
+¿Cómo? Bueno, puede estar embobinado para el otro lado. Por eso acá lo puse paralelo al eje. Y acá va a ser esencialmente cero. Lejos.
+1:19:21
+Vale, cero. Lejos, b igual a cero. Y acá también vamos a tener un campo que va a ser paralelo al eje.
+1:19:30
+En una buena aproximación el campo va a ser paralelo al eje. Digamos que el campo va a ser mucho más intenso acá. De toda esta curva, la parte que importa es esta que está acá adentro. ¿Sí? Entonces... El BDL, si esto tiene un ancho, le llamamos el ancho A, ¿cuánto valdrá? Esa circulación.
+1:20:04
+En los costados es 0, una buena aproximación porque B... Como el soledad es muy largo, podemos suponer que B es paralelo al eje, por simetría. De hecho, si acá viene para acá, el B acá se irá para el otro lado, ¿no? Pero lo importante es que es paralelo. Entonces, estas dos partes, como el largo es perpendicular al campo B, nos da cero. Acá, muy lejos, el campo va a ser cero también. Así que esto simplemente nos queda B por A.
+1:20:40
+Y por otro lado, por amper, la circulación del campo magnético será igual a la corriente que hay acá dentro de este rectángulo. ¿Cuál es la corriente que hay dentro de este rectángulo?
+1:21:00
+Entonces hay que, es mu sub cero por, ¿cuántas espiras hay acá adentro?
+1:21:10
+A chica por N chica. Entonces va a ser I la corriente de una espira por A por N chica. Entonces número de espiras por unidad de longitud. Entonces igualamos las dos cosas.
+1:21:48
+Entonces obtenemos B igual a mu sub cero por N por I. Solenoide ideal. Pero fíjense una cosa que está bueno acá. Que vimos que esto vale no solo sobre el eje. Acá no supusimos que estábamos en el eje. Es cualquier punto adentro.
+1:22:12
+En cualquier punto adentro.
+1:22:17
+Adentro, lejos de los extremos.
+1:22:26
+Antes el cálculo con Biotis Abarth lo habíamos hecho solo sobre el eje de solenoide. Pero fíjense que ahora vale en cualquier punto del solenoide. ¿Bien? Porque en ningún lado de un caucin usamos que estábamos sobre el eje. Este segmento podía estar sobre el eje o más sobre el borde, en fin. Es lo mismo. ¿Cómo es que te iba la densidad en el azul? Bueno, para que el campo vaya, para que el campo tenga esta forma, la corriente tiene que circular.
+1:22:56
+Porque las líneas de campo magnético tienen que ser cerradas, entonces tienen que circular.
+

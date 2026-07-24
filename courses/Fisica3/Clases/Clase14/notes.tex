@@ -1,0 +1,363 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 14: Circuitos RC e Introducción al Campo Magnético}\\[0.3em]
+        \large{Carga y descarga de un condensador, imanes, ausencia de
+              monopolos y la fuerza magnética}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Circuitos RC}
+% ===================================================================
+
+Un circuito RC tiene fuentes, resistencias y condensadores. El más
+simple: FEM $\varepsilon$, interruptor, $R$ y $C$ en serie. Convención:
+$Q$ = carga de una placa, $I$ = corriente entrante, con $I = dQ/dt$.
+
+\begin{figure}[H]
+\centering
+\begin{circuitikz}[line width=0.9pt, color=figblue]
+  \draw (0,0) to[battery1, l=$\varepsilon$] (0,3);
+  \draw (0,3) to[switch, l=$A$, i=$I$] (3,3);
+  \draw (3,3) to[R, l=$R$] (3,1.5);
+  \draw (3,1.5) to[capacitor, l=$C$] (3,0);
+  \draw (3,0) -- (0,0);
+\end{circuitikz}
+\caption{Circuito RC en serie: FEM $\varepsilon$, interruptor (posición A),
+         resistencia $R$ y condensador $C$. La corriente $I$ carga la placa
+         del condensador.}
+\label{fig:clase14-rc}
+\end{figure}
+
+\subsection{Comportamiento cualitativo: carga y descarga}
+
+\textbf{Carga:} el condensador descargado se comporta como un cable
+($\Delta V=0$), luego $I(0) = \varepsilon/R$. Al cargarse, crece su
+diferencia de potencial, baja la caída en $R$ y decrece la corriente
+hasta $I\to 0$ (cargado). \textbf{Descarga:} sin batería, la carga
+circula hasta agotarse.
+
+\subsection{Experimento con onda cuadrada}
+
+Alimentando con una \textbf{onda cuadrada} (tramo alto $=$ carga, bajo
+$=$ descarga) y midiendo con osciloscopio: el voltaje en $C$ ($\propto
+Q$) sube y baja; el voltaje en $R$ ($\propto I$) muestra el salto inicial
+de corriente y su decaimiento, con signo opuesto en la descarga.
+
+\subsection{Ecuación de carga y su resolución}
+
+Ley de mallas (posición A):
+\[
+\varepsilon - R\,I - \frac{Q}{C} = 0
+\;\Longrightarrow\;
+\boxed{R\,\frac{dQ}{dt} + \frac{Q}{C} = \varepsilon}
+\]
+Ecuación diferencial lineal de primer orden con segundo miembro.
+
+\textbf{Paso 1 --- solución particular} ($dQ/dt=0$, cargado):
+\[
+Q_p = \varepsilon C.
+\]
+
+\textbf{Paso 2 --- restar la particular:} $\tilde{Q} = Q - Q_p$ da la
+homogénea $R\,\dot{\tilde{Q}} + \tilde{Q}/C = 0$.
+
+\textbf{Paso 3 --- variables separables:}
+\[
+\frac{d\tilde{Q}}{\tilde{Q}} = -\frac{dt}{RC}
+\;\Longrightarrow\;
+\tilde{Q}(t) = \tilde{Q}_0\, e^{-t/RC}.
+\]
+
+\begin{notebox}[Estructura de la solución]
+  Solución general $=$ solución particular $+$ solución de la homogénea.
+\end{notebox}
+
+\subsection{Carga y corriente durante la carga}
+
+$Q(t) = \varepsilon C + Q_0 e^{-t/RC}$; con $Q(0)=0$, $Q_0 = -\varepsilon
+C$:
+
+\begin{keybox}[Carga de un condensador]
+  \[
+  \boxed{Q(t) = \varepsilon C\left(1 - e^{-t/RC}\right)}, \qquad
+  \boxed{I(t) = \frac{\varepsilon}{R}\, e^{-t/RC}}
+  \]
+\end{keybox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[fisfig,
+  xlabel={$t/RC$}, ylabel={valor normalizado},
+  xmin=0, xmax=5, ymin=0, ymax=1.05,
+  domain=0:5, samples=100,
+  legend pos=north east,
+]
+  \addplot[figblue] {1 - exp(-x)};
+  \addlegendentry{$Q/\varepsilon C$}
+  \addplot[figred] {exp(-x)};
+  \addlegendentry{$I/(\varepsilon/R)$}
+  \draw[figaux] (axis cs:1,0) -- (axis cs:1,1);
+  \node[figgray, anchor=south west, font=\footnotesize]
+        at (axis cs:1,0.03) {$\tau=RC$};
+\end{axis}
+\end{tikzpicture}
+\caption{Carga del condensador: $Q$ crece hacia $\varepsilon C$ mientras $I$
+         decae desde $\varepsilon/R$, ambos con constante de tiempo
+         $\tau = RC$ (a $t=\tau$ la carga alcanza $\approx 63\%$).}
+\label{fig:clase14-rc-carga}
+\end{figure}
+
+\begin{notebox}[Lo importante es el procedimiento]
+  (1) Restar la solución evidente $\to$ homogénea. (2) Variables
+  separables $\to$ exponenciales. (3) Imponer condiciones iniciales.
+\end{notebox}
+
+\subsection{Descarga del condensador}
+
+Sin batería, la ecuación es la homogénea; con $Q(0)=q_0$:
+\[
+\boxed{Q(t) = q_0\, e^{-t/RC}}, \qquad
+I(t) = -\frac{q_0}{RC}\, e^{-t/RC}.
+\]
+La corriente es negativa (circula al revés que en la carga).
+
+\begin{warnbox}[Test de signos]
+  Si la carga sale con un exponencial \textbf{creciente}, hay error de
+  signos: no puede crecer espontáneamente.
+\end{warnbox}
+
+\subsection{Constante de tiempo y el experimento de la chispa}
+
+El tiempo característico es $\tau = RC$. \textbf{Chispa:} un condensador
+grande cargado a $\sim 30$~V, cortocircuitado (resistencia diminuta), se
+descarga rapidísimo ($\propto RC$); la carga pasa por el aire, que se
+\textbf{ioniza} y emite luz.
+
+\begin{notebox}[Sin condensador no hay chispa]
+  Una resistencia sola no acumula carga; se necesita algo que almacene
+  energía.
+\end{notebox}
+
+% ===================================================================
+\section{Introducción al campo magnético}
+% ===================================================================
+
+Comienza el \textbf{capítulo 8}: un efecto específico de las cargas en
+movimiento.
+
+\subsection{Imanes y polos}
+
+Las \textbf{magnetitas} (óxidos de hierro), colgadas, apuntan al norte
+(brújulas). Un \textbf{imán} tiene \textbf{polo norte} y \textbf{polo
+sur}; el norte de uno atrae al sur de otro.
+
+\subsection{No es un fenómeno eléctrico; la Tierra como imán}
+
+Los imanes son \textbf{neutros}: la atracción \textbf{no} es
+electrostática. La \textbf{Tierra es un imán}: como los imancitos apuntan
+su norte al norte geográfico, el \textbf{polo norte geográfico es un polo
+sur magnético}.
+
+\subsection{No hay monopolos magnéticos}
+
+Al partir un imán se obtienen \textbf{dos imanes} completos, no polos
+aislados: \textbf{no existen monopolos magnéticos}.
+
+\begin{notebox}[Curiosidad]
+  Su existencia implicaría la cuantización de la carga eléctrica, pero
+  nunca se detectaron pese a muchas búsquedas.
+\end{notebox}
+
+\subsection{Corrientes e imanes: Oersted y electroimanes}
+
+\begin{itemize}[nosep]
+  \item Una \textbf{corriente genera efectos magnéticos} (Oersted:
+        orienta imancitos). Con cargas quietas, no hay efecto.
+  \item Una \textbf{espira con corriente} se comporta como un imán
+        (\textbf{electroimán}).
+  \item Los imanes permanentes son \textbf{corrientes microscópicas
+        alineadas} (en la mayoría de los materiales están al azar).
+\end{itemize}
+
+Todos los efectos magnéticos provienen de \textbf{cargas en movimiento
+(corrientes)}, y las que los sienten son también cargas en movimiento.
+
+% ===================================================================
+\section{Fuerza magnética sobre una carga en movimiento}
+% ===================================================================
+
+Sin monopolos, el papel de \enquote{lo que genera y siente} lo cumplen
+las cargas en movimiento: \emph{cargas en movimiento} $\leftrightarrow$
+\emph{campo magnético} $\leftrightarrow$ \emph{cargas en movimiento}.
+Aquí se supone conocido $\mathbf{B}$ y se estudia la fuerza.
+
+\subsection{El experimento ideal}
+
+Carga $q$ (entorno neutro) que pasa por un punto con distintas
+velocidades cerca de un imán. Se observa:
+\begin{enumerate}[nosep]
+  \item Hay una dirección de $\mathbf{v}$ \textbf{sin fuerza}.
+  \item $|\mathbf{F}| \propto v$.
+  \item $|\mathbf{F}| \propto |q|$.
+  \item $|\mathbf{F}| \propto \sin\theta$ (ángulo con la dirección sin
+        fuerza).
+  \item $\mathbf{F}$ perpendicular a $\mathbf{v}$ y a esa dirección.
+\end{enumerate}
+
+\subsection{La ley $\mathbf{F} = q\mathbf{v}\times\mathbf{B}$}
+
+\begin{keybox}[Fuerza magnética]
+  \[
+  \boxed{\mathbf{F} = q\, \mathbf{v}\times\mathbf{B}}
+  \]
+  $\mathbf{B}$ (campo magnético) en la dirección \enquote{sin fuerza};
+  depende de la posición. El producto vectorial codifica las cinco
+  observaciones.
+\end{keybox}
+
+\subsection{Propiedades y trabajo nulo}
+
+$\mathbf{F}\perp\mathbf{B}$, $\mathbf{F}\perp\mathbf{v}$; $\mathbf{F}=0$
+si $\mathbf{v}\parallel\mathbf{B}$; $|\mathbf{F}|\propto v,|q|,\sin\theta$.
+
+\begin{keybox}[Trabajo nulo]
+  Como $\mathbf{F}\perp\mathbf{v}$ siempre, $P=\mathbf{F}\cdot\mathbf{v}=0$:
+  la fuerza magnética \textbf{no realiza trabajo} (cambia la dirección de
+  $\mathbf{v}$, no su módulo).
+\end{keybox}
+
+\subsection{Unidades: Tesla y Gauss}
+
+\[
+[B] = \frac{\text{N}}{\text{C}\cdot(\text{m/s})} \equiv \text{Tesla (T)},
+\qquad 1\ \text{T} = 10^{4}\ \text{Gauss}.
+\]
+El Tesla es grande; suelen manejarse fracciones de Tesla.
+
+\subsection{Líneas de campo magnético}
+
+Como no hay monopolos, las \textbf{líneas de $\mathbf{B}$ son cerradas}
+(no nacen ni mueren). En un imán salen del norte, dan la vuelta y
+regresan por dentro.
+
+\subsection{Fuerza de Lorentz}
+
+Con campos eléctrico y magnético simultáneos:
+
+\begin{keybox}[Fuerza de Lorentz]
+  \[
+  \boxed{\mathbf{F} = q\left(\mathbf{E} + \mathbf{v}\times\mathbf{B}\right)}
+  \]
+\end{keybox}
+
+\begin{notebox}[Próxima clase]
+  Continúa el campo magnético (movimiento de cargas, fuerza sobre
+  corrientes).
+\end{notebox}
+
+\end{document}

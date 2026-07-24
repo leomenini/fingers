@@ -1,0 +1,515 @@
+# Clase 25
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/25/
+
+Fecha de exportación: 7/6/2026, 5:50:32 PM
+
+Clase: 25
+Curso: F3
+
+Segmentos : 276
+Palabras  : 9361
+Caracteres: 52337
+
+
+
+
+0:16
+Entonces ahora voy a arrancar otra sección que es sobre el transporte de energía en las ondas electromagnéticas.
+0:45
+Bueno, todas las ondas, a ver, todas las ondas, en general las ondas, todas las ondas viajeras, todas las ondas que implican una señal que se está trasladando,
+1:02
+transportan también energía. La energía se traslada con la onda. En el caso de las ondas electromagnéticas no es la excepción. Hay energía transportada en las ondas electromagnéticas. Y eso... Bueno, vamos a ver un poco ahora cómo es. Entonces, la idea es que ustedes puedan... Vamos a definir una cantidad que está asociada... Vamos a pensar un flujo de energía.
+1:34
+Vamos a pensar que tenemos una superficie. A. Bien. Y quieren ver cuáles... Entonces queremos... Entonces hay un flujo de energía. Energía que cruza esa superficie. Y queremos calcular... queremos calcular cuánto es la energía que atraviesa la superficie A por unidad de tiempo y por unidad de superficie.
+2:09
+¿Bien? ¿De acuerdo? Entonces, la energía que cruza...
+2:23
+En lugar de A llamémosle S, porque la superficie la venimos llamando S. A le llamamos al área de la superficie. Que cruza S por unidad de tiempo. Podrá escribirse.
+2:49
+Entonces, energía por unidad de tiempo es una potencia, es poder escribirse como la integral sobre la superficie de S de algún vector, que le vamos a llamar S, por la normal en un punto por dS. ¿De acuerdo? Así que lo escribimos como un flujo, como un flujo vectorial, donde S, donde el módulo de S... es la energía que cruza.
+3:31
+Si toman un elemento muy pequeñito, lo pueden considerar como plano, entonces S será la energía que cruza una pequeña área, delta S, delta S, Por unidad de tiempo y dividido delta S. Por unidad de tiempo y por unidad de superficie.
+4:06
+Disculpen, estoy usando la misma letra para dos cosas diferentes. Voy a volver a la letra A porque está el vector S y estoy usando la...
+4:16
+Estoy mezclando... Usando la letra para dos cosas diferentes.
+4:27
+¿Bien? Así que S mide eso. Y también la dirección de S... La dirección... Y el sentido... De S... Nos dicen...
+4:46
+hacia donde se transporta la energía. Así si la energía se está moviendo para allá, en esta dirección y en este sentido, ese tendrá esta dirección y este sentido, y su módulo es la energía... Que atraviesa una superficie normal a S por unidad. Entonces acá esto es normal.
+5:19
+Por unidad de tiempo y por unidad de
+5:21
+superficie.
+5:26
+Y ese vector tiene un nombre, se le llama... S se denomina... Vector de Pointing.
+5:44
+También le pueden llamar vector flujo de energía. Porque es eso lo que caracteriza. Entonces lo que vamos a probar... Vamos a probar que... Vamos a ver que... Que para las ondas electromagnéticas...
+6:17
+Ese tiene la forma siguiente. Esto lo pueden hacer para cualquier onda, ¿no? Incluso para cualquier... Ni siquiera podrían ser ondas. Tienen que ser transmisión de energía muy en general, ¿verdad? Siempre pueden definir ese vector de transporte de energía. Y para las ondas electromagnéticas tiene esta forma. Uno sobre mu cero por el vector E, producto vectorial con el vector B.
+6:50
+Como en la clase pasada vimos que las ondas electromagnéticas son transversales, si tienen una onda plana que se está propagando, dijimos que el vector E y el vector B, ¿en qué plano están? Si tienen una onda electromagnética propagándose en esta dirección, ¿en qué plano oscilan los campos eléctricos y magnéticos? El plano perpendicular. ¿Bien? Y además E y B son perpendiculares entre sí. Quiere decir que es inmediato de eso que S tiene la dirección correcta.
+7:23
+Porque fíjense, por esta definición S va a ser perpendicular a E y va a ser perpendicular a B. Quiere decir que es perpendicular al plano conformado por E y por B. Quiere decir que para una onda plana S tiene bien la dirección de propagación.
+7:39
+Entonces como E y B... son perpendiculares a la dirección de propagación de la onda, esto es lo que vimos en la clase pasada, ondas transversales, entonces S tiene la dirección de propagación de la onda.
+8:18
+Y se puede ver que tiene, no lo vamos a probar, pero se puede ver que tiene además el sentido correcto. Se puede probar que tiene el sentido correcto. Para la onda particular que vimos la clase pasada, pueden verificarlo ustedes mismos. Fíjense que la onda era así, se propagaba para allá, ¿se acuerdan? Hacia el eje X. Tenían E en la dirección de Y y tenían B en la dirección de Z. Y a notar que si hacen E producto vectorial con B, les queda X que es justo la dirección que se propaga.
+8:55
+Así que era correcto. ¿Cómo? ¿Cómo? No sé qué puse ahí. ¿Cómo? Gracias. Se puede probar que el sentido es el correcto.
+9:16
+Para el caso particular que vimos en la clase pasada, eso es claro. El producto vectorial de D con B les queda bien en la dirección X, que se estaba propagando en esa dirección la 1. Bien. Entonces ahora voy a hacerles un cuentito que les muestra que efectivamente E, S, C... Efectivamente es la energía que atraviesa una superficie por unidad de tiempo y por unidad de superficie.
+9:49
+Pero antes de eso vamos a hablar un poco de la densidad de energía. Les recuerdo, la densidad de energía, la densidad total de energía... Electromagnética, ya la hemos calculado en la suma de la energía eléctrica y la energía magnética. Esto no lo probamos totalmente en el curso, solo lo probamos en casos particulares. Pero yo les conté que era general. Les dije que la densidad de energía era de la parte eléctrica un medio de epsilon cero por e al cuadrado.
+10:23
+Y la parte magnética era uno sobre dos mu cero por b al cuadrado. Entonces, densidad...
+10:33
+...de energía eléctrica... ...y esta es la densidad... ...de energía... ...magnética... ...pero vimos la clase pasada... ...la clase pasada...
+11:05
+vimos que para una onda, esto es general, esto es para cualquier sistema electromagnético, pero la vez pasada vimos que para una onda, el campo eléctrico, el módulo del campo eléctrico es C, la velocidad de la luz, por B.
+11:35
+Acá lo podemos escribir como la densidad de energía eléctrica más la densidad de energía magnética.
+11:42
+Pero sustituyamos esto allá. Pero entonces, la energía magnética, que es 1 sobre 2 mu0 por B al cuadrado, lo pueden escribir, podemos sustituir B en función de E, les queda 1 sobre 2 mu0 por E al cuadrado sobre C al cuadrado.
+12:03
+¿Sí? Esto es C, la velocidad de la luz.
+12:09
+Que la calculamos la vez pasada. ¿Y C al cuadrado cuánto dijimos que era? La vez pasada la calculamos. ¿Se acuerdan la velocidad de la luz?
+12:19
+C
+12:20
+al cuadrado es 1 sobre mu cero por epsilon c.
+12:25
+C es 1 sobre raíz de mu0 por epsilon0, C al cuadrado. Entonces, si sustituimos acá, esto les queda 1 sobre 1 medio por epsilon0 por E al cuadrado. ¿Y esto que está acá qué es? Es la densidad de energía eléctrica. Vemos que la densidad de energía eléctrica, la energía magnética para una onda electromagnética, es la misma. ¿Está bien? Tenemos la misma densidad de energía eléctrica y la misma densidad de energía magnética.
+12:56
+¿Está? En el caso de una onda. Así que la densidad de energía total es simplemente dos veces la densidad de energía eléctrica.
+13:17
+Entonces ahora tomemos... Tomemos una onda que se propaga en la dirección X. Entonces tomemos una onda plana. Una onda plana de periodo T. Una onda plana que se propaga en la dirección X.
+13:57
+Si no se propaga en la dirección X, no importa. Yo me tomo el sistema de coordenadas tal que la dirección de propagación le llamo X. Siempre hay invariancia por rotación. Así que puedo elegir mi referencial de tal manera que si la onda se está propagando allá, me tomo mi sistema de coordenadas de la manera tal que esa dirección le llamo X. ¿Bien? Y tomemos un intervalo. Un intervalo de tiempo.
+14:28
+Delta T ¿Sí? Que ahora voy a ver Delta T lo tengo que tomar de cierta manera particular Entonces voy a tomar Un paralel epípedo ¿Sí? ¿Está? Tengo la onda que se está propagando para allá Este es el eje X A la sección lateral le llamo A
+14:59
+Entonces dirección de propagación de la onda. Y voy a suponer que en ese intervalo delta t, esto que está acá, este largo, va a ser igual a la velocidad de la luz por delta t.
+15:35
+¿De acuerdo? Pero la onda está oscilando, así que la densidad acá no es uniforme, varía de un punto a otro. ¿De acuerdo? Entonces, la energía que pasa por unidad de tiempo acá no es constante. Entonces, para poder hablar de energía por unidad de tiempo, que en realidad eso va a estar oscilando, y para no ocuparme de eso voy a suponer que delta T es mucho más grande que T.
+16:06
+Que el intervalo de tiempo es mucho más grande que el periodo. Cosa de que en realidad estoy pensando en una forma de energía promedio. Entonces en lugar de estar pensando realmente en la energía instante a instante, estoy pensando en la energía promediada en un periodo de oscilación. Les recuerdo que estamos pensando en una onda plana sinusoidal. Como la que vimos la vez pasada.
+16:32
+Entonces la pregunta es, ¿cuánta energía pasa por esta superficie en el intervalo delta T?
+16:40
+Entonces vamos a llamar delta U la energía. Energía que pasa por A en delta T. ¿Cuánto será?
+17:07
+La densidad de energía por la
+17:11
+volumen. Claro, va a ser. La energía que va a pasar acá va a ser la densidad de energía por el volumen para el epípedo. Porque toda la energía que está en este volumen, como esta es la velocidad de la luz por delta T, en este volumen toda la energía que está acá, en promedio, porque nuevamente estoy hablándoles de promedios, pasa por acá. ¿Se entiende? Toda la energía que estaba acá, cruza acá. Porque la bondad se está propagando para allá. ¿De acuerdo? Entonces delta U será la densidad de energía U por ese volumen.
+17:42
+Y ese volumen es el área por C por delta T. Por delta T. Entonces... La potencia, que es la energía que cruza, la energía por unidad de tiempo, será igual a U por el área por C por C. Entonces, la potencia por unidad de área será igual a U por C.
+18:39
+Potencia que cruza A por unidad de
+18:49
+superficie.
+19:07
+Bueno. Pero ahora queremos comparar esto que está acá. Lo que queremos probar es que esto vale el módulo de S. ¿Verdad? Porque dijimos que S era el vector cuyo módulo... ¿Sí? Dijimos que queremos probar que S es el vector cuyo módulo nos da la potencia por unidad de superficie. ¿Se acuerdan que es eso lo que dijimos? Entonces probemos esto. Calculemos. Ahora bien.
+19:36
+Módulo de S, ¿cuánto valdrá? Como E y B son perpendiculares, ¿cuánto vale el módulo de S?
+19:42
+En un producto vectorial, si tengo dos vectores perpendiculares. ¿Cómo? El producto de los cuadrados. ¿Están de acuerdo? El producto vectorial es el producto de los módulos por el seno del ángulo. Pero si el ángulo es pi sobre 2, entonces por el seno de 1. Perdón, el seno de 90 grados que es 1. Así que esto les queda 1 sobre mu0 por e por b.
+20:20
+¿De acuerdo? Pero dijimos que E es C por B. Así que esto lo podemos poner como C sobre mu cero por B al cuadrado.
+20:35
+Pero B al cuadrado sobre mu cero, fíjense, ¿qué es acá?
+20:42
+Es dos veces de la energía magnética. Pero dijimos que la energía eléctrica y la energía magnética, ¿cómo eran? Seguros. Iguales. Quiere decir que dos veces la energía magnética, ¿qué es?
+20:51
+La densidad de energía total. Así que esto les queda C por U. Que es justo esto. Entonces probamos que S, módulo de S, es igual a la potencia por unidad de área. Que era lo que queríamos probar. En realidad, estrictamente hablando, no lo probamos instante-instante, sino en promedios de tiempo mucho más grandes que el periodo de oscilación.
+21:25
+Pero se puede probar que en realidad es instante-instante. En realidad, es más complicado. Se puede probar que la relación...
+21:45
+es cierta instantáneamente. Pero la prueba es más complicada.
+21:57
+Igual en el plano conceptual queda claro entonces que S corresponde a la energía que cruza por unidad de tiempo la superficie dividido la superficie. Ese es el vector de Poynting. ¿Se entiende?
+22:23
+¿Preguntas? ¿Se entendió lo que estamos calculando? Estamos viendo cuánto es la energía que transporta por unidad de tiempo y por unidad de superficie la onda electromagnética. Y bueno, vemos que la podemos calcular de esta manera. Hallando el producto vectorial de E por B por mu cero. Eso nos da la dirección, el sentido de propagación. Y además el módulo de este vector nos dice cuánta es la energía que está transportada por unidad de tiempo y por unidad de superficie.
+22:50
+en realidad lo que es más útil las ondas por ejemplo en el visible vamos a ver que las ondas en el visible oscilan como 10 a la 15 veces por segundo entonces cualquier aparato de medida normal como los que podemos tener nuestros ojos por ejemplo es un aparato de medida usual No tiene una precisión que permita diferenciar cosas que suceden en una parte en 10 a la 15 veces, una parte en 10 a la 15 de un segundo.
+23:30
+No puede hacer eso. Entonces, en realidad, la mayor parte de los aparatos de medida no ven lo que sucede distante a distante, sino que midan promedios en un periodo, como venimos haciendo ahora en el cálculo que hice recién. Normalmente es eso lo que realmente se mide. Y entonces se define una cantidad que es la intensidad. entonces la mayor parte de los aparatos de medida no logran
+24:18
+instantáneamente S o módulo de S pues oscila muy rápido entonces se define
+24:48
+Entonces, se suele medir el promedio. Promedio que lo pueden hacer en un periodo. En un periodo o en un conjunto de periodos, promedian. Entonces, el promedio. Y eso se llama la intensidad. Intensidad es el valor medio en un periodo del módulo de S.
+25:20
+Entonces la intensidad será la energía promedio que llega a una superficie por unidad de tiempo y por unidad de superficie. Entonces cuando dicen la intensidad de la luz que llega del sol, están diciendo cuánta es la energía que llega, por ejemplo, al suelo. Por unidad de tiempo, ¿cuánta es la energía que llega? Por unidad de tiempo y por unidad de superficie promediado en un periodo. Pero en realidad, si el periodo es 1 sobre 10 a la 15 segundos, en realidad para cualquier aparato de medida es lo único que logra medir.
+26:01
+Bueno, esto que les conté es para ondas planas. ¿Sí? ¿Sí?
+26:07
+¿Qué son las ondas planas? Les repito, las ondas planas son ondas en las cuales tiene una dirección de propagación, digamos X, y en todo el plano perpendicular a X, suponemos que los campos eléctricos y campos magnéticos son uniformes. Entonces, en cada plano tendrán un valor fijo del campo eléctrico y del campo magnético. Está claro que esas ondas son idealizaciones, las ondas reales, Pueden comportarse así, en una pequeña región, pero no infinitamente. Esto tendría energía infinita.
+26:39
+Si no consideran la energía por unidad de superficie, sino la energía total, es una energía infinita. No
+26:43
+se pueden construir cosas con energía infinita.
+26:46
+Normalmente vamos a tener fuentes de energía, por ejemplo, una lamparita que puede emitir luz. Una lamparita va a emitir, normalmente, luz en todas las direcciones. ¿De acuerdo? ¿De acuerdo? Y esa energía se va a ir desparramando. Así que, si uno está más lejos de la lamparita, ¿cómo será la intensidad que recibimos?
+27:08
+¿Sí? Menor. ¿Cuánto menor? Bueno, entonces podemos estimar un poco cómo es, si estamos lejos de la lamparita, cómo es la intensidad, diciendo que la energía se conserva. ¿Está bien? Entonces podemos decir fuentes puntuales de energía. Fuentes con simetrías esféricas.
+27:40
+Entonces supongamos que tenemos acá una fuente que está emitiendo energía y que medimos la intensidad a una distancia r. Del origen. Acá es donde se está emitiendo la energía. Y supongamos que se emite con simetría esférica igual en todas las direcciones.
+28:00
+La onda electromagnética va a conservar la energía. No se está perdiendo energía cuando se propaga. Entonces, si yo calculo... Tengo acá un radio 1 y acá calculo la energía... En el radio R2, ¿cómo será la energía total en el cascarón R1 y la energía total en el cascarón R2? Igual. Entonces, la energía en R1 será igual a la energía en R2. ¿De acuerdo?
+28:33
+La energía que llega en un instante en R1 o la energía que llega en un instante en R2. Serán iguales.
+28:43
+Pero digamos, esto va a ser igual a la intensidad en R1 por la superficie. Porque dijimos que la...
+28:57
+Esto es la energía que llega al cascarón R1 por unidad de tiempo, la energía total en todo ese cascarón por unidad de tiempo.
+29:06
+En lugar de poner energía vamos a poner potencia, porque es la energía por unidad de tiempo. Potencia en R1 es igual a potencia en R2.
+29:13
+Y esto va a ser igual a la intensidad, como acabamos de decir, por el área. Y el área va a ser 4 pi R1 al cuadrado. Y esto será la intensidad en R2 por 4 pi por R2 al cuadrado. Las dos cosas son iguales.
+29:33
+¿De acuerdo? Entonces vemos que para una onda que en lugar de ser plana es una onda con simetría esférica, la intensidad a una distancia R será igual a la distancia en una cierta distancia.
+29:50
+A una cierta distancia fija, por 4pi por r0 al cuadrado, dividido 4pi r al cuadrado. Así que vemos que la intensidad, ¿cómo decrece? Con la distancia. ¿Cómo? Como 1 sobre r al cuadrado. Entonces, la intensidad en una onda esférica es proporcional a 1 sobre r al cuadrado.
+30:19
+Bárbaro. Pero si la intensidad decrece como 1 sobre R al cuadrado. Dijimos que la intensidad en promedio es como el... ¿Sí? Imaginemos que estamos muy lejos ahora.
+30:33
+Muy, muy lejos. Es una onda esférica. Pero localmente, en una región chiquitita, parece una onda plana. Cerquita de ahí, en una cierta región, parece una onda plana, ¿verdad? No llegamos a ver que se curva
+30:44
+en una pequeña región. ¿De
+30:45
+acuerdo? Entonces la intensidad será proporcional, si yo quiero hallar la relación entre la intensidad y el promedio del campo eléctrico al cuadrado. Al campo eléctrico. Es como el campo eléctrico al cuadrado. Dijimos que...
+31:04
+Creo que todavía está en el piso, no sé si todavía está en el piso, perdón, pero... Pero lejos de la fuente, lejos de la fuente, localmente se parece a una onda plana.
+31:36
+Entonces la intensidad es igual al valor medio del vector de Poynting, que lo calculamos para una onda plana, nos da 1 sobre Mu0 por el valor medio de E por B.
+31:50
+Y B dijimos es E sobre C, así que les queda E al cuadrado sobre Mu0C.
+32:00
+Entonces vemos que la intensidad es igual, de hecho es proporcional, al módulo al cuadrado del campo eléctrico.
+32:12
+Entonces, si la intensidad decrece como 1 sobre r al cuadrado, ¿cómo va a decrecer el módulo del campo eléctrico?
+32:26
+En una onda con simetría esférica.
+32:31
+¿R al A? No, no. Este es proporcional a 1 sobre R al cuadrado. Entonces, esto decrecerá como 1 sobre R al cuadrado. Así que, ¿el módulo de E cómo decrecerá?
+32:45
+Entonces, el módulo de E es proporcional a 1 sobre R. Proporcional, ¿no? Todo esto es proporcional.
+32:54
+Entonces vemos que las ondas que se emiten en simetría esférica, si estamos lejos, casi todas las ondas se comportan con simetría esférica, decrece el campo eléctrico bastante lento. Porque en el caso electrostático, ¿cómo decrece el campo eléctrico?
+33:10
+1
+33:10
+sobre r al cuadrado. Decrece mucho más rápido. Vemos que las ondas nos permiten tener campos eléctricos que decrecen lentamente, mucho más lentamente que el campo electrostático. Y eso es la razón por la cual podemos tener señales eléctricas a muy grande distancia. Si todos los campos fueran electrostáticos, no tendríamos transmisión a larga distancia, porque decrecería muchísimo. mucho más rápido el campo eléctrico. Muy rápidamente no veríamos nada. Y en realidad, el hecho de que crece como 1 sobre R es que podemos llegar a ver las ondas.
+33:43
+De hecho, el 1 sobre R corresponde simplemente a que la energía no se pierde, sino que a medida que la superficie en la que está la energía es más grande, el pedazo de energía que hay en cada región es más chico. Eso es razonable. ¿Y cómo? Bueno, exactamente de esa manera. La intensidad decrece como 1 sobre R al cuadrado y el campo eléctrico como 1 sobre R. Entonces, los campos eléctricos, los módulos de los campos eléctricos, de las ondas electromagnéticas con simetría esférica...
+34:35
+Decrecen lentamente. ¿Lentamente qué quiere decir? Proporcional a 1 sobre R. Mucho más lentamente que para el caso electrostático.
+35:02
+Es decir, lo único que hacen es ir repartiendo la energía en una zona cada vez más grande. El campo electrostático decrece mucho más rápido que eso. ¿Preguntas? ¿Se entendió?
+35:55
+Voy a empezar otro capítulo, el primer capítulo vinculado con la óptica.
+36:01
+Entonces, realmente, si tienen preguntas ahora, estamos terminando el capítulo asociado con las ondas electromagnéticas, las ecuaciones de Maxwell y demás. Vamos a empezar a hablar de las ondas de luz, pero ahora ya más, una visión más óptica. Así que si tienen dudas sobre estos temas, es el momento.
+36:20
+Gracias.
+36:46
+Gracias.
+37:05
+Entonces lo primero que vamos a hablar, entonces estoy usando de manera indistinguible, no estoy distinguiendo entre lo que es la luz y lo que son las ondas electromagnéticas, pero en realidad hay una diferencia. Porque lo que nosotros normalmente llamamos luz no es cualquier onda electromagnética, son ciertas ondas electromagnéticas particulares que tienen una cualidad diferente.
+37:29
+Son lo que llamamos normalmente luz. Son las ondas que vemos, las que están en el visible. Que ese es un rango de ondas. No todas las ondas son visibles. Por ejemplo, las ondas de radio son ondas electromagnéticas, pero no las podemos ver. Las ondas de microondas son ondas electromagnéticas, pero no las podemos ver. ¿Está bien?
+37:55
+Las ondas ultravioletas, las que hay que ponerse bronceador, protector solar para ir a la playa, esas tampoco las podemos ver, pero son ondas electromagnéticas. Entonces vamos a hablar un poco de eso.
+38:10
+¿Cuáles son los nombres? Un poco de zoología lo que voy a hacer. Zoología no, porque no son animales, pero voy a contarles los nombres de los distintos rangos de tipos de luz, de ondas electromagnéticas. Entonces, primero eso. Punto 1, espectro electromagnético.
+38:40
+entonces voy a hacerles un esquemita con con el espectro electromagnético y bueno, fíjense que el espectro electromagnético dijimos que dijimos que la longitud de onda dividido el periodo que es lo mismo que la longitud de onda por la frecuencia esto es el periodo longitud de onda
+39:12
+esta es la frecuencia, dijimos que todo esto es igual a la velocidad de la luz. Entonces la primera observación es que la velocidad de la luz no depende, es la misma, la que calculamos, fíjense, es la misma en el vacío, estamos hablando de todo esto en el vacío, Es la misma para todas las frecuencias o todas las longitudes de onda. Todas las longitudes de onda y todas las frecuencias tienen la misma velocidad de la luz en el vacío.
+39:43
+Así, velocidad de la luz en el vacío. Entonces, para hablar de la luz en el vacío...
+39:52
+Es lo mismo dar la frecuencia que la longitud de onda, porque la frecuencia simplemente es la velocidad de la luz sobre la longitud de onda. Entonces, como la velocidad de la luz está fija, si nos dan la longitud de onda, nos dan la frecuencia. Es lo mismo. Entonces, voy a hacer un gráfico donde represento tanto en términos de la frecuencia como de la longitud de onda, porque una cosa es lo mismo que la otra.
+40:18
+Voy a poner acá, para este lado, así. creciente la frecuencia que la voy a poner en hertz y para allá voy a poner creciente la longitud de onda que la voy a poner en metros entonces
+40:50
+Primero el visible.
+40:53
+El visible está en una región acá que corresponde, en realidad la dibujo grande porque es importante, pero en realidad depende de la escala, ¿no? Pero como 10 a la 15 Hz. Este es el visible. Y esto corresponde a longitudes de onda que están entre 10 a la menos 7 metros y 10 a la menos 6 metros.
+41:25
+Así que todo el espectro electromagnético, todas son ondas electromagnéticas, pero solo esas que están ahí corresponden al visible. Y esto es lo que normalmente llamamos la luz.
+41:37
+Es lo que podemos ver. ¿Por qué lo podemos ver? Y bueno, fíjense que... No sé bien, eso habría que preguntar a los biólogos. Pero se da una coincidencia, que capaz que no es una coincidencia, que el espectro visible es la zona donde el Sol, la estrella donde estamos al ladito, donde emite más. Hay estrellas que emiten en muy distintas frecuencias. Normalmente en esta zona, en realidad. Pero el pico máximo de emisión del Sol está en el... ¿qué color? No.
+42:08
+Ah, era obvio. Está en el verde. El principal pico de emisión del Sol está en el verde. Lo único, si estuviéramos afuera de la atmósfera, lo veríamos más bien verdoso, el Sol. Pero el cielo no filtra todas las longitudes de onda por igual. Y filtra más el verde que el amarillo. Entonces lo vemos amarillo porque en realidad lo vemos como filtrado, ¿verdad? Pero bueno, verde y amarillo tampoco están muy lejos.
+42:39
+Más o menos por ahí. Que es un poco estar en el centro del visible. Así que probablemente nosotros estamos diseñados para aprovechar la luz del sol. ¿Se entiende? Bueno. Después, si vamos de acá hasta el 10 a la 11...
+43:04
+Esto es lo que llamamos 10 a la 11, que corresponde aproximadamente a 10 a la menos 3. Todo esto es medio cualitativo, ¿no? Esto es lo que llamamos el infrarrojo. ¿Por qué se llama infrarrojo? Bueno, porque el rojo es el que está más pegado contra acá. Son las longitudes de onda más largas.
+43:32
+Quiere decir frecuencias... Más chicas. Infrarrojo porque son frecuencias que están por debajo de las frecuencias del rojo. El infra está con respecto a la frecuencia. Hay que tener cuidado porque es infra con respecto a las frecuencias, pero ultra con respecto a la... Están al revés. Uno lo hace normalmente en relación con la frecuencia. Perdón. Infra con respecto a la longitud de onda. Dije al revés.
+44:01
+Bueno, y del otro lado es lo que llamamos normalmente el ultravioleta.
+44:08
+¿Estoy dibujando bien? Sí.
+44:11
+Entonces hasta 10 a la 17 es lo que llamamos el ultravioleta.
+44:21
+Aunque a veces se le llama infrarrojo a todo lo que está por debajo del visible, todo lo que está para allá del visible, y ultravioleta es todo lo que está para allá. Pero muchas veces cuando uno habla de los rayos UV que uno ve en las cosas de pomada para el Sol, no se refiere a todo el UV, se refiere solo al UV relativamente cercano, que es el que efectivamente llega a la Tierra.
+44:48
+Bueno, y después tenemos otras cosas que tienen otro nombre. Por ejemplo, rayos que están por acá se les llama rayos X.
+45:02
+Que van, están centrados en 10 a la menos 9 acá, pero van hasta, digamos, 10 a la menos 11. que son los que se usan para las radiografías. Son señales electromagnéticas que son capaces de penetrar fácilmente los tejidos poco densos, como la piel, pero que no logran pasar los huesos, que son tejidos más densos. Entonces, los rayos X, por eso se hacen las radiografías así, porque atraviesan los tejidos blandos, son frenados por los tejidos duros, y de esa manera, poniendo una...
+45:38
+una película del otro lado que es sensible a los rayos X, permite determinar dónde están los tejidos endurecidos y no. Y por último, más para allá, todavía tenemos lo que llamamos rayos gamma, que aparecen en algunas desintegraciones radioactivas, acá voy hasta 10 a la 22 grados,
+46:06
+Y esto, como 10 a la menos 2, bueno,
+46:12
+no sé. Pero fíjense que hay zonas donde según el contexto se les llama rayos X o rayos gamma, porque en realidad no está totalmente diferenciado. De hecho es lo mismo, es radiación electromagnética, esa frecuencia. Pero según la manera en que se producen, a veces se les llama de una manera, a veces se les llama de la otra. Porque también hay cuestiones históricas de cómo se fabricaron los rayos. Antes no se sabía siempre que era lo mismo. Bueno, y si vamos para el otro lado, en el infrarrojo, tenemos después la región de las microondas.
+46:46
+Que van hasta ahí, alrededor de 10 a la menos 3, y van acá hasta el 10 a la 9, digamos. Entonces ahí tienen muchos circuitos eléctricos, emiten en la microondas. Los hornos de microondas, como su nombre lo indica, funcionan en esa... En esa frecuencia. Y después tienen, si van acá 10 a la 8, tienen acá las ondas de radio.
+47:14
+Entonces todo esto empieza a ser... Entonces por ejemplo acá tienen TB y AM.
+47:20
+No, perdón, acá primero está la FM, perdón, estoy diciendo mal. Después tienen radio fisionado, después tienen la AM por acá.
+47:30
+Con 10 a la 6.
+47:33
+Y después tienen ondas de radio larga. ¿Qué onda? Acá podemos seguir hasta 10 a la... Ah, bueno, perdón. Acá podemos decir microondas. Microondas va hasta acá. Estas son ondas del orden de un metro.
+47:53
+Las AM acá van del orden de 10 a la 3. Y después tienen onda larga que puede ser hasta 10 a la 6. También otras ondas de radio. Otras... Ondas de radio. Bueno, no tengo que explicarles el rol que juega la sonda de radio en nuestra vida cotidiana. Todos esos nombres en general están asociados, para ser preciso, el visible está...
+48:27
+Entre 400 nanómetros aproximadamente, incluso depende un poco de la persona, que es el violeta. Y el 700 nanómetros que es el rojo. Eso es longitud de onda, lambda.
+48:52
+Todo esto simplemente para ponerle nombre a las distintas componentes del espectro electromagnético. Lo que llamamos normalmente luz está acá, pero como ustedes saben hay muchas otras ondas electromagnéticas y en el vacío todas se propagan a la misma velocidad.
+49:15
+Las aplicaciones tecnológicas de todo esto fueron evidentes a medida que voy hablando. Ustedes ya saben la importancia de las telecomunicaciones que en general se hacen con otras. Ah, una pregunta.
+49:30
+¿Por qué las radios tienen antenas? Bueno, ahora casi todas. Hay muchas radios que no tienen antenas. Los celulares... ¿Por qué solían tener antenas?
+49:42
+¿Se dan cuenta? A ver si alguien se da cuenta por qué tienen antena.
+49:45
+¿Para captar la onda?
+49:46
+Sí, eso es para captar. ¿Pero por qué las antenas sirven para
+49:49
+captar?
+49:53
+Conductores. Son
+49:56
+conductores, bien. ¿Sí?
+50:00
+En realidad no aumentan el área. Lo que sucede es que, fíjense que las ondas de radio están acá por cosas del orden del metro. Si necesitáramos antenas, las antenas necesitan ser más o menos del tamaño, ¿sí? Más o menos. En realidad son un poco más chicas porque necesitaríamos, fíjense, antenas del orden de, para la M, lo ideal sería antenas de un kilómetro. Pero no es muy cómodo. Pero no importa. Eso sería lo ideal, lo óptimo para emitir radio.
+50:34
+Bueno, de hecho vieron que a veces son bien grandes las antenas de emisión. Pero uno no puede andar con antenas así tan grandes.
+50:44
+Pero igual tiene que ser algo que sea una fracción significativa. Porque en realidad lo que sucede es que si tienen... ¿Qué es una antena? Es un pedazo de circuito en el cual los electrones se pueden mover bastante. Y lo que es ideal para emitir o para captar la señal es que se muevan más o menos una cosa comparable con la longitud de onda. Fíjense.
+51:07
+Imaginen, es más fácil pensarlo en la emisión. Yo tengo acá un circuito que está conectado, viene acá, un circuito oscila y pongo acá la antena. Los electrones hacen... Entonces, si yo quiero emitir una cosa que tiene una longitud de onda, esto va a emitir fácil en una cosa cuya oscilación corresponde al movimiento del electrón. ¿Se entiende? Si quieren emitir una longitud de onda muy distinta, les va a costar. Entonces, las antenas se diseñan con tamaños parecidos... A veces pueden ser mil veces más chicos, pero no cien mil veces más chicos.
+51:38
+Si no, cuesta mucho emitir. Se puede, ¿no? No es que no puedan emitir en esas señales, pero cuesta más. Entonces, antenas son para eso. Son pedazos de circuito con tamaños que se trata de hacer lo más parecido posible a la onda que uno quiere emitir o recibir.
+51:55
+Y esto también le muestra por qué es tanto más importante tener antenas para las AM que las FM. ¿Por qué?
+52:05
+Porque la onda es mucho más chiquitita acá. Entonces, en realidad, para tener el mismo nivel de sensibilidad necesitamos una antena mucho más chiquita. ¿Se entiende? Entonces, vieron que es más complicado hacer funcionar las AM en un celular. ¿Está? Por ese mismo motivo. Porque los celulares no tienen antena. Y sin nada de antena es muy difícil para las AM porque estamos muy lejos de los valores. Acá igual seguimos, porque un celular no mide un metro, pero estamos en un factor 10 o un factor 20. Un celular mide 10 centímetros de peda hora y un celular
+52:37
+es así.
+52:39
+Son unas cosas de unos 10 centímetros, 8 centímetros. Entonces, más o menos es un factor 10, no estamos tan lejos. De cambio, acá estamos en un factor re
+52:46
+grande. ¿Y por qué se usa las ADN también? Sí.
+52:53
+Ah, cada una tiene sus ventajas tecnológicas y de hecho hay problemas de distancia de emisión, hay problemas de calidad de emisión. Yo no soy un experto del asunto, pero cada tipo de radio, según lo que uno quiere emitir, tiene sus ventajas e inconvenientes. Y aparte de otra cosa... Usar más pedazos del espectro permite tener más radios. ¿Me explico? Si no se satura el ancho de banda, no pueden tener muchas radios, tienen que estar suficientemente separadas, cada radio les ocupa un pedacito en realidad, entonces también tienen la ventaja de tener más.
+53:30
+En el medio yo creo que no puse acá, pero en el medio funcionan lo que se llaman radio aficionados, las comunicaciones que funcionan entre personas comunicadas por radio.
+53:43
+¿Pero las antenas que están dentro de los seminarios, son en realidad más chicas, no son bien
+53:48
+chiquitas? Son bien chiquitas, efectivamente, pero el celular, como todo, funciona un poco como antena. Y entonces termina siendo algo que no está... es más chico. Igual que acá, no tenemos antena de un kilómetro. Si tenés una antena que es 100 veces más chica que la onda, no es lo ideal, pero igual ya se ha captado. Pero acá ya está demasiado lejos, ¿me explico? Entonces... Cuando estamos muy lejos hay que tener aparatos. Antes se necesitaban antenas más grandes. Por ejemplo, la gente tenía antenas en el techo de su casa
+54:19
+para recibir la radio.
+54:22
+¿Por qué? Porque los aparatos de recepción no eran de muy buena calidad. Ahora tienen aparatos que tienen una cantidad de procesamiento de la señal que permite con una señal de mala calidad o no muy óptima lograr sacar una señal limpia. Pero cuando uno está muy lejos no logra reconstruir una señal limpia. ¿Se entiende? Bien.
+54:43
+¿Qué se debe a eso de mover la antena de la tele para que agarre mejor
+54:52
+o algo así? ¿Cuando uno ajusta? Bueno, ya no se hace más, es otra cosa que no se hace más porque ahora todo el mundo está conectado al cable. Yo creo que las... no estoy seguro, pero creo que lo que sucede es que en la ciudad... Esto tómenlo con pinzas porque estoy improvisando. Creo que en la ciudad hay una cantidad de obstáculos que hacen que la onda, moviéndose un poco, pueda estar en una zona donde recibe más. ¿Me explico? Entonces no están distribuidas uniformemente. Si uno estuviera en el campo, sí, sería bastante uniforme, pero está dentro de una casa y hay una cantidad de obstáculos que hacen que las ondas no lleguen de manera...
+55:30
+Es
+55:31
+simplemente eso, es acomodarse para mejorar
+55:33
+la recepción.
+55:35
+Y hay una cuestión, acomodarse no solo en una cuestión de lugar, sino también de dirección, porque hay que orientar de manera óptima según el
+55:48
+emisor. Una pregunta, ¿las AM tienen mayor alcance porque tienen una frecuencia menor?
+55:55
+Las AM tienen una longitud, las ondas con... Longitud de onda más grande suelen tener un mayor alcance. No es obligatorio, pero tienen tendencia a disipar en distancias comparables con su longitud. No tiene por qué ser siempre así, pero es la tendencia. Entonces por eso suelen tener mayor alcance. Por eso las radios que emiten a muy grandes distancias son de
+56:22
+onda
+56:22
+larga.
+56:22
+Miren, hay emisiones internacionales de
+56:25
+radio que las hacen con un
+56:26
+entorno. Igual, pero es abundante. Si el Sol llega a las ultravioletas,
+56:33
+o sea, hay un gran... No, no, no, no. Pero entre el Sol y la Tierra no hay nada. No hay nada de absorción. No hay nada que esté absorbiendo. En el vacío nada se absorbe. ¿Me explico? Ahí no hay problema. El problema es cuando uno está en un medio, como en el aire, o hay una cantidad de cosas que absorben y... Entonces ahí es que se tiene que ocupar de... entonces veamos ahora veamos ahora la velocidad de la luz en un medio todo esto que yo les dije es en el vacío ¿está bien?
+57:36
+Entonces, todo lo anterior es en el vacío. Cuando uno está en un medio se producen muchos fenómenos. El principal fenómeno es que la mayor parte de los medios absorben la luz. No permiten que las ondas electromagnéticas se propaguen en ellos. Se agarran un cacho de madera, lo iluminan, y la luz visible, todos sabemos, no pasa.
+58:15
+agarran un pedazo de metal, pasa lo mismo, lo refleja, pero no logra atravesar. Entonces, hay una primera cosa que es que muchos materiales absorben o reflejan, pero no dejan propagarse la luz al interior. Pero existen algunos materiales que sí lo permiten, que se llaman materiales transparentes. Materiales transparentes son aquellos que permiten En general no en todo el rango electromagnético, sino en alguna ventana, por ejemplo el vidrio en el visible, en el visible los vidrios permiten pasar la luz.
+58:49
+No totalmente, una parte se absorbe, cuando uno tiene un vidrio muy grueso la luz queda un poquito atenuada, pero pasa bastante bien la luz a través del agua o del vidrio o de una cantidad de otros materiales que llamamos transparentes.
+59:01
+En esos materiales transparentes, igual,
+59:05
+hay otro fenómeno que se produce, que es que la velocidad de la luz no es la misma que en el vacío. ¿Eso por qué? Porque lo que importa son las propiedades eléctricas del material. Y nosotros vimos que las propiedades eléctricas de los materiales, por ejemplo, del vidrio, no son iguales a las del vacío. ¿Se acuerdan? Cuando teníamos epsilon cero, ¿por qué había que reemplazarlo para calcular las propiedades en un medio dieléctrico de constante eléctrica K? Hay que reemplazar epsilon cero por k por epsilon cero.
+59:35
+Y lo mismo pasa con las propiedades magnéticas. Pero la velocidad de la luz, dijimos, en el vacío es uno sobre raíz de mu cero por epsilon cero. Quiere decir que no tiene que ser muy astuto para adivinar que la velocidad de la luz en el medio no va a ser esa, sino un bronco distinto. Entonces, en algunos medios...
+1:00:03
+las ondas electromagnéticas pueden propagarse.
+1:00:16
+¿Sí? ¿Cómo?
+1:00:21
+Ahora vamos, vamos a ver, eso no sé si me da tiempo para hacerlo hoy o luego el sábado, pero vamos a ver el fenómeno de la refracción.
+1:00:30
+La luz puede
+1:00:37
+propagarse.
+1:00:43
+Los medios opacos son aquellos en los cuales... A ver, repito, un medio puede ser transparente para el visible y opaco en otro sector. En otra longitud de onda, ¿verdad? Por ejemplo, el agua es transparente en el visible, pero en algunas regiones de la ultravioleta es opaca, no pasa el ultravioleta. Eso no nos damos cuenta nosotros. Entonces, la luz puede propagarse.
+1:01:15
+En esos medios,
+1:01:19
+la velocidad de la luz...
+1:01:26
+suele ser distinta que en el vacío entonces la velocidad en un medio será entonces vamos a suponer que el medio es un medio que es lineal isotropo y homogéneo
+1:01:57
+Tanto desde el punto de vista de las propiedades eléctricas como de las propiedades magnéticas. Entonces no hay que hacer adivino para adivinar que la velocidad de la luz va a ser igual a epsilon cero por k con la constante eléctrica por mu cero por la constante magnética del medio. Y esto lo podemos escribir como la velocidad de la luz en el vacío dividido la constante eléctrica por la constante magnética en el medio.
+1:02:39
+Ahora, en la práctica, la constante magnética no juega ningún papel, porque en casi todos los materiales transparentes, la constante magnética menos 1 es algo del orden... De 10 a la menos 4.
+1:03:11
+Así que Km es esencialmente 1.
+1:03:15
+Entonces B es esencialmente C sobre la raíz de la constante eléctrica. Velocidad de la luz en un medio.
+1:03:43
+Ahora hay que tener un poco de cuidado porque la constante eléctrica que aparece
+1:03:47
+acá,
+1:03:49
+¿sí? La constante eléctrica que aparece acá no es la constante eléctrica que vimos en la parte del curso de electrostática. Porque, ¿a qué correspondía? ¿Por qué un medio eléctrico tenía asociado una constante eléctrica? ¿Un aislante tenía asociado una constante eléctrica acá? ¿Por qué era? ¿Qué era lo que producía que hubiera una constante?
+1:04:12
+Aplicamos
+1:04:14
+un campo eléctrico y ¿qué le pasaba al material? Se polarizaba. ¿Y qué significaba que las moléculas del material se alineaban con el campo eléctrico? Ahora imagínense que en lugar de tener un campo electrostático, como habíamos visto en esa parte del curso, tienen un campo eléctrico.
+1:04:32
+Una onda electromagnética, un campo eléctrico oscilante. Entonces, en lugar de tener un campo así para el cual la molécula se puede orientar, tiene un campo que está siendo así. ¿De acuerdo? Entonces, ¿a las moléculas qué les pasa? van a querer orientarse con el campo eléctrico, porque como el campo eléctrico es una fuente móvil, se está moviendo todo el tiempo, las moléculas van a querer orientarse, pero está claro que les va a costar más trabajo orientarse cuando el campo se está moviendo que cuando el campo está quieto, porque cuando el campo está quieto uno espera el tiempo, ellas tienen tiempo de acomodarse, pero si el campo se está moviendo muy rápido, a la molécula le lleva un tiempo comparable, acomodarse que ya cambió de nuevo ¿me explico?
+1:05:13
+entonces la constante eléctrica hay que tener cuidado porque depende de la frecuencia de la luz ojo la constante eléctrica no es la constante estática sino que depende
+1:05:43
+de lambda de la longitud de onda depende de la longitud de onda longitud de onda entonces acá les doy algunos valores para que comparen con las que hemos visto antes se los voy a dar todos para una longitud de onda dada que es una luz en el amarillo 589 589 nanómetros entonces acá les doy una tablita y les sugiero que la comparen con la tablita que vimos en el caso electrostático al principio del curso material y acá les voy a dar la velocidad multiplicada por 10 a la 8 metros por segundo entonces en el vacío
+1:06:43
+Ya vimos, da 3,0 por 10 a la 8 metros por segundo. Entonces en el aire es igual. Aire y vacío da lo mismo. No cambia nada.
+1:06:55
+Entonces veamos ahora agua.
+1:06:58
+Agua da 2,26. Vidrio da 1,97.
+1:07:15
+Y diamante pongo otro material transparente, 1,29. Entonces ven que típicamente la velocidad de la luz es un poco menor que la velocidad de la luz en el vacío. Entonces, importante que, ¿entendieron por qué depende de la frecuencia? Porque las moléculas se tienen que tratar de alinear con el campo, pero según la velocidad que el campo esté oscilando, las moléculas van a resultar más fácil o más difícil alinearse, y por lo tanto, la velocidad depende, la velocidad, perdón, la constante eléctrica va a depender de la...
+1:07:59
+Va a depender de la frecuencia aplicada o de la longitud de onda aplicada. De hecho, se define el índice de refracción. Vamos a definirlo.
+1:08:14
+Se define el índice de refracción.
+1:08:31
+Se le suele llamar N, como la velocidad de la luz en el vacío sobre la velocidad en el material.
+1:08:40
+Y esto, bueno, vimos que esto es C por raíz de la constante eléctrica del material. Perdón, es sin el C, raíz constante.
+1:08:50
+¿Bien? Depende de la densidad del aire.
+1:08:57
+Sí, pero el aire siempre está súper diluido. Estamos hablando del aire, sí, capaz que el aire de Venus, pero el aire así normal, muy diluido. Bueno, y ahora voy a dedicarle un ratito, a ver cómo estoy de tiempo, voy a dedicarle un ratito a ver cómo, una cosa que les empecé a contar la vez pasada, que era ver cómo se midió la velocidad de la luz en el vacío.
+1:09:56
+Medida de C. Entonces lo primero es que en la antigüedad la gente no se planteaba ni siquiera el problema de medir C. Pensaban, y eso no está muy lejos de ser real, que la velocidad de la luz era infinita, que se propagaba de un punto a otro instantáneamente. Aparentemente uno de los primeros que se planteó el problema de si la velocidad de la luz era infinita o en realidad era simplemente muy grande y no la llegamos a medir,
+1:10:28
+Fue Galileo. Galileo, como muchas cosas de la ciencia, aparentemente fue uno de los primeros que se planteó el problema. Y en realidad los primeros que hicieron medidas bastante buenas de la luz fueron astrónomos. Hicieron medidas indirectas porque aparecen... A raíz de que la velocidad de la luz es finita, aparecen lo que se llaman fenómenos de aberración cuando uno hace medidas astronómicas. Básicamente, si tienen planetas, la velocidad de la luz demora en llegar de esos planetas hasta la Tierra.
+1:11:04
+Y entonces si tienen en cuenta cuánto demoran, a qué distancia están esos planetas, yo qué sé, puede estimar cuál es la velocidad de la luz porque aparecen pequeños efectos astronómicos y se pueden llegar a medir. Y entonces las primeras medidas fueron astronómicas. Primeras... Medidas astronómicas y fueron hechas por Römer en 1676 y Bradley.
+1:11:41
+En 1729.
+1:11:46
+Y calcularon la velocidad de luz con bastante precisión por esta vía, pero en general a lo físico no nos gustan las medidas de los astrónomos. o mejor, si nos gustan, pero no les damos total confianza por la razón siguiente, que es que siempre uno podría plantearse que capaz que es un fenómeno astronómico,
+1:12:05
+como eso sucede lejos, un
+1:12:07
+fenómeno astronómico al que no tenemos acceso, y que en realidad la explicación no es que la velocidad de luz valga tanto, sino, yo que sé, que hay un gas ahí en medio del sistema solar que hace que las cosas se muevan de otra manera. ¿Se entiende? Entonces, es preferible, o complementario por lo menos, poder hacer una medida... En laboratorio, o por lo menos acá en el planeta Tierra, donde podemos controlar más o menos todo lo que pasa.
+1:12:31
+Entonces yo voy a hablar de la
+1:12:33
+primera medida precisa que hubo de la velocidad de la luz en planeta Tierra, que es la que yo les empecé a hablar la vez pasada, el experimento de Fissot. Entonces, primera...
+1:12:51
+Medida, digamos, de laboratorio. No entra en un laboratorio. Pero en tierra, digamos.
+1:13:00
+Es fiso en 1849. Es bastante tardío, ¿no?
+1:13:09
+Entonces, fíjense cómo es el experimento. Tienen acá el ojo de un observador. Tienen un espejo. que refleja en parte tienen acá bueno acá voy a poner una lamparita pero en esa época no había una lamparita vamos a poner una vela entonces viene la luz acá se rebota acá viene acá y acá puso una rueda dentada
+1:13:45
+Este
+1:13:47
+es un espejo semi-reflecto. Una parte de la luz pasa, otra se refleja. La mitad pasa y la mitad se refleja. Entonces viene la luz y si pasa por un diente de esta rueda dentada, acá tiene una... algo que la está moviendo y se gira con una velocidad angular constante omega. ¿Sí? ¿Se entiende? Es una rueda que va girando y tiene dientes. ¿Sí? Ranuritas. ¿Sí? Si la veo de frente, es así, un círculo.
+1:14:18
+Y tiene ranuritas equispaciadas, con un ángulo teta acá. Entre cada uno. ¿Bien?
+1:14:26
+Viene la luz, pasa por acá. Si pasa por un diente, llega hasta acá. Recorre una distancia que entra acá y un espejo, que pondremos acá, espejo.
+1:14:37
+Una distancia que llamamos L, va, rebota, vuelve y acá hay dos posibilidades. O justo coincide con una ranura, en cuyo caso sigue y llega hasta el ojo del observador.
+1:14:53
+O se detiene. ¿De acuerdo? Entonces, ¿qué es lo que hizo Fissot? Fue cambiando las velocidades angulares de esta rueda dentada hasta que viera luz. Si había luz, quiere decir que el tiempo que le llevaba a la luz ir hasta acá y volver, era el mismo que le llevaba a la rueda dentada recorrer un ángulo teta o dos tetas, un múltiplo entero de teta. ¿De acuerdo? Entonces, lo que dice...
+1:15:25
+Fiso es que 2L sobre C, que es el tiempo que le lleva a la luz ir y volver, tiene que ser igual a teta sobre omega. En realidad, teta, porque lo que hace es hallar el menor ángulo.
+1:15:42
+Podría ser un múltiplo, pero en realidad prueba con varias cosas, varias frecuencias, hasta que le da cosas que pueden ser 2 teta, 3 teta, entonces ahí puede hallar cuál es el menor de todos. Eso lo hace variando teta, no fue cambiando cada vez la rueda, lo que cambió era la velocidad angular. Y usó un L largo, usó un L que era igual a 8630 metros. Así que lo tienen que hacer entre dos puntos, dos colinas, digamos, para que no haya nada en el medio.
+1:16:18
+Y así pudo medir, midió... Con mucha precisión, midió ya en aquella época que la velocidad de la luz era 3 por 10 a la 8 metros por segundo. Ese es el primer experimento de la velocidad de la luz. Hoy en día sabemos medir la velocidad de la luz con muchísima precisión. Tanta precisión que ya no se mide más la velocidad de la luz. ¿no?
+1:16:48
+hoy en día hemos fijado el valor de la velocidad de la luz y en realidad forma parte de de la definición del metro ¿no?
+1:17:01
+Hoy en día, a raíz de la teoría de la relatividad, podemos establecer una relación entre el metro y el segundo fijando la velocidad de la luz. Así que ya hemos saturado lo que conseguimos.
+1:17:14
+La imprecisión en la medida de la luz en realidad está escondida en la definición del metro. Pero se ha medido con muchísima precisión. Bueno, creo que estamos más o menos en hora. A ver...
+1:17:32
+no,
+1:17:33
+tengo unos minutos más entonces entonces en los minutos que quedan voy a plantear un problema que voy a resolver el sábado que es el tema, no falten el sábado que va a ser una clase divertida el problema de la reflexión y la refracción de la luz que alguien me preguntaba por ahí
+1:18:03
+reflexión y refracción entonces tomemos dos medios un medio 1 y un medio 2 transparentes y tienen un rayo de luz toman acá un eje normal al medio supongo que el borde es una superficie plana y tienen un rayo que incide un rayo de luz que incide acá que quiere decir que van a tener una onda que es como una onda plana así que incide con longitud de onda llamen el lambda acá incidiendo E incide con un cierto ángulo acá que le llamamos teta 1.
+1:19:09
+¿De acuerdo?
+1:19:11
+Cuando incide la luz sobre ese borde entre los medios pasan dos cosas. Una parte de la luz es reflejada a un cierto ángulo, teta 2. Y otra parte es transmitida con un ángulo teta 3. Entonces esto es onda incidente.
+1:19:35
+Esta es la onda reflejada.
+1:19:41
+Y esta es la onda transmitida. Y en la clase que viene vamos a probar dos propiedades.
+1:19:56
+Propiedades.
+1:20:02
+La primera es la ley de la reflexión. ¿Cómo es el ángulo θ2 con respecto al θ1? Arriba. Reflexión.
+1:20:10
+Todos
+1:20:12
+sabemos eso, tenemos una intuición muy armada al respecto. θ1 es igual a θ2. Vamos a probar eso. Vamos a entender por qué la luz tiene esa propiedad. Se puede ver, se puede dar una cuenta para ver que tiene que ser así. Y después una más útil, que es la ley de la refracción.
+1:20:31
+que es lo que se llama la ley de Snell que dice que el índice de refracción en el medio 1 por el seno de θ1 es igual al índice de refracción en el medio 2 por el seno de θ3
+1:20:54
+digamos en la
+1:20:54
+onda y eso también lo vamos a probar la clase que viene
+

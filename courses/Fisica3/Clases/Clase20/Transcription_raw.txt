@@ -1,0 +1,570 @@
+# Clase 20
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/20/
+
+Fecha de exportación: 7/24/2026, 12:06:58 AM
+
+Clase: 20
+Curso: F3
+
+Segmentos : 213
+Palabras  : 8180
+Caracteres: 46908
+0:16
+Nicolás Wschebor
+Quiero hacerles un comentario. Cuando vimos todas las propiedades eléctricas, cuando tienen un dieléctrico dentro de un condensador, vimos que colocar un material dieléctrico dentro de un condensador cambia las propiedades, cambia la capacitancia del condensador. En el caso magnético pasa lo mismo. Si yo pongo un material con propiedades magnéticas dentro de la bobina, imagínense que yo tengo la bobina, pongamos un tubo de plástico en el que enrollé alrededor el cable, le puedo meter adentro, por ejemplo, un núcleo de hierro, un cacho de hierro.
+0:54
+Nicolás Wschebor
+Entonces ahí nuevamente cambian, y de manera significativa, de hecho pueden cambiar de manera muy importante las propiedades de la bobina si yo coloco un material con propiedades magnéticas.
+1:06
+Nicolás Wschebor
+Ahora, contrariamente a lo que sucede en el caso eléctrico, en el caso eléctrico dijimos que la mayor parte de los dieléctricos son materiales lineales.
+1:17
+Nicolás Wschebor
+el efecto que va a tener en la polarización del material es un efecto que es proporcional al campo eléctrico aplicado. ¿Se acuerdan de eso? Entonces, lo que cambiaba es simplemente multiplicar por una constante. En el caso magnético, la mayor parte de los materiales magnéticos interesantes, por ejemplo el hierro, el hierro tiene propiedades magnéticas muy importantes, ¿sí?
+1:40
+Nicolás Wschebor
+no es lineal, es altamente no lineal. Existen tipos de hierro, hay muchos tipos de hierro, pero algunos tipos de hierro que se comportan como aproximadamente lineal, pero la mayor parte de los materiales que son interesantes para el uso, por ejemplo en transformadores, son cosas que son Tiene un comportamiento muy no lineal. Eso es muy complicado de tratar. Es una cosa que no se aborda en un primer curso como este. Eso da lugar a algunas propiedades importantes de los materiales magnéticos, por ejemplo, que pueden tener lo que se llama una magnetización espontánea.
+2:12
+Nicolás Wschebor
+Ustedes saben que pueden haber imanes. Pueden haber sistemas que, aún sin aplicarle ningún campo magnético externo, están imantados. De hecho, esos fueron los primeros efectos magnéticos que se conocieron ya en la antigüedad. Entender eso es muy complicado. se sabe, los físicos lo sabemos bien como funcionan bien los imanes pero es una cosa que no no se aborda en este curso pero les cuento que existe si existen algunos materiales que por lo menos de manera aproximada se comportan como lineales son los únicos que vamos a tratar en este curso y en ese caso lo único que sucede es que L hay que multiplicarlo por una constante que se llama la constante magnética del material igual que en el caso dieléctrico el comentario L puede depender puede depender además de la geometría de la bobina además de bobina
+3:30
+Nicolás Wschebor
+del material con que esté llena.
+3:47
+Nicolás Wschebor
+Muchos materiales con propiedades magnéticas
+4:04
+Nicolás Wschebor
+importantes son no lineales.
+4:16
+Nicolás Wschebor
+Esto permite, por ejemplo, la existencia
+4:33
+Nicolás Wschebor
+de magnetización espontánea imanes imanes
+5:04
+Nicolás Wschebor
+algunos materiales tienen un comportamiento magnético lineal por lo menos de manera aproximada y en ese caso
+5:35
+Nicolás Wschebor
+L del vacío, si está rellenado el vacío, cambia por Km por L del vacío. Tienen una bobina y esta es una constante magnética del material.
+6:09
+Nicolás Wschebor
+Esto es igual que, esto no se lo estoy contando en detalle, pero es la misma idea que lo que vimos para los condensadores, en que simplemente la capacidad se multiplicaba por la constante eléctrica del material. Acá es lo mismo, lo único que es otra constante que caracteriza las propiedades magnéticas.
+6:34
+Nicolás Wschebor
+Cuando llegue eso, ustedes ya tienen todo pronto.
+6:38
+Nicolás Wschebor
+Bueno, mientras van llegando las cámaras para hacer lo del experimento de hoy, sigo con... Vamos a ver ahora qué pasa cuando ponemos una bobina en un circuito. ¿Se acuerdan? Hasta ahora hemos visto circuitos solo con resistencias, circuitos con resistencias y condensadores. Bien. Y ahora vamos a ver, vamos a ir agregando una complejidad por vez.
+7:08
+Nicolás Wschebor
+Ahora vamos a ver circuitos con resistencias y bobinas. Y luego vamos a pasar a los circuitos que se llaman RLC. Resistencia, inductancia, LLC por capacidad. Pero empecemos primero por los circuitos RL.
+7:36
+Nicolás Wschebor
+Esta es la sección 11.3. Bueno, misma idea que para el caso de los circuitos RC que vimos, vamos a colocar una batería, vamos a colocar acá una resistencia y ahora una bobina.
+8:06
+Nicolás Wschebor
+Hago el caso más simple de un circuito con una sola malla, luego en el práctico podrán ver... Acá pongo un interruptor que puede estar en dos posiciones, la posición A y la posición B.
+8:24
+Nicolás Wschebor
+Luego en el práctico verán casos más generales donde pueden tener circuitos con más de una malla.
+8:30
+Nicolás Wschebor
+Pero por ahora vamos a interesarnos en este caso que es el caso más simple. Y... Supongamos que inicialmente no hay corriente. Bueno, es lo que va a pasar si está desconectado. Y supongamos que en t igual a 0 ponemos el interruptor en la posición A. En t igual a 0 colocamos el interruptor en A. Entonces, ¿cómo va a quedar la ley de mallas en este caso?
+9:04
+Nicolás Wschebor
+Y bueno, la podemos calcular circulando para allá.
+9:10
+Nicolás Wschebor
+Entonces nos queda E, cuando subimos, llamémosle I a la corriente circulando para allá, menos R por I. Y ahora lo que acabamos de ver, nos queda menos L por DI sobre D. Y esto es igual a C. Porque volvimos al punto de partida. ¿Está? Entonces, fíjense, nuevamente, esta es una ecuación de qué tipo.
+9:40
+Nicolás Wschebor
+Una ecuación diferencial. Fíjense que hay que intervenir la corriente y la derivada de la corriente. ¿Sí? Y además, sacando este término, que no depende de I, los otros términos son los que se llaman términos lineales. Aparece o I o la derivada de I. Son todas operaciones lineales de I. ¿Sí?
+9:59
+Nicolás Wschebor
+Entonces son ecuaciones relativamente simples. Se llama ecuación lineal de primer orden porque solo aparece hasta la derivada primera y con segundo miembro porque tienen un miembro que no depende de Y. Entonces la ecuación la escribiremos así. L de Y con respecto de T más R por Y es igual a E. Entonces, ecuación del circuito
+10:28
+Nicolás Wschebor
+de una malla entonces vamos ahora a ver como como resolver esta ecuación nuevamente es muy similar a algo que ya habíamos visto para el caso del circuito RC van a ver que es realmente muy muy similar recuerden que en el caso del circuito RC entonces podemos comparar con el circuito RC
+11:02
+Nicolás Wschebor
+Entonces en el circuito RC, si tenían una cosa así, R y C, habíamos visto que la ecuación era E es igual a Q sobre C más R por I. Que I lo puedo escribir en este caso como la derivada de Q con respecto de T.
+11:27
+Nicolás Wschebor
+Entonces fíjense que son muy parecidas las dos ecuaciones. En un caso lo que tengo es la derivada de la corriente, en otro caso la derivada de la carga. Y en el otro término, en un caso tengo la corriente y en otro la carga. Entonces sacando eso y que las constantes son diferentes, en un caso donde acá tengo R, allá tengo L y donde acá tengo 1 sobre C, allá tengo R. pero sacando esa diferencia la estructura de la ecuación va a ser parecida y por lo tanto su solución idéntica y vimos como resolver esta ecuación voy a retomarlo ahora porque es algo en lo cual ustedes todavía no están muy duchos así que decirlo reiterar no es un abuso entonces vamos a recordar como se hace esta ecuación entonces lo primero que hacemos es preguntarnos si podemos encontrar una solución particular de esta ecuación ¿si?
+12:17
+Nicolás Wschebor
+Las ecuaciones diferenciales normalmente tienen una familia infinita de soluciones. La pregunta es si podemos encontrar una solución particular, no de esta ecuación, sino de esta que está acá. ¿Cuál sería una solución particular que ustedes pueden hallar evidente?
+12:36
+Nicolás Wschebor
+Ah, en t igual a 0 es muy difícil. ¿Qué? ¿Y? ¿Y? E sobre R, claro. Tiene una solución que es evidente, que es la solución que sucede cuando esperamos mucho rato. Si esperamos mucho rato, mucho rato, la corriente se va a estabilizar. ¿Sí? Cuando se estabiliza, I ya no depende de T, y ahí sabemos resolver, es bien fácil. Queda I sobre R. Entonces tenemos... Esta ecuación le pongo un astérico. ¿Está? Entonces estas se resuelven parecido, ¿no? Se resuelven igual.
+13:10
+Nicolás Wschebor
+Entonces, voy a repetir todo el procedimiento que hicimos para el circuito de Rc. Entonces, primero que nada, buscamos una solución particular.
+13:25
+Nicolás Wschebor
+No es la solución general, es una solución particular. En este caso es una solución particular, particularmente simple, que es I igual constante, igual I0 constante. Y entonces sustituimos por una constante, nos queda R por I0, vale E, y entonces I0 es inmediato, es E sobre R. Entonces tenemos una solución particular.
+13:52
+Nicolás Wschebor
+¿De acuerdo? Entonces ahora, hagamos lo mismo que hicimos para el circuito RC. Dijimos, bueno, la solución particular...
+14:05
+Nicolás Wschebor
+La tenemos, pero como esta ecuación, toda esta parte es lineal, podemos decir, tenemos chance de que si restamos la solución particular después me quede una ecuación más simple. Entonces escribamos I mayúscula de T como I chica de T menos la solución particular.
+14:26
+Nicolás Wschebor
+I particular.
+14:29
+Nicolás Wschebor
+Es decir, I de T menos E sobre R.
+14:36
+Nicolás Wschebor
+Entonces si sustituimos, esto implica que I chica de T es la particular más la I mayúscula. Lo sustituimos en la ecuación. Esto no depende de T, así que cuando sustituyo acá no cuenta. Me queda L de I mayúscula sobre de T.
+14:58
+Nicolás Wschebor
+Después tenemos R por I mayúscula más E sobre R es igual a E. Y ahora, como por arte de magia, ¿qué pasa?
+15:10
+Nicolás Wschebor
+Se nos van estos términos. Entonces queda, I de T verifica la ecuación homogénea.
+15:27
+Nicolás Wschebor
+Que es LDI sobre DT más R por I igual a 0. Ecuación homogénea. Fíjense que la ecuación homogénea...
+15:49
+Nicolás Wschebor
+Es igual que la anterior, pero apagando la batería. Sacando la batería. Es como que nos hubiéramos puesto... Ah, y acá nuevamente esto está mal puesto. Discúlpenme. El interruptor lo voy a poner así. Y va a estar acá. Estaba mal puesto el interruptor. Para lo que hicimos hace un rato no cambió nada. Pero ahora, para lo que voy a hacer en un rato, sí. Porque les voy a decir que la homogénea es como poner el interruptor en B. Es como desconectar la batería. ¿Bien?
+16:21
+Nicolás Wschebor
+¿De acuerdo? Bueno, y esta ecuación vimos cómo resolverla. ¿Se acuerdan? Pasamos por una separación de variables, etc. Pero cuando uno llega a las ecuaciones homogéneas lineales, las ecuaciones diferenciales homogéneas lineales, hay otra técnica que yo no usé la vez pasada, porque es una técnica del que conoce el diario del lunes, el que ya sabe cómo es la solución. ¿Cómo era la solución?
+16:48
+Nicolás Wschebor
+una exponencial ¿verdad? una exponencial de tiempo entonces hay una técnica general cuando ustedes llegan a ecuaciones lineales homogéneas siempre o casi siempre salvo situaciones muy excepcionales las soluciones son exponenciales ¿está? en realidad cuando tienen ecuaciones diferenciales que no son de primer orden sino de mayor orden en lugar de tener soluciones que son exponenciales tienen soluciones que son combinación lineal de soluciones exponenciales ¿bien? Ustedes capaz que ya vieron en los cursos de matemática, en realidad el espacio de soluciones de una ecuación homogénea lineal forma un espacio vectorial.
+17:25
+Nicolás Wschebor
+¿Sí? ¿Han visto eso? Sí, algunos sí, otros no. Entonces lo que tienen que hacer es hallar una base de soluciones.
+17:33
+Nicolás Wschebor
+Lo interesante es que casi siempre la base de soluciones es exponencial. Entonces busquemos una base exponencial. Busquemos una solución exponencial.
+17:50
+Nicolás Wschebor
+Entonces busquemos una solución I que tendrá una constante por E a la una constante por T. A priori no sabemos ni I ni la función. Entonces, si sabemos eso, entonces la derivada... ¿Por qué hay chance de que esto sea así? Porque fíjense que esta ecuación lo que me dice es que la derivada de I es proporcional a I. Pero esa es la propiedad de las exponenciales. Las exponenciales tienen esa propiedad de que su derivada es proporcional a sí misma.
+18:24
+Nicolás Wschebor
+Entonces tomemos la derivada. Entonces esto va a ser I0 por I a la RT por R. Entonces si sustituyo acá, me queda L por R por I0 por exponencial de RT más I0... por exponencial de RT, por R mayúscula. Y todo esto igual a cero.
+18:52
+Nicolás Wschebor
+Bueno, y cero es una constante, si tenés una constante es diferente de cero, porque si no la solución es simplemente cero, es una media aburrida. Entonces podemos simplificar por y cero, la exponencial es positiva, también podemos simplificar, entonces nos queda la ecuación L por R más R mayúscula igual a cero, y entonces R vale menos... R sobre L entonces la solución de la homogénea será IDT una constante I0 que no está determinada menos fíjense que aparece un menos
+19:43
+Nicolás Wschebor
+R sobre L por T. Solución de la homogénea.
+19:57
+Nicolás Wschebor
+Esta técnica, que la apliqué en este caso particular, que en realidad ya sabíamos el resultado, porque en el caso del condensador habíamos resuelto la ecuación explícitamente usando el método de separación de variables. Este método en realidad es un poco más poderoso, porque vale para todas las ecuaciones lineales, todas las ecuaciones diferenciales lineales homogéneas. Les van a dar una base de soluciones y luego la solución general es una combinación lineal de esos elementos de la base.
+20:26
+Nicolás Wschebor
+Eso lo van a ver en los cursos de matemática, pero bueno. Entonces escribamos la solución general.
+20:36
+Nicolás Wschebor
+Bueno, cometí el error de borrar el circuito.
+20:42
+Nicolás Wschebor
+Pero tenemos allá la expresión. Entonces IDT se escribirá como E sobre R más I0 por exponencial de menos RT sobre L.
+20:58
+Nicolás Wschebor
+solución general de la ecuación. Pero fíjense que depende, como de costumbre para las ecuaciones diferenciales, ¿de qué depende?
+21:11
+Nicolás Wschebor
+De I0, que no queda determinado por la ecuación. Hay infinitas soluciones, para cada valor de I0 tendrán una solución diferente. ¿Cómo hacen para determinar I0?
+21:23
+Nicolás Wschebor
+Tenemos una condición inicial. ¿Y cuál es la condición inicial en este caso? ¿Qué pasaba en el instante t igual a cero en que cerramos el interruptor? ¿Qué sabíamos de i? Antes de poner el interruptor, ¿cuánto valía i? Cero. En t igual a cero, en el instante que cerramos el interruptor, i, perdón, chica, en t igual a cero vale cero. Entonces impongamos eso, condición inicial.
+21:57
+Nicolás Wschebor
+Entonces imponen eso, nos queda 0 e sobre r. Estoy evaluando en t igual a 0. Cuando evalúo en t igual a 0 la exponencial, ¿cuánto me vale?
+22:08
+Nicolás Wschebor
+1. Entonces me queda i0 acá nada más. Entonces vemos que i0 es simplemente menos e sobre r.
+22:19
+Nicolás Wschebor
+La ecuación les queda IDT para esa condición inicial, EDR de 1 menos exponencial de menos RT.
+22:38
+Nicolás Wschebor
+Bueno, y esto es lo que pasa mientras estamos conectando. Y fíjense, efectivamente, cuando esperamos un tiempo muy largo, ¿a qué tiende IDT? Si esperamos T, mucho rato, mucho rato. A sobre R, porque la exponencial esta tiene un signo negativo. Entonces tiende a cero. ¿Qué hubiera pasado si yo hubiera encontrado un exponencial con signo positivo?
+23:07
+Nicolás Wschebor
+Tengo que revisar las cuentas. No puede ser que un circuito así espontáneamente me quede una corriente que se empieza a crecer, crecer, crecer. ¿Se entiende? En algún momento satura. No puede ser. Entonces ustedes... Desde luego en el parcial, pero mucho más importante, cuando hagan algún cálculo, cuando sean ingenieros, si les da un circuito así y se pone a crecer exponencialmente, lo primero que tienen que hacer es revisar las cuentas, porque no puede ser. Les digo porque vi muchas exponenciales crecientes en el parcial pasado.
+23:38
+Nicolás Wschebor
+Pero eso es un buen test. Si las exponenciales quedan crecientes, no hay problema. A retomar. Bueno, ¿y qué pasa ahora? Si de golpe... Entonces acá tenemos la batería, esta era la posición A, tenemos la posición B acá, acá está el interruptor, y acá teníamos la resistencia y la bobina.
+24:18
+Nicolás Wschebor
+Entonces estábamos en la posición A. ¿Y de qué pasa si de golpe lo paso a la posición B?
+24:24
+Nicolás Wschebor
+Tiene que ser muy rápido, porque si no, no funciona. Claro, lo que va a pasar si yo lo paso a la posición B es que... Ahí ya no hay E. Entonces nuevamente la ecuación nos va a quedar simplemente en ese caso L derivada de I con respecto de T más R por I. Que es igual a la ecuación homogénea. Y bueno, ahí tienen que tener una condición inicial de la corriente y la corriente va a tender a 0. Simplemente la solución ya la saben directamente, es esta que está por aquí.
+25:00
+Nicolás Wschebor
+Pero con I minúscula.
+25:03
+Nicolás Wschebor
+Entonces típicamente, digamos, con E la solución será de este tipo.
+25:12
+Nicolás Wschebor
+Va hasta E sobre R, arranca de cero.
+25:16
+Nicolás Wschebor
+Entonces hace una cosa así. Y en el caso homogéneo...
+25:28
+Nicolás Wschebor
+Y de T arranca un cierto valor y cero y decrece exponencialmente a cero. ¿Cuál es el tiempo característico en que esto sucede? Y bueno, fíjense que hay que comparar T con L sobre R. Entonces el tiempo característico acá, en ambos casos, es del orden de L sobre R.
+25:58
+Nicolás Wschebor
+Y eso es razonable porque, fíjense, si tengo una bobina muy muy grande, ¿sí? Una bobina muy muy grande, la bobina está almacenando energía en su campo magnético. Si es una bobina muy muy grande, va a demorar mucho tiempo en llegar a saturar, a haber almacenado todo lo que podía almacenar de energía. Entonces el tiempo característico va a crecer mucho. Por otro lado, si tengo una resistencia muy, muy grande, lo que hay que comparar es el tamaño de la resistencia con el de la bobina.
+26:37
+Nicolás Wschebor
+Si tengo una resistencia abobinada, si tengo una resistencia muy, muy grande, rápidamente, si es muy grande, en tiempos más cortos, llega a ser solo la resistencia la que importa, solo disipación, ya se almacenó toda la energía con respecto a lo que se disipa.
+26:57
+Enzo Spera
+¿Preguntas? ¿Sí? ¿Y la cuestión para I en ese caso? ¿Sí? Este es el caso B. ¿Sí? ¿Va a ser esa y I0 va a ser...? ¿Va a ser...? No, I0 va a ser otra cosa. Va a depender de cuánto valga I en el instante en que se rechircuita. Si está en el... Cuando ya se estabilizó...
+27:30
+Nicolás Wschebor
+si esperamos hasta que se haya estabilizado efectivamente va a valer bueno acá lo que trajimos son tres experimentos de campo magnético concretamente los tres usan la ley de Faraday ¿está bien? entonces voy a escribir acá la ley de Faraday vincula la FEM que se induce con la variación de campo de flujo de campo magnético ¿está bien? ahora ¿cómo se calculaba el flujo de campo magnético?
+28:02
+Enzo Spera
+como la integral en una superficie del producto del campo magnético B, producto escalar con un diferencial de superficie. Esta integral es como se calculaba el flujo de campo. Ahora, ¿este producto interno qué es? Es el módulo del campo magnético por el módulo del diferencial de área, que lo definimos para que tenga módulo 1, por el coseno del ángulo entre ellos dos. ¿No es cierto?
+28:33
+Enzo Spera
+Entonces, el flujo magnético puede variar si varía el campo, el módulo del campo, ya sea en módulo solo o también en dirección, si varía el área sobre la cual estamos calculando el flujo o si varía el ángulo entre la superficie y el campo magnético. ¿Está bien? Entonces acá tenemos tres experimentos que cada uno ilustra una de estas variaciones. Vamos a empezar con el experimento en que vemos la variación del ángulo entre... el área y el campo magnético. Entonces, cuando tenemos una bobina, si colocamos en el interior un imán y lo hacemos girar, lo que estamos haciendo es, en un momento va a estar el polo sur del imán apuntando hacia adentro de nuestro bobinado.
+29:20
+Enzo Spera
+Vamos a hacerlo más grande. Si yo tengo un bobinado acá y yo coloco un imán y lo hago rotar. En un momento voy a tener el imán en un sentido y el campo magnético va a estar con el polo sur hacia adentro. Cuando yo lo rote, voy a estar con el polo norte hacia adentro del imán.
+29:40
+Enzo Spera
+A lo largo de esta rotación, yo lo que tengo es una variación del flujo a través de la bobina. ¿Qué va a pasar eso? Eso me va a generar en mi bobina una corriente. Así es como se genera la corriente alterna que se genera en represas hidroeléctricas, en centrales térmicas. Lo que se hace es, o se hace rotar un imán o se hace mover un electroimán, que es una bobina por la cual se pasa corriente para que se convierta en un imán, y a su vez se induce corriente en otra bobina más. Acá tenemos un ejemplo chiquitito de eso.
+30:12
+Enzo Spera
+Es un imán, lo levantamos porque no podemos proyectarlo. Acá adentro tenemos una bobina con un pequeño imán que está conectado a esta manija que lo hace girar. Entonces, en los bornes del bobinado se genera una FEM que ahora tenemos conectada a esta lamparita que está acá. Bueno, estaba conectada. Ahí, ¿está bien? Como ven, la lámpara se prende y es proporcional a la velocidad con la que yo estoy generando, con la velocidad con la que estoy girando de la manijita.
+30:47
+Enzo Spera
+¿Sí?
+30:50
+Enzo Spera
+Ahí está. También lo que podemos hacer es conectar las dos lámparas que tenemos.
+30:57
+Enzo Spera
+Tenemos dos lámparas que vamos a tratar de conectar en serie ahora. Entonces, en esta situación lo que tenemos son las dos lámparas en serie y va a pasar la misma corriente por ambas lámparas. Entonces lo que va a pasar es que las lámparas van a brillar las dos pero con menor intensidad porque la potencia que le estoy dando al motor se reparte en forma pareja por las dos lámparas porque se encuentran en serie. ¿Está bien? También tenemos acá otro ejemplo, este mismo sistema, que lo que vamos a hacer es conectar el generador a lo que podría ser otro generador, pero en este caso lo vamos a usar como un motorcito.
+31:38
+Enzo Spera
+Bien. Entonces, acá lo que tenemos es... un motorcito que es exactamente igual a esto, pero en vez de hacer girar el imán que se encuentra adentro para que se genere una FEM en el bobinado, vamos a hacer pasar una corriente por el bobinado, que va a generar un campo magnético que va a hacer girar el imán.
+31:57
+Enzo Spera
+Y como ven, el peso sube. Pero si lo suelto, cae, porque en el momento en que yo dejé de dar manija, se dejó de dar corriente y el imán no tenía ninguna fuerza que lo sustuviera. ¿Se entiende?
+32:12
+Enzo Spera
+Sube, si lo suelto, se desenrolla. Porque en el momento en que dejo de pasar corriente por el alambre, por el bobinado, deja de haber una fuerza sobre el imán. ¿Sí? Bien, este es un ejemplo de cómo se genera una corriente haciendo variar el ángulo entre el campo magnético y el área. ¿Sí? Bien, ahora te paso vos el micrófono si querés. Te voy a explicar otro caso de cómo se puede variar el flujo. Bien, la idea ahora es mostrar otra situación en la que podemos hacer variar el flujo de campo magnético, pero ahora variando el módulo del campo y su dirección.
+32:51
+Carla Yelpo
+¿La idea cuál es? Acá lo que nosotros pusimos fue una bobina, una bobina que tiene 2000 vueltas y por la que vamos a hacer circular una corriente alterna. Si hacemos circular una corriente alterna por una bobina, en el centro de la bobina se va a generar un campo magnético que va a variar como varía la corriente que hacemos circular. Está todo esto dentro de un núcleo de hierro y además adentro de esto colocamos un anillo de aluminio. Es decir, al ser un anillo de aluminio es un anillo conductor. Nosotros tenemos entonces que va a atravesar este anillo, es decir, esta espira que nosotros tenemos de aluminio, va a atravesarla un campo magnético variable.
+33:28
+Carla Yelpo
+Eso va a hacer que se genere una FEMA inducida dentro del anillo. Y bueno, vamos a ver qué pasa. ¿Está todo conectado entonces? Bien, entonces ahora lo que voy a hacer es empezar a subir la corriente que circula por la bobina. Siempre es corriente alterna.
+33:48
+Enzo Spera
+No sé si llegan a ver el anillo. El anillo se está levantando y queda levitando encima de la bobina.
+34:08
+Carla Yelpo
+Lo que está pasando es que se está ejerciendo una fuerza, es decir, el campo magnético en el que está inmerso este aro está ejerciendo una fuerza debido a que por el anillo está circulando una corriente. Entonces vamos a verlo para otro o. Acá tenemos la misma idea pero con un aro un poco más grande para ver cómo queda en este caso.
+34:38
+Nicolás Wschebor
+¿Bien?
+34:46
+Carla Yelpo
+¿Está bien? Queda oscilando. Ahora, acá tenemos otro aro exactamente igual, solo que le hicimos un pequeño corte al aro. ¿Bien? ¿Qué debería pasar en este caso? Nada, justamente. Si se fijan...
+35:11
+Carla Yelpo
+Hacemos circular corriente.
+35:16
+Carla Yelpo
+Ahí estamos haciendo circular la misma corriente que estábamos haciendo circular hoy por el anillo. No pasa nada. ¿Bien? Gracias, Leo. Bien, justamente lo que está pasando es que no se cerró el circuito. Entonces, a pesar de que se induce una FEM en el aro de aluminio, no está circulando ninguna corriente por él y por lo tanto no se va a ejercer ninguna fuerza. Bien, y ahora, por último, ¿qué debería pasar si no tenemos ningún núcleo? Porque nosotros dijimos, tal, lo ponemos todo adentro de un núcleo de hierro porque pintó.
+35:50
+Carla Yelpo
+Pero, ¿qué pasa si lo sacamos de ahí? ¿Cómo? Veamos. Sí, calienta, sí.
+36:08
+Carla Yelpo
+Vamos a ver qué pasa. Coloqué el anillo arriba de la bobina, pero ahora no está dentro del núcleo. ¿Bien? Bien. La misma corriente estoy haciendo circular. Que hoy lo había levantado como 10 centímetros por arriba y no pasa nada. ¿Por qué?
+36:30
+Carla Yelpo
+Es un tema del campo magnético que hacemos atravesar la espira. Cuando nosotros lo colocamos dentro de un núcleo, dentro de este solenoide va a aparecer un campo, ¿no? Y ese campo además va a ser reforzado debido al núcleo de hierro. De alguna manera el campo va a ser trasladado a lo largo de todo el núcleo porque se va a inducir un campo magnético a lo largo de toda la barra. Entonces, de esa manera tenemos siempre que por el anillo está atravesando un campo magnético. ¿Bien?
+37:02
+Carla Yelpo
+Importante. En cambio, si lo sacamos, lo que ocurre con las líneas de campo, con la bobina toda suelta, es que simplemente se abren, digamos, y dejamos de tener un campo vertical como el que nosotros queremos para que se induzca una corriente. Bueno, este es el último experimento que tenemos. Lo que tenemos acá son dos bobinas muy grandes, con también un núcleo metálico para aumentar el campo magnético y conducirlo en esta dirección. Y vamos a tratar de pasarle una gran corriente, corriente continua, a través de las dos bobinas que están conectadas en serie, para que en esta zona entremedio de las dos se genere un campo magnético muy fuerte.
+37:42
+Enzo Spera
+En el medio tenemos un péndulo que tiene una placa de bronce.
+37:49
+Enzo Spera
+No sé si se llega a ver. ¿Sí? Entonces, ahora tenemos el péndulo oscilando entre las dos bobinas. ¿Sí? No hay ningún campo magnético, están apagadas las dos, la corriente por los bobinados. Y tenemos el péndulo. Como pueden ver, el péndulo oscila y bastante bien. Se frena muy poco solo.
+38:09
+Enzo Spera
+Vamos a ver qué pasa cuando empecemos a pasar corriente por las bobinas.
+38:23
+Enzo Spera
+Bueno. El objetivo nuestro era pasar una corriente muy grande. Teníamos estas fuentes que están acá, que tienen una limitación de hasta 5 amperes. Para poder aumentar esa corriente que pasamos, para tratar de llegar a 10 amperes, lo que hicimos fue colocar ambas fuentes, pero en paralelo. Es decir, voy a hacer un dibujo mientras tanto. Nosotros lo que colocamos fueron las dos fuentes de esta forma. y de acá fuimos a parar a nuestro circuito, a nuestros bobinados grandes.
+38:54
+Enzo Spera
+Ahora que tenemos pasando 10 Amperes por estas bobinas, vamos a ver qué pasa cuando yo suelto este péndulo.
+39:06
+Enzo Spera
+El péndulo se frena enseguida. Es el mismo péndulo que hace un momento oscilaba libremente. Pero ahora yo lo suelto y enseguida queda clavado ahí en el medio. ¿Se ve?
+39:22
+Enzo Spera
+Una idea de por qué se frena el péndulo apenas atraviesa la zona de campo magnético. A ver si queda filmado desde acá.
+39:40
+Enzo Spera
+El péndulo tiene una placa de bronce. ¿Qué pasa cuando tenemos líneas de campo magnético en una dirección? Si esas líneas de campo magnético varían, en torno a ellas se generan aros de campo eléctrico. Bueno, al estar entrando la placa de bronce en la zona de campo magnético, es un efecto, como decir, que el flujo por ella está aumentando. Es decir, ¿qué se van a generar? Se van a generar círculos de campo eléctrico. Como el bronce es un metal conductor, esas líneas de campo eléctrico van a mover cargas en círculos dentro del material.
+40:16
+Enzo Spera
+Bueno, esas cargas en movimiento van a sufrir una fuerza magnética, debido al campo magnético que está generando las bobinas. Esa fuerza magnética es la que frena el péndulo. Ahora vamos a cambiar el péndulo.
+40:40
+Enzo Spera
+Y en vez de colocar este que es una placa de bronce maciza, vamos a colocar una que tiene muchos cortes hechos.
+40:48
+Enzo Spera
+Algo así como un peine, ahí está.
+40:54
+Enzo Spera
+Acá tenemos el peine que vamos a colocar. Es una placa de bronce, pero tiene muchos cortes hechos. ¿Está bien? Bueno, ¿qué esperaríamos que pase en este caso? Siga de largo, ¿por qué?
+41:21
+Enzo Spera
+Bien. Porque es diferente, es buena respuesta.
+41:26
+Enzo Spera
+Efectivamente, el péndulo oscila libremente en este caso. Porque al tener cortes, igual que con el anillo que no flotaba con la inducción del anillo de Thompson, en este caso los aros de campo eléctrico no pueden mover cargas en torno a ellos porque tenemos cortes que impiden que las cargas se muevan de un lado al otro. Entonces tenemos los aros de campo eléctrico que se generan, pero no hay cargas que puedan moverse porque está cortado el metal.
+41:57
+Nicolás Wschebor
+Está claro que solo se puede mover así y necesitaría poder moverse... En círculo. Necesitaría...
+42:01
+Enzo Spera
+Entonces este péndulo, por más que tenemos el mismo campo que antes, no se frena. ¿Sí? ¿Y si tuvieras un corte solo en la mitad, sería lo mismo? Con un corte solo en el medio se frenaría menos, porque tendrías círculos más chicos, pero aún así podría generar. Tendrías aros de corriente, pero más chicos nomás. Se frenaría menos. Por eso se necesitan muchos cortes. Este es el mismo principio que se usa en núcleos de transformadores. Cuando uno tiene un transformador, tiene dos bobinas que una le induce corriente a la otra.
+42:34
+Enzo Spera
+Esta es una versión miniatura. Con esto jugaba yo chico. Entonces, cuando tienen dos bobinados, se tiene un campo magnético en esta dirección.
+42:45
+Enzo Spera
+Por lo tanto, tienen campos eléctricos en este sentido. En el metal habría grandes corrientes y deberían que se caliente mucho. Por eso se colocan metales en el núcleo, se hace con láminas metálicas separadas por aislantes. Para que no se puedan formar esas corrientes. Y así se evita que se caliente.
+43:04
+Enzo Spera
+Vamos a apagar. Y eso es todo por hoy.
+43:18
+Nicolás Wschebor
+Entonces vamos a seguir con el teórico, no es tan exaltante como lo que acabamos de ver, pero es necesario.
+43:27
+Nicolás Wschebor
+Y lo que voy a ver ahora es qué pasa a nivel de la energía en estos problemas, en un bobinado, ¿verdad?
+43:37
+Nicolás Wschebor
+A ver, igual que nosotros vimos que un condensador era una manera de almacenar energía, ¿en qué cosa?,
+43:48
+Nicolás Wschebor
+En un campo eléctrico. Bueno, entonces no va a ser ninguna sorpresa para ustedes que una bobina sirve para almacenar energía en un campo magnético. Entonces lo que vamos a ver ahora es cómo son los procesos de almacenamiento de energía en una bobina. De manera más generalmente, cómo se almacena energía en un campo magnético. Pero vamos a ver una bobina porque es más fácil.
+44:21
+Nicolás Wschebor
+11.4
+44:58
+Nicolás Wschebor
+bueno entonces no le voy a repetir lo que ya les dije en el caso de un condensador una bobina es un dispositivo para almacenar energía vamos a ver como se produce eso retomemos el circuito que poníamos recién tenemos una FEMA acá una resistencia y una bobina pongamos un interruptor así En t igual a cero cerramos el interruptor y queremos ver qué va a pasar con la energía que está suministrando al circuito la batería.
+45:42
+Nicolás Wschebor
+La ecuación es la que vimos recién. E vale R por I más L por la derivada de I con respecto al tiempo. Pero en lugar de pensarlo en términos de voltaje, podemos querer pensarlo en términos de potencia entregada. ¿Se acuerdan cómo era la potencia entregada por la fuente? ¿Se acuerdan cómo se calculaba?
+46:10
+Nicolás Wschebor
+¿La potencia entregada por la fuente?
+46:14
+Nicolás Wschebor
+Trabajo por unidad de tiempo que era igual al voltaje... A ver, en un intervalo de tiempo, en... Un intervalo de T pasa por la batería una carga de Q.
+46:40
+Nicolás Wschebor
+Entonces, el elemento de trabajo...
+46:49
+Nicolás Wschebor
+Es DW, que será el elemento de trabajo, será la FEM por DQ. Porque tenemos una carga DQ que la vamos a subir un potencial, una diferencia potencial E. Entonces, ese es el elemento de trabajo aportado. Aportado por la batería.
+47:20
+Nicolás Wschebor
+en dt entonces si ahora queremos el trabajo aportado por unidad de tiempo habrá que dividir por dt el trabajo aportado por unidad de tiempo es la potencia entregada entonces la potencia entregada por la batería será
+47:50
+Nicolás Wschebor
+Potencia entregada será E por DQ dividido DT.
+47:59
+Nicolás Wschebor
+¿Se acuerdan que vimos esto? Así que es E por I. Esta es la potencia entregada por la batería.
+48:09
+Nicolás Wschebor
+Entonces, sabiendo que esa es la potencia entregada, calculemos E por I. E por I lo podemos escribir también, por lo que está allá, como R por I al cuadrado, más LI por DI sobre DP.
+48:31
+Nicolás Wschebor
+Es un edificio con mucha historia y... A ver, esta es la potencia entregada por la batería. ¿Qué será R por I al cuadrado?
+48:46
+Nicolás Wschebor
+Esta es la potencia, esta ya la conocemos, esta es la potencia disipada en la resistencia.
+49:01
+Nicolás Wschebor
+R por I al cuadrado. Entonces, si hacemos la diferencia entre la potencia entregada menos la potencia disipada, ¿qué será esto?
+49:15
+Nicolás Wschebor
+Esto va a ser la energía almacenada por unidad de tiempo. Entonces, Li por Di dt será la derivada, con respecto al tiempo, de la energía magnética. Entonces, energía...
+49:35
+Nicolás Wschebor
+almacenada en la bobina.
+49:42
+Nicolás Wschebor
+Bueno, acá estoy imaginando que la bobina es una bobina ideal sin resistencia. Si yo tuviera, obviamente, todas las bobinas que estamos tratando son bobinas ideales. Si es una bobina real, además tendrá un término extra que es asociado con la resistencia interna de la bobina. Estoy idealmente separando los elementos del circuito en elementos puros. Pero obviamente los elementos reales, una bobina como la que acaban de ver, tiene una resistencia grande. Entonces tendrán, además... La bobina en lugar de generar la inducción tendrá, además de generar la inducción, tendrá un efecto extra debido a su resistencia interna.
+50:20
+Nicolás Wschebor
+Podemos agregar. Pero estoy refiriendo solo a la parte propiamente de inducción.
+50:28
+Nicolás Wschebor
+Está claro que la otra parte que vos mencionás habría que incluirlo acá en la disciplina.
+50:35
+Nicolás Wschebor
+Bueno, entonces acá tenemos una expresión para la derivada de la energía magnética, puse B porque es en el campo magnético, por unidad de tiempo. Pero fíjense que querríamos escribir esto como una derivada total para poder escribir una expresión no para la derivada de B, sino para B mismo. ¿Cómo hacemos? ¿Y por DI de T a qué?
+51:00
+Nicolás Wschebor
+¿Cómo hacemos para despejar acá? Para despejar tendríamos que poner todo esto como una única derivada total.
+51:07
+Nicolás Wschebor
+¿Cómo hacemos para decir, escribir que I por DI es como una... Entonces fíjense, podemos usar lo siguiente. Observación. I por DI sobre DT lo pueden escribir como un medio de la derivada con respecto al tiempo de I al cuadrado. ¿Dónde han visto expresiones de ese tipo?
+51:39
+Nicolás Wschebor
+En mecánica. ¿Verdad? Cuando hacen... ¿Sí? ¿Les recuerda? No. Bueno, mecánica. Física 1 también. ¿No? Es cuando hallan la expresión de la energía cinética. ¿Está? Que les aparece la potencia entregada. La potencia entregada es M por B por la derivada de B. Y eso lo escriben como la derivada de un medio de M B al cuadrado. La misma... Digamos, lo que juega el papel acá de la velocidad es la corriente.
+52:17
+Nicolás Wschebor
+Entonces, bueno, esta presión que está acá la pueden escribir, entonces que la derivada con respecto al tiempo de V, la pueden escribir como la derivada con respecto al tiempo de 1 medio de L por I al cuadrado.
+52:34
+Nicolás Wschebor
+Bien. Bien.
+52:36
+Nicolás Wschebor
+Eso, fíjense que... Esto es fácil de ver, ¿no? Porque cuando toma la derivada, el 2 del i al cuadrado baja, compensa este 1 medio, me queda i por la derivada de lo que está adentro, que es la derivada de i. Entonces... De esto deducimos... Entonces... La energía almacenada en una bobina es un medio de L por I al cuadrado.
+53:24
+Nicolás Wschebor
+Bueno, a ver, ¿por qué no agregué una constante acá? Porque si las derivadas coinciden, las funciones coinciden a menos de una constante. ¿Por qué no agregué una constante?
+53:37
+Nicolás Wschebor
+Está claro, ¿no? Yo acá podría haber puesto una constante y aquella relación sigue siendo válida. ¿Por qué no agregué una constante?
+53:45
+Nicolás Wschebor
+¿Cómo? Dice el valor inicial, pero no, todavía no definí lo que era V. Podía haberlo puesto con una constante extra. ¿Por qué no lo hice?
+53:59
+Nicolás Wschebor
+¿Cómo? ¿Cómo?
+54:01
+Nicolás Wschebor
+Bueno, es verdad, lo único que interviene... Bueno, en el fondo es eso. Lo único que importa realmente en las energías son las diferencias de energía. Entonces, si yo... Una energía potencial, como es este tipo, este caso que está acá, yo siempre le puedo agregar una constante. ¿Está bien? Entonces la energía potencial siempre está definida en menos de una constante. Entonces es arbitrario, yo siempre le puedo agregar una constante o no, como me plazca. Entonces voy a hacerlo de la manera más simple, voy a decir, bueno no, le voy a asignar energía cero a la bobina cuando la corriente es cero.
+54:34
+Nicolás Wschebor
+podría haberlo hecho de otra manera pero hubiera sido medio artificial como siempre puedo agregar una constante aditiva me elijo la constante para que la expresión quede lo más simple posible y que se interprete fácil, es decir, cuando no hay corriente le asigno energía 0 entonces la energía la constante aditiva la elegimos es una elección para que
+55:05
+Nicolás Wschebor
+U B sea cero si I igual a cero.
+55:19
+Nicolás Wschebor
+Esta fórmula es análoga, expresión análoga.
+55:29
+Nicolás Wschebor
+¿Se acuerdan? Habíamos calculado la energía del campo eléctrico que era un medio de Q al cuadrado sobre C. ¿Se acuerdan de esto? Era la energía en una batería. Era en un condensador.
+55:46
+Nicolás Wschebor
+Ahora, para el condensador, para la energía eléctrica, vimos que también podíamos imaginar la energía eléctrica como almacenada no en el dispositivo como un todo, sino en el campo eléctrico.
+56:01
+Nicolás Wschebor
+En el campo mismo. Y ahora acá vamos a querer hacer lo mismo. Vamos a querer decir que la energía no está almacenada en todo el... Es decir, uno va a decir qué parte de ese bicho es el que está almacenando la energía. Y a los físicos nos gusta imaginar que eso está almacenado en el campo, propiamente dicho. Entonces, al igual que en el caso del condensador, ¿se acuerdan que yo deduje una expresión para la energía, para la densidad de energía almacenada en el campo eléctrico? Que era un medio... De epsilon cero por e al cuadrado.
+56:34
+Nicolás Wschebor
+¿Se acuerdan de eso? ¿Sí? ¿A alguien le suena esto? Vamos a hacer lo mismo ahora para el caso magnético. Pero en aquel caso no hicimos una prueba rigurosa, sino que lo que hicimos es tomamos el condensador más simple de todos, que era el condensador de placas paralelas, y calculamos en ese caso la energía y la dividimos por el volumen. Acá voy a hacer lo mismo. Voy a tomar la bobina más simple de todas, que es el solenoide, voy a calcular la energía y la voy a dividir por el volumen del solenoide y eso le vamos a asignar una densidad de energía al campo magnético.
+57:12
+Nicolás Wschebor
+En realidad esa expresión a la que voy a llegar es general, pero no la vamos a probar en el caso general. En el curso de electro eso se prueba más prolijamente, pero para una primera aproximación del tema lo vamos a hacer de esa manera más simple, que es simplemente calcular la energía en un solenoide y dividirla por el volumen de solenoide y ver cómo se expresa eso en términos de campones.
+57:42
+Nicolás Wschebor
+Entonces, densidad de energía en el campo magnético. Entonces, lo haremos...
+58:12
+Nicolás Wschebor
+en el caso más simple de un solenoide ideal. ¿Bien? Entonces en el solenoide ideal vimos que el campo magnético es mu cero por el número de vueltas en el solenoide dividido el largo del solenoide por I.
+58:41
+Nicolás Wschebor
+Es el número de espiras.
+58:47
+Nicolás Wschebor
+Y este es el largo del solenoide. Vamos a suponer que tiene una sección A, el solenoide.
+59:07
+Nicolás Wschebor
+¿Está bien?
+59:10
+Nicolás Wschebor
+Entonces calculemos la densidad de energía. Entonces es energía por unidad de volumen. Entonces va a ser la energía que calculamos recién. Un medio de L por I al cuadrado. Dividido por el volumen del solenoide que es L al cuadrado. Ah, no, espérenme un poquito porque estoy usando la misma letra para dos cosas.
+59:43
+Nicolás Wschebor
+Vamos a llamarle L minúscula, largo, para que no se me confunda con la inductancia.
+1:00:00
+Nicolás Wschebor
+Así que es L por A. Ahora la...
+1:00:04
+Nicolás Wschebor
+La inductancia, autoinductancia, en un solenoide, la habíamos calculado, era mu sub cero por N al cuadrado sobre L por A. ¿Se acuerdan? Eso se hace fácil porque lo que tienen que hacer es multiplicar por el área para hallar el flujo.
+1:00:30
+Nicolás Wschebor
+Multiplicar por N para tener el flujo total. Y luego dividir por I. Entonces multiplico por A, multiplico por N y saco el I.
+1:00:49
+Nicolás Wschebor
+Entonces ahora vamos a despejar todo. Vamos a tratar de deshacernos de la autoinductancia y de I. Entonces escribo V... dijimos es un medio, entonces sustituyo L, mayúscula, me queda mu sub cero N al cuadrado por A, y ahora tengo un L al cuadrado por A, y ahora tengo que sustituir I, que lo tengo acá, esto nos dice que I es igual a B por L dividido mu sub cero por N,
+1:01:28
+Nicolás Wschebor
+Entonces acá me va a quedar B por L dividido por mu sub cero por N. Todo el cuadrado.
+1:01:39
+Nicolás Wschebor
+Se dan cuenta, lo único que hice es tomar la energía y la dividí por el volumen. Y voy a expresar todo, no en términos de la corriente y de la autoinductancia, sino del campo mismo. Porque queremos que sea una propiedad intrínseca al campo y que no dependa de la forma del solenoide. De hecho, no depende, pero eso no lo vamos a probar. Vamos a calcular en un caso particular y ver que nos queda una expresión que no hace más referencia ni al tamaño del solenoide, ni al número de vueltas, nada. Pero no estamos probando eso. Simplemente después les cuento como cuentito que eso va a tener.
+1:02:10
+Nicolás Wschebor
+Bueno, ahora simplifiquemos.
+1:02:14
+Nicolás Wschebor
+No, está bien.
+1:02:18
+Nicolás Wschebor
+Este es un 1, perdón. Este es un 1 que parece un L. Entonces acá tengo un N al cuadrado, se me va con este.
+1:02:32
+Nicolás Wschebor
+Tengo un N al cuadrado que se me va con este.
+1:02:36
+Nicolás Wschebor
+Acá el A se me va con el A. Y entonces me queda una fórmula bien simple. Me queda que esto es B al cuadrado sobre 2 mu 0.
+1:02:47
+Nicolás Wschebor
+La densidad de energía almacenada en el campo magnético es esta que está acá.
+1:02:58
+Nicolás Wschebor
+Densidad de energía en el campo magnético. ¿Cómo?
+1:03:19
+Nicolás Wschebor
+Una densidad de energía por unidad de volumen. Y el comentario es que...
+1:03:32
+Nicolás Wschebor
+Vale, en general... En general en el vacío. Si tengo materiales que se pueden imantar y todo, hay que tenerlos en cuenta. Extra. Si estamos en el vacío, vale en general. Pero... Solo lo probamos...
+1:03:52
+Nicolás Wschebor
+en el caso particular del solenoide. Pero es una expresión general.
+1:04:13
+Nicolás Wschebor
+Y entonces es análoga
+1:04:18
+Nicolás Wschebor
+a lo que habíamos visto para el campo eléctrico, que era V, era un medio de epsilon cero por E al cuadrado. Fíjense, ambas expresiones son proporcionales al campo en cuestión, al cuadrado.
+1:04:34
+Nicolás Wschebor
+Y una hace intervenir epsilon cero y otra hace intervenir mu cero. Y el hecho de que mu cero aparezca en el denominador, fíjense que siempre pasa lo mismo. Epsilon cero, ¿se acuerdan? En la ley de Coulomb aparecía uno sobre cuatro pi epsilon cero abajo. Mientras que en la ley de Diotas, mu cero, por razones históricas, se lo puso arriba. Entonces, por eso siempre, cuando aparece uno en el numerador, el otro aparece en el denominador. Pero no es más profundo que eso.
+1:05:00
+Nicolás Wschebor
+Pero es la misma estructura. Ambas densidades de energía son proporcionales al campo correspondiente al cuadrado.
+

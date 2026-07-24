@@ -1,0 +1,67 @@
+title: Clase 25
+id: fis3-2015-2-25
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:20:55"
+
+stats:
+  transcript_words: 9361
+  summary_words: 472
+  diagrams_pending: 2
+  equations: 16
+
+topics:
+  - Vector de Poynting
+  - Transporte de energía en ondas EM
+  - Densidad de energía electromagnética
+  - Intensidad y valor medio
+  - Ondas esféricas (decaimiento 1/r²)
+  - Espectro electromagnético
+  - Antenas y comunicaciones
+  - Índice de refracción
+  - Velocidad de la luz en un medio
+  - Dispersión cromática
+  - Mediciones históricas de c (Römer, Bradley, Fizeau)
+  - Introducción a óptica: reflexión y refracción
+
+bibliography:
+  - title: Sears & Zemansky
+    chapter: "32-33"
+    verified: false
+
+prerequisites:
+  - Ondas electromagnéticas planas (Clase 24)
+  - Ecuaciones de Maxwell
+  - Velocidad de la luz c = 1/√(μ₀ε₀)
+
+next_topics:
+  - "Óptica: Reflexión y refracción (demostración)"
+  - Ley de Snell
+  - Principio de Huygens
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-06
+
+llm:
+  model: deepseek-v4-flash
+
+editorial_status: draft

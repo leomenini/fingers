@@ -1,0 +1,465 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 3: Campo Eléctrico, Comparación de Fuerzas \\
+        y Límites de Distribuciones}\\[0.3em]
+        \large{Introducción al concepto de campo eléctrico y principios de superposición}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Límites del problema de la barra cargada}
+% ===================================================================
+
+Retomando el problema de la Clase 2: barra de longitud $L$ con densidad
+lineal uniforme $\lambda$, carga puntual $q_0$ sobre el plano bisector a
+distancia $D$. El resultado obtenido fue
+
+\[
+F_x = \frac{q_0 \lambda L}{4\pi\varepsilon_0 \,
+      D\sqrt{D^{2} + (L/2)^{2}}}.
+\]
+
+\subsection{Límite de gran distancia ($D \gg L$)}
+
+Cuando la carga de prueba está muy alejada ($D \gg L$),
+\[
+\sqrt{D^{2} + (L/2)^{2}} \approx D,
+\]
+\[
+F_x \approx \frac{q_0 \lambda L}{4\pi\varepsilon_0 D^{2}}
+       = \frac{q_0 Q}{4\pi\varepsilon_0 D^{2}},
+\]
+donde $Q = \lambda L$ es la carga total de la barra. La barra se
+comporta como una \textbf{carga puntual}. Es esperable: desde muy lejos,
+el tamaño del objeto es imperceptible.
+
+\subsection{Límite de pequeña distancia ($D \ll L$)}
+
+Cuando la carga de prueba está muy cerca ($D \ll L$),
+\[
+\sqrt{D^{2} + (L/2)^{2}} \approx L/2,
+\]
+\[
+F_x \approx \frac{q_0 \lambda}{4\pi\varepsilon_0 D} \cdot \frac{L}{L/2}
+       = \frac{q_0 \lambda}{2\pi\varepsilon_0 D}.
+\]
+
+\begin{itemize}[nosep]
+  \item La fuerza \textbf{decrece como $1/D$} (no como $1/D^{2}$).
+  \item Es consistente con una \textbf{distribución infinita}: al estar
+        muy cerca, la barra parece infinitamente larga.
+  \item No hay contradicción: $D \gg L$ y $D \ll L$ son regímenes
+        mutuamente excluyentes.
+\end{itemize}
+
+\begin{warnbox}[Atención]
+  En el límite $D \ll L$, es mejor expresar la fuerza en términos de
+  $\lambda$ (densidad) que de $Q$ (carga total), porque $L$ se cancela.
+\end{warnbox}
+
+% ===================================================================
+\section{Cascarón esférico cargado}
+% ===================================================================
+
+Se considera un \textbf{cascarón esférico hueco} de radio $R$, con
+densidad superficial de carga uniforme y carga total $Q$. Se coloca una
+carga puntual $q_0$ a distancia $r$ del centro.
+
+Por simetría, la fuerza es radial: si $q_0 Q > 0$ es repulsiva, si
+$q_0 Q < 0$ es atractiva. El resultado (que se probará más adelante
+mediante la ley de Gauss) es:
+
+\subsection{Puntos fuera del cascarón ($r > R$)}
+
+\[
+F = \frac{q_0 Q}{4\pi\varepsilon_0 \, r^{2}}
+\]
+
+El cascarón se comporta \textbf{exactamente como una carga puntual}
+ubicada en el centro.
+
+\subsection{Puntos dentro del cascarón ($r < R$)}
+
+\[
+F = 0
+\]
+
+\begin{keybox}[Resultado sorprendente]
+  Dentro de un cascarón esférico con densidad superficial uniforme, la
+  \textbf{fuerza neta es cero}. Aunque unas partes estén más cerca que
+  otras, la compensación geométrica es exacta.
+\end{keybox}
+
+\begin{notebox}[Demostración pendiente]
+  Estos resultados se probarán formalmente mediante la \textbf{ley de
+  Gauss} en clases posteriores, donde el cálculo será mucho más simple.
+\end{notebox}
+
+% ===================================================================
+\section{Comparación de fuerzas fundamentales}
+% ===================================================================
+
+\subsection{Fuerza eléctrica vs. gravitatoria}
+
+\textbf{Datos del átomo de hidrógeno:}
+\begin{itemize}[nosep]
+  \item Distancia promedio protón-electrón:
+        $a_0 = 5.3 \times 10^{-11}$\,m (radio de Bohr).
+  \item Masa del protón: $m_p = 1.67 \times 10^{-27}$\,kg.
+  \item Masa del electrón: $m_e = 9.11 \times 10^{-31}$\,kg
+        ($\sim 4$ órdenes de magnitud más liviano que el protón).
+\end{itemize}
+
+\textbf{Fuerza eléctrica:}
+\[
+F_e = \frac{1}{4\pi\varepsilon_0} \frac{e^{2}}{a_0^{2}}
+     \approx 8.2 \times 10^{-8}\ \text{N}.
+\]
+
+\textbf{Fuerza gravitatoria:}
+\[
+F_g = G \frac{m_p m_e}{a_0^{2}}
+     \approx 3.6 \times 10^{-47}\ \text{N}.
+\]
+
+\textbf{Comparación:}
+\[
+\frac{F_e}{F_g} \approx 2.3 \times 10^{39}.
+\]
+
+La fuerza eléctrica es $\sim$ \textbf{40 órdenes de magnitud mayor} que
+la gravitatoria a escala atómica. La gravedad es completamente
+despreciable en fenómenos atómicos y subatómicos.
+
+\begin{warnbox}[¿Por qué la gravedad domina en la vida cotidiana?]
+  \begin{itemize}[nosep]
+    \item Los objetos cotidianos son \textbf{neutros} (igual número de
+          cargas $+$ y $-$).
+    \item Las fuerzas eléctricas se cancelan a larga distancia.
+    \item La gravedad siempre es atractiva y se acumula con la masa.
+    \item En el experimento del peine y los papelitos, ambas fuerzas
+          son comparables (papeles grandes no se levantan).
+  \end{itemize}
+\end{warnbox}
+
+\subsection{Repulsión electrostática entre protones en el núcleo}
+
+\textbf{Núcleo de hierro:} radio típico $\sim 4 \times 10^{-15}$\,m.
+
+\textbf{Repulsión entre dos protones:}
+\[
+F_{pp} = \frac{1}{4\pi\varepsilon_0}
+         \frac{e^{2}}{(4 \times 10^{-15})^{2}}
+       \approx 14\ \text{N}.
+\]
+
+¡14\,N es una fuerza macroscópica (como el peso de $\sim 1.4$\,kg)
+concentrada en dos partículas de $10^{-15}$\,m!
+
+\begin{keybox}[Implicación]
+  Si solo existiera la fuerza eléctrica, el núcleo se desintegraría
+  instantáneamente. Debe existir la \textbf{fuerza nuclear fuerte}, de
+  intensidad comparable, que mantiene unidos a protones y neutrones.
+\end{keybox}
+
+\textbf{Inestabilidad de núcleos grandes:} la fuerza nuclear fuerte
+decrece muy rápido con la distancia (alcance corto). En núcleos grandes,
+los protones en los extremos experimentan principalmente repulsión
+electrostática sin suficiente fuerza fuerte, causando radiactividad y
+fisión nuclear.
+
+% ===================================================================
+\section{Introducción al concepto de campo}
+% ===================================================================
+
+\subsection{Definición general}
+
+Un \textbf{campo} es una \textbf{propiedad física que depende de la
+posición} (y eventualmente del tiempo):
+\[
+\phi = \phi(\mathbf{r}, t).
+\]
+
+Matemáticamente, es una función de un espacio (típicamente $\mathbb{R}^{3}$
+o $\mathbb{R}^{4}$ si se incluye el tiempo) en otro espacio (escalares,
+vectores, tensores).
+
+\subsection{Ejemplos de campos en física}
+
+\textbf{Campos escalares} (un número por punto):
+\begin{itemize}[nosep]
+  \item \textbf{Temperatura}: en una sala con estufa, varía con la
+        posición.
+  \item \textbf{Presión}: uniforme en un salón, pero varía en la
+        atmósfera o en fluidos.
+  \item \textbf{Densidad} (de masa o de carga): $\rho(\mathbf{r})$.
+\end{itemize}
+
+\textbf{Campos vectoriales} (un vector por punto):
+\begin{itemize}[nosep]
+  \item \textbf{Velocidad de un fluido}: el agua al esquivar un pilar
+        tiene velocidades diferentes en cada punto.
+  \item \textbf{Campo de fuerzas}: la fuerza gravitatoria del Sol en
+        diferentes puntos del espacio.
+  \item \textbf{Campo eléctrico} $\mathbf{E}(\mathbf{r})$: objeto
+        central de esta clase.
+\end{itemize}
+
+\textbf{Campos tensoriales} (objetos más complejos):
+\begin{itemize}[nosep]
+  \item \textbf{Campo de tensiones} en un material deformado.
+\end{itemize}
+
+\subsection{Motivación: necesidad de descripción local}
+
+\textbf{Problema de la interacción a distancia:}
+\begin{itemize}[nosep]
+  \item En la ley de Coulomb, dos cargas interactúan directamente.
+  \item Funciona bien en \textbf{electrostática} (cargas fijas).
+  \item Pero si las cargas se mueven, ¿cómo sabe una carga dónde está
+        la otra ``ahora''?
+\end{itemize}
+
+\begin{notebox}[Ejemplo de la estufa móvil]
+  Si una estufa se mueve por el salón, la temperatura en un punto no
+  depende de dónde está la estufa \textit{ahora}, sino de dónde estuvo
+  (el calor se difunde con retardo). Sin campo, habría que conocer toda
+  la historia pasada de la estufa. Con campo, basta con la temperatura
+  local aquí y ahora.
+\end{notebox}
+
+\textbf{Conclusión:} el campo permite una \textbf{descripción local}
+(``aquí y ahora''), esencial cuando hay dependencia temporal o cuando
+la información no se propaga instantáneamente.
+
+% ===================================================================
+\section{Campo eléctrico}
+% ===================================================================
+
+\subsection{Definición}
+
+El \textbf{campo eléctrico} $\mathbf{E}(\mathbf{r})$ en un punto del
+espacio se define como la \textbf{fuerza por unidad de carga} que
+experimentaría una carga de prueba colocada en ese punto:
+
+\begin{keybox}[Definición de campo eléctrico]
+  \[
+  \boxed{\mathbf{E}(\mathbf{r}) =
+         \lim_{q_0 \to 0} \frac{\mathbf{F}(\mathbf{r})}{q_0}}
+  \]
+\end{keybox}
+
+\begin{itemize}[nosep]
+  \item Es un \textbf{campo vectorial}.
+  \item No depende de la carga de prueba $q_0$ (se cancela en el
+        cociente).
+  \item Unidades: N/C (newton por coulomb) o V/m (volt por metro).
+\end{itemize}
+
+\subsection{Carga de prueba y límite $q_0 \to 0$}
+
+Si la carga de prueba es demasiado grande, \textbf{perturba} la
+distribución original:
+\begin{itemize}[nosep]
+  \item En un \textbf{conductor}, $q_0$ induce polarización: las cargas
+        del conductor se reacomodan.
+  \item La fuerza resultante incluye efectos de la polarización
+        inducida (proporcionales a $q_0^{2}$, no lineales).
+  \item Al dividir por $q_0$ y tomar $q_0 \to 0$, estos efectos
+        desaparecen.
+\end{itemize}
+
+\begin{warnbox}[Cuantización de la carga]
+  Estrictamente, no se puede tomar $q_0 \to 0$ porque la carga está
+  cuantizada ($q_0 = Ne$). Es una idealización matemática del continuo.
+  Si todas las cargas están fijas (no se pueden mover), el límite es
+  irrelevante.
+\end{warnbox}
+
+\subsection{Campo de una carga puntual}
+
+Para una \textbf{carga puntual $Q$} en el origen:
+
+\[
+\mathbf{E}(\mathbf{r}) =
+\frac{1}{4\pi\varepsilon_0} \frac{Q}{r^{2}} \hat{\mathbf{r}}
+\]
+
+\textbf{Módulo:}
+\[
+|\mathbf{E}| = \frac{|Q|}{4\pi\varepsilon_0 \, r^{2}}
+\]
+
+\textbf{Dirección y sentido:}
+\begin{itemize}[nosep]
+  \item $Q > 0$: el campo \textbf{sale} de la carga (radial hacia
+        afuera).
+  \item $Q < 0$: el campo \textbf{entra} hacia la carga (radial hacia
+        adentro).
+\end{itemize}
+
+\begin{keybox}[Regla general]
+  \[
+  \boxed{\text{Las líneas de campo salen de las cargas positivas
+         y entran en las cargas negativas.}}
+  \]
+\end{keybox}
+
+El sentido del campo es independiente del signo de la carga de prueba
+$q_0$ (gracias a la definición $\mathbf{E} = \mathbf{F}/q_0$).
+
+\subsection{Principio de superposición}
+
+Para un sistema de $N$ cargas puntuales:
+
+\[
+\mathbf{E}(\mathbf{r}) = \sum_{i=1}^{N} \mathbf{E}_i(\mathbf{r})
+= \frac{1}{4\pi\varepsilon_0}
+  \sum_{i=1}^{N} \frac{Q_i}{|\mathbf{r} - \mathbf{r}_i|^{2}}
+  \hat{\mathbf{r}}_i
+\]
+
+El campo eléctrico total es la \textbf{suma vectorial} de los campos
+individuales, consecuencia directa del principio de superposición para
+fuerzas y la linealidad de la definición.
+
+% ===================================================================
+\section{Ejemplo: dipolo eléctrico}
+% ===================================================================
+
+\textbf{Configuración:}
+\begin{itemize}[nosep]
+  \item Carga $+Q$ en $(0, +a)$ y carga $-Q$ en $(0, -a)$ sobre el eje
+        $Y$.
+  \item Punto de observación sobre el \textbf{eje $X$} (plano
+        bisector), a distancia $x$ del origen.
+\end{itemize}
+
+\textbf{Análisis de simetría:}
+\begin{itemize}[nosep]
+  \item Las componentes $Y$ de los campos de las dos cargas se
+        \textbf{cancelan} por simetría.
+  \item Los módulos son iguales:
+        $|E_1| = |E_2| = \dfrac{Q}{4\pi\varepsilon_0 (x^{2} + a^{2})}$.
+  \item El campo resultante apunta en la dirección $-Y$ (hacia abajo,
+        de la carga positiva a la negativa).
+\end{itemize}
+
+\input{assets/clase3-dipolo.tex}
+
+\begin{keybox}[Dirección del campo del dipolo]
+  \[
+  \boxed{\mathbf{E}_{\text{total}} \parallel -\hat{\mathbf{Y}}}
+  \]
+  El campo resultante es vertical (hacia la carga negativa),
+  perpendicular a la línea que une las cargas.
+\end{keybox}
+
+\begin{notebox}[Tarea]
+  El cálculo explícito del módulo se completará en la próxima clase.
+  Se recomienda adelantar el ejercicio usando descomposición vectorial.
+\end{notebox}
+
+\end{document}

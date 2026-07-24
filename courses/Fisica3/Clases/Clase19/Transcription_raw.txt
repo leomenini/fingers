@@ -1,0 +1,461 @@
+# Clase 19
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/19/
+
+Fecha de exportación: 7/24/2026, 12:04:11 AM
+
+
+Clase: 19
+Curso: F3
+
+Segmentos : 250
+Palabras  : 8606
+Caracteres: 48440
+
+0:17
+Bueno, a ver, vamos entonces a arrancar la clase. La vez pasada terminé...
+0:33
+La clase pasada terminé hablando de las corrientes parásitas, que son las corrientes que se producen en un conductor que se mueve en un campo magnético, porque al moverse en un campo magnético, eso genera Una FEM entre los bornes del conductor, entre los distintos puntos del conductor, eso genera corrientes y las corrientes cuando circulan en un conductor generan disipación por efecto Joule y eso genera pérdidas. De hecho, vamos a ver...
+1:08
+El miércoles que viene vamos a mostrar varios experimentos en clase. Uno de ellos es sobre las corrientes parásitas. Vamos a ver que pueden tener efectos realmente muy espectaculares. Vamos a mostrarles algunos en clase el miércoles que viene. No les adelanto si no les arruino la sorpresa.
+1:29
+Pero vamos a seguir con otro ejemplo de ese tipo.
+1:38
+El ejemplo es el siguiente, es una varilla conductora que tiene un extremo fijo y que rota con una velocidad angular constante.
+1:56
+En una región en que tienen un campo magnético uniforme.
+2:07
+Uniforme y... Perpendicular al plano del pizarrón. Entonces rota, la varilla describe un círculo, el extremo de la varilla describe un círculo y vamos a llamarle R al largo de la varilla.
+2:33
+Entonces la pregunta es... ¿Cuál es la FEM que se produce entre los extremos de la varilla?
+2:46
+Se dan cuenta que esto es extremadamente confuso. Porque uno está acostumbrado a pensar la FEM dentro de un circuito. Pero acá yo le estoy preguntando, una varilla se mueve, ¿cuál es la FEM que se produce entre sus extremos? Y uno diría, es medio raro porque uno... Querría conectar eso a un circuito. Entonces, bueno, vamos a hacer el cálculo de dos maneras diferentes. Vamos a ver que de las dos maneras da lo mismo. Una de ellas es esa, es decir, bueno, vamos a conectar la FEM a un circuito. Pero primero hagámoslo de otra manera, que es la siguiente.
+3:20
+Para los que están llegando tarde, el miércoles que viene la clase es en el salón 307. ¿Está? Excepcionalmente. Entonces vamos a hacer el cálculo de dos maneras diferentes.
+3:41
+Una primera es, nosotros vimos la clase pasada cómo era la FEM que se producía en un segmento largo, rectilíneo, que se movía en un campo que tenía una velocidad... ¿Se acuerdan? Tenemos una varilla que se movía a una velocidad de... en un campo magnético perpendicular. Una varilla de largo L. Eso lo vimos en la clase pasada.
+4:07
+Y vimos que la FEM que se producía era igual... No me ocupo de los signos, me ocupo solo del valor absoluto.
+4:16
+Era igual a el largo de la varilla por la velocidad de la varilla por el campo magnético.
+4:24
+Entonces... Varilla...
+4:30
+en campo uniforme. Entonces acá podemos pensar que estamos haciendo que esto es una varilla que se mueve también en campo uniforme. El problema es que esa fórmula no la podemos aplicar directamente. ¿Por qué? A ver, ¿por qué no podemos aplicar aquella fórmula directamente? ¿Por qué? ¿Por qué?
+4:59
+La velocidad va cambiando de sentido, pero no ese es el motivo. Primero, ¿qué velocidad usarían? ¿Por qué omega r? ¿Omega r es la velocidad de qué punto?
+5:15
+Este punto. ¿Pero por qué van a usar esa velocidad? Porque este punto, ¿qué velocidad tiene?
+5:20
+Omega r sobre 2. ¿Se dan cuenta que tienen el problema de que la velocidad de la varilla, acá toda la varilla se mueve a la misma velocidad. Pero acá tienen algunas partes de la varilla que se mueven a velocidades diferentes unas con respecto al referencial en que el campo magnético está constante. Entonces tenemos el problema de que tenemos varillas, podemos pensarlo como una sucesión de pequeñas varillas y cada una se mueve a una velocidad diferente. Entonces, en el ejemplo...
+5:56
+En cuestión...
+6:00
+B depende del punto. Pero entonces podemos pensar que en lugar de tener una única FEM, tenemos una sucesión de FEM en serie y podemos calcular el elemento de FEM producido en un segmentito chiquitito que está a una distancia R del origen. Y que tiene ancho de R. ¿Sí? ¿Cómo será? En este caso sí podemos suponerla, porque como es muy chiquitito, podemos despreciar la variación de la velocidad a lo largo del segmento y podemos aplicar aquella fórmula.
+6:36
+¿Cómo será el elemento de FEM producido por este segmentito de largo de R y que está a una distancia R del origen? Entonces, primero, ¿el largo cuánto es?
+6:56
+No, de R. segundo, bueno el campo magnético es el campo magnético y ve cuánto vale omega por por R es la velocidad de ese segmento está claro que hay una pequeña variación de la velocidad pero como de R es muy chiquitito podemos despreciar cuánto varía la velocidad y eso es lo que produce este es el elemento de FEMM
+7:30
+De un pequeño segmento.
+7:39
+Bien, entonces ahora si queremos la FEM total, lo que habrá que hacer, como están en serie, es sumar. Imagínense, tienen muchas baterías, todas en serie, el efecto acumulado es la suma. Entonces, lo que tenemos que hacer es integrar entre R, que va, el R chico va de 0 a R grande, de esto, de R, B, omega, R. Pero esta es una integral que sabemos hacer. ¿Cuál es la integral de esto? B omega sale para afuera, y la integral de R, ¿cuánto vale?
+8:07
+R al cuadrado sobre 2.
+8:11
+Y esto es la FEM que se produce entre los bornes de la varilla. Pero ahora también podemos tratar de querer aplicar lo que hemos aprendido basado en la ley de Faraday directamente. En realidad esto lo dedujimos usando la ley de Faraday. Se puede hacer de otras maneras, pero... Entonces, para hacerlo... lo que vamos a hacer es conectar esto a un circuito. Vamos a decir, para medir la FEM, voy a poner un cable que va a salir de acá al origen, acá voy a poner un voltímetro para medir la FEM, y acá voy a poner otro cable, otro conductor que da la vuelta y que se conecta acá.
+9:00
+Entonces cierro el circuito de esta manera, ¿no? Cierra la varilla conductora, cierra por acá y este es el circuito que tengo que hacer. ¿Sí? Entonces podemos aplicar Faraday en ese circuito. ¿Sí? ¿De acuerdo? Ahora ya tenemos un circuito al que le podemos aplicar Faraday. Porque antes era medio raro, porque teníamos solo un segmento, un circuito abierto. Pero para medirlo, efectivamente, ¿qué vamos a hacer? Vamos a conectar un voltímetro. ¿Cómo lo conectamos al voltímetro? Bueno, una manera es eso. Poner una varilla chiquitita, conductora, que da la vuelta para que esto haga contacto.
+9:32
+Porque tenemos la FEMA entre estos dos puntos. Y unimos este acá y este acá. ¿De acuerdo? Bueno, entonces apliquemos Faraday. Para hacer Faraday, primero, ¿qué hay que calcular?
+9:46
+El flujo, el flujo dentro del circuito. Entonces calculemos el flujo dentro del circuito. Entonces, ¿cuánto vale el flujo en el circuito?
+9:56
+Va a ser proporcional al campo magnético y al área dentro del circuito. ¿Y cuál es el área donde hay campo magnético acá?
+10:10
+Depende del ángulo. Depende del ángulo. Entonces llamemos a este ángulo que está acá, le llamamos... Teta, que será omega T. Tomamos el origen del tiempo en el instante que la varilla está acá. ¿Sí? Elegimos el origen del tiempo en el instante que la varilla está por acá. Teta es omega T. Entonces, ¿cuánto valdrá el área? ¿Cómo? Tita sobre 2R. A ver, si fuera todo el círculo, ¿cuánto sería el área? Pi...
+10:43
+por R al cuadrado. Pero si no tienen el ángulo entero, sino un ángulo teta, tendrán... ¿Dónde está el negro? Teta sobre 2 por R al cuadrado. Fíjense que es proporcional a teta. Si teta vale 2pi, si dio la vuelta entera, tenemos el área entera y nos queda 2pi sobre 2, nos queda pi y nos queda pi por R. Así que la fórmula es esta. Regla de 3. Es proporcional al área.
+11:13
+Si el área fuera el círculo entero, nos quedaría pi por r al cuadrado. Entonces ahora podemos calcular la derivada del flujo magnético.
+11:25
+Por cierto, todo esto que dice acá es en valor absoluto. No me estoy ocupando de los signos. La derivada del flujo magnético, ¿cuánto será? Vamos arriba. Vamos arriba. ¿B depende del tiempo? ¿R depende del tiempo? ¿Teta? Sí. ¿Y cuánto vale su derivada? Omega. Así que esto nos queda B omega sobre 2 por R al cuadrado. ¿Está?
+11:56
+Que es justo lo que tenemos acá. A menos de un signo, ¿verdad? Porque estamos haciendo todo a menos de un signo. Así que es la misma FEM. Entonces la FEM en valor absoluto vale B omega R al cuadrado sobre 2. Es coherente. Así que aplicando directamente Faraday obtenemos lo mismo que habíamos obtenido sumando las FEMS de segmentitos.
+12:26
+Bueno, y ahora yo siempre le digo, ustedes son estudiantes de ingeniería, van a estar aprendiendo cosas de física, matemáticas, tienen que decir, bueno, ¿cómo se puede transformar esto en un aparato? ¿Cómo puedo hacer una aplicación industrial de esto, o industrial, bueno, tecnológica, de esto que estamos haciendo acá? La ley de inducción, ¿para qué la podemos usar? Su uso principal.
+12:55
+¿Por qué?
+12:58
+Para hacer un generador. Entonces vamos a hacer una sección que es generadores y ya de paso voy a hablar de otra cosa, de los motores y motores.
+13:16
+Entonces tomemos un campo magnético para arriba y una espira
+13:28
+Con un eje acá que gira con una velocidad angular omega.
+13:38
+¿De acuerdo? Vamos a ver cómo generar una corriente alterna a partir de...
+13:58
+el fenómeno de inducción electromagnética. Entonces vamos a hacer girar esto. ¿Cómo lo hacemos girar?
+14:08
+Por ejemplo, conectándolo a una turbina. Una turbina, ponen esto en salto grande, tiene una caída enorme de agua, eso hace girar las astas de una turbina y eso hace girar esta espira. Y en realidad no le van a poner una espira, sino que le van a dar muchas vueltas. Le van a poner una bobina para que se produzca mayor efecto.
+14:35
+Entonces calculemos cuál es el flujo acá. Fíjense. Si yo lo miro de costado, tendrán el campo magnético para arriba, una vista de costado, y acá tendrán la espira, viéndola de costado así, que está girando a una velocidad angular omega. ¿De acuerdo? Voy a ponerlo así.
+15:01
+Bien. Bien.
+15:04
+Entonces, este ángulo acá que está acá, teta, es el ángulo que la normal a la espira... Vamos a tomar este ángulo, perdón. Vamos a tomar el ángulo que la normal a la espira hace con el campo magnético. Este ángulo acá, teta. ¿Sí? Que hace con la vertical. ¿Sí? Entonces... Si teta fuera cero, la espira está así, ¿sí?
+15:40
+Entonces, ¿el flujo magnético cuánto vale? ¿Cuánto vale para un... para... Entonces tomen... Tomen esta distancia, le llaman A, y a esta distancia que está acá le llaman B. ¿Sí? ¿Cuál será el flujo magnético?
+16:05
+¿Cómo? El campo por el área por el coseno de teta.
+16:15
+Y si esto está girando a velocidad angular, tomemos el origen, tomemos teta igual a cero en t igual a cero. Tomamos el origen del tiempo cuando teta vale cero, así que esto será b por a por coseno de omega t.
+16:33
+Bueno, acá hay una convención de signos. Estoy tomando el ángulo medido así. Cosa que cuando teta vale cero, la espira la estoy orientando de esta manera.
+16:46
+A ver, no está para arriba, la estoy orientando así. Por acá... Entra por arriba y sale por abajo. La FEM que estoy considerando. Entonces la FEM será igual a menos la derivada de esto, la derivada del coseno es menos seno, así que nos queda BA por omega por seno de omega T. FEM inducido.
+17:30
+Entonces ven que con este procedimiento yo genero de manera natural una FEM sinusoidal entre los bornes de la espira. Si tuviera N espiras, acá tengo que multiplicar acá por N. Si tengo una bobina con N vueltas, multiplico por N porque cada una me va a generar esa FEM. Entonces, si conectamos eso a una resistencia, conectamos esto a una resistencia,
+18:01
+Perdón, A que está acá es A chica por B, ¿sí? El área.
+18:09
+Si conectamos esto acá a una resistencia, podemos querer calcular la corriente por la resistencia, I. Entonces vemos que la corriente...
+18:31
+y será igual a la FEM dividido R que es igual entonces dijimos a B por A sobre R por omega por seno de omega T entonces si lo representamos
+19:00
+Y de t, tendrán en 0 vale 0, en pi sobre 2 alcanza su valor máximo, que será b a omega sobre r. Y después sigue periódicamente. Esto es omega t. Acá está vale pi. Y sigue.
+19:31
+Es la corriente como función del tiempo. Se nos genera una corriente que se llama corriente alterna.
+19:39
+Corriente alterna. Porque está alternando su signo de un instante a otro. ¿Bien? ¿Sí? Ahora, pregunta. Si yo... Esto yo lo tengo que hacer girar, ¿no es cierto? Va de una pérdida de energía que viene de la pérdida en la resistencia.
+20:12
+Pero supongamos que esa pérdida es muy chiquitita, que no me estoy ocupando de esa pérdida. Pero la pregunta es, aún sin contar las pérdidas que se producen por la resistencia, supongan que esto en lugar de conectarlo a la bobina para hacerlo algo más físico, lo conecto a una manivela, a una palanca con la que voy a hacer girar eso. ¿Sí? Yo. Pregunta, ¿tengo que hacer fuerza para girar esa palanca o no?
+20:40
+Sí. ¿Cuánto es? Es decir, para que esto se mantenga a velocidad constante, voy a tener que hacer un torque, ¿no es cierto? Porque el campo magnético tiene una espira en un campo uniforme por la que pasa una corriente. Vimos que una espira en una corriente, una espira... por la que pasa una corriente en un campo magnético, experimenta un torque. ¿Se acuerdan de eso? Entonces, hay un torque que hace el campo magnético.
+21:13
+Entonces, la velocidad angular naturalmente no va a permanecer constante. Si alguien no le está haciendo un torque en permanencia, eso no va a caminar. ¿Me explico? Entonces va a haber que agregar un torque. ¿No es cierto? ¿No? Para que la velocidad angular sea constante, el torque con respecto a ese eje tiene que ser ¿cómo? El torque total. Cero. Entonces, si el campo magnético me hace un torque, yo tengo que hacer un torque externo, el que mueve la manivela, o el chorro de agua de salto grande, alguien me gira la...
+21:49
+Si yo no hubiera ese torque, ¿qué pasaría con la bobina? Si inicialmente tiene una velocidad angular, ¿qué pasa con el tiempo? Se va frenando por las corrientes parásitas de las que hablamos la clase pasada y al comienzo de esta clase. Hay una pérdida y poco a poco eso se va a ir frenando. ¿Me explico? Entonces, vamos a calcular el torque.
+22:27
+¿Está? Entonces... para mantener el movimiento un agente externo debe aplicar un torque
+22:57
+opuesto al producido por la fuerza magnética. Pero ese torque ya lo calculamos, torque magnético, dijimos que era igual. ¿Se acuerdan a que era igual?
+23:27
+AB por el área de la espira por la corriente.
+23:44
+Por otra cosa más. Si lo escribimos vectorialmente, había que multiplicar, era el producto vectorial de B por el vector área. Así que acá hay que agregar por el seno de teta. Entonces vamos a sustituir todo. Tenemos que esto es igual a B por A, y lo tengo allá arriba, nos queda B cuadrado sobre R, y nos queda seno al cuadrado de teta.
+24:18
+Lo podemos poner así, como mírate.
+24:24
+y el torque externo, para mantener una velocidad angular constante, tiene que ser opuesto.
+24:40
+Entonces lo que está haciendo el generador es convertir la energía mecánica que le aplica el agente externo haciéndole el torque, lo convierte en energía eléctrica que circula, digamos, por la resistencia. En este caso, o si quieren hacer algo más útil que simplemente... Bueno, esto serviría para calentar una casa, no es la manera más eficiente, pero... Pueden poner resistencia, toda la energía se disipa acá y usan esto de calefactor. Pero si no, pueden poner una lamparita eléctrica, un computador o lo que quieran.
+25:11
+Están conectando, generando una manera de producir electricidad que después le dan el uso que quieran.
+25:20
+Eso es el principio del generador. Y fíjense que los generadores normales, fáciles, que consisten en una bobina girando, típicamente nos generan no corrientes continuas, sino corrientes alternas. Por esto que acabamos de ver. Lo fácil es hacer una corriente alterna.
+25:39
+Bien. Ahora, ya lo hablamos. Sí, me olvidé acá del omega. Perdón, gracias.
+25:50
+¿Alguna otra pregunta? Bueno, ya lo hablamos algunas clases para atrás. Este bicho, ya lo vimos, este mismo dispositivo, lo vimos usándolo para otra cosa. ¿Para qué otra cosa?
+26:17
+Este mismo aparato, en lugar de usarlo como generador, lo podemos usar como... ¿Cómo? Como motor. Si en lugar de dejar esto acá abierto, acá le metemos un generador que nos genera una corriente alterna, fíjense que ahora en lugar de pensarlo como un aparato el cual le aplicamos... en el cual la corriente es producto de una corriente inducida, hagamos al revés, conectemos acá un generador, el generador nos va a generar la corriente que querramos, pongamos una corriente alterna de este tipo, la corriente alterna nos va a generar este torque, ahora ya no es producto de la corriente inducida, estamos haciendo las cosas funcionar para el otro lado.
+27:00
+Y eso, si tenemos ese torque, ¿qué le va a pasar? En lugar de poner una manivela acá, ponemos un taladro. ¿Qué le va a pasar a la mecha del taladro?
+27:14
+Va a girar. Esto es un... Es un motor. Si ponen acá una corriente alterna, en lugar de la resistencia ponen una corriente alterna, esto gira y el aparato funciona para un lado o para el otro. Puede servir para transformar energía mecánica en energía eléctrica o si suministra energía eléctrica a este lado puede producir un trabajo mecánico. Entonces si damos vuelta, si le aplicamos, si en lugar...
+27:44
+de aplicar un trabajo mecánico suministramos una corriente alterna el dispositivo
+28:13
+funciona como motor fíjense que para funcionar así tal como lo hemos hecho necesita que la corriente sea alterna porque si no es alterna lo que va a pasar si la corriente es continua ¿Cómo va a ser? Fíjense acá esta fórmula. Si la corriente fuera continua. Si la corriente es constante, no cambia de signo.
+28:45
+¿Cómo es el torque? El torque cambia de signo. Entonces a veces empuja para un lado y a veces empuja para el otro. Entonces no hace una fuerza acumulada. Si queremos que esto... Fíjense que este se mantiene siempre con el signo positivo. El seno al cuadrado es positivo. Siempre el torque va para el mismo lado. Para eso necesitamos que teta esté cambiando al mismo tiempo que i. Cuando i cambia de signo, Teta tiene que cambiar de signo. Eso ya lo hablamos cuando hablamos del motor de corriente continua, ¿se acuerdan? ¿Cuál es el mecanismo que hemos utilizado para evitar el problema?
+29:21
+La ficha cuando gira, cambia la conexión y entonces la corriente también cambia de signo. Cuando se da vuelta la espira, cambia de espira. Entonces, con eso terminamos con los motores.
+29:41
+Bien.
+29:44
+Entonces ahora lo que les voy a hablar es de campos eléctricos inducidos. Hasta ahora estuvimos hablando de FEM o de corriente inducida. Pero, a ver, para mover las cargas eléctricas en un circuito, tiene que haber un campo eléctrico. Lo que suministran... Vimos que los campos magnéticos no trabajan, ¿se acuerdan? ¿Por qué el campo magnético no trabaja, se acuerdan?
+30:10
+¿Por qué? Porque la fuerza es perpendicular a la velocidad en todo instante. Entonces, si queremos suministrar la energía a electrones, lo vamos a tener que hacer vía un campo eléctrico. Entonces, si estos campos están induciendo un movimiento de los electrones y generan una corriente, tienen que estar induciendo en realidad un campo eléctrico. Entonces vamos a ver que a la FEM, a la FEM inducida, se le puede asociar un campo eléctrico inducido.
+30:38
+Entonces es lo que vamos a ver ahora.
+30:52
+Entonces, si un campo magnético...
+31:21
+genera una corriente eléctrica inducida deberá tener asociado un Campo eléctrico inducido.
+32:03
+¿Bien? Entonces, veamos cómo. Entonces, tomémonos...
+32:21
+Un circuito que no tiene por qué cerrar. Puede ser un circuito imaginario. Podría ser simplemente una curva en el espacio que me tomo.
+32:31
+Pero por el momento imaginemos que esto es efectivamente un circuito.
+32:39
+Y tenemos alguna carga Q0 que circula, que da una vuelta alrededor de C.
+32:51
+El campo, la FEM inducida, entonces supongamos que acá hay un campo magnético, variable, tenemos una FEM inducida.
+33:07
+Entonces cuando Q0 da una vuelta alrededor de C, la FEM que haya ahí presente le aporta una energía, le hace un trabajo. Un trabajo que va a ser igual al trabajo a lo largo de la curva cerrada de la fuerza eléctrica por DL.
+33:33
+Y la FEM, dijimos, es el trabajo S dividido por Q0. Va a ser igual a 1 sobre Q0 por la fuerza eléctrica que es Q0 por E por DL. Entonces simplifica y nos queda el trabajo va a ser E. El trabajo por unidad de carga será E de Ls. Y alguien me va a decir, pero profesor, ya vimos que el trabajo de la fuerza eléctrica en una curva cerrada vale... ¿Cuánto vale el trabajo de la fuerza eléctrica en una curva cerrada?
+34:10
+¿Eh? ¿Todo el mundo piensa eso? No. Lo que vimos es que el trabajo... De la fuerza eléctrica, en el caso electrostático vale cero. Pero justamente ahora nos vamos a interesar al caso en el cual no estamos en una situación estática, sino tenemos un campo magnético variable.
+34:33
+Entonces ya no estamos en una situación electrostática. Pero bueno, el trabajo por unidad de carga de la fuerza eléctrica sigue siendo esto, independientemente de que ahora ya no estamos en una situación electrostática. Pero por otro lado sabemos cuánto vale esta FEMM. Esto que está acá es igual a la FEM. Entonces tenemos que el trabajo en una curva cerrada, la integral de línea del campo eléctrico en una curva cerrada, sería igual a la FEM. Pero la FEM vimos que es la derivada del flujo magnético en esa curva.
+35:05
+Menos. Entonces, esto es la ley de Faraday en términos
+35:17
+de campo eléctrico. Así que vemos que cuando las cosas dependen del tiempo, ya no es cierto que el campo eléctrico, que la circulación del campo eléctrico es cero. El campo eléctrico, en el caso de un campo magnético variable, ya no es cierto que su circulación vale cero. Y fíjense que esta ley tiene como caso particular la que vimos en el caso electrostático. ¿Por qué el caso electrostático es un caso particular de este?
+35:50
+En caso electrostático, nada depende del tiempo, en particular el flujo no depende del tiempo. En caso, si fuera electrostático, ni habría campo magnético, pero no importa. Supongamos que fuera estacionario, ni siquiera electrostático. Estacionario, cuando las cosas no dependen del tiempo, el flujo no depende del tiempo, entonces la circulación del campo eléctrico es cero. Pero esto generaliza, porque nos dice, cuando sí depende del tiempo, ¿cuánto da? Ya no vale cero, pero vale algo que conocemos, que es menos la derivada del flujo magnético. Acá, atención, tuve que elegir el flujo magnético, hicimos lo mismo que antes, los signos, ojo, ojo con signos.
+36:31
+Tuve que acordar la convención de signos para el campo magnético y la convención de signos para la circulación. Tal como hicimos antes, ¿se acuerdan? Para escribir la ley de Faraday con signos hay que ser consistentes, hay que aplicar la dirección de la superficie, la orientación de la superficie, hay que hacerla acorde con la orientación de su borde. ¿Sí? De acuerdo con la regla de la mano derecha. Eso ya lo vimos. ¿Sí?
+37:01
+Fíjense que, bueno, alguien me dice, bueno, pero profesor, ya no sé nada. Estoy perdido.
+37:07
+¿Pueden decir? La verdad es que ya no entiendo nada. Porque yo me había acostumbrado a que los campos eléctricos eran irrotacionales. Ustedes expresionaron eso. Tenían circulación nula.
+37:19
+Habíamos acostumbrado a que los campos eléctricos derivaban de un potencial. Es igual a menos gradiente de potencial. Eso ya no es verdad cuando está en el caso no estacionario. Cuando las cosas dependen del tiempo, el campo eléctrico ya no se escribe como menos el gradiente de potencial. Esa expresión se puede generalizar.
+37:39
+Hay una manera, los que vayan a hacer el curso de Electromagnetismo van a ver que hay una manera de generalizar esa expresión. Pero eso así tal cual ya no es cierto.
+37:51
+Bueno, y los campos eléctricos cuando ya no estamos en el caso estacionario. ¿Cómo son? Y bueno, son diferentes. Tienen algunas cosas en común. Sigue valiendo que la fuerza eléctrica es Q0 por el campo eléctrico. Eso es la definición misma del campo eléctrico. Eso sigue valiendo. Sigue valiendo que pueden calcular el trabajo de aquella manera.
+38:13
+Sigue valiendo que el campo eléctrico genera corrientes eléctricas. Eso también sigue valiendo. Sigue pudiendo aplicar la ley de Ohm, yo qué sé. Pero lo que ya no vale más es que la circulación del campo eléctrico valga cero.
+38:44
+¿Se entendió? ¿Se entendió?
+38:48
+Bueno, entonces hagamos un ejemplo. Un ejemplo de esto. Bueno, no, perdón. Antes de ir al ejemplo, quiero comentarles algo. Yo dije acá que nos imaginamos que acá hay un circuito. ¿Sí? Pero eso es... A ver, para hacer un circuito tuve que poner un cable eléctrico. ¿Sí? Pero imagínense que ese cable lo hago muy finito. Muy finito, muy finito, muy finito, muy finito, muy finito, muy finito, muy finito.
+39:22
+No importa cuán gordo o finito sea el cable, esta fórmula sigue valiendo igual. La fórmula ya no refiere a que aquí efectivamente hay un circuito. Si no hay un circuito no importa, la fórmula sigue valiendo igual. Para hacerla pensamos que había un circuito, porque hasta ahora veníamos pensando todo en términos de circuito.
+39:44
+Pero si no hay un circuito, esta fórmula vale igual. Lo único que necesito es imaginarme una curva y una superficie y demás. Entonces veamos un ejemplo. Entonces ejemplo. Tomemos una región con un campo magnético uniforme, perpendicular al pizarrón.
+40:14
+ve uniforme entonces es una zona donde no hay cargas eléctricas pero me voy a preguntar supongamos que el campo magnético para simplificar no es necesario pero supongamos que
+40:45
+Supongamos que el campo magnético está en una distribución circular. No es necesario lo que voy a hacer, pero me van a simplificar la vida. Voy a poner un círculo acá.
+40:55
+Todo es circular, uniforme. Y adentro tengo un campo magnético. ¿Sí? No es necesario eso. No tendría por qué ser una cosa circular, pero si no, el razonamiento es más complicado. Pregunta. ¿Sí? Pregunta. Yo me tomo un...
+41:15
+un círculo, me tomo un punto acá, a una distancia R del centro, ese círculo. Pregunta, ¿cuánto vale el campo eléctrico inducido?
+41:37
+Para que haya campo inducido, ¿cómo tiene que ser el campo magnético?
+41:43
+Variable. No variable en el espacio porque dijimos que es uniforme, pero sí dependiente del tiempo. Si no, no hay campo eléctrico inducido. Entonces estamos en campo B uniforme, pero dependiente. Bien. Entonces va a haber un campo eléctrico inducido. ¿Cómo hacemos para calcular el campo eléctrico inducido?
+42:18
+Sí, sí, porque es lo único que sabemos. Entonces, seguro que sí. Pero vamos a necesitar alguna cosa más. A ver, ¿cómo son las líneas de campo eléctrico acá? ¿Cómo son las líneas de campo eléctrico? ¿Dónde arrancan las líneas de campo eléctrico y dónde terminan las líneas de campo eléctrico? ¿Cómo? ¿No escuché? ¿No escuché?
+42:47
+El campo eléctrico ustedes saben. ¿Dónde surgen las líneas de campo eléctrico? En las cargas positivas. ¿Y terminan dónde? Las cargas positivas. ¿Acá hay cargas? No. Entonces, ¿cómo tiene que ser la línea de campo eléctrico?
+43:02
+Si no hay cargas eléctricas positivas ni negativas, ¿cómo tienen que ser las líneas? Cerradas, cerradas. ¿Cómo nos pasaba con el campo magnético? ¿Se acuerdan? Con el campo magnético nos pasaba que las líneas eran cerradas. Bueno, acá es lo mismo porque no hay cargas eléctricas en la vuelta. Entonces tienen que ser líneas cerradas. Y además el problema, ¿cómo es con respecto? ¿Tiene alguna simetría particular? ¿Eh? ¿Tiene alguna? Sí, posta que tiene. ¿Cuál es la simetría del problema?
+43:35
+Tiene una invalencia por rotaciones. Las líneas de campo eléctrico son círculos que tienen que ser invalentes por rotaciones. Entonces, ¿cómo son las líneas de campo eléctrico?
+43:45
+Círculos centrados acá. Entonces, las líneas de campo eléctrico las voy a dibujar acá en otro color. Vamos a hacerlo así. Campo eléctrico. Bueno, no sabemos la orientación. No sabemos la orientación, que sí podemos saberla, porque podemos... No, no, no podemos saberla porque depende de cómo esté variando el campo uniforme. No sabemos si es creciente o decreciente. Así que será, lo voy a dibujar para allá, pero podría ser para el otro lado, el campo eléctrico, en función de que el campo magnético esté creciendo o decreciendo.
+44:19
+¿No nos han dicho? Bien. Entonces, bárbaro. Y cómo es, como es inmanente por ordenación, cómo es el campo eléctrico inducido sobre este círculo. Esta es una línea, línea... De campo eléctrico.
+44:39
+¿Cómo es el campo eléctrico en esta línea? A lo largo de esta línea, el módulo.
+44:46
+Constante. ¿Por qué? ¿Sí?
+44:54
+Campo eléctrico dijimos que acá es así. La dirección no es constante, va variando. E, E.
+45:03
+Pero el módulo es constante. ¿Por qué? Porque el sistema E es invariante por rotaciones. Entonces, si roto, me tiene que quedar el mismo módulo. Entonces, E módulo es constante en el círculo de radio R.
+45:33
+Bueno, entonces, la circulación del campo eléctrico, ¿cuánto valdrá? La curva C. Tomemos una curva C, acá. ¿Cuánto valdrá? ¿Eh? Vamos arriba.
+45:59
+E por 2PR. Bueno, eventualmente podría ser el opuesto, porque supuse que es así, pero no saben, podría ser para el otro lado.
+46:12
+Sí, por eso, lo que estoy diciendo es, acá tengo que tomar la circulación en la dirección del campo eléctrico, pero no sé cuál es la dirección del campo eléctrico. Y esto será igual a qué? Por la ley aquella, la ley de Faraday.
+46:28
+Claro, menos la derivada del flujo. ¿Y cuánto es el flujo?
+46:37
+¿Cuánto es el flujo acá adentro?
+46:42
+B por el área. Va a ser B por el área que es pi por R al cuadrado. ¿Está bien? Bueno, en realidad acá hay un más menos, porque nuevamente les digo, depende de cómo estén orientadas las cosas.
+47:04
+Así que me voy a ocupar solo del módulo. Entonces nos queda que E en valor absoluto, voy a escribir los módulos, es igual a R por la derivada de B con respecto al tiempo en valor absoluto, del módulo de B y hay un 1 medio ¿está? este es el campo eléctrico inducido fíjense que a medida que nos alejamos del centro el campo crece linealmente con R a medida que estamos más lejos hay un mayor campo eléctrico inducido ¿está?
+48:02
+Un último comentario, comentario.
+48:10
+Los campos eléctricos inducidos no derivan de un potencial.
+48:30
+Importante. Se los dije oralmente, pero valía la pena escribir. ¿Se entendió esto? Fíjense que se parece mucho a, por ejemplo, los cálculos que uno hace usando la ley de Ampere. Es lo mismo, usa la simetría del problema, dice que hay inmanencia por rotación, entonces puede calcular la circulación y luego calculamos el otro miembro con el mismo tipo de ideas.
+49:03
+¿Preguntas?
+49:10
+Bueno, entonces voy a arrancar con otro capítulo que se llama Inductancia. Inductancia.
+49:37
+Capítulo 11, inductancia.
+50:08
+Bueno, entonces lo que vamos a hacer ahora en este capítulo es toda esta propiedad de inducción. Inductancia, como su nombre lo indica, es algo que está asociado con la inducción. Lo que vamos a hacer es ver cómo esta propiedad de inducción se puede hacer para construir dispositivos que permitan almacenar energía. en un campo magnético. Así como habíamos visto que los condensadores permitían almacenar energía en un campo eléctrico, vamos a tener dispositivos que permiten almacenar energía en un campo magnético.
+50:46
+¿Y cuáles son esos dispositivos?
+50:50
+Las bobinas. Ya sabemos que las bobinas... A ver, si yo tengo una bobina por la que pasa una corriente, yo le aplico una corriente a la bobina, esa corriente me va a generar un campo magnético. Y ese campo cognitivo va a tener asociada una energía. Así que seguro que ahí estoy almacenando energía de alguna manera. Todavía no sabemos bien cómo. Y la inductancia va a ser a las bobinas lo mismo que la capacitancia es a los condensadores. Es la propiedad, el número que caracteriza cuánta energía es capaz de almacenar una bobina dada, digamos, para una corriente aplicada.
+51:26
+¿Bien? Entonces... A veces se le llama de manera genérica a las bobinas, los inductores, así como se le llama capacitores o a los condensadores, porque tienen la propiedad de almacenar energía. Entonces lo que vamos a hacer es eso, vamos a ver cómo se almacena energía en una bobina. Inductancia.
+52:01
+¿Está? Definición. Entonces, la inductancia... A veces se le llama en realidad autoinductancia.
+52:17
+Ahora les voy a explicar por qué. Es una propiedad...
+52:29
+de un elemento de un circuito que nos dice que puede almacenar energía
+52:59
+en un campo magnético. Veamos esto de manera precisa. ¿Por qué se le llama autoinductancia? Porque si ustedes tienen dos bobinas, una al lado de la otra, o una dentro de la otra, vimos que una bobina puede inducir
+53:27
+una FEM en otra bobina. De hecho ya vimos algunos ejemplos en clase, la vez pasada. ¿Se acuerdan? Teníamos un solenoide grande y una bobina adentro. ¿Se acuerdan que el solenoide inducía un campo magnético y por lo tanto una FEM en la de adentro? ¿Se acuerdan que vimos eso en la clase pasada? Así que, además de la autoinductancia, que es cuánto una bobina se induce FEM a sí misma, uno podría definir lo que se llaman inductancias mutuas, en las cuales una bobina induce en otra.
+53:57
+De hecho, en el curso de electronetismo se ven esas nociones de cómo una bobina puede inducir en otra. Pero acá no nos vamos a ocupar de eso, nos vamos a ocupar del caso más simple, en el cual... La bobina no está interactuando con otras bobinas, sino que se almacena energía en sí misma, no en otras. ¿Bien? Cosa que a veces es importante. Por ejemplo, para hacer un transformador se necesita colocar una bobina al lado de la otra.
+54:29
+Y ahí importa que estén induciéndose mutuamente cosas.
+54:36
+Pero en este caso no nos vamos a interesar en eso. Entonces, vamos a ver cómo caracterizar la inductancia.
+54:47
+Entonces, veamos con un ejemplo. Entonces, tomemos el caso más simple de un solenoide.
+55:06
+Solenoide ideal. Entonces tenemos un cilindro con un bobinado bien compacto.
+55:17
+Y lo vamos a poner muy largo para no tener que andar arrastrando efectos de borde. Vimos que en ese caso el campo magnético que genera una corriente que circula acá, I, es mu sub cero N por I, donde N es el número de espiras...
+55:36
+por unidad de los hilos. Entonces, veamos cuál es la FEM. Supongamos que ahora I es variable y veamos cómo es la FEM que me induce la bobina, esa bobina, en sí misma. ¿De acuerdo? La bobina va a tener un largo L. Una sección A, acá, tendrá N espiras en total, N que es N chico por L, número de espiras.
+56:18
+Y la pregunta es, ¿cómo es la FEM que esta bobina se induce a sí misma? ¿Cómo hacemos? ¿Cómo hacemos?
+56:33
+¿Cómo hacemos para calcular la FEM? Por ejemplo, ¿cuál es la FEM que se genera en una? Hay N grandes espiras. ¿Cuál es la FEM que se genera en una espira?
+56:47
+Para calcular la FEM que se genera en una espira. Vamos arriba.
+56:55
+¿Cómo? Ley de inducción de Faraday, ¿cómo es? La FEM es igual a...
+57:03
+Menos la derivada del flujo. Entonces calculemos el flujo en una espira. Entonces flujo en una espira. Una espira. ¿Cómo será el flujo en una espira?
+57:19
+Todos saben esto rapidísimo, me van a contestar y van a evitar... Y van a perder un docente rápidamente. B por A. No me ocupo de los signos. ¿Está bien?
+57:32
+Y como B lo tenemos ahí, podemos escribirlo. Es mu sub cero N por I por A. Bien. Entonces podemos calcular la FEM inducida en una espira.
+57:46
+Fíjense que es la FEM que la bobina se va a inducir a sí misma.
+57:54
+Entonces voy a ocuparme por ahora solo del valor absoluto. ¿Cuánto valdrá?
+58:02
+Esto es la FEM que todas le inducen en una. ¿Me explico? Todas las espiras generan este campo magnético. Es toda la bobina que genera este magnético, pero este es el flujo en una espira. Así que esa es la FEM que se produce en una espira.
+58:22
+¿Cuánto será si yo calculo? Hay que tomar la derivada. Mu sub cero, n chica y a no depende del tiempo. Así que esto nos queda mu sub cero, n chica por a, por el valor absoluto de la derivada con respecto al tiempo. De la corriente. No me estoy ocupando por ahora de los signos.
+58:45
+Entonces si yo ahora quiero la fem inducida total, también en valor absoluto, no me estoy ocupando de los signos, habrá que multiplicar por N, por el número de espiras. Entonces será igual, y voy a escribirlo ya todo en términos de N, entonces será mu sub cero, por N grande, por N chica, por A, por la derivada de I con respecto del tiempo.
+59:16
+O también lo puedo escribir como mu sub cero, por N al cuadrado sobre A, sobre L mayúscula, por la derivada de I con respecto del tiempo.
+59:36
+¿De acuerdo?
+59:39
+Entonces vemos que la FEMA inducida es proporcional a la derivada de la corriente que pasa dentro de la bobina.
+59:54
+Y al factor de proporcionalidad se le llama autoinductancia. L será igual al valor absoluto de la FEMA inducida, dividido la derivada de la corriente con respecto del tiempo. Y esto se le llama la inductancia.
+1:00:15
+O autoinductancia.
+1:00:23
+En este caso, para el caso de un solenoide ideal...
+1:00:40
+Para un solenoide ideal, la autoinductancia será N al cuadrado por A, un sub cero, por N al cuadrado por A sobre L.
+1:01:27
+Ahora en un momento me voy a ocupar de los signos. Pero veamos ahora un poco cómo sería el caso general. Lo hice todo para, primero, el ejemplo específico de un solenoide. Pero veamos cómo sería en general. ¿Sí? En general. ¿Sí?
+1:01:52
+En general, si queremos calcular, vamos a tener que el campo magnético...
+1:01:58
+El campo magnético va a generar un flujo magnético en la bobina que va a ser igual, que va a ser proporcional a la corriente que circula en él. Entonces, si el circuito es rígido, si la bobina es rígida,
+1:02:29
+El factor de proporcionalidad no depende del tiempo.
+1:02:45
+Fíjense, ¿cómo va a ser esto? El campo magnético va a ser proporcional a la corriente, ¿verdad? Porque si yo multiplico la corriente por 2, la ley de Biot-Isabard me da un campo magnético doble, ¿verdad? Si yo multiplico el campo magnético por 2, el flujo magnético, que es una integral del campo magnético, también se multiplica por 2. Así que vemos que el flujo magnético es proporcional a la corriente. Si yo ahora calculo la FEMA inducida, que será la derivada de esto, me ocupo solo de los signos, del flujo magnético.
+1:03:17
+Perdón, al prefactor le vamos a poner un nombre, le vamos a llamar L. Entonces, phi B será igual a una cosa que llamaremos L por I.
+1:03:29
+Entonces la derivada acá, esta, será igual a L por la derivada de I con respecto de T. Entonces vemos que L no depende del... cuando derivamos, L no hay que derivarlo porque L está rígido. Estamos pensando en una bobina rígida. Obviamente podrían pensar bobinas que se deforman con el tiempo, ¿no? En cuyo caso es más complicado porque cuando toman la derivada, la derivada no solo se aplica en I, sino también en L. Estamos pensando en una bobina... que no se deforma.
+1:04:03
+Entonces vemos que acá, entonces vemos que L, que es el cociente de la fema inducida sobre la derivada de la velocidad en valores absolutos, es una constante que depende de la bobina, depende de la bobina.
+1:04:28
+Entonces para cada bobina tendrán un L diferente. Hoy hace un rato calculamos cuánto vale para un solenoide ideal y si me da el tiempo calcularé algún otro ejemplo en la clase o en la clase que viene. Pero fíjense que esto les dice cómo calcular. En la práctica.
+1:04:50
+Tienen una bobina dada. Supongamos que saben calcular el campo magnético producido por esa bobina, a priori eso puede ser difícil, puede necesitar el uso de un computador, pero supongamos que ustedes, aplicando la ley de Biotis Abarto, la ley de Ampere, calculan el campo magnético producido por una bobina. Luego pueden calcular el flujo que genera sobre cada una de las espiras de esa bobina, simplemente integrando. Esa integral puede ser difícil, puede necesitar usar una computadora, no importa, pero en principio se puede hacer. Una vez que calculan ese flujo, Derivan con respecto al tiempo y eso les da la febre inducida.
+1:05:24
+Y va a ser proporcional a la derivada de la corriente con respecto al tiempo. Dividen por eso y eso les da L. En la práctica en realidad es más cómodo usar directamente esta relación. No derivar, sino simplemente decir...
+1:05:42
+No derivar, sino simplemente calcular el flujo y derivar por i. Y derivar, no, dividir por i. Eso ya les queda ahí. Más cómodo. Porque si no, simplemente agregar una derivada de cada lado. ¿Cómo estamos de hora?
+1:06:03
+Tengo todavía unos minutos. Voy a tratar de ver un poco las cuestiones de signos. Antes, unidades. Unidades.
+1:06:24
+importante, L es algo positivo fíjense que por definición misma es algo positivo por ahora no nos ocupamos de los signos L es una cantidad positiva unidades, entonces las unidades de L son las unidades de campo magnético por las unidades de área que es como longitud al cuadrado dividido unidades de tiempo
+1:06:53
+¿Estoy diciendo bien? No, estoy diciendo mal. Eso me da la derivada... Esto me da la... Vamos a hacer así. L es como un volt. Fíjense acá.
+1:07:09
+L es como un volt. Unidades de E, digamos. Dividido... Ampere... Por... tiempo esto es volt por ampere dividido segundo o pueden poner segundo arriba y eso tiene un nombre el sistema internacional que se llama el henry h unidades de autoinductancia o de inductancia son los henry
+1:07:51
+Y después otra cosa que quiero mencionarles es que cuando colocamos una bobina en un circuito, el símbolo usado es como un resortecito. O como una bobina, ¿no?
+1:08:23
+Al principio se parece a una bobina. ¿Bien? Así que cuando coloquemos una bobina en un circuito, vamos a poner acá y le vamos a asociar una autoinductancia L. Bueno, entonces ahora voy a hablar de los signos.
+1:09:00
+Entonces tomemos una bobina, tomemos un punto A, un borne A, un borne B y pongamos una corriente que va de A a B.
+1:09:19
+Entonces por lo que acabamos de ver, valor absoluto de BB menos BA... es igual a L por la derivada de la corriente con respecto al tiempo.
+1:09:34
+La diferencia de potencial entre los bornes de la bobina será igual a la autoinductancia por la derivada de la corriente. Lo que tenemos que ahora fijar son los signos. Entonces vamos a poner dos casos. Entonces primero...
+1:09:58
+vamos acá A la bobina B y yendo de A a B y vamos a suponer que I de T es creciente entonces vamos a aplicar la ley de Lenz para tratar de ver cómo tienen que ser los signos entonces si
+1:10:28
+Y es creciente, ¿sí? Por la ley de Lenz, se me va a generar una FEM hacia allá.
+1:10:39
+Una FEM inducida. Para intentar compensar el crecimiento de Y. ¿Sí? Quiere decir que el potencial en A es mayor que el potencial en B. Entonces si calculamos B, B... Menos BA, la diferencia potencial entre el punto final y el punto inicial. Esto va a ser negativo. Me queda menos L DI sobre DT. Y esto es consistente porque estamos con I creciente, así que DI sobre DT es positivo.
+1:11:12
+Así que este signo está bien. Es el primer caso. Así que ese es el signo que yo había puesto en la clase pasada, pero después no sé por qué me pareció que estaba mal, que había una cosa que no cerraba, pero cerraba. En lo segundo, vamos a ver el segundo caso, es el caso idéntico, con la corriente para allá, pero ahora I es decreciente.
+1:11:37
+Entonces si I es decreciente, la feba inducida va a ser para el otro lado porque va a intentar compensar la variación de I, va a intentar generar una I para allá. Y entonces en ese caso Bb es mayor que Ba. Entonces BB nuevamente, BB menos BA es menos LDI sobre DT. Porque en este caso DI sobre DT es negativo. Entonces todo esto es positivo y BB menos BA es positivo como estaba poniendo la fila.
+1:12:10
+Así que esto es lo que, el signo es el que yo les había puesto en la clase, pero después no sé por qué, mientras les explicaba me parecía que había un error, pero no había un error. Estaba bien. Habíamos puesto que BB era más grande que BA, ¿no? Claro, pero simplemente ahí estaba la ecuación, pero todo el resto de los elementos estaba bien, la fórmula estaba bien, pero después cuando yo traté de explicar... Creo que había puesto bb menos b. Acá es esto lo que había escrito mal, pero la fórmula esta estaba bien.
+1:12:42
+Entonces por eso no me cerraba, porque en realidad estaba bien. Así que así quedan los signos. Y fíjense, lo que tienen que retener es que el signo es el mismo independientemente de si I está creciendo o si I está decreciendo.
+1:13:00
+Lo otro que conviene que retengan, es la manera en que yo me acuerdo, es que es como en las resistencias. En las resistencias, si pasan, si toman la diferencia potencial, les queda menos, menos, aparece un menos, R por I. Acá es lo mismo, aparece el menos, pero en lugar de R tienen L y en lugar de I la derivada de I con respecto a I. Entonces allí no se pueden equivocar. Sigamos ahora unos minutos más de clase que nos quedan para ver cómo hacemos en general.
+1:13:35
+Entonces es el 11.2 creo, ¿no?
+1:13:47
+Entonces los pasos son siempre los mismos.
+1:13:51
+Toman una bobina, calculan el campo magnético, deducen el flujo magnético
+1:14:19
+en cada espira el flujo total es la suma de todos los flujos magnéticos si todos los flujos magnéticos son iguales el flujo total es N por el flujo de una espira
+1:14:53
+Y bueno, finalmente lo que hacen es dividir por I. Acá hay que suponer que circula I. Suponen una corriente I. Entonces L es el flujo magnético total.
+1:15:23
+Entonces...
+1:15:35
+Recién calculamos para un solenoide.
+1:15:38
+Y si me da el tiempo calculo para el toroide y si no lo dejamos para la clase B.
+1:15:45
+No, creo que tengo tiempo todavía para calcular para el toroide. Veamos un ejemplo. Ok.
+1:16:09
+Entonces, ejemplo, vamos a considerar... Un toroide, ¿sí? Con una sección rectangular.
+1:16:28
+Sección...
+1:16:34
+Entonces supongan que la altura es H y que el radio este es R. No, tomemos a este radio desde el centro, le llamamos B, y desde el centro hasta la parte de adentro, A.
+1:16:50
+Entonces, la clase pasada o la otra, no recuerdo, calculamos el campo magnético y vimos que era N veces, N es el número de espiras, por mu sub cero por I, dividido 2 pi R.
+1:17:04
+Para todo R entre A y B. ¿Se acuerdan de eso? Ampere. ¿Se acuerdan que lo calculamos por ampere? Tomamos una espira, una curva circular por adentro con radio R. Y dijimos que pasaban, la corriente que pasaba era N veces por I. ¿Se acuerdan de eso? ¿Se acuerdan de eso?
+1:17:34
+Bueno, entonces si queremos calcular el flujo en una espira, fíjense, una espira es un rectángulo, ¿no? De altura h, y el campo no depende de la altura, depende solo del radio.
+1:17:52
+Esto va a ser igual.
+1:17:54
+Si tienen, digamos, acá tienen el centro, acá tienen a, y acá tienen b, va a ser igual. a h n mu sub cero por i sobre 2 pi por la integral entre a y b de dr sobre r. Porque si toman un segmentito de ancho dr a una distancia r del origen, el campo es este. Integran y se les queda h n mu cero i sobre 2 pi logaritmo de b sobre a.
+1:18:42
+Entonces, el flujo total, ahora hay que multiplicar por N de nuevo, les queda H, N al cuadrado, mu sub cero, sobre 2 pi, por I, por logaritmo de B sobre A.
+1:19:02
+Entonces, para pasar la autoinductancia, hay que agarrar el flujo total y dividir por la corriente.
+1:19:16
+Y esta entonces es la autoinductancia a un toroide.
+

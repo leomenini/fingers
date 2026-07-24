@@ -1,0 +1,469 @@
+# Clase 5
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/5/
+
+Fecha de exportación: 7/23/2026, 11:23:42 AM
+
+
+Clase: 5
+Curso: F3
+
+Segmentos : 254
+Palabras  : 9099
+Caracteres: 51674
+
+0:16
+Estamos viendo la situación en la que había dos placas con un campo eléctrico uniforme entre ellas, ¿no? E. Una partícula cargada que entraba con velocidad B, horizontal. Y la pregunta era... La partícula tiene una carga M... Perdón, una masa M y una carga Q. Y la pregunta es cómo es el movimiento. Y la vez pasada ya habíamos comentado que el movimiento iba a ser parabólico.
+0:49
+Porque si el campo eléctrico es constante, uniforme y constante, ¿verdad? Entonces la fuerza va a ser constante. Y una fuerza vectorialmente constante da lugar a un movimiento parabólico.
+1:05
+Entonces tomemos ejes así. Eje X para allá y eje Y para arriba.
+1:15
+Entonces, en la horizontal el movimiento va a ser rectilíneo uniforme porque, a ver, la fuerza, fuerza eléctrica es igual a Q por E. ¿Sí? Entonces es paralela a OY.
+1:33
+Y entonces, según...
+1:38
+...X... ...el movimiento... ...es... ...uniforme... ...no cambia... ...no está acelerado... ...entonces si tomamos el origen... ...en la posición... ...en T igual a 0... ...X será igual... ...a B... ...por T... ...B siendo la velocidad con la que se ingresa... ...y según... ...según... ...Y... Tenemos que Y a dos puntos es igual a menos, digo, masa por aceleración, ¿no?
+2:16
+Es igual a menos la fuerza, que será Q por E.
+2:29
+Bien. Acá, bueno, si fuera un electrón, si fuera un electrón, Q es negativo y la aceleración queda para arriba. Bien. Si la partícula es cargada positivamente, entonces la aceleración será para abajo. Entonces, bueno, Y a dos puntos es igual a menos Q sobre M por E.
+2:54
+Y entonces el movimiento será... Menos un medio de Q sobre M por E por T al cuadrado. Porque inicialmente no hay velocidad vertical, ¿verdad? La partícula entra con una velocidad horizontal. Y estoy tomando el origen en la posición inicial. En la posición inicial cuando entra la zona con campo eléctrico. Esto no es nada sorprendente, es igual a lo que ustedes han visto de los movimientos de proyectiles, lo único que acá la fuerza que interviene no es la fuerza gravitatoria, sino la fuerza eléctrica, que en este caso también es constante.
+3:50
+¿Se entendió esto? Bien fácil.
+3:53
+Bueno, yo les comentaba la vez pasada que este instrumento tiene varias aplicaciones tecnológicas. Una de ellas es lo que se llama el tubo de rayos catódicos. El tubo de rayos catódicos es, les decía, un pedazo de metal caliente, emite electrones y si ustedes... Esos electrones los hacen pasar por dos placas eléctricas, dos placas que generan un campo eléctrico entre ellas. Eso, variando la carga acumulada de un lado y del otro de las placas, pueden aumentar o achicar el campo eléctrico y de esa manera hacer que los electrones se desvíen más o menos.
+4:31
+Y así funcionaban los viejos televisores de rayos catódicos. Ahora no, ahora casi todos los... Los monitores y los televisores funcionan con otro principio, capaz que llevo a discutirlo en algún momento en este curso, pero es un poco distinto. Pero bueno, también algunas impresoras funcionan así, tienen gotitas de tinta que las cargan y esto las orienta para donde tienen que ir.
+5:02
+La idea de tener un mecanismo por el cual uno puede elegir cuánto desvía una partícula es cómodo, porque uno eléctricamente puede guiarlas. Entonces este es un primer ejemplo que yo les decía de movimiento en un campo eléctrico. Un segundo ejemplo, yo les decía, es tomar un dipolo en un campo eléctrico.
+5:43
+Tomen ahora un campo eléctrico uniforme, horizontal.
+5:55
+Y colocan una barrita rígida.
+6:01
+Objeto rígido.
+6:07
+Que tiene un... un largo D, una barrita D, y colocan una carga positiva aquí, más Q, y otra carga igual en módulo pero sin opuesto, igual en valor absoluto pero sin opuesto del otro lado. Entonces esto forma un dipolo. Un dipolo, como decíamos, es dos cargas eléctricas opuestas, iguales en valor absoluto pero opuestas, cercanas unas de otras opuestas. Y entonces ahora nos podemos plantear cómo será el movimiento de ese dipolo en el campo eléctrico.
+6:45
+Primero, ¿cuál será la fuerza neta que experimenta el dipolo? Cero. ¿Por qué? ¿Por qué?
+7:06
+Claro, va a experimentar dos fuerzas.
+7:11
+El dipolo, una fuerza acá. Llamémosle F1.
+7:16
+Supongo que la carga... Bueno, en realidad... Para que el dibujo me quede lindo... ¿Cómo hice? Está bien, vamos a hacerlo así. Y acá pongo... Otra fuerza F2. Como el campo eléctrico es uniforme, el módulo, y las dos cargas tienen igual valor absoluto, el módulo de las dos fuerzas es igual. Está claro que acá puedo despreciar totalmente la gravedad, no me tengo que ocupar de la gravedad.
+7:50
+Entonces las únicas dos fuerzas que siente el dipolo son estas dos fuerzas que son opuestas. F1 más F2 igual a cero.
+8:03
+Claro, entonces no genera una fuerza neta, esto no va a generar un desplazamiento del centro de masa del dipolo, pero sí va a generar un torque, porque tomemos acá el origen, llamémosle O al origen, que es el centro, podemos calcular el torque de cada una de estas fuerzas. Lo calculo de manera escalar, por ahora, no me ocupo de los aspectos vectoriales.
+8:32
+¿Sí? ¿Sí? No, nada, que va a ser así, ¿no?
+8:35
+Si no hay, claro, efectivamente, ahora voy a eso. Por ahora simplemente calculo las fuerzas.
+8:44
+Entonces llamémosle a este ángulo que está acá, a este ángulo le llamo teta. Entonces el torque que va a experimentar, el torque asociado con la fuerza 1 será el brazo de palanca, que es d sobre 2 por el seno de teta, ¿Se acuerdan? Torque, fuerza por brazo de palanca. Entonces será F1 por el brazo de palanca, que es B sobre 2 por seno de teta.
+9:19
+Y el otro torque, tau2, se suma a este que estamos haciendo.
+9:31
+No me estoy ocupando del sentido ni nada, solo el módulo, ¿verdad? En realidad sí, voy a ocuparme de los signos para señalar que son iguales. Este torque, si la fuerza va así, va a generar un movimiento de teta en el sentido de los tetas crecientes o en el sentido de los tetas decrecientes. Decreciente, así que le pongo un menos para explicitar eso. Y lo mismo, fíjense que este torque acá genera también un movimiento para el mismo lado. Así que ambos se suman, es decir, ambos vienen con el mismo signo.
+10:03
+Entonces el torque total es igual a menos F1 por D por seno de teta. Donde el menos quiere decir que genera un movimiento, digamos una aceleración angular en sentido opuesto de teta.
+10:26
+Bueno, y si escribimos esto en términos del campo eléctrico, esto nos queda menos Q por E por D por seno de teta. Y ahora lo podemos escribir en términos de... Les recuerdo que Q por D es lo que llamábamos el momento dipolar eléctrico.
+10:51
+Entonces en términos de P igual a Q por D...
+10:55
+momento dipolar eléctrico, que ya lo habíamos definido en la clase pasada, les queda tau total es menos P por E por seno de teta.
+11:21
+Así que ese es el torque. El torque generado por un dipolo eléctrico depende solo del campo eléctrico aplicado y del momento dipolar. Está claro que si el campo no es uniforme, pero que el dipolo es chiquitito, es muy chiquitito, mucho más chiquito que las escalas características de distancias en las cuales cambia E, podremos considerar E uniforme y la fórmula sigue siendo válida. ¿Verdad? Sí. Sí.
+11:55
+Es esto. Y ahora lo que podemos hacer, tratar de ver, es los aspectos vectoriales. ¿Sí? ¿Cuál será la dirección del torque como vector?
+12:17
+Primero la dirección, antes del sentido. ¿Sí?
+12:22
+Claro, el torque va a ser perpendicular. Entonces vectorialmente tau es perpendicular al pizarrón. Quien dice pizarrón en realidad está queriendo decir plano que incluye las dos cargas.
+12:52
+Y E. Entonces fíjense que esta fórmula se parece, si toman un vectorcito que va de menos Q a Q, ¿de acuerdo? Y E, esta en el plano... Esto se parece a una fórmula de producto vectorial, porque el producto vectorial también es el producto de los módulos de dos vectores por el seno del ángulo que forman.
+13:28
+¿Bien? Entonces, definamos... Fíjense, el torque que va a generar esto es un torque para adentro. Entonces vamos a definir un vector, definamos...
+13:52
+un vector d que va de la carga menos q a la carga más q y un vector momento dipolar
+14:21
+P, ahora ya no es un escalar, es Q por D. Es la carga positiva, Q le llamamos a la carga positiva, por un vector que va de la carga negativa a la carga positiva. Entonces está claro que en valor absoluto, el torque total es igual al valor absoluto del producto vectorial de P con E.
+14:49
+porque esto justo me va a dar el módulo de P, módulo de E por el seno del ángulo que forman entre sí. Pero además, además, el torque total como vector es paralelo a P por E, porque es perpendicular al plano que forman P y E, ¿sí?,
+15:13
+¿Se acuerdan? Tienen que tomar el plano de los dos vectores y es perpendicular al plano. Y después si queremos ver el sentido, usamos la regla de la mano derecha, ponemos el vector que va de menos Q a más Q.
+15:32
+Este es el primer vector, luego la dirección del campo A que va para allá y nos queda entrante. Así que justo nos queda, además, el sentido. Entonces... También de acuerdo a la regla de la mano derecha nos queda P producto vectorial con E. Entonces es el torque total que experimenta un dipolo en un campo...
+16:13
+E uniforme.
+16:19
+Y repito, si el campo no es uniforme, pero es casi uniforme, varía poco, lo que necesitamos es que varíe poco en el tamaño del dipolo. Si el dipolo es muy chiquitito con respecto a las distancias en las cuales varía E, la fórmula sigue siendo válida, porque lo único que necesitamos es que pudiéramos considerar las dos fuerzas como iguales, ¿verdad? Y esto lo único que requiere es que esta distancia sea mucho más chica, la distancia es que no tiene por qué ser estrictamente uniforme.
+16:53
+Y entonces pasa lo que algún compañero de ustedes decía, ¿no? Eso lo verán bien en el práctico, pero eso les va a generar un movimiento de rotación porque hace girar el dipolo, ¿verdad? ¿Sí?
+17:09
+Colocar un dipolo en un campo eléctrico lo hace girar, oscilar.
+17:19
+¿Preguntas? Bueno, estos son dos ejemplos de movimiento en un campo eléctrico. Y ahora antes de terminar el capítulo, termino ahora el capítulo con un último pedacito que va a motivar lo que vamos a ver en el capítulo que arranco a ver en un ratito. Vamos a hablar, a ver, Faraday, voy a tener ocasión de hablar con tiempo de Faraday, no voy a hablar hoy de Faraday. Faraday es un personaje muy interesante. No me voy a poner a hablar ahora de Faraday, solo les voy a comentar una idea que estuvo Faraday, que ha tenido mucho impacto, que es la idea de escribir un campo vectorial, en particular un campo de fuerzas, por medio de lo que Faraday llamaba líneas de fuerza o líneas de campo, en el caso que estemos hablando de un campo eléctrico, por ejemplo, líneas de campo eléctrico.
+18:09
+Vamos a introducir esa idea cualitativa que es muy cómoda para representar un campo y luego vamos a tratar de darle uso de manera un poco más cuantitativa a esa idea en el capítulo que arranca justo después. Antes de eso, ¿preguntas?
+18:56
+Entonces la idea de Faraday es definir líneas que en todo punto son tangentes al campo eléctrico. Entonces Faraday propone definir líneas de campo que tienen las propiedades siguientes, ¿no? nacen de campo eléctrico.
+19:31
+Pero lo pueden hacer con otros campos vectoriales, pero vamos a hacerlo ahora para el campo eléctrico. Entonces, ¿las propiedades cuáles son? Nacen de las cargas positivas y mueren en las cargas negativas.
+19:54
+No pueden haber aparición o desaparición de líneas. El único lugar donde pueden aparecer o desaparecer es en las cargas. Pero no pueden evaporarse las líneas. Primera cosa. Segunda cosa que propone Faraday es que si tienen una línea, línea de campo, en cada punto de la línea el campo eléctrico es tangente.
+20:32
+Entonces E tangente a las líneas en todo punto. ¿Está bien? Y una tercera propiedad que nos da idea, esto nos da en cada punto, si tenemos dibujadas las líneas, nos dice cuál es la dirección y si orientamos las líneas también en el sentido, podemos orientar las líneas, les podemos poner una flechita diciendo que el campo eléctrico va para allá, nos da la dirección y el sentido, pero si queremos además que las líneas nos den una idea cualitativa del módulo del campo eléctrico,
+21:26
+Faraday propone que, la tercera propiedad, que es que el módulo del campo eléctrico es proporcional al número de líneas a través de una superficie,
+21:58
+dividido la superficie. Si ustedes toman una superficie así, cuentan el número de líneas que atraviesan, acá estas líneas cruzan la superficie en estos puntos, mientras más líneas tengan, y dividen más líneas por unidad de superficie, mayor será el campo eléctrico.
+22:25
+Y la constante proporcionalidad depende de las unidades que uno toma. Si toma unidades Coulomb será una cosa... Es decir, tiene que decir cuánta carga le asocia a cada línea. Es decir, cuántas líneas van a salir de cada valor. Digamos que de un micro Coulomb salen, no sé, 100 cargas. Entonces cuenta las cargas y va viendo por dónde se desparraman, dónde está más concentrado, habrá más campo eléctrico, dónde está más desparramado.
+22:55
+Habrá menos campo eléctrico. Veamos cómo esta idea... Esto por ahora es una idea sola cualitativa para dibujar. Pero veamos, en el capítulo que viene vamos a tratar de usar esto de manera un poco más cuantitativa. Pero por ahora solo pensemos cómo podemos usar esto para representar un campo eléctrico. Entonces, ejemplos de representación de líneas de fuerza. Entonces tomemos los ejemplos más fáciles. El primer ejemplo sería un campo E...
+23:26
+uniforme tenemos un campo que vale lo mismo en una región tenemos un campo eléctrico que siempre es constante entonces como serán las líneas de fuerza si son tangentes al campo eléctrico en todo punto son todas paralelas y todas tienen la dirección del campo eléctrico las líneas de campo serán así
+23:59
+Y además, ¿estarán equiespaciadas o tendremos en algunas zonas, tendremos algunas líneas más pegadas que otras? En mi dibujo esta parece un poco más alejada, pero en realidad tendrían que estar todas igualmente espaciadas. ¿Por qué? Porque el campo es uniforme. Porque el campo es uniforme. Entonces, si yo tomo una superficie transversal, así digamos, el número de líneas de campo por superficie tiene que ser el mismo. Independientemente de qué superficie yo tome, ¿verdad? Como el campo es uniforme, si yo tomo una superficie doble, tengo que tener el doble de líneas.
+24:30
+Quiere decir que el número de líneas por unidad de superficie es constante, quiere decir que las líneas están equiespaciadas. Todo esto nos permite representar gráficamente, de manera cómoda, el campo eléctrico. En este caso, en un campo uniforme, es como matar una mosca con un cañón. Pero veamos casos un poco más interesantes.
+25:05
+Un segundo ejemplo es carga puntual. Arranco con los ejemplos simples, pero tengo una carga puntual Q, supongamos que es positiva. Salen de ella líneas, ¿verdad? ¿De acuerdo? Como la carga es puntual, ¿cómo serán del punto de vista angular las líneas? Serán radiales y estarán más concentradas en un ángulo que en otro ángulo. No, porque en principio esto es invariante por rotaciones, quiere decir que salen en igual proporción en todos los sentidos.
+25:39
+Lo dibujo en un plano, obviamente esto habría que dibujarlo en el espacio, pero no sé dibujar en el espacio. Sí, capaz que con un sistema óptico complicado, pero no lo tenemos. Así que vamos a dibujar en el plano.
+25:55
+Entonces supongamos que dibujo ocho líneas saliendo de esa carga.
+26:00
+Como la carga es positiva, las líneas son salientes. y tienen que estar equiespaciadas angularmente. Dibujo un corte, pero habría líneas en todo el espacio. Y fíjense que esto también nos dice, la propiedad cualitativa, por ahora solo lo mido a nivel cualitativo, que a medida que nos alejamos de la carga, ¿qué pasa con el campo eléctrico? Decrece, porque si yo tomo una superficie por acá, tendré dos líneas, pero si tomo una superficie del mismo tamaño por acá, ya tengo una.
+26:31
+Es decir, a medida que me voy alejando, las chances de que una línea pase por ahí va disminuyendo. Está claro que esto tiene un error de discretización, porque como tengo poquitas, yo puedo acá decir que es cero, pero el campo eléctrico acá no va a ser cero, simplemente porque como el número de líneas es discreto, para poder medir el campo con precisión tendría que tener muchísimas líneas para no tener un error de conteo de si pongo la superficie un poquito para acá o un poquito para allá. ¿Se entiende? Pero sacando ese problema de que tengo pixelado el campo eléctrico contando líneas, efectivamente esto nos dice que el número de líneas por unidad de superficie...
+27:15
+Y solo mueren cargas, pero en esta no hay cargas negativas. Quiere decir que en este problema se van al infinito las cargas. El número de líneas no va a cambiar, pero la superficie crece. Así que el número de líneas por unidad de superficie decrece. Así que esto también describe bien esa propiedad sin hacer ninguna cuenta de que el campo eléctrico decrece con la distancia. Y de hecho vamos a ver ahora en un ratito que esto además nos da que tiene que decrecer como 1 sobre r cuadrado, como sabemos. Pero por ahora no hago las cuentas. Entonces ahora también cualitativamente veamos campo de un dipolo.
+27:55
+Por ejemplo, tomamos una carga acá positiva, acá tomamos la carga opuesta, negativa.
+28:04
+Entonces, ¿cómo será este campo? ¿Cómo serán estas líneas de campo?
+28:11
+Son todas líneas que salen de la positiva a la negativa. Si yo me pongo muy cerquita de la positiva, ¿cómo serán las líneas?
+28:21
+Todas salientes. Todas salientes y ¿con qué pinta? Claro, si yo estoy muy muy cerquita del campo eléctrico producido por este, es mucho más grande que el producido por este y me puedo olvidar de este. Entonces acá cerquita voy a tener un campo saliente muy parecido al de una cara puntual.
+28:41
+De la misma manera, si yo me pongo acá muy cerquita, voy a tener un campo que se parece al de una cara puntual, pero con líneas entrantes, porque es una carga negativa.
+28:57
+Perdón, entrantes. Estoy haciendo cualquiera con las flechas.
+29:01
+Y luego esas líneas todas salen de uno y tienen que salir de otro. Bueno, las que están sobre el eje obviamente van a ir directo y después van a tener cosas que ustedes ya pueden reconstruir de manera imaginaria, pero que bastante responden a la realidad, cómo es el campo. Les permite dar una idea cualitativa de cómo será el campo. ¿Bien? ¿Bien? Entonces, perdón.
+29:27
+Esto les permite hacer un dibujito del campo eléctrico sin tener que saber exactamente. Incluso si ustedes proceden al revés, les dicen las líneas de campo. Imaginen que tienen otro ejemplo más. Les dicen que en una zona las líneas de campo son así. No les dicen dónde están las cargas.
+29:55
+Bueno, ¿dónde están las cargas positivas acá?
+30:03
+Bueno, tienen que estar por acá, están fuera del dibujo, pero por acá habrá alguna carga positiva. Carga positiva por aquí.
+30:16
+¿Bien? Y les dice que va divergiendo, quiere decir que pueden tener, o sea, alguna carga distribuida lejos negativa para que... Entonces les da una idea, el campo eléctrico es intenso acá y es más débil por aquí, y entonces tiene que estar proveniendo de alguna carga eléctrica o alguna distribución de carga eléctrica por acá. ¿Se entiende? Así que esto es un dibujo que enseguida les dice dónde el campo es grande, cuál es su dirección, cuál es su sentido, les dice enseguida cualitativamente cómo es el campo. Así que es muy cómodo representar el campo eléctrico de esa manera.
+30:46
+Y saben que Faraday hacía esto porque Faraday sabía muy poca matemática. Toda la noción de vectores y todo eso era algo que él no sabía. Era un autodidacta que sabía muy poquita matemática. Entonces le gustaba imaginarse los campos eléctricos y también los campos magnéticos, de los que vamos a hablar más adelante en este curso, mediante estos dibujitos. Y estos dibujitos tienen toda la información si uno lo sabe usar bien. Entonces él pensaba todo en términos de esos dibujitos y entonces así podía adivinar cuándo la fuerza era más grande, cuándo era más chica, etc.
+31:18
+Entonces sin hacer cálculos él podía... De hecho algunas leyes importantes del electromagnetismo las formuló sin fórmulas. Las escribió a su manera, usándolas, pero que eran equivalentes a fórmulas que la gente escribió después. ¿Se entiende? Lo escribía en términos de esos dibujitos.
+31:42
+Claro, la ley de Faraday es de él, digamos.
+31:51
+Bueno, esto por ahora tiene carácter de cuentito, pero se dan cuenta que es una manera cómoda de representar el campo eléctrico. Con poca información uno ya tiene idea cualitativamente de cómo van a ser las líneas y recíprocamente, sabiendo cómo son las líneas, tiene idea de cómo es el campo eléctrico.
+32:08
+Entonces, si no hay preguntas, arranco con el capítulo 3. ¿Sí? ¿Se entiende esto bien? Entonces, el capítulo 3 va a tratar de ser una manera de transformar esto que hicimos cualitativamente en algo cuantitativo.
+32:36
+Entonces, por ahora, el capítulo se llama Ley de Gauss, pero por ahora no voy a hablar de la Ley de Gauss. Eso va a aparecer la clase que viene. Por ahora vamos a retomar la idea de las líneas de campo eléctrico.
+33:15
+Entonces lo que voy a hacer es lo siguiente. Vamos a decir lo siguiente. Seguimos en electrostática.
+33:23
+Introdujimos recién la noción de línea de campo eléctrico. Lo que vamos a tratar de hacer ahora es ver si le podemos dar a esta noción de línea de campo una definición matemática un poco más precisa que nos permita hacer cuentas. Entonces lo primero que vamos a usar es... Bueno, vimos las propiedades de las líneas, no se las recuerdo, las tendría que haber dejado, las borré por error.
+33:48
+Uno, son tangentes al campo eléctrico en todo punto. Dos, solo se crean en las cargas positivas y solo mueren en las cargas negativas. Y tres, el campo eléctrico es igual... Es proporcional al número de líneas por unidad de superficie. Entonces veamos si podemos transformar eso en algo preciso. Entonces empecemos por el caso más simple.
+34:20
+Empecemos por una carga puntual. Entonces tratemos de dar un sentido...
+34:34
+más riguroso a las líneas de campo.
+34:44
+En particular, queremos tratar de definir alguna cantidad que mida el número de líneas, pero que no tenga los problemas de discretización, porque las líneas son discretas. O hay una línea en un lugar o no hay. Pero tenemos esos problemas de que las superficies en que las medimos, a veces por el pixelado, por el número de líneas, pueden contar de más o de menos, porque justo encajamos en un lugar entre dos líneas. Entonces, para evitar ese problema, vamos a tratar de definir cantidades que no tengan esa dificultad.
+35:14
+...las líneas nomás... ...entonces tomemos una carga... ...tomemos una carga puntual... ...puntual... ...q... ...que la voy a tomar positiva para simplificar los dibujos... ...voy a hacer todas las líneas salientes de q... ...pero podría hacer lo mismo con cargas negativas... ...y... ...supongamos... ...y supongamos... ...supongamos...
+35:47
+que le asignamos 8 líneas de campo. En realidad no es cierto, no le voy a asignar 8, le voy a asignar 8 sobre el plano, pero hay que pensar que las líneas salen por todo el espacio, ¿no? Todos mis dibujos son planos, pero en realidad de la carga no van a salir 8, sino más, porque yo solo dibujo un corte, ¿no?
+36:19
+Entonces, repito el dibujito que todavía está ahí en el pizarrón. Entonces, tomamos la carga Q, le asignamos ocho líneas. Repito, las líneas tendrían que estar en el espacio, pero las voy a dibujar todas en el plano simplemente por comodidad de dibujo. Como tomé la carga positiva, son líneas salientes. Y estoy haciendo la hipótesis de que se conserva el número de líneas. ¿Qué quiero decir que se conserva? Que fuera de una carga, hasta que no llego a otra carga, las líneas no mueren.
+36:50
+No se crean ni desaparecen. ¿Está? Esa es una de las propiedades de las líneas. Solo nacen en las cargas positivas y solo mueren en las cargas negativas. O eventualmente se van al infinito. ¿Verdad? Pero no se crean ni se destruyen líneas, salvo en las cargas. ¿Bien? Entonces, consideremos una superficie cerrada, esférica, alrededor de esta carga puntual. Entonces, superficie esférica.
+37:24
+¿Bien? Y tomo esa superficie esférica con radio R. ¿De acuerdo? Si el número de cargas... Perdón, si el número de líneas, cuando no hay carga, en toda esta zona no hay cargas, solo tenemos una carga puntual, se conserva. Si yo tomo una superficie de radio R, o si tomo una superficie de radio 3R, ¿cómo es el número de líneas?
+37:52
+Igual, ¿verdad? Las cargas se conservan fuera de las... Perdón, las líneas se conservan fuera de las cargas. Como el número de líneas...
+38:05
+se conserva fuera de las cargas entonces el número de líneas es igual a 8 independientemente del radio de la esfera
+38:39
+R le llamamos. Pero dijimos que el campo eléctrico, ¿cómo es con relación a la superficie? ¿Cómo están relacionados el campo eléctrico y el número de líneas y la superficie? El campo eléctrico es proporcional al número de líneas dividido el número de superficies. Entonces... El módulo del campo eléctrico va a ser igual al número de líneas, proporcional, digamos, al número de líneas dividido S, la superficie de la esfera.
+39:23
+¿De acuerdo? Si yo tomo desde el campo eléctrico a una distancia R, ¿sí? Pero S, ¿cuánto vale la superficie de una esfera? 4 pi R cuadrado. 4 pi R cuadrado, entonces superficie de una esfera.
+39:48
+No, no, los dibujos son en dos dimensiones, pero este es un fenómeno tridimensional. Todo es tridimensional. El dibujo, lamentablemente, lo hago en un corte. Superficie de la esfera de radio R es 4 pi por R al cuadrado. Entonces concluimos que el campo eléctrico es igual, proporcional, digamos, esto es igual al número de líneas
+40:16
+Sobre 4 pi r al cuadrado. ¿Se entiende?
+40:29
+A medida que me alejo, el número de líneas se mantiene, pero como la superficie crece, el campo decrece. ¿Y cómo decrece? Como r al cuadrado. Que eso es justo la ley de Coulomb. ¿Bien? Entonces vemos...
+40:45
+Vemos que la ley de Coulomb en el caso de una carga estática es equivalente
+41:20
+e proporcional al número de líneas por superficie y a que solo se crean, solo aparecen líneas en la carga, en las cargas.
+41:46
+Aparecen o desaparecen, ¿no?
+41:59
+Entonces, una manera de pensar la ley de Coulomb es así, pensándola en términos de líneas. Cada carga me genera un cierto número de líneas. Y ahora, ¿qué pasa si yo digo, a una unidad de carga dada le voy a asignar un cierto número de líneas? Supongamos, a un micro Coulomb le asigno 8 líneas.
+42:20
+Y si tengo 2 unidades de carga en ese lugar, ¿qué va a pasar con el número de líneas? ¿Cómo va a ser?
+42:30
+Si yo aumento por 2 la carga, ¿cómo van a cambiar el número de líneas? El doble, porque hay principio de superposición. Entonces, el campo eléctrico, si yo multiplico por 2, se multiplica por 2. Si multiplico la carga por 2, el campo eléctrico se multiplica por 2. Quiere decir que el número de líneas por esta fórmula también se tiene que multiplicar por 2. Quiere decir que también podemos ir un poquito más allá y decir... Como... El número de líneas que salen de una carga puntual es proporcional a Q, bueno, que salen o entran, ¿no?
+43:19
+Porque, sí, salen o entran. Si es positiva, salen, si... si es negativa entran, entonces el campo eléctrico no solo será proporcional a eso que está allá arriba, sino que será proporcional a la carga dividido por R al cuadrado. Podemos poner el 4pi si quieren, pero en realidad como ponemos proporcional. Y la constante de proporcionalidad depende de las unidades. Yo siempre puedo elegir las unidades de la carga para que valga lo que yo quiera.
+43:55
+¿Entiende? Si no valiera nuestra fórmula querida de valor absoluto de Q dividido por 4 pi epsilon cero por R al cuadrado, cambio las unidades de Q para hacer aparecer un epsilon cero, multiplico por epsilon cero la unidad de Q y entonces con unidades apropiadas de la carga...
+44:24
+El campo eléctrico será, no proporcional, sino igual al valor absoluto de Q sobre 4 pi epsilon cero por R al cuadrado. Bueno, y esto un poco les hace ver de dónde sale el 4 pi de la ley de Coulomb, que habíamos hecho aparecer un 4 pi, es porque queremos hacer referencia a esta propiedad geométrica.
+44:54
+De hecho hay una ley que se va a escribir cómodamente en términos de esta propiedad geométrica y queremos que esa ley no haga intervenir explícitamente el 4pi. Bueno, ¿qué pasa ahora? Pregunta, ¿qué pasa si yo en lugar de tomar esta superficie, tomo esta otra superficie?
+45:27
+Es C'. ¿Cómo será el número de líneas que atraviesan la superficie de C'?
+45:37
+Igual. Entonces, observación.
+45:44
+Como el número de líneas se conserva
+45:59
+Fuera de las cargas, entonces el número de líneas en S será igual al número de líneas en S'.
+46:23
+Ah, buena pregunta. Bueno, entonces ahí vamos a tener que decir, cuando decimos el número de líneas que cruzan una superficie, vamos a tener que darle sentido. Es decir, si tenemos una cosa que hace así, y vienen así las líneas, viene así, en el cruce acá le damos un positivo porque va para un lado. En este que entra para el otro lado le asignamos un signo menos. y a este le asignamos un signo más de nuevo. Entonces, estos dos cuentan cero. ¿Se entiende?
+46:55
+Para que la fórmula permanezca válida, tenemos que orientar la superficie, y cuando se atraviesa para un lado, le damos un signo más, y cuando se atraviesa para el otro, un signo menos. ¿Se entiende? Dicho de otra manera, vamos a contar como positivas las líneas salientes de C', y como negativas las líneas entrantes de C'. Eso para cualquier superficie. Vamos a ir volviendo a eso un poco más. Entonces ahora vamos a tratar de dar un sentido más matemático a esta noción de líneas de campo.
+47:31
+El conteo del número de líneas de campo, hay una noción matemática que lo vuelve preciso, que es lo que se llama el flujo de un campo vectorial.
+47:44
+Gracias.
+48:12
+Entonces vamos a tratar de definir una cantidad que sea una manera de contar el número de líneas. Entonces vamos a definir una cantidad que cuenta el número de líneas de campo.
+48:45
+Y esto lo podemos hacer con el campo eléctrico o con cualquier campo vectorial.
+48:50
+Para cualquier campo vectorial.
+49:01
+Y en realidad, para hacerlo más simple, para no pensar en un campo medio abstracto como el campo eléctrico, lo vamos a empezar haciendo por un campo más intuitivo, que es el campo de velocidades en un fluido. Eso es más intuitivo, uno se lo imagina más fácil. Piensen, en cada punto tienen la velocidad del fluido en ese punto. Para hacerlo más intuitivo...
+49:35
+Lo haremos para el campo de velocidades de un fluido. Bueno, entonces vamos a ir paso por paso. Primero en el caso más simple de todos, que es el caso... de un campo de velocidades uniforme.
+50:15
+Entonces, caso más simple.
+50:22
+Entonces empecemos por el caso más simple que es un campo de velocidades uniforme, velocidad uniforme,
+50:37
+Piensen en una cubeta por la cual entra agua por un lado y circula de manera laminar, se le llama, de manera suave, sin remolinos ni nada, va avanzando el fluido. Entonces tienen acá también siempre el mismo fluido.
+50:55
+La velocidad. Y ahora tomemos una superficie perpendicular, una superficie rectangular y perpendicular al fluido.
+51:07
+Superficie.
+51:14
+Perpendicular a B y rectangular.
+51:22
+Y plana. Bueno, si es rectangular, con más razón plana.
+51:29
+¿Bien? De hecho, en realidad, que sea rectangular no me interesa tanto como el hecho de que sea plana. Y plana.
+51:39
+Entonces se va a definir en ese caso, en este caso, definimos el flujo de B a través de A como flujo que suele usar la letra griega fi mayúscula, como B por A.
+52:22
+Y fíjense que es una medida del número de línea de campo, porque dijimos que el número de línea de campo dijimos que era A. Perdón, dijimos que el campo era el número de líneas de campo dividida por la superficie. Si paso la superficie dividiendo por el otro lado, veremos que el campo es proporcional a esto sobre la superficie. Así que esto es una medida del número de líneas de campo. Entonces, phi es proporcional al número de líneas de campo.
+53:02
+Acá estoy suponiendo, pero fíjense que phi tiene una ventaja con respecto al número de líneas de campo, que es que no depende de las propiedades discretas. Fíjense, yo puedo al campo asignarle, a un campo de velocidad tal, le puedo asignar 7 líneas. Entonces nuevamente tendremos el problema cuando coloco la superficie que justo puede quedar encajando y a veces contará 6, a veces contará 7. Y entonces podemos tener una cierta incertidumbre en el número de líneas porque según que la pongamos un poquito por arriba, fíjense acá, si yo pongo la superficie acá pasan dos, pero capaz que justo puedo ponerla acá y pasa una.
+53:43
+Entonces para evitar esos problemas de discretización habría que aumentar el número de líneas. Poner muchas, muchas líneas y de esa manera uno no le erra por mucho el número de líneas. Ese problema no lo tiene phi. Phi es una cantidad real que no tiene... Cuando el número de líneas es muy grande, son proporcionales, pero cuando el número de líneas de la discretización es grosera, puede errarle porque a veces la superficie hace encajar una línea y a veces no.
+54:15
+¿Se entiende eso? Así que esta definición, el flujo, es un poquito mejor que el número de líneas porque no sirve para la representación gráfica, pero sí sirve para no tener que... Depender del nivel de discretización que uno hizo. Bien. Entonces el flujo en este caso bien, bien simple. Pasemos ahora a un caso un poquito más difícil.
+54:51
+Segundo caso. Campo uniforme.
+54:58
+A plana, pero con orientación cualquiera.
+55:15
+Una pregunta, ¿es escalar? Esperá, un segundito. Perdón, ¿cuál era la pregunta?
+55:18
+¿Fi? Es escalar. Este es el módulo de B por A. ¿Está? Fi es un escalar. Como el número de líneas. El número de líneas también es un número. ¿Bien?
+55:30
+Entonces ahora vamos a repetir, tenemos un campo de velocidades, también uniforme, por ahora lo mantengo uniforme, pero la superficie, en lugar de ser perpendicular al campo de velocidades, ahora la hago chanfleada. ¿Sí? Sigue siendo plana, pero inclinada.
+55:59
+Está claro que si nosotros queremos que el flujo represente el número de líneas de campo, no puede seguir siendo simplemente B por A.
+56:07
+Porque en particular, si yo pongo la línea, el plano totalmente paralelo al campo de velocidades, ¿cuál será el número de líneas que atraviesan la superficie? Cero. Y si lo pongo así, me tiene que dar eso. Tiene que ser algo que sea proporcional a qué?
+56:28
+un coseno de un ángulo lo que queremos es que sea proporcional a la proyección de la superficie en la perpendicular al campo ¿está? ¿de acuerdo? entonces para hacer esto bien dibujado voy a hacer un dibujo chanfleado ¿está? entonces miro de costado ¿si? ¿Cómo va a ser? Tengo la velocidad acá, estoy mirando de costado y la superficie va a estar inclinada, así.
+57:06
+Ahora la veo como un segmento porque la estoy viendo de costado.
+57:10
+Superficie de canto.
+57:15
+Vista de canto, ¿verdad?
+57:21
+¿Bien? ¿Bien?
+57:23
+Está claro que lo que interviene para el flujo no es la superficie, sino su proyección en la superficie perpendicular a B. ¿Sí? ¿De acuerdo? Entonces, entonces llamemos esta, es la superficie A, y a esto le llamamos a la superficie A', que es la proyección, proyección,
+57:53
+de A perpendicular a B.
+58:09
+Entonces, en ese caso, si queremos que el flujo siga representando el número de líneas de campo, diremos que phi es igual a B por A'. ¿Sí? ¿Sí? Pero capaz que podemos... Este dibujo que hice está medio perverso porque justo parece 45 grados. Entonces vamos a ponerlo una cosa que esté chanfleada un poco diferente para que no confundamos senos y cosenos.
+58:37
+¿Está? Y ahora voy a tomar, voy a llamar... Lo hago más grande acá. Este es A, visto de costado. Y voy a introducir un vector N unitario Normal a A. Versor perpendicular a la superficie.
+59:03
+¿De acuerdo? Y acá tengo B.
+59:11
+Fíjense. Esto es A'.
+59:18
+Que A'. Todas las componentes La superficie A es un rectángulo, ¿verdad? Que están perpendiculares al pizarrón. Cuando las proyecto, no cambian esas distancias. Tengo un rectángulo así. Esta dimensión será igual en este que en este. En cambio, hay una longitud que cambia, que es esta que cambia a esta. Quiere decir que aprima...
+59:50
+Lo podemos escribir como A y si llamamos teta el ángulo este, el ángulo que forma N con B, será A por coseno de teta, porque queremos proyectar según acá. Acá nuevamente hice un dibujo que parece 45 grados y uno confunde senos y cosenos. Voy a editar eso. N y el ángulo teta es este.
+1:00:20
+Fíjense que tiene que ser proporcional al coseno y no al seno porque cuando teta vale cero, cuando n es paralelo a b, tiene que darnos a prima igual a a. Entonces, el flujo lo podemos escribir como a por b por coseno de teta. Que tiene como caso particular esta fórmula cuando el ángulo es cero. Y esto muchas veces se lo escribe de otra manera. Se suele definir, n versor... se suele definir se suele definir el vector área ¿si?
+1:01:09
+¿qué será? módulo de A es simplemente A A tiene la dirección
+1:01:23
+y sentido de N entonces con esa definición podemos escribir que esto es A producto escalar con B ¿bien? es el módulo de A el módulo de B por el coseno de los ángulos que forman que es justo el producto escalar
+1:01:55
+Así que este es el flujo para B uniforme y superficie A plana.
+1:02:21
+Ahí ya voy. Porque ahí todavía hay un problema de signo. Porque tenemos dos versores. Uno para allá y otro para allá. ¿Bien? Pero está claro que el flujo también lo podemos definir con dos signos. Podemos decidir que llamamos número de líneas... lo podemos contar positivamente cuando van para allá o positivamente cuando van para allá. Tenemos que decir qué línea, cuándo vamos a contar positivamente. Les recuerdo que más, dentro de un rato vamos a tener que ocuparnos de cuándo van positivas y negativas.
+1:02:55
+Hay que definir una convención de qué llamamos un flujo positivo. Bien. Y bueno, el flujo positivo está determinado por qué orientación le damos a N, pero es convencional. Entonces el signo, el signo,
+1:03:14
+de phi es convencional y depende del sentido elegido para n. Si tomamos n para un lado, contaremos el flujo como positivo en esa dirección. Si tomamos n para el otro lado, y se dan cuenta que es una cantidad que puede ser negativa, porque si yo hubiera tomado, por ejemplo, n para allá, el flujo me hubiera quedado negativo.
+1:03:49
+El flujo es una cantidad que cuenta el número de líneas, pero con signo. Cuando las líneas... Definimos lo que vamos a llamar la dirección positiva, por ejemplo, para allá. Si las líneas están cruzando en esta dirección, las contamos como positivas. Si están cruzando para la otra dirección, las estamos contando como negativas. Así que el flujo es el número de líneas, pero con signo. Las contamos como positivas cuando cruzan de acuerdo con la orientación elegida y como negativas cuando cruzan en la dirección opuesta. Lo mismo que acá, el flujo... Imaginen que es el agua.
+1:04:22
+Podemos decir, voy a contar como flujo positivo el agua que va en el sentido de para allá. Imagínense que el agua a veces va para un lado o para el otro. Entonces, por ejemplo, puedo querer... Calcular el flujo neto a lo largo de un día. ¿Bien? Entonces tengo que contar cuántas veces fue para un lado y cuántas veces fue para el otro. Y esta definición de flujo cuenta ese signo. ¿Bien? ¿Otras preguntas?
+1:04:57
+¿Se entiende esto? ¿Y se entiende por qué esto es una medida del número de líneas de campo? ¿Sí? Bueno, sigamos un poquito más.
+1:05:09
+Supongamos ahora que queremos definir el flujo para un campo cualquiera, un campo que no tiene que ser uniforme y para una superficie que es cualquiera, no tiene por qué ser una superficie plana. Caso general.
+1:05:37
+Entonces tenemos... Dibujo las líneas de campo acá. ¿Sí? Y dibujo acá una superficie S en la cual queremos calcular el flujo. S. Queremos calcular el flujo a través de la superficie S.
+1:06:15
+¿cómo haremos?
+1:06:18
+si queremos calcular el flujo a través de una superficie cualquiera de un campo que no tiene por qué ser uniforme claro, la idea va a ser esa vamos a dividir la superficie esta en muchos pedacitos
+1:06:40
+Y además tenemos que orientar la superficie. Tenemos que decir qué sentido de la superficie vamos a considerar como un sentido positivo. Por ejemplo, lo tomo para allá. Todos los vectorcitos van a estar orientados para el mismo lado. ¿De acuerdo? Entonces, en el caso general... ...orientamos...
+1:07:10
+S para decir que flujo es positivo y dividimos S en muchas superficies pequeñas.
+1:07:40
+Le llamaré delta S sub i. Entonces si queremos que el flujo mida el número de líneas de campo, el flujo será igual a la suma en i de los delta flujos del número de líneas de campo que atraviesan cada superficie chiquitita. ¿De acuerdo? El flujo total en la superficie S será el flujo en cada una de las superficies chiquititas. Pero si tomo una superficie muy chiquitita, en esa superficie, suficientemente chica, la puedo ver como un pedacito plano.
+1:08:15
+Tomo la superficie tangente a esa, se va a parecer un pequeño rectangulito.
+1:08:24
+Y además, en ese pequeño rectangulito podré considerar el campo como aproximadamente uniforme. Entonces puedo aplicar la fórmula anterior.
+1:08:32
+Entonces, para cada...
+1:08:37
+cada rectangulito, puedo aplicar... De hecho, ahí si no fuera un rectángulo, si fuera cualquier superficie plana, sirve igual, ¿no? Puedo aplicar lo anterior.
+1:08:57
+Entonces será la suma en I de B... y B en el punto I, producto escalar, con... con el N en el punto I, por el delta S sub I. ¿Está? Esto es aproximadamente igual, porque, obviamente, solo es igual en el límite en que todas las superficies son infinitamente chiquitas.
+1:09:30
+También es aproximadamente igual. Entonces, en el límite...
+1:09:42
+En el límite en que todas las delta S sub i tienden a cero, eso tiende a una integral. El flujo es igual a una integral sobre S de B, producto escalar con N, por dS.
+1:10:05
+Entonces, flujo, definición...
+1:10:11
+general del flujo de B a través de S ¿bien? ¿se está entendiendo? ¿se está entendiendo? Así que el caso general habrá que hacer una integral.
+1:10:42
+Una integral que es una integral nueva, porque es una integral sobre una superficie.
+1:10:48
+Algunos ya están cursando cálculo 3. ¿En cálculo 3 ya están viendo esto? Bueno, si no, lo van a ver pronto. Y si los que no están cursando cálculo 3 tampoco se mortifiquen mucho, porque acá... No hay nada nuevo. Simplemente es la misma idea de siempre. Una integral se define dividiendo muchos pedacitos, aplicando la fórmula de pedacitos chiquititos y luego sumando. Y luego pasando al límite. Conceptualmente es solo eso. Después técnicamente uno puede hacer cosas más sofisticadas, pero es eso. ¿Bien? Y esto está claro que es un conteo del número de líneas.
+1:11:21
+Pero comentarios. Uno referido a lo que me preguntaban hace un rato. Cuenta. el número de líneas de campo con signo.
+1:11:47
+Es decir, si yo tengo acá la superficie, tengo la superficie acá, ese. Y supongan que las líneas de campo hacen así, por decir algo.
+1:12:01
+Vienen acá, cruzan acá, tomo los versores N para allá. Entonces cruza para un lado, la línea viene por acá, cruza para acá y vuelve para atrás. Tomo otra línea.
+1:12:20
+¿Sí? Las líneas de campo, estos acá, estos puntos que están aquí, cuentan.
+1:12:29
+positivo, y estos dos que están acá, que cruzan para el lado opuesto de N, cuentan negativo.
+1:12:39
+Así que eso responde a una pregunta que me habían hecho ahí. El flujo cuenta el número de líneas que atravesan la superficie, pero contando el signo se atravesan. De manera... Los cuenta positivas se atravesan en la misma dirección que N y los cuenta de manera negativa se atravesan en la dirección opuesta. Y obviamente hay una convención que es para dónde elegimos el flujo positivo que depende para dónde orientamos. Es el primer comentario.
+1:13:08
+Bueno, el segundo comentario ya lo hice, que es que hay que orientar S. Una cosa que les quiero señalar, o sea, dos, importante orientar S. Bueno, hay algunas superficies que no se pueden orientar, pero es un problema para los matemáticos, no para los físicos. O sea, resuelvan el problema ellos. ¿Escucharon hablar de las superficies que no se pueden orientar?
+1:13:36
+Claro, está el dibujito de ella, el conocido de la hormiga que da la vuelta y vuelve. La banda de Moiris. Bueno, una cosa más que les quiero comentar es que en este curso nos vamos a interesar mucho por flujos a través de superficies cerradas. ¿Sí? ¿Sí?
+1:14:04
+delta S mi ni, ni, n es el vector a ver dijimos que el flujo chiquitito es igual a v producto escalar con delta S y vector pero delta S y vector es ni por el módulo delta
+1:14:32
+N es el versor, sí, sí. El mismo que habíamos definido acá. Versor perpendicular a la superficie. Siempre tendremos un versor y el vector superficie es el versor por el área. No, lo otro que les quería comentar es que nos vamos a interesar mucho...
+1:15:05
+por flujos en superficies cerradas entonces se los suele anotar así el flujo en una superficie cerrada
+1:15:35
+Por superficie cerrada.
+1:15:40
+Se lo suele anotar como así, con un circulito. Esta es la superficie cerrada. La superficie cerrada es S. Debe escalar N por DS. ¿Sí? ¿Sí?
+1:15:56
+Y pueden elegir dos convenciones de signos, o bien van a llamar flujo positivo al flujo saliente o bien al flujo entrante. ¿De acuerdo?
+1:16:08
+Hay dos convenciones posibles. Entonces, convención, en este curso, el flujo en una superficie cerrada...
+1:16:28
+lo tomaremos siempre como el flujo saliente. Es decir, vamos a orientar los versorcitos N para adentro o para afuera.
+1:16:51
+Para afuera. La superficie vamos a tomar, cualquier superficie cerrada para calcular un flujo, vamos a tomar los versorcitos siempre para afuera.
+1:17:04
+Es una convención, podríamos haber tomado el flujo para adentro, pero siempre, para evitar confusiones, siempre que tomemos el flujo a través de una superficie cerrada, primero, se usa la costumbre de poner un circulito ahí, eso significa que la superficie esta es cerrada, y segundo, que lo vamos a tomar siempre saliente, es decir, la convención de signos queda, para una superficie abierta siempre habrá que decir qué signo tomamos y para un lado o para el otro. Pero para la cerrada ya tenemos una convención única que siempre lo vamos a tomar positivo con el flujo saliente.
+1:17:36
+A ver si me da para ver algún ejemplo. ¿Se entendió? ¿Preguntas? A ver, hasta acá, ¿se entendió? Sí. Y lo otro es sumar, es decir, si tengo una situación más complicada, la divido en muchos pedacitos chiquititos, en cada uno de estos pedacitos estoy en esta situación y luego sumo. Esa suma, cuando hago tender los pedacitos de acero, es una integral.
+1:18:07
+No hay nada más profundo que eso.
+1:18:25
+Ese ejemplo. Entonces voy a considerar en el ejemplo B uniforme.
+1:18:35
+Y voy a tomar S, un prisma, que va a ser así.
+1:18:55
+Bueno, perdí dibujo 1, 2 y 3. El campo B es uniforme y paralelo a esta superficie.
+1:19:23
+Entonces, se dan cuenta, es un prisma de base triangular. Entonces, esta base es un... De este lado tenemos un cuadrado. Y los otros tenemos otra superficie. Pregunta. Antes de hacer ninguna cuenta. ¿Cuál es el flujo total que atraviesa esa superficie cerrada?
+1:19:51
+Cero. ¿Por qué? ¿Por qué?
+1:19:55
+Porque el flujo, les repito, tienen que guardar siempre eso en mente porque es muy útil para pensar. Cuenta el número de líneas de campo. Y entran tantas líneas como salen. ¿De acuerdo? Recuerden que las salientes las vamos a considerar positivas y las entrantes las vamos a considerar negativas. ¿De acuerdo? Cada línea atraviesa el prisma dos veces. Pero vamos a hacer una cosa un poquito más. Vamos a calcular el flujo en cada una de las superficies. Entonces le voy a poner nombre a cada una de las superficies y a los vectores correspondientes.
+1:20:29
+Al vector en la superficie esta cuadrada le llamaré A1 y lo tomo saliente. El vector en la superficie esta de la tapa de arriba le llamo A2. El vector en la tapa, esta chanfleada, le pongo A3.
+1:20:51
+Y después, perdón, capaz que no se nota, pero esto me refiero a la tapa cuadrada. Y después a las triangulares le llamaré A4.
+1:21:02
+Y la de atrás, A5. Bien. Bien. Entonces vamos a calcular el flujo con respecto que pasa por cada una de esas superficies. El flujo total es la suma.
+1:21:19
+El flujo total es phi1 más phi2 más phi3 más phi4 más phi5.
+1:21:32
+Y vamos a calcular el flujo con respecto a cada una de esas superficies. Bueno, ¿hay algunos flujos que sean fáciles de calcular sin hacer ninguna cuenta? el de la tapa arriba, ¿cuánto vale? cero, ¿por qué? no atraviesa o dicho de otra manera, viendo la fórmula porque B es perpendicular a A2 entonces el producto escalar es cero entonces phi2 vale cero ¿algún otro que sea fácil de calcular? la de los costados pasa lo mismo es perpendicular esto es igual a phi4 y es igual a phi5 entonces ahora calculemos por ejemplo phi1
+1:22:10
+Fi1, ¿cuánto valdrá? Va a valer menos B por, digamos, A1.
+1:22:20
+Porque A1 va para allá, B va para allá. Y nos queda, por último, Fi3.
+1:22:29
+Entonces ahí voy a hacer un dibujito chanfleado. Chanfleado, se ve esto como un triángulo. Y tengo A1, el versor para allá, y A3 para allá.
+1:22:41
+Y llamémosle a este ángulo acá, teta. Entonces, ¿cuánto valdrá phi3?
+1:22:54
+Claro, va a valer, pero digamos, b por a3 por coseno de teta. Pero a3 por coseno de teta no es otra cosa que a1. Viene con un más, porque es el... Flujo saliente. Esto es igual a B por A1. Y entonces vemos que efectivamente la suma de todo es cero. Pero bueno, de paso ejercitamos esos diferentes casos particulares. Bueno, les hago una sinopsis de la clase que viene.
+1:23:31
+La clase que viene vamos a probar esto. ¿Está bien?
+1:23:35
+Si ven esto no se asusten. Vamos a probar que el flujo del campo eléctrico en una superficie cerrada... A ver un segundito, ya estoy por terminar.
+1:23:50
+No es otra cosa que el flujo del campo eléctrico es igual a Q, la carga total, carga neta.
+1:24:03
+Dentro de ese.
+1:24:07
+Sobre epsilon cero. Eso es lo que vamos a probar la clase que viene. Y esto se llama la ley de Gauss. Así que eso es lo que vamos a ver la clase que viene. Y ustedes de hecho ya van a empezar a usarlo en el práctico. Pero lo importante es eso. El flujo neto en una superficie cerrada es igual a la carga dentro de la superficie dividida por epsilon cero. Seguimos el lunes.
+

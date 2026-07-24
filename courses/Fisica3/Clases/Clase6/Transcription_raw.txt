@@ -1,0 +1,484 @@
+# Clase 6
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/6/
+
+Fecha de exportación: 7/23/2026, 8:34:02 PM
+
+
+Clase: 6
+Curso: F3
+
+Segmentos : 261
+Palabras  : 9242
+Caracteres: 52196
+
+
+0:17
+Decía que la vez pasada estuvimos hablando del flujo de un campo vectorial. Pensamos sobre todo en un campo de velocidades para tener algo mecánico en mente que es más fácil de imaginar. Pero está claro que esta noción se aplica idéntica al campo eléctrico, que es un campo vectorial. Y entonces podemos definir inmediatamente el flujo del campo vectorial en una superficie. Entonces tomemos... Tomemos...
+0:50
+una superficie S orientada ¿qué quiere decir? tomamos una superficie y definimos en cada punto de la superficie un vector normal a ella todos los vectores normales se siguen por continuidad S entonces el flujo del campo
+1:22
+eléctrico a través de S es la integral sobre la superficie S de E, producto escalar con el vector normal por de S. También se lo anota de esta manera, otra anotación que se usa es E escalar de S. Porque habíamos visto que se podía definir un vector área, que era el elemento de área por el vector normal.
+1:57
+Las dos notaciones se utilizan. ¿Bien? Y les recuerdo que si la superficie S es cerrada...
+2:17
+Entonces, tomaremos el flujo saliente.
+2:27
+Esta es una cosa que yo les comenté en la clase anterior. Cuando tienen una superficie cerrada, tienen dos orientaciones posibles del flujo. O viene el flujo hacia afuera, o viene el flujo hacia adentro. El flujo saliente quiere decir que si tomamos la superficie esta cerrada, los vectorcitos N serán siempre salientes de la superficie y no entrantes. Y ahí se anotará el flujo N en esa superficie. Se le agrega un circulito, es una costumbre de notación, y será el flujo saliente.
+3:09
+Esto es simplemente aplicar lo que vimos la clase pasada al campo eléctrico.
+3:16
+Y entonces vamos a ver algunos ejemplos.
+3:24
+ejemplos electrostáticos entonces el primero es el siguiente e uniforme tomamos un campo eléctrico uniforme acá y queremos calcular el flujo en un cilindro con base normal al campo eléctrico Entonces, ¿cuánto valdrá el flujo en esta superficie cerrada?
+4:05
+Cero, dicen por ahí. ¿Por qué? Porque entra en la tapa esta y entra en la tapa esta. Claro, el flujo, les recuerdo, es una medida del número de líneas de campo que atraviesan la superficie. Y además, contadas con signos. Cuando van para el lado correcto se las cuenta con un más y cuando van para el lado correcto se las cuenta con un menos. Entonces, tenemos tres superficies acá. ¿Cuánto valdrá el flujo a través de la superficie lateral del cilindro?
+4:35
+Cero. ¿Por qué? Porque...
+4:38
+Sí, y si lo pensamos en términos de la integral, ¿por qué?
+4:43
+Es perpendicular, ¿verdad? Si toman un pedacito acá de superficie, el vector normal será así y en cualquier pedacito de superficie va a ser perpendicular a E. Entonces, este N es perpendicular a E. Entonces, N escalar E por DS vale 0. Entonces, flujo... Y ahora le podemos llamar a esta superficie, le llamamos 1 y a esta superficie que está por acá atrás le ponemos 2.
+5:20
+Y a esta área le llamamos delta A. ¿Cuánto valdrá el flujo en 1?
+5:34
+El área que le llamamos delta, llamémosle A, el área que está por acá, será el área A por E. ¿Todo el mundo está de acuerdo con esto? Levanten la mano los que están de acuerdo con esto. ¿Y los que están en desacuerdo? Y nuevamente, como viene pasando en este curso, siempre ganan los no sabe, no contesta.
+6:00
+A ver, ¿alguien tiene alguna objeción?
+6:03
+Es negativo, ¿verdad? Porque dijimos que, acabamos de decir que en una superficie cerrada vamos a tomar el flujo saliente. Y acá el flujo es entrante, así que hay que poner un signo menos. O dicho de otra manera, el producto N acá será para allá. Entonces es paralelo ahí, pero de sentido opuesto. Así que cuando hacemos el producto escalar da un menos uno. Y el flujo en dos, ¿cuánto valdrá?
+6:31
+Bueno, ahora sí, A por E, porque ahora sí es flujo saliente, el campo eléctrico acá va a estar saliente. Entonces el flujo total vale cero, como podíamos sospechar. En realidad esto no tiene una información muy interesante, pero sí vale la pena como pequeña ejercitación. Entonces ahora procedamos a ver algunos ejemplos un poquito más interesantes.
+7:05
+Entonces el ejemplo 2 es el siguiente, es una carga puntual y S, la superficie para la que vamos a calcular el flujo, es una esfera centrada en la carga.
+7:27
+Entonces, dicho de esta manera, voy a poner una carga acá. Para simplificar el dibujo voy a tomar la carga positiva, pero podría hacer esto mismo para una carga negativa. Entonces dibujo la superficie S, que va a ser una esfera.
+7:46
+Tomemos la de radio R chico. S es una superficie esférica de radio R. Entonces, ¿cuánto valdrá?
+7:57
+¿Cuánto valdrá el flujo a través de ese?
+8:08
+Entonces dicen, es el área de la esfera por el campo. ¿Por qué? Fíjense, en todo punto de la esfera, el versor será así. ¿Verdad? Para afuera. Y el campo eléctrico, ¿cómo es? ¿Cómo es el campo eléctrico generado por una carga puntual? Es radial y si vamos a una distancia fija, ¿cómo es el módulo?
+8:33
+Es el mismo. Entonces, en todo punto... En todo punto... ...de ese, E es radial, saliente, saliente porque tomamos Q positivo, si no sería entrante, ¿verdad?, Saliente y... Así que como es radial, entonces E es paralelo a N. En todo punto.
+9:06
+Y además... Módulo de E igual constante en la esfera.
+9:19
+Porque sabemos que el campo eléctrico electrostático, ley de Coulomb... solo depende de R entonces el flujo eléctrico en la esfera es igual a E este producto a escalar acá nos da E simplemente por la integral sobre la esfera de los elementos de superficie y esto nos da el área de la esfera esto es igual a Área de la esfera, que ya lo vimos el otro día, es 4 pi por r al cuadrado.
+10:07
+Pero por otro lado vale la ley de Coulomb. Pero el módulo de E es Q, que es positivo, sobre 4 pi r al cuadrado.
+10:21
+Falta un epsilon cero acá.
+10:25
+Entonces, si sustituyo, nos da que el flujo eléctrico en una esfera alrededor de una carga puntual, si sustituimos, nos da Q sobre épsilon cero. ¿Está? Carga puntual. Y S esférica.
+10:52
+¿Está?
+10:54
+Así que fíjense que esta fórmula se parece a una fórmula que yo les adelanté al final de la clase pasada, que es lo que se llama la ley de Gauss. Pero por ahora, acá, esto es simplemente una consecuencia de la ley de Coulomb. Tenemos la ley de Coulomb, estamos en un problema electrostático, calculamos el flujo y no hay ninguna ley nueva, simplemente la ley de Coulomb que nos da una cosa. Entonces veamos otros ejemplos.
+11:24
+¿Preguntas de esto? Punto 3. Entonces ahora vamos a tomar un tercer ejemplo en el cual nuevamente voy a concentrarme en una carga puntual.
+11:43
+Carga puntual.
+11:49
+Y cierta, no cualquiera por ahora, ¿no?
+11:56
+cerrada fuera de la carga.
+12:04
+Vamos a hacer un dibujo, porque describir con palabras la superficie que voy a hacer es más complicado que hacer un dibujo. Tomemos la carga Q nuevamente para simplificar, la considero positiva.
+12:17
+Voy a considerar una primera esfera, una esfera centrada,
+12:31
+y otra esfera más grande.
+12:36
+A la de radio más chico le llamamos con radio A, a la de radio más grande le llamamos con radio B y vamos a tomar una superficie que es, toman un cono que sale, un cono que tiene vértice en la carga y que atraviesa esas esferas. Entonces va a ser una cosa, a ver si la logra dibujar, va a ser una cosa que va a ser de este tipo.
+13:06
+Entonces esto no forma parte de él. La superficie es esta que está acá.
+13:18
+¿Se entiende la superficie? No. ¿No? Tienen un cono... ¿Qué? Es como un pedazo de cascarón. Tienen un cascarón entre las dos y lo intersectan con un cono saliendo de... ¿Se entiende? ¿Se entiende?
+13:37
+Bueno, una pirámide no exactamente porque las tapas son curvas. Arriba, ya les dije que perdí el dibujo 1, 2 y 3. Ven acá, tienen una cosa que sale de la carga y sale para afuera y corta las dos superficies.
+14:02
+Es una cosa así y así. ¿Se entiende?
+14:10
+Bueno, esa es la superficie.
+14:15
+Bueno, ¿y cuánto es el flujo a través de esa superficie?
+14:20
+Flujo eléctrico a través de esa superficie. Sin hacer cuentas, no hay que hacer ninguna cuenta. Enseguida me dicen, todos levantan la mano y dicen, profesor, es evidente, es evidente. Cero, ¿por qué? ¿Por qué?
+14:36
+No, eso está autológico, pero ahí estás usando lo que voy a probar dentro de un rato, así que no sirve. Tienen que usar otro argumento. Porque, ¿qué mide el flujo eléctrico? El número de líneas de campo. ¿Verdad? Las líneas nacen en las cargas y no desaparecen. Quiere decir que todas las que salen de acá cruzan la superficie de abajo y... luego la vuelven a cruzar, todo lo que entra sale, entonces el flujo es cero. Entonces, sin hacer ninguna cuenta, ya sabemos.
+15:08
+Y de hecho, si no tuviera esta forma, con este razonamiento que acabo de decir, ya sabemos también. Pero yo quiero hacerlo con una cosa específica para ver que la cuenta del flujo da lo que tiene que dar. Vamos a ver qué da cero. Entonces, primero que nada, tenemos varias superficies. ¿Qué pasa con las laterales?
+15:28
+Las que no están en las esferas.
+15:32
+Es cero, ¿por qué?
+15:35
+Las superficies son paralelas, quiere decir que el vector normal, la superficie es perpendicular. Y entonces los flujos a través de las superficies laterales dan cero. Eso es evidente. Entonces acá, por ejemplo, tendrían un versor así. Entonces este es N perpendicular a E. Dijimos que el campo es radial. Entonces no hay flujo.
+16:00
+en las superficies laterales.
+16:06
+Solo nos tiene que interesar la de afuera, llamémosle 1, y la de abajo, llamémosle 2.
+16:14
+¿Cuánto vale el flujo en la de afuera?
+16:26
+bueno, es en la superficie de C1, llamémosle C1 a esta que está acá, de E escalar N por DS. ¿Cuánto valdrá? A ver, sí, primero que nada, E es paralelo a N en toda esa superficie, así que E escalar N nos da el módulo de E. Y además, ¿cómo es E el módulo en esa superficie? Constante, porque es un cascarón esférico, está todo a la misma distancia.
+16:59
+Entonces esto es igual a E por la superficie S1.
+17:05
+Y además es positivo, ¿verdad? Porque es el flujo saliente y esta es la superficie para afuera. Bárbaro. Y E lo podemos escribir acá como Q sobre 4 pi B. Al cuadrado, ver al radio de la superficie de afuera por ese 1.
+17:40
+Bueno, ahora calculemos el flujo en 2. ¿Cuánto valdrá el flujo en 2? En el pedazo de superficie que en el cascarón más para adentro. Falta un epsilon 0. Gracias.
+17:57
+Entonces vamos a calcularlo bien, va a ser la integral sobre S2, perdón, es una superficie abierta, escalar N por DS, primero vendrá con un signo menos, menos E, pero es el E en R igual a A, ¿verdad? Por la superficie de S2.
+18:18
+Y esto es igual a menos Q sobre 4 pi epsilon 0 por R al cuadrado por S2. Perdón, y el radio acá es A. Y alguien dijo, bueno, pero tienen que dar igual. ¿Por qué tienen que dar igual? ¿Cómo? Claro, queremos que dé eso, pero ¿por qué estas dos expresiones son iguales?
+18:45
+A priori fíjense que no es obvio por qué son iguales. ¿Por qué son iguales?
+18:50
+¿Cómo es la superficie S1? Esta que está acá abajo la llamamos S2.
+18:56
+¿Cómo son las superficies S1 y S2? Son homotéticas, digamos. Paralelas no sé qué quiere decir, pero tienen la misma forma, ¿verdad? Son un cascarón esférico, ¿verdad? Un pedacito de cascarón de esfera. ¿Y cómo serán? ¿Proporcionales a qué? Al radio, ¿verdad? Fíjense que S2 sobre A al cuadrado es igual a S1 por B al cuadrado.
+19:27
+Las superficies, cada una de las superficies es proporcional al radio al cuadrado de su esfera. Por otro factor. ¿Bien? ¿De acuerdo? Porque las superficies son proporcionales al radio al cuadrado de la esfera.
+19:54
+¿Bien? Entonces vemos... que da lo mismo, porque tenemos S1 sobre B al cuadrado, es igual a S2 sobre B al cuadrado, entonces, phi1 es igual a menos phi2. Y entonces, el flujo total en S, en la superficie total, es 0. Como tenía que ser. ¿Bien? Esta expresión acá, la superficie dividida por el radio cuadrado, tiene un nombre.
+20:29
+Entonces, definición.
+20:37
+Entonces, tomemos una esfera cualquiera. Esto, en principio, no tiene nada que ver con... con el flujo eléctrico, es una cosa general. Tomen... una esfera de radio R y tomen alguna superficie dibujada en la esfera superficie en la esfera imagínense un globo Y en el globo agarra un marcador, no puede ser cualquier marcador, este no sirve, tiene que ser uno indeleble, porque si no se hace gotitas, pero no dibuja.
+21:17
+Entonces hacen el dibujo y les queda delimitada una superficie en el globo. Imagínense que es un globo esférico, en general son un poco ovalados, pero imagínense que es un globo esférico, un buen globo. Entonces tienen la superficie en esa esfera. Entonces se define, se le llama...
+21:40
+Ángulo sólido, es el nombre que se le da, es un nombre rarísimo, ángulo sólido, pero así se le llama.
+21:49
+Entonces acá tienen esta superficie, S a la cantidad S dividido R al cuadrado.
+22:05
+¿Se entiende? Toman la esfera, calculan una, dibujan una superficie sobre la esfera, miden el área, este es el área de la superficie, área de la superficie.
+22:21
+Y eso se le llama ángulo sólido. Fíjense que si tienen otra esfera de otro tamaño en que el nuevo dibujo es simplemente la proyección de esta misma, el área cambia pero el ángulo sólido no cambia, que es lo que tuvimos acá. Que C2 sobre A cuadrado es igual a S1 sobre A cuadrado. Porque las proyecciones de una en otra dan lo mismo. ¿Se entiende?
+22:51
+Otra manera de decir es, agarran el globo, le agregan más aire, la forma del globo supongamos que permanece esférica, el dibujo se agranda, el área del dibujo se agranda, pero el ángulo sólido no cambia. ¿Se entiende? Porque es el área dividido el radio al cuadrado. Eso no cambia. ¿Se entiende? Como todas las áreas aumentan como radio al cuadrado.
+23:16
+¿Se entendió?
+23:19
+Entonces, por ejemplo, ¿cuál será el ángulo sólido de una esfera entera? La esfera entera lo pueden ver como algo dibujado sobre la esfera. El globo lo rayan entero, por todos lados. ¿Cuál será el ángulo sólido de la esfera entera? Porque el área de toda la esfera es 4 pi R al cuadrado. Dividen por R al cuadrado, les queda 4 pi. Así que el ángulo entero, el ángulo sólido entero de toda la esfera es 4 pi. Y si no, es una cierta porción.
+23:53
+¿Se entiende esto? Esto en realidad no lo necesito, pero sépanlo para su cultura general porque es una expresión que se usa mucho. De hecho aparece en los libros y vale la pena que lo sepan.
+24:08
+Bueno, ahí ya vimos entonces tres ejemplos. Veamos otro ejemplo.
+24:15
+Nuevamente, tomemos un cuarto ejemplo que es una carga puntual y cualquier superficie que no contiene la carga.
+24:44
+entonces toman la carga Q y toman cualquier superficie acá cerrada cualquier superficie cerrada tiene la superficie acá S ¿cuánto valdrá el flujo a través de S? cero, sin hacer cuentas, no hay que hacer cuentas Porque conceptualmente sabemos que es el número de líneas de campo. Pero si quisiéramos hacer una cuenta, ¿qué cuenta tendríamos que hacer?
+25:15
+Si queremos hacerlo a partir de la definición, a partir de la integral. ¿Cómo haríamos para darnos cuenta que efectivamente da eso? Ese es el argumento físico-conceptual que está bien. Eso es lo que está atrás. Pero si quieren transformarlo en un argumento preciso a partir de la definición de flujo, ¿cómo hacen?
+25:38
+Sí, pero hacer esa integral en una superficie cualquiera es difícil. ¿Cómo hacen para no tener que hacer la integral sobre una superficie cualquiera?
+26:00
+Se lo metes en un círculo, pero ¿cómo hago para meter eso? Se me complica.
+26:08
+¿Y? ¿Y? Porque querés usar Gauss, pero todavía no probamos Gauss, así que debes hacer trampa.
+26:23
+A ver, ¿cómo lo pueden reducir este caso al anterior que acabamos de ver? ¿Sí? Sí, pero el problema es que allá servía la proporcional, pero acá no, porque como la forma es cualquiera, entonces...
+26:39
+Cuando tienen una... A ver, regla general. Cuando tienen que calcular la integral sobre un objeto complicado, ¿qué conviene hacer? Dividirlo en pedazos más simples, ¿verdad? En la medida que puedan. Acá lo que conviene es inventarse una cantidad de esferas que corten esta en una cantidad de secciones, ¿verdad? Una cantidad de cosas así. No, muchas. ¿Bien? Entonces...
+27:11
+Entonces van a tener como superficies así, después otra parecía así, ¿bien? ¿De acuerdo? Y si la... esto está punteado, porque está tapado por la superficie de arriba, ¿verdad?
+27:27
+Entonces está claro que si es muy chiquitito, ¿sí? ¿Bien? ¿Bien? el flujo lateral es despreciable y el flujo que está de un lado será la proyección del otro porque hicimos muchas esferas entonces me llevé al caso anterior ¿se entiende? porque el ángulo sólido en la de arriba será igual al de abajo y el de al lado es despreciable porque lo tomé muy chiquitito muy chiquitito se parece a una especie de puedo despreciar el flujo lateral porque es muy chiquitito entonces solo el de arriba menos el de abajo Entonces el flujo 1, se llama el flujo 2, entonces el flujo en 1 es menos el flujo en 2 y entonces se van simplificando todos unos con otros y al final nos queda cero.
+28:27
+Entonces el flujo lateral despreciable.
+28:37
+Si tomo bien chato. Bueno, y esto obedece a la idea intuitiva que tenemos de que el flujo da cero. Bien. Entonces, por último, a ver. ¿Qué pasa si yo tomo carga puntual con superficie S arbitraria que incluye la carga?
+29:16
+Tienen acá Q y toman una superficie que incluye la carga. Deja la carga adentro.
+29:25
+Pero ya no tiene por qué ser esférica ni tener una forma precisa. Ese.
+29:30
+¿Cuánto tendrá que ser el flujo? ¿Cómo? Diferente de cero y ¿cuánto tiene que valer? ¿Eh? Si la carga Q es positiva, será positivo. Si la carga Q es negativa, será negativo. Pero ¿cuál es el valor? Q sobre epsilon cero. Porque tiene que ser... ¿Por qué? ¿Cómo podemos volver ese argumento preciso? Porque dijimos, si yo tomo una esfera acá, me da Q sobre epsilon cero. ¿No es cierto?
+30:01
+¿No? Y el flujo, dijimos, cuenta el número de líneas. Acá no hay otras cargas. Quiere decir que lo que salió por acá es lo mismo que sale por allá, el número de cargas. Pero si lo queremos transformar, un argumento preciso en términos de la definición de flujo. ¿Cómo hacemos?
+30:24
+Sí, eso es lo mismo que contar cuántas. Pero fíjense, llámenle a esta superficie de C'. ¿Sí? Saben el flujo en S'. El flujo en S'. Es igual a Q sobre epsilon cero. ¿De acuerdo? ¿Y cuál es el flujo? Invéntense una superficie cerrada, pero que no incluye Q, que es S sacándole S'. ¿Se entiende cuál es la superficie que digo? Imagínense el sólido que está encerrado por S, al cual le hacen un agujero en la zona de S'. Entonces tiene dos superficies, dos partes esa superficie.
+30:57
+La superficie S y la superficie S'. ¿Cuál es el flujo a través de esa superficie compuesta? Cero, porque es una superficie cerrada que no incluye Q'. Pero esta está orientada para allá y esta está orientada para allá, porque es saliente a la superficie de este volumen. ¿De acuerdo? Entonces el flujo en S tiene que ser igual al flujo de S'. ¿Se entendió el argumento? Pero S sacándole S' es una superficie cerrada que no incluye...
+31:35
+Entonces por lo que acabamos de ver, flujo en S' es igual a flujo en S, que es igual a Q sobre epsilon C.
+32:02
+Entonces el flujo en cualquier superficie cerrada que incluye... Superficie arbitraria cerrada, no puse acá cerrada, pero es importante. Que incluye Q es Q sobre el signo 0. Y un comentario, lo hicimos todo con cargas positivas, pero si la carga es negativa, esta fórmula sigue valiendo, lo único que cambia es el signo. Este es negativo, pero el flujo también es negativo. Así que la fórmula vale igual. En todo esto vimos que todas estas fórmulas siempre dependen de...
+32:39
+Siempre dependen de que estamos usando la ley de Coulomb. ¿Bien? Y siempre estamos en la hipótesis de que estamos en el caso electrostático. Entonces voy a dar una... Todo esto entonces son consecuencias de la ley de Coulomb en el caso electrostático. Bien, entonces voy a anunciar una consecuencia de la ley de Coulomb en el caso electrostático. General. Ley de Gauss. Entonces, consideremos un problema electrostático...
+33:27
+Con un conjunto... Ah, insisto, se requiere la ley de Coulomb. Porque necesitamos que estos R al cuadrado se compensen entre el campo eléctrico y el tamaño de la superficie. Si no, no vale la expresión. Necesitan la ley de Coulomb. Un problema electrostático con un conjunto de cargas puntuales.
+33:59
+Entonces dibujo una cantidad de cargas puntuales. Q1, Q2, Q3, Q4, Q5. Y ahora toman una superficie cualquiera. Dibujemos una superficie cualquiera. Que deja algunas cargas adentro y otras cargas afuera. S. S.
+34:28
+Entonces queremos calcular el flujo a través de S del campo eléctrico.
+34:41
+El flujo eléctrico en S total, ¿cómo lo podemos escribir en términos de los flujos generados por cada una de las cargas?
+35:00
+El flujo eléctrico total a través de la superficie S generado por todas las cargas. Será el flujo a través de S, vamos a calcularlo así, N de S. ¿Cómo lo puedo expresar?
+35:16
+En términos de los flujos que tendría si solo tuviera alguna de esas cargas, si no las tuviera todas juntas.
+35:24
+Supongamos que yo tengo todas esas cargas y apago todas salvo una. Todas las transformo en valor cero y dejo una sola. A ese flujo le llamo phi sub i. ¿Cómo es el flujo total en términos de los flujos generados por cada una de las cargas?
+35:41
+Es la suma, porque el campo eléctrico es la suma, ¿verdad? ¿De acuerdo? Entonces esto lo pueden escribir como sumatoria en las cargas del flujo e sub i...
+36:11
+Entonces el flujo generado por la carga I. Fíjense, esto que está acá es el flujo generado por... A ver, silencio. Esto lo pueden escribir como la suma en I del flujo eléctrico I, que es el flujo generado en S por la carga I.
+36:42
+Bien. ¿Y cuánto vale el flujo eléctrico generado por la carga I en la superficie S?
+36:55
+Por ejemplo, ¿cuál es el flujo generado por la carga Q1? Q1 sobre epsilon 0. ¿Cuál es el generado por la carga Q2 sobre epsilon 0? ¿Por 3?
+37:09
+Q3 sobre epsilon 0. ¿Por 4? ¿Por 4?
+37:13
+Ah, cuidado. Acá es cero. Vale, eso solo por las cargas que están adentro. Las que están afuera no cuentan. Los de afuera son de palo. Nunca la expresión, los de afuera son de palo, estuvo tan bien utilizada como en la ley de Gauss. Entonces, esto es igual a sumatoria en... Ahora no es sobre todas las cargas, sobre las cargas ahí adentro de S. De Q sub i sobre epsilon cero. O esto también lo pueden escribir como 1 sobre epsilon 0 por Q total dentro de S. Entonces ahí tenemos una expresión muy importante.
+38:03
+Flujo eléctrico a través es Q total. Esto es en la superficie S. Dentro. De ese, dividido del silo en cero. Es una fórmula muy importante.
+38:26
+Entonces, hemos probado una fórmula general para el flujo eléctrico en una superficie cerrada, válida en el caso electrostático. Entonces, expresión...
+38:43
+para el flujo eléctrico en una superficie cerrada, en el caso electrostático. ¿Bien?
+39:13
+Esto se parece, pero no es la ley de Gauss.
+39:21
+Hay una pequeña diferencia. La diferencia es la siguiente, que es que esta fórmula... La hemos probado en el caso electrostático. Partimos de la ley de Coulomb, que es una expresión electrostática. Lo que dice la ley de Gauss es más fuerte. Y por eso los físicos solemos pensar a la ley de Gauss como una ley que se le llama más fundamental que la ley de Coulomb. La ley de Coulomb vale solo en el caso electrostático. Y esta ley, que se llama la ley de Gauss, vale en el caso electrostático, pero también vale en general.
+39:55
+La ley de Gauss dice... Está claro que en el caso electrostático da lo mismo. Hasta ahora solo vimos casos electrostáticos. En el caso electrostático, si vimos en un mundo electrostático, esto es la ley de Gauss. Pero nos podemos preguntar qué pasa con el flujo eléctrico en un caso en que los campos no fueran electrostáticos. Bueno, en la ley de Gauss esta expresión sigue valiendo, por más que la ley de Coulomb ya no vale más.
+40:39
+Entonces, ley de Gauss. Ley de Gauss. Es un resultado experimental que siempre no sólo
+41:07
+en el caso electrostático el flujo eléctrico en una superficie S es igual a la carga total dentro de S dividido por Y0 ley de Gauss
+41:41
+Gaus propuso en 1835. Gaus fue uno de los científicos más importantes de la historia. Matemático muy importante, físico importante, hizo también cosas en astronomía. Un tipo realmente muy, muy, muy importante. Además fue un... Un niño precoz, un niño prodigio.
+42:13
+Una cosa bastante increíble. Parece que era de una familia muy humilde, de campesinos. Y empezó a ir a la escuela y los profesores se quedaron muy impresionados porque, bueno, parece que desde muy chiquito era una bala. Pero bueno, muchos niños prodigios después no son buenos profesores. Bueno, científicos de adultos, pero en este caso sí.
+42:45
+¿Se entiende la diferencia? Esto lo dedujimos en el caso electrostático. Pero la ley de Gauss vale siempre. Intuitivamente lo pueden pensar de la manera siguiente.
+42:56
+Imagínense que ustedes tienen una superficie, tienen una carga que se está moviendo. que ya no está electrostática, está bailando, genera líneas de campo. Pero si las líneas de campo solo lo generan las cargas, y nada más que las cargas, entonces esas líneas también harán bailecitos, pero el número de líneas que atraviesan la superficie no depende de que la carga esté quieta o se esté moviendo, porque no lo tienen como deformar. ¿Se entiende? Cada tanto podrá pasar que la carga salga, en cuyo caso la fórmula también sigue valiendo porque solo cuenta las que están adentro.
+43:31
+¿Se entiende? Entonces, esa fórmula no depende de que la cosa esté quieta o no. Solo depende de contar cuántas líneas salieron de cada carga. Entonces, la fórmula es más general. Es más general que la ley de Coulomb. Pero en el caso electrostático, vimos que es una consecuencia de la ley de Coulomb. Comentario.
+43:55
+En el caso electrostático...
+44:02
+Coulomb es equivalente a Gauss. Vimos por ahora una parte de la prueba. Vimos que Coulomb implica Gauss. Pero podemos ver muy fácilmente que vale para el otro lado también.
+44:26
+En el caso de Trostático, Coulomb implica Gauss, pero Gauss... Es más general. Es totalmente general. Probemos, sin embargo, qué Gauss implica Coulomb en el caso electrostático. Prueba de que Gauss implica Coulomb en el caso electrostático.
+45:02
+Y bueno, fíjense, tomemos una carga puntual.
+45:06
+Carga puntual. ¿Cómo hacemos para deducir la ley de Coulomb usando la ley de Gauss?
+45:19
+¿Qué les parece? Supongamos que sabemos la ley de Gauss, pero no sabemos la ley de Coulomb.
+45:32
+Hacemos, tomamos una esfera. Bien. Bueno, a esas superficies, a las superficies que se utilizan para utilizar la ley de Gauss se les llama, como podían adivinar, superficies gaussianas.
+45:47
+Entonces tomen una superficie, esfera, S esfera, centrada en Q.
+46:01
+Tome el radio de la esfera igual a R. ¿Bien? ¿Cómo es el campo eléctrico en la esfera? Solo usando una consideración de simetría. Si no sabemos la de Coulomb, pero sí sabemos que el problema es invariante por rotaciones. ¿Cómo tiene que ser el campo eléctrico? Tiene que ser uniforme, solo depende del radio y tiene que ser radial. Entonces el flujo eléctrico... va a ser la integral sobre la superficie de E n de S, pero por simetría, sin usar la forma precisa de la de Coulomb, solo usando que es el mismo en toda la superficie y que es radial, esto es igual a E por la...
+46:56
+por la integral sobre toda la superficie, que es el área de la superficie, les queda E por 4 pi por R al cuadrado, pero por otro lado, por Gauss, el flujo vale Q sobre epsilon cero, porque la única carga que hay ahí adentro es Q.
+47:31
+Entonces deducimos que E vale Q sobre 4 pi epsilon 0 por R al cuadrado. Acá lo hice para una carga positiva, pero lo mismo podríamos haber hecho para la carga negativa. Simplemente cambian los signos. Lo hice para la carga positiva porque fíjense que estoy diciendo que el módulo del campo eléctrico es proporcional a Q. Si fuera una carga negativa sería el valor absoluto de Q. Habría que ocuparse del signo, pero sabemos que las cargas... Que el flujo es saliente de las cargas positivas y entrante de las cargas negativas.
+48:05
+Así que vemos que a menos de consideraciones de simetría, Gauss implica Coulomb. ¿Sí? En el caso electrostático. ¿Por qué el caso electrostático? Porque fíjense, yo estoy diciendo que el campo es radial, pero si la carga... Para decir que es radial, tengo que pensar que la carga está quieta. Si la carga se está moviendo, el campo no va a ser radial. Hay direcciones preferenciales. Supongan que la carga está haciendo así. El campo no será radial porque la carga se me está moviendo y el campo se mueve así.
+48:36
+Entonces ya no es radial. Instante a instante. En cambio, si la carga está quieta, tomo una superficie centrada en la esfera y ya está. En el caso no electrostático, Gauss no implica Coulomb. Pero sigue siendo válido. Gauss es más general que Coulomb.
+48:57
+¿Se entendió esto? En el caso particular electrostático, Gauss es una consecuencia de Coulomb. De hecho es equivalente. En el caso general, Gauss sigue variando, pero Coulomb no. Y entonces Gauss es una ley experimental. ¿Se entiende? Es un resultado experimental. ¿Sí? más potente que Coulomb. Bueno, y ahora ya vemos otra vez más el tema del 4pi. La razón por la cual habíamos puesto el 4pi en la ley de Coulomb es que consideramos la ley de Gauss como una ley más fundamental.
+49:34
+Entonces la ley que pensamos como más fundamental en el sentido más general Esa es la ley que queremos escribir de la manera más simple. Si hubiéramos descrito Coulomb sin el 4pi, nos aparecía un 4pi en esta fórmula y entonces la ley que pensamos más fundamental nos queda escrita más fea. ¿Se entiende? Queremos la ley más fundamental y escribirla de la manera más simple. Pero eso es simplemente una convención de lo que llamamos epsilon cero.
+50:00
+De hecho hay sistemas de unidades. que se usan en algunos contextos en los cuales aparece el 4Pi en la Ley de Gauss. Hay gente que hace eso. No es lo que usamos en este curso, ni es lo que se usa en el Sistema Internacional de Unidades, pero sí es una opción.
+50:19
+¿Se entendió esto?
+50:22
+Entonces ahora vamos a ver algunos ejemplos de aplicaciones de la Ley de Gauss.
+50:37
+ejemplos de aplicaciones de la ley de Gauss. Entonces, la ley de Gauss, para aplicarla directamente, una manera de aplicarla, ¿cuál es? En el caso electrostático, es deducir la ley de Coulomb y luego ya sabemos calcular, haciendo integrales complicadas. Pero a veces, cuando el sistema tiene mucha simetría, podemos aplicar la ley de Gauss directamente, sin pasar por la ley de Coulomb.
+51:11
+Entonces, veamos ejemplos. ¿Está? Tomemos una línea infinita de carga. Infinita. Cargada. Uniformemente.
+51:30
+Es decir, con una densidad lineal de carga lambda. ¿Sí?
+51:43
+Como está cargada uniformemente, lambda es constante a lo largo de la línea. Pensamos que es una línea muy grande. ¿Cuál es la situación física realista? Bueno, tiene una línea bastante grande y la observamos a una distancia mucho más chica que el tamaño de la línea. Ya hemos visto eso con Coulomb, ¿se acuerdan? Pero ahora pensemos en el caso de la línea en general. ¿Cómo hacemos para calcular en esta situación el campo eléctrico sin pasar por Coulomb?
+52:13
+Entonces tenemos que aplicar Gauss usando la simetría del problema. Sabemos que el sistema, como es infinita, es invariante por traslaciones a lo largo de la línea. Si miramos un punto acá o un punto acá, nos da lo mismo, porque como la línea igual es infinita, siempre nos sobra infinito para un lado y para el otro. Así que nos podemos mover verticalmente sin cambiar nada. girando alrededor del movimiento porque el campo eléctrico ¿cómo va a ser? Va a ser radial, va a ser siempre perpendicular a la línea y siempre uniforme a una distancia.
+52:48
+Entonces el compañero dice, bueno apliquemos Gauss con una superficie que tenga las simetrías del problema, ¿verdad? Que aproveche que el sistema tiene simetrías. Y bueno, una superficie que tiene esa propiedad es un cilindro
+53:05
+Vamos a tomar un cilindro de altura H, radio R, y apliquemos Gauss. Apliquemos Gauss aprovechando la simetría.
+53:31
+¿Está bien? Entonces, primero aplicando el flujo eléctrico en esa superficie cerrada, va a ser la carga total, ¿sí? Dividido del cielo en cero. ¿Cuánto vale la carga total ahí?
+53:45
+En términos de lambda.
+53:48
+Claro, valdrá H por lambda, esa es la carga total, dividido del cielo en cero. Esto es Gauss. Pero ahora tenemos que calcular el flujo. Si la superficie fuera cualquiera, no sabríamos calcular el flujo, pero como el problema tiene mucha simetría y la superficie tiene la misma simetría del problema, podemos calcular el flujo. El flujo tiene tres partes. Tiene la tapa de arriba, la tapa de abajo y la superficie lateral. ¿Cuánto es el flujo a través de la superficie de la tapa de arriba? Cero.
+54:18
+¿Por qué?
+54:22
+Porque el campo eléctrico es...
+54:26
+perpendicular a la línea. Entonces, en esta etapa y en la de abajo, el campo eléctrico será perpendicular a la superficie. Entonces, solo influye la superficie lateral. Y además, como la superficie lateral está a una distancia fija del eje, el campo eléctrico no cambia. Entonces, va a ser igual a E. Entonces, es el campo a una distancia...
+54:57
+que es constante, por la superficie lateral. ¿Cuánto valdrá la superficie lateral? 2PRH. ¿Cómo hacen ese cálculo? Y bueno, agarran el cilindro, hacen una tijera, lo abren, y entonces el largo del cilindro es 2PR, porque es la circunferencia. Y la altura, digamos, el ancho es H. Así que la superficie es 2PR por H.
+55:31
+Y ambas cosas son iguales. Entonces, como ambas cosas son iguales, deducimos de estas dos cosas, implica que el campo eléctrico es igual a lambda, fíjense que los h se nos van, nos queda lambda sobre 2 pi r sobre epsilon cero.
+55:51
+Que es la fórmula que ya habíamos deducido usando Coulomb, ¿se acuerdan? ¿Se acuerdan? O sea, Andoculum ya lo habíamos hecho por cálculo directo, que era un cuenterío bárbaro. Acá es una línea de cálculo, no es nada. Me llevó 5 minutos porque es el primer ejemplo que hago, pero en realidad, ustedes después, cuando se acostumbran a hacer esto, les lleva 30 segundos, ¿verdad? No lleva nada. Acá hice un poco nuevamente un abuso de lenguaje porque supuse que lambda es positivo. ¿Bien? Si lambda fuera negativo, hay que tener cuidado porque acá les aparece el valor absoluto y el campo eléctrico en lugar de ser saliente va a ser entrante.
+56:26
+Así que siempre para no complicarme con los signos, supongo cargas o densidades de carga positivas, pero ojo, tengan presente que si las cargas son negativas o las densidades de carga son negativas, tienen que ocuparse de los signos. ¿Bien?
+56:40
+Bien. Primer ejemplo. Segundo ejemplo. ¿Preguntas? ¿Se está entendiendo esto? ¿Sí? ¿Acá? Dice que el campo es constante en módulo en la superficie a una distancia r. Bien.
+57:13
+Bueno, el segundo ejemplo que voy a hacer es el siguiente. Toman una superficie infinita cargada uniformemente. Entonces, ¿qué hacen? Toman una superficie así, infinita, y tiene una densidad superficial de carga, densidad de carga, nuevamente la tomo positiva para simplificar los dibujos, tengo una densidad superficial de carga uniforme.
+58:03
+Esto es un plano infinito, es una superficie infinita cargada. De hecho no puse acá, superficie plana infinita. Entonces acá, nuevamente, ¿cómo haremos para aprovechar Gauss?
+58:29
+Entonces dicen, bueno, ¿qué es lo que podemos decir acá? Podemos decir que el sistema es invariante por traslaciones a lo largo del plano. Y además, si lo miro de canto...
+58:46
+Si lo miro de canto, el campo eléctrico a una distancia R para un lado y el campo eléctrico R para el otro, como el sistema es invariante dando vueltas para un lado y para el otro, el campo eléctrico acá será opuesto pero tendrá igual módulo acá y acá. Módulo de E es igual al módulo de prima. Van para lados opuestos pero tienen igual módulo, ¿no es cierto?
+59:12
+Y además puedo moverme, ¿verdad? Porque es infinito. Entonces, algunos dicen, bueno, entonces una superficie que aprovecha eso es tomar un cilindro, tomo un circulito acá sobre la superficie, me tomo un cilindro así y simétrico para el otro lado. ¿Se entiende el dibujo?
+59:37
+Un cilindro, digamos, si lo dibujo acá de canto será una cosa así.
+59:44
+¿Bien?
+59:46
+Y por simetría, el campo eléctrico es saliente y perpendicular, ¿verdad? Porque, supongamos que estuviera chanfleado, ¿sí? No puede ser porque la superficie es infinita, entonces quiere decir que si yo invierto la superficie para un lado y para el otro, no cambia, entonces el campo eléctrico cambiaría, no puede ser, tiene que siempre ser perpendicular. ¿Verdad? Otra manera de pensarlo es que el campo eléctrico, usando Coulomb, pueden decir, las contribuciones de un lado y del otro, chanfleadas, se me compensan. Solo puede contribuir. Pero sin usar Coulomb, pueden usar solo por simetría diciendo, como la superficie es infinita, si yo la invierto, no me puede cambiar el campo eléctrico.
+1:00:25
+Entonces, si el campo eléctrico no fuera normal, si fuera chanfleado, yo giro la superficie y me quedaría mirando para abajo. No puede ser, porque tiene que ser igual, porque la distribución de carga es la misma. ¿Verdad? Entonces, el campo eléctrico tiene que ser perpendicular. Y entonces, ¿cuánto vale el flujo eléctrico? El flujo eléctrico... Primero usemos Gauss. ¿Cuánto vale el flujo eléctrico en este cilindrito? Llamen en la superficie del cilindrito S.
+1:00:57
+¿Cómo es la expresión de Gauss?
+1:01:02
+S por sigma es la carga total y hay que dividir por opción cero para aplicar Gauss. ¿Bien? Ahí esto es por Gauss.
+1:01:14
+Pero ahora calculemos el flujo. El flujo también lo sabemos calcular, en este caso por simetría. ¿Cuánto valdrá el flujo?
+1:01:22
+Por ejemplo, el flujo lateral, la parte lateral del cilindro, ¿cuánto vale? Cero. ¿Por qué? ¿Por qué? Porque el campo eléctrico es perpendicular a la superficie en todo punto. Entonces, solo me tengo que ocupar de los flujos en las tapas. ¿Y cuánto es el flujo en la tapa? ¿Cómo? Bueno, sí, E por S. Le llamamos S a la superficie de la tapa. Entonces, el flujo E en una de las tapas es E por S. ¿Y en la otra tapa cuánto vale? ¿Menos E por S o más E por S?
+1:01:54
+Más. El flujo es saliente en los dos casos. Así que es 2E por S. Dos tapas. Entonces concluimos de estas dos expresiones que E es igual a sigma sobre 2 epsilon cero.
+1:02:18
+Entonces eso nos implica muchas cosas. Por ejemplo, que no depende de la distancia. El campo eléctrico no depende de la distancia en la medida que podamos pensar la superficie infinita. El caso realista es que la superficie no es infinita, pero es grande. Entonces, mientras estemos a una distancia chiquitita comparado al tamaño de la superficie, el campo eléctrico permanecerá uniforme. Cuando vamos a distancias que empiezan a ser comparables con el tamaño de la superficie, ahí ya no, ahí empieza a variar.
+1:02:51
+Entonces, es uniforme.
+1:02:58
+Y esto es, esto ya lo habíamos calculado usando Coulomb, ¿se acuerdan? Hicimos la cuenta explícita, nos da lo mismo. Por suerte, si no, nos habíamos equivocado. Nos tiene que dar lo mismo porque en problemas electrostáticos, Coulomb y Gauss son equivalentes.
+1:03:13
+¿Preguntas?
+1:03:19
+Agrega un cilindro. Está claro que la superficie de la tapa arriba y la superficie de la tapa abajo es igual. ¿Está claro? Y el campo eléctrico, el flujo es el flujo saliente. En un caso tenés que tomar un vector normal para allá...
+1:03:47
+y en esta otra, para esta superficie un vector normal para allá y en la superficie lateral un vector también normal, siempre la sube normal a la superficie y siempre saliente. Acá te queda E por la superficie esta que te queda E por S y en el otro caso te queda E' por L que nuevamente es el mismo valor por S. No, para la superficie esta, para esta.
+1:04:16
+¿se entiende cuál es la carga que hay acá?
+1:04:22
+tenemos que ver qué carga está encerrada ¿qué carga está encerrada?
+1:04:26
+es la carga encerrada en este cilindrito que es la superficie del plano encerrada por el cilindrito por la densidad superficial ¿alguna otra pregunta?
+1:04:41
+Hasta ahora, en realidad, rehicimos con cálculos mucho más simples, cosas que ya habíamos visto por cálculos complicados por Coulomb. Pero les voy a dar un ejemplo donde realmente ni nos animamos a hacer el cálculo por Coulomb, porque realmente el cálculo por Coulomb se podía hacer, pero daba mucho trabajo. Y acá, en realidad, el cálculo es una pavada. Entonces, el tercer ejemplo es cascarón esférico...
+1:05:12
+uniformemente cargado. Yo ya les di el resultado pero no lo probamos porque toman acá el origen, toman una superficie
+1:05:35
+con O en el medio el radio este le llaman R y acá tienen una carga total total Q uniformemente distribuida ¿bien? entonces queremos calcular el campo eléctrico producido por esta distribución de carga tanto adentro como afuera ¿cómo hacemos? Para aplicar Gauss.
+1:06:10
+Tomamos una superficie. Entonces, toma una superficie concéntrica o no. Para aprovechar la simetría del problema.
+1:06:22
+Llámenle R al radio de la superficie. Entonces, fíjense. ¿Cómo será el campo? Antes de hacer ninguna cuenta. ¿Cómo es el campo eléctrico en la superficie? Llamémosle S esta superficie.
+1:06:40
+Entonces sabemos que es radial. ¿Qué más?
+1:06:48
+Como la carga está distribuida uniformemente, ¿qué más sabemos? Que a una distancia dada del origen, como el problema es invariante por rotaciones, si yo roto la esfera, el problema no cambia. Quiere decir que el campo eléctrico en cualquier dirección, a una distancia dada del origen, tiene que valer lo mismo. ¿No es verdad? Entonces, el módulo de...
+1:07:10
+Es uniforme, constante, digamos, en la superficie S. ¿De acuerdo? Y además sabemos que E es radial. Entonces, el flujo eléctrico, ¿cuánto valdrá? ¿Cuánto va a ser? Si es uniforme en la superficie, E por...
+1:07:42
+por el área de la superficie, que es 4 pi por r al cuadrado. ¿Bien? Y ahora apliquemos Gauss. ¿Cuánto vale el flujo eléctrico? La carga encerrada. ¿La carga encerrada, que cuánto es? Q sobre el 0. ¿Q sobre el 0? ¿Siempre vale Q? ¿Siempre vale Q? ¿No importa el radio de la esfera? No. Exacto, entonces va a ser el flujo va a ser o Q sobre epsilon cero si el radio de la esfera S es mayor que R mayúscula o cero si R es menor que R porque si está dentro esta superficie si esta superficie punteada estuviera delgada adentro no encierra ninguna carga ¿De acuerdo?
+1:08:39
+Entonces de estas dos cosas, de esto y esto, concluimos que E es igual a Q sobre 4 pi epsilon 0 por R al cuadrado si R es menor que R y 0 si R es mayor que R y 0 si R es menor que R. Que es lo que yo ya les había anunciado anteriormente. Así que se comporta como una carga puntual si estamos afuera.
+1:09:13
+Si estamos afuera es igual que la fórmula de una carga puntual que estuviera ubicada en el origen. En cambio si estamos adentro no hace campo eléctrico.
+1:09:23
+A ver, hacer el cálculo este con Coulomb directamente da mucho trabajo, hay que hacer unas integrales complicadas. Acá en este caso da bastante simple. Acá nuevamente estoy siempre suponiendo que las cargas o densidades de carga son positivas, si no habría que ocuparse de los signos. ¿Qué pasa si estás exactamente en la superficie? Ah, esa pregunta me la hicieron algunos. ¿Qué pasa? A ver, les hago la pregunta a ustedes. ¿Qué pasa si estoy justo en la superficie? Porque fíjense que acá hay como una discontinuidad. Pasa de un valor no nulo, justo en R, a un valor nulo en R. Hay como un salto.
+1:09:56
+¿Qué es lo que pasa? Porque algo tenemos que estar haciendo mal, porque en la naturaleza, por lo menos a nivel clásico, no se dan esos saltos así abruptos. ¿Qué es lo que estamos haciendo mal?
+1:10:08
+Algo estamos haciendo mal cuando R minúscula es muy cercano a R mayúscula. ¿Qué es lo que estamos haciendo mal? Lo que estamos haciendo mal es que si estamos muy cerquita, la aproximación de suponer que toda la carga está concentrada en una superficie de ancho nulo, Es una mala aproximación porque cuando yo estoy muy cerquita, voy a ver que... Si yo estoy muy cerquita, empiezo a ver que el ancho no es nulo.
+1:10:39
+Entonces, en realidad, ¿cómo va a ser la curva? ¿Se entiende?
+1:10:53
+¿Se entiende?
+1:10:55
+supongan que la carga igual está distribuida con simetría esférica entonces lo que va a suceder es que el campo eléctrico como función de R Tienen acá R. Y pongamos acá que R es la superficie del lado de adentro del cascarón. Y que el cascarón en realidad tiene un ancho que es A. Llámenle A el ancho del cascarón. Que es muy finito. Por eso estamos suponiendo que es como un cascarón. Pero en realidad siempre va a tener un pequeño volumencito, aunque sea chico. Entonces lo que va a suceder es que acá el campo es cero. Acá sube rapidísimo.
+1:11:27
+Y luego decae. Acá vale como Q sobre 4Pi. y en el medio sube rapidísimo ¿se entiende?
+1:11:39
+¿en qué zona sube rapidísimo? en la zona del ancho del cascarón ¿se entiende?
+1:11:47
+entonces ahí la pregunta si es R más chico más bueno, tenés que cuando vas a estar justo arriba ves que no es infinitamente apretado que hay un ancho ¿alguna otra pregunta?
+1:12:07
+Tengo un ratito más. Bueno, entonces voy a empezar a hablarles de las consecuencias de la ley de Gauss sobre los conductores en el equilibrio.
+1:12:26
+Entonces, 3.6.
+1:12:30
+Ley de Gauss y conductores en el equilibrio.
+1:12:38
+Entonces, tomemos un conductor, un material conductor, en... en una situación electrostática entonces tiene cualquier forma el conductor acá está el conductor entonces se da la propiedad siguiente valen dos cosas
+1:13:40
+La primera es que en el interior del conductor no hay carga.
+1:13:57
+No hay carga neta. Eléctrica neta. Tomo cualquier volumencito dentro del conductor... Cualquier volumencito dentro del conductor va a tener carga neta nula. Es decir, si el conductor como un todo tiene carga neta, esa carga se va a distribuir sobre la superficie del conductor, pero no va adentro. Intuitivamente lo que va a pasar es que supongamos que tenemos una carga neta positiva, como es un conductor y llegó al equilibrio, todas las cargas se repelieron y se ponen lo más lejos posible las unas de las otras y entonces se ponen sobre la superficie.
+1:14:36
+Físicamente eso es lo que pasa. ¿Se entiende? Ustedes ponen carga dentro de un conductor, como se pueden mover dentro del conductor, supongamos que el conductor tiene una carga neta positiva, Esas cargas se repelen entre sí y se van a tratar de alejar lo más posible y se ponen en la superficie, pero no se quedan adentro. Porque si se quedaran adentro, si yo tengo dos cargas positivas adentro, no va a ser electrostáticamente razonable porque se van a empezar a rechazar y se van a ir. Y la segunda propiedad, que es bastante sorprendente, que es que el campo eléctrico dentro...
+1:15:15
+es nulo. En todo punto adentro del conductor no hay campo eléctrico. O sea, en esas dos propiedades, que son bastante... La primera es intuitiva por esto que yo les digo, la segunda es bastante menos intuitiva. ¿La segunda no implica la primera? No. Bueno, sí, pero no de manera evidente. Va a implicar, pero no es de manera evidente.
+1:15:47
+Valen las dos cosas. Y para probar esa propiedad vamos a usar Gauss. Entonces lo primero que es muy fácil darse cuenta es que valen las dos cosas, ¿no? Queremos probar que valen las dos cosas. Pero lo que es muy fácil darse cuenta es que vale alguna de las dos. Por lo menos una de las dos vale. Les digo por qué. Supongamos... que en el interior del conductor hubiera una carga neta.
+1:16:26
+Que no hubiera carga nula. Y estamos en una situación electrostática. En alguna zona tenemos carga positiva.
+1:16:34
+Y además hay campo eléctrico no nulo. Entonces, ¿qué le va a pasar a esa carga? Se va a mover porque estamos en un conductor. Así que no puede ser que a la vez tengamos carga y campo eléctrico. Alguno de los dos se anula. ¿Se entiende? O bien se anula la carga, o bien se anula el campo eléctrico. No pueden las dos ser no nulas, porque si hubieran las dos no nulas, el campo eléctrico haría que la carga se mueva. ¿Se entiende? Lo primero es darse cuenta que una de las dos cosas tiene que pasar.
+1:17:08
+Entonces, primer elemento de la prueba, alguna de las dos cosas...
+1:17:18
+debe ser cierta, pues si hubiera carga adentro y también E distinto de cero, entonces la carga se movería.
+1:17:51
+cosa que dijimos que no puede ser porque estamos en un caso en equilibrio.
+1:17:57
+Estamos en el caso de un conductor de situación nitrostática en equilibrio, ¿verdad? En equilibrio.
+1:18:07
+Así que ese es el primer elemento, es que una de las dos cosas tienen que suceder. Entonces supongamos, bueno, una de las dos sucede. Empecemos por la primera. Supongamos que El campo eléctrico es nulo. Y veamos que la carga es cero. Entonces, uno. Supongamos que es idénticamente cero adentro. ¿Sí?
+1:18:38
+Si sabemos que el campo eléctrico adentro es cero, ¿cómo nos damos cuenta que no hay carga adentro?
+1:18:45
+Entonces tenemos acá el conductor. ¿Sí? Y tenemos que adentro E vale 0.
+1:18:51
+Claro, ¿y en qué superficie uso? Uso cualquier superficie. Quiero saber si en una zona hay carga. Me tomo la zona en cuestión, tomo esta zona, quiero saber cuál es mi carga neta en esta zona. Defino esta superficie S. ¿Cuál es el flujo eléctrico a través de S? 0, porque E vale 0.
+1:19:14
+Entonces, flujo eléctrico...
+1:19:17
+En S, vale cero. Y esto es para todo S, cualquier superficie. Entonces, Q dentro de S igual a cero.
+1:19:30
+Y esto para todo S. Entonces no hay carga dentro. Tomo cualquier pedacito de conductor, veo que no hay carga neta. ¿Se entiende? Entonces, no hay carga.
+1:19:43
+Carga neta adentro. Entonces, si vale que el campo eléctrico es cero, también vale que la carga es cero. Pero podría pasar otra cosa. Podría ser que la carga sea cero y que el campo eléctrico no sea cero. Entonces, ahora dos. Supongamos que no hay carga... neta dentro del conductor.
+1:20:21
+Bien, entonces tenemos nuevamente el conductor. ¿Cómo serán las líneas de campo? Bueno, y supongamos, para que sea interesante, supongamos por el absurdo que el campo eléctrico no fuera cero. ¿Cómo serán las líneas de campo dentro del conductor? ¿Las líneas podrán terminar en algún punto interno del conductor? No, lo atraviesan. Ninguna línea se detiene. Tendrán líneas que podrán ser así.
+1:20:56
+¿Sí? Porque las líneas, al no haber carga adentro, las líneas no se pueden detener adentro. ¿Sí? ¿Sí?
+1:21:18
+Es decir, las líneas no pueden comenzar ni terminar en un punto interior. ¿Está bien?
+1:21:46
+Pero bueno, entonces dijimos que la carga no está adentro, tiene que estar en la superficie. ¿Qué pasa con una carga que esté acá en la superficie?
+1:21:54
+¿Qué le va a pasar a una carga que la tenga acá en la superficie?
+1:22:00
+¿Sí? Se va a querer mover y hacer para acá. Entonces esta situación no es de equilibrio. Pero entonces las cargas en la superficie
+1:22:18
+se van a mover y esto es absurdo entonces concluimos entonces E es cero y Q es cero en cualquier trozo interior ¿Probamos las dos cosas?
+

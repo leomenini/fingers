@@ -1,0 +1,62 @@
+title: Clase 1
+id: fis3-2015-2-01
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:28:31"
+
+stats:
+  transcript_words: 10120
+  summary_words: 219
+  diagrams_pending: 2
+  equations: 10
+
+topics:
+  - Presentación del curso y bibliografía
+  - Interacciones fundamentales (gravedad, EM, fuerte, débil)
+  - Carga eléctrica (tipos, experimentos de frotamiento)
+  - Ley de Coulomb (forma vectorial, constante ε₀)
+  - Contexto histórico (Coulomb, Cavendish)
+  - Principio de superposición
+  - Fuerza sobre objetos neutros
+  - Cuantización de la carga (carga elemental e)
+
+bibliography:
+  - title: Resnick & Halliday
+    chapter: "21"
+    verified: false
+
+prerequisites:
+  - Física I (mecánica newtoniana)
+  - Física II (fluidos, ondas, termodinámica)
+  - Nociones básicas de vectores y álgebra
+
+next_topics:
+  - Campo eléctrico (Clase 2)
+  - Ley de Gauss
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: in-progress
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-06
+
+llm:
+  model: deepseek-v4-flash
+
+editorial_status: draft

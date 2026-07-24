@@ -1,0 +1,360 @@
+# Clase 28
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/28/
+
+Fecha de exportación: 7/24/2026, 12:09:48 AM
+
+Clase: 28
+Curso: F3
+
+Segmentos : 200
+Palabras  : 9740
+Caracteres: 53603
+
+0:17
+Vamos a hablar del experimento de dos rendijas que yo comencé a mencionarles en la clase pasada. El experimento consiste en lo siguiente. Tenemos una primera pantalla con dos rendijas separadas a una distancia d. Tenemos una onda plana monocromática que avanza de manera normal a la pantalla d.
+0:48
+Desde la izquierda tenemos otra pantalla a una distancia de mayúscula. ¿Bien? Entonces esto tiene una cierta longitud de onda lambda. ¿Bien? Entonces tomo acá el eje... Por el medio de las dos rendijas vamos a tomar un punto acá P de observación y vamos a definir este ángulo θ, que es el ángulo en el cual observamos...
+1:30
+la pantalla entonces lo que voy a mostrarles es una cosa que ya les enuncié en la clase pasada que es que sucede en este caso una cosa antiintuitiva que es que tenemos dos fuentes de luz una de cada rendija Y en lugar de acumular su señal, en algunas zonas va a generar oscuridad en lugar de luz. Es decir, si tuviéramos una sola rendija, ilumina la pantalla en todos lados, en algunos lugares más intensamente y en otros casos menos intensamente, pero en todos los casos ilumina.
+2:04
+Acá, agregando una segunda rendija, hay lugares donde vamos a desiluminar. Y eso es antiintuitivo con respecto a nuestra experiencia cotidiana, en la cual si ponemos dos lamparitas se ilumina más, se suma siempre, ningún lado se resta. Entonces, para analizar este experimento vamos a ubicarnos en el caso en que la distancia entre la primera pantalla y la segunda es mucho más grande que la separación entre las rendijas. ¿Está bien? Lo que se llama campo lejano.
+2:39
+Si estuviéramos en campos cercanos suceden muchos otros efectos que no voy a mencionar. Esa es la primera suposición. La segunda suposición es que vamos a suponer, vamos a ignorar los efectos vectoriales. Vamos a pensar que podemos describir la onda con una única cantidad y que no nos tenemos que ocupar de que en realidad es una onda transversal y vectorial y todo lo demás. Entonces vamos a pensar que basta con ocuparnos de una componente del campo eléctrico. Entonces ignoramos...
+3:06
+aspectos vectoriales como les dije este experimento lo pueden pensar para la luz pero también lo pueden pensar en una cubeta con agua tiene una primera barrera con dos rendijas chapotean acá de este lado genera una onda esa onda pasa por acá y genera dos ondas y pueden ver en esta pantalla en qué lugares la altura del agua es más alta o más baja Así que es un experimento general para las ondas, no tiene nada que ver específico con la luz.
+3:40
+Podríamos pensarlo también en onda de sonido, que también es muy espectacular. Es un experimento que se podría hacer, es poner dos parlantes y darnos cuenta que en algunos lugares de la sala, no se escucha nada cada parlante prendido si tenemos un solo parlante prendido toda la sala escucha podemos poner dos parlantes los cuales en algunas zonas de la sala aparece sonido no aparece sonido entonces vamos a aprovechar vamos a hacer estas dos suposiciones y vamos a entonces mirar lo que estamos pensando es que estas dos distancias R1 acá y esta distancia que llamamos R2 son mucho más grandes que D. Entonces, como estamos muy lejos, estas dos líneas, que no son paralelas, se comportan casi como paralelas.
+4:37
+Entonces, como R1 y R2 es mucho más grande que D, son al menos iguales a D mayúscula, Entonces si hacemos un dibujo, un zoom de lo que pasa en la ranura, en las dos ranuras acá, que están a distancia d, las dos líneas se comportan como esencialmente paralelas.
+5:07
+Esto es d, fíjense que este ángulo acá es el que llamamos teta, Así que voy a hacer un dibujo en el cual el ángulo no parezca 45 grados, así podemos darnos claramente cuenta de qué es seno y qué es coseno. Así que este es el ángulo teta y vemos que este ángulo que está acá también es teta.
+5:35
+entonces la diferencia de caminos que recorre la luz entre un lado y el otro es esta diferencia de caminos acá diferencia de caminos entre una onda y la otra vemos que R2 menos R1 es en una muy buena aproximación es igual a D por seno de teta
+6:15
+¿Cómo? Ahí hay 90 grados. Este es un ángulo recto, ¿no? ¿De acuerdo? Entonces estas dos líneas son aproximadamente paralelas.
+6:37
+Fruto de que estamos suponiendo que estamos en D mucho más grande que... Entonces, la onda resultante en el... Aquí.
+6:51
+¿Sí?
+6:53
+¿Cuándo es que tendrá...? La onda acá va a ser como un... Vamos a suponer que las amplitudes que llegan de una y de otra son aproximadamente iguales. Entonces la onda... Onda en P será como una cierta amplitud por el seno. de K por R1 menos omega T bueno, perdón, otra cosa que les mencioné la vez pasada pero que no he retomado ahora pero es importante vamos a suponer que la onda incidente es plana monocromática
+7:42
+Y coherente. De esto ya les hablé la vez pasada, pero no lo reanoté y vale la pena anotarlo. Es decir, la fase entre las dos fuentes se mantiene constante en el tiempo. Una muy buena proyección. Entonces la superposición será la amplitud de la primera más A por seno de KR2 menos omega T. Y vimos que cuando sumamos dos senos para que la suma tuviera amplitud máxima que se necesitaba.
+8:26
+¿Se acuerdan que vimos la vez pasada? ¿Qué tenía que suceder con las fases de los dos senos? Para que fuera máxima, la fase tenía que diferir en un múltiplo de 2pi. Esto lo podemos ver, si quieren, fácilmente. Llamémosle a esto phi1.
+8:50
+Retomemos lo que vimos la vez pasada, esto lo llamamos phi2. Queremos ver cuando... esto oscila de manera máxima, entonces podemos escribir φ2 es igual a φ1 más Δφ, entonces seno de φ2 es igual a seno de φ1 más Δφ,
+9:21
+Y el seno lo podemos escribir como seno de una suma es seno de fi1 por coseno de delta fi más seno de delta fi por coseno de fi1.
+9:52
+no, perdón, no voy a hacer así voy a hacerlo de otra manera voy a escribir disculpenme voy a hacerlo de una manera un poco distinta voy a hacer así seno de fi2 lo voy a escribir como seno de fi1 más delta fi más delta fi sobre 2
+10:16
+¿De acuerdo? Entonces esto lo puedo escribir como, ahora sí, seno de phi1 más delta phi sobre 2 por coseno de delta phi sobre 2. más seno de delta fi sobre 2 por coseno de fi1 más delta fi sobre 2. Estoy verificando lo que vimos la vez pasada, de que la diferencia de fases tiene que ser un múltiplo de 2pi.
+10:48
+También podemos ver que seno de fi1 lo pueden escribir como seno de fi1 más delta fi sobre 2 menos delta fi sobre 2.
+11:03
+Entonces acá nuevamente voy a desarrollar el seno y me queda seno de phi1 más delta phi sobre 2 por coseno de delta phi sobre 2, porque el coseno es par, así que el coseno de menos delta phi sobre 2 es el coseno de phi sobre 2. Pero ahora en cambio el seno es impar, así que me aparece un menos, me queda coseno...
+11:28
+de phi1 más delta phi sobre 2 y seno de delta phi sobre 2 ¿acá es seno de phi2? ¿cómo perdón? seno de phi1 lo puedo escribir como seno de phi1 más delta phi sobre 2 menos delta phi sobre 1 bueno Entonces si sumo las dos, llamémosle esto, este es un campo eléctrico, digamos.
+12:06
+Entonces el campo eléctrico, si sumo las dos me queda la amplitud, y fíjense, si sumo las dos, seno de fi1 más seno de fi2, el término, Este, el término en coseno de phi1 más delta phi se nos va, porque en un caso aparece con un signo positivo y en otro caso aparece con el signo negativo. En cambio el otro término nos aparece dos veces igual y con el mismo signo. Así que nos queda dos veces seno de phi1 más delta phi sobre 2 por coseno de delta phi sobre 2.
+12:46
+Y volviendo a las variables originales, esto nos queda 2 veces A por seno de KR1 menos omega t más la diferencia que es KR2 menos R1. Todo esto aparece dividido por 2. Por el coseno...
+13:17
+De K R2 menos R1 sobre 2. Entonces tienen acá la onda. Ven que la onda resultante es nuevamente una onda sinusoidal. Pero que tiene una amplitud que es 2A por coseno de esto. Y esto es máximo cuando R2 menos R1. ¿Sí? ¿Cuándo el coseno? 2A. Cuando esto es 0, O tenemos múltiplo de 2pi.
+13:48
+Entonces tenemos que la suma es máxima, la amplitud de la onda resultante es máxima cuando el coseno es 1 o menos 1, así que corresponde a Km. R2 menos R1, K por la diferencia de camino es igual a más menos pi más 2n pi.
+14:28
+Y esto es lo mismo que decir que K R2 menos R1 es igual a 2n pi. Esta es la condición de máximo que habíamos visto la vez pasada. Condición de máximo. Porque es cuando el coseno vale 1 o menos 1, son los puntos donde la oscilación es máxima.
+15:01
+Bien. Bien.
+15:05
+Bueno, pero K, el número de onda, habíamos visto en algunas clases, que es como 2pi sobre la longitud de onda.
+15:15
+Número de ondas. Así que la condición de máximo la pueden escribir.
+15:35
+Como expresada en términos de la longitud de onda, les queda que r2 menos r1, la diferencia de caminos, por 2pi sobre lambda es igual a 2pi por n con n un entero. Acá n perteneciente a los enteros. Entonces simplificamos el 2pi y esto es equivalente a que la diferencia de caminos es un múltiplo de la longitud de onda.
+16:11
+No, no, no, no. No, no, no. Fíjate que acá te queda, multiplicás por 2 y te queda 2pi, más menos 2pi, más un múltiplo de 4pi. Pero los números que son más o menos 2pi más un múltiplo de 2pi son múltiplos de 2pi. Son todos los múltiplos de 2pi. Tomiendo en cuenta el más menos.
+16:43
+Bueno, entonces esa es la condición que tenemos que pedir. Que la diferencia de caminos que la calculamos acá sea múltiplo de la longitud de onda. Entonces... Para la interferencia. Esto es muy general. Esto es la superposición de dos ondas de igual amplitud. Nos dice que la superposición de dos ondas de igual amplitud tiene su máximo cuando la diferencia de fases es un múltiplo de 2pi. Y si la diferencia de fases está asociada con la diferencia de caminos, es simplemente que la diferencia de caminos...
+17:14
+La diferencia de fases es múltiplo de 2pi. Y si la diferencia de fases está asociada con la diferencia de caminos, nos dice que la diferencia de caminos tiene que ser un múltiplo de la longitud de onda. Y entonces para el caso particular que tenemos acá, para la experiencia de dos rendijas,
+17:37
+En las hipótesis que tenemos allá, campo lejano, ondas monocromáticas y demás, esto nos da que D por seno de teta es igual a N por lambda. Entonces, posición de los máximos de interferencia.
+18:10
+Pero también nos podemos preguntar... ¿Todo pronto por ahí? ¿Cómo? Hay que llevar el láser. También podemos preguntarnos cuál es la posición de los mínimos. Bueno, fíjense, la posición de los mínimos será cuando el coseno se anula. ¿Y cuándo un coseno se anula? ¿Qué le tiene que pasar al ángulo que está dentro del coseno para que se anule el coseno? O menos pi sobre 2. ¿De acuerdo? Entonces, condición de mínimo. Condición de mínimo...
+18:45
+La condición de mínimo nos dice que K r2 menos r1 sobre 2 sea igual a más menos pi sobre 2 más 2n pi.
+19:30
+Me están faltando. Entonces esto me queda que KR2 menos... Perdón, acá... Discúlpenme, acá había un error.
+19:46
+Acá esto no es más o menos pi. Más o menos pi no aporta nada. Es pi o cero. Discúlpenme, había un error hace un rato. Cero más 2Npi.
+19:58
+cuando multiplicamos por 2 nos da esto que está acá había un error hace un rato el resultado estaba bien pero en el medio dije una cosa que estaba mal el máximo es cuando esto vale el coseno vale más menos 1 y esto es cuando el ángulo vale pi o 0 cuando vale pi el coseno vale menos 1 amplitud máxima pero invertida o 0 y amplitud máxima y esto si les da esto que puse acá cuando multiplican por 2 y acá esto si está bien y les queda r1 igual a más menos pi más 4npi y esto es lo mismo que decir fíjense como tengo el más menos esto es lo mismo que decir que k R2 menos R1, llamémosle este N', un entero, esto es lo mismo que esto decir que es pi más 2Npi, con N entero.
+21:08
+Esto es la condición de mínimo.
+21:11
+¿Por qué? Porque cuando tengo, fíjense, acá es más 4, pero cuando tengo el menos puedo diferir en 2, ¿sí? Si yo tengo el menos, difiere de este que está acá en 2pi. Entonces cubro todos con esta única condición. Esta es la condición de mínimo. Así que fíjense que, si sustituyo ahora para el caso del experimento de doble arrendija, nos da que D seno de teta es igual...
+21:47
+Acá puedo escribirlo como 2pi sobre lambda por la diferencia de caminos igual a pi más 2npi.
+22:02
+Entonces esto me queda que dθ será igual a lambda por n más 1 medio. ¿Está bien?
+22:14
+Esto nuevamente, general, vale para la condición de mínimo de interferencia de dos... Ahí ya no van a ver nada, pero hay lugares acá.
+22:27
+Esto es general, es para la condición de interferencia de dos ondas cualesquiera de igual amplitud. Pero esto es para la geometría específica de las dos rendijas. ¿Bien? Entonces antes de pasar al experimento, comento un poco de cómo son las soluciones. Fíjense que... Borro por acá.
+22:55
+primero que nada los máximos y los mínimos están intercalados porque la función seno es una función monótona así que entre cada máximo entre dos máximos tengo un mínimo bueno eso no es muy sorprendente van a tener franjas oscuras y franjas claras sucesivamente primera cosa segunda cosa En diferencia de caminos están equiespaciados, pero en ángulo no están equiespaciados. Dicho de otra manera, en diferencia de caminos están equiespaciados, pero sobre la pantalla no están en general equiespaciados, pero ¿qué pasa si nos colocamos en los máximos y los mínimos que están cerca del eje?
+23:38
+Los que están por acá. Supongamos que tenemos muchos máximos y mínimos y miramos los que están acá cerca. Entonces el ángulo será chico. Esa fórmula general no supone que el ángulo sea chico. El ángulo puede ser cercano a pi sobre 2, no pasa nada. Pero ahora concentrémonos en el caso de los ángulos chicos. Entonces, para teta pequeño... Esto ya es un caso particular, no es el caso totalmente general. ¿Sí? Cuando θ es pequeño, el seno del ángulo es aproximadamente igual a la tangente del ángulo.
+24:13
+¿Se acuerdan? Ambos son equivalentes a θ. ¿Sí? ¿Sí?
+24:19
+Entonces la tangente de teta, llamémosle a esto la posición y, es la posición de un máximo. Esto es igual a y sobre d. Entonces la condición de máximo pasa a ser d. tangente de teta aproximadamente igual a n por lambda que esto es lo mismo, paso el d dividiendo acá perdón, d y vemos que esto nos dice que los máximos las posiciones de los máximos máximos
+25:15
+Serán d por n por lambda sobre d chica. Entonces vemos que los máximos en la pantalla, cuando miramos los máximos que están cerca del eje, están equiespaciados. Están a igual distancia. La distancia entre dos consecutivos es d lambda sobre d chica. Entonces vamos a tener una sucesión de franjas de igual ancho y equispaciadas. ¿Se entiende?
+25:48
+Después vamos a ver que cuando vamos al lado, sobre la región lateral, cada vez las franjas son más anchas. Pero en la zona central están todas de igual tamaño. Por ahora son todas del mismo tamaño porque estamos cerca. En realidad, cuando vamos sobre el borde vamos a ver que son cada vez más grandes. Y ahora veamos la posición de mínimo. Ahora, condición de mínimo.
+26:18
+Será lo mismo, pero en lugar de n tengo que poner n más 1 medio, como pusimos ahí. Entonces la condición de mínimo será d por lambda sobre d por n más 1 medio.
+26:34
+Entonces los mínimos también están equiespaciados y los mínimos están en las posiciones intermedias justo en la mitad entre dos máximos. El mínimo está entre dos máximos. Así que bien simple el resultado cerca del eje. Ahora, una observación. Esta ecuación...
+26:53
+No siempre tiene solución. ¿Qué necesitamos para que tenga alguna solución? Bueno, perdón, siempre hay una solución que es el máximo central, el θ igual a 0, siempre podemos tomar n igual a 0 y θ igual a 0 es solución de eso. Pero si queremos tener realmente el fenómeno de interferencia, queremos tener al menos un máximo lateral, ¿verdad? Es decir, queremos llegar a tener un mínimo, ¿sí?
+27:18
+¿Qué necesitamos para ya tener un máximo lateral? ¿Qué tiene que verificar D y lambda?
+27:29
+Para que esta ecuación tenga una solución. Al menos una. Fuera de teta igual a cero. Si tomo n igual a cero, esta ecuación tiene una solución que es teta igual a cero. ¿De acuerdo? Es la única porque me interesan soluciones entre cero y pi sobre dos. Así que yo solo tengo una. Si tomo, quiero tener un primer máximo que no sea el central, que está en teta igual a cero, sino que tenga un ángulo lateral.
+28:04
+Uno por lo menos. Claro, necesitamos que lambda sobre d sea menor a uno porque el seno es una función que está cotada por uno. Si quiero tener una solución que no sea teta igual a cero, El primero es n igual a 1. Lo más favorable es poner n igual a 1. El primer máximo lateral. Y eso corresponde a que necesitamos que lambda sea menor que d. De hecho, de manera general, el último máximo corresponde a No son infinitos en realidad, de esta fórmula uno podría pensar que son infinitos, pero esta fórmula solo vale en la región central.
+28:48
+A medida que nos alejamos, los máximos son cada vez más espaciosos y el último sucede cuando el ángulo es para pi sobre 2, cuando está muy alejado lateralmente. El último máximo corresponde a n lambda igual a d por seno de pi sobre 2. Esto es 1, ¿verdad? Así que el último máximo, el n máximo, corresponde a d sobre lambda.
+29:19
+Aproximadamente, ¿verdad? Porque no tiene por qué, como n es entero, no tiene por qué justo coincidir con esto. Pero es más o menos de ese orden. Puede ser un poquito, en general es un poquito menos. Digamos que el mayor corresponde a la parte entera de d sobre lambda. Entonces vemos que si queremos que este número sea al menos 1, que haya al menos un máximo lateral no trivial, necesitamos que D sobre lambda sea mayor o igual a 1.
+29:51
+Si D sobre lambda vale 4, tendremos el máximo central y 4 el máximo laterales. ¿Se entiende? No es mentira, porque si justo vale 4, el último está en pisos de 2, que es imposible de ver. ¿Se entiende lo que digo? Así que los laterales no están equispaciados, cada vez están más alejados unos de otros. Tenemos un número finito de máximos. Lo mismo puedo decir con los mínimos, ¿verdad? Los mínimos puedo hacer el mismo análisis, lo único que en lugar de aparecer n acá, aparecerá n más un medio, como en toda la fórmula.
+30:27
+Entonces todo esto que yo les conté ahora, lo vamos a verificar. En un experimento de la clase pasada alguien me preguntó, ¿pero eso de zonas que se oscurecen realmente se puede ver en un experimento? Sí, en un laboratorio es re fácil, pero es tan fácil que se puede hacer acá en una sala de clase, que es lo que van a hacer ahora Carla y Enzo. Bueno, lo que estamos usando acá es un láser verde de 450 nanómetros aproximadamente. Entonces, tenemos un frente de ondas planas monocromáticas que incide sobre una rendija doble. Entonces, acá tenemos la zona central.
+30:58
+En la zona central tenemos, como pueden ver, máximos y mínimos equiespaciados. Y seguimos teniendo diferentes máximos y mínimos en las dos direcciones totalmente simétricos. ¿está bien? vamos perdiendo intensidad a medida que nos alejamos que es normal, entonces en la zona central pueden ver como decía Nico que tenemos el mismo espaciado entre máximos y mínimos después cambia un poco ¿está bien? entonces este es el fenómeno de difracción de rendija doble entonces lo que se puede ver además son zonas como estas de acá que son en realidad un poco más oscuras que estos mínimos que están acá tenemos otros mínimos que se deben por otro efecto que todavía no se explicó, que es el efecto de...
+31:43
+No se explicó en clase. No se explicó en clase. Sí, sí, ahora trato de hacer una explicación breve de cómo funciona eso, que es el efecto de difracción de rendija simple. ¿Está bien? Entonces tenemos el efecto de difracción de rendija doble, que como acaban de ver, lo que tenemos es una sucesión de máximos y mínimos, espaciados a la zona central, que sería toda esta zona de por acá, También se proyecta, seguiría por acá y no sé si se llega a ver a esta altura, pero tenemos también el mismo ancho más o menos en los máximos y en los mínimos. Pero tenemos zonas más oscuras entre medio que son debido a otro efecto, que es el efecto de rendija simple.
+32:21
+Entonces, con rendija doble se esperaría ver este patrón extendiéndose indefinidamente hacia los costados. Zonas brillantes y zonas oscuras totalmente parejas. Estos efectos que ven acá son debidos a efectos de rendija simple, que si copiaron esto, voy a hacer un dibujito. Es muy similar el efecto a la hora de explicarlo.
+32:54
+Bueno, ahí está. Bueno, vamos a ver primero qué pasa si cambiamos un poco las rendijas. Acá tenemos otra rendija doble. Ahí. Acá tenemos otra rendija doble que tiene diferente ancho y diferente espaciado entre rendija y rendija. Entonces lo que vemos es que el ancho de los máximos y de los mínimos cambió ahora, son mucho más chicos.
+33:15
+A ver, trae otro, a ver, ese era el anterior. Acá tenemos otro que tiene todavía más chicos y acá se ve mucho más claro lo que decía, tenemos muchos máximos y muchos mínimos y zonas oscuras entre medio. ¿Está bien? ¿Se logra ver?
+33:32
+Acá tenemos el otro más. La red trae cuatro rendijas diferentes. Entonces, la cuestión es, ¿a qué se deben estas zonas oscuras que están acá? Estos que están acá se deben a la rendija doble y esos más espaciados se deben a la rendija simple. La rendija simple es esto, básicamente. Ahí está. Gracias, Tico. Es una rendija sola. ¿Está bien? Con un ancho determinado, digamos de... que va desde acá hasta acá entonces tenemos el eje y el objetivo donde estamos viendo nuestro patrón entonces imaginemos un rayo que sale desde este punto de acá el rayo que sale de este punto llega hasta ahí ahora imaginemos un rayo que sale de la zona central el rayo que sale de la zona central y va al mismo punto va a tener, igual que en el caso de la rendija una diferencia de camino, que es este tramo que está acá.
+34:32
+Este tramo que está acá mide d sobre 2 por seno de teta. Este ángulo que está acá, que es igual a este ángulo que está acá. Exactamente igual que en la rendija doble. La diferencia es que ahora estamos imaginándonos que tenemos una rendija acá y la otra acá. Es decir, la mitad del ancho de la rendija entera. Está haciendo una simplificación que está reemplazando una rendija ancha... Por dos agujeros. ¿Se entiende? Entonces, ¿qué pasa si esta diferencia de caminos entre este rayo y este otro es de media longitud de onda?
+35:09
+Como acabamos de ver. ¿Qué? ¿Alguien contestó me parece?
+35:16
+Ahí está. Si tenemos en la diferencia de caminos media longitud de onda, vamos a tener interferencia destructiva. Como yo todavía no lo borré, no, ahí está, acá. Digamos que tengo n igual a cero. Entonces la diferencia en los mínimos va a ser de media longitud de onda. ¿Está bien? Entre mínimos vamos a tener media longitud de onda. Entonces, si esta diferencia de caminos mide media longitud de onda, vamos a tener acá en este punto un mínimo. Bueno, imaginemos... Se da cuenta que este es otro efecto que se superpone. Lo que habíamos puesto acá, suponíamos las rendijas muy muy finitas y despreciábamos su ancho.
+35:53
+Y ahora le está mirando otro efecto que es la interferencia de una parte de la rendija consigo misma. Exactamente. Ahora estoy imaginando que tengo un rayo y otro rayo. Supongo que esta es una rendija y esta es la otra rendija y uso los mismos conocimientos, las mismas cuentas que hicimos para rendija doble. Entonces, este rayo, si esta diferencia de camino es de media longitud de onda, se va a interferir destructivamente con este otro.
+36:16
+Esta comparación entre dos rayos, yo puedo hacerla para un rayo que esté enseguida después más abajo, y otro que esté enseguida después más abajo, y así voy tomando de a dos rayos, y puedo ver que de a pares los rayos se van interfiriendo destructivamente siempre en este punto. Y así es como construyo en este punto un mínimo. ¿Está bien? Entonces, ¿qué condición me da eso? Dijimos que esta variación tendría que ser igual a un período sobre 2, bueno, un múltiplo entero de un período sobre 2.
+36:50
+En realidad no, porque para el caso en que... Un medio más uno, o sea, múltiplos impares. 2n más 1. Exacto. Si yo tengo en esta distancia múltiplos impares de la longitud de onda sobre 2, voy a tener mínimos. Y esta sería la condición que me daría los huecos esos oscuros más separados. ¿Está bien? Esta condición que tenemos acá. Y bueno, ese es el efecto que está superpuesto con el efecto de rendija doble. Entonces lo que tenemos son las rendijas dobles comunes, tenemos huecos más largos que son de la rendija simple.
+37:28
+Entonces tenemos los dos efectos. Los agujeros chicos, digamos, los mínimos chicos, son debido a la rendija doble, y los grandes son debido a este efecto de difracción de la rendija simple. ¿Sí? Ese segundo efecto de interferencia de la rendija homogénea es un efecto de difracción por una rendija. Este es el efecto de difracción que te hace una explicación con óptica geométrica que trata de aproximar el problema. Entonces vamos a ver si podemos ver sólo ese efecto.
+37:56
+Una pregunta, ¿rendijas en las que solo se ve el efecto de rendija doble sin difracción no consiguieron? No, las rendijas que había eran en las que trajimos. Bueno, ahí tenemos solo el láser.
+38:12
+Y bueno, esta rendija en realidad produce el efecto vertical, es decir, la rendija es horizontal, entonces produce el mismo efecto pero en dirección vertical. Esto es una rendija variable, lo que nos permite cambiar esa apertura. ese ancho, ese D entonces, a medida que lo variamos el efecto va variando el ancho del máximo central y los de diferentes máximos cambia, porque depende todo de la distancia D si lo cambiamos podemos ver ahora no tenemos las franjas que cortaban el máximo en pedazos chiquititos tenemos solo los agujeros grandes que se veían en la rendija doble estos que están acá bueno, este es el efecto de rendija simple con el que no pudimos buscar una rendija que se viera solo el otro efecto pero bueno, la idea es que uno tiene superposición de diferentes efectos en los problemas y también podemos ver situaciones más complicadas en las que no sólo tenemos una rendija de una dimensión como es esta es decir, tenemos una rendija fina y larga entonces nuestro rayo sólo sufre efecto en una dirección en este caso fue un efecto en la dirección vertical
+39:21
+Podemos tener diferentes configuraciones, todo tipo de agujeritos chiquititos producen este mismo tipo de efectos. Un círculo produce aros, un cubo produce algo bastante interesante, que es lo que tenemos acá.
+39:37
+Un cuadrado, sí. Problemas de dimensiones, me sobró una. Pero bueno, la idea es que en este efecto tenemos un rectángulo. Entonces tenemos el efecto de rendija simple en la dirección vertical y en la dirección horizontal, superpuestos. Entonces lo que nos termina produciendo son sucesiones de máximos en sumas. O sea, digamos que teníamos la rendija simple vertical más la horizontal a diferentes alturas. Entonces se van sumando todos los efectos. Entonces tenemos lugares donde todos coinciden con mínimos, donde uno solo tiene mínimo y el otro máximo, y lugares donde tenemos máximos de los dos, de la componente vertical y la componente horizontal.
+40:14
+Entonces se producen este tipo de patrones, que creo que había imágenes en el Resnick de esto. Y bueno, acá tenemos algo un poco más complejo, que es el caso de una rendija hexagonal. Tenemos el mismo efecto con tres ejes de simetría. Es exactamente el mismo principio. Tenemos zonas donde se superponen todos los mínimos, zonas donde algunos sí, otros no. No sé si llegan a ver, pero entre medio tenemos a su vez franjas más oscuras y más brillantes entre estos dos puntos brillantes. Y bueno, se puede hacer todo tipo de configuraciones y se ve todo tipo de dispersiones interesantes.
+40:49
+Con un círculo van a ver círculos concéntricos, de esas redes no tenemos, tratamos para enfocarlo con unos lentes pero no pudimos armarlo, no tenemos Michelson. Y bueno, básicamente eso es lo que queríamos mostrarles hoy, los diferentes efectos que se podían ver de difracción y rendija simple y doble, con solo esos conocimientos, se puede extrapolar a muchos casos. Gracias.
+41:16
+Una cosa que no les comentó Enzo, pero que es importante, es que este experimento fue hecho con un láser. Sí, les dijo que era un láser, pero no les explicó por qué era importante. Es importante por dos motivos. Primero porque el láser es una fuente de luz bastante potente. Esa es una primera cosa, como estamos en una... Como estamos en una situación que no está muy oscurecida, conviene tener una fuente de luz medianamente potente para poder ver, para que haya suficiente intensidad.
+42:00
+Pero más importante que eso, el láser es una fuente muy coherente de luz. Se comporta bastante bien como una onda. Primero, tiene una longitud de onda bien definida, bastante angosta. Es decir, la luz es casi toda de una única longitud de onda. Y además, es muy coherente en las distintas partes del frente de onda, que no es exactamente plano, pero sí es plano en una regioncita. Es una región suficientemente grande como para que incluya las dos rendijas. Y todos los puntos del frente de onda realmente oscilan bien en fase. Y entonces, el tener una fuente...
+42:35
+buena a nivel de coherencia, mejora mucho y por eso logramos ver claramente los máximos y los mínimos en el pizarrón. Con fuentes de luz normales, con una lamparita, es muy difícil hacer ese experimento. Entonces, la primera vez que se hizo este experimento hace mucho tiempo, se llama el experimento de Young, del que voy a hablar ahora, una de las principales dificultades para ver el fenómeno era lograr tener acá una fuente de luz suficientemente coherente como para que se viera el efecto de interferencia. Porque ya vimos, hablamos de eso la vez pasada, la coherencia es esencial para ver el efecto de interferencia.
+43:12
+Eso lo vamos a explicar ahora un poco en teoría. Entonces voy a hablar ahora un momentito del experimento de Young. ¿Ves?
+43:26
+Este es el experimento de Yang. Este es el experimento de 1801. Entonces, la dificultad que tenía Yang era tener una fuente coherente de luz.
+44:01
+Entonces lo que hizo es, sospechaba que la luz tenía esa propiedad de interferencia, que la luz era una onda, y para probarlo decían, vamos a ver que el fenómeno de interferencia que se ve en todas las ondas que conocemos también se da entre la luz. Pero es muy difícil porque nuestra experiencia cotidiana, como les digo, no tiene efecto de interferencia. Entonces lo que hizo es todo igual que lo que hicimos acá, pero antes puso otra pantalla.
+44:26
+con una rendija finita. Entonces puso una luz normal acá, en aquel entonces no eran aparitas, era una vela o una fogata, no sé lo que habrá puesto, pero una luz normal de este lado. Pero, como la rendija acá es finita, todos los puntos, por más que la luz esta es una luz incoherente, fuente incoherente,
+44:59
+Todos los puntos que están en esta rendija esencialmente son el mismo. Entonces toda la luz surge de un único punto y ese punto obviamente es coherente consigo mismo. En realidad eso no es exactamente cierto porque si fuera un punto infinitamente chiquito no pasa nada de luz y entonces tiene el problema de que mejora la coherencia. Pero no tiene casi intensidad. Entonces si no tiene casi intensidad no ve nada acá. Entonces tiene dos problemas que son, se contrapone entre si por un lado quiere que haya luz, entonces no quiere una rendija muy finita porque quiere hacer pasar luz, pero por otro lado quiere hacer coherencia.
+45:33
+Entonces ya han encontrado un compromiso entre las dos aspectos. dos requerimientos de que fuera coherente y que hubiera suficiente intensidad poniendo una fuente suficientemente grande de luz y una rendija bastante finita y entonces como el ancho es muy chiquito casi no hay incoherencia entre los puntos que salen acá entonces acá sale una onda que cerca de acá no se parece con una onda plana pero si esta pantalla está suficientemente lejos queda como una onda plana y esto es una fuente coherente
+46:06
+Si la rendija es suficientemente pequeña. Y así fue como Young logró hacer el experimento. Que no era para nada un experimento tan claro y fácil de hacer como el que hicimos ahora en el pizarrón. Pero eso fue hecho hace más de dos siglos. Así que más bien hay que sacarse el sombrero con Young. La dificultad era esa, que no tenían láseres. Láser es una cosa del siglo XX, ¿verdad? A mediados del siglo XX. Años 60.
+46:37
+Entonces, voy a hablarles ahora de la coherencia, justamente. Esto es la sección 15.3. Entonces, yo ya les comenté un poco, hablé un poco de la coherencia la clase pasada, pero vamos a transformar eso en algo un poco más cuantitativo.
+47:09
+Entonces, para observar el fenómeno de coherencia, de interferencia, necesitamos que las fuentes...
+47:42
+Con una diferencia de fase fija. Obviamente estas cosas no son blanco-negro. Si la diferencia de fase no es exactamente la misma, pero es una buena aproximación, no pasa nada.
+48:03
+Pero bueno, comenzamos de eso. Vamos a tomar nuevamente dos fuentes C.
+48:11
+Vamos a tomar dos fuentes que están con un disfasaje que le llamamos phi. Y vamos a suponer que ese disfasaje puede ser constante o no. Entonces tomemos una señal.
+48:29
+Señal suma. de dos señales entonces tomemos un campo resultante que será la suma de un primer campo que será seno de kx menos omega t y otro que será de la misma amplitud supongamos pero seno de kx menos omega t y hay una fase
+49:02
+Entonces, la intensidad...
+49:34
+No tengo por qué suponer que sean la misma señal. A esto le vamos a llamar E1 y a esto le voy a llamar E2. No tengo por qué suponer que es la misma amplitud. Entonces la intensidad asociada con E, con el campo E, será proporcional, dijimos, a... El campo al cuadrado.
+50:06
+¿Está? En realidad promediado en el tiempo. ¿Está? Pero esto lo puedo... Y entonces será E1... Al cuadrado más E2 al cuadrado más 2E1 por E2.
+50:38
+Y esto que está acá, bueno, entonces acá hay un factor de proporcionalidad que lo calculamos, pero no lo necesito ahora. Pongámosle nombre a esa constante, le ponemos, hay una constante E, que no la necesito ahora. Entonces acá voy a escribir no la intensidad, sino la intensidad sobre C. Pero esto que está acá es la intensidad... Asociada con la onda 1.
+51:08
+Y esto es la intensidad a menos del factor C con la onda 2. Así que esto lo podemos escribir como I1 sobre C más I2 sobre C más este término extra que se le denomina término de interferencia. ¿Bien?
+51:37
+Nuestra experiencia cotidiana, ¿qué nos dice? Que la intensidad de la onda resultante es suma de las intensidades. Quiere decir que el término de interferencia es cero.
+51:49
+Pero ahora, ¿qué pasa? Supongamos que nosotros tenemos un aparato de medida que es capaz de detectar señales en...
+52:01
+promedia en intervalos que digamos son una décima o una centésima de segundo y supongamos que la fase phi en realidad está oscilando está cambiando mucho es decir las dos fuentes emiten con un desfasaje que varía mucho en tiempo entonces podemos calcular lo que vamos a medir no es realmente la intensidad sino en la intensidad promediada en la fase Porque la fase supongamos que oscila, que varía mucho más seguido que lo que detecta nuestro aparato de medida.
+52:38
+Tomamos un aparato de medida, pongamos que oscila, que logra detectar, actualizar su valor de la medida una vez cada 10 veces por segundo o 100 veces por segundo y la fase puede oscilar, pongamos 10 a la 8 veces en un segundo. Así que vamos a poder promediar en la fase. Entonces vamos a tomar el promedio en la fase. Voy a poner acá fi, promedio en la fi. Promediamos en la fase.
+53:17
+Entonces, si promediamos en la fase, los dos primeros términos no les hace nada, quedan iguales, son las intensidades promedio en esa fase. Pero veamos qué le pasa, por qué no les pasa nada, perdón, capaz que vale la pena comentarlo. Si yo tomo el valor medio del seno al cuadrado de kx menos omega t más phi,
+53:48
+Cuando promedio, esto me da un medio, me da una constante.
+53:54
+¿De acuerdo? Así que promediar no me afecta en nada. Igual, para medir la intensidad, yo ya promedio en T. Así que ya me quedaría promediado a un medio. Así que promediar en fin no cambia nada.
+54:11
+Pero veamos este otro término. Tomemos el valor medio de E1 por E2, promediado en phi. E1 por E2 es A por B por el seno de KX menos omega T por el seno de KX menos omega T más phi. Todo promediado en phi.
+54:46
+Entonces desarrollemos el seno, esto nos queda, el seno de una suma nos queda, entonces seno cuadrado, vamos a poner seno de kx menos omega t lo pongo en factor, y acá el seno de la suma lo pongo como seno del primero de kx menos omega t por coseno de phi, más seno de phi por coseno de kx menos omega t. Todo esto promediado en phi.
+55:19
+En realidad para la intensidad también tengo que promediar en el tiempo, pero por ahora ni me interesa el promedio en el tiempo. Entonces yo puedo sacar para afuera y me va a quedar ab factor de seno al cuadrado de kx menos omega t por el valor medio de coseno de phi promediado en phi.
+55:42
+Y el otro me queda seno de kx menos omega t por coseno de kx menos omega t por el promedio del seno de phi.
+56:05
+Pero, si phi varía de manera aleatoria y ruidosa, el coseno en promedio tendrá tantas veces, como es una función que toma valores positivos y negativos, tendrá en promedio tantas veces valores positivos como valores negativos. ¿De acuerdo? Si phi no tiene un sesgo, si es totalmente aleatorio, en promedio tendrá tantos valores positivos como negativos. Así que, cuando promediamos en phi, esto es cero. Y esto también es 0. Lo mismo pasa con el seno.
+56:35
+Entonces, el promedio del término de interferencia, cuando la fase está oscilando mucho, es 0. Y esa es la razón por la cual cuando prendemos dos lamparitas en un cuarto, la intensidad que vemos es la suma de las intensidades. No aparecen zonas oscuras. Es porque la luz de una lamparita y de la otra emiten de manera totalmente independiente una de otra en todo instante. Y nuestro ojo no logra una resolución que es muchísimo más grande que el tiempo típico de diferencia de fases.
+57:10
+Entonces, si eso no fuera cero, ahí sí tendría zona oscura. Claro, exactamente. Si la fase, supongamos que en lugar de oscilar mucho, se mantiene constante, como en el experimento que acabamos de ver, entonces ahí habría un término de interferencia. ¿Me explico? Para poder promediar necesitamos que la fase varíe muchísimo en el tiempo de medida. Si la fase, por el contrario, se mantiene esencialmente constante en el tiempo de medida, no hay que tomar ningún promedio en phi, y este promedio no debe ser tomado, es una cosa fija. Acá yo estoy promediando porque estoy diciendo que la fase varía muchísimo y de manera totalmente aleatoria en el tiempo de medida.
+57:47
+Varía un millón de veces.
+57:52
+Eso es lo que pasa con las lamparitas normales. Las lamparitas normales tienen un tiempo típico de autocoherencia de 10 a la menos 8 segundos. Entonces, entre un instante y otro, la fase varió cualquier cosa. La fase entre un instante y 10 a la menos 8 segundos más tarde, digamos, 10 a la menos 7 segundos más tarde, se volvió totalmente independiente. Entonces... Y eso para cada lamparita, si le das otra lamparita a cada una de manera independiente, está claro que nosotros no tenemos una capacidad de ver con una precisión de 10 a la menos 8 segundos.
+58:31
+No tenemos esa resolución. Entonces cuando vemos el promedio...
+58:35
+Y ese es el fenómeno por el cual en la vida corriente no vemos el fenómeno de interferencia. Para que veamos el fenómeno de interferencia necesitamos dos fuentes coherentes, es decir, con la fase que se mantiene fija, por lo menos en un buen nivel de aproximación. Si la fase no se mantiene fija, pero bastante fija, por ejemplo en el experimento de la Rendi-Haiyan, Las fases entre los distintos puntos no son exactamente fijas, pero son más o menos fijas. Entonces, si el tiempo típico asociado se vuelve comparable o más grande que el tiempo de medida, logramos ver el fenómeno de interferencia.
+59:13
+Necesitamos que el tiempo de autocoherencia sea al menos igual que el tiempo de medida. acá además se suma otro efecto que es la falta de coherencia espacial que son distintos puntos que están sumando y que tienen que ser coherentes entre sí y es un poco lo mismo necesitamos que los distintos puntos emitan de manera coherente entre sí y eso Yang lo logró hacer con el razonamiento de precisión y ahora con las luces, con los láseres hay un nivel de coherencia total ¿se entiende esto?
+59:45
+Y eso explica cómo pasamos del fenómeno de interferencia al fenómeno sin interferencia. ¿Cómo estamos de hora?
+59:56
+Me queda media hora. En la media hora que me queda, voy a hacer lo siguiente.
+1:00:02
+Voy a calcular... Hace un rato vimos las posiciones de los máximos y los mínimos en el experimento de las rendijas. Lo que voy a hacer ahora es calcular no solo los máximos y los mínimos, sino la intensidad. ¿Cuánto vale la intensidad en cada punto?
+1:00:20
+¿Bien?
+1:00:22
+Hallar la curva de intensidad. Bueno, y acá para hallar la curva de intensidad voy a suponer que las rendijas estas son muy finitas. Así el fenómeno de difracción que les comentó Enzo hace un rato no aparece. Si las rendijas son muy finitas, el efecto de cómo interfieren unas con otras es prácticamente despreciable. Podemos considerar las rendijas puntuales. Y ahí solo me tengo que ocupar de las rendijas y no del ancho de cada una de ellas. Entonces, veamos ahora la intensidad...
+1:00:52
+el experimento de las dos rendijas entonces 15.4 cálculo
+1:01:23
+de la intensidad entonces esto es dos rendijas entonces si tomamos dos rendijas muy angostas entonces difracción
+1:01:54
+ignorada entonces acá tenemos este mismo dibujo que hace un rato lo que voy a querer calcular es cuánto vale la intensidad pero la intensidad acá en P será una constante que no voy a calcular por los campos eléctricos producidos por cada una de estas dos fuentes los campos dijimos el campo emitido por una onda decrece con la distancia ¿si?
+1:02:27
+Si fueran en lugar de rendijas puntos, si fueran ondas esféricas, dijimos que decrecía con qué velocidad.
+1:02:37
+Uno sobre R. ¿Se acuerdan? Acá no son puntuales, son rendijas, pero si la rendija tiene un ancho fijo, esencialmente la intensidad va a decrecer como la distancia, uno sobre la distancia. Así que esencialmente esto se va a comportar como... vamos a tomar que tomar el cuadrado de una amplitud acá en la fuente tomamos las dos fuentes con la misma amplitud sobre R1 por seno de KR1 menos omega T más A sobre R2 por seno de KR2 menos omega T todo esto al cuadrado, perdón
+1:03:29
+Entonces esto que está acá lo voy a llamar E. Vamos a calcular E. En la aproximación esta en la que estamos en campo lejano.
+1:03:43
+Entonces si D es mucho más grande que D, puedo hacer R2 aproximadamente igual a R1. La diferencia es de orden D. Pero eso lo puedo hacer acá en el prefactor. Pero en la fase no, porque la fase justamente me va a generar el fenómeno de interferencia.
+1:04:05
+En el prefactor. Pero no en la fase. ¿Está? Entonces hay un cálculo que yo hice hace un rato, entonces E será aproximadamente igual a A sobre R1, cualquiera de los dos, R1 es similar a R2, por la suma de los senos.
+1:04:42
+Pero esa suma la hicimos hace un ratito, vimos que la suma de esos dos senos me quedaba... el producto de un seno con un coseno entonces vamos a escribirlo vamos a escribirlo nuevamente repito ese cálculo tendría que haberlo guardado pero
+1:05:15
+Entonces dijimos que seno de fi1 más seno de fi2.
+1:05:26
+Podemos escribir, llamamos delta fi a fi2 menos fi1. Y hacemos como hace un rato, escribimos seno de fi1 como fi1 menos fi1 más delta fi sobre 2 menos delta fi. Y seno de phi2 lo escribo como phi1 más delta phi sobre 2 más delta phi sobre 2.
+1:06:02
+Esto es igual.
+1:06:04
+Y acá nuevamente, mismo cálculo que hace un rato. Desarrollo el seno en ambos lados. Entonces de este lado me queda seno de phi1 más delta phi sobre 2 por coseno de delta phi sobre 2.
+1:06:20
+Menos seno de delta phi sobre 2 coseno de phi1 más delta phi sobre 2. Ese es el primer término. Y ahora el segundo me queda, en la primera parte igual, me queda seno de fi1 más delta fi sobre 2 por coseno de delta fi sobre 2, más seno de delta fi sobre 2 por el coseno de fi1 más delta fi sobre 2. Entonces si sumo las dos, vemos que E será aproximadamente igual a A sobre R1, Este se va con este.
+1:06:56
+Estos dos se suman y me queda 2A por coseno de delta fi sobre 2 por seno de fi1.
+1:07:08
+Ya lo escribo como es, perdón. Reemplazo ya directamente y me queda KR2 menos R1 sobre 2 por seno de KR2.
+1:07:24
+r1 menos omega t más k sobre 2 por r2 menos r1 este es el cálculo que habíamos hecho hace un rato pero ahora me estoy ocupando también del prefactor y ahora tomo el cuadrado y voy a promediar en el tiempo entonces para la intensidad ah bueno, perdón, la intensidad me olvidé de decirles esto es esto Y tomo el promedio en el tiempo.
+1:08:03
+¿Se acuerdan? Promedio en el tiempo. Porque estamos pensando, la intensidad no es la potencia, sino es la potencia promediada. La luz oscila mucho en un intervalo de medida. Así que hay que promediar el tiempo. Entonces la intensidad será igual. A cuatro veces A al cuadrado sobre R1 al cuadrado. ¿Sí?
+1:08:36
+Por el coseno cuadrado de K R2 menos R1 sobre 2. por el valor, todo esto no depende del tiempo y después lo que depende del tiempo es el cuadrado de esto me queda por el seno cuadrado de K R1 menos omega T más K sobre 2 por R2 menos R1 pero ¿cuánto vale el promedio en un periodo de ese seno al cuadrado?
+1:09:07
+si yo promedio en un periodo un seno al cuadrado vale un medio Así que esto es 1 medio. Así que esto será 2a al cuadrado sobre r1 al cuadrado por coseno cuadrado de k de r2 menos r1 sobre 2.
+1:09:47
+Entonces vemos que la dependencia de la intensidad... Bueno, perdón. Hay además un factor multiplicativo acá que estoy omitiendo. Acá hay un factor multiplicativo. Estoy omitiendo. Que no lo he calculado, pero no me importa. Porque lo que voy a hacer es comparar con la intensidad...
+1:10:12
+ven que, perdón, una cosa que quiero comentar hay una parte que varía, oscilante que varía de manera importante que es el coseno al cuadrado ¿si? que eso varía mucho ¿si? ¿de acuerdo? y después tienen otra dependencia con la posición que está asociada con R1 que es el hecho de que obviamente cuando uno va a distancias se va lejos sobre el borde la intensidad va disminuyendo de a poquito ¿De acuerdo?
+1:10:44
+Pero es un fenómeno distinto, no es el fenómeno de interferencia. Simplemente que la señal de la luz sobre los lados laterales es menor. ¿De acuerdo? Perdón, puse uno y después es un medio. Gracias. Acá puse el... Escribí la mitad de un medio, que no es un cuarto.
+1:11:12
+no, no, las dos veces escribo a ver, phi1 phi1 es como phi1 de phi1 más delta phi sobre 2 menos delta phi sobre 2 eso lo escribí acá Y phi2 es phi1 más delta phi sobre 2 más delta phi sobre 2.
+1:11:48
+¿Qué? No, phi2 y phi1 no son iguales. Justamente delta phi es la diferencia. Es la suma. Cuando sumo... Bueno, entonces...
+1:12:05
+Voy a despreciar la variación con la distancia acá. Voy a despreciar el hecho de que la intensidad va variando sobre el costado. Voy a concentrarme en una serie de máximos que están en el centro antes de que la intensidad vaya decayendo sobre los bordes. ¿Se entiende?
+1:12:30
+es un efecto más suave me va a interesar el efecto grande de la oscilación con el coseno entonces si podemos entonces si despreciamos la dependencia suave
+1:13:02
+con R1 al cuadrado en el denominador, y será igual a una constante al cuadrado, voy a ponerle otra constante, C0, por coseno al cuadrado de K de R2 menos R1 sobre 2 pero fíjense que esa constante tiene una interpretación es el valor en el punto medio en el punto medio R2 vale igual que R1 si nos ubicamos acá y ahí justo el coseno al cuadrado vale 1 así que esto es igual a I0 La intensidad para teta igual a cero.
+1:14:09
+Por coseno al cuadrado de r2 menos r1. Una pregunta. ¿A qué te referís con dependencia suave con r1? Digo, tengo dos cosas. Una, esta dependencia que va oscilando así... Y otra, esta de acá, que va decreciendo suavemente. Si yo estoy en los primeros máximos, casi no varió R1 entre uno y otro, pero esto ya subió y bajó muchas veces.
+1:14:48
+¿Se entiende? Digo, si yo tomo acá muchos máximos en una región central, R1 casi no varió entre acá y acá, porque es esencialmente D. ¿De acuerdo? En cambio, el otro, el coseno cuadrado, varía muchas veces, porque lo que interviene no es R1, sino la diferencia entre R1 y R2, y eso varía mucho. La diferencia entre R1 y R2 es del orden D, varía mucho. En cambio, R1 está esencialmente fijo. Si voy sobre el costado, no.
+1:15:19
+Ahí me tengo que ocupar de que sobre los costados el campo eléctrico empieza a disminuir. ¿Se entiende? Digamos que esta fórmula vale en la región central. Si no, no cuesta nada agregar el 1 sobre R1 al cuadrado. ¿De acuerdo? ¿Sí? ¿Bien? Otra manera de hacerlo, si ustedes no quieren despreciar el 1 sobre R1 al cuadrado. Otra manera. Otra forma. Calculemos la contribución...
+1:15:51
+que habría con una sola rendija con la rendija R1 nada más si tenemos una sola rendija solo la rendija R1 si solo tenemos una rendija calculemos la intensidad producida si solo hay una rendija si solo hay una rendija la intensidad es C por A al cuadrado sobre R1 Por el valor medio del seno al cuadrado de KR1 menos omega t. Esto si tengo una sola rendija, ¿verdad?
+1:16:30
+Es todo el cálculo igual, salvo que no agrego este término. Voy a comparar con la intensidad que habría con una sola rendija. ¿Sí? Puedo hacer eso. Todo el cálculo es igual. Salvo que llego hasta acá y cuando promedio esto me da un medio. Así que me queda C por A al cuadrado sobre 2R1. Perdón, acá hay un R1 al cuadrado. Así que de otra manera, en lugar de despreciar R1, si les molesta despreciar R1, dividimos la intensidad de las dos rendijas con la intensidad que tendrían con una sola rendija.
+1:17:09
+Y sobre R y 1, también lo pueden hacer así. Es la intensidad, dividido la intensidad con una sola rendija. Entonces, intensidad solo con una rendija. Si lo dividen, fíjense, se les va... El C se les va al cuadrado, se les va el R1 al cuadrado, entonces les queda 4 veces coseno al cuadrado de K R2 menos R1.
+1:17:44
+Esa es otra manera de hacerlo, capaz que es más linda. Esta es la intensidad.
+1:17:52
+Ahora estamos mirando el cociente entre la intensidad en el experimento con la interferencia de rendijas y si solo tuvieran una rendija.
+1:18:03
+No, acá tengo el 1 medio, fíjate que yo acá tengo un 2 arriba y en el otro tengo un 2 abajo. Cuando divido me queda un 4 arriba. No, pero adentro del coseno. Sí, sí, perdón, perdón, me estoy morfando el soledad. Gracias. Bueno, entonces varias observaciones interesantes. Primero que esto de vez en cuando se anula, el coseno se anula. ¿De acuerdo? Así que la intensidad decrece. De hecho, veíamos manchas oscuras.
+1:18:34
+¿Dónde vale cero? Justo en las posiciones mínimas que ya las calculamos.
+1:18:41
+Segunda observación interesante. La intensidad en los máximos no es el doble que la intensidad que tendrían con una sola rendija.
+1:18:52
+Es el cuádruple. Es decir, el poner dos rendijas hace que algunas zonas sean oscuras, pero otras zonas, en este caso, uno más uno no hace dos. Uno más uno hace cuatro.
+1:19:04
+¿Está? Sumar dos señales en lugar de darles la intensidad doble y la intensidad cuádruple. ¿Está? ¿Eso a qué corresponde? Imagínense la cuerda. Si tienen dos ondas en fase, la suma de las dos, la altura es doble, pero la energía es proporcional a la altura al cuadrado, entonces les parece el factor 4. Pero efectivamente la luz que vemos es cuatro veces más brillante. Y lo tercero es que ahora tienen la forma precisa de cómo varían las posiciones. Pueden sustituir, lo último que pueden hacer es reemplazar K R2 menos R1 por lo que hicimos hace un rato.
+1:19:39
+Vimos que esto era D por seno de teta y esto les dice cómo es la intensidad ángulo por ángulo. Entonces, intensidad en rendija doble.
+1:19:59
+Bueno, y con esto... ¿Preguntas?
+1:20:03
+Es la misma. Bueno, acá dividí por I1, ¿no? Simplemente la normalicé con I1. Si quieren dividido por I1. Es la misma, lo único que acá yo... En esto había expresado R1, pero digo, si no quieren expresar R1, dividan por I1. También funciona.
+1:20:31
+¿Alguna otra pregunta? Bueno entonces con esto terminamos el curso.
+

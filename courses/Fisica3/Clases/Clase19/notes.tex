@@ -1,0 +1,280 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 19: Varilla Rotante, Generadores y Motores, \\
+        Campos Eléctricos Inducidos e Inductancia}\\[0.3em]
+        \large{FEM de movimiento, corriente alterna, Faraday para $\mathbf{E}$
+              y autoinductancia}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Varilla que rota en un campo magnético}
+% ===================================================================
+
+Varilla conductora de largo $R$, con un extremo fijo, que rota con velocidad
+angular $\omega$ en un campo uniforme $B$ perpendicular. Se busca la FEM entre
+sus extremos, por dos métodos.
+
+\subsection{Método 1: suma de FEMs de segmentos}
+
+No se puede usar $\varepsilon = LvB$ directamente porque la velocidad depende
+del punto ($v = \omega r$). Un segmento $dr$ a distancia $r$ aporta
+$d\varepsilon = B(\omega r)\,dr$. En serie, se integran:
+\[
+\varepsilon = \int_0^{R} B\,\omega\, r\, dr = \frac{B\,\omega\,R^2}{2}.
+\]
+
+\begin{keybox}[FEM de la varilla rotante]
+  \[
+  \boxed{|\varepsilon| = \frac{B\,\omega\,R^2}{2}}
+  \]
+\end{keybox}
+
+\subsection{Método 2: Faraday sobre un circuito}
+
+Cerrando el circuito, el área barrida es $A = \tfrac{\theta}{2}R^2$ con
+$\theta = \omega t$, así que $\Phi_B = \tfrac{B\omega R^2}{2}t$ y
+\[
+\left|\frac{d\Phi_B}{dt}\right| = \frac{B\,\omega\,R^2}{2},
+\]
+idéntico al método 1. Coherente.
+
+% ===================================================================
+\section{Generadores y motores}
+% ===================================================================
+
+\subsection{El generador de corriente alterna}
+
+Campo uniforme $B$ y espira (bobina de $N$ vueltas) girando con $\omega$
+(turbina). Con $\theta = \omega t$ el ángulo normal--$\mathbf{B}$:
+\[
+\Phi_B = B\,A\,\cos(\omega t).
+\]
+
+\begin{keybox}[FEM sinusoidal del generador]
+  \[
+  \boxed{\varepsilon = -\frac{d\Phi_B}{dt} = B\,A\,\omega\,\sin(\omega t)}
+  \]
+\end{keybox}
+
+Conectada a $R$, $I = \tfrac{BA\omega}{R}\sin(\omega t)$: \textbf{corriente
+alterna}. Los generadores simples producen CA de forma natural.
+
+\subsection{Torque necesario y balance de energía}
+
+Para $\omega$ constante hace falta un torque externo opuesto al magnético
+($\boldsymbol\tau = I\mathbf{A}\times\mathbf{B}$):
+\[
+\tau = I A B \sin\theta = \frac{B^2 A^2 \omega}{R}\sin^2\theta.
+\]
+El generador convierte energía mecánica en eléctrica.
+
+\subsection{El motor: el mismo aparato al revés}
+
+Inyectando una corriente alterna, el torque hace girar el eje: es un
+\textbf{motor} (energía eléctrica $\to$ mecánica).
+
+\begin{notebox}[¿Por qué CA?]
+  Con corriente continua el torque $\propto\sin\theta$ cambia de signo cada
+  media vuelta y no hay efecto acumulado. La CA sincroniza el cambio de signo;
+  el motor DC usa un conmutador.
+\end{notebox}
+
+% ===================================================================
+\section{Campos eléctricos inducidos}
+% ===================================================================
+
+El campo magnético no trabaja: para mover cargas hace falta un campo eléctrico
+inducido asociado a la FEM.
+
+\subsection{Faraday en términos del campo eléctrico}
+
+Una carga que recorre $C$ recibe $\varepsilon = \oint_C \mathbf{E}\cdot
+d\mathbf{l}$. Igualando a Faraday:
+
+\begin{keybox}[Ley de Faraday para $\mathbf{E}$]
+  \[
+  \boxed{\oint_C \mathbf{E}\cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}}
+  \]
+\end{keybox}
+
+\begin{warnbox}[$\mathbf{E}$ ya no deriva de un potencial]
+  Con campo magnético variable, la circulación de $\mathbf{E}$ no es cero:
+  $\mathbf{E} = -\nabla V$ deja de valer. Siguen valiendo $\mathbf{F}=q_0
+  \mathbf{E}$, el trabajo y la ley de Ohm.
+\end{warnbox}
+
+\subsection{Ejemplo: campo B uniforme y variable}
+
+Región circular con $\mathbf{B}$ uniforme pero variable, sin cargas. Las líneas
+de $\mathbf{E}$ son cerradas (círculos concéntricos), $\mathbf{E}$ tangente y de
+módulo constante. Con $C$ de radio $r$:
+\[
+E\,(2\pi r) = -\frac{d\Phi_B}{dt}, \qquad \Phi_B = B\,\pi r^2.
+\]
+
+\begin{keybox}[Campo eléctrico inducido]
+  \[
+  \boxed{|E| = \frac{r}{2}\left|\frac{dB}{dt}\right|}
+  \]
+\end{keybox}
+
+Crece linealmente con $r$; los campos inducidos no derivan de un potencial.
+
+% ===================================================================
+\section{Inductancia}
+% ===================================================================
+
+La inductancia es a las bobinas lo que la capacitancia a los condensadores:
+caracteriza la energía almacenable en el campo magnético.
+
+\subsection{Definición y autoinductancia}
+
+Se llama \textbf{autoinductancia}: una bobina se induce FEM a sí misma al
+variar su corriente (distinta de la inductancia mutua).
+
+\subsection{Cálculo para un solenoide ideal}
+
+Solenoide ideal ($n$ espiras/longitud, $N = n L_{\text{sol}}$, sección $A$),
+$B = \mu_0 n I$. Flujo en una espira $\Phi_1 = \mu_0 n I A$; FEM total:
+\[
+|\varepsilon| = \mu_0\, n^2\, A\, L_{\text{sol}}\,\left|\frac{dI}{dt}\right|.
+\]
+
+\begin{keybox}[Autoinductancia de un solenoide]
+  \[
+  \boxed{L = \mu_0\, n^2\, A\, L_{\text{sol}} = \frac{\mu_0 N^2 A}{L_{\text{sol}}}}
+  \]
+\end{keybox}
+
+\subsection{Caso general, unidades y signos}
+
+Como $\Phi_B \propto I$ y la bobina es rígida, $\Phi_B = L I$ y
+\[
+\varepsilon = -L\,\frac{dI}{dt}.
+\]
+Receta: $L = \Phi_B^{\text{total}}/I$. Unidad: el \textbf{henry} (H) $=$
+V$\cdot$s/A.
+
+\begin{keybox}[Signos en una bobina]
+  \[
+  \boxed{V_B - V_A = -L\,\frac{dI}{dt}}
+  \]
+  El signo es el mismo crezca o decrezca $I$ (análogo a $-RI$).
+\end{keybox}
+
+\subsection{Ejemplo: el toroide}
+
+Toroide de sección rectangular (altura $h$, radios $A$ y $B$, $N$ espiras),
+$B(r) = \mu_0 N I/(2\pi r)$. Flujo en una espira:
+\[
+\Phi_1 = \frac{h N \mu_0 I}{2\pi}\ln\!\frac{B}{A}.
+\]
+
+\begin{keybox}[Autoinductancia de un toroide]
+  \[
+  \boxed{L = \frac{\mu_0 N^2 h}{2\pi}\ln\!\frac{B}{A}}
+  \]
+\end{keybox}
+
+\begin{notebox}[Próxima clase]
+  Circuitos RL, materiales magnéticos y energía en el campo magnético.
+\end{notebox}
+
+\end{document}

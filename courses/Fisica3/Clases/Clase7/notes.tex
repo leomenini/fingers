@@ -1,0 +1,409 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 7: Conductores con Cavidades, Campo en la Superficie, \\
+        Test Experimental de Gauss y Energía/Potencial Eléctrico}\\[0.3em]
+        \large{Cavidades en conductores, campo justo afuera, experimento
+              de la caja y comienzo de energía y potencial}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+% ===================================================================
+\section{Repaso: conductor en equilibrio}
+% ===================================================================
+
+De la Clase 6, para un conductor en equilibrio electrostático se probó
+(con la Ley de Gauss):
+\begin{itemize}[nosep]
+  \item La \textbf{carga neta se ubica en la superficie} del conductor.
+  \item El \textbf{campo eléctrico interior es nulo} ($\mathbf{E}=0$).
+\end{itemize}
+
+Esta clase completa las propiedades de los conductores y testea
+experimentalmente la Ley de Gauss, antes de iniciar el capítulo de
+energía y potencial.
+
+% ===================================================================
+\section{Conductor aislado con cavidad}
+% ===================================================================
+
+\textbf{Configuración:} un conductor \textbf{aislado} (lejos de todo
+otro objeto cargado) en equilibrio, con un \textbf{hueco} interior que
+\textbf{no contiene cargas}. Tiene dos superficies: una \textbf{externa}
+y una \textbf{interna} (la de la cavidad).
+
+\subsection{La carga se ubica en la superficie externa}
+
+\textbf{Afirmación:} toda la carga está en la superficie
+\textbf{externa}; la carga neta en la interna es cero.
+
+\textbf{Prueba (Gauss):} se toma una superficie gaussiana cerrada $S$
+contenida \textbf{dentro del material}, que rodea la cavidad. Como
+$\mathbf{E}=0$ en el conductor,
+\[
+\Phi = \oiint_S \mathbf{E}\cdot d\mathbf{A} = 0
+\;\Longrightarrow\; Q_{\text{int}} = \varepsilon_0 \Phi = 0.
+\]
+Como en la cavidad no hay cargas, la carga neta en la superficie interna
+es cero.
+
+\subsection{Densidad superficial interna nula y estabilidad}
+
+Lo anterior solo prueba que la carga \textbf{neta} interna es cero, no
+que no haya zonas con $\sigma>0$ y otras con $\sigma<0$ que se cancelen.
+Descartarlo requiere un argumento \textbf{de estabilidad}: densidades de
+signo opuesto generarían líneas de campo a través de la cavidad y las
+cargas se moverían, contradiciendo el equilibrio.
+
+\begin{notebox}[Sutileza: contraejemplos]
+  Se pueden construir cavidades donde cargas opuestas quedan
+  \textbf{atoradas} en un equilibrio localmente estable pero globalmente
+  inestable (objetos macroscópicos). Con portadores reales esto
+  \textbf{no ocurre}: los electrones, por agitación térmica, siempre
+  encuentran el camino para neutralizarse. La conclusión
+  $\sigma_{\text{interna}}=0$ necesita \textbf{dos ingredientes}: Gauss
+  (carga neta cero) \textbf{y} la estabilidad del equilibrio.
+\end{notebox}
+
+% ===================================================================
+\section{Campo eléctrico justo afuera de un conductor}
+% ===================================================================
+
+Con densidad superficial $\sigma$, se busca el campo \textbf{justo
+afuera}. \textbf{No} es como una lámina infinita cargada: la lámina
+emite hacia ambos lados; aquí el campo sale \textbf{solo hacia afuera}
+(adentro $\mathbf{E}=0$).
+
+\subsection{El argumento erróneo de Resnick}
+
+Se \textbf{admite} (a probar más adelante) que el campo justo afuera es
+\textbf{normal} a la superficie. El Resnick da un argumento
+\textbf{incorrecto} (ejercicio: hallar el error).
+
+\begin{warnbox}[Argumento de Resnick y su error]
+  \emph{Resnick:} si hubiera componente tangencial, las cargas de la
+  superficie se moverían $\Rightarrow$ no hay tangencial.
+
+  \emph{Error:} aplica un razonamiento sobre el campo \textbf{afuera} a
+  las cargas \textbf{dentro} del conductor. Supone implícitamente que la
+  componente tangencial es \textbf{continua}; pero si se admite eso,
+  como adentro ya es cero, no habría nada que probar. La componente
+  \textbf{normal NO es continua} (salta de $0$ a un valor no nulo), así
+  que hay que justificar aparte por qué la tangencial sí lo es. El
+  resultado es correcto; el argumento, no.
+\end{warnbox}
+
+\subsection{Cálculo por Gauss}
+
+Admitiendo $\mathbf{E}$ normal, se usa una superficie gaussiana en forma
+de \textbf{cilindro muy achatado}, con una tapa afuera y otra dentro:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Parte} & \textbf{Flujo} & \textbf{Razón} \\
+\midrule
+Lateral            & $0$   & $\mathbf{E}$ normal $\Rightarrow \mathbf{E}\perp\hat{\mathbf{n}}$ \\
+Tapa interior      & $0$   & $\mathbf{E}=0$ dentro del conductor \\
+Tapa exterior ($S$ chica) & $ES$ & $\mathbf{E}\parallel\hat{\mathbf{n}}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Flujo total $\approx ES$. Por Gauss, con carga encerrada $\sigma S$,
+\[
+E\,S = \frac{\sigma S}{\varepsilon_0}
+\;\Longrightarrow\;
+\boxed{E = \frac{\sigma}{\varepsilon_0}} .
+\]
+
+\begin{notebox}[Validez punto a punto]
+  Si $\sigma$ no es uniforme, para el campo en un punto se usa el
+  $\sigma$ de \textbf{ese} punto. La superficie gaussiana debe ser
+  \textbf{cerrada} (de ahí el cilindro, no una tapa tangente).
+\end{notebox}
+
+\subsection{Paradoja aparente: plano conductor vs plano cargado}
+
+\begin{itemize}[nosep]
+  \item Plano infinito \textbf{cargado} (no conductor):
+        $E = \dfrac{\sigma}{2\varepsilon_0}$ (Clase 6).
+  \item Plano infinito \textbf{conductor}:
+        $E = \dfrac{\sigma}{\varepsilon_0}$.
+\end{itemize}
+
+\textbf{Resolución:} todo conductor tiene espesor; la carga se reparte
+por simetría en sus \textbf{dos caras}, con $\sigma' = \sigma/2$ en cada
+una. La fórmula del conductor usa la densidad de la cara \textbf{pegada}
+al punto:
+\[
+E = \frac{\sigma'}{\varepsilon_0} = \frac{\sigma/2}{\varepsilon_0}
+  = \frac{\sigma}{2\varepsilon_0} .
+\]
+
+\begin{keybox}[Coherencia Gauss vs Coulomb]
+  No hay contradicción: se llama $\sigma$ a cosas distintas (carga total
+  del plano vs. de una cara). Para Gauss solo cuenta la carga
+  \textbf{encerrada} (\enquote{los de afuera son de palo}); para Coulomb
+  se suman ambas caras, y da lo mismo.
+\end{keybox}
+
+% ===================================================================
+\section{Prueba experimental de la Ley de Gauss}
+% ===================================================================
+
+Como Gauss y Coulomb son \textbf{equivalentes en electrostática},
+testear Gauss es una \textbf{prueba indirecta} de Coulomb, mucho más
+precisa que medir fuerzas.
+
+\textbf{Experimento (caja metálica):}
+\begin{enumerate}[nosep]
+  \item Caja metálica conductora.
+  \item Se introduce una bolita conductora \textbf{cargada} colgada de
+        un hilo aislante (se induce polarización).
+  \item Se tapa la caja (agujerito despreciable para el hilo): cavidad
+        cerrada.
+  \item La bolita \textbf{toca el fondo}: forman \textbf{un solo
+        conductor} y la carga migra a la \textbf{superficie exterior};
+        la bolita queda con carga \textbf{cero}.
+  \item Se saca la bolita y se mide su carga: \textbf{cero}.
+\end{enumerate}
+
+\begin{keybox}[Por qué es tan preciso]
+  Medir si hay carga o \textbf{no} (blanco/negro) es mucho más preciso
+  que medir fuerzas. Así se acota el exponente de Coulomb:
+  \[
+  F \propto \frac{1}{r^{2+\delta}}, \qquad |\delta| < 10^{-15}.
+  \]
+\end{keybox}
+
+\begin{notebox}[Historia]
+  Experimento \textbf{propuesto por Priestley en 1767} (antes que
+  Coulomb), quien ya entendía que hallar carga cero implica la ley
+  $1/r^{2}$, pero no lo ejecutó con precisión. Ventaja: no depende de
+  que la caja esté perfectamente descargada. Con esto se cierra el
+  capítulo 3 (Ley de Gauss).
+\end{notebox}
+
+% ===================================================================
+\section{Energía y potencial eléctrico}
+% ===================================================================
+
+Comienza el \textbf{capítulo 4}. Las consideraciones energéticas son
+muy útiles cuando las fuerzas son \textbf{conservativas}.
+
+\subsection{Fuerzas conservativas}
+
+Una fuerza es \textbf{conservativa} si el trabajo no depende del camino;
+equivalentemente, el trabajo en una curva cerrada es cero:
+\[
+W_{I\to F}^{(C_1)} = W_{I\to F}^{(C_2)} \;\;\forall\, C_1,C_2
+\qquad\Longleftrightarrow\qquad
+\oint \mathbf{F}\cdot d\mathbf{l} = 0 .
+\]
+
+\subsection{La fuerza electrostática es conservativa}
+
+Trabajo de la fuerza de una carga puntual $Q$ sobre otra $Q_0$ que se
+mueve por una curva $C$:
+\[
+W_{I\to F} = \int_C \mathbf{F}\cdot d\mathbf{l}
+= \frac{Q_0 Q}{4\pi\varepsilon_0}\int_C \frac{\hat{\mathbf{r}}}{r^2}\cdot d\mathbf{l} .
+\]
+
+Como $\hat{\mathbf{r}}\cdot d\mathbf{l} = dr$, la integral de línea se
+reduce a una integral ordinaria:
+\[
+W_{I\to F} = \frac{Q_0 Q}{4\pi\varepsilon_0}\int_{r_i}^{r_f}\frac{dr}{r^2}
+= \frac{Q_0 Q}{4\pi\varepsilon_0}\left(\frac{1}{r_i}-\frac{1}{r_f}\right).
+\]
+
+\begin{keybox}[Trabajo entre dos cargas]
+  \[
+  \boxed{W_{I\to F}
+    = \frac{Q_0 Q}{4\pi\varepsilon_0}\left(\frac{1}{r_i}-\frac{1}{r_f}\right)}
+  \]
+  Solo depende de las posiciones inicial y final $\Rightarrow$ la fuerza
+  electrostática es \textbf{conservativa}.
+\end{keybox}
+
+\begin{notebox}[Caso general]
+  Aunque se probó para dos cargas, por superposición las fuerzas
+  electrostáticas de \textbf{cualquier} sistema son conservativas: el
+  trabajo sobre una carga es la suma de los trabajos de las demás.
+\end{notebox}
+
+\subsection{Energía potencial eléctrica}
+
+Al ser conservativa, hay una \textbf{energía potencial} $U$:
+\[
+\Delta U = U_F - U_I = -\,W_{I\to F}.
+\]
+
+Solo las \textbf{diferencias} están bien definidas; el valor absoluto
+depende de una \textbf{constante aditiva} (nivel de referencia).
+
+\begin{keybox}[Energía potencial de dos cargas]
+  Con la convención $U=0$ para cargas infinitamente alejadas,
+  \[
+  \boxed{U(r) = \frac{Q_0 Q}{4\pi\varepsilon_0\, r}} .
+  \]
+\end{keybox}
+
+\begin{itemize}[nosep]
+  \item \textbf{Igual signo} ($Q_0 Q>0$): $U>0$; sueltas, se repelen
+        hacia el mínimo (infinito).
+  \item \textbf{Signo opuesto} ($Q_0 Q<0$): $U<0$; sueltas, se atraen
+        hacia el mínimo (contacto).
+\end{itemize}
+
+\subsection{Energía potencial de un conjunto de cargas}
+
+Se arma el sistema trayendo las cargas \textbf{una a una} desde el
+infinito: la 1ª gratis; la 2ª siente a la 1ª; la 3ª a la 1ª y la 2ª;
+etc. Sumando y usando $U=-W_{\infty\to F}$:
+
+\begin{keybox}[Energía de un sistema de cargas puntuales]
+  \[
+  \boxed{U = \frac{1}{4\pi\varepsilon_0}\sum_{i<j}\frac{Q_i\,Q_j}{R_{ij}}}
+  \]
+  Suma sobre \textbf{todas las parejas}, cada una una sola vez
+  ($i<j$).
+\end{keybox}
+
+% ===================================================================
+\section{Potencial eléctrico}
+% ===================================================================
+
+\subsection{Definición}
+
+Se aísla en $U$ la parte que depende de la posición de una carga (p.\,ej.
+$Q_1$); todos esos términos son proporcionales a $Q_1$:
+\[
+U_{Q_1} = \frac{Q_1}{4\pi\varepsilon_0}\sum_{i\neq 1}\frac{Q_i}{R_{1i}} .
+\]
+
+El \textbf{potencial electrostático} es esa energía por unidad de carga
+(independiente de $Q_1$):
+\[
+\boxed{V = \frac{U_{Q_1}}{Q_1}} .
+\]
+
+Como $U$, el potencial $V$ se define a menos de una \textbf{constante
+aditiva}; lo bien definido son las \textbf{diferencias de potencial}.
+
+\subsection{Diferencia de potencial y campo eléctrico}
+
+Desplazando solo la carga de prueba $Q_0$ (las demás fijas) de $A$ a
+$B$:
+\[
+V_B - V_A = \frac{U_B - U_A}{Q_0} = -\frac{1}{Q_0}\,W_{A\to B}
+= -\frac{1}{Q_0}\int_A^B \mathbf{F}\cdot d\mathbf{l} .
+\]
+
+Como $\mathbf{F} = Q_0\mathbf{E}$, los $Q_0$ se cancelan:
+
+\begin{keybox}[Diferencia de potencial y campo]
+  \[
+  \boxed{V_B - V_A = -\int_A^B \mathbf{E}\cdot d\mathbf{l}}
+  \]
+  Independiente del camino (fuerza conservativa) y de $Q_0$: es una
+  propiedad del campo, no de la carga de prueba.
+\end{keybox}
+
+\end{document}

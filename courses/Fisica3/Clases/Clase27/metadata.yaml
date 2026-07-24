@@ -1,0 +1,73 @@
+title: Clase 27
+id: fis3-2015-2-27
+
+course: Física III
+academic_year: 2015
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:11:54"
+
+stats:
+  transcript_words: 8015
+  summary_words: 1578
+  diagrams_pending: 7
+  equations: 11
+
+topics:
+  - Efecto Doppler y referencial del medio
+  - Medición de la frecuencia contando frentes de onda
+  - Observador en movimiento
+  - Fuente en movimiento
+  - No equivalencia de las dos fórmulas
+  - Doppler para la luz (fórmula relativista)
+  - Aproximación a primer orden (v0 << c)
+  - Corrimiento al rojo y ley de Hubble
+  - Aplicaciones (sonar, radar, ecografía Doppler)
+  - Interferencia de ondas
+  - Ecuaciones de Maxwell lineales y homogéneas
+  - Principio de superposición
+  - Interferencia constructiva y destructiva
+  - Interferencia en el plano
+  - Condiciones de fase (constructiva y destructiva)
+  - Coherencia de las fuentes
+  - Preview del experimento de doble rendija
+
+bibliography:
+  - title: Sears & Zemansky
+    chapter: "16-35"
+    verified: false
+
+prerequisites:
+  - Clase 26 (reflexión, refracción, ley de Snell)
+  - Ondas, longitud de onda y número de onda
+  - Ecuaciones de Maxwell (Gauss, Ampère-Maxwell, Faraday)
+  - Desarrollo de Taylor a primer orden
+
+next_topics:
+  - Experimento de doble rendija (Clase 28)
+  - Difracción por una rendija
+  - Coherencia cuantitativa e intensidad
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-24
+
+llm:
+  model: claude-opus-4-8
+
+editorial_status: draft

@@ -1,0 +1,445 @@
+# Clase 8
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/8/
+
+Fecha de exportación: 7/23/2026, 9:32:09 PM
+
+
+Clase: 8
+Curso: F3
+
+Segmentos : 242
+Palabras  : 9079
+Caracteres: 48710
+
+0:17
+Después, esto es así terminada la clase pasada. Lo otro que quiero agregar es que las unidades...
+0:26
+Entonces, las unidades del potencial son las unidades de trabajo. Fíjense acá, las unidades de trabajo, que es el Joule, es lo mismo que las unidades de energía, dividido por las unidades de carga, así que es...
+0:42
+Estas son las unidades de trabajo divididas por unidades de carga. Así que en el sistema internacional de unidades, esto es Joule por Coulomb. Y eso tiene un nombre, es el Volt, que se abrevia con la letra B.
+1:08
+Esto es Joule por Coulomb.
+1:13
+Así que esto nos fija las unidades del potencial o de la diferencia de potencial. También se utiliza esto para definir otro sistema de unidades de energía. Esta unidad de energía que no se utiliza en el sistema internacional, pero que es una unidad que vale la pena definir porque es una... Una unidad que se utiliza mucho en el sistema natural de unidades.
+1:47
+Bueno, el sistema natural de unidades es tratar de definir las cosas no en términos de criterios arbitrarios de escala humana, sino en términos de constantes que aparecen en la naturaleza. Bueno, lo que voy a definir no es exactamente eso, pero va por ese lado. Entonces, se suele definir una unidad de energía, ahora ya no es una unidad de voltaje, sino una unidad de energía. Es decir, esto en lugar de usarlo para definir una unidad de voltaje, podemos darlo vuelta y decir, supongamos que tenemos definido el volt, podemos tratar a partir del volt, definir una unidad de energía.
+2:18
+Y eso se suele hacer, entonces comentario, el volt...
+2:29
+hacerlo con mayúscula, permite definir una unidad de energía que va a corresponder a lo siguiente, es el electrón volt. Un electrón volt es igual a la energía
+3:03
+que gana una partícula de carga E, la misma carga de siempre, igual al valor absoluto de la carga del electrón,
+3:31
+Cuando se desplaza, digamos, entre dos puntos con delta B igual 1 voltio.
+4:00
+Entonces tienen el punto A, el punto B, tienen acá una diferencia de potencial delta B, valor absoluto, llámenle 1 volt. Y toman una partícula que tiene carga E, pongan un protón por decir algo.
+4:23
+Lo desplazan a esta distancia. ¿Sí?
+4:29
+y sumamos que gana energía, según el sentido de delta D puede ganar energía o perder energía, no importa, toman el valor absoluto, ven cuánta energía gana, cuál es el trabajo necesario acá, ponen Q0 del otro lado, como delta D es 1, eso les dice cuánta energía ganó. Y entonces podemos expresar el electrón volt en Joule. ¿Sí? Entonces, un electrón volt se puede expresar, es una unidad de energía, se puede expresar en términos de joule.
+5:02
+Bueno, entonces usan aquella fórmula que está allá, les queda E, ¿sí?
+5:09
+E, la carga del protón, digamos, por un volt. La carga del protón en sistema...
+5:25
+internacional y esto esto es igual a 1,6 por 10 a la menos 19 joules en 1,67
+5:57
+Así que fíjense que el electronvolt es una unidad muy chiquitita de energía, pero que es útil cuando uno se va a interesar en las energías que aparecen en la escala atómica. Por ejemplo, las energías...
+6:18
+correspondientes a los enlaces atómicos típicamente son del orden del electrón volt por ejemplo el enlace atómico es decir el vínculo más fuerte que puede haber entre un electrón y su núcleo es el vínculo más fuerte la energía de ligazón más fuerte que hay en un átomo es la energía que tiene el de ligazón el átomo de hidrógeno Y el átomo de hidrógeno tiene una energía que es del orden de 13 electronvolt.
+6:53
+La mayor parte de las energías de vínculo de un electrón con su núcleo es un poco más chico que eso, así que típicamente el electronvolt. Así que el electronvolt, guarden en mente que es una unidad adecuada para que las energías atómicas sean de orden 1 medida en esas unidades. Por supuesto, son energías muy chiquititas con respecto a las energías que nosotros vivimos a nivel macroscópico, porque el átomo es súper chiquitito. Pero si uno va a interesarse, por ejemplo, en las energías, por ejemplo, en los procesos químicos, son del orden de electronvolto, de algunas fracciones de electronvolto.
+7:30
+Así que para ese tipo de cosas es una unidad adecuada. Parece que uno quiere hablar de números de orden 1, no tiene que andar arrastrando un 10 a la menos 19.
+7:41
+En física de partículas o física de altas energías, también se usa mucho el electronvolt. porque aparece la carga del electrón por todos lados, pero frecuentemente las energías son más grandes. Entonces, luego de usar el electrón volt, se usa el megaelectrón volt o el gigaelectrón volt, múltiplos de electrón volt, pero no se suele usar el Joule, porque como la carga del electrón aparece por todos lados, esto simplifica las expresiones, usar estas unidades. Así que frecuentemente en la física de partículas se suele usar eso.
+8:24
+Entonces ahora veamos, ¿sí? ¿Preguntas de esto? Veamos ahora el potencial generado por cargas puntuales. Es el punto 4.3.
+8:36
+Entonces, 4.3.
+8:51
+Potencial...
+8:55
+eléctrico producido por un conjunto de cargas puntuales.
+9:23
+Entonces tomemos un conjunto de cargas Q1, Q2, Q3, Q4.
+9:32
+Acá tomamos un origen. Y acá tomamos una cierta posición. Voy a llamar a la posición R. Y acá en esta posición, el punto P, ubico una carga de prueba Q0. Y me quiero preguntar cuánto vale el potencial en R.
+10:14
+Un poco de eso ya lo vimos en la clase pasada. Veámoslo en detalle nuevamente. La energía potencial, la energía potencial del sistema, dijimos que es 1 sobre 4 pi epsilon cero, por la sumatoria con i menor que j, de q sub i, por Q sub J, por la distancia Rij, que es la distancia entre carga I y carga J. Incluyo Q0, ¿verdad?
+11:03
+Q0, el índice lo va a arrancar, en lugar de hacerlo arrancar en 1, lo va a hacer arrancar en 0.
+11:09
+Bueno, de todos estos términos, Queremos ver qué parte depende de Q0. Qué parte de esta energía depende de Q0. Entonces podemos escribir acá esto como... Esto está hecho con un sistema de referencia particular que es en el que la energía potencial es cero cuando todas las cargas están finitamente alejadas. Cuando yo hable de una energía potencial o de un potencial sin especificar el sistema de referencia, es que voy a estar haciendo eso.
+11:41
+Si yo hablo de energía sin especificar el nivel de referencia, siempre va a ser así. Entonces acá esto lo podemos escribir como Q0 sobre 4 pi epsilon 0 por la sumatoria para I mayor o igual a 1, digamos. De Q sub i por R0i. La distancia entre la carga 0 y las distintas... Por ejemplo, esto que está acá es la distancia R03.
+12:21
+Y esto que está acá es la distancia R04. Entonces esta es la primera contribución, esta es la contribución que hace intervenir a la carga Q0, más otro término, 4pi epsilon 0, por sumatoria de I, digamos, ponemos 1 menor o igual que I menor que J, de Q sub I, Q sub J, por RI sub J. Es decir, todos los otros términos, todos los que nos hacen intervenir Q0.
+12:55
+¿Bien?
+13:04
+Pero dijimos que el potencial estaba asociado con los movimientos de la carga Q0, digamos el potencial sobre Q0, dejando todas las otras cargas fijas.
+13:14
+Entonces desde acá podemos leer inmediatamente que el potencial en R es esto dividido Q0. Y le podemos escribir 4 pi epsilon cero por sumatoria, sobre todo de las otras cargas, sin contar q cero de q sub i, por las distancias de esas otras cargas a la carga q cero. Y se simplifica q cero, ¿verdad? Porque hay que dividir por q cero.
+13:46
+Entonces el potencial en la posición...
+13:57
+De Q0. Como dijimos, es independiente de Q0. Así que, miren cómo es, ¿no? Agarran toda la energía, separan la parte que depende de la posición de Q0.
+14:13
+Como el potencial está asociado con el trabajo, asociado con mover Q0 y dejando las otras fijas, toda esta parte, si movemos Q0 y las otras las dejamos fijas, esta no cambia cuando hacemos una... desplazamiento de Q0, así que esto no interviene en el trabajo de mover Q0, así que solo esta parte interviene, lo que hace es agarrar esta parte y virla por Q0. Y esto nuevamente, fíjense que el nivel de referencia de esto dice que el potencial sería cero si Q0 está infinitamente alejado de todas las otras cargas.
+14:46
+Si hacemos tender la posición de Q0 a infinito, Todos estos R0I tienden a 0 y el potencial tiende a 0. Así que el nivel de referencia nuevamente corresponde, este potencial está definido siendo 0 cuando Q0 está infinitamente alejado. Entonces el nivel de referencia corresponde a Q0I.
+15:19
+infinitamente alejado, corresponde a un potencial nulo, a B igual a cero cuando Q0 infinitamente alejado de las otras caras.
+15:50
+Entonces veamos un ejemplo. Vamos a ver varios ejemplos. Veamos un primer ejemplo.
+16:05
+Ejemplos. Uno. Primer ejemplo bien fácil. Tomemos un cuadrado de lado A.
+16:14
+En los vértices del cuadrado tienen cargas Q1, Q2... Q3 y Q4. Y se preguntan, toman O, le llaman punto en el centro del cuadrado, pregunta potencial en O.
+16:37
+Vamos a tomar el potencial definido con la convención de que vale cero cuando estamos infinitamente lejos. ¿Cómo podemos hacer para calcular el potencial en O?
+16:58
+Hay que usar aquello, ¿no? Entonces tenemos que tener la distancia entre este punto y cada una de las cargas. Entonces hay que calcular esta distancia que está acá. Digamos, esta distancia acá. Llámenle D. ¿Cuánto valdrá la distancia D?
+17:19
+Y bueno, fíjense, este triángulo que está acá es rectángulo. ¿Sí? ¿Sí? Así que d al cuadrado más d al cuadrado, esta distancia es igual a esta, es igual a la hipotenusa que es a al cuadrado.
+17:33
+Entonces d es igual a a sobre raíz de 2.
+17:40
+Y ahora el potencial en O será 1 sobre 4 pi epsilon 0, como dice allá aquella fórmula. Por las distancias, las cuatro distancias en este caso son iguales. Así que tenemos un 1 sobre D que sale en factor. Perdón, 1 sobre D que ya lo escribo. Se escribe como A sobre raíz de 2. ¿Bien? Y luego tienen que sumar las cargas.
+18:08
+De 1 a 4.
+18:18
+Bien fácil, no hay misterio. ¿Está bien? Entonces vamos a ver un ejemplo. Pregunta, esto se entendió, ¿no? Entonces vamos a ver un ejemplo un poquito más interesante. ¿Sí? Sí, sí, sí. Ejemplo 2, más interesante. Potencial de un dipolo.
+18:52
+Bueno, una cosa que vale la pena mencionar es que, ¿por qué le estamos dedicando tanto tiempo al potencial, a la energía potencial? Lo dije al principio, pero vale la pena insistir en ello. Suele ser más como, en la medida que uno puede, trabajar con cantidades como la energía o el potencial, que con cantidades que son vectores como la fuerza o el campo eléctrico. Porque en lugar de tener que calcular... Tres cantidades, las tres componentes del vector, tenemos que calcular una sola, que es el potencial. Entonces no nos tenemos que ocupar de ángulos, productos escalares, nada.
+19:25
+Todo es directamente una cantidad escalar y suele ser más fácil. Tan es así, que cuando hicimos el cálculo del campo eléctrico de un dipolo, como ejemplo en el curso, después en el práctico fue un poco más difícil, pero en el teórico, les recuerdo, tomamos solo un dipolo... Calculamos el campo solo sobre el plano bisector del dipolo. ¿Se acuerdan de eso? El ejemplo que vimos en teórico era tomar una carga K más Q, una carga menos Q, separadas una distancia D, y calculamos el campo eléctrico que producían, pero sobre el eje.
+20:00
+¿Se acuerdan?
+20:03
+Si no se acuerdan, créanme. Pero para el caso del potencial, es tanto más fácil que el campo eléctrico, que vamos a calcularlo en un punto cualquiera. Vamos a poner un punto acá, P cualquiera.
+20:16
+Este es el origen, acá O. Y acá, a este vector que va de O a P le vamos a llamar R. Y a esta distancia que está acá, le vamos a llamar R más, es la distancia... desde P hasta la carga positiva, Q lo tomo positivo, ¿verdad? Así que más Q es una carga positiva y le vamos a llamar R menos a la distancia que va hasta la carga negativa. Pero no me voy a limitar al eje, al plano bisector del dipolo, vamos a tomar una posición cualquiera.
+20:55
+Vamos a ver qué se puede calcular. Así que la ventaja muchas veces del potencial es eso, que es mucho más fácil de calcular el potencial. Y ahora dentro de un ratito vamos a ver cómo, conocido el potencial, si conozco el potencial en el espacio, puedo calcular el campo eléctrico. Entonces suele ser más cómodo trabajar con el potencial y luego calcular el campo eléctrico. Bueno, entonces, ¿cómo es? Díganme, bien fácil, el potencial en P, ¿cuánto vale?
+21:25
+Es nuevamente esta fórmula. Tenemos el 1 sobre 4 pi epsilon 0.
+21:30
+Las dos cargas valen Q, Q y menos Q. Así que a menos de un signo puedo poner Q en factor. Y luego tengo 1 sobre R más. Como la otra carga es menos Q, que era un menos, por 1 menos R menos. Y este es el potencial de un dipolo.
+21:50
+¿Está? Bien fácil. Claro, pero esta fórmula no es útil, no es muy útil, porque fíjense que R más es una expresión un poquito complicada de la coordenada R. Entonces calculemos R más. ¿Sí?
+22:15
+Entonces podemos pensar R más como un vector, como el módulo de un vector que va de la carga más Q a P. Llamemos a esto un vector, R más. Y a este le llamamos un vector R menos. Y el módulo son los escalares aquellos. Entonces el vector R más, más el vector este, podemos llamar a un vector que va de la carga menos Q a Q, este vector le llamamos D. con vector.
+22:46
+Así que R más, más el vector D sobre 2, uso la fórmula de adición de vectores, tengo D sobre 2 más R más, me da el vector R.
+23:08
+¿De acuerdo? El vector este que está acá es este más este. ¿Se acuerdan que la regla de composición de vectores es poner uno al extremo del otro? Es justo lo que estamos haciendo. Entonces, si ahora yo tomo el módulo al cuadrado de esta expresión, tengo R más D sobre 2 al cuadrado es igual a R al cuadrado. Perdón, R más acá.
+23:38
+O no, o aún mejor, voy a hacerlo de otra manera. Voy a pasar el D sobre 2 para el otro lado. Equivale a R más es igual a R menos D sobre 2.
+23:53
+Y ahora tomo el módulo al cuadrado. Entonces me da el módulo al cuadrado R más es igual a R menos D sobre 2. sobre 2 al cuadrado, y esto lo podemos escribir porque sabemos escribir el cuadrado, esto es un producto escalar con sí mismo, así que queda R al cuadrado, menos doble producto, R escalar D, más D al cuadrado sobre 4.
+24:24
+¿Bien?
+24:30
+Así que la expresión del potencial, ahora en términos de coordenadas, será B de P igual a Q sobre 4 pi epsilon 0 por 1 sobre... Ahora, la raíz de aquello, ¿no? Raíz cuadrada de r al cuadrado menos r escalar d, más d cuadrado sobre 4, menos 1 sobre... Y ahora, r menos.
+25:13
+En lugar de tener r menos acá, ¿qué va a cambiar en r menos?
+25:20
+Claro, lo único que cambia es que tengo que cambiar este d sobre 2, lo tengo que poner menos d sobre 2. Entonces siempre que tengo d adelante, tengo que cambiar el signo. En este caso no, porque tengo d al cuadrado. Menos por menos da más. Pero en este caso parece un más. Así que también tenemos r menos al cuadrado, que nos da r al cuadrado, más r escalar d, más d al cuadrado sobre 4. Así que acá tenemos r al cuadrado, más r escalar d, Más D cuadrado sobre 4.
+25:59
+¿De acuerdo?
+26:05
+Y esto vale para cualquier pareja de cargas opuestas.
+26:15
+Pero podemos querer... Una cosa que uno suele hacer para un dipolo es decir... Me voy a interesar en el dipolo infinitamente chiquito. Voy a tomar una situación en la cual estoy mirándolo de lejos. O dicho de otra manera, en la cual considero D chiquito. Es lo mismo. O bien considero R grande o bien D chiquito. Porque solo hay dos cantidades con unidades de distancia. Tengo que compararlas una con respecto a la otra. Es decir, me voy a interesar a la situación en la cual veo el dipolo desde lejos. Se le llama el límite de dipolo puntual.
+26:47
+¿Sí? Está claro que si voy muy, muy, muy lejos, ¿cuánto me da el potencial? ¿Sí?
+26:51
+Cero. No es ese. Lo que quiero ver es el equivalente. ¿Cómo tiende a cero? ¿Va a tender como una carga puntual?
+27:01
+Si lo miro de muy lejos, ¿el potencial va a ser como el de una carga puntual? No. ¿Por qué?
+27:08
+Bueno, pero está autológico. No porque es un dipolo. ¿Cuál es la característica que hace que no se comporte como una carga puntual? Cero. Pues la carga total es cero. Entonces, cuando yo lo miro muy lejos, se comportaría como una carga puntual con carga, la carga neta total. Pero la carga neta total es cero. Así que ese efecto da cero. Entonces, lo que aparece es el efecto siguiente. Hay que ver cómo va a la orden siguiente. Entonces, para eso vamos a hacer un desarrollo de Taylor considerando D chiquito. D chiquito con respecto a R. Vamos a hacer un desarrollo en D sobre R. Entonces, fíjense.
+27:41
+Para hacer eso, tomo... R más, que vale raíz cuadrada de R al cuadrado menos R escalar de más D al cuadrado sobre 4.
+27:53
+Y voy a factorizar R. Ahora aclaro, ¿no? Vamos a interesarnos en el equivalente para... R mucho más grande que D. Entonces acá factorizo R. Me queda R por raíz cuadrada de 1. Saco el R cuadrado para afuera y me queda R. Entonces me queda 1 menos R escalar D sobre R al cuadrado más D al cuadrado sobre 4R al cuadrado.
+28:38
+¿Sí?
+28:41
+Y voy a hacer, me quiero interesar en el límite cuando R es mucho más grande que D. ¿Cuál de estos dos términos suele ser, normalmente es más grande que el otro?
+28:58
+¿El primero es más grande o el segundo es más grande? Cuando R es grande.
+29:07
+El primero es más grande, porque fíjense, este es de orden D sobre R, porque acá tengo un R arriba y un R al cuadrado abajo, así que este es de orden D sobre R. En cambio este es de orden D al cuadrado sobre R al cuadrado. Así que cuando haga un desarrollo de Taylor a primer orden, basta con considerar este. Pero por otro lado, esto lo puedo escribir como esta expresión, como R por 1 menos R escalar D, sobre r al cuadrado, más d al cuadrado, sobre 4r al cuadrado, a la 1 medio, ¿verdad?
+29:39
+La raíz cuadrada es como elevar a 1 medio. ¿Sí? Pero les recuerdo una cosa que yo les comenté ya varias veces y que ustedes deberían recordarse de cálculo 1, que el desarrollo de Taylor de la función 1 más x a la alfa, cuando x es chico, es 1, arranca en 1, cuando x es 0 es todo a 1, más alfa x... Más una cosa de orden X al cuadrado. Cuando X es chico.
+30:11
+¿Sí? X mucho más chico que 1. ¿Sí? ¿Qué es la situación en la que estamos acá? Porque tenemos 1 más algo chico. ¿Sí?
+30:19
+¿Sí? ¿De acuerdo? Donde alfa vale 1 medio. Así que esto que está acá... Vale R por 1 menos... Entonces tengo el 1 medio...
+30:32
+R escalar D sobre R al cuadrado. Y esto ya ni lo escribo porque esto es de orden siguiente. Esto es de orden X, esto es de orden X al cuadrado, así que esto ya ni lo tengo que escribir. Así que más algo de orden D al cuadrado sobre R al cuadrado. ¿De acuerdo? ¿De acuerdo?
+31:02
+¿Sí? ¿Se entendió? El alfa vale un medio, lo puse acá. Y solo me basta con guardar este término. Y ya todo lo demás lo puedo despreciar.
+31:23
+Aún más. Si yo tengo 1 sobre R más, va a ser... Se va a comportar como 1 sobre R por 1 menos 1 medio de R escalar D sobre R al cuadrado. Más orden de D al cuadrado sobre R al cuadrado.
+31:48
+Y esto lo puedo escribir como 1 sobre R por... Fíjense, tengo 1 sobre... También, a ver, si acá, esto lo pueden poner como, esto a la menos uno, pueden escribir como uno menos un medio de R escalar D sobre R al cuadrado más orden D al cuadrado sobre R al cuadrado, todo a la menos uno.
+32:15
+Entonces nuevamente uso la misma fórmula y me queda uno sobre R por uno más un medio de R escalar D Sobre r al cuadrado más orden d al cuadrado sobre r al cuadrado. Es el desarrollo de Taylor a primer orden cuando d es chiquito. A ver, fíjense esta fórmula.
+32:48
+Lo que desaparece es 1 más alfa por x. Alfa en este caso vale menos 1. Entonces acá tenía un menos. Es como decir, 1 sobre 0,99 es como aproximadamente, en primera aproximación, como 1,01. Lo que me falta abajo lo puedo agregar con un más arriba.
+33:14
+¿Se entiende lo que digo? Obviamente esto no es exacto, pero en el límite en que la corrección es chiquita a 1, eso es una...
+33:24
+Bueno, entonces, si sustituyo, entonces B de P nos queda Q sobre 4 pi epsilon cero, y acá abajo nos queda 1 sobre R, vamos a escribir esta expresión que tenemos acá, nos queda 1 sobre R por 1 más un medio de R escalar D, sobre R al cuadrado más orden D al cuadrado sobre R al cuadrado y ahora escribo el otro término el término que viene acá ¿qué hay que hacer en el otro término?
+34:09
+para esta misma expresión para no calcular todo de nuevo
+34:16
+donde tengo D pongo menos 1. Entonces pongo acá menos, debido a este menos que está acá, y pongo la misma expresión, 1 sobre R, 1, pero ahora tengo que poner menos, un medio de R escalar D, sobre R al cuadrado, más orden de D al cuadrado sobre R al cuadrado. Vamos a poner un corchete para que quede bien claro quién es quién.
+34:50
+Entonces ahora el 1, el 1 que correspondía a la carga puntual, al término en cual hacía D directamente 0, ese se nos va, como tenía que suceder porque la carga total es 0.
+35:04
+Y los otros términos fíjense que se suman, porque acá tengo un más y acá tengo menos por menos más. Así que me queda BDP Q sobre 4 pi epsilon 0... ¿Cuántos R tengo abajo? Tengo tres R abajo. R al cubo.
+35:25
+Y acá, un medio más un medio, me queda uno. Me queda arriba R escalar D. Más algo que puede despreciarse. Más cosas despreciables. Lo voy a escribir de otra manera. ¿Se acuerdan que habíamos definido el vector momento dipolar eléctrico? ¿Se acuerdan? Era un vector que era Q por el vector D. Es el vector que va de la carga menos Q a Q.
+35:57
+Entonces, como P igual a Q por D, este es el momento dipolar eléctrico, entonces D de P... se puede escribir como 1 sobre 4 pi epsilon cero por r escalar p dividido r al cubo.
+36:32
+Esta es la expresión del potencial de un dipolo en el límite
+36:50
+O el equivalente para R mucho más grande que el tamaño del dipolo. Así que decrece a qué velocidad. Cuando R es grande, ¿a qué velocidad decrece esto?
+37:20
+1 sobre R a la 2. Porque tenemos un R arriba, 3 abajo, decrece como 1 sobre R a 2. Así que decrece más rápido que el potencial de una carga puntual. Porque el potencial de una carga puntual a qué velocidad decrece? Como 1 sobre R. Así que decrece más rápido. Si lo quieren ver en coordenadas, fíjense que P tiene coordenadas verticales. Otra manera de ver esto es la siguiente, ahora tomemos el dipolo acá chiquitito, P, toman el punto acá P mayúscula, llámenle, bueno R es este vector que está acá, llámenle teta al ángulo que se forma con la dirección del dipolo, así que B de P lo pueden escribir como 1 sobre 4 pi epsilon 0 por P en módulo, por el coseno del ángulo, dividido por R al cuadrado.
+38:23
+También lo pueden escribir de esta manera que es cómodo. R escalar P, les queda módulo de R por el módulo de P, por coseno del ángulo entre ellos.
+38:33
+Así que, módulo de P por coseno del ángulo y simplifique un módulo de R. Esta es otra expresión cómoda.
+38:53
+¿Preguntas?
+38:58
+Ah, para poder usar las propiedades del producto escalar. Porque fíjate, yo sé que el módulo acá, el módulo de un vector es igual al producto escalar por sí mismo. Entonces el producto escalar de este es el producto escalar de este con sí mismo. Es como, cuando ustedes quieren hallar el módulo de un vector que lo tiene escrito como unas sumas, conviene tomar el cuadrado, porque de esa manera usan que el módulo del cuadrado es el producto escalar del vector con sí mismo. ¿Alguna otra pregunta?
+39:35
+Vieron que eso me permitió dar una fórmula bastante directa, ¿no? En términos de cosas... ¿Se entendió esto? Bueno, van a ver otros cálculos del producto del potencial. Fíjense que el cálculo tuvo el mismo nivel de dificultad que el que tuvimos para el campo eléctrico, pero esto es mucho más fuerte porque no sólo calculamos el potencial en el plano bisector, sino en cualquier punto. Quiere decir que con el mismo esfuerzo obtuvimos mucha más información.
+40:07
+Entonces ahora, ¿sí? ¿Alguna otra pregunta? Entonces lo que voy a hacer es pasar a calcular ahora el potencial no de una distribución de cargas puntuales, sino una distribución continua de carga.
+40:23
+Como hicimos antes con el campo eléctrico. Primero vimos el campo eléctrico generado por cargas puntuales y luego imaginamos una distribución continua de carga y calculamos el campo eléctrico de una distribución continua.
+40:46
+4.4 Potencial producido por una distribución continua.
+41:27
+Bueno, mismos comentarios que anteriormente. Primero, las distribuciones continuas de carga estrictamente no existen porque la carga está cuantizada. Pero eso no importa porque como la carga de electrón es muy chiquitita, si vamos a objetos macroscópicos, típicamente las cargas con las que contamos son mucho más grandes que las cargas de electrón. Y entonces el hecho de que la carga tenga una parte indivisible, que es la carga de electrón, no...
+41:55
+nos juega un papel significativo y entonces podemos imaginar que tenemos distribuciones continuas de carga. Entonces podemos pensar que tenemos un cuerpo en el cual tenemos, por ejemplo, una densidad de carga distribuida en un volumen. ¿Sí? Entonces, ¿cómo vamos a hacer para...? Tenemos otro punto acá, P, en que colocamos una carga Q0. ¿Cómo vamos a hacer para calcular el potencial?
+42:35
+Entonces supongamos que toman este punto y llaman a esta distancia R. Claro, dividimos este volumen en pedacitos chiquititos.
+42:46
+Un pedacito chiquitito con un volumen delta B, lo podemos considerar, como es muy chiquitito, como una carga puntual. Entonces el potencial en P será igual a 1 sobre 4 pi epsilon 0 de la suma. Nuevamente, lo mismo que teníamos antes de los delta QI, son las cargas de cada volumencito, dividido R sub I, que es la distancia del volumen delta VI a P. Pero delta QI...
+43:28
+lo pueden escribir como Rho, la densidad en I, digamos Rho de R, de R sub I, por delta V sub I. Entonces lo pueden escribir como V en P, lo pueden escribir como 1 sobre 4 pi epsilon cero, por sumatoria en I de Rho en RI, por delta VI sobre R sub I. Esto es aproximado, pero lo podemos volver una expresión exacta cuando hacemos tender todos los delta VI a cero.
+44:05
+Entonces eso se comporta como una suma de Riemann que tiende a la integral. Entonces, si delta VI tiende a cero para todo I... Entonces B de P es igual a 1 sobre 4 pi epsilon 0 por la integral sobre el volumen de Rho de R de B dividido R. Así que es la misma idea.
+44:44
+Reemplazan las sumas que aparecen en el caso de las cargas puntuales, lo reemplazan por integrales. No es más que eso. Y si en lugar de tener una densidad volumétrica tiene una densidad lineal, es la misma idea, lo único que en lugar de tener una integral de volumen tiene una integral sobre una línea. y en lugar de tener la densidad volumétrica de carga, tienen la densidad lineal de carga. Si es una distribución de carga sobre una superficie, tendrán que reemplazar el elemento de volumen por el elemento de superficie, y la densidad volumétrica de carga por la densidad superficial, densidad de carga por unidad de superficie.
+45:24
+Entonces veamos ejemplos, porque los ejemplos son más, hablan más de esto, ejemplos, y retomemos nuestro viejo y querido ejemplo de la barra, barra cargada uniformemente. Me voy a limitar, pero en realidad acá podríamos hacerlo más general, pero si no la cuenta se hace un poco pesada.
+45:57
+Vamos a llamarle a este eje Y, esta vez, y ahora este eje que está acá, voy a tomar el origen acá, lo voy a llamar el eje Z. Voy a colocar un punto acá, P, a una distancia, entonces, que le llamo Y. Y quiero calcular B de P. El potencial en P. Y acá tengo una densidad lineal de carga lambda uniforme.
+46:30
+Bien.
+46:33
+Entonces, ¿cómo hago para calcular esto?
+46:39
+Es parecido al problema que vimos con el campo eléctrico, salvo que acá no nos tenemos que ocupar de los aspectos vectoriales. En el caso del campo eléctrico, en este caso, los aspectos vectoriales fueron re simples, porque sabíamos enseguida que el campo eléctrico era paralelo a este eje y ya está. Pero... Así que en este caso el cálculo no va a ser mucho más simple. Pero bueno, supongamos...
+47:02
+Entonces planteamos esa integral. No exactamente la mía porque en lugar de un volumen tenemos una línea, pero es la misma idea.
+47:21
+A ver, entonces fíjense. Llamemos acá a un pedacito, acá, a este pedacito le llamo de ancho de zeta. Entonces va a ser, el potencial en P va a ser 1 sobre 4 pi epsilon 0, ese siempre está por ahí, la integral entre menos L, llamémosle L al largo de la barra, menos L sobre 2 a L sobre 2, Entonces ahora tengo que poner la densidad lineal de carga, lambda, esa es constante, por dz.
+47:59
+En lugar de tener un dB, ahora tengo un dz porque tengo que sumar solo los pedacitos de carga. El producto de estas dos cosas me da el elemento de carga y luego tengo que dividir por la distancia de este punto acá. Si a esto le llamé z, ¿cuánto vale esta distancia?
+48:20
+Pitágoras, ¿verdad? Entonces me queda raíz cuadrada de y cuadrado más z al cuadrado. Y ahora tengo que hacer esa integral.
+48:33
+¿Se acuerdan cómo hacer esa integral? Es muy parecida a la otra, no es igual, pero es parecida.
+48:42
+Entonces...
+48:45
+Sí, pero no conviene, conviene usar la... ¿Sí? Podemos hacer 0 a L y poner el 2 adelante, decís. Ah, bueno, eso sí puedo hacer. Está claro que esta integral es par en Z, así que en lugar de integrar de menos L sobre 2 a L sobre 2, si quiero puedo integrar entre 0 y L sobre 2 y multiplicar por 2. si queremos podemos hacer eso 1 sobre 2 pi epsilon 0 integral de 0 a L sobre 2 el lambda lo puedo sacar para afuera me queda dz sobre raíz cuadrada de y al cuadrado más z al cuadrado bien, ¿cómo sigue esto?
+49:31
+¿cómo? ¿por qué? ¿por qué? ¿por qué?
+49:40
+No, ojo, porque acá es Z al cuadrado, no es Z. La primitiva de esta no se saca así. Entonces, ¿qué cambio de variable? ¿Se acuerdan? Z igual a Y por seno hiperbólico, coseno hiperbólico. A ver, ¿cuál usé yo? Se pueden usar las dos. Seno hiperbólico. Seno hiperbólico de W.
+50:11
+¿De acuerdo? ¿Por qué hago esto? Esta es parecida a la que habíamos usado... ¿Se acuerdan lo que es el seno hiperbólico? Seno hiperbólico de W es exponencial de W menos exponencial de menos W sobre 2. Es una abreviación para eso. Y tiene propiedades parecidas al seno. Ahora vamos a ver en un momento. Les recuerdo, es la misma idea que ya usamos antes. Entonces, usando esto tengo que...
+50:42
+Bueno, la propiedad que hay que usar es esta, que el coseno hiperbólico de W es E a la W más E a la menos W sobre 2. Y tienen la propiedad que el coseno hiperbólico de W menos el seno hiperbólico de W vale 1. Fíjense que se parece a la fórmula con los senos y cosenos, salvo menos de un signo. Las fórmulas para los senos y cosenos hiperbólicos suelen ser idénticas a las de los senos y cosenos normales, a menos de signos. que uno tiene que hallar.
+51:16
+Entonces, fíjense, Z al cuadrado más Y al cuadrado, lo puedo escribir como Y al cuadrado, factor de 1 más seno al cuadrado de W, seno hiperbólico al cuadrado de W. Pero seno hiperbólico al cuadrado de W más 1, si paso esto para el otro lado, me queda Y al cuadrado por coseno al cuadrado hiperbólico de W.
+51:44
+Entonces, raíz cuadrada de Z al cuadrado más Y al cuadrado es igual a Y por coseno hiperbólico de W. No hay duda sobre el signo porque el coseno hiperbólico es una cantidad positiva.
+52:02
+Así que el denominador se escribe en términos de un coseno hiperbólico. Pero además...
+52:09
+Si yo quiero hallar el elemento de Z, será Y por la derivada del seno hiperbólico. ¿Cuál es la derivada del seno hiperbólico? Coseno hiperbólico.
+52:21
+Por DW.
+52:25
+Entonces el resultado de aquello es que V de P es igual a lambda sobre 2 pi epsilon 0 por la integral... Bueno, el seno hiperbólico, cuando Z vale 0, el seno hiperbólico vale 0, porque el seno hiperbólico se anula... El seno hiperbólico se anula en 0. Así que si quiero hallar el punto en que se anula es justo cuando W es 0. Es una función monótona creciente. Se anula justo cuando... Fíjense, W es 0, me da 0.
+52:57
+Así que me queda la integral entre 0 y la función inversa, voy a escribirlo así, seno hiperbólico... a la menos 1 de L sobre 2Y.
+53:13
+Y arriba me queda Y coseno hiperbólico de W por DW y abajo me queda Y por coseno hiperbólico de W. Magia. Parece que alguien lo hubiera hecho a propósito. ¿Está? Entonces me simplifica... Y me queda lambda sobre 2 pi epsilon cero por la función inversa del seno hiperbólico. Esto no es el seno hiperbólico dividido, es la función inversa.
+53:47
+¿Se entiende la notación?
+53:53
+Pero ahora hice trampa porque esto es simplemente escribir de una manera, una integral que no sabíamos lo que quería decir. Lo que valía lo expresamos en términos de una función que no sabemos lo que vale. Así que no ganamos mucho. ¿Cómo hacemos para...? Tenemos que hallar la función inversa del seno hiperbólico. ¿Quién sabe hacer eso? La función inversa del seno hiperbólico...
+54:30
+¿Vamos a hacer la función inversa del seno hiperbólico?
+54:34
+¿Sí? Entonces sabemos que llamémosle X grande al seno hiperbólico de X. ¿Sí? Lo que queremos hallar es invertir, es hallar X chica en términos de X grande. ¿Verdad? En lugar de querer X grande en función de X chica, queremos X chica en función de X grande. Sí, eso es la función inversa. ¿Están de acuerdo? Entonces, esto es equivalente a decir que X es el seno hiperbólico a la menos 1 de X grande. Esto es lo que queremos hallar. ¿Sí?
+55:06
+Bueno, pero sabemos la expresión explícita del seno hiperbólico, nos queda E a la menos X menos E a la menos X sobre 2. ¿Cómo invertimos esto?
+55:29
+Ahora escrito así es fácil. Ahora ya pueden encargar. Una pista más. Llamémosle Z a E a la X. Como variable intermedia. No voy a usar Z porque Z ya le estábamos llamando una cosa allá. Vamos a llamarle U. Entonces esta ecuación nos queda... Entonces, la ecuación de arriba nos queda 2X grande, es igual a U menos 1 sobre U.
+56:03
+¿Saben despejar U ahí? Vamos arriba, ahora sí saben despejar U. Si lo ubicamos por U, entonces nos queda U al cuadrado menos 2X por U menos 1 igual a 0.
+56:24
+Una ecuación de segundo grado. Esto nos dice que u es igual a 2x más menos raíz cuadrada de 4x al cuadrado menos 4 más 4. Todo dividido por 2.
+56:41
+Por lo que es lo mismo, x más menos raíz cuadrada de x al cuadrado más 1.
+56:52
+Esas son las dos soluciones posibles. Pero pregunta, ¿cuál va? ¿El más o el menos? ¿Se entiende lo que estoy haciendo? Estoy hallando X en función de X grande. ¿Cuál va acá? ¿Más o menos? Porque U como es, positivo. Entonces, ¿cuál va? El más, porque fíjense que esta cantidad siempre es mayor que X. ¿Sí? Entonces si fuera menos me quedaría algo negativo. Así que solo puede ser más porque u positivo.
+57:31
+Entonces tenemos que, reemplazo ahora u por lo que es, tengo que e a la x es igual a x más raíz cuadrada de x al cuadrado más 1. Entonces si tomo el logaritmo, llego a que X es el logaritmo, logaritmo nepeleano, de X más raíz cuadrada de X cuadrado más 1. Entonces tenemos que el seno hiperbólico a la menos 1 de X grande es el logaritmo de X más raíz de X al cuadrado más 1.
+58:09
+Entonces tenemos la expresión de la función inversa del logaritmo.
+58:16
+Seno hiperbólico. ¿Se entiende cómo hice? Entonces ahora expresé la función inversa del seno hiperbólico en términos de funciones que conozco. Bueno, esto alguien puede decir, esto no es física, esto lo que está haciendo es cálculo uno o no sé, hacer cuentas.
+58:37
+Pero la vida es así. La vida es... Ustedes... Pueden tener expresiones muy bonitas, así, pero si no pueden transformar la... Ustedes van a estudiar para ingenieros.
+58:53
+Entonces, pueden haber entendido, pero si después no pueden calcular cuánto hormigón le tiene que poner a un puente, que le dé un número, entonces, no. Hay que poder transformar las ideas generales en cuentas precisas. Bueno, entonces terminemos. Entonces el potencial en P... es igual a lambda sobre 2 pi epsilon 0, por esa función que no es otra que esta. Logaritmo, y cada vez que tengo X grande, lo tengo que reemplazar por aquello. L sobre 2Y más raíz cuadrada de L al cuadrado sobre 4Y al cuadrado más 1.
+59:33
+Ese es el potencial.
+59:39
+Vamos a ver qué pasa cuando Y es grande. Consideremos Y mucho más grande que L. ¿Cómo se tiene que comportar el potencial cuando estamos muy lejos de la barra?
+59:58
+Como una carga puntual. Entonces veamos que efectivamente es así. Fíjense, cuando Y es muy grande, esto L sobre Y es muy chico. ¿Sí?
+1:00:11
+Y acá también. Entonces, fíjense que L sobre 2Y más raíz cuadrada de 1 más L al cuadrado sobre 4Y al cuadrado, esto se comporta como, cuando eso tiene acción, se comporta como 1. Pero con eso no me alcanza, quiero ver la corrección a 1. ¿Sí? La corrección tendría este término que es L sobre 2Y... Y la corrección que viene de este es de orden L al cuadrado sobre Y al cuadrado. Así que eso ya es despreciable. Así que esto más orden L al cuadrado sobre Y al cuadrado.
+1:00:50
+¿Bien? Entonces si tomo el logaritmo, el logaritmo de L sobre 2Y más raíz cuadrada de 1 más L al cuadrado sobre 4Y al cuadrado.
+1:01:01
+El logaritmo de 1 más algo que tiende a 0 es equivalente a qué? El logaritmo de 1 más x, cuando x es chico, ¿a qué es equivalente? A x. Es igual a x más una cosa de orden x al cuadrado.
+1:01:17
+Y como, fíjense acá, entonces esto va a ser equivalente, esto es igual a l sobre 2y más una cosa de orden l al cuadrado sobre y al cuadrado. Entonces el b de p... va a ser equivalente, cuando Y es mucho más grande que L, a L sobre 2 pi epsilon cero por L mayúscula sobre 2Y.
+1:01:50
+Pero lambda por L queda la carga total de la barra. Así que esto lo podemos escribir como Q es la carga total
+1:02:06
+de la barra, dividido 4 pi epsilon cero por y. Entonces les dejo un ejercicio, que es divertido. Es plantearse cómo es el comportamiento en el límite opuesto. No cuando estamos muy lejos, sino cuando estamos pegaditos a la barra.
+1:02:33
+¿Bien? Un ejercicio teórico. Ejercicio. ¿Qué pasa para Y mucho menor que L? Segundo ejemplo. Anillo de carga.
+1:03:03
+Anillo cargado.
+1:03:06
+uniformemente entonces la idea ahora es tienen un anillo con densidad lineal de carga lambda uniforme en un plano y vamos a calcular acá tienen O el centro del anillo y tienen una distancia Z al centro llamenle R al radio del anillo
+1:03:34
+La pregunta es ¿cuánto vale el potencial en P? Este es bien fácil. Toman un cachito de arco de ancho angular de teta. ¿Cuál es la carga que hay en teta? ¿Cuál es la carga que hay en teta?
+1:04:07
+No, porque eso no tiene las unidades correctas. ¿Cuál es el largo? R lambda de tita. Entonces, el elemento de carga que hay en el ancho de tita, aquí hay una carga de Q que será R de teta por lambda. Entonces, el elemento de potencial que genera este pedacito, ¿cuánto va a ser?
+1:04:37
+V generado por este de Q. ¿Cuánto va a ser? 1 sobre 4 pi epsilon 0, ese siempre anda por ahí. Ahora hay que poner el de Q, que nos queda R de teta por lambda, y dividir por la distancia entre este y este. ¿Cuánto es esa distancia?
+1:04:59
+Raíz cuadrada de r al cuadrado. Acá hay un ángulo recto, ¿verdad? Entonces, este vale r. Es un triángulo. ¿Se lo imaginan en el espacio? Entonces, queda raíz cuadrada de r al cuadrado más z al cuadrado. Y si quieren el potencial entero, tienen que integrar en qué variable.
+1:05:21
+Si quiere el potencial de todo el anillo, ¿en qué variable tiene que integrar? En teta, sumar sobre todos los ángulos. Pero fíjense que está buenísimo, acá queda re fácil porque nada depende de teta.
+1:05:34
+Entonces si integran, ¿cuánto da? 1 sobre 4 pi epsilon 0, lambda por r, por 1 sobre raíz cuadrada de r cuadrado más z cuadrado, todo eso es independiente de teta, integrado entre 0 y 2 pi, De teta. ¿Y cuánto vale esa integral? Dos pi. A veces la vida es más fácil. Entonces B es igual a lambda R sobre 2 epsilon 0 raíz cuadrada de R cuadrado más z cuadrado.
+1:06:08
+Entonces, potencial de un anillo sobre su eje.
+1:06:23
+Bueno, y acá nuevamente no es difícil convencerse de que cuando uno toma Z mucho más grande que R, es decir, cuando miramos el anillo de muy lejos, se comporta nuevamente como una carga puntual. Son los mismos ejemplos que vi para el campo eléctrico, pero... Y tengo todavía unos minutos más y vamos a hacer ahora el disco.
+1:06:50
+Fíjense que la ventaja principal con respecto al campo eléctrico es que acá no hay aspectos vectoriales. En estos ejemplos igual los aspectos vectoriales eran re simples porque siempre nos dábamos cuenta de la dirección antes de empezar a calcular. Pero en otros casos donde hay problemas en el espacio que van a aparecer en el práctico, poder calcular una cantidad escalar es más cómodo que andar proyectando vectores. Entonces...
+1:07:36
+Disco uniformemente cargado.
+1:07:49
+Entonces, el dibujo va a ser el mismo, pero el sentido es diferente. Nuevamente, tomamos acá.
+1:07:57
+Pero acá es el disco. Todo el disco está uniformemente cargado. Sigma uniforme.
+1:08:04
+Y nuevamente vamos a tomar el origen acá y un punto P a una distancia Z. Lo que queremos calcular es el potencial en P generado, no ahora por un anillo, sino por el disco macizo, digamos. ¿Cómo hacemos?
+1:08:26
+Claro, dividimos este en muchos anillos. Lo miro de arriba, ¿no? Miro de arriba el disco macizo.
+1:08:34
+Tengo en el centro el origen, tomo un anillo.
+1:08:44
+Entonces tomo un anillo de ancho de R, que está a una distancia R del origen.
+1:08:52
+Ya hicimos esto para el campo eléctrico, ¿se acuerdan? ¿Cuánto vale la carga dentro del anillo? De Q, anillo.
+1:09:10
+Entonces primero el área, el área va a ser 2 pi r de r, y hay que multiplicar por la densidad superficial de cara, por sigma. ¿Se acuerdan de esto que ya lo habíamos visto?
+1:09:23
+Bien. Y entonces ahora voy a tener que el potencial en P va a ser igual a 1 sobre 4 pi epsilon 0, la integral entre 0 y r mayúscula, Tengo el elemento de carga, 2 pi r de r por sigma. Y tengo que poner abajo la distancia de este anillo al punto P. ¿Cuál es la distancia de eso?
+1:09:56
+Perdón, estoy diciendo mal. Estoy haciendo mal. Tengo que usar aquí el potencial. Tengo que sumar sobre los potenciales producidos por cada uno de los anillos. ¿Está bien? Disculpenme. Tengo este potencial que es el potencial de un anillo. Y tengo que sumar sobre los potenciales generados por cada uno de los anillos. Entonces tengo que sumar sobre esto. Esto lo voy a escribir de otra manera. Lo voy a escribir en términos de la carga del anillo. La carga del anillo es... La carga del anillo es lambda R por 2 pi.
+1:10:30
+¿Sí? Así que esto me queda Q sobre 4 pi epsilon 0...
+1:10:38
+Raíz cuadrada de R al cuadrado sobre Z al cuadrado. Entonces acá, es la misma idea, pero integral entre 0 y R, pongo el de Q, lo que hay es Q, acá pasa a ser de Q, porque es la carga de un anillo, y tengo que poner la distancia. Bueno, está bien, es la misma fórmula. 4pi, el silón 0, y ahora la distancia de cualquier punto del anillo a P, que cuánto vale.
+1:11:10
+Tenemos allá R raíz cuadrada de Z al cuadrado y ahora tengo que agregar R mayúscula o R minúscula. Minúscula, porque es la distancia del anillo. Que el anillo tiene distancia variable a depender de R. Bueno, entonces ahora esto nos queda. Sigma sobre 2 epsilon cero...
+1:11:37
+La integral entre 0 y r de r de r sobre raíz cuadrada de z al cuadrado más r al cuadrado. Bueno, esta integral es más fácil. ¿Cómo hacemos para calcularla?
+1:11:50
+Cambio de variable. ¿Qué cambio de variable?
+1:11:55
+Bueno, hay dos cambios de variable que resultan cómodos. Algunos están proponiendo usar la variable r al cuadrado más z al cuadrado. ¿Sí?
+1:12:06
+Vamos a darle u. A R al cuadrado más Z al cuadrado. Entonces de U, como Z está fijo, nos queda 2R de R. Entonces B de P es sigma sobre 2 epsilon 0. Bueno, cuando R chica vale 0, ¿U cuánto vale? Cuando R chica vale 0, ¿U cuánto vale? 0.
+1:12:36
+Z al cuadrado. Y arriba queda raíz cuadrada de R mayúscula más Z al cuadrado. Perdón, sin la raíz.
+1:12:46
+Bien. R de R nos queda DU sobre 2. Y abajo nos queda raíz cuadrada de U.
+1:13:02
+Que esto también lo podemos escribir como sigma sobre 4 epsilon cero por la integral entre z al cuadrado y r al cuadrado más z al cuadrado de du por u a la menos un medio.
+1:13:20
+Y esta la sabemos hacer. Esto nos queda sigma sobre 4 pi epsilon cero. por U a la 1 medio, con un signo más, y aquí si yo derivo me bajaría 1 medio, así que tengo que agregar un factor 2.
+1:13:37
+Evaluado entre R al cuadrado más Z al cuadrado y Z al cuadrado.
+1:13:43
+Esto queda sigma sobre 2 epsilon 0, por raíz cuadrada de R al cuadrado más Z al cuadrado, menos valor absoluto de Z.
+1:13:54
+El potencial de P. Bueno, lo que importa es esto, el concepto, ¿no? Tienen que sumar sobre todos los anillos. El potencial total es la suma de los potenciales generados por todos los anillos.
+1:14:21
+Y luego suman, la integral esta no es difícil de hacer. Es una cosa estando.
+1:14:38
+Bueno, les dejo como ejercicio ver qué se comporta. Ejercicio.
+1:14:48
+Verificar que B se comporta como una carga puntual si Z es mucho más grande que R. Ahora veamos el límite opuesto. Si Z es mucho más chico que R, entonces B de P, fíjense, este término se va a comportar como R más una cosa que es de orden Z al cuadrado.
+1:15:34
+¿Sí? ¿Sí?
+1:15:36
+Así que B de P, y este es lineal en Z, así que nos queda, se comporta cuando el valor absoluto de Z es mucho más chico que R, se comporta como sigma sobre 2 epsilon 0 por R menos valor absoluto de Z. Esto más algo que es de orden Z al cuadrado.
+1:16:02
+Z al cuadrado sobre R.
+1:16:11
+Entonces fíjense cómo es este potencial cerca del disco. Tiene una propiedad curiosa.
+1:16:30
+Bueno, esto se parece al campo. Sí, este es el campo, está bien. Pero la dependencia en Z tiene una propiedad curiosa.
+1:16:42
+¿No? ¿No se dan cuenta? A ver, se los digo en otros términos. El campo eléctrico, ¿cómo es cerca de un disco? Si pasan de un lado para el otro.
+1:16:52
+Tienen el campo de arriba y si lo pasan para el otro lado es para abajo, ¿se acuerdan? Y además cerca tiene una constante, que es discontinuo el campo eléctrico. El potencial es continuo, fíjense que cuando Z tiende a cero, tanto por arriba como por abajo, esto tiende a cero, así que es continuo. Pero... ¿Qué pasa con su derivada?
+1:17:22
+Claro, no es derivable. Fíjense, el potencial va a tener una pinta de este tipo. Como función de Z. Cuando Z tiende a 0, tiende a ese valor que está acá, llamémosle B0. No me importa el valor. Dice este, sigma sobre 2 epsilon 0 por R. Pero, luego... Decrece con un punto así y con un ángulo.
+1:17:46
+Decrece con un valor absoluto. Así que no es derivable. ¿Eso a qué se debe? Bueno, a que tenemos una carga concentrada. Es una situación un poco ideal. Tenemos una carga concentrada en un disco. ¿De acuerdo? Bueno, en el campo eléctrico todavía es más salvaje la cosa. No solo no era derivable, sino que además era discontinuo el campo eléctrico. Tenemos de arriba apuntando para arriba y abajo apuntando para abajo. Acá el potencial mismo se comporta un poquito mejor, pero su derivada... les doy un chisme la derivada del potencial en realidad en un sentido que vamos a precisar en la clase que viene es el campo eléctrico así que no es sorprendente que haya una discontinuidad en la derivada potencial es continuo pero su derivada que en realidad fíjense le pegan el palo al campo eléctrico ella es discontinua bueno dejamos por acá lo que vamos a hacer les doy una sinopsis de la clase que viene lo primero que vamos a hacer es ver cómo calcular el campo eléctrico en términos del potencial, eso es lo primero de todo, y luego para terminar el capítulo vamos a hablar de lo que son las superficies equipotenciales.
+1:18:53
+Y ya arrancamos con capacitores, con capacitores, condensadores, como quieran llamar. Nos vemos el lunes.
+

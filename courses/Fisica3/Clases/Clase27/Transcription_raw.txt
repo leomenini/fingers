@@ -1,0 +1,380 @@
+# Clase 27
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/27/
+
+Fecha de exportación: 7/24/2026, 12:09:13 AM
+
+Clase: 27
+Curso: F3
+
+Segmentos : 210
+Palabras  : 8015
+Caracteres: 45352
+
+0:16
+La vez pasada estuvimos hablando sobre los efectos de... vimos desde distintos puntos de vista los fenómenos de reflexión y refracción de la luz cuando pasa de un medio a otro. En particular probamos la ley de Snell y también la ley de iguales ángulos en la reflexión. Vimos que el índice de refracción dependía de la longitud de onda de la luz y por lo tanto distintas longitudes de ondas se refractaban diferente al pasar de un medio a otro y que eso explicaba el fenómeno de los arcoiris y más generalmente la aparición de distintos colores cuando la luz blanca pasa de un medio a otro.
+1:04
+Ahora, en esta clase voy a primero hablar un rato del efecto Doppler. que es un efecto importante, los fenómenos son duratorios, y luego voy a empezar a hablar de los fenómenos de interferencia de ondas, cosa que voy a terminar el miércoles y con eso termina el curso. Entonces, efecto Doppler. El efecto Doppler es un efecto que es importante y que está asociado con cómo cambia la percepción que nosotros tenemos de la longitud de onda o de la frecuencia de la onda cuando...
+1:38
+la fuente o el observador se mueven con respecto al medio que se propaga la onda. Entonces, para empezar a hablar de efecto Doppler, vamos a primero pensar en el efecto Doppler de ondas que se propagan en un medio. Vimos que la luz no se propaga en un medio, se puede propagar en el vacío. Pero es más simple pensar primero en el caso en que estamos pensando en ondas que se propagan en un medio. Por ejemplo, las ondas de sonido. ¿Está bien? Entonces pensemos, consideremos primero ondas que se propagan en un medio.
+2:28
+Entonces el ejemplo es el sonido.
+2:32
+entonces una primera cosa que podemos considerar es que tenemos acá un emisor de la onda emisor en reposo en el medio está emitiendo una onda acá que tiene una longitud de onda lambda ¿bien?
+2:57
+¿de acuerdo? y hay una velocidad de la onda La onda se propaga a una cierta velocidad. Esta es velocidad de la onda.
+3:09
+V. Y tenemos acá un observador que supondré que se propaga hacia el emisor a una cierta velocidad V0. ¿Está bien? el observador está yendo hacia el emisor a una velocidad B0. En realidad B0 podría tener el sentido opuesto, podría estarse alejando.
+3:42
+Entonces ejemplo de esto, situación en la cual el emisor está en reposo con respecto al medio y hay un observador que se está acercando, cosas que le suenan, por ejemplo en el sonido.
+3:58
+Un parlante y...
+4:07
+Te vas acercando al parlante y entonces vas a sentir que el sonido del... Si te mueves caminando no vas a notar diferencia. Supongamos que venís en un auto relativamente rápido, vas a notar que el sonido cambia. Van a notar, según que te estés acercando, vas a notar que el sonido es más agudo o más grave. Entonces vamos a calcular ese fenómeno.
+4:37
+¿De acuerdo? Entonces primero que nada pensemos, tomemos la onda acá, para simplificar voy a suponer que es una onda plana, en realidad si tenemos un emisor puntual va a ser una onda esférica, pero cerca de uno frente de onda, cuando no estamos muy pegaditos a la onda, se parece a una onda plana. Entonces tengo dos frentes de onda y acá tengo el observador, acá es la onda que se está propagando acá, Tiene una longitud de onda. Estos son dos frentes de onda consecutivos.
+5:08
+Y se está moviendo hacia allá la onda a una velocidad B. Y tenemos el observador que se mueve a una velocidad B0. ¿Está? Estamos haciendo la encuesta de evaluación docente. Los que acaban de llegar, agarren una hoja para...
+5:37
+Entonces, si yo tengo un observador, primero imaginémonos que el observador, antes de pensar el caso del observador en movimiento, pensemos que el observador estuviera acá en reposo. ¿Sí? ¿De acuerdo? Entonces, ¿cómo haría el observador en reposo para medir? Disculpa, estamos haciendo la encuesta de evaluación docente. Agarrala, hay una hoja ahí. Vale. ¿Cómo haría un observador, por ejemplo, cualquier observador, en particular un observador en reposo, para medir la frecuencia de la onda?
+6:12
+Experimentalmente, ¿cómo haría para medirla? En el sonido no vamos a hacer así, pero imaginemos que es más simple, imaginemos que es una onda en una cubeta, una onda que se propaga en una cubeta. ¿Cómo vamos a hacer para un observador que está parado en un cierto punto, cómo hace para medir la frecuencia de la onda? El tiempo que pasa de un frente a otro no es la frecuencia, es el periodo. Entonces, ¿qué es lo que hace? Bueno, una cosa es medir el periodo y tomar el inverso.
+6:43
+Más eficiente que eso es pararse en un lugar e ir contando en un intervalo de tiempo. Pongamos que mida 100 periodos, ¿sí? Contar cuántos frentes de onda, un periodo largo, cuentan cuántos frentes de onda llegaron y dividen por el tiempo, ¿está? Entonces la frecuencia, ¿sí? Se puede medir.
+7:12
+contando los frentes de onda en un tiempo t y dividiendo por t ¿está? entonces un observador en reposo
+7:53
+Esto mide lambda y esto se mueve a una velocidad B.
+7:59
+Entonces en reposo, en un tiempo T, ¿cuántos frentes de onda va a medir?
+8:15
+¿Cuántos frentes de onda pasan si el intervalo entre dos frentes es lambda y esperamos un tiempo T y las ondas se propagan a una velocidad B?
+8:25
+Dijeron varias cosas en el último. En el intervalo t van a pasar todas las ondas que estén a una distancia, ¿cuánto? dt. ¿Y cuántas van a pasar?
+8:46
+dt sobre lambda. Entonces, el número de frentes de onda...
+8:58
+que pasan para un observador en reposo en un tiempo t entonces será vt dividido lambda entonces la frecuencia Será Vt sobre lambda dividido T. Es decir, Vt sobre lambda.
+9:36
+Bueno, chocolate por la noticia. Esto ya lo sabíamos, ¿no? La frecuencia... Habíamos visto que B es lambda sobre T y F es 1 sobre T. Así que eso ya lo sabemos. ¿Bien? Confirmamos que este procedimiento de medir es incorrecto. Una observación. Esto solo es válido cuando el número de frente de onda es grande. Porque como el número de frente de onda, pongamos que contamos los máximos, es una cantidad discreta. Entonces a veces podemos medir uno más, uno menos, porque según exactamente en qué momento empezamos a medir.
+10:07
+Pero si el intervalo es largo, esos efectos de discretización son despreciables. Esperamos mucho rato. Entonces ahora pensemos en un observador en reposo, en movimiento. Si el observador se mueve...
+10:29
+Si el observador tiene velocidad B0, ¿cuántos frentes de onda va a medir?
+10:35
+Estamos haciendo la encuesta de evaluación. Si el observador se está moviendo, ¿cuántos frentes de onda va a medir? ¿Cuántos van a pasar? Supongamos que el observador se está moviendo con velocidad B0 como pusimos acá.
+10:56
+Y entonces... Supongamos que B0 acá va en esta dirección.
+11:07
+Bt más B0. Se agregan, ¿verdad? Porque no solo hay que contar los que vinieron... Es decir, hay que contar qué distancia. En lugar de contar la distancia Bt, vas a tener que contar la distancia B más B0t. Todos los que pasan por acá van a sumar. Entonces, el número...
+11:30
+de frentes de onda es decir, si me muevo hacia la fuente veo más frentes de onda observados en el tiempo t será v más v0 por t dividido por lambda entonces la frecuencia observada Frecuencia observada...
+12:08
+Será... Hay que dividir esto por T. Será B más B0 sobre lambda. Pero si queremos expresarlo en términos de la frecuencia que observa el observador en reposo... Podemos sacar B sobre lambda de factor. Nos queda B sobre lambda por 1 más B0 sobre B. Entonces... La frecuencia que observa un observador en movimiento es esta.
+12:38
+Frecuencia observada por un observador en movimiento. Observador en movimiento. Obviamente si B0 es negativa, si B0 va para el otro lado, acaba un signo menos simplemente. Acá solo me ocupé del caso en que la velocidad es hacia la fuente o alejándose.
+13:10
+En realidad, si tuviéramos una fuente, una velocidad chanfleada, ¿qué pasaría?
+13:18
+Solo interviene la componente en la dirección del movimiento, ¿verdad? Del movimiento de la onda.
+13:28
+¿Se entendió esto? Entonces, si nos estamos moviendo a una velocidad relativamente grande, observaremos el sonido, frecuencias que no son las que uno observaría estando en reposo, sino diferentes. Entonces, el primer caso del efecto Doppler. Vamos a ver un segundo caso. que es un poco diferente, les recuerdo que para las ondas hay un referencial privilegiado para las ondas mecánicas, que es el referencial en que el medio está en reposo.
+14:08
+En este caso el aire está en reposo para el sonido. ¿De acuerdo? Entonces voy a plantearles otra segunda situación en que el emisor se está moviendo, pero el observador está quieto. Y fíjense que no son equivalentes, porque hay un referencial, no es que solo interviene el movimiento relativo entre los dos, porque hay un medio referencial en reposo que es privilegiado, que es el medio en que se propaga la onda.
+14:39
+Entonces no son equivalentes.
+14:48
+Entonces, segundo caso.
+14:56
+Fuente se mueve y observador en reposo. ¿Ya? Entonces...
+15:23
+Tendremos acá el observador. Observador. Y acá voy a hacerlo como una fuente plana para simplificarme la vida. Y esta es la fuente. Por ahora lo hago con un punto. Fuente. Que se mueve a una velocidad B0.
+15:43
+Hacia el observador. ¿Sí? Y lo que nos vamos a plantear es cuál es la frecuencia que, digamos, si es sonido que escucha el observador. Ejemplo de este tipo de situación, ustedes deben haber escuchado muchos.
+15:58
+Una ambulancia. Una ambulancia cuando está llegando, ¿cómo la escuchan?
+16:04
+Más aguda. Más aguda. Y cuando se está alejando, más grave. No voy a repetir el sonido porque voy a ser ridículo, pero se lo pueden imaginar ustedes mismos. Cuando la ambulancia se mueve hacia ustedes, la escuchan más aguda y luego un poco más grave. Y una pregunta. ¿Esto tiene algunas aplicaciones tecnológicas importantes? ¿Tienen algunas en mente?
+16:42
+Esto tiene una utilidad importante tecnológica, esta situación. Bueno, no, no, con el sonido las estrellas no. No, pero efectivamente, el efecto Doppler se usa para ver la velocidad relativa de las estrellas con respecto a nosotros. Pero antes de ir a las estrellas, pensando en el sonido propiamente dicho. ¿Puedes usar para rodar para los autos? Claro, para los autos tienen acá un chancho que está tratando de poner multas, digamos, y tiene un radar que lo que hace es, no es un radar en realidad, es un sonar, lo que hace es emite un sonido muy agudo, que no lo escucha el ultrasonido, no lo escucha el oído humano, va, rebota contra el auto, vuelve, ¿sí?,
+17:42
+Entonces cuando emite, no pasa nada, pero en un momento rebota acá, entonces la emisión la está generando el auto en el rebote y vuelve la onda y ahí la mide el aparato, el sonar, y detecta a qué velocidad se está moviendo el auto. ¿Eso es una aplicación? ¿Tiene alguna otra?
+18:08
+Que no implique... ¿Poner multas?
+18:16
+Bueno, sí. los sonares de los submarinos no solo pueden detectar objetos, porque originalmente se los había diseñado para detectar objetos, que era, va, rebota, y según cuánto tiempo demoró, detectan dónde está el objeto. Pero también puede detectar, mirando el efecto Doppler, a qué velocidad se mueven los objetos en los que rebota. Pero mejor, mejor que eso. Esto es una aplicación médica.
+18:48
+Bueno, este es un diseño general para medir cosas que se mueven, cosas que queremos medir sin romperlas. Entonces, una cosa que se usa esto, por ejemplo, para los estudios de cuando la gente quiere ver si no tiene obstrucciones en las arterias, quieren ver la velocidad que se propaga la sangre en las arterias del cuerpo o las venas. Y entonces hacen por efecto Doppler. ¿Ven a qué velocidad? Por ejemplo, los glóbulos rojos de la sangre se están moviendo y hacen eso con efecto Doppler.
+19:25
+Así que es otra cosa que se hace.
+19:29
+Bueno, veamos un poco, calculemos ahora cómo cambia la frecuencia. Entonces dijimos, ¿cómo va a ser? Vamos a pensar en lo siguiente. Vamos a considerar emisiones sucesivas. La fuente emite una vez por periodo. Entonces, para la fuente, tiene un periodo.
+20:00
+de oscilación, que le llamaremos T, que es 1 sobre la frecuencia que ve la fuente. Entonces, pensemos cómo se emiten dos frentes consecutivos. Se emiten en intervalos de tiempo T. Entonces, acá tenemos un frente... En T igual a cero se emitió un frente. Tomo el origen del tiempo en un frente.
+20:31
+Ese frente se propaga a una velocidad B, la velocidad del sonido. B es la velocidad del sonido. B, velocidad de la onda. Entonces, la fuente está acá. Y pensemos qué es lo que pasa un periodo más tarde. En un periodo más tarde... Acá está la onda. Frente en T igual a T. ¿Sí?
+21:02
+Si la fuente estuviera en reposo, el frente siguiente lo emite acá. ¿No es verdad? Pero como la fuente se está moviendo, en el intervalo de tiempo se movió B por T. Entonces, fuente en... T igual a T. Y acá se emite el frente siguiente. Perdón, acá es la onda. No, es el frente de la onda en T igual a T. Ah, perdón, acá no dice fuente, dice frente, perdón.
+21:38
+Frente de onda. ¿Está? Entonces fíjense, esta distancia que está acá, la distancia entre... Ahí sería V0.
+21:58
+Y este es V0. Esto es lo que se propagó la onda. Esto que está acá es Vt.
+22:08
+Es lo que se propagó la onda en el periodo T.
+22:14
+Y esto es V0T. ¿Y VT cuánto vale?
+22:18
+VT es... ¿Sí? Lambda. Lambda que es la longitud de onda si la fuente estuviera en reposo.
+22:42
+Pero ese no es el lambda real, ¿verdad? ¿Cuál es el lambda real? El lambda que realmente se está propagando. ¿Cuál es la distancia? Es la distancia entre los dos frentes. Este es el lambda prima.
+22:55
+Este es lambda prima, que es la longitud de onda con fuente de movimiento.
+23:15
+¿de acuerdo? entonces la frecuencia que va a medir el observador frecuencia que mide el observador
+23:44
+y tenemos fuente de movimiento será nuevamente V por T dividido lambda prima y dividido T VT sobre lambda prima ahora vamos a escribirlo así VT sobre lambda prima todo dividido por T esto es el número de frentes de onda
+24:16
+Y esto es en el intervalo T. Y este es el intervalo. Entonces vemos, y si estamos calculando la frecuencia de la misma manera. Contamos el número de frentes de onda, pero ahora hay que usar lambda prima, que es la longitud de onda que realmente se propaga si la fuente se propaga a velocidad B. Entonces esto les queda B sobre lambda prima. Pero vimos que lambda prima lo podemos calcular como B menos B0 por T. Y T lo puedo escribir como 1 sobre la frecuencia.
+24:59
+Esta es la frecuencia si la fuente estuviera en reposo.
+25:17
+Entonces sustituyendo acá nos queda B por F dividido B menos B0.
+25:32
+Entonces vemos que F'. Factorizando B, les queda eso, por 1 menos B0 sobre B. Entonces frecuencia, si fuente se mueve.
+26:05
+Veamos si nuestra intuición de la ambulancia es correcta. Si B0 es positivo, quiere decir que la ambulancia se está acercando hacia nosotros. Quiere decir que el denominador va a ser más chico que 1. Quiere decir que la frecuencia es más grande. Quiere decir que efectivamente el sonido es más agudo. Frecuencias más altas son sonidos más agudos. Y luego cuando B pasa a ser negativo, al revés, se vuelve más grave. ¿No?
+26:35
+¿Bien? Y fíjense que las dos fórmulas no coinciden. Hay un referencial de preferencial. No es lo mismo que la fuente se esté moviendo que el observador se esté moviendo. No dan fórmulas equivalentes. Son fórmulas diferentes. ¿Sí? ¿De acuerdo? ¿Estamos de acuerdo? Entonces ahora queremos aplicar esto mismo al caso de la luz. ¿Se funciona? A veces no funciona. A veces no funciona.
+27:05
+Todo esto vale cuando B0 es más chico que B. Si B0 se propaga más rápido, si tenemos una fuente que se está propagando más rápido que la velocidad del sonido, ¿tienen ejemplo de eso? Los aviones supersónicos. Hay aviones que se propagan más rápido. Entonces, el fenómeno es completamente distinto.
+27:39
+Porque este dibujo hay que rehacerlo. En realidad se generan unos frentes totalmente distintos que se llaman ondas de choque. Que es totalmente distinto. Un fenómeno completamente distinto. Todo esto vale cuando V0 es menor que V.
+27:55
+Bueno, pregunta. Todo esto lo hicimos para el sonido o para cualquier onda que se propaga en un medio. ¿Qué pasa con la luz? Porque la luz dijimos que no se propaga en ningún medio. ¿Cuál sería el medio acá para la luz? ¿Cuál sería el medio? No hay. Entonces se dan cuenta que estas fórmulas para la luz no pueden ser exactas. Porque tendría que dar lo mismo. Tiene que dar lo mismo que sea el observador que se mueve o... Supongamos que estamos en un referencial inercial.
+28:35
+El observador está en un referencial inercial y la fuente se está moviendo a una velocidad constante hacia él.
+28:43
+Podemos colocarnos en otro referencial inercial en el cual la fuente está quieta. Y el observador se mueve. Y las dos cosas son físicamente totalmente equivalentes. Quiere decir que para la luz, como no hay referencial preferencial, los dos resultados tendrían que ser lo mismo. Que se mueva la fuente o se mueva el observador tiene que dar lo mismo para la luz. Quiere decir que estas fórmulas no pueden ser exactas para la luz. ¿Eso por qué? Porque aparecen lo que se llaman efectos relativistas. La luz es una onda que se propaga a una velocidad muy muy grande y cuando tenemos cosas que se propagan a velocidades...
+29:14
+como la luz o cercanas a la de la luz, hay que tomar en cuenta efectos relativistas y la mecánica normal ya no vale más. Y de hecho les voy a decir cómo es el resultado en el caso relativista. Para la luz no hay referencial preferencial.
+29:44
+Que se propaga en el vacío. Entonces hay efectos relativistas que hacen que...
+30:12
+Les doy el resultado. F' para la luz es igual a F por 1 más B0 sobre C, C es la velocidad de la luz, dividido raíz cuadrada de 1 menos B0 al cuadrado sobre C al cuadrado. A ver, déjenme verificar que no me equivoqué en el resultado. Está bien. Donde V0 acá, donde V0 es la velocidad relativa entre observador y fuente.
+31:05
+Lo único que cuenta es la velocidad relativa.
+31:10
+Es lo mismo, porque como no hay referencia a la inercial, si uno es inercial, el otro también es inercial, así que tiene que dar el mismo resultado físico. Y efectivamente es así y da esto. Pero fíjense que cuando la velocidad es pequeña, las dos fórmulas se parecen.
+31:30
+Ah, una cosa. Sigo haciendo todo con movimientos que se hacen en la dirección de la onda.
+31:39
+Está claro que se puede generalizar esto. La fórmula que vimos acá, estas fórmulas que están acá, las podríamos haber hecho, por ejemplo, cuando el observador y la fuente se mueven. Se puede hacer. Es un cálculo un poquito más complicado, pero se puede hacer. Y acá esto también se podría hacer con velocidades chanfleadas. Esta fórmula solo la estoy dando en el caso en que la velocidad está en la dirección de propagación. En el caso relativista no hay que solo proyectar, es un poquito más complicado.
+32:12
+Bueno, pero veamos qué pasa cuando V0 es pequeño.
+32:15
+Es pequeño o normal, digamos, mucho más chico que la velocidad de la luz. Si... V0 es mucho más chico que la velocidad de la luz. El resultado es F' es igual a F por 1 más V0 sobre C. Porque fíjense que el denominador es de orden... La corrección A1 es de orden B0 al cuadrado sobre C al cuadrado. Así que si queremos quedarnos con un desarrollo de Taylor al primer orden, lo único que cuenta es esto.
+32:51
+La corrección sería de orden B0 al cubo sobre C al cubo. No, mentira. Hay una corrección de orden B0 al cuadrado sobre C al cuadrado. ¿Sí? ¿Se entiende esto que digo?
+33:07
+Así que fíjense que esta fórmula nos da igual que esta que pusimos acá. A primer orden nos da igual. Pero a primer orden también es igual a esta. Entonces coincide con la fórmula de observador.
+33:36
+moviéndose pero lo que quiero mostrar es que también coincide con la otra pero además si tomamos f' igual a f sobre 1 menos b0 sobre c y hacemos el desarrollo de Taylor a primer orden ¿se acuerdan? el desarrollo de 1 más x a la menos 1 ¿se acuerdan como es el desarrollo de Taylor?
+34:08
+A primer orden. 1 más X a la alfa. Ya lo hemos visto varias veces, ¿no? ¿Se acuerdan? ¿Cómo arranca? El orden 0 es... Cuando X vale 0, vale 1. Y el término, la derivada, ¿se acuerdan cómo es?
+34:30
+El término de orden X...
+34:33
+Alfa por X. Entonces es como 1 más alfa por X más una cosa de orden X al cuadrado. Así que acá esta fórmula, si esto que está acá es X, es como esta misma fórmula pero con alfa igual a menos 1. Así que todo les queda F por 1. Entonces alfa vale menos 1 pero tengo un menos acá, así que aparece un más. De 0 sobre C. más algo de orden B0 al cuadrado sobre C al cuadrado. Quiere decir que a primer orden, en la velocidad relativa, las dos fórmulas coinciden.
+35:07
+Si bien no son iguales, Si nos limitamos al primer orden, son idénticas. Quiere decir que las fórmulas que hemos visto para el efecto Doppler de ondas propagándose en un medio, da lo mismo que el efecto Doppler de la luz, que no lo podemos calcular porque hay que saber la teoría de relatividad que es complicada. Pero da lo mismo. Cuando estamos con velocidades normales, velocidades mucho más chicas que la luz, una cosa y otra son equivalentes. Y ambas fórmulas coinciden a primer orden en velocidad.
+35:42
+Esto es como decir... Siempre les digo, retengan, ¿no? Que dividir por 0,99 es en buena aproximación casi igual que multiplicar por 1,01. Dividir por algo que hay que restar un poquito a 1 es lo mismo que multiplicar con ese poquito agregado arriba. ¿Se entiende? Entonces la fórmula que vale para la luz... es a velocidades normales esencialmente la misma que calculamos para ondas en medios mecánicos.
+36:14
+Y vale, tanto una como la otra son equivalentes.
+36:20
+Alguien comentaba que con esto, para la luz, tiene un efecto importante que es para el cálculo de la velocidad de las estrellas o incluso de las galaxias. Se ha detectado por esta vía que las galaxias muy alejadas se están alejando cada vez más rápido de nosotros. Es decir, a medida que vamos a galaxias que están más lejos, la velocidad con la que se alejan de nosotros Es mayor.
+36:53
+Eso se llama el corrimiento al rojo. Las frecuencias, si la velocidad es negativa, porque se están alejando, la frecuencia que vemos es una frecuencia menor. Y eso hace que, si estaban en un cierto color, se corren hacia el rojo, en el visible. En todo caso, la frecuencia disminuye.
+37:20
+Y eso permitió, he escuchado la ley de Hubble, dice que el universo se está expandiendo. ¿Cómo se detectó eso experimentalmente? Observacionalmente, porque se observó que todas las galaxias, mientras más alejadas están, más rápido se están moviendo.
+37:40
+Entonces, ojo, eso no quiere decir que nosotros estemos en el centro o algo por el estilo. Tiene que pensarlo como una especie de budín que se está... un budín... Que se está creciendo. Todos los puntos se alejan entre sí. Es decir, hay un borde. Pero supongan cualquier cosa que está más o menos en el medio, todos los puntos se alejan entre sí. No hay ningún punto privilegiado en realidad. Todos se alejan entre sí. Y si la velocidad de expansión es la misma, todos se alejan. Mientras más lejos estén, más es la velocidad relativa.
+38:13
+Y eso es la ley de Hubble. El universo está creciendo. Eso es lo que llevó a la teoría del Big Bang, porque si ahora está creciendo podemos proyectar para atrás y si era bueno, pero entonces en el pasado el universo era mucho más chiquito y seguimos yendo para atrás, llegamos a la conclusión que en un pasado remoto el universo estaba concentrado todo muy cerca de un punto. Eso se ha hecho una cosa más precisa que lo que estoy contando, pero conceptualmente esta es la base empírica, que se observa y el universo crece.
+38:49
+Bueno, ¿qué más?
+38:58
+Entonces, por ejemplo, las galaxias lejanas se alejan más. Si están lejos, se alejan más. Entonces F se corre al rojo. Al corrimiento al rojo.
+39:33
+¿Preguntas?
+39:35
+Entonces ahora voy a empezar a hablar de interferencia.
+39:39
+Interferencia de dos ondas.
+39:45
+Seguro voy a empezar con otro tema, así que si tienen dudas es un buen momento ahora. ¿Sí? ¿Cómo? ¿Por qué es más? Porque alfa acá vale menos uno, porque esto está en el denominador, es como multiplicar por esto a la menos uno. Entonces menos uno, y acá tenés un menos, así que menos por menos da más.
+40:15
+¿Alguna otra pregunta? O dicho de otra manera, achicar el denominador es aproximadamente igual que agrandar el numerador. Entonces capítulo creo que es 15, capítulo 15, interferencia.
+40:55
+Bueno, la interferencia es un... Uno de los fenómenos principales asociados con las ondas es el fenómeno de interferencia. Dos ondas...
+41:08
+Cuando tenemos un fenómeno aleatorio donde hay dos contribuciones, las dos contribuciones pueden sumarse o restarse. Pueden tener lo que se llama una interferencia constructiva o una interferencia destructiva. Pero antes de hablar de eso, tenemos que pensar... Pensemos primero en las ondas de luz, que en este caso, para lo que voy a decir ahora, es un poco más simple. Fíjense, supongamos que estamos hablando de la luz en el vacío y en una zona donde no tienen cargas ni corrientes.
+41:45
+Entonces, las ecuaciones de Maxwell son ecuaciones para el campo eléctrico y para el campo magnético y son ecuaciones lineales. ¿Sí? Si todo... Y además, como no hay ni cargas ni corrientes, son ecuaciones homogéneas. Son ecuaciones lineales y homogéneas. Quiere decir que si toman dos soluciones, una combinación lineal de esas soluciones también será solución. ¿Están de acuerdo? Entonces, si la carga vale cero y las corrientes valen cero, las ecuaciones de Maxwell quedan.
+42:23
+Las escribo. La ley de Gauss...
+42:28
+Cero porque la carga es cero. La ley de Gauss para el campo magnético.
+42:35
+También cero porque esa ya era cero de pique. Tienen la ley de Ampere. Estos son sobre superficies. Esto sobre una curva. La ley de Ampere les dice que la circulación del campo magnético.
+42:49
+Entonces acá solo van a tener el término de Maxwell. Entonces esto les queda el flujo sobre el borde, sobre ese, de... Acá aparece una derivada, perdónenme. Tiempo. Y por último les queda que la circulación del campo eléctrico en una curva tiene la ley de Faraday.
+43:25
+Les dice que la derivada con respecto al tiempo de... en la superficie correspondiente del campo magnético y ven que estas ecuaciones son todas ecuaciones lineales y homogéneas entonces si toman dos soluciones
+43:48
+A ver, la combinación lineal, si yo tomo E1, en lugar de E, te pongo E1, alfa E1 más beta E2, eso será, si E1 y E2 verifican las ecuaciones de Maxwell, alfa E1 más beta B2 también la verificará. Y lo mismo para el campo dominante. Entonces, como son ecuaciones lineales,
+44:17
+y homogéneas entonces combinación lineal de soluciones y solución Esto es lo que a veces se denomina el principio de superposición. Si tienen dos ondas, una combinación lineal de las ondas también es solución.
+44:49
+Por ejemplo, la suma. Si tienen dos ondas, la suman, sigue siendo una solución. Y eso es un poquito sorprendente. Porque, ¿qué quiere decir? Que si yo tengo una onda electromagnética que viene por acá, y tengo otra onda que viene por acá...
+45:06
+Cuando pasan una arriba de la otra no se ven una en la otra y después siguen como si nada. Una onda no puede rebotar en una onda electromagnética. Cada una sigue su mundo, no ve a las demás. Eso es el principio de superposición, que es un principio bastante fuerte. Y no funciona cuando uno está en un medio, obviamente. ¿Por qué?
+45:30
+Si tienen un medio, ya no vale el principio de superposición. ¿Por qué? Bueno, si el medio es lineal, sí, pero... Porque en realidad les va a quedar más o menos lo mismo. Pero si tienen un medio, normalmente van a tener cargas que van a hacer que la onda llega por acá, hace oscilar unas cargas que luego emiten no solo en la misma dirección de la onda, sino en cualquier otra dirección. Y entonces las ondas pueden... Una onda afecta a la otra. ¿Me explico? ¿Está bien? Pero esos efectos en el vacío no están presentes.
+46:02
+Incluso en un medio son efectos muy, muy, muy chiquititos. Esos efectos se llaman efectos de onda, efectos de óptica no lineal, son efectos muy, muy chiquititos que se observan en el laboratorio, pero son muy, muy chiquititos. Así que en el vacío de manera exacta y en un medio de manera con muy buena aproximación, las ondas electromagnéticas verifican el principio de superposición. Y lo mismo vale para las ondas mecánicas cuando... El desplazamiento no es muy grande. Porque fíjense, si el desplazamiento es chiquito, supongan una onda en una cubeta o en una cuerda.
+46:38
+Si tienen una onda muy grande en la cuerda, aparecen efectos no lineales. Pero si tienen ondas muy chiquititas, perturbaciones muy chiquititas, entonces esencialmente las ecuaciones son lineales y la suma de dos soluciones o la combinación lineal de dos soluciones será solución también.
+46:58
+esto pasa también para ondas mecánicas si la perturbación es pequeña
+47:36
+Entonces lo que se llama el principio de superposición. Bueno, entonces si tenemos el principio de superposición nos podemos plantear, bueno...
+47:57
+Pensemos primero en una onda más simple, pensemos en una onda en una cuerda, ¿qué pasa si tenemos dos ondas? Por ejemplo, para simplificar, pensemos en dos ondas sinusoidales. Tomemos dos ondas sinusoidales. ¿Sí? Entonces las dibujo acá, la onda 1...
+48:25
+Esta es la cuerda en reposo. Entonces estoy haciendo las ondas grandes para que se vean, pero les recuerdo que el principio de superposición vale si la perturbación es chiquita. Yo la dibujo grande para que se vea, pero no la tiene que ser chiquita, sino no vale el principio de superposición. Entonces esta es la onda 1. Y ahora dibujo una segunda onda, onda 2.
+49:01
+Entonces, si vale el principio de superposición, la onda 1 más la onda 2 será una solución también. ¿De acuerdo? Por ejemplo, ¿cómo se produce eso físicamente? Imagínense, viene una onda de un lado, sinusoidal, tienen otra onda del otro lado, sinusoidal, en un instante dado tienen las dos al mismo tiempo, se suman. ¿Cómo será la resultante?
+49:26
+Acá estoy imaginando que tienen igual amplitud, la resultante va a ser igual que cada una de ellas, pero con amplitud doble. Onda con amplitud doble. Paga si cada una tenía la misma amplitud. ¿Sí? ¿No se pasa si son las mecánicas grandes? Si aparecen ondas mecánicas grandes, ya no vale el principio de superposición. Eso lo pueden pensar, por ejemplo... Bueno, eso lo han visto ustedes en la playa.
+50:03
+¿Sí? No tienen olas grandes. ¿Sí? Saben que las olas rebotan unas contra otras. ¿Sí? Cuando tienen ondas bajitas, no. Pasa una por arriba de la otra, no pasa nada. Pero cuando tienen ondas grandes, se chocan. Aparecen lo que se llaman efectos no lineales. Es decir, de otra manera, una onda no se propaga igual, una ola no se propaga igual si ya hay una ola que si no hay ola. ¿Me explico? Que eso es lo que uno intuitivamente diría, el principio de superposición es un poquito antiintuitivo. El hecho de que pasan una arriba de la otra como si no se vieran.
+50:37
+En las ondas mecánicas, si la amplitud es grande, se empiezan a ver, pero si la amplitud es chica, esencialmente pasan, tienen una cubeta, hacen olitas suaves y cada una pasa por arriba de la otra y no se ve. Pero si las olas son grandes, no, ahí aparecen efectos de una onda, una ola puede rebotar en la otra.
+50:58
+¿Bien?
+51:11
+Bueno, entonces en este caso, en que se sumó la onda y quedó más grande, es lo que se llama interferencia constructiva. ¿Bien?
+51:28
+El resultado es mayor que lo que teníamos de las ondas cada una por separado. ¿De acuerdo? Pero ahora imaginemos... Bueno, a ver, si teníamos dos ondas que venían de lado, no sinusoides infinitas, sino limitadas en un intervalo, que venían así. Fíjense que a veces se van a sumar y a veces se van a restar. A veces van a tener un máximo que se suma con un mínimo. Veamos qué pasa en ese caso. Supongo que tenemos la onda 1.
+52:01
+Onda 1. Onda 2. Y ahora lo mismo, pero justo las agarramos en el instante en que van al revés. Entonces la onda resultante...
+52:27
+Si la sumamos es simplemente una onda que no hay nada.
+52:34
+Se restan. Y esto es lo que llamamos interferencia destructiva total.
+52:50
+Esta también ya le podríamos llamar interferencia constructiva total. En ese caso se suma todo totalmente, en este caso se resta todo totalmente. La situación típica es intermedia, ¿verdad? Ni se sumará totalmente ni se restará totalmente. Entonces, por ejemplo, si la onda está, si tenemos dos sinusoides, pensemos de igual amplitud, pero un poquito corridas una con respecto a la otra, está claro que el resultado no será ni totalmente sumado ni totalmente restado.
+53:22
+¿Se entiende esto? Bueno, cuando tienen ondas que no son unidimensionales, la onda en una cuerda es una onda unidimensional, pongamos una onda, como les decía, ponen una cubeta de agua y tienen dos ondas superpuestas, ahí la interferencia puede ser constructiva en algunos lugares y destructiva en otros.
+53:43
+Para ondas en el plano o en el espacio...
+53:56
+Les hago el dibujito, tienen acá una fuente, acá están golpeando, tienen una cubeta, golpean en la superficie y tienen unas ondas, unos frentes de onda circulares. Bien, y ahora tomamos otro punto.
+54:25
+Acá, en que estamos golpeando, y otros frentes circulares.
+54:33
+Entonces acá estoy dibujando los máximos, ¿no? Y entre máximo y mínimo, entre máximo y máximo habrá algún mínimo. Entonces fíjense, en estos puntos donde se cruzan los máximos, la onda será máxima, se suma totalmente. ¿Sí? Entonces acá tienen máximos. Máximos de interferencia. La interferencia acá es totalmente constructiva. No dibujé los mínimos, pero entre máximo y máximo tiene una línea de mínimos.
+55:05
+Cuando se cruzan mínimo con mínimo tiene una onda...
+55:10
+A ver, cuando digo máximo y mínimo estoy siendo inapropiado en el lenguaje. Estoy hablando de amplitud máxima o de amplitud mínima, porque en realidad lo que sucede es que la onda esta tiene un poquito de una elevación y después el siguiente va por abajo, ¿me explico? Entonces, si estos son máximos, lo que estoy dibujando acá son máximos, máximos, en el medio hay mínimos, Entonces cuando se cruza un máximo de una con un mínimo de la otra, da una cuenta que no se mueve.
+55:42
+Pero si tengo... Dos mínimos que se suman, ahí la interferencia nuevamente es constructiva. Se suma, se resta, digamos, y la amplitud se suma, ¿me explico? Las dos son para abajo pero suman. Y tienen toda la gama de situaciones intermedias en que se suma un poco, ¿está bien? Entonces, cuando están en el espacio no es cierto que todos los puntos, como acá, o bien se suman o bien se restan. No, la situación puede ser intermedia en el caso, puede depender punto a punto.
+56:13
+¿Bien?
+56:31
+Volvamos al caso unidimensional, por el momento. ¿Cuándo es que se suma y cuándo es que se resta? ¿Sí? Claro, es lo que estaba diciendo. Si tenemos... tenés el máximo que tenés el mínimo cuando tenés un máximo de una con un mínimo de la otra se resta pero puedes tener otras situaciones por eso dije hay que tener un poco de cuidado cuando uno habla del máximo está hablando de amplitud máxima o que en este caso también tenés amplitud máxima me refiero realmente lo más elevado y lo más elevado
+57:26
+Entonces, esto que dibujé acá no son realmente los frentes de onda, porque los frentes de onda son dos máximos consecutivos. En el medio tenés un mínimo, un valle. Bien, entonces...
+57:46
+¿Cómo? Pensemos en dos ondas de igual amplitud. Porque uno puede superponer ondas de amplitud diferente. Podría una oscilar dos metros y la otra, dicen, un metro. Por el momento, para simplificarnos la vida, pensemos ondas de igual amplitud. ¿Cuándo la interferencia es constructiva? Pensemos en el caso unidimensional y cuándo es destructiva.
+58:14
+Entonces, caso unidimensional...
+58:17
+con ondas de igual amplitud. Pensemos que son ondas sinusoidales y vamos a sumarlas. Entonces, Y de X y de T, voy a tomarlo en un cierto instante, en un cierto T igual a 0. Pongo T igual a 0 para simplificarlo. Entonces tengo A por seno, de k por x, k es lo que llamamos el número de onda, y para que sea constructivo voy a necesitar otra onda que es igual, con mismo signo y todo.
+58:55
+Entonces, más a por seno de k por x. En ese caso, la amplitud es simplemente 2a, y la onda es 2a por seno de kx.
+59:10
+¿De acuerdo? Esto es interferencia constructiva. Pero fíjense, lo que estoy necesitando es que la fase acá, lo que está dentro del seno...
+59:33
+sea igual o que en realidad difiera en 2pi, en un múltiplo de 2pi. Entonces, para ello, para interferencia constructiva, necesitamos que las fases...
+1:00:01
+Fases es el argumento del seno. Verifiquen. Llamamos a esto Φ1 y a esto le llamamos Φ2. Necesitamos que Φ2 menos Φ1 sea un múltiplo de 2πn. La diferencia de fases es un múltiplo de dosis. Eso es lo que necesitamos para que la interferencia sea constructiva.
+1:00:46
+Pero uno tiene por costumbre llamar fase al argumento del cero cuando puso una amplitud que sea un número real y positivo. Entonces veamos qué pasa ahora para la interferencia destructiva. Lo que vamos a necesitar es que la fórmula sea de este tipo. Y del t igual a cero, o sea, a seno de kx... Menos A por seno de KX.
+1:01:24
+Entonces la fase, ojo, hay que tener un poco de cuidado, porque la fase se usa cuando uno escribe una onda sinusoidal, le pone la amplitud, un número real y positivo. Pero acá pusimos un número negativo. Entonces si queremos que la amplitud se escriba como un número positivo, hay que modificar la fase. Pero, entonces... menos a seno de kx, lo podemos escribir como a, que es un número positivo, por seno de kx más pi.
+1:02:01
+Porque el seno, a ver si hacen el dibujo trigonométrico, del círculo trigonométrico, tiene un ángulo acá, fi. El ángulo de fi, esto que está acá, es fi más pi. El seno de phi más pi es menos el seno de phi. Entonces si queremos escribir los senos siempre con una cosa positiva adelante, este menos a por seno de kx lo escribiremos de esta manera.
+1:02:33
+Y esa es una manera para determinar la fase de manera correcta, porque si no la fase está determinada menos de un signo, porque siempre pueden meter ese signo para adentro o no y eso les cambia un signo. Entonces para determinar la fase de manera correcta, toman la sinusoide con un coeficiente adelante que sea positivo. Entonces vemos que para la interferencia negativa, para la interferencia destructiva, perdón,
+1:03:05
+Necesitaremos que la fase... Entonces esto será lo que llamamos phi2. Esto es lo que llamamos phi1.
+1:03:13
+Esto no es phi2. Phi2 requiere que el coeficiente sea positivo.
+1:03:19
+Para definir la fase, escribimos el seno con un coeficiente adelante positivo. Entonces necesitamos que phi2 menos phi1, ¿cuánto valga? Necesitamos que la fase es...
+1:03:37
+pi más 2 pi n entonces será pi más 2 pi por n con n entero ¿verdad? es interferencia constructiva
+1:04:11
+Entonces, para ver cuándo las ondas contribuyen de manera constructiva, o interfieren de manera constructiva o destructiva, lo que hay que ocuparse es de las fases. De las fases entre las ondas. Cuando se suman de manera...
+1:04:30
+Cuando las fases difieren en 2pi o difieren en más. Y fíjense que acá, lo de 2pi y todo eso no es gratuito, porque cuando miran el problema unidimensional, un frente de onda difiere con el siguiente en 2pi la fase. ¿De acuerdo? Si la van siguiendo por continuidad. Entonces, ¿por qué agregar el 2pi? Porque en realidad lo único que tenemos es que el seno es igual, pero si quieren medir por continuidad acá, la fase difirió en 2pi, y sin embargo, las condiciones que difieran, la fase no tiene por qué ser igual, pueden difirir en 2pi, o en 2pn.
+1:05:14
+Bien, entonces, capaz que vamos a empezar a ver algún ejemplo concreto de esto, a ver si me da un poco de tiempo.
+1:05:23
+Antes de empezar a ver un ejemplo concreto, no sé si lo voy a dejar para la clase que viene o lo vamos a ver ahora.
+1:05:31
+Capaz que algo llegó a ver ahora. Les quiero comentar una cosa que es importante. Para que el fenómeno de interferencia se pueda ver, se pueda ver experimentalmente, necesitamos que las fuentes que emiten las ondas, las emitan lo que se llama en fase. ¿Qué quiere decir eso?
+1:05:52
+Quiere decir que... Cada fuente está emitiendo, no tiene por qué emitir al mismo tiempo, pero tiene que emitir de tal manera que el intervalo entre un tiempo de emisión y el de la otra fuente sea constante. Están emitiendo cada una, yo que sé, con un intervalo de tiempo fijo, pero no estén emitiendo aleatoriamente una vez se emite una, una vez se emite otra. Y eso es importante porque nuestra experiencia cotidiana es que no hay interferencia. Si ustedes agarran Y prenden una lamparita en un cuarto.
+1:06:26
+Emite luz. ¿Verdad? Una lamparita, la prenden, emite luz. Entonces hay que decir, bueno, voy a usar el fenómeno de interferencia y entonces voy a prender otra lamparita, como acá, y me va a tener que aparecer en alguna parte del cuarto, se tiene que volver oscuro.
+1:06:45
+Eso es lo que diría el fenómeno de interferencia. Pero eso no pasa. Obviamente. ¿Por qué no pasa?
+1:06:57
+Porque cada lamparita, en realidad, emite por emisiones atómicas que se producen a nivel de los filamentos. Y cada emisión se produce de manera independiente entre una lamparita y la otra. Entonces después eso lo vamos a ver un poco cuantitativamente el miércoles. Pero necesitamos que las dos lamparitas estén emitiendo juntas. Y en realidad cada una está emitiendo en intervalos de tiempo muy muy cortitos, que son fracciones muy pequeñas del segundo. en cosas totalmente aleatorias una con respecto a la otra.
+1:07:29
+Y entonces no hay fenómeno de interferencia. Para que haya fenómeno de interferencia tiene que ser lo que se llama emisión coherente. Tienen que una fuente y la otra emitir en fase. No tiene por qué ser una fase constructiva o destructiva, pero sí una fase fija entre la emisión y la otra. Obviamente nunca la emisión es perfectamente en fase, pero necesitamos que sea suficientemente en fase, en manera coherente, lo suficientemente coherente como para llegar a ver el patrón de interferencia normalmente cuando la señal se vuelve muy pequeñita ya empezamos a ver los efectos de emisión incoherente necesitamos una señal suficientemente grande y coherente como para tener la interferencia ¿se entiende?
+1:08:18
+si, si, lo vamos a hacer acá
+1:08:23
+Vamos a hacer acá el miércoles que viene.
+1:08:27
+Vamos a poner dos fuentes de luz y va a generar zonas oscuras. ¿Nunca vieron eso?
+1:08:34
+Lo que vamos a hacer... Bueno, voy a empezar a dibujarle lo que vamos a hacer la clase que viene.
+1:08:51
+Ah, tendría que haber borrado acá, disculpe. Es decir, no hay que buscar un laboratorio muy sofisticado, lo vamos a hacer acá mismo en clase. Interferencia, entonces... Interferencia...
+1:09:25
+Lo que vamos a hacer la clase que viene es esto. Cortito y ya termino.
+1:09:32
+Una pantalla.
+1:09:34
+Tienen dos rendijas. Tienen una onda de luz. En realidad esto se puede hacer con otras ondas, ¿verdad? ¿Están yéndose de la clase? Yo sospecho que ya es la hora. No, tengo unos minutos todavía. Entonces, vamos a suponer que la onda incide... Perpendicular a la pantalla, incidencia normal. Entonces tenemos una pantalla con dos rendijas.
+1:10:11
+Y supongamos que las rendijas están separadas a una distancia que llamo D. Y más lejos, a una distancia D mayúscula, coloco una pantalla D. Entonces acá hay una incidencia normal de una onda plana.
+1:10:36
+Plana y monocromática. Un solo color, una sola frecuencia. ¿De acuerdo? Entonces, ¿qué es lo que va a pasar acá en esta pantalla? Van a aparecer zonas... Oscuras y zonas claras. Zonas muy iluminadas y zonas sin iluminación. Entonces, hago un dibujo. La pantalla, vamos a ver esto.
+1:11:06
+Zonas claras, una zona oscura, zona clara, una zona oscura, zona clara, una zona oscura, etc.
+1:11:22
+Bueno, y vamos a ver que en muchos casos la distancia entre dos zonas claras consecutivas es aproximadamente constante.
+1:11:34
+Vamos a ver eso. El ancho y la distancia entre dos zonas claras consecutivas es aproximadamente constante. Zonas oscuras y...
+1:11:54
+Zonas claras. Entonces, hagamos el cálculo. No quiero dejarlo por la mitad lo que pasa. Vamos a dejar la clase por acá hoy y arrancamos el miércoles para hacer esta cuenta.
+

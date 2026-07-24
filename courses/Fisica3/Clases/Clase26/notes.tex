@@ -1,0 +1,399 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Paquetes ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\geometry{margin=2.5cm}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+% ---- Colores ----
+\definecolor{keycolor}{HTML}{1a5276}
+\definecolor{warncolor}{HTML}{b03a2e}
+\definecolor{notecolor}{HTML}{2e86c1}
+\definecolor{refcolor}{HTML}{7d3c98}
+
+% ---- Entornos ----
+\newtcolorbox{keybox}[1][]{colback=keycolor!5!white,colframe=keycolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{warnbox}[1][]{colback=warncolor!5!white,colframe=warncolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{notebox}[1][]{colback=notecolor!5!white,colframe=notecolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{refbox}[1][]{colback=refcolor!5!white,colframe=refcolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+
+% ---- Encabezados ----
+\titleformat{\section}{\Large\bfseries\color{keycolor}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.4pt}]
+\titleformat{\subsection}{\large\bfseries\color{notecolor}}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{notecolor!70!black}}{}{0em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Notas --- Clase 26}
+\fancyhead[R]{\small Física III --- Óptica Geométrica}
+\fancyfoot[C]{\thepage}
+
+% ---- Título ----
+\title{\vspace{-1.5cm}\textbf{Clase 26: Reflexión, Refracción y Principios de la Óptica}\\
+\large{Ley de Snell, Principio de Huygens, Principio de Fermat y Reflexión Interna Total}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-0.5cm}
+
+% =========================================================================
+% ÍNDICE
+% =========================================================================
+\subsection*{Contenidos}
+\renewcommand{\contentsname}{}
+\tableofcontents
+\vspace{0.5cm}
+
+% =========================================================================
+\section{Reflexión y Refracción en la Frontera entre Dos Medios}
+% =========================================================================
+
+\subsection{Ondas planas monocromáticas}
+
+Consideramos ondas \textbf{planas} (frentes de onda paralelos) y \textbf{monocromáticas} (de un solo color, es decir, con una frecuencia bien definida). Un rayo de luz incidente desde el medio 1 (índice de refracción $n_1$) hacia el medio 2 ($n_2$) forma un ángulo $\theta_1$ con la normal a la superficie de separación.
+
+\begin{refbox}[Referencia: Definiciones básicas]
+\begin{itemize}[nosep]
+  \item \textbf{Onda monocromática}: onda sinusoidal con frecuencia $\nu$ (o longitud de onda $\lambda$) única.
+  \item \textbf{Frente de onda}: superficie de fase constante, perpendicular a la dirección de propagación.
+  \item \textbf{Rayo}: línea perpendicular a los frentes de onda que indica la dirección de propagación.
+  \item \textbf{Ángulo de incidencia} $\theta_1$: ángulo entre el rayo incidente y la normal a la superficie.
+\end{itemize}
+\end{refbox}
+
+\subsection{Dependencia del índice de refracción con la longitud de onda}
+
+El índice de refracción $n$ no es constante: depende de la longitud de onda $\lambda$ (fenómeno de \textbf{dispersión cromática}). Esto implica que ángulos distintos se refractan con ángulos distintos según su color.
+
+\subsubsection{Ejemplo: el arcoíris y el prisma}
+Un haz de luz blanca (superposición de todos los colores del visible) al atravesar un prisma de vidrio se descompone porque cada longitud de onda experimenta un ángulo de refracción diferente. Lo mismo ocurre en las gotas de agua suspendidas en la atmósfera, generando el arcoíris.
+
+\begin{notebox}[Dispersión en la vida cotidiana]
+Al observar un objeto sumergido en agua a través de un vaso, no solo se desplaza aparentemente su posición, sino que aparecen bordes coloreados debido a que la luz de distintas longitudes de onda se refracta en ángulos ligeramente distintos.
+\end{notebox}
+
+\subsection{Tabla de índices de refracción ($\lambda = 589$ nm, luz amarilla del sodio)}
+
+\vspace{0.3em}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Medio} & $n$ & $v$ ($\times 10^8$ m/s) \\
+\midrule
+Vacío / Aire & 1.000 & 3.00 \\
+Agua & 1.33 & 2.26 \\
+Acetona & 1.36 & 2.21 \\
+Alcohol etílico & 1.36 & 2.21 \\
+Vidrio (crown) & 1.52 & 1.97 \\
+Sal (NaCl cristalino) & 1.54 & 1.95 \\
+Diamante & 2.42 & 1.24 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.3em}
+
+\noindent A mayor $n$, mayor efecto refractivo. El diamante presenta el índice más alto de la tabla.
+
+% =========================================================================
+\section{Prueba de la Ley de Snell (Refracción)}
+% =========================================================================
+
+\subsection{Geometría de los frentes de onda}
+
+Consideramos una superficie plana que separa dos medios con índices $n_1$ y $n_2$. Los frentes de onda incidentes son perpendiculares a la dirección de propagación y están separados por una distancia $\lambda$ (longitud de onda en el medio 1). En el medio 2, la separación entre frentes es $\lambda'$ (longitud de onda en el medio 2).
+
+\subsubsection{Continuidad en la frontera}
+En la interfaz, la onda debe ser continua en todo instante. Esto impone dos condiciones:
+
+\begin{enumerate}[nosep]
+  \item \textbf{La frecuencia es la misma en ambos medios.} Si la frecuencia cambiara, la onda no podría mantener la continuidad en el borde para todo $t$:
+  \[
+  \nu_1 = \nu_2 = \nu.
+  \]
+  \item \textbf{Los frentes de onda incidente y transmitido se intersecan en la misma línea de la frontera.} La distancia $D$ entre dos intersecciones consecutivas de frentes con la frontera es la misma vista desde ambos lados.
+\end{enumerate}
+
+\subsection{Deducción geométrica}
+
+Del triángulo rectángulo formado por los frentes de onda y la frontera:
+
+\begin{itemize}[nosep]
+  \item En el medio 1: $\lambda = D \,\sen\theta_1$.
+  \item En el medio 2: $\lambda' = D \,\sen\theta_3$.
+\end{itemize}
+
+Recordando la relación entre velocidad, frecuencia y longitud de onda:
+\[
+v_1 = \lambda\,\nu,\qquad v_2 = \lambda'\,\nu,
+\]
+y la definición del índice de refracción $n = c/v$, se tiene:
+\[
+\frac{c}{n_1} = \lambda\,\nu,\qquad
+\frac{c}{n_2} = \lambda'\,\nu.
+\]
+
+Dividiendo miembro a miembro:
+\[
+\frac{\lambda}{\lambda'} = \frac{n_2}{n_1}\quad\Longrightarrow\quad
+\lambda\,n_1 = \lambda'\,n_2.
+\]
+
+Sustituyendo las expresiones geométricas $\lambda = D\,\sen\theta_1$ y $\lambda' = D\,\sen\theta_3$:
+\[
+D\,n_1\,\sen\theta_1 = D\,n_2\,\sen\theta_3.
+\]
+
+\begin{keybox}[Ley de Snell de la refracción]
+\[
+\boxed{n_1\,\sen\theta_1 = n_2\,\sen\theta_3}
+\]
+\end{keybox}
+
+\subsection{Observaciones importantes}
+\begin{itemize}[nosep]
+  \item La deducción solo utiliza: (a) continuidad de la onda en la frontera, (b) geometría de frentes de onda equiespaciados, (c) cambio de velocidad entre medios.
+  \item La ley de Snell vale para ondas \textbf{monocromáticas}. Para luz blanca debe aplicarse a cada componente espectral por separado.
+  \item La ley es general: se aplica también a ondas sonoras y otras ondas que se propagan en medios con distintas velocidades.
+\end{itemize}
+
+% =========================================================================
+\section{Prueba de la Ley de Reflexión}
+% =========================================================================
+
+La reflexión ocurre en el mismo medio ($n_1 = n_2$). El razonamiento es análogo al de la refracción, con la diferencia de que ambas ondas (incidente y reflejada) comparten el mismo medio y por tanto la misma longitud de onda $\lambda$ y la misma frecuencia $\nu$.
+
+\begin{enumerate}[nosep]
+  \item Los frentes de onda incidente y reflejado deben ser continuos en la frontera.
+  \item La distancia $D$ entre intersecciones consecutivas con la frontera satisface:
+  \[
+  D = \frac{\lambda}{\sen\theta_1} = \frac{\lambda}{\sen\theta_2}.
+  \]
+  \item Como $\lambda$ es la misma, se sigue $\sen\theta_1 = \sen\theta_2$.
+  \item Para ángulos en $[0, \pi/2]$, la función seno es monótona creciente, por lo tanto:
+\end{enumerate}
+
+\begin{keybox}[Ley de la reflexión]
+\[
+\boxed{\theta_1 = \theta_2}
+\]
+\end{keybox}
+
+\begin{refbox}[Referencia histórica]
+Estas leyes ya eran conocidas empíricamente desde la antigüedad (Euclides, s. III a.C., estudió la reflexión; Claudio Ptolomeo, s. II, realizó tablas de ángulos de refracción). La ley de Snell fue descubierta experimentalmente por Willebrord Snellius en 1621 y publicada por René Descartes en 1637.
+\end{refbox}
+
+% =========================================================================
+\section{Principio de Huygens (1678)}
+% =========================================================================
+
+\subsection{Enunciado}
+
+Christiaan Huygens propuso un método geométrico para determinar la propagación de frentes de onda:
+
+\begin{keybox}[Principio de Huygens]
+\begin{quote}
+Cada punto de un frente de onda se comporta como una fuente puntual que emite ondas esféricas secundarias. El nuevo frente de onda en un instante posterior es la \textbf{envolvente} de todas estas ondas secundarias.
+\end{quote}
+\end{keybox}
+
+\subsection{Ejemplo: frente de onda cuadrado}
+
+Si un objeto cuadrado golpea periódicamente la superficie del agua, los frentes de onda generados son:
+\begin{itemize}[nosep]
+  \item \textbf{Cerca del objeto}: aproximadamente cuadrados (conservan la forma de la fuente).
+  \item \textbf{Lejos del objeto}: se redondean progresivamente hasta volverse casi circulares.
+\end{itemize}
+
+Aplicando Huygens: cada punto del frente cuadrado emite ondas circulares (esféricas en 3D) de radio $\lambda$ (o fracción). La envolvente de esos círculos en la siguiente iteración da un frente más suavizado. Repitiendo el proceso, la onda tiende a circularizarse.
+
+\subsection{Aplicaciones y limitaciones}
+
+\begin{itemize}[nosep]
+  \item \textbf{Ondas planas}: Huygens no aporta nada nuevo — la envolvente de círculos desde un frente plano es otro plano paralelo.
+  \item \textbf{Ondas curvadas y obstáculos}: permite determinar gráficamente cómo se deforma un frente al incidir sobre superficies irregulares o bordes.
+  \item \textbf{Deducción de Snell}: aplicando Huygens con distinta velocidad (y por tanto distinto radio de los círculos) en cada medio, se puede recuperar la ley de Snell.
+  \item \textbf{Limitación}: las ondas secundarias no son uniformes en todas direcciones; tienen una dirección preferencial (la onda no se propaga hacia atrás). Huygens no explicaba por qué no hay onda regresiva — eso requiere la teoría ondulatoria completa.
+\end{itemize}
+
+\begin{refbox}[Referencia histórica]
+Christiaan Huygens (1629--1695), físico, matemático y astrónomo neerlandés. Publicó su principio en el \textit{Traité de la Lumière} (1690). Fue contemporáneo de Newton y defendió la teoría ondulatoria de la luz frente a la teoría corpuscular de Newton.
+\end{refbox}
+
+% =========================================================================
+\section{Principio de Fermat (ca. 1650)}
+% =========================================================================
+
+\subsection{Enunciado}
+
+Pierre de Fermat postuló que la luz, para ir de un punto a otro, sigue la trayectoria que requiere el \textbf{menor tiempo posible}:
+
+\begin{keybox}[Principio de Fermat (tiempo mínimo)]
+\[
+\text{Trayectoria real} = \arg\min \int_A^B dt = \arg\min \int_A^B \frac{ds}{v(s)}
+\]
+Para un medio homogéneo, $v$ es constante y el camino de mínimo tiempo coincide con el de mínima distancia.
+\end{keybox}
+
+\subsection{Aplicación a la reflexión}
+
+\begin{center}
+\begin{minipage}{0.85\textwidth}
+\noindent\textbf{Problema:} La luz parte de $A$, se refleja en una superficie plana y llega a $B$. ¿En qué punto $P$ de la superficie debe reflejarse para minimizar el tiempo?
+
+La distancia total recorrida es:
+\[
+L = \sqrt{X_A^2 + Y^2} + \sqrt{X_B^2 + (D - Y)^2}.
+\]
+
+Derivando $L$ respecto a $Y$ e igualando a cero:
+\[
+\frac{dL}{dY} = \frac{Y}{\sqrt{X_A^2 + Y^2}} - \frac{D - Y}{\sqrt{X_B^2 + (D - Y)^2}} = 0.
+\]
+
+Identificando los senos de los ángulos:
+\[
+\sen\theta_1 = \frac{Y}{\sqrt{X_A^2 + Y^2}},\qquad
+\sen\theta_2 = \frac{D - Y}{\sqrt{X_B^2 + (D - Y)^2}},
+\]
+se obtiene $\sen\theta_1 = \sen\theta_2 \;\Longrightarrow\; \theta_1 = \theta_2$.
+\end{minipage}
+\end{center}
+
+\subsection{Aplicación a la refracción}
+
+\begin{center}
+\begin{minipage}{0.85\textwidth}
+\noindent\textbf{Problema:} La luz parte de $A$ (medio 1, $v_1 = c/n_1$), cruza la frontera en $P$ y llega a $B$ (medio 2, $v_2 = c/n_2$). El tiempo total es:
+\[
+T = \frac{\sqrt{X_A^2 + Y^2}}{v_1} + \frac{\sqrt{X_B^2 + (D - Y)^2}}{v_2}.
+\]
+
+Derivando respecto a $Y$:
+\[
+\frac{dT}{dY} = \frac{Y}{v_1\sqrt{X_A^2 + Y^2}} - \frac{D - Y}{v_2\sqrt{X_B^2 + (D - Y)^2}} = 0.
+\]
+
+Sustituyendo $v_i = c/n_i$ y reconociendo los senos:
+\[
+\frac{n_1}{c}\,\sen\theta_1 = \frac{n_2}{c}\,\sen\theta_3,
+\]
+\begin{keybox}[]
+\[
+\boxed{n_1\,\sen\theta_1 = n_2\,\sen\theta_3}
+\]
+\end{keybox}
+que es precisamente la ley de Snell.
+\end{minipage}
+\end{center}
+
+\subsection{Analogía: el problema del salvavidas}
+
+Un salvavidas en la arena (velocidad alta) debe rescatar a una persona en el agua (velocidad baja). La trayectoria de menor tiempo no es la línea recta ni ir hasta el punto justo enfrente, sino un punto intermedio — exactamente la misma matemática que la ley de Snell.
+
+\begin{refbox}[Referencia histórica: Pierre de Fermat (1607--1665)]
+Fermat fue un matemático \emph{amateur} (trabajaba como consejero en el parlamento de Toulouse). Es famoso por:
+\begin{itemize}[nosep]
+  \item \textbf{Último teorema de Fermat}: $x^n + y^n = z^n$ no tiene soluciones enteras para $n > 2$ (conjeturado ca. 1637, demostrado por Andrew Wiles en 1994--1995).
+  \item \textbf{Principio de Fermat} (óptica): la luz sigue el camino de menor tiempo (ca. 1650).
+  \item Aportes fundamentales a la teoría de números, geometría analítica y cálculo de probabilidades (junto con Pascal).
+\end{itemize}
+El principio de Fermat es precursos del \textbf{principio de mínima acción} en mecánica (Maupertuis, Euler, Lagrange) que luego encontraría su justificación profunda en la mecánica cuántica (integrales de camino de Feynman).
+\end{refbox}
+
+% =========================================================================
+\section{Reflexión Interna Total}
+% =========================================================================
+
+\subsection{Ángulo crítico}
+
+Cuando la luz viaja de un medio con mayor índice de refracción ($n_1$) a uno con menor índice ($n_2$), existe un ángulo de incidencia $\theta_c$ a partir del cual no hay onda transmitida:
+
+\[
+n_1\,\sen\theta_c = n_2\,\sen(\pi/2) = n_2 \quad\Longrightarrow\quad
+\boxed{\theta_c = \arcsen\!\left(\frac{n_2}{n_1}\right)}.
+\]
+
+Para $\theta_1 > \theta_c$ ocurre \textbf{reflexión interna total}: toda la energía incidente se refleja de vuelta al medio 1.
+
+\begin{warnbox}[Condición necesaria]
+La reflexión interna total solo puede ocurrir cuando $n_1 > n_2$ (de un medio más denso ópticamente a uno menos denso).
+\end{warnbox}
+
+\subsection{Aplicación tecnológica: fibra óptica}
+
+La fibra óptica explota la reflexión interna total para guiar la luz a lo largo de grandes distancias con pérdidas mínimas.
+
+\subsubsection{Estructura básica}
+\begin{enumerate}[nosep]
+  \item \textbf{Núcleo} central de vidrio con índice de refracción alto ($n_{\text{núcleo}}$).
+  \item \textbf{Revestimiento} con índice de refracción ligeramente menor ($n_{\text{revest}} < n_{\text{núcleo}}$).
+\end{enumerate}
+
+Cuando un rayo de luz ingresa al núcleo con un ángulo adecuado, sufre reflexión interna total en la interfaz núcleo-revestimiento y queda confinado dentro del núcleo.
+
+\subsubsection{Ventajas frente a cables eléctricos}
+\begin{itemize}[nosep]
+  \item Bajas pérdidas (no hay efecto Joule, no hay calentamiento).
+  \item Gran ancho de banda (alta capacidad de transmisión de datos).
+  \item Inmunidad a interferencias electromagnéticas.
+  \item Tamaño reducido y flexibilidad.
+\end{itemize}
+
+\subsubsection{Limitaciones}
+\begin{itemize}[nosep]
+  \item Curvaturas muy pronunciadas pueden hacer que el ángulo de incidencia supere el ángulo crítico y la luz escape.
+  \item Las fibras reales utilizan un gradiente continuo del índice de refracción para mejorar el confinamiento.
+\end{itemize}
+
+\subsection{Reflexión interna total frustrada (onda evanescente)}
+
+Cuando ocurre reflexión interna total, en el segundo medio no hay una onda que se propague, pero sí existe un campo electromagnético que decae \textbf{exponencialmente} con la distancia a la frontera. Esta es una \textbf{onda evanescente}.
+
+Si se coloca un tercer medio muy cerca de la interfaz (a una distancia menor que la longitud de penetración de la onda evanescente), parte de la energía puede \textbf{tunelar} hacia ese medio. Este fenómeno se conoce como \textbf{reflexión interna total frustrada} (o efecto túnel óptico).
+
+\begin{refbox}[Referencia: aplicaciones adicionales]
+\begin{itemize}[nosep]
+  \item \textbf{Endoscopía}: fibras ópticas transmiten imágenes desde el interior del cuerpo humano.
+  \item \textbf{Sensores de onda evanescente}: detectan cambios en el índice de refracción cercano a la superficie de la fibra (aplicaciones en bioquímica).
+  \item \textbf{Acopladores ópticos}: dispositivos que aprovechan la onda evanescente para transferir luz entre fibras cercanas.
+\end{itemize}
+\end{refbox}
+
+% =========================================================================
+\section{Referencias y Lecturas Complementarias}
+% =========================================================================
+
+\begin{refbox}[Bibliografía]
+\begin{itemize}[nosep]
+  \item \textbf{Sears \& Zemansky}, \textit{Física Universitaria}, Vol. 2. Cap. 33 (Óptica Geométrica).
+  \item \textbf{Hecht, E.}, \textit{Óptica}. Addison Wesley. Cap. 4--5 (Reflexión, refracción, principio de Fermat).
+  \item \textbf{Feynman, R.}, \textit{Feynman Lectures on Physics}, Vol. I. Cap. 26--27 (Óptica: el principio de Fermat, reflexión y refracción).
+  \item \textbf{Alonso \& Finn}, \textit{Física}, Vol. 2. Cap. 20 (Ondas electromagnéticas y óptica).
+  \item \textbf{Huygens, C.}, \textit{Traité de la Lumière} (1690). Texto fundacional del principio de Huygens.
+  \item \textbf{Wiles, A.}, ``Modular Elliptic Curves and Fermat's Last Theorem'', \textit{Annals of Mathematics} 141 (1995), 443--551. Demostración del último teorema de Fermat.
+\end{itemize}
+\end{refbox}
+
+\end{document}

@@ -1,0 +1,468 @@
+# Clase 18
+
+Curso: F3
+
+Fuente: https://open.fing.edu.uy/courses/f3/18/
+
+Fecha de exportación: 7/24/2026, 12:03:19 AM
+
+Clase: 18
+Curso: F3
+
+Segmentos : 254
+Palabras  : 9851
+Caracteres: 55289
+
+0:16
+Buenos días. Bueno, para aquellos que de vez en cuando miran Open Think pueden haber notado que la clase número 18 no se escucha nada, no se entiende nada. Así que después de... Ocho años me decían acá, yo no me acordaba de ese número. De tener una de las clases de OpenFing que no funciona, no sirve. Vamos a filmarla de nuevo para corregir eso. Estamos tratando, no sé si han visto, estamos emprolijando el OpenFing. Hay pila de pequeñas correcciones en las clases para pequeños detalles que salieron mal.
+0:51
+Bueno, este es un detalle, no tan detalle, una clase entera que quedó mal el sonido. Así que lo vamos a corregir hoy. Así que agradecemos a los compañeros de OpenFing que están haciendo el trabajo ahí de emprolijamiento del OpenFing de Física 3. Voy a terminar de dar algún ejemplo de Ampere, un último ejemplo, y arrancar con la ley de inducción de Faraday, que describe el comportamiento de sistemas magnéticos cuando tenemos situaciones en las cuales hay dependencia con el tiempo.
+1:27
+Entonces, lo primero que voy a dar es un ejemplo más de la ley de Ampère. La ley de Ampère dice que la circulación del campo magnético en una curva...
+1:52
+Es igual a mu sub cero por la corriente adentro de la curva, es decir, que pasa a través de la curva.
+1:59
+Vimos varios ejemplos en la clase pasada, vimos que la ley de Ampere, mencionamos que cuando las corrientes varían lentamente, la ley de Ampere es equivalente a la ley de Biot-Isabard. Y vimos que en varios ejemplos era así. Ahora voy a ver un ejemplo que no habíamos calculado con BiotisArts, que es el cuarto ejemplo. Ya hay tres ejemplos en la clase pasada. Voy a ver el ejemplo del toroide.
+2:27
+El toroide no tiene nada que ver con las vacas.
+2:32
+No con el ganado en general. El toroide es un tipo de bobina que tiene esta forma.
+2:40
+Es como...
+2:45
+Si la miro de arriba, es un embobinado de este tipo. ¿Bien? Entonces tienen un radio interno A, un radio externo B.
+3:07
+Acá en este dibujo están acá A y B. Y tienen una corriente que pasa por este embobinado I.
+3:17
+Y la idea es calcular cómo es el campo magnético aquí adentro, entre los rollos de la bobina. La sección del toroide puede tener distintas formas, puede ser rectangular o circular, en fin. Para lo que vamos a hacer ahora no influye. lo único que voy a pedir es que el sistema tenga suficiente simetría para poder calcular esto, porque la ley de Ampere juega un poco el mismo rol para los campos magnéticos que la ley de Gauss para los campos eléctricos, es decir, nos permite hacer un cálculo de los campos magnéticos sin tener que hacer integrales complicadas como requiere el cálculo usando Biot y Savart.
+4:08
+Entonces, La idea es utilizar una situación en la cual tengo invariancia por rotaciones aquí y entonces como las líneas de campo magnético son líneas cerradas, son líneas, se acuerdan, no hay monopolios magnéticos, la línea de campo magnético nunca empieza ni termina, tienen que ser líneas cerradas o irse al infinito. En este caso son líneas circulares porque el sistema tiene invariancia por rotaciones alrededor. Entonces las líneas de campo magnético van a tener esta forma.
+4:41
+El campo magnético es siempre tangente a estas curvas.
+4:49
+Y además, como el sistema tiene inmanencia por rotaciones, el módulo del campo magnético, entonces llamamos a esta curva C. Entonces el módulo de B es constante...
+5:12
+a lo largo de la curva C. La dirección no, el campo magnético es tangente, así que va rotando, pero el módulo es constante, así que podemos calcular fácilmente el... la integral de línea del campo magnético a lo largo de esa curva, como la curva que tomo, esas curvas que uno toma juegan el rol para Ampere, similar a las superficies que uno toma para Gauss.
+5:45
+Las superficies, uno le llama superficies gaussianas y a esto le llama curvas amperianas, por razones obvias. Estoy tomando una curva que respeta la simetría del problema, es un círculo que respeta la forma del toroide. Y entonces, como el campo magnético es tangente a lo largo de esa curva, el producto escalar no es otra cosa que el producto de los módulos. Es B por DL.
+6:12
+Y como el campo magnético es constante, si el radio que estoy tomando acá le llamo R...
+6:24
+Esto será igual al módulo de B por la longitud de la curva del círculo, que no es otra cosa que 2 pi por r. Y esto va a ser igual a mu sub cero por la corriente que cruza una superficie delimitada por esta curva. ¿Cuánto es la corriente que cruza esta curva? Es decir, yo tengo una curva así. ¿Cuánto es la corriente que pasa por adentro?
+7:02
+Entonces fíjense, cada espira me contribuye con una corriente I, así que tengo que contar cuántas veces cruza, ¿verdad? Siempre cruza por adentro y sale por afuera. Lo que está por afuera no cuenta, solo por lo que pasa por adentro. Cada vez que entra, entra para el mismo lado, así que esto va a ser igual.
+7:25
+Entonces por amper, esa integral B de L...
+7:31
+será igual a mu sub cero por i adentro, y i adentro no es otra cosa que i por n, donde n es el número de espiras.
+7:45
+Es decir, en un toroide, el campo magnético, el módulo del campo magnético es igual a mu sub cero por n por i sobre 2 pi i.
+7:58
+R, si R está comprendido entre A y B.
+8:04
+¿Qué pasa si R es mayor que B?
+8:15
+Si tomáramos un radio más grande, así, el campo magnético afuera del toroide, por afuera. ¿Cómo va a ser el campo magnético?
+8:23
+Acá dicen cero. ¿Todo el mundo está de acuerdo? ¿Por qué sería...? A ver...
+8:29
+¿Y entonces? Toda la corriente que entra, si yo tomo un círculo por acá, por afuera, toda la corriente que entra de un lado sale del otro. Hay que contar con el signo, si cruzan para un lado y para el otro. Y si yo tomo un radio al revés, más chico que A, ¿cuánto va a ser el campo magnético?
+8:53
+Con más razón, porque ahí no es que entra y sale, es que no entra ni sale. Así que esto es igual a esto, o a cero, si R es mayor que B o R es menor que A. Así que este es el campo magnético del toroide. Y vieron que pudimos calcular el campo magnético en una situación bastante complicada, sin tener que poner a hacer integrales complicadas como se requerían en Biot-Isabal. Pregunta de esto...
+9:23
+¿No? Si no hay pregunta, vamos a arrancar con un nuevo capítulo, que es el capítulo de la Ley de Inducción de Faraday. Capítulo 10.
+10:02
+La ley de inducción de Faraday nos describe... Es una primera ley... A ver, este curso es un curso de electromagnetismo. ¿Por qué decimos electromagnetismo? Porque en realidad estamos viendo ya desde el capítulo anterior... de los dos capítulos anteriores, que hay un vínculo entre las cosas eléctricas y las cosas magnéticas. No son independientes. Por ejemplo, vimos que cargas en movimiento generan campos magnéticos. Ahora vamos a ver algo más fuerte.
+10:34
+Vamos a ver que cuando tienen variación, campos magnéticos variables o situaciones magnéticas variables, eso genera corrientes eléctricas. Hemos visto que corrientes eléctricas generan campos magnéticos. Ahora vamos a ver que campos magnéticos variables o situaciones magnéticas variables de manera más general generan corrientes eléctricas. Entonces veamos esto. Primero que nada los experimentos de Faraday.
+11:14
+Faraday era un autodidacta, era una persona que hizo sus experimentos viviendo... Cuenta la leyenda, no sé si es verdad, en el vagón de un tren. Y no sabía mucha matemática. Así que la descripción que hizo de los experimentos...
+11:35
+No es la que nosotros vamos a hacer, aunque en el fondo es la misma, pero él lo decía con otro lenguaje. Y Faraday era un tipo con muchísima intuición. Toda la noción de líneas de campo fue introducida por él, porque era una manera de escribir los campos eléctricos y magnéticos sin hacer referencia a cosas muy matemáticas. En realidad vimos que si queremos transformar el número de líneas de campo en una cosa cuantitativa, necesitamos un objeto matemático complicado como es el flujo. Pero él no hablaba en términos de flujo, hablaba del número de líneas de campo. Y todas sus leyes estaban escritas en términos de dibujitos.
+12:10
+Pero bueno, era un experimentador genial y además tenía una intuición física muy potente. Entonces, veamos el primer experimento de Faraday. El primer experimento de Faraday es el siguiente. Toman un amperímetro, acá, una cosa que les permite medir una corriente, ¿sí?
+12:30
+está unido a pongamos una resistencia y acá esto está unido a una bobina pongamos para simplificar una espira pero pueden ser muchas vueltas voy a dibujar una sola bobina una sola espira para simplificar pero para que el experimento sea más efectivo en realidad uno necesita una bobina porque mientras más vueltas haya más grande es el fenómeno entonces el primer experimento de Faraday se agarra un imán agarra un imán y lo coloca cerca de un circuito eléctrico de este tipo.
+13:11
+Entonces sería el primer experimento de Faraday. Bien. Bien.
+13:30
+Esto es una espira. Viene todo el circuito eléctrico y se abre en una curva así. Pero en lugar de esto podría dar varias vueltas si tenemos una bobina.
+13:42
+Primero, ¿qué pasa si uno está en esta situación? ¿Qué es lo que va a haber acá en el amperímetro?
+13:48
+Nada, no pasa nada. Este es el experimento más aburrido del mundo.
+13:55
+A ver, Faraday no tiene una ley con su nombre por haber hecho un experimento que no ve nada. Entonces, ¿qué fue lo que hizo? No hizo esto. Hizo eso primero, pero lo segundo que observó es que se agarra el imán y lo acerca al circuito, se le genera una corriente eléctrica acá. Al mover la fuente de campo magnético, en este caso un imán, se le modifica la corriente en el circuito. Si va para un lado, la corriente es para un lado.
+14:26
+Si va para el otro, la corriente es para el otro. Y cuando se detiene, la corriente se detiene. No es la presencia del campo magnético lo que genera la corriente, sino la variación del efecto magnético. Al mover la fuente de campo magnético, en este caso el imán, se genera una corriente. Pero cuando uno se detiene, desaparece la corriente.
+14:50
+Y cuando uno va para un lado, la corriente va para un lado, y cuando uno va para el otro, la corriente circula para el otro lado.
+14:58
+Entonces, lo que nos dice Faraday es... Campos magnéticos variables en una bobina, o una espira en este caso, en una bobina, inducen...
+15:21
+una corriente eléctrica.
+15:36
+Faraday hizo muchas variantes del experimento. Una cosa que hizo es, en lugar de agarrar un imán chiquito, agarró un imán grandote, repitió el experimento. ¿Qué adivinan? ¿Qué pasa con la corriente cuando el imán es grandote?
+15:52
+el efecto es mayor. Se invertía la polaridad del imán, se imponía el imán para el otro lado y movía igual la corriente también cambiada de signo.
+16:05
+Y después otra cosa que hizo es agarrar acá una espira en lugar de fija deformable, deformaba la espira y veía que el efecto era proporcional al área de la espira.
+16:23
+el efecto es proporcional al área de la espira y a la derivada del módulo de B.
+16:55
+También vio lo siguiente, que si en lugar de deformar la espira estirándola o achicándola, la giraba, también había un efecto. El efecto era proporcional al ángulo que forma, en nuestro lenguaje, al ángulo que forma el campo magnético con la normal distancia. a la superficie.
+17:35
+Es proporcional al coseno del ángulo entre la normal a la espira
+17:58
+y B. Bueno, primera cosa.
+18:05
+No contento con esto, Faraday dijo, bueno, está, vemos que los imanes en movimiento o las deformaciones de una bobina me inducen una corriente eléctrica. Pero entonces dijo, ¿y esto tendrá que ver con el imán, con la corriente o con qué? Y dice, bueno, yo sé, porque eso ya se sabía en aquella época, que otra manera de generar un campo magnético equivalente o muy parecida a un imán era un electroimán.
+18:42
+Generar otra corriente, tener otro circuito por el que pasar una corriente,
+18:51
+y enfrentarlo a esto. Es decir, el segundo experimento de Faraday es el siguiente. Entonces nuevamente pone un amperímetro, pone acá una bobina, dibujé una sola espira pero es lo mismo, acá pongo una resistencia y lo que hace es poner otra bobina o pongo acá una sola espira, pero es lo mismo, una batería y un interruptor.
+19:37
+Pongamos una resistencia acá para que no haya problemas. ¿Qué es lo que ve El señor Faraday. El señor Faraday observa lo siguiente.
+19:51
+Que cuando cierra el interruptor, ¿qué pasa? En este circuito, si yo cierro el interruptor, ¿qué va a pasar?
+20:02
+Empieza a circular una corriente acá, ¿verdad? ¿Sí? ¿Estamos de acuerdo?
+20:09
+Cuando se genera una corriente acá, una bobina por la que circula la corriente, por ampero, bioto y sabar, ¿qué hace desde el punto de vista magnético?
+20:19
+Genera un campo magnético. Ese campo magnético va a durar el tiempo que dura la corriente.
+20:24
+Bueno, cierra el interruptor, se genera la corriente y en el momento de cerrar, un ratito, tiempo después de cerrar el interruptor, se mueve la aguja. Y luego se detiene. ¿Por qué se detiene la aguja?
+20:41
+Tienen que levantar la mano. ¿Sí? ¿Qué? ¿Había alguien que iba a levantar? ¿Sí? Claro. Yo cierro. Se me genera una corriente. Se estabiliza la corriente. Una vez que se estabilizó, el campo magnético es constante. Y nuevamente, al igual que allá, si el campo magnético no varía, no hay corriente. La corriente está asociada con la variación del campo magnético. ¿De acuerdo? Y luego entonces lo que hace es, abre el interruptor.
+21:11
+¿Qué pasa cuando abre el interruptor? ¿Sí? Varía nuevamente el campo magnético. ¿Y cómo va a ser la corriente inducida?
+21:26
+¿Cómo? Opuesta a la anterior, porque ahora el campo magnético en lugar de crecer, digamos, decrece. Y entonces se nos genera una corriente inducida pero que va para el otro lado. Entonces también se observa una corriente inducida.
+21:54
+Es decir, lo que se concluye con esto es que lo que importa es la variación del campo. No importa qué tipo de fuente de campo tenemos, da lo mismo. Otra cosa que hizo Faraday es, en lugar de mover En cualquiera de los experimentos, acá, en lugar de mover el imán, dejó fijo el imán y movió el circuito.
+22:29
+Ahí el campo magnético está fijo. Y sin embargo, al mover el circuito, también se le genera una corriente inducida. Lo que importa no es que el campo magnético esté cambiando, sino que el flujo que pase a través de la espira esté cambiando. Entonces, en términos modernos, podemos resumir las observaciones de Faraday de la manera siguiente.
+23:04
+Ley de Inducción de Faraday.
+23:13
+Y por ahora no me voy a ocupar de los signos, porque los signos dan un poco de trabajo y son una especie de trabalengua en este tema, pero les voy a decir cómo es la corriente que se genera en valor absoluto y luego, o en realidad vamos a hablar por ahora del voltaje que se genera, la diferencia de potencial, la FEM inducida, y luego vamos a ver qué pasa con los signos. Entonces, para ello todo queda determinado en términos del flujo magnético.
+23:45
+Para discutir la ley de inducción, debemos definir el flujo magnético.
+24:11
+El flujo magnético se define de manera similar al flujo eléctrico. Nosotros ya vimos cómo definir en general el flujo de un campo vectorial. Va a ser así. El flujo del campo magnético en una superficie dada es la integral sobre la superficie del producto escalar de B con la normal a la superficie por dS. Es la misma definición que habíamos hecho anteriormente. Para el campo eléctrico. Con la diferencia que para los flujos de campo eléctrico, nosotros nos estuvimos interesando, en particular para la ley de Gauss, siempre teníamos que trabajar con superficies cerradas.
+24:45
+Mientras que acá la superficie que aparece naturalmente, S, es una superficie que esté bordeada por la espira o por la bobina en la cual queremos hallar la ley de inducción. Entonces, S...
+25:11
+S es una superficie que tiene por borde la espira en que se induce corriente.
+25:37
+Es decir, si tenemos acá la espira, ya vemos la espira está definida por una curva C, tomaremos una superficie, alguna superficie, por ejemplo, si la espira es plana, lo más natural es tomar una superficie plana, pero la espira podría ser curva, tener una forma rara, y podemos tomar cualquier superficie S, ¿se entiende? Esto lo veo como una especie de red de mariposas, ¿se entiende? Donde esto sería el borde, ¿se entiende el dibujo? Y esta superficie que está acá le llamamos S. Es cualquier superficie bordeada por C. Entonces el flujo que vamos a interesarnos es el flujo por una superficie S cuyo borde es C. Y lo que nos dice la ley de inducción de Faraday es lo siguiente.
+26:27
+Que cuando tenemos un flujo variable en una espira... un flujo magnético variable en una espira, se nos genera una FEM inducida. Entonces, la FEM inducida por un flujo magnético variable es, y ahora vamos a escribirla allá arriba,
+27:04
+Entonces la FEM inducida, por ahora me intereso solo en el valor absoluto, es igual al valor absoluto de la derivada del campo magnético con respecto al tiempo.
+27:41
+Bueno, obviamente, si se me induce una FEM, cuando tengo una FEM y tengo un circuito cerrado, se me genera una corriente. Si el circuito no estuviera cerrado, no se me genera corriente, porque la corriente no puede circular, ¿verdad? La FEM se me genera siempre, lo único que es una potencialidad de corriente. Si yo no cierro un circuito acá, no circula corriente porque no tiene cómo circular, ¿verdad? Pero la FEM se me genera siempre igual. Se me genera un voltaje entre los bordes de la bobina o de la espira que estará dado por aquello que está allá.
+28:20
+Fíjense que el hecho de ser el flujo incluye toda la información que habíamos visto con los experimentos. ¿Qué quiere decir con eso? que importa la superficie, el tamaño de la espira, importa el módulo del campo magnético, pero también importa el ángulo que forma el campo magnético con la superficie. ¿De acuerdo? Porque aparece el producto escalar. Si el campo magnético fuera paralelo a la superficie, no importa que varíe, no nos va a inducir... no genera flujo y por lo tanto la variación de flujo no genera FEM.
+28:53
+Tiene que tener por lo menos una componente normal a la superficie para que se genere un flujo y por lo tanto cuando varía el flujo puede aparecer. Alguien puede decir, y tendría razón de hacerlo, pero ¿por qué justo es igual y no proporcional? ¿Por qué no hay un coeficiente? ¿Saben por qué?
+29:19
+¿Se entiende? Nosotros vimos toda la ley de Faraday y nos dicen que esta cosa tendría que ser proporcional a esta, los experimentos. ¿Pero por qué el coeficiente es 1?
+29:29
+El coeficiente es 1 porque el sistema internacional de unidades fue elegido así. ¿Me explico? Las unidades están elegidas para que sea 1. ¿De acuerdo? Cuando se definen las unidades de campo magnético, están definidas para que esto suceda. Hay la suficiente libertad en la elección de unidades para que elegiera el coeficiente 1. Pero es una elección de unidades. En otros sistemas de unidades, el coeficiente no es 1, es otra cosa. Pero una cosa que es, depende de cómo midamos los campos magnéticos y cómo midamos los voltajes.
+30:04
+En el sistema internacional están justo definidos de tal manera que el coeficiente es 1. El coeficiente... coeficiente es 1 por la elección de unidades.
+30:25
+De hecho hay sistemas de unidades que se utilizan en donde el coeficiente no es 1 por la elección de unidades en el sistema internacional. ¿Qué más tengo para contarles?
+30:41
+¿Cómo?
+30:43
+No, no, no, no sirve de nada que sea uno, que no sea uno. Lo que sucede es que a veces, es decir, en este sistema internacional están elegidos todas las definiciones de las unidades para que este coeficiente sea uno y simplificar esta ley. En otros optaron por el lugar de simplificar esta ley. Simplificar otra. Y bueno, entonces cuando arreglan una, cuando una queda más linda, otra queda un poco menos linda. Entonces no pueden hacer todo a la vez. En el sistema internacional optaron por poner este coeficiente 1. En otros sistemas de unidades optan por simplificar otra ley.
+31:17
+Podrían elegir un sistema, digamos, un poco perverso en que nada se simplificara. En general no. Todos los sistemas eligen... de unidades realmente utilizados simplifican alguna ley, pero a veces al simplificar una se les complica otra. Esto es un ejemplo más de lo que yo ya les mencioné, que el coeficiente, ese 4 pi raro que aparece en Coulomb, en el sistema internacional lo pusieron ahí para simplificar Gauss. Pusieron un coeficiente raro en Coulomb para que ese coeficiente 4 pi no parezca Gauss.
+31:47
+Bueno, esto es lo mismo. Acá se eligen los coeficientes para que este coeficiente sea 1, pero en otros lados aparecen otros coeficientes. Bien. Bien.
+31:58
+Por ahora, fíjense que hablé del valor absoluto. Y voy a darles, antes de pasar a hablar de los signos, voy a ver un ejemplo concreto. Una cosa que no mencioné, pero que es obvia, es que hay que considerar el flujo total. Si en lugar de tener una espira, tengo una bobina con N vueltas, tengo que sumar el flujo en cada una de ellas, si están enrolladas unas con respecto a otras, porque todas suman. En ese caso será proporcional el número de vueltas de la bobina.
+32:30
+¿Se entiende? O, dicho de otra manera, lo que tienen que considerar es el flujo total por el circuito. Y si hay muchas espiras en el circuito, suman sobre todas las espiras. Si el flujo en todas las espiras es igual, simplemente multiplican por n. ¿Se entiende lo que digo? Bien. Vale. Entonces veamos un ejemplo.
+32:53
+El ejemplo es así. Tengo un solenoide grande. Tengo a mamá solenoide acá. Solenoide. Entonces, voy a poner unas corrientes que salen por acá y entran por acá.
+33:20
+Así que acá hay una corriente I y esto es un solenoide.
+33:28
+Que lo consideraré ideal.
+33:33
+Con N vueltas, con N espiras por unidad de longitud.
+33:48
+Y además considero una bobina chiquita. Este es mamá bobina, solenoide grandote. Y acá tengo una bobina chiquita, también enrollada así, con N vueltas.
+34:10
+Y una sección A.
+34:15
+¿Por qué digo que una es mamá bobina y otra es la bobina chiquita? Porque está claro que si yo tengo una corriente variable, el campo magnético variable en la bobina de adentro me generará una febinducida acá. ¿No es cierto? Pero cuando se me genera una febinducida, si esto se cerrara el circuito, Por ahora lo voy a considerar abierto, una bobina no cerrada. Pero si eso se me cerrara, tendría una corriente circulando acá adentro, que a su vez podría inducir en la bobina de afuera.
+34:53
+Y entonces se me complica todo. No quiero hacer esa cosa complicada, quiero ver el efecto de la grande en la chica. Entonces una es grande y una es chica, entonces el efecto de la chica en la grande es despreciable y me olvido. ¿Bien? Por eso estoy llamando la atención sobre que una es grande y otra es chica. En el caso general, uno tendría que pensar cómo cada bobina influye en la otra.
+35:16
+Entonces, lo primero es ver cómo es el campo magnético generado por la bobina grande en adentro. ¿Cómo es el campo magnético generado por una bobina grande, un solenoide, adentro del solenoide? Los que estuvieron el sábado, todos esos lo saben muy bien.
+35:37
+El campo magnético inducido dentro de un solenoide es un campo magnético uniforme, que va de acuerdo con la dirección del eje del solenoide y de la dirección es de acuerdo con la regla de la mano derecha. Y su módulo es igual a mu sub cero n por i.
+36:01
+Un solenoide, ese tipo de bobinas, que es una bobina larga, muy bien enrollada, con espiras bien compactas, cuando el largo del solenoide es grande con respecto al radio, tiene un campo magnético uniforme con este módulo adentro. Este es el campo magnético que tenemos generado por la bobina. Entonces, calculemos el flujo magnético en la bobina chica.
+36:34
+¿Cómo será el flujo magnético total en la bobina chica?
+36:48
+Entonces, primero que nada, en una espira, en una espira de la bobina chica, ¿cuánto será el flujo? ¿Cómo se calcula el flujo de un campo vectorial?
+36:58
+Por la sección A. Entonces, en una espira el flujo es B por A. ¿Bien? Y si quiero calcular el flujo total en la espira chica, en la bobina chica, por N. Vale. Este es el flujo en la bobina chica. Si yo utilizo la fórmula del campo magnético, me quedará mu sub cero por N chica por N grande por I por A.
+37:28
+Ese es el flujo de la bobina chica. Entonces ahora supongamos que tenemos una corriente en la bobina grande, conocida, que tenga esta forma. Si la corriente es constante, ¿cómo será la FEMA inducida en la bobina chica? Si la corriente es constante. Cero, ¿verdad? Entonces voy a, para que el problema sea interesante, voy a suponer una corriente. Entonces supongamos...
+37:57
+que la corriente tiene esta forma y como función del tiempo voy a suponer que es cero para tiempos menor que cero, luego crece linealmente hasta un tiempo máximo t final y ahí llega a un I máximo y luego cero de nuevo.
+38:25
+o no, o incluso mejor y luego constante. Vamos así, una rampa.
+38:35
+Entonces I de t será igual a cero si t menor que cero será igual a Imax sobre t final por t si t entre cero
+38:56
+Y T final. Y para T mayor que T final será igual a Imax. ¿De acuerdo? Entonces ahora calculemos el módulo de la FEM inducida en la bobina chica.
+39:21
+Que va a ser igual al valor absoluto de la derivada del flujo magnético. con respecto al tiempo de la bobina chica.
+39:33
+Fíjense, en esta fórmula, acá del flujo de la bobina chica, todo es constante, mu sub cero es constante, n es constante, el número de espiras en la bobina chica es constante, y el área... lo único que depende es i.
+39:47
+Así que aquello será igual... a mu sub cero por n chica por n grande por A por el valor absoluto de la derivada de la corriente con respecto al tiempo. ¿No es cierto? Pero fíjense, la derivada de la corriente con respecto al tiempo es igual.
+40:17
+Si t es menor que cero, es cero. Porque la derivada de 0 es 0. La derivada de una constante también es 0. Así que si t es mayor que tf también es 0. Y si t está entre 0 y tf será Imax sobre tf.
+40:44
+Entonces concluimos que la FEMA inducida... el valor absoluto de la fea inducida en la bobina chica será igual a cero si t es menor que cero o t es mayor que tf y será igual a mu sub cero por n chica por n grande por A por I máximo sobre tf Si 0 es menor que T, menor que TF.
+41:22
+Que esto se parece al experimento de nuestro amigo Faraday, porque fíjense, cuando la corriente no está cambiando, no se induce FEM. Cuando la corriente sí está cambiando, entonces se nos genera una FEM. Si esta bobina estuviera conectada a un amperímetro, cerrando el circuito, veríamos en este periodo intermedio una corriente inducida y antes y después no.
+41:54
+Que es exactamente lo que veía el señor Faraday. ¿Se entiende cómo funciona?
+42:10
+Claro, la corriente que está pasando por el solenoide es dato. Alguien de afuera nos está haciendo pasar esa corriente en función de otro circuito que no dibujé en la figura. Hay una corriente que es dato, que depende del tiempo de esa manera. Esto es dato del problema. No sabemos cómo generamos esta corriente, pero alguien de afuera nos genera. Perdón. Sí. ¿De acuerdo? Alguien de afuera nos generó esa corriente de la bobina de afuera. Y eso nos genera una FEMA en la bobina de adentro.
+42:42
+Si la bobina de adentro a su vez la conectáramos a un amperímetro, nos generaría una corriente dentro de la bobina chica. Que esa por ahora no la calculamos. Solo calculamos la FEMA inducida, no la corriente inducida.
+42:56
+¿Cómo? ¿Cómo?
+43:00
+La FEM es constante porque la intensidad acá varía linealmente. Si hubiera dependido de otra manera, la FEM no sería constante. Si, por ejemplo, acá hubiera sido cuadrático, podría haber sido cuadrático, una parábola, entonces la FEM hubiera variado linealmente, porque proporciona la derivada. Entonces ahora vamos a ocuparnos de los signos. Vamos a ocuparnos de los signos.
+43:28
+Entonces, ustedes, yo no sé decir trabalenguas. Ustedes saben decir tres tristes tigres. A mí no me sale nunca. Bueno, no me va a salir ahora tampoco, porque lo que voy a decirles ahora es un trabalengua. Pero les pido que presten atención porque no es un trabalengua difícil. Simplemente es difícil de decir, pero si lo piensan no es tan raro.
+43:54
+Es un trabalenguas que nos dice cómo es el signo de la frema inducida y por tanto de la corriente inducida.
+44:11
+Entonces vamos a suponer que estamos en la situación en que
+44:18
+en que la FEMA inducida genera una corriente inducida, es decir, tenemos que haber cerrado la espira en un circuito para que corra una corriente. Obviamente, eso puede ser real o no, pero no importa, porque podemos pensar... Que un circuito abierto es casi como un circuito cerrado. Imagínense que ustedes cierran el circuito, tienen una bobina abierta, los extremos no están cerrados. Y lo cierran por una resistencia gigantesca.
+44:53
+De hecho es lo que pasa, porque el aire es una resistencia gigantesca.
+44:57
+Entonces siempre pueden pensar un circuito abierto como un circuito cerrado por una resistencia enorme. Entonces la corriente que pasa es muy chiquitita. ¿Bien? Como yo no me voy a interesar ahora por el módulo de la corriente, sino solo por el signo, siempre imaginen que cerraron, eventualmente por una resistencia enorme para que en la práctica es como que no pasara casi corriente. Pero solo me voy a interesar en el signo de esa corriente. ¿Bien? Entonces siempre imaginen el circuito cerrado. Entonces voy a suponer siempre que hay una corriente inducida, porque es más fácil decir lo que voy a decir.
+45:29
+¿Está bien? Esa corriente puede ser real o simplemente imaginaria para la descripción que voy a hacer. Es decir, si yo cerrar el circuito, ¿qué es lo que pasaría? Entonces la ley dice lo siguiente. El signo de la corriente inducida es tal que
+46:01
+el campo magnético que ésta generaría esta corriente generaría se opone a la variación
+46:34
+de flujo magnético que la provocó.
+46:50
+Se dan cuenta que es un poco trabalenguas, pero si se ponen a pensar y vamos a ver algunos ejemplos van a ver que no es difícil. Se parece a... Al comienzo de Cien Años de Soledad, ¿no? El coronel hoy en día habría que recordar muchos años más tarde de qué tiempo estoy hablando. Bueno, acá pasa lo mismo. Capaz que si no lo entiende de primera lectura, y yo no lo entiendo de primera lectura, vale la pena ver algunos ejemplos para entender de qué estamos hablando.
+47:25
+Pero antes de ir a ejemplos, quiero decirles que el signo no podía ser siempre el opuesto. Capaz que no siempre tenía que ser este signo, pero no podía ser siempre el otro porque si la corriente no intentara oponerse a las causas que la generó, si intentara alimentar esas mismas causas, entonces podríamos entrar en un círculo infernal en el cual una corriente variable me induce una corriente que a su vez genera un campo magnético que favorece la nueva inducción y al final explota todo.
+48:04
+¿Se entiende?
+48:06
+Lo razonable, desde el punto de vista de que las cosas no se ponen a crecer solas, es que la corriente inducida tiende a oponerse a lo que la generó, no a retroalimentarse de manera positiva. ¿Se entiende la idea? Esa es una manera de pensar. De que no puede ser que el proceso de inducción me esté generando corrientes cada vez más grandes que se me van autoinduciendo y crecer en definitivo. Me van a tender a hacerlo opuesto.
+48:32
+Otro comentario importante es que no se opone, la corriente inducida no se opone al campo magnético que la generó, se opone a la variación del campo magnético, porque dijimos que la ley de inducción no refería a la presencia del campo magnético, sino a la variación del campo magnético, o más precisamente a la variación de flujo magnético. Entonces veamos algún ejemplo, para hacerlo concreto.
+49:02
+Voy a hacer un ejemplo. Tengo acá una espira.
+49:15
+Para ser concreto voy a pensar que está unida acá en un circuito cerrado con una resistencia para así hay una verdadera corriente.
+49:28
+¿Sí?
+49:38
+No, el campo en el centro no es como el campo eléctrico que en el centro tenés menor campo. No, el campo eléctrico es más o menos constante. En un solenoide, el campo es uniforme de hecho.
+49:57
+No, pero si está variando el campo y pones otro solenoide adentro, adentro de otro solenoide el campo es constante. Sí, es constante. ¿Y? No entendí tu pregunta.
+50:08
+Ah, no, pero esto solo es el signo. No es que logra oponerse completamente. De hecho, en general, la oposición no alcanza. ¿Me explico? No mata totalmente. No es un fenómeno de inducción perfecta en el cual la corriente inducida frena totalmente el campo original. ¿Se entiende? No, no. Se tiende a oponerse, pero no se logra oponer completamente. Es decir, le encaja en una piña y se defiende, pero no logra compensar la piña que le encajaron primero. ¿Se entiende?
+50:40
+Entonces acá tengo un problema de perspectiva, porque algunos de ustedes van a ver este circuito de una manera y otros lo van a ver de otra. Yo voy a imaginarme de que este lado que dibujo gordo es el que está delante. ¿De acuerdo?
+50:57
+Para que quede claro cómo estoy imaginando esa espiga. ¿Se entiende? Esto sale para afuera del pizarrón. ¿Se entiende? El pedazo gordo es el que está hacia nosotros. Y acá tengo un imán que voy a poner acá el polo norte, el polo sur. Es decir, tengo líneas de campo magnético que hacen así. ¿De acuerdo? Son así las líneas de campo magnético.
+51:31
+Entonces voy a tomar... La orientación de esta espira la voy a tomar de la manera siguiente. La corriente que pasa aquí la voy a llamar positiva si va entrante arriba y saliente abajo. ¿Se entiende cómo es el dibujo?
+51:59
+O dicho de otra manera, con este dibujo, con esta perspectiva que yo le puse, la corriente va así. La tomo positiva así. ¿Sí? Cuando digo que es una convención de signos, no sé cuál va a ser el signo. Puede ser positiva o negativa. Simplemente me voy a interesar la corriente definida de esta manera. ¿De acuerdo? Para fijar signos.
+52:23
+Bueno, bárbaro. Entonces, ahora supongamos, si todo esto está quieto, ¿cómo es la corriente inducida? Cero. Entonces, hay un dato que tengo que agregar, es si el imán se está moviendo hacia la espira o se está moviendo alejándose de la espira. Supongamos que el imán va hacia la espira. La velocidad va para allá. Tengo un imán moviéndose para adentro. Fíjense, a medida que entro, había líneas que si yo estuviera más afuera, por ejemplo, esta línea está dentro de la espira, pero si yo estuviera más afuera, como se van abriendo, no entra.
+52:57
+Entonces, a medida que yo me voy acercando, todas las líneas de flujo que salen del campo del imán, pasan por dentro de la espina. Cosa que si estoy lejos, no. Si estoy muy lejos, ninguna. Y a medida que voy acercando, cada vez más líneas entran por dentro de la espina. Entonces, en este caso, si yo... Entonces, voy a tomar la orientación de la superficie esta. Para definir un flujo, te voy a decir cómo tomo la normal. Voy a tomar la normal para allá. La normal por la sección.
+53:34
+Normal a la superficie. Estoy tomando una superficie plana en este caso.
+53:40
+Tomo la superficie S, S es esta. Entonces el flujo magnético por la superficie S, ¿qué signo tiene? De acuerdo con mi convención que tomé. ¿Es un flujo positivo o un flujo negativo?
+53:59
+Positivo porque el producto escalar de B, B es para allá y tomé N en la misma dirección. Así que este flujo que será así, B escalar N. Como estos productos escalares son todos positivos, este flujo es positivo. ¿De acuerdo?
+54:18
+Y si yo estoy acercando el imán, ¿este flujo crece o decrece?
+54:23
+Además...
+54:27
+El flujo magnético crece. Entonces, al tener un flujo magnético variable se me va a generar una FEM y por lo tanto una corriente inducida acá I. Y, si esto se está moviendo, no será nula, será distinto de cero. Ahora la pregunta es... Dado que tengo un flujo magnético creciente, voy a generar una corriente inducida que intentará generarme un campo magnético que vaya en sentido opuesto a la variación del campo magnético.
+55:12
+¿Cómo es la variación del campo magnético? ¿Es para allá o para allá? No el campo magnético, es la variación del campo magnético. ¿Para dónde es?
+55:27
+Es positiva porque el campo magnético es positivo y creciente, quiere decir que la variación del campo magnético es para allá. ¿Bien? ¿De acuerdo? ¿Cómo tiene que ser una corriente aquí y para generarme un campo magnético que se oponga a ese campo magnético? ¿Cómo? Exactamente. Para que el campo magnético que me generaría una corriente por acá se oponga a la variación, tiene que ser una corriente I negativa.
+56:00
+¿Se dan cuenta? Porque regla de la mano derecha, si esto circulara así, como en el dibujo, si I fuera positivo, el campo que me generaría sería para allá. Quiere decir que iría en la misma dirección de la variación, pero yo necesito una corriente que intenta oponerse. Entonces... Y debe ser negativa. ¿Se entendió esto?
+56:30
+A ver si entendieron. Vamos a ver otro ejemplo. Esto si ve hacia la izquierda.
+56:44
+¿Está bien?
+56:47
+Ahora veamos otro caso. Caso en que B es hacia la derecha.
+57:02
+Es decir, ahora voy a tomar el caso en que B va para el otro lado.
+57:09
+Ah, N lo elijo como yo quiera.
+57:13
+Por ahora, como yo quiera. Por ahora, el sentido de la corriente y n lo elegí, son convencionales. Después van a ver que no. Pero por ahora son convencionales. Elegí el flujo, no importa. Todos los resultados no dependen de las convenciones de sigma. Ahora vamos a tomar...
+57:35
+Nuevamente, todo igual, pero el lugar del imán acercándose se está alejando. Entonces ahora, el signo del flujo magnético, ¿cuál será? No. El signo es igual, es la derivada que es negativa. Entonces en ese caso tendremos flujo magnético, nuevamente será positivo, eso no cambia nada. Pero, en lugar de ser creciente, el flujo magnético es decreciente.
+58:07
+Porque me estoy alejando. Sigue siendo positivo, pero no. Entonces, la variación del flujo magnético, ¿para dónde va ahora?
+58:16
+Ahora va, la variación del flujo magnético está asociada con un campo magnético hacia la derecha. ¿Se entiende? Porque está decreciendo. Entonces, ¿la corriente cómo tiene que ser? Una corriente para generar un campo magnético hacia la derecha.
+58:32
+Positiva. Entonces, I es positiva.
+58:39
+¿Se entendió el punto? No importa para... Sí, sí importa, pero no importa sólo para dónde es el flujo. Importa cómo está variando. ¿Se entiende? ¿Se entendió cómo hizo? No estoy seguro si tu afirmación es general.
+59:15
+Tengo que pensar. Pero bueno, se entendió de todo caso cómo es.
+59:22
+¿Se entendió esto? Entonces, tienen que calcular el flujo con el signo y ver si crece o decrece. No alcanza con saber si es positivo o negativo. Tienen que ver si crece o decrece. Luego tienen que tener una corriente que se opone a la variación, no al flujo en sí mismo. ¿Se entiende? Podemos ver otro ejemplo, a ver si se dan cuenta. Veamos un ejemplo más.
+59:47
+Ahora hagámoslo todo igual. Una resistencia, una bobina...
+59:57
+Y ahora hago, di vuelta el imán y tengo una velocidad para allá.
+1:00:07
+Entonces las líneas de campo serán así. Lo que cambió son las flechas de líneas de campo. El cambio va para allá. Y nuevamente, como hace un rato, dibujo la normal para allá. y hago la corriente así. Convención de signos. Bárbaro. Acá el signo del flujo magnético, ¿cómo es?
+1:00:39
+Negativo, ¿verdad? Porque el campo va para allá, pero la N va para allá. Así que el flujo es negativo. El módulo del campo magnético, ¿crece o decrece?
+1:00:51
+Acá, si yo estoy acercando el imán. Crece. Pero entonces el flujo magnético en sí, ¿crece o decrece?
+1:01:02
+Decrece, porque es negativo y su valor absoluto crece. Si yo paso de menos 2 a menos 7, estoy decreciendo, ¿verdad? ¿Están de acuerdo con lo que digo? Si tengo una cantidad negativa que en valor absoluto crece, ella misma decrece.
+1:01:19
+¿De acuerdo?
+1:01:23
+El flujo magnético en esta dirección está decreciendo. Quiere decir que quiero generar un campo magnético en qué dirección. Es decir, la corriente esta me tiene que generar un campo magnético en qué dirección. N positivo. Entonces I es positivo. ¿Está diciendo bien? Sí, porque queremos una corriente que nos genere... un campo magnético en la dirección de N. ¿De acuerdo?
+1:01:57
+Porque el flujo de B está decreciendo. ¿De acuerdo? Entonces queremos algo que tienda a generar un flujo positivo en la dirección de B. ¿Bien? Y aparte, fíjense, es totalmente razonable. Porque comparen esta primera versión con la otra. Si cambiaste el signo del imán, tiene que cambiar el sentido de la corriente. Y efectivamente es lo que pasó. ¿Bien? Ese es un test de consistencia que tienen que usar siempre. Si dan vuelta el imán, el sentido de la corriente tiene que cambiar. Si no pasó eso, es que se equivocaron.
+1:02:27
+Las primeras veces que uno aplica la ley de Lenz, sucede algo casi siempre fijo. Se equivocan aproximadamente en el 50% de las veces. Quiere decir que no tienen ni idea de lo que están haciendo. Si se equivocan en 100%, quiere decir que están entendiendo al revés. pero normalmente no es que no están entendiendo nada, entonces es 50% para cada lado. Pero a medida que va avanzando el curso, va aumentando ese porcentaje y traten de que cuando llegue el segundo parcial ya sea cercano al 100%.
+1:02:59
+¿Se entendió? Ley de Lenz. Entonces tenemos la ley de inducción en dos partes. Una parte que la dimos que nos da el valor absoluto y otra parte a la... afuera, que nos da el signo. Pero hoy en día nos gusta meter todo en una única ley sin valores absolutos que tenga todos los signos. ¿Se entiende? Entonces vamos a escribir la ley de Faraday, pero con signos, incluyendo los signos. Pero entonces ahí tenemos que ser muy cuidadosos con las convenciones de signos.
+1:03:53
+Entonces, ley de Faraday incluyendo signos. Entonces la idea es la siguiente. Ustedes tienen una espira, acá, en la cual quieren calcular la ley de Faraday. ¿De acuerdo? Esa espira la tienen que orientar de alguna manera, que esa la pueden elegir de manera arbitraria. ¿Para qué lado van a considerar la fe en positiva? Pongan que lo tomaron para allá. Pero pueden tomarlo para el otro lado.
+1:04:26
+Para que no haya problemas de perspectiva, considero que este es el lado gordo. Este es el lado que está hacia nosotros. ¿Sí? O no, mejor, mejor. Voy a pensar que esta curva está en el plano del pizarrón. Más fácil. Voy a orientar así y está en el plano del pizarrón.
+1:04:48
+Yo tengo dos convenciones de signo que elegir. Una, el sentido de qué FEM considero positiva, primero. Y segundo, segunda convención, cuál es el flujo que considero positivo. Las dos convenciones a priori son independientes. Para escribir la ley de Faraday con signo, tenemos que hacer que esas dos convenciones de signo no sean independientes entre sí. Entonces, elegimos... Elegimos...
+1:05:20
+la normal a S de acuerdo con la regla de la mano derecha.
+1:05:39
+¿Qué quiere decir esto? Que si la corriente se recorre para allá, voy a tomar una normal de esta manera.
+1:05:53
+¿Se entiende? Yo tengo la curva C que me limita a la superficie S. Voy a elegir la normal a S, la podría tomar la normal para arriba o la normal para abajo. Voy a tomar una normal tal que el recorrido de la curva me determine con el dedo pulgar una normal acorde. Entonces tengo dos convenciones que a priori serían independientes que ahora ya no son independientes porque dado el sentido de la curva me queda determinada el sentido de la superficie. ¿Bien? Con esta convención de signo, importante, sólo con esta convención de signo, la ley de Faraday queda que la FEM inducida es igual a menos la derivada del flujo magnético con respecto al tiempo.
+1:06:48
+Donde el signo menos lo que refleja es la ley de Lenz.
+1:07:07
+El signo menos es esto de oponerse. ¿De acuerdo? Pero para poder hablar de oponerse tenemos que relacionar la convención de signo del flujo con la convención de signo de la FEM. ¿Se entiende?
+1:07:23
+Entonces, podemos verificar que esta convención de signos es acorde con lo que nos diría Lenz.
+1:07:37
+Pero lo podemos hacer, fíjense, lo podemos hacer en los ejemplos que ya vimos. Veamos. Acá.
+1:07:47
+Fíjense. Hice la convención que estoy diciendo acá. Porque yo tengo la corriente allá, así, y N está elegido de acorde con la corriente acá. ¿Verdad? ¿Sí? Son acordes. Gira así y me queda N acá. Y efectivamente... Si yo miro, I va a ser proporcional a la FEM, ¿verdad? Así que va a tener el mismo signo. La proporcionalidad es una resistencia. Uno sobre la resistencia. Y fíjense acá que efectivamente me queda que la FEM es negativa y es igual a menos la derivada del flujo.
+1:08:25
+La derivada del flujo es positiva porque el flujo está creciendo y la FEM me queda menos, el signo me queda correcto. ¿Se dan cuenta? Acá también lo mismo, fíjense. Acá el flujo está decreciendo, quiere decir que su derivada es negativa. Menos una derivada negativa me queda una I positiva. Dos signos menos me quedan un más. Nuevamente la FEN positiva. Acá lo mismo, tengo un flujo que está decreciendo, quiere decir que la derivada es negativa, menos por menos da más y me queda una I positiva.
+1:09:02
+Así que esta ley escrita así incluye las dos informaciones, la información del valor absoluto y la información del signo. Pero insisto, para poder haber escrito esta ley de esta manera, tengo que elegir las convenciones de signos de manera acorde. ¿Se entendió? Yo había hecho trampa, porque yo ya las había elegido acorde, porque ya estoy acostumbrado. Pero si no, el flujo lo podían haber definido para el otro lado. De hecho, alguien me preguntó, ¿por qué lo elegiste así? Ah, pues me dice el bobo, pero no sé tampoco.
+1:09:33
+¿Se entiende?
+1:09:35
+En realidad, a este nivel, podíamos haber elegido el flujo de las dos maneras. Pero después siempre es consistente si uno usa esta ley. ¿Preguntas?
+1:09:47
+Esto... Cuando salgan de la clase, en una escala de tiempo de aproximadamente 3 milisegundos, se van a haber olvidado. Para retener esto, tienen que hacer muchos ejercicios, porque si no, uno se equivoca en los signos. Es más fácil acordarse el valor absoluto de la ley de Faraday que la ley de Lenz, que los signos. Pero si hacen muchos ejercicios, enseguida le empiezan a agarrar la mano. Hay una parte de ejercitación ahí que es irreducible.
+1:10:20
+Entonces veamos otro ejemplo, en lo que queda de la clase. Ejemplo.
+1:10:29
+Tengo una región con un campo magnético uniforme entrante. B uniforme. Y entrante a la fibra. Voy a tener una espira rectangular...
+1:10:52
+de este lado L, voy a llamarle D a esto, y esta espira se está moviendo con una velocidad B hacia afuera. ¿De acuerdo?
+1:11:10
+Voy a orientar la corriente en esta dirección. Vamos a tratar de ver, supongan que
+1:11:23
+que la resistencia total de la espira es R. La pregunta es cuánto vale la I inducida.
+1:11:43
+¿De acuerdo? Y voy a despreciar acá los fenómenos de autoinducción, porque una vez que se genera la corriente, la corriente va a ser una corriente que eventualmente podría ser variable, y si la corriente es variable, podría generarme una nueva inducción en sí misma. Todo eso lo voy a expresar. Sólo el efecto del campo magnético una vez inducida la corriente. Entonces, primero que nada, ¿cuánto es el flujo acá? Si yo a esta distancia le llamo X.
+1:12:10
+El flujo magnético, ¿cuánto vale?
+1:12:18
+Claro, vale, la superficie que es D por X por B. No hay ningún coseno del ángulo ni nada porque el campo es ortogonal a...
+1:12:34
+A la figura. Acá estoy eligiendo implícitamente la normal a la figura N. Entrante, para que fuera positivo. Pero fíjense que eso es acorde con la ley, con esta elección que hemos tomado acá. Porque si yo tomo la orientación de la curva así, N va para adentro. Bien. ¿De acuerdo? Entonces ahora...
+1:12:56
+Calculemos la FEM inducida. La FEM inducida, de acuerdo con la ley de Faraday con signo, será igual a menos la derivada del flujo magnético con respecto al tiempo.
+1:13:09
+Entonces esto es igual a menos B por D por la derivada de X con respecto al tiempo. ¿Y quién es la derivada de X con respecto al tiempo?
+1:13:22
+No, menos B. Esto que está acá es menos B. Cuando X, si B es positivo, XD crece. ¿De acuerdo? Así que tenemos dos signos y esto nos queda B por D por B. Esto nos dice que la FEM inducida tendrá el sentido de la orientación esta que tomamos para acá. Veamos si eso es razonable. El flujo magnético que estamos tomando acá es positivo, pero decrece, porque cuando yo me estoy moviendo, decrece.
+1:13:59
+Entonces voy a tener que tener una corriente que tienda a favorecer el crecimiento. tenga que oponerse a la variación. Quien dice variación es como que tuviéramos que generar un campo magnético hacia afuera. Perdón, no, estoy diciendo al revés. La variación es hacia afuera, dado que el flujo es para adentro, la variación es para afuera, porque es negativa.
+1:14:23
+Acá es negativa.
+1:14:25
+El flujo este es negativo. Sin el signo menos, el flujo es negativo. Pero la derivada del flujo es negativa. Entonces quiere decir que queremos una corriente que nos generara un flujo positivo. Y efectivamente una corriente positiva para allá nos genera un campo magnético positivo para allá. Así que este signo que obtuvimos de acuerdo con la ley de Faraday con signos es consistente con Lenz. Si queremos ahora hallar la corriente...
+1:14:55
+I inducida será igual a la FEM inducida dividido la resistencia. Es decir, será B por D por B dividido R. Esa es la corriente inducida. ¿No entendés por qué la derivada de X será menos R? A ver, en módulo estamos de acuerdo que la derivada de x, pero cuando esto se está moviendo para allá, x está decreciendo.
+1:15:31
+Esta distancia, si esto se mueve para allá, si b es positivo, x decrece. Quiere decir que la derivada de x es menos b. Esta distancia, si yo me estoy moviendo para allá, decrece. Su derivada es negativa.
+1:15:53
+Pero ahora nos podemos pensar un poco en temas de energía.
+1:16:07
+Fíjense, ¿cuál es la potencia disipada? Y bueno, la potencia disipada en este circuito será R por la corriente inducida al cuadrado. que entonces será igual a R por B por D por B por R al cuadrado, o lo que es lo mismo B cuadrado, D cuadrado, B cuadrado dividido R. Se nos va uno de los R. Pero entonces, si el sistema está disipando energía, para que B permanezca constante, alguien tiene que estar haciendo una fuerza, es decir...
+1:16:45
+El sistema está perdiendo energía por efecto Joule. Quiere decir que para que velocidad se permanezca constante tengo que tener una fuerza acá que me compense.
+1:16:54
+¿Qué tiene que decir? Que la fuerza magnética tiene que tender a evitar este movimiento. Bueno, pero pensemos cómo es la fuerza magnética. Fíjense, tiene una corriente acá. Entonces, fuerza magnética, van a tener un tramo de fuerza acá, un tramo de fuerza acá, un tramo de fuerza acá. Pero hemos visto que la fuerza magnética es igual, ¿se acuerdan? Es igual a I por L, producto vectorial con B. ¿Se acuerdan la fórmula esta? ¿Sí?
+1:17:26
+Entonces, calculemos cada una de las fuerzas.
+1:17:32
+Entonces, la fuerza acá, en este tramo... Si yo tengo la corriente que va para allá, dijimos que I es positivo, y B, acá nos tenemos una primera fuerza que le puedo llamar F1, que va para allá. En este otro tramo es opuesta, así que estas dos fuerzas se anulan entre sí. F1 más F3 vectorialmente se anulan. Esas no me hacen nada. Pero en este tramo, la corriente va para allá, tengo el campo magnético para allá, y la fuerza magnética, F2, fíjense que intenta oponerse al movimiento, intenta frenar.
+1:18:05
+Lo cual es razonable porque el sistema está perdiendo energía. Entonces F2, podemos calcular, F2 es opuesta a la velocidad y el módulo será igual a I por la longitud, en este caso D, por el campo magnético y en la inducida entonces vemos que la fuerza efe 2 la fuerza que intenta oponerse a al movimiento es igual a b cuadrado por de al cuadrado por b sobre r
+1:18:45
+Quiere decir que si la fuerza magnética tiende a frenar el movimiento, entonces para que permanezca a velocidad constante tiene que haber una fuerza externa, una fuerza externa que está acá. Si queremos que el sistema esté en velocidad constante, si B igual a constante, entonces la fuerza externa en módulo tiene que ser igual a F2, es opuesta, en módulo tiene que ser igual. Entonces la fuerza externa tiene el mismo módulo, es B cuadrado por D cuadrado por B sobre R. Pero ¿cuál es la potencia aportada por la fuerza externa?
+1:19:25
+Física 1, ¿cómo es la potencia aportada por una fuerza?
+1:19:30
+Entonces, la potencia aportada, no sé cómo decirlo, entregada...
+1:19:43
+externa, será igual a F externa, producto escalar con B. Pero eso no es otra cosa que esto multiplicado por B. Y me queda B cuadrado por D cuadrado por B al cuadrado sobre R. Y, buenas noticias, la potencia disipada es igual a la potencia entregada. Si el sistema se está moviendo a velocidad uniforme, está en un régimen estacionario, toda la potencia que estoy entregando se está disipando. Entonces, bueno, un buen test de lo que hicimos es que la potencia entregada es igual a la potencia disipada, que es lo que tenía que pasar si la velocidad es constante.
+1:20:25
+Es un buen test.
+1:20:29
+La potencia que estamos entregando para que el sistema se mueva. A ver, si yo dejo de hacer la fuerza, ¿qué le va a pasar al sistema?
+1:20:36
+Si dejo de hacer la fuerza externa.
+1:20:40
+progresivamente, no tiene una velocidad y se va a ir frenando. Esta fuerza va a ir frenando el sistema. A medida que lo frena, cada vez que tiene velocidad menor, y como tiene velocidad menor, se induce menos. Y al final se va frenando progresivamente. De hecho, ustedes van a ser ingenieros. ¿Cuál es una aplicación tecnológica de esto? ¿Cómo?
+1:21:13
+No. Los frenos. Los frenos magnéticos. Ustedes saben que los autos chic tienen frenos magnéticos. ¿Saben lo que son los frenos magnéticos? Son frenos que no se gastan. Tienen imanes y no es el freno mecánico como la mayor parte de los autos como mi Volkswagen. Si tienen un BMW... de alta gama, tienen frenos magnéticos que no se gastan, no hay contacto, es simplemente un freno de inducción. El sistema, cuando le prenden el campo magnético, se tiende a frenar una chapa de metal que se induce.
+1:21:49
+La energía de la rueda se pierde por efecto Joule. Esto es un ejemplo de aplicación.
+
