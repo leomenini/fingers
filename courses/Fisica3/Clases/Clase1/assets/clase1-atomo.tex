@@ -1,0 +1,27 @@
+% Clase 1 --- Estructura del átomo (esquema, §2.6).
+% El docente lo dibuja en el pizarrón advirtiendo que el núcleo, a escala, no
+% se vería: por eso la figura lo exagera y lo declara explícitamente.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % nube electrónica
+  \draw[figblue, line width=0.9pt, fill=figblue!7] (0,0) circle (2.1);
+  % electrones dispersos en la nube
+  \foreach \a/\r in {20/1.7, 75/1.1, 175/1.4, 215/0.8, 105/1.75,
+                     255/1.8, 295/1.5, 345/1.15, 60/1.85, 190/1.9} {
+    \node[figneg] at (\a:\r) {};
+  }
+  % núcleo (fuera de escala)
+  \node[figpos, minimum size=7pt] (nuc) at (0,0) {};
+  % radio del átomo
+  \draw[figaxis] (0,0) -- (140:2.1);
+  \node[figlblaux, above, rotate=-40] at (140:1.15) {$\sim 10^{-10}$~m};
+  % rótulo del núcleo, fuera del círculo
+  \draw[figgray, line width=0.6pt] (0.16,-0.14) -- (2.5,-1.6);
+  \node[figlbl, figred, right=2pt, align=left] at (2.5,-1.6)
+        {núcleo\\ $\sim 10^{-15}$~m};
+  \node[figlbl, figblue] at (0,-2.7) {nube electrónica: carga $-$, casi todo el volumen};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El núcleo está dibujado \textbf{muy fuera de escala}: con el
+átomo del tamaño de esta figura, a escala no sería visible. Concentra casi toda
+la masa; los electrones son livianísimos y ocupan todo el espacio.}
+\end{center}

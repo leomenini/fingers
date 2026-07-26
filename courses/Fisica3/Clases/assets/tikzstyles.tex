@@ -23,9 +23,27 @@
 }
 
 % ---- TikZ: estilos reutilizables ----
+% Nota: las puntas se declaran como `-{Latex[...]}` y no como `->`. La forma
+% con llaves NO contiene un `>` literal, así que es inmune al `>` activo que
+% introduce babel español (ver CLAUDE.md §7.3.3).
+\usetikzlibrary{arrows.meta,calc,angles,quotes}
+
 \tikzset{
   figline/.style={figblue, line width=0.9pt},
   figaux/.style={figgray, dashed, line width=0.6pt},
+  % vectores
+  figvec/.style={figblue, line width=0.9pt, -{Latex[length=2.2mm,width=1.6mm]}},
+  figvecres/.style={figred, line width=1.3pt, -{Latex[length=2.6mm,width=1.9mm]}},
+  figvecaux/.style={figgray, line width=0.7pt, -{Latex[length=1.8mm,width=1.3mm]}},
+  figaxis/.style={figgray, line width=0.6pt, -{Latex[length=2mm,width=1.4mm]}},
+  % cargas puntuales
+  figcarga/.style={circle, inner sep=0pt, minimum size=5.4pt, draw=none},
+  figpos/.style={figcarga, fill=figred},
+  figneg/.style={figcarga, fill=figblue},
+  figneutra/.style={figcarga, fill=figgray},
+  % etiquetas
+  figlbl/.style={font=\small},
+  figlblaux/.style={font=\footnotesize, figgray},
 }
 
 % ---- pgfplots: estilo base de las gráficas ----

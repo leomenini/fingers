@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 
-% ---- Paquetes ----
+% ---- Encoding & Font ----
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[utf8]{inputenc}
@@ -9,383 +9,824 @@
   \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
 \fi
 \usepackage[spanish]{babel}
-\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
 \usepackage{graphicx}
-\usepackage{geometry}
-\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
 \usepackage{xcolor}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
 
-\geometry{margin=2.5cm}
-\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
 
-% ---- Configuración de encabezados ----
-\titleformat{\section}{\Large\bfseries\color{blue!70!black}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.4pt}]
-\titleformat{\subsection}{\large\bfseries\color{blue!50!black}}{}{0em}{}
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small Resumen — Clase 24}
-\fancyhead[R]{\small Electromagnetismo}
-\fancyfoot[C]{\thepage}
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
 
-% ---- Título ----
-\title{\vspace{-1.5cm}\textbf{Resumen de Clase 24}\\\large{Corriente de Desplazamiento, Ecuaciones de Maxwell y Ondas Electromagnéticas}}
-\author{Transcripción ampliada}
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 24: Corriente de Desplazamiento, Ecuaciones de Maxwell
+        y Ondas Electromagnéticas}\\[0.3em]
+        \large{Incoherencia de Ampère y su resolución, las cuatro leyes,
+              repaso de ondas mecánicas y deducción de la velocidad de la luz}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
 \date{}
 
 \begin{document}
 
 \maketitle
-\vspace{-0.5cm}
+\thispagestyle{empty}
+\newpage
 
-% =========================================================================
-\section{Problema de la Ley de Ampere sin el Término de Maxwell}
-% =========================================================================
+\tableofcontents
+\newpage
 
-La ley de Ampere en su forma original establece que la circulación del campo magnético $\mathbf{B}$ a lo largo de una curva cerrada $C$ es proporcional a la corriente eléctrica $I$ que atraviesa cualquier superficie $S$ cuyo borde sea $C$:
+% ===================================================================
+\section{La incoherencia de la ley de Ampère}
+% ===================================================================
 
+La clase abre cerrando un problema que había quedado planteado en el
+práctico: la ley de Ampère \textbf{sin} el término de Maxwell es
+matemáticamente incoherente.
+
+\subsection{El problema: dos superficies con el mismo borde}
+
+La ley de Ampère relaciona la circulación de $\mathbf{B}$ sobre una curva
+cerrada $C$ (la \textbf{amperiana}) con la corriente que atraviesa una
+superficie $S$ cuyo \textbf{borde} es $C$:
 \[
-\oint_C \mathbf{B} \cdot d\mathbf{l} = \mu_0 I .
+\oint_C \mathbf{B}\cdot d\boldsymbol{\ell} = \mu_0 I_{\text{enc}}
 \]
 
-Sin embargo, surge una inconsistencia cuando se aplica a circuitos que incluyen un condensador en proceso de carga. Si se toma una curva amperiana $C$ alrededor del cable que conduce al condensador, se pueden elegir distintas superficies cuyo borde sea $C$:
+La ley no especifica \emph{cuál} superficie: cualquiera que tenga a $C$ por
+borde debería servir. Ahí está el problema. Tomemos un circuito que carga un
+\textbf{condensador de placas paralelas} y una amperiana $C$ que rodea el
+cable:
 
 \begin{itemize}
-  \item \textbf{Superficie $S_1$}: Atraviesa el cable conductor. Mide la corriente de conducción $I$ que circula por el cable.
-  \item \textbf{Superficie $S_2$}: Pasa entre las placas del condensador, donde no hay corriente de conducción ($I=0$).
+  \item \textbf{$S_1$}: una superficie que corta el cable. La corriente que
+        la atraviesa es $I$.
+  \item \textbf{$S_2$}: una superficie abombada que se cuela \textbf{entre
+        las placas} del condensador sin cortar ningún cable. La corriente
+        que la atraviesa es $0$ --- por el medio del condensador no pasa
+        corriente.
 \end{itemize}
 
-Aplicando Ampere con $S_1$ se obtiene $\oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 I$, mientras que con $S_2$ se obtiene $\oint \mathbf{B} \cdot d\mathbf{l} = 0$. Esto es contradictorio: la circulación de $\mathbf{B}$ no puede depender de la superficie elegida.
+Dos superficies con el mismo borde dan dos respuestas distintas. La ley, así
+escrita, no está bien definida.
 
-\subsection{Origen de la inconsistencia}
+\begin{warnbox}[El origen del problema: el sistema no es estacionario]
+Aunque la corriente $I$ sea independiente del tiempo, en las placas del
+condensador se está \textbf{acumulando carga}: $Q$ cambia con $t$. Eso se
+traduce en que el flujo eléctrico entre las placas también cambia con el
+tiempo. La ley de Ampère original \textbf{sólo vale en régimen
+estacionario}.
+\end{warnbox}
 
-El sistema no es estacionario: aunque la corriente $I$ sea constante, la carga se acumula en las placas del condensador, por lo que la densidad de carga $\rho$ varía con el tiempo. Como consecuencia, el flujo del campo eléctrico $\Phi_E$ entre las placas también cambia, violando la condición implícita de estacionariedad que requiere Ampere original.
-
-% =========================================================================
-\section{Corriente de Desplazamiento de Maxwell}
-% =========================================================================
-
-Maxwell resolvió esta inconsistencia añadiendo un término a la ley de Ampere: la \textbf{corriente de desplazamiento}. La ecuación modificada es:
-
+La ley de Ampère \textbf{modificada por Maxwell} agrega la \textbf{corriente
+de desplazamiento} $I_d$:
 \[
-\oint_C \mathbf{B} \cdot d\mathbf{l} = \mu_0 I + \mu_0 \varepsilon_0 \frac{d\Phi_E}{dt},
+\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}
+  = \mu_0 I + \mu_0\varepsilon_0 \frac{d\Phi_E}{dt},
+\qquad
+I_d \equiv \varepsilon_0\frac{d\Phi_E}{dt}
 \]
 
-donde $\Phi_E = \int_S \mathbf{E} \cdot d\mathbf{S}$ es el flujo eléctrico a través de la superficie $S$, y
+Verifiquemos que con este término las dos superficies \textbf{sí} dan lo
+mismo.
 
+\subsection{Cálculo sobre la superficie que corta el cable}
+
+$S_1$ corta el cable, fuera del condensador. En esa zona no hay cargas
+acumuladas que generen campo eléctrico, así que $\mathbf{E} \approx 0$, de
+donde $\Phi_E = 0$ y por lo tanto $I_d = 0$. El término de Maxwell no aporta
+nada y recuperamos la ley de Ampère de siempre, sin modificación:
 \[
-I_d = \varepsilon_0 \frac{d\Phi_E}{dt}
+\left.\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}\right|_{S_1} = \mu_0 I
 \]
 
-es la \textbf{corriente de desplazamiento}.
+\subsection{Cálculo sobre la superficie que pasa entre las placas}
 
-\subsection{Verificación de la consistencia}
+En $S_2$ \textbf{no hay corriente de conducción}: $I = 0$. Pero sí hay campo
+eléctrico. Para un condensador de placas paralelas de área $A$ con carga $Q$,
+el campo entre las placas vale
+\[
+E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{A\,\varepsilon_0}
+\]
 
-Apliquemos la ley de Ampere-Maxwell a ambas superficies:
+Al calcular el flujo hay que tener cuidado: en $S_2$ hay campo eléctrico
+\textbf{sólo en la zona de área $A$} que queda entre las placas; en todo el
+resto de la superficie $E = 0$. Entonces el flujo es el campo por el área de
+la zona donde el campo existe:
+\[
+\Phi_E = E \cdot A = \frac{Q}{A\,\varepsilon_0}\, A = \frac{Q}{\varepsilon_0}
+\]
 
-\begin{itemize}
-  \item \textbf{En $S_1$}: Fuera del condensador, el campo eléctrico es despreciable, $\Phi_E \approx 0$, por lo que $I_d = 0$. Luego,
-  \[
-  \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 I .
-  \]
+y la corriente de desplazamiento resulta
+\[
+I_d = \varepsilon_0\frac{d\Phi_E}{dt}
+    = \varepsilon_0\frac{d}{dt}\!\left(\frac{Q}{\varepsilon_0}\right)
+    = \frac{dQ}{dt} = I
+\]
 
-  \item \textbf{En $S_2$}: No hay corriente de conducción ($I=0$), pero sí existe corriente de desplazamiento. Para un condensador de placas paralelas de área $A$, el campo eléctrico entre las placas es $E = \sigma/\varepsilon_0 = Q/(A\varepsilon_0)$. El flujo eléctrico a través de $S_2$ es
-  \[
-  \Phi_E = E \cdot A = \frac{Q}{\varepsilon_0},
-  \]
-  por lo que
-  \[
-  I_d = \varepsilon_0 \frac{d}{dt}\!\left(\frac{Q}{\varepsilon_0}\right) = \frac{dQ}{dt} = I .
-  \]
-  Así,
-  \[
-  \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_d = \mu_0 I .
-  \]
-\end{itemize}
+Los $\varepsilon_0$ se cancelan y queda exactamente la corriente que llega
+por el cable, porque $dQ/dt$ \textbf{es} la corriente que está cargando la
+placa. Por lo tanto
+\[
+\left.\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}\right|_{S_2}
+  = \mu_0 I_d = \mu_0 I
+\]
 
-Ambas superficies dan el mismo resultado, resolviendo la inconsistencia. La corriente de desplazamiento \"toma el relevo\" donde la corriente de conducción se interrumpe.
+\begin{keybox}[Coherencia restaurada]
+\[
+\boxed{\
+\left.\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}\right|_{S_1}
+= \left.\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}\right|_{S_2}
+= \mu_0 I\ }
+\]
+\end{keybox}
 
-\subsection{Motivación de Maxwell}
+\subsection{Interpretación: la corriente de desplazamiento toma el relevo}
 
-Maxwell introdujo este término no solo por coherencia matemática, sino también por \textbf{simetría estética}: Faraday mostraba que un campo magnético variable genera un campo eléctrico, y Maxwell buscaba la contraparte — que un campo eléctrico variable generara un campo magnético. La naturaleza confirmó su intuición.
-
-% =========================================================================
-\section{Las Ecuaciones de Maxwell}
-% =========================================================================
-
-Las cuatro ecuaciones de Maxwell resumen todo el electromagnetismo clásico:
-
-\medskip
-\noindent
-\begin{minipage}{\textwidth}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{ll}
-\textbf{Ley de Gauss para el campo eléctrico:} &
-$\displaystyle \oint_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{int}}}{\varepsilon_0}$ \\[10pt]
-\textbf{Ley de Gauss para el campo magnético:} &
-$\displaystyle \oint_S \mathbf{B} \cdot d\mathbf{S} = 0$ \\[10pt]
-\textbf{Ley de Faraday-Lenz:} &
-$\displaystyle \oint_C \mathbf{E} \cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}$ \\[10pt]
-\textbf{Ley de Ampere-Maxwell:} &
-$\displaystyle \oint_C \mathbf{B} \cdot d\mathbf{l} = \mu_0 I + \mu_0\varepsilon_0\frac{d\Phi_E}{dt}$
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Superficie} & $I$ (conducción) & $I_d$ (desplazamiento)
+  & \textbf{Circulación total} \\
+\midrule
+$S_1$ (corta el cable)     & $I$ & $0$ & $\mu_0 I$ \\
+$S_2$ (entre las placas)   & $0$ & $I$ & $\mu_0 I$ \\
+\bottomrule
 \end{tabular}
-\end{minipage}
+\end{table}
 
-\medskip
-\noindent
-Donde:
-\begin{itemize}
-  \item La \textbf{ley de Gauss eléctrica} relaciona el flujo de $\mathbf{E}$ con la carga encerrada.
-  \item La \textbf{ley de Gauss magnética} expresa la ausencia de monopolos magnéticos (las líneas de $\mathbf{B}$ siempre son cerradas).
-  \item La \textbf{ley de Faraday} describe cómo un campo magnético variable induce un campo eléctrico.
-  \item La \textbf{ley de Ampere-Maxwell} describe cómo las corrientes y los campos eléctricos variables generan campos magnéticos.
-\end{itemize}
+La imagen física es nítida: la corriente viene por el cable, \textbf{se
+interrumpe} al llegar a la placa, y justo ahí la corriente de desplazamiento
+\textbf{toma el relevo}. Cada término por separado vale cosas distintas
+según la superficie elegida, pero la \textbf{suma} de los dos da lo mismo.
+Eso es exactamente lo que hacía falta para que la ley quede bien definida.
 
-\subsection{Importancia histórica}
+\begin{notebox}[La corriente de desplazamiento no es una corriente de cargas]
+En general es simplemente la manifestación de una \textbf{variación del flujo
+eléctrico} en una zona. Lo que ocurre en este ejemplo concreto es que, justo
+donde no hay carga ni corriente eléctrica, hay un cambio del campo eléctrico
+que se ocupa de tomar el relevo.
+\end{notebox}
 
-Estas ecuaciones fueron publicadas por James Clerk Maxwell en 1865 y representan uno de los hitos más importantes de la física. Logran la \textbf{unificación de la electricidad, el magnetismo y la óptica} en una sola teoría. Han sobrevivido intactas hasta hoy (salvo correcciones cuánticas en la electrodinámica cuántica, QED, desarrollada por Feynman, Schwinger y Tomonaga en la década de 1940).
+\subsection{El argumento estético de Maxwell}
 
-% =========================================================================
-\section{Introducción a las Ondas}
-% =========================================================================
+Lo que motivó a Maxwell no fue en primer lugar la incoherencia matemática,
+sino una \textbf{asimetría} que le molestaba: un campo magnético variable
+induce un campo eléctrico (Faraday), pero parecía que un campo eléctrico
+variable no podía inducir un campo magnético. Inventó el término por ese
+motivo estético.
 
-Antes de estudiar las ondas electromagnéticas, se realiza un repaso de ondas mecánicas, que son más intuitivas.
+\begin{warnbox}[La naturaleza no tiene por qué compartir nuestros gustos]
+Alguien podría objetar que el término le complica la vida y que menos
+términos es más lindo. Que el término resuelva una incoherencia matemática
+es bienvenido, pero \textbf{el criterio de verdad en física es el acuerdo con
+los experimentos}, no la elegancia. Lo notable del caso es que el sentido
+estético de Maxwell resultó coincidir con el de la naturaleza: la ley
+resultante es correcta experimentalmente y además \textbf{predice un hecho
+mayor}, la existencia de ondas electromagnéticas, cuya velocidad resulta ser
+la velocidad de la luz.
+\end{warnbox}
 
-\subsection{Definición de onda}
+% ===================================================================
+\section{Las ecuaciones de Maxwell}
+% ===================================================================
 
-Una \textbf{onda} es una perturbación oscilatoria que se propaga transportando energía y cantidad de movimiento, sin transporte neto de materia. Ejemplos:
+\subsection{Las cuatro leyes}
 
-\begin{itemize}
-  \item \textbf{Ondas sonoras}: oscilaciones de presión y densidad en un medio material (aire, agua, sólidos).
-  \item \textbf{Ondas en una cuerda}: oscilaciones transversales de la altura de la cuerda.
-  \item \textbf{Ondas electromagnéticas (luz)}: oscilaciones de los campos $\mathbf{E}$ y $\mathbf{B}$.
-\end{itemize}
+Este es un momento fundacional del curso: acá se juntan todas las leyes que
+se fueron construyendo de a poco a lo largo del semestre.
 
-\subsection{Ondas viajeras unidimensionales}
-
-Para una onda que se propaga hacia la derecha sin deformarse, la función de onda tiene la forma:
-
-\[
-y(x,t) = f(x - vt),
-\]
-
-donde $v$ es la velocidad de propagación. Para una onda hacia la izquierda: $y(x,t) = f(x + vt)$.
-
-\subsection{Ondas sinusoidales}
-
-Las ondas sinusoidales son un caso idealizado pero fundamental:
-
-\[
-y(x,t) = A \sin\!\left( \frac{2\pi}{\lambda} (x - vt) \right),
-\]
-
-donde $A$ es la amplitud y $\lambda$ la longitud de onda.
-
-\subsection{Parámetros fundamentales}
-
-\begin{itemize}
-  \item \textbf{Longitud de onda} $\lambda$: distancia espacial entre dos puntos equivalentes consecutivos.
-  \item \textbf{Período} $T$: tiempo necesario para una oscilación completa en un punto fijo.
-  \item \textbf{Frecuencia} $\nu = 1/T$: número de oscilaciones por unidad de tiempo (Hz).
-  \item \textbf{Frecuencia angular} $\omega = 2\pi / T = 2\pi \nu$.
-  \item \textbf{Número de onda} $k = 2\pi / \lambda$.
-  \item \textbf{Velocidad de propagación}: $v = \lambda / T = \omega / k$.
-\end{itemize}
-
-Con estas definiciones, la onda sinusoidal se escribe:
-
-\[
-y(x,t) = A \sin(kx - \omega t).
-\]
-
-% =========================================================================
-\section{Ondas Electromagnéticas en el Vacío}
-% =========================================================================
-
-\subsection{Ecuaciones de Maxwell en el vacío}
-
-En una región sin cargas ni corrientes ($\rho = 0$, $\mathbf{J} = 0$), las ecuaciones de Maxwell se reducen a:
-
-\[
-\begin{aligned}
-\nabla \cdot \mathbf{E} &= 0, &
-\nabla \cdot \mathbf{B} &= 0, \\[4pt]
-\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}, &
-\nabla \times \mathbf{B} &= \mu_0\varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}.
-\end{aligned}
-\]
-
-\subsection{Solución de onda plana sinusoidal}
-
-Buscamos una onda plana que se propaga en la dirección $x$, con el campo eléctrico polarizado según $y$ y el magnético según $z$:
-
-\[
-\mathbf{E}(x,t) = E_0 \sin(kx - \omega t)\,\hat{\mathbf{j}}, \qquad
-\mathbf{B}(x,t) = B_0 \sin(kx - \omega t)\,\hat{\mathbf{k}}.
-\]
-
-\subsubsection{Aplicando la ley de Faraday}
-
-Consideramos un rectángulo infinitesimal en el plano $XY$ de altura $h$ y ancho $\Delta x$. Faraday establece:
-
-\[
-\oint \mathbf{E} \cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}.
-\]
-
-El lado izquierdo da $h[E_y(x+\Delta x,t) - E_y(x,t)]$, y el flujo magnético es $\Phi_B = B_z(x,t)\,h\,\Delta x$. Tomando el límite $\Delta x \to 0$:
-
-\[
-\frac{\partial E_y}{\partial x} = -\frac{\partial B_z}{\partial t}. \tag{1}
-\]
-
-\subsubsection{Aplicando la ley de Ampere-Maxwell}
-
-Tomamos ahora un rectángulo en el plano $XZ$. Con $I=0$:
-
-\[
-\oint \mathbf{B} \cdot d\mathbf{l} = \mu_0\varepsilon_0 \frac{d\Phi_E}{dt}.
-\]
-
-Siguiendo un procedimiento análogo:
-
-\[
--\frac{\partial B_z}{\partial x} = \mu_0\varepsilon_0 \frac{\partial E_y}{\partial t}. \tag{2}
-\]
-
-\subsubsection{Sustitución de las ondas sinusoidales}
-
-Derivando las expresiones de los campos:
-
+\begin{keybox}[Ecuaciones de Maxwell]
 \begin{align*}
-\frac{\partial E_y}{\partial x} &= kE_0 \cos(kx - \omega t), \\
-\frac{\partial B_z}{\partial t} &= -\omega B_0 \cos(kx - \omega t).
+\oiint_S \mathbf{E}\cdot d\mathbf{A}
+  &= \frac{Q_{\text{int}}}{\varepsilon_0}
+  && \text{(Gauss para } \mathbf{E}\text{)} \\[6pt]
+\oiint_S \mathbf{B}\cdot d\mathbf{A}
+  &= 0
+  && \text{(Gauss para } \mathbf{B}\text{)} \\[6pt]
+\oint_C \mathbf{E}\cdot d\boldsymbol{\ell}
+  &= -\frac{d\Phi_B}{dt}
+  && \text{(Faraday)} \\[6pt]
+\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}
+  &= \mu_0 I + \mu_0\varepsilon_0\frac{d\Phi_E}{dt}
+  && \text{(Ampère--Maxwell)}
 \end{align*}
+\end{keybox}
 
-Sustituyendo en (1):
-\[
-kE_0 \cos(kx - \omega t) = \omega B_0 \cos(kx - \omega t) \quad\Longrightarrow\quad B_0 = \frac{k}{\omega} E_0 = \frac{E_0}{v}. \tag{3}
-\]
+Lectura de cada una:
 
-Ahora, de (2):
-\begin{align*}
--\frac{\partial B_z}{\partial x} &= -(-kB_0\cos(kx - \omega t)) = kB_0\cos(kx - \omega t), \\
-\mu_0\varepsilon_0 \frac{\partial E_y}{\partial t} &= \mu_0\varepsilon_0 (-\omega E_0\cos(kx - \omega t)).
-\end{align*}
-Igualando:
-\[
-kB_0 = \mu_0\varepsilon_0 \omega E_0 \quad\Longrightarrow\quad B_0 = \mu_0\varepsilon_0 \frac{\omega}{k} E_0 = \mu_0\varepsilon_0 v E_0. \tag{4}
-\]
-
-\subsubsection{Velocidad de la luz}
-
-Igualando (3) y (4):
-\[
-\frac{E_0}{v} = \mu_0\varepsilon_0 v E_0 \quad\Longrightarrow\quad v^2 = \frac{1}{\mu_0\varepsilon_0}.
-\]
-
-Por lo tanto, la velocidad de las ondas electromagnéticas en el vacío es:
-
-\[
-\boxed{c = \frac{1}{\sqrt{\mu_0\varepsilon_0}} }.
-\]
-
-Sustituyendo los valores conocidos $\mu_0 = 4\pi \times 10^{-7}\,\text{N/A}^2$ y $\varepsilon_0 \approx 8.854 \times 10^{-12}\,\text{F/m}$, se obtiene:
-
-\[
-c \approx 3.0 \times 10^8\ \text{m/s},
-\]
-
-que coincide con la velocidad de la luz medida experimentalmente. Este fue un triunfo de la teoría de Maxwell: la luz es una onda electromagnética.
-
-\subsection{Relación entre amplitudes}
-
-De (3) obtenemos:
-
-\[
-B_0 = \frac{E_0}{c}.
-\]
-
-En una onda electromagnética, la amplitud del campo magnético es $c$ veces menor que la del campo eléctrico (en unidades del SI).
-
-\subsection{Naturaleza transversal}
-
-Las ondas electromagnéticas son \textbf{transversales}: los campos $\mathbf{E}$ y $\mathbf{B}$ son perpendiculares entre sí y ambos perpendiculares a la dirección de propagación. Además, están en fase (se anulan y alcanzan sus máximos simultáneamente para la solución más simple).
-
-% =========================================================================
-\section{Contexto Histórico: El Problema del Éter}
-% =========================================================================
-
-\subsection{El éter luminífero}
-
-En el siglo XIX, los físicos suponían que las ondas electromagnéticas necesitaban un medio material para propagarse, al igual que las ondas sonoras necesitan aire. Postularon la existencia del \textbf{éter}, un medio hipotético que impregnaba todo el espacio y servía de soporte a las ondas electromagnéticas. Las ecuaciones de Maxwell se considerarían válidas solo en el referencial en reposo respecto al éter.
-
-\subsection{El experimento de Michelson-Morley (1887)}
-
-Albert Michelson y Edward Morley diseñaron un interferómetro ultrasensible para detectar el movimiento de la Tierra respecto al éter. La idea era medir la diferencia en la velocidad de la luz en direcciones perpendiculares. El resultado fue \textbf{nulo}: no se detectó ningún movimiento respecto al éter.
-
-Se intentaron explicaciones ad hoc:
 \begin{itemize}
-  \item \textbf{Arrastre del éter}: la Tierra arrastra consigo al éter. Experimentos más precisos lo descartaron.
-  \item \textbf{Contracción de Lorentz-FitzGerald}: los objetos se contraen en la dirección del movimiento, compensando el efecto. Aunque correcta como descripción, no explicaba el origen físico.
+  \item \textbf{Gauss para $\mathbf{E}$}: el flujo saliente a través de una
+        superficie cerrada mide la carga encerrada, dividida por
+        $\varepsilon_0$.
+  \item \textbf{Gauss para $\mathbf{B}$}: el flujo de $\mathbf{B}$ a través
+        de una superficie cerrada es cero \textbf{porque no hay monopolos
+        magnéticos}. Es, literalmente, la ley que anuncia su inexistencia.
+  \item \textbf{Faraday}: la circulación de $\mathbf{E}$ sobre una curva
+        cerrada es menos la derivada temporal del flujo magnético a través de
+        la superficie limitada por esa curva.
+  \item \textbf{Ampère--Maxwell}: la versión corregida en la sección
+        anterior.
 \end{itemize}
 
-\subsection{La solución de Einstein (1905)}
+\subsection{Alcance y vigencia}
 
-Albert Einstein, con su teoría de la relatividad especial, eliminó la necesidad del éter:
-\begin{itemize}
-  \item Las ecuaciones de Maxwell son válidas en todos los referenciales inerciales.
-  \item La velocidad de la luz es la misma en todos los referenciales inerciales ($c = \text{constante}$).
-  \item La mecánica newtoniana debe modificarse: la regla de adición de velocidades $v_{\text{total}} = v_1 + v_2$ no es válida a velocidades cercanas a $c$.
-\end{itemize}
+Escritas en la segunda mitad del siglo XIX, estas leyes unificaron la teoría
+eléctrica y la magnética en una sola y además predijeron las propiedades de
+la luz. Han sobrevivido hasta hoy: no se conocen experimentos que las
+contradigan, y se cuentan entre las \textbf{interacciones fundamentales}.
 
-La relatividad especial ha sido verificada experimentalmente con enorme precisión, y la constancia de $c$ es uno de sus pilares.
+\begin{notebox}[Única modificación necesaria]
+En el régimen microscópico hay que incorporar los efectos cuánticos. Esa
+versión es la \textbf{electrodinámica cuántica}, completada hacia 1948--49,
+que le valió el Nobel a Feynman, Schwinger y Tomonaga. Fuera de ese régimen
+la teoría está terminada: no hubo que volver a tocarla.
+\end{notebox}
 
-% =========================================================================
-\section{Medición Experimental de la Velocidad de la Luz}
-% =========================================================================
+% ===================================================================
+\section{Repaso de ondas mecánicas}
+% ===================================================================
 
-\subsection{Experimento de Fizeau (1849)}
+Antes de buscar ondas en las ecuaciones de Maxwell, el docente hace un repaso
+de \textbf{ondas mecánicas} (remite al capítulo 13, sección 13.2), porque son
+más fáciles de visualizar y aportan todo el vocabulario que se usará después.
+El repaso se da desde cero, sin suponerlo conocido.
 
-Hippolyte Fizeau realizó la primera medición terrestre precisa de $c$ usando un método de rueda dentada:
+\subsection{Qué es una onda y por qué importa el medio}
+
+\enquote{Una manera de propagar energía} es una definición \textbf{demasiado
+general}: hay muchísimas maneras de propagar energía, y las partículas
+propagándose también la propagan sin ser ondas. La caracterización correcta
+es más específica:
+
+\begin{keybox}[Definición]
+Una \textbf{onda} es un movimiento (una señal) \textbf{oscilatorio} que
+\textbf{se propaga}, generalmente en un medio.
+\end{keybox}
+
+Cuando se propaga en un medio se habla de \textbf{onda mecánica}. Ejemplos, y
+qué es lo que oscila en cada caso:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Onda} & \textbf{Cantidad que oscila} \\
+\midrule
+Sonido  & Presión y densidad del aire, alrededor de su valor de reposo \\
+Cuerda  & Altura (desplazamiento transversal) de la cuerda \\
+Luz     & $\mathbf{E}$ y $\mathbf{B}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Cuando hay medio, conviene describir la onda en el \textbf{referencial en que
+el medio está en reposo}: ese referencial juega un rol privilegiado. Una
+cuerda estirada y quieta determina ese referencial, y los desplazamientos se
+miden respecto de él.
+
+\begin{notebox}[Por qué ese referencial y no otro]
+Se podría tomar otro referencial inercial --- por ejemplo uno que se mueva
+uniformemente --- pero en él la cuerda no estaría en reposo y la descripción
+se complica sin ganar nada. Por eso las ondas mecánicas tienen asociado un
+\textbf{referencial preferencial}: el del medio en reposo.
+\end{notebox}
+
+\subsection{Ondas viajeras y el signo del argumento}
+
+Una onda es \textbf{viajera} cuando mantiene su forma --- al menos de manera
+aproximada --- pero se desplaza. Si en $t = 0$ el perfil es $y(0,x) = f(x)$,
+en un instante posterior es \textbf{la misma forma evaluada en otro punto}:
+\[
+\boxed{\ y(t,x) = f(x - vt)\ }
+\]
+
+El perfil se corre una distancia $\Delta x = v\,t$ en un tiempo $t$.
+
+\begin{warnbox}[El signo menos confunde a mucha gente]
+Parece que para mover la onda hacia la derecha habría que \emph{sumar}. No es
+así. Verificación: tomemos el origen en el máximo, de modo que en $t = 0$ el
+máximo está en $x = 0$. En $t > 0$ el máximo sigue estando donde el argumento
+se anula, es decir en $x' = x - vt = 0$, o sea en $x = vt > 0$:
+\textbf{efectivamente corrido hacia la derecha}. Con $f(x + vt)$ se obtiene
+una onda viajando hacia la izquierda.
+\end{warnbox}
+
+Una cuerda real puede tener la \textbf{superposición} de una onda hacia la
+derecha y otra hacia la izquierda, e incluso combinaciones más complicadas.
+
+\begin{notebox}[Limitación: tratamiento unidimensional]
+Una onda en el espacio --- un grito, por ejemplo --- se desparrama en todas
+las direcciones y la imagen 1D no aplica directamente, salvo que la onda esté
+confinada, como en un tubo. Se trabaja en 1D por simplicidad.
+\end{notebox}
+
+\subsection{Ondas sinusoidales y periodicidad espacial}
+
+Un caso idealizado muy cómodo es la \textbf{onda sinusoidal}:
+\[
+f(x) = A\,\sen\!\left(\frac{2\pi x}{\lambda}\right)
+\]
+
+\begin{notebox}[Por qué \enquote{idealizada}]
+El seno está definido de $-\infty$ a $+\infty$, pero una onda real no puede
+tener esa forma en todo el eje. En la práctica uno tiene ese perfil sólo en
+un tramo. Se supone extendido a todo $x$ porque simplifica las cuentas.
+\end{notebox}
+
+Recorriendo la forma: vale $0$ en $x=0$; alcanza su máximo $A$ en
+$x = \lambda/4$ (donde el argumento del seno vale $\pi/2$); vuelve a cero en
+$\lambda/2$; llega al mínimo $-A$ en $3\lambda/4$; y en $\lambda$ vuelve al
+punto de partida y repite. Es decir, $f$ es periódica de \textbf{periodo
+espacial} $\lambda$:
+\[
+f(x + \lambda) = f(x), \qquad f'(x + \lambda) = f'(x)
+\]
+
+\begin{warnbox}[Por qué hay que pedir también la derivada]
+La función sola vuelve a tomar el mismo valor mucho antes de $\lambda$. Pero
+en esos puntos \textbf{la derivada tiene signos opuestos} (en uno la función
+sube y en el otro baja). El primer punto en que se repiten \emph{función y
+derivada} es $\lambda$.
+\end{warnbox}
+
+A ese periodo espacial se lo llama \textbf{longitud de onda}, justamente
+porque es el largo del tramo de onda que después se repite.
+
+\subsection{Periodicidad temporal y definiciones asociadas}
+
+Incorporando el desplazamiento:
+\[
+y(t,x) = A\,\sen\!\left[\frac{2\pi}{\lambda}(x - vt)\right]
+\]
+
+Fijado un $x$, esta función también es periódica en $t$. Su \textbf{periodo
+de oscilación} $T$ es el menor tiempo tal que la onda --- y su derivada ---
+vuelven al mismo valor. Probando $T = \lambda/v$:
+\[
+y\!\left[x - v\!\left(t + \tfrac{\lambda}{v}\right)\right]
+ = y\big[(x - vt) - \lambda\big] = y(x - vt)
+\]
+donde el último paso usa que $\lambda$ es el periodo espacial. Por lo tanto
+\[
+\boxed{\ T = \frac{\lambda}{v}\ }
+\]
+
+\begin{notebox}[Regla mnemotécnica, algo tramposa]
+\enquote{Velocidad $=$ distancia / tiempo}, con la distancia siendo el
+periodo espacial y el tiempo el periodo temporal. Funciona, pero no es una
+deducción.
+\end{notebox}
+
+Definiciones asociadas:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Cantidad} & \textbf{Símbolo} & \textbf{Definición} & \textbf{Rol} \\
+\midrule
+Frecuencia         & $\nu$    & $\nu = 1/T$
+  & inversa del periodo \\
+Número de ondas    & $k$      & $k = 2\pi/\lambda$
+  & análogo espacial de $\omega$ \\
+Frecuencia angular & $\omega$ & $\omega = 2\pi/T = 2\pi v/\lambda$
+  & análogo temporal de $k$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Con ellas la onda se escribe en la forma compacta
+\[
+\boxed{\ y(t,x) = A\,\sen(kx - \omega t)\ }
+\]
+y, comparando con la expresión anterior, la velocidad de la onda es
+\[
+\boxed{\ v = \frac{\omega}{k} = \frac{\lambda}{T}\ }
+\]
+
+\begin{notebox}[Un paralelo exacto entre espacio y tiempo]
+El análogo de la \textbf{frecuencia angular} es el \textbf{número de ondas},
+y el análogo del \textbf{periodo} es la \textbf{longitud de onda}. Unas
+describen la estructura temporal de la onda; las otras, la espacial. El
+pasaje de frecuencia a frecuencia angular ya se conoce del movimiento
+armónico simple y del movimiento circular uniforme.
+\end{notebox}
+
+% ===================================================================
+\section{Planteo de las ondas electromagnéticas}
+% ===================================================================
+
+El objetivo: \textbf{probar que las ecuaciones de Maxwell tienen soluciones
+con forma de onda}, y calcular su velocidad.
+
+\subsection{Hipótesis de trabajo}
+
+\begin{warnbox}[Alcance limitado, y explícitamente]
+No se busca la onda electromagnética más general: se propone una
+\textbf{familia particular} de soluciones, se verifica que satisface las
+ecuaciones de Maxwell y se calcula su velocidad. Que no haya otras
+posibilidades es cierto, pero \textbf{no se demuestra acá}.
+\end{warnbox}
 
 \begin{enumerate}
-  \item Un haz de luz pasa por una rendija de una rueda dentada que gira a velocidad angular conocida.
-  \item Viaja hasta un espejo situado a varios kilómetros de distancia.
-  \item La luz se refleja y regresa. Si la rueda ha girado lo suficiente como para que la rendija sea reemplazada por un diente, la luz es bloqueada.
-  \item Midiendo la velocidad angular crítica para la cual la luz es bloqueada, se puede calcular el tiempo de ida y vuelta y, conociendo la distancia, obtener $c$.
+  \item \textbf{Vacío}: $Q = 0$ e $I = 0$. Es una idealización realista ---
+        el espacio entre el Sol y la Tierra no tiene prácticamente cargas ni
+        corrientes, y la onda que emite el Sol se sostiene a sí misma durante
+        todo el trayecto hasta llegar a la Tierra.
+  \item \textbf{Onda transversal}: si la propagación es en $\hat{x}$,
+        entonces $\mathbf{E} \perp \hat{x}$, $\mathbf{B} \perp \hat{x}$ y
+        $\mathbf{E} \perp \mathbf{B}$.
+  \item \textbf{Onda plana}: los campos no dependen de $y$ ni de $z$, sólo de
+        $x$ y $t$.
+  \item \textbf{Sinusoidal y en fase}: ambos campos se anulan
+        simultáneamente.
 \end{enumerate}
 
-Fizeau obtuvo $c \approx 3.15 \times 10^8\ \text{m/s}$, muy cercano al valor aceptado actualmente. Para la época en que Maxwell realizó su cálculo teórico (1865), $c$ ya había sido medida con buena precisión, y la coincidencia espectacular entre ambos valores confirmó la naturaleza electromagnética de la luz.
+\begin{notebox}[No hay medio, y eso es lo raro]
+Las ondas electromagnéticas se propagan en el vacío: no necesitan un medio
+como el sonido necesita el aire. Por lo tanto \textbf{no hay un referencial
+privilegiado}. Es justamente lo que desconcertó a los físicos del siglo XIX.
+\end{notebox}
 
-% =========================================================================
-\section{Estructura del Curso: Tres Finales}
-% =========================================================================
+\begin{notebox}[Sobre la hipótesis de onda plana]
+Que un plano infinito perpendicular a $x$ oscile todo junto es claramente una
+idealización. Se justifica como buena aproximación de una región donde el
+campo es aproximadamente uniforme en la sección perpendicular al eje de
+propagación. La ventaja es que reduce el problema a uno efectivamente
+unidimensional.
+\end{notebox}
 
-El profesor menciona que el curso tiene una estructura peculiar con \textbf{tres finales}:
+\subsection{Por qué la onda es transversal (argumento cualitativo)}
+
+Estamos en una zona sin cargas eléctricas ni magnéticas. ¿Cómo son las líneas
+de campo eléctrico si no hay cargas positivas de donde salir ni negativas a
+donde llegar? \textbf{Cerradas.}
+
+Imaginemos entonces una línea de $\mathbf{E}$ cerrada, oscilando. Al oscilar
+genera --- por Ampère--Maxwell --- un campo magnético \textbf{perpendicular}
+a ese plano, que a su vez también oscila y tiene sus propias líneas cerradas,
+perpendiculares a las de $\mathbf{E}$. En cada zona, entonces, $\mathbf{E}$
+queda contenido en un plano y $\mathbf{B}$ resulta perpendicular a él.
+
+\begin{warnbox}[Es una idea cualitativa, no una demostración]
+El sentido en que entra o sale $\mathbf{B}$ depende de si el campo está
+creciendo o decreciendo: con una sola \enquote{foto} no se puede determinar.
+\end{warnbox}
+
+\subsection{La forma propuesta}
+
+Con el eje $x$ como dirección de propagación, $\mathbf{E}$ a lo largo de
+$\hat{y}$ y $\mathbf{B}$ a lo largo de $\hat{z}$:
+\[
+E_y(x,t) = E_0\,\sen(kx - \omega t), \qquad
+B_z(x,t) = B_0\,\sen(kx - \omega t)
+\]
+
+Son las \textbf{únicas componentes} no nulas, y están \textbf{en fase}:
+cuando una se anula, la otra también. Como la velocidad de una onda es
+$v = \omega/k$, y acá esa velocidad es la de la luz $c$, todo el problema se
+reduce a \textbf{calcular $\omega/k$} a partir de las ecuaciones de Maxwell.
+
+% ===================================================================
+\section{Interludio: el éter y la relatividad}
+% ===================================================================
+
+La ausencia de un referencial privilegiado incomodó tanto a los físicos del
+siglo XIX que \textbf{inventaron uno}: el \textbf{éter}, un medio muy difícil
+de detectar en cuyo referencial --- se suponía --- valían las ecuaciones de
+Maxwell. Fuera de él, los cálculos no serían correctos. El propio Maxwell lo
+pensaba así.
+
+La cronología del desmontaje:
 
 \begin{enumerate}
-  \item \textbf{Primer final (clase anterior)}: Circuitos de corriente alterna, impedancia compleja, potencia en CA.
-  \item \textbf{Segundo final (esta clase)}: Obtención de las ecuaciones de Maxwell, la culminación del electromagnetismo clásico.
-  \item \textbf{Tercer final (próximas clases)}: El estudio de las ondas electromagnéticas y la óptica (propagación de la luz). Este final es también un nuevo comienzo.
+  \item \textbf{Medir la velocidad de la Tierra respecto del éter.} Como
+        $v/c$ es pequeño, los primeros experimentos tenían precisión a orden
+        $v/c$, con un error de orden $v^2/c^2$ que se podía despreciar.
+        Resultado: \textbf{cero}. Raro, porque la Tierra orbita el Sol:
+        ¿cómo puede dar cero cuando va y también cuando vuelve?
+  \item \textbf{Arrastre del éter} (idea de la época, ligada a Fizeau): quizá
+        la Tierra arrastra el éter consigo, y por eso se mide cero.
+  \item \textbf{Michelson y Morley}: un experimento mucho más preciso,
+        sensible a efectos de orden $v^2/c^2$ --- donde el arrastre ya no
+        alcanzaba para explicar el resultado. Dio \textbf{cero} otra vez.
+  \item \textbf{Lorentz}: propone que los cuerpos se \textbf{contraen} en la
+        dirección de propagación al moverse respecto del éter, y calcula
+        exactamente cuánto para que el efecto no se vea. Funcionaba, pero no
+        se entendía por qué habría de suceder.
+  \item \textbf{Poincaré} lo pone en palabras: ¿qué idea disparatada habría
+        que inventar cuando el experimento se haga con precisión $v^3/c^3$ y
+        vuelva a dar cero? El \enquote{recauchutaje} de la mecánica ya no
+        daba más.
+  \item \textbf{Einstein, 1905}: no hay éter. La luz se propaga en el vacío,
+        \textbf{todos los referenciales inerciales son equivalentes} también
+        para el electromagnetismo, y la velocidad de la luz es \textbf{la
+        misma medida en todos ellos}.
 \end{enumerate}
 
-% =========================================================================
-\section{Conclusión}
-% =========================================================================
+\begin{keybox}[El ejemplo del tren]
+Un tren viaja a velocidad $v$ comparable a $c$. Alguien arriba enciende una
+luz; alguien en la estación mide la velocidad de esa señal. La intuición dice
+$c - v$. Pero da $c$. La conclusión de Einstein es que \textbf{lo que hay que
+modificar no es el electromagnetismo sino la mecánica}: cuando las
+velocidades son comparables a $c$, deja de valer la ley de adición de
+velocidades.
+\end{keybox}
 
-En esta clase se ha recorrido un camino fundamental:
+Dicho de otro modo: la teoría de Maxwell \textbf{ya verificaba la relatividad
+antes de la relatividad} --- ya tenía la propiedad de ser la misma en todos
+los referenciales inerciales ---, lo que no verificaba era la ley de adición
+de velocidades. Está muy bien confirmada experimentalmente: el efecto es
+minúsculo para objetos macroscópicos, pero se mide todos los días en los
+aceleradores de partículas con enorme precisión.
+
+% ===================================================================
+\section{Deducción de la velocidad de la luz}
+% ===================================================================
+
+La estrategia: aplicar Faraday y Ampère--Maxwell a rectángulos pequeños y ver
+qué condiciones imponen sobre $E_0$, $B_0$, $k$ y $\omega$.
+
+\subsection{Faraday sobre un rectángulo en el plano $xy$}
+
+Se toma una curva rectangular $C$ en el plano $xy$, de altura $h$ (en
+$\hat{y}$) y ancho $\Delta x$ \textbf{pequeño} (en $\hat{x}$), ubicada en la
+posición $x$.
+
+\paragraph{Circulación de $\mathbf{E}$.}
+En los tramos horizontales --- los de largo $\Delta x$ --- la contribución es
+\textbf{cero}: ahí $d\boldsymbol{\ell} \parallel \hat{x}$ mientras que
+$\mathbf{E}$ apunta en $\hat{y}$. En los tramos verticales el campo es
+uniforme a lo largo del tramo (no depende de $y$), así que
+\[
+\oint_C \mathbf{E}\cdot d\boldsymbol{\ell}
+  = h\,\big[E_y(x+\Delta x,\,t) - E_y(x,\,t)\big]
+\]
+Todo evaluado en el \textbf{mismo instante} $t$: la ley se aplica en un
+instante dado.
+
+\paragraph{Flujo magnético.}
+Con $\hat{z}$ saliente --- la orientación coherente con el sentido de
+recorrido de $C$ --- y $\Delta x$ pequeño:
+\[
+\Phi_B \simeq B_z(x,t)\,\Delta x\,h
+\]
+
+\begin{notebox}[Por qué se puede despreciar acá y no allá]
+Se desprecia la variación de $B$ dentro del rectángulo porque $\Delta x$ es
+pequeño. \textbf{En la circulación no se podía hacer lo mismo}: si ahí se
+despreciara la variación de $E$, el resultado sería idénticamente cero. Esa
+diferencia es justamente la que hace aparecer una derivada.
+\end{notebox}
+
+Sustituyendo en Faraday,
+$\oint \mathbf{E}\cdot d\boldsymbol{\ell} = -\,d\Phi_B/dt$ --- sin olvidar el
+signo menos:
+\[
+h\big[E_y(x+\Delta x,t) - E_y(x,t)\big]
+  = -\,\Delta x\,h\,\frac{\partial B_z}{\partial t}
+\]
+
+Se cancela $h$, se divide entre $\Delta x$ y se toma el límite
+$\Delta x \to 0$:
+
+\begin{keybox}[Faraday para la onda plana]
+\[
+\boxed{\ \frac{\partial E_y}{\partial x}
+       = -\,\frac{\partial B_z}{\partial t}\ }
+\]
+\end{keybox}
+
+\begin{notebox}[Todavía no se usó la forma sinusoidal]
+Lo único que se usó es que la onda es \textbf{plana}, es decir, que no
+depende de las direcciones laterales.
+\end{notebox}
+
+\subsection{Sustitución de la onda sinusoidal en Faraday}
+
+Ahora sí se sustituyen $E_y = E_0\sen(kx-\omega t)$ y
+$B_z = B_0\sen(kx-\omega t)$. Derivando cada lado:
+\[
+k\,E_0\cos(kx-\omega t) = -\big[-\omega\,B_0\cos(kx-\omega t)\big]
+                        = \omega\,B_0\cos(kx-\omega t)
+\]
+
+Como esto debe valer \textbf{para todo $x$ y todo $t$}, los cosenos se
+cancelan:
+\[
+k\,E_0 = \omega\,B_0
+\quad\Longrightarrow\quad
+B_0 = \frac{k}{\omega}E_0
+\]
+y como $\omega/k = c$:
+\[
+\boxed{\ B_0 = \frac{E_0}{c}\ } \qquad \text{(primera relación)}
+\]
+
+\begin{notebox}[Todavía no sabemos cuánto vale $c$]
+Esta relación sólo establece un vínculo entre las amplitudes de oscilación de
+los campos eléctrico y magnético. Hace falta usar la otra ecuación.
+\end{notebox}
+
+\subsection{Ampère--Maxwell sobre un rectángulo en el plano $xz$}
+
+Se repite el procedimiento con un rectángulo de altura $h$ y ancho
+$\Delta x$, pero ahora en el plano $xz$, y se aplica Ampère--Maxwell
+\textbf{con $I = 0$} (estamos en el vacío):
+\[
+\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}
+  = \mu_0\varepsilon_0\frac{d\Phi_E}{dt}
+\]
+
+\begin{notebox}[Casi idéntico a Faraday, con dos diferencias]
+\textbf{No hay signo menos} en el miembro derecho, y aparece el factor
+$\mu_0\varepsilon_0$.
+\end{notebox}
+
+\paragraph{Circulación de $\mathbf{B}$.}
+Acá hay una sutileza de signo: por la orientación del rectángulo en el plano
+$xz$, el tramo de $x$ mayor se recorre \emph{acercándose} al eje y el de $x$
+menor \emph{alejándose} --- al revés de lo que pasaba en el caso anterior.
+Entra entonces un \textbf{signo menos}:
+\[
+\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}
+  = -\,h\big[B_z(x+\Delta x,t) - B_z(x,t)\big]
+\]
+
+\paragraph{Flujo eléctrico,} en la dirección acorde con la curva:
+\[
+\Phi_E \simeq E_y(x,t)\,\Delta x\,h
+\]
+
+Sustituyendo, cancelando $h$ y tomando $\Delta x \to 0$:
+
+\begin{keybox}[Ampère--Maxwell para la onda plana]
+\[
+\boxed{\ -\,\frac{\partial B_z}{\partial x}
+       = \mu_0\varepsilon_0\,\frac{\partial E_y}{\partial t}\ }
+\]
+\end{keybox}
+
+Sustituyendo ahora la forma sinusoidal:
+\[
+-\,B_0\,k\cos(kx-\omega t)
+  = \mu_0\varepsilon_0\,\big[-\omega\,E_0\cos(kx-\omega t)\big]
+\]
+y como vale para todo $x$ y todo $t$:
+\[
+B_0\,k = \mu_0\varepsilon_0\,\omega\,E_0
+\quad\Longrightarrow\quad
+B_0 = \mu_0\varepsilon_0\frac{\omega}{k}E_0
+\]
+\[
+\boxed{\ B_0 = \mu_0\varepsilon_0\,c\,E_0\ } \qquad \text{(segunda relación)}
+\]
+
+\subsection{Combinación: la velocidad de la luz}
+
+Igualando las dos expresiones obtenidas para $B_0$:
+\[
+\frac{E_0}{c} = \mu_0\varepsilon_0\,c\,E_0
+\]
+
+Queremos una solución con \textbf{onda de verdad}, es decir $E_0 \neq 0$: si
+$E_0 = 0$ entonces $B_0 = 0$ y simplemente no hay campos --- es la solución
+trivial, la situación sin onda. Podemos entonces dividir entre $E_0$:
+\[
+\frac{1}{c} = \mu_0\varepsilon_0\,c
+\quad\Longrightarrow\quad
+c^2 = \frac{1}{\mu_0\varepsilon_0}
+\]
+
+\begin{keybox}[Velocidad de las ondas electromagnéticas]
+\[
+\boxed{\ c = \frac{1}{\sqrt{\mu_0\varepsilon_0}}
+        \approx 3{,}0\times 10^{8}\ \si{\metre\per\second}\ }
+\]
+\end{keybox}
+
+\begin{notebox}[Lo notable del resultado]
+La velocidad de la luz quedó calculada a partir de \textbf{propiedades
+puramente electromagnéticas}: $\mu_0$ y $\varepsilon_0$ se miden en el
+laboratorio con experimentos de electricidad y magnetismo, sin ninguna
+referencia a la luz. Además, \textbf{todas} estas ondas se propagan a la
+misma velocidad.
+\end{notebox}
+
+% ===================================================================
+\section{La medición de $c$: el experimento de Fizeau}
+% ===================================================================
+
+En la época de Maxwell ya se sabía medir $c$ de manera independiente, y el
+valor coincidía con el cálculo electromagnético. Uno de esos métodos es el de
+\textbf{Fizeau}:
+
 \begin{itemize}
-  \item Se identificó la inconsistencia de la ley de Ampere original.
-  \item Maxwell la resolvió introduciendo la corriente de desplazamiento.
-  \item Se presentaron las cuatro ecuaciones de Maxwell como la base del electromagnetismo.
-  \item Se repasaron conceptos básicos de ondas mecánicas.
-  \item Se demostró que las ecuaciones de Maxwell predicen ondas electromagnéticas que se propagan a la velocidad de la luz.
-  \item Se discutió el contexto histórico del éter y el experimento de Michelson-Morley.
-  \item Se describió el experimento de Fizeau para medir $c$.
+  \item Se colocan dos puntos muy alejados --- por ejemplo, dos elevaciones:
+        en uno, una \textbf{rueda dentada} que gira con velocidad angular
+        $\omega$; en el otro, un \textbf{espejo}.
+  \item La rueda es un disco con \textbf{rendijas equiespaciadas}. La luz
+        sale por una rendija, viaja hasta el espejo, rebota y vuelve.
+  \item Si el tiempo de ida y vuelta coincide con el que tarda la rueda en
+        avanzar de una rendija a la siguiente, la luz \textbf{pasa} y se ve.
+        Si la rueda gira un poco más rápido o más lento, la luz vuelve a una
+        \textbf{zona opaca} y se apaga.
+  \item Ajustando $\omega$ y conociendo la distancia, se despeja $c$. Con una
+        distancia suficientemente grande la medida es precisa, a pesar de lo
+        enorme que es $c$.
 \end{itemize}
 
-La teoría de Maxwell no solo unificó la electricidad y el magnetismo, sino que reveló que la luz es una onda electromagnética, sentando las bases para la física moderna.
+\begin{warnbox}[Coincidencia de notación]
+La $\omega$ de la rueda dentada \textbf{no tiene nada que ver} con la
+frecuencia angular de la onda: es sólo una coincidencia de símbolo.
+\end{warnbox}
+
+Que el valor medido por métodos ópticos coincidiera con
+$1/\sqrt{\mu_0\varepsilon_0}$ --- calculado con constantes puramente
+electromagnéticas --- fue la confirmación de que \textbf{la luz es una onda
+electromagnética}.
+
+\begin{notebox}[Los tres finales del curso]
+El docente describe el curso como una película con tres finales: el primero
+fue llegar a las ecuaciones de los circuitos de corriente alterna; el segundo
+es esta clase, llegar a las ecuaciones de Maxwell; el tercero será la óptica.
+Cada final es el comienzo de otra cosa.
+\end{notebox}
+
+\vspace{1em}
+\noindent\emph{Continúa en la Clase 25: vector de Poynting y transporte de
+energía en ondas electromagnéticas, espectro electromagnético, índice de
+refracción y entrada a la óptica.}
 
 \end{document}

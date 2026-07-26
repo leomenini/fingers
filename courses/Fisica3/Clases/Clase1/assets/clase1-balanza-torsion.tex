@@ -1,0 +1,60 @@
+% Clase 1 --- Balanza de torsión de Coulomb (§3.6).
+% Vista superior del palito (lo que realmente se mide es el ángulo que gira),
+% con la suspensión indicada arriba. El hilo se usa en TORSIÓN, no en
+% estiramiento: por eso lo que se lee es un ángulo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---------- (a) vista lateral: la suspensión ----------
+  \begin{scope}
+    % soporte
+    \fill[figgray!30] (-1.1,2.5) rectangle (1.1,2.7);
+    \draw[figgray, line width=0.8pt] (-1.1,2.5) rectangle (1.1,2.7);
+    \foreach \x in {-0.9,-0.5,...,0.95} {
+      \draw[figgray, line width=0.5pt] (\x,2.7) -- (\x+0.25,2.95);
+    }
+    % hilo metálico elástico
+    \draw[figline] (0,2.5) -- (0,0.35);
+    \node[figlblaux, right=3pt] at (0,1.6)
+      {\begin{tabular}{@{}l@{}}hilo metálico\\[-1pt] elástico (torsión)\end{tabular}};
+    % flecha de torsión alrededor del hilo
+    \draw[figvecres] (-0.45,0.95) arc (200:-20:0.45 and 0.16);
+    % palito horizontal con las esferas
+    \draw[figline, line width=1.2pt] (-1.5,0.25) -- (1.5,0.25);
+    \node[figpos, minimum size=8pt] at (-1.5,0.25) {};
+    \node[figpos, minimum size=8pt] at (1.5,0.25) {};
+    \node[figlbl] at (0,-1.9) {(a) vista lateral};
+  \end{scope}
+
+  % ---------- (b) vista superior: el ángulo medido ----------
+  \begin{scope}[xshift=6.8cm, yshift=0.6cm]
+    % eje del hilo
+    \node[figneutra, minimum size=4pt] (o) at (0,0) {};
+    % posición del palito sin cargar (referencia)
+    \draw[figaux] (0,0) -- (2.5,0);
+    \node[figlblaux, right=2pt] at (2.5,0) {palito sin cargar};
+    % posición girada
+    \draw[figline, line width=1.2pt] (0,0) -- (32:2.5);
+    \node[figpos, minimum size=8pt] (m) at (32:2.5) {};
+    \node[figlbl, above left=1pt] at (m) {esfera móvil};
+    % esfera fija (anclada al soporte), del otro lado de la referencia
+    \node[figpos, minimum size=8pt] (f) at (-30:2.6) {};
+    \draw[figgray, line width=0.8pt] (f) -- ++(0,-0.45);
+    \fill[figgray!30] ($(f)+(-0.3,-0.62)$) rectangle ($(f)+(0.3,-0.45)$);
+    \draw[figgray, line width=0.6pt] ($(f)+(-0.3,-0.62)$) rectangle ($(f)+(0.3,-0.45)$);
+    \node[figlbl, right=3pt] at (f) {esfera fija};
+    % repulsión: aleja la esfera móvil de la fija
+    \draw[figvecres] (m) -- ++(62:1.1);
+    \node[figlbl, figred, left=2pt] at ($(m)+(62:0.75)$) {$\vec F_e$};
+    % ángulo medido
+    \draw[figvecaux] (1.3,0) arc (0:32:1.3);
+    \node[figlbl] at (16:1.6) {$\theta$};
+    \node[figlbl] at (1.2,-2.5) {(b) vista superior: se mide $\theta$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El hilo no se usa estirado sino \textbf{en torsión}: la fuerza
+entre las esferas cargadas lo hace girar un ángulo $\theta$, y ese ángulo es la
+magnitud medida. Para la época --y todavía hoy-- medir ángulos es mucho más
+preciso que medir estiramientos. Es el mismo diseño que había usado Cavendish.}
+\end{center}

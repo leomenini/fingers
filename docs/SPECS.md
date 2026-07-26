@@ -2,6 +2,11 @@
 
 # Especificación del Modelo de Datos
 
+> **Autoridad.** Este documento describe el modelo de datos a nivel de proyecto.
+> El `CLAUDE.md` de cada curso (p. ej. `courses/Fisica3/CLAUDE.md`) define el
+> esquema **ejecutable** y es más estricto. Ante un conflicto, **manda el
+> `CLAUDE.md` del curso**; este documento se corrige para seguirlo.
+
 ## Clase
 
 Una clase constituye la unidad mínima del conocimiento dentro del proyecto.
@@ -22,16 +27,17 @@ Debe contener:
 ```text
 ClaseXX/
 
-assets/
+  Transcription_raw.txt    # dado, no se edita
+  summary.md               # generado
+  notes.tex                # generado
+  metadata.yaml            # generado
 
-metadata.yaml
-
-summary.md
-
-notes.tex
-
-transcript_raw.txt
+  assets/                  # opcional, se crea al producir la primera figura
 ```
+
+Los cuatro archivos son obligatorios. `assets/` se crea **on demand**, con los
+archivos planos (sin subcarpetas por tipo) nombrados
+`<claseN>-<slug>.{tex,svg,pdf}`.
 
 ---
 
@@ -40,11 +46,13 @@ transcript_raw.txt
 Los recursos pueden incluir:
 
 * diagramas;
-* fotografías;
 * gráficos;
 * circuitos;
 * ecuaciones;
 * referencias.
+
+Siempre en formato vectorial y reproducible. No se admiten fotografías del
+pizarrón ni capturas del video.
 
 ---
 
@@ -58,7 +66,7 @@ Ejemplos:
 
 * curso;
 * docente;
-* duración;
+* tramo de video (`start`/`end`);
 * bibliografía;
 * temas;
 * prerequisitos;
@@ -66,19 +74,29 @@ Ejemplos:
 * modelo utilizado para generar el borrador;
 * fecha de revisión.
 
+> No existe un campo `duration`: es redundante con el tramo de video, que ya da
+> el final real. El esquema completo y normativo está en el `CLAUDE.md` del
+> curso.
+
 ---
 
 ## Estados Editoriales
 
-Cada clase posee un estado editorial.
+El estado de una clase se registra en **dos campos independientes**, porque
+avance editorial y estado de revisión son ejes distintos: una clase puede estar
+avanzada y aun así necesitar trabajo.
 
-Ejemplo:
+| Campo | Valores | Qué expresa |
+|---|---|---|
+| `editorial_status` | `draft`, `reviewing`, `verified`, `published` | En qué punto del pipeline editorial está la clase |
+| `review.state` | `needs-review`, `needs-work`, `reviewed` | Qué le hace falta a la revisión humana |
 
-* Draft
-* Needs Work
-* Reviewing
-* Verified
-* Published
+`needs-work` vive en `review.state`, **no** en `editorial_status`: significa que
+alguien revisó y encontró problemas, no que la clase haya retrocedido de etapa.
+
+Junto a ellos, el bloque `status` registra el avance por artefacto
+(`transcript`, `summary`, `latex`, `assets`), con valores `done`, `pending` o
+`in-progress`.
 
 ---
 

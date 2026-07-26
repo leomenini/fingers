@@ -26,12 +26,12 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ "$#" -gt 0 ]; then
   CLASSES=("$@")
 else
-  mapfile -t CLASSES < <(for d in "$ROOT"/Clase*/; do n="${d%/}"; echo "${n##*/Clase}"; done | sort -n)
+  mapfile -t CLASSES < <(for d in "$ROOT"/Clases/Clase*/; do n="${d%/}"; echo "${n##*/Clase}"; done | sort -n)
 fi
 
 fail=0
 for N in "${CLASSES[@]}"; do
-  dir="$ROOT/Clase$N"
+  dir="$ROOT/Clases/Clase$N"
   if [ ! -f "$dir/notes.tex" ]; then
     echo "SKIP Clase$N (no existe notes.tex)"; continue
   fi

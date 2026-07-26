@@ -1,0 +1,68 @@
+% Clase 1 --- Objeto neutro visto de lejos y de cerca (§5).
+% (a) Lejos: los versores r_i0 son casi paralelos y las distancias casi iguales,
+%     se los saca de factor común y queda sum(Q_i) = 0  =>  F ~ 0.
+% (b) Cerca: el 1/r^2 pesa, las cargas próximas dominan y el neto no es nulo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =================== (a) lejos ===================
+  \begin{scope}
+    % cúmulo de cargas (neutro)
+    \draw[figaux] (0,0) circle (0.95);
+    \node[figpos] (p1) at (-0.45,0.42) {};
+    \node[figneg] (n1) at (0.38,0.5)   {};
+    \node[figpos] (p2) at (0.3,-0.45)  {};
+    \node[figneg] (n2) at (-0.35,-0.3) {};
+    \node[figpos] (p3) at (-0.1,0.05)  {};
+    \node[figneg] (n3) at (0.62,-0.05) {};
+    \node[figlbl, above] at (0,1.1) {$\displaystyle\sum_i Q_i = 0$};
+    \node[figlblaux, below] at (0,-1.15) {objeto neutro};
+
+    % carga externa, lejos
+    \node[figpos] (q0) at (6.6,0) {};
+    \node[figlbl, above=4pt] at (q0) {$Q_0$};
+
+    % versores r_i0: casi paralelos vistos desde lejos
+    \draw[figvecaux] (p1) -- (6.15,0.14);
+    \draw[figvecaux] (p2) -- (6.15,-0.10);
+    \draw[figvecaux] (n2) -- (6.15,-0.02);
+    \node[figlblaux, above] at (3.5,0.35)
+      {$\hat r_{i0}$ casi paralelos, $r_{i0}\simeq r$};
+
+    \node[figlbl, figred] at (3.3,-1.35)
+      {$\displaystyle \vec F \simeq \frac{Q_0}{4\pi\varepsilon_0}\,
+        \frac{\hat r}{r^2}\sum_i Q_i = 0$};
+    \node[figlbl] at (3.3,-2.3) {(a) \textbf{lejos}: la fuerza se cancela};
+  \end{scope}
+
+  % =================== (b) cerca ===================
+  \begin{scope}[yshift=-5.0cm]
+    % objeto polarizado: negativas a la izquierda, positivas a la derecha
+    \draw[figaux] (0.7,0) ellipse (1.7 and 0.9);
+    \foreach \y in {-0.4,0,0.4} { \node[figneg] at (-0.2,\y) {}; }
+    \foreach \y in {-0.4,0,0.4} { \node[figpos] at (1.6,\y) {}; }
+    \node[figlblaux, below] at (0.7,-1.1) {objeto neutro, carga mal distribuida};
+
+    % carga externa, pegada al lado positivo
+    \node[figpos] (c0) at (3.5,0) {};
+    \node[figlbl, above=11pt] at (c0) {$Q_0 > 0$};
+
+    % repulsión de las positivas (cerca): grande
+    \draw[figvecres] (c0) -- (5.3,0);
+    \node[figlbl, figred, anchor=west] at (5.45,0) {repulsión de las $+$ (cerca)};
+
+    % atracción de las negativas (lejos): chica
+    \draw[figvec] (c0) -- (2.75,0);
+    \node[figlbl, figblue, anchor=west] at (2.9,-0.8) {atracción de las $-$ (lejos)};
+
+    \node[figlbl] at (3.0,-2.1)
+      {(b) \textbf{cerca}: neto repulsivo, $F \sim 1/r^3$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Como la fuerza va con $1/r^2$, las cargas más próximas pesan
+más: hay tantas atracciones como repulsiones, pero \textbf{no son iguales}. Los
+objetos neutros sí generan interacción eléctrica; lo que ocurre es que decae más
+rápido que $1/r^2$ ---típicamente como $1/r^3$. La idea de que ``un objeto
+neutro no hace fuerza'' vale sólo lejos.}
+\end{center}

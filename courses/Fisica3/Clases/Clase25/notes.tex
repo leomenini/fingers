@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 
-% ---- Paquetes ----
+% ---- Encoding & Font ----
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[utf8]{inputenc}
@@ -9,347 +9,697 @@
   \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
 \fi
 \usepackage[spanish]{babel}
-\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
 \usepackage{graphicx}
-\usepackage{geometry}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
 \usepackage{booktabs}
-\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
 \usepackage{tcolorbox}
 \tcbuselibrary{most}
 
-\geometry{margin=2.5cm}
-\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
 
-% ---- Colores para cajas ----
-\definecolor{keycolor}{HTML}{1a5276}
-\definecolor{warncolor}{HTML}{b03a2e}
-\definecolor{notecolor}{HTML}{2e86c1}
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
 
-% ---- Entornos personalizados ----
-\newtcolorbox{keybox}[1][]{colback=keycolor!5!white,colframe=keycolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
-\newtcolorbox{warnbox}[1][]{colback=warncolor!5!white,colframe=warncolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
-\newtcolorbox{notebox}[1][]{colback=notecolor!5!white,colframe=notecolor!70!black,fonttitle=\bfseries,title={#1},arc=4pt}
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
 
-% ---- Configuración de encabezados ----
-\titleformat{\section}{\Large\bfseries\color{keycolor}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.4pt}]
-\titleformat{\subsection}{\large\bfseries\color{notecolor}}{}{0em}{}
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small Notas --- Clase 25}
-\fancyhead[R]{\small Física III --- Ondas EM}
-\fancyfoot[C]{\thepage}
+% ---- Enumerate ----
+\usepackage{enumitem}
 
-% ---- Título ----
-\title{\vspace{-1.5cm}\textbf{Clase 25: Transporte de Energía, Espectro EM y Velocidad de la Luz}\\
-\large{Vector de Poynting, Ondas Esféricas, Índice de Refracción y Mediciones Históricas}}
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 25: Vector de Poynting, Intensidad y Espectro
+        Electromagnético}\\[0.3em]
+        \large{Transporte de energía en ondas electromagnéticas, ondas
+              esféricas, velocidad de la luz en un medio y su medición}}
 \author{Transcripto y expandido --- Curso Física III (OpenFING)}
 \date{}
 
 \begin{document}
 
 \maketitle
-\vspace{-0.5cm}
+\thispagestyle{empty}
+\newpage
 
-% =========================================================================
-\section{Transporte de Energía en las Ondas Electromagnéticas}
-% =========================================================================
+\tableofcontents
+\newpage
 
-Toda onda viajera transporta energía. En el caso de las ondas electromagnéticas, la energía viaja con los campos $\mathbf{E}$ y $\mathbf{B}$ a la velocidad de la luz. Para describir cuantitativamente este flujo se introduce el \textbf{vector de Poynting}.
+% ===================================================================
+\section{Transporte de energía: el vector de Poynting}
+% ===================================================================
 
-\subsection{Vector de Poynting}
+\subsection{Definición del flujo de energía}
 
-Se define el vector de Poynting $\mathbf{S}$ como:
+\textbf{Todas las ondas viajeras transportan energía}: la energía se traslada con
+la onda. Las ondas electromagnéticas no son la excepción.
+
+Para cuantificarlo se considera una superficie de área $A$ y se pregunta cuánta
+energía la atraviesa \textbf{por unidad de tiempo y por unidad de superficie}. La
+energía por unidad de tiempo es una \textbf{potencia}, y se la escribe como un
+flujo vectorial:
+\[
+P = \iint_S \mathbf{S}\cdot\hat{\mathbf{n}}\, dA
+\]
+
+donde el vector $\mathbf{S}$ queda definido por:
+
+\begin{itemize}
+  \item \textbf{Módulo}: la energía que atraviesa una superficie \textbf{normal}
+        a $\mathbf{S}$, por unidad de tiempo y por unidad de superficie. Tomando
+        un elemento suficientemente pequeño como para considerarlo plano, es
+        $\Delta U/(\Delta t\,\Delta A)$.
+  \item \textbf{Dirección y sentido}: hacia dónde se está transportando la
+        energía.
+\end{itemize}
+
+Ese vector se llama \textbf{vector de Poynting}, o \textbf{vector de flujo de
+energía}.
+
+\begin{notebox}[Una definición muy general]
+Se puede construir un vector de transporte de energía para cualquier situación en
+que haya transmisión de energía --- ni siquiera hace falta que sea una onda. Lo
+que sigue es su forma \textbf{específica} para el campo electromagnético.
+\end{notebox}
+
+\subsection{La forma del vector de Poynting}
 
 \begin{keybox}[Vector de Poynting]
 \[
-\boxed{\mathbf{S} = \frac{1}{\mu_0}\, \mathbf{E} \times \mathbf{B}}
-\]
-\begin{itemize}[nosep]
-  \item Su \textbf{módulo} $|\mathbf{S}|$ representa la potencia por unidad de área (energía por unidad de tiempo y por unidad de superficie) que atraviesa una superficie perpendicular a la dirección de propagación.
-  \item Su \textbf{dirección y sentido} indican hacia dónde se transporta la energía.
-\end{itemize}
-\end{keybox}
-
-Para una onda plana sinusoidal propagándose en la dirección $x$, los campos son perpendiculares entre sí y perpendiculares a $x$:
-\[
-\mathbf{E} = E_0\sin(kx-\omega t)\,\hat{\mathbf{j}},\qquad
-\mathbf{B} = B_0\sin(kx-\omega t)\,\hat{\mathbf{k}}.
-\]
-El producto vectorial da:
-\[
-\mathbf{E}\times\mathbf{B} = E_0B_0\sin^2(kx-\omega t)\,\hat{\mathbf{i}},
-\]
-por lo que $\mathbf{S}\parallel\hat{\mathbf{i}}$, confirmando que la energía fluye en la dirección de propagación.
-
-\subsection{Densidad de Energía Electromagnética}
-
-La densidad de energía electromagnética total es la suma de las contribuciones eléctrica y magnética:
-\[
-u = u_E + u_B = \frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0} B^2.
-\]
-
-Para una onda electromagnética en el vacío se cumple $E = cB$, y como $c^2 = 1/(\mu_0\varepsilon_0)$:
-
-\begin{align*}
-u_B &= \frac{1}{2\mu_0} B^2 = \frac{1}{2\mu_0}\frac{E^2}{c^2}
-     = \frac{1}{2\mu_0}\,E^2\,\mu_0\varepsilon_0 = \frac{1}{2}\varepsilon_0 E^2 = u_E.
-\end{align*}
-
-\[
-\boxed{u_E = u_B},\qquad \boxed{u = u_E + u_B = 2u_E = \varepsilon_0 E^2}.
-\]
-
-En una onda electromagnética las densidades de energía eléctrica y magnética son iguales en todo instante.
-
-\subsection{Relación entre $|\mathbf{S}|$ y la densidad de energía}
-
-Consideremos un paralelepípedo de sección transversal $A$ y longitud $c\,\Delta t$ en la dirección de propagación. Toda la energía contenida en ese volumen atraviesa $A$ en el intervalo $\Delta t$:
-
-\[
-\Delta U = u \cdot A \cdot c\,\Delta t.
-\]
-
-La potencia que cruza $A$ es:
-\[
-P = \frac{\Delta U}{\Delta t} = u\,A\,c,
-\]
-por lo que la potencia por unidad de área es $P/A = u\,c$.
-
-Por otro lado, el módulo del vector de Poynting es:
-\[
-|\mathbf{S}| = \frac{1}{\mu_0} E B = \frac{1}{\mu_0} E\cdot\frac{E}{c}
-            = \frac{E^2}{\mu_0 c} = \frac{\varepsilon_0 E^2}{\mu_0\varepsilon_0 c}
-            = \frac{\varepsilon_0 E^2}{1/c^2\cdot c} = \varepsilon_0 E^2\,c = u\,c.
-\]
-
-Se verifica entonces:
-\[
-\boxed{|\mathbf{S}| = u\,c},
-\]
-que es la potencia instantánea por unidad de área transportada por la onda.
-
-\subsection{Intensidad}
-
-Los campos eléctrico y magnético de una onda luminosa oscilan a frecuencias del orden de $10^{15}$ Hz. Ningún detector ordinario (incluido el ojo humano) puede seguir esas fluctuaciones. Por ello se define la \textbf{intensidad} $I$ como el promedio temporal del módulo del vector de Poynting:
-
-\begin{keybox}[Intensidad de una onda EM]
-\[
-\boxed{I = \langle |\mathbf{S}| \rangle_T = \frac{1}{T}\int_0^T |\mathbf{S}|\,dt}
-\]
-Para una onda sinusoidal $E = E_0\sin(kx-\omega t)$:
-\[
-\langle E^2\rangle = \frac{E_0^2}{2},\qquad
-I = \frac{1}{2}\,\varepsilon_0 c\,E_0^2 = \frac{E_0^2}{2\mu_0 c}.
+\boxed{\ \mathbf{S} = \frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B}\ }
 \]
 \end{keybox}
 
-\subsection{Ondas Esféricas}
+\subsection{Verificación de la dirección}
 
-Una fuente puntual que emite isotropicamente genera ondas esféricas. La potencia total $P$ emitida se distribuye sobre frentes de onda esféricos de área $4\pi r^2$. Por conservación de la energía:
+En la Clase 24 se vio que las ondas electromagnéticas son \textbf{transversales}:
+$\mathbf{E}$ y $\mathbf{B}$ oscilan en el plano perpendicular a la dirección de
+propagación, y además son perpendiculares entre sí.
 
+De la definición, $\mathbf{S}$ es perpendicular a $\mathbf{E}$ y perpendicular a
+$\mathbf{B}$; por lo tanto es \textbf{perpendicular al plano que ellos forman}.
+Para una onda plana eso es exactamente la \textbf{dirección de propagación}. La
+dirección sale sola de la definición.
+
+\begin{notebox}[El sentido también es el correcto]
+No se demuestra en general, pero para la onda particular de la Clase 24 se
+verifica de inmediato: propagándose según $\hat{x}$, con $\mathbf{E}$ en $\hat{y}$
+y $\mathbf{B}$ en $\hat{z}$, el producto vectorial
+$\hat{y}\times\hat{z} = \hat{x}$ da justo la dirección de propagación.
+\end{notebox}
+
+% ===================================================================
+\section{Densidad de energía en una onda electromagnética}
+% ===================================================================
+
+Las densidades de energía eléctrica y magnética ya se conocían del curso:
 \[
-P = I_1\cdot 4\pi r_1^2 = I_2\cdot 4\pi r_2^2 \quad\Longrightarrow\quad
-\boxed{I(r) \propto \frac{1}{r^2}}.
+u_E = \tfrac{1}{2}\varepsilon_0 E^2, \qquad u_B = \frac{1}{2\mu_0}B^2
 \]
 
-Como $I \propto E_0^2$, el campo eléctrico decae como:
+\begin{notebox}[Validez]
+Estas expresiones son \textbf{generales} para cualquier sistema electromagnético.
+En el curso se demostraron sólo en casos particulares, pero valen siempre.
+\end{notebox}
+
+Ahora se usa la relación específica de las ondas, deducida en la Clase 24:
+$E = c\,B$. Sustituyendo $B = E/c$ en la densidad magnética:
 \[
-\boxed{E_0(r) \propto \frac{1}{r}}.
+u_B = \frac{1}{2\mu_0}\frac{E^2}{c^2}
+\]
+y usando que $c^2 = 1/(\mu_0\varepsilon_0)$, es decir
+$1/c^2 = \mu_0\varepsilon_0$:
+\[
+u_B = \frac{1}{2\mu_0}\,\mu_0\varepsilon_0\, E^2
+    = \tfrac{1}{2}\varepsilon_0 E^2 = u_E
 \]
 
-\begin{warnbox}[Campo lejano de una fuente]
-Este decaimiento $1/r$ es mucho más lento que el campo electrostático ($1/r^2$), lo que explica por qué las ondas electromagnéticas pueden transmitir información a larga distancia. La energía no se pierde: simplemente se reparte en una superficie cada vez mayor.
+\begin{keybox}[Equipartición de la energía en la onda]
+\[
+\boxed{\ u_E = u_B \quad\Longrightarrow\quad u = u_E + u_B = 2\,u_E\ }
+\]
+En una onda electromagnética la energía está repartida \textbf{por partes
+iguales} entre el campo eléctrico y el magnético. La densidad total es simplemente
+el doble de cualquiera de las dos.
+\end{keybox}
+
+% ===================================================================
+\section{Demostración de que $|\mathbf{S}|$ es la potencia por unidad de área}
+% ===================================================================
+
+Se toma una \textbf{onda plana de período $T$} propagándose según $\hat{x}$.
+
+\begin{notebox}[Sin pérdida de generalidad]
+Por invariancia de rotación siempre se puede elegir el sistema de coordenadas de
+modo que la dirección de propagación sea $\hat{x}$.
+\end{notebox}
+
+Se construye un \textbf{paralelepípedo} de sección transversal $A$ (perpendicular
+a la propagación) y largo $c\,\Delta t$ a lo largo de $\hat{x}$.
+
+\begin{warnbox}[Por qué se pide $\Delta t \gg T$]
+La onda está oscilando, así que la densidad de energía no es uniforme y la energía
+que pasa por unidad de tiempo tampoco es constante. Para poder hablar de una
+energía por unidad de tiempo bien definida se toma el intervalo \textbf{mucho
+mayor que el período}: lo que se calcula es entonces la energía \textbf{promediada
+en un período de oscilación}.
 \end{warnbox}
 
-% =========================================================================
-\section{Espectro Electromagnético}
-% =========================================================================
-
-Todas las ondas electromagnéticas en el vacío viajan a la misma velocidad $c \approx 3\times10^8$ m/s, independientemente de su frecuencia o longitud de onda. Se relacionan mediante:
+\paragraph{Paso 1 --- la energía contenida.}
+Toda la energía que está dentro del paralelepípedo cruza la cara de área $A$ en el
+intervalo $\Delta t$, porque en ese tiempo la onda avanza justamente el largo del
+paralelepípedo:
 \[
-c = \lambda\,\nu,
+\Delta U = u \cdot \text{Volumen} = u\, A\, c\, \Delta t
 \]
-donde $\lambda$ es la longitud de onda y $\nu$ la frecuencia.
 
-\begin{keybox}[Espectro electromagnético]
-\centering
-\begin{tabular}{lcc}
-\toprule
-\textbf{Región} & \textbf{Frecuencia (Hz)} & \textbf{Longitud de onda (m)} \\
-\midrule
-Ondas de radio & $10^3$--$10^9$ & $10^3$--$10^{-1}$ \\
-Microondas & $10^9$--$10^{11}$ & $10^{-1}$--$10^{-3}$ \\
-Infrarrojo (IR) & $10^{11}$--$4.3\times10^{14}$ & $10^{-3}$--$7\times10^{-7}$ \\
-Visible & $4.3\times10^{14}$--$7.5\times10^{14}$ & $7\times10^{-7}$--$4\times10^{-7}$ \\
-Ultravioleta (UV) & $7.5\times10^{14}$--$10^{17}$ & $4\times10^{-7}$--$10^{-9}$ \\
-Rayos X & $10^{17}$--$10^{20}$ & $10^{-9}$--$10^{-11}$ \\
-Rayos Gamma ($\gamma$) & $>10^{20}$ & $<10^{-11}$ \\
-\bottomrule
-\end{tabular}
+\paragraph{Paso 2 --- potencia por unidad de área.}
+\[
+P = \frac{\Delta U}{\Delta t} = u\,A\,c
+\qquad\Longrightarrow\qquad
+\frac{P}{A} = u\,c
+\]
+
+\paragraph{Paso 3 --- cálculo de $|\mathbf{S}|$.}
+El módulo de un producto vectorial es el producto de los módulos por el seno del
+ángulo entre ellos; como $\mathbf{E} \perp \mathbf{B}$, ese seno vale 1:
+\[
+|\mathbf{S}| = \frac{1}{\mu_0}E\,B
+\]
+Sustituyendo $E = cB$:
+\[
+|\mathbf{S}| = \frac{c}{\mu_0}B^2
+\]
+Y reconociendo que $B^2/\mu_0 = 2\,u_B$, que por la sección anterior es igual a
+$2\,u_E$, es decir la \textbf{densidad total} $u$:
+
+\begin{keybox}[Resultado]
+\[
+\boxed{\ |\mathbf{S}| = c\,u = \frac{P}{A}\ }
+\]
 \end{keybox}
 
-\subsection{El Espectro Visible}
+\begin{warnbox}[Alcance de la demostración]
+Estrictamente, no se probó instante a instante sino \textbf{en promedios sobre
+tiempos mucho mayores que el período}. Se puede demostrar que la relación vale
+también instantáneamente, pero esa prueba es más complicada. En el plano
+conceptual queda claro: $\mathbf{S}$ es la energía que cruza una superficie por
+unidad de tiempo, dividida por esa superficie.
+\end{warnbox}
 
-El ojo humano es sensible aproximadamente entre $400$ nm (violeta) y $700$ nm (rojo). Esta ventana no es casual: el Sol emite su máximo de radiación en torno a los $500$ nm (verde), y nuestra atmósfera es transparente en ese rango. La evolución adaptó nuestra visión para aprovechar la luz solar.
+% ===================================================================
+\section{Intensidad}
+% ===================================================================
 
-\subsection{Aplicaciones de las distintas regiones}
+\begin{notebox}[Por qué el promedio es lo que importa]
+La luz visible oscila del orden de $10^{15}$ veces por segundo. Ningún aparato de
+medida corriente --- los ojos, por ejemplo --- tiene la precisión temporal para
+resolver algo que ocurre en una parte en $10^{15}$ de segundo. Los instrumentos no
+ven lo que pasa instante a instante: miden \textbf{promedios en un período}.
+\end{notebox}
 
-\begin{itemize}[nosep]
-  \item \textbf{Radio (AM, FM)}: Comunicaciones de larga distancia. Las ondas AM ($\lambda\sim10^2$--$10^3$ m) rodean obstáculos y alcanzan grandes distancias; las FM ($\lambda\sim1$--$10$ m) ofrecen mejor calidad pero menor alcance.
-  \item \textbf{Microondas}: Telecomunicaciones (celulares, WiFi), radar, hornos microondas ($\sim2.45$ GHz).
-  \item \textbf{Infrarrojo}: Visión nocturna, controles remotos, termografía.
-  \item \textbf{Ultravioleta}: Esterilización, bronceado (dañino en exceso). La capa de ozono filtra la mayor parte del UV solar.
-  \item \textbf{Rayos X}: Diagnóstico médico (radiografías, tomografías). Penetran tejidos blandos pero son absorbidos por huesos.
-  \item \textbf{Rayos Gamma}: Desintegración radiactiva, medicina (radioterapia), astrofísica (explosiones de supernovas, rayos cósmicos).
-\end{itemize}
+\begin{keybox}[Intensidad]
+\[
+\boxed{\ I = \langle |\mathbf{S}| \rangle \ }
+\]
+el \textbf{valor medio del módulo del vector de Poynting} en un período, o en un
+conjunto de períodos.
+\end{keybox}
+
+Es decir: la \textbf{energía promedio que llega a una superficie, por unidad de
+tiempo y por unidad de superficie}. Cuando se habla de \enquote{la intensidad de
+la luz que llega del Sol} se está diciendo cuánta energía llega al suelo por
+unidad de tiempo y de área, promediada en un período.
+
+% ===================================================================
+\section{Ondas esféricas}
+% ===================================================================
+
+\begin{warnbox}[La onda plana es una idealización]
+Supone que $\mathbf{E}$ y $\mathbf{B}$ son uniformes en \textbf{todo} el plano
+perpendicular a la propagación. Las ondas reales pueden comportarse así en una
+región pequeña, pero no infinitamente: una onda plana infinita tendría
+\textbf{energía total infinita}, y no se pueden construir cosas con energía
+infinita.
+\end{warnbox}
+
+Lo realista es una \textbf{fuente puntual} --- una lamparita, por ejemplo --- que
+emite en todas las direcciones con \textbf{simetría esférica}, y cuya energía se
+va desparramando: cuanto más lejos, menor la intensidad recibida.
+
+\subsection{Decaimiento de la intensidad}
+
+El argumento es \textbf{conservación de la energía}: la onda electromagnética no
+pierde energía al propagarse, así que la potencia total que atraviesa un cascarón
+esférico de radio $r_1$ es la misma que la que atraviesa el de radio $r_2$:
+\[
+P(r_1) = P(r_2)
+\quad\Longrightarrow\quad
+I(r_1)\,4\pi r_1^2 = I(r_2)\,4\pi r_2^2
+\]
+\[
+\boxed{\ I(r) \propto \frac{1}{r^2}\ }
+\]
+
+\subsection{Decaimiento del campo eléctrico}
+
+\textbf{Lejos de la fuente, localmente la onda esférica se parece a una onda
+plana}: en una región suficientemente pequeña no se llega a notar la curvatura. Se
+puede entonces usar el resultado de la sección anterior:
+\[
+I = \langle|\mathbf{S}|\rangle = \frac{1}{\mu_0}\langle E B\rangle
+  = \frac{\langle E^2\rangle}{\mu_0 c}
+\]
+usando $B = E/c$. Es decir, $I \propto |E|^2$. Combinando con
+$I \propto 1/r^2$:
+\[
+\boxed{\ |E| \propto \frac{1}{r}\ }
+\]
+
+\begin{keybox}[Por qué esto es importante]
+En el caso \textbf{electrostático} el campo decae como $1/r^2$. Las ondas permiten
+campos eléctricos que decaen \textbf{mucho más lentamente}, y \textbf{ésa es la
+razón por la cual existen las telecomunicaciones a larga distancia}. Si todos los
+campos fueran electrostáticos no habría transmisión a gran distancia: el campo
+caería demasiado rápido y muy pronto no se vería nada.
+\end{keybox}
+
+\begin{notebox}[Lectura del $1/r$]
+Corresponde simplemente a que \textbf{la energía no se pierde}: a medida que la
+superficie sobre la que se reparte crece, el pedazo de energía que toca a cada
+región es más chico. Nada más que eso.
+\end{notebox}
+
+% ===================================================================
+\section{Espectro electromagnético}
+% ===================================================================
+
+Lo que normalmente llamamos \textbf{luz} no es cualquier onda electromagnética:
+son las del rango \textbf{visible}. Las ondas de radio, las microondas y las
+ultravioletas también son ondas electromagnéticas, y no las vemos.
+
+\subsection{Una sola velocidad en el vacío}
+
+De la relación general de ondas:
+\[
+\frac{\lambda}{T} = \lambda\,\nu = c
+\]
+
+\begin{keybox}[Primera observación]
+En el vacío, $c$ es \textbf{la misma para todas las frecuencias y todas las
+longitudes de onda}.
+\end{keybox}
+
+\begin{notebox}[Consecuencia práctica]
+En el vacío, dar la frecuencia es lo mismo que dar la longitud de onda, porque
+$\nu = c/\lambda$ con $c$ fija. Por eso el espectro puede graficarse
+indistintamente en cualquiera de las dos variables.
+\end{notebox}
+
+\subsection{Las regiones del espectro}
+
+De mayor a menor frecuencia (es decir, de menor a mayor longitud de onda):
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Región} & \textbf{Frecuencia aprox.} & \textbf{Longitud de onda aprox.} \\
+\midrule
+Rayos gamma  & hasta $\sim 10^{22}$ Hz & --- \\
+Rayos X      & ---                     & $10^{-11}$--$10^{-9}$ m \\
+Ultravioleta & hasta $\sim 10^{17}$ Hz & --- \\
+\textbf{Visible} & $\sim 10^{15}$ Hz   & $10^{-7}$--$10^{-6}$ m \\
+Infrarrojo   & hasta $\sim 10^{11}$ Hz & hasta $\sim 10^{-3}$ m \\
+Microondas   & hasta $\sim 10^{9}$ Hz  & $\sim 10^{-3}$--$1$ m \\
+Radio (FM, AM, onda larga) & $\sim 10^{6}$ Hz y menos
+             & $\sim 10^{3}$--$10^{6}$ m \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{warnbox}[Las fronteras no están nítidamente definidas]
+Los límites son \textbf{cualitativos}. De hecho, hay zonas donde según el contexto
+se habla de \textbf{rayos X} o de \textbf{rayos gamma}: físicamente es lo mismo
+--- radiación electromagnética de esa frecuencia --- pero se les da distinto
+nombre según \textbf{cómo se producen}, por razones en buena parte históricas (los
+rayos gamma aparecen en algunas desintegraciones radiactivas).
+\end{warnbox}
+
+\textbf{El visible, con precisión:} de aproximadamente \SI{400}{\nano\metre}
+(violeta) a \SI{700}{\nano\metre} (rojo); el límite exacto depende algo de cada
+persona.
+
+\begin{notebox}[Por qué vemos justamente ese rango]
+Se da la coincidencia --- que quizá no sea coincidencia --- de que el visible es
+la zona donde \textbf{el Sol emite más}. El pico máximo de emisión solar está en
+el \textbf{verde}. Si estuviéramos fuera de la atmósfera veríamos el Sol más bien
+verdoso; lo vemos amarillo porque la atmósfera \textbf{no filtra todas las
+longitudes de onda por igual} y filtra más el verde que el amarillo. En todo caso,
+verde y amarillo están cerca y ambos aproximadamente en el centro del visible:
+probablemente estamos \enquote{diseñados} para aprovechar la luz del Sol.
+\end{notebox}
+
+\begin{warnbox}[Cuidado con los prefijos]
+\emph{Infra}-rrojo y \emph{ultra}-violeta están al revés uno del otro según qué
+variable se use. El infrarrojo tiene longitudes de onda \textbf{más largas} que el
+rojo y por lo tanto frecuencias \textbf{más bajas}. Los prefijos se entienden
+habitualmente respecto de la \textbf{frecuencia}.
+\end{warnbox}
+
+\begin{notebox}[Dos observaciones sueltas]
+\textbf{Rayos X}: penetran fácilmente los tejidos poco densos (la piel) pero son
+frenados por los tejidos duros (los huesos). Colocando una película sensible del
+otro lado se obtiene una radiografía.
+
+\textbf{Ultravioleta}: cuando se habla de los \enquote{rayos UV} del protector
+solar no se refiere a todo el UV, sino sólo al \textbf{UV relativamente cercano},
+que es el que efectivamente llega a la Tierra.
+\end{notebox}
 
 \subsection{Antenas}
 
-Las antenas son dispositivos conductores diseñados para emitir o recibir ondas electromagnéticas de manera eficiente. Su tamaño óptimo es del orden de la longitud de onda que se desea transmitir:
+\textbf{¿Por qué las antenas sirven para captar?} No es por el área, ni sólo
+porque sean conductores. Una antena es \textbf{un pedazo de circuito en el que los
+electrones se pueden mover bastante}, y lo ideal para emitir o captar una señal es
+que se muevan una distancia \textbf{comparable a la longitud de onda}.
 
-\[
-L_{\text{antena}} \sim \frac{\lambda}{2}.
-\]
+\begin{keybox}[Regla práctica]
+Las antenas se diseñan con tamaños lo más parecidos posible a la $\lambda$ que se
+quiere emitir o recibir. Pueden ser mil veces más chicas, pero no cien mil veces
+más chicas; si no, cuesta mucho. No es que no se pueda: cuesta más.
+\end{keybox}
 
-Esto explica por qué:
-\begin{itemize}[nosep]
-  \item Las antenas de AM pueden ser enormes (cientos de metros) mientras que las de FM son mucho más pequeñas.
-  \item Los teléfonos celulares (que operan en microondas, $\lambda\sim10$--$30$ cm) pueden incorporar la antena dentro del dispositivo.
-  \item Las emisoras de onda larga requieren torres de transmisión de gran altura.
+Esto explica el contraste \textbf{AM vs.\ FM en un celular}:
+
+\begin{itemize}
+  \item Las ondas de \textbf{FM} son del orden del \textbf{metro}. Un celular mide
+        unos \SIrange{8}{10}{\centi\metre}: un factor 10 de diferencia, no está
+        tan lejos, y el aparato entero funciona un poco como antena.
+  \item Las ondas de \textbf{AM} son del orden de $10^3$ m. Lo ideal sería una
+        antena de un kilómetro, lo cual no es cómodo. El factor de diferencia es
+        enorme, y por eso es mucho más difícil hacer funcionar AM en un celular.
 \end{itemize}
 
-% =========================================================================
-\section{Velocidad de la Luz en un Medio}
-% =========================================================================
+\begin{notebox}[Tres observaciones]
+\textbf{Antenas en el techo}: antes se necesitaban antenas grandes porque los
+receptores no eran de buena calidad. Hoy los aparatos hacen tanto procesamiento de
+señal que logran limpiar una señal mediocre --- pero si uno está demasiado lejos,
+tampoco se puede reconstruir.
 
-\subsection{Índice de Refracción}
+\textbf{AM y alcance}: las ondas de longitud de onda más grande \emph{suelen}
+tener mayor alcance, porque tienden a disiparse en distancias comparables a su
+longitud. No es obligatorio, es una tendencia. Por eso las emisiones a muy grandes
+distancias son de onda larga.
 
-En un medio material transparente, lineal, isótropo y homogéneo, la velocidad de la luz es menor que en el vacío:
+\textbf{Por qué usar varias bandas}: además de las ventajas técnicas propias de
+cada una, usar más pedazos del espectro permite tener \textbf{más radios}: cada
+emisora ocupa un pedacito de ancho de banda y tienen que estar suficientemente
+separadas para no saturarlo.
+\end{notebox}
+
+% ===================================================================
+\section{Velocidad de la luz en un medio}
+% ===================================================================
+
+Todo lo anterior valía \textbf{en el vacío}.
+
+\subsection{Medios opacos y transparentes}
+
+El principal fenómeno en un medio es que \textbf{la mayor parte de los materiales
+absorben la luz} o la reflejan, pero no dejan que la onda se propague en su
+interior (la madera, el metal). Los que sí lo permiten se llaman
+\textbf{transparentes}.
+
+\begin{notebox}[La transparencia es por ventanas, no absoluta]
+Un material puede ser transparente en el visible y opaco en otro rango. El
+\textbf{agua} es transparente en el visible pero \textbf{opaca en algunas regiones
+del ultravioleta}, cosa de la que no nos damos cuenta. Y aun dentro de su ventana
+la transmisión no es total: un vidrio muy grueso atenúa un poco la luz.
+\end{notebox}
+
+\subsection{Deducción de la velocidad}
+
+En el vacío se dedujo $c = 1/\sqrt{\mu_0\varepsilon_0}$. En un medio hay que
+reemplazar las constantes por las del material:
+$\varepsilon_0 \to K_e\varepsilon_0$ y $\mu_0 \to K_m\mu_0$, siendo $K_e$ y $K_m$
+las constantes eléctrica y magnética del medio.
+
+\begin{notebox}[Hipótesis sobre el medio]
+Se lo supone \textbf{lineal, isótropo y homogéneo}, tanto en sus propiedades
+eléctricas como magnéticas.
+\end{notebox}
 
 \[
-v = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{1}{\sqrt{K_e\varepsilon_0 \cdot K_m\mu_0}},
-\]
-donde $K_e$ es la constante dieléctrica y $K_m$ la permeabilidad relativa del medio. En la mayoría de los materiales transparentes $K_m \approx 1$, por lo que:
-\[
-v \approx \frac{c}{\sqrt{K_e}}.
+v = \frac{1}{\sqrt{K_e\varepsilon_0\, K_m\mu_0}} = \frac{c}{\sqrt{K_e K_m}}
 \]
 
-Se define el \textbf{índice de refracción} $n$ como:
+\begin{notebox}[En la práctica $K_m$ no juega ningún papel]
+En casi todos los materiales transparentes $K_m - 1$ es del orden de $10^{-4}$,
+así que $K_m \approx 1$.
+\end{notebox}
+
+\begin{keybox}[Velocidad de la luz en un medio]
+\[
+\boxed{\ v \simeq \frac{c}{\sqrt{K_e}}\ }
+\]
+\end{keybox}
+
+\subsection{La constante dieléctrica depende de la frecuencia}
+
+\begin{warnbox}[Advertencia importante]
+La $K_e$ que aparece acá \textbf{no es la misma} que la constante dieléctrica
+estudiada en la parte electrostática del curso.
+\end{warnbox}
+
+El razonamiento: un dieléctrico tiene constante eléctrica porque al aplicarle un
+campo \textbf{se polariza}, es decir, sus moléculas se \textbf{alinean} con el
+campo. Pero en una onda electromagnética el campo eléctrico está
+\textbf{oscilando}. Las moléculas quieren orientarse, pero les cuesta mucho más
+hacerlo con un campo que se mueve que con uno quieto: con el campo estático tienen
+todo el tiempo para acomodarse, mientras que si oscila muy rápido, para cuando la
+molécula alcanza a acomodarse el campo ya cambió.
+\[
+\boxed{\ K_e = K_e(\lambda)\ }
+\]
+
+\begin{notebox}[Adelanto]
+Ésta es la raíz física de la \textbf{dispersión cromática} que se verá en la clase
+siguiente: distintos colores \enquote{ven} distinta constante dieléctrica y por lo
+tanto se propagan a distinta velocidad.
+\end{notebox}
+
+\textbf{Velocidades en distintos medios} (para $\lambda = \SI{589}{\nano\metre}$,
+en el amarillo):
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Medio} & $v\ (\times 10^{8}\ \si{\metre\per\second})$ \\
+\midrule
+Vacío / aire & $3{,}0$  \\
+Agua         & $2{,}26$ \\
+Vidrio       & $1{,}97$ \\
+Diamante     & $1{,}29$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Típicamente la velocidad en un medio es \textbf{menor} que en el vacío. El aire y
+el vacío dan lo mismo, porque el aire está muy diluido.
+
+\subsection{Índice de refracción}
 
 \begin{keybox}[Índice de refracción]
 \[
-\boxed{n = \frac{c}{v} \approx \sqrt{K_e}}
+\boxed{\ n = \frac{c}{v} = \sqrt{K_e}\ }
 \]
 \end{keybox}
 
-\begin{notebox}[Dependencia con la frecuencia --- Dispersión]
-La constante dieléctrica $K_e$ no es la misma que en electrostática. Cuando un campo eléctrico oscilante incide sobre un material, las moléculas intentan orientarse con el campo, pero si la frecuencia es muy alta no logran seguir la oscilación. Por ello $K_e$, y por tanto $n$, \textbf{dependen de la frecuencia} (o de la longitud de onda). Este fenómeno se llama \textbf{dispersión cromática}.
+\begin{notebox}[Verificación con la tabla anterior]
+$n_{\text{agua}} = 3{,}00/2{,}26 = 1{,}33$ y
+$n_{\text{vidrio}} = 3{,}00/1{,}97 = 1{,}52$, que son exactamente los valores
+tabulados estándar. Para el diamante da $3{,}00/1{,}29 = 2{,}33$, algo por debajo
+del valor habitual ($\approx 2{,}42$); en la Clase 26 el docente da $2{,}54$ para
+el mismo material, así que ese dato arrastra algo de ruido de transcripción. Los
+dos primeros cierran perfecto.
 \end{notebox}
 
-\subsection{Valores típicos (para $\lambda = 589$ nm, luz amarilla del sodio)}
+Como $K_e$ depende de $\lambda$, \textbf{también $n$ depende de $\lambda$}. Por
+eso las tablas de índices siempre se dan para una longitud de onda especificada.
 
-\begin{center}
-\begin{tabular}{lcc}
+% ===================================================================
+\section{La medición de la velocidad de la luz}
+% ===================================================================
+
+\textbf{En la antigüedad} ni siquiera se planteaba el problema: se suponía que la
+luz se propagaba instantáneamente, con velocidad infinita --- lo cual no está tan
+lejos de la experiencia cotidiana. Aparentemente \textbf{Galileo} fue de los
+primeros en plantearse si era realmente infinita o simplemente muy grande.
+
+\textbf{Las primeras medidas fueron astronómicas}, e indirectas: como la velocidad
+de la luz es finita, la luz tarda en llegar desde otros planetas, y eso produce
+pequeños efectos observables (fenómenos de \textbf{aberración}). Conociendo las
+distancias se puede estimar $c$.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
 \toprule
-\textbf{Medio} & $v$ ($\times 10^8$ m/s) & $n$ \\
+\textbf{Autor} & \textbf{Año} \\
 \midrule
-Vacío & 3.00 & 1.0000 \\
-Aire (CNPT) & 2.997 & 1.0003 \\
-Agua & 2.26 & 1.33 \\
-Vidrio (crown) & 1.97 & 1.52 \\
-Diamante & 1.29 & 2.42 \\
+Römer   & 1676 \\
+Bradley & 1729 \\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
 
-% =========================================================================
-\section{Mediciones Históricas de la Velocidad de la Luz}
-% =========================================================================
-
-\subsection{Primeras especulaciones}
-
-En la antigüedad se pensaba que la luz se propagaba instantáneamente ($c \to \infty$). \textbf{Galileo Galilei} (s. XVII) fue uno de los primeros en cuestionarlo, proponiendo un experimento con linternas en colinas distantes, aunque la precisión era insuficiente para detectar el retardo.
-
-\subsection{Mediciones astronómicas}
-
-\begin{itemize}[nosep]
-  \item \textbf{Olaus Römer (1676)}: Observando los eclipses del satélite Io de Júpiter, notó que los tiempos de eclipse se adelantaban o atrasaban según la posición relativa de la Tierra. Dedujo que la luz tardaba un tiempo finito en recorrer la distancia, estimando $c \approx 2.2\times10^8$ m/s.
-  \item \textbf{James Bradley (1729)}: Detectó la aberración estelar (el desplazamiento aparente de la posición de las estrellas debido al movimiento orbital de la Tierra), obteniendo $c \approx 3.0\times10^8$ m/s con notable precisión.
-\end{itemize}
-
-\subsection{Experimento de Fizeau (1849) --- Primera medición terrestre precisa}
-
-Hippolyte Fizeau realizó la primera medición de laboratorio (en Tierra) de $c$ usando una \textbf{rueda dentada}:
-
-\begin{enumerate}[nosep]
-  \item Un haz de luz pasa por una rendija de una rueda dentada que gira a velocidad angular $\omega$ constante.
-  \item La luz viaja una distancia $L = 8630$ m hasta un espejo y regresa.
-  \item Si al regresar la rueda ha girado exactamente el ángulo entre dos rendijas consecutivas ($\theta$), la luz pasa de vuelta y es detectada. Si no, choca contra un diente y se bloquea.
-\end{enumerate}
-
-La condición es:
-\[
-\frac{2L}{c} = \frac{\theta}{\omega},
-\]
-de donde se despeja $c$. Fizeau obtuvo $c \approx 3.15\times10^8$ m/s.
-
-\begin{notebox}[Definición actual del metro]
-Hoy en día la velocidad de la luz es una constante definida exactamente como $c = 299\,792\,458$ m/s. El metro se define a partir de $c$ y del segundo, invirtiendo la relación: es la distancia que recorre la luz en $1/299\,792\,458$ segundos.
-\end{notebox}
-
-% =========================================================================
-\section{Introducción a la Óptica Geométrica}
-% =========================================================================
-
-\subsection{Reflexión y Refracción}
-
-Cuando un rayo de luz incide sobre la superficie de separación entre dos medios transparentes, ocurren dos fenómenos:
-
-\begin{enumerate}[nosep]
-  \item Una parte de la luz se \textbf{refleja} en el mismo medio.
-  \item Otra parte se \textbf{transmite} (refracta) hacia el segundo medio, cambiando su dirección.
-\end{enumerate}
-
-\subsubsection{Ley de la Reflexión}
-\[
-\boxed{\theta_1 = \theta_2},
-\]
-donde $\theta_1$ es el ángulo de incidencia y $\theta_2$ el ángulo de reflexión, ambos medidos respecto a la normal a la superficie.
-
-\subsubsection{Ley de Snell (Refracción)}
-\[
-\boxed{n_1 \sen\theta_1 = n_2 \sen\theta_3},
-\]
-donde $n_1$ y $n_2$ son los índices de refracción de los medios, y $\theta_3$ el ángulo de transmisión.
-
-\begin{warnbox}[Continuará...]
-La demostración de estas leyes a partir del principio de Huygens y el estudio detallado de la reflexión y refracción se abordarán en la próxima clase (Clase 26).
+\begin{warnbox}[Por qué a los físicos no les alcanzaban]
+No es desconfianza del método sino del control: en un fenómeno astronómico, lejano
+e inaccesible, siempre se puede sospechar que la explicación no es el valor de $c$
+sino alguna otra cosa --- por ejemplo, un gas en medio del sistema solar que
+altere el resultado. Es preferible, o al menos complementario, hacer una medida
+\textbf{en la Tierra}, donde se controla todo lo que pasa.
 \end{warnbox}
 
-% =========================================================================
-\section{Resumen de Ecuaciones Clave}
-% =========================================================================
+\textbf{El experimento de Fizeau (1849)} fue la primera medida terrestre precisa.
+El montaje:
 
-\begin{keybox}[Fórmulas fundamentales de la clase]
-\begin{align*}
-\text{Vector de Poynting:}&\quad \mathbf{S} = \frac{1}{\mu_0}\,\mathbf{E}\times\mathbf{B} \\[4pt]
-\text{Módulo de }\mathbf{S}:&\quad |\mathbf{S}| = u\,c = \varepsilon_0 E^2 c \\[4pt]
-\text{Intensidad:}&\quad I = \langle|\mathbf{S}|\rangle = \frac{1}{2}\varepsilon_0 c E_0^2 \\[4pt]
-\text{Ondas esféricas:}&\quad I \propto \frac{1}{r^2},\quad E_0 \propto \frac{1}{r} \\[4pt]
-\text{Índice de refracción:}&\quad n = \frac{c}{v} \approx \sqrt{K_e} \\[4pt]
-\text{Velocidad en el vacío:}&\quad c = \frac{1}{\sqrt{\mu_0\varepsilon_0}} \approx 3.00\times10^8\ \text{m/s}
-\end{align*}
+\begin{itemize}
+  \item Una fuente de luz (en la época, una vela) y un \textbf{espejo
+        semirreflectante}: la mitad de la luz pasa y la mitad se refleja.
+  \item Una \textbf{rueda dentada} con ranuras equiespaciadas, separadas por un
+        ángulo $\theta$, girando con velocidad angular constante $\omega$.
+  \item Un \textbf{espejo} a una distancia $L$, y el ojo del observador del otro
+        lado del espejo semirreflectante.
+\end{itemize}
+
+La luz pasa por una ranura, recorre $L$, rebota en el espejo y vuelve. Al volver,
+o coincide con una ranura --- y llega al observador --- o choca con un diente y se
+bloquea.
+
+Fizeau fue \textbf{variando la velocidad angular} hasta ver luz. Cuando la ve, el
+tiempo de ida y vuelta de la luz coincide con el que tarda la rueda en avanzar un
+ángulo $\theta$ (o un múltiplo entero):
+
+\begin{keybox}[Relación de Fizeau]
+\[
+\boxed{\ \frac{2L}{c} = \frac{\theta}{\omega}\ }
+\]
 \end{keybox}
 
-% =========================================================================
-\section{Notas sobre la Estructura del Curso}
-% =========================================================================
+\begin{notebox}[Cómo se resuelve la ambigüedad]
+Probando con varias velocidades angulares se identifican los casos $2\theta$,
+$3\theta$, etc., y de ahí se determina cuál es el menor. Lo que se variaba era la
+velocidad angular, no la rueda.
+\end{notebox}
 
-El profesor menciona que la clase del sábado próximo (recuperación) cubrirá la demostración de las leyes de reflexión y refracción, y posiblemente otros ejemplos de óptica geométrica. Se recomienda repasar los conceptos de ondas planas y el principio de Huygens como preparación.
+Con $L = \SI{8630}{\metre}$ --- una distancia que obliga a montar el experimento
+entre dos elevaciones, para que no haya nada en el medio --- obtuvo
+$c \approx 3\times 10^{8}\ \si{\metre\per\second}$.
+
+\begin{notebox}[Hoy ya no se mide $c$]
+Se conoce con tanta precisión que su valor está \textbf{fijado por convención} y
+forma parte de la \textbf{definición del metro}: a partir de la relatividad se
+establece una relación entre el metro y el segundo fijando $c$. La imprecisión de
+la medida quedó, en rigor, escondida dentro de la definición del metro.
+\end{notebox}
+
+% ===================================================================
+\section{Planteo: reflexión y refracción}
+% ===================================================================
+
+Los últimos minutos plantean el problema que se resolverá en la clase siguiente.
+
+Dos medios transparentes, 1 y 2, separados por una superficie plana, con un eje
+normal. Un rayo de luz --- una onda plana de longitud de onda $\lambda$ ---
+incide con un ángulo $\theta_1$ respecto de la normal. Al llegar a la frontera
+ocurren dos cosas:
+
+\begin{itemize}
+  \item Parte de la luz es \textbf{reflejada} con un ángulo $\theta_2$.
+  \item Parte es \textbf{transmitida} con un ángulo $\theta_3$.
+\end{itemize}
+
+\begin{keybox}[Las dos propiedades a demostrar]
+\[
+\boxed{\ \theta_1 = \theta_2\ } \qquad \text{(ley de la reflexión)}
+\]
+\[
+\boxed{\ n_1 \sen\theta_1 = n_2 \sen\theta_3\ } \qquad \text{(ley de Snell)}
+\]
+\end{keybox}
+
+\begin{notebox}[El objetivo]
+De la ley de la reflexión todos tienen una intuición muy armada; lo que interesa
+es \textbf{entender por qué} la luz tiene esa propiedad, y poder hacer la cuenta
+que muestra que tiene que ser así.
+\end{notebox}
+
+\vspace{1em}
+\noindent\emph{Continúa en la Clase 26: demostración de ambas leyes a partir de
+los frentes de onda, principios de Huygens y de Fermat, y reflexión total
+interna.}
 
 \end{document}

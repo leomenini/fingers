@@ -4,18 +4,19 @@
 % Escala 0.9 unidades/N:  F12=(1.59,0) [1.77 N],  F13=(1.18,-1.89) [2.48 N],
 % resultante F1=(2.77,-1.89) [3.73 N].
 \begin{center}
-\begin{tikzpicture}[line width=0.9pt]
+\begin{tikzpicture}
   % carga Q1 (origen)
-  \filldraw[figblue] (0,0) circle (2.2pt) node[above left]{$Q_1$};
+  \node[figneg] at (0,0) {};
+  \node[figlbl, above left=1pt] at (0,0) {$Q_1$};
   % F12 desde Q1
-  \draw[figblue,->] (0,0) -- (1.59,0)
-        node[midway,above]{$\vec F_{12}$};
+  \draw[figvec] (0,0) -- (1.59,0)
+        node[figlbl, midway, above]{$\vec F_{12}$};
   % F13 desde la punta de F12 (traslación)
-  \draw[figblue,->] (1.59,0) -- (2.77,-1.89)
-        node[pos=0.55,right=1pt]{$\vec F_{13}$};
+  \draw[figvec] (1.59,0) -- (2.77,-1.89)
+        node[figlbl, pos=0.55, right=1pt]{$\vec F_{13}$};
   % resultante F1 desde Q1
-  \draw[figred,->,line width=1.3pt] (0,0) -- (2.77,-1.89)
-        node[pos=0.55,below left=1pt]{$\vec F_{1}$};
+  \draw[figvecres] (0,0) -- (2.77,-1.89)
+        node[figlbl, pos=0.55, below left=1pt]{$\vec F_{1}$};
 \end{tikzpicture}\\[0.4em]
 {\small\itshape La fuerza neta $\vec F_1$ es la suma vectorial de
 $\vec F_{12}$ (atracción de $Q_2$, $1{,}77$~N) y $\vec F_{13}$ (repulsión de
