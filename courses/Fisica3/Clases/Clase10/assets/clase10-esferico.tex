@@ -1,0 +1,55 @@
+% Clase 10 --- Capacitor de placas esféricas (§2).
+% Lo que la figura tiene que hacer visible es POR QUÉ Gauss resuelve el problema:
+% sobre la esfera gaussiana S el módulo de E es constante y E es paralelo a la
+% normal, así que el flujo sale de la integral sin integrar. Y por qué el camino
+% de integración conviene radial: ahí E.dl = E dr.
+% Reparto angular para que nada se encime: 0 camino radial, 45 cota B, 90 cota r,
+% 135 rótulo S, 180 cota A, 200-320 vectores E.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- cascarón externo, carga -Q ----
+  \draw[figblue, line width=1.6pt] (0,0) circle (2.55);
+  \foreach \a in {10,50,...,350} {\node[figlbl, figblue, scale=0.7] at (\a:2.32) {$-$};}
+  \node[figlbl, figblue, anchor=south west] at (65:2.62) {$-Q$};
+
+  % ---- conductor interno, carga +Q ----
+  \draw[figred, line width=1.4pt, fill=figred!8] (0,0) circle (0.95);
+  \foreach \a in {20,65,...,340} {\node[figlbl, figred, scale=0.7] at (\a:1.15) {$+$};}
+  \node[figlbl, figred] at (0,-0.42) {$+Q$};
+
+  % ---- superficie gaussiana ----
+  \draw[figaux, line width=0.9pt] (0,0) circle (1.75);
+  \node[figlblaux] at (135:1.95) {$S$};
+
+  % ---- campo radial entre las placas ----
+  \foreach \a in {200,240,280,320} {\draw[figvecres] (\a:1.0) -- (\a:2.45);}
+
+  % ---- cotas de los radios (tres direcciones distintas, sin encimarse) ----
+  \draw[figvecaux] (0,0) -- (180:0.95);
+  \node[figlblaux, anchor=south] at (180:0.55) {$A$};
+  \draw[figvecaux] (0,0) -- (90:1.75);
+  \node[figlblaux, anchor=west] at (90:1.30) {$r$};
+  \draw[figvecaux] (0,0) -- (45:2.55);
+  \node[figlblaux, anchor=north west] at (45:2.05) {$B$};
+
+  % ---- camino de integración radial ----
+  \draw[figblue, line width=1.2pt] (0.95,0) -- (2.55,0);
+  \foreach \x in {0.95,2.55} {\draw[figblue, line width=1.2pt] (\x,-0.1) -- (\x,0.1);}
+  \node[figlbl, figblue, anchor=west, align=left] at (2.75,0)
+    {camino radial\\[-0.15em] \footnotesize $\vec E\cdot d\vec l = E\,dr$};
+
+  \node[figlbl, figred, anchor=north] at (0,-3.0)
+    {sobre $S$: $\vec E \parallel \hat n$ \ y \ $|\vec E|$ constante};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La simetría esférica hace todo el trabajo: la carga se reparte
+uniformemente, así que sobre cualquier esfera $S$ centrada en el origen el campo
+tiene el mismo módulo y apunta según la normal. El flujo es entonces
+$|\vec E|$ por el área, y Gauss da un campo idéntico al de una carga puntual $Q$
+en el centro ---el cascarón externo no interviene, porque su carga queda
+\textbf{fuera} de $S$---. Para el potencial conviene un camino radial, no porque
+sea el único válido (la integral no depende del camino) sino porque ahí
+$\vec E$ y $d\vec l$ son paralelos y la integral de línea se vuelve una integral
+en $r$ de una sola variable.}
+\end{center}

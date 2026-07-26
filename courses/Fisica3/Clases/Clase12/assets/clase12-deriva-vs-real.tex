@@ -1,0 +1,60 @@
+% Clase 12 --- La trayectoria sin campo y con campo (§1.2 y §7.1).
+% Es el dibujo que el docente hizo en el pizarrón: la negra sin campo eléctrico
+% y la azul con campo, "básicamente las dos son un relajo, pero una se va
+% corriendo con respecto a la otra levemente". La azul es literalmente la negra
+% con un corrimiento que se va acumulando --- no otra trayectoria al azar ---
+% porque eso es lo que dice el modelo. Y la advertencia del propio docente: en
+% la realidad el corrimiento es muchísimo más leve; a escala no se vería nada.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- sin campo: el relajo puro, sin avance neto ----
+  \draw[figgray, line width=1pt]
+    (-3.2,0.0) -- (-2.45,0.9) -- (-1.8,-0.45) -- (-1.05,0.6)
+    -- (-0.4,-0.8) -- (0.35,0.5) -- (1.0,-0.55) -- (1.7,0.65)
+    -- (2.3,-0.35) -- (2.8,0.2);
+
+
+  % ---- con campo: los mismos vértices, con un corrimiento acumulado ----
+  \draw[figblue, line width=1pt]
+    (-3.2,0.0) -- (-2.35,0.9) -- (-1.6,-0.45) -- (-0.75,0.6)
+    -- (0.0,-0.8) -- (0.85,0.5) -- (1.6,-0.55) -- (2.4,0.65)
+    -- (3.1,-0.35) -- (3.7,0.2);
+
+
+  % ---- punto de partida común ----
+  \node[figcarga, fill=figred, minimum size=6pt] at (-3.2,0) {};
+  \node[figlbl, figred, anchor=east] at (-3.35,0) {$e^-$};
+
+  % ---- el corrimiento neto entre los dos extremos ----
+  \draw[figaux] (2.8,0.2) -- (2.8,-1.5);
+  \draw[figaux] (3.7,0.2) -- (3.7,-1.5);
+  \draw[figvecaux, line width=0.9pt,
+        {Latex[length=2mm,width=1.4mm]}-{Latex[length=2mm,width=1.4mm]}]
+        (2.8,-1.4) -- (3.7,-1.4);
+  \node[figlbl, figred, anchor=north, align=center] at (3.25,-1.5)
+    {\footnotesize esto es toda\\[-0.2em] \footnotesize la deriva};
+
+  % ---- campo aplicado: apunta al revés que la deriva, por ser un electrón ----
+  \draw[figvecres] (0.2,1.55) -- (-1.2,1.55);
+  \node[figlbl, figred, anchor=south] at (-0.5,1.6) {$\vec E$};
+  \node[figlblaux, anchor=west] at (0.4,1.55)
+    {el $e^-$ deriva al revés que $\vec E$};
+
+  % ---- leyenda ----
+  \draw[figgray, line width=1pt] (4.15,0.45) -- (4.65,0.45);
+  \node[figlbl, anchor=west] at (4.75,0.45) {sin campo};
+  \draw[figblue, line width=1pt] (4.15,-0.05) -- (4.65,-0.05);
+  \node[figlbl, figblue, anchor=west] at (4.75,-0.05) {con campo};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos trayectorias arrancan en el mismo punto, tienen los
+mismos choques y son igual de caóticas: el campo no ordena el movimiento, apenas
+lo sesga. Todo el transporte de carga vive en esa diferencia diminuta entre los
+dos extremos. La escala está \textbf{muy} exagerada, y a propósito: la velocidad
+real de un electrón en el cobre es del orden de $10^{6}$ m/s ---prácticamente
+fija en módulo, y de promedio nulo mientras no haya campo--- mientras que la
+deriva es de algunos centímetros por hora. Dibujada a escala, la curva azul se
+superpondría con la negra y no se vería nada. Ese contraste de órdenes de
+magnitud, y no el dibujo, es lo que hay que retener.}
+\end{center}

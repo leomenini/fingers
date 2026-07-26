@@ -1,0 +1,71 @@
+% Clase 11 --- Los tres campos dentro del dieléctrico (§1.3).
+% Clase 10 ya mostró las moléculas orientándose; acá lo que importa NO son las
+% moléculas sino el campo que producen sus cargas de superficie: E' es colineal
+% con E0 (por isotropía no hay otra dirección disponible) y opuesto, así que el
+% campo total queda MENOR que el aplicado. Eso es todo lo que hace falta para
+% que K_E >= 1.
+% Se respeta la orientación del pizarrón de esta clase: -Q arriba, +Q abajo,
+% de modo que E0 apunta hacia arriba.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- placas del sistema ----
+  \draw[figblue, line width=1.6pt] (-2.3,2.1) -- (2.3,2.1);
+  \foreach \x in {-2.0,-1.4,...,2.1} {\node[figlbl,figblue,scale=0.7] at (\x,2.3) {$-$};}
+  \node[figlbl, figblue, anchor=west] at (2.45,2.25) {$-Q$};
+
+  \draw[figred, line width=1.6pt] (-2.3,-2.1) -- (2.3,-2.1);
+  \foreach \x in {-2.0,-1.4,...,2.1} {\node[figlbl,figred,scale=0.7] at (\x,-2.3) {$+$};}
+  \node[figlbl, figred, anchor=west] at (2.45,-2.25) {$+Q$};
+
+  % ---- dieléctrico ----
+  \fill[figgray!8] (-2.15,-1.65) rectangle (2.15,1.65);
+  \draw[figgray, line width=0.7pt] (-2.15,-1.65) rectangle (2.15,1.65);
+  \fill[figred!14] (-2.15,1.35) rectangle (2.15,1.65);
+  \foreach \x in {-1.8,-1.2,...,1.9} {\node[figlbl,figred,scale=0.7] at (\x,1.5) {$+$};}
+  \fill[figblue!14] (-2.15,-1.65) rectangle (2.15,-1.35);
+  \foreach \x in {-1.8,-1.2,...,1.9} {\node[figlbl,figblue,scale=0.7] at (\x,-1.5) {$-$};}
+  \node[figlblaux, anchor=west, align=left] at (2.45,1.5)
+    {cargas de\\[-0.15em] polarización};
+  \node[figlblaux, anchor=west] at (2.45,-1.5) {$K_E$};
+
+  % ---- los tres campos, en columnas separadas y rotulados al costado ----
+  \draw[figvecres] (-1.7,-1.15) -- (-1.7,1.15);
+  \node[figlbl, figred, anchor=west] at (-1.6,0.75) {$\vec E_0$};
+
+  \draw[figvecaux, figblue, line width=1pt,
+        -{Latex[length=2.2mm,width=1.6mm]}] (-0.25,0.5) -- (-0.25,-0.5);
+  \node[figlbl, figblue, anchor=west] at (-0.15,-0.28) {$\vec E\,'$};
+
+  \draw[figvecres, line width=1.3pt] (1.25,-0.7) -- (1.25,0.7);
+  \node[figlbl, figred, anchor=west] at (1.35,0.4) {$\vec E$};
+
+  % ---- suma vectorial, al costado ----
+  \begin{scope}[xshift=7.9cm, yshift=-0.1cm]
+    \draw[figvecres] (0,-1.15) -- (0,1.15);
+    \node[figlbl, figred, anchor=south, align=center] at (0,1.2)
+      {$E_0$\\[-0.25em] \footnotesize cargas libres};
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (2.1,0.45) -- (2.1,-0.45);
+    \node[figlbl, figblue, anchor=south, align=center] at (2.1,1.2)
+      {$E'$\\[-0.25em] \footnotesize polarización};
+    \draw[figvecres, line width=1.3pt] (4.2,-0.7) -- (4.2,0.7);
+    \node[figlbl, figred, anchor=south, align=center] at (4.2,1.2)
+      {$E$\\[-0.25em] \footnotesize total};
+    \node[figlbl, anchor=north, align=center] at (2.1,-1.55)
+      {$E = E_0 - E' < E_0$
+       \ $\Longrightarrow$ \ $K_E \geq 1$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos propiedades de $\vec E\,'$ no se postulan, se deducen de
+las hipótesis sobre el material. Que sea \textbf{colineal} con $\vec E_0$ es
+consecuencia de la \textbf{isotropía}: la única dirección privilegiada del
+problema es la que impone el campo aplicado, así que no hay ninguna otra hacia
+la cual $\vec E\,'$ pudiera apuntar. Que sea \textbf{opuesto} es la disposición
+de las cargas de polarización, que quedan de signo contrario a la placa vecina.
+Como los dos vectores se restan, el campo dentro del material es siempre
+\emph{menor} que el aplicado ---y eso, y no otra cosa, es lo que obliga a que
+$K_E \geq 1$---. El dieléctrico no cancela el campo como haría un conductor:
+sólo lo debilita en un factor $K_E$.}
+\end{center}

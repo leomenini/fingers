@@ -1,0 +1,68 @@
+% Clase 14 --- El experimento de Oersted (§2.2 y §2.4).
+% El docente construyó el argumento sustituyendo una cosa por otra: primero un
+% imán grandote con imancitos livianos alrededor, y después "en lugar de poner
+% un imán grandote acá, lo que hizo fue poner un cable con una corriente".
+% Los dos paneles tienen los mismos imancitos: lo único que cambia es qué los
+% orienta.
+\providecommand{\imancito}[3]{%
+  \begin{scope}[shift={(#1,#2)}, rotate=#3]
+    \fill[figblue!35] (-0.28,-0.09) rectangle (0,0.09);
+    \fill[figred!35] (0,-0.09) rectangle (0.28,0.09);
+    \draw[figgray, line width=0.5pt] (-0.28,-0.09) rectangle (0.28,0.09);
+  \end{scope}}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) un imán grandote ===============
+  \begin{scope}
+    % el imán, visto desde arriba
+    \fill[figblue!18] (-0.5,-1.3) rectangle (0.5,0);
+    \fill[figred!18] (-0.5,0) rectangle (0.5,1.3);
+    \draw[figgray, line width=1pt] (-0.5,-1.3) rectangle (0.5,1.3);
+    \draw[figgray, line width=0.7pt] (-0.5,0) -- (0.5,0);
+    \node[figlbl, figblue] at (0,-0.65) {S};
+    \node[figlbl, figred] at (0,0.65) {N};
+
+    % imancitos livianos alrededor, orientados por el grande
+    \imancito{-1.7}{0.9}{-35}  \imancito{1.7}{0.9}{215}
+    \imancito{-1.9}{0}{-90}    \imancito{1.9}{0}{-90}
+    \imancito{-1.7}{-0.9}{35}  \imancito{1.7}{-0.9}{145}
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.1)
+      {(a) un imán grande\\[-0.2em] \footnotesize (por ejemplo, la Tierra)};
+  \end{scope}
+
+  % =============== (b) un cable con corriente ===============
+  \begin{scope}[xshift=7.6cm]
+    % el cable, perpendicular a la mesa: se ve el corte
+    \draw[figred, line width=1.1pt] (0,0) circle (0.17);
+    \node[figcarga, fill=figred, minimum size=3.4pt] at (0,0) {};
+    \node[figlbl, figred, anchor=north, scale=0.92] at (0,-0.4) {$I$ sale del plano};
+
+    % los mismos imancitos, ahora tangentes a las circunferencias
+    % tangentes, en sentido antihorario: con I saliendo del plano, el N de cada
+    % imancito apunta según B, o sea a 90 grados de su posición angular.
+    \imancito{-1.55}{0.9}{240}  \imancito{1.55}{0.9}{120}
+    \imancito{-1.8}{0}{270}     \imancito{1.8}{0}{90}
+    \imancito{-1.55}{-0.9}{300} \imancito{1.55}{-0.9}{60}
+    \draw[figaux] (0,0) circle (1.8);
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.1)
+      {(b) un cable con corriente\\[-0.2em] \footnotesize (Oersted)};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los imancitos livianos hacen de detector: se orientan solos
+según lo que haya alrededor, mientras que el objeto del centro está fijo. El
+punto del experimento es que en (b) reaccionan igual que en (a), aunque ahí no
+hay ningún imán: alcanza con que por el cable circule corriente ---con las
+cargas quietas no pasa nada---. Y el efecto es recíproco: una espira con
+corriente colocada cerca de un imán se orienta y es atraída como si fuera otro
+imán, que es exactamente un electroimán. La conclusión que ordena todo el
+capítulo es que \textbf{los efectos magnéticos los producen cargas en
+movimiento}, y que lo que siente fuerza magnética son también cargas en
+movimiento. Los imanes permanentes no son la excepción: a nivel molecular hay
+corrientes diminutas que en casi todos los materiales apuntan al azar, y en un
+imán están alineadas y sus efectos se suman. Notar que la orientación en (b) es
+\emph{tangente} a las circunferencias alrededor del cable, no radial.}
+\end{center}

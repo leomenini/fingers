@@ -1,0 +1,65 @@
+% Clase 14 --- El experimento ideal y la ley que lo resume (§3.1 y §3.2).
+% Las cinco observaciones del experimento no se enuncian por separado: la
+% figura las pone todas sobre el mismo dibujo, porque el producto vectorial las
+% contiene a todas a la vez. La dirección sin fuerza es la que DEFINE a B.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la dirección sin fuerza ===============
+  \begin{scope}
+    \draw[figvecaux, figgray, line width=1pt,
+          -{Latex[length=2.4mm,width=1.7mm]}] (-1.6,0) -- (1.6,0);
+    \node[figlbl, anchor=west] at (1.7,0) {$\vec B$};
+
+    \draw[figvecres] (-1.2,0.9) -- (1.2,0.9);
+    \node[figlbl, figred, anchor=south] at (0,0.95) {$\vec v \parallel \vec B$};
+    \node[figlbl, anchor=north, align=center] at (0,-0.5)
+      {$\vec F = 0$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.6)
+      {(a) hay \emph{una} dirección\\[-0.2em] \footnotesize sin fuerza: ésa
+       define $\vec B$};
+  \end{scope}
+
+  % =============== (b) el caso general ===============
+  \begin{scope}[xshift=7.4cm]
+    \draw[figvecaux, figgray, line width=1pt,
+          -{Latex[length=2.4mm,width=1.7mm]}] (-1.9,0) -- (1.9,0);
+    \node[figlbl, anchor=west] at (2.0,0) {$\vec B$};
+
+    % la velocidad, a un ángulo theta
+    \draw[figvecres] (0,0) -- (1.45,1.45);
+    \node[figlbl, figred, anchor=south west] at (1.4,1.4) {$\vec v$};
+    \draw[figgray, line width=0.5pt] (0.7,0) arc (0:45:0.7);
+    \node[figlblaux] at (0.95,0.3) {$\theta$};
+
+    % la fuerza, perpendicular a las dos (sale del plano)
+    \draw[figblue, line width=1.1pt] (0,0) circle (0.2);
+    \node[figcarga, fill=figblue, minimum size=3.4pt] at (0,0) {};
+    \node[figlbl, figblue, anchor=north east, align=right] at (-0.3,-0.3)
+      {$\vec F$ sale del plano\\[-0.2em]
+       \footnotesize (perpendicular a $\vec v$ \emph{y} a $\vec B$)};
+
+    \node[figlbl, figred, anchor=west, align=left] at (2.2,1.3)
+      {$|\vec F| \propto |q|\,v\,\sin\theta$};
+
+    \node[figlbl, anchor=north, align=center] at (0.2,-1.6)
+      {(b) $\vec F = q\,\vec v \times \vec B$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El orden lógico conviene no invertirlo. Primero está el
+experimento: se lanza una carga por un mismo punto con velocidades de todas las
+direcciones y módulos y se mide la fuerza. Aparecen cinco hechos ---existe una
+única dirección en la que la fuerza se anula, la fuerza es proporcional a $v$, a
+$|q|$ y a $\sin\theta$ medido desde esa dirección, y es perpendicular a ambas---
+y recién entonces se \emph{define} $\vec B$ como el vector que apunta en la
+dirección sin fuerza. La ley $\vec F = q\,\vec v\times\vec B$ no agrega nada
+nuevo: es la manera compacta de decir esas cinco cosas juntas, y por eso el
+producto vectorial es la operación adecuada. Una consecuencia que se usa todo el
+tiempo: como $\vec F \perp \vec v$ en todo instante, la potencia
+$\vec F\cdot\vec v$ es nula y la fuerza magnética \textbf{no hace trabajo}
+---puede curvar la trayectoria, nunca cambiar la rapidez ni la energía
+cinética---. Si además hay campo eléctrico, las dos fuerzas se suman:
+$\vec F = q(\vec E + \vec v\times\vec B)$, la fuerza de Lorentz.}
+\end{center}

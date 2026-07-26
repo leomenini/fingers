@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -150,6 +157,8 @@ $\mathbf{v}_d$ es solo el pequeño arrastre \textbf{promedio}:
   una velocidad límite (como un cuerpo en un medio viscoso).
 \end{notebox}
 
+\input{assets/clase12-deriva-vs-real.tex}
+
 % ===================================================================
 \section{Relación entre J y la velocidad de deriva}
 % ===================================================================
@@ -183,6 +192,8 @@ Dividiendo por $A$:
   \boxed{J = -e\, n\, v_d}
   \]
 \end{keybox}
+
+\input{assets/clase12-cilindrito.tex}
 
 \subsection{Forma vectorial general}
 
@@ -231,6 +242,8 @@ aunque el agua avance lento — sale la que ya estaba del otro lado.
   La \textbf{señal eléctrica} viaja muchísimo más rápido que la velocidad
   de deriva.
 \end{keybox}
+
+\input{assets/clase12-manguera.tex}
 
 \subsection{Corrección cuántica: el principio de Pauli}
 
@@ -317,6 +330,8 @@ Vidrio & $10^{10}$--$10^{14}$ & aislante \\
   \item El vidrio no es realmente óhmico ($\rho$ depende del campo).
 \end{itemize}
 
+\input{assets/clase12-resistividad.tex}
+
 % ===================================================================
 \section{Resistencia y ley de Ohm macroscópica}
 % ===================================================================
@@ -361,6 +376,8 @@ $\Rightarrow$ $R$ pequeña).
   \]
 \end{keybox}
 
+\input{assets/clase12-resistencia.tex}
+
 % ===================================================================
 \section{Materiales óhmicos vs.\ no óhmicos: el diodo}
 % ===================================================================
@@ -375,6 +392,8 @@ En la curva $I$ vs.\ $\Delta V$:
 Ejemplo no óhmico: el \textbf{diodo}. Curva asimétrica: para voltajes
 positivos la corriente crece muy rápido; para negativos permanece casi
 nula. Conduce fácil en un sentido y bloquea en el otro.
+
+\input{assets/clase12-ohmico-diodo.tex}
 
 % ===================================================================
 \section{Modelo microscópico de la conducción (Drude)}

@@ -1,0 +1,75 @@
+% Clase 13 --- Quién entrega y quién consume (§6).
+% La fórmula P = DeltaV_AB * I es una sola, con un convenio de signos fijo; lo
+% que cambia entre dispositivos es el signo que sale. El docente se detuvo
+% justamente en eso ("¿se entiende el signo menos?"), así que la figura organiza
+% los tres casos con la misma convención dibujada arriba.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== la convención ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (0.85,0);
+      \draw (3.15,0) -- (4.0,0);
+    \end{scope}
+    \draw[figgray, line width=1pt, fill=figgray!10] (0.85,-0.6) rectangle (3.15,0.6);
+    \node[figlbl, scale=0.9] at (2.0,0) {dispositivo};
+    \node[figcarga, fill=figgray, minimum size=4pt] at (0,0) {};
+    \node[figcarga, fill=figgray, minimum size=4pt] at (4.0,0) {};
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (4.1,0) {$B$};
+
+    \draw[figvecres] (0.05,0.42) -- (0.78,0.42);
+    \node[figlbl, figred, anchor=south] at (0.42,0.46) {$I$};
+
+    \node[figlbl, anchor=north, align=center] at (2.0,-1.05)
+      {$\Delta V_{AB} = V_B - V_A$};
+    \node[figlbl, figred, anchor=north] at (2.0,-1.85)
+      {$P = \Delta V_{AB}\, I$};
+    \node[figlbl, anchor=north, align=center] at (2.0,-2.75)
+      {potencia \emph{entregada}\\[-0.2em] \footnotesize por el dispositivo al
+       circuito};
+  \end{scope}
+
+  % =============== los tres casos ===============
+  \begin{scope}[xshift=6.4cm, yshift=1.6cm]
+    % batería
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[battery1] (1.8,0);
+    \end{scope}
+    \node[figlbl, anchor=west, align=left] at (2.2,0)
+      {$\Delta V_{AB} = \varepsilon$\\[-0.15em]
+       $P = \varepsilon I > 0$: \textbf{entrega}};
+  \end{scope}
+
+  \begin{scope}[xshift=6.4cm, yshift=0cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[R] (1.8,0);
+    \end{scope}
+    \node[figlbl, anchor=west, align=left] at (2.2,0)
+      {$\Delta V_{AB} = -R\,I$\\[-0.15em]
+       $P = -R\,I^2 < 0$: \textbf{disipa}};
+  \end{scope}
+
+  \begin{scope}[xshift=6.4cm, yshift=-1.6cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[C] (1.8,0);
+    \end{scope}
+    \node[figlbl, anchor=west, align=left] at (2.2,0)
+      {$\Delta V_{AB} = \pm Q/C$\\[-0.15em]
+       $P \gtrless 0$: \textbf{almacena o entrega}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Con una sola fórmula y un solo convenio se ordena todo el
+balance energético del circuito. La convención es la del dibujo de la izquierda:
+$P$ es la potencia que el dispositivo \emph{entrega} al circuito, con la
+corriente entrando por $A$. El signo que sale es entonces informativo y no un
+accidente de notación. La batería da $P>0$ porque efectivamente aporta energía
+---transformada desde otra forma: química en una pila, mecánica en un
+generador---. El resistor da $P<0$ siempre, sea cual sea el sentido de la
+corriente, porque $I^2$ no cambia de signo: nunca aporta, siempre saca, y esa
+energía se va como calor a la red. El condensador es el único de los tres que
+puede tener ambos signos, según cómo estén $Q$ e $I$ en ese instante: si se está
+cargando le saca energía al circuito y si se descarga se la devuelve.}
+\end{center}

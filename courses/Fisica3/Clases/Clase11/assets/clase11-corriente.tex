@@ -1,0 +1,93 @@
+% Clase 11 --- Por qué hace falta una bomba, y por qué el conductor se calienta
+% (§7.1--7.2).
+% (a) y (b) son el mismo conductor con el mismo E0 aplicado: lo único que se
+% agrega en (b) es el camino de retorno. Eso basta para que el sistema nunca
+% llegue al equilibrio y la corriente se sostenga.
+% (c) es el modelo de pinball: sin choques la fuerza constante daría movimiento
+% uniformemente acelerado (y no lo hay); con choques queda un avance medio lento
+% y la energía se va a la red en forma de calor.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+
+  % =============== (a) equilibrio ===============
+  \begin{scope}
+    \fill[figgray!10] (-1.6,-0.65) rectangle (1.6,0.65);
+    \draw[figgray, line width=0.9pt] (-1.6,-0.65) rectangle (1.6,0.65);
+    \foreach \y in {-0.35,0,0.35} {
+      \node[figlbl, figblue, scale=0.75] at (-1.35,\y) {$-$};
+      \node[figlbl, figred, scale=0.75] at (1.35,\y) {$+$};
+    }
+    \node[figlbl] at (0,0) {$\vec E = 0$};
+
+    \draw[figvecres] (-1.2,1.15) -- (1.2,1.15);
+    \node[figlbl, figred, anchor=south] at (0,1.2) {$\vec E_0$ aplicado};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(a) equilibrio\\[-0.2em] \footnotesize la polarización compensa\\[-0.2em]
+       \footnotesize a $\vec E_0$: adentro no hay campo};
+  \end{scope}
+
+  % =============== (b) con bombeo: corriente ===============
+  \begin{scope}[xshift=6.2cm]
+    \fill[figgray!10] (-1.6,-0.65) rectangle (1.6,0.65);
+    \draw[figgray, line width=0.9pt] (-1.6,-0.65) rectangle (1.6,0.65);
+    \draw[figvecres] (-1.1,0) -- (1.1,0);
+    \node[figlbl, figred, anchor=south] at (0,0.08) {$\vec E$};
+
+    % camino de retorno con la bomba
+    \draw[figblue, line width=1pt] (1.6,0) -- (2.3,0) -- (2.3,-1.6) -- (-2.3,-1.6)
+                                  -- (-2.3,0) -- (-1.6,0);
+    \draw[figblue, line width=1pt, fill=figblue!10] (-0.8,-1.95) rectangle (0.8,-1.25);
+    \node[figlbl, figblue, scale=0.85] at (0,-1.6) {bomba};
+    \draw[figvecaux, figblue, line width=0.9pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (1.35,-1.6) -- (0.9,-1.6);
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(b) fuera del equilibrio\\[-0.2em] \footnotesize el campo se mantiene y
+       hay corriente};
+  \end{scope}
+
+  % =============== (c) modelo de pinball ===============
+  \begin{scope}[xshift=12.4cm]
+    \fill[figgray!10] (-1.7,-0.65) rectangle (1.7,0.65);
+    \draw[figgray, line width=0.9pt] (-1.7,-0.65) rectangle (1.7,0.65);
+    % iones de la red
+    \foreach \x in {-1.15,-0.35,0.45,1.25} {
+      \foreach \y in {-0.3,0.3} { \node[figneutra, minimum size=6pt] at (\x,\y) {}; }
+    }
+    % trayectoria en zigzag
+    \draw[figred, line width=0.9pt]
+      (-1.6,0.05) -- (-1.2,-0.15) -- (-0.85,0.4) -- (-0.4,0.05)
+      -- (-0.05,-0.42) -- (0.4,0.3) -- (0.8,-0.2) -- (1.25,0.42) -- (1.6,0.1);
+    \node[figlbl, figred, anchor=west, scale=0.85] at (1.8,0.1) {$e^-$};
+
+    \draw[figvecres] (1.0,1.15) -- (-1.0,1.15);
+    \node[figlbl, figred, anchor=south, align=center] at (0,1.2)
+      {avance \emph{medio} del $e^-$};
+    \draw[figvecres, line width=0.8pt] (-0.7,-1.15) -- (0.7,-1.15);
+    \node[figlbl, figred, anchor=west] at (0.8,-1.15) {$\vec E$};
+
+    \node[figlblaux, anchor=north, align=center] at (0,-1.55)
+      {en cada choque entrega\\[-0.2em] su energía a la red};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(c) pinball\\[-0.2em] \footnotesize la red vibra: eso es calor};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Entre (a) y (b) no cambió el material ni el campo aplicado:
+cambió que hay un camino de retorno y un agente que gasta energía para
+mantenerlo. Sin él, las cargas se acumulan en los extremos hasta cancelar el
+campo interior y todo se detiene ---el equilibrio de un conductor es
+justamente el estado sin corriente---. El panel (c) responde la objeción
+obvia al panel (b): si adentro hay campo, la fuerza sobre cada electrón es
+constante y el movimiento debería ser uniformemente acelerado, con electrones
+cada vez más rápidos. No ocurre porque el electrón choca contra la red, le
+entrega la energía ganada y arranca de cero; lo que sobrevive es una velocidad
+media pequeña a lo largo del campo ---en sentido opuesto a él, por tratarse de
+electrones, y por eso la corriente resulta hacia la derecha en los dos paneles
+de la derecha---. La energía que no quedó en el
+movimiento quedó en la vibración de la red, que macroscópicamente es
+temperatura: el efecto Joule. Un superconductor es, en este dibujo, un material
+donde el panel (c) no ocurre.}
+\end{center}

@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -175,6 +182,8 @@ Luego el campo total tiene módulo $E = E_0 - E'$. En un material
           $E<E_0$.
   \end{itemize}
 \end{keybox}
+
+\input{assets/clase11-campo-polarizacion.tex}
 
 % ===================================================================
 \section{Valores de la constante dieléctrica}
@@ -299,6 +308,8 @@ y con $\Delta V = E\,d$:
   (factor $K_E$).
 \end{notebox}
 
+\input{assets/clase11-condensador-dielectrico.tex}
+
 % ===================================================================
 \section{Ley de Gauss en presencia de dieléctricos}
 % ===================================================================
@@ -346,6 +357,8 @@ K_E\,\Phi_E = \frac{Q_{\text{libre}}}{\varepsilon_0}.
   obliga a considerar $Q_{\text{pol}}$.
 \end{warnbox}
 
+\input{assets/clase11-gauss-dielectrico.tex}
+
 % ===================================================================
 \section{Ejemplos con varios dieléctricos}
 % ===================================================================
@@ -366,6 +379,8 @@ dieléctrico:
   del mismo orden que el problema de cada dieléctrico, no se puede
   separar (se ve en Electromagnetismo).
 \end{warnbox}
+
+\input{assets/clase11-varios-dielectricos.tex}
 
 % ===================================================================
 \section{Corriente eléctrica}
@@ -403,6 +418,8 @@ resultado es un \textbf{avance medio lento} y una \textbf{disipación} en
 forma de calor: el \textbf{efecto Joule} (por eso un conductor con
 corriente se calienta). En los aislantes casi no ocurre.
 
+\input{assets/clase11-corriente.tex}
+
 \subsection{Superconductores}
 
 Bajo cierta temperatura crítica, algunos materiales tienen
@@ -423,9 +440,11 @@ refrigeración.
 \end{keybox}
 
 Hay que \textbf{orientar} la superficie: corriente positiva cuando cargas
-positivas la cruzan en el sentido elegido. Los electrones hacia la
-derecha $\Rightarrow$ corriente hacia la derecha (opuesta al movimiento
-de los portadores negativos).
+positivas la cruzan en el sentido elegido. Una carga negativa que la cruza
+en ese sentido cuenta como contribución \textbf{negativa}, así que los
+electrones hacia la derecha $\Rightarrow$ corriente hacia la
+\textbf{izquierda}: la corriente convencional va en sentido contrario al
+movimiento de los portadores negativos.
 
 \subsection{Densidad de corriente}
 
@@ -450,5 +469,7 @@ Se define el vector densidad de corriente $\mathbf{J}$:
 
 Próxima clase: relación entre $\mathbf{J}$ y el campo aplicado
 (\textbf{Ley de Ohm}).
+
+\input{assets/clase11-densidad-corriente.tex}
 
 \end{document}

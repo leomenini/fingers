@@ -1,0 +1,91 @@
+% Clase 10 --- Capacitor de placas cilíndricas (§3).
+% Dos vistas del mismo objeto: el corte transversal muestra la simetría que
+% justifica Gauss; la vista lateral muestra las dos cosas que hacen falta para
+% cerrar la cuenta y que en el corte no se ven: que las tapas no aportan flujo
+% y que la gaussiana de altura H sólo encierra la fracción H/L de la carga.
+\begin{center}
+\begin{tikzpicture}[scale=0.92]
+
+  % =============== (a) corte transversal ===============
+  \begin{scope}
+    \draw[figblue, line width=1.6pt] (0,0) circle (2.0);
+    \foreach \a in {15,60,...,345} {\node[figlbl, figblue, scale=0.7] at (\a:1.78) {$-$};}
+    \draw[figred, line width=1.4pt, fill=figred!8] (0,0) circle (0.6);
+    \foreach \a in {30,105,...,340} {\node[figlbl, figred, scale=0.7] at (\a:0.8) {$+$};}
+
+    \draw[figaux, line width=0.9pt] (0,0) circle (1.35);
+    \node[figlblaux] at (128:1.55) {$S$};
+
+    \foreach \a in {215,260,305,350} {\draw[figvecres] (\a:0.66) -- (\a:1.9);}
+    \node[figlbl, figred, anchor=north] at (0,-2.35) {$\vec E$ radial};
+
+    \draw[figvecaux] (0,0) -- (175:0.6);
+    \node[figlblaux, anchor=south] at (175:0.33) {$A$};
+    \draw[figvecaux] (0,0) -- (60:1.35);
+    \node[figlblaux, anchor=north west] at (60:1.05) {$r$};
+    \draw[figvecaux] (0,0) -- (40:2.0);
+    \node[figlblaux, anchor=north west] at (40:1.55) {$B$};
+
+    \node[figlbl, align=center] at (0,-3.5) {(a) corte transversal};
+  \end{scope}
+
+  % =============== (b) vista lateral ===============
+  \begin{scope}[xshift=9.6cm]
+    % cilindro externo
+    \draw[figblue, line width=1.4pt] (-1.5,-2.3) -- (-1.5,2.3);
+    \draw[figblue, line width=1.4pt] (1.5,-2.3) -- (1.5,2.3);
+    \draw[figblue, line width=1.0pt, dash pattern=on 3pt off 2pt] (0,2.3) ellipse (1.5 and 0.34);
+    \draw[figblue, line width=1.0pt, dash pattern=on 3pt off 2pt] (0,-2.3) ellipse (1.5 and 0.34);
+    \node[figlbl, figblue, anchor=east] at (-1.6,1.75) {$-Q$};
+
+    % cilindro interno: la parte encerrada por S, resaltada
+    \fill[figred!22] (-0.45,-0.7) rectangle (0.45,0.7);
+    \draw[figred, line width=1.2pt] (-0.45,-2.3) -- (-0.45,2.3);
+    \draw[figred, line width=1.2pt] (0.45,-2.3) -- (0.45,2.3);
+    \draw[figred, line width=1.0pt] (0,2.3) ellipse (0.45 and 0.11);
+    \node[figlbl, figred, anchor=west] at (0.6,1.75) {$+Q$};
+
+    % superficie gaussiana: cilindro de radio r y altura H
+    \draw[figgray, dashed, line width=0.8pt] (-1.05,-0.7) rectangle (1.05,0.7);
+    \draw[figgray, dashed, line width=0.8pt] (0,0.7) ellipse (1.05 and 0.24);
+    \draw[figgray, dashed, line width=0.8pt] (0,-0.7) ellipse (1.05 and 0.24);
+
+    % flujo por la pared lateral
+    \foreach \y in {-0.35,0.35} {
+      \draw[figvecres] (0.5,\y) -- (1.0,\y);
+      \draw[figvecres] (-0.5,\y) -- (-1.0,\y);
+    }
+    % en las tapas E es paralelo a la tapa: no hay flujo
+    \draw[figvecres] (0.2,0.92) -- (0.85,0.92);
+    \draw[figgray, line width=0.4pt] (0.9,0.94) -- (1.62,1.05);
+    \node[figlbl, figred, anchor=west, align=left] at (1.65,1.05)
+      {$\vec E$ \emph{en el plano}\\[-0.15em] de la tapa:\\[-0.15em]
+       \footnotesize flujo nulo};
+
+    % cotas H y L
+    \draw[figvecaux] (-1.28,0) -- (-1.28,0.7);
+    \draw[figvecaux] (-1.28,0) -- (-1.28,-0.7);
+    \node[figlblaux, anchor=east] at (-1.33,0) {$H$};
+    \draw[figvecaux] (4.15,0.25) -- (4.15,2.3);
+    \draw[figvecaux] (4.15,-0.25) -- (4.15,-2.3);
+    \node[figlblaux, anchor=west] at (4.2,0) {$L$};
+
+    % qué carga queda encerrada
+    \draw[figgray, line width=0.4pt] (-0.5,-0.35) -- (-1.68,-0.9);
+    \node[figlbl, figred, anchor=east, align=right] at (-1.72,-0.95)
+      {\footnotesize sólo esta fracción\\[-0.2em] \footnotesize queda dentro de $S$};
+
+    \node[figlbl, align=center] at (1.2,-3.5) {(b) vista lateral};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La hipótesis $L \gg B$ es la que permite tratar el campo como
+puramente radial y uniforme a lo largo del eje: sólo así el corte (a) representa
+igual de bien cualquier altura del cilindro. Con eso, las tapas de la gaussiana
+no aportan flujo ---$\vec E$ está contenido en ellas--- y todo el flujo sale por
+la pared lateral, de área $2\pi r H$. La carga encerrada no es $Q$ sino la
+fracción de altura $H/L$, y esa $H$ se cancela contra la del área: el resultado
+es exactamente el de una \textbf{línea infinita} de densidad $\lambda = Q/L$
+(Clase 6), como tiene que ser. Cerca de las tapas reales del capacitor esto deja
+de valer.}
+\end{center}

@@ -1,0 +1,75 @@
+% Clase 12 --- El cilindrito y de dónde sale J = n q v_d (§2.1).
+% El docente dibujó el cable, se tomó un cilindrito alineado con E y le hizo un
+% zoom. El paso no trivial es la elección del largo: L = v_d*Dt no es un dato
+% del problema, es una elección hecha para que "los que cruzan en Dt" sean
+% exactamente "los que están adentro".
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== el cable, con el cilindrito marcado ===============
+  \begin{scope}
+    \draw[figgray, line width=1pt] (-2.3,-0.55) .. controls (-1.2,-0.75) and (0.6,-0.2) .. (2.3,-0.5);
+    \draw[figgray, line width=1pt] (-2.3,0.55) .. controls (-1.2,0.35) and (0.6,0.9) .. (2.3,0.6);
+    \node[figlblaux, anchor=south] at (0,1.05) {conductor de forma cualquiera};
+
+    \draw[figvecres] (-1.0,0.05) -- (0.2,0.18);
+    \node[figlbl, figred, anchor=north] at (-0.4,0.0) {$\vec E$};
+
+    \draw[figred, dashed, line width=0.9pt] (0.45,-0.3) rectangle (1.15,0.55);
+    \node[figlblaux, anchor=north west] at (1.2,-0.35) {cilindrito};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.15)
+      {(a) se elige un trozo tan chico\\[-0.2em]
+       \footnotesize que $\vec E$ sea uniforme ahí};
+  \end{scope}
+
+  % ---- flecha de zoom ----
+  \draw[figvecaux, line width=1pt] (3.1,0.1) -- (4.3,0.1);
+  \node[figlblaux, anchor=south] at (3.7,0.2) {zoom};
+
+  % =============== el zoom: el cilindrito en detalle ===============
+  \begin{scope}[xshift=7.9cm]
+    % cuerpo del cilindro
+    \fill[figblue!6] (-1.8,-1.0) rectangle (1.8,1.0);
+    \draw[figblue, line width=1pt] (-1.8,-1.0) -- (1.8,-1.0);
+    \draw[figblue, line width=1pt] (-1.8,1.0) -- (1.8,1.0);
+    \draw[figblue, line width=1.6pt] (1.8,0) ellipse (0.3 and 1.0);
+    \draw[figblue, dashed, line width=0.8pt] (-1.8,0) ellipse (0.3 and 1.0);
+
+    % portadores adentro
+    \foreach \p in {(-1.45,0.55),(-0.95,-0.42),(-0.35,0.7),(-0.1,-0.12),
+                    (0.45,0.35),(0.75,-0.68),(1.25,0.1),(1.5,-0.45),
+                    (-1.2,-0.05),(0.15,-0.75),(1.05,0.75),(-0.6,0.05)} {
+      \node[figneg, minimum size=4.6pt] at \p {};
+    }
+    \node[figlblaux, anchor=south west] at (-1.75,1.08) {$n$ portadores por unidad de volumen};
+
+    % velocidad de deriva
+    \draw[figvecres] (-0.45,-1.45) -- (0.45,-1.45);
+    \node[figlbl, figred, anchor=north] at (0,-1.5) {$\vec v_d$};
+
+    % cota del largo
+    \draw[figvecaux] (-1.8,2.15) -- (-0.3,2.15);
+    \draw[figvecaux] (1.8,2.15) -- (0.3,2.15);
+    \node[figlbl, anchor=south] at (0,2.12) {$L = v_d\,\Delta t$};
+
+    % la base
+    \node[figlbl, figblue, anchor=west] at (2.2,0) {base $A$};
+    \draw[figgray, line width=0.4pt] (2.15,0) -- (1.95,0);
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.15)
+      {(b) en $\Delta t$ cruzan la base \emph{todos} los que están adentro};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El largo del cilindrito no es un dato: se \textbf{elige}
+$L = v_d\,\Delta t$ justamente para que la cuenta se vuelva trivial. Con esa
+elección, el portador que está en la tapa más lejana recorre exactamente $L$ y
+\emph{justo} alcanza a cruzar la base en el tiempo $\Delta t$, y el que estaba
+un poco más allá no llega: los que cruzan son exactamente los que estaban
+dentro del volumen $A\,v_d\,\Delta t$. Contarlos ($n$ por unidad de volumen) y
+multiplicar por la carga de cada uno da toda la deducción. Es un enunciado
+\textbf{en promedio} ---el movimiento real de cada electrón es errático y
+muchísimo más rápido que $v_d$---, pero con $\sim10^{28}$ portadores por metro
+cúbico el promedio es todo lo que importa.}
+\end{center}

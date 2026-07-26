@@ -1,0 +1,89 @@
+% Clase 11 --- El condensador con dieléctrico (§4).
+% (a) De dónde sale Q': la gaussiana de siempre encierra la carga de la placa Y
+%     la carga de polarización de la cara vecina del aislante. La ley de Gauss
+%     usual exige TODA la carga encerrada, y de ahí sale E = (Q+Q')/(eps0 A).
+% (b) Meter el dieléctrico no es una sola operación: según se deje fija DeltaV
+%     (conectado a la fuente) o Q (desconectado), cambia una cosa u otra.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la gaussiana ve las dos cargas ===============
+  \begin{scope}
+    % placas
+    \draw[figblue, line width=1.6pt] (-2.0,1.9) -- (2.0,1.9);
+    \foreach \x in {-1.7,-1.1,...,1.8} {\node[figlbl,figblue,scale=0.7] at (\x,2.1) {$-$};}
+    \node[figlbl, figblue, anchor=west] at (2.15,2.0) {$-Q$};
+    \draw[figred, line width=1.6pt] (-2.0,-1.9) -- (2.0,-1.9);
+    \foreach \x in {-1.7,-1.1,...,1.8} {\node[figlbl,figred,scale=0.7] at (\x,-2.1) {$+$};}
+    \node[figlbl, figred, anchor=west] at (2.15,-2.0) {$+Q$};
+
+    % dieléctrico y sus cargas de polarización
+    \fill[figgray!8] (-1.85,-1.5) rectangle (1.85,1.5);
+    \draw[figgray, line width=0.7pt] (-1.85,-1.5) rectangle (1.85,1.5);
+    \foreach \x in {-1.5,-0.9,...,1.6} {\node[figlbl,figred,scale=0.7] at (\x,1.35) {$+$};}
+    \foreach \x in {-1.5,-0.9,...,1.6} {\node[figlbl,figblue,scale=0.7] at (\x,-1.35) {$-$};}
+    \node[figlblaux, anchor=west] at (1.95,0.6) {$K_E$};
+
+    % gaussiana (cilindro chato) que abraza la placa + y la cara vecina
+    \draw[figgray, dashed, line width=0.9pt] (-1.0,-2.25) rectangle (1.0,-1.05);
+    \node[figlblaux, anchor=north, align=center] at (0,-2.35)
+      {gaussiana: encierra $+Q$ \emph{y} $Q'$};
+    \draw[figgray, line width=0.4pt] (-1.55,-1.35) -- (-2.05,-1.35);
+    \node[figlbl, figblue, anchor=east] at (-2.1,-1.35) {$Q' < 0$};
+
+    % campo
+    \draw[figvecres] (0,-0.9) -- (0,0.9);
+    \node[figlbl, figred, anchor=west] at (0.1,0.35) {$\vec E$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.15)
+      {(a) la ley de Gauss de siempre\\[-0.2em]
+       \footnotesize pide \emph{toda} la carga encerrada};
+  \end{scope}
+
+  % =============== (b) las dos maneras de meterlo ===============
+  \begin{scope}[xshift=8.0cm]
+    % --- fila superior: DeltaV fija ---
+    \begin{scope}[yshift=1.15cm]
+      \draw[figblue, line width=1.3pt] (-1.5,0.55) -- (1.5,0.55);
+      \draw[figred, line width=1.3pt] (-1.5,-0.55) -- (1.5,-0.55);
+      \fill[figgray!12] (-1.4,-0.42) rectangle (1.4,0.42);
+      \node[figlblaux] at (0,0) {$K_E$};
+      \node[figlbl, anchor=east, align=right] at (-1.7,0)
+        {\footnotesize conectado\\[-0.2em] \footnotesize a la fuente};
+      \node[figlbl, anchor=west, align=left] at (1.7,0)
+        {$\Delta V$ fija:\\[-0.15em] \textbf{sube} $Q$};
+    \end{scope}
+    % --- fila inferior: Q fija ---
+    \begin{scope}[yshift=-1.15cm]
+      \draw[figblue, line width=1.3pt] (-1.5,0.55) -- (1.5,0.55);
+      \draw[figred, line width=1.3pt] (-1.5,-0.55) -- (1.5,-0.55);
+      \fill[figgray!12] (-1.4,-0.42) rectangle (1.4,0.42);
+      \node[figlblaux] at (0,0) {$K_E$};
+      % bornes cortados
+      \draw[figgray, line width=0.9pt] (-1.5,0.55) -- (-1.9,0.55);
+      \draw[figgray, line width=0.9pt] (-1.5,-0.55) -- (-1.9,-0.55);
+      \draw[figred, line width=0.9pt] (-2.05,0.4) -- (-1.75,0.7);
+      \draw[figred, line width=0.9pt] (-2.05,-0.7) -- (-1.75,-0.4);
+      \node[figlbl, anchor=east, align=right] at (-2.2,0)
+        {\footnotesize desconectado};
+      \node[figlbl, anchor=west, align=left] at (1.7,0)
+        {$Q$ fija:\\[-0.15em] \textbf{baja} $\Delta V$};
+    \end{scope}
+
+    \node[figlbl, anchor=north, align=center] at (0.2,-3.15)
+      {(b) el mismo dieléctrico,\\[-0.2em] dos experimentos\\[0.1em]
+       \footnotesize en ambos $C$ crece $\times K_E$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El panel (a) es la razón por la que aparece $Q'$ en la cuenta:
+la superficie gaussiana no distingue entre carga libre y carga de polarización,
+las encierra a las dos, y la ley de Gauss ---que sigue valiendo tal cual con
+dieléctricos--- exige usar la suma. El resultado, $Q' = Q(1/K_E - 1)$, tiene el
+signo que debía: el paréntesis es negativo porque $K_E > 1$. El panel (b) marca
+una distinción que suele confundirse: la capacitancia $C = \varepsilon A/d$
+crece en un factor $K_E$ en los dos casos ---es geometría más material, no
+depende del experimento---, pero lo que se observa es distinto según qué se
+mantenga fijo. Con la fuente conectada entra más carga; desconectado, la carga
+no tiene por dónde entrar y lo que cae es el voltaje.}
+\end{center}

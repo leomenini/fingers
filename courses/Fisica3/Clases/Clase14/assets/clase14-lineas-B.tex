@@ -1,0 +1,66 @@
+% Clase 14 --- Por qué las líneas de B son cerradas (§3.5).
+% La comparación con el dipolo eléctrico es la que explica la diferencia: allá
+% las líneas nacen y mueren en las cargas, acá no hay dónde nacer ni morir
+% --- no hay monopolos --- así que tienen que cerrarse sobre sí mismas, y para
+% eso vuelven por dentro del imán.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) dipolo eléctrico: líneas abiertas ===============
+  \begin{scope}
+    \node[figpos, minimum size=7pt] at (0,0.7) {};
+    \node[figlbl, figred, anchor=west] at (0.18,0.7) {$+$};
+    \node[figneg, minimum size=7pt] at (0,-0.7) {};
+    \node[figlbl, figblue, anchor=west] at (0.18,-0.7) {$-$};
+
+    \foreach \b in {0.55,1.15,1.8} {
+      \draw[figvecres, line width=0.8pt]
+        (0,0.7) .. controls (\b,0.55) and (\b,-0.55) .. (0,-0.7);
+      \draw[figvecres, line width=0.8pt]
+        (0,0.7) .. controls (-\b,0.55) and (-\b,-0.55) .. (0,-0.7);
+    }
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-1.5)
+      {nacen en la carga $+$\\[-0.2em] y mueren en la $-$};
+    \node[figlbl, anchor=north, align=center] at (0,-2.5)
+      {(a) campo eléctrico de un dipolo};
+  \end{scope}
+
+  % =============== (b) imán: líneas cerradas ===============
+  \begin{scope}[xshift=7.8cm]
+    % el imán
+    \fill[figblue!18] (-0.45,-0.85) rectangle (0.45,0);
+    \fill[figred!18] (-0.45,0) rectangle (0.45,0.85);
+    \draw[figgray, line width=1pt] (-0.45,-0.85) rectangle (0.45,0.85);
+    \node[figlbl, figred, scale=0.85] at (-0.21,0.45) {N};
+    \node[figlbl, figblue, scale=0.85] at (-0.21,-0.45) {S};
+
+    % líneas exteriores: salen del N y entran por el S
+    \foreach \b in {0.85,1.5,2.2} {
+      \draw[figvecres, line width=0.8pt]
+        (0,0.85) .. controls (\b,0.75) and (\b,-0.75) .. (0,-0.85);
+      \draw[figvecres, line width=0.8pt]
+        (0,0.85) .. controls (-\b,0.75) and (-\b,-0.75) .. (0,-0.85);
+    }
+    % el tramo que cierra, por dentro del imán (corrido para no pisar N y S)
+    \draw[figvecres, line width=1pt] (0.21,-0.7) -- (0.21,0.7);
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-1.5)
+      {no nacen ni mueren:\\[-0.2em] se cierran};
+    \node[figlbl, anchor=north, align=center] at (0,-2.5)
+      {(b) campo magnético de un imán};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los dos dibujos se parecen mucho por fuera, y ésa es
+precisamente la trampa: un imán no es un dipolo eléctrico con polos en vez de
+cargas. La diferencia está adentro. En (a) cada línea tiene un principio y un
+final, porque existen las cargas donde nacer y morir; en (b) no hay monopolos
+magnéticos, así que no hay ningún punto donde una línea pueda empezar ni
+terminar, y la única salida es que se cierre sobre sí misma ---por eso el tramo
+que falta va por el interior del imán, algo que en el caso eléctrico no tiene
+análogo---. Dicho de otro modo: la ausencia de monopolos no es un dato suelto,
+es lo que fija la forma global de las líneas de $\vec B$ en cualquier
+configuración. Si en algún dibujo una línea magnética pareciera irse al
+infinito, es porque el dibujo está recortado: más lejos se cierra.}
+\end{center}

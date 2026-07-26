@@ -265,7 +265,7 @@ $$
 \boxed{I = \lim_{\Delta t\to 0}\frac{\Delta Q}{\Delta t}}
 $$
 
-- **Orientación (signo):** hay que **orientar** la superficie, es decir, elegir un sentido positivo. La corriente es **positiva** cuando cargas positivas la cruzan en el sentido elegido. Una carga negativa que cruza en ese sentido cuenta como contribución **negativa**. En consecuencia, si los electrones se mueven hacia la derecha, la **corriente** apunta hacia la derecha (opuesta al movimiento de los electrones): la corriente convencional va en sentido contrario a los portadores negativos.
+- **Orientación (signo):** hay que **orientar** la superficie, es decir, elegir un sentido positivo. La corriente es **positiva** cuando cargas positivas la cruzan en el sentido elegido. Una carga negativa que cruza en ese sentido cuenta como contribución **negativa**. En consecuencia, si los electrones se mueven hacia la derecha, la **corriente** apunta hacia la **izquierda**: la corriente convencional va en sentido contrario al movimiento de los portadores negativos.
 - **Unidad:** $[I] = \text{Coulomb/segundo} \equiv \textbf{Ampere (A)}$.
 
 ### 7.5 Densidad de corriente

@@ -1,0 +1,77 @@
+% Clase 10 --- De dónde sale el factor 1/2 y dónde vive la energía (§5--§6).
+% (a) Cargar el condensador NO cuesta Q*DeltaV: mientras se carga, la diferencia
+%     de potencial va creciendo desde cero. El trabajo es el área bajo la recta
+%     --- un triángulo --- y de ahí el 1/2. La franja fina es el dU de un paso.
+% (b) La misma energía, releída como repartida en el volumen que ocupa el campo.
+\begin{center}
+\begin{tikzpicture}
+
+  % =============== (a) trabajo de carga = área bajo la recta ===============
+  \begin{axis}[
+      fisfig,
+      width=8.2cm, height=6.0cm,
+      grid=none,
+      xmin=0, xmax=1.28, ymin=0, ymax=1.30,
+      xlabel={$Q'$ (carga ya acumulada)},
+      ylabel={$\Delta V' = Q'/C$},
+      xtick={1}, xticklabels={$Q$},
+      ytick={1}, yticklabels={$\Delta V$},
+      axis line style={figgray},
+    ]
+    % área total = U
+    \addplot[draw=none, fill=figblue!16, domain=0:1] {x} \closedcycle;
+    % franja dQ'
+    \addplot[draw=none, fill=figred!45, domain=0.60:0.70] {x} \closedcycle;
+    % la recta
+    \addplot[figblue, line width=1pt, domain=0:1.18] {x};
+
+    \node[figlbl, figblue] at (axis cs:0.42,0.16) {$U = \text{área}$};
+    \node[figlbl, figred, anchor=west] at (axis cs:0.73,0.30) {$dU$};
+    \draw[figgray, line width=0.5pt] (axis cs:0.60,0.03) -- (axis cs:0.70,0.03);
+    \node[figlblaux, anchor=north] at (axis cs:0.65,0.03) {$dQ'$};
+    \draw[figaux] (axis cs:0,1) -- (axis cs:1,1) -- (axis cs:1,0);
+  \end{axis}
+
+  % =============== (b) la energía, repartida en el volumen ===============
+  \begin{scope}[shift={(9.9cm,0.85cm)}]
+    % región donde hay campo
+    \fill[figblue!10] (-1.5,0) rectangle (1.5,2.2);
+
+    % placas
+    \draw[figred, line width=1.6pt] (-1.5,2.2) -- (1.5,2.2);
+    \foreach \x in {-1.2,-0.6,0,0.6,1.2} {\node[figlbl,figred,scale=0.7] at (\x,2.4) {$+$};}
+    \draw[figblue, line width=1.6pt] (-1.5,0) -- (1.5,0);
+    \foreach \x in {-1.2,-0.6,0,0.6,1.2} {\node[figlbl,figblue,scale=0.7] at (\x,-0.2) {$-$};}
+
+    % campo uniforme
+    \foreach \x in {-1.15,-0.45,0.45,1.15} {\draw[figvecres] (\x,2.1) -- (\x,0.1);}
+    \node[figlbl, figred, anchor=west] at (1.2,1.65) {$\vec E$};
+
+    % elemento de volumen
+    \draw[figblue, line width=1pt, fill=figblue!35] (-0.18,0.82) rectangle (0.18,1.18);
+    \node[figlbl, figblue, anchor=south] at (0,1.26) {$dV$};
+
+    % cotas
+    \draw[figvecaux] (2.0,1.35) -- (2.0,2.2);
+    \draw[figvecaux] (2.0,0.85) -- (2.0,0);
+    \node[figlblaux] at (2.0,1.1) {$d$};
+    \node[figlblaux, anchor=south] at (0,2.6) {placas de área $A$};
+
+    \node[figlbl, anchor=north, align=center] at (0.25,-2.15)
+      {(b) la misma energía, vista\\ como contenida en el campo};
+  \end{scope}
+
+  \node[figlbl, anchor=north, align=center] at (4.1,-1.3)
+    {(a) el trabajo de cargar el condensador};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El punto del panel (a) es que la carga no se trae toda contra el
+mismo voltaje: la primera carga entra gratis (condensador descargado,
+$\Delta V'=0$) y la última paga el $\Delta V$ final. Sumar los $dU$ es acumular
+las franjas bajo una recta, y el área de un triángulo trae el $\tfrac12$ que
+distingue $U$ de $Q\,\Delta V$. El panel (b) es un cambio de contabilidad, no un
+resultado nuevo: la misma $U$ escrita como algo por unidad de volumen, repartido
+donde hay campo. Ese reparto es el que se generaliza ---la deducción usa placas
+paralelas, pero la conclusión vale para cualquier configuración en el vacío--- y
+es lo que permite calcular la energía de un sistema sin saber cómo se armó.}
+\end{center}

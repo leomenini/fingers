@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -131,6 +138,8 @@ Configuraciones:
   por el \textbf{promedio de sus vecinos} hasta converger.
 \end{notebox}
 
+\input{assets/clase10-cuba.tex}
+
 % ===================================================================
 \section{Capacitor de placas esféricas}
 % ===================================================================
@@ -156,6 +165,8 @@ E = \frac{Q}{4\pi\varepsilon_0 r^2}.
   \boxed{C = \frac{4\pi\varepsilon_0}{\dfrac{1}{A}-\dfrac{1}{B}}}
   \]
 \end{keybox}
+
+\input{assets/clase10-esferico.tex}
 
 % ===================================================================
 \section{Capacitor de placas cilíndricas}
@@ -189,6 +200,8 @@ idéntico al de una línea infinita con $\lambda = Q/L$.
   Las aproximaciones valen lejos de los bordes; cilindros cortos tienen
   efectos de borde adicionales.
 \end{notebox}
+
+\input{assets/clase10-cilindrico.tex}
 
 % ===================================================================
 \section{Condensadores en serie y en paralelo}
@@ -229,6 +242,8 @@ $Q$ en ambos. Las diferencias de potencial se suman:
   equivalente es \textbf{menor} que cualquiera de las individuales.
 \end{notebox}
 
+\input{assets/clase10-serie-paralelo.tex}
+
 \subsection{Ejemplo combinado}
 
 $C_1$ y $C_2$ en paralelo, en serie con $C_3$. Por etapas:
@@ -241,6 +256,8 @@ $C_{12} = C_1 + C_2$, luego
   Si hay baterías, resistencias u otros elementos entre medio, este método
   de reducción no aplica.
 \end{warnbox}
+
+\input{assets/clase10-combinado.tex}
 
 \subsection{Uso práctico}
 
@@ -289,6 +306,8 @@ campo, con densidad volumétrica:
   integrar $u$ sobre toda la región donde $\mathbf{E}\neq 0$.
 \end{notebox}
 
+\input{assets/clase10-energia.tex}
+
 % ===================================================================
 \section{Anuncio: aislante en un campo (dieléctricos)}
 % ===================================================================
@@ -314,5 +333,7 @@ conducción).
   \textbf{mecánica estadística}). La próxima clase: cómo describir el
   dieléctrico sin calcular la polarización exacta.
 \end{warnbox}
+
+\input{assets/clase10-polarizacion.tex}
 
 \end{document}

@@ -1,0 +1,69 @@
+% Clase 12 --- La escala de resistividades (§4.3).
+% La tabla del texto da los números pero no deja ver lo que importa: que entre
+% un conductor y un aislante hay ~20 órdenes de magnitud, y que los tres grupos
+% no forman un continuo sino islas muy separadas. Sobre un eje logarítmico eso
+% se ve de una. Los valores son los de la tabla de la clase.
+% Mapeo del eje: x = (log10(rho) + 8) / 3, es decir 1 unidad = 3 décadas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- el salto conductor -> aislante ----
+  \draw[figvecaux, line width=0.9pt,
+        {Latex[length=2.2mm,width=1.6mm]}-{Latex[length=2.2mm,width=1.6mm]}]
+        (0.25,1.65) -- (6.2,1.65);
+  \node[figlbl, figred, anchor=south] at (3.2,1.7) {$\sim 10^{13}$ veces, o más};
+
+  % ---- bandas de los tres grupos ----
+  \fill[figblue!22] (-0.05,0.25) rectangle (0.25,0.8);
+  \node[figlbl, figblue, anchor=south] at (0.1,0.86) {conductores};
+  \fill[figamber!35] (3.6,0.25) rectangle (4.3,0.8);
+  \node[figlbl, anchor=south] at (3.95,0.86) {semiconductores};
+  \fill[figred!20] (4.5,0.25) rectangle (8.0,0.8);
+  \node[figlbl, figred, anchor=south] at (6.5,0.86) {aislantes};
+
+  % ---- eje ----
+  \draw[figaxis, line width=0.9pt] (-0.5,0) -- (8.5,0);
+  \foreach \e/\x in {-8/0, -4/1.333, 0/2.667, 4/4.0, 8/5.333, 12/6.667, 16/8.0} {
+    \draw[figgray, line width=0.6pt] (\x,0.12) -- (\x,-0.12);
+    \node[figlblaux, anchor=north] at (\x,-0.15) {$10^{\e}$};
+  }
+
+  % ---- materiales concretos, en dos alturas para no encimarse ----
+  \draw[figgray, line width=0.4pt] (0.075,-0.55) -- (0.075,-0.85);
+  \node[figlbl, anchor=north, align=center, scale=0.9] at (0.3,-0.88)
+    {plata, cobre,\\[-0.2em] aluminio};
+
+  \draw[figgray, line width=0.4pt] (3.83,-0.55) -- (3.83,-0.85);
+  \node[figlbl, anchor=north, align=center, scale=0.9] at (3.83,-0.88)
+    {silicio\\[-0.2em] puro};
+
+  \draw[figgray, line width=0.4pt] (6.7,-0.55) -- (6.7,-0.85);
+  \node[figlbl, anchor=north, align=center, scale=0.9] at (6.7,-0.88)
+    {vidrio};
+
+  \draw[figgray, line width=0.4pt] (4.47,-0.55) -- (4.47,-1.72);
+  \node[figlbl, anchor=north, align=center, scale=0.9] at (4.47,-1.75)
+    {agua destilada};
+
+  % ---- el dopaje mueve al silicio hacia la izquierda ----
+  \draw[figvecres, line width=0.9pt] (3.55,-2.55) -- (2.35,-2.55);
+  \node[figlbl, figred, anchor=west, align=left, scale=0.9] at (3.65,-2.55)
+    {dopar el silicio (tipo N) le baja $\rho$};
+
+  \node[figlbl, anchor=north] at (4.0,-3.15)
+    {$\rho\ (\Omega\cdot\text{m})$, escala logarítmica};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Lo que la tabla no muestra y el eje sí: los materiales no se
+reparten de manera continua sobre el rango, sino en islas muy separadas. Entre
+un conductor y un aislante hay del orden de $10^{13}$, de modo que ante el mismo
+campo las corrientes que circulan no son \emph{algo} distintas sino
+radicalmente distintas ---por eso la clasificación conductor/aislante, que en
+principio suena arbitraria, resulta tan nítida en la práctica---. Los
+semiconductores no son sólo un caso intermedio: su rasgo propio es la
+\textbf{movilidad} sobre este eje, ya que dopar el silicio con impurezas
+controladas lo desplaza órdenes de magnitud hacia la izquierda, algo que a un
+metal no le pasa. Dos salvedades sobre los extremos: el vidrio no es realmente
+óhmico, así que su $\rho$ depende del campo aplicado y del tipo de vidrio, y el
+agua debe ser destilada ---con sales disueltas sería un conductor---.}
+\end{center}

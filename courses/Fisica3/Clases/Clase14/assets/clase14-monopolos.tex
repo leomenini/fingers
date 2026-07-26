@@ -1,0 +1,68 @@
+% Clase 14 --- No hay monopolos magnéticos (§2.3).
+% "Agarro una buena sierra y quiero separar el polo norte del polo sur": el
+% experimento mental que el docente dibujó. El resultado no es un polo suelto
+% sino dos imanes completos, y por más que se repita el corte sigue pasando lo
+% mismo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== el imán entero ===============
+  \begin{scope}
+    \fill[figblue!18] (-1.6,-0.45) rectangle (0,0.45);
+    \fill[figred!18] (0,-0.45) rectangle (1.6,0.45);
+    \draw[figgray, line width=1pt] (-1.6,-0.45) rectangle (1.6,0.45);
+    \draw[figgray, line width=0.7pt] (0,-0.45) -- (0,0.45);
+    \node[figlbl, figblue] at (-0.8,0) {S};
+    \node[figlbl, figred] at (0.8,0) {N};
+
+    % la sierra
+    \draw[figgray, line width=0.8pt] (0,0.75) -- (0,1.25);
+    \node[figlblaux, anchor=south] at (0,1.28) {cortar acá};
+
+    \node[figlbl, anchor=north] at (0,-0.95) {un imán};
+  \end{scope}
+
+  % ---- flecha ----
+  \draw[figvecaux, line width=1pt] (2.3,0) -- (3.5,0);
+  \node[figlblaux, anchor=south] at (2.9,0.1) {cortar};
+
+  % =============== los dos pedazos ===============
+  \begin{scope}[xshift=6.1cm]
+    % pedazo izquierdo
+    \fill[figblue!18] (-1.9,-0.45) rectangle (-1.1,0.45);
+    \fill[figred!18] (-1.1,-0.45) rectangle (-0.3,0.45);
+    \draw[figgray, line width=1pt] (-1.9,-0.45) rectangle (-0.3,0.45);
+    \draw[figgray, line width=0.7pt] (-1.1,-0.45) -- (-1.1,0.45);
+    \node[figlbl, figblue, scale=0.9] at (-1.5,0) {S};
+    \node[figlbl, figred, scale=0.9] at (-0.7,0) {N};
+
+    % pedazo derecho
+    \fill[figblue!18] (0.3,-0.45) rectangle (1.1,0.45);
+    \fill[figred!18] (1.1,-0.45) rectangle (1.9,0.45);
+    \draw[figgray, line width=1pt] (0.3,-0.45) rectangle (1.9,0.45);
+    \draw[figgray, line width=0.7pt] (1.1,-0.45) -- (1.1,0.45);
+    \node[figlbl, figblue, scale=0.9] at (0.7,0) {S};
+    \node[figlbl, figred, scale=0.9] at (1.5,0) {N};
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-0.95)
+      {dos imanes completos,\\[-0.2em] no dos polos sueltos};
+  \end{scope}
+
+  % ---- y otra vez ----
+  \draw[figvecaux, line width=1pt] (8.4,0) -- (9.4,0);
+  \node[figlblaux, anchor=south, align=center] at (8.9,0.1) {y otra vez};
+  \node[figlbl, anchor=west, align=left] at (9.6,0)
+    {\dots\ siempre igual};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El experimento se puede repetir todas las veces que se quiera y
+el resultado no cambia: nunca queda un polo aislado. Esto no es un detalle
+técnico sino una diferencia estructural con el caso eléctrico, donde sí se puede
+tener una carga positiva sola, y es la razón de fondo por la que el magnetismo
+no se puede describir copiando la electrostática: si no hay monopolos, el papel
+de \enquote{fuente} del campo tiene que jugarlo otra cosa, y esa otra cosa son
+las \textbf{cargas en movimiento}. Como curiosidad, algunas teorías predicen
+monopolos, y bastaría con que existieran unos pocos para que quedara explicado
+por qué la carga eléctrica está cuantizada ---pero pese a muchísima búsqueda
+experimental no se detectó ninguno hasta hoy---.}
+\end{center}

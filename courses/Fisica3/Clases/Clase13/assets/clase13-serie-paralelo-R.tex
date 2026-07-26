@@ -1,0 +1,68 @@
+% Clase 13 --- Resistencias en serie y en paralelo (§5).
+% Los mismos dos resistores, cambiando sólo la conexión. Se dibuja en el mismo
+% formato que la figura de condensadores de la Clase 10 a propósito: la
+% comparación entre ambas es justamente lo que el docente marcó como fuente de
+% error, porque las reglas salen al revés.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) serie ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (0.7,0);
+      \draw (0.7,0) to[R, l=$R_1$] (2.5,0);
+      \draw (2.5,0) to[R, l=$R_2$] (4.3,0);
+      \draw (4.3,0) -- (5.0,0);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (5.1,0) {$B$};
+
+    \draw[figvecres] (1.1,-0.6) -- (3.9,-0.6);
+    \node[figlbl, figred, anchor=north] at (2.5,-0.65) {la misma $I$ por los dos};
+
+    \node[figlbl, figred, anchor=north] at (2.5,-1.5)
+      {$R_{\text{eq}} = R_1 + R_2$};
+    \node[figlbl, anchor=north] at (2.5,-3.55) {(a) serie};
+  \end{scope}
+
+  % =============== (b) paralelo ===============
+  \begin{scope}[xshift=8.2cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (1.1,0);
+      \draw (1.1,-1.0) -- (1.1,1.0);
+      \draw (1.1,1.0) to[R, l=$R_1$] (3.5,1.0);
+      \draw (1.1,-1.0) to[R, l_=$R_2$] (3.5,-1.0);
+      \draw (3.5,-1.0) -- (3.5,1.0);
+      \draw (3.5,0) -- (4.6,0);
+      \fill (1.1,0) circle (2.2pt);
+      \fill (3.5,0) circle (2.2pt);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (4.7,0) {$B$};
+
+    \draw[figvecres] (1.4,0.35) -- (1.4,0.85);
+    \node[figlbl, figred, anchor=west] at (1.45,0.6) {$I_1$};
+    \draw[figvecres] (1.4,-0.35) -- (1.4,-0.85);
+    \node[figlbl, figred, anchor=west] at (1.45,-0.6) {$I_2$};
+    \node[figlbl, figred, anchor=north] at (2.3,-1.95)
+      {el mismo $\Delta V_{AB}$ en los dos};
+
+    \node[figlbl, figred, anchor=north] at (2.3,-2.6)
+      {$\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$};
+    \node[figlbl, anchor=north] at (2.3,-3.55) {(b) paralelo};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El razonamiento es el mismo que con condensadores, pero la
+conclusión sale al revés, y conviene ver por qué en vez de memorizar las dos
+reglas. Lo que se suma directamente es siempre la magnitud que se \emph{reparte}
+en esa conexión. En serie lo común es la corriente y lo que se reparte son las
+caídas de potencial, así que se suman las resistencias. En paralelo lo común es
+el voltaje y lo que se reparte es la corriente, y como cada rama aporta
+$\Delta V/R_i$, lo que se suma son los inversos. Con condensadores el papel de
+$R$ lo hace $1/C$ ---$\Delta V = Q/C$ frente a $\Delta V = R\,I$---, y por eso
+todo queda invertido: los condensadores en paralelo suman capacidades, las
+resistencias en paralelo suman inversos. Un chequeo rápido: dos resistencias en
+paralelo dan siempre \emph{menos} que cualquiera de las dos, porque se abre un
+camino más para la corriente.}
+\end{center}

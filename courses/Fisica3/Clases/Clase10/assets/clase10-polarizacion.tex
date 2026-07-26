@@ -1,0 +1,94 @@
+% Clase 10 --- El aislante dentro del condensador (§7).
+% Mismo dieléctrico en los dos paneles; lo único que cambia es si hay carga en
+% las placas. El resultado que interesa no son las moléculas sino lo que queda
+% al final: dos capas de carga en las CARAS del aislante, con el interior
+% todavía neutro y sin que ninguna carga haya viajado.
+\providecommand{\molClaseDiez}[3]{%
+  \begin{scope}[shift={(#1,#2)}, rotate=#3]
+    \draw[figgray, line width=0.5pt] (-0.15,0) -- (0.15,0);
+    \node[figneg, minimum size=4.4pt] at (-0.15,0) {};
+    \node[figpos, minimum size=4.4pt] at (0.15,0) {};
+  \end{scope}}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) Q = 0 ===============
+  \begin{scope}
+    % placas descargadas
+    \draw[figgray, line width=1.4pt] (-1.9,1.5) -- (1.9,1.5);
+    \draw[figgray, line width=1.4pt] (-1.9,-1.5) -- (1.9,-1.5);
+    \node[figlblaux, anchor=south] at (0,1.55) {placas descargadas};
+
+    % aislante
+    \fill[figgray!8] (-1.75,-1.1) rectangle (1.75,1.1);
+    \draw[figgray, line width=0.7pt] (-1.75,-1.1) rectangle (1.75,1.1);
+
+    % moléculas al azar
+    \molClaseDiez{-1.30}{0.70}{25}  \molClaseDiez{-0.44}{0.70}{115}
+    \molClaseDiez{0.42}{0.70}{200}  \molClaseDiez{1.28}{0.70}{340}
+    \molClaseDiez{-1.30}{0.00}{160} \molClaseDiez{-0.44}{0.00}{55}
+    \molClaseDiez{0.42}{0.00}{285}  \molClaseDiez{1.28}{0.00}{10}
+    \molClaseDiez{-1.30}{-0.70}{95} \molClaseDiez{-0.44}{-0.70}{240}
+    \molClaseDiez{0.42}{-0.70}{320} \molClaseDiez{1.28}{-0.70}{150}
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.85)
+      {(a) $Q = 0$\\[0.15em] \footnotesize orientaciones al azar:\\[-0.2em]
+       \footnotesize ninguna dirección preferencial};
+  \end{scope}
+
+  % =============== (b) Q distinto de cero ===============
+  \begin{scope}[xshift=7.7cm]
+    % placas cargadas
+    \draw[figred, line width=1.6pt] (-1.9,1.5) -- (1.9,1.5);
+    \foreach \x in {-1.5,-0.9,...,1.6} {\node[figlbl,figred,scale=0.7] at (\x,1.7) {$+$};}
+    \node[figlbl, figred, anchor=west] at (2.0,1.5) {$+Q$};
+    \draw[figblue, line width=1.6pt] (-1.9,-1.5) -- (1.9,-1.5);
+    \foreach \x in {-1.5,-0.9,...,1.6} {\node[figlbl,figblue,scale=0.7] at (\x,-1.7) {$-$};}
+    \node[figlbl, figblue, anchor=west] at (2.0,-1.5) {$-Q$};
+
+    % aislante
+    \fill[figgray!8] (-1.75,-1.1) rectangle (1.75,1.1);
+    \draw[figgray, line width=0.7pt] (-1.75,-1.1) rectangle (1.75,1.1);
+    % bandas de carga de polarización (contienen los extremos sin aparear)
+    \fill[figblue!14] (-1.75,0.78) rectangle (1.75,1.1);
+    \fill[figred!14] (-1.75,-1.1) rectangle (1.75,-0.78);
+
+    % moléculas alineadas (- arriba, + abajo)
+    \foreach \x in {-1.30,-0.44,0.42,1.28} {
+      \foreach \y in {-0.70,0.00,0.70} { \molClaseDiez{\x}{\y}{-90} }
+    }
+
+    % campo aplicado
+    \draw[figvecres] (-3.5,1.35) -- (-3.5,-1.35);
+    \node[figlbl, figred, anchor=east] at (-3.55,0) {$\vec E$};
+
+    % interior neutro
+    \draw[figgray, dashed, line width=0.7pt] (-0.85,-0.42) rectangle (0.85,0.42);
+    \node[figlblaux, anchor=west, align=left] at (1.85,0.02)
+      {interior:\\[-0.15em] cada $+$ con un $-$};
+
+    % lo que sobra en las caras
+    \node[figlbl, figblue, anchor=east, align=right] at (-1.85,0.94)
+      {\footnotesize sobrante $-$};
+    \node[figlbl, figred, anchor=east, align=right] at (-1.85,-0.94)
+      {\footnotesize sobrante $+$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.85)
+      {(b) $Q \neq 0$\\[0.15em] \footnotesize aparecen cargas de\\[-0.2em]
+       \footnotesize polarización en las caras};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La alineación perfecta del panel (b) es una caricatura: en un
+dieléctrico real las moléculas siguen básicamente desordenadas y sólo quedan
+\emph{levemente} orientadas en promedio, porque además del campo externo
+soportan las fuerzas internas del material. Lo que la caricatura sí captura bien
+es el efecto neto, y es lo único que se va a usar: el interior sigue siendo
+neutro ---toda carga positiva tiene su negativa al lado---, pero en las caras
+del aislante queda un sobrante sin aparear, negativo contra la placa positiva y
+positivo contra la negativa. Esas cargas \textbf{no se desplazaron} por el
+material: no hubo conducción, sólo un corrimiento a escala molecular. El
+problema abierto es cuánto se orientan ---eso depende de las interacciones
+internas del material y es un cálculo de mecánica estadística---, y la clase
+siguiente muestra cómo describir el capacitor sin necesidad de responderlo.}
+\end{center}
