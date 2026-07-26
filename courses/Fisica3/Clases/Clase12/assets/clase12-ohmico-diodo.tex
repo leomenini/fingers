@@ -1,0 +1,69 @@
+% Clase 12 --- Qué quiere decir "óhmico", y un ejemplo de lo contrario
+% (§4.2 y §6).
+% La definición no es "conduce bien" sino una condición geométrica sobre la
+% curva: recta Y por el origen. El diodo sirve de contraejemplo porque falla de
+% la manera más visible posible --- ni siquiera es simétrico al invertir el
+% signo del voltaje.
+\begin{center}
+\begin{tikzpicture}
+
+  % =============== (a) óhmico ===============
+  \begin{axis}[
+      fisfig,
+      width=7.1cm, height=5.6cm,
+      grid=none,
+      axis lines=middle,
+      xmin=-1.25, xmax=1.25, ymin=-1.25, ymax=1.25,
+      xlabel={$\Delta V$}, ylabel={$I$},
+      xlabel style={anchor=north west}, ylabel style={anchor=south east},
+      xtick=\empty, ytick=\empty,
+      axis line style={figgray},
+      at={(0,0)},
+    ]
+    \addplot[figblue, line width=1pt, domain=-1.1:1.1] {0.95*x};
+    \node[figlbl, figblue, anchor=west, align=left] at (axis cs:-1.18,0.68)
+      {pendiente\\[-0.2em] $1/R$};
+    \node[figcarga, fill=figred, minimum size=5pt] at (axis cs:0,0) {};
+  \end{axis}
+  \node[figlbl, anchor=north, align=center] at (3.0,-1.15)
+    {(a) óhmico: una \textbf{resistencia}\\[-0.2em]
+     \footnotesize recta \emph{y} por el origen};
+
+  % =============== (b) no óhmico: el diodo ===============
+  \begin{axis}[
+      fisfig,
+      width=7.1cm, height=5.6cm,
+      grid=none,
+      axis lines=middle,
+      xmin=-1.25, xmax=1.25, ymin=-1.25, ymax=1.25,
+      xlabel={$\Delta V$}, ylabel={$I$},
+      xlabel style={anchor=north west}, ylabel style={anchor=south east},
+      xtick=\empty, ytick=\empty,
+      axis line style={figgray},
+      at={(8.4cm,0)},
+    ]
+    \addplot[figred, line width=1pt, domain=-1.15:0.95, samples=120]
+      {0.04*(exp(2.9*x) - 1)};
+    \node[figlbl, figred, anchor=east, align=right, scale=0.9]
+      at (axis cs:0.72,0.95) {crece\\[-0.2em] muy rápido};
+    \node[figlbl, anchor=north west, align=left, scale=0.9]
+      at (axis cs:-1.15,-0.12) {casi no pasa corriente};
+  \end{axis}
+  \node[figlbl, anchor=north, align=center] at (11.4,-1.15)
+    {(b) no óhmico: un \textbf{diodo}\\[-0.2em]
+     \footnotesize ni recta ni simétrica};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Ser óhmico no es conducir bien: es que la curva sea una recta
+\emph{y} pase por el origen. Las dos condiciones importan. Que pase por el
+origen dice que sin diferencia de potencial no hay corriente; que sea recta
+dice que $R$ es un número, el mismo para toda intensidad ---por eso tiene
+sentido hablar de \enquote{la} resistencia de un cuerpo y escribir
+$\Delta V = R\,I$---. El diodo incumple lo segundo de forma extrema: su curva
+ni siquiera es simétrica, así que la misma diferencia de potencial aplicada al
+revés da corrientes que difieren en órdenes de magnitud. Ahí no hay ningún $R$
+que reporte: la respuesta depende del punto de trabajo. El diodo es sólo un
+ejemplo entre muchas curvas no óhmicas posibles; lo notable es lo contrario,
+que tantísimos materiales sí resulten rectos en el rango de campos con que se
+trabaja.}
+\end{center}

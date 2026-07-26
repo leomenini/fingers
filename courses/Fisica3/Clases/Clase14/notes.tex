@@ -119,20 +119,7 @@ Un circuito RC tiene fuentes, resistencias y condensadores. El más
 simple: FEM $\varepsilon$, interruptor, $R$ y $C$ en serie. Convención:
 $Q$ = carga de una placa, $I$ = corriente entrante, con $I = dQ/dt$.
 
-\begin{figure}[H]
-\centering
-\begin{circuitikz}[line width=0.9pt, color=figblue]
-  \draw (0,0) to[battery1, l=$\varepsilon$] (0,3);
-  \draw (0,3) to[switch, l=$A$, i=$I$] (3,3);
-  \draw (3,3) to[R, l=$R$] (3,1.5);
-  \draw (3,1.5) to[capacitor, l=$C$] (3,0);
-  \draw (3,0) -- (0,0);
-\end{circuitikz}
-\caption{Circuito RC en serie: FEM $\varepsilon$, interruptor (posición A),
-         resistencia $R$ y condensador $C$. La corriente $I$ carga la placa
-         del condensador.}
-\label{fig:clase14-rc}
-\end{figure}
+\input{assets/clase14-circuito-rc.tex}
 
 \subsection{Comportamiento cualitativo: carga y descarga}
 
@@ -190,29 +177,7 @@ C$:
   \]
 \end{keybox}
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{axis}[fisfig,
-  xlabel={$t/RC$}, ylabel={valor normalizado},
-  xmin=0, xmax=5, ymin=0, ymax=1.05,
-  domain=0:5, samples=100,
-  legend pos=north east,
-]
-  \addplot[figblue] {1 - exp(-x)};
-  \addlegendentry{$Q/\varepsilon C$}
-  \addplot[figred] {exp(-x)};
-  \addlegendentry{$I/(\varepsilon/R)$}
-  \draw[figaux] (axis cs:1,0) -- (axis cs:1,1);
-  \node[figgray, anchor=south west, font=\footnotesize]
-        at (axis cs:1,0.03) {$\tau=RC$};
-\end{axis}
-\end{tikzpicture}
-\caption{Carga del condensador: $Q$ crece hacia $\varepsilon C$ mientras $I$
-         decae desde $\varepsilon/R$, ambos con constante de tiempo
-         $\tau = RC$ (a $t=\tau$ la carga alcanza $\approx 63\%$).}
-\label{fig:clase14-rc-carga}
-\end{figure}
+\input{assets/clase14-rc-carga.tex}
 
 \begin{notebox}[Lo importante es el procedimiento]
   (1) Restar la solución evidente $\to$ homogénea. (2) Variables
@@ -232,6 +197,8 @@ La corriente es negativa (circula al revés que en la carga).
   Si la carga sale con un exponencial \textbf{creciente}, hay error de
   signos: no puede crecer espontáneamente.
 \end{warnbox}
+
+\input{assets/clase14-rc-descarga.tex}
 
 \subsection{Constante de tiempo y el experimento de la chispa}
 
@@ -275,6 +242,8 @@ aislados: \textbf{no existen monopolos magnéticos}.
   nunca se detectaron pese a muchas búsquedas.
 \end{notebox}
 
+\input{assets/clase14-monopolos.tex}
+
 \subsection{Corrientes e imanes: Oersted y electroimanes}
 
 \begin{itemize}[nosep]
@@ -288,6 +257,8 @@ aislados: \textbf{no existen monopolos magnéticos}.
 
 Todos los efectos magnéticos provienen de \textbf{cargas en movimiento
 (corrientes)}, y las que los sienten son también cargas en movimiento.
+
+\input{assets/clase14-oersted.tex}
 
 % ===================================================================
 \section{Fuerza magnética sobre una carga en movimiento}
@@ -322,6 +293,8 @@ velocidades cerca de un imán. Se observa:
   observaciones.
 \end{keybox}
 
+\input{assets/clase14-fuerza-magnetica.tex}
+
 \subsection{Propiedades y trabajo nulo}
 
 $\mathbf{F}\perp\mathbf{B}$, $\mathbf{F}\perp\mathbf{v}$; $\mathbf{F}=0$
@@ -346,6 +319,8 @@ El Tesla es grande; suelen manejarse fracciones de Tesla.
 Como no hay monopolos, las \textbf{líneas de $\mathbf{B}$ son cerradas}
 (no nacen ni mueren). En un imán salen del norte, dan la vuelta y
 regresan por dentro.
+
+\input{assets/clase14-lineas-B.tex}
 
 \subsection{Fuerza de Lorentz}
 

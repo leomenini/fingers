@@ -1,0 +1,85 @@
+% Clase 10 --- Reducción por etapas del ejemplo combinado (§4.3).
+% La idea que la figura tiene que transmitir es procedimental: no hay una
+% fórmula para "esto", hay un orden de reducción. Se identifica el subgrupo que
+% SÍ es un paralelo puro, se lo reemplaza por un solo condensador, y recién
+% entonces lo que queda es una serie pura.
+\begin{center}
+\begin{tikzpicture}[scale=0.92]
+  \ctikzset{bipoles/length=1.05cm}
+
+  % =============== (a) circuito original ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (0.7,0);
+      \draw (0.7,-0.95) -- (0.7,0.95);
+      \draw (0.7,0.95) to[C] (2.0,0.95);
+      \draw (0.7,-0.95) to[C] (2.0,-0.95);
+      \draw (2.0,-0.95) -- (2.0,0.95);
+      \draw (2.0,0) to[C] (3.4,0);
+      \draw (3.4,0) -- (4.0,0);
+      \fill (0.7,0) circle (2pt);
+      \fill (2.0,0) circle (2pt);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (4.1,0) {$B$};
+    \node[figlbl, figblue, anchor=south] at (1.35,1.05) {$C_1$};
+    \node[figlbl, figblue, anchor=north] at (1.35,-1.05) {$C_2$};
+    \node[figlbl, figblue, anchor=south] at (2.7,0.22) {$C_3$};
+
+    \draw[figred, dashed, line width=0.9pt] (0.45,-1.62) rectangle (2.3,1.62);
+    \node[figlbl, figred, anchor=south] at (1.35,1.68) {\footnotesize paralelo};
+    \node[figlbl, anchor=north] at (2.0,-2.35) {(a) circuito original};
+  \end{scope}
+
+  % ---- flecha 1 ----
+  \draw[figvecaux, line width=1pt] (4.6,0) -- (5.5,0);
+  \node[figlblaux, anchor=south, align=center] at (5.05,0.12)
+    {paso 1\\[-0.2em] $C_{12}$};
+
+  % =============== (b) tras reducir el paralelo ===============
+  \begin{scope}[xshift=6.2cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (0.5,0);
+      \draw (0.5,0) to[C] (1.9,0);
+      \draw (1.9,0) to[C] (3.3,0);
+      \draw (3.3,0) -- (3.8,0);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (3.9,0) {$B$};
+    \node[figlbl, figblue, anchor=south] at (1.2,0.22) {$C_{12}$};
+    \node[figlbl, figblue, anchor=south] at (2.6,0.22) {$C_3$};
+
+    \draw[figred, dashed, line width=0.9pt] (0.3,-0.8) rectangle (3.5,0.8);
+    \node[figlbl, figred, anchor=south] at (1.9,0.86) {\footnotesize serie};
+    \node[figlbl, anchor=north] at (1.9,-2.35) {(b) queda una serie};
+  \end{scope}
+
+  % ---- flecha 2 ----
+  \draw[figvecaux, line width=1pt] (10.55,0) -- (11.4,0);
+  \node[figlblaux, anchor=south, align=center] at (10.98,0.12)
+    {paso 2\\[-0.2em] $C_{\text{eq}}$};
+
+  % =============== (c) condensador equivalente ===============
+  \begin{scope}[xshift=11.9cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (0.4,0);
+      \draw (0.4,0) to[C] (1.8,0);
+      \draw (1.8,0) -- (2.2,0);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (2.3,0) {$B$};
+    \node[figlbl, figblue, anchor=south] at (1.1,0.22) {$C_{\text{eq}}$};
+    \node[figlbl, anchor=north] at (1.1,-2.35) {(c) un solo condensador};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La reducción se hace \textbf{por etapas} y en el orden que la
+topología permite: $C_1$ y $C_2$ comparten sus dos bornes, así que forman un
+paralelo puro y pueden colapsarse; sólo después de ese colapso $C_{12}$ y $C_3$
+quedan uno a continuación del otro con la isla central aislada, que es la
+definición de serie. Al revés no se puede: $C_2$ y $C_3$ \emph{no} están en
+serie en el circuito original, porque el nodo que los une está también conectado
+a $C_1$. Y el método entero se apoya en que todo lo que hay entre medio son
+condensadores: con una batería o una resistencia intercalada, la carga de la
+isla ya no está obligada a valer cero y la reducción deja de valer.}
+\end{center}

@@ -1,0 +1,21 @@
+% Clase 14 --- El circuito RC y sus dos posiciones (§1).
+% Movida acá desde el cuerpo de notes.tex al agregar el resto de las figuras,
+% para que toda la clase use el mismo formato que el resto del curso.
+% El interruptor es lo que hace las dos historias: en A la batería carga el
+% condensador, en B queda descolgada y el condensador se descarga sobre R.
+\begin{center}
+\begin{circuitikz}[line width=0.9pt, color=figblue]
+  \draw (0,0) to[battery1, l=$\varepsilon$] (0,3);
+  \draw (0,3) to[switch, l=$A$, i=$I$] (3,3);
+  \draw (3,3) to[R, l=$R$] (3,1.5);
+  \draw (3,1.5) to[capacitor, l=$C$] (3,0);
+  \draw (3,0) -- (0,0);
+\end{circuitikz}\\[0.5em]
+{\small\itshape Con el interruptor en \textbf{A} la batería queda conectada y el
+condensador se carga; en \textbf{B} queda descolgada y lo que hay es un
+condensador cargado descargándose sobre la resistencia. Conviene fijar la
+convención de signos antes de escribir nada: se llama $Q$ a la carga de
+\emph{una} placa e $I$ a la corriente entrante por ese lado, y con esa elección
+$I = dQ/dt$. Si se hubiera llamado $Q$ a la carga de la otra placa quedaría
+$I = -dQ/dt$, y todos los signos posteriores saldrían cambiados.}
+\end{center}

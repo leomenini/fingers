@@ -1,0 +1,82 @@
+% Clase 11 --- Las dos contabilidades de la ley de Gauss (§5).
+% La misma superficie y la misma física; lo que cambia es qué carga se cuenta y
+% con qué constante se divide. La de la izquierda vale siempre pero obliga a
+% conocer Q_pol, que es interna al material y no se mide. La de la derecha usa
+% sólo lo que el experimentador maneja --- a cambio de exigir un único
+% dieléctrico lineal.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) contabilidad completa ===============
+  \begin{scope}
+    \fill[figgray!8] (-2.2,-2.3) rectangle (2.2,2.3);
+    \draw[figgray, line width=0.7pt] (-2.2,-2.3) rectangle (2.2,2.3);
+    \node[figlblaux, anchor=north east] at (2.1,2.25) {dieléctrico $K_E$};
+
+    \draw[figaux, line width=1pt] (0,0.2) circle (1.3);
+    \node[figlblaux, anchor=south east] at (-0.95,1.1) {$S$};
+
+    % carga libre: accesible
+    \node[figpos, minimum size=7pt] at (-0.3,0.45) {};
+    \node[figpos, minimum size=7pt] at (0.35,0.15) {};
+    \node[figlbl, figred, anchor=south] at (0.05,0.68) {$Q_{\text{libre}}$};
+
+    % carga de polarización: dispersa e inaccesible
+    \foreach \p in {(-0.85,-0.45),(0.9,0.85),(-0.7,1.05),(0.95,-0.35),(0.1,-0.72)} {
+      \node[figneg, minimum size=4.6pt, opacity=0.45] at \p {};
+    }
+    \draw[figgray, line width=0.4pt] (0.1,-0.78) -- (-0.35,-1.42);
+    \node[figlbl, figblue, anchor=north east] at (-0.3,-1.42) {$Q_{\text{pol}}$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.55)
+      {$\Phi_E = \dfrac{Q_{\text{libre}} + Q_{\text{pol}}}{\varepsilon_0}$};
+    \node[figlbl, anchor=north, align=center] at (0,-3.9)
+      {(a) vale \textbf{siempre}\\[-0.2em]
+       \footnotesize pero pide una carga que no se mide};
+  \end{scope}
+
+  % ---- flecha entre paneles ----
+  \draw[figvecaux, line width=1pt] (3.05,0.2) -- (4.35,0.2);
+  \node[figlblaux, anchor=south, align=center] at (3.7,0.3)
+    {un solo dieléctrico\\[-0.2em] lineal};
+
+  % =============== (b) contabilidad práctica ===============
+  \begin{scope}[xshift=8.2cm]
+    \fill[figgray!8] (-2.2,-2.3) rectangle (2.2,2.3);
+    \draw[figgray, line width=0.7pt] (-2.2,-2.3) rectangle (2.2,2.3);
+    \node[figlblaux, anchor=north east] at (2.1,2.25) {dieléctrico $K_E$};
+
+    \draw[figaux, line width=1pt] (0,0.2) circle (1.3);
+    \node[figlblaux, anchor=south east] at (-0.95,1.1) {$S$};
+
+    \node[figpos, minimum size=7pt] at (-0.3,0.45) {};
+    \node[figpos, minimum size=7pt] at (0.35,0.15) {};
+    \node[figlbl, figred, anchor=south] at (0.05,0.68) {$Q_{\text{libre}}$};
+
+    % la carga de polarización, escondida dentro de epsilon
+    \foreach \p in {(-0.85,-0.45),(0.9,0.85),(-0.7,1.05),(0.95,-0.35),(0.1,-0.72)} {
+      \node[figneg, minimum size=4.6pt, opacity=0.12] at \p {};
+    }
+    \node[figlblaux, anchor=north, align=center] at (0,-1.4)
+      {sigue ahí, pero ya no se cuenta};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.55)
+      {$\Phi_E = \dfrac{Q_{\text{libre}}}{\varepsilon}$,
+       \quad $\varepsilon = K_E\,\varepsilon_0$};
+    \node[figlbl, anchor=north, align=center] at (0,-3.9)
+      {(b) vale con \textbf{un} dieléctrico\\[-0.2em]
+       \footnotesize y usa sólo lo que se mide};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos ecuaciones dicen lo mismo; no hay ninguna ley nueva. La
+carga de polarización no desaparece ni deja de ser real: queda absorbida dentro
+de $\varepsilon$, que es exactamente la operación de barrer la mugre bajo la
+alfombra. Lo que se paga por la comodidad es generalidad. El paso de (a) a (b)
+usa que $E = E_0/K_E$ \emph{en todo punto}, y eso requiere un único dieléctrico
+---con dos constantes distintas habría que dividir por $K_1$ en una región y por
+$K_2$ en otra, y los flujos ya no serían proporcionales--- y que el material sea
+lineal, que es un hecho \textbf{empírico}, no algo deducido de la teoría. La
+versión (a) nunca deja de valer; es el precio de tener que conocer
+$Q_{\text{pol}}$.}
+\end{center}

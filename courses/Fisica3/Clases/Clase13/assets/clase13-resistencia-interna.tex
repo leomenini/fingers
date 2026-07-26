@@ -1,0 +1,65 @@
+% Clase 13 --- La pila real y por qué "ideal" no es una propiedad de la pila
+% (§3.3 y el cierre de §4.2).
+% El docente descompuso la pila real en una pila ideal más una resistencia r en
+% serie, y de ahí sacó la conclusión que sorprende: que una batería se comporte
+% como ideal depende de A QUÉ SE LA CONECTA, no de la batería.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) el modelo de la pila real ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[battery1, l=$\varepsilon$] (0,2.2);
+      \draw (0,2.2) to[R, l=$r$] (1.9,2.2);
+      \draw (1.9,2.2) -- (3.6,2.2);
+      \draw (3.6,2.2) to[R, l_=$R$] (3.6,0);
+      \draw (3.6,0) -- (0,0);
+    \end{scope}
+
+    % la caja que es "la pila real"
+    \draw[figred, dashed, line width=0.9pt] (-0.75,-0.5) rectangle (2.5,2.85);
+    \node[figlbl, figred, anchor=south, align=center] at (0.85,2.9)
+      {la pila real};
+
+    \draw[figvecres] (2.5,2.55) -- (3.4,2.55);
+    \node[figlbl, figred, anchor=south] at (2.95,2.6) {$I$};
+
+    \node[figlbl, anchor=north, align=center] at (1.6,-1.55)
+      {(a) pila ideal $+$ resistencia interna};
+  \end{scope}
+
+  % =============== (b) el voltaje en bornes cae con la corriente ===============
+  \begin{axis}[
+      fisfig,
+      width=7.6cm, height=5.4cm,
+      grid=none,
+      axis lines=left,
+      xmin=0, xmax=1.15, ymin=0, ymax=1.15,
+      xlabel={$I$}, ylabel={$\Delta V$ entre bornes},
+      xtick=\empty, ytick={1}, yticklabels={$\varepsilon$},
+      axis line style={figgray},
+      at={(7.6cm,-0.2cm)},
+    ]
+    \addplot[figblue, line width=1pt, domain=0:1.05] {1 - 0.75*x};
+    \node[figlbl, figblue, anchor=west] at (axis cs:0.42,0.78)
+      {$\Delta V = \varepsilon - r\,I$};
+    \node[figlbl, figred, anchor=west, align=left] at (axis cs:0.03,0.36)
+      {$I$ chica ($R \gg r$):\\[-0.2em] se porta como ideal};
+    \draw[figaux] (axis cs:0,1) -- (axis cs:0.18,1);
+  \end{axis}
+  \node[figlbl, anchor=north, align=center] at (11.4,-1.55)
+    {(b) cuánto se aparta de la ideal};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La fuerza electromotriz $\varepsilon$ ---que no es una fuerza
+sino una energía por unidad de carga, y el nombre es sólo histórico--- es una
+propiedad intrínseca de la pila: $1{,}5$ V en las comunes. Lo que \emph{no} es
+intrínseco es comportarse como ideal. Toda pila disipa algo por efecto Joule en
+su propio interior, y eso se modela como una resistencia $r$ en serie, de modo
+que el voltaje que realmente aparece entre los bornes, $\varepsilon - rI$, baja
+a medida que se le pide más corriente. Conectada a un $R$ mucho mayor que $r$,
+la corriente es chica, la caída interna es despreciable y la pila parece ideal;
+en cortocircuito, con $R \to 0$, la única resistencia que queda es $r$, la
+corriente satura en $\varepsilon/r$ y la aproximación se rompe por completo. La
+misma pila, entonces, es ideal o no según a qué se la conecte.}
+\end{center}

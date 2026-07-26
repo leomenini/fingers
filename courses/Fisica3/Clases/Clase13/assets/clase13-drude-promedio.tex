@@ -1,0 +1,73 @@
+% Clase 13 --- Por qué el promedio deja sólo la deriva (§1.2).
+% El docente insistió en que el electrón "arranca con alguna velocidad, con una
+% dirección aleatoria". La figura sigue la componente de la velocidad a lo largo
+% del campo: en cada choque salta a un valor al azar (que puede ser negativo) y
+% entre choque y choque crece con pendiente constante a = eE/m. Al promediar,
+% los saltos al azar se cancelan y sobrevive sólo lo que aportó el campo.
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+      fisfig,
+      width=9.0cm, height=5.8cm,
+      grid=none,
+      axis lines=middle,
+      xmin=-0.15, xmax=8.1, ymin=-1.35, ymax=1.95,
+      xlabel={$t$}, ylabel={$v$ a lo largo de $\vec E$},
+      xlabel style={anchor=north west}, ylabel style={anchor=south east},
+      xtick=\empty, ytick={0}, yticklabels={$0$},
+      axis line style={figgray},
+    ]
+    % tramos entre choques: pendiente constante a = eE/m
+    \addplot[figblue, line width=1pt] coordinates {(0,0.6) (1.0,1.6)};
+    \addplot[figblue, line width=1pt] coordinates {(1.0,-0.5) (2.2,0.7)};
+    \addplot[figblue, line width=1pt] coordinates {(2.2,0.3) (3.1,1.2)};
+    \addplot[figblue, line width=1pt] coordinates {(3.1,-0.7) (4.4,0.6)};
+    \addplot[figblue, line width=1pt] coordinates {(4.4,0.2) (5.2,1.0)};
+    \addplot[figblue, line width=1pt] coordinates {(5.2,-0.3) (6.5,1.0)};
+    \addplot[figblue, line width=1pt] coordinates {(6.5,0.5) (7.5,1.5)};
+
+    % los choques
+    % OJO: sin \foreach --- dentro de un `axis` de pgfplots revienta con
+    % este preámbulo (babel español); va desenrollado a mano.
+    \node[figcarga, fill=figgray, minimum size=3.4pt] at (axis cs:1.0,0) {};
+    \draw[figgray, dashed, line width=0.4pt] (axis cs:1.0,-0.95) -- (axis cs:1.0,1.7);
+    \node[figcarga, fill=figgray, minimum size=3.4pt] at (axis cs:2.2,0) {};
+    \draw[figgray, dashed, line width=0.4pt] (axis cs:2.2,-0.95) -- (axis cs:2.2,1.7);
+    \node[figcarga, fill=figgray, minimum size=3.4pt] at (axis cs:3.1,0) {};
+    \draw[figgray, dashed, line width=0.4pt] (axis cs:3.1,-0.95) -- (axis cs:3.1,1.7);
+    \node[figcarga, fill=figgray, minimum size=3.4pt] at (axis cs:4.4,0) {};
+    \draw[figgray, dashed, line width=0.4pt] (axis cs:4.4,-0.95) -- (axis cs:4.4,1.7);
+    \node[figcarga, fill=figgray, minimum size=3.4pt] at (axis cs:5.2,0) {};
+    \draw[figgray, dashed, line width=0.4pt] (axis cs:5.2,-0.95) -- (axis cs:5.2,1.7);
+    \node[figcarga, fill=figgray, minimum size=3.4pt] at (axis cs:6.5,0) {};
+    \draw[figgray, dashed, line width=0.4pt] (axis cs:6.5,-0.95) -- (axis cs:6.5,1.7);
+
+    % el promedio
+    \addplot[figred, line width=1.1pt, dashed, domain=0:7.5] {0.47};
+    \node[figlbl, figred, anchor=west] at (axis cs:7.6,0.47) {$v_d$};
+
+    \node[figlblaux, anchor=south] at (axis cs:5.85,-1.33) {choques};
+  \end{axis}
+
+  \node[figlbl, anchor=west, align=left] at (9.5,3.6)
+    {\footnotesize arranca al azar:\\[-0.2em] \footnotesize promedia a $0$};
+  \node[figlbl, figblue, anchor=west, align=left] at (9.5,2.2)
+    {\footnotesize pendiente $a = \dfrac{eE}{m}$};
+  \node[figlbl, figred, anchor=west, align=left] at (9.5,0.9)
+    {\footnotesize lo único que\\[-0.2em] \footnotesize sobrevive};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Cada tramo es un movimiento uniformemente acelerado y cada punto
+gris un choque, tras el cual el electrón arranca en una dirección cualquiera
+---por eso los saltos van a valores positivos y negativos indistintamente---. La
+deducción consiste en promediar $\mathbf v(t) = \mathbf v_0 - (e/m)\mathbf E\,t$
+sobre muchísimos electrones: el término $\mathbf v_0$ se cancela porque las
+direcciones de arranque no tienen nada que ver con el campo, y del término
+restante queda $v_d = eE\tau/m$, con $\tau$ el tiempo libre medio. Notar el
+orden de magnitud que la figura no puede respetar: los saltos verticales son del
+orden de $10^{6}$ m/s y la línea roja está a algunos centímetros por hora, o sea
+prácticamente pegada al eje. El paso decisivo del argumento es que
+\textbf{$\tau$ casi no depende de $E$}: el movimiento está dominado por la
+agitación térmica y el campo apenas lo sesga, así que la frecuencia de choques
+no cambia ---y por eso $v_d$ sale proporcional a $E$, que es la ley de Ohm---.}
+\end{center}

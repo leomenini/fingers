@@ -1,0 +1,88 @@
+% Clase 12 --- La analogía de la manguera llena (§3.2).
+% Resuelve la paradoja que el propio cálculo acababa de crear: si el electrón
+% avanza 14 cm/hora, tardaría más de un día en llegar del interruptor a la
+% lámpara, y sin embargo la luz se prende al instante. La clave es que la
+% manguera YA está llena: lo que sale por la punta no es lo que entró.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la manguera ===============
+  \begin{scope}
+    % la señal, inmediata
+    \draw[figvecres, line width=1.2pt] (-2.6,1.15) -- (2.4,1.15);
+    \node[figlbl, figred, anchor=south] at (-0.1,1.2)
+      {la presión se transmite al instante};
+
+    % canilla
+    \draw[figgray, line width=1.2pt] (-3.3,-0.45) rectangle (-2.8,0.45);
+    \node[figlblaux, anchor=east] at (-3.4,0) {canilla};
+
+    % manguera, ya llena
+    \fill[figblue!14] (-2.8,-0.32) rectangle (2.6,0.32);
+    \draw[figgray, line width=1pt] (-2.8,-0.32) -- (2.6,-0.32);
+    \draw[figgray, line width=1pt] (-2.8,0.32) -- (2.6,0.32);
+    \node[figlblaux] at (0.1,0) {ya estaba llena de agua};
+
+    % la molécula que entra y la que sale: distintas
+    \node[figcarga, fill=figred, minimum size=6pt] at (-2.55,0) {};
+    \node[figlbl, figred, anchor=south, scale=0.85] at (-2.5,0.42) {entra ésta};
+    \node[figcarga, fill=figblue, minimum size=6pt] at (2.35,0) {};
+    \node[figlbl, figblue, anchor=south, scale=0.85] at (2.3,0.42) {sale ésta};
+
+    % avance lento
+    \draw[figvecaux, figred, line width=0.9pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (-2.5,-0.75) -- (-1.95,-0.75);
+    \node[figlbl, figred, anchor=west, scale=0.9] at (-1.85,-0.75)
+      {el agua avanza lento};
+
+    \node[figlbl, anchor=north] at (-0.1,-1.35) {(a) manguera llena};
+  \end{scope}
+
+  % =============== (b) el circuito ===============
+  \begin{scope}[yshift=-4.0cm]
+    \draw[figvecres, line width=1.2pt] (-2.6,1.15) -- (2.4,1.15);
+    \node[figlbl, figred, anchor=south] at (-0.1,1.2)
+      {la señal eléctrica viaja rapidísimo};
+
+    % interruptor
+    \draw[figgray, line width=1.2pt] (-3.3,-0.45) rectangle (-2.8,0.45);
+    \node[figlblaux, anchor=east] at (-3.4,0) {interruptor};
+
+    % cable
+    \fill[figblue!14] (-2.8,-0.32) rectangle (2.6,0.32);
+    \draw[figgray, line width=1pt] (-2.8,-0.32) -- (2.6,-0.32);
+    \draw[figgray, line width=1pt] (-2.8,0.32) -- (2.6,0.32);
+    \node[figlblaux, scale=0.92] at (-0.15,0) {ya estaba lleno de electrones};
+
+    % lámpara
+    \draw[figamber, line width=1.2pt, fill=figamber!25] (3.0,0) circle (0.4);
+    \foreach \a in {30,90,...,330} {
+      \draw[figamber, line width=0.7pt] ($(3.0,0)+(\a:0.5)$) -- ($(3.0,0)+(\a:0.7)$);
+    }
+    \node[figlblaux, anchor=west, align=left] at (3.85,0)
+      {enciende\\[-0.2em] al instante};
+
+    \node[figcarga, fill=figred, minimum size=6pt] at (-2.55,0) {};
+    \node[figcarga, fill=figblue, minimum size=6pt] at (2.35,0) {};
+
+    \draw[figvecaux, figred, line width=0.9pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (-2.5,-0.75) -- (-1.95,-0.75);
+    \node[figlbl, figred, anchor=west, scale=0.9] at (-1.85,-0.75)
+      {$v_d \sim$ algunos cm/hora};
+
+    \node[figlbl, anchor=north] at (-0.1,-1.35) {(b) el mismo argumento en el cable};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La paradoja aparece al tomar el resultado del cálculo demasiado
+literalmente: a algunos centímetros por hora, el electrón que sale del
+interruptor tardaría más de un día en llegar a la lámpara, y sin embargo la luz
+se prende ni bien se cierra el circuito. La salida es que el agua que sale por
+la punta \textbf{no es} la que entró por la canilla: la manguera ya estaba llena
+y todas las moléculas empiezan a moverse casi a la vez. En el cable pasa lo
+mismo, con los electrones de conducción que ya estaban ahí. Conviene separar
+tres velocidades que suelen confundirse: la \emph{real} de cada electrón
+(enorme y errática), la de \emph{deriva} (lentísima, y la única que transporta
+carga neta) y la de la \emph{señal} ---la que se percibe al encender la luz---,
+que es muchísimo mayor que las otras dos.}
+\end{center}

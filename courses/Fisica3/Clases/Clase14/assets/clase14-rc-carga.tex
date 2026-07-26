@@ -1,0 +1,31 @@
+% Clase 14 --- Carga del condensador (§1.4).
+% Movida acá desde el cuerpo de notes.tex (ver clase14-circuito-rc).
+% Las dos curvas normalizadas, para que se vea que arrancan en extremos
+% opuestos y comparten la misma constante de tiempo.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[fisfig,
+  width=11cm, height=6cm,
+  xlabel={$t/RC$}, ylabel={valor normalizado},
+  xmin=0, xmax=5, ymin=0, ymax=1.05,
+  domain=0:5, samples=100,
+  legend pos=north east,
+]
+  \addplot[figblue] {1 - exp(-x)};
+  \addlegendentry{$Q/\varepsilon C$}
+  \addplot[figred] {exp(-x)};
+  \addlegendentry{$I/(\varepsilon/R)$}
+  \draw[figaux] (axis cs:1,0) -- (axis cs:1,1);
+  \node[figgray, anchor=south west, font=\footnotesize]
+        at (axis cs:1,0.03) {$\tau=RC$};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos curvas son la misma exponencial vista al derecho y al
+revés, y eso no es casualidad: $I$ es la derivada de $Q$, y la derivada de una
+exponencial es otra exponencial con la misma constante de tiempo. Los valores
+iniciales salen de razonar el circuito sin resolver nada: en $t=0$ el
+condensador está descargado, no cae potencial en él, se comporta como un cable y
+toda la FEM cae en la resistencia, de donde $I(0)=\varepsilon/R$; al final está
+totalmente cargado, toda la FEM cae en él y no circula corriente. A $t=\tau=RC$
+la carga alcanzó el $63\%$ de su valor final.}
+\end{center}

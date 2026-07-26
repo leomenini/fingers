@@ -1,0 +1,42 @@
+% Clase 14 --- Descarga del condensador (§1.5 y §1.6).
+% "Voy a representar acá la carga Q como función de T durante la descarga":
+% el docente pasó del osciloscopio al pizarrón para dibujar justamente esto.
+% Lo que la figura agrega respecto de la de carga es el signo de la corriente,
+% que es lo que se vio invertirse en el experimento con onda cuadrada.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[fisfig,
+  width=11cm, height=6cm,
+  xlabel={$t/RC$}, ylabel={valor normalizado},
+  xmin=0, xmax=5, ymin=-1.1, ymax=1.1,
+  domain=0:5, samples=100,
+  axis lines=left,
+  legend pos=north east,
+]
+  \addplot[figblue] {exp(-x)};
+  \addlegendentry{$Q/q_0$}
+  \addplot[figred] {-exp(-x)};
+  \addlegendentry{$I\,RC/q_0$}
+  \draw[figaux] (axis cs:0,0) -- (axis cs:5,0);
+  \draw[figaux] (axis cs:1,-1) -- (axis cs:1,1);
+  \node[figgray, anchor=south west, font=\footnotesize]
+        at (axis cs:1.05,0.72) {$\tau=RC$};
+  \node[figlbl, figred, anchor=north west] at (axis cs:1.6,-0.35)
+    {la corriente cambia de signo};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Sin batería la ecuación es directamente la homogénea, así que no
+hace falta ninguna solución particular: la carga cae exponencialmente desde su
+valor inicial. Lo que conviene mirar es el signo de la corriente. Durante la
+carga entraba carga al condensador y $I$ era positiva; ahora la carga sale, la
+corriente circula al revés y queda negativa ---exactamente lo que se vio en el
+osciloscopio al alimentar el circuito con una onda cuadrada, donde el tramo alto
+hace de \enquote{fuente conectada} y el bajo de \enquote{sin fuente}---. De ahí
+sale un test de signos barato para el ejercicio de carga: si al resolver aparece
+una exponencial \textbf{creciente}, hay un error, porque la carga no puede
+crecer sola sin que nadie aporte energía. El tiempo característico es $RC$ en
+los dos casos, y eso es lo que explica la chispa: al cortocircuitar un
+condensador grande la única resistencia es la del cable, $RC$ se vuelve
+diminuto, y toda la carga pasa casi de golpe ---por el aire, que se ioniza y
+emite luz---.}
+\end{center}

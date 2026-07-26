@@ -1,0 +1,81 @@
+% Clase 11 --- Cuándo se puede descomponer y cuándo no (§6).
+% Los tres casos que aparecieron en la clase, en el mismo orden: lado a lado
+% (paralelo), sándwich (serie) y el contraejemplo con el que el docente cerró
+% --- dos dieléctricos separando directamente +Q de -Q, donde la interacción
+% entre las partes ya no es despreciable y la receta no aplica.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+
+  % =============== (a) lado a lado -> paralelo ===============
+  \begin{scope}
+    \draw[figred, line width=1.5pt] (-1.6,1.15) -- (1.6,1.15);
+    \draw[figblue, line width=1.5pt] (-1.6,-1.15) -- (1.6,-1.15);
+    \fill[figblue!12] (-1.5,-1.02) rectangle (0,1.02);
+    \fill[figamber!22] (0,-1.02) rectangle (1.5,1.02);
+    \draw[figgray, line width=0.6pt] (-1.5,-1.02) rectangle (1.5,1.02);
+    \draw[figgray, line width=0.6pt] (0,-1.02) -- (0,1.02);
+    \node[figlbl] at (-0.75,0) {$K_1$};
+    \node[figlbl] at (0.75,0) {$K_2$};
+
+    \node[figlblaux, anchor=south, align=center] at (0,1.3)
+      {las dos mitades comparten\\[-0.2em] la \emph{misma} placa};
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-1.75)
+      {\textbf{paralelo}: mismo $\Delta V$};
+    \node[figlbl, anchor=north] at (0,-2.55) {(a) lado a lado};
+  \end{scope}
+
+  % =============== (b) sándwich -> serie ===============
+  \begin{scope}[xshift=5.6cm]
+    \draw[figred, line width=1.5pt] (-1.6,1.15) -- (1.6,1.15);
+    \draw[figblue, line width=1.5pt] (-1.6,-1.15) -- (1.6,-1.15);
+    \fill[figblue!12] (-1.5,0) rectangle (1.5,1.02);
+    \fill[figamber!22] (-1.5,-1.02) rectangle (1.5,0);
+    \draw[figgray, line width=0.6pt] (-1.5,-1.02) rectangle (1.5,1.02);
+    \node[figlbl] at (0,0.5) {$K_1$};
+    \node[figlbl] at (0,-0.5) {$K_2$};
+    % placa imaginaria en la interfaz
+    \draw[figgray, dashed, line width=1pt] (-1.5,0) -- (1.5,0);
+    \node[figlblaux, anchor=west] at (1.6,0) {placa imaginaria};
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-1.75)
+      {\textbf{serie}: misma $Q$};
+    \node[figlbl, anchor=north] at (0,-2.55) {(b) sándwich};
+  \end{scope}
+
+  % =============== (c) el caso que no se descompone ===============
+  \begin{scope}[xshift=12.6cm]
+    \fill[figblue!12] (-1.5,-1.15) rectangle (0,1.15);
+    \fill[figamber!22] (0,-1.15) rectangle (1.5,1.15);
+    \draw[figgray, line width=0.6pt] (-1.5,-1.15) rectangle (1.5,1.15);
+    \draw[figgray, line width=0.6pt] (0,-1.15) -- (0,1.15);
+    \node[figlbl] at (-0.9,0.75) {$K_1$};
+    \node[figlbl] at (0.9,0.75) {$K_2$};
+
+    \node[figpos, minimum size=8pt] at (-0.75,-0.35) {};
+    \node[figlbl, figred, anchor=north] at (-0.75,-0.5) {$+Q$};
+    \node[figneg, minimum size=8pt] at (0.75,-0.35) {};
+    \node[figlbl, figblue, anchor=north] at (0.75,-0.5) {$-Q$};
+    % líneas de campo que cruzan la frontera
+    \draw[figvecres, line width=0.8pt] (-0.6,-0.2) .. controls (-0.3,0.35) and (0.3,0.35) .. (0.6,-0.2);
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-1.75)
+      {\textbf{no} se separa};
+    \node[figlbl, anchor=north, align=center] at (0,-2.55)
+      {(c) cargas enfrentadas\\[-0.2em] a través de la frontera};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La descomposición de (a) y (b) no es un truco de notación: se
+apoya en que los efectos de borde son despreciables, incluso en la frontera
+entre los dos dieléctricos. Bajo esa hipótesis las dos mitades \emph{no
+interactúan}, y da igual que estén pegadas o separadas ---por eso (a) es
+literalmente un paralelo, con las dos regiones entre las mismas placas
+conductoras y por lo tanto al mismo potencial---. Cada región queda con un solo
+dieléctrico, que es la condición para poder usar $\Phi_E = Q_{\text{libre}}/
+\varepsilon$; recién después se combinan las capacidades. En (c) esa hipótesis
+se cae: las líneas de campo cruzan la frontera y la interacción entre las dos
+regiones es del mismo orden que el problema de cada una por separado, así que no
+hay dos subproblemas independientes que resolver. Ese caso se trata en el curso
+de Electromagnetismo.}
+\end{center}

@@ -1,0 +1,82 @@
+% Clase 10 --- Condensadores en paralelo y en serie (§4.1--4.2).
+% Dos paneles con los MISMOS dos condensadores: lo único que cambia es cómo se
+% los conecta. El panel (a) hace visible qué se comparte (la diferencia de
+% potencial) y qué se reparte (la carga); el panel (b), lo contrario --- y el
+% recuadro punteado muestra el argumento clave de la serie: la zona del medio
+% está desconectada del resto del universo, así que su carga neta sigue siendo
+% cero y eso obliga a la misma Q en los dos condensadores.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) paralelo ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (1.3,0);
+      \draw (1.3,-1.15) -- (1.3,1.15);
+      \draw (1.3,1.15) to[C] (3.7,1.15);
+      \draw (1.3,-1.15) to[C] (3.7,-1.15);
+      \draw (3.7,-1.15) -- (3.7,1.15);
+      \draw (3.7,0) -- (5.0,0);
+      \fill (1.3,0) circle (2pt);
+      \fill (3.7,0) circle (2pt);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (5.1,0) {$B$};
+    \node[figlbl, figblue, anchor=south] at (2.5,1.42) {$C_1$};
+    \node[figlbl, figblue, anchor=north] at (2.5,-1.42) {$C_2$};
+
+    % reparto de la carga
+    \draw[figvecres] (0.05,0.42) -- (1.25,0.42);
+    \node[figlbl, figred, anchor=south] at (0.65,0.45) {$Q$};
+    \draw[figvecres] (1.55,0.42) -- (1.55,1.0);
+    \node[figlbl, figred, anchor=west] at (1.6,0.72) {$Q_1$};
+    \draw[figvecres] (1.55,-0.42) -- (1.55,-1.0);
+    \node[figlbl, figred, anchor=west] at (1.6,-0.72) {$Q_2$};
+
+    \node[figlbl, align=center, anchor=north] at (2.5,-2.15)
+      {(a) paralelo\\[0.15em] \footnotesize mismo $\Delta V_{AB}$;\\[-0.2em]
+       \footnotesize la carga se reparte: $Q = Q_1 + Q_2$};
+  \end{scope}
+
+  % =============== (b) serie ===============
+  \begin{scope}[xshift=7.8cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) -- (0.7,0);
+      \draw (0.7,0) to[C] (2.5,0);
+      \draw (2.5,0) -- (3.5,0);
+      \draw (3.5,0) to[C] (5.3,0);
+      \draw (5.3,0) -- (6.0,0);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.1,0) {$A$};
+    \node[figlbl, anchor=west] at (6.1,0) {$B$};
+    \node[figlbl, figblue, anchor=south] at (1.6,0.52) {$C_1$};
+    \node[figlbl, figblue, anchor=south] at (4.4,0.52) {$C_2$};
+    \node[figlbl, fill=white, inner sep=1.5pt] at (3.0,0) {$K$};
+
+    % zona aislada: contiene la placa derecha de C1, el cable y la izquierda de C2
+    \draw[figred, dashed, line width=0.9pt] (1.6,-0.45) rectangle (4.4,0.45);
+    \node[figlbl, figred, anchor=south, align=center] at (3.0,1.05)
+      {\footnotesize zona aislada del resto del circuito:\\[-0.2em]
+       \footnotesize su carga neta sigue siendo $0$};
+
+    % cargas en las placas
+    \node[figlbl, figred, anchor=north east] at (1.52,-0.55) {$+Q$};
+    \node[figlbl, figblue, anchor=north west] at (1.68,-0.55) {$-Q$};
+    \node[figlbl, figred, anchor=north east] at (4.32,-0.55) {$+Q$};
+    \node[figlbl, figblue, anchor=north west] at (4.48,-0.55) {$-Q$};
+
+    \node[figlbl, align=center, anchor=north] at (3.0,-2.15)
+      {(b) serie\\[0.15em] \footnotesize misma $Q$;\\[-0.2em]
+       \footnotesize las diferencias de potencial se suman};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En cualquiera de los dos casos hay que probar lo mismo: que el
+conjunto se comporta \textbf{como un solo condensador}, es decir que
+$\Delta V_{AB}$ resulta proporcional a la carga que entra por $A$. En paralelo
+eso sale de la conservación de la carga en el nodo; en serie, de que la isla
+central ---placa derecha de $C_1$, cable, placa izquierda de $C_2$--- no
+intercambia carga con nadie: si empezó neutra sigue neutra, y la $-Q$ que atrae
+la placa de $C_1$ deja necesariamente $+Q$ sobre la de $C_2$. De ahí que en
+serie lo común sea la carga y en paralelo el voltaje ---y no al revés---.}
+\end{center}

@@ -1,0 +1,93 @@
+% Clase 10 --- Las cuatro configuraciones de la cuba electrolítica (§1).
+% Los estudiantes midieron con un tester el potencial sobre curvas ya dibujadas
+% en el papel, para cada par de electrodos conectados a 5 V y 0 V. La figura
+% reproduce esquemáticamente esas curvas: lo que se verifica en cada panel es
+% que V es constante sobre la curva y que E la cruza perpendicularmente.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) dos líneas de carga ~ placas ===============
+  \begin{scope}
+    \draw[figred, line width=1.6pt] (-1.5,-1.15) -- (-1.5,1.15);
+    \draw[figblue, line width=1.6pt] (1.5,-1.15) -- (1.5,1.15);
+    \node[figlbl, figred, above] at (-1.5,1.2) {$5$ V};
+    \node[figlbl, figblue, above] at (1.5,1.2) {$0$ V};
+
+    \foreach \x in {-0.75,0,0.75} {\draw[figaux] (\x,-1.15) -- (\x,1.15);}
+    \foreach \y in {-0.6,0.6} {\draw[figvecres] (-1.15,\y) -- (-0.1,\y);}
+    \node[figlbl, figred, anchor=south] at (-0.5,0.68) {$\vec E$};
+
+    \node[figlbl, align=center] at (0,-2.3)
+      {(a) dos líneas de carga\\ \footnotesize equipotenciales rectas paralelas};
+  \end{scope}
+
+  % =============== (b) aros concéntricos ===============
+  \begin{scope}[xshift=7.4cm]
+    \draw[figblue, line width=1.6pt] (0,0) circle (1.5);
+    \draw[figred, line width=1.6pt, fill=figred!10] (0,0) circle (0.5);
+    \node[figlbl, figred, scale=0.8] at (0,0) {$5$ V};
+    \node[figlbl, figblue, anchor=south] at (0,1.55) {$0$ V};
+
+    \foreach \r in {0.75,1.0,1.25} {\draw[figaux] (0,0) circle (\r);}
+    \foreach \a in {30,150,270} {\draw[figvecres] (\a:0.56) -- (\a:1.42);}
+    \node[figlbl, figred, anchor=west] at (30:1.6) {$\vec E$};
+
+    \node[figlbl, align=center] at (0,-2.3)
+      {(b) aros concéntricos\\ \footnotesize equipotenciales circulares};
+  \end{scope}
+
+  % =============== (c) dipolo ===============
+  \begin{scope}[yshift=-5.0cm]
+    \node[figpos, minimum size=7pt] at (-1.0,0) {};
+    \node[figneg, minimum size=7pt] at (1.0,0) {};
+    \node[figlbl, figred, anchor=north] at (-1.0,-0.95) {$5$ V};
+    \node[figlbl, figblue, anchor=north] at (1.0,-0.95) {$0$ V};
+
+    % equipotenciales cercanas a cada carga (se abren hacia afuera)
+    \draw[figaux] (-1.08,0) circle (0.35);
+    \draw[figaux] (-1.22,0) circle (0.62);
+    \draw[figaux] (1.08,0) circle (0.35);
+    \draw[figaux] (1.22,0) circle (0.62);
+    % plano bisector
+    \draw[figaux, line width=0.9pt] (0,-1.25) -- (0,1.25);
+    \node[figlbl, figgray, anchor=south] at (0,1.3) {$2{,}5$ V};
+
+    \draw[figvecres] (-0.4,0.75) -- (0.4,0.75);
+    \node[figlbl, figred, anchor=west] at (0.5,0.75) {$\vec E$};
+
+    \node[figlbl, align=center] at (0,-2.3)
+      {(c) dipolo\\ \footnotesize bisector al potencial medio};
+  \end{scope}
+
+  % =============== (d) plano + carga puntual ===============
+  \begin{scope}[xshift=7.4cm, yshift=-5.0cm]
+    \draw[figblue, line width=1.6pt] (-1.7,-1.15) -- (1.7,-1.15);
+    \node[figlbl, figblue, anchor=north] at (1.3,-1.22) {$0$ V};
+    \node[figpos, minimum size=7pt] at (0,0.75) {};
+    \node[figlbl, figred, anchor=west] at (0.62,1.15) {$5$ V};
+
+    % cerca de la punta: círculos; lejos: rectas
+    \draw[figaux] (0,0.75) circle (0.3);
+    \draw[figaux] (0,0.72) circle (0.55);
+    \draw[figaux] (-1.7,-0.35) .. controls (-0.7,-0.32) and (-0.45,0.42) ..
+                  (0,0.45) .. controls (0.45,0.42) and (0.7,-0.32) .. (1.7,-0.35);
+    \draw[figaux] (-1.7,-0.75) .. controls (-0.8,-0.73) and (-0.6,-0.15) ..
+                  (0,-0.12) .. controls (0.6,-0.15) and (0.8,-0.73) .. (1.7,-0.75);
+
+    \draw[figvecres] (1.35,-0.18) -- (1.35,-0.62);
+    \node[figlbl, figred, anchor=west] at (1.42,-0.4) {$\vec E$};
+
+    \node[figlbl, align=center] at (0,-2.3)
+      {(d) plano + carga puntual\\ \footnotesize rectas lejos, círculos cerca};
+  \end{scope}
+
+\end{tikzpicture}\\[0.6em]
+{\small\itshape En los cuatro casos el tester marca el mismo valor a lo largo de
+toda la curva: eso es lo que se mide, y de ahí se lee que $\vec E$ ---que apunta
+en la dirección en que $V$ cambia más rápido--- las corta perpendicularmente. La
+forma de las curvas no depende de cuánta carga hay sino de la \textbf{geometría
+de los electrodos}: por eso (b) reproduce el patrón de una carga puntual dentro
+de un cascarón. El panel (d) fue el más difícil de dibujar a mano ---no hay un
+punto nítido donde las rectas empiezan a curvarse---, y por eso se recurrió a la
+simulación por relajación para ubicarlo. Trazado esquemático, no a escala.}
+\end{center}

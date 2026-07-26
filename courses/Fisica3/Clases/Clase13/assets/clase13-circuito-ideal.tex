@@ -1,0 +1,71 @@
+% Clase 13 --- Qué se está suponiendo al dibujar un circuito (§2.1 y §2.2).
+% Las hipótesis de la "aproximación de circuito" son fáciles de usar sin notar
+% que son hipótesis. El panel (a) las pone todas sobre el mismo dibujo que hizo
+% el docente (batería, interruptor, resistencias) y el (b) muestra la
+% consecuencia inmediata de que no se acumule carga: la ley de los nudos.
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) el circuito y sus hipótesis ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[battery1, l=$\varepsilon$] (0,2.6);
+      \draw (0,2.6) to[switch, l=interruptor] (3.2,2.6);
+      \draw (3.2,2.6) to[R, l=$R_1$] (3.2,0);
+      \draw (3.2,0) to[R, l_=$R_2$] (0,0);
+    \end{scope}
+
+    % corriente
+    \draw[figvecres] (1.1,2.15) -- (2.1,2.15);
+    \node[figlbl, figred, anchor=north] at (1.6,2.1) {$I$};
+
+    % cable de sección variable: la misma corriente
+    \draw[figgray, line width=0.5pt] (0.9,-0.16) -- (2.3,-0.16);
+    \draw[figgray, line width=0.5pt] (0.9,0.16) -- (2.3,0.16);
+    \node[figlblaux, anchor=north, align=center] at (1.6,-0.35)
+      {aunque cambie la sección,\\[-0.2em] la corriente es la misma};
+
+    \node[figlblaux, anchor=east, align=right] at (-0.9,1.3)
+      {cable ideal:\\[-0.2em] resistencia\\[-0.2em] despreciable};
+
+    \node[figlbl, anchor=north, align=center] at (1.6,-1.5)
+      {(a) la aproximación de circuito};
+  \end{scope}
+
+  % =============== (b) el nudo ===============
+  \begin{scope}[xshift=9.6cm, yshift=1.3cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (-2.2,0) -- (0,0);
+      \draw (0,0) -- (2.0,1.1);
+      \draw (0,0) -- (2.0,-1.1);
+      \fill (0,0) circle (2.2pt);
+    \end{scope}
+    \node[figlblaux, anchor=north] at (0,-0.2) {nudo};
+
+    \draw[figvecres] (-1.9,0.28) -- (-0.9,0.28);
+    \node[figlbl, figred, anchor=south] at (-1.4,0.32) {$I_1$};
+    \draw[figvecres] (0.85,0.75) -- (1.75,1.24);
+    \node[figlbl, figred, anchor=south east] at (1.5,1.2) {$I_2$};
+    \draw[figvecres] (0.85,-0.75) -- (1.75,-1.24);
+    \node[figlbl, figred, anchor=north east] at (1.5,-1.2) {$I_3$};
+
+    \node[figlbl, figred, anchor=north] at (0,-1.95) {$I_1 = I_2 + I_3$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.8)
+      {(b) ley de los nudos};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las cuatro hipótesis se usan todo el tiempo sin nombrarlas.
+Que el cable sea ideal significa que su resistencia es despreciable
+\emph{frente a la de los resistores} ---no que sea nula: cuando no hay ningún
+resistor, como en un cortocircuito, esa resistencia diminuta es la única que
+queda y la corriente se vuelve enorme---. Que la corriente sea la misma a lo
+largo de un tramo, incluso donde el cable se ensancha, no es geometría sino
+conservación de la carga. Y que el circuito quede neutro en todas partes es lo
+que hace que la corriente sea estacionaria: acumular carga en algún punto
+costaría muchísima energía, así que el sistema se acomoda ---en un transitorio
+de unos $10^{-9}$ s, imperceptible--- para que eso no pase. La ley de los nudos
+del panel (b) es exactamente esa hipótesis aplicada a un punto de empalme: lo
+que entra, sale.}
+\end{center}

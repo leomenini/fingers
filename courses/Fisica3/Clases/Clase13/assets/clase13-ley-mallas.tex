@@ -1,0 +1,83 @@
+% Clase 13 --- La ley de mallas es que el potencial está bien definido
+% (§4.1 y §4.2).
+% El circuito simple que dibujó el docente, y al lado el potencial a lo largo
+% del recorrido. El panel (b) es el que explica la ley: al dar la vuelta
+% completa hay que volver al mismo valor de V, y eso es todo lo que dice
+% "suma de las diferencias de potencial igual a cero".
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) el circuito, con el recorrido marcado ===============
+  \begin{scope}
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[battery1, l=$\varepsilon$] (0,2.4);
+      \draw (0,2.4) -- (3.2,2.4);
+      \draw (3.2,2.4) to[R, l=$R$] (3.2,0);
+      \draw (3.2,0) -- (0,0);
+    \end{scope}
+
+    % puntos del recorrido
+    \foreach \p/\n/\pos in {(0,0)/A/{below left}, (0,2.4)/B/{above left},
+                            (3.2,2.4)/C/{above right}, (3.2,0)/D/{below right}} {
+      \node[figcarga, fill=figgray, minimum size=4pt] at \p {};
+      \node[figlbl, \pos] at \p {$\n$};
+    }
+
+    % sentido del recorrido
+    \draw[figvecres, line width=0.9pt] (1.3,1.2) arc (200:-70:0.45);
+    \node[figlbl, figred, anchor=north] at (1.75,0.5) {\footnotesize recorrido};
+
+    \draw[figvecres] (1.2,2.72) -- (2.1,2.72);
+    \node[figlbl, figred, anchor=south] at (1.65,2.76) {$I$};
+
+    \node[figlbl, anchor=north, align=center] at (1.6,-1.55)
+      {(a) circuito simple};
+  \end{scope}
+
+  % =============== (b) el potencial a lo largo del recorrido ===============
+  \begin{scope}[xshift=7.4cm, yshift=0.1cm]
+    \draw[figaxis, line width=0.7pt] (-0.3,0) -- (6.1,0);
+    \draw[figaxis, line width=0.7pt] (-0.3,0) -- (-0.3,2.9);
+    \node[figlbl, anchor=east] at (-0.4,2.6) {$V$};
+    \node[figlblaux, anchor=north] at (2.7,-0.95) {recorrido de la malla};
+
+    % perfil: sube eps en la batería, constante en los cables, baja RI en R
+    \draw[figblue, line width=1.1pt]
+      (0,0.4) -- (1.0,0.4) -- (1.0,2.3) -- (3.2,2.3) -- (3.2,0.4) -- (5.4,0.4);
+    \draw[figgray, dashed, line width=0.4pt] (1.0,0) -- (1.0,2.45);
+    \draw[figgray, dashed, line width=0.4pt] (3.2,0) -- (3.2,2.45);
+    \draw[figaux] (0,0.4) -- (5.6,0.4);
+
+    \node[figlblaux, anchor=north] at (0.15,-0.08) {$A$};
+    \node[figlblaux, anchor=north] at (1.25,-0.08) {$B$};
+    \node[figlblaux, anchor=north] at (2.95,-0.08) {$C$};
+    \node[figlblaux, anchor=north] at (3.45,-0.08) {$D$};
+    \node[figlblaux, anchor=north] at (5.35,-0.08) {$A$};
+
+    % las dos contribuciones
+    \draw[figvecaux, figred, line width=0.9pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0.62,0.45) -- (0.62,2.25);
+    \node[figlbl, figred, anchor=east] at (0.57,1.35) {$+\varepsilon$};
+    \draw[figvecaux, figblue, line width=0.9pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (3.6,2.25) -- (3.6,0.45);
+    \node[figlbl, figblue, anchor=west] at (3.7,1.35) {$-R\,I$};
+
+    \node[figlbl, figred, anchor=west] at (4.2,1.9) {$\varepsilon - R\,I = 0$};
+
+    \node[figlbl, anchor=north, align=center] at (2.7,-1.55)
+      {(b) al volver a $A$ el potencial es el mismo};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El panel (b) es la ley de mallas dibujada. Recorrer la malla es
+ir leyendo el potencial punto a punto: sube $\varepsilon$ al atravesar la
+batería del borne $-$ al $+$, se mantiene a lo largo de cada cable ---un cable
+ideal es óhmico con $R=0$, así que no puede haber caída en él, y todos sus
+puntos están al mismo potencial--- y baja $R\,I$ al atravesar la resistencia a
+favor de la corriente. La única exigencia es la del final: al volver al punto de
+partida hay que reencontrar el mismo valor, porque el potencial es una función
+del punto. De ahí sale $\varepsilon = R\,I$ sin ninguna física nueva. Vale la
+pena notar de dónde sale el sentido de la corriente: el potencial es mayor en el
+borne positivo, hacia allí van los electrones, y la corriente convencional
+resulta al revés que ellos.}
+\end{center}

@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -153,6 +160,8 @@ $\langle t\rangle = \tau$:
   $\mathbf{E}$. $\tau$ casi no depende de $E$ (propiedad del material).
 \end{keybox}
 
+\input{assets/clase13-drude-promedio.tex}
+
 \subsection{Ley de Ohm y conductividad microscópica}
 
 Con $J = e\,n\,v_d$:
@@ -220,6 +229,8 @@ alterna, sinusoidal).
   acumulación de carga).
 \end{keybox}
 
+\input{assets/clase13-circuito-ideal.tex}
+
 % ===================================================================
 \section{Baterías y fuerza electromotriz}
 % ===================================================================
@@ -266,6 +277,8 @@ modelada como pila ideal $\varepsilon$ en serie con $r$.
   Salvo aviso, todos los dispositivos son ideales.
 \end{notebox}
 
+\input{assets/clase13-resistencia-interna.tex}
+
 % ===================================================================
 \section{Análisis de circuitos: ley de mallas}
 % ===================================================================
@@ -295,6 +308,8 @@ al atravesar la resistencia a favor de la corriente:
         $\Delta V_R = \varepsilon R/(R+r)$; ideal si $R \gg r$.
 \end{itemize}
 
+\input{assets/clase13-ley-mallas.tex}
+
 \subsection{Circuito de dos mallas}
 
 Con varias FEM el sentido no es evidente. Estrategia:
@@ -307,6 +322,8 @@ Con varias FEM el sentido no es evidente. Estrategia:
 \end{enumerate}
 Queda un sistema lineal $3\times3$. Los signos dependen de las FEM
 relativas ($I \propto \varepsilon_1 - \varepsilon_2$).
+
+\input{assets/clase13-dos-mallas.tex}
 
 % ===================================================================
 \section{Resistencias en serie y en paralelo}
@@ -326,6 +343,8 @@ V_A - V_B = (R_1+R_2)\,I \;\Longrightarrow\; \boxed{R_{\text{eq}} = R_1 + R_2}.
   En condensadores la suma directa era en paralelo; en resistencias, en
   serie.
 \end{warnbox}
+
+\input{assets/clase13-serie-paralelo-R.tex}
 
 % ===================================================================
 \section{Transferencia de energía en un circuito}
@@ -355,5 +374,7 @@ Condensador & $\pm Q/C$ & almacena o entrega \\
 \begin{notebox}[Próxima clase]
   Experimento con circuitos de resistencias y condensadores.
 \end{notebox}
+
+\input{assets/clase13-potencia.tex}
 
 \end{document}
