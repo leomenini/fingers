@@ -1,6 +1,5 @@
 # CLAUDE.md — Curso Física III (OpenFING)
 
-▎ "Continuá con los diagramas de la Clase 10 siguiendo CLAUDE.md §6.5."
 
 Guía para generar las notas de cada clase a partir de su transcripción. Cada
 carpeta `Clases/ClaseN/` documenta una clase del curso y debe contener **cuatro**
@@ -19,8 +18,8 @@ archivos:
 
 > **Layout del repo (reorg 2026-07-25):** las 28 clases viven en
 > `courses/Fisica3/Clases/ClaseN/`; el `assets/` global en
-> `courses/Fisica3/Clases/assets/`. `build.sh`, `CLAUDE.md`, `METADATA_AUDIT.md`
-> y ` PDFiter1/` (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3/`.
+> `courses/Fisica3/Clases/assets/`. `build.sh`, `CLAUDE.md` y ` PDFiter1/`
+> (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3/`.
 
 ---
 
@@ -186,8 +185,9 @@ editorial_status: draft            # enum {draft, reviewing, verified, published
   malformado) y usa espaciado irregular. Tomar de él el *conjunto de campos*,
   no su formato literal.
 - El corpus (Clase1–7, 23–26) fue **normalizado** a este esquema el
-  2026-07-23; el detalle de qué se corrigió está en **`METADATA_AUDIT.md`**
-  (misma carpeta). Las clases nuevas deben seguir §4.1 desde el inicio.
+  2026-07-23 y la corrección ya está aplicada; el detalle de qué se tocó vivía
+  en `METADATA_AUDIT.md`, que se eliminó del repo. Las clases nuevas deben
+  seguir §4.1 desde el inicio.
 - **`id` es único por clase** con la convención `fis3-2015-2-NN` (curso +
   número de clase con cero a la izquierda, p. ej. `fis3-2015-2-07`). No
   reutilizar el id de curso `fis3-2015-2` como id de clase.
@@ -316,7 +316,18 @@ del Overleaf del usuario. Flujo:
    `align=center` y aparecen colisiones que en el harness (interlineado simple)
    no existen. Pasó en Clase 2 y Clase 4. Para acercar el harness al documento,
    cargar también `setspace`+`\onehalfspacing` en `preview.tex`.
-5. Recién entonces entregar el `.tex`. El usuario recibe figuras **ya
+5. **Chequear `Overfull \hbox`.** El harness es apaisado (~24 cm útiles) y el
+   documento tiene 16 cm de ancho de texto: una figura puede verse impecable en
+   el preview y meterse en el margen del PDF real. **Pasó en 4 de las 5 clases
+   10–14.** El grep es barato y no perdona:
+   ```bash
+   ~/.local/bin/tectonic -X compile notes.tex --outdir /tmp/chk 2>&1 | grep -c Overfull
+   ```
+   Debe dar `0`. Si no, casi siempre se arregla partiendo en dos líneas los pies
+   de panel largos y acercando los `xshift` entre paneles, antes que bajando el
+   `scale` (que achica la geometría pero **no** el texto de los nodos, así que
+   suele empeorar las colisiones).
+6. Recién entonces entregar el `.tex`. El usuario recibe figuras **ya
    verificadas**; su compile es sólo el armado del documento, no depuración.
 
 > Costo/beneficio: el loop de compilar+ver gasta *menos* en total que el ida y
@@ -354,6 +365,16 @@ del Overleaf del usuario. Flujo:
   `clase2-electrolito`: "fuera de escala"), en vez de dibujar algo engañoso.
 - **Pie de figura en `\small\itshape`** con la lectura física, no la repetición
   de los rótulos.
+- **`\providecommand` para el sub-dibujo que se repite** (moléculas polares en
+  `clase10-polarizacion`, imancitos en `clase14-oersted`). Dos requisitos: va
+  definido **antes** del `tikzpicture` —si se define dentro de un `scope` no se
+  ve desde los otros paneles— y con `#1`, no `##1`:
+  ```latex
+  \providecommand{\imancito}[3]{%
+    \begin{scope}[shift={(#1,#2)}, rotate=#3] ... \end{scope}}
+  ```
+  Con `providecommand` (y no `newcommand`) el mismo asset se puede compilar dos
+  veces en el mismo documento sin chocar.
 
 #### 6.5.3 Colisiones de rótulos: los casos que se repiten
 
@@ -373,7 +394,7 @@ Casi todo el tiempo de iteración se va en esto. Los recurrentes:
 
 #### 6.5.4 Releer el PDF atrapa errores de física, no sólo de tipografía
 
-Dos casos reales de este curso, ambos detectados **mirando el render**, no
+Cuatro casos reales de este curso, todos detectados **mirando el render**, no
 leyendo el código:
 
 - `clase4-capacitor`: el aporte de la placa $-\sigma$ estaba dibujado hacia
@@ -384,6 +405,17 @@ leyendo el código:
   las componentes $Y$ y dos líneas después que el neto apunta en $-\hat Y$. La
   figura dejó la contradicción a la vista; se corrigió a componentes $X$ en
   `notes.tex` **y** en `summary.md`.
+- Clase 11 §7.4: al dibujar `clase11-corriente` no cerraba el sentido de la
+  deriva, y el texto decía «los electrones hacia la derecha ⟹ corriente hacia
+  la derecha **(opuesta al movimiento de los portadores negativos)**» — las dos
+  mitades se contradicen entre sí. Va hacia la **izquierda**; corregido en
+  `summary.md` y `notes.tex`. El error venía de una línea confusa de la propia
+  transcripción, así que **la transcripción no arbitra**: arbitra la física.
+- `clase14-oersted`: los imancitos alrededor del cable habían quedado en sentido
+  horario. Con la corriente saliendo del plano, $\vec B$ es antihorario y cada
+  imancito va a $90°$ de su posición angular. Conviene calcular el ángulo, no
+  ponerlo a ojo (el propio docente avisa en clase «no quiero equivocarme en el
+  sentido»).
 
 > Corolario: si al dibujar una figura el contenido del `.tex` no cierra,
 > **el sospechoso es el texto**, no la figura. Corregir ambos y decirlo.
@@ -438,3 +470,14 @@ otra cosa: automatización por intervalo, no esto.)*
    pdflatex, que produce PDF igual enmascarando bugs). Por eso afloraron typos
    preexistentes (`\viaje`, `}` por `)`); si una clase falla, es un bug real a
    arreglar, no ruido.
+5. **`\foreach` no funciona dentro de un `axis` de pgfplots.** Falla en el
+   `\end{axis}` con `Undefined control sequence` en `\UseTextAccent`, sin
+   importar qué haya en el cuerpo del loop. **Desenrollarlo a mano** (ver
+   `Clase13/assets/clase13-drude-promedio.tex`, que dibuja seis choques uno por
+   uno). Fuera del `axis`, en `tikzpicture` plano, `\foreach` anda perfecto.
+6. **Nunca usar `\t` como variable de `\foreach`** —ni `\c`, `\d`, `\b`, `\v`,
+   `\u`, `\r`, `\H`—: son los macros de **acento** de LaTeX, y redefinirlos
+   rompe todo el texto acentuado del documento. Da **el mismo síntoma** que (5),
+   lo que hace perder mucho tiempo en el diagnóstico: ante `\UseTextAccent`,
+   revisar primero el nombre de la variable y después si el loop está dentro de
+   un `axis`. Nombres seguros: `\tcol`, `\ang`, `\xx`.
