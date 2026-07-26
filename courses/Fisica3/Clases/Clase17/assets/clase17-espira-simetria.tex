@@ -1,0 +1,103 @@
+% Clase 17 --- La simetría de la espira circular y la proyección axial (§1.1-1.2).
+% (a) "Para convencernos de que es vertical, fíjense, si toman el punto opuesto
+%      con respecto al centro..."
+% (b) "Voy a hacer un dibujo que ahora es un corte... tomo el plano tal que dS es
+%      perpendicular al plano."
+% Sentidos calculados, no puestos a ojo: con el elemento de la derecha llevando
+% ds = -z (alejándose del lector) y r = -R x + Z y, queda dB ∝ ds x r = R y + Z x,
+% o sea hacia arriba y hacia AFUERA; el elemento opuesto da hacia arriba y hacia
+% adentro. Por eso sobrevive sólo la componente axial.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la espira en perspectiva ===============
+  \begin{scope}
+    \draw[figaux] (0,-1.0) -- (0,4.0);
+
+    % la espira
+    \draw[figaux, figblue] (2.0,0) arc (0:180:2.0 and 0.62);
+    \draw[figline, line width=1.3pt] (-2.0,0) arc (180:360:2.0 and 0.62);
+    \draw[figvecres] (-0.4,-0.62) -- (0.45,-0.62);
+    \node[figlbl, figred, anchor=north] at (0,-0.72) {$I$};
+
+    % los dos elementos diametralmente opuestos
+    \draw[figvecres, line width=1.3pt] (2.0,-0.20) -- (2.0,0.28);
+    \node[figlbl, figred, anchor=west] at (2.08,0.1) {$d\vec s$};
+    \draw[figvecres, line width=1.3pt] (-2.0,0.20) -- (-2.0,-0.28);
+    \node[figlbl, figred, anchor=east] at (-2.08,-0.1) {$d\vec s\,'$};
+
+    % radios y punto de observación
+    \draw[figaux] (0,0) -- (2.0,0);
+    \node[figlblaux, anchor=north] at (1.0,-0.04) {$R$};
+    \node[figgray, circle, fill=figgray, inner sep=1.2pt] at (0,2.5) {};
+    \node[figlbl, anchor=east] at (-0.12,2.5) {$P$};
+    \node[figlblaux, anchor=west] at (0.1,1.35) {$Z$};
+
+    % los dos aportes dB en P y su resultante
+    \draw[figaux] (2.0,0) -- (0,2.5);
+    \draw[figaux] (-2.0,0) -- (0,2.5);
+    \draw[figvec, line width=1pt] (0,2.5) -- (0.86,3.19);
+    \node[figlbl, figblue, anchor=west] at (0.9,3.19) {$d\vec B$};
+    \draw[figvec, line width=1pt] (0,2.5) -- (-0.86,3.19);
+    \node[figlbl, figblue, anchor=east] at (-0.9,3.19) {$d\vec B'$};
+    \draw[figaux] (-0.86,3.19) -- (0.86,3.19);
+    \draw[figvecres, line width=1.4pt] (0,2.5) -- (0,3.85);
+    \node[figlbl, figred, anchor=west] at (0.08,3.6) {$dB_z$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.35)
+      {(a) los aportes de dos elementos opuestos:\\[-0.2em]
+       lo horizontal se cancela, lo axial se suma};
+  \end{scope}
+
+  % =============== (b) el corte que da la proyección ===============
+  \begin{scope}[xshift=7.6cm, yshift=-0.2cm]
+    % traza del plano de la espira y eje
+    \draw[figaux] (-2.6,0) -- (2.6,0);
+    \draw[figaux] (0,-0.5) -- (0,3.6);
+
+    % los dos elementos, de punta (ds es perpendicular al corte)
+    \node[figred, scale=1.05] at (2.0,0) {$\otimes$};
+    \node[figred, scale=1.05] at (-2.0,0) {$\odot$};
+    \node[figlblaux, figred, anchor=north] at (2.0,-0.18) {$d\vec s$};
+    \draw[figvecaux] (0,-0.32) -- (2.0,-0.32);
+    \node[figlblaux, anchor=north] at (1.0,-0.36) {$R$};
+
+    % P y la distancia Z
+    \node[figgray, circle, fill=figgray, inner sep=1.2pt] at (0,2.5) {};
+    \node[figlbl, anchor=east] at (-0.12,2.62) {$P$};
+    \draw[figvecaux] (-0.28,0) -- (-0.28,2.5);
+    \node[figlblaux, anchor=east] at (-0.36,1.3) {$Z$};
+
+    % el vector r y el ángulo alfa
+    \draw[figvec, line width=1.1pt] (2.0,0) -- (0.18,2.28);
+    \node[figlbl, figblue, anchor=west] at (1.22,1.28) {$\vec r$};
+    \draw[figaux] (0,1.65) arc (-90:-49:0.85);
+    \node[figlbl, anchor=north west] at (0.16,1.72) {$\alpha$};
+
+    % dB perpendicular a r, y su proyección
+    \draw[figvec, line width=1.1pt] (0,2.5) -- (1.09,3.37);
+    \node[figlbl, figblue, anchor=south west] at (1.05,3.3) {$d\vec B\perp\vec r$};
+    \draw[figvecres, line width=1.3pt] (0,2.5) -- (0,3.37);
+    \node[figlbl, figred, anchor=east] at (-0.1,3.05) {$dB_z$};
+    \draw[figaux] (0,3.37) -- (1.09,3.37);
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.15)
+      {(b) $\sin\alpha = \dfrac{R}{\sqrt{Z^2+R^2}}$,\quad
+       $dB_z = dB\,\sin\alpha$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Lo que hace fácil este cálculo es la simetría, y conviene verla
+antes de escribir nada. Cada elemento $d\vec s$ aporta un $d\vec B$
+perpendicular a $\vec r$; el elemento diametralmente opuesto aporta otro con la
+\emph{misma} componente axial y la componente radial \emph{invertida}, así que
+al recorrer la espira entera sólo sobrevive la componente sobre el eje ---y su
+sentido lo da la mano derecha---. El corte del panel (b) es el truco de dibujo
+que usa el docente para proyectar: eligiendo el plano que contiene al eje y al
+elemento, $d\vec s$ queda perpendicular a la hoja, de modo que $|d\vec s\times
+\vec r| = ds\,r$ (son perpendiculares) y $dB = \frac{\mu_0 I}{4\pi}
+\frac{ds}{Z^2+R^2}$. Proyectando con $\sin\alpha = R/\sqrt{Z^2+R^2}$ nada queda
+dependiendo del ángulo alrededor de la espira, así que la integral es
+simplemente $\int ds = 2\pi R$ y sale
+$B_z = \mu_0 I R^2 / 2(Z^2+R^2)^{3/2}$.}
+\end{center}

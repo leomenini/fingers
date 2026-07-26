@@ -1,0 +1,46 @@
+% Clase 18 --- El segundo experimento de Faraday (§2.1).
+% "Pone un amperímetro, pone acá una bobina... y lo que hace es poner otra
+%  bobina, una batería y un interruptor."
+% El punto es que el campo no tiene por qué venir de un imán permanente: si lo
+% genera otra corriente, sirve igual. Y ahí queda clarísimo que lo que cuenta es
+% el transitorio: con la llave cerrada y la corriente ya estabilizada, nada.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- circuito primario: batería, llave, bobina ----
+  \draw (0,0) to[battery1, l=$\varepsilon_0$] (0,2.2)
+        to[cute open switch, l=llave] (2.4,2.2);
+  \draw (2.4,2.2) to[L, l_=$\ $] (2.4,0) -- (0,0);
+
+  % ---- circuito secundario: bobina y amperímetro ----
+  \draw (4.6,0) to[L, l=$\ $] (4.6,2.2) -- (7.0,2.2);
+  \draw (7.0,2.2) to[ammeter] (7.0,0) -- (4.6,0);
+
+  % acoplamiento
+  \draw[figvecres, line width=1pt] (2.85,1.1) -- (4.15,1.1);
+  \node[figlbl, figred, anchor=south] at (3.5,1.15) {$\vec B$};
+  \node[figlblaux, anchor=north, align=center] at (3.5,0.25)
+    {sin contacto\\[-0.25em] eléctrico};
+  \node[figlblaux, anchor=east] at (2.25,1.1) {electroimán};
+  \node[figlblaux, anchor=west] at (4.75,1.1) {bobina};
+
+  % los tres momentos
+  \node[figlbl, anchor=north, align=left] at (-0.4,-0.75)
+    {\textbf{al cerrar} la llave: $I$ crece $\Rightarrow$ la aguja salta\\[0.15em]
+     \textbf{con $I$ ya estabilizada}: la aguja vuelve a cero\\[0.15em]
+     \textbf{al abrir} la llave: la aguja salta \emph{para el otro lado}};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La segunda familia de experimentos reemplaza el imán permanente
+por un electroimán, es decir, por otra corriente. No hay ningún contacto
+eléctrico entre los dos circuitos: lo único que los une es el campo magnético
+que el primero produce en la región del segundo. Al cerrar la llave la corriente
+del primario crece de cero a su valor final y durante ese transitorio ---y sólo
+durante él--- la aguja del amperímetro se mueve. Una vez estabilizada la
+corriente, aunque el campo sea intenso y esté ahí, no pasa nada. Al abrir la
+llave la corriente cae y vuelve a inducirse, ahora con el signo opuesto. La
+conclusión refuerza la del primer experimento y agrega algo: al fenómeno le da
+igual de dónde venga el campo ---imán o corriente---, lo que necesita es que el
+flujo cambie. Vale la pena notar de paso que este arreglo es, en esencia, un
+transformador, y que el mismo principio reaparecerá en los generadores.}
+\end{center}

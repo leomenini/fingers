@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -137,6 +144,8 @@ $\theta = \omega t$, así que $\Phi_B = \tfrac{B\omega R^2}{2}t$ y
 \]
 idéntico al método 1. Coherente.
 
+\input{assets/clase19-varilla.tex}
+
 % ===================================================================
 \section{Generadores y motores}
 % ===================================================================
@@ -158,6 +167,8 @@ Campo uniforme $B$ y espira (bobina de $N$ vueltas) girando con $\omega$
 Conectada a $R$, $I = \tfrac{BA\omega}{R}\sin(\omega t)$: \textbf{corriente
 alterna}. Los generadores simples producen CA de forma natural.
 
+\input{assets/clase19-generador.tex}
+
 \subsection{Torque necesario y balance de energía}
 
 Para $\omega$ constante hace falta un torque externo opuesto al magnético
@@ -177,6 +188,8 @@ Inyectando una corriente alterna, el torque hace girar el eje: es un
   media vuelta y no hay efecto acumulado. La CA sincroniza el cambio de signo;
   el motor DC usa un conmutador.
 \end{notebox}
+
+\input{assets/clase19-motor-generador.tex}
 
 % ===================================================================
 \section{Campos eléctricos inducidos}
@@ -202,6 +215,8 @@ d\mathbf{l}$. Igualando a Faraday:
   \mathbf{E}$, el trabajo y la ley de Ohm.
 \end{warnbox}
 
+\input{assets/clase19-cable-fino.tex}
+
 \subsection{Ejemplo: campo B uniforme y variable}
 
 Región circular con $\mathbf{B}$ uniforme pero variable, sin cargas. Las líneas
@@ -218,6 +233,8 @@ E\,(2\pi r) = -\frac{d\Phi_B}{dt}, \qquad \Phi_B = B\,\pi r^2.
 \end{keybox}
 
 Crece linealmente con $r$; los campos inducidos no derivan de un potencial.
+
+\input{assets/clase19-campo-inducido.tex}
 
 % ===================================================================
 \section{Inductancia}
@@ -245,6 +262,8 @@ $B = \mu_0 n I$. Flujo en una espira $\Phi_1 = \mu_0 n I A$; FEM total:
   \]
 \end{keybox}
 
+\input{assets/clase19-autoinduccion.tex}
+
 \subsection{Caso general, unidades y signos}
 
 Como $\Phi_B \propto I$ y la bobina es rígida, $\Phi_B = L I$ y
@@ -261,10 +280,12 @@ V$\cdot$s/A.
   El signo es el mismo crezca o decrezca $I$ (análogo a $-RI$).
 \end{keybox}
 
+\input{assets/clase19-signos-bobina.tex}
+
 \subsection{Ejemplo: el toroide}
 
-Toroide de sección rectangular (altura $h$, radios $A$ y $B$, $N$ espiras),
-$B(r) = \mu_0 N I/(2\pi r)$. Flujo en una espira:
+Toroide de sección rectangular (altura $h$, radios $A$ y $B$, con $N$
+espiras), donde $B(r) = \mu_0 N I/(2\pi r)$. Flujo en una espira:
 \[
 \Phi_1 = \frac{h N \mu_0 I}{2\pi}\ln\!\frac{B}{A}.
 \]
@@ -274,6 +295,8 @@ $B(r) = \mu_0 N I/(2\pi r)$. Flujo en una espira:
   \boxed{L = \frac{\mu_0 N^2 h}{2\pi}\ln\!\frac{B}{A}}
   \]
 \end{keybox}
+
+\input{assets/clase19-toroide-L.tex}
 
 \begin{notebox}[Próxima clase]
   Circuitos RL, materiales magnéticos y energía en el campo magnético.

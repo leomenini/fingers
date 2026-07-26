@@ -1,0 +1,67 @@
+% Clase 20 --- Un núcleo magnético dentro de la bobina (§1).
+% El paralelo con el dieléctrico funciona sólo hasta cierto punto, y la figura
+% tiene que dejar ver justamente dónde se rompe: el hierro NO es lineal, así que
+% "L = Km L_vacío" es una aproximación, no una identidad.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) las dos bobinas ===============
+  \begin{scope}
+    \draw[figline, line width=1pt] (-2.4,-0.7) -- (-0.4,-0.7);
+    \draw[figline, line width=1pt] (-2.4,0.7) -- (-0.4,0.7);
+    \foreach \xx in {-2.2,-1.8,-1.4,-1.0,-0.6} {
+      \node[figblue, scale=0.55] at (\xx,0.7) {$\odot$};
+      \node[figblue, scale=0.55] at (\xx,-0.7) {$\otimes$};
+    }
+    \node[figlblaux, anchor=north] at (-1.4,-0.95) {vacío: $L_{\text{vacío}}$};
+
+    \draw[figline, line width=1pt] (1.4,-0.7) -- (3.4,-0.7);
+    \draw[figline, line width=1pt] (1.4,0.7) -- (3.4,0.7);
+    \foreach \xx in {1.6,2.0,2.4,2.8,3.2} {
+      \node[figblue, scale=0.55] at (\xx,0.7) {$\odot$};
+      \node[figblue, scale=0.55] at (\xx,-0.7) {$\otimes$};
+    }
+    \fill[figamber!35] (1.5,-0.5) rectangle (3.3,0.5);
+    \draw[figamber, line width=0.9pt] (1.5,-0.5) rectangle (3.3,0.5);
+    \node[figlbl, figamber, anchor=south] at (2.4,0.85) {núcleo de hierro};
+    \node[figlblaux, anchor=north] at (2.4,-0.95) {con núcleo: $L = K_m L_{\text{vacío}}$};
+
+    \node[figlbl, anchor=north, align=center] at (0.6,-1.7)
+      {(a) el núcleo multiplica la inductancia};
+  \end{scope}
+
+  % =============== (b) la no linealidad ===============
+  \begin{scope}[xshift=7.0cm, yshift=-0.35cm]
+    \begin{axis}[
+      fisfig, width=5.8cm, height=4.4cm,
+      xlabel={$I$}, ylabel={$B$ en el material},
+      xmin=0, xmax=3.2, ymin=0, ymax=1.35,
+      xtick=\empty, ytick=\empty,
+    ]
+      \addplot[figamber, smooth, samples=120, domain=0:3.2]
+        {1.15*tanh(1.3*x)};
+      \addplot[figblue, dashed, samples=2, domain=0:1.05] {0.95*x};
+      \node[figlblaux, figblue, anchor=west] at (axis cs:0.35,1.18)
+        {lineal (vacío)};
+      \node[figlblaux, figamber, anchor=west] at (axis cs:1.5,0.75)
+        {hierro: satura};
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (2.9,-1.4)
+      {(b) por eso $K_m$ es una aproximación};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La analogía con el dieléctrico dentro de un condensador es
+tentadora y sirve para orientarse: así como el dieléctrico multiplica la
+capacitancia, un núcleo magnético multiplica la inductancia, y en los dos casos
+el factor depende sólo del material. Pero hay una diferencia que conviene no
+barrer bajo la alfombra: los dieléctricos son, en su enorme mayoría, lineales,
+mientras que los materiales magnéticos interesantes ---el hierro a la
+cabeza--- son \textbf{fuertemente no lineales}. La curva de la derecha muestra
+lo que eso significa: al aumentar la corriente el campo dentro del material
+deja de crecer proporcionalmente y termina saturando. Escribir $L = K_m
+L_{\text{vacío}}$ es entonces una aproximación válida en un rango, no una ley.
+Esa misma no linealidad es lo que hace posible la \textbf{magnetización
+espontánea} ---o sea, los imanes permanentes---, un fenómeno que no tiene
+análogo eléctrico común y que este curso no desarrolla.}
+\end{center}

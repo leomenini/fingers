@@ -1,0 +1,98 @@
+% Clase 16 --- El campo magnético de una carga en movimiento (§3.2--3.3).
+% "Tomen acá la carga Q que se mueve a velocidad v y ponen imancitos todo
+%  alrededor... el módulo de B en ese círculo es constante."
+% (a) es la descripción experimental que el docente arma a mano (círculos en el
+% plano perpendicular a v); (b) es la misma geometría para un punto cualquiera,
+% que es lo que la fórmula vectorial resume de un saque.
+% Sentido: con v hacia arriba (y) y q > 0, B = (mu0/4pi) q v x r / r^3 da, a la
+% derecha de la carga, y x x = -z, o sea ENTRANTE; a la izquierda, saliente; y
+% en el punto de adelante (hacia el lector) apunta a la derecha. Conviene
+% calcularlo y no ponerlo a ojo.
+\providecommand{\imancito}[3]{%
+  \begin{scope}[shift={(#1,#2)}, rotate=#3]
+    \draw[figred, fill=figred, line width=0.3pt] (0,-0.07) rectangle (0.26,0.07);
+    \draw[figblue, fill=figblue, line width=0.3pt] (-0.26,-0.07) rectangle (0,0.07);
+    \node[figlblaux, scale=0.8, anchor=west] at (0.3,0) {N};
+  \end{scope}}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) el círculo en el plano perpendicular ===============
+  \begin{scope}
+    % la carga y su velocidad
+    \draw[figvecres, line width=1.2pt] (0,0.18) -- (0,2.05);
+    \node[figlbl, figred, anchor=west] at (0.1,1.75) {$\vec v$};
+    \node[figpos, minimum size=6.5pt] at (0,0) {};
+    \node[figlbl, anchor=east] at (-0.14,-0.06) {$q>0$};
+
+    % el círculo, en perspectiva: mitad de atrás punteada
+    \draw[figaux, figblue] (1.7,0) arc (0:180:1.7 and 0.5);
+    \draw[figline] (-1.7,0) arc (180:360:1.7 and 0.5);
+
+    % el campo sobre el círculo
+    \node[figblue, scale=1.05, fill=white, inner sep=0.6pt] at (1.7,0) {$\otimes$};
+    \node[figblue, scale=1.05, fill=white, inner sep=0.6pt] at (-1.7,0) {$\odot$};
+    \draw[figvec] (-0.4,-0.5) -- (0.45,-0.5);
+    \draw[figvecaux, figblue] (0.4,0.5) -- (-0.45,0.5);
+    \imancito{-0.30}{-0.78}{0}
+
+    % radio
+    \draw[figaux] (0,0) -- (1.62,0);
+    \node[figlblaux, anchor=south] at (0.62,0.06) {$r$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.5)
+      {$|\vec B|$ constante sobre el círculo,\\[-0.2em]
+       tangente y con el sentido de la mano derecha};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.05)
+      {(a) el plano $\perp\vec v$ que pasa por $q$};
+  \end{scope}
+
+  % =============== (b) un punto cualquiera ===============
+  \begin{scope}[xshift=6.4cm]
+    \draw[figvecres, line width=1.2pt] (0,0.18) -- (0,2.05);
+    \node[figlbl, figred, anchor=east] at (-0.1,1.75) {$\vec v$};
+    \node[figpos, minimum size=6.5pt] at (0,0) {};
+    \node[figlbl, anchor=east] at (-0.14,-0.06) {$q$};
+
+    % vector r hasta el punto de observación
+    \draw[figvec, line width=1.1pt] (0,0) -- (1.14,1.63);
+    \node[figlbl, figblue, anchor=north west] at (0.62,1.02) {$\vec r$};
+    \node[figblue, scale=1.15] at (1.26,1.80) {$\otimes$};
+    \node[figlbl, anchor=west, align=left] at (1.48,1.86)
+      {$\vec B$ entrante\\[-0.2em] ($\perp$ a $\vec v$ y a $\vec r$)};
+
+    % ángulo
+    \draw[figaux] (55:0.95) arc (55:90:0.95);
+    \node[figlbl, anchor=south west] at (70:1.0) {$\theta$};
+
+    % sobre la propia recta de v el campo se anula
+    \node[figgray, circle, draw=figgray, fill=white, inner sep=1.3pt]
+      at (0,-1.15) {};
+    \node[figlblaux, anchor=west, align=left] at (0.16,-1.15)
+      {sobre la recta de $\vec v$\\[-0.25em] ($\theta=0$ o $\pi$): $\vec B=\vec 0$};
+
+    \node[figlbl, anchor=north] at (0.9,-1.95)
+      {$B=\dfrac{\mu_0}{4\pi}\dfrac{|q|\,v\sin\theta}{r^2}$};
+
+    \node[figlbl, anchor=north, align=center] at (0.9,-3.05)
+      {(b) la fórmula vectorial resume todo};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Punto por punto, poniendo imancitos alrededor, el resultado es
+un lío: el campo no apunta ni hacia la carga ni en la dirección de la velocidad.
+Ordenado, dice que sobre cada círculo contenido en un plano perpendicular a
+$\vec v$ y centrado en la carga el módulo es constante, el campo es tangente al
+círculo y el sentido lo da la mano derecha con el pulgar según $\vec v$; y que
+además $B\propto|q|$, $B\propto v$, $B\propto 1/r^2$ y $B\propto\sin\theta$.
+Todo eso ---módulo, dirección y sentido--- cabe en
+$\vec B(\vec r)=\dfrac{\mu_0}{4\pi}\dfrac{q\,\vec v\times\vec r}{r^3}$,
+con $\vec r$ desde la carga hasta el punto de observación. Se parece a Coulomb
+en el $1/r^2$ y en la proporcionalidad con $q$, pero difiere en lo esencial: el
+campo es \textbf{perpendicular} a $\vec r$ en vez de paralelo, y depende de la
+velocidad. Ojo con el detalle experimental: esta medida en la práctica no se
+hace, porque la misma carga genera una fuerza eléctrica enormemente mayor que
+tapa la magnética ---por eso los experimentos reales usan cables con corriente,
+que son neutros---.}
+\end{center}

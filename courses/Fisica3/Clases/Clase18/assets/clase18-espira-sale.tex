@@ -1,0 +1,72 @@
+% Clase 18 --- La espira que sale del campo: flujo y FEM (§5).
+% "Voy a orientar la corriente en esta dirección... si yo a esta distancia le
+%  llamo X, el flujo magnético vale la superficie, que es D por X, por B."
+% Ojo con los nombres: D es el lado PERPENDICULAR al movimiento (el que queda
+% adentro del campo) y x la penetración, así que el área encerrada por el campo
+% es D*x. La normal se toma entrante para que el flujo salga positivo, y eso es
+% coherente con el sentido horario elegido para I (mano derecha).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % región con campo entrante
+  \fill[figblue!8] (-3.9,-1.9) rectangle (0,1.9);
+  \draw[figgray, line width=0.7pt] (-3.9,-1.9) rectangle (0,1.9);
+  \foreach \xx in {-3.5,-2.9,-2.3,-1.7,-1.1,-0.5} {
+    \foreach \yy in {-1.5,-0.9,0.9,1.5} {
+      \node[figblue, scale=0.6] at (\xx,\yy) {$\otimes$};
+    }
+  }
+  \node[figlblaux, anchor=south west] at (-3.9,1.95) {$\vec B$ entrante y uniforme};
+
+  % la espira
+  \draw[figline, line width=1.5pt] (-1.3,-1.05) rectangle (1.5,1.05);
+
+  % sentido positivo de la corriente (horario: acorde con n entrante)
+  \draw[figvecres, line width=1pt] (-0.5,1.05) -- (0.6,1.05);
+  \draw[figvecres, line width=1pt] (1.5,0.4) -- (1.5,-0.4);
+  \draw[figvecres, line width=1pt] (0.6,-1.05) -- (-0.5,-1.05);
+  \draw[figvecres, line width=1pt] (-1.3,-0.4) -- (-1.3,0.4);
+  \node[figlbl, figred, anchor=north] at (0.05,0.95) {$I>0$};
+
+  % normal entrante
+  \node[figred, scale=1.1] at (0.75,0.35) {$\otimes$};
+  \node[figlblaux, figred, anchor=north] at (0.55,0.18) {$\hat n$ entrante};
+
+  % velocidad
+  \draw[figvecres, line width=1.3pt] (1.7,0) -- (2.7,0);
+  \node[figlbl, figred, anchor=south] at (2.2,0.06) {$\vec v$};
+
+  % cotas
+  \draw[figvecaux] (-1.55,-0.4) -- (-1.55,-1.05);
+  \draw[figvecaux] (-1.55,0.4) -- (-1.55,1.05);
+  \node[figlbl, anchor=east] at (-1.62,0) {$D$};
+  \draw[figvecaux] (-0.4,1.55) -- (-1.3,1.55);
+  \draw[figvecaux] (0.6,1.55) -- (1.5,1.55);
+  \node[figlbl, anchor=south] at (0.1,1.5) {$L$};
+  \draw[figaux] (-1.3,-1.05) -- (-1.3,-1.75);
+  \draw[figaux] (0,-1.9) -- (0,-1.75);
+  \draw[figvecaux] (-0.8,-1.65) -- (-1.3,-1.65);
+  \draw[figvecaux] (-0.5,-1.65) -- (0,-1.65);
+  \node[figlbl, anchor=north] at (-0.65,-1.6) {$x$};
+
+  \node[figlbl, anchor=north, align=center] at (-0.7,-2.35)
+    {$\Phi_B = B\,D\,x$,\qquad $\dfrac{dx}{dt} = -v$
+     \qquad$\Longrightarrow$\qquad
+     $\varepsilon = -\dfrac{d\Phi_B}{dt} = B\,D\,v > 0$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Todo el problema se reduce a escribir bien el flujo. Del área
+de la espira sólo cuenta la parte que todavía está dentro del campo, $D\,x$,
+donde $D$ es el lado \emph{perpendicular} al movimiento y $x$ lo que queda
+adentro; no aparece ningún coseno porque $\vec B$ es ortogonal al plano. La
+normal se elige entrante para que $\Phi_B$ sea positivo, y esa elección obliga
+---por la mano derecha--- al sentido horario para la corriente positiva: las dos
+convenciones tienen que ser coherentes o el signo final no significa nada. Al
+moverse hacia afuera $x$ \textbf{decrece}, de modo que $dx/dt = -v$ y los dos
+signos menos se cancelan: $\varepsilon = B\,D\,v$, positiva, es decir en el
+sentido que dibujamos. El control de Lenz cierra: el flujo entrante está
+disminuyendo, así que la corriente inducida debe generar campo entrante dentro
+de la espira para frenar esa caída, y una corriente horaria vista desde acá hace
+exactamente eso. Con la resistencia total $R$ queda $I = BDv/R$. Se desprecia la
+autoinducción, que se estudia dos clases más adelante.}
+\end{center}

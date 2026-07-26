@@ -1,0 +1,50 @@
+% Clase 22 --- Para qué sirve un pico angosto: la sintonía (§2.3).
+% El mismo dial, dos ajustes de L o C: la curva de resonancia se corre y elige
+% cuál de las emisoras del aire amplifica. Las líneas verticales son las
+% emisoras; lo que decide es cuál cae bajo el pico.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \begin{axis}[
+    fisfig, width=11.0cm, height=5.0cm,
+    xlabel={$\omega$ (frecuencia de la señal)}, ylabel={respuesta del receptor},
+    xmin=0.25, xmax=2.35, ymin=0, ymax=5.6,
+    xtick=\empty, ytick=\empty,
+    legend style={at={(0.5,-0.28)}, anchor=north, draw=none, fill=none,
+                  font=\footnotesize, legend columns=2},
+  ]
+    % emisoras
+    \draw[figgray, line width=1pt] (axis cs:0.75,0) -- (axis cs:0.75,4.6);
+    \draw[figgray, line width=1pt] (axis cs:1.2,0) -- (axis cs:1.2,4.6);
+    \draw[figgray, line width=1pt] (axis cs:1.75,0) -- (axis cs:1.75,4.6);
+    \node[figlblaux, anchor=south] at (axis cs:0.75,4.6) {emisora 1};
+    \node[figlblaux, anchor=south] at (axis cs:1.2,4.6) {emisora 2};
+    \node[figlblaux, anchor=south east] at (axis cs:1.78,4.6) {emisora 3};
+
+    \addplot[figred, smooth, samples=300, domain=0.25:2.35]
+      {1/sqrt(0.25^2 + (x/1.2 - 1.2/x)^2)};
+    \addlegendentry{dial en la emisora 2}
+    \addplot[figblue, dashed, smooth, samples=300, domain=0.25:2.35]
+      {1/sqrt(0.25^2 + (x/1.75 - 1.75/x)^2)};
+    \addlegendentry{dial en la emisora 3}
+  \end{axis}
+
+  \node[figlbl, anchor=north, align=center] at (5.4,-2.15)
+    {sintonizar $=$ mover $\omega_{\text{res}} = \dfrac{1}{\sqrt{LC}}$
+     cambiando $C$ (o $L$)};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En el aire están todas las emisoras a la vez, cada una con su
+frecuencia, y todas inducen señales minúsculas en la antena. Lo que hace un
+receptor no es filtrar ``a mano'' sino aprovechar la resonancia: se ajusta un
+condensador variable ---eso es girar el dial--- hasta que la frecuencia natural
+$1/\sqrt{LC}$ coincide con la de la emisora deseada. Como la resistencia es
+muy chica, el pico es altísimo y angostísimo: la señal sintonizada se amplifica
+muchísimo y las vecinas, que caen en las colas, prácticamente no se escuchan.
+Esa es la razón de fondo por la que un aparato puede capturar una señal
+diminuta y aun así distinguirla del resto, y por la que las emisoras tienen que
+respetar una separación mínima en frecuencia: si dos caen dentro del mismo pico,
+el receptor no puede separarlas. El mismo principio, con otros números,
+sintoniza un celular, calienta el agua en un microondas o elige la longitud de
+onda de una lámpara terapéutica.}
+\end{center}

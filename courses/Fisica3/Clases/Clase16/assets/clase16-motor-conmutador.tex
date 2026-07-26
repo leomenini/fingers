@@ -1,0 +1,124 @@
+% Clase 16 --- El conmutador del motor de corriente continua (§2.1).
+% "Cada media vuelta hay que dar vuelta el sentido de la corriente... tienen
+%  típicamente unas escobillitas para que haga contacto."
+% Los dos paneles son la misma posición angular separados por media vuelta,
+% vistos a lo largo del eje de giro. Los colores siguen a cada conductor
+% (ámbar = 1, azul = 2) para que se vea que rotaron, y los símbolos (x) / (.)
+% muestran que la corriente en cada conductor se invirtió. Moraleja: en una
+% posición dada la corriente es siempre la misma, así que el par nunca cambia
+% de sentido y la espira gira en lugar de oscilar.
+% El sub-dibujo del conmutador va con \providecommand y ANTES del tikzpicture
+% (si se define dentro de un scope no se ve desde el otro panel).
+\providecommand{\conmutador}[1]{%
+  \draw[figamber, line width=2.2pt] ({#1+7}:0.62) arc ({#1+7}:{#1+173}:0.62);
+  \draw[figblue, line width=2.2pt] ({#1+187}:0.62) arc ({#1+187}:{#1+353}:0.62);
+  \node[figlblaux, figamber] at ({#1+90}:0.95) {$1$};
+  \node[figlblaux, figblue] at ({#1+270}:0.95) {$2$};
+  \draw[figgray, fill=figgray!25, line width=0.6pt]
+    (-0.95,-0.15) rectangle (-0.70,0.15);
+  \draw[figgray, fill=figgray!25, line width=0.6pt]
+    (0.70,-0.15) rectangle (0.95,0.15);
+}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+
+  % =============== (a) ===============
+  \begin{scope}
+    \draw[figvecaux, figgray] (-2.9,2.8) -- (2.4,2.8);
+    \node[figlblaux, anchor=south east] at (2.4,2.85) {$\vec B$};
+
+    % traza del plano de la espira
+    \draw[figaux] (-1.5,-1.5) -- (1.5,1.5);
+
+    % conductor 1 (ámbar): saliente;  conductor 2 (azul): entrante
+    \node[figamber, scale=1.15] at (1.34,1.34) {$\odot$};
+    \node[figlbl, figamber, anchor=south west] at (1.42,1.40) {$1$};
+    \node[figblue, scale=1.15] at (-1.34,-1.34) {$\otimes$};
+    \node[figlbl, figblue, anchor=north east] at (-1.42,-1.40) {$2$};
+
+    % fuerzas: saliente -> hacia arriba;  entrante -> hacia abajo
+    \draw[figvecres, line width=1.2pt] (1.34,1.62) -- (1.34,2.45);
+    \node[figlbl, figred, anchor=east] at (1.24,2.05) {$\vec F$};
+    \draw[figvecres, line width=1.2pt] (-1.34,-1.62) -- (-1.34,-2.45);
+    \node[figlbl, figred, anchor=west] at (-1.24,-2.05) {$\vec F$};
+
+    % sentido de giro
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (115:2.25) arc (115:162:2.25);
+    \node[figlblaux, figred, anchor=south east] at (-1.35,1.75) {gira};
+
+    \conmutador{45}
+    \node[figlblaux, anchor=north, align=center] at (0.45,-0.95)
+      {escobillas fijas};
+
+    % batería
+    \draw[figgray, line width=0.8pt]
+      (-0.95,0) -- (-2.65,0) -- (-2.65,-3.2) -- (-0.45,-3.2);
+    \draw[figgray, line width=0.8pt]
+      (0.95,0) -- (2.65,0) -- (2.65,-3.2) -- (0.45,-3.2);
+    \draw[figgray, line width=1.5pt] (-0.16,-3.45) -- (-0.16,-2.95);
+    \draw[figgray, line width=0.9pt] (0.16,-3.32) -- (0.16,-3.08);
+    \draw[figgray, line width=0.8pt] (-0.45,-3.2) -- (-0.16,-3.2);
+    \draw[figgray, line width=0.8pt] (0.16,-3.2) -- (0.45,-3.2);
+    \node[figlblaux, anchor=north] at (0,-3.55) {$\varepsilon$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-4.15)
+      {(a) antes de la media vuelta};
+  \end{scope}
+
+  % =============== (b) ===============
+  \begin{scope}[xshift=7.6cm]
+    \draw[figvecaux, figgray] (-2.9,2.8) -- (2.4,2.8);
+    \node[figlblaux, anchor=south east] at (2.4,2.85) {$\vec B$};
+
+    \draw[figaux] (-1.5,-1.5) -- (1.5,1.5);
+
+    % ahora arriba está el 2, y por él sale la corriente
+    \node[figblue, scale=1.15] at (1.34,1.34) {$\odot$};
+    \node[figlbl, figblue, anchor=south west] at (1.42,1.40) {$2$};
+    \node[figamber, scale=1.15] at (-1.34,-1.34) {$\otimes$};
+    \node[figlbl, figamber, anchor=north east] at (-1.42,-1.40) {$1$};
+
+    \draw[figvecres, line width=1.2pt] (1.34,1.62) -- (1.34,2.45);
+    \node[figlbl, figred, anchor=east] at (1.24,2.05) {$\vec F$};
+    \draw[figvecres, line width=1.2pt] (-1.34,-1.62) -- (-1.34,-2.45);
+    \node[figlbl, figred, anchor=west] at (-1.24,-2.05) {$\vec F$};
+
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (115:2.25) arc (115:162:2.25);
+    \node[figlblaux, figred, anchor=south east, align=right] at (-1.35,1.75)
+      {sigue\\[-0.25em] girando};
+
+    \conmutador{225}
+    \node[figlblaux, anchor=north, align=center] at (0.5,-0.95)
+      {cada anillo cambió\\[-0.25em] de escobilla};
+
+    \draw[figgray, line width=0.8pt]
+      (-0.95,0) -- (-2.65,0) -- (-2.65,-3.2) -- (-0.45,-3.2);
+    \draw[figgray, line width=0.8pt]
+      (0.95,0) -- (2.65,0) -- (2.65,-3.2) -- (0.45,-3.2);
+    \draw[figgray, line width=1.5pt] (-0.16,-3.45) -- (-0.16,-2.95);
+    \draw[figgray, line width=0.9pt] (0.16,-3.32) -- (0.16,-3.08);
+    \draw[figgray, line width=0.8pt] (-0.45,-3.2) -- (-0.16,-3.2);
+    \draw[figgray, line width=0.8pt] (0.16,-3.2) -- (0.45,-3.2);
+    \node[figlblaux, anchor=north] at (0,-3.55) {$\varepsilon$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-4.15)
+      {(b) media vuelta después};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Sin conmutador el motor sería ``aburrido'': pasada la posición
+de alineación el par se invierte y la espira oscila en vez de girar. El truco es
+que la corriente que entrega la batería \textbf{no} cambia de signo ---eso sería
+difícil---; lo que cambia es la conexión. Los dos medios anillos giran
+solidarios con la espira y, al pasar por la posición crítica, cada uno queda
+apoyado en la escobilla opuesta. Comparando los paneles: el conductor $1$ pasó
+de arriba a abajo y a la vez su corriente se invirtió de saliente a entrante, de
+modo que \emph{en cada posición} la corriente ---y con ella la fuerza--- es
+siempre la misma, y el par mantiene el sentido vuelta tras vuelta. El motor de
+corriente alterna funciona igual, sólo que ahí la inversión la trae la propia
+corriente, que oscila sola. Como $\tau\propto\sin\theta$ no es constante a lo
+largo de la vuelta, en la práctica se agregan dispositivos que estabilicen el
+giro para que no salga a tirones.}
+\end{center}

@@ -1,0 +1,87 @@
+% Clase 16 --- Del par al instrumento de medida (§2.2).
+% "Lo que tienen que hacer es poner un resorte, de hecho les conviene un resorte
+%  de torsión... entonces pueden poner una agujita."
+% (a) el mecanismo, visto desde arriba como en las figuras anteriores: el par
+% magnético empuja a la bobina y el resorte responde con un par proporcional al
+% ángulo; la aguja se detiene donde los dos se igualan. (b) el mismo aparato
+% conectado de las dos maneras posibles.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) el galvanómetro ===============
+  \begin{scope}
+    \draw[figvecaux, figgray] (-2.35,2.95) -- (2.15,2.95);
+    \node[figlblaux, anchor=south east] at (2.15,3.0) {$\vec B$};
+
+    % escala
+    \draw[figgray, line width=0.6pt] (32:1.95) arc (32:128:1.95);
+    \foreach \ang in {32,48,64,80,96,112,128} {
+      \draw[figgray, line width=0.6pt] ({\ang}:1.95) -- ({\ang}:2.10);
+    }
+    \node[figlblaux, anchor=west] at (30:2.15) {escala};
+
+    % bobina vista desde arriba (segmento) con sus dos lados de punta
+    \draw[figline, line width=1.6pt] (-1.18,0.55) -- (1.18,-0.55);
+    \node[figblue, scale=0.9] at (1.18,-0.55) {$\otimes$};
+    \node[figblue, scale=0.9] at (-1.18,0.55) {$\odot$};
+    \node[figlblaux, anchor=north east] at (-1.05,0.42) {bobina de $N$ vueltas};
+
+    % par magnético
+    \draw[figvecres] (1.18,-0.72) -- (1.18,-1.45);
+    \node[figlbl, figred, anchor=west] at (1.26,-1.1) {$\vec F$};
+    \draw[figvecres] (-1.18,0.72) -- (-1.18,1.45);
+    \node[figlbl, figred, anchor=east] at (-1.26,1.1) {$\vec F$};
+
+    % resorte de torsión (espiral) y eje
+    \draw[figamber, line width=0.8pt, smooth, samples=140, variable=\ang,
+          domain=0:630] plot ({0.0011*\ang*cos(\ang)},{0.0011*\ang*sin(\ang)});
+    \draw[figamber, fill=figamber, line width=0.5pt]
+      (-0.09,-0.78) rectangle (0.09,-0.60);
+    \node[figlblaux, figamber, anchor=north east] at (-0.22,-0.72)
+      {resorte de torsión};
+    \node[figgray, circle, fill=figgray, inner sep=1.6pt] at (0,0) {};
+
+    % aguja y ángulo de desviación
+    \draw[figaux] (0,0) -- (110:2.0);
+    \draw[figvecres, line width=1.2pt] (0,0) -- (65:1.8);
+    \node[figlbl, figred, anchor=south west] at (65:2.25) {aguja};
+    \draw[figaux] (65:1.15) arc (65:110:1.15);
+    \node[figlbl, anchor=south] at (88:1.25) {$\varphi$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.85)
+      {(a) equilibrio: $N I A B\sin\theta = k\,\varphi$};
+  \end{scope}
+
+  % =============== (b) amperímetro y voltímetro ===============
+  \begin{scope}[xshift=5.0cm, yshift=-0.1cm]
+    \draw (0,-1.25) to[battery1, l=$\varepsilon$] (0,1.25)
+          to[R, l=$R_1$] (2.6,1.25);
+    \draw (2.6,1.25) to[R, l_=$R_2$] (2.6,-1.25);
+    \draw (2.6,-1.25) to[ammeter] (0,-1.25);
+    \draw (2.6,1.25) -- (3.9,1.25) to[voltmeter] (3.9,-1.25) -- (2.6,-1.25);
+
+    \node[figlbl, anchor=north, align=center] at (1.3,-1.75)
+      {en \textbf{serie}\\[-0.2em] $R$ chica};
+    \node[figlbl, anchor=north, align=center] at (3.9,-1.75)
+      {en \textbf{paralelo}\\[-0.2em] $R$ grande};
+
+    \node[figlbl, anchor=north, align=center] at (1.75,-2.75)
+      {(b) el mismo galvanómetro, conectado de dos maneras};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Como el par vale $NIAB\sin\theta$ y con la bobina y el imán
+fijos todo lo demás es constante, medir el par es medir la corriente. El resorte
+de torsión hace de patrón: responde con un par $k\varphi$ proporcional al ángulo
+girado, así que la aguja se detiene donde $NIAB\sin\theta = k\varphi$ y la
+desviación $\varphi$ queda en correspondencia con $I$. Ése es el galvanómetro,
+el núcleo de casi todos los instrumentos de aguja. Conectado \textbf{en serie}
+mide la corriente de la rama y por eso se lo construye con resistencia
+\textbf{chica}: si fuera comparable a las del circuito, cambiaría justamente la
+corriente que se quiere medir. Conectado \textbf{en paralelo} con una
+resistencia \textbf{grande} en serie, se desvía por él una corriente minúscula y
+lo que se lee, vía $\Delta V = RI$, es la diferencia de potencial entre los dos
+bornes. La idea de fondo es la misma en los dos casos y vale para cualquier
+medición: para medir hay que perturbar, y el diseño consiste en perturbar lo
+menos posible.}
+\end{center}

@@ -17,7 +17,7 @@ video:
 stats:
   transcript_words: 10397
   summary_words: 1493
-  diagrams_pending: 6
+  diagrams_pending: 0
   equations: 13
 
 topics:
@@ -59,7 +59,7 @@ status:
   transcript: done
   summary: done
   latex: done
-  assets: pending
+  assets: done
 
 review:
   state: needs-review

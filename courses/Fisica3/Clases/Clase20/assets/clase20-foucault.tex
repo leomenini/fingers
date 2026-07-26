@@ -1,0 +1,67 @@
+% Clase 20 --- Corrientes parásitas: el péndulo de Foucault y los núcleos
+% laminados (§3).
+% "Péndulo de bronce macizo que se frena entre bobinas encendidas; con cortes
+%  (peine), oscila libre."
+% Dos paneles con la misma placa, el mismo imán y la misma velocidad: lo único
+% que cambia son los cortes. Es el patrón de "una sola variable en discusión".
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \providecommand{\montaje}{%
+    \draw[figgray, line width=0.9pt] (0,3.2) -- (0,3.4);
+    \node[figgray, circle, fill=figgray, inner sep=1.3pt] at (0,3.4) {};
+    \draw[figgray, line width=0.9pt] (0,3.4) -- (1.15,0.9);
+    \fill[figblue!8] (-1.5,-1.3) rectangle (1.5,0.5);
+    \draw[figgray, line width=0.7pt] (-1.5,-1.3) rectangle (1.5,0.5);
+    \foreach \xx in {-1.1,-0.4,0.3,1.0} {
+      \foreach \yy in {-1.0,-0.4,0.2} {
+        \node[figblue, scale=0.55] at (\xx,\yy) {$\otimes$};
+      }}
+    \node[figlblaux, anchor=south east] at (1.5,0.55) {$\vec B$};}
+
+  % =============== (a) placa maciza ===============
+  \begin{scope}
+    \montaje
+    \fill[figamber!30] (0.55,-0.75) rectangle (1.75,0.9);
+    \draw[figamber, line width=1.1pt] (0.55,-0.75) rectangle (1.75,0.9);
+    % corrientes parásitas
+    \draw[figvecres, line width=0.9pt] (1.15,0.05) circle (0.32);
+    \draw[figvecres, line width=0.9pt] (1.15,0.05) circle (0.55);
+    \node[figlbl, figred, anchor=west] at (1.85,0.05) {corrientes};
+    \draw[figvecres, line width=1.3pt] (0.35,-1.05) -- (-0.55,-1.05);
+    \node[figlbl, figred, anchor=north] at (-0.1,-1.15) {frena};
+    \node[figlbl, anchor=north, align=center] at (0,-1.85)
+      {(a) placa maciza:\\[-0.2em] se detiene enseguida};
+  \end{scope}
+
+  % =============== (b) placa con cortes ===============
+  \begin{scope}[xshift=6.6cm]
+    \montaje
+    \fill[figamber!30] (0.55,-0.75) rectangle (1.75,0.9);
+    \draw[figamber, line width=1.1pt] (0.55,-0.75) rectangle (1.75,0.9);
+    \foreach \xx in {0.79,1.03,1.27,1.51} {
+      \draw[white, line width=2.2pt] (\xx,-0.75) -- (\xx,0.62);
+      \draw[figamber, line width=0.5pt] (\xx,-0.75) -- (\xx,0.62);
+    }
+    \node[figlblaux, figred, anchor=west, align=left] at (1.85,0.05)
+      {sin lugar para\\[-0.25em] los remolinos};
+    \node[figlbl, anchor=north, align=center] at (0,-1.85)
+      {(b) placa ranurada:\\[-0.2em] oscila casi libre};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Al entrar y salir de la región con campo, el flujo a través de
+la placa cambia y se inducen corrientes en el propio metal ---corrientes
+\textbf{parásitas} o de Foucault, remolinos cerrados dentro del material---.
+Lenz vuelve a decidir el signo: se oponen al movimiento, de modo que la placa
+maciza se frena en pocas oscilaciones y la energía mecánica termina como calor
+por efecto Joule. La versión ranurada es el control experimental: es el mismo
+metal, la misma masa y el mismo campo, pero los cortes interrumpen los caminos
+cerrados y los remolinos no pueden formarse, así que el péndulo oscila casi sin
+pérdidas. De acá sale, sin ningún paso adicional, la razón por la que los
+núcleos de los transformadores se construyen \textbf{laminados} y no macizos:
+las chapas aisladas entre sí cumplen el papel de las ranuras, cortan las
+corrientes parásitas y evitan que buena parte de la energía se disipe en
+calentar el hierro. Y del lado en que sí se las quiere, son las mismas
+corrientes que frenan un tren sin tocarlo.}
+\end{center}

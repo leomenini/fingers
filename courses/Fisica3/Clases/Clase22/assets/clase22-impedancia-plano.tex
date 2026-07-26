@@ -1,0 +1,67 @@
+% Clase 22 --- La impedancia en el plano complejo (§3.3).
+% Ésta es la figura que hace que todo el método complejo se vuelva geométrico:
+% el módulo de Z da la amplitud y su argumento el desfasaje. Los dos paneles
+% son el mismo triángulo con el signo de (omega L - 1/omega C) invertido.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) inductivo ===============
+  \begin{scope}
+    \draw[figaxis] (-0.6,0) -- (2.9,0);
+    \draw[figaxis] (0,-1.9) -- (0,1.9);
+    \node[figlblaux, anchor=north east] at (2.9,-0.05) {Re};
+    \node[figlblaux, anchor=south east] at (-0.08,1.9) {Im};
+
+    \draw[figvec, line width=1.2pt] (0,0) -- (2.0,0);
+    \node[figlbl, figblue, anchor=north] at (1.0,-0.1) {$R$};
+    \draw[figvec, line width=1.2pt] (2.0,0) -- (2.0,1.35);
+    \node[figlbl, figblue, anchor=west] at (2.08,0.7)
+      {$\omega L - \dfrac{1}{\omega C}$};
+    \draw[figvecres, line width=1.4pt] (0,0) -- (2.0,1.35);
+    \node[figlbl, figred, anchor=south east] at (1.15,0.78) {$\hat Z$};
+    \draw[figaux] (0.75,0) arc (0:34:0.75);
+    \node[figlblaux, anchor=west] at (20:0.95) {$\varphi>0$};
+
+    \node[figlbl, anchor=north, align=center] at (1.2,-2.35)
+      {(a) $\omega L > \dfrac{1}{\omega C}$: inductivo,\\[-0.1em]
+       la corriente \textbf{atrasa}};
+  \end{scope}
+
+  % =============== (b) capacitivo ===============
+  \begin{scope}[xshift=7.4cm]
+    \draw[figaxis] (-0.6,0) -- (2.9,0);
+    \draw[figaxis] (0,-1.9) -- (0,1.9);
+    \node[figlblaux, anchor=north east] at (2.9,-0.05) {Re};
+    \node[figlblaux, anchor=south east] at (-0.08,1.9) {Im};
+
+    \draw[figvec, line width=1.2pt] (0,0) -- (2.0,0);
+    \node[figlbl, figblue, anchor=south] at (1.0,0.08) {$R$};
+    \draw[figvec, line width=1.2pt] (2.0,0) -- (2.0,-1.35);
+    \node[figlbl, figblue, anchor=north west] at (2.08,-1.05)
+      {$\omega L - \dfrac{1}{\omega C}$};
+    \draw[figvecres, line width=1.4pt] (0,0) -- (2.0,-1.35);
+    \node[figlbl, figred, anchor=north east] at (1.15,-0.78) {$\hat Z$};
+    \draw[figaux] (0.75,0) arc (0:-34:0.75);
+    \node[figlblaux, anchor=west] at (-20:0.95) {$\varphi<0$};
+
+    \node[figlbl, anchor=north, align=center] at (1.2,-2.35)
+      {(b) $\omega L < \dfrac{1}{\omega C}$: capacitivo,\\[-0.1em]
+       la corriente \textbf{adelanta}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El truco del método complejo es que, al proponer
+$\hat I = \hat I_M e^{j\omega t}$, cada derivada se convierte en multiplicar por
+$j\omega$ y la ecuación diferencial se vuelve una división de números
+complejos: $\hat I_M = \varepsilon_0/\hat Z$, con
+$\hat Z = R + j(\omega L - 1/\omega C)$. Toda la información del circuito queda
+en ese único número, y la figura lo dice mejor que la fórmula: la parte real es
+la resistencia ---lo que disipa--- y la parte imaginaria es la
+\textbf{reactancia}, la competencia entre bobina y condensador, que no disipa
+pero desfasa. El módulo de la hipotenusa fija la amplitud,
+$I_M = \varepsilon_0/|\hat Z|$, y el ángulo fija el desfasaje entre corriente y
+tensión. Según cuál de los dos gane, el circuito se comporta como inductivo o
+como capacitivo. Y hay un caso especial que se lee de un vistazo: cuando los dos
+se cancelan, el triángulo se aplasta sobre el eje real, $\hat Z = R$, y estamos
+en resonancia.}
+\end{center}

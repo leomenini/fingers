@@ -1,0 +1,63 @@
+% Clase 21 --- Por qué las soluciones complejas dan una respuesta real (§2.5).
+% "Esto lo podemos ver en un dibujo acá": el punto es que las dos raíces son
+% imaginarias puras y conjugadas, y que exigir Q real obliga a que las dos
+% constantes también lo sean, con lo que la suma cierra en un coseno.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) las raíces ===============
+  \begin{scope}
+    \draw[figaxis] (-1.7,0) -- (1.7,0);
+    \draw[figaxis] (0,-1.8) -- (0,1.8);
+    \node[figlblaux, anchor=north east] at (1.7,-0.05) {Re};
+    \node[figlblaux, anchor=south east] at (-0.08,1.8) {Im};
+
+    \node[figred, circle, fill=figred, inner sep=1.6pt] at (0,1.25) {};
+    \node[figlbl, figred, anchor=west] at (0.12,1.25) {$r_+ = i\omega$};
+    \node[figred, circle, fill=figred, inner sep=1.6pt] at (0,-1.25) {};
+    \node[figlbl, figred, anchor=west] at (0.12,-1.25) {$r_- = -i\omega$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.3)
+      {(a) $Lr^2 + \frac1C = 0$: raíces\\[-0.2em] imaginarias puras};
+  \end{scope}
+
+  % =============== (b) las constantes conjugadas ===============
+  \begin{scope}[xshift=6.2cm]
+    \draw[figaxis] (-1.9,0) -- (1.9,0);
+    \draw[figaxis] (0,-1.8) -- (0,1.8);
+    \node[figlblaux, anchor=north east] at (1.9,-0.05) {Re};
+    \node[figlblaux, anchor=south east] at (-0.08,1.8) {Im};
+
+    \draw[figvec, line width=1.1pt] (0,0) -- (38:1.5);
+    \node[figlbl, figblue, anchor=south west] at (38:1.5) {$A_1$};
+    \draw[figvec, line width=1.1pt] (0,0) -- (-38:1.5);
+    \node[figlbl, figblue, anchor=north west] at (-38:1.5) {$A_2=\overline{A_1}$};
+    \draw[figaux] (1.0,0) arc (0:38:1.0);
+    \node[figlblaux, anchor=west] at (19:1.12) {$\varphi$};
+    \draw[figaux] (1.0,0) arc (0:-38:1.0);
+    \node[figlblaux, anchor=west] at (-19:1.35) {$-\varphi$};
+
+    \draw[figaux] (38:1.5) -- (-38:1.5);
+    \draw[figvecres, line width=1.4pt] (0,0) -- (0.62,0);
+    \node[figlbl, figred, anchor=north] at (0.31,-0.5) {$A_1+A_2$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.3)
+      {(b) su suma es \textbf{real}:\\[-0.2em]
+       $2|A_1|\cos(\omega t+\varphi)$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Proponer $Q = A e^{rt}$ no es adivinar: es el método sistemático
+para ecuaciones lineales con coeficientes constantes, y funciona donde
+``proponer un coseno'' ya no alcanza. Sustituyendo queda el polinomio
+característico $Lr^2 + 1/C = 0$, cuyas raíces son \emph{imaginarias puras},
+$\pm i\omega$ con $\omega = 1/\sqrt{LC}$; ahí ya está la frecuencia, sin haber
+supuesto nada oscilatorio. La solución general es entonces
+$Q = A_1 e^{i\omega t} + A_2 e^{-i\omega t}$, y acá aparece la única sutileza:
+$Q$ es una carga, tiene que ser un número real, y eso obliga a que $A_2$ sea el
+\textbf{conjugado} de $A_1$ ---dos complejos con el mismo módulo y fases
+opuestas---. Sumados, sus partes imaginarias se cancelan y con la fórmula de
+Euler queda $Q(t) = 2|A_1|\cos(\omega t+\varphi)$, exactamente lo que había dado
+la analogía mecánica. Las dos constantes libres, $|A_1|$ y $\varphi$, son las
+que fijan las condiciones iniciales.}
+\end{center}

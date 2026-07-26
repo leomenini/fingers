@@ -1,0 +1,43 @@
+% Clase 20 --- La analogía RC / RL (§2.2).
+% No es una curiosidad estética: es la razón por la que no hay que resolver nada
+% nuevo. La figura pone los dos circuitos y el diccionario entre ambos.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \begin{scope}
+    \draw (0,0) to[battery1, l=$\varepsilon$] (0,2.2)
+          to[R, l=$R$] (2.6,2.2);
+    \draw (2.6,2.2) to[C, l_=$C$] (2.6,0) -- (0,0);
+    \node[figlbl, anchor=north, align=center] at (1.3,-0.5)
+      {(a) $RC$: $\dfrac{Q}{C} + R\dfrac{dQ}{dt} = \varepsilon$};
+  \end{scope}
+
+  \begin{scope}[xshift=6.0cm]
+    \draw (0,0) to[battery1, l=$\varepsilon$] (0,2.2)
+          to[R, l=$R$] (2.6,2.2);
+    \draw (2.6,2.2) to[L, l_=$L$] (2.6,0) -- (0,0);
+    \node[figlbl, anchor=north, align=center] at (1.3,-0.5)
+      {(b) $RL$: $R\,I + L\dfrac{dI}{dt} = \varepsilon$};
+  \end{scope}
+
+  \node[figlbl, anchor=north, align=center] at (4.3,-1.7)
+    {$Q \leftrightarrow I$,\qquad
+     $\dfrac{1}{C} \leftrightarrow R$,\qquad
+     $R \leftrightarrow L$,\qquad
+     $\tau = RC \leftrightarrow \tau = \dfrac{L}{R}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos ecuaciones son la misma con otros nombres, y eso vale
+más que una analogía decorativa: significa que toda la matemática ya está hecha
+y que basta traducir. El diccionario asigna la carga a la corriente, el inverso
+de la capacitancia a la resistencia y la resistencia a la inductancia ---sí, la
+$R$ cambia de papel al pasar de un circuito al otro, que es la parte
+contraintuitiva del asunto---. De ahí que las soluciones tengan exactamente la
+misma forma, exponenciales con una constante de tiempo, y que baste con conocer
+una para escribir la otra. La lectura física, en cambio, es distinta: el
+condensador almacena energía en el campo \emph{eléctrico} entre sus placas y la
+bobina en el campo \emph{magnético} de su interior, y mientras el transitorio
+del $RC$ se acelera cuando la resistencia baja, el del $RL$ hace lo contrario.
+Un tiempo característico chico significa siempre lo mismo: el circuito llega
+rápido a su régimen estacionario.}
+\end{center}

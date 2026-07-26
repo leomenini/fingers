@@ -1,0 +1,93 @@
+% Clase 19 --- La varilla que rota, por los dos caminos (§1).
+% "Rota, la varilla describe un círculo, y vamos a llamarle R al largo."
+% (a) el método microscópico: cada segmento dr es una pilita en serie, y hay que
+% integrarlas porque la velocidad NO es la misma en todos los puntos (v = wr).
+% (b) el mismo resultado por Faraday, cerrando el circuito: el área barrida
+% crece linealmente con el tiempo. Que los dos den lo mismo es el control.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) sumando segmentos ===============
+  \begin{scope}
+    \foreach \xx in {-2.4,-1.6,-0.8,0,0.8,1.6,2.4} {
+      \foreach \yy in {-2.2,-1.4,1.4,2.2} {
+        \node[figblue, scale=0.55] at (\xx,\yy) {$\otimes$};
+      }
+    }
+    \node[figlblaux, anchor=north east] at (2.7,-2.5) {$\vec B$ entrante y uniforme};
+
+    \draw[figaux] (0,0) circle (2.3);
+    \node[figgray, circle, fill=figgray, inner sep=1.5pt] at (0,0) {};
+    \node[figlblaux, anchor=north east] at (-0.1,-0.1) {eje fijo};
+
+    % la varilla
+    \draw[figline, line width=2pt] (0,0) -- (25:2.3);
+    \node[figlbl, anchor=south west] at (25:2.35) {$R$};
+
+    % el segmento dr
+    \draw[figred, line width=2.6pt] (25:1.25) -- (25:1.6);
+    \draw[figvecaux] (0,0) -- (25:1.25);
+    \node[figlblaux, anchor=north west] at (25:0.75) {$r$};
+    \node[figlbl, figred, anchor=north west] at (25:1.5) {$dr$};
+
+    % la velocidad del segmento
+    \draw[figvecres, line width=1.1pt] (25:1.42) -- ($(25:1.42)+(115:1.0)$);
+    \node[figlbl, figred, anchor=south west] at ($(25:1.42)+(115:1.0)$)
+      {$v=\omega r$};
+
+    % sentido de giro
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (60:2.6) arc (60:100:2.6);
+    \node[figlblaux, figred, anchor=south] at (80:2.75) {$\omega$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(a) $d\varepsilon = B\,(\omega r)\,dr$, en serie:\\[-0.2em]
+       $\varepsilon = \displaystyle\int_0^R B\omega r\,dr
+        = \dfrac{B\omega R^2}{2}$};
+  \end{scope}
+
+  % =============== (b) cerrando el circuito ===============
+  \begin{scope}[xshift=7.4cm]
+    \foreach \xx in {-2.4,-1.6,-0.8,0,0.8,1.6,2.4} {
+      \foreach \yy in {-2.2,-1.4,1.4,2.2} {
+        \node[figblue, scale=0.55] at (\xx,\yy) {$\otimes$};
+      }
+    }
+    % el área barrida
+    \fill[figamber!25] (0,0) -- (0:2.3) arc (0:55:2.3) -- cycle;
+    \draw[figaux] (0,0) circle (2.3);
+    \draw[figline, line width=1.6pt] (0,0) -- (0:2.3);
+    \draw[figline, line width=2pt] (0,0) -- (55:2.3);
+    \draw[figline, line width=1.6pt] (0:2.3) arc (0:55:2.3);
+    \node[figgray, circle, fill=figgray, inner sep=1.5pt] at (0,0) {};
+
+    \draw[figaux] (0.8,0) arc (0:55:0.8);
+    \node[figlbl, anchor=west] at (27:0.88) {$\theta=\omega t$};
+    \node[figlbl, figamber, anchor=south] at (27:1.95)
+      {$A=\tfrac{\theta}{2}R^2$};
+
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (70:2.6) arc (70:105:2.6);
+    \node[figlblaux, figred, anchor=south] at (88:2.75) {$\omega$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(b) $\Phi_B = \dfrac{B\omega R^2}{2}\,t$
+       $\Longrightarrow$
+       $\left|\dfrac{d\Phi_B}{dt}\right| = \dfrac{B\omega R^2}{2}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La tentación es aplicar $\varepsilon = LvB$ de una, pero no se
+puede: esa fórmula supone que toda la barra se mueve con la misma velocidad, y
+acá el extremo va rapidísimo mientras el punto fijo no se mueve. El método
+honesto es partir la varilla en segmentos $dr$, cada uno con su
+$v=\omega r$, y notar que están \textbf{en serie}: son como muchas pilitas
+encadenadas, así que las FEMs se suman y la suma es una integral,
+$\int_0^R B\omega r\,dr = B\omega R^2/2$ ---el factor $1/2$ sale del promedio de
+la velocidad, no de ningún truco---. El segundo camino evita las cuentas
+microscópicas: se cierra el circuito con un arco conductor y se mira el
+\emph{área barrida}, que crece proporcionalmente al ángulo y por lo tanto al
+tiempo; su derivada da lo mismo. Que dos razonamientos tan distintos coincidan
+no es casualidad, es la coherencia entre la fuerza de Lorentz sobre los
+portadores y la ley de Faraday.}
+\end{center}

@@ -1,0 +1,60 @@
+% Clase 19 --- De la espira material a la curva imaginaria (§3.1).
+% "Imagínense que ese cable lo hago muy finito, muy finito, muy finito... pero
+%  si no hay un circuito, esta fórmula vale igual."
+% El paso conceptual de la clase: la ley no habla de cables, habla de curvas.
+% Los dos paneles tienen la misma curva y el mismo campo variable; lo único que
+% cambia es que en (b) no hay materia.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) con cable ===============
+  \begin{scope}
+    \fill[figblue!8] (0,0) circle (1.9);
+    \draw[figgray, line width=0.7pt] (0,0) circle (1.9);
+    \foreach \ang in {30,90,150,210,270,330} {
+      \node[figblue, scale=0.7] at (\ang:1.1) {$\otimes$};
+    }
+    \node[figblue, scale=0.7] at (0,0) {$\otimes$};
+    \node[figlblaux, anchor=south] at (0,1.95) {$\vec B(t)$ variable};
+
+    \draw[figline, line width=2.2pt] (0,0) circle (1.35);
+    \draw[figvecres, line width=1.1pt] (100:1.35) arc (100:65:1.35);
+    \node[figlbl, figred, anchor=south west] at (60:1.4) {$I$};
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(a) con un cable: circula corriente};
+  \end{scope}
+
+  % =============== (b) sin cable ===============
+  \begin{scope}[xshift=6.8cm]
+    \fill[figblue!8] (0,0) circle (1.9);
+    \draw[figgray, line width=0.7pt] (0,0) circle (1.9);
+    \foreach \ang in {30,90,150,210,270,330} {
+      \node[figblue, scale=0.7] at (\ang:1.1) {$\otimes$};
+    }
+    \node[figblue, scale=0.7] at (0,0) {$\otimes$};
+    \node[figlblaux, anchor=south] at (0,1.95) {$\vec B(t)$ variable};
+
+    \draw[figamber, dashed, line width=1.3pt] (0,0) circle (1.35);
+    \draw[figvecaux, figamber, line width=1pt] (100:1.35) arc (100:65:1.35);
+    \node[figlbl, figamber, anchor=south west] at (60:1.4) {$C$};
+    \node[figlblaux, anchor=north, align=center] at (0,-1.42)
+      {no hay materia:\\[-0.25em] sólo una curva imaginaria};
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(b) sin cable: el campo $\vec E$ está igual};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Vale la pena detenerse en este paso porque es el que cambia el
+estatus de la ley. Mientras haya un cable uno puede contarse el cuento de que
+``la corriente inducida circula por el circuito''; pero si el cable se va
+haciendo cada vez más fino, y finalmente se lo saca, la ley
+$\oint_C \vec E\cdot d\vec l = -d\Phi_B/dt$ sigue valiendo palabra por palabra:
+sólo necesita una curva y una superficie apoyada en ella, no materia. Lo que hay
+en el espacio, entonces, no es ``corriente esperando un cable'' sino un
+\textbf{campo eléctrico inducido}, que existe con o sin circuito y que es el que
+efectivamente empuja las cargas cuando el cable está ---el campo magnético no
+puede hacerlo, porque la fuerza magnética nunca trabaja---. La consecuencia
+teórica es fuerte: este $\vec E$ tiene circulación no nula, así que \emph{no}
+deriva de un potencial y $\vec E = -\nabla V$ deja de valer. Siguen valiendo,
+eso sí, $\vec F = q\vec E$, el trabajo y la ley de Ohm.}
+\end{center}

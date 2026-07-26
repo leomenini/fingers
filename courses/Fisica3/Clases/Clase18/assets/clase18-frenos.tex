@@ -1,0 +1,64 @@
+% Clase 18 --- Las fuerzas sobre la espira y el balance de energía (§5.1).
+% "Van a tener un tramo de fuerza acá, un tramo de fuerza acá, un tramo de
+%  fuerza acá... F2, fíjense que intenta oponerse al movimiento, intenta frenar."
+% Misma geometría que la figura anterior: acá sólo se agregan las fuerzas.
+% Sentidos calculados: con I horaria, en el lado izquierdo (dentro del campo) la
+% corriente va hacia ARRIBA, y F = I D y x (-B z) = -I D B x, o sea hacia la
+% IZQUIERDA: frena. Los tramos horizontales dan fuerzas verticales opuestas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % región con campo entrante
+  \fill[figblue!8] (-3.9,-1.9) rectangle (0,1.9);
+  \draw[figgray, line width=0.7pt] (-3.9,-1.9) rectangle (0,1.9);
+  \foreach \xx in {-3.5,-2.9,-2.3,-1.7,-1.1,-0.5} {
+    \foreach \yy in {-1.5,1.5} {
+      \node[figblue, scale=0.6] at (\xx,\yy) {$\otimes$};
+    }
+  }
+  \node[figlblaux, anchor=south west] at (-3.9,1.95) {$\vec B$ entrante};
+
+  % la espira y la corriente inducida
+  \draw[figline, line width=1.5pt] (-1.3,-1.05) rectangle (1.5,1.05);
+  \draw[figvecres, line width=1pt] (-0.5,1.05) -- (0.6,1.05);
+  \draw[figvecres, line width=1pt] (1.5,0.4) -- (1.5,-0.4);
+  \draw[figvecres, line width=1pt] (0.6,-1.05) -- (-0.5,-1.05);
+  \draw[figvecres, line width=1pt] (-1.3,-0.4) -- (-1.3,0.4);
+  \node[figlbl, figred, anchor=west] at (1.65,1.05) {$I = \dfrac{BDv}{R}$};
+
+  % fuerzas: las de los tramos horizontales se cancelan
+  \draw[figvec, line width=1.2pt] (-0.7,1.05) -- (-0.7,1.75);
+  \node[figlbl, figblue, anchor=south] at (-0.7,1.78) {$\vec F_1$};
+  \draw[figvec, line width=1.2pt] (-0.7,-1.05) -- (-0.7,-1.75);
+  \node[figlbl, figblue, anchor=north] at (-0.7,-1.78) {$\vec F_3$};
+
+  % la fuerza del lado interior: frena
+  \draw[figvecres, line width=1.6pt] (-1.3,0) -- (-2.5,0);
+  \node[figlbl, figred, anchor=south] at (-2.5,0.12) {$\vec F_2 = I D B$};
+
+  % velocidad
+  \draw[figvecres, line width=1.3pt] (1.7,0) -- (2.7,0);
+  \node[figlbl, figred, anchor=south] at (2.2,0.06) {$\vec v$};
+  \node[figlblaux, anchor=west, align=left] at (1.75,-0.95)
+    {alguien tiene que tirar\\[-0.25em] para mantener $v$};
+
+  \node[figlbl, anchor=north, align=center] at (-0.6,-2.35)
+    {$P_{\text{dis}} = R I^2 = \dfrac{B^2D^2v^2}{R}
+     \;=\; F_2\,v = P_{\text{ext}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Una vez que hay corriente, el mismo campo actúa sobre ella:
+$\vec F = I\vec L\times\vec B$ en cada tramo. Los dos tramos horizontales que
+están dentro del campo llevan corriente en sentidos opuestos y dan fuerzas
+verticales que se cancelan (además de tender a deformar la espira, no a
+moverla). Todo el efecto neto queda en el lado interior, y su fuerza
+$F_2 = I D B = B^2D^2v/R$ apunta \textbf{hacia adentro del campo}: se opone al
+movimiento. Eso no es casualidad ni una coincidencia de signos, es Lenz otra
+vez, y el balance energético lo confirma: la espira disipa $RI^2$ por efecto
+Joule, así que para mantener $v$ constante alguien tiene que entregar
+exactamente esa potencia, y en efecto $F_{\text{ext}}v = B^2D^2v^2/R = RI^2$. Si
+nadie tira, la energía cinética se va convirtiendo en calor y el sistema
+\emph{se frena solo}: es el principio del \textbf{freno magnético}, que no tiene
+contacto ---no se gastan pastillas--- pero tampoco puede detener del todo, ya
+que al anularse $v$ desaparece la fuerza.}
+\end{center}

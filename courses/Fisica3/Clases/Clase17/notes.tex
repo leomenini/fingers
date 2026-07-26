@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -130,6 +137,8 @@ Proyectando con $\sin\alpha = R/\sqrt{Z^2+R^2}$:
 dB_z = \frac{\mu_0 I R}{4\pi}\,\frac{ds}{(Z^2+R^2)^{3/2}}.
 \]
 
+\input{assets/clase17-espira-simetria.tex}
+
 \subsection{Resultado}
 
 Nada depende del ángulo; $\int ds = 2\pi R$:
@@ -162,6 +171,8 @@ anillo cargado). Las líneas son cerradas y atraviesan la espira.
   cuadrupolar ($1/r^4$).
 \end{notebox}
 
+\input{assets/clase17-espira-lineas.tex}
+
 % ===================================================================
 \section{El solenoide}
 % ===================================================================
@@ -172,11 +183,14 @@ Bobina cilíndrica con espiras \textbf{muy compactas}. Largo $L$, número
 total $N$, densidad $n = N/L$ (espiras por unidad de longitud). Se calcula
 $\mathbf{B}$ sobre el eje.
 
+
 \begin{notebox}[Por qué compactas]
   Separadas serían hélices; pegadas, cada una se aproxima por una espira
   circular. El cable está barnizado (aislado) para que la corriente dé
   vueltas.
 \end{notebox}
+
+\input{assets/clase17-solenoide.tex}
 
 \subsection{Suma de espiras: la integral}
 
@@ -194,7 +208,10 @@ Con $u = y-x$ y la primitiva $\dfrac{u}{R^2\sqrt{u^2+R^2}}$:
     \frac{L/2 - x}{\sqrt{(L/2-x)^2 + R^2}} +
     \frac{L/2 + x}{\sqrt{(L/2+x)^2 + R^2}}\right]}
   \]
+
 \end{keybox}
+
+\input{assets/clase17-solenoide-integral.tex}
 
 \subsection{El solenoide ideal}
 
@@ -214,7 +231,10 @@ $\sim R$).
 \begin{notebox}[Solo sobre el eje]
   Este cálculo (Biot--Savart) es sobre el eje; la uniformidad en toda la
   sección se prueba con Ampère (\S3.4).
+
 \end{notebox}
+
+\input{assets/clase17-solenoide-lineas.tex}
 
 % ===================================================================
 \section{Ley de Ampère}
@@ -249,6 +269,8 @@ B\,(2\pi R) = \mu_0 I \;\Longrightarrow\; \boxed{B = \frac{\mu_0 I}{2\pi R}}.
 (Una sola línea de cálculo; para un segmento finito hay que usar
 Biot--Savart.)
 
+\input{assets/clase17-ampere.tex}
+
 \subsection{Ejemplo: cable cilíndrico}
 
 Cable de radio $R$, corriente $I$ uniforme. Con $\oint = B\,(2\pi r)$ y
@@ -266,6 +288,8 @@ la corriente encerrada:
 
 Crece linealmente hasta $r=R$ (máximo $\mu_0 I/2\pi R$), luego decrece
 como $1/r$.
+
+\input{assets/clase17-cable-cilindrico.tex}
 
 \subsection{Ejemplo: solenoide ideal}
 
@@ -285,6 +309,8 @@ B\,a = \mu_0\, I\,(n\,a) \;\Longrightarrow\; \boxed{B = \mu_0\, n\, I}.
   No se supuso estar sobre el eje: $B = \mu_0 n I$ vale en \textbf{cualquier
   punto interior} (lejos de los extremos), no solo sobre el eje.
 \end{keybox}
+
+\input{assets/clase17-solenoide-ampere.tex}
 
 \begin{notebox}[Próxima clase]
   Más aplicaciones de Ampère y materiales magnéticos.

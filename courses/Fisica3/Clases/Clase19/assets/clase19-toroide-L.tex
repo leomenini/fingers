@@ -1,0 +1,71 @@
+% Clase 19 --- La autoinductancia del toroide (§4.5).
+% Es el ejemplo donde la receta L = Phi_total / I muestra su valor: el campo NO
+% es uniforme (va como 1/r), así que el flujo por espira hay que integrarlo,
+% y de ahí sale el logaritmo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) el toroide, visto desde arriba ===============
+  \begin{scope}
+    \fill[figblue!10, even odd rule] (0,0) circle (2.0) (0,0) circle (1.05);
+    \draw[figline, line width=1pt] (0,0) circle (2.0);
+    \draw[figline, line width=1pt] (0,0) circle (1.05);
+    \foreach \ang in {0,24,...,336} {
+      \draw[figline, line width=0.7pt] ({\ang}:1.05) -- ({\ang}:2.0);
+    }
+    \draw[figvecaux] (0,0) -- (145:1.05);
+    \node[figlblaux, anchor=south east] at (145:0.85) {$A$};
+    \draw[figvecaux] (0,0) -- (215:2.0);
+    \node[figlblaux, anchor=north east] at (215:2.1) {$B$};
+    \node[figlblaux, anchor=south] at (0,2.05) {$N$ espiras, corriente $I$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.6)
+      {(a) visto desde arriba};
+  \end{scope}
+
+  % =============== (b) la sección, donde se integra ===============
+  \begin{scope}[xshift=6.8cm, yshift=-0.2cm]
+    \draw[figaux] (-0.6,-1.6) -- (-0.6,1.9);
+    \node[figlblaux, anchor=south] at (-0.6,1.9) {eje};
+
+    \fill[figblue!10] (0.9,-0.85) rectangle (3.0,0.85);
+    \draw[figline, line width=1.2pt] (0.9,-0.85) rectangle (3.0,0.85);
+
+    % la franja dr
+    \fill[figamber!35] (1.75,-0.85) rectangle (2.0,0.85);
+    \draw[figamber, line width=0.9pt] (1.75,-0.85) rectangle (2.0,0.85);
+    \node[figlbl, figamber, anchor=south] at (1.88,0.95) {$dr$};
+
+    % cotas
+    \draw[figvecaux] (3.25,-0.85) -- (3.25,0.85);
+    \node[figlbl, anchor=west] at (3.32,0) {$h$};
+    \draw[figvecaux] (-0.6,-1.25) -- (0.9,-1.25);
+    \node[figlblaux, anchor=north] at (0.15,-1.28) {$A$};
+    \draw[figvecaux] (-0.6,-1.75) -- (3.0,-1.75);
+    \node[figlblaux, anchor=north] at (1.2,-1.78) {$B$};
+    \draw[figaux] (0.9,-0.85) -- (0.9,-1.85);
+    \draw[figaux] (3.0,-0.85) -- (3.0,-1.85);
+
+    \node[figlblaux, figblue, anchor=south] at (1.95,1.05)
+      {$B(r)=\dfrac{\mu_0 N I}{2\pi r}$};
+
+    \node[figlbl, anchor=north, align=center] at (1.2,-2.4)
+      {(b) $\Phi_1 = \displaystyle\int_A^B \dfrac{\mu_0 N I}{2\pi r}\,h\,dr
+       = \dfrac{\mu_0 N I h}{2\pi}\ln\dfrac{B}{A}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El toroide es el ejemplo que justifica tener una receta general,
+$L = \Phi_B^{\text{total}}/I$, en vez de una fórmula por aparato. Acá el campo
+\textbf{no} es uniforme dentro de la bobina: vale $\mu_0 N I/2\pi r$ y decrece
+al alejarse del eje, así que el flujo a través de una espira no es ``campo por
+área'' sino una integral. Tomando la sección rectangular de altura $h$ y
+partiéndola en franjas verticales de ancho $dr$ ---en cada una el campo sí es
+constante--- queda $\Phi_1 = \frac{\mu_0 N I h}{2\pi}\ln(B/A)$, y el logaritmo
+es la firma inconfundible de haber integrado un $1/r$. El flujo total encadena
+las $N$ espiras, de modo que $\Phi^{\text{total}} = N\Phi_1$ y
+$L = \frac{\mu_0 N^2 h}{2\pi}\ln\frac{B}{A}$. Conviene mirar el resultado: como
+en el solenoide, $L$ crece con $N^2$ ---una vez porque hay más espiras
+produciendo campo y otra porque hay más espiras recibiendo el flujo--- y sólo
+depende de la geometría y del material, nunca de la corriente.}
+\end{center}

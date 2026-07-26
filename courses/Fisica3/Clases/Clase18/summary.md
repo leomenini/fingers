@@ -175,7 +175,7 @@ El **signo menos** codifica la ley de Lenz (la oposición). Verificando en los e
 
 ## 5. Ejemplo: espira que sale de un campo (frenos magnéticos)
 
-Región con campo magnético uniforme **entrante** $B$. Una **espira rectangular** de lados $L$ (vertical, dentro del campo) y con una porción de ancho $x$ dentro del campo se mueve con velocidad $v$ **hacia afuera**; el lado horizontal mide $D$. Resistencia total $R$; se desprecia la autoinducción.
+Región con campo magnético uniforme **entrante** $B$. Una **espira rectangular** de lados $D$ (vertical: es el lado que queda dentro del campo) y $L$ (horizontal), con una porción de ancho $x$ dentro del campo, se mueve con velocidad $v$ **hacia afuera**. Resistencia total $R$; se desprecia la autoinducción.
 
 **Flujo** (normal entrante, consistente con la orientación por la mano derecha): $\Phi_B = B\,D\,x$ (no hay coseno; $\mathbf{B}$ es ortogonal a la figura).
 

@@ -261,6 +261,11 @@ bloque de `tcolorbox`, para evitar el choque de opciones de `xcolor`):
 > El error es silencioso hasta que se compila. Va **después** de cargar
 > `circuitikz`/`pgfplots` (que traen `tikz`) y de `babel`.
 
+> **Primer paso de toda clase nueva: agregar este bloque.** Ninguna clase sin
+> figuras lo trae (las 16–22 no lo tenían). Si falta, el síntoma es
+> `Package xcolor Error: Undefined color 'figblue'` en la primera figura, no un
+> mensaje sobre `tikzstyles.tex`.
+>
 > Compilar **desde el directorio de la clase** para que `\input{../assets/…}`
 > resuelva. El builder canónico es **tectonic** vía `./build.sh N` (ver §7), que
 > ya hace `cd Clases/ClaseN` y deja `Clases/ClaseN/notes.pdf`.
@@ -321,12 +326,26 @@ del Overleaf del usuario. Flujo:
    el preview y meterse en el margen del PDF real. **Pasó en 4 de las 5 clases
    10–14.** El grep es barato y no perdona:
    ```bash
+   mkdir -p /tmp/chk   # ¡obligatorio!
    ~/.local/bin/tectonic -X compile notes.tex --outdir /tmp/chk 2>&1 | grep -c Overfull
    ```
-   Debe dar `0`. Si no, casi siempre se arregla partiendo en dos líneas los pies
-   de panel largos y acercando los `xshift` entre paneles, antes que bajando el
-   `scale` (que achica la geometría pero **no** el texto de los nodos, así que
-   suele empeorar las colisiones).
+   Debe dar `0`. **El `mkdir -p` no es opcional:** si el `--outdir` no existe,
+   tectonic aborta con `output directory does not exist` sin compilar nada y el
+   `grep -c` devuelve `0` igual — un falso negativo que deja pasar figuras que
+   se salen del margen. Ante un `0`, confirmar que la salida trae los `note:` de
+   compilación. (Detectado el 2026-07-26: dos figuras de la Clase 16 y tres de
+   la Clase 17 se metían hasta 3 cm en el margen derecho con el chequeo dando
+   `0`.)
+
+   Cuando el chequeo (bien hecho) da distinto de `0`, casi siempre se arregla
+   partiendo en dos líneas los pies de panel largos y acercando los `xshift`
+   entre paneles, antes que bajando el `scale` (que achica la geometría pero
+   **no** el texto de los nodos, así que suele empeorar las colisiones).
+
+   > La causa típica en figuras de dos paneles es un `pgfplots` con `width`
+   > grande más un `xshift` grande: hay que achicar las dos cosas a la vez.
+   > Como referencia, un panel de gráfica de ~5,6 cm con el otro panel a
+   > `xshift` no mayor a 6,5 cm entra cómodo.
 6. Recién entonces entregar el `.tex`. El usuario recibe figuras **ya
    verificadas**; su compile es sólo el armado del documento, no depuración.
 
@@ -475,7 +494,20 @@ otra cosa: automatización por intervalo, no esto.)*
    importar qué haya en el cuerpo del loop. **Desenrollarlo a mano** (ver
    `Clase13/assets/clase13-drude-promedio.tex`, que dibuja seis choques uno por
    uno). Fuera del `axis`, en `tikzpicture` plano, `\foreach` anda perfecto.
-6. **Nunca usar `\t` como variable de `\foreach`** —ni `\c`, `\d`, `\b`, `\v`,
+6. **`\\` dentro de un `\node` exige `align=`.** Sin `align=left|center|right`
+   el salto de línea falla con `Something's wrong--perhaps a missing \item`,
+   que no dice nada del nodo. Pasó en `clase20-foucault`.
+7. **En `pgfplots`, un `\addplot` sin `\addlegendentry` se come la entrada
+   siguiente.** Las curvas auxiliares (la segunda rama de una envolvente, una
+   asíntota) van con `forget plot` o la leyenda queda corrida y rotula mal las
+   curvas — un error que *parece* de física. Pasó en `clase21-amortiguado`.
+8. **Leyenda debajo del eje:** `legend style={at={(0.5,-0.45)}, anchor=north}`;
+   con `-0.32` o menos choca con el `xlabel`.
+9. **Insertar los `\input` por número de línea es cómodo pero ciego.** Después
+   de insertar, `grep -n -B2 "input{assets"` y comprobar que ninguno cayó
+   *dentro* de un `keybox`/`notebox` ni partió una oración al medio. Pasó en las
+   clases 17, 20 y 22.
+10. **Nunca usar `\t` como variable de `\foreach`** —ni `\c`, `\d`, `\b`, `\v`,
    `\u`, `\r`, `\H`—: son los macros de **acento** de LaTeX, y redefinirlos
    rompe todo el texto acentuado del documento. Da **el mismo síntoma** que (5),
    lo que hace perder mucho tiempo en el diagnóstico: ante `\UseTextAccent`,

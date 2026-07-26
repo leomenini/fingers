@@ -1,0 +1,72 @@
+% Clase 19 --- La misma máquina, en los dos sentidos (§2.3).
+% "Este mismo aparato, en lugar de usarlo como generador, lo podemos usar como
+%  motor... hagamos al revés, conectemos acá un generador."
+% Los dos paneles tienen exactamente el mismo dibujo: lo único que cambia es
+% quién empuja a quién, y eso se marca con el sentido de las flechas gruesas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \providecommand{\maquina}{%
+    \draw[figvecaux, figgray] (-2.2,1.75) -- (2.2,1.75);
+    \node[figlblaux, anchor=south east] at (2.2,1.8) {$\vec B$};
+    \draw[figline, line width=1.6pt] (-1.2,0.85) -- (1.2,-0.85);
+    \node[figblue, scale=0.85] at (1.2,-0.85) {$\otimes$};
+    \node[figblue, scale=0.85] at (-1.2,0.85) {$\odot$};
+    \node[figgray, circle, draw=figgray, fill=white, inner sep=1.4pt] at (0,0) {};
+    \draw[figgray, line width=0.8pt] (0,-1.35) -- (0,-2.1) -- (1.9,-2.1);
+    \draw[figgray, line width=0.8pt] (0.35,-1.15) -- (0.35,-1.75) -- (1.9,-1.75);}
+
+  % =============== (a) generador ===============
+  \begin{scope}
+    \maquina
+    \draw[figgray, line width=0.9pt] (1.9,-1.75) -- (2.35,-1.75)
+      -- (2.35,-2.1) -- (1.9,-2.1);
+    \draw[figgray, fill=figgray!20, line width=0.8pt]
+      (2.2,-2.05) rectangle (2.5,-1.8);
+    \node[figlblaux, anchor=west] at (2.6,-1.92) {$R$};
+
+    \draw[figvecres, line width=2pt] (-2.6,0) -- (-1.55,0);
+    \node[figlbl, figred, anchor=south, align=center] at (-2.05,0.08)
+      {torque\\[-0.25em] externo};
+    \draw[figvecres, line width=2pt] (1.55,-2.6) -- (2.6,-2.6);
+    \node[figlbl, figred, anchor=north] at (2.05,-2.68) {corriente};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.3)
+      {(a) \textbf{generador}: mecánica $\to$ eléctrica};
+  \end{scope}
+
+  % =============== (b) motor ===============
+  \begin{scope}[xshift=7.6cm]
+    \maquina
+    \draw[figgray, line width=0.9pt] (1.9,-1.75) -- (2.35,-1.75);
+    \draw[figgray, line width=0.9pt] (1.9,-2.1) -- (2.35,-2.1);
+    \draw[figgray, line width=1.4pt] (2.35,-1.62) -- (2.35,-1.88);
+    \draw[figgray, line width=0.9pt] (2.5,-1.75) -- (2.5,-2.1);
+    \node[figlblaux, anchor=west] at (2.62,-1.92) {$\sim$ CA};
+
+    \draw[figvecres, line width=2pt] (2.6,-2.6) -- (1.55,-2.6);
+    \node[figlbl, figred, anchor=north] at (2.05,-2.68) {corriente};
+    \draw[figvecres, line width=2pt] (-1.55,0) -- (-2.6,0);
+    \node[figlbl, figred, anchor=south, align=center] at (-2.05,0.08)
+      {el eje\\[-0.25em] gira};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.3)
+      {(b) \textbf{motor}: eléctrica $\to$ mecánica};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El dibujo es el mismo en los dos paneles y ésa es toda la
+gracia: una máquina eléctrica rotativa es reversible. Si alguien hace girar el
+eje, el flujo a través de la espira varía, aparece FEM y por la resistencia
+circula corriente: es un generador, y el precio de esa corriente es el torque
+que hay que sostener contra el magnético. Si en cambio se inyecta corriente
+desde afuera, el par $\vec\tau = I\vec A\times\vec B$ hace girar el eje y la
+máquina entrega trabajo mecánico: es un motor. En los dos casos lo que corre por
+el medio es el mismo fenómeno, con el signo de la conversión invertido. Un
+detalle que explica una decisión de ingeniería: si al motor se le metiera
+corriente \emph{continua}, el torque $\propto\sin\theta$ cambiaría de signo cada
+media vuelta y el efecto acumulado sería nulo ---la espira oscilaría---; la
+corriente alterna, en cambio, cambia de signo justo cuando hace falta y
+sincroniza el empuje. El motor de continua resuelve lo mismo por hardware, con
+el conmutador de la Clase 16.}
+\end{center}

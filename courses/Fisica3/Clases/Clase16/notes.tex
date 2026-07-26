@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -133,6 +140,8 @@ Fuerza sobre cada lado $\mathbf{F} = I\,\mathbf{L}\times\mathbf{B}$:
 Resultante cero, pero \textbf{torque} neto. (Con campo no uniforme
 habría también resultante.)
 
+\input{assets/clase16-espira-perspectiva.tex}
+
 \subsection{El torque y su módulo}
 
 Lados $a$, $b$ ($A=ab$). Torque de $\mathbf{F}_3$ (brazo
@@ -144,6 +153,8 @@ $\tfrac{a}{2}\sin\theta$), con $F_3 = IbB$; sumando $\mathbf{F}_4$:
   \]
   Nulo en $\theta=0$ (normal $\parallel$ campo): equilibrio alineado.
 \end{keybox}
+
+\input{assets/clase16-espira-torque.tex}
 
 \subsection{Forma vectorial: vector área y momento}
 
@@ -162,6 +173,8 @@ por la regla de la mano derecha (dedos $=$ corriente, pulgar $=$ normal):
   \boldsymbol{\mu}\times\mathbf{B}$, análogo a $\boldsymbol{\tau} =
   \mathbf{p}\times\mathbf{E}$.
 \end{notebox}
+
+\input{assets/clase16-mano-derecha.tex}
 
 \subsection{Bobina de N vueltas}
 
@@ -189,6 +202,8 @@ corriente alterna es igual, pero la corriente ya oscila sola.
   estabilizadores.
 \end{notebox}
 
+\input{assets/clase16-motor-conmutador.tex}
+
 \subsection{Galvanómetro: amperímetro y voltímetro}
 
 Como $\tau\propto I$, con un \textbf{resorte de torsión} (torque
@@ -206,6 +221,8 @@ $\propto$ ángulo) se mide la corriente en la posición de equilibrio:
   Todo instrumento perturba; se lo diseña para perturbar lo menos
   posible.
 \end{keybox}
+
+\input{assets/clase16-galvanometro.tex}
 
 % ===================================================================
 \section{Campo magnético de una carga en movimiento}
@@ -236,6 +253,8 @@ $\propto v$, $\propto |q|$, $\propto \sin\theta$.
   \]
   $\mu_0$: permeabilidad magnética del vacío (análoga a $\varepsilon_0$).
 \end{keybox}
+
+\input{assets/clase16-campo-carga.tex}
 
 \subsection{Comparación con Coulomb y validez}
 
@@ -280,6 +299,8 @@ dB = \frac{\mu_0 I}{4\pi}\,\frac{X\,dy}{(X^2+Y^2)^{3/2}}
 B = \frac{\mu_0 I X}{4\pi}\int_{-L/2}^{L/2}\frac{dy}{(X^2+Y^2)^{3/2}}.
 \]
 
+\input{assets/clase16-segmento.tex}
+
 \begin{notebox}[Cálculo]
   Mismo tipo de integral que la barra cargada (Clase 8). Se resuelve con
   $Y = Xu$ y un truco de integración por partes (sumar y restar
@@ -301,6 +322,8 @@ cerrado completo decrece como $1/r^3$.
 \[
 \boxed{B = \frac{\mu_0 I}{2\pi X}}.
 \]
+
+\input{assets/clase16-limites.tex}
 
 \begin{notebox}[Dirección]
   Líneas de $\mathbf{B}$ circulares cerradas alrededor del cable,

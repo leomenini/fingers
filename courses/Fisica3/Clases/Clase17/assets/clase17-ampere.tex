@@ -1,0 +1,85 @@
+% Clase 17 --- La ley de Ampère: qué corrientes cuentan y con qué signo (§3.1-3.2).
+% "Si tomamos la corriente orientada para allá, las corrientes que pasen de abajo
+%  para arriba las vamos a tomar positivas, y las que pasen de arriba para abajo,
+%  negativas. Hay que orientar las corrientes de acuerdo con la regla de la mano
+%  derecha en función de cómo orientamos la curva."
+% (a) el enunciado y su convención; (b) el caso donde la ley sirve de verdad,
+% que es cuando la simetría permite sacar B de la integral.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la curva y las corrientes ===============
+  \begin{scope}
+    % curva cerrada irregular, orientada
+    \draw[figline, line width=1.1pt]
+      (-1.9,0.1) .. controls (-1.7,1.6) and (-0.3,1.9) .. (0.6,1.5)
+      .. controls (1.6,1.05) and (2.0,0.2) .. (1.6,-0.8)
+      .. controls (1.2,-1.7) and (-0.6,-1.9) .. (-1.5,-1.2)
+      .. controls (-2.0,-0.8) and (-2.05,-0.5) .. (-1.9,0.1);
+    \draw[figvec, line width=1.1pt] (-1.83,0.65) -- (-1.72,1.15);
+    \node[figlbl, figblue, anchor=east] at (-1.9,0.95) {$C$};
+    \node[figlblaux, anchor=east, align=right] at (-1.95,1.55)
+      {$C$ orientada; el pulgar\\[-0.25em] da el signo de $I$};
+
+    % corrientes que la atraviesan
+    \node[figred, scale=1.15] at (-0.55,0.55) {$\odot$};
+    \node[figlbl, figred, anchor=south] at (-0.55,0.72) {$+I_1$};
+    \node[figred, scale=1.15] at (0.6,0.05) {$\otimes$};
+    \node[figlbl, figred, anchor=west] at (0.75,0.05) {$-I_2$};
+    \node[figred, scale=1.15] at (-0.7,-0.95) {$\odot$};
+    \node[figlbl, figred, anchor=north] at (-0.7,-1.12) {$+I_3$};
+
+    % una corriente exterior, que no cuenta
+    \node[figgray, scale=1.15] at (2.5,1.35) {$\odot$};
+    \node[figlblaux, anchor=west, align=left] at (2.65,1.3)
+      {$I_4$ no atraviesa $C$:\\[-0.25em] no entra en\\[-0.25em] la suma};
+
+    \node[figlbl, anchor=north, align=center] at (0.3,-2.35)
+      {(a) $\displaystyle\oint_C \vec B\cdot d\vec l =
+       \mu_0 (I_1 - I_2 + I_3)$};
+  \end{scope}
+
+  % =============== (b) el hilo infinito ===============
+  \begin{scope}[xshift=7.45cm]
+    % la amperiana circular
+    \draw[figline, line width=1.1pt] (0,0) circle (1.55);
+    \draw[figvec, line width=1.1pt] (100:1.55) arc (100:80:1.55);
+    \node[figlbl, figblue, anchor=south] at (0,1.6) {$C$};
+
+    % el hilo, de punta
+    \node[figred, scale=1.25] at (0,0) {$\odot$};
+    \node[figlbl, figred, anchor=north east] at (-0.12,-0.1) {$I$};
+
+    % B tangente y de módulo constante
+    \foreach \ang in {0,45,90,135,180,225,270,315} {
+      \draw[figvecres, line width=0.9pt]
+        (\ang:1.55) -- ($(\ang:1.55)+({\ang+90}:0.6)$);
+    }
+    \node[figlbl, figred, anchor=west] at (1.15,-1.35) {$\vec B$};
+
+    % el radio
+    \draw[figvecaux] (0,0) -- (-1.55,0);
+    \node[figlblaux, anchor=south] at (-0.8,0.04) {$R$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.35)
+      {(b) $B\,(2\pi R) = \mu_0 I \Rightarrow
+       B = \dfrac{\mu_0 I}{2\pi R}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La ley de Ampère juega para el magnetismo el papel que la de
+Gauss para la electricidad, con la misma lógica y las mismas limitaciones. Del
+lado izquierdo hay una circulación sobre una curva \textbf{cerrada}; del
+derecho, sólo las corrientes que \textbf{atraviesan} esa curva. Las de afuera no
+figuran, y eso no significa que no generen campo: lo generan, y de hecho
+modifican $\vec B$ punto por punto sobre $C$; lo que ocurre es que su
+contribución neta a la circulación se cancela. Los signos hay que tomarlos en
+serio: una vez elegido el sentido de recorrido de $C$, el pulgar de la mano
+derecha dice cuáles corrientes son positivas, y las que van al revés restan.
+Como con Gauss, la ley vale siempre pero \emph{sirve} sólo cuando hay tanta
+simetría que $B$ es constante sobre la curva y sale de la integral: en el hilo
+infinito, las simetrías de rotación y de traslación obligan a que las líneas
+sean círculos con $|\vec B|$ constante, y todo el cálculo de Biot--Savart de la
+clase pasada se reduce a un renglón. Para un segmento finito no hay tal simetría
+y hay que volver a Biot--Savart.}
+\end{center}

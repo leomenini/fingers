@@ -1,0 +1,79 @@
+% Clase 17 --- El campo del solenoide: dibujo y perfil sobre el eje (§2.3-2.4).
+% "Entonces, ¿cómo es el campo en un solenoide? Se los dibujo."
+% El panel (b) es la fórmula exacta de §2.2 graficada para L/R = 10: se ve de un
+% golpe la meseta mu0*n*I en el interior, el valor MITAD justo en la boca y la
+% caída rápida afuera --- que es de dónde sale la idealización L >> R.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) las líneas de campo ===============
+  \begin{scope}
+    \draw[figline, line width=1.1pt] (-2.6,-0.9) -- (2.6,-0.9);
+    \draw[figline, line width=1.1pt] (-2.6,0.9) -- (2.6,0.9);
+    \foreach \xx in {-2.2,-1.6,-1.0,-0.4,0.2,0.8,1.4,2.0} {
+      \node[figblue, scale=0.6] at (\xx,0.9) {$\odot$};
+      \node[figblue, scale=0.6] at (\xx,-0.9) {$\otimes$};
+    }
+
+    % líneas interiores: paralelas y apretadas
+    \foreach \yy in {-0.6,-0.3,0,0.3,0.6} {
+      \draw[figred, line width=0.8pt] (-2.45,\yy) -- (2.2,\yy);
+      \draw[figvecres, line width=0.8pt] (0.2,\yy) -- (0.75,\yy);
+    }
+    % las mismas líneas, abriéndose al salir y volviendo por afuera
+    \foreach \yy/\hh in {-0.6/-1.5, -0.3/-1.9, 0.3/1.9, 0.6/1.5} {
+      \draw[figred, line width=0.7pt]
+        (2.2,\yy) .. controls (3.3,\yy) and (3.6,\hh) .. (2.4,\hh)
+        -- (-2.4,\hh)
+        .. controls (-3.6,\hh) and (-3.3,\yy) .. (-2.45,\yy);
+    }
+    \node[figlbl, figred, anchor=west] at (0.85,0.02) {$\vec B$};
+    \node[figlblaux, anchor=north] at (0,-2.15) {afuera el campo se abre y se diluye};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(a) adentro: intenso y paralelo al eje};
+  \end{scope}
+
+  % =============== (b) el perfil exacto sobre el eje ===============
+  \begin{scope}[xshift=6.2cm, yshift=-0.3cm]
+    \begin{axis}[
+      fisfig,
+      width=5.6cm, height=4.6cm,
+      xlabel={$x$ (en unidades de $R$, con $L=10R$)},
+      ylabel={$B_z / \mu_0 n I$},
+      xmin=-9, xmax=9, ymin=0, ymax=1.15,
+      ytick={0,0.5,1},
+      xtick={-5,0,5},
+      xticklabels={$-L/2$,$0$,$L/2$},
+    ]
+      \addplot[figblue, smooth, samples=220, domain=-9:9]
+        {0.5*((5-x)/sqrt((5-x)^2+1) + (5+x)/sqrt((5+x)^2+1))};
+      \draw[figaux] (axis cs:-5,0) -- (axis cs:-5,1.02);
+      \draw[figaux] (axis cs:5,0) -- (axis cs:5,1.02);
+      \draw[figaux] (axis cs:-9,0.5) -- (axis cs:9,0.5);
+      \node[figlblaux, figred, anchor=south] at (axis cs:0,1.01)
+        {meseta: $B=\mu_0 n I$};
+      \node[figlblaux, anchor=north east] at (axis cs:0,0.45)
+        {en la boca vale la mitad};
+    \end{axis}
+
+    \node[figlbl, anchor=north, align=center] at (2.7,-1.55)
+      {(b) el resultado exacto, para $L/R = 10$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las líneas de campo son cerradas: salen por una boca, se abren
+en un alcance del orden de $R$ y vuelven por afuera repartidas en todo el
+espacio, de modo que afuera el campo es débil ---nulo en el límite ideal--- y
+adentro queda intenso y prácticamente paralelo al eje. La gráfica es la fórmula
+exacta de la sección anterior, sin aproximar: el campo no cae de golpe sino que
+tiene una meseta plana en casi todo el interior, vale exactamente la
+\textbf{mitad} en la boca ($x=\pm L/2$, donde sólo se ``ve'' medio solenoide) y
+se desploma afuera. Eso es lo que justifica el \textbf{solenoide ideal}: si
+$L\gg R$ y el punto está lejos de los bordes ---es decir $|L/2\mp x|\gg R$---
+los dos cocientes valen $\pm 1$ y queda $B_z = \mu_0 n I$, constante. La trampa
+está en ``lejos de los bordes'': cerca de la boca la fórmula ideal no sirve, y
+por eso conviene mirar el perfil antes de aplicarla. Todo esto, además, es sobre
+el eje; que el valor sea el mismo en \emph{cualquier} punto interior recién lo
+prueba la ley de Ampère.}
+\end{center}

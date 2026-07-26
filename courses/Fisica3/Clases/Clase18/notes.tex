@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -144,6 +151,8 @@ No es uniforme: decrece como $1/R$. Se obtuvo sin integrales, por simetría.
 \end{itemize}
 El campo del toroide está \textbf{confinado} en su interior.
 
+\input{assets/clase18-toroide.tex}
+
 % ===================================================================
 \section{La ley de inducción de Faraday}
 % ===================================================================
@@ -162,12 +171,16 @@ corriente invertida; deformar la espira (área) $\to$ efecto $\propto$ área y
 $dB/dt$; girar la espira $\to$ efecto $\propto \cos\theta$ (normal contra
 $\mathbf{B}$).
 
+\input{assets/clase18-faraday-iman.tex}
+
 \textbf{Segundo experimento (electroimán).} Al cerrar un interruptor la
 corriente crece y se induce; estabilizada, no hay inducción; al abrir, se
 induce con signo opuesto. Da igual la fuente del campo.
 
 \textbf{Variante clave.} Con el imán fijo y moviendo el circuito, también hay
 corriente: importa la variación del \textbf{flujo}, no la de $\mathbf{B}$.
+
+\input{assets/clase18-faraday-electroiman.tex}
 
 \subsection{El flujo magnético}
 
@@ -181,6 +194,8 @@ corriente: importa la variación del \textbf{flujo}, no la de $\mathbf{B}$.
   A diferencia de Gauss (superficie cerrada), aquí $S$ es abierta y su
   \textbf{borde} es la espira $C$ (cualquier superficie apoyada en el aro).
 \end{notebox}
+
+\input{assets/clase18-flujo.tex}
 
 \subsection{La FEM inducida (valor absoluto)}
 
@@ -230,6 +245,8 @@ Como todo es constante salvo $I$:
 
 Reproduce a Faraday: hay FEM solo mientras la corriente cambia.
 
+\input{assets/clase18-rampa.tex}
+
 % ===================================================================
 \section{Los signos: la ley de Lenz}
 % ===================================================================
@@ -272,6 +289,8 @@ que se opone a la \emph{variación}.
   Al invertir el imán, la corriente debe cambiar de sentido.
 \end{notebox}
 
+\input{assets/clase18-lenz.tex}
+
 \subsection{Ley de Faraday con signos}
 
 Ligando las convenciones de FEM y flujo por la regla de la mano derecha
@@ -290,8 +309,8 @@ El signo menos codifica Lenz. Verificado en los ejemplos: flujo creciente
 \section{Ejemplo: espira que sale de un campo (frenos magnéticos)}
 % ===================================================================
 
-Campo uniforme entrante $B$; espira rectangular (lado vertical $L$, horizontal
-$D$) con porción $x$ dentro, moviéndose hacia afuera con velocidad $v$;
+Campo uniforme entrante $B$; espira rectangular (lado vertical $D$ ---el que
+queda dentro del campo---, horizontal $L$) con porción $x$ dentro, moviéndose hacia afuera con velocidad $v$;
 resistencia $R$. Flujo (normal entrante): $\Phi_B = B\,D\,x$. Como
 $dx/dt = -v$:
 \[
@@ -303,6 +322,8 @@ $dx/dt = -v$:
   \boxed{I = \frac{\varepsilon}{R} = \frac{B\,D\,v}{R}}
   \]
 \end{keybox}
+
+\input{assets/clase18-espira-sale.tex}
 
 \subsection{Balance de energía y frenos magnéticos}
 
@@ -322,6 +343,8 @@ P_{\text{ext}} = F_{\text{ext}}\,v = \frac{B^2 D^2 v^2}{R} = P_{\text{dis}}.
   externa, la fuerza magnética frena el sistema: es el principio de los frenos
   magnéticos (sin contacto, no se gastan; la energía se pierde por Joule).
 \end{notebox}
+
+\input{assets/clase18-frenos.tex}
 
 \begin{notebox}[Próxima clase]
   Corrientes parásitas, generadores y motores, campos eléctricos inducidos.

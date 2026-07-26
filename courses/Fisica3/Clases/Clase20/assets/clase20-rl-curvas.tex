@@ -1,0 +1,62 @@
+% Clase 20 --- Las dos exponenciales del circuito RL (§2.3-2.5).
+% Los dos paneles usan la MISMA escala temporal, medida en tau = L/R, para que
+% se vea que el tiempo característico es el mismo al conectar y al desconectar.
+% La recta punteada es la tangente en el origen: su intersección con el valor
+% final ocurre justo en t = tau, que es la lectura gráfica de tau.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) al conectar ===============
+  \begin{scope}
+    \begin{axis}[
+      fisfig, width=6.2cm, height=4.4cm,
+      xlabel={$t/\tau$}, ylabel={$I$},
+      xmin=0, xmax=4.3, ymin=0, ymax=1.25,
+      xtick={1,2,3}, ytick={0.632,1},
+      yticklabels={$0{,}63\,\frac{\varepsilon}{R}$,$\frac{\varepsilon}{R}$},
+    ]
+      \addplot[figblue, smooth, samples=140, domain=0:4.3] {1-exp(-x)};
+      \addplot[figgray, dashed, samples=2, domain=0:1.15] {x};
+      \draw[figaux] (axis cs:0,1) -- (axis cs:4.3,1);
+      \draw[figaux] (axis cs:1,0) -- (axis cs:1,0.632);
+      \draw[figaux] (axis cs:0,0.632) -- (axis cs:1,0.632);
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (3.1,-1.35)
+      {(a) posición A:
+       $I = \dfrac{\varepsilon}{R}\left(1-e^{-t/\tau}\right)$};
+  \end{scope}
+
+  % =============== (b) al desconectar ===============
+  \begin{scope}[xshift=7.6cm]
+    \begin{axis}[
+      fisfig, width=6.2cm, height=4.4cm,
+      xlabel={$t/\tau$}, ylabel={$i$},
+      xmin=0, xmax=4.3, ymin=0, ymax=1.25,
+      xtick={1,2,3}, ytick={0.368,1},
+      yticklabels={$0{,}37\,i_0$,$i_0$},
+    ]
+      \addplot[figred, smooth, samples=140, domain=0:4.3] {exp(-x)};
+      \addplot[figgray, dashed, samples=2, domain=0:1.05] {1-x};
+      \draw[figaux] (axis cs:1,0) -- (axis cs:1,0.368);
+      \draw[figaux] (axis cs:0,0.368) -- (axis cs:1,0.368);
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (3.1,-1.35)
+      {(b) posición B: $i = i_0\,e^{-t/\tau}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La solución se arma como en el circuito $RC$: una solución
+particular ---la estacionaria, $I_0 = \varepsilon/R$, que es la que sobrevive
+cuando ya nada cambia--- más la solución de la homogénea, que necesariamente es
+una exponencial $e^{rt}$ con $r = -R/L$. La condición inicial $I(0)=0$ fija la
+constante y queda $I = \frac{\varepsilon}{R}(1-e^{-t/\tau})$ con
+$\tau = L/R$. Conviene hacer siempre el control físico: para $t\to\infty$ la
+corriente tiende a $\varepsilon/R$, que es lo que uno espera cuando la bobina
+deja de ``sentir'' cambios; si la exponencial saliera creciente, hay un error de
+cuentas. Al pasar la llave a B desaparece la batería y sólo queda la homogénea:
+la corriente no se corta de golpe, decae con la \emph{misma} constante de
+tiempo. La lectura gráfica de $\tau$ es la de la recta punteada: es el tiempo
+que tardaría el transitorio si mantuviera su pendiente inicial, y equivale al
+$63\%$ del salto en la subida ($37\%$ del valor restante en la bajada). Bobina
+grande, transitorio lento; resistencia grande, transitorio rápido.}
+\end{center}

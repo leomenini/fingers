@@ -1,0 +1,73 @@
+% Clase 17 --- El planteo de la integral del solenoide (§2.2).
+% "Entonces hagamos un dibujo de costado... voy a tomar el origen en el centro...
+%  hago un dibujo más grande para que se vea más claro: Y es la posición de un
+%  segmentito, el segmentito tiene ancho dY."
+% La figura tiene que dejar clarísimo quién es quién: x es donde se mide, y es
+% dónde está la rebanada, y lo que entra en la fórmula de la espira es la
+% distancia entre ambos, y - x.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % el solenoide de costado
+  \draw[figline, line width=1.1pt] (-3.4,-0.95) rectangle (3.4,0.95);
+  \draw[figaux] (-4.1,0) -- (4.1,0);
+  \node[figlblaux, anchor=west] at (4.15,0) {eje};
+
+  % espiras (de punta): corriente saliente arriba, entrante abajo
+  \foreach \xx in {-3.0,-2.4,-1.8,-1.2,-0.6,0,0.6,1.2,1.8,2.4,3.0} {
+    \node[figblue, scale=0.62] at (\xx,0.95) {$\odot$};
+    \node[figblue, scale=0.62] at (\xx,-0.95) {$\otimes$};
+  }
+
+  % origen en el centro
+  \node[figgray, circle, fill=figgray, inner sep=1.1pt] at (0,0) {};
+  \node[figlblaux, anchor=north] at (0,-0.1) {$0$};
+
+  % la rebanada dy en la posición y
+  \fill[figamber!25] (-2.1,-0.95) rectangle (-1.75,0.95);
+  \draw[figamber, line width=0.8pt] (-2.1,-0.95) rectangle (-1.75,0.95);
+  \draw[figvecaux, figamber] (-2.55,1.55) -- (-2.0,1.05);
+  \node[figlbl, figamber, anchor=south east, align=right] at (-2.5,1.5)
+    {rebanada de ancho $dy$:\\[-0.25em] contiene $n\,dy$ espiras};
+  \node[figlbl, anchor=north] at (-1.93,-2.12) {$y$};
+
+  % el punto de observación
+  \node[figred, circle, fill=figred, inner sep=1.5pt] at (1.4,0) {};
+  \node[figlbl, figred, anchor=south] at (1.4,0.12) {$P$};
+  \node[figlbl, anchor=north] at (1.4,-2.12) {$x$};
+
+  % la distancia que entra en la fórmula
+  \draw[figaux] (-1.93,-2.1) -- (-1.93,-0.95);
+  \draw[figaux] (1.4,-2.1) -- (1.4,-0.95);
+  \draw[figvecaux] (-0.35,-1.5) -- (-1.93,-1.5);
+  \draw[figvecaux] (-0.15,-1.5) -- (1.4,-1.5);
+  \node[figlbl, anchor=south] at (-0.26,-1.44) {$|y-x|$};
+
+  % cotas L y R
+  \draw[figvecaux] (-0.4,1.35) -- (-3.4,1.35);
+  \draw[figvecaux] (0.4,1.35) -- (3.4,1.35);
+  \node[figlbl, anchor=south] at (0,1.28) {$L$};
+  \draw[figvecaux] (3.75,0) -- (3.75,0.95);
+  \node[figlbl, anchor=west] at (3.8,0.5) {$R$};
+
+  \node[figlbl, anchor=north, align=center] at (0,-2.8)
+    {$dB_z = \dfrac{\mu_0 I R^2}{2\,[(y-x)^2+R^2]^{3/2}}\;n\,dy
+     \;\Longrightarrow\;
+     B_z = \dfrac{\mu_0 I R^2 n}{2}\displaystyle\int_{-L/2}^{L/2}
+     \dfrac{dy}{[(y-x)^2+R^2]^{3/2}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El cálculo no agrega física nueva: cada rebanada de ancho $dy$
+tiene $n\,dy$ espiras que ---al estar pegadas--- aportan lo mismo que una espira
+circular a distancia $y-x$ del punto de observación, y ya sabemos cuánto vale
+eso. Conviene fijar el origen en el centro del solenoide y no confundir los dos
+lugares: $x$ es dónde se mide y $y$ es dónde está la rebanada que aporta; en la
+fórmula de la espira, el ``$Z$'' es la distancia entre los dos. Sustituyendo
+$u = y-x$ la integral tiene primitiva elemental,
+$u/(R^2\sqrt{u^2+R^2})$, y evaluando entre los extremos queda
+$B_z = \frac{\mu_0 n I}{2}\left[\frac{L/2-x}{\sqrt{(L/2-x)^2+R^2}} +
+\frac{L/2+x}{\sqrt{(L/2+x)^2+R^2}}\right]$, con los dos términos midiendo
+cuánto ``ve'' el punto a cada mitad del solenoide. Ojo con el alcance del
+resultado: es exacto (dentro de la aproximación de espiras pegadas) pero
+\textbf{sólo sobre el eje}.}
+\end{center}

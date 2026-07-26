@@ -1,0 +1,79 @@
+% Clase 17 --- Por qué en el centro de la espira el campo NO se anula (§1.4).
+% "Recuerden el caso eléctrico... teníamos un aro cargado. ¿Cómo era el campo
+%  eléctrico en el centro? Cero. Fíjense que acá no pasa eso."
+% Dos paneles con la misma geometría (el aro visto de canto, sus dos secciones a
+% distancia R del centro): lo único que cambia es qué lleva el aro, corriente o
+% carga. Con corriente las líneas son CERRADAS y atraviesan la espira, de modo
+% que en el centro se suman; con carga son radiales y en el centro se cancelan.
+% Sentido: sección derecha entrante (x), izquierda saliente (.); para la
+% entrante, dB ∝ ds x r con ds = -z y r = -x da +y, y la saliente da también +y.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) espira con corriente ===============
+  \begin{scope}
+    % líneas de campo: cerradas, encerrando cada sección del cable
+    \foreach \rx/\ry in {0.45/0.7, 0.82/1.3, 1.15/1.95} {
+      \draw[figline, line width=0.7pt] (1.2,0) ellipse ({\rx} and {\ry});
+      \draw[figline, line width=0.7pt] (-1.2,0) ellipse ({\rx} and {\ry});
+    }
+    \draw[figvec, line width=0.7pt] (1.1,1.3) -- (1.32,1.3);
+    \draw[figvec, line width=0.7pt] (-1.32,1.95) -- (-1.1,1.95);
+    \draw[figvec, line width=0.7pt] (1.32,-1.95) -- (1.1,-1.95);
+    \draw[figvec, line width=0.7pt] (-1.1,-1.3) -- (-1.32,-1.3);
+
+    % el aro, visto de canto
+    \node[figred, scale=1.15] at (1.2,0) {$\otimes$};
+    \node[figred, scale=1.15] at (-1.2,0) {$\odot$};
+    \node[figlblaux, figred, anchor=north] at (1.2,-0.2) {$I$};
+
+    % el campo en el centro
+    \draw[figvecres, line width=1.4pt] (0,-0.45) -- (0,0.55);
+    \node[figlbl, figred, anchor=west] at (0.1,0.2) {$\vec B$};
+    \node[figgray, circle, fill=figgray, inner sep=1pt] at (0,-0.45) {};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.45)
+      {(a) espira con corriente:\\[-0.2em]
+       $B(0)=\dfrac{\mu_0 I}{2R}\neq 0$};
+  \end{scope}
+
+  % =============== (b) el aro cargado, para comparar ===============
+  \begin{scope}[xshift=6.4cm]
+    % campo radial de cada sección
+    \foreach \ang in {30,60,90,120,150,210,240,270,300,330} {
+      \draw[figvecaux, figblue] (1.2,0) -- ($(1.2,0)+(\ang:1.15)$);
+      \draw[figvecaux, figblue] (-1.2,0) -- ($(-1.2,0)+(\ang:1.15)$);
+    }
+
+    % el aro cargado, visto de canto
+    \node[figpos, minimum size=7pt] at (1.2,0) {};
+    \node[figpos, minimum size=7pt] at (-1.2,0) {};
+    \node[figlblaux, figred, anchor=south] at (1.2,1.3) {$+q$};
+
+    % en el centro los aportes se cancelan
+    \draw[figvecres, line width=1.2pt] (0,0) -- (-0.75,0);
+    \draw[figvecres, line width=1.2pt] (0,0) -- (0.75,0);
+    \node[figlbl, anchor=north, align=center] at (0,-1.5)
+      {en el centro, aportes opuestos};
+    \node[figgray, circle, fill=figgray, inner sep=1pt] at (0,0) {};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.45)
+      {(b) aro cargado:\\[-0.2em] $E(0)=0$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La comparación con el aro cargado es el mejor control de que la
+cuenta está bien. En el caso eléctrico los aportes en el centro son radiales y
+apuntan desde cada trocito hacia el centro: los de secciones opuestas se
+cancelan de a pares y queda $E(0)=0$. En el magnético no puede pasar lo mismo
+porque $d\vec B$ no es paralelo a $\vec r$ sino perpendicular a $\vec r$ y a
+$d\vec s$: los dos aportes se suman y da $B(0)=\mu_0 I/2R$, el máximo de la
+curva. La figura muestra además la propiedad estructural del campo magnético:
+sus líneas son \textbf{cerradas} ---entran por una cara de la espira y salen por
+la otra---, no nacen ni mueren en ninguna parte, porque no hay monopolos
+magnéticos. Ese mismo hecho fija el comportamiento lejano: para $Z\gg R$ queda
+$B_z\simeq \mu_0 I R^2/2|Z|^3$, un \textbf{dipolo} de momento $\mu = IA = I\pi
+R^2$ que decae como $1/r^3$, y no como el $1/r^2$ de una carga puntual. Si se
+arreglan dos espiras opuestas para que el dipolo se cancele, lo que sobrevive es
+el cuadrupolo, con $1/r^4$.}
+\end{center}

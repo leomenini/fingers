@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -135,6 +142,8 @@ $\omega\to 0$: $|Q_0|\to\varepsilon_0 C$; $\omega$ grande: $\to 0$. El
 denominador se anula en $\omega = 1/\sqrt{LC}$: asíntota vertical (amplitud
 infinita), la \textbf{frecuencia de resonancia}.
 
+\input{assets/clase22-amplitud-sin-R.tex}
+
 % ===================================================================
 \section{El fenómeno de resonancia}
 % ===================================================================
@@ -171,6 +180,8 @@ complicados tienen varias frecuencias de resonancia.
   \item \textbf{Ictericia (LEDs):} se emite concentrado en la frecuencia de
         resonancia, curando sin deshidratar.
 \end{itemize}
+
+\input{assets/clase22-sintonia.tex}
 
 % ===================================================================
 \section{Circuitos RLC por el método complejo}
@@ -209,6 +220,8 @@ Con $\hat I = \hat I_M e^{j\omega t}$, cada derivada agrega $j\omega$:
   \]
 \end{keybox}
 
+\input{assets/clase22-impedancia-plano.tex}
+
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -220,6 +233,8 @@ Condensador & $1/(j\omega C) = -j/(\omega C)$ \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\input{assets/clase22-impedancias-elementos.tex}
 
 \subsection{Amplitud y desfasaje}
 
@@ -237,8 +252,8 @@ Condensador & $1/(j\omega C) = -j/(\omega C)$ \\
   \]
 \end{keybox}
 
-$Z = |\hat Z|$ es la impedancia real (el módulo, no la parte real). Luego
-$I(t) = I_M\cos(\omega t - \varphi)$.
+$Z = |\hat Z|$ es la impedancia real: el \emph{módulo}, no la parte real.
+Luego $I(t) = I_M\cos(\omega t - \varphi)$.
 
 \subsection{Composición de impedancias}
 
@@ -269,11 +284,15 @@ El pico se angosta al achicar $R$; las colas ($I_M \to \omega C\varepsilon_0$
 para $\omega\to 0$ y $\varepsilon_0/(\omega L)$ para $\omega\to\infty$) no
 dependen de $R$.
 
+\input{assets/clase22-resonancia-R.tex}
+
 \subsection{El desfasaje}
 
 Monótono: $\varphi \to -\pi/2$ ($\omega\to 0$), $\varphi = 0$ (resonancia),
 $\varphi \to +\pi/2$ ($\omega\to\infty$). Al achicar $R$, la transición se hace
 abrupta (casi discontinua en $R\to 0$).
+
+\input{assets/clase22-desfasaje.tex}
 
 \begin{notebox}[Cierre]
   El comportamiento de un circuito de CA queda descrito por la impedancia

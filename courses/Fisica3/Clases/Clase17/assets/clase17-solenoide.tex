@@ -1,0 +1,69 @@
+% Clase 17 --- Qué es (y qué no es) un solenoide (§2.1).
+% "Diremos que es un solenoide cuando tiene esta forma cilíndrica y además las
+%  espiras, contrariamente a lo que puse acá en el dibujo, porque si lo hiciera
+%  así no se vería nada, están todas pegaditas unas contra la otra."
+% El dibujo del pizarrón miente por necesidad (si se dibujan pegadas no se ve
+% nada), así que la figura hace explícita la diferencia: lo que se dibuja es (a),
+% lo que se calcula es (b).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) como se dibuja: espiras separadas ===============
+  \begin{scope}
+    \draw[figaux] (-2.6,0) -- (2.9,0);
+    \foreach \xx in {-1.8,-0.9,0,0.9,1.8} {
+      \draw[figaux, figblue] (\xx,0.85) arc (90:-90:0.28 and 0.85);
+      \draw[figline, line width=1pt] (\xx,0.85) arc (90:270:0.28 and 0.85);
+    }
+    % el cable que sube de una espira a la siguiente
+    \foreach \xx in {-1.8,-0.9,0,0.9} {
+      \draw[figline, line width=1pt] (\xx,0.85) -- (\xx+0.9,0.85);
+    }
+    \draw[figvecres] (-2.55,0.85) -- (-1.85,0.85);
+    \node[figlbl, figred, anchor=south] at (-2.2,0.9) {$I$};
+
+    \node[figlblaux, anchor=north, align=center] at (0,-1.15)
+      {entre espira y espira hay hueco:\\[-0.25em] en rigor es una hélice};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(a) como se \textbf{dibuja}};
+  \end{scope}
+
+  % =============== (b) como se calcula: espiras pegaditas ===============
+  \begin{scope}[xshift=7.4cm]
+    \draw[figaux] (-2.6,0) -- (2.9,0);
+    \foreach \xx in {-1.8,-1.5,-1.2,-0.9,-0.6,-0.3,0,0.3,0.6,0.9,1.2,1.5,1.8} {
+      \draw[figaux, figblue] (\xx,0.85) arc (90:-90:0.28 and 0.85);
+      \draw[figline, line width=1pt] (\xx,0.85) arc (90:270:0.28 and 0.85);
+    }
+    \draw[figvecres] (-2.55,0.85) -- (-1.85,0.85);
+    \node[figlbl, figred, anchor=south] at (-2.2,0.9) {$I$};
+
+    % cotas
+    \draw[figvecaux] (-0.4,-1.15) -- (-1.8,-1.15);
+    \draw[figvecaux] (0.4,-1.15) -- (1.8,-1.15);
+    \node[figlbl, anchor=north] at (0,-1.05) {$L$};
+    \draw[figvecaux] (2.15,0) -- (2.15,0.85);
+    \node[figlbl, anchor=west] at (2.22,0.45) {$R$};
+
+    \node[figlblaux, anchor=north, align=center] at (0,-1.45)
+      {$N$ vueltas pegadas: $n = N/L$ por unidad de largo,\\[-0.25em]
+       cada una se aproxima por una espira circular};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(b) como se \textbf{calcula}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Un solenoide es una bobina cilíndrica con las espiras
+\emph{muy} juntas, y esa condición no es un detalle de dibujo sino la única
+aproximación de todo el cálculo: si estuvieran separadas el objeto sería una
+hélice y cada vuelta tendría una componente de corriente a lo largo del eje;
+pegadas, cada vuelta se aproxima por una espira circular perpendicular al eje y
+alcanza con apilar el resultado ya obtenido. En el pizarrón se las dibuja
+separadas por necesidad ---juntas no se distinguirían--- pero hay que leerlas
+como en (b). El cable va barnizado: el aislante es lo que impide que la
+corriente corte camino entre vueltas vecinas en vez de dar todas las vueltas.
+Con $n = N/L$ espiras por unidad de longitud, un tramo $dy$ aporta $n\,dy$
+espiras, y ése es el paso que convierte la suma en integral.}
+\end{center}

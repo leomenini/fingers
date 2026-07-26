@@ -1,0 +1,54 @@
+% Clase 21 --- Los dos regímenes de la homogénea (§3.2).
+% El discriminante R^2 - 4L/C decide todo: raíces reales (no oscila) o complejas
+% conjugadas (oscila bajo una envolvente exponencial). Los dos casos van en la
+% misma gráfica y con la misma condición inicial, que es lo que los hace
+% comparables.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \begin{axis}[
+    fisfig, width=11.0cm, height=5.2cm,
+    xlabel={$t$}, ylabel={$Q_H(t)$},
+    xmin=0, xmax=9, ymin=-0.75, ymax=1.15,
+    xtick=\empty, ytick={0}, yticklabels={$0$},
+    legend style={at={(0.98,0.95)}, anchor=north east, draw=figgray!40,
+                  fill=white, font=\footnotesize},
+  ]
+    % envolvente
+    \addplot[figgray, dashed, smooth, samples=120, domain=0:9]
+      {exp(-0.42*x)};
+    \addlegendentry{envolvente $\pm e^{-\gamma t}$}
+    \addplot[figgray, dashed, smooth, samples=120, domain=0:9,
+             forget plot] {-exp(-0.42*x)};
+    % subamortiguado
+    \addplot[figblue, smooth, samples=400, domain=0:9]
+      {exp(-0.42*x)*cos(deg(3.1*x))};
+    \addlegendentry{$R$ chica: subamortiguado}
+    % sobreamortiguado
+    \addplot[figred, smooth, samples=200, domain=0:9]
+      {1.18*exp(-0.62*x) - 0.18*exp(-4.1*x)};
+    \addlegendentry{$R$ grande: sobreamortiguado}
+  \end{axis}
+
+  \node[figlbl, anchor=north, align=center] at (5.6,-1.6)
+    {$r_\pm = \dfrac{-R \pm \sqrt{R^2 - 4L/C}}{2L}$\\[0.5em]
+     subamortiguado: $r_\pm = -\gamma \pm i\omega'$, \;
+     $\gamma = \dfrac{R}{2L}$, \;
+     $\omega' = \sqrt{\dfrac{1}{LC} - \dfrac{R^2}{4L^2}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Toda la homogénea se decide mirando el signo del discriminante
+$R^2 - 4L/C$. Si la resistencia es \textbf{grande}, las dos raíces son reales y
+negativas y la carga se va a cero sin oscilar ni una vez: es el caso
+\emph{sobreamortiguado}, el de una puerta con amortiguador que se cierra sola
+sin golpear. Si la resistencia es \textbf{chica}, las raíces son complejas
+conjugadas, $-\gamma \pm i\omega'$, y aparece lo interesante: la parte
+imaginaria produce la oscilación y la real, siempre negativa, la apaga. Queda
+$Q_H = Q_0 e^{-\gamma t}\cos(\omega' t + \varphi)$, es decir el $LC$ de la
+primera parte de la clase \emph{modulado} por una exponencial decreciente ---la
+envolvente punteada---. Dos controles que conviene hacer siempre: la frecuencia
+amortiguada $\omega'$ es \emph{menor} que la natural $\omega = 1/\sqrt{LC}$, y
+tiende a ella cuando $R\to 0$, donde además la envolvente se vuelve plana y se
+recupera el oscilador sin pérdidas. En los dos casos $Q_H\to 0$: por eso es el
+transitorio.}
+\end{center}

@@ -1,0 +1,86 @@
+% Clase 18 --- Los tres casos de Lenz, con una convención de signos fija (§4.2).
+% "Voy a tomar la orientación de esta espira de la manera siguiente... cuando
+%  digo que es una convención de signos, no sé cuál va a ser el signo."
+% La clave del método es que la convención NO cambia entre paneles: se fija
+% n (y con ella el sentido positivo de I por la mano derecha) y después se
+% analiza cada caso. Lo único que cambia es el imán.
+\providecommand{\imanbarra}[1]{%
+  \ifnum#1=1
+    \draw[figblue, fill=figblue] (-0.55,-0.2) rectangle (0,0.2);
+    \draw[figred, fill=figred] (0,-0.2) rectangle (0.55,0.2);
+    \node[figlblaux, white, scale=0.75] at (-0.28,0) {S};
+    \node[figlblaux, white, scale=0.75] at (0.28,0) {N};
+  \else
+    \draw[figred, fill=figred] (-0.55,-0.2) rectangle (0,0.2);
+    \draw[figblue, fill=figblue] (0,-0.2) rectangle (0.55,0.2);
+    \node[figlblaux, white, scale=0.75] at (-0.28,0) {N};
+    \node[figlblaux, white, scale=0.75] at (0.28,0) {S};
+  \fi}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- la escena: #1 = 1 (N hacia la espira) o 0 (invertido) ----
+  \providecommand{\escenalenz}[1]{%
+    \begin{scope}[shift={(-1.5,0)}] \imanbarra{#1} \end{scope}
+    \draw[figline, line width=1.3pt] (0.9,0) ellipse (0.3 and 1.0);
+    \draw[figvecres, line width=1.1pt] (0.9,0) -- (1.95,0);
+    \node[figlbl, figred, anchor=south] at (1.6,0.05) {$\hat n$};
+    \node[figred, scale=0.85] at (0.9,1.0) {$\odot$};
+    \node[figred, scale=0.85] at (0.9,-1.0) {$\otimes$};
+    \node[figlblaux, figred, anchor=north] at (0.9,-1.15) {sentido $I>0$};}
+
+  % =============== (a) acercándose ===============
+  \begin{scope}
+    \escenalenz{1}
+    \foreach \yy in {-0.5,0,0.5} {
+      \draw[figvecaux, figblue] (-0.85,\yy) -- (0.5,\yy);
+    }
+    \draw[figvecres, line width=1.1pt] (-2.1,0.75) -- (-1.3,0.75);
+    \node[figlbl, figred, anchor=south] at (-1.7,0.8) {$\vec v$};
+    \node[figlbl, anchor=north, align=center] at (0,-1.75)
+      {(a) $\Phi>0$ y \textbf{crece}\\[-0.2em]
+       $\Rightarrow I<0$};
+  \end{scope}
+
+  % =============== (b) alejándose ===============
+  \begin{scope}[xshift=5.0cm]
+    \escenalenz{1}
+    \foreach \yy in {-0.5,0,0.5} {
+      \draw[figvecaux, figblue] (-0.85,\yy) -- (0.5,\yy);
+    }
+    \draw[figvecres, line width=1.1pt] (-1.3,0.75) -- (-2.1,0.75);
+    \node[figlbl, figred, anchor=south] at (-1.7,0.8) {$\vec v$};
+    \node[figlbl, anchor=north, align=center] at (0,-1.75)
+      {(b) $\Phi>0$ y \textbf{decrece}\\[-0.2em]
+       $\Rightarrow I>0$};
+  \end{scope}
+
+  % =============== (c) imán invertido, acercándose ===============
+  \begin{scope}[xshift=10.0cm]
+    \escenalenz{0}
+    \foreach \yy in {-0.5,0,0.5} {
+      \draw[figvecaux, figblue] (0.5,\yy) -- (-0.85,\yy);
+    }
+    \draw[figvecres, line width=1.1pt] (-2.1,0.75) -- (-1.3,0.75);
+    \node[figlbl, figred, anchor=south] at (-1.7,0.8) {$\vec v$};
+    \node[figlbl, anchor=north, align=center] at (0,-1.75)
+      {(c) $\Phi<0$ y \textbf{decrece}\\[-0.2em]
+       $\Rightarrow I>0$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La ley de Lenz dice que la corriente inducida se orienta de modo
+que el campo que ella misma genera \textbf{se opone a la variación} del flujo, y
+en esa frase los dos matices importan. Primero: se opone a la variación, no al
+campo ---en (b) el flujo es positivo y la corriente inducida tira \emph{a favor}
+del campo, porque lo que hay que contrarrestar es que esté disminuyendo---.
+Segundo: la oposición nunca alcanza a compensar del todo; si lo hiciera, o peor,
+si alimentara la causa, la corriente crecería sin límite y tendríamos energía
+gratis. El método práctico es el de los tres pasos, y conviene aplicarlo siempre
+en el mismo orden: (1) fijar la convención ---acá $\hat n$ hacia la derecha y,
+por la mano derecha, el sentido positivo de $I$--- y escribir el flujo con su
+signo; (2) decidir si crece o decrece; (3) elegir la corriente que se opone a
+\emph{esa variación}. El panel (c) sirve de control: al dar vuelta el imán, con
+todo lo demás igual, la corriente tiene que invertirse respecto de (a). Y así
+es.}
+\end{center}

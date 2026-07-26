@@ -1,0 +1,96 @@
+% Clase 16 --- Las cuatro fuerzas sobre la espira (§1.2).
+% "Si yo lo dibujo en perspectiva... hay cuatro fuerzas a priori."
+% Lo que la figura tiene que dejar claro es por qué la resultante es cero pero
+% igual hay par: los cuatro lados sienten fuerza, pero los dos horizontales dan
+% fuerzas verticales opuestas APLICADAS SOBRE EL EJE (brazo nulo), mientras que
+% los dos laterales dan fuerzas horizontales opuestas aplicadas a distinto lado
+% del eje --- eso es exactamente un par de fuerzas.
+% Convención usada en toda la clase (figs. 1-3): corriente bajando por el lado
+% delantero y subiendo por el trasero.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la espira en perspectiva ===============
+  \begin{scope}
+    % campo uniforme
+    \draw[figvecaux, figgray] (-3.0,2.7) -- (2.6,2.7);
+    \draw[figvecaux, figgray] (-3.0,-2.7) -- (2.6,-2.7);
+    \node[figlblaux, anchor=south east] at (2.6,2.76) {$\vec B$ uniforme};
+
+    % eje de rotación
+    \draw[figaux] (0,-2.55) -- (0,2.55);
+    \node[figlblaux, anchor=south west] at (0.08,2.15) {eje};
+
+    % la espira (paralelogramo: se ve "chanfleada")
+    \draw[figline, line width=1.4pt]
+      (1.7,0.95) -- (-1.7,1.55) -- (-1.7,-0.95) -- (1.7,-1.55) -- cycle;
+
+    % sentido de la corriente en cada lado
+    \draw[figvecres] (1.7,0.15) -- (1.7,-0.75);
+    \node[figlbl, figred, anchor=east] at (1.6,0.3) {$I$};
+    \draw[figvecres] (-1.7,-0.15) -- (-1.7,0.75);
+    \draw[figvecres] (-0.55,1.35) -- (0.55,1.16);
+    \draw[figvecres] (0.55,-1.35) -- (-0.55,-1.16);
+
+    % fuerzas sobre los lados laterales (largo b): horizontales y opuestas
+    \draw[figvecres, line width=1.3pt] (1.7,-0.3) -- (2.78,-1.03);
+    \node[figlbl, figred, anchor=north] at (2.78,-1.12) {$\vec F_3$};
+    \draw[figvecres, line width=1.3pt] (-1.7,0.3) -- (-2.78,1.03);
+    \node[figlbl, figred, anchor=south] at (-2.78,1.12) {$\vec F_4$};
+
+    % fuerzas sobre los lados horizontales (largo a): verticales, sobre el eje
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0,1.3) -- (0,2.1);
+    \node[figlbl, figblue, anchor=west] at (0.1,1.75) {$\vec F_1$};
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0,-1.3) -- (0,-2.1);
+    \node[figlbl, figblue, anchor=west] at (0.1,-1.75) {$\vec F_2$};
+
+    % rótulos de los lados
+    \node[figlblaux, anchor=south] at (-0.95,1.48) {lado $a$};
+    \node[figlblaux, anchor=east] at (1.55,-0.55) {lado $b$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.25)
+      {(a) los cuatro lados sienten fuerza};
+  \end{scope}
+
+  % =============== (b) por qué los lados a no cuentan ===============
+  \begin{scope}[xshift=8.6cm]
+    \draw[figaux] (0,-2.3) -- (0,2.3);
+    \node[figlblaux, anchor=south] at (0,2.32) {eje};
+
+    \draw[figline, line width=1.4pt] (-1.15,1.25) -- (1.15,1.25);
+    \node[figgray, circle, fill=figgray, inner sep=1.3pt] at (0,1.25) {};
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0,1.32) -- (0,2.05);
+    \node[figlbl, figblue, anchor=west] at (0.12,1.72) {$\vec F_1$};
+
+    \draw[figline, line width=1.4pt] (-1.15,-1.25) -- (1.15,-1.25);
+    \node[figgray, circle, fill=figgray, inner sep=1.3pt] at (0,-1.25) {};
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0,-1.32) -- (0,-2.05);
+    \node[figlbl, figblue, anchor=west] at (0.12,-1.72) {$\vec F_2$};
+
+    \node[figlblaux, anchor=east, align=right] at (-1.28,0)
+      {aplicadas en el centro\\[-0.25em] del lado, por simetría};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.25)
+      {(b) $\vec F_1+\vec F_2=\vec 0$ y ambas\\[-0.2em]
+       con línea de acción \textbf{sobre el eje}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Un segmento suelto de corriente no existe ---la carga se
+conserva, así que lo que entra por un lado sale por otro---, y ésa es la razón
+de estudiar la espira completa: los cuatro tramos se cierran entre sí. Los dos
+lados horizontales (largo $a$) están, igual que $\vec B$, en planos
+horizontales, de modo que $I\vec L\times\vec B$ les da fuerzas
+\textbf{verticales} opuestas; como además se aplican en el centro del lado, su
+línea de acción pasa por el eje y no aportan ni a la resultante ni al par. Los
+dos lados laterales (largo $b$) son perpendiculares a $\vec B$: sus fuerzas
+$\vec F_3$ y $\vec F_4$ también se cancelan como vectores, pero están aplicadas
+a distinto lado del eje, así que forman un \textbf{par}. Resultado: resultante
+nula y torque no nulo. La cancelación exacta de los módulos usa que $\vec B$ es
+el mismo en los cuatro lados; con campo no uniforme habría además fuerza
+resultante.}
+\end{center}

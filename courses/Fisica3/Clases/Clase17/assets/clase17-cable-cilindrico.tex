@@ -1,0 +1,77 @@
+% Clase 17 --- El cable cilíndrico por dentro y por fuera (§3.3).
+% "Vamos a hacer un cable cilíndrico... tengo acá el cable, la corriente por todo
+%  el cable, lo dibujé grande el cable, y quiero ver el campo magnético adentro."
+% Lo que decide el resultado es qué fracción de corriente encierra la amperiana:
+% adentro sólo la del disco de radio r (proporcional a r^2), afuera toda.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) las dos amperianas ===============
+  \begin{scope}
+    % sección del cable
+    \fill[figblue!12] (0,0) circle (1.3);
+    \draw[figline, line width=1.1pt] (0,0) circle (1.3);
+    \foreach \ang in {0,72,144,216,288} {
+      \node[figblue, scale=0.6] at (\ang:1.05) {$\odot$};
+    }
+    \node[figlblaux, anchor=south west] at (1.05,1.05) {$I$ uniforme};
+    \draw[figvecaux] (0,0) -- (180:1.3);
+    \node[figlblaux, anchor=south] at (-0.98,0.05) {$R$};
+
+    % amperiana interior
+    \draw[figred, dashed, line width=1pt] (0,0) circle (0.78);
+    \draw[figvecres, line width=0.9pt] (98:0.78) arc (98:74:0.78);
+    \draw[figvecaux, figred] (0,0) -- (270:0.78);
+    \node[figlbl, figred, anchor=west] at (0.07,-0.45) {$r$};
+    \node[figlbl, figred, anchor=south west] at (0.06,0.1) {$r<R$};
+
+    % amperiana exterior
+    \draw[figamber, dashed, line width=1pt] (0,0) circle (2.1);
+    \draw[figvecaux, figamber, line width=0.9pt] (98:2.1) arc (98:74:2.1);
+    \draw[figvecaux, figamber] (0,0) -- (315:2.1);
+    \node[figlbl, figamber, anchor=north west] at (315:1.35) {$r$};
+    \node[figlbl, figamber, anchor=south east] at (145:2.2) {$r>R$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.6)
+      {(a) $I_{\text{enc}} = I\dfrac{r^2}{R^2}$ adentro,\quad
+       $I_{\text{enc}} = I$ afuera};
+  \end{scope}
+
+  % =============== (b) el resultado ===============
+  \begin{scope}[xshift=6.1cm, yshift=-0.35cm]
+    \begin{axis}[
+      fisfig,
+      width=5.6cm, height=4.6cm,
+      xlabel={$r$}, ylabel={$B$},
+      xmin=0, xmax=3.4, ymin=0, ymax=1.25,
+      xtick={1}, xticklabels={$R$},
+      ytick={1}, yticklabels={$\frac{\mu_0 I}{2\pi R}$},
+    ]
+      \addplot[figblue, samples=2, domain=0:1] {x};
+      \addplot[figamber, smooth, samples=120, domain=1:3.4] {1/x};
+      \draw[figaux] (axis cs:1,0) -- (axis cs:1,1);
+      \node[figlblaux, figblue, anchor=west] at (axis cs:0.12,0.68)
+        {$\propto r$};
+      \node[figlblaux, figamber, anchor=south west] at (axis cs:1.6,0.62)
+        {$\propto 1/r$};
+    \end{axis}
+
+    \node[figlbl, anchor=north, align=center] at (2.7,-1.5)
+      {(b) el máximo está justo en la superficie};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Con la corriente repartida uniformemente en la sección, la
+simetría es la misma que la del hilo infinito ---rotación y traslación--- así
+que las líneas siguen siendo círculos con $|\vec B|$ constante sobre cada uno y
+la circulación vale $B\,(2\pi r)$ en los dos casos. Lo único que cambia es el
+lado derecho de la ley: una amperiana interior encierra sólo la fracción de
+corriente que pasa por su disco, $I\,r^2/R^2$, y de ahí sale
+$B = \mu_0 I r/2\pi R^2$, que \emph{crece} linealmente desde cero en el eje;
+una amperiana exterior encierra toda la corriente y devuelve el resultado del
+hilo infinito, $B = \mu_0 I/2\pi r$. Las dos expresiones coinciden en $r=R$
+---como tienen que hacerlo---, y ahí está el máximo, $\mu_0 I/2\pi R$. Notar de
+paso la respuesta a la pregunta de si tiene sentido hablar del campo
+\emph{dentro} de un cable: sí, pero entonces el cable ya no puede idealizarse
+como una línea, hay que darle espesor.}
+\end{center}

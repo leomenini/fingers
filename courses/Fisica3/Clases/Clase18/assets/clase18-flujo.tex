@@ -1,0 +1,64 @@
+% Clase 18 --- El flujo por una superficie ABIERTA (§2.2).
+% "Esto lo veo como una especie de red de mariposas, ¿se entiende? Donde esto
+%  sería el borde... Es cualquier superficie bordeada por C."
+% Los dos paneles tienen la misma curva C y el mismo campo: lo único que cambia
+% es qué superficie se elige para calcular el flujo. Y da lo mismo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la superficie plana ===============
+  \begin{scope}
+    \foreach \xx in {-1.5,-0.75,0,0.75,1.5} {
+      \draw[figvecaux, figblue] (\xx,-1.5) -- (\xx,1.7);
+    }
+    \node[figlblaux, figblue, anchor=south east] at (1.9,1.5) {$\vec B$};
+
+    \fill[figamber!20] (0,0) ellipse (1.75 and 0.55);
+    \draw[figline, line width=1.4pt] (0,0) ellipse (1.75 and 0.55);
+    \draw[figvec, line width=1.1pt] (1.75,0.05) arc (0:22:1.75 and 0.55);
+    \node[figlbl, figblue, anchor=west] at (1.85,0.28) {$C$};
+    \draw[figvecres, line width=1.2pt] (0,0) -- (0,1.05);
+    \node[figlbl, figred, anchor=west] at (0.08,0.75) {$\hat n$};
+    \node[figlbl, figamber, anchor=north] at (0,-0.78) {$S$ plana};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.75)
+      {(a) la superficie más natural};
+  \end{scope}
+
+  % =============== (b) la "red de mariposas" ===============
+  \begin{scope}[xshift=6.0cm]
+    \foreach \xx in {-1.5,-0.75,0,0.75,1.5} {
+      \draw[figvecaux, figblue] (\xx,-1.5) -- (\xx,1.7);
+    }
+
+    \fill[figamber!20] (-1.75,0) .. controls (-1.5,-1.5) and (1.5,-1.5) ..
+      (1.75,0) arc (0:-180:1.75 and 0.55);
+    \draw[figamber, line width=1.1pt] (-1.75,0) .. controls (-1.5,-1.5) and
+      (1.5,-1.5) .. (1.75,0);
+    \draw[figaux, figamber] (0,0) ellipse (1.75 and 0.55);
+    \draw[figline, line width=1.4pt] (-1.75,0) arc (180:360:1.75 and 0.55);
+    \draw[figline, line width=1.4pt, dashed] (1.75,0) arc (0:180:1.75 and 0.55);
+    \draw[figvecres, line width=1.2pt] (0,0) -- (0,1.05);
+    \node[figlbl, figred, anchor=west] at (0.08,0.75) {$\hat n$};
+    \node[figlbl, figamber, anchor=north] at (0,-1.35) {$S'$ abombada};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.75)
+      {(b) otra superficie con el \textbf{mismo} borde:\\[-0.2em]
+       el flujo es el mismo};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Acá hay una diferencia con Gauss que conviene tener presente:
+en Gauss la superficie es \textbf{cerrada} y no tiene borde, mientras que en
+Faraday es \textbf{abierta} y su borde es justamente la espira. Faraday lo
+pensaba como una red de mariposas: el aro es $C$ y la tela es $S$, y la tela
+puede estar más o menos abombada sin que eso cambie nada. El flujo
+$\Phi_B = \iint_S \vec B\cdot\hat n\,dS$ resulta el mismo para cualquier
+superficie apoyada en el mismo borde, y la razón es que las líneas de $\vec B$
+son cerradas: todo lo que atraviesa una tela atraviesa la otra ---si no fuera
+así, la ley sería ambigua y no serviría---. Lo que sí hay que fijar es la
+orientación: elegido un sentido de recorrido para $C$, la mano derecha da
+$\hat n$, y ese par de convenciones ligadas es lo que después permite escribir
+la ley con signo. En el flujo entran los tres ingredientes que Faraday había
+ensayado por separado: el módulo de $\vec B$, el área y el ángulo.}
+\end{center}

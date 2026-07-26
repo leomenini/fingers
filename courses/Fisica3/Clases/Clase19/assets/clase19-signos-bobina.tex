@@ -1,0 +1,52 @@
+% Clase 19 --- El signo de la caída en una bobina (§4.4).
+% La regla práctica que hay que retener para los circuitos RL de la clase que
+% viene: V_B - V_A = -L dI/dt, con el mismo signo crezca o decrezca la corriente
+% (igual que -RI en una resistencia). Los paneles comparan los dos casos con la
+% misma referencia de bornes.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) corriente creciente ===============
+  \begin{scope}
+    \draw (0,0) to[short, -*] (0.7,0);
+    \draw (0.7,0) to[L] (2.9,0);
+    \draw (2.9,0) to[short, *-] (3.6,0);
+    \node[figlbl, anchor=north] at (0.7,-0.15) {$A$};
+    \node[figlbl, anchor=north] at (2.9,-0.15) {$B$};
+    \draw[figvecres, line width=1.2pt] (0.9,0.75) -- (2.1,0.75);
+    \node[figlbl, figred, anchor=south] at (1.5,0.8) {$I$};
+    \node[figlbl, anchor=north, align=center] at (1.8,-0.85)
+      {(a) $\dfrac{dI}{dt}>0$:\\[0.2em] $V_B-V_A<0$};
+  \end{scope}
+
+  % =============== (b) corriente decreciente ===============
+  \begin{scope}[xshift=6.4cm]
+    \draw (0,0) to[short, -*] (0.7,0);
+    \draw (0.7,0) to[L] (2.9,0);
+    \draw (2.9,0) to[short, *-] (3.6,0);
+    \node[figlbl, anchor=north] at (0.7,-0.15) {$A$};
+    \node[figlbl, anchor=north] at (2.9,-0.15) {$B$};
+    \draw[figvecres, line width=1.2pt] (0.9,0.75) -- (2.1,0.75);
+    \node[figlbl, figred, anchor=south] at (1.5,0.8) {$I$};
+    \node[figlbl, anchor=north, align=center] at (1.8,-0.85)
+      {(b) $\dfrac{dI}{dt}<0$:\\[0.2em] $V_B-V_A>0$};
+  \end{scope}
+
+  \node[figlbl, anchor=north, align=center] at (5.0,-2.3)
+    {en los dos casos:
+     $\boxed{V_B-V_A = -L\,\dfrac{dI}{dt}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Ésta es la regla que hace falta tener a mano para los circuitos
+$RL$, y conviene enunciarla de una manera que no dependa de si la corriente sube
+o baja. Fijado el sentido de $I$ de $A$ hacia $B$, la ``caída'' en la bobina es
+$V_B - V_A = -L\,dI/dt$, exactamente igual de mecánica que el $-RI$ de una
+resistencia: no hay que decidir nada caso por caso, se pone la fórmula con su
+signo y la fórmula se encarga. Si la corriente crece, la expresión da negativa
+---la bobina se comporta como algo que consume, oponiéndose---, y si decrece da
+positiva, es decir la bobina actúa como una fuente que sostiene la corriente. La
+diferencia con la resistencia es de fondo, eso sí: la resistencia disipa
+irreversiblemente, mientras que la bobina \emph{devuelve} lo que tomó, porque lo
+tenía guardado en el campo magnético. Esa energía almacenada es el tema con el
+que sigue la próxima clase.}
+\end{center}
