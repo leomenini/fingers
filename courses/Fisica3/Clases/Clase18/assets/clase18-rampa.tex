@@ -1,0 +1,82 @@
+% Clase 18 --- Solenoide grande, bobina chica y la rampa de corriente (§3).
+% "Este es mamá bobina, solenoide grandote. Y acá tengo una bobina chiquita,
+%  también enrollada así, con N vueltas."
+% (a) la geometría; (b) las dos gráficas apiladas, que son la respuesta: la FEM
+% no copia a I, copia a su PENDIENTE.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la geometría ===============
+  \begin{scope}[yshift=0.2cm]
+    \draw[figline, line width=1.1pt] (-2.6,-1.15) -- (2.6,-1.15);
+    \draw[figline, line width=1.1pt] (-2.6,1.15) -- (2.6,1.15);
+    \foreach \xx in {-2.4,-1.8,-1.2,-0.6,0,0.6,1.2,1.8,2.4} {
+      \node[figblue, scale=0.58] at (\xx,1.15) {$\odot$};
+      \node[figblue, scale=0.58] at (\xx,-1.15) {$\otimes$};
+    }
+    \node[figlblaux, anchor=south west] at (-2.6,1.25)
+      {solenoide grande: $n$ espiras/largo, corriente $I(t)$};
+
+    \foreach \yy in {-0.75,-0.25,0.25,0.75} {
+      \draw[figvecres, line width=0.8pt] (-1.9,\yy) -- (-1.1,\yy);
+    }
+    \node[figlbl, figred, anchor=east] at (-1.95,0) {$\vec B$};
+    \node[figlblaux, anchor=west] at (-2.5,-0.6) {$B=\mu_0 n I$};
+
+    % la bobina chica, adentro
+    \draw[figamber, line width=1.2pt] (0.75,-0.6) rectangle (1.75,0.6);
+    \foreach \xx in {0.9,1.1,1.3,1.5} {
+      \draw[figamber, line width=0.9pt] (\xx,-0.6) -- (\xx,0.6);
+    }
+    \node[figlbl, figamber, anchor=west, align=left] at (1.9,0)
+      {bobina chica:\\[-0.25em] $N$ vueltas, área $A$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-1.75)
+      {(a) $\Phi_B = N\,(BA) = \mu_0 N n A\, I(t)$};
+  \end{scope}
+
+  % =============== (b) la rampa y la FEM ===============
+  \begin{scope}[xshift=7.4cm, yshift=1.5cm]
+    \begin{axis}[
+      fisfig, width=5.6cm, height=3.0cm,
+      xlabel={}, ylabel={$I(t)$},
+      xmin=-0.6, xmax=3.2, ymin=-0.15, ymax=1.35,
+      xtick={0,1.6}, xticklabels={$0$,$t_f$}, ytick={1},
+      yticklabels={$I_{\max}$},
+    ]
+      \addplot[figblue, samples=2, domain=-0.6:0] {0};
+      \addplot[figblue, samples=2, domain=0:1.6] {x/1.6};
+      \addplot[figblue, samples=2, domain=1.6:3.2] {1};
+    \end{axis}
+  \end{scope}
+  \begin{scope}[xshift=7.4cm, yshift=-2.1cm]
+    \begin{axis}[
+      fisfig, width=5.6cm, height=3.0cm,
+      xlabel={$t$}, ylabel={$|\varepsilon|$},
+      xmin=-0.6, xmax=3.2, ymin=-0.15, ymax=1.35,
+      xtick={0,1.6}, xticklabels={$0$,$t_f$}, ytick=\empty,
+    ]
+      \addplot[figred, samples=2, domain=-0.6:0] {0};
+      \addplot[figred, samples=2, domain=0:1.6] {1};
+      \addplot[figred, samples=2, domain=1.6:3.2] {0};
+      \draw[figaux] (axis cs:0,0) -- (axis cs:0,1);
+      \draw[figaux] (axis cs:1.6,0) -- (axis cs:1.6,1);
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (2.4,-1.35)
+      {(b) hay FEM sólo mientras $I$ cambia};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La bobina chica se toma ``chica'' con dos propósitos: para que
+el campo del solenoide sea uniforme en toda su sección ---y valga $\mu_0 n I$
+sin correcciones--- y para poder despreciar la inducción que ella misma genera
+sobre el solenoide grande. Con eso el flujo total encadenado es
+$\Phi_B = N B A = \mu_0 N n A\,I$, y como todo salvo la corriente es constante,
+$|\varepsilon| = \mu_0 N n A\,|dI/dt|$: la FEM no sigue a la corriente, sigue a
+su \textbf{pendiente}. Por eso, con la rampa impuesta desde afuera, la respuesta
+es un escalón: cero antes de $t=0$, constante e igual a
+$\mu_0 N n A I_{\max}/t_f$ mientras dura la subida ---más rápida la rampa, mayor
+la FEM--- y cero de nuevo cuando la corriente se estabiliza, por grande que sea.
+Es exactamente el segundo experimento de Faraday, ahora con números: pasa algo
+al cerrar y al abrir, y no pasa nada en el medio.}
+\end{center}

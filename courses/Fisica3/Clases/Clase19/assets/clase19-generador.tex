@@ -1,0 +1,75 @@
+% Clase 19 --- El generador de corriente alterna (§2.1).
+% "Con este procedimiento yo genero de manera natural una FEM sinusoidal entre
+%  los bornes de la espira."
+% (a) la máquina; (b) las dos curvas, que muestran lo esencial: la FEM es máxima
+% justo cuando el flujo pasa por CERO (y viceversa), porque es su derivada.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la espira girando ===============
+  \begin{scope}[yshift=-0.2cm]
+    \draw[figvecaux, figgray] (-2.6,2.35) -- (2.3,2.35);
+    \node[figlblaux, anchor=south east] at (2.3,2.4) {$\vec B$};
+    \draw[figvecaux, figgray] (-2.6,-2.35) -- (2.3,-2.35);
+
+    % la espira vista desde arriba
+    \draw[figline, line width=1.7pt] (-1.5,1.05) -- (1.5,-1.05);
+    \node[figblue, scale=0.9] at (1.5,-1.05) {$\otimes$};
+    \node[figblue, scale=0.9] at (-1.5,1.05) {$\odot$};
+    \node[figgray, circle, draw=figgray, fill=white, inner sep=1.5pt] at (0,0) {};
+
+    % normal y ángulo
+    \draw[figvec, line width=1.1pt] (0,0) -- (35:1.6);
+    \node[figlbl, figblue, anchor=south west] at (35:1.6) {$\hat n$};
+    \draw[figaux] (0,0) -- (1.15,0);
+    \draw[figaux] (0.8,0) arc (0:35:0.8);
+    \node[figlbl, anchor=west] at (17:0.95) {$\theta=\omega t$};
+
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (100:1.95) arc (100:140:1.95);
+    \node[figlblaux, figred, anchor=south] at (120:2.0) {$\omega$};
+
+    \node[figlblaux, anchor=north, align=center] at (0,-1.4)
+      {la turbina hace girar el eje};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.7)
+      {(a) $\Phi_B = B A\cos(\omega t)$};
+  \end{scope}
+
+  % =============== (b) flujo y FEM ===============
+  \begin{scope}[xshift=6.6cm, yshift=-0.6cm]
+    \begin{axis}[
+      fisfig, width=6.6cm, height=4.4cm,
+      xlabel={$t$}, ylabel={},
+      xmin=-0.2, xmax=6.6, ymin=-1.45, ymax=1.75,
+      xtick={0,1.5708,3.1416,4.7124,6.2832},
+      xticklabels={$0$,,$\frac{T}{2}$,,$T$},
+      ytick=\empty,
+      legend style={at={(0.5,1.18)}, anchor=north, legend columns=2},
+    ]
+      \addplot[figblue, smooth, samples=180, domain=0:6.4] {cos(deg(x))};
+      \addlegendentry{$\Phi_B$}
+      \addplot[figred, smooth, samples=180, domain=0:6.4] {sin(deg(x))};
+      \addlegendentry{$\varepsilon$}
+      \draw[figaux] (axis cs:-0.2,0) -- (axis cs:6.6,0);
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (3.3,-1.35)
+      {(b) $\varepsilon = BA\omega\sin(\omega t)$: corriente \textbf{alterna}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La máquina es la misma espira del par magnético, pero leída al
+revés: en vez de meterle corriente para que gire, se la hace girar ---con una
+turbina, una caída de agua, vapor--- y se cosecha la FEM. Con la normal formando
+$\theta=\omega t$ con el campo, el flujo es $BA\cos(\omega t)$ y la FEM su
+derivada cambiada de signo, $BA\omega\sin(\omega t)$; con $N$ vueltas, todo
+multiplicado por $N$. La gráfica deja ver la relación que más se presta a
+confusión: la FEM es \textbf{máxima cuando el flujo se anula} ---ahí es cuando
+más rápido cambia--- y se anula cuando el flujo es máximo. De acá sale un hecho
+tecnológico importante: la corriente alterna no es un capricho, es lo que
+producen naturalmente los generadores rotativos, y por eso la red eléctrica es
+alterna. Para mantener $\omega$ constante hay que entregar un torque que venza
+al magnético, $\tau = IAB\sin\theta = (B^2A^2\omega/R)\sin^2\theta$: cuanta más
+corriente se consume, más cuesta girar la turbina. Ahí está la conversión de
+energía mecánica en eléctrica, sin magia.}
+\end{center}

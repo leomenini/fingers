@@ -1,0 +1,52 @@
+% Clase 22 --- La curva de resonancia con resistencia (§4.1).
+% Tres valores de R sobre la misma curva: el pico vale eps0/R (finito) y se
+% angosta al bajar R, pero las COLAS son las mismas --- ahí no importa R. Eso es
+% lo que hace que un receptor con R chica sea selectivo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \begin{axis}[
+    fisfig, width=10.5cm, height=5.6cm,
+    xlabel={$\omega$}, ylabel={$I_M$},
+    xmin=0.05, xmax=2.6, ymin=0, ymax=5.4,
+    xtick={1}, xticklabels={$\frac{1}{\sqrt{LC}}$}, ytick=\empty,
+    legend style={at={(0.97,0.95)}, anchor=north east, draw=figgray!40,
+                  fill=white, font=\footnotesize},
+  ]
+    \addplot[figred, smooth, samples=300, domain=0.05:2.6]
+      {1/sqrt(0.2^2 + (x - 1/x)^2)};
+    \addlegendentry{$R$ chica}
+    \addplot[figamber, smooth, samples=300, domain=0.05:2.6]
+      {1/sqrt(0.5^2 + (x - 1/x)^2)};
+    \addlegendentry{$R$ media}
+    \addplot[figblue, smooth, samples=300, domain=0.05:2.6]
+      {1/sqrt(1.1^2 + (x - 1/x)^2)};
+    \addlegendentry{$R$ grande}
+    \draw[figaux] (axis cs:1,0) -- (axis cs:1,5.2);
+    \node[figlblaux, figred, anchor=west] at (axis cs:1.06,4.9)
+      {pico $= \dfrac{\varepsilon_0}{R}$};
+    \node[figlblaux, anchor=south east] at (axis cs:2.55,1.15)
+      {las colas no dependen de $R$};
+  \end{axis}
+
+  \node[figlbl, anchor=north, align=center] at (5.2,-1.75)
+    {$I_M = \dfrac{\varepsilon_0}{\sqrt{R^2 +
+      \left(\omega L - \dfrac{1}{\omega C}\right)^2}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Con resistencia la amplitud ya no diverge: el máximo ocurre
+cuando la parte imaginaria de $\hat Z$ se anula ---o sea otra vez en
+$\omega = 1/\sqrt{LC}$, la misma frecuencia--- pero ahí queda
+$\hat Z = R$ y la corriente vale $\varepsilon_0/R$, grande pero finita. La
+familia de curvas muestra el efecto de $R$ en las dos direcciones: al bajarla el
+pico sube \emph{y} se angosta, mientras que las colas ---donde domina la
+reactancia--- son prácticamente las mismas para todos. Eso explica de un vistazo
+para qué sirve la resonancia en tecnología: un receptor de radio o un celular es
+un circuito con $R$ muy chica sintonizado a la frecuencia de la emisora, de modo
+que amplifica muchísimo esa señal y casi nada las vecinas; un microondas emite
+en la frecuencia que resuena con la molécula de agua; las lámparas para tratar
+la ictericia concentran la emisión en la frecuencia útil, sin calentar de más al
+bebé. Y también explica el riesgo: si $R$ es demasiado chica, en resonancia la
+corriente puede crecer hasta quemar el circuito ---o hasta que aparezcan efectos
+no lineales que acoten la amplitud---.}
+\end{center}

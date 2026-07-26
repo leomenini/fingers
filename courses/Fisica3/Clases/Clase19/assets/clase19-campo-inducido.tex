@@ -1,0 +1,71 @@
+% Clase 19 --- El campo eléctrico inducido de una región con B(t) (§3.2).
+% "Círculos centrados acá... el campo eléctrico lo voy a dibujar para allá, pero
+%  podría ser para el otro lado, en función de que B esté creciendo o
+%  decreciendo."
+% Ojo con el sentido: la figura NO puede comprometerse, porque depende del signo
+% de dB/dt. Se dibuja un sentido y se aclara explícitamente que el otro caso lo
+% invierte --- eso es más honesto que elegir uno y callarlo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) las líneas de E ===============
+  \begin{scope}
+    \fill[figblue!8] (0,0) circle (2.1);
+    \draw[figgray, line width=0.8pt] (0,0) circle (2.1);
+    \foreach \ang in {0,60,120,180,240,300} {
+      \node[figblue, scale=0.7] at (\ang:1.55) {$\otimes$};
+      \node[figblue, scale=0.7] at ({\ang+30}:0.8) {$\otimes$};
+    }
+    \node[figblue, scale=0.7] at (0,0) {$\otimes$};
+    \node[figlblaux, anchor=south west] at (1.5,2.15) {$\vec B(t)$ uniforme};
+
+    % líneas de campo eléctrico
+    \foreach \rr in {0.65,1.25,1.85} {
+      \draw[figred, line width=0.9pt] (0,0) circle (\rr);
+      \draw[figvecres, line width=0.9pt] ({95}:\rr) arc (95:65:\rr);
+    }
+    \node[figlbl, figred, anchor=west] at (0:1.9) {$\vec E$};
+
+    % la curva amperiana
+    \draw[figamber, dashed, line width=1.2pt] (0,0) circle (1.55);
+    \draw[figvecaux, figamber] (0,0) -- (215:1.55);
+    \node[figlbl, figamber, anchor=north] at (215:0.85) {$r$};
+
+    \node[figlblaux, anchor=north, align=center] at (0,-2.35)
+      {el sentido depende del signo de $dB/dt$};
+    \node[figlbl, anchor=north, align=center] at (0,-2.95)
+      {(a) $E\,(2\pi r) = -\dfrac{d\Phi_B}{dt}$, \; $\Phi_B = B\pi r^2$};
+  \end{scope}
+
+  % =============== (b) el resultado ===============
+  \begin{scope}[xshift=6.4cm, yshift=-0.7cm]
+    \begin{axis}[
+      fisfig, width=5.8cm, height=4.4cm,
+      xlabel={$r$}, ylabel={$|E|$},
+      xmin=0, xmax=2.6, ymin=0, ymax=1.35,
+      xtick={2}, xticklabels={$R$}, ytick=\empty,
+    ]
+      \addplot[figred, samples=2, domain=0:2] {0.55*x};
+      \draw[figaux] (axis cs:2,0) -- (axis cs:2,1.1);
+      \node[figlblaux, figred, anchor=north west] at (axis cs:0.1,1.28)
+        {$|E| = \dfrac{r}{2}\left|\dfrac{dB}{dt}\right|$};
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (2.9,-1.4)
+      {(b) crece linealmente con $r$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El ejemplo es el análogo eléctrico del hilo infinito, y se
+resuelve con el mismo argumento de simetría, sólo que ahora la ley que se usa
+es la de Faraday. Como no hay cargas y la situación es invariante ante
+rotaciones alrededor del centro, las líneas de $\vec E$ tienen que ser
+circunferencias concéntricas con $|\vec E|$ constante sobre cada una ---y
+cerradas, que es la marca de un campo que no deriva de un potencial---. Entonces
+$\oint \vec E\cdot d\vec l = E\,(2\pi r)$, el flujo encerrado es $B\pi r^2$ y
+queda $|E| = \tfrac{r}{2}|dB/dt|$: nulo en el centro y creciendo linealmente
+hacia afuera. El sentido de recorrido es lo único que la figura no puede
+decidir, porque depende de si $B$ está creciendo o decreciendo; dibujarlo sin
+aclararlo sería tomar partido en algo que el enunciado no fija. Conviene retener
+la lectura conceptual: un campo magnético variable \emph{crea} campo eléctrico
+en el vacío, sin cargas de por medio.}
+\end{center}

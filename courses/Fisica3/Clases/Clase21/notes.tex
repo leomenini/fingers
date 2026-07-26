@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -135,6 +142,8 @@ dU = u_B\,(2\pi r\,\ell\,dr) = \frac{\mu_0\,\ell\, I^2}{4\pi}\,\frac{dr}{r}.
   \]
 \end{keybox}
 
+\input{assets/clase21-coaxial.tex}
+
 % ===================================================================
 \section{Oscilaciones: el circuito LC}
 % ===================================================================
@@ -167,6 +176,8 @@ potencial $\tfrac12 K x^2$ & eléctrica $\tfrac12 Q^2/C$ \\
 \end{tabular}
 \end{center}
 
+\input{assets/clase21-lc-analogia.tex}
+
 \subsection{Conservación de la energía}
 
 $U = \tfrac12 Q^2/C + \tfrac12 L I^2$; derivando y usando $\dot Q = I$:
@@ -174,6 +185,8 @@ $U = \tfrac12 Q^2/C + \tfrac12 L I^2$; derivando y usando $\dot Q = I$:
 \frac{dU}{dt} = I\left(\frac{Q}{C} + L\frac{dI}{dt}\right) = 0.
 \]
 La energía se conserva, oscilando entre condensador y bobina.
+
+\input{assets/clase21-lc-ciclo.tex}
 
 \subsection{Solución por analogía y verificación}
 
@@ -200,6 +213,8 @@ Q(t) = 2|A_1|\cos(\omega t + \varphi) \equiv Q_0\cos(\omega t + \varphi).
   "adivinar" la solución).
 \end{notebox}
 
+\input{assets/clase21-complejas.tex}
+
 % ===================================================================
 \section{Oscilaciones forzadas con resistencia (RLC)}
 % ===================================================================
@@ -225,6 +240,8 @@ Q(t) = Q_{\text{part}}(t) + Q_H(t).
   particular.
 \end{keybox}
 
+\input{assets/clase21-hamaca.tex}
+
 \subsection{Solución de la homogénea: caso subamortiguado}
 
 $Q_H = A e^{rt}$ da $L r^2 + R r + 1/C = 0$:
@@ -248,6 +265,8 @@ $\omega' = \sqrt{1/LC - R^2/4L^2}$. Imponiendo $Q_H$ real:
 
 Es el LC modulado por $e^{-\gamma t}$: las oscilaciones se amortiguan.
 $\omega' \to \omega$ cuando $R \to 0$.
+
+\input{assets/clase21-amortiguado.tex}
 
 \begin{notebox}[Próxima clase]
   Solución particular en régimen permanente, resonancia e impedancias complejas.

@@ -1,0 +1,78 @@
+% Clase 21 --- El ciclo del LC y el trasvase de energía (§2.3-2.4).
+% (a) los cuatro instantes característicos de un período; (b) las dos energías,
+% que oscilan en contrafase con SUMA CONSTANTE. Eso es la conservación que se
+% demuestra derivando U y usando la ecuación de mallas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- una viñeta del ciclo: #1 carga (+1/0/-1), #2 corriente (0/1/-1) ----
+  \providecommand{\vineta}[2]{%
+    \draw[figline, line width=1.2pt] (-0.45,0.5) -- (0.45,0.5);
+    \draw[figline, line width=1.2pt] (-0.45,0.18) -- (0.45,0.18);
+    \ifnum#1=1
+      \node[figlblaux, figred, scale=0.9] at (0,0.68) {$+\!+\!+$};
+      \node[figlblaux, figblue, scale=0.9] at (0,0.02) {$-\!-\!-$};
+    \fi
+    \ifnum#1=-1
+      \node[figlblaux, figblue, scale=0.9] at (0,0.68) {$-\!-\!-$};
+      \node[figlblaux, figred, scale=0.9] at (0,0.02) {$+\!+\!+$};
+    \fi
+    \ifnum#2=1
+      \draw[figvecres, line width=1.1pt] (-0.5,-0.55) -- (0.5,-0.55);
+    \fi
+    \ifnum#2=-1
+      \draw[figvecres, line width=1.1pt] (0.5,-0.55) -- (-0.5,-0.55);
+    \fi}
+
+  \foreach \idx/\xx/\qq/\ii/\lbl in {%
+      0/0/1/0/{$t=0$}, 1/2.6/0/1/{$t=T/4$},
+      2/5.2/-1/0/{$t=T/2$}, 3/7.8/0/-1/{$t=3T/4$}} {
+    \begin{scope}[shift={(\xx,0)}]
+      \vineta{\qq}{\ii}
+      \node[figlbl, anchor=north] at (0,-0.85) {\lbl};
+    \end{scope}
+  }
+  \node[figlblaux, anchor=north, align=center] at (3.9,-1.45)
+    {(a) toda la energía en el condensador $\to$ toda en la bobina $\to$
+     de nuevo en el condensador, al revés};
+
+  % ---- las energías ----
+  \begin{scope}[yshift=-6.6cm, xshift=1.1cm]
+    \begin{axis}[
+      fisfig, width=7.6cm, height=4.0cm,
+      xlabel={$t/T$}, ylabel={energía},
+      xmin=0, xmax=1.05, ymin=0, ymax=1.35,
+      xtick={0,0.25,0.5,0.75,1},
+      xticklabels={$0$,$\frac{1}{4}$,$\frac{1}{2}$,$\frac{3}{4}$,$1$},
+      ytick=\empty,
+      legend style={at={(0.5,-0.55)}, anchor=north, draw=none, fill=none,
+                    font=\footnotesize, legend columns=3},
+    ]
+      \addplot[figred, smooth, samples=160, domain=0:1.05]
+        {(cos(deg(2*pi*x)))^2};
+      \addlegendentry{$U_E=\frac{Q^2}{2C}$}
+      \addplot[figblue, smooth, samples=160, domain=0:1.05]
+        {(sin(deg(2*pi*x)))^2};
+      \addlegendentry{$U_B=\frac12 LI^2$}
+      \addplot[figamber, samples=2, domain=0:1.05] {1};
+      \addlegendentry{suma}
+    \end{axis}
+  \end{scope}
+  \node[figlbl, anchor=north, align=center] at (3.9,-8.75)
+    {(b) la suma es constante: $\dfrac{dU}{dt}
+     = I\left(\dfrac{Q}{C} + L\dfrac{dI}{dt}\right) = 0$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Sin resistencia el circuito no tiene dónde perder energía, así
+que la que hay se pasa de un lado al otro indefinidamente. En $t=0$ el
+condensador está cargado y no hay corriente: toda la energía es eléctrica. Un
+cuarto de período después el condensador está descargado pero la corriente es
+máxima ---la bobina no dejó que se frenara de golpe--- y toda la energía es
+magnética. En $T/2$ el condensador vuelve a estar cargado, pero con la
+polaridad invertida. Es exactamente el ida y vuelta de una masa colgada de un
+resorte entre energía potencial y cinética. La conservación no hay que
+postularla: derivando $U = \tfrac12 Q^2/C + \tfrac12 LI^2$ y usando
+$\dot Q = I$ aparece justo el paréntesis de la ley de mallas, que vale cero. Y
+notar el detalle de la gráfica: cada energía oscila con \emph{el doble} de la
+frecuencia de $Q$, porque ambas dependen del cuadrado.}
+\end{center}

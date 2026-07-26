@@ -1,0 +1,91 @@
+% Clase 21 --- La energía guardada en un cable coaxial (§1).
+% El cable coaxial es el caso donde la densidad de energía NO es uniforme: como
+% B va como 1/r, u_B va como 1/r^2, y hay que integrar por cascarones. La figura
+% separa las dos cosas: la geometría del campo (a) y el elemento de volumen (b).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la sección y el campo ===============
+  \begin{scope}
+    \fill[figblue!25] (0,0) circle (0.45);
+    \draw[figline, line width=1pt] (0,0) circle (0.45);
+    \node[figblue, scale=0.85] at (0,0) {$\otimes$};
+    \node[figlblaux, anchor=north east] at (-0.85,-1.15) {$I$ entrante};
+
+    \fill[figblue!25, even odd rule] (0,0) circle (2.05) (0,0) circle (1.8);
+    \draw[figline, line width=1pt] (0,0) circle (2.05);
+    \draw[figline, line width=1pt] (0,0) circle (1.8);
+    \foreach \ang in {35,105,175,245,315} {
+      \node[figblue, scale=0.7] at (\ang:1.93) {$\odot$};
+    }
+    \node[figlblaux, anchor=south west] at (60:2.15) {$I$ saliente};
+
+    % amperiana entre A y B
+    \draw[figred, dashed, line width=1.1pt] (0,0) circle (1.2);
+    \draw[figvecres, line width=0.9pt] (98:1.2) arc (98:72:1.2);
+    \node[figlbl, figred, anchor=west] at (10:1.3) {$\vec B$};
+    \draw[figvecaux, figred] (0,0) -- (235:1.2);
+    \node[figlbl, figred, anchor=north] at (235:0.7) {$r$};
+
+    % afuera
+    \draw[figamber, dashed, line width=1.1pt] (0,0) circle (2.5);
+    \node[figlbl, figamber, anchor=south] at (0,2.55) {$r>B$: $\vec B=\vec 0$};
+
+    \draw[figvecaux] (0,0) -- (118:0.45);
+    \node[figlblaux, anchor=south] at (118:0.55) {$A$};
+    \draw[figvecaux] (0,0) -- (200:1.8);
+    \node[figlblaux, anchor=north east] at (200:1.55) {$B$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(a) $B = \dfrac{\mu_0 I}{2\pi r}$,\quad
+       $u_B = \dfrac{\mu_0 I^2}{8\pi^2 r^2}$};
+  \end{scope}
+
+  % =============== (b) el cascarón ===============
+  \begin{scope}[xshift=7.6cm, yshift=-0.2cm]
+    % cilindro exterior
+    \draw[figaux, figblue] (-2.2,0) -- (2.2,0);
+    \draw[figline, line width=0.9pt] (-2.2,1.35) -- (2.2,1.35);
+    \draw[figline, line width=0.9pt] (-2.2,-1.35) -- (2.2,-1.35);
+    \draw[figaux, figblue] (-2.2,0) ellipse (0.3 and 1.35);
+    \draw[figline, line width=0.9pt] (2.2,0) ellipse (0.3 and 1.35);
+    % conductor central
+    \draw[figline, line width=1.6pt] (-2.2,0) -- (2.2,0);
+
+    % el cascarón de radio r
+    \fill[figamber!35] (-0.5,0.7) rectangle (0.4,0.95);
+    \fill[figamber!35] (-0.5,-0.95) rectangle (0.4,-0.7);
+    \draw[figamber, line width=0.8pt] (-0.5,0.7) rectangle (0.4,0.95);
+    \draw[figamber, line width=0.8pt] (-0.5,-0.95) rectangle (0.4,-0.7);
+    \draw[figvecaux, figamber] (1.35,1.55) -- (0.45,0.98);
+    \node[figlbl, figamber, anchor=south west, align=left] at (1.3,1.5)
+      {cascarón: radio $r$,\\[-0.25em] espesor $dr$};
+
+    \draw[figvecaux] (-0.05,-1.75) -- (-2.2,-1.75);
+    \draw[figvecaux] (0.15,-1.75) -- (2.2,-1.75);
+    \node[figlbl, anchor=north] at (0.05,-1.68) {$\ell$};
+    \draw[figvecaux] (-0.9,0) -- (-0.9,0.82);
+    \node[figlblaux, anchor=east] at (-0.95,0.45) {$r$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.6)
+      {(b) $dV = 2\pi r\,\ell\,dr
+       \Rightarrow
+       dU = \dfrac{\mu_0 \ell I^2}{4\pi}\dfrac{dr}{r}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El coaxial se resuelve con Ampère en dos renglones: por simetría
+cilíndrica las líneas son círculos, y una amperiana entre los conductores
+encierra sólo la corriente del conductor central, de modo que
+$B = \mu_0 I/2\pi r$ ---igual que un hilo infinito---. Afuera del cascarón
+externo la corriente neta encerrada es cero, así que ahí $B = 0$: el cable no
+irradia campo al exterior, que es justamente para lo que se lo usa. La novedad
+frente a la clase pasada es que la densidad de energía $u_B = B^2/2\mu_0$ ya
+\textbf{no es uniforme}: depende de $r$ como $1/r^2$, y por eso no se la puede
+multiplicar por el volumen. Hay que integrar, y el elemento de volumen adecuado
+es el que respeta la simetría: un cascarón cilíndrico de radio $r$, espesor $dr$
+y largo $\ell$, cuyo volumen es $2\pi r \ell\,dr$. Al multiplicar, el $r$ del
+volumen cancela uno de los del denominador y queda un $dr/r$: otra vez el
+logaritmo, $U = \frac{\mu_0 \ell I^2}{4\pi}\ln(B/A)$, la misma firma que apareció
+en la autoinductancia del toroide.}
+\end{center}

@@ -1,0 +1,101 @@
+% Clase 16 --- Por qué la normal se elige con la mano derecha (§1.4).
+% "Pareciera que la elección que hicimos de N no es la más conveniente."
+% Los dos primeros paneles tienen EXACTAMENTE la misma física (misma espira,
+% misma corriente, mismas fuerzas, mismo par): lo único que cambia es cuál de
+% las dos normales se elige. Con la elección "a ojo" el equilibrio estable cae
+% en theta = 180 y el signo de la fórmula no acompaña; con la de la mano derecha
+% cae en theta = 0 y tau = I A x B da módulo, dirección y sentido de una.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) normal elegida a ojo ===============
+  \begin{scope}
+    \draw[figvecaux, figgray] (-2.0,2.35) -- (1.9,2.35);
+    \node[figlblaux, anchor=south east] at (1.9,2.4) {$\vec B$};
+    \draw[figaux] (0,0) -- (1.5,0);
+
+    \draw[figline, line width=1.6pt] (-1.15,0.80) -- (1.15,-0.80);
+    \node[figblue, scale=0.85] at (1.15,-0.80) {$\otimes$};
+    \node[figblue, scale=0.85] at (-1.15,0.80) {$\odot$};
+    \node[figgray, circle, draw=figgray, fill=white, inner sep=1.4pt] at (0,0) {};
+
+    \draw[figvecres] (1.15,-0.97) -- (1.15,-1.75);
+    \node[figlbl, figred, anchor=west] at (1.22,-1.4) {$\vec F_3$};
+    \draw[figvecres] (-1.15,0.97) -- (-1.15,1.75);
+    \node[figlbl, figred, anchor=east] at (-1.22,1.4) {$\vec F_4$};
+
+    % la normal "a ojo"
+    \draw[figvec, line width=1.1pt] (0,0) -- (-0.86,-1.23);
+    \node[figlbl, figblue, anchor=north east] at (-0.80,-1.16) {$\hat n$};
+    \draw[figaux] (0.95,0) arc (0:-125:0.95);
+    \node[figlbl, anchor=west] at (0.58,-1.02) {$\theta$};
+
+    % sentido del par
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (-1.0,-1.73) arc (240:186:2.0);
+    \node[figlblaux, figred, anchor=east] at (-1.95,-1.15) {sentido del par};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(a) con $\hat n$: el par lleva a\\[-0.2em]
+       $\hat n$ \textbf{antiparalelo} a $\vec B$};
+  \end{scope}
+
+  % =============== (b) normal por la mano derecha ===============
+  \begin{scope}[xshift=4.8cm]
+    \draw[figvecaux, figgray] (-2.0,2.35) -- (1.9,2.35);
+    \node[figlblaux, anchor=south east] at (1.9,2.4) {$\vec B$};
+    \draw[figaux] (0,0) -- (1.5,0);
+
+    \draw[figline, line width=1.6pt] (-1.15,0.80) -- (1.15,-0.80);
+    \node[figblue, scale=0.85] at (1.15,-0.80) {$\otimes$};
+    \node[figblue, scale=0.85] at (-1.15,0.80) {$\odot$};
+    \node[figgray, circle, draw=figgray, fill=white, inner sep=1.4pt] at (0,0) {};
+
+    \draw[figvecres] (1.15,-0.97) -- (1.15,-1.75);
+    \node[figlbl, figred, anchor=west] at (1.22,-1.4) {$\vec F_3$};
+    \draw[figvecres] (-1.15,0.97) -- (-1.15,1.75);
+    \node[figlbl, figred, anchor=east] at (-1.22,1.4) {$\vec F_4$};
+
+    % la normal correcta
+    \draw[figvec, line width=1.1pt] (0,0) -- (0.86,1.23);
+    \node[figlbl, figblue, anchor=south west] at (0.80,1.16) {$\hat n'$};
+    \draw[figaux] (0.95,0) arc (0:55:0.95);
+    \node[figlbl, anchor=west] at (0.98,0.42) {$\theta$};
+
+    \draw[figvecaux, figred, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (-1.0,-1.73) arc (240:186:2.0);
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(b) con $\hat n'$: el par lleva a\\[-0.2em]
+       $\hat n'$ \textbf{paralelo} a $\vec B$};
+  \end{scope}
+
+  % =============== (c) la regla, de frente ===============
+  \begin{scope}[xshift=9.2cm]
+    \draw[figline, line width=1.4pt] (-1.0,-0.85) rectangle (1.0,0.85);
+    \draw[figvecres] (0.35,-0.85) -- (1.0,-0.85) -- (1.0,-0.15);
+    \draw[figvecres] (-0.35,0.85) -- (-1.0,0.85) -- (-1.0,0.15);
+    \node[figlbl, figred, anchor=north] at (0.7,-0.92) {$I$};
+
+    \node[figblue, scale=1.1] at (0,0) {$\odot$};
+    \node[figlbl, figblue, anchor=west] at (0.18,0.02) {$\hat n'$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.75)
+      {(c) dedos $=$ corriente,\\[-0.2em] pulgar $=\hat n'$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La física de los paneles (a) y (b) es idéntica ---las fuerzas y
+el par son los mismos---; lo único que cambia es cuál de las dos normales se
+llama ``la'' normal. Con $\hat n$ el sistema queda con la incomodidad de que la
+posición estable es $\theta=180^\circ$, y al escribir el par como producto
+vectorial el sentido sale al revés. Eligiendo $\hat n'=-\hat n$ mediante la
+regla de la mano derecha ---dedos siguiendo la corriente, pulgar dando la
+normal, panel (c)--- la posición estable pasa a ser $\theta=0$ y basta definir
+$\vec A = A\,\hat n'$ para que
+$\boldsymbol{\tau} = I\,\vec A\times\vec B$
+dé de una sola vez módulo, dirección y sentido. El orden importa: $\vec
+B\times\vec A$ daría el sentido opuesto, y por eso se escribe $\vec A$ primero.
+Con $\boldsymbol{\mu}=I\vec A$ queda $\boldsymbol{\tau}=\boldsymbol{\mu}\times
+\vec B$, calcado del dipolo eléctrico $\boldsymbol{\tau}=\vec p\times\vec E$.}
+\end{center}

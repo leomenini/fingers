@@ -1,0 +1,47 @@
+% Clase 20 --- El circuito RL y su ecuación (§2.1).
+% "Interruptor de dos posiciones: A conecta, B desconecta." La figura fija las
+% dos configuraciones que después dan las dos exponenciales, y deja a la vista
+% de dónde sale cada término de la ecuación de mallas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \draw (0,0) to[battery1, l=$\varepsilon$] (0,2.6);
+  \draw (0,2.6) -- (1.1,2.6);
+  \draw[figgray, line width=0.9pt] (1.1,2.6) -- (2.15,3.0);
+  \node[figgray, circle, fill=figgray, inner sep=1.1pt] at (1.1,2.6) {};
+  \node[figgray, circle, fill=figgray, inner sep=1.1pt] at (2.3,3.05) {};
+  \node[figgray, circle, fill=figgray, inner sep=1.1pt] at (2.3,2.1) {};
+  \node[figlbl, anchor=south] at (2.3,3.2) {A};
+  \node[figlbl, anchor=north east] at (2.25,2.0) {B};
+  \draw (2.3,3.05) -- (4.4,3.05) -- (4.4,2.6);
+  \draw (2.3,2.1) -- (4.0,2.1) -- (4.0,2.6) -- (4.4,2.6);
+
+  \draw (4.4,2.6) to[R, l=$R$] (4.4,1.3);
+  \draw (4.4,1.3) to[L, l=$L$] (4.4,0);
+  \draw (4.4,0) -- (0,0);
+
+  \draw[figvecres, line width=1.1pt] (1.6,-0.3) -- (2.8,-0.3);
+  \node[figlbl, figred, anchor=north] at (2.2,-0.38) {$I(t)$};
+
+  \node[figlblaux, anchor=north west, align=left] at (-0.3,-0.9)
+    {A: conectada a la batería\\[-0.25em] B: batería fuera del circuito};
+
+  \node[figlbl, anchor=north, align=center] at (2.2,-1.9)
+    {$\varepsilon - R I - L\dfrac{dI}{dt} = 0
+     \;\Longleftrightarrow\;
+     L\dfrac{dI}{dt} + R I = \varepsilon$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El circuito es el de siempre más la bobina, y la única novedad
+al escribir la malla es su caída: $-L\,dI/dt$, con el mismo signo crezca o
+decrezca la corriente, tal como quedó establecido en la clase anterior. El
+resultado es una ecuación diferencial \textbf{lineal de primer orden con
+segundo miembro}, que es exactamente la misma estructura matemática del
+circuito $RC$; por eso no hace falta inventar un método nuevo. La llave de dos
+posiciones permite estudiar los dos transitorios que interesan: en A la batería
+alimenta el circuito y la corriente arranca de cero, y en B se la saca del
+medio y queda la bobina descargándose sobre la resistencia. Lo que la bobina
+introduce, físicamente, es \emph{inercia}: la corriente no puede saltar de golpe
+a su valor final $\varepsilon/R$, porque eso exigiría $dI/dt$ infinito y una
+FEM autoinducida infinita.}
+\end{center}

@@ -1,0 +1,63 @@
+% Clase 19 --- La bobina que se induce a sí misma (§4.1-4.2).
+% El fenómeno nuevo no es Faraday sino a QUIÉN se le aplica: la propia bobina.
+% Los dos paneles tienen la misma bobina y el mismo circuito; lo único que
+% cambia es el signo de dI/dt, y con él el sentido de la FEM autoinducida.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \providecommand{\bobinita}{%
+    \draw[figline, line width=1.1pt] (-2.1,-0.85) -- (2.1,-0.85);
+    \draw[figline, line width=1.1pt] (-2.1,0.85) -- (2.1,0.85);
+    \foreach \xx in {-1.8,-1.2,-0.6,0,0.6,1.2,1.8} {
+      \node[figblue, scale=0.6] at (\xx,0.85) {$\odot$};
+      \node[figblue, scale=0.6] at (\xx,-0.85) {$\otimes$};
+    }}
+
+  % =============== (a) corriente creciente ===============
+  \begin{scope}
+    \bobinita
+    \foreach \yy in {-0.45,0,0.45} {
+      \draw[figvecres, line width=0.9pt] (-0.9,\yy) -- (0.6,\yy);
+    }
+    \node[figlbl, figred, anchor=west] at (0.7,0) {$\vec B$};
+    \draw[figvecres, line width=1.2pt] (-3.2,1.35) -- (-2.2,1.35);
+    \node[figlbl, figred, anchor=south] at (-2.7,1.4) {$I$ \textbf{crece}};
+    \draw[figvec, line width=1.3pt] (3.2,-1.35) -- (2.2,-1.35);
+    \node[figlbl, figblue, anchor=north, align=center] at (2.7,-1.45)
+      {la FEM inducida empuja\\[-0.25em] \textbf{en contra}: frena la subida};
+    \node[figlbl, anchor=north, align=center] at (0,-2.35)
+      {(a) $\dfrac{dI}{dt}>0$};
+  \end{scope}
+
+  % =============== (b) corriente decreciente ===============
+  \begin{scope}[xshift=7.5cm]
+    \bobinita
+    \foreach \yy in {-0.45,0,0.45} {
+      \draw[figvecaux, figred, line width=0.9pt] (-0.9,\yy) -- (0.6,\yy);
+    }
+    \node[figlbl, figred, anchor=west] at (0.7,0) {$\vec B$};
+    \draw[figvecres, line width=1.2pt] (-3.2,1.35) -- (-2.2,1.35);
+    \node[figlbl, figred, anchor=south] at (-2.7,1.4) {$I$ \textbf{decrece}};
+    \draw[figvec, line width=1.3pt] (2.2,-1.35) -- (3.2,-1.35);
+    \node[figlbl, figblue, anchor=north, align=center] at (2.7,-1.45)
+      {la FEM inducida empuja\\[-0.25em] \textbf{a favor}: sostiene $I$};
+    \node[figlbl, anchor=north, align=center] at (0,-2.35)
+      {(b) $\dfrac{dI}{dt}<0$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La autoinducción no es un fenómeno nuevo: es Faraday aplicado a
+la propia bobina. Al pasar corriente por ella se genera campo, ese campo produce
+flujo a través de sus mismas espiras, y si la corriente cambia, el flujo cambia
+y aparece una FEM \emph{sobre ella misma} ---por eso ``auto'', para
+distinguirla de la inducción mutua entre dos bobinas distintas---. Lenz fija el
+sentido y el resultado es una especie de inercia eléctrica: si la corriente
+crece, la FEM se opone al crecimiento; si decrece, tiende a sostenerla. Como el
+campo es proporcional a la corriente y la geometría no cambia, el flujo total
+encadenado es proporcional a $I$, y a esa constante de proporcionalidad se la
+llama \textbf{autoinductancia}: $\Phi_B^{\text{total}} = L\,I$, de donde
+$\varepsilon = -L\,dI/dt$. Para el solenoide ideal la cuenta es directa
+---$B=\mu_0 n I$, flujo por espira $\mu_0 n I A$, por $N=n L_{\text{sol}}$
+espiras--- y da $L = \mu_0 n^2 A L_{\text{sol}}$: depende sólo de la geometría,
+como la capacitancia. La unidad es el henry, $1\,$H $=1\,$V$\cdot$s/A.}
+\end{center}

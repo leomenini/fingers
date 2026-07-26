@@ -1,0 +1,65 @@
+% Clase 16 --- La vista superior y el brazo de palanca (§1.3).
+% "Entonces voy a dibujar esto visto desde arriba... lo que interviene no es
+%  a/2 sino a/2 por el seno de teta, que es el brazo de palanca."
+% Es el dibujo del que sale tau = I A B sen(theta): sin el brazo de palanca
+% acotado, la fórmula es un enunciado; con él, es una cuenta de dos líneas.
+% Misma convención que la fig. de perspectiva: por el lado delantero (abajo a la
+% derecha) la corriente baja --- entrante en esta vista desde arriba.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo uniforme
+  \draw[figvecaux, figgray] (-2.7,2.45) -- (2.5,2.45);
+  \node[figlblaux, anchor=south east] at (2.5,2.5) {$\vec B$};
+  \draw[figaux] (0,0) -- (0.9,0);
+
+  % la espira vista desde arriba: se ve como un segmento
+  \draw[figline, line width=1.6pt] (-1.64,1.15) -- (1.64,-1.15);
+
+  % eje de rotación (vertical: se ve de punta)
+  \node[figgray, circle, draw=figgray, fill=white, inner sep=1.6pt] at (0,0) {};
+  \node[figgray, circle, fill=figgray, inner sep=0.7pt] at (0,0) {};
+  \node[figlblaux, anchor=north east] at (-0.16,-0.16) {eje};
+
+  % los lados laterales, de punta: corriente entrante / saliente
+  \node[figblue, scale=0.9] at (1.64,-1.15) {$\otimes$};
+  \node[figblue, scale=0.9] at (-1.64,1.15) {$\odot$};
+
+  % fuerzas del par
+  \draw[figvecres, line width=1.2pt] (1.64,-1.32) -- (1.64,-2.3);
+  \node[figlbl, figred, anchor=west] at (1.74,-1.9) {$\vec F_3$};
+  \draw[figvecres, line width=1.2pt] (-1.64,1.32) -- (-1.64,2.3);
+  \node[figlbl, figred, anchor=east] at (-1.74,1.9) {$\vec F_4$};
+
+  % normal por la regla de la mano derecha y ángulo theta
+  \draw[figvec, line width=1.1pt] (0,0) -- (0.92,1.31);
+  \node[figlbl, figblue, anchor=south west] at (0.86,1.28) {$\hat n'$};
+  \draw[figaux] (0.75,0) arc (0:55:0.75);
+  \node[figlbl, anchor=west] at (0.85,0.42) {$\theta$};
+
+  % cota a/2 sobre la espira
+  \draw[figvecaux] (0.19,0.27) -- (1.83,-0.88);
+  \node[figlblaux, anchor=south west] at (1.5,-0.44) {$a/2$};
+
+  % brazo de palanca
+  \draw[figaux] (1.64,-1.15) -- (1.64,-2.75);
+  \draw[figaux] (0,0) -- (0,-2.75);
+  \draw[figvecaux] (0.82,-2.62) -- (0,-2.62);
+  \draw[figvecaux] (0.82,-2.62) -- (1.64,-2.62);
+  \node[figlbl, anchor=north] at (0.82,-2.72)
+    {brazo $=\dfrac{a}{2}\sin\theta$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Vista desde arriba la espira se ve como un segmento y el eje de
+punta, que es justo lo que hace falta para calcular el par. Los lados laterales
+son perpendiculares a $\vec B$, así que el producto vectorial es el producto de
+los módulos: $F_3=F_4=IbB$. Lo que no hay que confundir es la distancia al eje
+($a/2$) con el \textbf{brazo de palanca}, que es la distancia del eje a la
+\emph{línea de acción} de la fuerza: $(a/2)\sin\theta$. Las dos fuerzas suman al
+mismo par, de modo que
+$\tau = 2\,(IbB)\,\tfrac{a}{2}\sin\theta = I\,(ab)\,B\sin\theta = IAB\sin\theta$.
+El $\sin\theta$ no es un adorno: en $\theta=0$ ---normal paralela al campo--- el
+brazo se anula y con él el par, y ésa es la posición de equilibrio a la que la
+espira tiende. Notar que todo esto es el par \textbf{respecto de ese eje}, no
+respecto de un punto cualquiera.}
+\end{center}

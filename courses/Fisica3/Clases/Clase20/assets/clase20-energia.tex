@@ -1,0 +1,66 @@
+% Clase 20 --- Dónde va la energía y dónde queda guardada (§4-5).
+% (a) el reparto de la potencia entregada por la batería, instante a instante,
+% durante el transitorio; (b) dónde está esa energía: en el campo del interior
+% del solenoide, con densidad B^2/2mu0.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) el reparto de la potencia ===============
+  \begin{scope}
+    \begin{axis}[
+      fisfig, width=6.4cm, height=4.4cm,
+      xlabel={$t/\tau$}, ylabel={potencia},
+      xmin=0, xmax=4.3, ymin=0, ymax=1.25,
+      xtick={1,2,3}, ytick=\empty,
+      legend style={at={(0.5,-0.45)}, anchor=north, draw=none,
+                    fill=none, font=\footnotesize, legend columns=1},
+    ]
+      \addplot[figblue, smooth, samples=140, domain=0:4.3] {1-exp(-x)};
+      \addlegendentry{$P=\varepsilon I$}
+      \addplot[figred, smooth, samples=140, domain=0:4.3]
+        {(1-exp(-x))^2};
+      \addlegendentry{$RI^2$ (se disipa)}
+      \addplot[figamber, smooth, samples=140, domain=0:4.3]
+        {(1-exp(-x))*exp(-x)};
+      \addlegendentry{$LI\frac{dI}{dt}$ (se guarda)}
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (3.2,-3.05)
+      {(a) $\varepsilon I = R I^2 + L I\dfrac{dI}{dt}$};
+  \end{scope}
+
+  % =============== (b) dónde queda guardada ===============
+  \begin{scope}[xshift=8.4cm, yshift=0.55cm]
+    \fill[figred!12] (-2.0,-0.85) rectangle (2.0,0.85);
+    \draw[figline, line width=1.1pt] (-2.0,-0.85) -- (2.0,-0.85);
+    \draw[figline, line width=1.1pt] (-2.0,0.85) -- (2.0,0.85);
+    \foreach \xx in {-1.7,-1.2,-0.7,-0.2,0.3,0.8,1.3,1.8} {
+      \node[figblue, scale=0.55] at (\xx,0.85) {$\odot$};
+      \node[figblue, scale=0.55] at (\xx,-0.85) {$\otimes$};
+    }
+    \foreach \yy in {-0.5,0,0.5} {
+      \draw[figvecres, line width=0.8pt] (-0.7,\yy) -- (0.3,\yy);
+    }
+    \node[figlbl, figred, anchor=west] at (0.45,0) {$\vec B$};
+    \draw[figvecaux] (-2.0,-1.25) -- (2.0,-1.25);
+    \node[figlblaux, anchor=north] at (0,-1.3) {volumen $= l A$};
+    \node[figlbl, anchor=north, align=center] at (0,-1.95)
+      {(b) $u_B = \dfrac{U_B}{lA} = \dfrac{B^2}{2\mu_0}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Multiplicando la ecuación de mallas por $I$ se obtiene un
+balance de potencias, que es la manera honesta de ver adónde va la energía: la
+batería entrega $\varepsilon I$, una parte $RI^2$ se disipa irreversiblemente en
+la resistencia y el resto, $LI\,dI/dt$, no se pierde: queda \emph{guardado}.
+Como $I\,dI/dt = \tfrac12 d(I^2)/dt$, esa parte integra a
+$U_B = \tfrac12 L I^2$, con la constante elegida para que valga cero cuando no
+hay corriente ---calcada de $U_E = \tfrac12 Q^2/C$ en el condensador---. La
+gráfica muestra el reparto instante a instante: al principio casi todo se
+almacena y casi nada se disipa, y al final ocurre lo contrario, porque ya no
+queda transitorio y toda la potencia va a la resistencia. La pregunta siguiente
+es dónde está esa energía, y la respuesta es que está en el \textbf{campo}:
+tomando el solenoide ideal y dividiendo $U_B$ por el volumen de su interior
+queda $u_B = B^2/2\mu_0$, un resultado que se demuestra acá para este caso
+particular pero vale en general, y que es el gemelo de
+$u_E = \tfrac12\varepsilon_0 E^2$.}
+\end{center}

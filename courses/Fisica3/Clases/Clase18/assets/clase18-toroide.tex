@@ -1,0 +1,68 @@
+% Clase 18 --- El toroide por Ampère (§1).
+% "Acá en este dibujo están A y B, y tienen una corriente que pasa por este
+%  embobinado I... la idea es calcular cómo es el campo magnético entre los
+%  rollos de la bobina."
+% Visto desde arriba, cada vuelta atraviesa el plano DOS veces: subiendo por el
+% borde interior y bajando por el exterior. Eso es lo que decide los tres casos:
+% la amperiana de en medio encierra las N subidas; la de afuera encierra las N
+% subidas y las N bajadas (neta cero); la de adentro no encierra nada.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- sub-dibujo del toroide visto desde arriba ----
+  \providecommand{\toro}{%
+    \fill[figblue!10, even odd rule] (0,0) circle (2.1) (0,0) circle (1.15);
+    \draw[figline, line width=1pt] (0,0) circle (2.1);
+    \draw[figline, line width=1pt] (0,0) circle (1.15);
+    \foreach \ang in {0,20,...,340} {
+      \draw[figline, line width=0.8pt] ({\ang}:1.15) -- ({\ang}:2.1);
+      \node[figred, scale=0.72] at ({\ang}:1.33) {$\odot$};
+      \node[figred, scale=0.72] at ({\ang}:1.92) {$\otimes$};
+    }}
+
+  % =============== (a) entre los rollos ===============
+  \begin{scope}
+    \toro
+    \draw[figamber, dashed, line width=1.2pt] (0,0) circle (1.62);
+    \draw[figvecaux, figamber, line width=1pt] (100:1.62) arc (100:72:1.62);
+    \draw[figvecaux, figamber] (0,0) -- (305:1.62);
+    \node[figlbl, figamber, anchor=north west] at (305:0.95) {$R$};
+    \draw[figvecaux] (0,0) -- (150:1.15);
+    \node[figlblaux, anchor=south east] at (150:0.95) {$A$};
+    \draw[figvecaux] (0,0) -- (215:2.1);
+    \node[figlblaux, anchor=north east] at (215:2.35) {$B$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.95)
+      {(a) $A<R<B$: encierra las $N$ subidas\\[-0.2em]
+       $B\,(2\pi R) = \mu_0 N I$};
+  \end{scope}
+
+  % =============== (b) afuera y adentro ===============
+  \begin{scope}[xshift=7.4cm]
+    \toro
+    \draw[figred, dashed, line width=1.2pt] (0,0) circle (2.65);
+    \node[figlbl, figred, anchor=south] at (0,2.7) {$R>B$};
+    \draw[figred, dashed, line width=1.2pt] (0,0) circle (0.62);
+    \node[figlbl, figred, anchor=north] at (0,-0.7) {$R<A$};
+
+    \node[figlbl, anchor=north, align=center] at (0,-2.95)
+      {(b) afuera: $N$ suben y $N$ bajan $\Rightarrow$ neta $0$;\\[-0.2em]
+       adentro del hueco no hay corriente: $B=0$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El toroide es el cuarto ejemplo de Ampère y no se calculó antes
+con Biot--Savart porque ahí habría sido una pesadilla; con simetría, en cambio,
+sale sin integrales. El sistema es invariante ante rotaciones alrededor de su
+eje y las líneas de $\vec B$ son cerradas, así que tienen que ser
+circunferencias concéntricas con $|\vec B|$ constante sobre cada una:
+$\oint = B\,(2\pi R)$. La cuenta de la derecha se lee del dibujo visto desde
+arriba: cada una de las $N$ vueltas cruza el plano dos veces, subiendo por el
+borde interno y bajando por el externo. Una amperiana ubicada entre los rollos
+encierra sólo las subidas, $I_{\text{enc}} = NI$, y da
+$B = \mu_0 N I/2\pi R$ ---no uniforme: decrece como $1/R$ al alejarse del eje,
+a diferencia del solenoide---. Una amperiana exterior encierra tantas subidas
+como bajadas y su corriente neta es cero, y una interior al hueco no encierra
+ninguna: en los dos casos $B=0$. El campo del toroide queda entonces
+\textbf{confinado} adentro, que es justamente lo que lo hace útil.}
+\end{center}

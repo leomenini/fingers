@@ -1,0 +1,69 @@
+% Clase 16 --- La geometría del segmento rectilíneo (§4.2).
+% "Tenemos acá un cable, pongamos largo L... y vamos a poner un punto de
+%  observación a una distancia X en el plano bisector del segmento."
+% Toda la integral sale de este dibujo: r^2 = X^2 + Y^2, sen(theta) = X/r, y el
+% hecho de que TODAS las contribuciones dB sean entrantes (paralelas entre sí),
+% que es lo que permite sumar módulos en lugar de vectores.
+% Sentido: con la corriente hacia arriba (y) y P a la derecha,
+% ds x r = y x (X x - Y y) = -X z, o sea entrante. Calculado, no puesto a ojo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % el cable
+  \draw[figline, line width=1.8pt] (0,-2.2) -- (0,2.2);
+  \draw[figvecres] (0,-1.95) -- (0,-1.15);
+  \node[figlbl, figred, anchor=west] at (0.1,-1.55) {$I$};
+
+  % cota del largo L
+  \draw[figaux] (-1.3,2.2) -- (0,2.2);
+  \draw[figaux] (-1.3,-2.2) -- (0,-2.2);
+  \draw[figvecaux] (-1.15,0.25) -- (-1.15,2.2);
+  \draw[figvecaux] (-1.15,-0.25) -- (-1.15,-2.2);
+  \node[figlbl, anchor=east] at (-1.05,0) {$L$};
+
+  % el tramito ds a altura Y
+  \draw[figvecres, line width=1.4pt] (0,1.18) -- (0,1.62);
+  \node[figlbl, figred, anchor=south east] at (-0.08,1.5) {$d\vec s$};
+  \draw[figvecaux] (-0.45,0.08) -- (-0.45,1.4);
+  \node[figlblaux, anchor=east] at (-0.53,0.72) {$Y$};
+  \draw[figaux] (-0.55,1.4) -- (0,1.4);
+
+  % el vector r y el ángulo
+  \draw[figvec, line width=1.1pt] (0,1.4) -- (3.05,0.06);
+  \node[figlbl, figblue, anchor=south west] at (1.55,0.78) {$\vec r$};
+  \draw[figaux] (0,2.02) arc (90:-23.6:0.62);
+  \node[figlbl, anchor=west] at (0.6,1.85) {$\theta$};
+
+  % el punto de observación y la distancia X
+  \draw[figvecaux] (1.5,0) -- (0,0);
+  \draw[figvecaux] (1.7,0) -- (3.2,0);
+  \node[figlbl, anchor=south] at (1.6,0.04) {$X$};
+  \node[figblue, scale=1.15] at (3.2,0) {$\otimes$};
+  \node[figlbl, anchor=north] at (3.2,-0.22) {$P$};
+  \node[figlbl, figblue, anchor=west, align=left] at (3.45,0.32)
+    {$d\vec B$ \textbf{entrante}};
+
+  % relaciones que salen del dibujo
+  \node[figlbl, anchor=north, align=center] at (1.1,-2.6)
+    {$r^2 = X^2+Y^2$,\qquad
+     $\sin\theta = \dfrac{X}{\sqrt{X^2+Y^2}}$\\[0.4em]
+     todos los $d\vec B$ son entrantes y \textbf{paralelos}:
+     se suman los módulos};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El punto de observación se elige en el plano bisector para que
+el problema quede simétrico. Lo primero que hay que resolver es la dirección:
+$d\vec s$ y $\vec r$ están los dos en el plano del dibujo, así que
+$d\vec s\times\vec r$ es perpendicular a ese plano ---entrante para todos los
+tramitos, sin importar a qué altura estén---. Eso es lo que salva la cuenta:
+como todas las contribuciones son paralelas, la suma vectorial se vuelve una
+suma de módulos. Después queda la geometría: el ángulo entre $d\vec s$ y
+$\vec r$ tiene seno $X/\sqrt{X^2+Y^2}$ ---vale $1$ justo frente a $P$, donde
+$Y=0$, que es el control que conviene hacer para no confundir el seno con el
+coseno---, y con $r^2=X^2+Y^2$ resulta
+$dB = \dfrac{\mu_0 I}{4\pi}\dfrac{X\,dy}{(X^2+Y^2)^{3/2}}$, cuya integral entre
+$-L/2$ y $L/2$ es del mismo tipo que la de la barra cargada de la Clase 8.
+Ojo con el estatus del resultado: un tramo suelto no existe, la carga se
+conserva; esto es el aporte de un tramo a un circuito que se cierra en algún
+lado.}
+\end{center}

@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -127,6 +134,8 @@ Para materiales aproximadamente lineales:
 
 $L$ depende de la geometría de la bobina y del material.
 
+\input{assets/clase20-nucleo.tex}
+
 % ===================================================================
 \section{Circuitos RL}
 % ===================================================================
@@ -141,10 +150,14 @@ L\frac{dI}{dt} + R I = \varepsilon.
 \]
 Ecuación lineal de primer orden con segundo miembro.
 
+\input{assets/clase20-rl-circuito.tex}
+
 \subsection{Analogía con el circuito RC}
 
 Misma estructura que $\varepsilon = Q/C + R\,dQ/dt$: $R \leftrightarrow L$,
 $1/C \leftrightarrow R$, $Q \leftrightarrow I$. Solución idéntica en forma.
+
+\input{assets/clase20-analogia-rc.tex}
 
 \subsection{Resolución: solución particular y homogénea}
 
@@ -181,6 +194,8 @@ i(t) = i_0\, e^{-Rt/L}.
 Bobina grande $\to$ $\tau$ grande (tarda en almacenar energía); resistencia
 grande $\to$ $\tau$ chico (domina la disipación).
 
+\input{assets/clase20-rl-curvas.tex}
+
 % ===================================================================
 \section{Experimentos de inducción}
 % ===================================================================
@@ -198,6 +213,10 @@ Tres experimentos (ley de Faraday); el flujo varía por módulo, área o ángulo
         los núcleos laminados de transformadores.
 \end{itemize}
 
+\input{assets/clase20-thomson.tex}
+
+
+\input{assets/clase20-foucault.tex}
 % ===================================================================
 \section{Energía almacenada en una bobina}
 % ===================================================================
@@ -238,6 +257,8 @@ $I = Bl/(\mu_0 N)$:
 \end{keybox}
 
 Probada para el solenoide, vale en general (en el vacío).
+
+\input{assets/clase20-energia.tex}
 
 \begin{notebox}[Analogía]
   $u_E = \tfrac12 \varepsilon_0 E^2$ y $u_B = \tfrac{1}{2\mu_0}B^2$: ambas

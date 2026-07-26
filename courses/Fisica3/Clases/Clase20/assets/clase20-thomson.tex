@@ -1,0 +1,69 @@
+% Clase 20 --- Los experimentos de inducción: el anillo de Thomson (§3).
+% "Anillo de aluminio sobre una bobina con CA y núcleo de hierro levita;
+%  cortado, no levita; sin núcleo, tampoco."
+% Tres versiones del MISMO montaje: cada panel saca un ingrediente y el efecto
+% desaparece. Eso es lo que identifica qué hace falta para que haya inducción.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \providecommand{\bobinaCA}[1]{%
+    \draw[figline, line width=1.1pt] (-0.75,-1.2) rectangle (0.75,0.55);
+    \foreach \yy in {-1.05,-0.75,-0.45,-0.15,0.15,0.45} {
+      \draw[figline, line width=0.8pt] (-0.75,\yy) -- (0.75,\yy);
+    }
+    \ifnum#1=1
+      \fill[figamber!40] (-0.28,-1.2) rectangle (0.28,1.35);
+      \draw[figamber, line width=0.9pt] (-0.28,-1.2) rectangle (0.28,1.35);
+    \fi
+    \node[figlblaux, anchor=north] at (0,-1.3) {$\sim$ CA};}
+
+  % =============== (a) con núcleo: levita ===============
+  \begin{scope}
+    \bobinaCA{1}
+    \draw[figline, line width=1.5pt] (-0.62,1.75) -- (0.62,1.75);
+    \draw[figline, line width=1.5pt] (-0.62,1.9) -- (0.62,1.9);
+    \node[figlbl, anchor=west] at (0.7,1.82) {anillo};
+    \draw[figvecres, line width=1.2pt] (0,2.15) -- (0,2.85);
+    \node[figlbl, figred, anchor=south] at (0,2.9) {salta};
+    \node[figlbl, anchor=north, align=center] at (0,-2.1)
+      {(a) anillo cerrado\\[-0.2em] con núcleo: \textbf{levita}};
+  \end{scope}
+
+  % =============== (b) anillo cortado ===============
+  \begin{scope}[xshift=4.6cm]
+    \bobinaCA{1}
+    \draw[figline, line width=1.5pt] (-0.62,1.75) -- (-0.12,1.75);
+    \draw[figline, line width=1.5pt] (0.12,1.75) -- (0.62,1.75);
+    \draw[figline, line width=1.5pt] (-0.62,1.9) -- (-0.12,1.9);
+    \draw[figline, line width=1.5pt] (0.12,1.9) -- (0.62,1.9);
+    \node[figlbl, figred, anchor=west] at (0.7,1.82) {corte};
+    \node[figlblaux, anchor=south] at (0,2.3) {no pasa nada};
+    \node[figlbl, anchor=north, align=center] at (0,-2.1)
+      {(b) anillo cortado:\\[-0.2em] no puede circular corriente};
+  \end{scope}
+
+  % =============== (c) sin núcleo ===============
+  \begin{scope}[xshift=9.2cm]
+    \bobinaCA{0}
+    \draw[figline, line width=1.5pt] (-0.62,1.75) -- (0.62,1.75);
+    \draw[figline, line width=1.5pt] (-0.62,1.9) -- (0.62,1.9);
+    \node[figlblaux, anchor=south] at (0,2.3) {apenas se mueve};
+    \node[figlbl, anchor=north, align=center] at (0,-2.1)
+      {(c) sin núcleo:\\[-0.2em] el flujo es muy chico};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El anillo de Thomson es el experimento que mejor separa los
+ingredientes, porque alcanza con sacar uno para que el efecto se caiga. Con
+corriente alterna en la bobina el flujo a través del anillo varía todo el
+tiempo, se induce en él una corriente y ---por Lenz--- esa corriente se opone a
+la variación, de modo que el anillo es empujado hacia afuera y salta. Si se lo
+corta, el circuito queda abierto: sigue habiendo FEM inducida, pero \emph{no
+puede circular corriente} y no hay fuerza; ésa es la prueba de que lo que
+empuja es la corriente inducida y no el campo por sí solo. Y si se quita el
+núcleo de hierro el efecto se desploma, porque el hierro es lo que concentra y
+multiplica el flujo que atraviesa el anillo ---el mismo $K_m$ de la primera
+sección, ahora visible a simple vista---. Vale notar que acá lo que varía es el
+\textbf{módulo} de $\vec B$; en el generador con imán giratorio lo que varía es
+el \textbf{ángulo}. Distintas rutas, la misma ley.}
+\end{center}

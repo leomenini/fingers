@@ -1,0 +1,61 @@
+% Clase 21 --- Transitorio y permanente: la hamaca (§3.1).
+% "Cuando empujan, al principio la hamaca no se mueve... pero llega un momento
+%  en que el movimiento es periódico, y de hecho tiene el mismo periodo en que
+%  ustedes empujan."
+% La gráfica es la que fija la idea: la misma solución tiene dos tramos, uno que
+% se olvida de las condiciones iniciales y otro que ya no.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) el circuito forzado ===============
+  \begin{scope}[yshift=-0.3cm]
+    \draw (0,0) to[sV, l=$\varepsilon(t)$] (0,2.4);
+    \draw (0,2.4) to[R, l=$R$] (2.4,2.4);
+    \draw (2.4,2.4) to[L, l_=$L$] (2.4,1.2);
+    \draw (2.4,1.2) to[C, l_=$C$] (2.4,0);
+    \draw (2.4,0) -- (0,0);
+    \draw[figvecres, line width=1.1pt] (0.9,-0.35) -- (1.9,-0.35);
+    \node[figlbl, figred, anchor=north] at (1.4,-0.42) {$I$};
+
+    \node[figlbl, anchor=north, align=center] at (1.2,-0.95)
+      {(a) $L\ddot Q + R\dot Q + \dfrac{Q}{C} = \varepsilon(t)$};
+  \end{scope}
+
+  % =============== (b) los dos regímenes ===============
+  \begin{scope}[xshift=6.2cm, yshift=-0.3cm]
+    \begin{axis}[
+      fisfig, width=8.0cm, height=4.6cm,
+      xlabel={$t$}, ylabel={$Q(t)$},
+      xmin=0, xmax=13, ymin=-1.5, ymax=1.5,
+      xtick=\empty, ytick=\empty,
+    ]
+      \addplot[figblue, smooth, samples=400, domain=0:13]
+        {sin(deg(2*x)) + 1.1*exp(-0.55*x)*cos(deg(3.4*x))};
+      \draw[figaux] (axis cs:5.2,-1.5) -- (axis cs:5.2,1.5);
+      \node[figlblaux, figred, anchor=north] at (axis cs:2.4,1.45)
+        {transitorio};
+      \node[figlblaux, anchor=north] at (axis cs:9.2,1.45)
+        {régimen permanente};
+      \node[figlblaux, anchor=south, align=center] at (axis cs:8.6,-1.48)
+        {misma frecuencia que $\varepsilon(t)$};
+    \end{axis}
+    \node[figlbl, anchor=north, align=center] at (4.0,-1.6)
+      {(b) $Q(t) = Q_{\text{part}}(t) + Q_H(t)$, con $Q_H\to 0$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La analogía con la hamaca es más útil de lo que parece. Al
+empezar a empujar con un ritmo fijo, la hamaca hace durante un rato un
+movimiento raro, que depende de cómo estaba al principio ---quieta, o ya
+oscilando---; pero después de unos segundos termina yendo y viniendo al
+compás del que empuja, y ahí ya da igual cómo se arrancó. La estructura
+matemática de eso es exacta: si $Q_1$ y $Q_2$ son dos soluciones de la ecuación
+forzada, su diferencia resuelve la \textbf{homogénea}, y con resistencia la
+homogénea se apaga. Por lo tanto toda solución se escribe como una particular
+---la que sobrevive--- más una homogénea que decae. El \textbf{transitorio} es
+el tramo que se acuerda de las condiciones iniciales y dura poco; el
+\textbf{régimen permanente} es el que queda, y oscila con la frecuencia del
+forzante, no con la natural del circuito. Buscar la solución particular es,
+entonces, buscar el régimen permanente ---que es lo que se hace en la clase
+siguiente---.}
+\end{center}

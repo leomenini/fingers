@@ -1,0 +1,51 @@
+% Clase 22 --- El desfasaje en función de la frecuencia (§4.2).
+% El argumento de Z pasa de -pi/2 a +pi/2 y vale CERO justo en resonancia. Con
+% R chica la transición se vuelve casi discontinua: el circuito cambia de
+% capacitivo a inductivo en un suspiro.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \begin{axis}[
+    fisfig, width=10.5cm, height=5.2cm,
+    xlabel={$\omega$}, ylabel={$\varphi = \arg\hat Z$},
+    xmin=0.05, xmax=2.6, ymin=-1.85, ymax=1.85,
+    xtick={1}, xticklabels={$\frac{1}{\sqrt{LC}}$},
+    ytick={-1.5708,0,1.5708},
+    yticklabels={$-\frac{\pi}{2}$,$0$,$\frac{\pi}{2}$},
+    legend style={at={(0.97,0.28)}, anchor=east, draw=figgray!40,
+                  fill=white, font=\footnotesize},
+  ]
+    \addplot[figred, smooth, samples=300, domain=0.05:2.6]
+      {rad(atan((x - 1/x)/0.2))};
+    \addlegendentry{$R$ chica}
+    \addplot[figblue, smooth, samples=300, domain=0.05:2.6]
+      {rad(atan((x - 1/x)/1.1))};
+    \addlegendentry{$R$ grande}
+    \draw[figaux] (axis cs:1,-1.85) -- (axis cs:1,1.85);
+    \draw[figaux] (axis cs:0.05,0) -- (axis cs:2.6,0);
+    \node[figlblaux, anchor=south west] at (axis cs:1.5,1.0)
+      {inductivo};
+    \node[figlblaux, anchor=north east] at (axis cs:0.65,-1.0)
+      {capacitivo};
+  \end{axis}
+
+  \node[figlbl, anchor=north, align=center] at (5.2,-1.6)
+    {$\varphi = \arctan\dfrac{\omega L - \dfrac{1}{\omega C}}{R}$,\qquad
+     $I(t) = I_M\cos(\omega t - \varphi)$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El argumento de la impedancia completa el cuadro que empezó el
+módulo. A frecuencias bajas manda el condensador, la reactancia es negativa y
+$\varphi \to -\pi/2$: la corriente adelanta a la tensión casi un cuarto de
+período. A frecuencias altas manda la bobina y pasa lo contrario,
+$\varphi \to +\pi/2$. Y en el medio, exactamente en resonancia, los dos efectos
+se cancelan, $\varphi = 0$ y el circuito se comporta ---en cuanto a fase--- como
+si sólo hubiera una resistencia: corriente y tensión van juntas, que es también
+la condición para que la potencia entregada sea máxima. La resistencia controla
+cuán brusco es el cambio: con $R$ grande la transición es suave y con $R$ chica
+se vuelve casi un salto, hasta el punto de que en el límite $R\to 0$ el
+desfasaje pasa de $-\pi/2$ a $+\pi/2$ de manera discontinua ---que es la versión
+en fases de la asíntota infinita de la primera figura---. Con esto el circuito
+de corriente alterna queda descrito por completo: el módulo de $\hat Z$ da la
+amplitud y su argumento el desfasaje.}
+\end{center}

@@ -1,0 +1,64 @@
+% Clase 22 --- Las tres impedancias elementales y su desfasaje (§3.3).
+% La tabla del texto da los tres valores; lo que la tabla no muestra es qué
+% significan: cada j equivale a un cuarto de período de corrimiento entre la
+% tensión y la corriente. Por eso cada panel lleva su par de curvas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \providecommand{\parcurvas}[1]{%
+    \begin{axis}[
+      fisfig, width=5.0cm, height=3.2cm,
+      axis lines=middle, grid=none,
+      xlabel={}, ylabel={},
+      xmin=0, xmax=6.5, ymin=-1.5, ymax=1.5,
+      xtick=\empty, ytick=\empty,
+      every axis plot/.append style={line width=0.9pt},
+    ]
+      \addplot[figblue, smooth, samples=140, domain=0:6.4] {cos(deg(x))};
+      \addplot[figred, smooth, samples=140, domain=0:6.4]
+        {cos(deg(x - #1))};
+    \end{axis}}
+
+  % =============== (a) resistencia ===============
+  \begin{scope}
+    \draw (0.2,2.6) to[R, l=$R$] (2.6,2.6);
+    \parcurvas{0}
+    \node[figlbl, anchor=north, align=center] at (1.4,-1.35)
+      {(a) $\hat Z_R = R$\\[-0.1em] en fase};
+  \end{scope}
+
+  % =============== (b) bobina ===============
+  \begin{scope}[xshift=5.0cm]
+    \draw (0.2,2.6) to[L, l=$L$] (2.6,2.6);
+    \parcurvas{-90}
+    \node[figlbl, anchor=north, align=center] at (1.4,-1.35)
+      {(b) $\hat Z_L = j\omega L$\\[-0.1em] $I$ atrasa $90^\circ$};
+  \end{scope}
+
+  % =============== (c) condensador ===============
+  \begin{scope}[xshift=10.0cm]
+    \draw (0.2,2.6) to[C, l=$C$] (2.6,2.6);
+    \parcurvas{90}
+    \node[figlbl, anchor=north, align=center] at (1.4,-1.35)
+      {(c) $\hat Z_C = \dfrac{1}{j\omega C}$\\[-0.1em] $I$ adelanta $90^\circ$};
+  \end{scope}
+
+  \node[figlbl, anchor=north] at (6.4,-3.05)
+    {\textcolor{figblue}{---} tensión \qquad
+     \textcolor{figred}{---} corriente};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las tres impedancias elementales dicen dos cosas a la vez, y
+conviene leerlas separadas. El módulo dice cuánto ``cuesta'' hacer pasar
+corriente: constante en la resistencia, creciente con la frecuencia en la bobina
+---que se opone a los cambios rápidos--- y decreciente en el condensador, que a
+frecuencia alta apenas alcanza a cargarse y casi no estorba. El factor $j$ dice
+lo otro: un cuarto de período de corrimiento entre tensión y corriente. En la
+resistencia no hay $j$ y las dos curvas van juntas; en la bobina la corriente
+queda atrasada y en el condensador adelantada, y esa oposición entre ambas es
+justamente la que permite que se cancelen en resonancia. Una vez que cada
+elemento tiene su número complejo, los circuitos se combinan con las reglas de
+siempre ---en serie se suman las impedancias, en paralelo se suman los
+inversos---, sólo que ahora la aritmética es compleja. De $\hat Z_{\text{eq}}$
+se sacan el módulo (amplitud) y el argumento (desfasaje).}
+\end{center}

@@ -1,0 +1,45 @@
+% Clase 22 --- La amplitud sin resistencia y su asíntota (§1.2).
+% Con R = 0 el denominador 1/C - omega^2 L se anula exactamente en la frecuencia
+% natural y la amplitud se va a infinito. La figura muestra las dos ramas y el
+% cambio de signo, que es el desfasaje de 180 grados al cruzar la resonancia.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \begin{axis}[
+    fisfig, width=10.5cm, height=5.4cm,
+    xlabel={$\omega$ (frecuencia del generador)}, ylabel={$Q_0$},
+    xmin=0, xmax=2.3, ymin=-3.6, ymax=3.6,
+    xtick={1}, xticklabels={$\frac{1}{\sqrt{LC}}$},
+    ytick={1}, yticklabels={$\varepsilon_0 C$},
+  ]
+    \addplot[figblue, smooth, samples=200, domain=0:0.93] {1/(1-x^2)};
+    \addplot[figblue, smooth, samples=200, domain=1.07:2.3] {1/(1-x^2)};
+    \draw[figred, dashed, line width=1pt]
+      (axis cs:1,-3.6) -- (axis cs:1,3.6);
+    \draw[figaux] (axis cs:0,0) -- (axis cs:2.3,0);
+    \node[figlblaux, figred, anchor=south west] at (axis cs:1.04,2.1)
+      {resonancia};
+    \node[figlblaux, anchor=north east] at (axis cs:2.25,-0.15)
+      {$Q_0 \to 0$};
+  \end{axis}
+
+  \node[figlbl, anchor=north, align=center] at (5.2,-1.75)
+    {$Q_0 = \dfrac{\varepsilon_0}{\dfrac{1}{C} - \omega^2 L}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Acá $\omega$ es la frecuencia del \textbf{generador} y es
+arbitraria: no hay que confundirla con la natural del circuito, que es un dato
+de $L$ y $C$. Buscar el régimen permanente es proponer que la carga oscile con
+la frecuencia del forzante, $Q = Q_0\cos\omega t$; como cada derivada segunda
+trae un $-\omega^2$, la ecuación se vuelve algebraica y sale
+$Q_0 = \varepsilon_0/(1/C - \omega^2 L)$ en un renglón. Los dos extremos son
+razonables: a frecuencia muy baja el circuito se comporta como si sólo estuviera
+el condensador ($Q_0 \to \varepsilon_0 C$, la carga que pondría una batería), y a
+frecuencia muy alta la bobina no deja pasar nada y la amplitud se va a cero. Lo
+llamativo está en el medio: el denominador se anula exactamente cuando
+$\omega = 1/\sqrt{LC}$ y la amplitud \textbf{diverge}. Ésa es la
+\textbf{resonancia}, y el cambio de signo al cruzarla no es un error de cuentas:
+significa que la carga pasa a oscilar en contrafase con el generador. Que dé
+infinito, claro, es una señal de que el modelo sin resistencia ya no sirve
+justo ahí.}
+\end{center}

@@ -1,0 +1,66 @@
+% Clase 18 --- El primer experimento de Faraday (§2.1).
+% "Se agarra un imán y lo coloca cerca de un circuito eléctrico de este tipo."
+% Los tres paneles tienen la misma geometría; lo único que cambia es si el imán
+% se mueve y hacia dónde. Ésa es toda la observación: no importa que haya campo,
+% importa que el campo VARÍE.
+\providecommand{\galvo}[1]{%
+  \draw[figgray, line width=0.9pt] (0,0) circle (0.34);
+  \draw[figred, line width=1pt] (0,-0.05) -- ({#1}:0.28);
+  \node[figlblaux, anchor=north] at (0,-0.42) {G};}
+\providecommand{\imancitobarra}{%
+  \draw[figblue, fill=figblue] (-0.5,-0.2) rectangle (0,0.2);
+  \draw[figred, fill=figred] (0,-0.2) rectangle (0.5,0.2);
+  \node[figlblaux, white, scale=0.8] at (-0.25,0) {S};
+  \node[figlblaux, white, scale=0.8] at (0.25,0) {N};}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- una escena completa: #1 = ángulo de la aguja ----
+  \providecommand{\escena}[1]{%
+    \begin{scope}[shift={(-1.15,0)}] \imancitobarra \end{scope}
+    \draw[figline, line width=1.1pt] (0.35,0) ellipse (0.3 and 0.95);
+    \draw[figline, line width=1pt] (0.45,-0.85) -- (1.35,-1.35);
+    \draw[figline, line width=1pt] (0.45,0.85) .. controls (1.2,0.7) .. (1.35,-0.75);
+    \begin{scope}[shift={(1.7,-1.05)}] \galvo{#1} \end{scope}}
+
+  % =============== (a) quieto ===============
+  \begin{scope}
+    \escena{90}
+    \node[figlbl, anchor=north, align=center] at (0.3,-2.0)
+      {(a) imán quieto:\\[-0.2em] la aguja no se mueve};
+  \end{scope}
+
+  % =============== (b) acercándose ===============
+  \begin{scope}[xshift=4.7cm]
+    \escena{35}
+    \draw[figvecres, line width=1.1pt] (-1.55,0.55) -- (-0.75,0.55);
+    \node[figlbl, figred, anchor=south] at (-1.15,0.6) {$\vec v$};
+    \node[figlbl, anchor=north, align=center] at (0.3,-2.0)
+      {(b) acercándose:\\[-0.2em] hay corriente};
+  \end{scope}
+
+  % =============== (c) alejándose ===============
+  \begin{scope}[xshift=9.4cm]
+    \escena{145}
+    \draw[figvecres, line width=1.1pt] (-0.75,0.55) -- (-1.55,0.55);
+    \node[figlbl, figred, anchor=south] at (-1.15,0.6) {$\vec v$};
+    \node[figlbl, anchor=north, align=center] at (0.3,-2.0)
+      {(c) alejándose:\\[-0.2em] corriente al revés};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El experimento es de una simplicidad brutal y por eso convence:
+un imán, una espira y un galvanómetro, sin ninguna batería en el circuito. Con
+el imán quieto ---por fuerte que sea--- no pasa nada; en cuanto se lo mueve
+aparece corriente, que cambia de signo al invertir el movimiento y desaparece
+apenas el imán se detiene. Lo que induce, entonces, no es la \emph{presencia}
+del campo sino su \textbf{variación}. Las variantes que ensayó Faraday recorren
+todos los ingredientes de lo que después se llamará flujo: un imán más grande da
+más efecto (depende de $B$), deformar la espira también (depende del área), y
+girarla hace aparecer un $\cos\theta$ (depende del ángulo entre $\vec B$ y la
+normal). Y hay un detalle que se suele pasar por alto: el mismo efecto aparece
+dejando el imán quieto y moviendo el circuito, lo cual descarta que lo relevante
+sea ``el imán moviéndose'' y deja como responsable a la variación del flujo a
+través de la espira ---mérito de Faraday, que razonaba con dibujitos de líneas
+de campo y no con integrales---.}
+\end{center}
