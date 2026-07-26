@@ -1,0 +1,61 @@
+% Clase 6 --- Superficie cerrada ARBITRARIA, con y sin la carga adentro
+% (§2.5 y §2.6). En (a) la superficie se descompone en cascarones cónicos como
+% el de §2.3 y todos los pares se cancelan. En (b) se le resta una esferita S'
+% centrada en Q: lo que queda no contiene la carga, así que Phi_S = Phi_{S'}.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) la carga queda AFUERA ===============
+  \begin{scope}
+    \node[figpos, minimum size=8pt] at (0,0) {};
+    \node[figlbl, below left=1pt] at (0,0) {$Q$};
+
+    % superficie arbitraria, lejos de la carga
+    \draw[figline, fill=figblue!6]
+      plot[smooth cycle, tension=0.8]
+      coordinates {(1.8,0.95) (2.9,1.35) (3.7,0.35) (3.35,-0.95) (2.2,-1.25) (1.55,-0.3)};
+    \node[figlbl, figblue, above=2pt] at (2.7,1.45) {$S$};
+
+    % rayos desde la carga que la atraviesan
+    \foreach \a in {-16,-4,8,20} {
+      \draw[figvecaux] (\a:1.35) -- (\a:4.0);
+    }
+    \node[figlblaux, below=2pt] at (2.6,-1.6) {cada rayo entra y sale};
+
+    \node[figlbl, figred] at (2.6,-2.45) {$\Phi = 0$};
+    \node[figlbl] at (2.0,-3.15) {(a) la carga queda \textbf{afuera}};
+  \end{scope}
+
+  % =============== (b) la carga queda ADENTRO ===============
+  \begin{scope}[xshift=8.0cm]
+    % superficie arbitraria que la encierra
+    \draw[figline, fill=figblue!6]
+      plot[smooth cycle, tension=0.8]
+      coordinates {(-0.3,1.7) (1.5,1.5) (2.0,0.1) (1.1,-1.5) (-0.9,-1.4) (-1.7,0.2)};
+    \node[figlbl, figblue, above=2pt] at (0.6,1.75) {$S$};
+
+    % esferita auxiliar centrada en la carga
+    \draw[figred, dashed, line width=0.9pt] (0.1,0.05) circle (0.72);
+    \node[figlbl, figred, below right=0pt] at (0.6,-0.45) {$S'$};
+
+    \node[figpos, minimum size=8pt] at (0.1,0.05) {};
+    \node[figlbl, above left=1pt] at (0.1,0.05) {$Q$};
+
+    % rayos que salen
+    \foreach \a in {35,105,175,250,315} {
+      \draw[figvecaux] ($(0.1,0.05)+(\a:0.72)$) -- ($(0.1,0.05)+(\a:2.15)$);
+    }
+
+    \node[figlbl, figred, align=center] at (0.2,-2.4)
+      {$\Phi_S = \Phi_{S'} = \dfrac{Q}{\varepsilon_0}$};
+    \node[figlbl] at (0.2,-3.15) {(b) la carga queda \textbf{adentro}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En (a) la superficie se descompone en cascarones cónicos como
+el de la figura anterior: cada trozo de entrada cancela al de salida, sin
+importar la forma. En (b) el truco es \textbf{restar} una esferita $S'$ centrada
+en la carga: la región entre $S$ y $S'$ es cerrada y \textbf{no} contiene a $Q$,
+así que su flujo es nulo y por lo tanto $S$ tiene el mismo flujo que $S'$, que
+ya sabemos calcular.}
+\end{center}

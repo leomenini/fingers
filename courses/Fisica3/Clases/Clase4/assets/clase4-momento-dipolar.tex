@@ -1,0 +1,48 @@
+% Clase 4 --- Momento dipolar y decaimiento 1/x^3 (§1.1-1.3).
+% p = Q d va de la carga NEGATIVA a la POSITIVA; sobre el plano bisector el
+% campo resulta ANTIPARALELO a p. Lejos decae como 1/x^3, no como 1/x^2,
+% porque la carga neta es cero y los dos campos casi se cancelan.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % eje del dipolo
+  \draw[figaux] (0,-2.0) -- (0,2.0);
+  \draw[figaux] (-0.5,0) -- (5.6,0);
+
+  % cargas
+  \node[figpos] at (0,1.1) {};
+  \node[figlbl, left=4pt] at (0,1.1) {$+Q$};
+  \node[figneg] at (0,-1.1) {};
+  \node[figlbl, left=4pt] at (0,-1.1) {$-Q$};
+  % separación d
+  \draw[figvecaux] (-1.5,0.1) -- (-1.5,1.1);
+  \draw[figvecaux] (-1.5,-0.1) -- (-1.5,-1.1);
+  \node[figlblaux, left=2pt] at (-1.5,0) {$d$};
+
+  % momento dipolar p (de - a +)
+  \draw[figvecres, line width=1.6pt] (0.42,-1.1) -- (0.42,1.1);
+  \node[figlbl, figred, anchor=south west] at (0.5,1.02) {$\vec p = Q\vec d$};
+
+  % campo cerca
+  \node[figneutra, minimum size=4pt] at (2.0,0) {};
+  \draw[figvec] (2.0,0) -- (2.0,-1.15);
+  \node[figlbl, figblue, right=2pt] at (2.0,-0.6) {$\vec E$};
+  \node[figlblaux, above=3pt] at (2.0,0.05) {$x$};
+
+  % campo lejos: mucho más chico
+  \node[figneutra, minimum size=4pt] at (4.9,0) {};
+  \draw[figvec] (4.9,0) -- (4.9,-0.32);
+  \node[figlbl, figblue, right=2pt] at (4.9,-0.25) {$\vec E$};
+  \node[figlblaux, above=3pt] at (4.9,0.05) {$2x$};
+
+  % lectura
+  \node[figlbl, align=center] at (2.6,-2.35)
+    {$\vec E \parallel -\vec p$ \ sobre el plano bisector, \ y para $x \gg d$:
+     \ $E \simeq \dfrac{p}{4\pi\varepsilon_0 x^{3}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Al duplicar la distancia el campo cae \textbf{ocho} veces (no
+cuatro): el dipolo decae como $1/x^{3}$. La razón es que su \textbf{carga neta
+es cero}, así que de lejos los campos de $+Q$ y $-Q$ casi se cancelan y lo único
+que sobrevive es el efecto de la separación finita $d$.}
+\end{center}

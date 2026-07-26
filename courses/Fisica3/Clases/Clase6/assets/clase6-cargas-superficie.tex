@@ -1,0 +1,47 @@
+% Clase 6 --- Muchas cargas y una superficie cualquiera (§3).
+% Por superposición, cada carga aporta su propio flujo: Q/eps0 si está adentro
+% y 0 si está afuera. Sólo sobrevive la carga NETA ENCERRADA.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % superficie arbitraria
+  \draw[figline, fill=figblue!6]
+    plot[smooth cycle, tension=0.75]
+    coordinates {(-1.9,1.1) (0.1,1.7) (1.8,0.8) (1.5,-1.1) (-0.4,-1.6) (-2.1,-0.5)};
+  \node[figlbl, figblue, above=2pt] at (0.1,1.8) {$S$};
+
+  % cargas adentro
+  \node[figpos] at (-1.0,0.5) {};
+  \node[figlbl, above=3pt] at (-1.0,0.5) {$Q_1$};
+  \node[figneg] at (0.35,0.6) {};
+  \node[figlbl, above=3pt] at (0.35,0.6) {$Q_2$};
+  \node[figpos] at (-1.25,-0.7) {};
+  \node[figlbl, anchor=east] at (-1.4,-0.7) {$Q_3$};
+
+  % cargas afuera
+  \node[figpos] at (3.3,1.0) {};
+  \node[figlbl, above=3pt] at (3.3,1.0) {$Q_4$};
+  \node[figneg] at (3.0,-1.2) {};
+  \node[figlbl, below=3pt] at (3.0,-1.2) {$Q_5$};
+
+  % los aportes de las de afuera entran y salen
+  \foreach \a in {176,186,196} {
+    \draw[figvecaux] ($(3.3,1.0)+(\a:0.35)$) -- ($(3.3,1.0)+(\a:4.4)$);
+  }
+
+  % rótulos de aporte
+  \node[figlbl, figred, align=center, anchor=west] at (4.3,0.1)
+    {adentro: aporta $\dfrac{Q_i}{\varepsilon_0}$\\[4pt]
+     afuera: aporta $0$};
+
+  \node[figlbl, align=center] at (0.6,-2.6)
+    {$\displaystyle \Phi_S = \frac{Q_1+Q_2+Q_3}{\varepsilon_0}
+      = \frac{Q_{\text{int}}}{\varepsilon_0}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El campo total es la suma de los campos de cada carga
+(superposición) y el flujo es lineal en el campo, así que los flujos también se
+suman. Cada carga ya tiene su caso resuelto: las de adentro aportan
+$Q_i/\varepsilon_0$ y las de afuera, cero. \textbf{$Q_4$ y $Q_5$ sí afectan al
+campo $\vec E$ sobre la superficie}; lo que no afectan es el flujo total.}
+\end{center}

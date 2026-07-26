@@ -1,0 +1,86 @@
+% Clase 2 --- Los dos mecanismos de polarización (§4).
+% (a) Aislante (papel): las cargas NO circulan, pero los dipolos moleculares se
+%     orientan; las cargas positivas quedan en promedio más cerca del peine.
+% (b) Conductor (barra metálica): las cargas SÍ circulan; los electrones libres
+%     se acumulan en el extremo cercano al vidrio.
+% En ambos casos el neto es atractivo y muy pequeño.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) aislante: peine y papelito ===============
+  \begin{scope}
+    % peine cargado negativamente
+    \fill[figblue!12] (-0.45,-1.0) rectangle (0,1.0);
+    \draw[figblue, line width=1pt] (-0.45,-1.0) rectangle (0,1.0);
+    \foreach \y in {-0.75,-0.25,0.25,0.75} {
+      \draw[figblue, line width=0.9pt] (0,\y) -- (0.3,\y);
+      \node[figlbl, figblue, right=1pt] at (0.3,\y) {$-$};
+    }
+    \node[figlbl, figblue, above, align=center] at (-0.22,1.05)
+      {peine\\ \small (aislante)};
+
+    % papelito con dipolos orientados
+    \draw[figgray, line width=0.9pt] (1.55,-0.95) rectangle (3.5,0.95);
+    \node[figlblaux, above] at (2.5,1.0) {papel (aislante)};
+    \foreach \y in {-0.55,0,0.55} {
+      \foreach \x in {1.85,2.55,3.25} {
+        \node[figpos, minimum size=4.6pt] at (\x-0.16,\y) {};
+        \node[figneg, minimum size=4.6pt] at (\x+0.16,\y) {};
+        \draw[figgray, line width=0.5pt] (\x-0.16,\y) -- (\x+0.16,\y);
+      }
+    }
+    \node[figlblaux, below, align=center] at (2.5,-1.05)
+      {dipolos moleculares orientados\\ (escala muy exagerada)};
+
+    % fuerza neta atractiva sobre el papel
+    \draw[figvecres] (2.3,2.45) -- (1.0,2.45);
+    \node[figlbl, figred, above] at (1.65,2.48) {$\vec F$ neta (atractiva, pequeña)};
+
+    \node[figlbl] at (1.6,-2.5)
+      {(a) aislante: polarización \textbf{molecular}};
+  \end{scope}
+
+  % =============== (b) conductor: barra colgada y vidrio ===============
+  \begin{scope}[xshift=8.3cm]
+    % soporte
+    \fill[figgray!30] (-0.9,1.75) rectangle (0.9,1.9);
+    \draw[figgray, line width=0.7pt] (-0.9,1.75) rectangle (0.9,1.9);
+    \foreach \x in {-0.75,-0.4,...,0.8} {
+      \draw[figgray, line width=0.5pt] (\x,1.9) -- (\x+0.22,2.1);
+    }
+    % hilo
+    \draw[figline] (0,1.75) -- (0,0.35);
+    \node[figlblaux, left=2pt] at (0,1.05) {hilo};
+
+    % barra de metal neutra
+    \fill[figgray!12] (-1.9,0.05) rectangle (1.9,0.35);
+    \draw[figgray, line width=0.9pt] (-1.9,0.05) rectangle (1.9,0.35);
+    \node[figlblaux, below=2pt, align=center] at (-0.2,0.02)
+      {barra de metal\\ (conductora, neutra)};
+    % extremo lejano: déficit de electrones
+    \foreach \x in {-1.75,-1.45,-1.15} {\node[figlbl, figred] at (\x,0.2) {$+$};}
+    % extremo cercano: electrones acumulados
+    \foreach \x in {1.15,1.45,1.75} {\node[figlbl, figblue] at (\x,0.2) {$-$};}
+
+    % varilla de vidrio cargada positivamente
+    \fill[figred!10] (2.6,-0.75) rectangle (2.95,1.35);
+    \draw[figred, line width=1pt] (2.6,-0.75) rectangle (2.95,1.35);
+    \foreach \y in {-0.5,0,0.5,1.0} {\node[figlbl, figred] at (2.78,\y) {$+$};}
+    \node[figlbl, figred, above, align=center] at (2.78,1.4) {vidrio\\ cargado};
+
+    % atracción / giro
+    \draw[figvecres] (1.95,0.75) -- (2.5,0.75);
+    \node[figlbl, figred, above=1pt] at (2.2,0.78) {$\vec F$};
+
+    \node[figlbl] at (0.6,-2.5)
+      {(b) conductor: polarización \textbf{macroscópica}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En el aislante las cargas no viajan: son las moléculas las que
+se \textbf{orientan}, desplazándose sólo a escala atómica. En el conductor los
+electrones libres \textbf{sí} recorren la barra entera y se acumulan en el
+extremo cercano. En los dos casos las cargas de signo opuesto al inductor quedan
+en promedio \textbf{más cerca}, y como la fuerza va con $1/r^{2}$ el neto es
+atractivo --- pero muy pequeño, y desaparece al alejarse.}
+\end{center}

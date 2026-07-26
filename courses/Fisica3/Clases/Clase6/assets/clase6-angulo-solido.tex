@@ -1,0 +1,44 @@
+% Clase 6 --- Ángulo sólido: la imagen del globo (§2.4).
+% Se dibuja una mancha sobre un globo esférico y se lo infla: el ÁREA crece
+% como r^2 pero Omega = S/r^2 no cambia. La esfera entera da 4 pi.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % globo chico
+  \begin{scope}
+    \draw[figline] (0,0) circle (1.15);
+    \draw[figaux] (0,0) ellipse (1.15 and 0.38);
+    \fill[figred, opacity=0.75] (52:1.15) arc (52:8:1.15)
+      .. controls (0.85,0.35) and (0.7,0.72) .. (52:1.15);
+    \node[figlblaux, right=3pt] at (1.2,0.55) {$S$};
+    \draw[figvecaux] (0,0) -- (215:1.15);
+    \node[figlblaux, anchor=north east] at (215:0.85) {$r$};
+    \node[figlbl, align=center] at (0,-1.85) {globo};
+  \end{scope}
+
+  % flecha "se infla"
+  \draw[figvecres] (2.0,0) -- (3.1,0);
+  \node[figlbl, figred, above=2pt] at (2.55,0.02) {se infla};
+
+  % globo grande: la misma mancha, proyectada
+  \begin{scope}[xshift=5.5cm]
+    \draw[figline] (0,0) circle (1.85);
+    \draw[figaux] (0,0) ellipse (1.85 and 0.61);
+    \fill[figred, opacity=0.75] (52:1.85) arc (52:8:1.85)
+      .. controls (1.37,0.56) and (1.13,1.16) .. (52:1.85);
+    \node[figlblaux, right=3pt] at (1.95,0.9) {$S'$};
+    \draw[figvecaux] (0,0) -- (215:1.85);
+    \node[figlblaux, anchor=north east] at (215:1.35) {$r'$};
+    \node[figlbl, align=center] at (0,-2.55) {mismo cono, mismo $\Omega$};
+  \end{scope}
+
+  % resultado
+  \node[figlbl, align=center] at (2.75,-3.35)
+    {$\Omega = \dfrac{S}{r^{2}} = \dfrac{S'}{r'^{2}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Al inflar el globo la mancha se agranda ---el \textbf{área}
+cambia--- pero el \textbf{ángulo sólido} no, porque todas las áreas crecen como
+$r^{2}$. Es exactamente la cancelación que hace cero el flujo del cascarón
+cónico, y la razón por la que en la ley de Gauss aparece un $4\pi$.}
+\end{center}

@@ -1,0 +1,50 @@
+% Clase 9 --- "Equiespaciadas en voltaje" no es "equiespaciadas en distancia"
+% (§2.3, nota de vocabulario). Sólo coinciden donde el campo es uniforme.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) campo NO uniforme: carga puntual ===============
+  \begin{scope}
+    \node[figpos, minimum size=8pt] at (0,0) {};
+    \foreach \r in {0.55, 0.78, 1.18, 2.3} { \draw[figline] (0,0) circle (\r); }
+    \node[figlblaux, anchor=south] at (0.0,0.85) {$40$};
+    \node[figlblaux, anchor=south] at (0.0,2.35) {$10$};
+    \draw[figvecaux] (-0.55,-2.75) -- (-0.78,-2.75);
+    \draw[figvecaux] (-1.18,-2.75) -- (-2.3,-2.75);
+    \draw[figaux, line width=0.5pt] (-0.55,-0.35) -- (-0.55,-2.75);
+    \draw[figaux, line width=0.5pt] (-0.78,-0.55) -- (-0.78,-2.75);
+    \draw[figaux, line width=0.5pt] (-1.18,-0.75) -- (-1.18,-2.75);
+    \draw[figaux, line width=0.5pt] (-2.3,-0.35) -- (-2.3,-2.75);
+    \node[figlblaux, anchor=north, align=center] at (-1.2,-2.85)
+      {mismos $10$\,V, distinta distancia};
+    \node[figlbl, align=center] at (0,-3.65)
+      {(a) campo \textbf{no} uniforme};
+  \end{scope}
+
+  % =============== (b) campo uniforme: capacitor ===============
+  \begin{scope}[xshift=8.4cm]
+    \draw[figline, line width=1.7pt] (-1.9,1.6) -- (1.9,1.6);
+    \foreach \x in {-1.7,-1.2,...,1.8} {\node[figlbl,figred,scale=0.65] at (\x,1.8){$+$};}
+    \draw[figline, line width=1.7pt] (-1.9,-1.6) -- (1.9,-1.6);
+    \foreach \x in {-1.7,-1.2,...,1.8} {\node[figlbl,figblue,scale=0.65] at (\x,-1.8){$-$};}
+    \foreach \y/\v in {0.8/30, 0.0/20, -0.8/10} {
+      \draw[figline] (-1.6,\y) -- (1.6,\y);
+      \node[figlblaux, anchor=west] at (1.7,\y) {\v};
+    }
+    \foreach \x in {-1.0,0,1.0} { \draw[figvecres] (\x,1.5) -- (\x,-1.5); }
+    \draw[figvecaux] (-2.35,0.8) -- (-2.35,0.0);
+    \draw[figvecaux] (-2.35,0.0) -- (-2.35,-0.8);
+    \node[figlblaux, anchor=east, align=right] at (-2.45,0.0)
+      {mismos $10$\,V,\\ misma distancia};
+    \node[figlbl, align=center] at (0,-3.65)
+      {(b) campo \textbf{uniforme}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En los dos paneles las equipotenciales están dibujadas cada
+$10$\,V. En (a) eso da separaciones muy distintas ---muy juntas cerca de la
+carga, donde el campo es intenso--- porque $\Delta s = |\Delta V|/E$. En (b) el
+campo es el mismo en todas partes y entonces, y \textbf{sólo} entonces, las dos
+nociones coinciden. Confundirlas es el error típico: la separación de las
+equipotenciales no es un dato del dibujo, es información sobre el campo.}
+\end{center}

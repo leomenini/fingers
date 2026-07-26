@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -159,6 +166,8 @@ U = \frac{Q_0}{4\pi\varepsilon_0}\sum_{i\geq 1}\frac{Q_i}{R_{0i}}
 
 El potencial es esa parte por unidad de carga (se cancela $Q_0$):
 
+\input{assets/clase8-escalar-vs-vector.tex}
+
 \begin{keybox}[Potencial de cargas puntuales]
   \[
   \boxed{V(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\sum_{i}\frac{Q_i}{R_{0i}}}
@@ -177,6 +186,8 @@ V(O) = \frac{1}{4\pi\varepsilon_0}\cdot\frac{\sqrt{2}}{A}\sum_{i=1}^{4} Q_i.
 \]
 
 % ===================================================================
+\input{assets/clase8-cuadrado-cargas.tex}
+
 \section{Potencial de un dipolo}
 % ===================================================================
 
@@ -195,6 +206,8 @@ V(P) = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{r_+} - \frac{1}{r_-}\right),
 \qquad
 r_\pm^2 = r^2 \mp \mathbf{r}\cdot\mathbf{d} + \frac{d^2}{4}.
 \]
+
+\input{assets/clase8-dipolo-potencial.tex}
 
 \subsection{Límite de dipolo puntual (Taylor)}
 
@@ -243,6 +256,8 @@ punto $P$ a distancia $y$ perpendicular, en el centro:
 V(P) = \frac{1}{4\pi\varepsilon_0}\int_{-L/2}^{L/2}\frac{\lambda\, dz}{\sqrt{y^2+z^2}}
      = \frac{\lambda}{2\pi\varepsilon_0}\int_{0}^{L/2}\frac{dz}{\sqrt{y^2+z^2}}.
 \]
+
+\input{assets/clase8-barra-potencial.tex}
 
 \subsection{Integral por sustitución hiperbólica}
 
@@ -314,6 +329,8 @@ Con $u = r^2+z^2$:
 Para $|z| \ll R$: $\;V(P) \approx \dfrac{\sigma}{2\varepsilon_0}(R - |z|)
 + \mathcal{O}(z^2/R)$.
 
+\input{assets/clase8-anillo-disco.tex}
+
 \subsection{Continuidad del potencial y no derivabilidad}
 
 \begin{itemize}[nosep]
@@ -322,6 +339,8 @@ Para $|z| \ll R$: $\;V(P) \approx \dfrac{\sigma}{2\varepsilon_0}(R - |z|)
   \item \textbf{No es derivable}: la dependencia $-|z|$ da un pico en
         $z=0$.
 \end{itemize}
+
+\input{assets/clase8-disco-perfil.tex}
 
 \begin{warnbox}[Anticipo: $V$ y el campo]
   La derivada del potencial es (menos) el campo eléctrico. El campo de

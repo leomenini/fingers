@@ -1,0 +1,45 @@
+% Clase 9 --- E = -grad V: el campo apunta hacia donde V baja más rápido (§1.1).
+% Analogía del paisaje: las equipotenciales son las curvas de nivel y el campo
+% es la línea de máxima pendiente, siempre perpendicular a ellas y "cuesta
+% abajo" (de ahí el signo menos).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % curvas de nivel de V (más juntas a la derecha = pendiente mayor)
+  \foreach \x in {-2.6, -1.35, -0.4, 0.3, 0.8} {
+    \draw[figline, line width=0.9pt] (\x,-1.9) .. controls (\x+0.35,-0.6) and (\x-0.35,0.6) .. (\x,1.9);
+  }
+  \node[figlblaux, anchor=south] at (-2.6,1.95) {$40$\,V};
+  \node[figlblaux, anchor=south] at (0.95,1.95) {$0$\,V};
+  \node[figlblaux, anchor=south, figblue] at (-1.0,2.5) {equipotenciales cada $10$\,V};
+
+  % un punto y su vector campo, normal a la curva
+  \node[figneutra, minimum size=5pt] (A) at (-1.35,0.0) {};
+  \draw[figvecres, line width=1.5pt] (A) -- ++(1.0,0);
+  \node[figlbl, figred, anchor=south] at (-0.85,0.12) {$\vec E$};
+
+  % el desplazamiento tangente no cambia V
+  \draw[figvec] (A) -- ++(0.13,0.95);
+  \node[figlbl, figblue, anchor=south east] at (-1.3,1.0) {$\Delta\vec s$ tangente: $\Delta V = 0$};
+
+  % separación entre equipotenciales
+  \draw[figvecaux] (-2.6,-2.35) -- (-1.35,-2.35);
+  \node[figlblaux, anchor=north] at (-2.0,-2.4) {$\Delta s$ grande};
+  \draw[figvecaux] (0.3,-2.35) -- (0.8,-2.35);
+  \node[figlblaux, anchor=north] at (0.55,-2.4) {$\Delta s$ chico};
+
+  % lectura
+  \node[figlbl, align=left, anchor=west] at (1.9,1.15)
+    {$\vec E = -\nabla V$};
+  \node[figlblaux, align=left, anchor=west] at (1.9,-0.35)
+    {mismo $\Delta V$ entre curvas\\ vecinas, distinto $\Delta s$:\\[3pt]
+     $E = \dfrac{|\Delta V|}{\Delta s} \propto \dfrac{1}{\Delta s}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las cinco curvas están \textbf{equiespaciadas en voltaje}
+(10 V entre vecinas), no en distancia. Donde se aprietan, la misma caída de
+potencial ocurre en menos camino y el campo es más intenso. El signo menos de
+$\vec E = -\nabla V$ dice que el campo apunta hacia el potencial
+\textbf{decreciente}: una carga positiva soltada ahí \emph{cae} hacia los
+voltajes bajos, igual que una piedra rueda cuesta abajo.}
+\end{center}

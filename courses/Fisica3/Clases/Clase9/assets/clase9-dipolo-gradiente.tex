@@ -1,0 +1,44 @@
+% Clase 9 --- El campo del dipolo obtenido DERIVANDO el potencial (§1.2).
+% En Clase 4 el campo se calculó sólo sobre el plano bisector, sumando
+% vectores. Acá se parte de V (que Clase 8 dio en un punto arbitrario) y se
+% deriva: sale el campo en CUALQUIER punto, con mucho menos trabajo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) camino largo: sumar vectores ===============
+  \begin{scope}
+    \node[figpos] at (0,0.55) {}; \node[figlbl, anchor=east] at (-0.12,0.55) {$+Q$};
+    \node[figneg] at (0,-0.55) {}; \node[figlbl, anchor=east] at (-0.12,-0.55) {$-Q$};
+    \node[figneutra, minimum size=5pt] (P) at (2.3,0.9) {};
+    \node[figlbl, anchor=south] at (2.3,1.05) {$P$};
+    \draw[figvec] (P) -- ++(15:1.0);
+    \draw[figvec] (P) -- ++(-160:0.85);
+    \node[figlblaux, anchor=west] at (3.3,1.15) {$\vec E_+$};
+    \node[figlblaux, anchor=north east] at (1.5,0.42) {$\vec E_-$};
+    \node[figlbl, align=center] at (1.4,-1.85)
+      {sumar \textbf{vectores}\\ (y sólo sale fácil en el bisector)};
+    \node[figlbl] at (1.4,-2.9) {(a) camino de la Clase 4};
+  \end{scope}
+
+  % =============== (b) camino corto: derivar V ===============
+  \begin{scope}[xshift=7.4cm]
+    \node[figpos] at (0,0.55) {}; \node[figlbl, anchor=east] at (-0.12,0.55) {$+Q$};
+    \node[figneg] at (0,-0.55) {}; \node[figlbl, anchor=east] at (-0.12,-0.55) {$-Q$};
+    \node[figneutra, minimum size=5pt] (P2) at (2.3,0.9) {};
+    \node[figlbl, anchor=south] at (2.3,1.05) {$P$};
+    \node[figlblaux, figblue, anchor=west] at (2.5,0.85) {$V(r,\theta)$};
+    \draw[figvecres, line width=1.4pt] (P2) -- ++(-38:1.15);
+    \node[figlbl, figred, anchor=west] at (3.3,0.15) {$\vec E = -\nabla V$};
+    \node[figlbl, align=center] at (1.4,-1.85)
+      {derivar un \textbf{escalar}\\ (vale en cualquier punto)};
+    \node[figlbl] at (1.4,-2.9) {(b) camino de esta clase};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El contenido físico es el mismo, pero el orden de trabajo
+cambia todo. Calcular $\vec E$ directo obliga a sumar vectores punto por punto;
+calcular primero $V$ ---que es un número--- y después derivarlo da el campo en
+\textbf{cualquier} punto de una sola vez. Las derivadas parciales que aparecen
+($\partial V/\partial x$, $\partial V/\partial y$, \dots) son justamente las
+componentes de $\vec E$ cambiadas de signo.}
+\end{center}

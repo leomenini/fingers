@@ -1,0 +1,42 @@
+% Clase 6 --- Campo uniforme a través de un cilindro (§2.1).
+% La lateral no aporta (n perpendicular a E); las dos tapas aportan -EA y +EA.
+% Flujo neto cero: entran tantas líneas como salen, no hay fuentes adentro.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo uniforme
+  \foreach \y in {-1.35,-0.7,0,0.7,1.35} {
+    \draw[figvecres] (-3.6,\y) -- (3.6,\y);
+  }
+  \node[figlbl, figred, above=2pt] at (-3.0,1.4) {$\vec E$ uniforme};
+
+  % cilindro de canto: dos elipses y las generatrices
+  \draw[figline, fill=figblue!6, fill opacity=0.55] (-1.5,0) ellipse (0.42 and 1.15);
+  \draw[figline] (-1.5,1.15) -- (1.5,1.15);
+  \draw[figline] (-1.5,-1.15) -- (1.5,-1.15);
+  \draw[figline, fill=figblue!6, fill opacity=0.55] (1.5,0) ellipse (0.42 and 1.15);
+
+  % normales salientes
+  \draw[figvec] (-1.92,0) -- (-2.75,0);
+  \node[figlbl, figblue, above=2pt] at (-2.5,0.02) {$\hat n_1$};
+  \draw[figvec] (1.92,0) -- (2.75,0);
+  \node[figlbl, figblue, above=2pt] at (2.5,0.02) {$\hat n_2$};
+  \draw[figvec] (0,1.15) -- (0,1.85);
+  \node[figlbl, figblue, right=2pt] at (0,1.7) {$\hat n_{\text{lat}}$};
+
+  % rótulos de las tapas
+  \node[figlbl, below=3pt] at (-1.5,-1.2) {tapa 1};
+  \node[figlbl, below=3pt] at (1.5,-1.2) {tapa 2};
+
+  % balance
+  \node[figlbl, align=center] at (0,-2.45)
+    {$\Phi_{\text{lat}} = 0$ \quad
+     $\Phi_1 = -EA$ \quad $\Phi_2 = +EA$
+     \\[3pt] $\Phi_{\text{total}} = 0$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En la lateral $\hat n \perp \vec E$, así que no aporta. En la
+tapa 1 la normal saliente apunta \textbf{contra} el campo (flujo negativo) y en
+la tapa 2 a favor (positivo). Se cancelan exactamente: entran tantas líneas como
+salen porque \textbf{no hay carga adentro}.}
+\end{center}

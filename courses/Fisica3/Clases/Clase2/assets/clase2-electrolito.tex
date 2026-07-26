@@ -1,0 +1,52 @@
+% Clase 2 --- Conducción en un electrolito (§3).
+% Cubeta con agua y sal disuelta: los iones Na+ y Cl- quedan libres y migran en
+% sentidos opuestos, pero AMBOS aportan corriente convencional en el mismo
+% sentido (Na+ hacia la derecha; Cl- negativo hacia la izquierda = corriente
+% hacia la derecha).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- batería y cables ----
+  \draw[figline] (-2.6,1.9) to[battery1, l=$V$] (2.6,1.9);
+  \draw[figline] (-2.6,1.9) -- (-2.6,1.0);
+  \draw[figline] (2.6,1.9)  -- (2.6,1.0);
+
+  % ---- cubeta ----
+  \draw[figgray, line width=1pt] (-3.2,1.0) -- (-3.2,-1.3) -- (3.2,-1.3) -- (3.2,1.0);
+  \fill[figblue!6] (-3.2,-1.3) rectangle (3.2,0.75);
+  \draw[figblue!35, line width=0.7pt] (-3.2,0.75) -- (3.2,0.75);
+  \node[figlblaux, anchor=west] at (-3.15,-1.62) {agua con sal disuelta};
+
+  % ---- electrodos ----
+  \fill[figred!25] (-2.75,-0.95) rectangle (-2.45,1.0);
+  \draw[figred, line width=0.8pt] (-2.75,-0.95) rectangle (-2.45,1.0);
+  \node[figlbl, figred, above] at (-2.6,1.02) {$+$};
+  \fill[figblue!25] (2.45,-0.95) rectangle (2.75,1.0);
+  \draw[figblue, line width=0.8pt] (2.45,-0.95) rectangle (2.75,1.0);
+  \node[figlbl, figblue, above] at (2.6,1.02) {$-$};
+
+  % ---- iones positivos (Na+), migran hacia el electrodo negativo ----
+  \foreach \x/\y in {-1.75/0.45, -0.55/-0.25, 0.65/0.45} {
+    \node[figpos, minimum size=7pt] at (\x,\y) {};
+    \node[figlblaux, above=2pt] at (\x,\y) {Na$^{+}$};
+    \draw[figvecres] (\x+0.18,\y) -- (\x+0.8,\y);
+  }
+
+  % ---- iones negativos (Cl-), migran hacia el electrodo positivo ----
+  \foreach \x/\y in {1.75/-0.25, 0.55/-0.9, -0.65/-0.9} {
+    \node[figneg, minimum size=7pt] at (\x,\y) {};
+    \node[figlblaux, below=2pt] at (\x,\y) {Cl$^{-}$};
+    \draw[figvec] (\x-0.18,\y) -- (\x-0.8,\y);
+  }
+
+  % ---- corriente convencional resultante ----
+  \draw[figvecres, line width=1.6pt] (-1.6,-2.2) -- (1.6,-2.2);
+  \node[figlbl, figred, below] at (0,-2.25) {corriente convencional $I$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Al disolverse, los iones de la red cristalina quedan libres. El
+electrodo positivo repele los Na$^{+}$ y atrae los Cl$^{-}$: los dos tipos de
+ion migran en \textbf{sentidos opuestos}, pero como también tienen signos
+opuestos, ambos aportan corriente \textbf{hacia el mismo lado}. (Iones dibujados
+enormemente fuera de escala.)}
+\end{center}

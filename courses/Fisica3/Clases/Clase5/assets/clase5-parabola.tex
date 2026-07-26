@@ -1,0 +1,53 @@
+% Clase 5 --- Movimiento parabólico de una carga en un campo uniforme (§1).
+% Análogo exacto al tiro parabólico: velocidad constante según x, aceleración
+% constante qE/m según y. La curvatura se invierte al cambiar el signo de q.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % placas
+  \draw[figline, line width=1.6pt] (0,1.35) -- (3.6,1.35);
+  \foreach \x in {0.25,0.75,...,3.5} {\node[figlbl,figred,scale=0.7] at (\x,1.55){$+$};}
+  \draw[figline, line width=1.6pt] (0,-1.35) -- (3.6,-1.35);
+  \foreach \x in {0.25,0.75,...,3.5} {\node[figlbl,figblue,scale=0.7] at (\x,-1.55){$-$};}
+
+  % campo uniforme
+  \foreach \x in {0.6,1.5,2.4,3.3} {\draw[figvecaux] (\x,1.2) -- (\x,-1.2);}
+  \node[figlblaux, right=2pt] at (3.35,0.75) {$\vec E$};
+
+  % velocidad de entrada
+  \draw[figvecres] (-1.4,0.35) -- (-0.15,0.35);
+  \node[figlbl, figred, above=2pt] at (-0.75,0.35) {$\vec v_0$};
+
+  % trayectoria de una carga negativa: se curva hacia la placa +
+  \draw[figline, line width=1.2pt, domain=0:3.6, samples=40, smooth, variable=\x]
+    plot ({\x},{0.35+0.075*\x*\x});
+
+
+  % trayectoria de una carga positiva: se curva hacia la placa -
+  \draw[figline, figred, line width=1.2pt, domain=0:3.6, samples=40, smooth, variable=\x]
+    plot ({\x},{0.35-0.075*\x*\x});
+
+
+  % punto de entrada, común a las dos
+  \node[figneutra] at (0,0.35) {};
+
+  % pantalla, con los dos impactos
+  \draw[figgray, line width=1.4pt] (4.4,-1.9) -- (4.4,1.9);
+  \node[figlblaux, rotate=-90] at (5.9,0) {pantalla};
+  \draw[figaux, line width=0.6pt] (3.6,1.32) -- (4.35,1.6);
+  \draw[figaux, line width=0.6pt] (3.6,-0.62) -- (4.35,-0.9);
+  \node[figneg, minimum size=5pt] at (4.4,1.6) {};
+  \node[figpos, minimum size=5pt] at (4.4,-0.9) {};
+  \node[figlbl, figblue, right=4pt] at (4.4,1.6) {$q < 0$};
+  \node[figlbl, figred, right=4pt] at (4.4,-0.9) {$q > 0$};
+
+  % ejes de referencia
+  \node[figlblaux, below=2pt] at (1.8,-1.75) {$x = v_0 t$ \ (uniforme)};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Dentro del capacitor la fuerza $\vec F = q\vec E$ es
+\textbf{constante}: el movimiento es uniforme según $x$ y uniformemente acelerado
+según $y$, es decir una \textbf{parábola} ---el mismo problema que el tiro
+oblicuo, con $qE/m$ en lugar de $g$. El signo de $q$ decide hacia qué placa se
+curva. La gravedad es despreciable aquí ($F_e/F_g \sim 10^{39}$).}
+\end{center}

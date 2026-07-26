@@ -1,0 +1,52 @@
+% Clase 6 --- Superficie cerrada que NO contiene la carga (§2.3).
+% Un cono con vértice en Q recorta dos casquetes, S2 en la esfera de radio a y
+% S1 en la de radio b; las caras laterales tienen n perpendicular a E. Como los
+% casquetes son homotéticos, S1/b^2 = S2/a^2 y los flujos se cancelan.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % esferas de referencia
+  \draw[figaux] (0,0) circle (1.5);
+  \draw[figaux] (0,0) circle (3.0);
+
+  % carga en el vértice
+  \node[figpos, minimum size=8pt] at (0,0) {};
+  \node[figlbl, anchor=north east] at (-0.1,-0.1) {$Q$};
+
+  % cono (bien abierto para que quepan los rótulos)
+  \draw[figline] (0,0) -- (45:3.0);
+  \draw[figline] (0,0) -- (-5:3.0);
+
+  % casquetes
+  \draw[figred, line width=2.4pt] (-5:1.5) arc (-5:45:1.5);
+  \draw[figred, line width=2.4pt] (-5:3.0) arc (-5:45:3.0);
+  \node[figlbl, figred, anchor=east] at (20:1.35) {$S_2$};
+  \node[figlbl, figred, anchor=west] at (20:3.15) {$S_1$};
+
+  % normales salientes de cada casquete (una hacia adentro, la otra hacia afuera)
+  \draw[figvec] (8:1.5) -- (8:0.95);
+  \node[figlblaux, anchor=north] at (8:0.85) {$\hat n_2$};
+  \draw[figvec] (34:3.0) -- (34:3.6);
+  \node[figlblaux, anchor=south west] at (34:3.62) {$\hat n_1$};
+
+  % campo radial atravesando el cascarón
+  \draw[figvecres] (20:1.7) -- (20:2.8);
+  \node[figlbl, figred, anchor=south] at (23:2.3) {$\vec E$};
+
+  % lateral: n perpendicular a E
+  \draw[figvec, figgray] (45:2.2) -- ++(135:0.75);
+  \node[figlblaux, anchor=south east] at (63:2.75) {$\hat n \perp \vec E$};
+
+  % radios
+  \draw[figvecaux] (0,0) -- (-55:1.5);
+  \node[figlblaux, anchor=north east] at (-55:1.05) {$a$};
+  \draw[figvecaux] (0,0) -- (-100:3.0);
+  \node[figlblaux, anchor=east] at (-100:1.9) {$b$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El casquete lejano recibe un campo $b^{2}/a^{2}$ veces menor,
+pero su área es $b^{2}/a^{2}$ veces mayor: los dos flujos son iguales y de signo
+opuesto, porque las normales salientes apuntan al revés. Toda línea que entra por
+$S_2$ sale por $S_1$. El cociente $S/r^{2}$ que aparece acá es el \textbf{ángulo
+sólido}.}
+\end{center}

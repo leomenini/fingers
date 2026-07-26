@@ -1,0 +1,53 @@
+% Clase 7 --- La paradoja sigma/eps0 vs sigma/2eps0 (§3.3).
+% No hay contradicción: se le llama "sigma" a cosas distintas. En la placa
+% conductora la carga se reparte en las DOS caras, sigma' = sigma/2, y la
+% fórmula del conductor usa la densidad de la cara pegada al punto.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) plano cargado no conductor ===============
+  \begin{scope}
+    \draw[figline, line width=1.8pt] (-1.9,0) -- (1.9,0);
+    \foreach \x in {-1.7,-1.25,...,1.8} {\node[figlbl,figred,scale=0.7] at (\x,0.2){$+$};}
+    \node[figlbl, figred, anchor=west] at (2.0,0.2) {$\sigma$};
+    \foreach \x in {-1.2,-0.4,0.4,1.2} {
+      \draw[figvecres] (\x,0.35) -- (\x,1.5);
+      \draw[figvecres] (\x,-0.35) -- (\x,-1.5);
+    }
+    \node[figlbl, align=center] at (0,-2.35)
+      {$E = \dfrac{\sigma}{2\varepsilon_0}$};
+    \node[figlbl, align=center] at (0,-3.25)
+      {(a) plano \textbf{cargado}\\ (no conductor)};
+  \end{scope}
+
+  % =============== (b) placa conductora ===============
+  \begin{scope}[xshift=7.4cm]
+    \fill[figgray!14] (-1.9,-0.28) rectangle (1.9,0.28);
+    \draw[figline, line width=1.2pt] (-1.9,0.28) -- (1.9,0.28);
+    \draw[figline, line width=1.2pt] (-1.9,-0.28) -- (1.9,-0.28);
+    \node[figlblaux] at (0,0) {$\vec E = 0$};
+    % carga repartida en las dos caras
+    \foreach \x in {-1.7,-1.25,...,1.8} {
+      \node[figlbl,figred,scale=0.7] at (\x,0.48){$+$};
+      \node[figlbl,figred,scale=0.7] at (\x,-0.48){$+$};
+    }
+    \node[figlbl, figred, anchor=west] at (2.0,0.5) {$\sigma' = \sigma/2$};
+    \node[figlbl, figred, anchor=west] at (2.0,-0.5) {$\sigma' = \sigma/2$};
+    \foreach \x in {-1.2,-0.4,0.4,1.2} {
+      \draw[figvecres] (\x,0.72) -- (\x,1.5);
+      \draw[figvecres] (\x,-0.72) -- (\x,-1.5);
+    }
+    \node[figlbl, align=center] at (0,-2.35)
+      {$E = \dfrac{\sigma'}{\varepsilon_0}
+        = \dfrac{\sigma/2}{\varepsilon_0} = \dfrac{\sigma}{2\varepsilon_0}$};
+    \node[figlbl, align=center] at (0,-3.25)
+      {(b) placa \textbf{conductora}\\ (tiene espesor)};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los dos resultados coinciden. La trampa es de notación: en (a)
+$\sigma$ es la carga por unidad de área \textbf{del plano entero}; en (b) la
+fórmula $E=\sigma/\varepsilon_0$ se aplica con la densidad de \textbf{una cara},
+que es la mitad. Todo conductor real tiene espesor, y la carga se reparte por
+simetría entre sus dos caras.}
+\end{center}

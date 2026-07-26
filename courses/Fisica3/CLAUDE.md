@@ -1,5 +1,7 @@
 # CLAUDE.md — Curso Física III (OpenFING)
 
+▎ "Continuá con los diagramas de la Clase 10 siguiendo CLAUDE.md §6.5."
+
 Guía para generar las notas de cada clase a partir de su transcripción. Cada
 carpeta `Clases/ClaseN/` documenta una clase del curso y debe contener **cuatro**
 archivos:
@@ -68,8 +70,9 @@ esperado: 2000–3200 (no forzar el número — depende de la densidad de la cla
 ## 3. `notes.tex` — estilo
 
 - El **preámbulo es idéntico en todas las clases**: copiarlo verbatim de
-  `Clase6/notes.tex` (o Clase5/Clase7). No agregar ni quitar paquetes sin
-  motivo. Incluye `babel` español, `amsmath/physics/esint`, `tcolorbox`,
+  `Clase7/notes.tex` (referencia limpia, sin diagramas). No agregar ni quitar
+  paquetes sin motivo. Las clases **con** diagramas le suman encima el bloque de
+  §6.3 (Clase1–6 ya lo tienen); ese bloque es lo único que las diferencia. Incluye `babel` español, `amsmath/physics/esint`, `tcolorbox`,
   `booktabs`, `hyperref`.
 - **Encoding compatible con tectonic (XeTeX)**: el bloque de encoding va con
   guarda `iftex` (pdflatex → `inputenc`+`fontenc T1`; XeTeX → `fontspec`). No
@@ -307,13 +310,92 @@ del Overleaf del usuario. Flujo:
    ```
 3. **Leer** `out/preview.pdf` (una página por figura), diagnosticar y **corregir
    el asset** hasta que se vea limpio; recompilar sólo lo que cambie.
-4. Recién entonces entregar el `.tex`. El usuario recibe figuras **ya
+4. **El preview no alcanza.** Tras insertar las figuras, compilar la clase
+   (`./build.sh N`) y **releer `notes.pdf`** en las páginas donde caen. El
+   documento usa `setspace` a 1.5: eso **estira los `\\` dentro de los nodos**
+   `align=center` y aparecen colisiones que en el harness (interlineado simple)
+   no existen. Pasó en Clase 2 y Clase 4. Para acercar el harness al documento,
+   cargar también `setspace`+`\onehalfspacing` en `preview.tex`.
+5. Recién entonces entregar el `.tex`. El usuario recibe figuras **ya
    verificadas**; su compile es sólo el armado del documento, no depuración.
 
 > Costo/beneficio: el loop de compilar+ver gasta *menos* en total que el ida y
 > vuelta a ciegas (menos turnos, menos trabajo del usuario) y sube mucho la
 > calidad. Insertar diagramas **no toca `summary.md`** (la figura vive sólo en
 > `notes.tex`).
+
+#### 6.5.1 Qué figuras hacer (y cuántas)
+
+- **El número lo fija `stats.diagrams_pending`** del `metadata.yaml`, no el
+  criterio del momento. Al terminar: `diagrams_pending: 0` y
+  `status.assets: done`.
+- **Anclar cada figura a un momento en que el docente dibuja.** Buscar en la
+  transcripción `dibuj|pizarr|hagamos|vamos a hacer|acá tengo|acá ponemos`. Si
+  él lo dibujó, es porque el dibujo aportaba; si no lo dibujó, probablemente la
+  figura sea decorativa. Esto además protege la regla de §1.5 (*no inventar
+  datos*): la figura no introduce contenido que la clase no tenga.
+- **Priorizar por cobertura de secciones**: elegir las que dejan sin figura a
+  las secciones más áridas, no varias del mismo tema. Cotejar con los assets ya
+  existentes de la clase antes de elegir.
+
+#### 6.5.2 Patrones que funcionan
+
+- **Dos paneles con geometría idéntica**, donde lo único que cambia es la
+  variable en discusión (signo, régimen, mecanismo). Usado en
+  `clase1-coulomb-vectorial`, `clase3-cascaron`, `clase3-limites-barra`,
+  `clase2-polarizacion`, `clase4-plano-infinito`.
+- **Mostrar el *porqué*, no sólo el resultado.** El panel interior de
+  `clase3-cascaron` dibuja el casquete cercano-chico contra el lejano-grande:
+  eso explica la cancelación, mientras que "$F=0$" solo la enuncia.
+- **Etiquetas simbólicas cuando el número es dudoso.** `clase1-tres-cargas` va
+  con $r_{12}$, $r_{13}$, $\theta$ y sin cifras, para no tomar partido en la
+  inconsistencia 12/15 cm que el texto documenta en un `warnbox`.
+- **Declarar la escala falseada dentro de la figura** (`clase1-atomo`,
+  `clase2-electrolito`: "fuera de escala"), en vez de dibujar algo engañoso.
+- **Pie de figura en `\small\itshape`** con la lectura física, no la repetición
+  de los rótulos.
+
+#### 6.5.3 Colisiones de rótulos: los casos que se repiten
+
+Casi todo el tiempo de iteración se va en esto. Los recurrentes:
+
+- Rótulo **sobre su propia cota** (`\node` en el medio de una flecha doble) →
+  usar `anchor=south` desplazado, no centrado.
+- Rótulo de vector **sobre el vector paralelo de al lado** → si dos flechas son
+  colineales (p. ej. $\vec r_{21}$ y $\vec F_{12}$), desplazar **una de ellas**
+  a una vertical/horizontal paralela; no basta con mover el texto.
+- **Rótulos de dos líneas** que crecen hacia el objeto de arriba → ver punto 4
+  del flujo (interlineado 1.5).
+- Rótulos de paneles vecinos que se tocan por el borde → separar los `xshift`
+  antes que achicar la letra.
+- Captions `(a)`/`(b)` de paneles: alinearlos a la **misma** $y$ absoluta y
+  dejar ≥ 0.8 de aire respecto del contenido.
+
+#### 6.5.4 Releer el PDF atrapa errores de física, no sólo de tipografía
+
+Dos casos reales de este curso, ambos detectados **mirando el render**, no
+leyendo el código:
+
+- `clase4-capacitor`: el aporte de la placa $-\sigma$ estaba dibujado hacia
+  abajo también *debajo* de la placa, cuando ahí apunta **hacia** ella. Se
+  rehizo por regiones (arriba se cancelan / en medio se suman / abajo se
+  cancelan).
+- Clase 3 §6: el texto (heredado de `deepseek-v4-flash`) decía que se cancelan
+  las componentes $Y$ y dos líneas después que el neto apunta en $-\hat Y$. La
+  figura dejó la contradicción a la vista; se corrigió a componentes $X$ en
+  `notes.tex` **y** en `summary.md`.
+
+> Corolario: si al dibujar una figura el contenido del `.tex` no cierra,
+> **el sospechoso es el texto**, no la figura. Corregir ambos y decirlo.
+
+#### 6.5.5 Coherencia visual al tocar una clase con assets previos
+
+Las figuras viejas (Clase 1–5, iteración inicial) usan `->`, `\filldraw` y
+colores ad hoc. Al agregar figuras nuevas a una de esas clases, **restilar
+también la vieja** al vocabulario de `tikzstyles.tex` (`figvec`, `figvecres`,
+`figpos`/`figneg`, `figlbl`/`figlblaux`), conservando geometría y contenido. Sin
+eso la clase queda con dos códigos de color contradictorios (p. ej. `+` azul en
+la figura vieja y `+` rojo en las nuevas).
 
 ---
 

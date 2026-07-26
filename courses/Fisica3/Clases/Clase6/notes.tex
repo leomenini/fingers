@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -169,6 +176,8 @@ Tapa 2 (saliente)  & $+EA$  & $\hat{\mathbf{n}}$ paralelo a $\mathbf{E}$ \\
 
 Entran tantas líneas como salen (no hay fuentes dentro).
 
+\input{assets/clase6-cilindro-uniforme.tex}
+
 \subsection{Carga puntual y esfera centrada}
 
 Carga puntual $Q$ (positiva) y superficie esférica $S$ de radio $r$
@@ -179,6 +188,8 @@ Coulomb, $E$ solo depende de $r$):
 \Phi = E \iint_S dS = E \cdot 4\pi r^{2}
      = \frac{Q}{4\pi\varepsilon_0 r^{2}} \cdot 4\pi r^{2}.
 \]
+
+\input{assets/clase6-esfera-centrada.tex}
 
 \begin{keybox}[Flujo de una carga puntual]
   \[
@@ -211,6 +222,8 @@ de su radio:
 
 Conceptualmente: toda línea que entra por una cara sale por la otra.
 
+\input{assets/clase6-cono-cascaron.tex}
+
 \subsection{Ángulo sólido}
 
 La cantidad $\Omega = S/r^{2}$ (área de un trozo dibujado sobre una
@@ -224,6 +237,8 @@ sólido}.
   \item Ángulo sólido de la \textbf{esfera entera}:
         $\dfrac{4\pi r^{2}}{r^{2}} = 4\pi$.
 \end{itemize}
+
+\input{assets/clase6-angulo-solido.tex}
 
 \begin{notebox}[Cultura general]
   No es imprescindible para la deducción, pero aparece con frecuencia
@@ -258,6 +273,8 @@ Vale también para carga negativa: solo cambia el signo
 ($\Phi < 0$).
 
 % ===================================================================
+\input{assets/clase6-superficie-arbitraria.tex}
+
 \section{Deducción para un conjunto de cargas}
 % ===================================================================
 
@@ -286,6 +303,8 @@ Q_i/\varepsilon_0, & Q_i \text{ dentro de } S \\
 \end{keybox}
 
 % ===================================================================
+\input{assets/clase6-cargas-superficie.tex}
+
 \section{Ley de Gauss}
 % ===================================================================
 
@@ -399,6 +418,8 @@ que atraviesa el plano, con tapas de área $S$ paralelas al plano.
 El campo \textbf{no depende de la distancia}: es uniforme mientras la
 distancia sea pequeña frente al tamaño del plano.
 
+\input{assets/clase6-gaussianas.tex}
+
 \subsection{Cascarón esférico uniformemente cargado}
 
 Cascarón esférico de radio $R$ con carga total $Q$ distribuida
@@ -419,6 +440,8 @@ $S$ está dentro o fuera:
         en el origen.
   \item \textbf{Dentro:} campo nulo.
 \end{itemize}
+
+\input{assets/clase6-cascaron-perfil.tex}
 
 \begin{warnbox}[Discontinuidad en $r = R$]
   El salto abrupto es un artefacto de suponer el cascarón de ancho

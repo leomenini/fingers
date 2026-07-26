@@ -1,0 +1,60 @@
+% Clase 8 --- Anillo y disco sobre el eje (§7 y §8).
+% En el anillo TODOS los elementos están a la misma distancia de P, así que el
+% potencial sale sin integrar (sólo el 2 pi del ángulo). El disco es entonces
+% una suma de anillos: una sola integral en r.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) anillo ===============
+  \begin{scope}
+    \draw[figaux] (0,-0.7) -- (0,3.0);
+    \draw[figline] (0,0) ellipse (1.55 and 0.52);
+    \foreach \a in {30,100,170,240,310} {
+      \node[figlbl,figred,scale=0.65] at ({1.55*cos(\a)},{0.52*sin(\a)}) {$+$};
+    }
+    \draw[figvecaux] (0,0) -- (-1.55,0);
+    \node[figlblaux, anchor=north east] at (-1.55,-0.1) {$R$};
+
+    \node[figneutra, minimum size=5pt] (Pa) at (0,2.3) {};
+    \node[figlbl, anchor=east] at (-0.12,2.3) {$P$};
+    \node[figlblaux, anchor=east] at (-0.1,1.2) {$z$};
+
+    % todas las distancias iguales
+    \foreach \a in {30,170,310} {
+      \draw[figgray, line width=0.6pt] ({1.55*cos(\a)},{0.52*sin(\a)}) -- (Pa);
+    }
+    \node[figlblaux, anchor=west] at (0.85,1.5) {$\sqrt{R^{2}+z^{2}}$};
+
+    \node[figlbl, figred, align=center] at (0,-1.65)
+      {todos los $dQ$ a la \textbf{misma} distancia};
+    \node[figlbl] at (0,-2.5) {(a) anillo};
+  \end{scope}
+
+  % =============== (b) disco = suma de anillos ===============
+  \begin{scope}[xshift=7.4cm]
+    \draw[figaux] (0,-0.7) -- (0,3.0);
+    \draw[figline, fill=figblue!7] (0,0) ellipse (2.0 and 0.68);
+    \draw[figred, line width=1.5pt] (0,0) ellipse (1.35 and 0.46);
+    \draw[figred, line width=0.7pt] (0,0) ellipse (1.52 and 0.52);
+    \draw[figvecaux] (0,0) -- (-2.0,0);
+    \node[figlblaux, anchor=north east] at (-2.0,-0.1) {$R$};
+    \draw[figvecaux] (0,0) -- (35:1.35 and 0.46);
+    \node[figlblaux, anchor=south] at (0.62,0.22) {$r$};
+
+    \node[figneutra, minimum size=5pt] (Pb) at (0,2.3) {};
+    \node[figlbl, anchor=east] at (-0.12,2.3) {$P$};
+    \node[figlblaux, anchor=west] at (0.1,1.2) {$z$};
+    \node[figlbl, figred, anchor=west] at (1.6,0.75) {$dQ = \sigma\,2\pi r\,dr$};
+
+    \node[figlbl, figred, align=center] at (0,-1.65)
+      {se \textbf{suman los potenciales} de cada anillo};
+    \node[figlbl] at (0,-2.5) {(b) disco};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El anillo es el caso ideal para el potencial: como todos sus
+puntos equidistan de $P$, el $1/\sqrt{R^{2}+z^{2}}$ sale de la integral y sólo
+queda $\int_0^{2\pi} d\theta = 2\pi$. El disco hereda eso: se lo parte en
+anillos y basta \textbf{una} integral en $r$, \emph{sumando escalares}. Con el
+campo habría hecho falta además proyectar cada aporte sobre el eje.}
+\end{center}

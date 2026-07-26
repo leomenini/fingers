@@ -1,0 +1,49 @@
+% Clase 3 --- Campo de una carga puntual y regla de signos (§5.3).
+% El sentido de E lo fija el signo de la carga FUENTE, no el de la carga de
+% prueba: E = F/q0 ya divide por q0. Se muestran las dos fuentes y, en cada
+% una, la fuerza sobre una carga de prueba de cada signo en el mismo punto.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== Q > 0 : el campo sale ===============
+  \begin{scope}
+    \foreach \a in {0,45,...,315} {\draw[figvec] (\a:0.32) -- (\a:1.5);}
+    \node[figpos, minimum size=8pt] at (0,0) {};
+    \node[figlbl, figred, below=3pt] at (0,-1.6) {$Q > 0$: el campo \textbf{sale}};
+
+    % carga de prueba en un punto del campo
+    \node[figlbl, figblue, above=2pt] at (1.75,1.55) {$\vec E$};
+    \node[figpos, minimum size=6pt] at (2.9,0.55) {};
+    \node[figlblaux, above=3pt] at (2.9,0.55) {$q_0 > 0$};
+    \draw[figvecres] (2.9,0.55) -- (3.75,0.55);
+    \node[figlbl, figred, below=2pt] at (3.35,0.5) {$\vec F$};
+    \node[figneg, minimum size=6pt] at (2.9,-0.6) {};
+    \node[figlblaux, below=3pt] at (2.9,-0.6) {$q_0 < 0$};
+    \draw[figvecres] (2.9,-0.6) -- (2.05,-0.6);
+    \node[figlbl, figred, above=2pt] at (2.45,-0.55) {$\vec F$};
+  \end{scope}
+
+  % =============== Q < 0 : el campo entra ===============
+  \begin{scope}[xshift=8.4cm]
+    \foreach \a in {0,45,...,315} {\draw[figvec] (\a:1.5) -- (\a:0.32);}
+    \node[figneg, minimum size=8pt] at (0,0) {};
+    \node[figlbl, figblue, below=3pt] at (0,-1.6) {$Q < 0$: el campo \textbf{entra}};
+
+    \node[figlbl, figblue, above=2pt] at (1.75,1.55) {$\vec E$};
+    \node[figpos, minimum size=6pt] at (2.9,0.55) {};
+    \node[figlblaux, above=3pt] at (2.9,0.55) {$q_0 > 0$};
+    \draw[figvecres] (2.9,0.55) -- (2.05,0.55);
+    \node[figlbl, figred, below=2pt] at (2.45,0.5) {$\vec F$};
+    \node[figneg, minimum size=6pt] at (2.9,-0.6) {};
+    \node[figlblaux, below=3pt] at (2.9,-0.6) {$q_0 < 0$};
+    \draw[figvecres] (2.9,-0.6) -- (3.75,-0.6);
+    \node[figlbl, figred, above=2pt] at (3.35,-0.55) {$\vec F$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las flechas azules son el campo $\vec E$ de la fuente; las rojas,
+la fuerza $\vec F = q_0\vec E$ sobre una carga de prueba puesta en ese punto.
+Cambiar el signo de $q_0$ da vuelta $\vec F$ pero \textbf{no} $\vec E$: el
+sentido del campo depende sólo del signo de la \textbf{fuente}. La longitud de
+las flechas de $\vec E$ no está a escala: el módulo decae como $1/r^{2}$.}
+\end{center}

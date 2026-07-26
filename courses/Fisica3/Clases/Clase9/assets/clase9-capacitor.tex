@@ -1,0 +1,46 @@
+% Clase 9 --- Capacitor de placas paralelas y el método general (§4).
+% El método es siempre el mismo: poner +-Q, calcular E (por Gauss), integrar
+% para obtener DeltaV y dividir. Para placas paralelas da C = eps0 A / d.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % placas
+  \draw[figline, line width=1.8pt] (-2.2,1.1) -- (2.2,1.1);
+  \foreach \x in {-2.0,-1.55,...,2.1} {\node[figlbl,figred,scale=0.65] at (\x,1.3){$+$};}
+  \node[figlbl, figred, anchor=west] at (2.35,1.2) {$+Q$};
+
+  \draw[figline, line width=1.8pt] (-2.2,-1.1) -- (2.2,-1.1);
+  \foreach \x in {-2.0,-1.55,...,2.1} {\node[figlbl,figblue,scale=0.65] at (\x,-1.3){$-$};}
+  \node[figlbl, figblue, anchor=west] at (2.35,-1.2) {$-Q$};
+
+  % campo uniforme
+  \foreach \x in {-1.6,-0.8,0,0.8,1.6} { \draw[figvecres] (\x,1.0) -- (\x,-1.0); }
+  \node[figlbl, figred, anchor=west] at (0.15,0.35) {$E = \dfrac{\sigma}{\varepsilon_0}$};
+
+  % separación d
+  \draw[figvecaux] (-2.75,0.15) -- (-2.75,1.1);
+  \draw[figvecaux] (-2.75,-0.15) -- (-2.75,-1.1);
+  \node[figlblaux] at (-2.75,0) {$d$};
+
+  % área A
+  \node[figlblaux, anchor=south] at (0,1.55) {placas de área $A$};
+
+  % método general, al costado
+  \node[figlbl, align=left, anchor=west] at (3.5,1.45) {\textbf{método general}};
+  \node[figlblaux, align=left, anchor=west] at (3.5,0.15)
+    {1. poner $\pm Q$\\ 2. calcular $\vec E$ (Gauss)\\
+     3. $\Delta V = -\displaystyle\int \vec E\cdot d\vec l$\\ 4. $C = Q/\Delta V$};
+
+  % resultado
+  \node[figlbl, figred, anchor=west] at (3.5,-1.35)
+    {$C = \dfrac{\varepsilon_0 A}{d}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La capacitancia \textbf{no depende de $Q$}: al duplicar la
+carga se duplica el campo y por lo tanto $\Delta V$, y el cociente queda igual.
+Eso es superposición, y es lo que hace que $C$ sea una propiedad puramente
+\textbf{geométrica} ---acá, área sobre separación. El método de cuatro pasos es
+general, pero sólo se puede llevar a cabo analíticamente en geometrías
+simétricas: en una forma arbitraria ni siquiera se sabe de antemano cómo se
+reparte la carga sobre la superficie.}
+\end{center}

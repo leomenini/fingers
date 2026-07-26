@@ -1,0 +1,53 @@
+% Clase 5 --- Prisma triangular en campo uniforme: flujo neto cero (§5).
+% La cara inclinada tiene mayor área que la frontal, pero su proyección
+% perpendicular al campo es EXACTAMENTE A1: A3 cos(theta) = A1. Por eso el
+% flujo saliente compensa al entrante.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo uniforme
+  \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+    \draw[figvecres] (-3.6,\y) -- (-2.3,\y);
+  }
+  \node[figlblaux, above=2pt] at (-2.95,1.25) {$\vec v$ uniforme};
+
+  % prisma visto de canto (triángulo) + perspectiva
+  \draw[figline, fill=figblue!6] (-1.4,-1.4) -- (-1.4,1.4) -- (1.7,-1.4) -- cycle;
+  \draw[figaux] (-1.4,1.4) -- (-0.75,1.85) -- (2.35,-0.95) -- (1.7,-1.4);
+  \draw[figaux] (-1.4,-1.4) -- (-0.75,-0.95) -- (2.35,-0.95);
+  \draw[figaux] (-0.75,1.85) -- (-0.75,-0.95);
+
+  % cara frontal A1 y su normal
+  \node[figlbl, figblue, above left=1pt] at (-1.42,0.55) {$A_1$};
+  \draw[figvec] (-1.4,0.3) -- (-2.15,0.3);
+  \node[figlblaux, left=2pt] at (-2.15,0.3) {$\hat n_1$};
+
+  % cara inclinada A3 y su normal
+  \node[figlbl, figblue, right=3pt] at (0.55,-0.45) {$A_3$};
+  \draw[figvec] (0.15,0.0) -- (0.83,0.75);
+  \node[figlblaux, right=2pt] at (0.83,0.75) {$\hat n_3$};
+  % ángulo entre n3 y el campo
+  \draw[figvecaux] (0.15,0) -- (0.95,0);
+  \draw[figaux] (0.72,0) arc (0:48:0.57);
+  \node[figlblaux] at (26:0.95) {$\theta$};
+
+  % cara superior A2
+  \node[figlbl, figblue, above=1pt] at (-1.1,1.55) {$A_2$};
+  \draw[figvec] (-1.1,1.62) -- (-1.1,2.3);
+  \node[figlblaux, above=1pt] at (-1.1,2.3) {$\hat n_2$};
+
+  % balance de flujos
+  \node[figlbl, align=left, anchor=west] at (3.2,0.75)
+    {$\Phi_1 = -v A_1$\\[3pt]
+     $\Phi_3 = +v A_3\cos\theta = +v A_1$\\[3pt]
+     $\Phi_2 = \Phi_4 = \Phi_5 = 0$};
+  \node[figlbl, figred, anchor=west] at (3.2,-0.85)
+    {$\Phi_{\text{total}} = 0$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las caras paralelas al campo no aportan nada ($\vec v \perp
+\hat n$). La cara inclinada es \textbf{más grande} que la frontal, pero el
+$\cos\theta$ la corrige exactamente: $A_3\cos\theta = A_1$. Entran tantas líneas
+como salen porque \textbf{no hay carga adentro} ---ni fuentes ni sumideros---, y
+ése es justamente el germen de la ley de Gauss.}
+\end{center}

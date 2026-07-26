@@ -1,0 +1,45 @@
+% Clase 4 --- Disco cargado: integración por anillos concéntricos (§3.1).
+% El disco se descompone en anillos de radio r y ancho dr; cada uno aporta el
+% dEz ya calculado para el anillo, y se integra r de 0 a R.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % eje Z
+  \draw[figaux] (0,-1.1) -- (0,3.6);
+  \node[figlblaux, right=2pt] at (0,3.5) {$Z$};
+
+  % disco en perspectiva
+  \draw[figline, fill=figblue!7] (0,0) ellipse (2.3 and 0.78);
+  \foreach \a in {25,95,165,235,305} {
+    \node[figlbl,figred,scale=0.7] at ({2.3*cos(\a)*0.62},{0.78*sin(\a)*0.62}) {$+$};
+  }
+  \node[figlbl, figblue, right=2pt] at (2.35,-0.45) {$\sigma$ uniforme};
+
+  % radio R
+  \draw[figvecaux] (0,0) -- (-2.3,0);
+  \node[figlblaux, anchor=east] at (-2.4,-0.05) {$R$};
+
+  % anillo elemental de radio r y ancho dr
+  \draw[figred, line width=1.6pt] (0,0) ellipse (1.5 and 0.51);
+  \draw[figred, line width=0.7pt] (0,0) ellipse (1.68 and 0.57);
+  \draw[figvecaux] (0,0) -- (25:1.5 and 0.51);
+  \node[figlblaux, above=1pt] at (0.62,0.16) {$r$};
+  \node[figlbl, figred, right=2pt] at (1.7,0.62)
+    {$dq = \sigma\,2\pi r\,dr$};
+
+  % punto sobre el eje
+  \node[figneutra, minimum size=4pt] (P) at (0,2.6) {};
+  \node[figlbl, left=4pt] at (P) {$P$};
+  \node[figlblaux, left=3pt] at (0,1.35) {$Z$};
+
+  % contribución del anillo
+  \draw[figvecres] (P) -- (0,3.45);
+  \node[figlbl, figred, right=2pt] at (0,3.15) {$dE_z$};
+  \draw[figgray, line width=0.6pt] (25:1.5 and 0.51) -- (P);
+  \node[figlblaux, right=1pt] at (1.05,1.75) {$\sqrt{r^{2}+Z^{2}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Cada anillo ya tiene resuelto su campo axial, así que el disco
+sólo agrega \textbf{una} integral en $r$ (de $0$ a $R$). Las componentes
+radiales se cancelan anillo por anillo, de modo que basta con sumar $dE_z$.}
+\end{center}
