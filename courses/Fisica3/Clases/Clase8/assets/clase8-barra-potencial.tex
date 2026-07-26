@@ -1,0 +1,47 @@
+% Clase 8 --- Potencial de una barra en un punto del plano bisector (§6).
+% Igual geometría que el cálculo del CAMPO en Clase 2, pero acá no hay que
+% proyectar: se suma lambda dz / sqrt(y^2+z^2) y listo. La simetría sólo se usa
+% para integrar de 0 a L/2 y duplicar.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % barra sobre el eje z (vertical)
+  \draw[figline, line width=1.7pt] (0,-2.1) -- (0,2.1);
+  \foreach \y in {-1.85,-1.4,...,2.0} {\node[figlbl,figred,scale=0.65] at (-0.22,\y){$+$};}
+  \node[figlbl, figblue, anchor=south] at (0,2.2) {$\lambda$};
+  \node[figlblaux, anchor=east] at (-0.45,2.1) {$L/2$};
+  \node[figlblaux, anchor=east] at (-0.45,-2.1) {$-L/2$};
+
+  % elemento dz
+  \draw[figred, line width=2.4pt] (0,1.05) -- (0,1.38);
+  \node[figlbl, figred, anchor=west] at (0.12,1.72) {$dQ = \lambda\,dz$};
+  \node[figlblaux, anchor=east] at (-0.45,1.2) {$z$};
+  \draw[figaux, line width=0.5pt] (0,1.2) -- (-0.4,1.2);
+
+  % punto P
+  \node[figneutra, minimum size=5pt] (P) at (3.0,0) {};
+  \node[figlbl, anchor=north] at (3.0,-0.2) {$P$};
+  \draw[figvecaux] (0,0) -- (2.85,0);
+  \node[figlblaux, anchor=south] at (1.5,0.05) {$y$};
+
+  % distancia del elemento a P
+  \draw[figgray, line width=0.7pt] (0,1.2) -- (P);
+  \node[figlblaux, anchor=south west] at (1.5,0.7) {$\sqrt{y^{2}+z^{2}}$};
+
+  % el elemento simétrico
+  \draw[figred, line width=2.4pt] (0,-1.38) -- (0,-1.05);
+  \draw[figgray, line width=0.7pt, dashed] (0,-1.2) -- (P);
+  \node[figlblaux, anchor=north] at (1.9,-1.15) {mismo aporte};
+
+  % lectura
+  \node[figlblaux, align=left, anchor=west] at (3.6,0.0)
+    {sin proyectar: los dos aportes\\ simétricos se \textbf{suman} igual};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Compárese con el mismo problema para el \textbf{campo} (Clase
+2): allí había que proyectar cada $d\vec E$ con un $\cos\theta$ y descartar la
+componente que se cancelaba. Acá los dos elementos simétricos aportan
+\textbf{lo mismo} y simplemente se suman, así que la integral se hace de $0$ a
+$L/2$ y se duplica. La sustitución $z = y\sinh w$ la resuelve, y el resultado
+sale en términos de $\operatorname{arcsinh}$.}
+\end{center}

@@ -1,0 +1,49 @@
+% Clase 4 --- Los dos límites del disco (§3.2-3.3).
+% (a) Z >> R: el disco se ve puntual, E ~ Q/(4 pi eps0 Z^2).
+% (b) Z << R: el borde queda fuera de alcance, el disco se ve infinito y el
+%     campo es UNIFORME, sigma/(2 eps0), independiente de la distancia.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) Z >> R : carga puntual ===============
+  \begin{scope}
+    \draw[figline, fill=figblue!7] (0,0) ellipse (0.75 and 0.26);
+    \node[figlblaux, left=3pt] at (-0.78,0) {$R$};
+    \node[figneutra, minimum size=4pt] (pa) at (0,2.7) {};
+    \draw[figaux] (0,0) -- (0,3.1);
+    \node[figlblaux, right=3pt] at (0,1.5) {$Z \gg R$};
+    \draw[figvecres] (pa) -- (0,3.5);
+    \node[figlbl, figred, right=2pt] at (0,3.25) {$\vec E$};
+    \node[figlbl, align=center] at (0,-1.3)
+      {$E \simeq \dfrac{Q}{4\pi\varepsilon_0 Z^{2}}$\\[2pt] se ve \textbf{puntual}};
+    \node[figlbl] at (0,-2.35) {(a) $Z \gg R$};
+  \end{scope}
+
+  % =============== (b) Z << R : plano infinito ===============
+  \begin{scope}[xshift=6.6cm]
+    % plano visto de canto, se sale del dibujo
+    \draw[figline, line width=1.6pt] (-2.6,0) -- (2.6,0);
+    \foreach \x in {-2.35,-1.85,...,2.4} {\node[figlbl,figred,scale=0.7] at (\x,0.2){$+$};}
+    \node[figlblaux, left=2pt] at (-2.6,0) {$\cdots$};
+    \node[figlblaux, right=2pt] at (2.6,0) {$\cdots$};
+    \node[figlbl, figblue, anchor=west] at (2.62,-0.38) {$\sigma$};
+
+    % campo uniforme a ambos lados: misma longitud a toda altura
+    \foreach \x in {-1.9,-0.95,0,0.95,1.9} {
+      \draw[figvecres] (\x,0.35) -- (\x,1.5);
+      \draw[figvecres] (\x,-0.35) -- (\x,-1.5);
+    }
+    \node[figlbl, figred, right=3pt] at (1.95,1.0) {$\vec E$};
+    \node[figlbl, figred, right=3pt] at (1.95,-1.0) {$\vec E$};
+
+    \node[figlbl, align=center] at (0,-2.35)
+      {(b) $Z \ll R$: \ $E = \dfrac{\sigma}{2\varepsilon_0}$, \ \textbf{uniforme}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los dos límites son el test del resultado general
+$E_z=\frac{\sigma}{2\varepsilon_0}\bigl(1-Z/\sqrt{Z^{2}+R^{2}}\bigr)$: de lejos
+tiene que dar carga puntual y de cerca, plano infinito. Nótese que en (b) el
+campo \textbf{no depende de $Z$}: todas las flechas miden lo mismo, estén cerca
+o lejos del plano.}
+\end{center}

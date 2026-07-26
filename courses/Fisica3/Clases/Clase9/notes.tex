@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -148,6 +155,8 @@ para cada eje:
   puntos cercanos y derivar.
 \end{notebox}
 
+\input{assets/clase9-gradiente.tex}
+
 \subsection{Ejemplo: campo del dipolo desde el potencial}
 
 Potencial del dipolo (Clase 8), en el plano $xy$ que lo contiene, con
@@ -177,6 +186,8 @@ exactamente el resultado del cálculo directo sobre el eje.
 \end{keybox}
 
 % ===================================================================
+\input{assets/clase9-dipolo-gradiente.tex}
+
 \section{Superficies equipotenciales}
 % ===================================================================
 
@@ -209,6 +220,8 @@ Conjunto de puntos con potencial constante: $V(x,y,z) = V_0$.
         dirección de máxima variación de $V$.
 \end{enumerate}
 
+\input{assets/clase9-equipot-ejemplos.tex}
+
 \subsection{Ejemplos}
 
 \begin{center}
@@ -222,6 +235,8 @@ Dipolo & de $+Q$ a $-Q$ & esferas cerca; plano bisector $V=0$ \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\input{assets/clase9-voltaje-vs-distancia.tex}
 
 \begin{notebox}[Vocabulario]
   \enquote{Equiespaciadas en voltaje} ($V_3-V_2=V_2-V_1$) no es lo mismo
@@ -247,6 +262,8 @@ V_B - V_A = -\int_A^B \mathbf{E}\cdot d\mathbf{l} = 0.
   región 3D ($\mathbf{E}\equiv 0$) es equipotencial.
 \end{keybox}
 
+\input{assets/clase9-conductor-equipotencial.tex}
+
 \subsection{Continuidad de la componente tangencial}
 
 Se completa la prueba (Clase 7) de que $\mathbf{E}$ es \textbf{normal} a
@@ -261,6 +278,8 @@ la superficie del conductor:
         cortos, $E_{1,\text{tang}} = E_{2,\text{tang}}$. Como adentro
         $\mathbf{E}=0$, afuera la tangencial es cero.
 \end{itemize}
+
+\input{assets/clase9-tangencial.tex}
 
 \subsection{Ejemplo: cascarón esférico}
 
@@ -285,6 +304,8 @@ $\mathbf{E}=-\nabla V$ y el salto de $\mathbf{E}$ en $r=R$); adentro es
 constante (equipotencial).
 
 % ===================================================================
+\input{assets/clase9-cascaron-VE.tex}
+
 \section{Capacitores}
 % ===================================================================
 
@@ -353,6 +374,8 @@ E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{\varepsilon_0 A},
 \qquad
 |\Delta V| = E\,d = \frac{Q\,d}{\varepsilon_0 A}.
 \]
+
+\input{assets/clase9-capacitor.tex}
 
 \begin{keybox}[Capacitancia de placas paralelas]
   \[

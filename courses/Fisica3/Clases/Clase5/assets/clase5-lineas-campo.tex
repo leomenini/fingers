@@ -1,0 +1,45 @@
+% Clase 5 --- Líneas de campo de Faraday (§3.2).
+% Tres representaciones canónicas: campo uniforme (líneas paralelas
+% equiespaciadas), carga puntual positiva (radiales salientes) y dipolo
+% (nacen en +Q y mueren en -Q).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) campo uniforme ===============
+  \begin{scope}
+    \foreach \y in {-1.2,-0.6,0,0.6,1.2} {\draw[figvec] (-1.1,\y) -- (1.1,\y);}
+    \node[figlbl, align=center] at (0,-2.1) {(a) uniforme:\\ paralelas y equiespaciadas};
+  \end{scope}
+
+  % =============== (b) carga puntual positiva ===============
+  \begin{scope}[xshift=4.4cm]
+    \foreach \a in {0,30,...,330} {\draw[figvec] (\a:0.3) -- (\a:1.45);}
+    \node[figpos, minimum size=8pt] at (0,0) {};
+    \node[figlbl, align=center] at (0,-2.1) {(b) carga $+$:\\ radiales, salientes};
+  \end{scope}
+
+  % =============== (c) dipolo ===============
+  \begin{scope}[xshift=9.8cm]
+    \coordinate (p) at (-0.85,0);
+    \coordinate (n) at (0.85,0);
+    % línea recta que las une
+    \draw[figvec] (-0.55,0) -- (0.5,0);
+    % arcos simétricos arriba y abajo
+    \foreach \b in {25,50,75} {
+      \draw[figvec] ($(p)+(\b:0.32)$) to[bend left=\b] ($(n)+(180-\b:0.32)$);
+      \draw[figvec] ($(p)+(-\b:0.32)$) to[bend right=\b] ($(n)+(\b-180:0.32)$);
+    }
+    \node[figpos, minimum size=8pt] at (p) {};
+    \node[figlbl, below=11pt] at (p) {$+Q$};
+    \node[figneg, minimum size=8pt] at (n) {};
+    \node[figlbl, below=11pt] at (n) {$-Q$};
+    \node[figlbl, align=center] at (0,-2.1) {(c) dipolo:\\ nacen en $+Q$, mueren en $-Q$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape $\vec E$ es \textbf{tangente} a la línea en cada punto, y el
+módulo es proporcional a la \textbf{densidad de líneas} por unidad de área
+transversal. De ahí sale Coulomb sin cuentas: si $N$ líneas atraviesan la esfera
+de radio $r$, entonces $|\vec E| \propto N/4\pi r^{2} \propto 1/r^{2}$, y el
+$4\pi$ aparece solo, por geometría.}
+\end{center}

@@ -1,0 +1,36 @@
+% Clase 7 --- Energía potencial de dos cargas y la convención U(inf) = 0 (§5.3).
+% Sólo las DIFERENCIAS de U están definidas; la constante aditiva se fija
+% eligiendo U = 0 en el infinito, que es lo que hace la curva pasar por cero.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  fisfig,
+  width=11.5cm, height=6.2cm,
+  xlabel={$r$}, ylabel={$U(r)$},
+  xmin=0, xmax=4.3, ymin=-1.5, ymax=1.5,
+  axis lines=middle,
+  xtick=\empty, ytick=\empty,
+  every axis y label/.style={at={(ticklabel* cs:1.0)}, anchor=south east},
+  every axis x label/.style={at={(ticklabel* cs:1.0)}, anchor=north west},
+  legend pos=north east,
+]
+  % cargas del mismo signo: U > 0, repulsivo
+  \addplot[figred, line width=1.2pt, domain=0.42:4.25, samples=140] {0.5/x};
+  \addlegendentry{$Q_0Q > 0$ (se repelen)}
+  % cargas de signo opuesto: U < 0, ligado
+  \addplot[figblue, line width=1.2pt, domain=0.42:4.25, samples=140] {-0.5/x};
+  \addlegendentry{$Q_0Q < 0$ (se atraen)}
+
+  % la asíntota: U -> 0 en el infinito
+  \draw[figgray, dashed, line width=0.6pt] (axis cs:0,0) -- (axis cs:4.25,0);
+  \node[figlblaux, anchor=north east] at (axis cs:4.2,-0.12) {$U \to 0$ cuando $r \to \infty$};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape $U = \dfrac{Q_0Q}{4\pi\varepsilon_0 r}$ está definida
+\textbf{a menos de una constante aditiva}: sumarle un número a las dos curvas no
+cambia ninguna diferencia de energía, que es lo único con sentido físico. La
+convención $U=0$ en el infinito es la que las hace tender a cero, y es cómoda
+porque separa los dos casos por el signo: $U>0$ significa que hay que
+\textbf{gastar} energía para acercarlas, $U<0$ que hay que gastarla para
+\textbf{separarlas}.}
+\end{center}

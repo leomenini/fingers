@@ -1,0 +1,40 @@
+% Clase 6 --- Perfil E(r) del cascarón esférico y la discontinuidad (§5.3).
+% El salto en r = R es un artefacto de suponer espesor nulo. Con un espesor
+% real a, el campo sube de forma continua a través de la cáscara.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  fisfig,
+  width=12cm, height=6.2cm,
+  xlabel={$r$}, ylabel={$E(r)$},
+  xmin=0, xmax=4.2, ymin=0, ymax=1.35,
+  xtick={1}, xticklabels={$R$},
+  ytick={1}, yticklabels={$\frac{Q}{4\pi\varepsilon_0 R^{2}}$},
+  legend pos=north east,
+]
+  % idealización: 0 adentro, salto en R, 1/r^2 afuera
+  \addplot[figred, line width=1.2pt, domain=0:1, samples=2, forget plot] {0};
+  \addplot[figred, line width=1.2pt, dashed, forget plot] coordinates {(1,0) (1,1)};
+  \addplot[figred, line width=1.2pt, domain=1:4.15, samples=120] {1/(x*x)};
+  \addlegendentry{cascarón ideal (espesor nulo)}
+
+  % con espesor real a: subida continua entre R y R+a
+  \addplot[figblue, line width=1.1pt, domain=0:1, samples=2, forget plot] {0};
+  \addplot[figblue, line width=1.1pt, domain=1:1.42, samples=40]
+    {((x-1)/0.42)^3 / (x*x)};
+  \addlegendentry{cascarón de espesor $a$}
+  \addplot[figblue, line width=1.1pt, domain=1.42:4.15, samples=120, forget plot]
+    {1/(x*x)};
+
+  % marca del espesor
+  \draw[figgray, line width=0.6pt, dashed] (axis cs:1.42,0) -- (axis cs:1.42,0.5);
+  \draw[figvecaux] (axis cs:1.0,0.62) -- (axis cs:1.42,0.62);
+  \node[figlblaux, anchor=west] at (axis cs:1.5,0.63) {espesor $a$};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Dentro del cascarón $E=0$ y fuera vale exactamente lo mismo que
+una carga puntual $Q$ en el centro. El \textbf{salto} en $r=R$ de la curva roja
+no es físico: aparece porque se supuso el cascarón infinitamente delgado. Con un
+espesor real $a$ (curva azul) el campo sube de forma continua a través de la
+cáscara. A nivel clásico \textbf{no hay saltos abruptos en la naturaleza}.}
+\end{center}

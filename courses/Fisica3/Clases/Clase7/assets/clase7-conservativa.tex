@@ -1,0 +1,71 @@
+% Clase 7 --- Por qué la fuerza electrostática es conservativa (§5.2).
+% El zoom muestra la clave del cálculo: r_hat . dl = dr, la proyección de dl
+% sobre la dirección radial. Por eso la integral de línea colapsa a una
+% integral ordinaria en r y sólo sobreviven r_i y r_f.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== dos caminos entre I y F ===============
+  \begin{scope}
+    \node[figpos, minimum size=9pt] (Q) at (0,0) {};
+    \node[figlbl, below left=1pt] at (Q) {$Q$};
+
+    \node[figneutra, minimum size=5pt] (I) at (1.1,-1.15) {};
+    \node[figlbl, below=3pt] at (I) {$I$};
+    \node[figneutra, minimum size=5pt] (F) at (2.75,1.5) {};
+    \node[figlbl, right=3pt] at (F) {$F$};
+
+    % dos caminos distintos
+    \draw[figvec] (I) to[bend right=45] (F);
+    \draw[figvec, figred] (I) to[bend left=40] (F);
+    \node[figlblaux, anchor=north west] at (2.5,-0.55) {$C_1$};
+    \node[figlblaux, anchor=south east] at (1.0,0.95) {$C_2$};
+
+    % radios inicial y final
+    \draw[figvecaux] (Q) -- (I);
+    \node[figlblaux, anchor=north east] at (0.65,-0.75) {$r_i$};
+    \draw[figvecaux] (Q) -- (F);
+    \node[figlblaux, anchor=north west] at (1.75,0.85) {$r_f$};
+
+    \node[figlbl, align=center] at (1.2,-2.5)
+      {$W^{(C_1)} = W^{(C_2)}$: \ sólo importan $r_i$ y $r_f$};
+  \end{scope}
+
+  % =============== zoom: r_hat . dl = dr ===============
+  \begin{scope}[xshift=7.9cm, yshift=-0.2cm]
+    \node[figlblaux, anchor=south] at (0.8,2.1) {zoom sobre un tramo};
+
+    % dirección radial (viene de Q, lejos a la izquierda-abajo)
+    \draw[figaux] (-1.7,-1.15) -- (2.1,1.4);
+    \node[figlblaux, anchor=east] at (-1.75,-1.05) {hacia $Q$};
+
+    % dl
+    \draw[figvecres, line width=1.5pt] (0,0) -- (1.15,1.55);
+    \node[figlbl, figred, anchor=east] at (0.5,0.95) {$d\vec l$};
+
+    % versor radial
+    \draw[figvec] (0,0) -- (0.75,0.5);
+    \node[figlbl, figblue, anchor=north west] at (0.7,0.42) {$\hat r$};
+
+    % proyección: dr
+    \draw[figaux, line width=0.6pt] (1.15,1.55) -- (1.72,0.9);
+    \draw[figvecaux] (0,0) -- (1.68,1.12);
+    \node[figlblaux, anchor=north] at (1.15,-0.05) {$dr = \hat r \cdot d\vec l$};
+
+    % ángulo
+    \draw[figaux] (0.55,0.37) arc (34:53:0.66);
+    \node[figlblaux] at (44:0.95) {$\theta$};
+
+    \node[figlbl, align=center] at (0.3,-1.95)
+      {$\displaystyle \int_C \frac{\hat r \cdot d\vec l}{r^{2}}
+        = \int_{r_i}^{r_f} \frac{dr}{r^{2}}$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La integral de línea parece difícil, pero $\hat r \cdot d\vec l$
+es justamente $dr$: la proyección del desplazamiento sobre la dirección radial,
+o sea cuánto cambió la distancia a $Q$. Todo lo que el camino haga en la
+dirección transversal \textbf{no aporta trabajo}. Por eso la integral colapsa a
+una integral ordinaria y el resultado depende sólo de $r_i$ y $r_f$: la fuerza
+es \textbf{conservativa}.}
+\end{center}

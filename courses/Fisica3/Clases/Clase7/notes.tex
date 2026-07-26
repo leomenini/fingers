@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -144,6 +151,8 @@ $\mathbf{E}=0$ en el conductor,
 Como en la cavidad no hay cargas, la carga neta en la superficie interna
 es cero.
 
+\input{assets/clase7-cavidad.tex}
+
 \subsection{Densidad superficial interna nula y estabilidad}
 
 Lo anterior solo prueba que la carga \textbf{neta} interna es cero, no
@@ -151,6 +160,8 @@ que no haya zonas con $\sigma>0$ y otras con $\sigma<0$ que se cancelen.
 Descartarlo requiere un argumento \textbf{de estabilidad}: densidades de
 signo opuesto generarían líneas de campo a través de la cavidad y las
 cargas se moverían, contradiciendo el equilibrio.
+
+\input{assets/clase7-sigma-interna.tex}
 
 \begin{notebox}[Sutileza: contraejemplos]
   Se pueden construir cavidades donde cargas opuestas quedan
@@ -214,6 +225,8 @@ E\,S = \frac{\sigma S}{\varepsilon_0}
 \boxed{E = \frac{\sigma}{\varepsilon_0}} .
 \]
 
+\input{assets/clase7-pillbox.tex}
+
 \begin{notebox}[Validez punto a punto]
   Si $\sigma$ no es uniforme, para el campo en un punto se usa el
   $\sigma$ de \textbf{ese} punto. La superficie gaussiana debe ser
@@ -237,6 +250,8 @@ al punto:
 E = \frac{\sigma'}{\varepsilon_0} = \frac{\sigma/2}{\varepsilon_0}
   = \frac{\sigma}{2\varepsilon_0} .
 \]
+
+\input{assets/clase7-paradoja-plano.tex}
 
 \begin{keybox}[Coherencia Gauss vs Coulomb]
   No hay contradicción: se llama $\sigma$ a cosas distintas (carga total
@@ -265,6 +280,8 @@ precisa que medir fuerzas.
         la bolita queda con carga \textbf{cero}.
   \item Se saca la bolita y se mide su carga: \textbf{cero}.
 \end{enumerate}
+
+\input{assets/clase7-experimento-caja.tex}
 
 \begin{keybox}[Por qué es tan preciso]
   Medir si hay carga o \textbf{no} (blanco/negro) es mucho más preciso
@@ -315,6 +332,8 @@ W_{I\to F} = \frac{Q_0 Q}{4\pi\varepsilon_0}\int_{r_i}^{r_f}\frac{dr}{r^2}
 = \frac{Q_0 Q}{4\pi\varepsilon_0}\left(\frac{1}{r_i}-\frac{1}{r_f}\right).
 \]
 
+\input{assets/clase7-conservativa.tex}
+
 \begin{keybox}[Trabajo entre dos cargas]
   \[
   \boxed{W_{I\to F}
@@ -353,6 +372,8 @@ depende de una \textbf{constante aditiva} (nivel de referencia).
   \item \textbf{Signo opuesto} ($Q_0 Q<0$): $U<0$; sueltas, se atraen
         hacia el mínimo (contacto).
 \end{itemize}
+
+\input{assets/clase7-energia-potencial.tex}
 
 \subsection{Energía potencial de un conjunto de cargas}
 
@@ -399,6 +420,8 @@ V_B - V_A = \frac{U_B - U_A}{Q_0} = -\frac{1}{Q_0}\,W_{A\to B}
 \]
 
 Como $\mathbf{F} = Q_0\mathbf{E}$, los $Q_0$ se cancelan:
+
+\input{assets/clase7-diferencia-potencial.tex}
 
 \begin{keybox}[Diferencia de potencial y campo]
   \[

@@ -1,0 +1,44 @@
+% Clase 7 --- Conductor aislado con cavidad (§2.1).
+% La gaussiana S se dibuja ENTERAMENTE dentro del material, rodeando la
+% cavidad. Como E = 0 en el conductor, Phi = 0 y por Gauss Q_int = 0: no hay
+% carga neta en la superficie interna, y toda la carga va a la externa.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % cuerpo del conductor
+  \draw[figline, fill=figgray!14] (0,0) ellipse (2.55 and 1.95);
+  \node[figlbl, anchor=west] at (2.95,1.15) {conductor};
+  \node[figlblaux, anchor=west] at (2.95,0.65) {$\vec E = 0$ adentro};
+
+  % cavidad vacía
+  \draw[figline, fill=white]
+    plot[smooth cycle, tension=0.8]
+    coordinates {(-0.9,0.55) (0.25,0.85) (0.95,0.05) (0.3,-0.85) (-0.85,-0.5)};
+  \node[figlblaux] at (0.05,0.02) {cavidad};
+  \node[figlblaux] at (0.05,-0.45) {(vacía)};
+
+  % gaussiana dentro del material
+  \draw[figred, dashed, line width=1.1pt]
+    plot[smooth cycle, tension=0.8]
+    coordinates {(-1.5,1.1) (0.5,1.55) (1.75,0.15) (0.6,-1.5) (-1.35,-1.1)};
+  \node[figlbl, figred, anchor=south west] at (1.05,1.05) {$S$};
+
+  % carga en la superficie externa
+  \foreach \a in {20,55,...,340} {
+    \node[figlbl,figred,scale=0.75] at ({2.78*cos(\a)},{2.14*sin(\a)}) {$+$};
+  }
+  \node[figlbl, figred, anchor=east, align=right] at (-3.0,-1.0)
+    {toda la carga,\\ en la cara externa};
+
+  % resultado
+  \node[figlbl, align=center] at (0.1,-2.85)
+    {$\displaystyle \Phi = \oiint_S \vec E \cdot d\vec A = 0
+      \ \Longrightarrow\ Q_{\text{int}} = \varepsilon_0 \Phi = 0$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La clave está en \textbf{dónde} se dibuja la gaussiana: toda
+ella dentro del material, donde $\vec E=0$ punto a punto. Entonces el flujo es
+nulo no por cancelación sino porque el integrando lo es, y Gauss obliga a que la
+carga encerrada sea cero. Como la cavidad está vacía, la carga neta de la
+superficie interna también es cero.}
+\end{center}

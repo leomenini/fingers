@@ -1,0 +1,40 @@
+% Clase 5 --- Convención de signo en superficies cerradas (§4.5).
+% Para una superficie CERRADA la normal apunta siempre HACIA AFUERA: donde el
+% campo entra el flujo es negativo y donde sale, positivo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo uniforme de fondo
+  \foreach \y in {-1.5,-0.75,0,0.75,1.5} {
+    \draw[figvecaux] (-3.6,\y) -- (-2.6,\y);
+  }
+  \node[figlblaux, above=2pt] at (-3.1,1.55) {$\vec v$};
+
+  % superficie cerrada
+  \draw[figline, fill=figblue!6] (0,0) circle (1.6);
+
+  % normales salientes
+  \foreach \a in {0,45,...,315} {
+    \draw[figvec, figgray] (\a:1.6) -- (\a:2.25);
+  }
+  \node[figlblaux, right=2pt] at (2.3,0) {$\hat n$ (siempre saliente)};
+
+  % líneas de campo que atraviesan
+  \foreach \y in {-1.0,-0.35,0.35,1.0} {
+    \draw[figvecres] (-2.45,\y) -- (2.45,\y);
+  }
+
+  % rótulos de entrada y salida
+  \node[figlbl, figblue, align=center] at (-2.35,-2.15)
+    {entra: $\vec v \cdot \hat n < 0$\\ flujo \textbf{negativo}};
+  \node[figlbl, figred, align=center] at (2.35,-2.15)
+    {sale: $\vec v \cdot \hat n > 0$\\ flujo \textbf{positivo}};
+  \node[figlbl] at (0,-3.0) {$\displaystyle \Phi = \oint_S \vec v \cdot d\vec A$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Sin una convención, el signo de $\Phi$ sería arbitrario: una
+superficie abierta admite dos normales opuestas y ambas son igual de válidas.
+En una superficie \textbf{cerrada} el criterio ``$\hat n$ hacia afuera'' la fija
+sin ambigüedad, y entonces el signo del flujo pasa a significar algo:
+\textbf{sale más de lo que entra} o al revés.}
+\end{center}

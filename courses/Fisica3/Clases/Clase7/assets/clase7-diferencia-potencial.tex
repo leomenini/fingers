@@ -1,0 +1,43 @@
+% Clase 7 --- Diferencia de potencial como integral de línea del campo (§6.2).
+% V_B - V_A = -int_A^B E . dl. Como la fuerza es conservativa, el camino no
+% importa: los dos caminos dibujados dan lo mismo. El signo menos viene de que
+% V mide la energía POR UNIDAD DE CARGA que hay que entregar.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo de fondo (no uniforme, sólo indicativo)
+  \foreach \x in {-2.6,-1.3,0,1.3,2.6} {
+    \foreach \y in {-1.3,0,1.3} {
+      \draw[figvecaux] (\x,\y) -- ++(0.75,-0.2);
+    }
+  }
+  \node[figlblaux, anchor=west] at (-3.5,1.75) {$\vec E$};
+
+  % puntos A y B
+  \node[figneutra, minimum size=6pt] (A) at (-2.4,-1.05) {};
+  \node[figlbl, below left=1pt] at (A) {$A$};
+  \node[figneutra, minimum size=6pt] (B) at (2.6,1.15) {};
+  \node[figlbl, above right=1pt] at (B) {$B$};
+
+  % dos caminos
+  \draw[figvecres, line width=1.4pt] (A) to[bend left=38] (B);
+  \draw[figvec] (A) to[bend right=32] (B);
+  \node[figlbl, figred, anchor=south east] at (-0.5,1.35) {$C_1$};
+  \node[figlbl, figblue, anchor=north west] at (0.4,-1.55) {$C_2$};
+
+  % un dl sobre el camino rojo
+  \draw[figvecres, line width=1.8pt] (-0.15,1.02) -- (0.5,1.12);
+  \node[figlbl, figred, anchor=south] at (0.2,1.15) {$d\vec l$};
+
+  % resultado
+  \node[figlbl, align=center] at (0,-2.5)
+    {$\displaystyle V_B - V_A = -\int_A^B \vec E \cdot d\vec l$
+     \quad (igual por $C_1$ que por $C_2$)};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La independencia del camino no es un detalle técnico: es lo que
+hace que $V$ \textbf{exista} como función de la posición. Si el trabajo
+dependiera del recorrido, no se podría asignar un número a cada punto. Nótese
+además que $V$ no depende de la carga de prueba ---los $Q_0$ se cancelan al
+dividir---: es una propiedad del \textbf{campo}, no de quien lo explora.}
+\end{center}

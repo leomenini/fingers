@@ -1,0 +1,75 @@
+% Clase 3 --- Cascarón esférico con densidad superficial uniforme (§2).
+% (a) Fuera (r > R): se comporta EXACTAMENTE como si toda Q estuviera en el
+%     centro.  (b) Dentro (r < R): la fuerza neta es cero. El panel (b) muestra
+%     por qué el resultado es sorprendente y por qué igual se cancela: el
+%     casquete cercano está más cerca pero es más chico; el lejano está más
+%     lejos pero es proporcionalmente más grande.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) fuera del cascarón ===============
+  \begin{scope}
+    \draw[figline] (0,0) circle (1.35);
+    \foreach \a in {0,30,...,330} {\node[figlbl,figred,scale=0.7] at (\a:1.35){$+$};}
+    % carga puntual equivalente en el centro
+    \node[figpos, minimum size=7pt, draw=figred, dashed] at (0,0) {};
+    \node[figlblaux, below left=1pt] at (0,0) {$O$};
+    \node[figlblaux, figred, below right=0pt] at (0.05,-0.05) {$Q$};
+    \draw[figaxis] (0,0) -- (58:1.35);
+    \node[figlblaux, above left=-1pt] at (58:0.75) {$R$};
+    \node[figlbl, figblue, above] at (0,1.5) {$\sigma$ uniforme, \ carga total $Q$};
+
+    % carga exterior
+    \node[figpos] (p) at (3.3,0) {};
+    \node[figlbl, above=4pt] at (p) {$q_0$};
+    \draw[figvecaux] (0,0) -- (3.15,0);
+    \node[figlblaux, below=2pt] at (2.2,0) {$r > R$};
+    \draw[figvecres] (p) -- (4.35,0);
+    \node[figlbl, figred, above=2pt] at (3.95,0) {$\vec F$};
+
+    \node[figlbl, align=center] at (1.6,-2.15)
+      {$F = \dfrac{q_0 Q}{4\pi\varepsilon_0\,r^{2}}$: \ \textbf{como si toda
+       $Q$}\\[1pt] \textbf{estuviera en el centro}};
+    \node[figlbl] at (1.6,-3.5) {(a) fuera ($r > R$)};
+  \end{scope}
+
+  % =============== (b) dentro del cascarón ===============
+  \begin{scope}[xshift=8.0cm]
+    \draw[figline] (0,0) circle (1.35);
+    \foreach \a in {0,30,...,330} {\node[figlbl,figred,scale=0.7] at (\a:1.35){$+$};}
+
+    % carga interior, descentrada
+    \node[figpos] (c) at (0.65,0) {};
+    \node[figlbl, below=4pt] at (c) {$q_0$};
+
+    % cono hacia el casquete cercano (chico, cerca)
+    \draw[figaux, line width=0.5pt] (c) -- (14:1.35);
+    \draw[figaux, line width=0.5pt] (c) -- (-14:1.35);
+    \draw[figred, line width=2.2pt] (-14:1.35) arc (-14:14:1.35);
+    \node[figlblaux, right=3pt, align=left] at (1.4,0.45) {cerca,\\ poca carga};
+
+    % cono hacia el casquete lejano (grande, lejos)
+    \draw[figaux, line width=0.5pt] (c) -- (166:1.35);
+    \draw[figaux, line width=0.5pt] (c) -- (194:1.35);
+    \draw[figred, line width=2.2pt] (152:1.35) arc (152:208:1.35);
+    \node[figlblaux, left=3pt, align=right] at (-1.45,0.5) {lejos,\\ mucha carga};
+
+    % contribuciones iguales y opuestas
+    \draw[figvec] (c) -- ++(-0.85,0);
+    \draw[figvec] (c) -- ++(0.85,0);
+    \node[figlbl, figblue, above=3pt] at (0.15,0.05) {$d\vec F_1$};
+    \node[figlbl, figblue, above=3pt] at (1.2,0.05) {$d\vec F_2$};
+
+    \node[figlbl, figred, align=center] at (0,-2.15)
+      {$\vec F = 0$ \ en \textbf{todo} punto interior};
+    \node[figlbl] at (0,-3.5) {(b) dentro ($r < R$)};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El resultado de adentro es sorprendente: el casquete cercano
+está más próximo ---y la fuerza va con $1/r^{2}$--- pero abarca menos carga; el
+lejano está más lejos pero abarca proporcionalmente más. Las dos dependencias se
+compensan \textbf{exactamente}. Ambos resultados se demostrarán con la
+\textbf{ley de Gauss}; por Coulomb directo la integral sobre la esfera es
+laboriosa.}
+\end{center}

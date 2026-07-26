@@ -1,0 +1,59 @@
+% Clase 4 --- Capacitor de placas paralelas como superposición de dos planos
+% infinitos (§5.2). Cada placa aporta sigma/(2 eps0); entre las placas los dos
+% campos se SUMAN (E = sigma/eps0) y fuera se CANCELAN (E = 0).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % placas
+  \draw[figline, line width=1.8pt] (-3.0,1.2) -- (3.0,1.2);
+  \foreach \x in {-2.75,-2.25,...,2.8} {\node[figlbl,figred,scale=0.7] at (\x,1.42){$+$};}
+  \node[figlbl, figred, right=3pt] at (3.0,1.3) {$+\sigma$};
+
+  \draw[figline, line width=1.8pt] (-3.0,-1.2) -- (3.0,-1.2);
+  \foreach \x in {-2.75,-2.25,...,2.8} {\node[figlbl,figblue,scale=0.7] at (\x,-1.42){$-$};}
+  \node[figlbl, figblue, right=3pt] at (3.0,-1.3) {$-\sigma$};
+
+  % campo entre las placas: uniforme, de + a -
+  \foreach \x in {-2.3,-1.5,...,2.4} {
+    \draw[figvecres] (\x,1.05) -- (\x,-1.0);
+  }
+  \node[figlbl, figred, align=center] at (0,0.15)
+    {$E = \dfrac{\sigma}{\varepsilon_0}$};
+
+  % fuera: campo nulo (los dos aportes se cancelan)
+  \node[figlbl, align=center] at (0,2.0) {fuera: $E = 0$};
+  \node[figlbl, align=center] at (0,-2.0) {fuera: $E = 0$};
+
+  % ---- detalle: aportes de cada placa, región por región ----
+  \begin{scope}[xshift=-5.6cm]
+    % placas de referencia
+    \draw[figaux, line width=0.8pt] (-0.55,1.2) -- (1.35,1.2);
+    \node[figlblaux, figred, left=2pt] at (-0.55,1.2) {$+\sigma$};
+    \draw[figaux, line width=0.8pt] (-0.55,-1.2) -- (1.35,-1.2);
+    \node[figlblaux, figblue, left=2pt] at (-0.55,-1.2) {$-\sigma$};
+
+    % región de arriba: se cancelan
+    \draw[figvec] (0.25,1.45) -- (0.25,2.1);
+    \draw[figvec, figred] (0.75,2.1) -- (0.75,1.45);
+    \node[figlblaux, right=3pt] at (0.95,1.78) {se cancelan};
+
+    % región de en medio: se suman
+    \draw[figvec] (0.25,0.9) -- (0.25,-0.9);
+    \draw[figvec, figred] (0.75,0.9) -- (0.75,-0.9);
+    \node[figlblaux, right=3pt] at (0.95,0) {se suman};
+
+    % región de abajo: se cancelan
+    \draw[figvec] (0.25,-1.45) -- (0.25,-2.1);
+    \draw[figvec, figred] (0.75,-2.1) -- (0.75,-1.45);
+    \node[figlblaux, right=3pt] at (0.95,-1.78) {se cancelan};
+
+    \node[figlblaux, align=center] at (0.4,2.6)
+      {aporte de $+\sigma$ (azul)\\ y de $-\sigma$ (rojo)};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Cada placa, tomada como plano infinito, produce
+$\sigma/(2\varepsilon_0)$ a ambos lados. \textbf{Entre} las placas los dos
+aportes apuntan igual (de $+$ a $-$) y se suman a $\sigma/\varepsilon_0$;
+\textbf{fuera} apuntan al revés y se cancelan. Vale salvo cerca de los bordes.}
+\end{center}

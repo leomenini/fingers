@@ -1,0 +1,54 @@
+% Clase 8 --- Potencial de un dipolo en un punto arbitrario (§4).
+% Exacto: V = (Q/4 pi eps0)(1/r+ - 1/r-). Lejos (r >> d) las dos rectas hacia P
+% son casi paralelas y la diferencia de caminos es d cos(theta): de ahí sale
+% V = p . r_hat / (4 pi eps0 r^2), que decae como 1/r^2, no como 1/r.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % cargas
+  \node[figpos] (mas) at (0,0.6) {};
+  \node[figlbl, anchor=east] at (-0.15,0.6) {$+Q$};
+  \node[figneg] (men) at (0,-0.6) {};
+  \node[figlbl, anchor=east] at (-0.15,-0.6) {$-Q$};
+
+  % momento dipolar
+  \draw[figvecres, line width=1.4pt] (-0.62,-0.6) -- (-0.62,0.6);
+  \node[figlbl, figred, anchor=east] at (-0.68,0.0) {$\vec p$};
+
+  % punto P
+  \node[figneutra, minimum size=5pt] (P) at (4.3,2.35) {};
+  \node[figlbl, anchor=south west] at (4.35,2.4) {$P$};
+
+  % distancias
+  \draw[figvec] (mas) -- (P);
+  \node[figlblaux, anchor=south east] at (2.4,1.75) {$r_+$};
+  \draw[figvec] (men) -- (P);
+  \node[figlblaux, anchor=north west] at (2.3,0.8) {$r_-$};
+
+  % eje del dipolo y ángulo theta
+  \draw[figaux] (0,0) -- (4.3,2.35);
+  \draw[figaux] (0,-0.05) -- (0,2.4);
+  \draw[figvecaux] (0,1.5) arc (90:28.7:1.5);
+  \node[figlblaux] at (58:1.75) {$\theta$};
+  \node[figlblaux, anchor=north west] at (1.7,1.05) {$r$};
+
+  % diferencia de caminos, lejos
+  \draw[figred, line width=1.2pt] (0,-0.6) -- ++(28.7:1.05);
+  \draw[figaux, line width=0.6pt] (0,0.6) -- (0.92,0.5);
+  \node[figlbl, figred, anchor=north west] at (0.95,-0.25) {$d\cos\theta$};
+
+  % lectura
+  \node[figlbl, align=left, anchor=west] at (5.1,1.0)
+    {$V = \dfrac{Q}{4\pi\varepsilon_0}
+      \left(\dfrac{1}{r_+} - \dfrac{1}{r_-}\right)$};
+  \node[figlbl, figred, align=left, anchor=west] at (5.1,-0.35)
+    {$r \gg d$: \ $V \simeq \dfrac{p\cos\theta}{4\pi\varepsilon_0 r^{2}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Visto de lejos, las dos rectas hacia $P$ son casi paralelas y lo
+único que las distingue es el tramo extra $d\cos\theta$ que recorre la que sale
+de $-Q$. Esa diferencia es la que sobrevive: el potencial del dipolo decae como
+$1/r^{2}$ (y no como $1/r$, que es lo que daría una carga neta) porque
+\textbf{la carga total es cero}. Sobre el plano bisector, $\theta = 90^\circ$ y
+$V=0$ ---aunque el campo ahí \textbf{no} es nulo.}
+\end{center}

@@ -1,0 +1,34 @@
+% Clase 8 --- V(z) del disco: continuo pero NO derivable en z = 0 (§8.1).
+% El termino -|z| produce un pico. Como E = -dV/dz, el pico del potencial es
+% exactamente la discontinuidad del campo al atravesar el disco.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  fisfig,
+  width=11.5cm, height=6.0cm,
+  xlabel={$z$}, ylabel={$V(z)$},
+  every axis x label/.style={at={(ticklabel* cs:1.0)}, anchor=west},
+  xmin=-2.6, xmax=2.6, ymin=0, ymax=1.25,
+  axis lines=left,
+  xtick={0}, xticklabels={$0$},
+  ytick={1}, yticklabels={$\frac{\sigma R}{2\varepsilon_0}$},
+]
+  % V(z) = (sigma/2eps0)(sqrt(R^2+z^2) - |z|), con R = 1 y normalizado a 1 en z=0
+  \addplot[figblue, line width=1.3pt, domain=-2.55:2.55, samples=250]
+    {sqrt(1+x*x) - abs(x)};
+
+  % marca del pico
+  \draw[figgray, dashed, line width=0.6pt] (axis cs:-2.55,1) -- (axis cs:0,1);
+  \node[figlbl, figred, anchor=south] at (axis cs:0,1.02) {pico: no derivable};
+  \node[figlblaux, anchor=north west] at (axis cs:0.35,0.86)
+    {continua en $z=0$};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape $V = \frac{\sigma}{2\varepsilon_0}\bigl(\sqrt{R^{2}+z^{2}} -
+|z|\bigr)$ es \textbf{continua} al atravesar el disco: vale
+$\sigma R/2\varepsilon_0$ por los dos lados. Pero el $-|z|$ le deja un
+\textbf{pico}: la derivada salta. Y como el campo es (menos) la derivada del
+potencial, ese pico \emph{es} la discontinuidad de $\vec E$ al cruzar la
+lámina ---apunta hacia un lado abajo y hacia el otro arriba. Continuidad de $V$
+y discontinuidad de $\vec E$ son la misma afirmación vista de dos maneras.}
+\end{center}

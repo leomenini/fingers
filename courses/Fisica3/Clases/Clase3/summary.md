@@ -255,7 +255,7 @@ El campo eléctrico total es la **suma vectorial** de los campos individuales. E
 - Punto de observación sobre el **eje $X$** (plano bisector), a distancia $x$ del origen.
 
 **Análisis de simetría:**
-- Por simetría, las componentes $Y$ de los campos de las dos cargas se cancelan.
+- Por simetría, las componentes $X$ de los campos de las dos cargas se cancelan (son opuestas); las componentes $Y$ se suman.
 - El campo resultante apunta en la dirección $-Y$ (hacia abajo, de la carga positiva a la negativa).
 - Los módulos son iguales: $|E_1| = |E_2| = \frac{Q}{4\pi\varepsilon_0 (x^2 + a^2)}$.
 

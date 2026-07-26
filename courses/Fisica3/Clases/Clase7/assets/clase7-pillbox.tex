@@ -1,0 +1,44 @@
+% Clase 7 --- Cilindro achatado ("pillbox") justo afuera de un conductor (§3.2).
+% Una tapa afuera (aporta ES) y otra dentro del conductor (aporta 0 porque
+% E = 0). La lateral no aporta si E es normal. Resultado: E = sigma/eps0.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % material del conductor (abajo)
+  \fill[figgray!14] (-3.3,-1.7) rectangle (3.3,0);
+  \draw[figline, line width=1.2pt] (-3.3,0) -- (3.3,0);
+  \node[figlblaux] at (0,-1.25) {conductor: \ $\vec E = 0$};
+
+  % densidad superficial
+  \foreach \x in {-3.05,-2.6,...,3.1} {\node[figlbl,figred,scale=0.7] at (\x,0.22){$+$};}
+  \node[figlbl, figred, anchor=west] at (3.45,0.22) {$\sigma$};
+
+  % pillbox
+  \draw[figred, dashed, line width=1.1pt] (-0.9,-0.5) rectangle (0.9,0.5);
+
+  % rótulo de la gaussiana, con guía
+  \draw[figaux, line width=0.5pt] (-0.9,0.5) -- (-2.0,1.35);
+  \node[figlbl, figred, anchor=east] at (-2.05,1.35) {gaussiana};
+
+  % tapas, con guías a la derecha
+  \draw[figaux, line width=0.5pt] (0.9,0.5) -- (2.0,1.35);
+  \node[figlblaux, anchor=west] at (2.05,1.35) {tapa afuera: $\Phi = ES$};
+  \draw[figaux, line width=0.5pt] (0.9,-0.5) -- (2.0,-1.0);
+  \node[figlblaux, anchor=west] at (2.05,-1.0) {tapa adentro: $\Phi = 0$};
+
+  % campo saliente
+  \foreach \x in {-0.45,0,0.45} {\draw[figvecres] (\x,0.5) -- (\x,1.8);}
+  \node[figlbl, figred, anchor=west] at (0.55,1.55) {$\vec E$};
+
+  % lateral, con guía a la izquierda
+  \draw[figvec] (-0.9,-0.15) -- (-1.55,-0.15);
+  \node[figlblaux, anchor=east, align=right] at (-1.6,-0.8)
+    {lateral: $\hat n \perp \vec E$,\\ no aporta};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La caja tiene que ser \textbf{cerrada} ---por eso un cilindro y
+no una tapa suelta---, y muy achatada para que el $\sigma$ que se usa sea el del
+punto. Lo que hace aparecer $\sigma/\varepsilon_0$ y no $\sigma/2\varepsilon_0$
+es que \textbf{sólo una} tapa aporta: la de adentro está en la región donde
+$\vec E = 0$.}
+\end{center}

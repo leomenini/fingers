@@ -1,0 +1,83 @@
+% Clase 6 --- Elección de la superficie gaussiana (§5.1 y §5.2).
+% La misma estrategia en los dos casos: elegir una superficie con la simetría
+% del problema, de modo que sobre cada cara E sea CONSTANTE y PARALELO o
+% PERPENDICULAR a n. Así el flujo sale sin integrar.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) línea infinita: cilindro coaxial ===============
+  \begin{scope}
+    % línea cargada
+    \draw[figline, line width=1.6pt] (0,-2.3) -- (0,2.3);
+    \foreach \y in {-2.0,-1.4,...,2.1} {\node[figlbl,figred,scale=0.65] at (-0.2,\y){$+$};}
+    \node[figlbl, figblue, above=2pt] at (0,2.35) {$\lambda$};
+
+    % cilindro coaxial
+    \draw[figaux] (0,1.0) ellipse (1.25 and 0.4);
+    \draw[figaux] (0,-1.0) ellipse (1.25 and 0.4);
+    \draw[figaux] (-1.25,1.0) -- (-1.25,-1.0);
+    \draw[figaux] (1.25,1.0) -- (1.25,-1.0);
+    \node[figlblaux, anchor=south] at (0.65,-0.97) {$r$};
+    \draw[figvecaux] (0.62,-1.0) -- (0,-1.0);
+    \draw[figvecaux] (0.68,-1.0) -- (1.25,-1.0);
+    \draw[figvecaux] (2.55,0.12) -- (2.55,1.0);
+    \draw[figvecaux] (2.55,-0.12) -- (2.55,-1.0);
+    \node[figlblaux, anchor=west] at (2.6,0) {$h$};
+
+    % campo radial en la lateral
+    \foreach \y in {-0.55,0,0.55} {
+      \draw[figvecres] (0.15,\y) -- (1.95,\y);
+    }
+    \node[figlbl, figred, right=2pt] at (1.95,0.55) {$\vec E$};
+
+    % tapas: E perpendicular a n
+    \draw[figvec] (-0.7,1.4) -- (-0.7,2.0);
+    \node[figlblaux, anchor=east] at (-0.8,1.75) {$\hat n \perp \vec E$};
+
+    \node[figlbl, align=center] at (0,-3.0)
+      {$E\,(2\pi r h) = \dfrac{\lambda h}{\varepsilon_0}
+        \ \Rightarrow\ E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$};
+    \node[figlbl] at (0,-3.85) {(a) línea infinita};
+  \end{scope}
+
+  % =============== (b) plano infinito: pastilla simétrica ===============
+  \begin{scope}[xshift=7.6cm]
+    % plano visto de canto
+    \draw[figline, line width=1.6pt] (-2.4,0) -- (2.4,0);
+    \foreach \x in {-2.2,-1.7,...,2.3} {\node[figlbl,figred,scale=0.65] at (\x,0.18){$+$};}
+    \node[figlblaux, left=2pt] at (-2.4,0) {$\cdots$};
+    \node[figlblaux, right=2pt] at (2.4,0) {$\cdots$};
+    \node[figlbl, figblue, anchor=west] at (2.45,-0.35) {$\sigma$};
+
+    % pastilla cilíndrica atravesando el plano
+    \draw[figaux] (0,1.0) ellipse (1.1 and 0.34);
+    \draw[figaux] (0,-1.0) ellipse (1.1 and 0.34);
+    \draw[figaux] (-1.1,1.0) -- (-1.1,-1.0);
+    \draw[figaux] (1.1,1.0) -- (1.1,-1.0);
+    \node[figlblaux, anchor=east] at (-1.2,1.05) {tapa de área $S$};
+
+    % campo saliente por las dos tapas
+    \foreach \x in {-0.55,0,0.55} {
+      \draw[figvecres] (\x,0.25) -- (\x,1.85);
+      \draw[figvecres] (\x,-0.25) -- (\x,-1.85);
+    }
+    \node[figlbl, figred, right=3pt] at (0.6,1.5) {$\vec E$};
+    \node[figlbl, figred, right=3pt] at (0.6,-1.5) {$\vec E$};
+
+    % lateral
+    \draw[figvec] (1.1,0.45) -- (1.85,0.45);
+    \node[figlblaux, right=1pt] at (1.85,0.45) {$\hat n \perp \vec E$};
+
+    \node[figlbl, align=center] at (0,-3.0)
+      {$2ES = \dfrac{\sigma S}{\varepsilon_0}
+        \ \Rightarrow\ E = \dfrac{\sigma}{2\varepsilon_0}$};
+    \node[figlbl] at (0,-3.85) {(b) plano infinito};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La simetría es lo que hace el trabajo: en (a) $\vec E$ es radial
+y constante sobre la lateral, y las tapas no aportan; en (b) $\vec E$ es
+perpendicular al plano y son las tapas las que aportan ---las dos, por eso
+aparece el factor 2--- mientras que la lateral no. En ambos casos el área
+encerrada se cancela y queda $E$ despejado en una línea.}
+\end{center}

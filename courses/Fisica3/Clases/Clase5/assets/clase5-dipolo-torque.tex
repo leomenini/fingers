@@ -1,0 +1,50 @@
+% Clase 5 --- Dipolo rígido en campo uniforme (§2).
+% Las dos fuerzas son iguales y opuestas: la fuerza NETA es cero (no se
+% traslada), pero forman un PAR y el dipolo rota hasta alinearse con E.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo uniforme de fondo
+  \foreach \y in {-1.7,-0.85,0,0.85,1.7} {
+    \draw[figvecaux] (-2.9,\y) -- (-1.9,\y);
+  }
+  \node[figlblaux, above=2pt] at (-2.4,1.75) {$\vec E$ uniforme};
+
+  % barra rígida del dipolo, inclinada theta respecto de E
+  \draw[figline, line width=1.4pt] (-1.15,-1.0) -- (1.15,1.0);
+  \node[figpos, minimum size=8pt] (mas) at (1.15,1.0) {};
+  \node[figlbl, above=3pt] at (mas) {$+Q$};
+  \node[figneg, minimum size=8pt] (men) at (-1.15,-1.0) {};
+  \node[figlbl, below=3pt] at (men) {$-Q$};
+
+  % momento dipolar p (de - a +)
+  \draw[figvecres, line width=1.5pt] (-0.85,-0.74) -- (0.85,0.74);
+  \node[figlbl, figred, above left=0pt] at (0.45,0.35) {$\vec p$};
+
+  % fuerzas: +QE hacia la derecha, -QE hacia la izquierda
+  \draw[figvec] (mas) -- ++(1.35,0);
+  \node[figlbl, figblue, below=3pt] at (2.0,1.0) {$+Q\vec E$};
+  \draw[figvec] (men) -- ++(-1.35,0);
+  \node[figlbl, figblue, above=3pt] at (-2.0,-1.0) {$-Q\vec E$};
+
+  % eje del campo por el centro y ángulo theta
+  \draw[figaux] (-1.7,0) -- (1.7,0);
+  \draw[figvecaux] (0.85,0) arc (0:41:0.85);
+  \node[figlbl] at (20:1.05) {$\theta$};
+
+  % sentido de rotación
+  \draw[figvecres] (152:1.7) arc (152:108:1.7);
+  \node[figlbl, figred, above right=0pt] at (108:1.75) {rota};
+
+  % resultados
+  \node[figlbl, align=center] at (0,-2.9)
+    {$\vec F_{\text{total}} = +Q\vec E - Q\vec E = 0$ \ (no se traslada)\\[3pt]
+     $\boldsymbol\tau = \vec p \times \vec E$, \ $\tau = -pE\sen\theta$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos fuerzas tienen el mismo módulo y sentidos opuestos, pero
+\textbf{no están sobre la misma recta}: forman un par. Por eso la fuerza neta es
+nula y aun así hay torque. El signo negativo indica que $\boldsymbol\tau$ es
+\textbf{restitutivo}: siempre tiende a llevar $\vec p$ hacia $\vec E$, donde
+$\theta=0$ y el torque se anula.}
+\end{center}

@@ -1,0 +1,56 @@
+% Clase 7 --- Por qué Gauss NO alcanza para sigma_interna = 0 (§2.2).
+% (a) Configuración que Gauss no prohíbe: carga neta interna cero, pero con
+%     zonas + y - que se cancelan y líneas de campo cruzando la cavidad.
+% (b) Lo que la descarta es la ESTABILIDAD: esas cargas sentirían el campo y se
+%     moverían, así que no puede ser un equilibrio.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) lo que Gauss permite ===============
+  \begin{scope}
+    \draw[figline, fill=figgray!14] (0,0) circle (2.0);
+    \draw[figline, fill=white] (0,0) circle (1.05);
+
+    % densidades opuestas en la cara interna
+    \foreach \a in {105,130,...,255} {
+      \node[figlbl,figred,scale=0.7] at (\a:1.05) {$+$};
+    }
+    \foreach \a in {-75,-50,...,75} {
+      \node[figlbl,figblue,scale=0.7] at (\a:1.05) {$-$};
+    }
+
+    % líneas cruzando la cavidad
+    \foreach \y in {-0.45,0,0.45} {
+      \draw[figvecres] (-0.85,\y) -- (0.85,\y);
+    }
+    \node[figlblaux, anchor=north] at (0,-2.15) {$\vec E \neq 0$ en la cavidad};
+
+    \node[figlbl, align=center] at (0,-3.15)
+      {$Q_{\text{int}} = 0$: \ Gauss \textbf{no} lo prohíbe};
+    \node[figlbl] at (0,-4.1) {(a) sólo con Gauss};
+  \end{scope}
+
+  % =============== (b) lo que descarta la estabilidad ===============
+  \begin{scope}[xshift=7.2cm]
+    \draw[figline, fill=figgray!14] (0,0) circle (2.0);
+    \draw[figline, fill=white] (0,0) circle (1.05);
+    \node[figlblaux] at (0,0.25) {$\vec E = 0$};
+    \node[figlblaux] at (0,-0.3) {$\sigma_{\text{int}} = 0$};
+
+    % las cargas se moverían: flechas de migración
+    \draw[figvecres] (120:1.15) arc (120:65:1.15);
+    \draw[figvecres] (240:1.15) arc (240:295:1.15);
+    \node[figlblaux, anchor=south east] at (-2.15,1.65) {se moverían};
+
+    \node[figlbl, align=center] at (0,-3.15)
+      {en equilibrio \textbf{no} puede haber campo\\ donde hay portadores libres};
+    \node[figlbl] at (0,-4.1) {(b) con Gauss \emph{y} estabilidad};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Gauss sólo dice que la carga \textbf{neta} de la cara interna es
+cero, y eso lo cumple también el panel (a), con zonas $+$ y $-$ que se
+compensan. Hace falta un segundo ingrediente: si hubiera esas densidades habría
+campo en la cavidad, las cargas de la superficie se moverían y no sería un
+equilibrio. \textbf{Gauss no alcanza; hay que agregar la estabilidad.}}
+\end{center}

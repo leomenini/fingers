@@ -1,0 +1,46 @@
+% Clase 9 --- V(r) y E(r) del cascarón, uno debajo del otro (§3.3).
+% V es CONTINUO pero con un quiebre en r = R; E es DISCONTINUO ahí. Las dos
+% cosas son la misma: E = -dV/dr, y la derivada de un quiebre salta.
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+  fisfig,
+  name=vplot,
+  width=11cm, height=4.4cm,
+  ylabel={$V(r)$},
+  xmin=0, xmax=3.6, ymin=0, ymax=1.35,
+  xtick={1}, xticklabels={$R$},
+  ytick={1}, yticklabels={$\frac{Q}{4\pi\varepsilon_0 R}$},
+  xticklabel style={font=\footnotesize},
+]
+  \addplot[figblue, line width=1.3pt, domain=0:1, samples=2] {1};
+  \addplot[figblue, line width=1.3pt, domain=1:3.55, samples=120] {1/x};
+  \draw[figgray, dashed, line width=0.6pt] (axis cs:1,0) -- (axis cs:1,1);
+  \node[figlblaux, anchor=west] at (axis cs:1.1,1.12) {continuo, con \textbf{quiebre}};
+\end{axis}
+
+\begin{axis}[
+  fisfig,
+  at={(vplot.below south west)}, anchor=above north west,
+  width=11cm, height=4.4cm,
+  xlabel={$r$}, ylabel={$E(r)$},
+  xmin=0, xmax=3.6, ymin=0, ymax=1.35,
+  xtick={1}, xticklabels={$R$},
+  ytick={1}, yticklabels={$\frac{Q}{4\pi\varepsilon_0 R^{2}}$},
+  xticklabel style={font=\footnotesize},
+]
+  \addplot[figred, line width=1.3pt, domain=0:1, samples=2] {0};
+  \addplot[figred, line width=1.3pt, domain=1:3.55, samples=120] {1/(x*x)};
+  \draw[figred, dashed, line width=1.1pt] (axis cs:1,0) -- (axis cs:1,1);
+  \node[figlblaux, anchor=west] at (axis cs:1.1,1.12) {\textbf{salta} en $r=R$};
+\end{axis}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Adentro el cascarón es un \textbf{volumen equipotencial}: $V$
+constante, y por eso $E=0$ (la derivada de una constante). Afuera se comporta
+como una carga puntual. Lo importante es la relación entre los dos gráficos:
+$E = -dV/dr$, así que el \textbf{quiebre} de $V$ en $r=R$ ---donde la pendiente
+pasa de $0$ a un valor no nulo--- es exactamente el \textbf{salto} de $E$.
+Potencial continuo y campo discontinuo no son dos hechos, sino uno.}
+\end{center}

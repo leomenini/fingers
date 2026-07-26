@@ -1,0 +1,56 @@
+% Clase 9 --- Equipotenciales de los tres casos canónicos (§2.3).
+% Siempre perpendiculares a las líneas de campo. Sólo en el capacitor coinciden
+% "equiespaciadas en voltaje" y "equiespaciadas en distancia", porque ahí el
+% campo es uniforme.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) carga puntual ===============
+  \begin{scope}
+    \foreach \r in {0.6,1.05,1.6,2.25} { \draw[figline] (0,0) circle (\r); }
+    \foreach \a in {0,45,...,315} { \draw[figvecres] (\a:0.32) -- (\a:2.5); }
+    \node[figpos, minimum size=8pt] at (0,0) {};
+    \node[figlbl, align=center] at (0,-3.0) {(a) carga puntual:\\ esferas};
+  \end{scope}
+
+  % =============== (b) placas paralelas ===============
+  \begin{scope}[xshift=6.4cm]
+    \draw[figline, line width=1.7pt] (-1.7,1.5) -- (1.7,1.5);
+    \foreach \x in {-1.5,-1.0,...,1.6} {\node[figlbl,figred,scale=0.65] at (\x,1.7){$+$};}
+    \draw[figline, line width=1.7pt] (-1.7,-1.5) -- (1.7,-1.5);
+    \foreach \x in {-1.5,-1.0,...,1.6} {\node[figlbl,figblue,scale=0.65] at (\x,-1.7){$-$};}
+    % equipotenciales: planos equiespaciados
+    \foreach \y in {-0.9,-0.3,0.3,0.9} { \draw[figline] (-1.5,\y) -- (1.5,\y); }
+    % campo uniforme
+    \foreach \x in {-1.15,-0.4,0.4,1.15} { \draw[figvecres] (\x,1.4) -- (\x,-1.4); }
+    \node[figlbl, align=center] at (0,-3.0) {(b) placas paralelas:\\ planos equiespaciados};
+  \end{scope}
+
+  % =============== (c) dipolo ===============
+  \begin{scope}[xshift=13.0cm]
+    \coordinate (p) at (-1.05,0);
+    \coordinate (n) at (1.05,0);
+    % líneas de campo
+    \draw[figvecres] (-0.72,0) -- (0.72,0);
+    \foreach \b in {35,68} {
+      \draw[figvecres] ($(p)+(\b:0.3)$) to[bend left=\b] ($(n)+(180-\b:0.3)$);
+      \draw[figvecres] ($(p)+(-\b:0.3)$) to[bend right=\b] ($(n)+(\b-180:0.3)$);
+    }
+    % equipotenciales: el plano bisector (V = 0) y dos lóbulos
+    \draw[figline, line width=1.1pt] (0,-2.3) -- (0,2.3);
+    \node[figlbl, figblue, anchor=south west] at (0.06,1.75) {$V=0$};
+    \draw[figline] (-1.05,0) circle (0.72);
+    \draw[figline] (1.05,0) circle (0.72);
+    \node[figpos, minimum size=8pt] at (p) {};
+    \node[figneg, minimum size=8pt] at (n) {};
+    \node[figlbl, align=center] at (0,-3.0) {(c) dipolo:\\ plano bisector $V=0$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las curvas azules son \textbf{equipotenciales} y las rojas
+líneas de campo: se cortan siempre en ángulo recto. En (a) las esferas se
+aprietan al acercarse a la carga porque el campo crece. En (b) ---y sólo en
+(b)--- están además equiespaciadas en distancia, porque el campo es uniforme. En
+(c) el plano bisector es la equipotencial $V=0$: ahí el potencial se anula, pero
+el campo \textbf{no}, y de hecho lo cruza perpendicularmente.}
+\end{center}
