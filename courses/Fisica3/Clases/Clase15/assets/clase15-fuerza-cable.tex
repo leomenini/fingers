@@ -1,0 +1,56 @@
+% Clase 15 --- De la fuerza sobre cada portador a F = I L x B (§4.1).
+% La barra sobre rieles que planteó el docente. Lo que la figura tiene que dejar
+% claro es de dónde sale la fórmula: no es una ley nueva, es la suma de las
+% fuerzas sobre los portadores del tramo, reescrita con cantidades macroscópicas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % región con campo entrante
+  \fill[figblue!5] (-2.9,-1.5) rectangle (2.9,1.9);
+  \draw[figgray, line width=0.7pt] (-2.9,-1.5) rectangle (2.9,1.9);
+  \foreach \x in {-2.4,-1.6,-0.8,0,0.8,1.6,2.4} {
+    \foreach \y in {-1.05,-0.35,1.45} { \node[figblue, scale=0.55] at (\x,\y) {$\otimes$}; }
+  }
+  \node[figlblaux, anchor=south east] at (2.85,1.95) {$\vec B$ entrante};
+
+  % rieles
+  \draw[figgray, line width=1.2pt] (-2.6,0.55) -- (2.6,0.55);
+  \draw[figgray, line width=1.2pt] (-2.6,-0.55) -- (2.6,-0.55);
+  \node[figlblaux, anchor=east] at (-2.65,0.55) {rieles};
+
+  % la barra
+  \draw[figblue, line width=2.2pt] (0.4,-0.55) -- (0.4,0.55);
+  \node[figlbl, figblue, anchor=south] at (0.4,0.95) {la barra};
+
+  % corriente y vector L
+  \draw[figvecres, line width=1.1pt] (0.4,-0.35) -- (0.4,0.35);
+  \node[figlbl, figred, anchor=east] at (0.32,0) {$\vec L$};
+  \node[figlblaux, anchor=west] at (-2.55,-0.15) {$I$};
+  \draw[figvecres] (-2.3,-0.15) -- (-1.6,-0.15);
+
+  % portadores dentro de la barra
+  \foreach \y in {-0.32,0,0.32} { \node[figneg, minimum size=4.4pt] at (0.4,\y) {}; }
+
+  % la fuerza resultante
+  \draw[figvecres, line width=1.4pt] (0.55,0.22) -- (1.85,0.22);
+  \node[figlbl, figred, anchor=north] at (1.25,0.14) {$\vec F$};
+
+  % la suma microscópica, al costado
+  \node[figlbl, anchor=north, align=center] at (0,-1.9)
+    {$\underbrace{-e\,N\,\vec v_d\times\vec B}_{\text{suma sobre los }N\text{ portadores}}
+     \;=\; \underbrace{(-e\,n\,\vec v_d)}_{\vec J}\,A\,\vec L\times\vec B
+     \;=\; I\,\vec L\times\vec B$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La razón de estudiar cables y no cargas sueltas es práctica: una
+carga aislada casi siempre viene acompañada de efectos eléctricos que tapan al
+magnético, mientras que un cable con corriente es \textbf{neutro} ---no hay
+fuerza eléctrica neta--- y sin embargo lleva un número enorme de cargas en
+movimiento, así que el efecto magnético se vuelve medible. La deducción no
+introduce nada nuevo: se suman las fuerzas de Lorentz sobre los $N = n\,A\,L$
+portadores del tramo, se reconoce $-e\,n\,\vec v_d$ como la densidad de
+corriente $\vec J$ y se usa $J\,A = I$. El vector $\vec L$ tiene el largo del
+tramo y el sentido de la corriente. Notar que el resultado no depende del signo
+de los portadores: si fueran positivos irían al revés, y el producto quedaría
+igual ---la misma cancelación de signos que hace funcionar el efecto Hall---.}
+\end{center}
