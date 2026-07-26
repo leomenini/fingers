@@ -1,12 +1,7 @@
 # CLAUDE.md — Curso Física III (OpenFING)
 
-
-claude --resume fc86d5d2-d723-4385-ad35-ce6acec3a4c4
-
-
-
 Guía para generar las notas de cada clase a partir de su transcripción. Cada
-carpeta `ClaseN/` documenta una clase del curso y debe contener **cuatro**
+carpeta `Clases/ClaseN/` documenta una clase del curso y debe contener **cuatro**
 archivos:
 
 | Archivo | Origen | Descripción |
@@ -16,15 +11,20 @@ archivos:
 | `notes.tex` | generado | El mismo resumen traducido a LaTeX. |
 | `metadata.yaml` | generado | Metadatos de la clase (esquema estricto, ver abajo). |
 
-> El nombre del archivo de transcripción varía en el corpus histórico
-> (`Transcription_raw.txt` y, en Clase1, `Transciption_raw.txt` con typo). Para
-> clases nuevas usar **`Transcription_raw.txt`**.
+> El nombre del archivo de transcripción es **`Transcription_raw.txt`** en las
+> 28 clases (unificado el 2026-07-25; antes había cuatro variantes históricas,
+> ver `docs/log.md` §2).
+
+> **Layout del repo (reorg 2026-07-25):** las 28 clases viven en
+> `courses/Fisica3/Clases/ClaseN/`; el `assets/` global en
+> `courses/Fisica3/Clases/assets/`. `build.sh`, `CLAUDE.md`, `METADATA_AUDIT.md`
+> y ` PDFiter1/` (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3/`.
 
 ---
 
 ## 1. Flujo de trabajo para una clase nueva
 
-1. Leer `ClaseN/Transcription_raw.txt`. La cabecera trae `Palabras : NNNN` →
+1. Leer `Clases/ClaseN/Transcription_raw.txt`. La cabecera trae `Palabras : NNNN` →
    ese número es `stats.transcript_words`.
 2. Escribir `summary.md` siguiendo §2.
 3. Traducir a `notes.tex` siguiendo §3 (preámbulo **verbatim**).
@@ -219,20 +219,20 @@ limpias y reproducibles. El objetivo de tamaño de todo el curso con assets es
 - **Gráficas/curvas** → **`pgfplots`** (código en el `.tex`).
 - **Freeform** (líneas de campo, geometría, esquemas) → **SVG** como fuente
   editable → exportar **PDF** para `\includegraphics`.
-- **Nunca** PNG/JPG/WebP para line-art. `pdflatex` (pipeline actual) solo
-  incluye PDF/PNG/JPG; SVG y WebP no son válidos para `\includegraphics`. WebP
+- **Nunca** PNG/JPG/WebP para line-art. El pipeline canónico (**tectonic/XeTeX**)
+  sólo incluye PDF/PNG/JPG; SVG y WebP no son válidos para `\includegraphics`. WebP
   queda reservado para una futura representación web derivada.
 
 ### 6.2 Estructura de archivos
 
-- **Global — `courses/Fisica3/assets/`**: existe para **consistencia visual**,
+- **Global — `courses/Fisica3/Clases/assets/`**: existe para **consistencia visual**,
   no para ahorrar bytes (con vector la deduplicación es irrelevante; **no
   obsesionarse** con reusar). Contiene `tikzstyles.tex` (paleta
   `figblue`/`figred`/`figamber`/`figgray` alineada con las cajas del preámbulo,
   estilos `figline`/`figaux` y el estilo `fisfig` de pgfplots). Promover una
   figura de local→global solo si de verdad se reusa.
-- **Local — `ClaseN/assets/`**: la mayoría de las figuras viven acá,
-  específicas de la clase (o inline en el `.tex`, o en `ClaseN/assets/figNN.tex`
+- **Local — `Clases/ClaseN/assets/`**: la mayoría de las figuras viven acá,
+  específicas de la clase (o inline en el `.tex`, o en `Clases/ClaseN/assets/figNN.tex`
   incluido con `\input`; para SVG, el `.svg` fuente + el `.pdf` derivado).
 - **Naming**: `<claseN>-<slug>.{tex,svg,pdf}`, kebab-case.
 - **Git**: versionar solo la fuente (TikZ `.tex`, SVG); `.gitignore` para raster
@@ -260,7 +260,7 @@ bloque de `tcolorbox`, para evitar el choque de opciones de `xcolor`):
 
 > Compilar **desde el directorio de la clase** para que `\input{../assets/…}`
 > resuelva. El builder canónico es **tectonic** vía `./build.sh N` (ver §7), que
-> ya hace `cd ClaseN` y deja `ClaseN/notes.pdf`.
+> ya hace `cd Clases/ClaseN` y deja `Clases/ClaseN/notes.pdf`.
 >
 > Clases **sin** el bloque §6.3 pero con un `tikzpicture` inline que use `->`
 > (p. ej. `Clase23`) necesitan igual `\usetikzlibrary{babel}` tras cargar `tikz`.
@@ -326,8 +326,8 @@ asistente genera los PDF end-to-end; el usuario revisa.
 
 - Binario durable en `~/.local/bin/tectonic` (instalar con el `curl` de §6.5).
 - **`courses/Fisica3/build.sh`**: `./build.sh` compila las 28; `./build.sh 1 5 14`
-  sólo esas. Deja el PDF **in situ** en `ClaseN/notes.pdf` (tectonic no deja
-  `.aux/.log`). Compila desde cada `ClaseN/` para que `\input{../assets/…}`
+  sólo esas. Deja el PDF **in situ** en `Clases/ClaseN/notes.pdf` (tectonic no deja
+  `.aux/.log`). Compila desde cada `Clases/ClaseN/` para que `\input{../assets/…}`
   resuelva. Salida ~40–85 KB por clase; el curso entero < 2 MB.
 - La carpeta ` PDFiter1/` (con espacio) es el **snapshot de iteración 1 del
   usuario** — **no tocar**. Los recompilados viven por clase, no en un `pdf/`

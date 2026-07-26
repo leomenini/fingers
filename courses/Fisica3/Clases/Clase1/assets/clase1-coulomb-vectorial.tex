@@ -1,0 +1,55 @@
+% Clase 1 --- Ley de Coulomb en forma vectorial (§3.3).
+% Dos paneles con la MISMA geometría (Q2 arriba, Q1 abajo) para que se vea que
+% lo único que cambia es el signo del producto Q1 Q2, y con él el sentido de F12.
+% El versor r21 va SIEMPRE de 2 hacia 1; F12 es la fuerza que 2 le hace a 1.
+% F12 se dibuja en una vertical desplazada para no superponerse con r21.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== panel (a): mismo signo -> repulsión ===============
+  \begin{scope}
+    \node[figpos] (a2) at (0,2.6) {};
+    \node[figpos] (a1) at (0,0)   {};
+    \node[figlbl, left=4pt] at (a2) {$Q_2 > 0$};
+    \node[figlbl, left=4pt] at (a1) {$Q_1 > 0$};
+    % recta que une las cargas
+    \draw[figaux] (0,3.15) -- (0,-1.7);
+    % vector r21 (de 2 a 1), sobre la recta que une las cargas
+    \draw[figvecaux] (a2) -- (a1);
+    \node[figlblaux, left=2pt] at (0,1.45) {$\vec r_{21}$};
+    % versor r21
+    \draw[figvec, figgray] (1.9,2.6) -- (1.9,1.75);
+    \node[figlblaux, right=2pt] at (1.9,2.2) {$\hat r_{21}$};
+    % fuerza sobre 1: mismo sentido que el versor
+    \draw[figvecres] (0.55,0) -- (0.55,-1.4);
+    \node[figlbl, figred, right=3pt] at (0.55,-0.75) {$\vec F_{12}$};
+    \node[figlbl, align=center] at (0.4,-2.35)
+      {(a) $Q_1Q_2 > 0$\\[1pt]
+       $\vec F_{12}$ va como $\hat r_{21}$: \textbf{repulsión}};
+  \end{scope}
+
+  % =============== panel (b): signos opuestos -> atracción ===============
+  \begin{scope}[xshift=7.2cm]
+    \node[figpos] (b2) at (0,2.6) {};
+    \node[figneg] (b1) at (0,0)   {};
+    \node[figlbl, left=4pt] at (b2) {$Q_2 > 0$};
+    \node[figlbl, left=4pt] at (b1) {$Q_1 < 0$};
+    \draw[figaux] (0,3.15) -- (0,-1.7);
+    \draw[figvecaux] (b2) -- (b1);
+    \node[figlblaux, left=2pt] at (0,1.45) {$\vec r_{21}$};
+    \draw[figvec, figgray] (1.9,2.6) -- (1.9,1.75);
+    \node[figlblaux, right=2pt] at (1.9,2.2) {$\hat r_{21}$};
+    % fuerza sobre 1: sentido opuesto al versor
+    \draw[figvecres] (0.55,0) -- (0.55,1.4);
+    \node[figlbl, figred, right=3pt] at (0.55,0.75) {$\vec F_{12}$};
+    \node[figlbl, align=center] at (0.4,-2.35)
+      {(b) $Q_1Q_2 < 0$\\[1pt]
+       $\vec F_{12}$ va como $-\hat r_{21}$: \textbf{atracción}};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Una sola expresión contiene los dos casos: el versor
+$\hat r_{21}$ fija la dirección (el eje que une las cargas) y el signo del
+producto $Q_1Q_2$ fija el sentido. La regla ``iguales se repelen, opuestas se
+atraen'' ya está dentro de la fórmula, no hay que agregarla aparte.}
+\end{center}

@@ -1,0 +1,43 @@
+% Clase 1 --- Geometría del ejemplo numérico de superposición (§4.2).
+% Etiquetas SIMBÓLICAS a propósito: los valores numéricos viven en el texto,
+% donde además está documentada la inconsistencia r12 = 12 cm vs 15 cm.
+% Q1 en el origen; Q2 sobre el eje x; Q3 arriba a la izquierda, con theta
+% medido desde la VERTICAL (por eso la componente x de F13 va con seno).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % ejes
+  \draw[figaxis] (-2.4,0) -- (3.4,0) node[figlbl, right=1pt] {$x$};
+  \draw[figaxis] (0,-2.1) -- (0,2.9) node[figlbl, above=1pt] {$y$};
+
+  % cargas
+  \node[figneg] (q1) at (0,0)      {};
+  \node[figpos] (q2) at (2.6,0)    {};
+  \node[figneg] (q3) at (-1.28,2.05) {};
+  \node[figlbl, below left=3pt]  at (q1) {$Q_1 < 0$};
+  \node[figlbl, above right=1pt] at (q2) {$Q_2 > 0$};
+  \node[figlbl, above left=1pt]  at (q3) {$Q_3 < 0$};
+
+  % distancias
+  \draw[figaux] (q1) -- (q3);
+  \node[figlblaux, left=3pt] at (-0.64,1.02) {$r_{13}$};
+  \node[figlblaux, below=3pt] at (2.0,0) {$r_{12}$};
+
+  % ángulo theta, medido desde la vertical
+  \draw[figvecaux] (0,1.25) arc (90:122:1.25);
+  \node[figlbl] at (105:1.55) {$\theta$};
+
+  % F12: atractiva (signos opuestos), apunta de 1 hacia 2
+  \draw[figvec] (q1) -- (1.55,0);
+  \node[figlbl, figblue, above=2pt] at (0.8,0) {$\vec F_{12}$};
+
+  % F13: repulsiva (mismo signo), se aleja de Q3
+  \draw[figvec] (q1) -- (1.3,-2.08);
+  \node[figlbl, figblue, right=2pt] at (0.85,-1.35) {$\vec F_{13}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Elección de ejes: origen en $Q_1$ y eje $x$ según la recta
+$Q_1Q_2$; como tres puntos definen un plano, se toma el plano de las tres
+cargas. $\vec F_{12}$ es \textbf{atractiva} (signos opuestos) y $\vec F_{13}$
+\textbf{repulsiva} (mismo signo). Como $\theta$ se mide desde la vertical, la
+componente $x$ de $\vec F_{13}$ va con $\sen\theta$ y la $y$ con $\cos\theta$.}
+\end{center}

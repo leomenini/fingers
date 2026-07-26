@@ -146,22 +146,32 @@ Una clase debe poder evolucionar sin afectar al resto del curso.
 # Estructura
 
 ```
-Curso/
+courses/<Curso>/
 
-ClaseXX/
+  build.sh
+  CLAUDE.md
 
-assets/
+  Clases/
 
-metadata.yaml
+    assets/            # compartido por el curso (tikzstyles.tex)
 
-summary.md
+    ClaseXX/
 
-notes.tex
-
-transcript_raw.txt
+      Transcription_raw.txt
+      summary.md
+      notes.tex
+      metadata.yaml
+      assets/          # opcional, ver abajo
 ```
 
-Cada carpeta debe ser autocontenida.
+Cada carpeta de clase debe ser autocontenida: los cuatro archivos son
+obligatorios.
+
+La carpeta `assets/` de una clase **se crea on demand**, al producir su primera
+figura. No se crean carpetas vacías ni subcarpetas por tipo de recurso: los
+archivos van planos, nombrados `<claseN>-<slug>.{tex,svg,pdf}` en kebab-case.
+El `assets/` a nivel de curso existe para consistencia visual (paleta y estilos
+compartidos), no para deduplicar.
 
 ---
 
@@ -174,29 +184,26 @@ Por ejemplo:
 * diagramas;
 * gráficos;
 * circuitos;
-* fotografías del pizarrón;
 * referencias bibliográficas;
 * figuras originales.
 
 El texto no representa todo el conocimiento de una clase.
 
+Todo recurso gráfico se autora en **formato vectorial** y reproducible (TikZ,
+circuitikz, pgfplots, SVG). No se usan fotografías del pizarrón ni capturas del
+video: son material de origen, no contenido del repositorio, y no son
+reconstruibles con herramientas abiertas.
+
 ---
 
 # Estados Editoriales
 
-Una clase puede encontrarse en distintos estados.
+Una clase puede encontrarse en distintos estados, que representan el nivel de
+confianza editorial. No representan versiones del documento.
 
-Ejemplos:
-
-* Draft
-* Reviewing
-* Needs Work
-* Verified
-* Published
-
-Estos estados representan el nivel de confianza editorial.
-
-No representan versiones del documento.
+El estado se registra en `metadata.yaml` mediante **dos campos independientes**,
+no uno solo: el avance editorial y el estado de revisión son ejes distintos. El
+detalle del mapeo está en `SPECS.md`.
 
 ---
 
