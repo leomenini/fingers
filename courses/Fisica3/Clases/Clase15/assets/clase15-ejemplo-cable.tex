@@ -1,0 +1,79 @@
+% Clase 15 --- El ejemplo de los dos segmentos y el semicírculo (§4.2--4.3).
+% El ejemplo con el que el docente cerró la clase. La figura tiene que mostrar
+% las dos cosas que hacen la cuenta: que en el arco las componentes
+% horizontales se cancelan de a pares, y que el resultado final equivale a
+% haber reemplazado el arco por su cuerda.
+% Sentido de dF en el arco: con B entrante y la corriente recorriendo la mitad
+% inferior de izquierda a derecha, dF = I dL x B apunta hacia el CENTRO en cada
+% punto (no hacia afuera). Integrado, da 2 I R B hacia arriba.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % campo entrante
+  \fill[figblue!5] (-3.7,-1.55) rectangle (3.7,1.3);
+  \draw[figgray, line width=0.7pt] (-3.7,-1.55) rectangle (3.7,1.3);
+  \foreach \x in {-3.3,-2.5,2.5,3.3} {
+    \foreach \y in {-1.2,-0.5,0.3,1.0} {
+      \node[figblue!45, scale=0.55] at (\x,\y) {$\otimes$};
+    }
+  }
+  \node[figlblaux, anchor=south west] at (-3.7,1.36) {$\vec B$ entrante};
+
+  % el cable: segmento -- semicírculo (abajo) -- segmento
+  \draw[figblue, line width=1.6pt] (-3.3,0) -- (-1.2,0);
+  \draw[figblue, line width=1.6pt] (-1.2,0) arc (180:360:1.2);
+  \draw[figblue, line width=1.6pt] (1.2,0) -- (3.3,0);
+
+  % sentido de la corriente
+  \draw[figvecres] (-2.75,0) -- (-2.15,0);
+  \node[figlbl, figred, anchor=south] at (-2.45,0.06) {$I$};
+  \draw[figvecres] (2.15,0) -- (2.75,0);
+
+  % fuerzas sobre los segmentos rectos y sobre el arco
+  \draw[figvecres, line width=1.2pt] (-1.7,0.05) -- (-1.7,0.7);
+  \draw[figvecres, line width=1.2pt] (1.7,0.05) -- (1.7,0.7);
+  \draw[figvecres, line width=1.2pt] (0,0.05) -- (0,0.7);
+  \node[figlbl, figred, anchor=south] at (-1.7,0.72) {$I L B$};
+  \node[figlbl, figred, anchor=south] at (1.7,0.72) {$I L B$};
+  \node[figlbl, figred, anchor=south] at (0,0.72) {$2\,I R B$};
+
+  % la cuerda
+  \draw[figred, dashed, line width=0.9pt] (-1.2,0) -- (1.2,0);
+
+  % cotas
+  \draw[figvecaux] (-3.3,-0.5) -- (-2.35,-0.5);
+  \draw[figvecaux] (-1.2,-0.5) -- (-2.15,-0.5);
+  \node[figlblaux, anchor=north] at (-2.25,-0.46) {$L$};
+  \draw[figvecaux] (3.3,-0.5) -- (2.35,-0.5);
+  \draw[figvecaux] (1.2,-0.5) -- (2.15,-0.5);
+  \node[figlblaux, anchor=north] at (2.25,-0.46) {$L$};
+  \draw[figvecaux] (0,0) -- (0,-1.15);
+  \node[figlblaux, anchor=west] at (0.06,-0.72) {$R$};
+
+  % elementos simétricos del arco: dF apunta hacia el centro
+  \draw[figvecaux, figblue, line width=0.9pt,
+        -{Latex[length=2mm,width=1.4mm]}] (-0.85,-0.85) -- (-0.42,-0.42);
+  \draw[figvecaux, figblue, line width=0.9pt,
+        -{Latex[length=2mm,width=1.4mm]}] (0.85,-0.85) -- (0.42,-0.42);
+  \node[figlbl, figblue, anchor=north, align=center] at (0,-1.75)
+    {cada $d\vec F$ apunta al centro; los pares simétricos\\[-0.2em]
+     cancelan su componente horizontal};
+
+  \node[figlbl, figred, anchor=north, align=center] at (0,-2.95)
+    {el arco aporta lo mismo que su cuerda, de largo $2R$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Para un cable de forma cualquiera se parte en elementos
+$d\vec L$, cada uno localmente recto y con $\vec B$ casi constante, y se suman
+vectorialmente los aportes $d\vec F = I\,d\vec L\times\vec B$; como la corriente
+es la misma en todo el cable, $I$ sale de la integral. Acá los dos segmentos
+rectos dan $ILB$ cada uno, y en el arco la simetría hace el trabajo: los
+elementos simétricos respecto del eje vertical tienen componentes horizontales
+opuestas que se cancelan, de modo que sólo queda integrar
+$\int_0^{\pi} IRB\sin\theta\,d\theta = 2IRB$. El total, $2ILB + 2IRB$ hacia
+arriba, admite una lectura que conviene retener porque ahorra cuentas: en campo
+\textbf{uniforme}, la fuerza sobre un tramo curvo depende únicamente del vector
+que une sus extremos ---acá, el diámetro $2R$---, así que el semicírculo podría
+haberse reemplazado de entrada por un segmento recto de ese largo. Ojo con la
+condición: si el campo no fuera uniforme, esto no vale y hay que integrar.}
+\end{center}

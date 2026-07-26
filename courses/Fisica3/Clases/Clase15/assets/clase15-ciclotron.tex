@@ -1,0 +1,85 @@
+% Clase 15 --- El ciclotrón (§2.2).
+% El docente hizo dos dibujos "porque me cuesta hacer todo en un solo dibujo":
+% la vista de las dos Ds con la ranura, y el detalle del movimiento. Acá van los
+% dos, con el énfasis en dónde se gana energía (sólo en la ranura) y en por qué
+% alcanza UNA sola frecuencia para la fuente alterna.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) las dos Ds y la espiral ===============
+  \begin{scope}
+    % D izquierda
+    \draw[figgray, line width=1.1pt, fill=figgray!10]
+      (-0.12,2.0) arc (90:270:2.0) -- cycle;
+    % D derecha
+    \draw[figgray, line width=1.1pt, fill=figgray!10]
+      (0.12,-2.0) arc (-90:90:2.0) -- cycle;
+    \node[figlbl] at (-1.15,1.35) {D};
+    \node[figlbl] at (1.15,1.35) {D};
+
+    % campo perpendicular
+    \foreach \x in {-1.55,-0.8,0.8,1.55} {
+      \foreach \y in {-1.45,-0.7,0.05,0.8} {
+        \node[figblue!45, scale=0.55] at (\x,\y) {$\otimes$};
+      }
+    }
+
+    % la espiral: semicírculos de radio creciente
+    \draw[figred, line width=1pt] (0,0.3) arc (90:-90:0.3);
+    \draw[figred, line width=1pt] (0,-0.3) arc (-90:-270:0.6);
+    \draw[figred, line width=1pt] (0,0.9) arc (90:-90:0.9);
+    \draw[figred, line width=1pt] (0,-0.9) arc (-90:-270:1.2);
+    \draw[figred, line width=1pt] (0,1.5) arc (90:-90:1.5);
+    \node[figcarga, fill=figred, minimum size=5pt] at (0,0.3) {};
+
+    % salida
+    \draw[figvecres] (0.1,-1.5) -- (1.0,-2.35);
+    \node[figlbl, figred, anchor=west] at (1.05,-2.4) {sale};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(a) vista desde arriba};
+  \end{scope}
+
+  % =============== (b) qué pasa en la ranura ===============
+  \begin{scope}[xshift=7.0cm]
+    \fill[figgray!10] (-2.0,-1.4) rectangle (-0.25,1.4);
+    \fill[figgray!10] (0.25,-1.4) rectangle (2.0,1.4);
+    \draw[figgray, line width=1.1pt] (-2.0,-1.4) rectangle (-0.25,1.4);
+    \draw[figgray, line width=1.1pt] (0.25,-1.4) rectangle (2.0,1.4);
+    \node[figlblaux, anchor=south] at (0,1.5) {la ranura};
+
+    % la diferencia de potencial alterna
+    \draw[figvecres, line width=1.2pt] (-0.2,0.45) -- (0.2,0.45);
+    \draw[figvecaux, figblue, line width=1.1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0.2,-0.45) -- (-0.2,-0.45);
+
+    \node[figlbl, anchor=center, align=center] at (-1.12,0)
+      {adentro:\\[-0.2em] \footnotesize sólo gira};
+    \node[figlbl, anchor=center, align=center] at (1.12,0)
+      {adentro:\\[-0.2em] \footnotesize sólo gira};
+
+    \node[figlbl, figred, anchor=north, align=center] at (0,-1.6)
+      {la energía se gana \emph{sólo} acá:\\[-0.2em]
+       \footnotesize un $\Delta V$ que cambia de signo cada media vuelta};
+
+    \node[figlbl, anchor=north, align=center] at (0,-3.0)
+      {(b) detalle de la ranura};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Adentro de cada D no hay campo eléctrico: la partícula sólo
+describe su semicírculo, y como la fuerza magnética no hace trabajo, entra y
+sale con la misma rapidez. Toda la energía se entrega en la ranura, y para que
+la partícula sea acelerada ---y no frenada--- al llegar allí, la diferencia de
+potencial tiene que haber cambiado de signo en el ínterin: de ahí que la fuente
+sea alterna. Acá es donde se cobra el resultado de §1.3: como el período no
+depende de la velocidad, \emph{todas} las medias vueltas duran lo mismo aunque
+la partícula vaya cada vez más rápido, así que basta una \textbf{única
+frecuencia fija} para acompañarla durante todo el recorrido. Los semicírculos
+van creciendo hasta que la partícula alcanza el borde y sale con
+$E_c = q^2B^2R^2/2m$. Las dos limitaciones salen de ahí: la energía crece con
+$R^2$ ---y el imán no puede ser arbitrariamente grande--- y, a velocidades
+relativistas, el período deja de ser constante y el diseño entero se cae. Por
+eso los aceleradores de kilómetros usan otra tecnología, y los ciclotrones
+quedaron para medicina y estudio de materiales.}
+\end{center}

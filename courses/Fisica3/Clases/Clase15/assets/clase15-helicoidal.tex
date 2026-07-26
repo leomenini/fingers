@@ -1,0 +1,46 @@
+% Clase 15 --- Entrada oblicua: la hélice (§1.4).
+% No hay física nueva acá, sólo una descomposición: la componente paralela a B
+% no siente fuerza y sigue de largo, la perpendicular hace el círculo de
+% siempre. Lo que la figura tiene que mostrar es que las dos cosas ocurren a la
+% vez y de manera independiente.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- eje del campo ----
+  \draw[figvecaux, figgray, line width=1pt,
+        -{Latex[length=2.4mm,width=1.7mm]}] (-3.4,0) -- (3.6,0);
+  \node[figlbl, anchor=west] at (3.7,0) {$\vec B$};
+
+  % ---- la hélice ----
+  \draw[figred, line width=1pt] plot[domain=0:1080, samples=200, smooth]
+    ({-3.0 + \x/180}, {0.85*sin(\x)});
+
+  \node[figcarga, fill=figred, minimum size=6pt] at (-3.0,0) {};
+
+  % ---- descomposición de la velocidad ----
+  \draw[figvecres] (-3.0,0) -- (-1.85,0.95);
+  \node[figlbl, figred, anchor=south east] at (-1.9,0.95) {$\vec v$};
+  \draw[figvecaux, figblue, line width=0.9pt,
+        -{Latex[length=2.2mm,width=1.6mm]}] (-3.0,0) -- (-1.85,0);
+  \node[figlbl, figblue, anchor=north] at (-2.4,-0.12) {$\vec v_\parallel$};
+  \draw[figvecaux, figblue, line width=0.9pt,
+        -{Latex[length=2.2mm,width=1.6mm]}] (-3.0,0) -- (-3.0,0.95);
+  \node[figlbl, figblue, anchor=east] at (-3.06,0.5) {$\vec v_\perp$};
+
+  % ---- rótulos de las dos partes ----
+  \node[figlbl, figblue, anchor=south, align=center] at (0.3,1.6)
+    {$\vec v_\perp$: círculo de radio $r = \dfrac{m\,v_\perp}{|q|\,B}$};
+  \node[figlbl, figblue, anchor=north, align=center] at (0.3,-1.5)
+    {$\vec v_\parallel$: no siente fuerza, sigue de largo};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La descomposición funciona porque las dos partes no se estorban.
+La componente paralela a $\vec B$ no aparece en el producto vectorial, así que
+sobre ella no hay fuerza y se conserva: es un movimiento rectilíneo uniforme a
+lo largo del campo. La componente perpendicular hace exactamente el círculo de
+la sección anterior, con la salvedad de que en el radio entra $v_\perp$ y no la
+rapidez total. Superponer las dos da la hélice ---el paso del tirabuzón es lo
+que avanza $\vec v_\parallel$ en un período $T$---. Notar que el período sigue
+sin depender de nada de esto: es el mismo $2\pi m/(|q|B)$, así que una entrada
+más oblicua no cambia el ritmo de giro, sólo estira la hélice.}
+\end{center}

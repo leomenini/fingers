@@ -1,0 +1,66 @@
+% Clase 15 --- El régimen estacionario y el voltaje de Hall (§3.3--3.4).
+% La acumulación lateral no crece para siempre: crea un campo eléctrico
+% transversal que la frena, y el estado final es el de fuerza total nula sobre
+% los portadores que siguen circulando. De ese equilibrio sale todo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % la cinta conductora
+  \fill[figgray!8] (-2.6,-1.2) rectangle (2.6,1.2);
+  \draw[figgray, line width=1pt] (-2.6,-1.2) rectangle (2.6,1.2);
+  \foreach \x in {-2.0,-1.2,0.6,1.4,2.2} {
+    \foreach \y in {-0.7,0,0.7} { \node[figblue!45, scale=0.55] at (\x,\y) {$\otimes$}; }
+  }
+  \node[figlblaux, anchor=south west] at (-2.6,1.28) {$\vec B$ entrante};
+
+  % corriente
+  \draw[figvecres, line width=1.1pt] (-3.5,0) -- (-2.7,0);
+  \node[figlbl, figred, anchor=south] at (-3.1,0.06) {$I$};
+
+  % cargas acumuladas
+  \foreach \x in {-2.1,-1.3,-0.5,0.3,1.1,1.9} {\node[figlbl,figred,scale=0.75] at (\x,1.02) {$+$};}
+  \foreach \x in {-2.1,-1.3,-0.5,0.3,1.1,1.9} {\node[figlbl,figblue,scale=0.75] at (\x,-1.02) {$-$};}
+
+  % el equilibrio sobre un portador
+  \node[figpos, minimum size=6pt] at (-0.35,0) {};
+  \draw[figvecaux, figblue, line width=1pt,
+        -{Latex[length=2.2mm,width=1.6mm]}] (-0.35,0.15) -- (-0.35,0.72);
+  \draw[figvecres, line width=1pt] (-0.35,-0.15) -- (-0.35,-0.72);
+  \node[figlbl, figblue, anchor=east] at (-0.45,0.45) {$q\,\vec v_d\times\vec B$};
+  \node[figlbl, figred, anchor=east] at (-0.45,-0.45) {$q\,\vec E_H$};
+
+  % cotas W y H
+  \draw[figvecaux] (2.85,1.2) -- (2.85,0.3);
+  \draw[figvecaux] (2.85,-1.2) -- (2.85,-0.3);
+  \node[figlblaux, anchor=west] at (2.9,0) {$W$};
+
+  % el voltímetro
+  \node[figcarga, fill=figgray, minimum size=4pt] at (1.6,1.2) {};
+  \node[figcarga, fill=figgray, minimum size=4pt] at (1.6,-1.2) {};
+  \draw[figgray, line width=0.8pt] (1.6,1.2) -- (4.4,1.2) -- (4.4,-1.2) -- (1.6,-1.2);
+  \node[figlbl, anchor=west] at (4.5,0) {$\Delta V_H$};
+
+  % notas fuera del dibujo
+  \node[figlbl, figred, anchor=north, align=center] at (0,-1.55)
+    {en régimen estacionario las dos fuerzas se cancelan\\[-0.2em]
+     \footnotesize y los portadores siguen derecho};
+  \node[figlblaux, anchor=north] at (0,-2.65)
+    {($H$ es la altura, hacia adentro de la hoja)};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La acumulación lateral no puede crecer indefinidamente: apenas
+empieza, la carga separada genera un campo eléctrico transversal $\vec E_H$ que
+empuja a los portadores en sentido contrario a la fuerza magnética. Tras un
+transitorio brevísimo el sistema llega al \textbf{régimen estacionario}, donde
+los portadores que siguen circulando lo hacen en línea recta porque la fuerza
+total sobre ellos es cero: $q\vec E_H + q\,\vec v_d\times\vec B = 0$. De ahí
+sale $E_H = v_d B$, que no depende de $q$, y el voltaje entre los costados es
+$|\Delta V_H| = v_d B W$. Hall no podía medir $v_d$, así que usó Drude
+($J = n|q|v_d$) para escribirlo con cantidades accesibles:
+$|\Delta V_H| = B\,I/(n|q|H)$. Con eso el experimento entrega dos cosas: el
+\emph{signo} de los portadores y el producto $n|q|$, o sea cuántos hay. El
+resultado incómodo llegó con el berilio y el zinc, que dan portadores
+\textbf{positivos}: no son electrones moviéndose sino \emph{huecos}, déficits de
+electrón que se comportan como cargas positivas ---algo que tardó unos cuarenta
+años en entenderse y que sólo se explica con mecánica cuántica---.}
+\end{center}

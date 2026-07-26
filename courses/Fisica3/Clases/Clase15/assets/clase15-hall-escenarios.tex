@@ -1,0 +1,81 @@
+% Clase 15 --- Los dos escenarios de Hall (§3.1--3.2).
+% "No sabemos, hay dos escenarios. Voy a repetir con los dos escenarios."
+% Todo el efecto vive en esta comparación: la corriente es la misma en los dos
+% paneles y la fuerza magnética empuja a los portadores hacia EL MISMO lado, así
+% que lo único que cambia es el SIGNO de la carga acumulada arriba --- y eso es
+% justamente lo que se mide.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) portadores positivos ===============
+  \begin{scope}
+    \fill[figgray!8] (-2.2,-1.1) rectangle (2.2,1.1);
+    \draw[figgray, line width=1pt] (-2.2,-1.1) rectangle (2.2,1.1);
+    \foreach \x in {-1.6,-0.8,0,0.8,1.6} {
+      \foreach \y in {-0.6,0,0.6} { \node[figblue, scale=0.55] at (\x,\y) {$\otimes$}; }
+    }
+
+    % corriente
+    \draw[figvecres, line width=1.1pt] (-3.1,0) -- (-2.3,0);
+    \node[figlbl, figred, anchor=south] at (-2.7,0.06) {$I$};
+    \draw[figvecres, line width=1.1pt] (2.3,0) -- (3.1,0);
+
+    % portador positivo: v_d a la derecha
+    \node[figpos, minimum size=6pt] at (-0.35,-0.25) {};
+    \draw[figvecres] (-0.2,-0.25) -- (0.5,-0.25);
+    \node[figlbl, figred, anchor=north] at (0.15,-0.32) {$\vec v_d$};
+    % fuerza hacia arriba
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (-0.35,-0.1) -- (-0.35,0.6);
+    \node[figlbl, figblue, anchor=east] at (-0.42,0.3) {$\vec F$};
+
+    % acumulación
+    \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5} {\node[figlbl,figred,scale=0.75] at (\x,0.92) {$+$};}
+    \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5} {\node[figlbl,figblue,scale=0.75] at (\x,-0.92) {$-$};}
+
+    \node[figlbl, figred, anchor=south] at (0,1.25) {arriba queda \textbf{positivo}};
+    \node[figlbl, anchor=north, align=center] at (0,-1.55)
+      {(a) portadores $+$ moviéndose con $I$};
+  \end{scope}
+
+  % =============== (b) portadores negativos ===============
+  \begin{scope}[xshift=8.6cm]
+    \fill[figgray!8] (-2.2,-1.1) rectangle (2.2,1.1);
+    \draw[figgray, line width=1pt] (-2.2,-1.1) rectangle (2.2,1.1);
+    \foreach \x in {-1.6,-0.8,0,0.8,1.6} {
+      \foreach \y in {-0.6,0,0.6} { \node[figblue, scale=0.55] at (\x,\y) {$\otimes$}; }
+    }
+
+    \draw[figvecres, line width=1.1pt] (-3.1,0) -- (-2.3,0);
+    \node[figlbl, figred, anchor=south] at (-2.7,0.06) {$I$};
+    \draw[figvecres, line width=1.1pt] (2.3,0) -- (3.1,0);
+
+    % portador negativo: v_d a la izquierda
+    \node[figneg, minimum size=6pt] at (0.35,-0.25) {};
+    \draw[figvecres] (0.2,-0.25) -- (-0.5,-0.25);
+    \node[figlbl, figred, anchor=north] at (-0.3,-0.34) {$\vec v_d$};
+    % la fuerza sigue siendo hacia arriba
+    \draw[figvecaux, figblue, line width=1pt,
+          -{Latex[length=2.2mm,width=1.6mm]}] (0.35,-0.1) -- (0.35,0.6);
+    \node[figlbl, figblue, anchor=west] at (0.42,0.3) {$\vec F$};
+
+    \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5} {\node[figlbl,figblue,scale=0.75] at (\x,0.92) {$-$};}
+    \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5} {\node[figlbl,figred,scale=0.75] at (\x,-0.92) {$+$};}
+
+    \node[figlbl, figblue, anchor=south] at (0,1.25) {arriba queda \textbf{negativo}};
+    \node[figlbl, anchor=north, align=center] at (0,-1.55)
+      {(b) portadores $-$ moviéndose contra $I$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los dos paneles son indistinguibles desde afuera mientras uno
+sólo mire la corriente: por eso, hasta Hall, no había manera macroscópica de
+saber el signo de los portadores ---y de hecho el signo negativo del electrón es
+una convención histórica anterior a saberlo---. La observación fina es que la
+fuerza magnética apunta hacia \textbf{el mismo lado} en los dos casos, porque al
+pasar de (a) a (b) se invierten a la vez el signo de $q$ y el sentido de
+$\vec v_d$, y el producto $q\,\vec v_d\times\vec B$ no cambia. Entonces en los
+dos escenarios se acumula carga arriba ---pero de signo opuesto---, y eso sí es
+medible: aparece una diferencia de potencial transversal cuyo \emph{signo}
+distingue un caso del otro. Ésa es toda la idea de Hall.}
+\end{center}

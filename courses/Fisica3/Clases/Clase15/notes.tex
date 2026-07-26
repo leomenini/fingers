@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -151,11 +158,15 @@ T = \frac{2\pi r}{v} = \boxed{\frac{2\pi m}{q\,B}}.
   radios mayores, pero tardan lo mismo.
 \end{keybox}
 
+\input{assets/clase15-circular.tex}
+
 \subsection{Entrada oblicua: movimiento helicoidal}
 
 Si $\mathbf{v}$ no es perpendicular a $\mathbf{B}$: la componente
 $\perp\mathbf{B}$ da el círculo; la componente $\parallel\mathbf{B}$ se
 mantiene constante (sin fuerza) $\Rightarrow$ \textbf{hélice}.
+
+\input{assets/clase15-helicoidal.tex}
 
 \subsection{Validez no relativista}
 
@@ -174,6 +185,8 @@ Determina la composición química: se vaporiza e ioniza la muestra, se la
 acelera a velocidad conocida y se la inyecta en $\mathbf{B}$ uniforme.
 Como $r = mv/(qB)$ con $q,B$ conocidos, el radio \textbf{determina la
 masa}; la abundancia se lee por la intensidad de las manchas.
+
+\input{assets/clase15-espectrometro.tex}
 
 \subsection{El ciclotrón}
 
@@ -198,6 +211,8 @@ Limitaciones: tamaño ($E_c\propto R^2$) y efectos relativistas.
   Medicina (tratamientos, imágenes) y estudio de materiales.
 \end{notebox}
 
+\input{assets/clase15-ciclotron.tex}
+
 \subsection{Desviación en tubos de rayos catódicos}
 
 Los televisores antiguos combinaban campo eléctrico y magnético para
@@ -221,6 +236,8 @@ Corriente $I$ por un cable ancho en $\mathbf{B}$ (entrante). En
 $q\,\mathbf{v}_d\times\mathbf{B}$ empuja las cargas al \textbf{mismo
 lado}: se acumulan y generan una diferencia de potencial transversal cuyo
 \textbf{signo} revela el signo de los portadores.
+
+\input{assets/clase15-hall-escenarios.tex}
 
 \subsection{Cálculo del campo y el voltaje de Hall}
 
@@ -268,6 +285,8 @@ Silicio & negativo & $\sim 3\times10^{-3}$ \\
   entenderse).
 \end{warnbox}
 
+\input{assets/clase15-hall-equilibrio.tex}
+
 % ===================================================================
 \section{Fuerza magnética sobre un cable}
 % ===================================================================
@@ -292,6 +311,8 @@ $JA = I$:
   \boxed{\mathbf{F} = I\,\mathbf{L}\times\mathbf{B}}
   \]
 \end{keybox}
+
+\input{assets/clase15-fuerza-cable.tex}
 
 \subsection{Caso general: la integral}
 
@@ -333,5 +354,7 @@ F_y = \int_0^{\pi} I R B \sin\theta\, d\theta = 2\,I R B.
 \begin{notebox}[Próxima clase]
   Momento sobre una espira y campo magnético generado por corrientes.
 \end{notebox}
+
+\input{assets/clase15-ejemplo-cable.tex}
 
 \end{document}

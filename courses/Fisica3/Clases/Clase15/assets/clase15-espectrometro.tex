@@ -1,0 +1,58 @@
+% Clase 15 --- Espectrómetro de masas (§2.1).
+% "Entra acá todo el gas, las distintas partículas recorren distintas
+% circunferencias y para saber cuál es la composición relativa ven el tamaño de
+% las manchas". La figura tiene que dejar ver las dos lecturas que da el
+% aparato: la POSICIÓN de la mancha da la masa, su INTENSIDAD da la abundancia.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % región con campo entrante
+  \fill[figblue!5] (-0.4,-0.4) rectangle (5.7,3.2);
+  \draw[figgray, line width=0.7pt] (-0.4,-0.4) rectangle (5.7,3.2);
+  \foreach \x in {0.35,1.2,2.05,2.9,3.75,4.6,5.45} {
+    \foreach \y in {0.45,1.3,2.15,3.0} {
+      \node[figblue!45, scale=0.6] at (\x,\y) {$\otimes$};
+    }
+  }
+  \node[figlblaux, anchor=south west] at (-0.4,3.26) {$\vec B$ uniforme, entrante};
+
+  % entrada: el haz acelerado
+  \draw[figvecres, line width=1.1pt] (-2.2,0) -- (-0.2,0);
+  \node[figlbl, figred, anchor=south east, align=right] at (-0.55,0.15)
+    {iones, todos\\[-0.2em] \footnotesize a la misma $v$};
+
+  % tres semicircunferencias de distinto radio
+  \draw[figred, line width=1pt] (0,0) arc (180:0:1.15);
+  \draw[figred, line width=1pt] (0,0) arc (180:0:1.75);
+  \draw[figred, line width=1pt] (0,0) arc (180:0:2.45);
+  \node[figcarga, fill=figred, minimum size=5pt] at (0,0) {};
+
+  % la placa donde llegan
+  \draw[figgray, line width=1.6pt] (0.2,-0.4) -- (5.5,-0.4);
+
+  % las manchas: distinto tamaño = distinta abundancia
+  \fill[figred!75] (2.3,-0.4) ellipse (0.1 and 0.07);
+  \fill[figred!75] (3.5,-0.4) ellipse (0.2 and 0.1);
+  \fill[figred!75] (4.9,-0.4) ellipse (0.07 and 0.055);
+  \node[figlblaux, anchor=north] at (2.3,-0.55) {$m_1$};
+  \node[figlblaux, anchor=north] at (3.5,-0.55) {$m_2$};
+  \node[figlblaux, anchor=north] at (4.9,-0.55) {$m_3$};
+  \node[figlblaux, anchor=north east] at (1.7,-0.55) {película};
+
+  % lecturas
+  \node[figlbl, figred, anchor=north, align=center] at (2.6,-1.05)
+    {\textbf{dónde} cae $\Rightarrow$ la masa \qquad
+     \textbf{cuán oscura} $\Rightarrow$ la abundancia};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Todo el aparato se apoya en que $r = mv/(qB)$ con $v$, $q$ y $B$
+conocidos: el radio queda determinado por la masa y nada más, así que la
+distancia a la que cada ion golpea la película ---que es $2r$, el diámetro---
+lo identifica. Por eso hay que acelerar previamente los iones con un campo
+eléctrico hasta una velocidad conocida: sin ese paso, un ion pesado y rápido
+caería en el mismo lugar que uno liviano y lento, y la medida no distinguiría
+nada. La segunda lectura es independiente de la primera y suele pasarse por
+alto: la \emph{intensidad} de cada mancha cuenta cuántas partículas llegaron
+ahí, o sea la abundancia relativa de ese componente en la muestra. Con las dos
+juntas, el espectrómetro no sólo dice qué hay sino cuánto hay de cada cosa.}
+\end{center}
