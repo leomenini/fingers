@@ -1,0 +1,50 @@
+% Clase 28 --- Por que hay un numero FINITO de maximos (§1.5).
+% sen(theta_n) = n*lambda/d no puede pasar de 1: los ordenes se van abriendo y en
+% algun momento se caen fuera del semicirculo. Ejemplo con d = 2.5 lambda.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % barrera y rendijas
+  \draw[figline, line width=1.6pt] (0,-2.6) -- (0,-0.22);
+  \draw[figline, line width=1.6pt] (0,0.22) -- (0,2.6);
+  \filldraw[figamber] (0,0.1) circle (1.6pt);
+  \filldraw[figamber] (0,-0.1) circle (1.6pt);
+  \node[figlblaux, anchor=east] at (-0.15,0) {$d = 2{,}5\,\lambda$};
+
+  % semicirculo de direcciones posibles
+  \draw[figaux] (0,-3.1) arc (-90:90:3.1);
+
+  % ordenes: sen(theta) = 0.4 n
+  \foreach \nn/\ang in {0/0, 1/23.58, 2/53.13}{
+    \draw[figvecres] (0,0) -- (\ang:3.1);
+    \node[figlbl, figred, anchor=west, inner sep=2pt] at (\ang:3.2)
+      {$n = \nn$};}
+  \foreach \nn/\ang in {1/-23.58, 2/-53.13}{
+    \draw[figvecres] (0,0) -- (\ang:3.1);
+    \node[figlbl, figred, anchor=west, inner sep=2pt] at (\ang:3.2)
+      {$n = -\nn$};}
+
+  % el orden imposible
+  \draw[figgray, dashed, line width=0.9pt] (0,0) -- (90:3.1);
+  \node[figlbl, anchor=south, align=center] at (0.15,3.2)
+    {$\sen\theta = 1$ es el límite;\\
+     $n = 3$ pediría $1{,}2$: imposible};
+
+  \node[figlbl, anchor=north west, align=left] at (1.15,-2.55)
+    {$\sen\theta_n = n\,\dfrac{\lambda}{d} \le 1
+      \;\Rightarrow\; n \le \left\lfloor \dfrac{d}{\lambda} \right\rfloor$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La condición de máximo $\sen\theta_n = n\lambda/d$ tiene un
+techo que suele pasarse por alto: el seno no puede valer más que uno. Los
+órdenes van saliendo en direcciones cada vez más abiertas ---y cada vez más
+separadas entre sí, porque el arcoseno se estira--- hasta que el siguiente
+simplemente \textbf{no existe}. Con $d = 2{,}5\lambda$, como en el dibujo, sólo
+hay cinco máximos en total: el central y dos a cada lado. Dos lecturas útiles se
+desprenden de esto. Primero, para que haya \emph{algún} máximo lateral hace
+falta $d \ge \lambda$: con rendijas más juntas que una longitud de onda no se ve
+patrón alguno. Segundo, el número de máximos crece con $d/\lambda$, y en un
+montaje real ---donde $d$ vale miles de longitudes de onda--- ese número es
+enorme, aunque los que se ven cómodos son los pocos primeros, que caen cerca del
+eje y están equiespaciados.}
+\end{center}

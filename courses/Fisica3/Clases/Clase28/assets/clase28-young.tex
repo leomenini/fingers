@@ -1,0 +1,76 @@
+% Clase 28 --- El truco de Young (§3.1).
+% Sin la rendija previa cada punto de la fuente hace su propio patron, corrido
+% respecto de los demas, y la suma se lava. La rendija fina selecciona un solo
+% punto: todo lo que pasa por ella es coherente consigo mismo.
+% Paneles APILADOS: cada uno es ancho y de lado a lado no entran en 16 cm.
+\begin{center}
+\begin{tikzpicture}[scale=0.9, transform shape]
+
+% ---------------- (a) fuente extensa, sin rendija previa ----------------
+\begin{scope}
+  \foreach \yy in {-0.6,-0.3,0,0.3,0.6}{
+    \filldraw[figamber] (-3.4,\yy) circle (1.6pt);
+    \draw[figvecaux, figamber] (-3.25,\yy) -- (-0.15,{0.6+0.15*\yy});
+    \draw[figvecaux, figamber] (-3.25,\yy) -- (-0.15,{-0.6+0.15*\yy});}
+  \node[figlbl, figamber, anchor=east] at (-3.6,0) {vela};
+
+  \draw[figline, line width=1.4pt] (0,-1.6) -- (0,-0.72);
+  \draw[figline, line width=1.4pt] (0,-0.48) -- (0,0.48);
+  \draw[figline, line width=1.4pt] (0,0.72) -- (0,1.6);
+
+  \foreach \yy in {-1.3,-0.9,...,1.4}{
+    \draw[figvecaux] (0.3,{0.3*\yy}) -- (2.9,\yy);}
+  \fill[figgray!30] (3.0,-1.6) rectangle (3.4,1.6);
+  \draw[figgray, line width=0.7pt] (3.0,-1.6) rectangle (3.4,1.6);
+  \node[figlbl, anchor=west, align=left] at (3.6,0)
+    {cada punto corre el patrón:\\ la pantalla queda pareja};
+
+  \node[figlbl, anchor=north, align=center] at (0.2,-1.95)
+    {\textbf{(a)} fuente extensa, sin $S_0$: incoherente};
+\end{scope}
+
+% ---------------- (b) con la rendija previa ----------------
+\begin{scope}[yshift=-5.3cm]
+  \foreach \yy in {-0.6,-0.3,0,0.3,0.6}{
+    \filldraw[figamber] (-3.4,\yy) circle (1.6pt);
+    \draw[figvecaux, figamber] (-3.25,\yy) -- (-1.75,0);}
+  \node[figlbl, figamber, anchor=east] at (-3.6,0) {vela};
+
+  \draw[figline, line width=1.4pt] (-1.65,-1.6) -- (-1.65,-0.12);
+  \draw[figline, line width=1.4pt] (-1.65,0.12) -- (-1.65,1.6);
+  \node[figlblaux, anchor=south] at (-1.65,1.68) {$S_0$};
+
+  \draw[figvecres] (-1.6,0) -- (-0.15,0.6);
+  \draw[figvecres] (-1.6,0) -- (-0.15,-0.6);
+
+  \draw[figline, line width=1.4pt] (0,-1.6) -- (0,-0.72);
+  \draw[figline, line width=1.4pt] (0,-0.48) -- (0,0.48);
+  \draw[figline, line width=1.4pt] (0,0.72) -- (0,1.6);
+
+  \foreach \yy in {-1.3,-0.9,...,1.4}{
+    \draw[figvecaux] (0.3,{0.3*\yy}) -- (2.9,\yy);}
+  \draw[figgray, line width=0.7pt] (3.0,-1.6) rectangle (3.4,1.6);
+  \foreach \yy in {-1.35,-0.81,...,1.4}{
+    \fill[figamber!80] (3.0,{\yy-0.1}) rectangle (3.4,{\yy+0.1});}
+  \node[figlbl, anchor=west, align=left] at (3.6,0)
+    {un solo punto emisor:\\ franjas nítidas};
+
+  \node[figlbl, anchor=north, align=center] at (0.2,-1.95)
+    {\textbf{(b)} el arreglo de Young (1801)};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Young hizo el experimento en 1801, más de un siglo antes del
+láser, y el problema que tuvo que resolver primero fue el de la
+\textbf{coherencia}: la llama de una vela es una fuente extensa, cada pedacito
+emite por su cuenta y con fase propia, de modo que cada uno produce su patrón de
+franjas ligeramente corrido respecto del vecino. La suma de todos ellos es un
+manchón parejo, como en (a). La solución fue interponer una \textbf{rendija muy
+fina} antes de la doble rendija: todo lo que la atraviesa proviene
+esencialmente de un único punto y es, por lo tanto, coherente consigo mismo, así
+que las dos rendijas quedan alimentadas por la misma señal. Hay un compromiso
+inevitable: cuanto más fina es $S_0$, mejor la coherencia y menos luz pasa; una
+rendija infinitamente fina daría un patrón perfecto y completamente invisible.
+Un láser resuelve las dos cosas a la vez ---es intenso y coherente en una región
+amplia--- y por eso hoy el experimento sale a la primera.}
+\end{center}

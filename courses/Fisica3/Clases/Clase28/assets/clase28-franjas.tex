@@ -1,0 +1,54 @@
+% Clase 28 --- Las franjas sobre la pantalla (§1.4).
+% Los maximos estan equiespaciados en DIFERENCIA DE CAMINOS, no en angulo; cerca
+% del eje, donde sen(theta) ~ tg(theta) = y/D, eso se traduce en franjas
+% equiespaciadas y de ahi sale la separacion D*lambda/d.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % la pantalla vista de frente: franjas
+  \foreach \nn/\lbl in {-3/{$-3$}, -2/{$-2$}, -1/{$-1$}, 0/{$0$},
+                        1/{$1$}, 2/{$2$}, 3/{$3$}}{
+    \pgfmathsetmacro{\yy}{\nn*1.05}
+    \fill[figamber!75] (0,{\yy-0.13}) rectangle (1.5,{\yy+0.13});
+    \node[figlblaux, anchor=east, inner sep=3pt] at (-0.05,\yy) {$n = $\lbl};}
+  \draw[figgray, line width=0.7pt] (0,-3.6) rectangle (1.5,3.6);
+
+  % cota entre franjas
+  \draw[figred, line width=0.9pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (1.75,0) -- (1.75,1.05);
+  \node[figlbl, figred, anchor=west, inner sep=2pt] at (1.82,0.52)
+    {$\dfrac{D\lambda}{d}$};
+
+  % el perfil de intensidad, al lado
+  \begin{scope}[xshift=3.3cm]
+  \begin{axis}[
+    fisfig, width=5.6cm, height=7.6cm, grid=none,
+    xlabel={$I/I_1$}, ylabel={$y$},
+    xmin=0, xmax=4.4, ymin=-3.6, ymax=3.6,
+    xtick={0,2,4}, ytick=\empty,
+    at={(0,0)}, anchor=west,
+  ]
+    \addplot[figblue, smooth, samples=300, domain=-3.6:3.6, variable=\yy]
+      ({4*(cos(deg(pi*\yy/1.05)))^2}, {\yy});
+    \addplot[figred, dashed, samples=2, domain=-3.6:3.6, variable=\yy]
+      ({2}, {\yy});
+    \node[figlblaux, figred, anchor=west, fill=white, inner sep=1.5pt]
+      at (axis cs:2.15,-3.2) {promedio $2I_1$};
+  \end{axis}
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La condición $d\sen\theta = n\lambda$ dice que los máximos están
+equiespaciados en \textbf{diferencia de caminos}, no en ángulo: al alejarse del
+centro los ángulos crecen cada vez más rápido y las franjas se van separando.
+Cerca del eje, sin embargo, $\theta$ es chico y valen $\sen\theta \simeq
+\tan\theta = y/D$, con lo que la posición del máximo $n$ queda
+$y_n = n\,D\lambda/d$: \textbf{franjas parejas}, separadas $D\lambda/d$, con los
+mínimos justo en la mitad. Esa fórmula es la que hace útil al experimento como
+instrumento de medida: conociendo $d$ y $D$ y midiendo la separación de las
+franjas, se despeja $\lambda$ ---así se midió por primera vez la longitud de
+onda de la luz, un número imposible de obtener con una regla. Nótese que las
+franjas oscuras son \emph{exactamente} oscuras y las claras valen $4I_1$; el
+promedio sigue siendo $2I_1$, que es lo que llegaría sin interferencia.}
+\end{center}

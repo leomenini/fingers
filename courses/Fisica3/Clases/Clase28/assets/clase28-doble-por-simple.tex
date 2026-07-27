@@ -1,0 +1,37 @@
+% Clase 28 --- Los dos efectos superpuestos (§2, cierre).
+% Las franjas finas las pone la SEPARACION d; la envolvente ancha, el ANCHO a de
+% cada rendija. En el dibujo, d = 4a: cada cuatro franjas cae un cero de la
+% envolvente y ese maximo desaparece.
+\begin{center}
+\begin{tikzpicture}
+
+  \begin{axis}[
+    fisfig, width=13.2cm, height=6.0cm, grid=none,
+    xlabel={$\sen\theta$ \; (en unidades de $\lambda/a$)},
+    ylabel={$I/I_1$},
+    xmin=-2.6, xmax=2.6, ymin=0, ymax=4.5,
+    xtick={-2,-1,0,1,2}, ytick={0,2,4},
+    legend style={at={(0.5,-0.42)}, anchor=north, legend columns=2},
+  ]
+    \addplot[figblue, smooth, samples=700, domain=-2.6:2.6]
+      {4*(cos(deg(4*pi*x/2)))^2 * ((sin(deg(pi*x))/(pi*x))^2)};
+    \addlegendentry{patrón observado}
+    \addplot[figred, dashed, smooth, samples=400, domain=-2.6:2.6]
+      {4*((sin(deg(pi*x))/(pi*x))^2)};
+    \addlegendentry{envolvente de una rendija}
+  \end{axis}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En un experimento real los dos fenómenos ocurren a la vez y hay
+que separarlos mentalmente porque dependen de longitudes distintas: las
+\textbf{franjas finas} las pone la separación $d$ entre rendijas, y la
+\textbf{envolvente ancha} ---que apaga zonas enteras--- la pone el ancho $a$ de
+cada una. Como siempre $a < d$, la escala angular de la envolvente es más grande
+y por eso se la ve modulando a las franjas y no al revés. El detalle más vistoso
+es el de los máximos \textbf{ausentes}: acá $d = 4a$, así que cada cuarto máximo
+de interferencia coincide con un cero de difracción y no aparece, por más que la
+condición $d\sen\theta = n\lambda$ se cumpla. Vale notar que el cálculo de la
+doble rendija supuso rendijas \textbf{muy finas}, o sea $a \ll \lambda$, en cuyo
+caso la envolvente es tan ancha que no se nota; el patrón dibujado acá es lo que
+se obtiene al levantar esa idealización.}
+\end{center}

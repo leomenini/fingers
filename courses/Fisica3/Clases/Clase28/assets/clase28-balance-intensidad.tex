@@ -1,0 +1,54 @@
+% Clase 28 --- El cuadruple, no el doble (§4).
+% Lo que se suman son las AMPLITUDES; la intensidad va con el cuadrado. Por eso
+% el maximo vale 4 I1 y no 2 I1, y por eso el promedio sigue valiendo 2 I1: la
+% energia no aparece de la nada, se redistribuye.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \draw[figaxis] (-0.3,0) -- (8.6,0);
+  \draw[figaxis] (0,-0.15) -- (0,4.5);
+  \foreach \yy/\lbl in {1/{$I_1$}, 2/{$2I_1$}, 4/{$4I_1$}}{
+    \draw[figgray!35, line width=0.5pt] (0,\yy) -- (8.4,\yy);
+    \node[figlblaux, anchor=east, inner sep=3pt] at (-0.05,\yy) {\lbl};}
+
+  % una rendija
+  \fill[figblue!45] (0.5,0) rectangle (1.7,1);
+  \draw[figgray, line width=0.6pt] (0.5,0) rectangle (1.7,1);
+  \node[figlbl, anchor=north, align=center] at (1.1,-0.25)
+    {una\\ rendija};
+
+  % dos incoherentes
+  \fill[figgray!45] (2.6,0) rectangle (3.8,2);
+  \draw[figgray, line width=0.6pt] (2.6,0) rectangle (3.8,2);
+  \node[figlbl, anchor=north, align=center] at (3.2,-0.25)
+    {dos\\ incoherentes};
+
+  % dos coherentes: entre 0 y 4
+  \fill[figamber!35] (4.7,0) rectangle (5.9,4);
+  \draw[figgray, line width=0.6pt] (4.7,0) rectangle (5.9,4);
+  \draw[figred, dashed, line width=1pt] (4.6,2) -- (6.0,2);
+  \node[figlbl, figred, anchor=west, inner sep=2pt] at (6.05,2)
+    {promedio: $2I_1$};
+  \node[figlbl, anchor=north, align=center] at (5.3,-0.25)
+    {dos\\ coherentes};
+
+  \node[figlbl, anchor=west, align=left, inner sep=2pt] at (6.05,3.55)
+    {franja clara: $4I_1$\\ franja oscura: $0$};
+  \node[figlbl, figred, anchor=south west, inner sep=2pt] at (0.5,4.15)
+    {$I = 4I_1\cos^2\!\left(\dfrac{k\,d\,\sen\theta}{2}\right)$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El resultado que más sorprende del cálculo es el
+\textbf{cuádruple}: en una franja clara no llega el doble de luz que con una
+sola rendija, sino cuatro veces más. La razón es que lo que se suman son las
+\textbf{amplitudes} de campo ---$A + A = 2A$--- mientras que la intensidad va
+con el \emph{cuadrado} de la amplitud, y $(2A)^2 = 4A^2$. La contracara está en
+las franjas oscuras, donde no llega absolutamente nada. Que el promedio siga
+valiendo $2I_1$ ---exactamente lo que llegaría si las dos rendijas fueran
+incoherentes--- es lo que salva la conservación de la energía: la interferencia
+no crea ni destruye luz, la \textbf{redistribuye} sobre la pantalla, sacándola
+de las franjas oscuras para amontonarla en las claras. Al resultado hay que
+sumarle una dependencia suave extra, el $1/R_1^2$ del decaimiento de cada onda,
+que hace que todo el patrón se apague despacio hacia los bordes; conviene no
+confundirla con la interferencia, que es la que produce la alternancia rápida.}
+\end{center}

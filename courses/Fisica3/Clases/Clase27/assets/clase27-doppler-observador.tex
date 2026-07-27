@@ -1,0 +1,46 @@
+% Clase 27 --- Doppler con el OBSERVADOR en movimiento (§1.2).
+% La fuente esta quieta: los frentes son circulos concentricos EQUIESPACIADOS,
+% separados lambda. Lo unico que cambia es cuantos frentes barre el observador
+% por unidad de tiempo, porque el va al encuentro de ellos.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % fuente en reposo
+  \filldraw[figamber] (0,0) circle (2.4pt);
+  \node[figlbl, figamber, anchor=north, fill=white, inner sep=1.5pt]
+    at (0,-0.16) {fuente en reposo};
+
+  % frentes de onda: circulos equiespaciados
+  \foreach \rr in {0.7,1.4,2.1,2.8}{\draw[figaux] (0,0) circle (\rr);}
+  \draw[figgray, line width=0.7pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (1.4,0.3) -- (2.1,0.3);
+  \node[figlblaux, anchor=south, inner sep=1.5pt, fill=white]
+    at (1.75,0.32) {$\lambda$};
+
+  % el observador viene hacia la fuente
+  \filldraw[figred] (4.1,0) circle (2.4pt);
+  \draw[figvecres] (3.95,0) -- (3.0,0);
+  \node[figlbl, figred, anchor=north] at (3.5,-0.12) {$v_0$};
+  \node[figlbl, figred, anchor=south] at (4.1,0.2) {observador};
+
+  \node[figlbl, anchor=north, align=center] at (0.6,-3.15)
+    {en reposo cuenta $v\,t/\lambda$ frentes
+     $\Rightarrow f = v/\lambda$\\[2pt]
+     yendo al encuentro barre $(v+v_0)\,t/\lambda$
+     $\Rightarrow f' = f\left(1 + v_0/v\right)$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Medir una frecuencia es, literalmente, \textbf{contar frentes de
+onda} en un tiempo largo y dividir. Con todo quieto pasan $v\,t/\lambda$ frentes
+y sale $f = v/\lambda$. Si el observador se mueve hacia la fuente, los frentes
+siguen dibujados exactamente igual ---la fuente no se enteró de nada, así que
+$\lambda$ \textbf{no cambia}---, pero él los va a buscar: en el tiempo $t$ el
+encuentro cubre $(v + v_0)t$ en vez de $v\,t$, y por eso cuenta más. Sólo
+interviene la componente de $v_0$ \textbf{en la dirección de propagación}: quien
+se mueve tangencialmente, sobre un mismo círculo, no percibe cambio alguno. Es
+importante retener qué es lo que cambia en este caso ---el ritmo del conteo, no
+la separación de los frentes---, porque en el caso de la fuente en movimiento
+ocurre justo lo contrario, y de esa diferencia sale que las dos fórmulas no
+coincidan.}
+\end{center}

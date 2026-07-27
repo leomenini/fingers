@@ -1,0 +1,56 @@
+% Clase 28 --- Difraccion por una rendija: el truco del emparejamiento (§2).
+% La rendija de ancho a interfiere CONSIGO MISMA. Se emparejan los rayos que
+% salen de puntos separados a/2: si su diferencia de caminos es lambda/2, cada
+% pareja se cancela y por lo tanto se cancela toda la rendija.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % la rendija de ancho a
+  \draw[figline, line width=1.6pt] (0,-2.6) -- (0,-1.2);
+  \draw[figline, line width=1.6pt] (0,1.2) -- (0,2.6);
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.5mm,width=1.1mm]}-{Latex[length=1.5mm,width=1.1mm]}]
+    (-0.3,-1.2) -- (-0.3,1.2);
+  \node[figlblaux, anchor=east, inner sep=2pt] at (-0.35,0) {$a$};
+  \draw[figaux] (-0.05,0) -- (0.05,0);
+
+  % puntos emparejados: borde y centro, y sus vecinos
+  \foreach \yy in {1.2,0.75,0.3}{
+    \filldraw[figblue] (0,\yy) circle (1.5pt);
+    \filldraw[figred] (0,{\yy-1.2}) circle (1.5pt);
+    \draw[figvecaux, figblue] (0,\yy) -- ({3.6},{\yy+1.35});
+    \draw[figvecaux, figred] (0,{\yy-1.2}) -- ({3.6},{\yy+0.15});}
+
+  % la pareja destacada: borde y centro
+  \draw[figblue, line width=1.1pt] (0,1.2) -- (3.9,2.66);
+  \draw[figred, line width=1.1pt] (0,0) -- (3.9,1.46);
+  \draw[figaux] (0,1.2) -- (0.415,0.111);
+  \draw[figred, line width=1.4pt] (0,0) -- (0.415,0.111);
+  \draw[figvecaux, figred] (1.15,-1.35) -- (0.5,-0.02);
+  \node[figlbl, figred, anchor=north west, inner sep=2pt] at (1.1,-1.32)
+    {$\tfrac{a}{2}\sen\theta = \tfrac{\lambda}{2}
+      \Rightarrow$ la pareja se cancela};
+
+  \draw[figgray, line width=0.6pt] (1.9,0) arc (0:20.6:1.9);
+  \node[figlbl, anchor=west, inner sep=1pt] at (1.95,0.36) {$\theta$};
+  \draw[figaux] (0,0) -- (4.4,0);
+
+  \node[figlbl, anchor=north west, align=left] at (2.6,-2.15)
+    {emparejando de a dos, toda\\ la rendija se cancela:\\[3pt]
+     $a\,\sen\theta = m\,\lambda$, \; $m \neq 0$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Una sola rendija tampoco ilumina parejo: \textbf{interfiere
+consigo misma}. El argumento no necesita integrales, sólo una idea de
+apareamiento: se piensa la rendija como una colección de fuentes distribuidas a
+lo ancho de $a$, y se emparejan los puntos que están separados exactamente
+$a/2$ ---el borde con el centro, el siguiente al borde con el siguiente al
+centro, y así hasta agotarlos. Cada pareja tiene entre sí una diferencia de
+caminos de $(a/2)\sen\theta$; si esa cantidad vale $\lambda/2$, los dos rayos
+llegan en contrafase y se anulan. Y como \emph{todas} las parejas cumplen lo
+mismo, la rendija entera se apaga en esa dirección: $a\sen\theta = \lambda$.
+Repitiendo el reparto en cuatro, seis, ocho grupos salen los demás ceros,
+$a\sen\theta = m\lambda$ con $m \neq 0$. El caso $m = 0$ queda excluido a
+propósito: en el centro no hay ninguna diferencia de caminos que anular, y ahí
+está el máximo principal.}
+\end{center}

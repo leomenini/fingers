@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -132,6 +139,8 @@ Con velocidad $v_0$ hacia la fuente, pasan los frentes en $(v+v_0)t$:
 
 Solo interviene la componente en la dirección de propagación.
 
+\input{assets/clase27-doppler-observador.tex}
+
 \subsection{Fuente en movimiento}
 
 La fuente avanza $v_0 T$ por período, así que $\lambda' = (v - v_0)T$:
@@ -143,6 +152,8 @@ La fuente avanza $v_0 T$ por período, así que $\lambda' = (v - v_0)T$:
 \end{keybox}
 
 Coherente con la ambulancia (más aguda al acercarse).
+
+\input{assets/clase27-doppler-fuente.tex}
 
 \begin{warnbox}[No coinciden]
   Las dos fórmulas difieren: hay un referencial privilegiado (el medio). Válidas
@@ -163,6 +174,8 @@ relativista (solo velocidad relativa $v_0$):
 Para $v_0 \ll c$, a primer orden $f' \approx f(1 + v_0/c)$, que coincide con
 ambas fórmulas mecánicas.
 
+\input{assets/clase27-doppler-comparacion.tex}
+
 \subsection{Corrimiento al rojo y ley de Hubble}
 
 Las galaxias lejanas se alejan (más rápido cuanto más lejos): su frecuencia
@@ -173,6 +186,8 @@ centro), base empírica del Big Bang.
   Radar/sonar de velocidad, sonares de submarinos, ecografía Doppler (velocidad
   de la sangre).
 \end{notebox}
+
+\input{assets/clase27-corrimiento-rojo.tex}
 
 % ===================================================================
 \section{Interferencia de ondas}
@@ -199,6 +214,8 @@ Una combinación lineal de soluciones es solución.
   ondas mecánicas grandes.
 \end{notebox}
 
+\input{assets/clase27-superposicion.tex}
+
 \subsection{Interferencia constructiva y destructiva}
 
 Sumando dos ondas de igual amplitud: constructiva total ($2A$), destructiva
@@ -223,11 +240,15 @@ Definiendo la fase con amplitud positiva delante:
 
 Importa la diferencia de fases; $-A\sin(kx) = A\sin(kx + \pi)$.
 
+\input{assets/clase27-interferencia-plano.tex}
+
 \subsection{Coherencia}
 
 Para ver interferencia, las fuentes deben ser \textbf{coherentes} (desfasaje
 constante en el tiempo). Dos lamparitas emiten incoherentemente (emisiones
 atómicas aleatorias) $\Rightarrow$ no hay zonas oscuras.
+
+\input{assets/clase27-coherencia.tex}
 
 \subsection{Preview: experimento de doble rendija}
 
