@@ -1,0 +1,55 @@
+% Clase 25 --- Onda esferica: la intensidad cae como 1/r^2 (§5).
+% El argumento es conservacion de la energia: la MISMA potencia atraviesa los dos
+% cascarones, pero repartida en areas que crecen como r^2. El dibujo tiene que
+% mostrar el cono de energia ensanchandose, no solo las esferas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % fuente
+  \filldraw[figamber] (0,0) circle (2.4pt);
+  \node[figlbl, figamber, anchor=north east] at (-0.2,-0.3) {fuente};
+
+  % cascarones
+  \draw[figaux] (0,0) circle (1.7);
+  \draw[figaux] (0,0) circle (3.2);
+  \draw[figvecaux] (0,0) -- (150:1.7);
+  \node[figlblaux, anchor=south east] at (150:1.0) {$r_1$};
+  \draw[figvecaux] (0,0) -- (170:3.2);
+  \node[figlblaux, anchor=south] at (170:2.2) {$r_2$};
+
+  % cono de energía: el mismo haz, dos áreas distintas
+  \fill[figamber!14] (0,0) -- (25:1.7) arc (25:55:1.7) -- (55:3.2)
+      arc (55:25:3.2) -- cycle;
+  \draw[figamber, line width=0.9pt] (25:1.7) arc (25:55:1.7);
+  \draw[figamber, line width=0.9pt] (25:3.2) arc (25:55:3.2);
+  \draw[figaux] (0,0) -- (25:3.6);
+  \draw[figaux] (0,0) -- (55:3.6);
+  \node[figlbl, figamber, anchor=north] at (38:1.52) {$A_1$};
+  \node[figlbl, figamber, anchor=south] at (38:3.32) {$A_2$};
+
+  % rayos en el resto de las direcciones
+  \foreach \ang in {60,80,100,120,250,280,310,340}{
+    \draw[figvecaux] (\ang:0.25) -- (\ang:1.45);}
+
+  % lectura
+  \node[figlbl, anchor=north west, align=left] at (3.3,-0.5)
+    {$P$ es la misma en los dos cascarones:\\[2pt]
+     $I_1\,4\pi r_1^2 = I_2\,4\pi r_2^2$\\[2pt]
+     $\Rightarrow\; I \propto \dfrac{1}{r^2}, \qquad
+      |\mathbf{E}| \propto \dfrac{1}{r}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La onda plana es cómoda pero imposible: uniforme en todo un
+plano infinito, tendría energía total infinita. Lo realista es una fuente
+puntual que emite en todas direcciones, y ahí el decaimiento no es una pérdida
+de energía sino puro reparto geométrico. La onda no disipa nada al propagarse,
+así que la potencia que atraviesa el cascarón chico es la misma que atraviesa el
+grande; como la superficie de una esfera crece con $r^2$, la energía por unidad
+de área cae con $1/r^2$. El segundo resultado se obtiene enganchando con lo
+anterior: lejos de la fuente, en una región chica, la onda esférica se parece
+localmente a una plana ---no se alcanza a notar la curvatura--- y ahí vale
+$I \propto \langle E^2\rangle$. Si $I$ cae como $1/r^2$, el campo eléctrico cae
+como $1/r$, no como $1/r^2$. Vale la pena reparar en la diferencia con el campo
+de una carga puntual, que sí va como $1/r^2$: el campo \emph{radiado} decae
+mucho más despacio, y por eso la radiación llega lejos.}
+\end{center}

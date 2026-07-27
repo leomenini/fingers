@@ -1,0 +1,102 @@
+% Clase 26 --- Los dos ejemplos del principio de Fermat (§5.2 y §5.3).
+% (a) reflexion: un solo medio, tiempo minimo = distancia minima.
+% (b) refraccion (el salvavidas): dos velocidades, ya NO es la distancia minima.
+\begin{center}
+\begin{tikzpicture}[scale=0.9, transform shape]
+
+% ---------------- (a) reflexión ----------------
+\begin{scope}
+  \draw[figline, line width=1.2pt] (-2.6,0) -- (2.6,0);
+  \foreach \xx in {-2.5,-2.2,...,2.5}{
+    \draw[figgray, line width=0.5pt] (\xx,0) -- ({\xx-0.2},-0.2);}
+
+  \coordinate (A) at (-2.0,1.6);
+  \coordinate (B) at (2.0,1.1);
+  \coordinate (P) at (0.37,0);
+
+  % caminos alternativos
+  \draw[figaux] (A) -- (-0.9,0) -- (B);
+  \draw[figaux] (A) -- (1.5,0) -- (B);
+
+  % camino real
+  \draw[figvecres] (A) -- (P);
+  \draw[figvecres] (P) -- (B);
+
+  \draw[figaux] (0.37,-0.35) -- (0.37,1.5);
+  \draw[figgray, line width=0.6pt] (0.37,0.9) arc (90:146:0.9);
+  \node[figlbl, anchor=south east, inner sep=1pt] at (0.2,0.62) {$\theta_1$};
+  \draw[figgray, line width=0.6pt] (0.37,0.9) arc (90:34:0.9);
+  \node[figlbl, anchor=south west, inner sep=1pt] at (0.56,0.62) {$\theta_2$};
+
+  \filldraw[figred] (A) circle (2pt) node[figlbl, anchor=south east] {$A$};
+  \filldraw[figred] (B) circle (2pt) node[figlbl, anchor=south west] {$B$};
+
+  \draw[figgray, line width=0.55pt,
+        {Latex[length=1.4mm,width=1mm]}-{Latex[length=1.4mm,width=1mm]}]
+    (-2.2,0) -- (-2.2,1.6);
+  \node[figlblaux, anchor=east, inner sep=2pt] at (-2.24,0.8) {$x_A$};
+  \draw[figgray, line width=0.55pt,
+        {Latex[length=1.4mm,width=1mm]}-{Latex[length=1.4mm,width=1mm]}]
+    (2.2,0) -- (2.2,1.1);
+  \node[figlblaux, anchor=west, inner sep=2pt] at (2.24,0.55) {$x_B$};
+  \draw[figgray, line width=0.55pt,
+        {Latex[length=1.4mm,width=1mm]}-{Latex[length=1.4mm,width=1mm]}]
+    (-2.0,-0.6) -- (0.37,-0.6);
+  \node[figlblaux, anchor=north, inner sep=2pt] at (-0.8,-0.62) {$y$};
+
+  \node[figlbl, anchor=north, align=center] at (0,-2.45)
+    {\textbf{(a)} un solo medio: mínimo de\\
+     $L(y) = \sqrt{x_A^2+y^2} + \sqrt{x_B^2+(D-y)^2}$};
+\end{scope}
+
+% ---------------- (b) el salvavidas ----------------
+\begin{scope}[xshift=7.6cm]
+  \fill[figblue!10] (-2.6,-2.2) rectangle (2.6,0);
+  \draw[figline, line width=1pt] (-2.6,0) -- (2.6,0);
+  \node[figlblaux, anchor=west] at (-2.55,0.28) {arena (rápido)};
+  \node[figlblaux, anchor=west] at (-2.55,-0.3) {agua (lento)};
+
+  \coordinate (A2) at (-2.0,1.8);
+  \coordinate (B2) at (1.48,-1.6);
+  \coordinate (P2) at (0.3,0);
+
+  \draw[figaux] (A2) -- (B2);
+  \node[figlblaux, anchor=east, align=right] at (-1.75,1.05)
+    {recta:\\ no es la mejor};
+  \draw[figaux] (A2) -- (1.48,0) -- (B2);
+
+  \draw[figvecres] (A2) -- (P2);
+  \draw[figvecres] (P2) -- (B2);
+
+  \draw[figaux] (0.3,-1.5) -- (0.3,1.5);
+  \draw[figgray, line width=0.6pt] (0.3,0.85) arc (90:142:0.85);
+  \node[figlbl, anchor=south east, inner sep=1pt] at (0.14,0.55) {$\theta_1$};
+  \draw[figgray, line width=0.6pt] (0.3,-0.85) arc (270:306:0.85);
+  \node[figlbl, anchor=north west, inner sep=1pt] at (0.5,-0.72) {$\theta_3$};
+
+  \filldraw[figred] (A2) circle (2pt) node[figlbl, anchor=south east] {$A$};
+  \filldraw[figred] (B2) circle (2pt) node[figlbl, anchor=north west] {$B$};
+
+  \node[figlbl, anchor=north, align=center] at (0,-2.45)
+    {\textbf{(b)} dos velocidades: mínimo de\\
+     $t(y) = \dfrac{n_1}{c}\sqrt{x_A^2+y^2}
+             + \dfrac{n_2}{c}\sqrt{x_B^2+(y-D)^2}$};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Fermat pide que la luz vaya de $A$ a $B$ por el camino de
+\textbf{menor tiempo}, y con eso solo se recuperan las dos leyes. En (a), como
+hay un único medio, tiempo mínimo es lo mismo que distancia mínima: derivando
+$L(y)$ e igualando a cero aparecen dos cocientes que son \emph{cateto opuesto
+sobre hipotenusa} en cada triángulo, es decir $\sen\theta_1 - \sen\theta_2 = 0$,
+y de ahí $\theta_1 = \theta_2$. En (b) la equivalencia se rompe ---la velocidad
+cambia al cruzar--- y hay que minimizar el tiempo, con lo que cada término entra
+pesado por su $n$: sale $n_1\sen\theta_1 = n_2\sen\theta_3$, Snell otra vez, por
+un camino completamente distinto al de los frentes de onda. La versión cotidiana
+es el salvavidas que corre en la arena y nada en el agua: no le conviene la recta
+(nada demasiado) ni correr hasta quedar enfrente de la persona (camina de más);
+le conviene un punto intermedio, y ese punto es exactamente el que da la ley de
+Snell. Un detalle de cuentas: conviene escribir el segundo radicando como
+$(y-D)^2$ y no $(D-y)^2$, para no perderse con el signo que trae la regla de la
+cadena.}
+\end{center}

@@ -1,0 +1,61 @@
+% Clase 25 --- Por que el tamano de la antena importa (§6.3).
+% Dos paneles a la MISMA escala de dibujo pero con lambda muy distinta: lo que
+% cambia es el factor entre el largo de la antena y la longitud de onda.
+\begin{center}
+\begin{tikzpicture}[scale=0.95, transform shape]
+
+% ---------------- (a) FM ----------------
+\begin{scope}
+  % onda de FM: lambda ~ 3 m
+  \draw[figline, smooth, samples=90, domain=0:5.4]
+    plot (\x, {0.42*sin(deg(2*pi*\x/2.7)) + 1.5});
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (0.675,2.2) -- (3.375,2.2);
+  \node[figlblaux, anchor=south, inner sep=1.5pt] at (2.025,2.2)
+    {$\lambda \sim \SI{3}{\metre}$};
+
+  % el celular
+  \fill[figgray!25] (2.4,-0.55) rectangle (2.85,0.35);
+  \draw[figgray, line width=0.8pt] (2.4,-0.55) rectangle (2.85,0.35);
+  \node[figlbl, anchor=west] at (3.0,-0.1) {celular ($\sim\SI{10}{\centi\metre}$)};
+
+  \node[figlbl, anchor=north, align=center] at (2.4,-1.0)
+    {\textbf{(a)} FM: factor $\sim 30$ entre $\lambda$ y el aparato\\
+     ---incómodo pero manejable, el celular entero hace de antena};
+\end{scope}
+
+% ---------------- (b) AM ----------------
+\begin{scope}[yshift=-5.1cm]
+  % onda de AM: lambda ~ 300 m; a la misma escala no entra ni un cuarto de ciclo
+  \draw[figline, smooth, samples=90, domain=0:5.4]
+    plot (\x, {0.42*sin(deg(2*pi*\x/270)) + 1.5});
+  \draw[figgray, line width=0.6pt, -{Latex[length=1.6mm,width=1.2mm]}]
+    (0.2,2.2) -- (5.4,2.2);
+  \node[figlblaux, anchor=south, inner sep=1.5pt] at (2.8,2.45)
+    {$\lambda \sim \SI{300}{\metre}$: a esta escala la onda ni se curva};
+
+  \fill[figgray!25] (2.4,-0.55) rectangle (2.85,0.35);
+  \draw[figgray, line width=0.8pt] (2.4,-0.55) rectangle (2.85,0.35);
+  \node[figlbl, anchor=west] at (3.0,-0.1) {el mismo celular};
+
+  \node[figlbl, anchor=north, align=center] at (2.4,-1.0)
+    {\textbf{(b)} AM: factor $\sim 3000$\\
+     ---la antena ideal mediría un kilómetro};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Una antena no capta por ser grande ni por ser metálica: capta
+porque es \textbf{un pedazo de circuito en el que los electrones se pueden mover
+bastante}, y el acoplamiento con la onda es bueno cuando esa distancia
+disponible es comparable a $\lambda$. De ahí la regla práctica de diseñarlas del
+tamaño de la longitud de onda que se quiere emitir o recibir. La comparación
+explica por qué un celular sintoniza FM sin drama y AM casi no: las ondas de FM
+miden metros y el aparato mide una décima de eso, un factor manejable; las de AM
+miden cientos o miles de metros y ahí el factor se va a los miles. No es que sea
+imposible ---mil veces más chica se banca, cien mil ya no--- sino que
+\emph{cuesta}, y el precio se paga en sensibilidad. La otra cara de la moneda es
+el alcance: las ondas más largas tienden a disiparse en distancias comparables a
+su propia longitud, y por eso las emisiones a muy grandes distancias se hacen en
+onda larga.}
+\end{center}

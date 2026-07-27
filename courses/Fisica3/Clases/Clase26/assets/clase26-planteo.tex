@@ -1,0 +1,56 @@
+% Clase 26 --- Planteo de reflexion y refraccion (§1.1).
+% Los tres rayos, los tres angulos medidos DESDE LA NORMAL y el hecho de que al
+% entrar en el medio mas refringente el rayo se ACERCA a la normal.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % medios
+  \fill[figblue!8] (-4.2,-2.6) rectangle (4.2,0);
+  \draw[figline, line width=1pt] (-4.2,0) -- (4.2,0);
+  \node[figlblaux, anchor=west] at (-4.15,0.32) {medio 1: $n_1$ (aire)};
+  \node[figlblaux, anchor=west] at (-4.15,-0.34) {medio 2: $n_2 > n_1$};
+
+  % normal
+  \draw[figaux] (0,-2.5) -- (0,2.5);
+  \node[figlblaux, anchor=south] at (0,2.52) {normal};
+
+  % rayo incidente (theta1 = 40 grados)
+  \draw[figvecres] (-1.93,2.30) -- (-0.2,0.24);
+  \draw[figred, line width=1.3pt] (-0.2,0.24) -- (0,0);
+  \node[figlbl, figred, anchor=east] at (-1.95,2.30) {incidente};
+
+  % rayo reflejado
+  \draw[figvecres] (0,0) -- (1.93,2.30);
+  \node[figlbl, figred, anchor=west] at (1.98,2.30) {reflejado};
+
+  % rayo refractado (theta3 = 25.4 grados)
+  \draw[figvecres] (0,0) -- (1.29,-2.71);
+  \node[figlbl, figred, anchor=west] at (1.34,-2.60) {transmitido};
+
+  % ángulos
+  \draw[figgray, line width=0.7pt] (0,1.15) arc (90:130:1.15);
+  \node[figlbl, anchor=south east] at (-0.42,0.95) {$\theta_1$};
+  \draw[figgray, line width=0.7pt] (0,1.15) arc (90:50:1.15);
+  \node[figlbl, anchor=south west] at (0.42,0.95) {$\theta_2$};
+  \draw[figgray, line width=0.7pt] (0,-1.45) arc (270:295.4:1.45);
+  \node[figlbl, anchor=north west] at (0.42,-1.35) {$\theta_3$};
+
+  % leyes
+  \node[figlbl, anchor=north west, align=left] at (2.15,-0.55)
+    {$\theta_2 = \theta_1$\\[3pt]
+     $n_1\sen\theta_1 = n_2\sen\theta_3$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los tres ángulos se miden \textbf{desde la normal}, no desde la
+superficie: es una convención, pero olvidarla es la fuente de errores más común
+del tema. La numeración incómoda ($1$ y $3$ en la misma fórmula) tiene una regla
+que la ordena: \emph{el $n$ del medio por el seno del ángulo \textbf{en ese
+mismo} medio}. Lo que se dibuja como \enquote{rayo} es la dirección de
+propagación, o sea la normal a los frentes de onda. Como acá $n_2 > n_1$, el
+rayo transmitido \textbf{se acerca} a la normal ($\theta_3 < \theta_1$): en el
+vidrio la luz va más lento y el frente se \enquote{endereza}. También hay que
+tener presente que $n$ depende de $\lambda$, así que la ley de Snell se aplica
+color por color; y que este tratamiento sólo sirve para los \textbf{ángulos}: para
+saber \emph{qué fracción} de la luz se refleja y cuál se transmite habría que
+tomar en cuenta el carácter vectorial de la onda, es decir, la polarización.}
+\end{center}

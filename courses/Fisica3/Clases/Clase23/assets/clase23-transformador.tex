@@ -1,0 +1,52 @@
+% Clase 23 --- El transformador (§3.1). Reemplaza el esquema inline de la
+% primera version, restilado al vocabulario de tikzstyles.tex.
+% Lo esencial que tiene que mostrar el dibujo: el nucleo cerrado obliga al MISMO
+% flujo por espira en las dos bobinas; lo unico distinto es cuantas espiras ve.
+\begin{center}
+\begin{tikzpicture}[scale=0.85, transform shape]
+
+  % ---- núcleo de hierro (marco cerrado) ----
+  \fill[figgray!18] (0,0) rectangle (5,3.4);
+  \fill[white] (1,0.7) rectangle (4,2.7);
+  \draw[figgray, line width=0.9pt] (0,0) rectangle (5,3.4);
+  \draw[figgray, line width=0.9pt] (1,0.7) rectangle (4,2.7);
+  \node[figlblaux, anchor=center, align=center] at (2.5,1.7)
+    {núcleo de\\ hierro};
+
+  % ---- flujo confinado en el núcleo ----
+  \draw[figamber, line width=1.1pt, -{Latex[length=2.4mm,width=1.8mm]}]
+    (1.7,3.05) -- (2.7,3.05);
+  \draw[figamber, line width=1.1pt, -{Latex[length=2.4mm,width=1.8mm]}]
+    (2.7,0.35) -- (1.7,0.35);
+  \node[figlbl, figamber, anchor=west] at (2.85,3.05) {$\Phi(t)$};
+
+  % ---- primario ----
+  \draw[figline] (0.5,0.9) to[cute inductor] (0.5,2.5);
+  \draw[figline] (0.5,2.5) -- (0.5,4.0) -- (-2.2,4.0);
+  \draw[figline] (0.5,0.9) -- (0.5,-0.6) -- (-2.2,-0.6);
+  \draw[figline] (-2.2,-0.6) to[sV=$\mathcal{E}(t)$] (-2.2,4.0);
+  \node[figlbl, anchor=east] at (0.15,1.7) {$N_p$};
+  \node[figlbl, anchor=south, align=center] at (-0.9,4.1) {primario};
+
+  % ---- secundario ----
+  \draw[figline] (4.5,0.9) to[cute inductor] (4.5,2.5);
+  \draw[figline] (4.5,2.5) -- (4.5,4.0) -- (7.2,4.0);
+  \draw[figline] (4.5,0.9) -- (4.5,-0.6) -- (7.2,-0.6);
+  \draw[figline] (7.2,4.0) to[R=$R_{\text{carga}}$] (7.2,-0.6);
+  \node[figlbl, anchor=west] at (4.85,1.7) {$N_s$};
+  \node[figlbl, anchor=south, align=center] at (5.9,4.1) {secundario};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El transformador no tiene ninguna conexión eléctrica entre los
+dos circuitos: lo único que los vincula es el flujo magnético, y el núcleo de
+hierro está ahí para que ese vínculo sea casi perfecto. Como
+$\mu_{\text{hierro}}/\mu_{\text{aire}} \sim 4000$, el campo prefiere quedarse
+dentro del marco cerrado en vez de escaparse al aire, y entonces
+\textbf{cada espira} ---la primera del primario o la última del secundario---
+ve el \emph{mismo} $\Phi(t)$. Ahí está el argumento completo: por Faraday cada
+espira aporta $d\Phi/dt$, así que $V_p = N_p\,d\Phi/dt$ y
+$V_s = N_s\,d\Phi/dt$, y al dividir se va lo único que no sabemos calcular,
+quedando $V_p/V_s = N_p/N_s$. Nótese que todo esto exige corriente
+\textbf{alterna}: con corriente continua $\Phi$ es constante, $d\Phi/dt = 0$ y
+el secundario no ve absolutamente nada.}
+\end{center}

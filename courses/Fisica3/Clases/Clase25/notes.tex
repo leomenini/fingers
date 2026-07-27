@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -259,6 +266,8 @@ $2\,u_E$, es decir la \textbf{densidad total} $u$:
 \]
 \end{keybox}
 
+\input{assets/clase25-poynting-caja.tex}
+
 \begin{warnbox}[Alcance de la demostración]
 Estrictamente, no se probó instante a instante sino \textbf{en promedios sobre
 tiempos mucho mayores que el período}. Se puede demostrar que la relación vale
@@ -350,6 +359,8 @@ superficie sobre la que se reparte crece, el pedazo de energía que toca a cada
 región es más chico. Nada más que eso.
 \end{notebox}
 
+\input{assets/clase25-esferica.tex}
+
 % ===================================================================
 \section{Espectro electromagnético}
 % ===================================================================
@@ -397,6 +408,8 @@ Radio (FM, AM, onda larga) & $\sim 10^{6}$ Hz y menos
 \bottomrule
 \end{tabular}
 \end{table}
+
+\input{assets/clase25-espectro.tex}
 
 \begin{warnbox}[Las fronteras no están nítidamente definidas]
 Los límites son \textbf{cualitativos}. De hecho, hay zonas donde según el contexto
@@ -460,6 +473,8 @@ Esto explica el contraste \textbf{AM vs.\ FM en un celular}:
         antena de un kilómetro, lo cual no es cómodo. El factor de diferencia es
         enorme, y por eso es mucho más difícil hacer funcionar AM en un celular.
 \end{itemize}
+
+\input{assets/clase25-antenas.tex}
 
 \begin{notebox}[Tres observaciones]
 \textbf{Antenas en el techo}: antes se necesitaban antenas grandes porque los
@@ -548,6 +563,8 @@ molécula alcanza a acomodarse el campo ya cambió.
 siguiente: distintos colores \enquote{ven} distinta constante dieléctrica y por lo
 tanto se propagan a distinta velocidad.
 \end{notebox}
+
+\input{assets/clase25-dispersion.tex}
 
 \textbf{Velocidades en distintos medios} (para $\lambda = \SI{589}{\nano\metre}$,
 en el amarillo):

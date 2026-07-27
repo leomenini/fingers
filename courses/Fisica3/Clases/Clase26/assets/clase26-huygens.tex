@@ -1,0 +1,65 @@
+% Clase 26 --- Principio de Huygens (§4).
+% (a) el ejemplo del docente: la cubeta golpeada con un objeto CUADRADO; los
+%     frentes se van redondeando hasta parecer circulares.
+% (b) el limite del metodo: partiendo de un frente plano la envolvente es otro
+%     plano, y el principio no aporta nada.
+\begin{center}
+\begin{tikzpicture}[scale=0.92, transform shape]
+
+% ---------------- (a) el cuadrado que se redondea ----------------
+\begin{scope}
+  % frente actual: cuadrado
+  \draw[figline, line width=1pt] (-0.85,-0.85) rectangle (0.85,0.85);
+
+  % ondas secundarias: un circulito centrado en cada punto del frente
+  \foreach \pp in {(-0.85,-0.85),(-0.85,-0.28),(-0.85,0.28),(-0.85,0.85),
+                   (-0.28,0.85),(0.28,0.85),(0.85,0.85),(0.85,0.28),
+                   (0.85,-0.28),(0.85,-0.85),(0.28,-0.85),(-0.28,-0.85)}{
+    \draw[figaux] \pp circle (0.55);}
+
+  % envolvente: nuevo frente
+  \draw[figamber, line width=1pt, rounded corners=0.55cm]
+    (-1.4,-1.4) rectangle (1.4,1.4);
+  % un paso mas
+  \draw[figamber!55, line width=1pt, rounded corners=1.35cm]
+    (-2.15,-2.15) rectangle (2.15,2.15);
+
+  \node[figlbl, figamber, anchor=south west] at (0.95,1.45) {envolvente};
+
+  \node[figlbl, anchor=north, align=center] at (0,-2.55)
+    {\textbf{(a)} el frente cuadrado se redondea\\
+     paso a paso (radio $=\lambda$ por período)};
+\end{scope}
+
+% ---------------- (b) el caso en que no aporta nada ----------------
+\begin{scope}[xshift=7.4cm]
+  \draw[figline, line width=1pt] (-1.7,-0.6) -- (1.7,-0.6);
+  \foreach \xx in {-1.7,-1.13,...,1.75}{
+    \draw[figaux] (\xx,-0.6) circle (0.55);}
+  \draw[figamber, line width=1pt] (-1.7,-0.05) -- (1.7,-0.05);
+
+  \draw[figvecaux] (0,-0.6) -- (0,-0.05);
+  \node[figlblaux, anchor=west] at (0.08,-0.32) {$\lambda$};
+
+  \node[figlbl, anchor=north, align=center] at (0,-2.55)
+    {\textbf{(b)} si el frente ya es plano,\\
+     la envolvente es otro plano};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Formulado en 1678 ---mucho antes de que se supiera que la luz es
+un campo electromagnético--- el principio vale para \textbf{cualquier} onda y es
+una receta gráfica, no una fórmula: cada punto del frente actual se comporta como
+una fuente puntual de ondas esféricas, y el frente siguiente es la
+\textbf{envolvente} de todos esos circulitos. Como todas las ondas secundarias
+tienen la misma $\lambda$ y el mismo período, \textbf{todos los circulitos son
+iguales}; el radio depende de cuánto se avanza por paso ($\lambda$ si es un
+período entero, $\lambda/10$ si es una décima parte). Su valor está en los frentes
+\textbf{curvos}, donde permite predecir la deformación con regla y compás: en el
+panel (b) se ve que para un frente plano el método sólo confirma que la onda sigue
+siendo plana. Tiene una falla conocida: tomado al pie de la letra también predice
+un frente que viaja \textbf{hacia atrás}. La salida es que las ondas secundarias
+no son esféricas uniformes sino que tienen una dirección preferencial ---para
+saber hacia dónde va la onda, y no sólo dónde está, hay que conocer cuánta
+intensidad manda hacia cada lado.}
+\end{center}

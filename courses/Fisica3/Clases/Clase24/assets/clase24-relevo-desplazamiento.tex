@@ -1,0 +1,74 @@
+% Clase 24 --- La corriente de desplazamiento toma el relevo (§1.2--1.4).
+% Dos paneles con la MISMA amperiana y el mismo condensador; lo unico que cambia
+% es cual de las dos superficies se elige. La idea que tiene que quedar: cada
+% termino por separado vale cosas distintas, pero la SUMA da lo mismo.
+\begin{center}
+\begin{tikzpicture}[scale=0.82, transform shape]
+
+% ---------------- (a) S1 corta el cable ----------------
+\begin{scope}
+  \fill[figblue!14] (0,0) ellipse (0.26 and 1.15);
+  \draw[figline] (-2.2,0) -- (1.5,0);
+  \draw[figline] (2.3,0) -- (3.4,0);
+  \draw[figline, line width=1.5pt] (1.5,-0.85) -- (1.5,0.85);
+  \draw[figline, line width=1.5pt] (2.3,-0.85) -- (2.3,0.85);
+  \draw[figline, line width=1.1pt] (0,0) ellipse (0.26 and 1.15);
+  \node[figlblaux, anchor=north east] at (-0.2,-0.95) {$C$};
+
+  \draw[figvecres] (-2.05,0.35) -- (-1.25,0.35);
+  \node[figlbl, figred, anchor=south] at (-1.65,0.4) {$I$};
+
+  \node[figlbl, figblue, anchor=south] at (0.1,1.35) {$S_1$};
+
+  \node[figlbl, anchor=north, align=center] at (0.6,-1.85)
+    {\textbf{(a)} la corriente de conducción perfora $S_1$\\
+     $I_{\text{cond}} = I$, \quad $\Phi_E = 0 \Rightarrow I_d = 0$};
+\end{scope}
+
+% ---------------- (b) S2 pasa entre las placas ----------------
+\begin{scope}[xshift=7.6cm]
+  \draw[figline] (-2.2,0) -- (1.5,0);
+  \draw[figline] (2.3,0) -- (3.4,0);
+
+  % campo eléctrico creciente entre las placas
+  \fill[figamber!12] (1.5,-0.85) rectangle (2.3,0.85);
+  \foreach \yy in {-0.6,-0.2,0.2,0.6}{
+    \draw[figamber, line width=0.8pt, -{Latex[length=1.8mm,width=1.3mm]}]
+      (1.58,\yy) -- (2.22,\yy);}
+  \node[figlbl, figamber, anchor=south, align=center, fill=white,
+        inner sep=1.5pt] at (1.75,1.02) {$\mathbf{E}$ crece};
+
+  \draw[figline, line width=1.5pt] (1.5,-0.85) -- (1.5,0.85);
+  \draw[figline, line width=1.5pt] (2.3,-0.85) -- (2.3,0.85);
+
+  % la superficie abombada que se cuela por el hueco
+  \draw[figamber, line width=1.0pt]
+    (0,1.15) .. controls (1.2,2.0) and (2.2,1.9) .. (1.9,0)
+    .. controls (2.2,-1.9) and (1.2,-2.0) .. (0,-1.15);
+  \draw[figline, line width=1.1pt] (0,0) ellipse (0.26 and 1.15);
+  \node[figlblaux, anchor=north east] at (-0.2,-0.95) {$C$};
+
+  \draw[figvecres] (-2.05,0.35) -- (-1.25,0.35);
+  \node[figlbl, figred, anchor=south] at (-1.65,0.4) {$I$};
+  \node[figlbl, figamber, anchor=west] at (2.35,1.72) {$S_2$};
+
+  \node[figlbl, anchor=north, align=center] at (0.6,-1.85)
+    {\textbf{(b)} nada de corriente atraviesa $S_2$\\
+     $I_{\text{cond}} = 0$, \quad $I_d = \varepsilon_0\dv{\Phi_E}{t} = I$};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los dos paneles muestran la \emph{misma} amperiana $C$ y el
+mismo condensador cargándose; lo único que cambia es qué superficie se elige
+para contar lo que la atraviesa. En (a) la que perfora es la corriente de
+conducción y no hay campo eléctrico, así que el término de Maxwell no aporta
+nada. En (b) no pasa ninguna carga, pero el campo entre las placas
+\textbf{crece} mientras la carga se acumula, y ese crecimiento es exactamente
+lo que mide $I_d = \varepsilon_0\,d\Phi_E/dt$. La cancelación es limpia:
+$\Phi_E = (Q/A\varepsilon_0)\,A = Q/\varepsilon_0$, de modo que
+$I_d = dQ/dt = I$, la misma corriente que llega por el cable ---los
+$\varepsilon_0$ se van y el área tampoco importa. Cada término por separado
+depende de la superficie; la \textbf{suma} de los dos, no. La imagen física es
+que la corriente viene por el cable, se interrumpe al llegar a la placa y el
+campo eléctrico variable toma el relevo justo ahí.}
+\end{center}

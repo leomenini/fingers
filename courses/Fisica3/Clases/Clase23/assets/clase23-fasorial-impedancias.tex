@@ -1,0 +1,78 @@
+% Clase 23 --- Diagrama fasorial de impedancias en el plano complejo (§1.8).
+% El docente lo dibuja para leer |Z| y cos(phi) de la geometria, sin cuentas:
+% R sobre el eje real, la bobina hacia arriba, el condensador hacia abajo.
+% Dos paneles con la MISMA geometria; lo unico que cambia es cual de las dos
+% reactancias gana.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+% ---------------- (a) circuito inductivo: omega L > 1/(omega C) ------------
+\begin{scope}
+  \draw[figaxis] (-0.4,0) -- (4.7,0) node[figlblaux, anchor=south east] {Re};
+  \draw[figaxis] (0,-2.0) -- (0,2.7) node[figlblaux, anchor=south east] {Im};
+
+  % R sobre el eje real
+  \draw[figvec] (0,0) -- (3,0);
+  \node[figlbl, anchor=north] at (1.5,-0.12) {$R$};
+
+  % bobina hacia arriba y condensador hacia abajo, encadenados en la punta de R
+  \draw[figvec] (3,0) -- (3,2.2);
+  \node[figlbl, anchor=west] at (3.08,0.6) {$\omega L$};
+  \draw[figvec] (3.6,2.2) -- (3.6,1.3);
+  \node[figlbl, anchor=west] at (3.7,1.78) {$-\dfrac{1}{\omega C}$};
+  \draw[figaux] (3,2.2) -- (3.6,2.2);
+  \draw[figaux] (3,1.3) -- (3.6,1.3);
+
+  % impedancia total
+  \draw[figvecres] (0,0) -- (3,1.3);
+  \node[figlbl, figred, anchor=south east] at (2.5,1.09) {$\hat Z$};
+
+  \draw[figgray, line width=0.6pt] (0.95,0) arc (0:23.4:0.95);
+  \node[figlbl, anchor=west] at (1.0,0.26) {$\phi > 0$};
+
+  \node[figlbl, anchor=north, align=center] at (2.0,-2.35)
+    {\textbf{(a)} $\omega L > \dfrac{1}{\omega C}$: inductivo,\\
+     la corriente atrasa};
+\end{scope}
+
+% ---------------- (b) circuito capacitivo: omega L < 1/(omega C) -----------
+\begin{scope}[xshift=6.4cm]
+  \draw[figaxis] (-0.4,0) -- (4.7,0) node[figlblaux, anchor=south east] {Re};
+  \draw[figaxis] (0,-2.0) -- (0,2.7) node[figlblaux, anchor=south east] {Im};
+
+  \draw[figvec] (0,0) -- (3,0);
+  \node[figlbl, anchor=south] at (1.5,0.12) {$R$};
+
+  \draw[figvec] (3,0) -- (3,0.9);
+  \node[figlbl, anchor=east] at (2.9,0.62) {$\omega L$};
+  \draw[figvec] (3.6,0.9) -- (3.6,-1.3);
+  \node[figlbl, anchor=east] at (3.5,-0.5) {$-\dfrac{1}{\omega C}$};
+  \draw[figaux] (3,0.9) -- (3.6,0.9);
+  \draw[figaux] (3,-1.3) -- (3.6,-1.3);
+
+  \draw[figvecres] (0,0) -- (3,-1.3);
+  \node[figlbl, figred, anchor=north east] at (2.4,-1.0) {$\hat Z$};
+
+  \draw[figgray, line width=0.6pt] (0.95,0) arc (0:-23.4:0.95);
+  \node[figlbl, anchor=west] at (1.0,-0.26) {$\phi < 0$};
+
+  \node[figlbl, anchor=north, align=center] at (2.0,-2.35)
+    {\textbf{(b)} $\omega L < \dfrac{1}{\omega C}$: capacitivo,\\
+     la corriente adelanta};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las tres impedancias no se suman como números sino como
+vectores del plano complejo, y ahí está toda la gracia: la resistencia va sobre
+el eje real, la bobina hacia arriba y el condensador hacia abajo, de modo que
+las dos reactancias \textbf{se restan entre sí} antes de componerse con $R$. El
+triángulo rectángulo que queda dice de un vistazo lo que costaría media carilla
+de trigonometría: la hipotenusa es $|Z|$, el cateto adyacente es $R$, y por lo
+tanto el factor de potencia es $\cos\phi = R/|Z|$. Como sólo la componente
+\emph{real} sobrevive en $\langle P\rangle = \tfrac12\mathcal{E}_0 I_m\cos\phi$,
+el dibujo también explica por qué únicamente la resistencia disipa: si el
+triángulo es todo cateto vertical ($R = 0$), el vector $\hat Z$ es puramente
+imaginario, $\phi = \pm\pi/2$ y la potencia media es cero. En resonancia
+($\omega L = 1/\omega C$) los dos aportes verticales se cancelan, $\hat Z$
+queda acostado sobre el eje real y el factor de potencia vale $1$.}
+\end{center}

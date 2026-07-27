@@ -1,0 +1,64 @@
+% Clase 23 --- La incoherencia de la ley de Ampère (§4.2).
+% El docente dibuja el cable que carga un condensador y elige DOS superficies
+% distintas con el mismo borde. La figura tiene que dejar ver que el borde es
+% el mismo (la amperiana C) y que sin embargo una superficie es atravesada por
+% la corriente y la otra no.
+\begin{center}
+\begin{tikzpicture}[scale=0.95, transform shape]
+
+  % ---- superficie S2: la "bolsa" que se cuela entre las placas ----
+  \fill[figamber!14]
+    (0,1.35) .. controls (1.4,2.3) and (2.4,2.2) .. (2.1,0)
+    .. controls (2.4,-2.2) and (1.4,-2.3) .. (0,-1.35)
+    -- cycle;
+  \draw[figamber, line width=0.9pt]
+    (0,1.35) .. controls (1.4,2.3) and (2.4,2.2) .. (2.1,0)
+    .. controls (2.4,-2.2) and (1.4,-2.3) .. (0,-1.35);
+
+  % ---- cable y condensador ----
+  \draw[figline] (-3.1,0) -- (1.6,0);
+  \draw[figline] (2.6,0) -- (4.6,0);
+  \draw[figline, line width=1.6pt] (1.6,-1.0) -- (1.6,1.0);
+  \draw[figline, line width=1.6pt] (2.6,-1.0) -- (2.6,1.0);
+  \node[figlbl, figred, anchor=east] at (1.5,0.72) {$+Q$};
+  \node[figlbl, figblue, anchor=west] at (2.7,0.72) {$-Q$};
+
+  \draw[figvecres] (-2.9,0.42) -- (-2.0,0.42);
+  \node[figlbl, figred, anchor=south] at (-2.45,0.5) {$I$};
+  \draw[figvecres] (3.5,0.42) -- (4.4,0.42);
+
+  % ---- superficie S1: el disco plano ----
+  \fill[figblue!14] (0,0) ellipse (0.3 and 1.35);
+
+  % ---- amperiana C (borde común de las dos superficies) ----
+  \draw[figline, line width=1.1pt] (0,0) ellipse (0.3 and 1.35);
+  \node[figlbl, figblue, anchor=east] at (-0.42,-1.15) {$C$};
+
+  % ---- rótulos ----
+  \node[figlbl, figblue, anchor=east, align=right] at (-1.05,1.9)
+    {$S_1$: corta el cable\\ $\Rightarrow \mu_0 I$};
+  \draw[figvecaux, figblue] (-1.0,1.75) -- (-0.18,0.95);
+
+  \node[figlbl, figamber, anchor=west, align=left] at (2.95,2.35)
+    {$S_2$: pasa entre las placas\\ $\Rightarrow 0$};
+  \draw[figvecaux, figamber] (2.9,1.95) -- (2.3,1.0);
+
+  \node[figred, font=\Large\bfseries] at (1.15,-2.25) {?};
+  \node[figlbl, figred, anchor=west] at (1.45,-2.25)
+    {mismo borde, dos respuestas};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La ley de Ampère habla de \enquote{la corriente que atraviesa
+una superficie cuyo borde es $C$}, pero no dice cuál: cualquiera debería
+servir, y ahí se cae. Las dos superficies dibujadas tienen exactamente el mismo
+borde ---la amperiana $C$, que abraza el cable--- y sin embargo el disco plano
+$S_1$ es perforado por la corriente $I$, mientras que la bolsa $S_2$, que se
+mete por el hueco entre las placas, no es atravesada por ninguna carga en
+movimiento. El miembro izquierdo $\oint_C \mathbf{B}\cdot d\boldsymbol{\ell}$
+es uno solo, así que el derecho no puede valer $\mu_0 I$ y $0$ a la vez. La
+pista de dónde está la falla la da el condensador: la carga $Q$ de las placas
+\textbf{crece con el tiempo}, o sea que el sistema no es estacionario, que es
+justamente la hipótesis bajo la cual se dedujo la ley de Ampère. Lo que sí
+ocurre en el hueco es que el campo eléctrico aumenta, y ése será el término que
+Maxwell agregue para tapar el agujero.}
+\end{center}
