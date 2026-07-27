@@ -1,0 +1,68 @@
+% Clase 28 --- Suma de las dos ondas segun el desfasaje (§1.2--1.3).
+% Tres casos con la MISMA geometria: lo unico que cambia es Delta(phi), que a su
+% vez esta fijado por la diferencia de caminos. La amplitud resultante es
+% 2A cos(Delta phi / 2).
+\begin{center}
+\begin{tikzpicture}
+
+  \begin{axis}[
+    fisfig, width=4.7cm, height=3.4cm, grid=none,
+    xmin=0, xmax=6.5, ymin=-2.4, ymax=2.4,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    title={\small $\Delta\phi = 0$: refuerzo},
+    title style={yshift=-2pt},
+  ]
+    \addplot[figgray!60, smooth, samples=120, domain=0:6.5] {sin(deg(x))};
+    \addplot[figgray!60, smooth, samples=120, domain=0:6.5] {sin(deg(x))};
+    \addplot[figblue, line width=1.2pt, smooth, samples=120, domain=0:6.5]
+      {2*sin(deg(x))};
+  \end{axis}
+
+  \begin{scope}[xshift=5.0cm]
+  \begin{axis}[
+    fisfig, width=4.7cm, height=3.4cm, grid=none,
+    xmin=0, xmax=6.5, ymin=-2.4, ymax=2.4,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    title={\small $\Delta\phi = \pi/2$}, title style={yshift=-2pt},
+  ]
+    \addplot[figgray!60, smooth, samples=120, domain=0:6.5] {sin(deg(x))};
+    \addplot[figgray!60, smooth, samples=120, domain=0:6.5]
+      {sin(deg(x)+90)};
+    \addplot[figblue, line width=1.2pt, smooth, samples=120, domain=0:6.5]
+      {sin(deg(x)) + sin(deg(x)+90)};
+  \end{axis}
+  \end{scope}
+
+  \begin{scope}[xshift=10.0cm]
+  \begin{axis}[
+    fisfig, width=4.7cm, height=3.4cm, grid=none,
+    xmin=0, xmax=6.5, ymin=-2.4, ymax=2.4,
+    xtick=\empty, ytick=\empty, axis lines=middle,
+    title={\small $\Delta\phi = \pi$: se cancelan},
+    title style={yshift=-2pt},
+  ]
+    \addplot[figgray!60, smooth, samples=120, domain=0:6.5] {sin(deg(x))};
+    \addplot[figgray!60, smooth, samples=120, domain=0:6.5]
+      {sin(deg(x)+180)};
+    \addplot[figblue, line width=1.2pt, samples=2, domain=0:6.5] {0};
+  \end{axis}
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos ondas que llegan a $P$ tienen la misma amplitud y la
+misma frecuencia; lo único que las distingue es la fase con que llegan, y esa
+fase la fija la diferencia de caminos: $\Delta\phi = k(R_2-R_1)$. Sumar dos
+senos de igual frecuencia da otro seno de la misma frecuencia,
+\[
+E = 2A\cos\!\Big(\tfrac{\Delta\phi}{2}\Big)\,
+     \sen\!\Big(kR_1 - \omega t + \tfrac{\Delta\phi}{2}\Big),
+\]
+es decir que el desfasaje no cambia el ritmo de la oscilación sino
+\textbf{su amplitud}, a través del factor $2A\cos(\Delta\phi/2)$. De ahí salen
+las dos condiciones sin necesidad de más cuentas: amplitud máxima cuando
+$\Delta\phi$ es múltiplo de $2\pi$ ---o sea, cuando la diferencia de caminos es
+un número entero de longitudes de onda, $d\sen\theta = n\lambda$--- y
+cancelación exacta cuando es un múltiplo impar de $\pi$, $d\sen\theta =
+(n+\tfrac12)\lambda$. El caso intermedio del panel del medio no es ni una cosa
+ni la otra: la amplitud queda entre $0$ y $2A$.}
+\end{center}

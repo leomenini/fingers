@@ -1,0 +1,41 @@
+% Clase 27 --- Las tres formulas no son la misma (§1.3--1.4).
+% A primer orden las tres coinciden; la diferencia recien se nota cuando la
+% velocidad deja de ser chica frente a la de la onda.
+\begin{center}
+\begin{tikzpicture}
+
+  \begin{axis}[
+    fisfig, width=10.5cm, height=6.0cm,
+    xlabel={$v_0/v$ \; (o $v_0/c$ en el caso de la luz)},
+    ylabel={$f'/f$},
+    xmin=0, xmax=0.62, ymin=0.95, ymax=2.9,
+    xtick={0,0.2,0.4,0.6}, ytick={1,1.5,2,2.5},
+    legend style={at={(0.03,0.97)}, anchor=north west},
+  ]
+    \addplot[figblue, smooth, samples=100, domain=0:0.6] {1+x};
+    \addlegendentry{observador en movimiento: $1 + v_0/v$}
+    \addplot[figred, smooth, samples=100, domain=0:0.6] {1/(1-x)};
+    \addlegendentry{fuente en movimiento: $1/(1-v_0/v)$}
+    \addplot[figamber, dashed, smooth, samples=100, domain=0:0.6]
+      {sqrt((1+x)/(1-x))};
+    \addlegendentry{luz (relativista): $\sqrt{(1+\beta)/(1-\beta)}$}
+
+    \draw[figaux] (axis cs:0.12,0.95) -- (axis cs:0.12,2.9);
+    \node[figlblaux, anchor=north west, align=left] at (axis cs:0.145,1.45)
+      {a la izquierda de acá las tres\\ son indistinguibles};
+  \end{axis}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos fórmulas acústicas se parecen mucho pero no son la
+misma: $1 + \beta$ contra $1/(1-\beta) = 1 + \beta + \beta^2 + \dots$, con
+$\beta = v_0/v$. Difieren recién en el segundo orden, y por eso en la vida
+cotidiana ---donde $v_0$ es una fracción chica de la velocidad del sonido--- da
+lo mismo cuál se use. Que sean \textbf{distintas} en el fondo es lo importante:
+significa que en las ondas mecánicas se puede saber, midiendo, quién se mueve
+respecto del medio. Para la luz eso sería inaceptable, porque no hay medio y la
+relatividad exige que sólo importe la velocidad \textbf{relativa}: la fórmula
+correcta es la relativista, que es simétrica ---cambiarle el signo a $\beta$ la
+invierte--- y que a primer orden se confunde con las otras dos,
+$f' \simeq f(1 + v_0/c)$. Ése es el orden que alcanza para todas las
+aplicaciones habituales: radar de velocidad, sonar y ecografía Doppler.}
+\end{center}

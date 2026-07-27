@@ -1,0 +1,77 @@
+% Clase 27 --- Corrimiento al rojo y ley de Hubble (§1.5).
+% (a) las mismas lineas espectrales, corridas en bloque hacia el rojo.
+% (b) la recta de Hubble: cuanto mas lejos, mas rapido se aleja.
+\begin{center}
+\begin{tikzpicture}[scale=0.95, transform shape]
+
+% ---------------- (a) las líneas espectrales corridas ----------------
+\begin{scope}
+  % espectro de laboratorio
+  \fill[violet!70] (0,1.15) rectangle (0.9,1.75);
+  \fill[blue!60]   (0.9,1.15) rectangle (1.8,1.75);
+  \fill[green!55!black] (1.8,1.15) rectangle (2.7,1.75);
+  \fill[yellow!80!black] (2.7,1.15) rectangle (3.6,1.75);
+  \fill[orange!85] (3.6,1.15) rectangle (4.5,1.75);
+  \fill[red!80]    (4.5,1.15) rectangle (5.4,1.75);
+  \draw[figgray, line width=0.6pt] (0,1.15) rectangle (5.4,1.75);
+  \foreach \xx in {1.1,1.55,3.0}{
+    \draw[black, line width=1.4pt] (\xx,1.15) -- (\xx,1.75);}
+  \node[figlbl, anchor=east] at (-0.15,1.45) {laboratorio};
+
+  % espectro de la galaxia: las mismas lineas, corridas
+  \fill[violet!70] (0,0.0) rectangle (0.9,0.6);
+  \fill[blue!60]   (0.9,0.0) rectangle (1.8,0.6);
+  \fill[green!55!black] (1.8,0.0) rectangle (2.7,0.6);
+  \fill[yellow!80!black] (2.7,0.0) rectangle (3.6,0.6);
+  \fill[orange!85] (3.6,0.0) rectangle (4.5,0.6);
+  \fill[red!80]    (4.5,0.0) rectangle (5.4,0.6);
+  \draw[figgray, line width=0.6pt] (0,0.0) rectangle (5.4,0.6);
+  \foreach \xx in {2.0,2.45,3.9}{
+    \draw[black, line width=1.4pt] (\xx,0.0) -- (\xx,0.6);}
+  \node[figlbl, anchor=east] at (-0.15,0.3) {galaxia lejana};
+
+  \foreach \xa/\xb in {1.1/2.0, 1.55/2.45, 3.0/3.9}{
+    \draw[figvecres] (\xa,1.05) -- (\xb,0.7);}
+  \node[figlbl, figred, anchor=west] at (4.05,0.88) {hacia el rojo};
+
+  \node[figlbl, anchor=north, align=center] at (2.7,-0.35)
+    {\textbf{(a)} el patrón entero se corre:\\
+     no cambian las líneas, cambia $f$};
+\end{scope}
+
+% ---------------- (b) la recta de Hubble ----------------
+\begin{scope}[xshift=7.7cm, yshift=-0.35cm]
+  \begin{axis}[
+    fisfig, width=5.7cm, height=4.4cm, grid=none,
+    xlabel={distancia $d$}, ylabel={velocidad de alejamiento},
+    xmin=0, xmax=1.05, ymin=0, ymax=1.05,
+    xtick=\empty, ytick=\empty,
+    at={(0,0)}, anchor=south west,
+  ]
+    \addplot[figblue, samples=2, domain=0:1] {0.95*x};
+    \addplot[only marks, mark=*, mark size=1.4pt, figred]
+      coordinates {(0.14,0.19) (0.3,0.24) (0.42,0.45) (0.58,0.5)
+                   (0.71,0.72) (0.86,0.79)};
+    \node[figlblaux, anchor=north west] at (axis cs:0.06,0.98)
+      {$v = H_0\,d$};
+  \end{axis}
+  \node[figlbl, anchor=north, align=center] at (2.85,-1.05)
+    {\textbf{(b)} ley de Hubble: cuanto más lejos,\\
+     más rápido se aleja};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Lo que se mide de una galaxia no es \enquote{un color} sino un
+patrón de líneas ---las huellas de los elementos, cuyas frecuencias se conocen
+con enorme precisión en el laboratorio. Al observar una galaxia lejana el patrón
+aparece completo pero \textbf{corrido en bloque} hacia frecuencias menores: no
+es que la galaxia esté hecha de otra cosa, es Doppler. De ahí el nombre
+\textbf{corrimiento al rojo}, y de ahí se despeja la velocidad con la que se
+aleja. Lo notable llega al graficar esa velocidad contra la distancia: los
+puntos se acomodan sobre una recta, y cuanto más lejos está la galaxia, más
+rápido se aleja. Es la \textbf{ley de Hubble}, la base empírica de que el
+universo está en expansión. Conviene evitar la lectura ingenua de que estamos en
+el centro de una explosión: en una expansión de este tipo \textbf{cualquier}
+observador ve lo mismo, todas las galaxias alejándose de él y las más lejanas
+más rápido. No hay centro.}
+\end{center}

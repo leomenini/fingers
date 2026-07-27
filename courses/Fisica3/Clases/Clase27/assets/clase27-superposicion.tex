@@ -1,0 +1,58 @@
+% Clase 27 --- Principio de superposicion (§2.1--2.2).
+% Tres instantes: los pulsos se acercan, se suman (aca, con signos opuestos, se
+% cancelan casi del todo) y siguen viaje intactos. Lo notable es lo ULTIMO.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+% ---- antes ----
+\begin{scope}[yshift=3.4cm]
+  \draw[figaxis] (-0.3,0) -- (7.4,0);
+  \draw[figline, smooth, samples=80, domain=0:3.2]
+    plot (\x, {0.85*exp(-((\x-1.4)^2)/0.30)});
+  \draw[figred, line width=0.9pt, smooth, samples=80, domain=3.6:7.2]
+    plot (\x, {-0.85*exp(-((\x-5.6)^2)/0.30)});
+  \draw[figvecaux] (2.0,0.35) -- (2.7,0.35);
+  \draw[figvecaux] (5.0,-0.35) -- (4.3,-0.35);
+  \node[figlblaux, anchor=west] at (7.5,0) {antes};
+\end{scope}
+
+% ---- durante ----
+\begin{scope}[yshift=1.6cm]
+  \draw[figaxis] (-0.3,0) -- (7.4,0);
+  \draw[figaux, smooth, samples=90, domain=1.6:5.4]
+    plot (\x, {0.85*exp(-((\x-3.5)^2)/0.30)});
+  \draw[figaux, smooth, samples=90, domain=1.6:5.4]
+    plot (\x, {-0.85*exp(-((\x-3.5)^2)/0.30)});
+  \draw[figamber, line width=1.2pt] (1.6,0) -- (5.4,0);
+  \node[figlblaux, anchor=west] at (7.5,0) {durante};
+  \node[figlbl, figamber, anchor=west, inner sep=2pt] at (5.6,0.12)
+    {suma $= 0$};
+\end{scope}
+
+% ---- después ----
+\begin{scope}
+  \draw[figaxis] (-0.3,0) -- (7.4,0);
+  \draw[figred, line width=0.9pt, smooth, samples=80, domain=0:3.2]
+    plot (\x, {-0.85*exp(-((\x-1.4)^2)/0.30)});
+  \draw[figline, smooth, samples=80, domain=3.6:7.2]
+    plot (\x, {0.85*exp(-((\x-5.6)^2)/0.30)});
+  \draw[figvecaux] (2.0,-0.35) -- (1.3,-0.35);
+  \draw[figvecaux] (5.0,0.35) -- (5.7,0.35);
+  \node[figlblaux, anchor=west] at (7.5,0) {después};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En el vacío, sin cargas ni corrientes, las ecuaciones de Maxwell
+son \textbf{lineales y homogéneas}: si $\mathbf{E}_1$ y $\mathbf{E}_2$ son
+soluciones, cualquier combinación $\alpha\mathbf{E}_1 + \beta\mathbf{E}_2$
+también lo es. Eso es el principio de superposición, y su consecuencia dibujada
+es ésta: en el instante del cruce el campo total es la \textbf{suma} de los dos
+---acá, como los pulsos vienen con signos opuestos, se cancelan y por un momento
+no hay nada--- y sin embargo cada onda \textbf{sigue viaje intacta}, como si la
+otra no existiera. La cancelación no destruye nada: la información de los dos
+pulsos sigue estando, en ese instante, en la velocidad con la que la cuerda
+---o el campo--- se está moviendo. Lo mismo permite que dos haces de luz se
+crucen sin afectarse. Vale la pena señalar sus límites: en un medio no lineal,
+o en una cuerda con oscilaciones grandes, la ecuación deja de ser lineal y esto
+ya no funciona.}
+\end{center}

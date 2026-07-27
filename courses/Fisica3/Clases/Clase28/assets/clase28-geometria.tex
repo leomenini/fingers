@@ -1,0 +1,66 @@
+% Clase 28 --- Geometria de la doble rendija (§1.1).
+% Todo el experimento se reduce a una cuenta geometrica: en campo lejano los dos
+% rayos son practicamente paralelos y la unica diferencia entre ellos es el
+% triangulito rectangulo de cateto d*sen(theta).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % onda plana incidente
+  \foreach \xx in {-2.4,-2.0,-1.6,-1.2}{
+    \draw[figline] (\xx,-1.5) -- (\xx,1.5);}
+  \draw[figvecaux] (-2.2,1.85) -- (-1.2,1.85);
+  \node[figlblaux, anchor=south] at (-1.7,1.9) {onda plana, $\lambda$};
+
+  % barrera con dos rendijas
+  \draw[figline, line width=1.6pt] (0,-2.0) -- (0,-0.72);
+  \draw[figline, line width=1.6pt] (0,-0.48) -- (0,0.48);
+  \draw[figline, line width=1.6pt] (0,0.72) -- (0,2.0);
+  \node[figlblaux, anchor=north] at (0,-2.05) {barrera};
+
+  % cota d
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.5mm,width=1.1mm]}-{Latex[length=1.5mm,width=1.1mm]}]
+    (-0.35,-0.6) -- (-0.35,0.6);
+  \node[figlblaux, anchor=east, inner sep=2pt] at (-0.4,0) {$d$};
+
+  % eje y rayos hacia P
+  \draw[figaux] (0,0) -- (7.2,0);
+  \draw[figvecres] (0,0.6) -- (6.9,3.36);
+  \draw[figvecres] (0,-0.6) -- (6.9,2.16);
+
+  % el triangulito de la diferencia de caminos
+  \draw[figred, line width=1.3pt] (0,-0.6) -- (0.414,-0.434);
+  \draw[figaux] (0,0.6) -- (0.414,-0.434);
+  \node[figlbl, figred, anchor=north west, inner sep=2pt] at (0.42,-0.5)
+    {$R_2 - R_1 \simeq d\,\sen\theta$};
+
+  % angulo
+  \draw[figgray, line width=0.6pt] (2.2,0) arc (0:21.8:2.2);
+  \node[figlbl, anchor=west, inner sep=1pt] at (2.25,0.45) {$\theta$};
+
+  % pantalla
+  \draw[figline, line width=1.4pt] (6.9,-1.9) -- (6.9,3.7);
+  \node[figlblaux, anchor=west] at (6.98,3.4) {pantalla};
+  \filldraw[figred] (6.9,2.76) circle (2pt);
+  \node[figlbl, figred, anchor=west] at (7.0,2.76) {$P$};
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.5mm,width=1.1mm]}-{Latex[length=1.5mm,width=1.1mm]}]
+    (0,-1.75) -- (6.9,-1.75);
+  \node[figlblaux, anchor=south, inner sep=2pt] at (3.45,-1.72)
+    {$D \gg d$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La onda plana llega a las dos rendijas \textbf{en fase}: los
+frentes son paralelos a la barrera, así que las dos se comportan como dos
+fuentes sincronizadas. Todo lo que sigue depende de una sola cantidad, la
+\textbf{diferencia de caminos} hasta el punto $P$. Calcularla exactamente sería
+un lío, y ahí entra la hipótesis de campo lejano: si $D \gg d$, los dos rayos
+que llegan a $P$ son prácticamente \textbf{paralelos}, y la diferencia se lee en
+el triangulito rectángulo de la izquierda, $R_2 - R_1 \simeq d\,\sen\theta$.
+Conviene notar la escala real: en un montaje típico $d$ es de décimas de
+milímetro y $D$ de metros, de modo que el dibujo está fuertemente
+\textbf{fuera de escala} ---los rayos verdaderos serían casi horizontales y el
+ángulo $\theta$, de fracciones de grado. La otra simplificación es tratar la luz
+por un solo número, ignorando su carácter vectorial; alcanza para las posiciones
+de las franjas, que es lo que se busca.}
+\end{center}

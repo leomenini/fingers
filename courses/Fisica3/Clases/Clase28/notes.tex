@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -124,6 +131,8 @@ vectoriales.
   \]
 \end{keybox}
 
+\input{assets/clase28-geometria.tex}
+
 \subsection{Suma de las dos ondas}
 
 Con amplitudes iguales y onda coherente:
@@ -135,6 +144,8 @@ Sumando los senos ($\Delta\phi = k(R_2-R_1)$):
 E = 2A\cos\!\left(\frac{k(R_2-R_1)}{2}\right)
     \sin\!\left(kR_1 - \omega t + \frac{k(R_2-R_1)}{2}\right).
 \]
+
+\input{assets/clase28-suma-ondas.tex}
 
 \subsection{Condiciones de máximo y mínimo}
 
@@ -162,6 +173,8 @@ en ángulo. Para $\theta$ pequeño ($\sin\theta \approx \tan\theta = y/D$):
 
 Equiespaciados con separación $D\lambda/d$; los mínimos a mitad de camino.
 
+\input{assets/clase28-franjas.tex}
+
 \subsection{Número finito de máximos}
 
 $\sin\theta = n\lambda/d$ requiere $n\lambda/d \le 1$. Para un máximo lateral:
@@ -174,6 +187,8 @@ $\sin\theta = n\lambda/d$ requiere $n\lambda/d \le 1$. Para un máximo lateral:
 \end{keybox}
 
 Número finito de máximos, más espaciados hacia los lados.
+
+\input{assets/clase28-numero-finito.tex}
 
 % ===================================================================
 \section{Difracción por una rendija}
@@ -190,8 +205,12 @@ a dos:
   \]
 \end{keybox}
 
+\input{assets/clase28-difraccion-rendija.tex}
+
 Los dos efectos se superponen: mínimos finos (doble rendija, $d$) y envolventes
 oscuras anchas (rendija simple, $a$).
+
+\input{assets/clase28-doble-por-simple.tex}
 
 \begin{notebox}[¿Por qué un láser?]
   Es potente y muy coherente (longitud de onda definida, frente en fase en una
@@ -212,6 +231,8 @@ incoherente (vela) en coherente.
   Una rendija infinitamente fina daría coherencia perfecta pero sin intensidad.
   Young balanceó fuente grande + rendija fina.
 \end{warnbox}
+
+\input{assets/clase28-young.tex}
 
 \subsection{Coherencia cuantitativa: el término de interferencia}
 
@@ -266,6 +287,8 @@ Normalizando por una rendija ($I_1 = CA^2/2R_1^2$):
   \item Hay una dependencia suave extra $1/R_1^2$ (decae hacia los bordes),
         distinta de la interferencia.
 \end{itemize}
+
+\input{assets/clase28-balance-intensidad.tex}
 
 \begin{notebox}[Fin del curso]
   Con el cálculo de la intensidad del experimento de doble rendija cierra el

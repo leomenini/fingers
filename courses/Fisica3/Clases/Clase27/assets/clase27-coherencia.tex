@@ -1,0 +1,53 @@
+% Clase 27 --- Coherencia (§2.5).
+% Lo unico que cambia entre los dos paneles es si el desfasaje entre las fuentes
+% se mantiene o cambia al azar: con fase fija hay franjas, con fase que salta
+% cada 10^-8 s el patron se promedia y desaparece.
+\begin{center}
+\begin{tikzpicture}
+
+  \begin{axis}[
+    fisfig, width=7.0cm, height=4.2cm, grid=none,
+    xlabel={posición en la pantalla}, ylabel={$I$},
+    xmin=-3.2, xmax=3.2, ymin=0, ymax=4.6,
+    xtick=\empty, ytick={0,2,4}, yticklabels={$0$,$2I_1$,$4I_1$},
+    title={\small\textbf{(a)} fuentes coherentes},
+    title style={yshift=-2pt},
+  ]
+    \addplot[figblue, smooth, samples=200, domain=-3.2:3.2]
+      {4*(cos(deg(2.2*x)))^2};
+  \end{axis}
+
+  \begin{scope}[xshift=8.2cm]
+  \begin{axis}[
+    fisfig, width=7.0cm, height=4.2cm, grid=none,
+    xlabel={posición en la pantalla}, ylabel={$I$},
+    xmin=-3.2, xmax=3.2, ymin=0, ymax=4.6,
+    xtick=\empty, ytick={0,2,4}, yticklabels={$0$,$2I_1$,$4I_1$},
+    title={\small\textbf{(b)} fuentes incoherentes},
+    title style={yshift=-2pt},
+  ]
+    \addplot[figgray!55, smooth, samples=200, domain=-3.2:3.2]
+      {4*(cos(deg(2.2*x+1.1)))^2};
+    \addplot[figgray!55, smooth, samples=200, domain=-3.2:3.2]
+      {4*(cos(deg(2.2*x-0.8)))^2};
+    \addplot[figred, line width=1.2pt, samples=2, domain=-3.2:3.2] {2};
+    \node[figlblaux, figred, anchor=south, fill=white, inner sep=1.5pt]
+      at (axis cs:0,2.1) {$I = I_1 + I_2$: sin franjas};
+  \end{axis}
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Dos fuentes son \textbf{coherentes} si mantienen su desfasaje
+constante en el tiempo; entonces el lugar de cada franja no se mueve y el patrón
+se ve. Con dos lamparitas comunes pasa lo contrario: la luz sale de emisiones
+atómicas independientes, la fase relativa salta al azar cada $10^{-8}$ segundos
+más o menos, y en el tiempo que tarda cualquier detector ---o el ojo--- en
+registrar algo, el patrón ya se corrió miles de veces. Lo que queda es el
+promedio, dibujado en (b): el término de interferencia promedia cero y las
+intensidades simplemente se suman, $I = I_1 + I_2$, sin zonas oscuras. Nótese
+que en (a) el máximo no vale $2I_1$ sino $4I_1$ ---se suman las
+\textbf{amplitudes}, y la intensidad va con el cuadrado--- y que los mínimos
+valen exactamente cero; el promedio sobre la pantalla sigue siendo $2I_1$, de
+modo que la energía no se pierde: se redistribuye. Ésta es la razón práctica
+por la que el experimento se hace con láser.}
+\end{center}

@@ -1,0 +1,54 @@
+% Clase 27 --- Interferencia de dos fuentes en el plano (§2.3--2.4).
+% Los circulos son las crestas de cada fuente. Donde se cruza cresta con cresta
+% hay refuerzo; entre medio quedan lineas donde siempre se cancelan, y esas
+% lineas son hiperbolas (diferencia de caminos constante).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \coordinate (S1) at (-1.1,0);
+  \coordinate (S2) at (1.1,0);
+
+  % crestas de cada fuente, separadas lambda
+  \foreach \rr in {1.1,2.2,3.3,4.4}{
+    \draw[figaux] (S1) circle (\rr);
+    \draw[figgray!45, dashed, line width=0.6pt] (S2) circle (\rr);}
+
+  \filldraw[figamber] (S1) circle (2.4pt);
+  \filldraw[figamber] (S2) circle (2.4pt);
+  \node[figlbl, figamber, anchor=north, fill=white, inner sep=1.5pt]
+    at (-1.1,-0.16) {$S_1$};
+  \node[figlbl, figamber, anchor=north, fill=white, inner sep=1.5pt]
+    at (1.1,-0.16) {$S_2$};
+
+  % lineas nodales: hiperbolas |r1 - r2| = (n+1/2) lambda, con c = 1.1
+  \foreach \aa/\bb in {0.275/1.0651, 0.825/0.7276}{
+    \draw[figred, line width=0.9pt, smooth, samples=90,
+          variable=\pp, domain=-1.75:1.75]
+      plot ({\aa*cosh(\pp)}, {\bb*sinh(\pp)});
+    \draw[figred, line width=0.9pt, smooth, samples=90,
+          variable=\pp, domain=-1.75:1.75]
+      plot ({-\aa*cosh(\pp)}, {\bb*sinh(\pp)});}
+
+  % la linea central: constructiva siempre
+  \draw[figblue, line width=1.1pt] (0,-3.4) -- (0,3.4);
+  \node[figlbl, figblue, anchor=west, fill=white, inner sep=1.5pt]
+    at (0.1,3.05) {refuerzo: $r_1 = r_2$};
+  \node[figlbl, figred, anchor=west, fill=white, inner sep=1.5pt]
+    at (2.0,2.2) {líneas oscuras: $|r_1 - r_2| = (n+\tfrac12)\lambda$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Cada familia de círculos marca las crestas de una fuente,
+separadas $\lambda$. Donde una cresta se cruza con otra cresta ---o un valle con
+un valle--- las dos ondas se suman y hay \textbf{interferencia constructiva};
+donde una cresta cae sobre un valle, se cancelan. Lo que ordena el dibujo es que
+esas condiciones no dependen del tiempo sino sólo de la \textbf{diferencia de
+caminos} $r_1 - r_2$: por eso los puntos de refuerzo no están sueltos sino
+alineados sobre curvas fijas, alternadas con las curvas oscuras. La mediatriz es
+siempre constructiva porque ahí las dos fuentes están a igual distancia. Escrito
+en términos de fase, hay refuerzo cuando $\phi_2 - \phi_1 = 2\pi n$ y
+cancelación cuando vale $\pi + 2\pi n$; lo que importa es la \textbf{diferencia}
+de fases y no cada fase por separado ---conviene recordar que $-A\sen(kx)$ es lo
+mismo que $A\sen(kx+\pi)$, de modo que un signo menos ya es medio ciclo de
+desfasaje. Todo esto exige que las dos fuentes mantengan su desfasaje en el
+tiempo, es decir, que sean coherentes.}
+\end{center}

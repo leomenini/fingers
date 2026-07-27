@@ -1,0 +1,52 @@
+% Clase 27 --- Doppler con la FUENTE en movimiento (§1.3).
+% Cada frente se emite desde una posicion distinta: los circulos quedan
+% descentrados y la longitud de onda misma cambia (comprimida adelante,
+% estirada atras). Es un mecanismo distinto al del observador en movimiento.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % frentes emitidos en instantes sucesivos, desde posiciones sucesivas
+  \draw[figaux] (0,0) circle (2.7);
+  \draw[figaux] (0.4,0) circle (1.8);
+  \draw[figaux] (0.8,0) circle (0.9);
+  \foreach \xx in {0,0.4,0.8}{\filldraw[figgray!60] (\xx,0) circle (1.3pt);}
+
+  % la fuente, ahora
+  \filldraw[figamber] (1.2,0) circle (2.6pt);
+  \draw[figvec, figamber] (1.35,0) -- (2.05,0);
+  \node[figlbl, figamber, anchor=south, inner sep=2pt] at (1.75,0.06) {$v_0$};
+
+  % lambda comprimida adelante
+  \draw[figred, line width=0.9pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (2.2,-0.45) -- (2.7,-0.45);
+  \node[figlbl, figred, anchor=north, inner sep=2pt, fill=white] at (2.6,-0.5)
+    {$\lambda' = (v - v_0)T$};
+
+  % lambda estirada atras
+  \draw[figblue, line width=0.9pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (-2.7,-0.45) -- (-1.4,-0.45);
+  \node[figlbl, figblue, anchor=north, inner sep=2pt, fill=white] at (-2.05,-0.5)
+    {$(v + v_0)T$};
+
+  \node[figlbl, figred, anchor=west] at (2.95,0.9) {adelante: más aguda};
+  \node[figlbl, figblue, anchor=east] at (-2.95,0.9) {atrás: más grave};
+
+  \node[figlbl, anchor=north] at (0.4,-3.05)
+    {$f' = \dfrac{v}{\lambda'} = \dfrac{f}{1 - \dfrac{v_0}{v}}$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Acá lo que cambia es \textbf{la onda misma}, no el ritmo con que
+se la mide: cada frente sale de una posición distinta, porque entre emisión y
+emisión la fuente avanzó $v_0T$. Los círculos quedan descentrados y se apiñan
+adelante ---donde la longitud de onda vale $\lambda' = (v-v_0)T$--- y se
+separan atrás. Nótese que la velocidad de la onda $v$ \textbf{no} cambia: la
+fija el medio, no quien emite. Ésa es la explicación de la ambulancia que suena
+aguda al acercarse y grave apenas pasa. Comparando con el caso anterior se ve
+que las dos fórmulas \textbf{no coinciden}, y que eso no es un descuido sino
+física: en las ondas mecánicas hay un referencial privilegiado ---el del medio
+en reposo--- y no da lo mismo quién se mueve respecto de él. Las dos expresiones
+valen mientras $v_0 < v$; si la fuente supera la velocidad de la onda, los
+frentes se amontonan en un cono y aparece la onda de choque.}
+\end{center}
