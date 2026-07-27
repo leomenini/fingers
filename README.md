@@ -34,7 +34,9 @@ viene siempre de las fuentes originales y de la revisión humana.
 1. **Las fuentes son la autoridad.** Un resumen nunca reemplaza a la clase, al
    libro ni al material del docente.
 2. **La IA propone, las personas deciden.** Todo lo generado es borrador hasta
-   que alguien lo revisa. (Dejo a Claude como colaborador porque tiene skills para dibujar las figuras, tip: Revisar /courses/Fisica3/CLAUDE.md en punto 6 y 7)
+   que alguien lo revisa. (Dejo a Claude como colaborador porque tiene skills
+   para dibujar las figuras; tip: revisar `courses/Fisica3/CLAUDE.md`, puntos 6
+   y 7.)
 3. **El conocimiento es trazable.** De cada cambio debe poder saberse quién lo
    hizo, por qué, con qué respaldo y cuándo fue revisado.
 4. **El conocimiento es reproducible.** Con las mismas fuentes y las mismas
@@ -125,7 +127,7 @@ detectar sin leer con atención.
 **Regla de recursos:** todo gráfico se autora en formato **vectorial y
 reproducible**. No se admiten fotos del pizarrón ni capturas del video: son
 material de origen, no contenido del repositorio, y no se reconstruyen con
-herramientas abiertas. (Solo es una cuestion de peso del proyecto esta regla).
+herramientas abiertas. (Sólo es una cuestión de peso del proyecto esta regla.)
 
 ## Cómo se produce una figura
 
