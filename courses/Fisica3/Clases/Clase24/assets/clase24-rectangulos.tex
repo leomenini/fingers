@@ -1,0 +1,90 @@
+% Clase 24 --- Los dos rectangulos de la deduccion (§5.1 y §5.3).
+% Misma geometria (altura h, ancho Delta x pequeno, en la posicion x); lo unico
+% que cambia es el plano en que se apoya y, con el, que ley se aplica.
+\begin{center}
+\begin{tikzpicture}[scale=0.95, transform shape]
+
+% ---------------- (a) Faraday, rectángulo en el plano xy ----------------
+\begin{scope}
+  \draw[figaxis] (-0.4,0) -- (4.3,0) node[figlblaux, anchor=north] {$x$};
+  \draw[figaxis] (0,-0.4) -- (0,3.1) node[figlblaux, anchor=east] {$y$};
+
+  \fill[figamber!12] (1.5,0.4) rectangle (2.6,2.4);
+  \draw[figline, line width=1pt] (1.5,0.4) rectangle (2.6,2.4);
+
+  % B saliente (símbolo de punto) dentro del rectángulo
+  \foreach \xx/\yy in {1.78/0.9, 2.32/0.9, 1.78/1.9, 2.32/1.9}{
+    \draw[figred, line width=0.8pt] (\xx,\yy) circle (0.13);
+    \filldraw[figred] (\xx,\yy) circle (1.3pt);}
+  \node[figlbl, figred, anchor=west] at (2.75,1.4) {$B_z$ (saliente)};
+
+  % campo eléctrico en los tramos verticales: distinto a cada lado
+  \draw[figvec] (1.5,2.4) -- (1.5,2.95);
+  \draw[figvec] (2.6,2.4) -- (2.6,3.25);
+  \node[figlbl, figblue, anchor=east] at (1.42,2.75) {$E_y(x)$};
+  \node[figlbl, figblue, anchor=west] at (2.68,3.0) {$E_y(x{+}\Delta x)$};
+
+  % cotas
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (1.28,0.4) -- (1.28,2.4);
+  \node[figlblaux, anchor=east] at (1.24,1.4) {$h$};
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (1.5,0.18) -- (2.6,0.18);
+  \node[figlblaux, anchor=north] at (2.05,0.14) {$\Delta x$};
+
+  \node[figlbl, anchor=north, align=center] at (2.0,-0.55)
+    {\textbf{(a)} plano $xy$: Faraday\\
+     $\pdv{E_y}{x} = -\,\pdv{B_z}{t}$};
+\end{scope}
+
+% ---------------- (b) Ampère--Maxwell, rectángulo en el plano xz ----------
+\begin{scope}[xshift=8.4cm]
+  \draw[figaxis] (-0.4,0) -- (4.3,0) node[figlblaux, anchor=north] {$x$};
+  \draw[figaxis] (0,-0.4) -- (0,3.1) node[figlblaux, anchor=east] {$z$};
+
+  \fill[figblue!10] (1.5,0.4) rectangle (2.6,2.4);
+  \draw[figline, line width=1pt] (1.5,0.4) rectangle (2.6,2.4);
+
+  \foreach \xx/\yy in {1.78/0.9, 2.32/0.9, 1.78/1.9, 2.32/1.9}{
+    \draw[figblue, line width=0.8pt] (\xx,\yy) circle (0.13);
+    \filldraw[figblue] (\xx,\yy) circle (1.3pt);}
+  \node[figlbl, figblue, anchor=west] at (2.75,1.4) {$E_y$ (saliente)};
+
+  \draw[figvecres] (1.5,2.4) -- (1.5,2.95);
+  \draw[figvecres] (2.6,2.4) -- (2.6,3.25);
+  \node[figlbl, figred, anchor=east] at (1.42,2.75) {$B_z(x)$};
+  \node[figlbl, figred, anchor=west] at (2.68,3.0) {$B_z(x{+}\Delta x)$};
+
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (1.28,0.4) -- (1.28,2.4);
+  \node[figlblaux, anchor=east] at (1.24,1.4) {$h$};
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (1.5,0.18) -- (2.6,0.18);
+  \node[figlblaux, anchor=north] at (2.05,0.14) {$\Delta x$};
+
+  \node[figlbl, anchor=north, align=center] at (2.0,-0.55)
+    {\textbf{(b)} plano $xz$: Ampère--Maxwell\\
+     $-\pdv{B_z}{x} = \mu_0\varepsilon_0\,\pdv{E_y}{t}$};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El truco de la deducción está en elegir el rectángulo
+\textbf{angosto}: $\Delta x$ chico permite despreciar la variación del campo
+\emph{en el flujo} ---donde el campo entra multiplicado por el área--- pero
+\textbf{no} en la circulación, porque ahí los dos tramos verticales se restan y
+si se despreciara la diferencia el resultado sería idénticamente cero. Esa
+asimetría deliberada es la que hace aparecer una derivada respecto de $x$ de un
+lado y una respecto de $t$ del otro. Los tramos horizontales no aportan nada en
+ninguno de los dos casos: ahí $d\boldsymbol{\ell}$ es paralelo a $\hat x$ y los
+campos son perpendiculares. Cada panel entrega después una relación entre las
+amplitudes: Faraday da $B_0 = E_0/c$ y Ampère--Maxwell da
+$B_0 = \mu_0\varepsilon_0\,c\,E_0$. Igualarlas ---y descartar la solución
+trivial $E_0 = 0$, que es simplemente \enquote{no hay onda}--- deja
+$c = 1/\sqrt{\mu_0\varepsilon_0}$. El signo menos del panel (b) no es un
+descuido: viene de que, con la orientación del rectángulo en el plano $xz$, los
+tramos se recorren al revés que en el caso anterior.}
+\end{center}

@@ -1,0 +1,47 @@
+% Clase 24 --- Onda viajera y el signo del argumento (§3.2).
+% El docente dibuja el pulso en t=0 y "el mismo dibujo corrido" en t. La figura
+% tiene que dejar ver por que el MENOS mueve la onda hacia la DERECHA: el maximo
+% vive donde el argumento se anula.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \draw[figaxis] (-0.5,0) -- (9.2,0) node[figlblaux, anchor=north east] {$x$};
+  \draw[figaxis] (0,-0.3) -- (0,2.3) node[figlblaux, anchor=south east] {$y$};
+
+  % perfil en t = 0
+  \draw[figgray, line width=1pt, smooth, samples=80, domain=-0.2:3.4]
+    plot (\x, {1.7*exp(-((\x-1.6)^2)/0.55)});
+  \node[figlblaux, anchor=south] at (1.6,1.78) {$t = 0$};
+  \filldraw[figgray] (1.6,1.7) circle (1.6pt);
+
+  % el mismo perfil, corrido
+  \draw[figline, line width=1pt, smooth, samples=80, domain=3.4:8.9]
+    plot (\x, {1.7*exp(-((\x-6.5)^2)/0.55)});
+  \node[figlbl, figblue, anchor=south] at (6.5,1.78) {$t > 0$};
+  \filldraw[figblue] (6.5,1.7) circle (1.6pt);
+
+  % el corrimiento
+  \draw[figgray, dashed, line width=0.6pt] (1.6,0.12) -- (1.6,1.68);
+  \draw[figgray, dashed, line width=0.6pt] (6.5,0.12) -- (6.5,1.68);
+  \draw[figred, line width=0.9pt,
+        {Latex[length=2mm,width=1.5mm]}-{Latex[length=2mm,width=1.5mm]}]
+    (1.6,0.42) -- (6.5,0.42);
+  \node[figlbl, figred, anchor=south] at (4.05,0.48) {$\Delta x = v\,t$};
+
+  \node[figlbl, anchor=north] at (1.6,-0.12) {$y(0,x) = f(x)$};
+  \node[figlbl, anchor=north] at (6.5,-0.12) {$y(t,x) = f(x - vt)$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape El signo menos desconcierta a todo el mundo: parece que para
+correr la onda hacia la derecha habría que \emph{sumar}. La verificación se ve
+mejor siguiendo un punto de la forma que sea fácil de rastrear, por ejemplo el
+máximo. Si se elige el origen de modo que en $t=0$ el máximo esté en $x = 0$,
+entonces en cualquier instante posterior el máximo sigue estando donde el
+argumento de $f$ se anula, es decir en $x - vt = 0$, o sea en $x = vt$: cada vez
+más a la derecha. Con $f(x + vt)$ el mismo razonamiento da $x = -vt$ y la onda
+viaja hacia la izquierda. Lo que hace \enquote{viajera} a esta onda es que la
+\textbf{forma no cambia}: el segundo dibujo es una copia calcada del primero,
+apenas trasladada. En una cuerda real puede haber una onda hacia la derecha
+superpuesta con otra hacia la izquierda, y ahí el perfil sí cambia de aspecto
+con el tiempo.}
+\end{center}

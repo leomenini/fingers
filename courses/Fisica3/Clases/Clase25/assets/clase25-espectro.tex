@@ -1,0 +1,71 @@
+% Clase 25 --- El espectro electromagnetico (§6.2).
+% Escala logaritmica en lambda: es la unica manera de que entren veinte ordenes
+% de magnitud en un renglon. El visible se dibuja del ancho que le toca (una
+% rendija) y se amplia aparte, que es justo la aclaracion que hace el docente.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+\begin{scope}[xscale=0.72]
+  % ---- bandas (coordenada x = log10 de lambda en metros) ----
+  \fill[figblue!45]  (-13,0) rectangle (-11,0.62);
+  \fill[figblue!30]  (-11,0) rectangle (-9,0.62);
+  \fill[figblue!18]  (-9,0)  rectangle (-6.4,0.62);
+  \fill[figamber!35] (-6.15,0) rectangle (-3,0.62);
+  \fill[figamber!22] (-3,0)  rectangle (-0.5,0.62);
+  \fill[figgray!22]  (-0.5,0) rectangle (4,0.62);
+  \fill[figred]      (-6.4,0) rectangle (-6.15,0.62);
+  \draw[figgray, line width=0.7pt] (-13,0) rectangle (4,0.62);
+
+  % ---- llamada al visible (va antes de los rótulos: el fondo blanco los tapa) ----
+  \draw[figred, line width=0.8pt] (-6.4,0) -- (-8.6,-1.87);
+  \draw[figred, line width=0.8pt] (-6.15,0) -- (2.0,-1.87);
+
+  % ---- eje ----
+  \draw[figaxis] (-13.4,-0.15) -- (4.6,-0.15);
+  \foreach \xx/\lbl in {-12/\SI{1}{\pico\metre}, -9/\SI{1}{\nano\metre},
+                        -3/\SI{1}{\milli\metre},
+                        0/\SI{1}{\metre}, 3/\SI{1}{\kilo\metre}}{
+    \draw[figgray, line width=0.6pt] (\xx,-0.1) -- (\xx,-0.28);
+    \node[figlblaux, anchor=north, inner sep=2pt, fill=white] at (\xx,-0.3) {\lbl};}
+  \node[figlblaux, anchor=west] at (4.7,-0.15) {$\lambda$};
+
+  % ---- rótulos de banda ----
+  \node[figlblaux, anchor=south, inner sep=2pt] at (-12,0.66) {rayos $\gamma$};
+  \node[figlblaux, anchor=south, inner sep=2pt] at (-10,1.06) {rayos X};
+  \node[figlblaux, anchor=south, inner sep=2pt] at (-7.7,0.66) {ultravioleta};
+  \node[figlblaux, anchor=south, inner sep=2pt] at (-4.6,1.06) {infrarrojo};
+  \node[figlblaux, anchor=south, inner sep=2pt] at (-1.75,0.66) {microondas};
+  \node[figlblaux, anchor=south, inner sep=2pt] at (1.75,1.06)
+    {radio (FM $\to$ onda larga)};
+
+\end{scope}
+
+  % ---- el visible ampliado (fuera del scope escalado) ----
+  \fill[violet!75]  (-6.2,-1.95) rectangle (-4.55,-1.35);
+  \fill[blue!65]    (-4.55,-1.95) rectangle (-2.9,-1.35);
+  \fill[green!60!black] (-2.9,-1.95) rectangle (-1.25,-1.35);
+  \fill[yellow!85!black] (-1.25,-1.95) rectangle (0.4,-1.35);
+  \fill[orange!85]  (0.4,-1.95) rectangle (2.05,-1.35);
+  \fill[red!80]     (2.05,-1.95) rectangle (3.7,-1.35);
+  \draw[figgray, line width=0.7pt] (-6.2,-1.95) rectangle (3.7,-1.35);
+  \node[figlblaux, anchor=north] at (-6.2,-2.0) {\SI{400}{\nano\metre}};
+  \node[figlblaux, anchor=north] at (3.7,-2.0) {\SI{700}{\nano\metre}};
+  \node[figlblaux, anchor=north] at (-1.25,-2.05)
+    {el visible, ampliado (pico solar en el verde)};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La escala es logarítmica porque de otro modo no entran veinte
+órdenes de magnitud en un renglón, y esa compresión es la que hace visible el
+punto de fondo: \textbf{todas} estas ondas son lo mismo ---campos $\mathbf{E}$ y
+$\mathbf{B}$ oscilando--- y en el vacío \textbf{todas} viajan a la misma $c$, de
+modo que dar $\lambda$ o dar $\nu = c/\lambda$ es exactamente la misma
+información. Lo único que las distingue es la escala espacial de la oscilación, y
+de ahí salen todas las diferencias prácticas: qué las produce, qué las absorbe y
+qué tamaño de antena hace falta para captarlas. Nótese lo angosto que es el
+visible en la barra de arriba: es una rendija dentro de un espectro enorme, y
+hubo que ampliarla aparte para poder rotularla. Las fronteras entre regiones no
+son nítidas ---la misma radiación se llama rayo X o rayo $\gamma$ según cómo se
+haya producido, no según su frecuencia--- y los prefijos \emph{infra} y
+\emph{ultra} se entienden respecto de la \textbf{frecuencia}: el infrarrojo tiene
+$\lambda$ más larga que el rojo, y por eso queda a su derecha.}
+\end{center}

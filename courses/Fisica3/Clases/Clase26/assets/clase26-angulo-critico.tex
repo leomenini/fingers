@@ -1,0 +1,54 @@
+% Clase 26 --- El angulo critico (§6.1).
+% Tres rayos que llegan a la frontera con angulos crecientes desde el medio mas
+% refringente. La carrera es entre theta1 y theta3: gana theta3, que llega a 90
+% grados primero. Valores: n1 = 1.5, n2 = 1, theta_c = 41.8 grados.
+% OJO: el rayo transmitido sigue HACIA ADELANTE (mismo lado de la normal que el
+% incidente), sólo que más abierto respecto de la normal.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  \fill[figblue!10] (-4.2,-2.5) rectangle (4.4,0);
+  \draw[figline, line width=1pt] (-4.2,0) -- (4.4,0);
+  \node[figlblaux, anchor=west] at (-4.15,2.0) {$n_2 = 1$ (aire)};
+  \node[figlblaux, anchor=west] at (-4.15,-2.25) {$n_1 = 1{,}5$ (vidrio)};
+
+  % normales
+  \foreach \xx in {-2.4,-0.4,1.6}{\draw[figaux] (\xx,-0.9) -- (\xx,1.3);}
+
+  % --- rayo 1: theta1 = 25 < theta_c : se transmite abriendose ---
+  \draw[figvecres] (-3.20,-1.72) -- (-2.4,0);
+  \draw[figvec, figamber] (-2.4,0) -- (-1.19,1.47);
+  \node[figlbl, figamber, anchor=south west, align=left] at (-1.15,1.45)
+    {$\theta_1 < \theta_c$: se transmite\\ ($\theta_3 = 39^\circ$)};
+
+  % --- rayo 2: theta1 = theta_c : el transmitido sale rasante ---
+  \draw[figvecres] (-1.67,-1.42) -- (-0.4,0);
+  \draw[figvec, figamber] (-0.35,0.09) -- (0.85,0.09);
+  \node[figlbl, figamber, anchor=west, inner sep=2pt, fill=white] at (0.92,0.2)
+    {$\theta_1 = \theta_c$: $\theta_3 = 90^\circ$, rasante};
+
+  % --- rayo 3: theta1 > theta_c : reflexion total ---
+  \draw[figvecres] (0.04,-1.09) -- (1.6,0);
+  \draw[figvecres] (1.6,0) -- (3.32,-1.21);
+  \node[figlbl, figred, anchor=north, align=center] at (2.5,-1.45)
+    {$\theta_1 > \theta_c$: toda la luz\\ vuelve al vidrio};
+
+  \node[figlbl, anchor=north west, align=left] at (1.7,2.15)
+    {$\sen\theta_c = \dfrac{n_2}{n_1}$\\[4pt]
+     $\theta_c = \arcsen(1/1{,}5) = 41{,}8^\circ$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La pregunta que abre el tema es si la ley de Snell
+\textbf{siempre} tiene solución. Al crecer $\theta_1$ crece también $\theta_3$, y
+lo que hay que ver es cuál de los dos llega antes a $90^\circ$. Yendo del medio
+más refringente al menos refringente ($n_2 < n_1$) gana el transmitido: para
+$\theta_1 = \theta_c$ el rayo de afuera sale \textbf{rasante} a la superficie y,
+pasado ese ángulo, la ecuación $\sen\theta_3 = (n_1/n_2)\sen\theta_1$ pediría un
+seno mayor que uno ---no hay onda transmitida y toda la luz se refleja hacia
+adentro. Nótese que el fenómeno es \textbf{unidireccional}: en el sentido
+contrario, del aire al vidrio, $\theta_3$ siempre existe y no hay ángulo crítico.
+La condición $\sen\theta_c = n_2/n_1$ deja además una lectura útil: cuanto mayor
+es el contraste de índices, más chico es $\theta_c$ y más fácil es quedar
+atrapado ---en el diamante, con $n$ muy alto, $\theta_c$ ronda los $24^\circ$, y
+por eso la luz rebota tantas veces adentro antes de salir.}
+\end{center}

@@ -1,0 +1,81 @@
+% Clase 26 --- Fibra optica y onda evanescente (§6.2 y §6.3).
+% (a) la aplicacion: la luz "dobla" a fuerza de reflexiones totales sucesivas.
+% (b) la letra chica: del otro lado SI penetra algo, sin propagarse; si el
+%     segundo medio es fino, la onda continua (reflexion total frustrada).
+\begin{center}
+\begin{tikzpicture}[scale=0.95, transform shape]
+
+% ---------------- (a) fibra óptica ----------------
+\begin{scope}
+  \fill[figblue!10] (0,0) rectangle (6.0,1.2);
+  \draw[figline, line width=1pt] (0,0) -- (6.0,0);
+  \draw[figline, line width=1pt] (0,1.2) -- (6.0,1.2);
+  \node[figlblaux, anchor=west] at (0.05,1.5) {revestimiento: $n_2 < n_1$};
+
+  \draw[figvecres] (-0.9,-0.36) -- (0,0.2);
+  \draw[figred, line width=1.1pt]
+    (0,0.2) -- (1.25,1.2) -- (2.75,0) -- (4.25,1.2) -- (5.75,0) -- (6.0,0.2);
+  \draw[figvecres] (6.0,0.2) -- (6.6,0.68);
+
+  \draw[figgray, line width=0.55pt] (3.5,-0.28) -- (3.5,0.35);
+  \node[figlblaux, anchor=north] at (3.5,-0.3) {núcleo: $n_1$};
+
+  \node[figlbl, anchor=north, align=center] at (3.0,-0.9)
+    {\textbf{(a)} la luz sigue el cable sin pérdidas,\\
+     siempre que no se lo curve demasiado};
+\end{scope}
+
+% ---------------- (b) onda evanescente ----------------
+\begin{scope}[yshift=-4.6cm]
+  \fill[figblue!10] (-2.8,-2.0) rectangle (3.4,0);
+  \fill[figblue!10] (-2.8,0.95) rectangle (3.4,2.15);
+  \draw[figline, line width=1pt] (-2.8,0) -- (3.4,0);
+  \draw[figline, line width=1pt] (-2.8,0.95) -- (3.4,0.95);
+  \node[figlblaux, anchor=west] at (-2.75,-0.3) {medio 1: $n_1$};
+  \node[figlblaux, anchor=east] at (3.35,0.2) {medio 2: $n_2 < n_1$};
+  \node[figlblaux, anchor=west] at (-2.75,1.25) {tercer medio};
+
+  % rayo incidente y reflejado
+  \draw[figvecres] (-2.3,-1.55) -- (0,0);
+  \draw[figvecres] (0,0) -- (2.3,-1.55);
+
+  % onda evanescente: amplitud que decae exponencialmente hacia arriba
+  \draw[figaux] (0,0) -- (0,0.95);
+  \draw[figamber, line width=1pt, smooth, samples=40, variable=\yy, domain=0:0.95]
+    plot ({1.15*exp(-2.6*\yy)}, {\yy});
+  \node[figlbl, figamber, anchor=east, inner sep=2pt] at (-0.15,0.5)
+    {amplitud $\propto e^{-y/\delta}$};
+
+  % lo que sigue del otro lado
+  \draw[figvecres, figred!55] (0,0.95) -- (1.35,1.85);
+  \node[figlbl, figred!70, anchor=west, inner sep=2pt] at (1.45,1.7)
+    {onda transmitida (débil)};
+
+  \draw[figgray, line width=0.55pt,
+        {Latex[length=1.4mm,width=1mm]}-{Latex[length=1.4mm,width=1mm]}]
+    (-1.9,0) -- (-1.9,0.95);
+  \node[figlblaux, anchor=east, inner sep=2pt] at (-1.94,0.48) {$e$};
+
+  \node[figlbl, anchor=north, align=center] at (0.3,-2.15)
+    {\textbf{(b)} con espesor $e$ finito la onda continúa:\\
+     reflexión total \emph{frustrada}};
+\end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La fibra óptica resuelve un problema concreto: la señal viaja
+mejor en luz que en cobre ---que se calienta y tiene impurezas--- pero la luz, a
+priori, va en línea recta. La reflexión total la obliga a doblar: adentro del
+núcleo cada rebote ocurre con incidencia \textbf{rasante}, muy por encima del
+ángulo crítico, y por eso no se pierde nada en cada uno. De ahí también la
+recomendación de no doblar una fibra bruscamente: al curvarla el ángulo de
+incidencia empeora, en algún punto baja de $\theta_c$ y la luz se escapa. Las
+fibras reales no son vidrio-aire sino dos vidrios, y la capa exterior tiene un
+degradé de índice que da margen: si el rayo se pasa un poco, en vez de perderse
+se curva y vuelve hacia adentro. El panel (b) corrige la frase
+\enquote{no se transmite nada}: del otro lado sí penetra campo, sólo que no en
+forma de onda que se propague, sino como una \textbf{onda evanescente} cuya
+amplitud cae exponencialmente. Si el segundo medio no llega hasta el infinito
+sino que tiene un espesor finito, y se coloca un tercer medio antes de que la
+evanescente se apague, la onda \textbf{continúa} del otro lado ---poco, y
+decreciendo exponencialmente con el espesor, pero continúa.}
+\end{center}

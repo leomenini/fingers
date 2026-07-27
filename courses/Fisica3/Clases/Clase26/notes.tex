@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -142,6 +149,8 @@ normal, y la figura es la misma.
 Cuando se dibuja la dirección de propagación se está dibujando la \textbf{normal
 a los frentes de onda}.
 
+\input{assets/clase26-planteo.tex}
+
 \subsection{Dependencia con la longitud de onda: dispersión}
 
 El índice de refracción se define como
@@ -168,6 +177,8 @@ atravesar, por ejemplo, un prisma de vidrio, el rojo y el violeta se refractan a
   \item En un \textbf{vaso de agua}: no sólo se ve desplazada la posición del
         objeto, sino que los bordes aparecen \enquote{manchados} con colores.
 \end{itemize}
+
+\input{assets/clase26-prisma.tex}
 
 \subsection{Tabla de índices de refracción}
 
@@ -329,6 +340,8 @@ y simplificando $d$:
 \]
 \end{keybox}
 
+\input{assets/clase26-snell-frentes.tex}
+
 \begin{notebox}[De qué depende realmente la ley de Snell]
 De sólo dos cosas: (i) la \textbf{continuidad de la onda en la frontera en todo
 instante} --- que fija que la frecuencia sea la misma --- y (ii) que los
@@ -432,6 +445,8 @@ la misma longitud de onda y el mismo período, así que \textbf{todos los
 circulitos son iguales}. Si se quisiera avanzar de a un décimo de período, el
 radio sería $\lambda/10$: hay que declarar cada cuánto se hacen los dibujitos.
 \end{notebox}
+
+\input{assets/clase26-huygens.tex}
 
 \paragraph{Aplicaciones.}
 \begin{itemize}
@@ -615,6 +630,8 @@ de menor distancia --- para ir de un punto a otro. Todas las fórmulas de la óp
 geométrica pueden hallarse a partir de esa única exigencia.
 \end{keybox}
 
+\input{assets/clase26-fermat.tex}
+
 % ===================================================================
 \section{Reflexión total interna}
 % ===================================================================
@@ -654,6 +671,8 @@ medio \textbf{más} refringente a uno \textbf{menos} refringente. A partir de
 $\theta_c$ toda la luz queda en el medio 1.
 \end{warnbox}
 
+\input{assets/clase26-angulo-critico.tex}
+
 \subsection{Fibra óptica}
 
 La aplicación tecnológica más conocida.
@@ -691,6 +710,8 @@ Instrumentos de exploración médica. Un haz de tubitos de fibra óptica se
 introduce en el cuerpo; la luz entra por esos cañitos y, si no se los deforma
 demasiado, \textbf{sale del otro lado la misma imagen que entró}, porque se
 mantiene a lo largo del recorrido.
+
+\input{assets/clase26-fibra-evanescente.tex}
 
 \subsection{Onda evanescente y reflexión total frustrada}
 

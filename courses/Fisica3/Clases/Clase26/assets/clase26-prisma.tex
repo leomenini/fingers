@@ -1,0 +1,54 @@
+% Clase 26 --- Dispersion cromatica en un prisma (§1.2).
+% La luz blanca se abre porque n depende de lambda: cada color obedece la ley de
+% Snell con SU propio indice y sale con otro angulo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % prisma
+  \fill[figblue!10] (0,0) -- (3,0) -- (1.5,2.6) -- cycle;
+  \draw[figline, line width=1pt] (0,0) -- (3,0) -- (1.5,2.6) -- cycle;
+  \node[figlblaux, anchor=north] at (1.5,-0.1) {prisma de vidrio};
+
+  % haz blanco incidente
+  \draw[figgray, line width=1.6pt, -{Latex[length=2.4mm,width=1.8mm]}]
+    (-2.3,1.72) -- (0.55,1.0);
+  \node[figlbl, anchor=south] at (-1.5,1.62) {luz blanca};
+
+  % rayos internos (ya separados, apenas)
+  \draw[violet!75, line width=1pt] (0.6,1.04) -- (2.13,1.51);
+  \draw[green!55!black, line width=1pt] (0.6,1.04) -- (2.19,1.40);
+  \draw[red!80, line width=1pt] (0.6,1.04) -- (2.25,1.29);
+
+  % rayos emergentes, abiertos en abanico
+  \draw[violet!75, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}]
+    (2.13,1.51) -- (5.4,0.42);
+  \draw[blue!60, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}]
+    (2.15,1.47) -- (5.4,0.66);
+  \draw[green!55!black, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}]
+    (2.19,1.40) -- (5.4,0.92);
+  \draw[yellow!75!black, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}]
+    (2.22,1.35) -- (5.4,1.16);
+  \draw[orange!85, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}]
+    (2.24,1.31) -- (5.4,1.38);
+  \draw[red!80, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}]
+    (2.25,1.29) -- (5.4,1.60);
+
+  \node[figlbl, violet!75, anchor=west] at (5.5,0.42) {violeta};
+  \node[figlbl, red!80, anchor=west] at (5.5,1.60) {rojo};
+  \node[figlblaux, anchor=north west] at (2.9,-0.35)
+    {$n_{\text{violeta}} > n_{\text{rojo}}$: el violeta se desvía más};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La luz blanca es la que trae todos los colores en proporciones
+parecidas, y el prisma no los \emph{crea}: los \textbf{separa}. La razón es que
+el índice de refracción no es un número del material sino una función de la
+longitud de onda, de modo que cada color entra con el mismo $\theta_1$ pero sale
+con su propio $\theta_3$. El violeta, con $n$ mayor, es el que más se desvía. El
+efecto se acumula en las dos caras del prisma, y por eso el abanico se ve
+claramente aunque los índices difieran apenas en centésimas. Es exactamente el
+mismo mecanismo del \textbf{arcoíris} ---la luz del Sol refractándose en las
+gotitas de agua en suspensión--- y el que \enquote{mancha} de colores el borde
+de un objeto visto a través de un vaso con agua. La moraleja operativa es que la
+ley de Snell se aplica \textbf{longitud de onda por longitud de onda}: hablar
+del ángulo refractado de la luz blanca, sin más, no tiene sentido.}
+\end{center}

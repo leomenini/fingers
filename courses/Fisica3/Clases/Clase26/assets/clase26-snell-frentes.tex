@@ -1,0 +1,68 @@
+% Clase 26 --- Deduccion geometrica de la ley de Snell (§2).
+% La clave es la distancia d entre cortes de frentes consecutivos con la
+% frontera: es UNA sola cantidad, calculable de los dos lados.
+% Angulos: theta1 = 45 grados, n2/n1 = 1.5 -> theta3 = 28.1 grados.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % medios y frontera
+  \fill[figblue!8] (-5.0,-2.1) rectangle (2.6,0);
+  \draw[figline, line width=1pt] (-5.0,0) -- (2.6,0);
+  \node[figlblaux, anchor=east] at (2.55,0.28) {$n_1$};
+  \node[figlblaux, anchor=east] at (2.55,-0.32) {$n_2 > n_1$};
+
+  % frentes incidentes (perpendiculares a la propagacion, separados lambda)
+  \foreach \xo in {-3.4,-1.7,0}{
+    \draw[figline] (\xo,0) -- ({\xo+1.56},1.56);}
+  % frentes transmitidos (separados lambda' = lambda*n1/n2)
+  \foreach \xo in {-3.4,-1.7,0}{
+    \draw[figline, figamber] (\xo,0) -- ({\xo-1.76},-0.94);}
+
+  % rayos
+  \draw[figvecres] (-1.85,1.85) -- (-0.15,0.15);
+  \draw[figvecres] (0,0) -- (0.85,-1.59);
+
+  % la distancia comun d sobre la frontera
+  \draw[figred, line width=0.9pt,
+        {Latex[length=1.8mm,width=1.3mm]}-{Latex[length=1.8mm,width=1.3mm]}]
+    (-1.7,-0.16) -- (0,-0.16);
+  \node[figlbl, figred, anchor=north, fill=white, inner sep=1.5pt]
+    at (-0.85,-0.2) {$d$};
+
+  % lambda (arriba) y lambda' (abajo)
+  \draw[figgray, line width=0.7pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (-2.41,0.99) -- (-1.56,0.14);
+  \node[figlbl, anchor=south west, inner sep=1pt] at (-2.08,0.62) {$\lambda$};
+  \draw[figgray, line width=0.7pt,
+        {Latex[length=1.6mm,width=1.2mm]}-{Latex[length=1.6mm,width=1.2mm]}]
+    (-2.58,-0.47) -- (-2.20,-1.18);
+  \node[figlbl, anchor=east, inner sep=2pt] at (-2.42,-0.9) {$\lambda'$};
+
+  % los angulos con la frontera (lados perpendiculares)
+  \draw[figgray, line width=0.7pt] (-1.2,0) arc (0:45:0.5);
+  \node[figlbl, anchor=west, inner sep=1pt] at (-1.16,0.28) {$\theta_1$};
+  \draw[figgray, line width=0.7pt] (-2.2,0) arc (180:208:0.5);
+  \node[figlbl, anchor=east, inner sep=1pt] at (-2.24,-0.2) {$\theta_3$};
+
+  % lectura
+  \node[figlbl, anchor=north west, align=left] at (1.25,-0.45)
+    {$\lambda = d\,\sen\theta_1$\\[3pt]
+     $\lambda' = d\,\sen\theta_3$\\[3pt]
+     $\lambda\,n_1 = \lambda'\,n_2$};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Los frentes de onda ---las líneas perpendiculares a la
+dirección de propagación, separadas $\lambda$--- tienen que \textbf{empalmar} en
+la frontera, porque el campo es continuo ahí en todo instante. Esa exigencia es
+todo lo que hace falta. La cantidad que traduce un lado en el otro es la
+distancia $d$ entre los puntos donde dos frentes consecutivos cortan la
+frontera: $d$ es \textbf{una sola}, aunque $\lambda \neq \lambda'$, y se puede
+calcular con el triángulo rectángulo de arriba o con el de abajo. Los ángulos
+que aparecen dentro de esos triángulos son los mismos $\theta_1$ y $\theta_3$ por
+tener lados perpendiculares. Falta un solo ingrediente: la \textbf{frecuencia no
+puede cambiar} al cruzar ---si de un lado hubiera un máximo cada $3$ y del otro
+cada $4$ unidades de tiempo, los dos lados se desfasarían y la continuidad se
+rompería---, y de $v = \lambda f$ con $v = c/n$ sale $\lambda n_1 = \lambda' n_2$.
+Sustituyendo las dos primeras en la tercera, el $d$ se cancela y queda Snell.}
+\end{center}

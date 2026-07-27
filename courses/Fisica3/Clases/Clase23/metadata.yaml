@@ -17,13 +17,21 @@ video:
 stats:
   transcript_words: 12584
   summary_words: 2677
-  diagrams_pending: 4
+  diagrams_pending: 0
   equations: 18
 
 topics:
-  - Ley de Faraday
-  - Flujo magnético
-  - FEM inducida
+  - Potencia instantánea y potencia media en corriente alterna
+  - Valores eficaces (RMS)
+  - Factor de potencia
+  - Conservación de la energía en el RLC serie
+  - Diagrama fasorial de impedancias
+  - Paréntesis de trigonometría (fórmula de Euler)
+  - El transformador ideal
+  - Las cuatro ecuaciones antes de Maxwell
+  - Incoherencia de la ley de Ampère
+  - Corriente de desplazamiento
+  - Ondas electromagnéticas y velocidad de la luz
 
 bibliography:
   - title: Sears & Zemansky
@@ -41,7 +49,7 @@ status:
   transcript: done
   summary: done
   latex: done
-  assets: pending
+  assets: done
 
 review:
   state: needs-work

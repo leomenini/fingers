@@ -1,0 +1,42 @@
+% Clase 25 --- La constante dielectrica (y con ella n) depende de lambda (§7.3).
+% La curva no pretende ser un ajuste: lo que importa es la TENDENCIA (n baja al
+% crecer lambda) y que la variacion es chica pero suficiente para separar colores.
+\begin{center}
+\begin{tikzpicture}
+
+  \begin{axis}[
+    fisfig, width=10.5cm, height=5.6cm,
+    xlabel={$\lambda$ \; (\si{\nano\metre})}, ylabel={$n = c/v = \sqrt{K_e}$},
+    xmin=350, xmax=780, ymin=1.505, ymax=1.545,
+    xtick={400,500,600,700}, ytick={1.51,1.52,1.53,1.54},
+    yticklabel style={/pgf/number format/fixed,
+                      /pgf/number format/precision=3},
+  ]
+    \addplot[figblue, smooth, samples=120, domain=370:770]
+      {1.5053 + 4277/(x*x)};
+    \node[figlblaux, anchor=south west] at (axis cs:455,1.5275)
+      {vidrio (esquemático)};
+
+    \draw[figaux] (axis cs:400,1.505) -- (axis cs:400,1.545);
+    \draw[figaux] (axis cs:700,1.505) -- (axis cs:700,1.545);
+    \node[figlblaux, violet, anchor=north west] at (axis cs:404,1.5435)
+      {violeta: $n$ mayor $\Rightarrow$ $v$ menor};
+    \node[figlblaux, red!70!black, anchor=south east] at (axis cs:697,1.5085)
+      {rojo: $n$ menor $\Rightarrow$ $v$ mayor};
+  \end{axis}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La razón física es que un dieléctrico tiene constante $K_e$
+porque sus moléculas \textbf{se alinean} con el campo aplicado, y en una onda ese
+campo está oscilando. Con un campo estático las moléculas tienen todo el tiempo
+del mundo para acomodarse; con un campo que cambia $10^{15}$ veces por segundo,
+para cuando alcanzan a orientarse el campo ya se dio vuelta. Por eso la $K_e$
+efectiva \textbf{no es} la de la electrostática del curso, y depende de la
+frecuencia: $K_e = K_e(\lambda)$ y, con ella, $n = \sqrt{K_e}$. La variación es
+chica ---acá, dos centésimas entre un extremo y otro del visible--- pero alcanza
+para que el violeta viaje más lento que el rojo dentro del vidrio, que es
+exactamente la \textbf{dispersión cromática} de la clase siguiente: la razón por
+la que un prisma abre la luz blanca en colores y por la que toda tabla de índices
+de refracción viene con una $\lambda$ especificada al lado (la de referencia
+suele ser la línea amarilla del sodio, \SI{589}{\nano\metre}).}
+\end{center}

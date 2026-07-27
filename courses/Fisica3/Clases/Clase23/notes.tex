@@ -24,7 +24,6 @@
 % ─── Graphics ──────────────────────────────────────────────────
 \usepackage{graphicx}
 \usepackage{tikz}
-\usetikzlibrary{babel}  % babel español activa `>`; evita romper `->` en los tikzpicture
 \usepackage{float}
 \usepackage{caption}
 
@@ -78,6 +77,13 @@
   title={#1}
 }
 
+% ─── Diagramas (circuitos y gráficas) ─────────────────────────
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ─── Hyperlinks & TOC ─────────────────────────────────────────
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -92,10 +98,11 @@
 \usepackage[bottom]{footmisc}
 
 % ─── Metadata ──────────────────────────────────────────────────
-\title{\textbf{Notas de Clase 2} \\
-       \large Circuitos de Corriente Alterna, Potencia, \\
-       Transformador y Ecuaciones de Maxwell}
-\author{Física 3}
+\title{\textbf{Clase 23: Potencia en Corriente Alterna, Transformador
+        y Ecuaciones de Maxwell}\\[0.3em]
+        \large{Valores eficaces y factor de potencia, diagrama fasorial de
+              impedancias, transformador ideal y corriente de desplazamiento}}
+\author{Transcripto y expandido --- Curso Física III (OpenFING)}
 \date{}
 
 \begin{document}
@@ -177,6 +184,8 @@ pues \(\langle \cos(2\omega t - 2\phi) \rangle = 0\).
 Se parece a la potencia en DC (\(P = R I^2\)), pero con un factor
 \(1/2\) y usando la amplitud máxima \(I_m\).
 \end{keybox}
+
+\input{assets/clase23-promedio-cos2.tex}
 
 % -------------------------------------------------------------------
 \subsection{Potencia media entregada por la fuente}
@@ -331,6 +340,8 @@ De la representación fasorial se obtiene directamente:
 \cos\phi = \frac{R}{|Z|}\quad\text{(cateto adyacente / hipotenusa)}.
 \]
 
+\input{assets/clase23-fasorial-impedancias.tex}
+
 % -------------------------------------------------------------------
 \subsection{Potencia media en condensador y bobina}
 % -------------------------------------------------------------------
@@ -432,20 +443,7 @@ Simplemente desarrollar \(e^{i3x} = (e^{ix})^3\).
         carga.
 \end{itemize}
 
-\[
-\begin{tikzpicture}[scale=0.7]
-  \draw[thick] (0,0) rectangle (6,2);
-  \node at (3,1) {\textbf{Núcleo de hierro}};
-  \draw[thick] (1.0,0.5) rectangle (2.0,1.5);
-  \node at (1.5,1.0) {$N_p$};
-  \draw[thick] (4.0,0.5) rectangle (5.0,1.5);
-  \node at (4.5,1.0) {$N_s$};
-  \draw[->] (-1,1) -- (1,1);
-  \draw[->] (5,1) -- (7,1);
-  \node at (-0.5,1.3) {Primario};
-  \node at (5.8,1.3) {Secundario};
-\end{tikzpicture}
-\]
+\input{assets/clase23-transformador.tex}
 
 % -------------------------------------------------------------------
 \subsection{Principio de funcionamiento}
@@ -516,7 +514,7 @@ Dividiendo:
 
 \begin{table}[H]
   \centering
-  \begin{tabularx}{\textwidth}{l X l}
+  \begin{tabularx}{\textwidth}{@{}l l X@{}}
     \toprule
     \textbf{Ecuación} & \textbf{Forma integral} &
     \textbf{Significado físico} \\
@@ -562,6 +560,8 @@ superficies distintas bordeada por \(C\):
         alguna \(\rightarrow\)
         \(\displaystyle \oint_C \vec B \cdot d\vec l = 0\).
 \end{itemize}
+
+\input{assets/clase23-ampere-paradoja.tex}
 
 \begin{warnbox}[Inconsistencia]
   La ley de Ampère da \textbf{dos resultados diferentes} para la

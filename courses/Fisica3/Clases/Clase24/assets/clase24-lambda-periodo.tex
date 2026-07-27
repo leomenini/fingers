@@ -1,0 +1,60 @@
+% Clase 24 --- Periodicidad espacial y temporal (§3.3--3.4).
+% Dos paneles con la misma sinusoide: uno es una FOTO (se congela t y se recorre
+% x, aparece lambda), el otro es una PELICULA en un punto fijo (se congela x y
+% se recorre t, aparece T). El paralelo exacto entre los dos es el punto.
+\begin{center}
+\begin{tikzpicture}
+
+  \begin{axis}[
+    fisfig, width=7.0cm, height=4.3cm,
+    xlabel={$x$ \; (foto: $t$ fijo)}, ylabel={$y$},
+    xmin=-0.3, xmax=7.2, ymin=-1.75, ymax=1.9,
+    xtick={1.5708,3.1416,4.7124,6.2832},
+    xticklabels={$\frac{\lambda}{4}$,$\frac{\lambda}{2}$,
+                 $\frac{3\lambda}{4}$,$\lambda$},
+    ytick={-1,1}, yticklabels={$-A$,$A$},
+    title={\small\textbf{(a)} periodo espacial}, title style={yshift=-2pt},
+  ]
+    \addplot[figblue, smooth, samples=200, domain=0:7.2] {sin(deg(x))};
+    \draw[figred, line width=0.9pt,
+          {Latex[length=1.8mm,width=1.3mm]}-{Latex[length=1.8mm,width=1.3mm]}]
+      (axis cs:0,1.45) -- (axis cs:6.2832,1.45);
+    \node[figlbl, figred, anchor=south, inner sep=1pt]
+      at (axis cs:3.1416,1.45) {$\lambda$};
+  \end{axis}
+
+  \begin{scope}[xshift=8.2cm]
+  \begin{axis}[
+    fisfig, width=7.0cm, height=4.3cm,
+    xlabel={$t$ \; (un punto fijo: $x$ fijo)}, ylabel={$y$},
+    xmin=-0.3, xmax=7.2, ymin=-1.75, ymax=1.9,
+    xtick={1.5708,3.1416,4.7124,6.2832},
+    xticklabels={$\frac{T}{4}$,$\frac{T}{2}$,$\frac{3T}{4}$,$T$},
+    ytick={-1,1}, yticklabels={$-A$,$A$},
+    title={\small\textbf{(b)} periodo temporal}, title style={yshift=-2pt},
+  ]
+    \addplot[figblue, smooth, samples=200, domain=0:7.2] {-sin(deg(x))};
+    \draw[figred, line width=0.9pt,
+          {Latex[length=1.8mm,width=1.3mm]}-{Latex[length=1.8mm,width=1.3mm]}]
+      (axis cs:0,1.45) -- (axis cs:6.2832,1.45);
+    \node[figlbl, figred, anchor=south, inner sep=1pt]
+      at (axis cs:3.1416,1.45) {$T = \lambda/v$};
+  \end{axis}
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las dos gráficas son la misma función $y = A\sen[k(x-vt)]$
+mirada de dos maneras distintas, y conviene no confundirlas: (a) es una
+\textbf{foto} ---se congela el tiempo y se recorre la cuerda--- mientras que (b)
+es lo que ve alguien parado en \textbf{un solo punto} de la cuerda, mirando cómo
+sube y baja. La primera se repite cada $\lambda$; la segunda, cada $T$. Un
+detalle que se pasa por alto: para definir el período no alcanza con pedir que
+la función vuelva a valer lo mismo, porque eso ocurre mucho antes ---en (a) la
+curva vale $0$ en $\lambda/2$ igual que en $0$--- sino que hay que pedir también
+que la \textbf{derivada} vuelva al mismo valor, porque en esos puntos
+intermedios la onda está bajando en vez de subiendo. Que los dos períodos estén
+atados por $T = \lambda/v$ sale de sustituir: correr el tiempo en $\lambda/v$
+equivale a correr el argumento en un $\lambda$ entero. De ahí las definiciones
+gemelas $k = 2\pi/\lambda$ y $\omega = 2\pi/T$, y la forma compacta
+$y = A\sen(kx - \omega t)$ con $v = \omega/k$.}
+\end{center}

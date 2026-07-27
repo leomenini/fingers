@@ -1,0 +1,61 @@
+% Clase 24 --- El experimento de Fizeau (§6).
+% Rueda dentada girando + espejo lejano. Lo que hay que ver: la luz sale por una
+% rendija y, al volver, se encuentra con la rueda GIRADA; si el giro es justo el
+% que lleva de una rendija a la siguiente, la luz pasa; si no, la tapa un diente.
+\begin{center}
+\begin{tikzpicture}[scale=0.95, transform shape]
+
+  % ---- rueda dentada ----
+  \foreach \ang in {0,30,...,330}{
+    \fill[figgray!35] (\ang:0.55) -- (\ang:1.15)
+      arc (\ang:\ang+15:1.15) -- ({\ang+15}:0.55) -- cycle;}
+  \draw[figgray, line width=0.8pt] (0,0) circle (0.55);
+  \draw[figgray, line width=0.8pt] (0,0) circle (1.15);
+  \draw[figvec, figgray] (1.45,0.55) arc (25:65:1.55);
+  \node[figlblaux, anchor=west] at (1.5,1.1) {$\omega$};
+  \node[figlbl, anchor=south, align=center] at (0,1.45)
+    {rueda dentada\\ (rendijas equiespaciadas)};
+
+  % ---- fuente ----
+  \draw[figvec] (-2.6,0) -- (-0.35,0);
+  \node[figlbl, anchor=east] at (-2.7,0) {fuente};
+
+  % ---- ida y vuelta ----
+  \draw[figvecres] (0.35,0.14) -- (7.3,0.14);
+  \draw[figvecres] (7.3,-0.14) -- (0.35,-0.14);
+  \node[figlbl, figred, anchor=south] at (3.9,0.2) {ida};
+  \node[figlbl, figred, anchor=north] at (3.9,-0.2) {vuelta};
+
+  % ---- espejo ----
+  \draw[figline, line width=1.8pt] (7.5,-0.9) -- (7.5,0.9);
+  \foreach \yy in {-0.75,-0.45,...,0.8}{
+    \draw[figgray, line width=0.6pt] (7.52,\yy) -- (7.78,{\yy+0.22});}
+  \node[figlbl, anchor=north, align=center] at (7.5,-1.05) {espejo};
+
+  % ---- distancia ----
+  \draw[figgray, line width=0.6pt,
+        {Latex[length=1.8mm,width=1.3mm]}-{Latex[length=1.8mm,width=1.3mm]}]
+    (0,-1.9) -- (7.5,-1.9);
+  \node[figlblaux, anchor=south] at (3.75,-1.86) {$L$ (dos elevaciones lejanas)};
+
+  \node[figlbl, anchor=north, align=center] at (3.75,-2.15)
+    {la luz pasa si $\dfrac{2L}{c}$ coincide con el tiempo\\
+     que tarda la rueda en avanzar una rendija};
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La dificultad de medir $c$ es que el ida y vuelta dura
+poquísimo, y la salida de Fizeau fue convertir un tiempo imposible de cronometrar
+en algo que sí se mide bien: una velocidad de giro. La rueda hace de obturador
+periódico. A la velocidad justa, la luz que salió por una rendija encuentra al
+volver la rendija siguiente ya en posición y el observador la ve; si la rueda
+gira apenas más rápido o más lento, la luz regresa contra un diente y la imagen
+\textbf{se apaga}. Alcanza entonces con ajustar $\omega$ hasta el apagón (o hasta
+el reencendido) y conocer $L$ para despejar $c$; cuanto más grande es $L$, más
+precisa la medida, y de ahí que el montaje use dos elevaciones alejadas. Que este
+número, medido con espejos y engranajes, coincidiera con
+$1/\sqrt{\mu_0\varepsilon_0}$ ---calculado con dos constantes de laboratorio que
+nada tienen que ver con la luz--- es la razón por la que se aceptó que la luz
+\textbf{es} una onda electromagnética. La $\omega$ de la rueda, dicho sea de
+paso, no tiene ninguna relación con la frecuencia angular de la onda: es pura
+coincidencia de símbolo.}
+\end{center}

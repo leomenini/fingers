@@ -75,6 +75,13 @@
   title={#1}
 }
 
+% ---- Diagramas (circuitos y gráficas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -209,6 +216,8 @@ placa. Por lo tanto
 = \mu_0 I\ }
 \]
 \end{keybox}
+
+\input{assets/clase24-relevo-desplazamiento.tex}
 
 \subsection{Interpretación: la corriente de desplazamiento toma el relevo}
 
@@ -382,6 +391,8 @@ se anula, es decir en $x' = x - vt = 0$, o sea en $x = vt > 0$:
 una onda viajando hacia la izquierda.
 \end{warnbox}
 
+\input{assets/clase24-onda-viajera.tex}
+
 Una cuerda real puede tener la \textbf{superposición} de una onda hacia la
 derecha y otra hacia la izquierda, e incluso combinaciones más complicadas.
 
@@ -447,6 +458,8 @@ donde el último paso usa que $\lambda$ es el periodo espacial. Por lo tanto
 periodo espacial y el tiempo el periodo temporal. Funciona, pero no es una
 deducción.
 \end{notebox}
+
+\input{assets/clase24-lambda-periodo.tex}
 
 Definiciones asociadas:
 
@@ -553,6 +566,8 @@ E_y(x,t) = E_0\,\sen(kx - \omega t), \qquad
 B_z(x,t) = B_0\,\sen(kx - \omega t)
 \]
 
+\input{assets/clase24-onda-em.tex}
+
 Son las \textbf{únicas componentes} no nulas, y están \textbf{en fase}:
 cuando una se anula, la otra también. Como la velocidad de una onda es
 $v = \omega/k$, y acá esa velocidad es la de la luz $c$, todo el problema se
@@ -617,6 +632,8 @@ aceleradores de partículas con enorme precisión.
 
 La estrategia: aplicar Faraday y Ampère--Maxwell a rectángulos pequeños y ver
 qué condiciones imponen sobre $E_0$, $B_0$, $k$ y $\omega$.
+
+\input{assets/clase24-rectangulos.tex}
 
 \subsection{Faraday sobre un rectángulo en el plano $xy$}
 
@@ -806,6 +823,8 @@ valor coincidía con el cálculo electromagnético. Uno de esos métodos es el d
         distancia suficientemente grande la medida es precisa, a pesar de lo
         enorme que es $c$.
 \end{itemize}
+
+\input{assets/clase24-fizeau.tex}
 
 \begin{warnbox}[Coincidencia de notación]
 La $\omega$ de la rueda dentada \textbf{no tiene nada que ver} con la
