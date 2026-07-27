@@ -191,6 +191,12 @@ editorial_status: draft            # enum {draft, reviewing, verified, published
 - **`id` es único por clase** con la convención `fis3-2015-2-NN` (curso +
   número de clase con cero a la izquierda, p. ej. `fis3-2015-2-07`). No
   reutilizar el id de curso `fis3-2015-2` como id de clase.
+- **Los restos de `deepseek-v4-flash` traen encabezados de otra clase.** En
+  `Clase23` el `\title` decía «Notas de Clase 2» con `\author{Física 3}`, y sus
+  `topics` eran los de una clase de Faraday, nada que ver con el contenido real
+  (potencia en CA, transformador, Maxwell). Al tocar una clase con
+  `llm.model: deepseek-v4-flash`, cotejar título, autor y `topics` contra el
+  cuerpo antes que nada; el resto del corpus ya está normalizado.
 
 ---
 
@@ -261,8 +267,9 @@ bloque de `tcolorbox`, para evitar el choque de opciones de `xcolor`):
 > El error es silencioso hasta que se compila. Va **después** de cargar
 > `circuitikz`/`pgfplots` (que traen `tikz`) y de `babel`.
 
-> **Primer paso de toda clase nueva: agregar este bloque.** Ninguna clase sin
-> figuras lo trae (las 16–22 no lo tenían). Si falta, el síntoma es
+> **Primer paso de toda clase nueva: agregar este bloque.** Ninguna clase lo
+> traía antes de tener figuras (hubo que agregarlo en las 16–28). Si falta, el
+> síntoma es
 > `Package xcolor Error: Undefined color 'figblue'` en la primera figura, no un
 > mensaje sobre `tikzstyles.tex`.
 >
@@ -413,7 +420,7 @@ Casi todo el tiempo de iteración se va en esto. Los recurrentes:
 
 #### 6.5.4 Releer el PDF atrapa errores de física, no sólo de tipografía
 
-Cuatro casos reales de este curso, todos detectados **mirando el render**, no
+Cinco casos reales de este curso, todos detectados **mirando el render**, no
 leyendo el código:
 
 - `clase4-capacitor`: el aporte de la placa $-\sigma$ estaba dibujado hacia
@@ -435,6 +442,11 @@ leyendo el código:
   imancito va a $90°$ de su posición angular. Conviene calcular el ángulo, no
   ponerlo a ojo (el propio docente avisa en clase «no quiero equivocarme en el
   sentido»).
+- `clase26-angulo-critico`: el rayo transmitido estaba dibujado **hacia atrás**
+  (subía hacia la izquierda) mientras el incidente venía desde abajo a la
+  derecha. Refractado y reflejado siguen **hacia adelante**: conservan el signo
+  de la componente paralela a la frontera y sólo cambia el ángulo con la normal.
+  En cualquier figura de óptica geométrica, verificar ese signo antes que nada.
 
 > Corolario: si al dibujar una figura el contenido del `.tex` no cierra,
 > **el sospechoso es el texto**, no la figura. Corregir ambos y decirlo.
@@ -447,6 +459,44 @@ también la vieja** al vocabulario de `tikzstyles.tex` (`figvec`, `figvecres`,
 `figpos`/`figneg`, `figlbl`/`figlblaux`), conservando geometría y contenido. Sin
 eso la clase queda con dos códigos de color contradictorios (p. ej. `+` azul en
 la figura vieja y `+` rojo en las nuevas).
+
+#### 6.5.6 Composición: lo que se aprendió cerrando las clases 23–28
+
+Las 37 figuras de esas seis clases dejaron un puñado de recetas que ahorran
+iteraciones. Van de más a menos frecuente:
+
+- **Etiqueta que cruza una línea → `fill=white, inner sep=1.5pt` en el nodo.**
+  Es la solución barata para rótulos sobre círculos de frentes de onda, cotas,
+  ticks de eje o curvas (`clase25-espectro`, `clase27-doppler-observador`,
+  `clase26-angulo-critico`). Requiere que la línea a tapar se dibuje **antes**
+  que el nodo: en `clase25-espectro` hubo que mover las líneas de llamada
+  *arriba* de los rótulos del eje para que el blanco las cortara.
+- **El texto explicativo va fuera del dibujo, no adentro.** En figuras radiales
+  (círculos concéntricos, cascarones) cualquier nodo dentro del radio máximo
+  choca con todo; el bloque de lectura va al costado o debajo
+  (`clase25-esferica`, `clase27-doppler-observador`).
+- **Dos paneles anchos no van lado a lado: se apilan.** Si cada panel tiene
+  rótulos laterales, el par no entra en los 16 cm por más que se achique
+  (`clase28-young` desbordaba 109 pt); con `yshift` entra cómodo y se lee mejor.
+  La regla de §6.5.3 de alinear los pies `(a)`/`(b)` a la misma $y$ sigue
+  valiendo para los paneles lado a lado, y cuando tienen alturas distintas se
+  usa la $y$ del panel más bajo (`clase26-fermat`).
+- **Tres paneles `pgfplots` en fila entran con `width=4.7cm` + `xshift=5.0cm`;**
+  dos, con `width≈7cm` + `xshift≈8.2cm` (`clase28-suma-ondas`,
+  `clase24-lambda-periodo`). Con `width=6.2cm` y `xshift=8.4cm` ya desborda.
+- **Los nodos anotados dentro de un `axis` se dibujan antes que la leyenda:** si
+  la leyenda está en la esquina donde cae el nodo, el nodo desaparece
+  (`clase27-doppler-comparacion`). Con una sola curva conviene directamente
+  sacar la leyenda y rotular la curva con un nodo.
+- **Funciones tipo `sinc` en `pgfplots`: elegir `samples` de modo que la grilla
+  no caiga exactamente en la singularidad.** `domain=-2.6:2.6` con
+  `samples=700` es seguro; con `701` cae justo en $x=0$ y da `nan`
+  (`clase28-doble-por-simple`).
+- **Hipérbolas y curvas paramétricas**: `plot[variable=\pp, domain=…]` con
+  `cosh/sinh` funciona en `tikz` plano; hay que **subir `samples` a ~90** o la
+  parte curva cerca del vértice queda facetada, y limitar el dominio a $\pm1.8$
+  para que no se dispare fuera del dibujo (`clase27-interferencia-plano`).
+  Recordar §7.3.10 al elegir el nombre de la variable.
 
 ---
 
@@ -513,3 +563,8 @@ otra cosa: automatización por intervalo, no esto.)*
    lo que hace perder mucho tiempo en el diagnóstico: ante `\UseTextAccent`,
    revisar primero el nombre de la variable y después si el loop está dentro de
    un `axis`. Nombres seguros: `\tcol`, `\ang`, `\xx`.
+11. **El chequeo de Overfull también delata bugs viejos del cuerpo, no sólo
+   figuras.** En `Clase23` daba distinto de `0` por una `tabularx` con la última
+   columna declarada `l` (texto largo que no envuelve); se arregla poniendo la
+   columna de prosa como `X`. Ante un Overfull en una clase recién tocada,
+   mirar el número de línea antes de suponer que es la figura.
