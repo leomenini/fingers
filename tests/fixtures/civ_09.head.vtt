@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:18.577 --> 00:00:28.085
+Ok, hoy vamos a hacer la última clase sobre el capítulo sobre los números reales. Vamos a terminar con los números reales.
+
+00:00:43.338 --> 00:01:17.001
+Entonces, la vez pasada, demostramos... La vez pasada... La vez pasada hicimos un recordatorio sobre el teorema de completitud, el axioma de completitud, que es un axioma. Y vimos que es el motor de los números reales, el axioma de completitud. Esa cosa más importante es lo que define la textura de los números reales. Y vimos un método de razonamiento que es el método de razonamiento a menos de epsilon para demostrar desigualdades e igualdades.
+
+00:01:17.268 --> 00:01:56.357
+y demostramos el teorema que es que para todo x positivo o nulo existe un único y positivo o nulo cuyo cuadrado es igual a x. Es el teorema que nos asegura de la existencia y de la unicidad de la raíz cuadrada. Entonces ahora tenemos notación, se escribe y se escribe raíz cuadrada de x.
+
+00:01:56.377 --> 00:02:27.066
+Ahora sabemos, entonces no solo tenemos la raíz cuadrada de 2, pero tenemos la raíz cuadrada de cualquier número real. Es decir, tenemos también la raíz cuadrada de 3, también tenemos la raíz cuadrada de 4, pero esto no nos sirve para nada porque ya la teníamos antes. Pero también tenemos la raíz cuadrada de la raíz cuadrada de 2. Todo esto sigue de este teorema y ahora vamos a admitir que la función existe porque demostramos su existencia.
+
+00:02:28.508 --> 00:02:59.546
+Y ahora, por supuesto, por construcción tenemos que esta definición, la raíz cuadrada de x es un número positivo o nulo y su cuadrado es igual a x. Ok. Ahora vamos a hablar de los intervalos. Y ya definí la noción de intervalo, pero definí los intervalos. Ahora vamos a ver la noción de intervalo.
+
+00:03:00.628 --> 00:03:13.607
+Entonces, los 10 tipos de intervalos. Ok. Ahora...
+
+00:03:15.747 --> 00:03:20.035
+Voy a dar una definición abstracta. Voy a definir en general lo que es un intervalo.
+
+00:03:24.202 --> 00:03:40.911
+La definición es que un conjunto I que está incluido en R es un intervalo.
+
+00:03:45.228 --> 00:04:14.070
+y acá voy a poner la condición que es la definición más general posible. La definición de intervalo es muy fácil, es cualquier conjunto, tal que cuando yo tomo dos objetos en este orden, todos los objetos entre mis dos extremos también pertenecen al intervalo. Es decir, si para todos X, Y en Y, si para todo Z en R,
+
+00:04:16.261 --> 00:04:48.631
+Si X es menor o igual a Z, que es menor o igual a Y, esto implica que Z pertenece a Y. Esta es la definición más general de la noción de intervalo. Es decir, cada vez que yo tomo dos puntos en mi intervalo, todos los puntos entre estos dos extremos también pertenecen al intervalo. Esa es la definición abstracta.
+
+00:04:48.651 --> 00:05:07.395
+Es decir, llamo un conjunto, digo que un conjunto es un intervalo cuando cumple esta condición. Esa es la definición más abstracta posible de la solución de intervalos. Entonces, es una definición distinta de la que ya vimos. Vimos 10 tipos de intervalos antes.
+
+00:05:09.012 --> 00:05:36.302
+Y ahora tenemos una definición abstracta. La buena noticia es que en R sabemos caracterizar todos los intervalos y vamos a ver que son todos los que ya vimos antes. Es decir, que no hay ningún otro tipo de intervalo. Entonces, el teorema fundamental dice que, teorema, si I
+
+00:05:38.543 --> 00:06:21.730
+es un intervalo de R entonces o bien y acá hay 10 casos posibles que tenemos que distinguir es decir que sólo hay 10 tipos de intervalos primer tipo o bien I es igual al vacío que es un intervalo cumple la definición O bien, I es igual a intervalo cerrado AB con A menor o igual a B.
+
+00:06:22.952 --> 00:06:47.314
+O bien, I es igual al intervalo A cerrado B abierto con ahora A es menor que B. O bien, I es igual a la cosa opuesta, idem, O bien, I es igual a menos infinito A. Olvide el caso todo abierto.
+
+00:06:51.337 --> 00:07:26.313
+Después hay el caso menos infinito A. No, acá no hay ningún B, entonces con A en R cualquiera. Tenemos el caso I igual a menos infinito A. Y también tenemos el caso I igual a A infinito con A cualquiera.
