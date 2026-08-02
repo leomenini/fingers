@@ -22,8 +22,8 @@ Cada corpus tiene el suyo, con las convenciones de su dominio:
 | Archivo | Cubre |
 | --- | --- |
 | `/CLAUDE.md` (este) | pipeline, extractor, ADRs, métricas |
-| `courses/Fisica3/CLAUDE.md` | recetas de TikZ/circuitikz/pgfplots de Física III, gotchas de LaTeX, chequeo de Overfull |
-| `courses/CDIV2017/CLAUDE.md` | modificacion de recetas del courses/Fisica3/CLAUDE.md |
+| `courses/Fisica3-2015/CLAUDE.md` | recetas de TikZ/circuitikz/pgfplots de Física III, gotchas de LaTeX, chequeo de Overfull |
+| `courses/CDIV2017/CLAUDE.md` | modificacion de recetas del courses/Fisica3-2015/CLAUDE.md |
 
 Claude Code carga el de la raíz **y** el del subdirectorio donde trabaja,
 así que se complementan. **No traer recetas de composición acá**: cuando se
@@ -39,7 +39,9 @@ Dos frentes abiertos, en este orden:
 
 1. **Automatizar la extracción.** Motivado por el segundo corpus: Cálculo
    Diferencial e Integral en una Variable, `civ` (Teórico 2017, Alexandre
-   Miquel), **42 clases**. Existe también `cdiv-2022`, una segunda edición.
+   Miquel), **42 clases** (5 con transcripción, resumen, notas y metadata ya
+   commiteadas en `courses/CDIV2017/`; faltan 37). Existe también `cdiv-2022`,
+   una segunda edición.
 2. **Instrumentar métricas**, como paso previo a un benchmark.
 
 La revisión humana de Física III (28 clases en `draft`) sigue pendiente y es el
@@ -145,24 +147,39 @@ para Cálculo. Son tareas distintas y fallan distinto. El gold standard es
 
 ## 6. Artefactos que existen
 
-- **`scripts/probe.mjs`** — descubrimiento con Playwright. Abre una clase,
-  bloquea `media`/`image`/`font`, escucha todo el tráfico, guarda candidatos a
-  transcripción, extrae meta tags, y escribe `manifest.json` + `netlog.json`.
-  Se conserva para re-descubrir el patrón si OpenFING cambia, o para incorporar
-  una fuente nueva. Requiere `npm i playwright && npx playwright install chromium`.
-- **`scripts/vtt.mjs`** — parser de WebVTT. Exporta funciones **puras**:
-  `parseVtt`, `validarTranscripcion`, `aTextoPlano`, `aTextoConTiempo`,
-  `metricas`, `detectarSolapeTextual`, `parseTimestamp`, `formatTimestamp`.
-  CLI produce `transcript.txt`, `transcript.timed.txt`,
+`scripts/` y `tests/` se espejan por módulo del pipeline: el código en
+`scripts/<modulo>/`, sus fixtures en `tests/<modulo>/fixtures/`. Hoy el único
+módulo con código es `extractor/`; los demás se crean cuando exista código,
+no antes. `package.json`, `package-lock.json` y `node_modules/` quedan en la
+raíz — npm los necesita ahí y bajarlos exigiría workspaces, que no se
+justifica con un módulo. `tests/` en la raíz queda libre para la suite BDD
+cross-módulo (ver sección 9).
+
+- **`scripts/extractor/probe.mjs`** — descubrimiento con Playwright. Abre una
+  clase, bloquea `media`/`image`/`font`, escucha todo el tráfico, guarda
+  candidatos a transcripción, extrae meta tags, y escribe `manifest.json` +
+  `netlog.json`. Se conserva para re-descubrir el patrón si OpenFING cambia, o
+  para incorporar una fuente nueva. Requiere
+  `npm i playwright && npx playwright install chromium`.
+- **`scripts/extractor/vtt.mjs`** — parser de WebVTT. Exporta funciones
+  **puras**: `parseVtt`, `validarTranscripcion`, `aTextoPlano`,
+  `aTextoConTiempo`, `metricas`, `detectarSolapeTextual`, `parseTimestamp`,
+  `formatTimestamp`. CLI produce `transcript.txt`, `transcript.timed.txt`,
   `transcript.stats.json`, y sale con código 2 si la entrada no es una
   transcripción. Corrido contra `civ_09`: 0 advertencias.
-- **`tests/fixtures/`** — 6 entradas, una por rama del parser. Ver su README.
-- **`docs/adr/evidence/0001-netlog.json`** — tráfico observado en el
-  descubrimiento, con los parámetros de Matomo removidos.
-- **`docs/adr/`** — ADR-0001 (extracción) y ADR-0002 (representación).
+- **`scripts/extractor/README.md`** — cómo se invoca cada script y qué
+  produce. (Hasta 2026-08-02 tenía por error una copia del README de
+  fixtures.)
+- **`tests/extractor/fixtures/`** — 6 entradas, una por rama del parser. Ver
+  su README.
+- **`docs/adr/evidence/`** — respaldos medidos de los ADR, con un `README.md`
+  que resume cada uno. Hoy: `0001-netlog.json` (tráfico observado en el
+  descubrimiento, parámetros de Matomo removidos).
+- **`docs/adr/`** — ADR-0001 (extracción), ADR-0002 (representación),
+  ADR-0003 (nombres de curso/edición), ADR-0004 (retención del VTT).
 
-Ambos scripts son ESM (`.mjs`). Si se ponen bajo un `package.json` con
-`"type": "module"`, pueden renombrarse a `.js`.
+Ambos scripts son ESM (`.mjs`). Como el `package.json` ya declara
+`"type": "module"`, pueden renombrarse a `.js` sin tocar el código.
 
 ---
 
@@ -215,26 +232,38 @@ npx playwright install chromium
    así el `git log` y los ADR cuentan la misma historia. Git conserva el
    historial; el ADR lo menciona como pieza histórica, no como archivo vivo.
 
+**Resueltas (2026-08-02)**
+
+- **Convención de nombres curso/edición → ADR-0003.** `courses/Fisica3/` se
+  renombró a `courses/Fisica3-2015/`. Regla general: sufijo `-<año>` cuando
+  hace falta desambiguar ediciones o el slug ya termina en dígito (evita
+  `Fisica32015`). `courses/CDIV2017/` ya cumplía la regla.
+- **Retención del payload VTT → ADR-0004.** El `.vtt` crudo no se commitea;
+  se versiona sólo `manifest.json` (URL, `sha256`, fecha, versión del
+  extractor). Resuelve el `Pendiente` de ADR-0002.
+
 **Decisiones abiertas**
 
-- **Si el payload VTT se commitea o queda fuera de Git** (`Pendiente` del
-  ADR-0002). Mantenerlo fuera y conservar sólo el manifiesto (URL + `sha256` +
-  versión del extractor) da reproducibilidad *verificable* y evita redistribuir
-  material de terceros; el costo es depender de que la fuente siga disponible.
-  Requiere ADR propio. **Relacionado:** OpenFING es CC BY-NC-ND y el repo hoy
-  commitea 271 057 palabras de transcripción literal. El riesgo real no es una
-  demanda sino un takedown en GitHub, y es un agujero de procedencia en un
-  proyecto cuyo producto es la trazabilidad.
-- **¿Curso o edición como unidad? — resuelta de hecho, falta formalizar.**
-  El árbol nuevo es `courses/CDIV2017/`, que codifica la edición. Es la
-  decisión correcta: `civ` (2017) y `cdiv-2022` son dos ediciones del mismo
-  curso y así conviven sin chocar.
-  **Queda una inconsistencia:** el corpus viejo es `courses/Fisica3/`, sin
-  edición. Dos convenciones en el mismo directorio, y la vieja no dice de qué
-  año es. Tres salidas: (a) renombrar ahora, que es barato; (b) dejarlo y
-  documentar `Fisica3` como legacy; (c) adoptar la regla "edición sólo si hay
-  más de una". Cualquiera sirve — lo que no sirve es dejarlo sin decidir.
-  **Material de ADR-0003.**
+- **¿La transcripción derivada (`Transcription_raw.txt`) debe salir de Git
+  también?** ADR-0004 resolvió el `.vtt` crudo, pero **no** esto: el repo hoy
+  commitea 271 057 palabras de transcripción literal de OpenFING (CC
+  BY-NC-ND) en las 28 clases de Física III, y ADR-0004 no lo toca. El riesgo
+  real no es una demanda sino un takedown en GitHub, y es un agujero de
+  procedencia en un proyecto cuyo producto es la trazabilidad. Requiere ADR
+  propio — es una decisión sobre el modelo de datos de **todas** las clases,
+  no sólo del extractor.
+- **Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
+  en el corpus real.** ADR-0002 ya decidió el esquema de dos
+  representaciones, pero el corpus (Física III y las 5 clases de CDIV2017)
+  todavía usa el nombre y formato viejos — el extractor nuevo existe pero
+  todavía no produjo ninguna clase real del corpus. Pendiente de decidir si
+  se migra retroactivamente o sólo aplica de acá en adelante.
+- **`Resnick.pdf` (69 MB) sigue pesando en el historial de Git** aunque el
+  archivo esté borrado del working tree — borrarlo requiere `git filter-repo`
+  (reescribe historia, la rama ya está pusheada). No es urgente; el
+  disparador es antes de que el clon se ponga lento o se sume gente nueva al
+  repo. Limpieza de repo, no ADR — agendada como próximo paso concreto
+  después de esta sesión de documentación.
 - **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
   enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
 - **Representación canónica del contenido.** Ver sección 8.
@@ -270,7 +299,7 @@ Consecuencias:
   correcciones tipográficas necesitó? La B es en buena parte automatizable.
 - Habilita **mezclar modelos** (barato en A, Claude en B). Con 42 clases el
   impacto en costo es real. Es el primer experimento que conviene correr.
-- La afirmación *"los otros modelos se caen a pedazos con LaTeX"* es barata de
+- La afirmación *"los otros modelos no logran generar adecuadamente LaTeX"* es barata de
   medir: 3 clases × 4 modelos, contar cuántos `.tex` compilan sin intervención.
 
 **Problema abierto:** si `summary.md` es descartable, `notes.tex` es el

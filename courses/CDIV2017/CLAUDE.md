@@ -12,8 +12,8 @@ archivos:
 | `metadata.yaml` | generado | Metadatos de la clase (esquema estricto, ver abajo). |
 
 > El nombre del archivo de transcripción es **`Transcription_raw.txt`**, igual
-> que en el resto del repo (ver `courses/Fisica3/CLAUDE.md` y `docs/log.md`
-> §2, donde se unificó para todos los cursos).
+> que en el resto del repo (ver `courses/Fisica3-2015/CLAUDE.md` y
+> `docs/log.md` §2, donde se unificó para todos los cursos).
 
 > **Layout**: las clases viven en `courses/CDIV2017/Clases/ClaseN/`; el
 > `assets/` global (compartido, para consistencia visual) en
@@ -21,7 +21,7 @@ archivos:
 > tenga figuras. `build.sh` y `CLAUDE.md` quedan a nivel `courses/CDIV2017/`.
 
 > **Este curso es nuevo en el repo** (el otro curso existente es
-> `courses/Fisica3/`, Física III/OpenFING/2015). La metodología general
+> `courses/Fisica3-2015/`, Física III/OpenFING/2015). La metodología general
 > (estructura de 4 archivos, esquema de `metadata.yaml`, pipeline de
 > compilación con tectonic) es la misma en todo el repo — ver
 > `docs/ARCHITECTURE.md` y `docs/SPECS.md` para el modelo de datos a nivel de
@@ -344,7 +344,8 @@ curso y fundamentos (conjuntos, funciones, números reales); `diagrams_pending`
 se deja en `0` salvo que al leer la transcripción aparezca un momento
 explícito de pizarrón que amerite una figura (gráfica de una función, recta
 numérica, diagrama de conjuntos). Si eso ocurre, seguir la metodología general
-de abajo — es agnóstica de curso y ya está validada en `courses/Fisica3/`.
+de abajo — es agnóstica de curso y ya está validada en
+`courses/Fisica3-2015/`.
 
 ### 6.1 Formatos
 
@@ -359,8 +360,8 @@ de abajo — es agnóstica de curso y ya está validada en `courses/Fisica3/`.
 
 - **Global — `courses/CDIV2017/Clases/assets/`**: se crea on demand, cuando
   la primera clase del curso tenga una figura. Contendría un `tikzstyles.tex`
-  propio de este curso (no reusar el de Fisica3: paletas y convenciones de
-  signo son de otro contexto).
+  propio de este curso (no reusar el de Fisica3-2015: paletas y convenciones
+  de signo son de otro contexto).
 - **Local — `Clases/ClaseN/assets/`**: la mayoría de las figuras viven acá,
   específicas de la clase.
 - **Naming**: `<claseN>-<slug>.{tex,svg,pdf}`, kebab-case.
@@ -402,7 +403,7 @@ La metodología completa (instalar tectonic, harness `preview.tex`, releer
 `notes.pdf` con `setspace` activo, chequeo de `Overfull \hbox`,
 `\providecommand` para sub-dibujos repetidos, patrones de composición de
 paneles, catálogo de colisiones de rótulos frecuentes) está desarrollada en
-detalle en `courses/Fisica3/CLAUDE.md` §6.5 — es agnóstica de curso y no hace
+detalle en `courses/Fisica3-2015/CLAUDE.md` §6.5 — es agnóstica de curso y no hace
 falta reescribirla acá. Los casos de estudio citados ahí (`clase1-coulomb-
 vectorial`, `clase26-angulo-critico`, etc.) son de Física III; **documentar
 acá los casos propios de CDIV2017** a medida que se autoren las primeras
@@ -412,7 +413,8 @@ figuras de este curso, en vez de heredar ejemplos que no aplican.
 
 ## 7. Compilación (tectonic) y edición dirigida por PDF
 
-**tectonic es el compilador canónico del curso** (mismo binario que Fisica3).
+**tectonic es el compilador canónico del curso** (mismo binario que
+Fisica3-2015).
 
 ### 7.1 `build.sh`
 

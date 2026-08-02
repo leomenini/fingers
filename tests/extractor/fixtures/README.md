@@ -1,6 +1,6 @@
 # Fixtures del parser de WebVTT
 
-Entradas para ejercitar `scripts/vtt.mjs` sin red. Cada archivo existe para
+Entradas para ejercitar `scripts/extractor/vtt.mjs` sin red. Cada archivo existe para
 cubrir **una** rama concreta; si se agrega uno, decir acá qué rama cubre.
 
 | Archivo | Origen | Qué ejercita | Resultado esperado |
