@@ -6,7 +6,7 @@
 #   ./build.sh 1 5 14       # compila sólo Clase1, Clase5, Clase14
 #
 # Cada PDF queda in situ en ClaseN/notes.pdf. tectonic no deja .aux/.log.
-# (El snapshot iter1 del usuario en " PDFiter1/" NO se toca.)
+# (El snapshot iter1 en PDFiter1/ NO se toca; esta fuera de Git.)
 set -uo pipefail
 
 # --- localizar tectonic (PATH o ~/.local/bin) ---
