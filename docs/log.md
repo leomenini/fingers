@@ -113,6 +113,43 @@ de `log.md` (fechada 2026-07-24/25 en las secciones de arriba) no se edita
 retroactivamente — las rutas que cita ahí eran correctas cuando se
 escribieron.
 
+## 7. `stats.transcript_words` no es reproducible desde el archivo — ABIERTA (2026-08-02)
+
+Detectada al correr `scripts/extractor/diff-oraculo.mjs` sobre las 28 clases
+de Física III.
+
+**Las 28 clases tienen `stats.transcript_words` distinto del conteo real de
+su propio `Transcription_raw.txt`.** No es un caso aislado:
+
+| | |
+|---|---|
+| Clases afectadas | 28 / 28 |
+| Error típico | +355 a +518 palabras (≈ 4 %) |
+| Caso extremo | Clase23: `12584` declarado, **9225** real (+36 %) |
+| Error absoluto acumulado | 13 908 palabras |
+
+En 26 clases el número de `metadata.yaml` copia fielmente el header del
+userscript (`Palabras : NNNN`), así que el error viene de origen: el
+userscript contaba sobre el DOM al momento de exportar y lo que quedó
+guardado en el archivo no es exactamente eso. No hay una fórmula simple que
+lo explique — no es "contó los timestamps" ni "contó la cabecera"; en Clase1
+el valor declarado es incluso **menor** que el real. Las dos clases sin
+bloque de stats (1 y 23) tienen números de otra procedencia, y la de Clase23
+es la peor de todas.
+
+**Por qué importa:** el `CLAUDE.md` de ambos cursos instruye *"La cabecera
+trae `Palabras : NNNN` → ese número es `stats.transcript_words`"*. Esa receta
+propaga un número que no se puede verificar contra el archivo.
+
+**Decisión:** no se corrigen los 28 `metadata.yaml` a mano ahora. El conteo
+correcto lo produce el parser (`transcript.stats.json`), así que la
+corrección llega sola cuando el extractor regenere cada clase. Lo que sí hay
+que hacer en ese momento es **dejar de copiar el header** y empezar a usar el
+valor medido. Hasta entonces, `stats.transcript_words` es indicativo, no
+exacto — no usarlo como base de ninguna métrica del benchmark.
+
+---
+
 ## Pendientes (2026-08-02)
 
 Registrado el mismo día que se resolvió el punto 6, durante la sesión de
