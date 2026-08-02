@@ -1,0 +1,10 @@
+
+node_modules/
+out/
+probe-out/
+out/
+probe-out/
+
+# generado por build.sh
+notes.pdf
+notes.pdf

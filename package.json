@@ -1,0 +1,21 @@
+{
+  "name": "fingers",
+  "version": "1.0.0",
+  "description": "Una base de conocimiento académico abierta, versionada y revisada por la comunidad: cada afirmación puede rastrearse hasta sus fuentes y cada cambio tiene historial.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "probe": "node scripts/probe.mjs",
+    "vtt": "node scripts/vtt.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  },
+  "private": "true"
+}
