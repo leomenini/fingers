@@ -1,0 +1,9 @@
+WEBVTT
+
+00:00:10.000 --> 00:00:05.000
+Cue con fin anterior al inicio.
+
+00:00:20.000 --> 00:00:25.000
+Cue normal despues del malformado.
+
+esto no es un cue y no tiene linea de tiempo
