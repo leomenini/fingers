@@ -40,7 +40,8 @@ fingers/
     CDIV2017/         # 5/42 clases, ver courses/CDIV2017/CLAUDE.md
   docs/               # visión, arquitectura, modelo de datos, ADRs, bitácora
   scripts/
-    extractor/        # módulo Extractor: probe.js, vtt.js — ya no es userscript
+    README.md         # ← qué se ejecuta y qué se hace a mano
+    extractor/        # módulo Extractor: probe.js, vtt.js, diff-oraculo.js
   tests/
     extractor/fixtures/   # fixtures del parser de VTT
   package.json        # raíz: npm lo necesita acá
@@ -49,6 +50,12 @@ fingers/
 
 `scripts/` y `tests/` se espejan por módulo del pipeline. Hoy sólo existe
 `extractor/`; los demás módulos aparecerán cuando haya código, no antes.
+
+**Si no sabés por dónde empezar a ejecutar**, [`scripts/README.md`](scripts/README.md)
+tiene la tabla de qué paso está automatizado y cuál es manual.
+
+Los PDF (`notes.pdf` y el snapshot `PDFiter1/`) **no se versionan**: son
+artefactos de `build.sh` y se regeneran con tectonic.
 
 Cada clase (`courses/<Curso>/Clases/ClaseN/`) es autocontenida: cuatro
 archivos obligatorios (`Transcription_raw.txt`, `summary.md`, `notes.tex`,
@@ -77,6 +84,10 @@ git).
 - [`docs/log.md`](docs/log.md) — bitácora de decisiones de nomenclatura y
   esquema.
 - [`docs/adr/`](docs/adr/) — decisiones de arquitectura (ADR-0001 a 0004).
+- [`SESIONES.md`](SESIONES.md) — bitácora de trabajo: qué se hizo cada sesión
+  y qué quedó abierto.
+- [`scripts/README.md`](scripts/README.md) — qué se ejecuta y qué se hace a
+  mano.
 - `CLAUDE.md` (raíz) — contexto de trabajo del pipeline/extractor, qué sigue,
   decisiones abiertas. `courses/<Curso>/CLAUDE.md` — convenciones específicas
   de cada corpus.

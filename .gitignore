@@ -4,5 +4,10 @@ node_modules/
 out/
 probe-out/
 
-# generado por build.sh
+# artefactos de build.sh: se regeneran con tectonic, no se versionan
 notes.pdf
+
+# snapshot histórico de la iteración 1 de Física III (28 PDF, 6,5 MB).
+# Se conserva en disco, fuera de Git: son PDF superados y su único valor es
+# poder comparar contra la iteración actual en local.
+PDFiter1/
