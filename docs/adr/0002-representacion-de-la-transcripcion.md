@@ -88,6 +88,9 @@ lo cual es una forma más fuerte de reproducibilidad que incluir el texto, y
 evita redistribuir material de terceros. El costo es depender de que la fuente
 siga disponible. Se decidirá en un ADR propio.
 
+> **Resuelto por [ADR-0004](0004-retencion-payload-vtt.md)** (2026-08-02): el
+> `.vtt` crudo no se commitea, sólo el manifiesto.
+
 ## Evidencia
 
 Parseo de `civ_09_transcription.vtt` (2026-08-02):

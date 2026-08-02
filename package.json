@@ -7,8 +7,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "probe": "node scripts/probe.mjs",
-    "vtt": "node scripts/vtt.mjs"
+    "probe": "node scripts/extractor/probe.mjs",
+    "vtt": "node scripts/extractor/vtt.mjs"
   },
   "keywords": [],
   "author": "",
