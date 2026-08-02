@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * probe.mjs — descubrimiento de red + extractor v0 para OpenFING
+ * probe.js — descubrimiento de red + extractor v0 para OpenFING
  *
  *   npm i playwright && npx playwright install chromium
- *   node probe.mjs https://open.fing.edu.uy/courses/civ/9/ ./out
+ *   node probe.js https://open.fing.edu.uy/courses/civ/9/ ./out
  *
  * Qué hace:
  *   1. Abre la clase en Chromium headless.
@@ -26,7 +26,7 @@ import { join } from 'node:path';
 
 const [, , url, outDirArg] = process.argv;
 if (!url) {
-  console.error('uso: node probe.mjs <url-de-la-clase> [dir-salida]');
+  console.error('uso: node probe.js <url-de-la-clase> [dir-salida]');
   process.exit(1);
 }
 const outDir = outDirArg ?? './out';

@@ -12,12 +12,13 @@ trabajo está en `CLAUDE.md` §3–§6 de la raíz.
 
 | Archivo | Rol |
 | --- | --- |
-| `vtt.mjs` | Parser de WebVTT. Producción. |
-| `probe.mjs` | Descubrimiento con Playwright. **Diagnóstico, no producción.** |
+| `vtt.js` | Parser de WebVTT. Producción. |
+| `probe.js` | Descubrimiento con Playwright. **Diagnóstico, no producción.** |
+| `diff-oraculo.js` | Valida el extractor contra el corpus del userscript. |
 
 Ambos son ESM y se ejecutan con Node (v20 en el entorno actual).
 
-## `vtt.mjs` — parser
+## `vtt.js` — parser
 
 ```bash
 npm run vtt -- <archivo.vtt> [directorio-salida]   # salida por defecto: ./out
@@ -40,7 +41,7 @@ WebVTT perfectamente válido pero cuyos cues son referencias a sprites del
 scrubbing. `validarTranscripcion` mira el contenido, no el nombre del
 archivo.
 
-## `probe.mjs` — descubrimiento
+## `probe.js` — descubrimiento
 
 ```bash
 npm i -D playwright && npx playwright install chromium   # sólo la primera vez
@@ -56,6 +57,29 @@ OpenFING cambie su infraestructura, o para incorporar una fuente nueva cuyo
 mecanismo de entrega se desconozca (ADR-0001). Chromium pesa ~150 MB y vive
 en `~/.cache/ms-playwright`, no en `node_modules`.
 
+## `diff-oraculo.js` — validación contra el oráculo
+
+```bash
+npm run diff -- Fisica3-2015 1 14 23   # sólo esas clases
+npm run diff -- Fisica3-2015           # todas las del curso
+```
+
+Los `Transcription_raw.txt` que dejó el userscript de Tampermonkey son 28
+casos de contenido revisado a mano: el único test con **oráculo real** del
+proyecto. Este script baja el VTT de cada clase, lo parsea y compara el
+resultado contra ese archivo.
+
+Compara **bolsas de palabras, no cue a cue**, a propósito: OpenFING
+re-segmentó varios VTT desde que se exportó el corpus, así que los cortes no
+coinciden aunque el texto sea idéntico. Lo que se mide es si el contenido
+sobrevive.
+
+Sale con código 1 si alguna clase baja de 0,97 de similitud. El VTT se
+descarta al terminar; no se guarda (ADR-0004).
+
+El resultado de la corrida sobre las 28 clases está en `CLAUDE.md` §6.c:
+21 clases dan 1.000 exacto y el userscript resultó no transformar el texto.
+
 ## Fixtures
 
 En [`tests/extractor/fixtures/`](../../tests/extractor/fixtures/), con su
@@ -67,7 +91,7 @@ npm run vtt -- tests/extractor/fixtures/civ_09.head.vtt
 
 ## Salida
 
-`vtt.mjs` y `probe.mjs` escriben en directorios efímeros (`out/`,
+`vtt.js` y `probe.js` escriben en directorios efímeros (`out/`,
 `probe-out/`), ignorados por Git. De ahí se promueve a mano sólo lo que pasa
 a ser evidencia de un ADR o fixture; el resto se borra (`CLAUDE.md` §7). El
 payload `.vtt` crudo **no** se commitea

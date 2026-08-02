@@ -17,13 +17,13 @@ líneas para recordar qué dice.
 
 - **Respalda:** [ADR-0001](../0001-extraccion-por-vtt-estatico.md) (extracción
   por VTT estático).
-- **Cómo se capturó:** `scripts/extractor/probe.mjs` sobre
+- **Cómo se capturó:** `scripts/extractor/probe.js` sobre
   `https://open.fing.edu.uy/courses/civ/9/`, con los recursos `media`, `image`
   y `font` bloqueados, el 2026-08-02 a las 02:40 UTC.
 - **Tamaño:** 87 requests, ~16 KB.
 
 **Qué contiene.** Una entrada por request, con `url`, `status` y
-`contentType`; las respuestas que `probe.mjs` guardó como candidatas traen
+`contentType`; las respuestas que `probe.js` guardó como candidatas traen
 además `bytes` y `sha256`.
 
 | `contentType` | Requests |
@@ -51,7 +51,7 @@ elegir parser por `content-type`.
 
 **Por qué 87 y no 11.** ADR-0001 dice *"11 respuestas capturadas como
 candidatas"*. No se contradice con las 87 de este archivo: 87 es el tráfico
-total observado, y 11 es el subconjunto que `probe.mjs` retuvo como posible
+total observado, y 11 es el subconjunto que `probe.js` retuvo como posible
 transcripción tras filtrar. De esas 11, una sola lo era.
 
 **Sobre los parámetros removidos.** Las dos requests a `www.fing.edu.uy` son
