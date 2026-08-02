@@ -1,16 +1,33 @@
+
+
 # CLAUDE.md — contexto del módulo Extractor
 
 > Estado al **2026-08-02**. Este archivo existe para que una sesión nueva
 > (Claude Code u otra) retome el trabajo sin releer conversaciones. Si algo
 > acá contradice a `docs/adr/`, mandan los ADR: son la decisión formal, esto
 > es el contexto de trabajo.
->
-> El repo está en medio de una migración: hay trabajo sin commitear
-> (`courses/CDIV2017/`, `docs/adr/`, `scripts/extraction/`, `scripts/legacy/`,
-> `CLAUDE.md`, `package.json`) y el userscript viejo borrado sin commitear.
+> El repo está en medio de una migración y puede haber trabajo sin commitear
 > Antes de asumir que algo no existe, mirar `git status`.
 
 ---
+
+## 0. Alcance de este archivo
+
+Este `CLAUDE.md` cubre el **pipeline y el extractor**: arquitectura,
+decisiones de red y formato, métricas, benchmark. Nada de composición
+de figuras.
+
+Cada corpus tiene el suyo, con las convenciones de su dominio:
+
+| Archivo | Cubre |
+| --- | --- |
+| `/CLAUDE.md` (este) | pipeline, extractor, ADRs, métricas |
+| `courses/Fisica3/CLAUDE.md` | recetas de TikZ/circuitikz/pgfplots de Física III, gotchas de LaTeX, chequeo de Overfull |
+| `courses/CDIV2017/CLAUDE.md` | modificacion de recetas del courses/Fisica3/CLAUDE.md |
+
+Claude Code carga el de la raíz **y** el del subdirectorio donde trabaja,
+así que se complementan. **No traer recetas de composición acá**: cuando se
+aprenda algo produciendo figuras, va al `CLAUDE.md` del corpus, no a este.
 
 ## 1. Dónde está parado el proyecto
 
