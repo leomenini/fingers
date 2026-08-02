@@ -1,0 +1,8 @@
+node_modules/
+
+# salida efímera del extractor (ver CLAUDE.md §7)
+out/
+probe-out/
+
+# generado por build.sh
+notes.pdf

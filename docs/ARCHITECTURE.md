@@ -125,6 +125,15 @@ PDF
 
 En ningún momento un contenido generado automáticamente se considera definitivo.
 
+> El paso de "Extracción de transcripción" tiene su mecanismo concreto
+> decidido en [`docs/adr/0001-extraccion-por-vtt-estatico.md`](adr/0001-extraccion-por-vtt-estatico.md)
+> (VTT estático vía HTTP, sin ejecutar JavaScript) y
+> [`docs/adr/0002-representacion-de-la-transcripcion.md`](adr/0002-representacion-de-la-transcripcion.md)
+> (separación `fetch`/`parse`, doble representación con y sin marcas de
+> tiempo). Este diagrama describe el flujo editorial a nivel de proyecto, no
+> los módulos de código: hoy sólo el Extractor existe como código real: el
+> resto de los pasos son manuales.
+
 ---
 
 # Unidad Fundamental

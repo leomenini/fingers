@@ -97,6 +97,60 @@ reproducibilidad (`ARCHITECTURE.md` §4).
 
 ---
 
+## 6. Convención de nombres de curso/edición — RESUELTA (2026-08-02)
+
+- **`docs/`, `CLAUDE.md` y el corpus real** tenían dos convenciones
+  conviviendo: `courses/Fisica3/` (sin año) y `courses/CDIV2017/` (con año),
+  sin que ningún documento explicara la asimetría.
+
+**Decisión:** [ADR-0003](adr/0003-convencion-nombres-curso-edicion.md).
+`courses/Fisica3/` se renombra a `courses/Fisica3-2015/` (`git mv`, historial
+preservado); regla general: sufijo `-<año>` obligatorio si hay más de una
+edición conocida del curso, recomendado en caso contrario. Las referencias
+textuales en `CLAUDE.md`, `README.md`, `docs/SPECS.md` y
+`courses/CDIV2017/CLAUDE.md` se actualizaron en el mismo commit. Esta entrada
+de `log.md` (fechada 2026-07-24/25 en las secciones de arriba) no se edita
+retroactivamente — las rutas que cita ahí eran correctas cuando se
+escribieron.
+
+## Pendientes (2026-08-02)
+
+Registrado el mismo día que se resolvió el punto 6, durante la sesión de
+sincronización de documentación posterior al rediseño del proyecto (ver
+`CLAUDE.md` §7 y §10).
+
+### Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
+
+ADR-0002 (2026-08-02) ya decidió el esquema de dos representaciones
+derivadas del VTT, con esos nombres. El corpus real (28 clases de Física III
++ 5 de CDIV2017) todavía usa el nombre y formato viejos: el extractor nuevo
+existe (`scripts/extractor/vtt.mjs`) pero todavía no produjo ninguna clase real del
+corpus. Falta decidir si la migración es retroactiva sobre las 33 clases
+existentes o sólo aplica de acá en adelante, dejando convivir dos
+convenciones. Diferido, no resuelto en esta sesión.
+
+### Riesgo CC BY-NC-ND de la transcripción derivada ya commiteada
+
+[ADR-0004](adr/0004-retencion-payload-vtt.md) resolvió que el `.vtt` crudo no
+se commitea, pero **no** resolvió esto: el repo ya commitea 271 057 palabras
+de transcripción literal de OpenFING (`Transcription_raw.txt` de las 28
+clases de Física III), bajo una licencia CC BY-NC-ND que no cubre
+redistribución. El riesgo concreto no es una demanda sino un takedown de
+GitHub. Es una decisión sobre el modelo de datos de todas las clases del
+repo, no sólo del extractor — queda para un ADR propio.
+
+### `Resnick.pdf` (69 MB) en el historial de git
+
+No es un problema de documentación ni de modelo de datos, es limpieza de
+repositorio: el archivo está borrado del working tree pero sus objetos siguen
+en `.git`, y sacarlos requiere `git filter-repo` (reescribe todo el
+historial; la rama ya está pusheada a `origin`). Detectado y anotado en
+`/home/leo/devTools/Transcripciones/ROADMAP/DetallesRepo2-08-2026.md`. No es
+urgente hoy; el disparador ya está escrito ahí: antes de que clonar el repo
+se ponga notablemente lento, o antes de sumar colaboradores nuevos que lo
+clonen. Se agenda como el próximo paso concreto después de esta sesión de
+documentación (no un ADR).
+
 ## Pendientes
 
 ### `status.assets` no tiene valor para "no aplica"

@@ -3,7 +3,7 @@
 # Especificación del Modelo de Datos
 
 > **Autoridad.** Este documento describe el modelo de datos a nivel de proyecto.
-> El `CLAUDE.md` de cada curso (p. ej. `courses/Fisica3/CLAUDE.md`) define el
+> El `CLAUDE.md` de cada curso (p. ej. `courses/Fisica3-2015/CLAUDE.md`) define el
 > esquema **ejecutable** y es más estricto. Ante un conflicto, **manda el
 > `CLAUDE.md` del curso**; este documento se corrige para seguirlo.
 

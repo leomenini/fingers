@@ -1,0 +1,47 @@
+% Clase 1 --- Construcción de conjuntos por comprensión (§7).
+% El docente: "supongo que yo tengo un conjunto A... una propiedad me va a
+% dividir el universo en dos partes: los objetos que cumplen la propiedad y
+% los que no... ¿cuáles serían los elementos que están dentro de A pero que
+% no cumplen P de x? Un elemento acá, por ejemplo Y que cumple P(x) y este Z
+% que no cumple P(x)". El universo matemático se parte en dos mitades según
+% P(x); el conjunto A se solapa con ambas; solo la intersección con la mitad
+% "cumple P" es el conjunto {x en A : P(x)}.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % ---- universo matemático ----
+  \draw[figuniverso] (-4,-2.5) rectangle (4,2.5);
+  \node[figlblaux] at (-3.3,2.2) {universo};
+
+  % ---- conjunto A (base, antes de resaltar la intersección) ----
+  \draw[figset] (1,0) ellipse (2 and 1.3);
+  \node[figlbl] at (1,1.7) {$A$};
+
+  % ---- frontera P(x): divide el universo en dos mitades ----
+  \draw[figaux] (0,-2.5) -- (0,2.5);
+  \node[figlblaux, above] at (0,2.5) {$P(x)$};
+  \node[figlblaux] at (2.4,-2.15) {cumple $P$};
+  \node[figlblaux] at (-2.4,-2.15) {no cumple $P$};
+
+  % ---- resaltar la región intersección: A \cap "cumple P" ----
+  \begin{scope}
+    \clip (0,-2.5) rectangle (4,2.5);
+    \clip (1,0) ellipse (2 and 1.3);
+    \fill[figamber!25] (-4,-2.5) rectangle (4,2.5);
+    \draw[figsetC] (1,0) ellipse (2 and 1.3);
+    \draw[figsetC] (0,-2.5) -- (0,2.5);
+  \end{scope}
+
+  % ---- elemento y: en A y cumple P (entra al conjunto por comprensión) ----
+  \node[figptoY, minimum size=6pt] (py) at (1.5,-0.3) {};
+  \node[figlbl, right=2pt] at (py) {$y$};
+
+  % ---- elemento z: en A pero no cumple P (queda fuera) ----
+  \node[figptoZ, minimum size=6pt] (pz) at (-0.5,0.35) {};
+  \node[figlbl, above=2pt] at (pz) {$z$};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La propiedad $P$ traza una frontera que parte el universo en
+dos mitades; el conjunto $\{x \in A : P(x)\}$ es la región resaltada
+(intersección de $A$ con la mitad ``cumple $P$''). Tanto $y$ como $z$
+pertenecen a $A$, pero solo $y$ cumple $P$ y entra al nuevo conjunto; $z$ no
+cumple $P$ y por eso queda afuera, aunque también pertenezca a $A$.}
+\end{center}

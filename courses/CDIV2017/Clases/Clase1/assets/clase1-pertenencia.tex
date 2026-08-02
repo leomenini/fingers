@@ -1,0 +1,25 @@
+% Clase 1 --- Relación de pertenencia y diagramas de Venn (§3.1).
+% El docente: "en general se dibujan los conjuntos así, con los elementos
+% adentro... si A es mi conjunto, tenemos que x pertenece a A, mientras que
+% y no pertenece a A". Diagrama de Venn simple: un óvalo (conjunto A) con un
+% elemento adentro y uno afuera.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % óvalo del conjunto A
+  \draw[figset] (0,0) ellipse (2.2 and 1.4);
+  \node[figlbl] at (0,1.75) {$A$};
+
+  % elemento x, adentro
+  \node[figptoY, minimum size=6pt] (px) at (-0.6,0.25) {};
+  \node[figlbl, below=2pt] at (px) {$x$};
+  \node[figlbl] at (-0.6,-1.75) {$x \in A$};
+
+  % elemento y, afuera
+  \node[figptoZ, minimum size=6pt] (py) at (3.4,0.6) {};
+  \node[figlbl, above=2pt] at (py) {$y$};
+  \node[figlbl] at (3.4,-1.75) {$y \notin A$};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Diagrama de Venn: el conjunto $A$ se dibuja como un óvalo; sus
+elementos van adentro ($x$) y los objetos que no pertenecen a $A$ quedan
+afuera ($y$).}
+\end{center}

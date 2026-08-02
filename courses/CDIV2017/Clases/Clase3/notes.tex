@@ -1,0 +1,436 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (gráficas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 3: Funciones} \\[0.3em]
+        \large{Definición, dominio implícito, operaciones e inyectividad/sobreyectividad/biyectividad}}
+\author{Transcripto y expandido --- Curso Cálculo 1 (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{La definición de función: dominio, codominio y regla}
+
+El docente retoma el hilo de la clase anterior (``conjuntos y funciones'') y anuncia que esta es la última clase antes de empezar con los números reales. El tema del día es exclusivamente \textbf{funciones}.
+
+La definición de partida es que una función queda determinada por \textbf{tres datos}:
+
+\begin{enumerate}
+  \item Un \textbf{dominio}, escrito $\mathrm{Dom}(f)$: el conjunto de partida. Todo lo que se ``entregue'' a la función debe pertenecer a él.
+  \item Un \textbf{codominio}, escrito $\mathrm{Cod}(f)$: el conjunto donde caen las salidas.
+  \item Una \textbf{definición} (regla de asignación) de la forma
+  $$f(x) = \text{expresión que puede depender de } x,$$
+  tal que para todo $x$ en el dominio la expresión $f(x)$ sea \textbf{bien definida} y pertenezca al codominio.
+\end{enumerate}
+
+Un matiz importante: la regla \textbf{puede no depender realmente de $x$} (una función puede ser constante) y \textbf{puede darse por casos} --- ambas posibilidades se retoman más adelante en la clase.
+
+\begin{notebox}[Definición parcial y aceptada como tal]
+El profesor deja explícitamente sin definir con precisión qué significa ``bien definida'' (``nunca definí lo que significa ser bien definido, pero vamos a aceptar esta definición parcial''). Es una noción que se maneja de manera intuitiva y se precisa caso a caso con los ejemplos.
+\end{notebox}
+
+\section{Notación estándar y la intuición de ``máquina''}
+
+La notación que se privilegiará de ahora en más (en lugar de escribir $\mathrm{Dom}(f)$ y $\mathrm{Cod}(f)$ por separado) es
+$$f : A \to B,$$
+que se lee ``$f$ es una función de $A$ en $B$'': el dominio es $A$, el codominio es $B$.
+
+La intuición central que propone el docente es que \textbf{una función es una máquina}: tiene una entrada ($x$) y una salida ($f(x)$); $x$ debe pertenecer al dominio y la respuesta siempre pertenece al codominio. Traza una analogía con la informática: es la visión ``de los años 60'' de un programa (entregar datos, correr la máquina, esperar, obtener la respuesta), un modelo de ``caja negra'' que en matemática se conserva porque es conceptualmente muy simple --- incluso para analizar un programa moderno, alcanza con considerar el teclado como parte de la entrada y la pantalla como parte de la salida.
+
+En consecuencia, \textbf{definir una función exige dar tres cosas}: el formato de los datos de entrada (dominio), el formato de los datos de salida (codominio) y el algoritmo (la expresión), verificando que esté bien definida para todo $x$ del dominio.
+
+\section{Buenas y malas definiciones: cuidado con el dominio}
+
+El primer ejemplo es una \textbf{definición sencilla y correcta}:
+$$f : \mathbb{R} \to \mathbb{R}, \qquad f(x) = x^3 - 3x + 1.$$
+Se verifica que está bien definida tomando un $x \in \mathbb{R}$ cualquiera: $x^3$ siempre tiene sentido, $-3x$ también, sumar $1$ también, y el resultado es un número real --- por lo tanto $f(x) \in \mathbb{R}$ siempre.
+
+El segundo ejemplo es una \textbf{mala definición}, elegida deliberadamente porque el docente comenta que en la corrección de exámenes es un error frecuente:
+$$f : \mathbb{R} \to \mathbb{R}, \qquad f(x) = \sqrt{x^2 - 1}.$$
+
+El problema aparece cuando $-1 < x < 1$: ahí $x^2 - 1 < 0$ y la raíz cuadrada de un número negativo no tiene sentido en $\mathbb{R}$. Hay \textbf{dos lecturas posibles} del error, que llevan a la misma conclusión (la función está mal definida):
+
+\begin{itemize}
+  \item \textbf{El dominio es incorrecto}: si se trabaja en $\mathbb{R}$, la raíz cuadrada nunca está definida para negativos, así que la expresión simplemente no tiene sentido cuando $x \in (-1,1)$.
+  \item \textbf{El codominio es incorrecto}: se podría decir que la expresión siempre ``tiene sentido'' pero da un número complejo --- en ese caso el error está en haber puesto $\mathbb{R}$ como codominio.
+\end{itemize}
+
+Como el curso no trabaja con números complejos, la corrección adoptada es \textbf{restringir el dominio}, no tocar el codominio:
+$$f : (-\infty,-1] \cup [1,+\infty) \to \mathbb{R}, \qquad f(x) = \sqrt{x^2-1}.$$
+
+\begin{warnbox}[Cuidado con el dominio]
+El cuidado con el dominio de definición es ``un punto especialmente importante en cálculo'' al que el docente anuncia que va a volver más adelante en el curso.
+\end{warnbox}
+
+\section{Definición por casos}
+
+\subsection{Valor absoluto}
+
+El primer ejemplo de \textbf{función definida por casos} es el valor absoluto. Antes de escribir la fórmula, el docente explica una convención de notación: cuando una operación \textbf{no tiene nombre en letras} (a diferencia de seno, coseno o logaritmo), se le da nombre reemplazando la variable por un punto o una barra: $|\cdot|$ indica dónde va el argumento.
+
+La definición:
+$$|\cdot| : \mathbb{R} \to \mathbb{R}, \qquad |x| = \begin{cases} x & \text{si } x \geq 0 \\ -x & \text{si } x < 0 \end{cases}$$
+
+Para que una definición por casos sea \textbf{correcta}, hay que verificar dos cosas:
+
+\begin{enumerate}
+  \item \textbf{Los casos son disjuntos}: ningún número real puede ser a la vez $\geq 0$ y $< 0$ --- no hay ambigüedad.
+  \item \textbf{Los casos cubren todo el dominio}: $\mathbb{R} = (-\infty, 0) \cup [0, +\infty)$, y estos dos subconjuntos son disjuntos y su unión da exactamente $\mathbb{R}$.
+\end{enumerate}
+
+Cumplidas ambas condiciones, la definición es válida.
+
+\subsection{Función signo}
+
+El segundo ejemplo, con \textbf{tres casos}, es la función signo:
+$$\mathrm{sgn} : \mathbb{R} \to \mathbb{R}, \qquad \mathrm{sgn}(x) = \begin{cases} 1 & \text{si } x > 0 \\ 0 & \text{si } x = 0 \\ -1 & \text{si } x < 0 \end{cases}$$
+
+Aquí los tres subdominios son $\mathbb{R}^-$, $\{0\}$ y $\mathbb{R}^+$: disjuntos dos a dos y su unión reconstruye $\mathbb{R}$. Es una \textbf{función constante por trozos} (o ``seccionalmente constante''): vale $-1$ en todos los negativos, salta a $0$ exactamente en $0$, y pasa a $1$ en los positivos. El docente describe su gráfica: un segmento en altura $-1$ para $x<0$ que \textbf{no alcanza} el punto $(0,-1)$ (extremo abierto), el punto aislado $(0,0)$, y un segmento en altura $1$ para $x>0$ que tampoco alcanza $(0,1)$.
+
+\input{assets/clase3-funcion-signo.tex}
+
+\subsection{Una definición ``peligrosa'' que igual funciona}
+
+El docente muestra qué pasa si, por simetría, se reescriben los casos del valor absoluto permitiendo que se \textbf{toquen} en $x=0$ (por ejemplo usando $x \geq 0$ en un caso y $x \leq 0$ en el otro). Ahora los dos subdominios \textbf{no son disjuntos}: se solapan en $x=0$.
+
+\begin{warnbox}[Definición por casos con solapamiento]
+Hay que verificar que la función dé \textbf{el mismo resultado} en la intersección. En $x=0$, ambas ramas de la definición dan $0$, así que --- aunque sea una definición ``peligrosa'' --- sigue siendo válida. El docente es explícito: ``si no están seguros, hay que quedarse en el caso donde los casos son disjuntos'', es decir, evitar el solapamiento salvo que se controle bien la coherencia.
+\end{warnbox}
+
+\section{Dominio implícito en funciones numéricas}
+
+Se introduce una observación de notación muy usada en la práctica: para las \textbf{funciones numéricas} (dominio y codominio son conjuntos de números) es frecuente escribir solo
+$$f(x) = \text{expresión}$$
+sin precisar dominio ni codominio --- el docente lo atribuye, con humor, a que ``los matemáticos a veces son perezosos''. Ante esa omisión, se adopta una \textbf{convención}:
+
+\begin{itemize}
+  \item El \textbf{codominio}, en las funciones numéricas de este curso, siempre será $\mathbb{R}$ (no genera problema).
+  \item El \textbf{dominio}, por convención, es el conjunto más grande de $x$ para los cuales el lado derecho tiene sentido.
+\end{itemize}
+
+\begin{keybox}[Convención de dominio implícito]
+$$\boxed{\mathrm{Dom}(f) = \{\, x \mid \text{el lado derecho de } f(x) \text{ tiene sentido} \,\}.}$$
+\end{keybox}
+
+Esta convención se ejemplifica con una batería de casos, de menor a mayor dificultad:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+Expresión $f(x)$ & Dominio \\
+\midrule
+$\dfrac{1}{x}$ & $\mathbb{R} \setminus \{0\}$ \\[1.2ex]
+$\sqrt{x}$ & $[0, +\infty)$ \\[0.6ex]
+$\ln(x)$ (o $\log$) & $(0, +\infty)$ \\[0.6ex]
+$\dfrac{1}{x^2-1}$ & $\mathbb{R} \setminus \{-1, 1\}$ \\[0.6ex]
+\bottomrule
+\end{tabular}
+\end{table}
+
+Para el ejemplo de $\dfrac{1}{x^2-1}$, el razonamiento es: el único problema posible en una división es que el denominador se anule (``nunca dividirás por cero... sino guillotina'', bromea el docente). Hay que resolver $x^2 - 1 = 0 \iff x = \pm 1$, y esos dos valores quedan excluidos.
+
+Después se presenta un ejemplo deliberadamente \textbf{más difícil}: una función del tipo $f(x) = \dfrac{1}{P(x)}$ con $P$ un polinomio de tercer grado sin raíces expresables de forma sencilla. El docente no calcula las raíces exactas en vivo, pero razona \textbf{cualitativamente}: sabe que $P$ tiene tres raíces reales (por el signo de $P$ en un par de puntos de referencia, p.\ ej.\ evaluando en $0$), así que el dominio tendrá la forma $(-\infty,A) \cup (B,C) \cup (C',+\infty)$ (la forma exacta depende de dónde $P$ cambia de signo), con $A, B, C$ las tres raíces --- que en general \textbf{no} son valores exactos fáciles de escribir, sino que requerirían aproximación numérica.
+
+\begin{notebox}[Una trampa del profesor]
+El propio docente señala que este último ejemplo es ``una trampa del profesor'': si un examen pide el dominio de una función así, es genuinamente difícil incluso para quien la escribe, porque exige resolver una ecuación de tercer grado. En los casos frecuentes del curso, en cambio, el dominio se calcula fácilmente.
+\end{notebox}
+
+\section{Definición implícita de una función}
+
+Se presenta un segundo mecanismo para definir funciones, distinto de dar una fórmula explícita: la \textbf{definición implícita}. Su forma general:
+
+\begin{quote}
+Sea $f : A \to B$ el único $y$ tal que $E(x,y)$,
+\end{quote}
+
+donde $E(x,y)$ es un enunciado (``frase'') que relaciona $x \in A$ con $y \in B$. Formalmente:
+$$\forall x \in A,\ \exists! y \in B \text{ tal que } E(x,y).$$
+
+\textbf{Para que esta definición sea legítima, hay que demostrar la propiedad} de existencia y unicidad --- no se supone gratis. Una vez demostrado que a cada $x$ le corresponde un único $y$, queda definida automáticamente una función $f(x) := y$.
+
+\subsection{La raíz cuadrada como definición implícita}
+
+El primer ejemplo, elegido porque ``ya lo conocen, pero en general no son conscientes de que ya lo conocen'', es la \textbf{raíz cuadrada}:
+
+$$\forall x \in [0,+\infty),\ \exists! y \in \mathbb{R} \text{ tal que } \big(y \geq 0 \ \text{y}\ y^2 = x\big).$$
+
+El docente hace explícito \textbf{por qué hace falta la condición $y \geq 0$}: si solo se pidiera $y^2 = x$, en general hay \textbf{dos} soluciones (salvo en $x=0$, donde hay una sola), así que no se podría hablar de ``el'' $y$. Al restringir a soluciones no negativas, la solución es única. Esto permite definir formalmente
+$$\sqrt{\cdot} : [0,+\infty) \to \mathbb{R},$$
+donde $\sqrt{x}$ es, por definición, \textbf{la única solución no negativa} de la ecuación $y^2 = x$.
+
+\subsection{La parte entera}
+
+Segundo ejemplo, la \textbf{función parte entera}, notada con corchetes dobles $[\![x]\!]$ (o $\lfloor x \rfloor$):
+
+$$\forall x \in \mathbb{R},\ \exists! y \in \mathbb{R} \text{ tal que } \big(y \in \mathbb{Z}\ \text{y}\ y \leq x < y+1\big).$$
+
+El docente enuncia el resultado subyacente: dado un real $x$, siempre existe un entero $y$ que es simultáneamente el mayor entero menor o igual a $x$ (porque el ``siguiente'' entero ya se pasa de $x$). Formalmente:
+
+\begin{keybox}[Definición: parte entera]
+$$\boxed{[\![x]\!] \in \mathbb{Z}, \qquad [\![x]\!] \leq x < [\![x]\!] + 1.}$$
+\end{keybox}
+
+\subsection{El axioma de elección (mención)}
+
+El docente adelanta, sin desarrollarlo (``normalmente debería estar afuera del programa, pero quizás lo use a veces''), que la \textbf{unicidad} en una definición implícita es en realidad opcional si se acepta el \textbf{axioma de elección}: cuando para cada $x$ existe al menos un $y$ pero no necesariamente uno solo, el axioma garantiza que se puede ``elegir'' un $y$ para cada $x$, y eso también define una función. La \textbf{existencia}, en cambio, sigue siendo obligatoria: sin al menos un $y$ para cada $x$, no hay función posible.
+
+\section{Vocabulario: imagen y preimagen}
+
+Se introduce vocabulario básico sobre funciones, insistiendo en su \textbf{asimetría}: cada entrada tiene una única salida, pero dos entradas distintas pueden compartir la misma salida (ejemplo inmediato: $|3| = |-3|$).
+
+Dada $f:A\to B$, si $y = f(x)$:
+
+\begin{itemize}
+  \item se dice que $y$ es \textbf{la imagen} de $x$ por $f$ (con artículo determinado ``la'', porque siempre existe y es única);
+  \item se dice que $x$ es \textbf{una preimagen} de $y$ por $f$ (con artículo ``una'', porque un elemento del codominio puede tener cero, una o varias preimágenes).
+\end{itemize}
+
+\begin{notebox}[La asimetría de una función]
+La relación que induce una función va en una sola dirección de manera controlada (de $x$ a su imagen), pero al revés (de $y$ a sus preimágenes) puede haber cero, una o muchas. Las funciones donde esta relación inversa también es ``buena'' se llaman \textbf{biyecciones} (se retoman en la Sección~\ref{sec:biyectividad} y siguientes).
+\end{notebox}
+
+Se define además la \textbf{imagen} (o \textbf{recorrido}) de $f$, notada $\mathrm{Img}(f)$, como el subconjunto del codominio formado por los elementos que tienen \textbf{al menos una preimagen}:
+$$\mathrm{Img}(f) = \{\, y \in B \mid \exists x \in A,\ y = f(x) \,\} = \{\, f(x) \mid x \in A \,\}.$$
+
+Es una \textbf{definición por comprensión}, y por construcción $\mathrm{Img}(f) \subseteq B$.
+
+\section{Representaciones de una función}
+
+El docente enumera \textbf{tres representaciones} habituales de una función (particularmente útiles para el caso finito):
+
+\begin{enumerate}
+  \item \textbf{Diagramas de Venn}: dos ``nubes'' $A$ y $B$ con flechas de cada elemento de $A$ a su imagen en $B$. Permite visualizar de un vistazo la asimetría: cada elemento de $A$ tiene \textbf{exactamente una} flecha saliente (si un elemento tuviera dos flechas, eso ``no es una función'', sino una \textbf{relación}); en cambio un elemento de $B$ puede recibir cero, una o varias flechas.
+  \item \textbf{Tablas de valores}: dos filas, la primera con los argumentos y la segunda con las imágenes correspondientes. El docente comenta, con ironía, que ``los ingenieros nunca hacen diagramas de Venn porque no parecen serios'', y que la tabla es la representación que sí usan --- aunque para funciones finitas ambas son formalmente equivalentes.
+  \item \textbf{Gráficas}: solo tiene sentido para funciones numéricas. Por definición, la \textbf{gráfica} de $f:A\to B$ es
+  $$\mathrm{Gr}(f) = \{\, (x,y) \in A \times B \mid y = f(x) \,\},$$
+  un subconjunto del producto cartesiano que, vía la identificación entre pares de reales y puntos del plano, se visualiza como una curva.
+\end{enumerate}
+
+Se retoma el ejemplo $f(x) = x^3-3x+1$ de la Sección~3 y se menciona el procedimiento habitual antes de dibujar: estudiar el dominio, construir una tabla de valores inicial, y estudiar continuidad/monotonía.
+
+\section{Operaciones sobre funciones: identidad y composición}
+
+Se presentan las dos operaciones que existen para \textbf{cualquier} función entre conjuntos abstractos (más adelante, con funciones numéricas, se agregarán suma, producto, etc.).
+
+\subsection{La función identidad}
+
+Para todo conjunto $A$ existe la \textbf{función identidad} en $A$:
+$$\mathrm{id}_A : A \to A, \qquad \mathrm{id}_A(x) = x.$$
+Es la función que ``no cambia nada''. Su gráfica, cuando $A=\mathbb{R}$, es la recta diagonal.
+
+\subsection{Composición de funciones}
+
+Dadas $f:A\to B$ y $g:B\to C$, se define la \textbf{compuesta} $g \circ f : A \to C$ por
+$$(g \circ f)(x) := g\big(f(x)\big).$$
+
+\begin{warnbox}[Cuidado con el orden de la notación]
+Aunque se escribe $g \circ f$, la función que se aplica \textbf{primero} es $f$, y \textbf{después} $g$. Esto viene directamente de la definición: para calcular $(g\circ f)(x)$ hay que evaluar primero $f(x)$ y recién después aplicarle $g$.
+\end{warnbox}
+
+La analogía con circuitos: $f$ y $g$ son ``máquinas'' que se enchufan en cadena, y $g\circ f$ es la ``supermáquina'' resultante --- con la salvedad de tener presente el orden invertido en la notación.
+
+\subsection{Neutralidad de la identidad y asociatividad}
+
+Con la analogía de circuitos (``la identidad es un cable: lo que entra sale idéntico''), se derivan dos propiedades para $f:A\to B$, $g:B\to C$, $h:C\to D$:
+
+\begin{keybox}[Identidad neutra y asociatividad]
+$$f \circ \mathrm{id}_A = f, \qquad \mathrm{id}_B \circ f = f,$$
+es decir, \textbf{la identidad actúa como elemento neutro} de la composición; y
+$$(h\circ g)\circ f = h\circ(g\circ f),$$
+es decir, \textbf{la composición es asociativa} --- no importa cómo se agrupen los paréntesis al componer tres o más funciones.
+\end{keybox}
+
+\subsection{La composición no es conmutativa}
+
+Se dedica especial énfasis a una advertencia:
+$$\boxed{g \circ f \neq f \circ g \ \ \text{en general.}}$$
+
+Hay \textbf{dos razones} distintas por las que puede fallar la conmutatividad:
+
+\begin{enumerate}
+  \item \textbf{Razón de dominios/codominios}: si $f:A\to B$ y $g:B\to C$, se puede formar $g\circ f$, pero para formar $f\circ g$ haría falta que la salida de $g$ (en $C$) fuera del tipo de entrada de $f$ (en $A$) --- y si no hay vínculo entre $C$ y $A$, $f \circ g$ \textbf{ni siquiera está definida}. Muchas veces se puede componer en una sola dirección.
+  \item \textbf{Razón ``de fondo'', incluso cuando ambas composiciones existen} (los tres conjuntos coinciden, digamos todos $\mathbb{R}$): igual puede no haber conmutatividad. Contraejemplo trabajado en clase con $f,g:\mathbb{R}\to\mathbb{R}$, $f(x)=x^2$, $g(x)=x+1$:
+  $$(g\circ f)(x) = g(x^2) = x^2+1,$$
+  $$(f\circ g)(x) = f(x+1) = (x+1)^2 = x^2+2x+1.$$
+  Como $x^2+1 \neq x^2+2x+1$ (difieren en el término $2x$), las dos compuestas son funciones \textbf{distintas}.
+\end{enumerate}
+
+\begin{warnbox}[Trampas de examen]
+El docente advierte, con humor, que este es terreno fértil para ``trampas gigantescas'' y ``oportunidades maravillosas para armar ejercicios de parcial que van a matar a toda la gente'' --- la recomendación es simplemente \textbf{tener siempre presente que, en general, son dos cosas distintas}.
+\end{warnbox}
+
+\section{Funciones inyectivas, sobreyectivas y biyectivas}
+\label{sec:biyectividad}
+
+\subsection{Inyectividad y el contrarrecíproco}
+
+Una función $f:A\to B$ es \textbf{inyectiva} si objetos distintos del dominio tienen imágenes distintas:
+$$\forall x, x' \in A,\quad x \neq x' \implies f(x) \neq f(x').$$
+
+El docente muestra que esta definición es \textbf{lógicamente equivalente} a su contrarrecíproco:
+$$\forall x, x' \in A,\quad f(x) = f(x') \implies x = x'.$$
+
+La equivalencia se justifica invocando la regla general de la lógica: un enunciado $E \Rightarrow F$ es siempre equivalente a $\lnot F \Rightarrow \lnot E$ (el docente ilustra con el ejemplo clásico: ``si llueve, voy al cine'' equivale a ``si no estoy en el cine, no llueve'').
+
+\begin{notebox}[Recomendación práctica]
+En la práctica, para \emph{demostrar} que una función es inyectiva conviene usar la segunda formulación (la del contrarrecíproco), porque parte de una \textbf{igualdad} --- y ``sabemos hacer un montón de cosas con igualdades'', mientras que ``en general no se sabe hacer muchas cosas con negaciones de igualdad''.
+\end{notebox}
+
+\subsection{Sobreyectividad}
+
+Una función $f:A\to B$ es \textbf{sobreyectiva} si todo elemento del codominio tiene \textbf{al menos una} preimagen, lo cual equivale exactamente a decir que la imagen coincide con todo el codominio:
+
+\begin{keybox}[Definición: sobreyectividad]
+$$\boxed{f \text{ sobreyectiva} \iff \mathrm{Img}(f) = B.}$$
+\end{keybox}
+
+Y $f$ es \textbf{biyectiva} si es a la vez inyectiva y sobreyectiva.
+
+\subsection{Biyectividad: ejemplos con diagramas}
+
+El criterio práctico que propone el docente, con diagramas de Venn dibujados en clase: contar, \textbf{para cada elemento del codominio, cuántas preimágenes tiene}.
+
+\begin{itemize}
+  \item Si cada elemento del codominio tiene \textbf{a lo sumo una} preimagen $\to$ la función es inyectiva.
+  \item Si cada elemento tiene \textbf{al menos una} $\to$ sobreyectiva.
+  \item Si tiene \textbf{exactamente una} en todos los casos $\to$ biyectiva.
+\end{itemize}
+
+Se repasan cuatro diagramas ilustrativos:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}p{7.8cm}cc@{}}
+\toprule
+Situación (conteo de preimágenes por elemento de $B$) & Inyectiva & Sobreyectiva \\
+\midrule
+Un punto con 5 preimágenes; otro con 0 & No & No \\
+Cada punto con 0 o 1 preimagen (nunca más) & Sí & No \\
+Un punto con 3 preimágenes; todos con $\geq 1$ & No & Sí \\
+Cada punto con exactamente 1 preimagen & Sí & Sí (biyectiva) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\input{assets/clase3-inyectiva-sobreyectiva.tex}
+
+\section{La función inversa}
+
+Solo en el caso biyectivo la noción de función se vuelve \textbf{simétrica}: cada elemento del dominio tiene una única imagen y, ahora también, cada elemento del codominio tiene una única preimagen. Esto corresponde a la idea de ``circuito inversible'': se puede invertir la función.
+
+Si $f:A\to B$ es biyectiva, se define su \textbf{inversa} $f^{-1}:B\to A$ mediante una \textbf{definición implícita}:
+$$f^{-1}(y) := \text{el único } x \in A \text{ tal que } f(x)=y.$$
+
+Se verifican dos propiedades por construcción, con la misma analogía de circuitos (``dos circuitos que se anulan''):
+
+\begin{keybox}[Propiedades de la inversa]
+$$\boxed{f^{-1}\circ f = \mathrm{id}_A, \qquad f\circ f^{-1} = \mathrm{id}_B.}$$
+\end{keybox}
+
+La primera identidad vive en $A$ (se parte del dominio, se llega al codominio vía $f$, y se regresa al dominio vía $f^{-1}$); la segunda vive en $B$, en el sentido inverso. Esta correspondencia también recibe el nombre de \textbf{recíproca}.
+
+\begin{notebox}[Próxima clase]
+El docente cierra la clase reconociendo que fue rápido en esta última parte y promete retomar todo --- inyectividad, sobreyectividad, biyectividad, inversa --- con más ejemplos en la clase siguiente. \emph{La próxima clase (lunes) comienza el estudio de los números reales.}
+\end{notebox}
+
+\end{document}
