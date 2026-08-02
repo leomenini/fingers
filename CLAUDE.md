@@ -251,32 +251,54 @@ npx playwright install chromium
   `npx playwright install-deps` (pide sudo).
 - El Chromium no vive en `node_modules` sino en `~/.cache/ms-playwright`
   (~150 MB), y se comparte entre proyectos.
-- El repo **no tenía `.gitignore`** hasta 2026-08-02. Debe contener
-  `node_modules/`, `/probe-out/` y `/out/`.
+- El repo **no tenía `.gitignore`** hasta 2026-08-02. Contiene
+  `node_modules/`, `out/`, `probe-out/`, `notes.pdf` y `PDFiter1/`. Los dos
+  últimos son artefactos de compilación: están en disco pero fuera de Git.
 
 ## 7. Qué sigue
 
-**Inmediato**
+**Lo próximo, en orden**
 
-0. **Política de retención ya aplicada:** la salida de `probe.js` es efímera
-   (`/probe-out/` y `/out/` en `.gitignore`). De ahí sólo se promueve a mano
-   lo que pasa a ser evidencia de un ADR o fixture. Todo lo demás se borra:
-   si el criterio es "lo guardo por las dudas", en un año hay diez netlogs y
-   ninguno indexado.
-1. ~~Correr `vtt.js` contra los `Transcription_raw.txt` de Física III.~~
-   **HECHO (2026-08-02).** Ver sección 6.c: el extractor está validado contra
-   las 28 clases y el userscript no transformaba el texto.
-2. Completar el módulo Extractor: índice del curso → por clase, `og:video` →
-   `.vtt` → parse → manifest. Idempotente y resumible (con 42 clases, algo va
-   a fallar en la 27).
-3. Actualizar `docs/SPECS.md`: `Transcription_raw.txt` deja de ser el artefacto
-   crudo de la clase y pasa a ser una salida del parser.
-4. Actualizar el README: eliminar Fase 1 del Roadmap, generalizar el paso 1 del
-   pipeline, y `scripts/` deja de ser "userscript".
-5. `scripts/tampermonkeyV0.1.js` está borrado en el working tree pero sin
-   commitear. Al commitear, que el mensaje diga que se elimina **por ADR-0001**,
-   así el `git log` y los ADR cuentan la misma historia. Git conserva el
-   historial; el ADR lo menciona como pieza histórica, no como archivo vivo.
+1. **Completar el módulo Extractor de punta a punta.** Es el trabajo real que
+   queda: índice del curso → por clase, `og:video` → `.vtt` → parse →
+   manifiesto. Idempotente y resumible (con 42 clases, algo va a fallar en la
+   27). Hoy `vtt.js` parsea un archivo que ya tenés; **falta el `fetch`**.
+   El arnés para validarlo ya existe: `diff-oraculo.js` sobre las 42 de
+   CDIV2017.
+2. **Actualizar `docs/SPECS.md`.** Sigue diciendo que `Transcription_raw.txt`
+   es "dado, no se edita" (línea 30). ADR-0002 lo convirtió en salida del
+   parser y esto nunca se corrigió — es lo único de la documentación que
+   quedó desalineado.
+3. **Instrumentar métricas** (ver sección 9). El paso previo al benchmark.
+4. **Pasada de `git filter-repo`.** Limpieza de repo, no ADR. Ver *Decisiones
+   abiertas*.
+
+**Política de retención (vigente, ya aplicada)**
+
+La salida de `probe.js` y `vtt.js` es efímera (`out/`, `probe-out/` en
+`.gitignore`). De ahí se promueve **a mano** sólo lo que pasa a ser evidencia
+de un ADR o fixture; todo lo demás se borra. Si el criterio es "lo guardo por
+las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
+2026-08-02: se borró `scripts/out/` una vez promovido su netlog a
+`docs/adr/evidence/`.
+
+**Hecho el 2026-08-02** (ver `SESIONES.md` para el detalle)
+
+- ~~Correr `vtt.js` contra los `Transcription_raw.txt` de Física III.~~
+  Sección 6.c: el extractor está validado contra las 28 clases y **el
+  userscript no transformaba el texto**.
+- ~~Actualizar el README~~ (Fase 1 del Roadmap eliminada, `scripts/` ya no es
+  "userscript"), ~~eliminar `scripts/tampermonkeyV0.1.js`~~ (commit `dbef60c`,
+  por ADR-0001).
+- ~~Convención de nombres curso/edición~~ → **ADR-0003**. `courses/Fisica3/`
+  pasó a `courses/Fisica3-2015/`. Regla: sufijo `-<año>` cuando hace falta
+  desambiguar ediciones o el slug ya termina en dígito (evita `Fisica32015`).
+- ~~Retención del payload VTT~~ → **ADR-0004**. El `.vtt` crudo no se
+  commitea; sólo el manifiesto (URL, `sha256`, fecha, versión del extractor).
+  Resuelve el `Pendiente` de ADR-0002.
+- ~~Los PDF salen de Git.~~ Los 28 `notes.pdf` estaban trackeados *y* en
+  `.gitignore` a la vez; `PDFiter1/` cargaba 6,5 MB de PDF superados y tenía
+  un espacio inicial en el nombre. Ambos fuera de Git, ambos en disco.
 
 **Resueltas (2026-08-02)**
 
@@ -304,12 +326,12 @@ npx playwright install chromium
   todavía usa el nombre y formato viejos — el extractor nuevo existe pero
   todavía no produjo ninguna clase real del corpus. Pendiente de decidir si
   se migra retroactivamente o sólo aplica de acá en adelante.
-- **`Resnick.pdf` (69 MB) sigue pesando en el historial de Git** aunque el
-  archivo esté borrado del working tree — borrarlo requiere `git filter-repo`
-  (reescribe historia, la rama ya está pusheada). No es urgente; el
-  disparador es antes de que el clon se ponga lento o se sume gente nueva al
-  repo. Limpieza de repo, no ADR — agendada como próximo paso concreto
-  después de esta sesión de documentación.
+- **Peso muerto en el historial de Git.** Tres cosas ya destrackeadas cuyos
+  objetos siguen pesando: `Resnick.pdf` (69 MB), los 28 `notes.pdf` (3,3 MB) y
+  `PDFiter1/` (6,5 MB) — ~79 MB en total. Sacarlos exige `git filter-repo`,
+  que reescribe historia ya pusheada. No es urgente; el disparador es antes de
+  que clonar se ponga lento o se sume gente nueva. Limpieza de repo, no ADR.
+  Cuanto más se acumula, más rentable es hacer una sola pasada.
 - **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
   enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
 - **Representación canónica del contenido.** Ver sección 8.

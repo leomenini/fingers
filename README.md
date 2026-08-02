@@ -84,6 +84,10 @@ git).
 - [`docs/log.md`](docs/log.md) — bitácora de decisiones de nomenclatura y
   esquema.
 - [`docs/adr/`](docs/adr/) — decisiones de arquitectura (ADR-0001 a 0004).
+- [`SESIONES.md`](SESIONES.md) — bitácora de trabajo: qué se hizo cada sesión
+  y qué quedó abierto.
+- [`scripts/README.md`](scripts/README.md) — qué se ejecuta y qué se hace a
+  mano.
 - `CLAUDE.md` (raíz) — contexto de trabajo del pipeline/extractor, qué sigue,
   decisiones abiertas. `courses/<Curso>/CLAUDE.md` — convenciones específicas
   de cada corpus.
