@@ -16,10 +16,11 @@ archivos:
 > 28 clases (unificado el 2026-07-25; antes había cuatro variantes históricas,
 > ver `docs/log.md` §2).
 
-> **Layout del repo (reorg 2026-07-25):** las 28 clases viven en
-> `courses/Fisica3/Clases/ClaseN/`; el `assets/` global en
-> `courses/Fisica3/Clases/assets/`. `build.sh`, `CLAUDE.md` y ` PDFiter1/`
-> (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3/`.
+> **Layout del repo (reorg 2026-07-25; renombrado a `Fisica3-2015` por
+> ADR-0003 el 2026-08-02):** las 28 clases viven en
+> `courses/Fisica3-2015/Clases/ClaseN/`; el `assets/` global en
+> `courses/Fisica3-2015/Clases/assets/`. `build.sh`, `CLAUDE.md` y ` PDFiter1/`
+> (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3-2015/`.
 
 ---
 
@@ -234,7 +235,7 @@ limpias y reproducibles. El objetivo de tamaño de todo el curso con assets es
 
 ### 6.2 Estructura de archivos
 
-- **Global — `courses/Fisica3/Clases/assets/`**: existe para **consistencia visual**,
+- **Global — `courses/Fisica3-2015/Clases/assets/`**: existe para **consistencia visual**,
   no para ahorrar bytes (con vector la deduplicación es irrelevante; **no
   obsesionarse** con reusar). Contiene `tikzstyles.tex` (paleta
   `figblue`/`figred`/`figamber`/`figgray` alineada con las cajas del preámbulo,
@@ -508,7 +509,7 @@ asistente genera los PDF end-to-end; el usuario revisa.
 ### 7.1 `build.sh`
 
 - Binario durable en `~/.local/bin/tectonic` (instalar con el `curl` de §6.5).
-- **`courses/Fisica3/build.sh`**: `./build.sh` compila las 28; `./build.sh 1 5 14`
+- **`courses/Fisica3-2015/build.sh`**: `./build.sh` compila las 28; `./build.sh 1 5 14`
   sólo esas. Deja el PDF **in situ** en `Clases/ClaseN/notes.pdf` (tectonic no deja
   `.aux/.log`). Compila desde cada `Clases/ClaseN/` para que `\input{../assets/…}`
   resuelva. Salida ~40–85 KB por clase; el curso entero < 2 MB.

@@ -1,0 +1,72 @@
+title: Clase 4
+id: civ-2017-1-04
+
+course: Cálculo 1
+academic_year: 2017
+semester: 1
+
+teacher: Alexandre Miquel
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:20"
+    end: "01:25:14"
+
+stats:
+  transcript_words: 9599
+  summary_words: 3795
+  diagrams_pending: 3
+  equations: 45
+
+topics:
+  - Intuición geométrica de los números reales como puntos de una recta
+  - Construcción (Dedekind, Cauchy) vs. axiomatización de R
+  - Unicidad de R a menos de isomorfismo
+  - Los 15 axiomas de cuerpo ordenado (suma, producto, orden)
+  - Unicidad del neutro y del opuesto de la suma; definición de la resta
+  - Unicidad del neutro y del inverso del producto
+  - Demostración de que 0 es absorbente para el producto
+  - Producto nulo y producto igual a 1
+  - Los enteros como abreviaturas (2 := 1+1, etc.)
+  - Definición del cociente y advertencia sobre dividir entre cero
+  - Reducción al mismo denominador (racionales e irracionales)
+  - Interpretación geométrica de la suma (paralelogramos)
+  - Interpretación geométrica del producto (teorema de Tales)
+  - Adelanto de la construcción de la raíz cuadrada con regla y compás
+  - Axiomas de orden: totalidad, transitividad, antisimetría
+  - Orden estricto y tricotomía
+  - Aparte de lógica: la implicación material (falso implica cualquier cosa)
+  - Compatibilidad del orden con la suma (sin restricciones)
+  - Compatibilidad del orden con el producto (según el signo del multiplicador)
+
+bibliography: []
+
+prerequisites:
+  - Conjuntos, pertenencia, igualdad e inclusión (Clase 1)
+  - Cuantificadores y conectivos lógicos básicos (∀, ∃, ∧, ∨, ⟹, ⟺)
+  - Manejo algebraico elemental (suma, producto, fracciones) de liceo
+  - Nociones geométricas elementales (recta, paralelogramo, triángulos semejantes, teorema de Tales)
+
+next_topics:
+  - Axioma de completitud (axioma 4)
+  - Existencia de supremo e ínfimo
+  - Existencia de la raíz cuadrada a partir de la completitud
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-30
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

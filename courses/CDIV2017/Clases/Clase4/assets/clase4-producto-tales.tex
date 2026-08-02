@@ -1,0 +1,60 @@
+% Clase 4 --- El producto en la recta: construcción por el teorema de Tales
+% (§8.2). Recta principal R con O, I=1, Y=y, X=x, Z=xy (valores ilustrativos
+% x=2, y=1.5, xy=3, elegidos solo para que la figura sea legible). Recta
+% secante R' por O con la "unidad duplicada" I' a distancia arbitraria
+% a=1.3 y G' a distancia a·y (Tales, paso 1). El paso 2 repite Tales entre
+% I'-X y G'-Z para obtener Z=xy sobre R. Construcción estándar de Tales
+% para el producto (la transcripción da los mismos puntos O,I',G',Z, pero
+% sin el detalle numérico de la razón).
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+
+  % ---- parámetros de la construcción (coordenadas calculadas, no a ojo) ----
+  % ang=35°, a=OI'=1.3 (unidad duplicada arbitraria); x=OX=2, y=OY=1.5.
+  % Por Tales: OG'=a*y=1.95, Z=OX*OG'/OI'=x*y=3. Coordenadas de R' obtenidas
+  % de (r*cos(ang), r*sin(ang)) con ang=35°: cos35=0.81915, sin35=0.57358.
+
+  % ---- recta principal R (el eje numérico) ----
+  \draw[figaxis] (-0.5,0) -- (3.7,0) node[right, figlbl] {$R$};
+
+  % ---- recta secante R' ----
+  \draw[figline] (-0.2048,-0.1434) -- (1.8840,1.3192)
+        node[above right, figlbl] {$R'$};
+
+  % ---- puntos sobre R ----
+  \node[figptocerrado] (O) at (0,0)   {};
+  \node[figptocerrado] (I) at (1,0)   {};
+  \node[figptocerrado] (Y) at (1.5,0) {};
+  \node[figptocerrado] (X) at (2,0)   {};
+  \node[circle, inner sep=0pt, minimum size=5pt, draw=figred, line width=0.9pt, fill=figred] (Z) at (3,0) {};
+
+  \node[figlbl, below=3pt] at (O) {$O$};
+  \node[figlbl, below=3pt] at (I) {$I$};
+  \node[figlbl, below=3pt] at (Y) {$Y$};
+  \node[figlbl, below=3pt] at (X) {$X$};
+  \node[figlbl, figred, below=3pt] at (Z) {$X{\cdot}Y$};
+
+  % ---- puntos sobre R': I' a distancia 1.3, G' a distancia 1.5*1.3=1.95 ----
+  \node[figptocerrado] (Ip) at (1.0649,0.7456) {};
+  \node[figptocerrado] (Gp) at (1.5973,1.1185) {};
+
+  \node[figlbl, right=2pt] at (Ip) {$I'$};
+  \node[figlbl, right=2pt] at (Gp) {$G'$};
+
+  % ---- paso 1 de Tales: I-I' y su paralela por Y hasta G' ----
+  \draw[figline] (I) -- (Ip);
+  \draw[figline] (Y) -- (Gp);
+
+  % ---- paso 2 de Tales: I'-X y su paralela por G' hasta Z ----
+  \draw[figred, line width=0.9pt] (Ip) -- (X);
+  \draw[figred, line width=0.9pt] (Gp) -- (Z);
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Construcción estándar de $x\cdot y$ por el teorema de Tales
+(triángulos semejantes). \textbf{Paso 1} (azul): se traza $I'$ arbitrario
+sobre la secante $R'$ y la paralela a $II'$ por $Y$, que determina $G'$ con
+$OG'/OI' = OY/OI$. \textbf{Paso 2} (rojo): se traza la paralela a $I'X$ por
+$G'$, que determina $Z$ sobre $R$ con $OZ/OX = OG'/OI'$; combinando ambas
+razones, $OZ = OX \cdot OY / OI = x\cdot y$ (con $OI=1$). A diferencia de la
+suma, el producto \textbf{sí} necesita fijar la unidad $I$.}
+\end{center}

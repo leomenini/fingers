@@ -1,0 +1,419 @@
+# Clase 2
+
+Curso: CIV
+
+Fuente: https://open.fing.edu.uy/courses/civ/2/
+
+Fecha de exportación: 7/30/2026, 10:46:45 AM
+
+---
+Clase: 2
+Curso: CIV
+
+Segmentos : 243
+Palabras  : 8333
+Caracteres: 45902
+
+0:16
+Ok, hoy vamos a continuar con el primer capítulo que es conjuntos y funciones Ok
+0:38
+La vez pasada vimos la noción de conjunto, la relación de igualdad entre conjuntos, vimos la noción de inclusión, vimos un primer método, vimos cuatro conjuntos de base que son los naturales, los enteros relativos, los números racionales y los números reales. Y también vimos el método de construcción por extensión que permite formar conjuntos finitos. Y también vimos, y vamos a continuar, con la noción de conjunto construido por comprensión.
+1:18
+Entonces, conjunto construido por comprensión.
+1:24
+Entonces, la construcción que ya vimos la vez pasada era, si yo me doy un conjunto A, y lo que llamo un predicado, P de X sobre A.
+1:46
+Cuando digo un predicado, es una frase matemática que depende de una variable. ¿Ok? Por ejemplo, x es par. Por ejemplo, x es menor o igual a 7. ¿Ok? Entonces, esto es una frase matemática que depende de x y en general se llama un predicado. Y se puede formar... Entonces, dados un conjunto y un predicado, se puede formar...
+2:24
+el conjunto de todos los X en A que cumplen la propiedad P y vimos que El dibujo es el siguiente. Yo tengo un conjunto A y mi propiedad me divide el mundo, el universo matemático en dos partes. La parte constituida de los objetos que cumplen la propiedad y la parte de los objetos constituida por los objetos que no cumplen la propiedad. Entonces...
+2:56
+yo tengo mi predicado que me divide el universo y el conjunto construido por comprensión consiste en construir un subconjunto de a formado por todos los objetos que cumplen la propiedad a es decir por definición tenemos que para todo x en el universo matemático acá es una cuantificación no restringida Y, no, X es una mala letra porque ya usé la letra X acá.
+3:28
+Para todo Y, Y pertenece al conjunto de los X en A, tales que P de X, si y solo si, X cumple dos cosas. Primera cosa, tiene que pertenecer al conjunto A. Y segunda cosa, tiene que cumplir el predicado P. Y el predicado puede ser cualquier frase que habla de X. Entonces, acá es muy importante porque es una construcción que mezcla dos cosas, dos ingredientes.
+4:04
+Un ingrediente que es... Ah, sí, disculpa, gracias. me equivoqué y van a ver que en este curso me voy a equivocar frecuentemente entonces realmente cuando yo me equivoco hay que decir menos gracias y entonces acá Es un objeto, el conjunto construido por comprensión mezcla dos cosas distintas. Mezcla un conjunto A, que es el conjunto de base, y mezcla un objeto lingüístico, que es el predicado P. El predicado P es una frase que tiene que tener un sentido matemático bien definido.
+4:47
+Y vamos a ver ejemplos. Ya vimos un par de ejemplos y voy a continuar. Ok, y acá es importante que esta construcción, acá funciona como un para todo o un existe, es decir, que esta construcción no depende de X. Claro para ustedes que esta construcción no depende de X. Es decir, cuando yo escribo esta cosa...
+5:15
+tiene exactamente el mismo sentido que el conjunto de los Z en A, tal vez que P de Z. Es decir, la variable no importa. ¿Por qué? Es exactamente como cuando yo escribo la suma de I igual a 0 a N de los I. Esto es exactamente lo mismo que la suma de los K igual a 0 a N. Disculpa. De los k. Y esta expresión solo depende de n. De mismo modo, esta expresión solo depende de n. Es decir, se dice que la variable y es ligada a k. ¿Entienden la idea?
+5:59
+Y es lo mismo acá. Entonces acá la variable x es ligada. Y vimos ejemplos.
+6:09
+Por ejemplo, el conjunto de los enteros naturales pares, tal que n es par. Acá la frase n es par es mi predicado y yo puedo decir que obtengo el conjunto de los números pares. Así. Y de mismo modo, yo puedo reemplazar par por n es impar o bien n es primo.
+6:40
+son otros ejemplos de conjuntos construidos por comprensión.
+6:50
+Y acá vimos que era 1, 3, 5, 7, etc. Y acá son 2, 3, 5, 7, 11, 13, etc. Son los números primos. Es decir, cada vez que yo tengo dos cosas, un conjunto y una frase, yo puedo dividir mi conjunto, seleccionar, hacer una selección de los objetos que cumplen la propiedad deseada. y de mismo modo se pueden definir los intervalos de R y es así que se definen es decir por ejemplo yo pienso que ya conocen la notación para los intervalos de R por ejemplo el intervalo cerrado AB es el conjunto de todos los números reales entre a y b incluidos es decir es el conjunto de los números reales que cumplen las propiedades que a es menor o igual a x que es menor o igual a b ¿ok?
+8:04
+y es así que se define el intervalo ab ¿ok? es un ejemplo bastante sencillo y de mismo modo hay el intervalo ab abierto que es el conjunto de los X en R que cumple las propiedades que A es estrictamente menor que X que es estrictamente menor que B y de mismo modo se definen los conjuntos semiabiertos, semicerrados esto
+8:48
+Ok, ejercicio de dar la definición de tales intervalos. Y de hecho no me gusta mucho la notación acá, uso la notación... Hay dos notaciones.
+9:00
+Hay la notación acá, que es la notación inglesa, y a veces vamos a usar la notación francesa, que también existe.
+9:09
+La notación francesa es... El problema es que esta cosa tiene dos significaciones en matemática, representa a la vez un intervalo abierto y a la vez el par no ordenado que vamos a ver en un par de minutos. entonces cuidado con esta notación pero cuando vamos a presentar los intervalos yo voy a dar una otra notación ok y de mismo modo yo puedo definir los intervalos infinitos por ejemplo el intervalo a hasta más infinito es igual al conjunto de los x en R que son mayores o iguales a a y de mismo modo se define el intervalo abierto que corresponde y etcétera ok son otros ejemplos de conjuntos construidos por comprensión y último ejemplo el conjunto de las soluciones de una ecuación lo que se llama el conjunto solución
+10:24
+Es decir, cuando tienen una ecuación, pueden formar a partir de dicha ecuación el conjunto de todas las soluciones de la ecuación. Y se llama el conjunto solución. Por ejemplo, el conjunto solución... formado por todos los números reales que cumplen una ecuación y acá voy a poner una ecuación cualquiera por ejemplo x a la 3 menos 3x más 1 igual a cero es una ecuación y esto me da un conjunto construido por comprensión a este conjunto r que se puede decir sobre el tamaño de r Es infinito.
+11:09
+Ahora, usé la palabra tamaño, que es una palabra informal, y en matemática no se usa para los conjuntos, no se habla de tamaño, se habla de cardinal. Entonces, ahora vamos a decir que el cardinal de R es infinito. ¿Ok? Pero, esta propiedad, ¿para cuántos objetos se cumple? ¿Cómo? ¿Qué decís? ¿Qué decís? Mucho más. Exactamente, a lo sumo para tres. Es claro, porque tenemos una ecuación de tercer grado.
+11:43
+Y ya sabemos que tiene a lo sumo tres soluciones. Entonces, ya sabemos que este conjunto es finito y contiene a lo sumo tres elementos. Quizás que contiene cero, quizás que contiene uno, quizás que contiene tres o dos. Y para ustedes, ¿cuántos elementos contiene este conjunto?
+12:06
+si tienen intuiciones, yo diría al menos uno. Porque acá este polinomio tiende a menos infinito cuando x tiende a menos infinito y tiende a más infinito cuando x tiende a más infinito. Entonces, tiene que haber un cero entre los dos.
+12:27
+Y de hecho, se puede verificar haciendo el dibujo que hay exactamente tres números adentro. pero sólo es un ejemplo es cómo construir un conjunto finito por comprensión a partir de un conjunto infinito ok ahora vamos a ver otro tema vamos a ver las operaciones binarias lo que llamo las operaciones binarias sobre los conjuntos operaciones
+13:02
+De hecho, no se llaman exactamente operaciones binarias, se llaman operaciones booleanas. Booleanas sobre los conjuntos.
+13:22
+Del nombre de George Boole, el tipo que inventó. ¿Sí? Pregunta.
+13:33
+¿Sí? ¿Sí? ¿Nunca di una definición de qué? De n. Ah, de n grande. Nunca di. Es una buena...
+13:53
+Ok, es claro. Porque en este... Buena pregunta. Entonces, tu crítica es que nunca definí N. Nunca definí N. Y esa razón porque es el tema de la próxima semana. Es el tema de la próxima semana. Es decir, la próxima semana vamos a definir todo junto. Es decir, vamos a definir R. Entonces, ahora, yo supongo que ya tienen una intuición de lo que es N, Z, Q y R. Y ya podemos comenzar por jugar con tales conjuntos.
+14:25
+Pero la próxima semana vamos a definirlos. Entonces, acá supongo que ya conocemos al menos intuitivamente lo que significa esta letra. Voy a volver a las operaciones booleanas sobre los conjuntos. Entonces, sean dos conjuntos.
+14:45
+A y B. Se pueden definir.
+14:53
+Voy a definir tres cosas. Entonces, el conjunto unión, la unión A unión B, que se escribe así.
+15:11
+Unión, ¿ok? Es como una U. La unión, y por definición, tenemos que, acá doy la definición, para todo objeto del universo matemático, X pertenece a la unión de A y de B, si y solo si, o bien X pertenece a A, O bien, X pertenece a B.
+15:48
+Y acá olvidé la cosa más importante, que es la conectiva O. Se acuerden que este símbolo significa O. Es el O lógico. Y acá hay un truco para memorizar, que es, acá es la forma ronda, redondea, no sé cómo decir, de este símbolo. Tienen la misma orientación. Es el truco para memorizar. Es decir, un objeto pertenece a A unión B, si, solo si, o bien está en A, o bien está en B.
+16:26
+Y quizás que está en ambos conjuntos. Así vamos a hacer el dibujo. Yo tengo A, yo tengo B, y ¿qué es A unión B? Es el todo. Es decir, voy a poner todo. Y acá, podemos que hay una primera ambigüedad, porque en el lenguaje natural se dice que contiene los elementos de A y los elementos de B.
+16:58
+Pero desde el punto de vista de la matemática, la definición es un O.
+17:05
+Porque vamos a ver lo que pasa cuando reemplazamos el O por un I.
+17:12
+Entonces, el segundo conjunto que vamos a definir es la intersección. A inter B. Es una U al revés. Y por definición, tenemos que para todo X en el universo matemático, X pertenece a la intersección, si solo si, X pertenece a la vez a A y a B.
+17:43
+Y acá hay que hacer el dibujo.
+17:50
+¿Cuál es A intersección B? Esta parte común. Y pueden ver la diferencia.
+18:02
+Y acá el truco que permite memorizar es que estos dos símbolos tienen la misma orientación.
+18:11
+¿Ok? ¿Ok? Y la última construcción que voy a hacer es la diferencia.
+18:23
+Entonces se escribe A menos barra... No sé cómo decirla, este símbolo. A menos B. O a veces se escribe... A con un menos usual. Es la diferencia entre dos conjuntos. Acá esta notación es peligrosa porque también se usa en álgebra. Entonces es la razón por la que prefiero esta notación, para cambiarle símbolo. Y por definición, tenemos que para todo objeto en el universo matemático, X pertenece a la diferencia A menos B, si y solo si.
+19:05
+X pertenece a A y X no pertenece a B. Es decir, son los objetos de A, salvo los objetos que ya pertenecen en B. Entonces voy a hacer el dibujo que corresponde. ¿Cuál sería A menos B?
+19:29
+Todo no, porque lo que decís es todo a solo de a. Es decir, la parte de a menos la intersección.
+19:41
+Acá en mi dibujo es una luna. Y acá se puede ver que hay una cosa nueva que aparece. Es que acá es claro que la unión de A y de B es idéntica a la unión de B y de A. Claro, es decir, el orden no importa. Y lo mismo para la intersección A intersección B es lo mismo que B intersección A. Pero cuidado, no es el caso para la diferencia. Ahora yo voy a definir, acá es B menos A, acá es la unión, acá es la intersección, pero también yo puedo dibujar...
+20:18
+No, es A menos B, disculpa. Es A menos B. Y ahora yo voy a dibujar B menos A. Y B menos A está acá. ¿Ok? Entonces, cuidado... Cuidado, las construcciones unión e intersección son conmutativas, pero no es el caso para la diferencia. Entonces, hay dos observaciones que voy a hacer. ¿Ok?
+21:09
+Es muy difícil limpiar este pizarrón. Observaciones. Tengo dos observaciones. La primera cosa que ya dije es que tenemos que A unión B es trivialmente igual a B unión A. Tenemos que A intersección B es igual a B intersección A. Pero, en general... tenemos que la diferencia A menos B es distinta de la diferencial de B menos A, en general.
+21:47
+Hay casos donde son iguales, pero son iguales sólo cuando son vacías.
+21:54
+Ok, esa primera observación. La segunda observación, que es un poquito más... con un contenido fundacional es que acá yo dije que yo había introducido tres nuevas construcciones y como siempre mentí. Mentí porque de hecho solo hay una construcción nueva porque la intersección y la diferencia se pueden definir por comprensión. Es decir, se pueden definir
+22:34
+la intersección y la diferencia por comprensión es decir, yo hubiera podido decir que la intersección de A y de B es exactamente el conjunto de los elementos de A que también pertenecen a B
+22:59
+Pero, por supuesto, también yo hubiera podido decir, es un conjunto construido a partir de B, con la propiedad, yo pertenezco a A. Y yo hubiera obtenido el mismo conjunto. ¿Claro? Entonces, de hecho la intersección es un caso particular de comprensión. Y lo mismo para la diferencia. Es el conjunto de los X en A, tal es que X no pertenece a B.
+23:32
+Y de mismo modo, la otra diferencia entre B y A es el conjunto de los X en B que no pertenecen a A. Y cuidado, en general estos dos conjuntos son distintos. Entonces la moraleja de la historia es que de hecho sólo introduje una nueva notación que es la unión. La unión en general no se puede definir por comprensión porque mezcla el contenido de dos conjuntos distintos y la comprensión sólo nos permite elegir una parte de un conjunto dado, pero no nos permite mezclar dos conjuntos.
+24:17
+entonces esa razón porque la unión es una cosa realmente nueva que no se puede definir por comprensión ok vamos a continuar y así voy a ver un par de ejemplos cuando tenemos esto cuando tenemos esto se pueden demostrar igualdades por ejemplo
+24:56
+Ok, ahora vamos a jugar con la noción de conjunto. Ejemplos de igualdades.
+25:08
+Por ejemplo, una igualdad que funciona muy bien, dice que la unión siempre se puede descomponer en tres partes.
+25:18
+Primeramente, lo que hay en común. Y después, ¿qué tengo yo que añadir para llenar la unión? Lo que digo es que la unión ya tiene la parte en común. Y después, ¿qué tengo yo que añadir? La diferencia entre A y B.
+25:40
+¿Y es todo? Yo tengo que agregar la diferencia entre B y A.
+25:50
+Es una igualdad que siempre se cumple para todo par de conjunto. ¿Ok? Si yo tengo dos conjuntos con la izquierda, A y B, yo puedo hacer esta, yo tengo esta igualdad.
+26:06
+¿Ok? ¿Y qué se puede decir sobre los miembros de las uniones acá? ¿Hay una intersección entre este y este?
+26:17
+No se intersectan. Y este y este no se intersectan. Y este y este tampoco. Entonces, se llama una unión disjunta.
+26:32
+Acá es una unión disjunta. ¿O qué es una unión disjunta?
+26:44
+Es decir, se dice que... Una unión C es disjunta cuando no tiene intersección. C intersección D es el vacío. Esa es la definición de lo que es una unión disjunta. Y acá es una unión disjunta de tres conjuntos donde entre dos conjuntos cualesquiera no hay ninguna intersección.
+27:17
+Es decir, son conjuntos disjuntos a pares o disjuntos 2 a 2. Ok, y otro ejemplo, por ejemplo, es mostrar que hay una forma de distributividad entre la unión y la intersección. mostrar que para todos los conjuntos A, B y C tenemos lo siguiente que si yo construyo la unión de A y de B y después hago la intersección con C es idéntico a hacer que la intersección de A y de C y después hacer la unión con la intersección entre B y C Es una forma de distributividad.
+28:09
+Ya conocéis una ley similar, ¿no? Con la adición y la multiplicación. ¿Ya vieron tal ley? Entonces, hay leyes que funcionan de modo análogo para los conjuntos. Entonces, análogo a la regla que dice que A más B por C es igual a A por C más B por C. Es análogo. Solo es una analogía, no hay nada más.
+28:42
+Pero hay que ver por qué esto funciona, siempre. Yo podría hacer una demostración formal, prefiero hacer una demostración gráfica para que entendamos lo que pasa. ¡Uf!
+29:09
+Ok, vamos a tomar tres conjuntos en situación cualquiera.
+29:24
+Ok, yo me doy tres conjuntos así. A, voy a tomar acá A, B y arriba voy a poner C. ¿Cuál es A unión B? A unión B es esto.
+29:57
+Y después voy a intersectar con C. Voy a obtener esta figura.
+30:07
+y lo único que me va a quedar es esta parte acá dibujo A unión B intersectado con C y lo que digo es que idéntico a hacer primeramente la intersección entre A y C
+30:35
+acá obtengo yo después hacer la intersección entre b y c obtengo yo esto y si yo hago la unión de esto obtengo esta cosa acá es un razonamiento gráfico que funciona muy bien ok En general, cuando tienen leyes para demostrar que involucran solo dos o tres conjuntos, pueden usar este tipo de razonamiento.
+31:10
+Se llama un razonamiento con diagrama de Venn. También hay una demostración formal que no voy a presentar hoy. En algunos casos vamos a usar el razonamiento formal. Ok. Después, ejercicio.
+31:27
+De modo análogo se puede hacer la misma ley de distributividad para al revés. Ejercicio. Para ver que todo esto funciona.
+31:46
+Ejercicio.
+31:59
+demostrar que acá demostré esta ley pero la cosa divertida es que acá hay una simetría entre la unión y la intersección que no existe entre la suma y el producto. Por ejemplo, si yo tomo esta ley que ya conocemos en los números, ¿qué pasa si yo reemplazo las sumas por productos y si yo reemplazo los productos por sumas?
+32:31
+¿Qué obtengo yo? Algo que no tiene sentido, que es falso en general, ¿no? pero acá si yo reemplazo las uniones por intersecciones y de mismo modo si yo reemplazo las intersecciones por uniones también todavía se cumple es decir A intersección B unión C es igual a la unión de A y de C intersección B unión C. Y esto funciona.
+33:07
+Y ejercicio, hacer el dibujo correspondiente y verificar que esto funciona. Entonces acá hay una simetría entre la intersección y la unión que no existe entre la suma y el producto. Esa razón porque esto solo era una analogía, no tiene vínculo.
+33:32
+Y la idea es que vamos a manipular un montón de conjuntos en este curso. Entonces, estos tipos de razonamiento tienen que ser tan naturales como el aire que respiran.
+33:51
+Yo sé que no es natural por primera vez, pero después hay que ser natural. OK. Ahora vamos a ver un nuevo tema que es el tema de los pares ordenados y de los productos cartesianos.
+34:18
+Acá hay que hacer entonces pares ordenados y producto
+34:30
+cartesiano antes hay que recordar porque yo estoy haciendo todas estas cosas que parecen que no tienen nada que ver con cálculo 1 no La razón es que vamos a hacer un montón de razonamientos y siempre vamos a usar estas notaciones de modo implícito.
+34:58
+Entonces, hay que recordar en una parte todas las notaciones que yo voy a usar en lo siguiente. Ahora voy a introducir el par ordenado. Par ordenado. Entonces, dado dos objetos matemáticos,
+35:19
+a y b, se puede formar el par ordenado que se escribe así, paréntesis a coma b. Intuitivamente, el par ordenado es una construcción que permite agrupar dos objetos en un pequeño paquete. Y es un paquete que tiene dos bolsas, una bolsa a la izquierda y otra bolsa a la derecha.
+35:56
+Entonces, diré que esto es la primera componente.
+36:05
+del par y diré que esto es la segunda componente ok es decir el par ordenado es un truco que permite agrupar dos objetos manteniendo el orden entre los dos objetos es decir acá digo que A es en primera posición y que B es en segunda posición y Entonces, esto se llama la primera componente del par y esto se llama la segunda componente del par.
+36:39
+Y la igualdad entre pares es definida por... Para todos a, b, c y d, tengo que el par a, b es igual al par c, d. Si solo si dos pares son iguales, si solo si las dos primeras componentes son iguales, así como las dos segundas componentes.
+37:14
+Es decir, si solo si A es igual a C y B es igual a D. Esa definición de la igualdad entre pares. Entonces, en informática no hay realmente una construcción que corresponde. Es decir, yo tengo dos archivos y lo que me gustaría hacer es agrupar mis dos archivos para formar un único archivo que contiene ambos archivos. Si se puede hacer con ZIP, por ejemplo, con el software ZIP. ¿Ok? Agrupar dos archivos para poner un único archivo.
+37:45
+Y es esta construcción que vamos a usar muy frecuentemente es para agrupar, estructurar el universo. ¿Ok? Y acá ya vimos otro par, entonces hay que recordar la diferencia entre el par ordenado y el par no ordenado.
+38:06
+Entonces, acá hay que precisar cuál es la diferencia, porque ya tenemos dos nociones de par.
+38:26
+Entonces, cuidado, cuidado, cuidado, cuidado. Acá, posibilidad de trampa.
+38:39
+Cuidado. No hay que confundir el par ordenado
+38:53
+con el par no ordenado que ya vimos acá es el par ordenado y acá es el par no ordenado y voy a recordar las diferencias entre ambas construcciones hay que repetir que esta construcción es un conjunto
+39:23
+Es decir, es un objeto cuyo tipo matemático es conjunto. ¿Ok? Es un objeto de tipo conjunto. Es un conjunto y que solo contiene A y B. Y por construcción es no ordenado, es decir, que este par es igual al par formado al revés al par no ordenado formado al revés ok ya vimos esto pero en otro lado el par ordenado AB es un nuevo tipo de objeto
+40:31
+y precisamente la función del par ordenado es ordenar las componentes es decir, en general tenemos que el par AB es distinto del par BA pero ¿en qué situación el par BA es igual al par AB? cuando A es igual a B.
+41:03
+Entonces, salvo cuando A es igual a B. Pero incluso, incluido en el caso donde A es igual a B, tampoco es un par no ordenado. ok entonces son dos tipos distintos acá es el tipo conjunto es una carpeta y acá es un nuevo tipo de archivo que permite agrupar dos archivos y mientras que mantenga el orden entre las dos cosas porque a veces si pregunta Ese conjunto AA se vuelve el conjunto A.
+41:51
+Exactamente. No, de hecho tenés razón. Entonces, la pregunta que me haces es, acá sabemos que cuando A es igual a B, sabemos que cuando A es igual a B, el par no ordenado AA es igual a esto.
+42:09
+Pero, en otro lado, ¿qué pasa cuando yo tengo dos veces A en un par ordenado? esto no se puede simplificar es decir, tengo dos copias del mismo objeto en una caja que tiene dos espacios para mantener dos objetos ¿ok?
+42:41
+entonces son dos construcciones distintas ¿ok?
+42:47
+y ahora voy a interesarme al par ordenado y voy a definir el producto cartesiano ok tenemos el par ordenado ahora par ordenado acá se puede definir el producto cartesiano
+43:19
+Producto cartesiano.
+43:29
+Si yo me doy dos conjuntos.
+43:41
+¿Pregunta? ¿Tiene una pregunta? Si yo me doy dos conjuntos, ¿se puede formar
+43:54
+el producto cartesiano que se escribe como un producto A por B es el conjunto de todos los pares A chica y B chica tales que la primera componente pertenece al primer conjunto y la segunda componente pertenece al segundo conjunto
+44:21
+Es decir, el producto cartesiano es un conjunto de pares y de hecho es el conjunto de pares formado construyendo todos los pares posibles cuya primera componente pertenece a A y cuya segunda componente pertenece a B. ¿Ok? Y ahora vamos a materializar esta noción de producto cartesiano. Entonces un producto cartesiano es un conjunto, es un conjunto de pares.
+44:52
+Es decir, si yo tengo un conjunto A de elementos, un conjunto B de elementos, voy a formar todas las combinaciones posibles de un elemento de A con un elemento de B y al final voy a obtener un conjunto de pares. y se llama el producto cartesiano y ahora hay que explicar el producto cartesiano en la expresión producto cartesiano hay dos palabras importantes hay producto y cartesiano entonces hay que explicar ambas palabras voy a explicar por qué se llama un producto se llama un producto por la siguiente razón en el caso
+45:36
+donde a y b son finitos, ¿qué pasa? Es decir, ¿qué pasa si a tiene exactamente n elementos, de a1 a an, y mientras b tiene m elementos?
+46:09
+¿Qué pasa?
+46:11
+¿Cuál será el producto cartesiano? ¿Cuántos elementos tendrá?
+46:16
+N por M. Y se puede representar en una tabla.
+46:28
+Es decir, en este caso, se puede representar el producto cartesiano así.
+46:42
+es un conjunto que empieza por a1 b1 después a1 con b2 hasta a1 bm acá hice todas esas combinaciones posibles a partir de a1 y puse todos los b posibles a la derecha y después puedo continuar con A2. A2 con B1, A2 con B2 y A2 con BM y etc. hasta A sub n con B1 a sub n con b sub 2 y esto al final hasta a sub n con b sub m y es claro que con esta representación obtengo un conjunto que tiene en su representación n filas y m columnas entonces tiene n por m elementos y esta razón porque en su naturaleza es un producto
+47:58
+construye un producto y vamos a ver que cuando A y B los conjuntos A y B son conjuntos numéricos esto tiene la forma de un rectángulo Y en general, yo insisto en que el producto cartesiano es relacionado a la idea de rectángulo, en general. Es decir, toda representación razonable del producto cartesiano tiene que tener la forma de un rectángulo. Entonces, acá expliqué la palabra producto, porque cuando ahora yo puedo usar la terminología matemática, cuando A es finito y tiene cardinal A y B es finito y tiene el cardinal de B entonces el cardinal del producto cartesiano es el producto usual de los cardinales de A y de B ¿ok?
+48:51
+¿es claro para ustedes?
+48:54
+entonces esa razón por qué se llama producto cartesiano entonces esto voy a escribir así el cardinal acá es el símbolo para cardinal
+49:06
+de a por b es igual al producto del cardinal de a por el cardinal de b en el caso finito y de hecho cuando se define no vamos a hacerlo pero en teoría de conjuntos se pueden definir productos de cardinales infinitos y se define así es decir, el producto cartesiano me da una definición general de la noción de producto que supera de mucho la noción de número Esa primera razón por qué se llama producto.
+49:39
+Acá expliqué la palabra producto. Después hay que explicar la palabra por qué se llama cartesiano. Y la razón es que esta construcción fue nombrada al honor del filósofo. Entonces, la palabra cartesiano significa... En general van a encontrar esta palabra. Significa todo lo que es relativo o bien que pertenece al filósofo y matemático francés.
+50:25
+Es decir, cartesiano viene de este nombre. ¿Y cómo se llama acá?
+50:32
+Acá yo sé que la gente dice Descartes, y voy a decir Descartes porque no puedo hacer otra mente, pero no es la pronunciación real. Este tipo se llama René Descartes. Y yo estoy seguro. René Descartes. No hay ninguna S en la pronunciación de esta palabra que contiene dos S's.
+50:56
+Es así de francés, hay que tomar las letras y sacar la mitad de las letras y pronunciar lo que queda. Entonces, acá es Descartes. Esta razón por qué es un idioma muy musical es porque sacamos la mitad de las letras para simplificar.
+51:25
+Ok, entonces, pero soy serio, cartesiano significa al honor de Descartes. Por ejemplo, la filosofía de Descartes también se puede llamar la filosofía cartesiana.
+51:39
+Y una persona cartesiana es una persona que tiende a razonar como René Descartes.
+51:47
+Y la razón es que, ¿cuál es el vínculo entre Descartes y esta construcción? Es que es Descartes que observó por primera vez que se podían representar los puntos del plano por coordenadas cartesianas. ¿Conocen las coordenadas cartesianas? ¿Y qué es un par de coordenadas cartesianas? Lo que dice esencialmente Descartes es lo siguiente... es que yo puedo representar todos los puntos del plano por pares de coordenadas y acá llega el par entonces para Descartes el plano es lo mismo que el producto cartesiano de R con R
+52:43
+Es decir, se puede identificar el plano con el producto cartesiano de R con R. Es decir, es el conjunto de todos los pares cuyas componentes pertenecen a R. Y es así que más generalmente fue nombrada la construcción producto cartesiano.
+53:03
+Ahora tenemos el producto cartesiano y podemos continuar.
+53:10
+Ah, sí, olvidé hacer una cosa muy importante. que es representar el producto cartesiano. ¿Cómo se representa en general el producto cartesiano? Entonces vimos, por ejemplo, acá es una representación matricial. Acá hay gente, yo pienso que ya conocen la palabra matriz y acá es una representación matricial. yo hubiera podido poner paréntesis acá y paréntesis acá y yo habría obtenido una matriz, ¿no?
+53:43
+Entonces es una representación matricial. Pero, ¿qué pasa cuando A y B son conjuntos numéricos?
+53:50
+Por ejemplo, ¿qué pasa si yo tengo que representar? Entonces, representación. Voy a hablar de la representación del producto cartesiano para ver que realmente es un producto. Supongo que yo tengo dos intervalos AB y CD.
+54:13
+Acá es el conjunto de todos los números entre A y B y acá es el conjunto de todos los números entre C y D. ¿Qué pasa si yo formo el producto grafiteado? yo obtengo todos los pares cuya primera componente está entre A y B y cuya segunda componente está entre C y D. Ahora hay que hacer el dibujo. Vamos a hacer el dibujo.
+54:47
+Voy a tomar dos ejes X Y voy a poner lo que tiene que ver con la primera componente en X y lo que tiene que ver con la segunda componente en Y.
+54:58
+Por ejemplo, mi primer intervalo está acá.
+55:02
+AB. Es mi primer intervalo. Y yo voy a dibujar mi segundo intervalo de modo vertical. CID. Acá está mi segundo intervalo. ¿Qué forma va a tener el producto cartesiano?
+55:21
+Será rectangular. Será un rectángulo. Y será este rectángulo.
+55:46
+¿Y cuál será el área de dicho rectángulo?
+55:54
+El área será b-a por d-c. ¿No? Área b-a por d-c. Acá es la longitud del primer intervalo y acá es la longitud del segundo intervalo. Y de vuelta se encuentra un producto. Es decir, acá yo tengo lo que yo deseo hacer, es poner en su cabeza que producto cartesiano igual a rectángulo. Rectángulo, producto cartesiano.
+56:25
+Producto cartesiano, rectángulo, etcétera, etcétera. Son dos cosas muy vinculadas.
+56:32
+Y acá se puede jugar con esto. Por ejemplo, ¿qué pasa si yo excluyo acá los dos extremos? Si yo tomo un intervalo abierto, ¿qué va a pasar? Voy a eliminar Estos dos segmentos. Y lo mismo si yo hago la misma cosa con este intervalo. Voy a sacar este segmento y este segmento. Y ejercicio hacer todas las combinaciones posibles y ver lo que pasa. El interior del rectángulo no va a cambiar, pero los lados a veces se van a mantener o bien se van a partir.
+57:07
+¿Ok?
+57:12
+Y ahora vamos a continuar. Ah, ¿y qué pasa si yo hago un producto cartesiano con dos conjuntos discretos?
+57:27
+Ejemplo de producto cartesiano. Todo esto es para mostrar que la noción de producto cartesiano es muy intuitiva y corresponde a muchas construcciones que ya hacemos en matemática. que son construcciones básicas. Por ejemplo, si yo hago el producto cartesiano de 2, 3, 4, 5, por el producto, no sé, de 4, 5 y 6. ¿Qué voy a obtener?
+58:01
+Acá voy a usar la figura.
+58:04
+Acá tengo 1, 2, 3, 3, 4, 5, acá. Y verticalmente voy a hacer... Ah, y me equivoqué. No tengo bastante espacio.
+58:21
+Voy a tomar más espacio vertical.
+58:31
+Entonces, 0... 1, 2, 3, 4, 5 y acá 1, 2, 3, 4, 5, 6.
+58:48
+Acá el primer conjunto son 2, 3, 4, 5 y acá tengo 4, 5, 6 que voy a obtener una grilla. una grilla de puntos.
+59:09
+Es decir, es esta grilla que está así.
+59:38
+¿Y cuántos puntos tiene mi grilla? 12, es decir, 4 por 3. De nuevo, el producto cartesiano. Un producto. ¿Entienden? Entonces, cada vez que hay un producto cartesiano, se puede representar fácilmente. Y hay una generalización muy natural.
+1:00:03
+¿Qué voy a hacer?
+1:00:06
+Generalización. no voy a decir muchas cosas sobre la generalización generalización voy a decir las n-uplas y las n-uplas son como pares pero en lugar de tener dos componentes tienen n componentes ¿ok?
+1:00:39
+Y funciona del mismo modo. Esto se llama una n-upla. Entonces, cuando una n-upla tiene dos componentes, se llama un par. Cuando tiene tres componentes, se llama una terna. Cuando tienen cuatro componentes, se llama una cuarta, pero no estoy seguro. Y después, se llama una n-upla con n más o menos grande. y del mismo modo tenemos que el producto cartesiano generalizado que es a sub 1 a sub 1 por a sub 2 por a sub n que es igual al conjunto de todas las n-uplas
+1:01:39
+cuyas componentes pertenecen a los conjuntos correspondientes ok, es el producto cartesiano generalizado acá es mucho más difícil representarlo porque necesitamos n dimensiones para representarlo ¿no? Si yo tengo tres componentes, necesito tres dimensiones para representarlo.
+1:02:11
+Si yo tengo 17 componentes, necesito un pizarrón con 17 dimensiones para representarlo. Y el problema es que no tenemos bastante plata para comprar un pizarrón con 17 dimensiones.
+1:02:26
+Entonces, disculpa, no voy a representar. Pero, por ejemplo, un producto cartesiano con tres componentes sería un paralelepido.
+1:02:38
+Y después, entonces no voy a decir más cosas porque todo lo que ya vimos para los pares y los productos cartesianos se generaliza inmediatamente al caso de aridad N, con N componentes. Es decir, si por ejemplo todos los conjuntos son finitos, ¿cuál es el cardinal del producto cartesiano? Será el producto de todos los cardinales. Y etcétera, etcétera. Entonces, no voy a decir más cosas sobre esta construcción.
+1:03:12
+¿Está bien para el producto cartesiano? ¿Todo está claro?
+1:03:18
+Ahora voy a introducir una nueva construcción que no vamos a usar mucho. Entonces, voy a decir pocas cosas, pero a veces se usa.
+1:03:39
+el conjunto potencia voy a hablar un poquito de conjunto potencia el conjunto potencia es fácil es decir dado es un conjunto potente como lo dice vamos a ver que es un conjunto muy potente dado un conjunto potente
+1:04:11
+se escribe P cursiva de A el conjunto de los subconjuntos o de las partes se llaman también las partes de A Es decir, cuando yo tengo un conjunto A, yo puedo considerar todos sus subconjuntos y esto me forma directamente un nuevo conjunto que se llama el conjunto potencia.
+1:04:48
+Es decir, por definición, tenemos que para todo B,
+1:04:58
+B pertenece al conjunto potencia de A, si y solo si B es un conjunto y B está incluido en A.
+1:05:17
+Y vamos a ver que en general es un conjunto muy grande. Cuidado, esto es un conjunto de conjuntos, es decir, una carpeta que solo contiene carpetas.
+1:05:31
+Y vamos a ver ejemplos.
+1:05:35
+En el caso finito, porque en el caso infinito, vamos a ver después que es una construcción salvaje. En lógica, esta construcción parece ingenua, pero se sabe que es la construcción la más potente de toda la matemática. Vamos a ver por qué. Ejemplo.
+1:06:04
+Vamos a considerar, calcular el producto, la potencia del conjunto vacío. Vamos a comenzar por el conjunto más pequeño del universo. Es el conjunto vacío. ¿Cuáles son los subconjuntos del vacío?
+1:06:24
+Hay el vacío. El vacío es un subconjunto del vacío, claro. Hay otro subconjunto vacío. No. Entonces, el único elemento de P del vacío es el vacío. Pero, cuidado, es un elemento. Entonces, es un conjunto unitario.
+1:06:44
+¿Ok? Es decir, es un conjunto de conjuntos cuyo único elemento es vacío. En particular, P del vacío no es vacío, porque ya contiene un elemento, que es el conjunto vacío. ¿Ok? Ahora vamos a añadir un elemento. ¿Cuál es la potencia de un conjunto con un único elemento? Ahora, yo tomo como ejemplo el conjunto unitario formado a partir de A. ¿Cuáles son los subconjuntos del conjunto unitario A?
+1:07:22
+Hay el vacío y también el conjunto unitario A. ¿Claro?
+1:07:28
+Entonces hay dos elementos distintos, que son estos, y forman un nuevo conjunto. Ah, acá obtuve dos elementos.
+1:07:40
+Vamos a continuar. Vamos a tener P de dos elementos.
+1:07:50
+Ahora yo tengo el par no ordenado AB y yo considero todas las partes del par no ordenado AB. ¿cuáles son los subconjuntos de este conjunto?
+1:08:04
+hay el vacío el conjunto que solo contiene A el conjunto que solo contiene B y al final hay el todo ¿cuántos elementos obtengo yo? cuatro vamos a ver que es dos a la n esta razón porque se llama potencia vamos a continuar vamos a hacer el último a b y c cuáles son los subconjuntos hay el vacío después hay tres conjuntos con un elemento después hay tres conjuntos con dos elementos
+1:08:58
+y después hay un conjunto con todos los elementos y acá se puede contar que hay exactamente 8 elementos en el conjunto potencia y más generalmente cuando tendré un conjunto con n elementos su potencia tendrá 2 a la n elementos entonces más generalmente
+1:09:30
+Yo puedo decir que el cardinal de la potencia de A es igual a 2 al cardinal de A si A es finito. ¿Ok? ¿Y por qué? Porque cuando yo tengo que definir un subconjunto, yo tengo una lista de n elementos. y yo tengo dos posibilidades para el primer elemento o bien yo lo pongo adentro o bien yo lo pongo afuera dos posibilidades para el segundo elemento o bien yo lo pongo adentro o bien yo lo pongo afuera y etcétera hasta dos posibilidades para el último elemento o bien yo lo pongo adentro de mi parte o bien yo lo pongo afuera al final para construir un subconjunto de A tendré dos por dos por dos por dos por dos n veces es decir, dos a la n elementos.
+1:10:29
+Y ahora, por supuesto, a partir de que yo tengo la potencia, la pregunta natural es, acá, como es una construcción muy potente, comencé de modo sencillo solo con conjuntos finitos, pero la potencia también existe para los conjuntos infinitos.
+1:10:55
+¿Cuál es la potencia de n? En teoría de conjuntos, de hecho, se escribe 2 a la n. No vamos a usar esta notación, porque es una notación peligrosa para ustedes. Pero, ¿es un conjunto finito o infinito?
+1:11:16
+De hecho, no solo es infinito, es re super bárbaro infinito.
+1:11:22
+es mucho más infinito que n. Porque en general ya sabemos que cuando tenemos n y 2 a la n, 2 a la n siempre es mucho más grande que n. Y esto continúa para los conjuntos infinitos. Es decir, cuando vamos a tomar la potencia de un conjunto infinito, en general vamos a obtener un conjunto cuyo cardinal explota.
+1:11:47
+Y de hecho, no vamos a demostrarlo, este conjunto tiene exactamente el mismo tamaño que el conjunto de los números reales.
+1:11:59
+Es decir, pasamos del tamaño de n directamente al tamaño de r. Es un resultado que no voy a demostrar, es un poquito complicado, es un resultado conocido desde hace ahora un siglo y medio, pero esto tiene el mismo cardinal, mismo cardinal que R. Es decir, técnicamente existe una biyección entre P de N y R. Es decir, hay la misma cantidad de elementos.
+1:12:34
+Es decir, N es el primer infinito, ¿no? Es el infinito más pequeño que conocemos. Y 2 a la N, es decir, la potencia de N, es directamente el infinito de los reales. Pero no vamos a verlo, solo es una intuición. Ok. ¿Sí? ¿La potencia se puede hacer de cualquier conjunto? ¿Cualquier conjunto? ¿Incluso de los cuaterniones? Claro. Incluso los cuaterniones. Pero, ¿sabes que los cuaterniones están afuera del programa?
+1:13:05
+Porque ya los complejos están afuera del programa.
+1:13:09
+Pero puedes hacer, por supuesto, algo mucho más largo. De hecho, se llama la potencia del funcional. Acá se llama el numerable, R se llama el continuo, y después el próximo cardinal que viene se llama el funcional. Y los matemáticos después tienen una jerarquía infinita de cardinales infinitos, pero en este curso solo vamos a considerar dos, el infinito de N y el infinito de R, y ya es bastante para nosotros.
+1:13:46
+porque después hay cosas salvajes que aparecen. Son jóvenes y no podemos ponerlos en la misma sala que los animales peligrosos.
+1:14:04
+Es prohibido por la ley.
+1:14:11
+Ahora terminamos con el conjunto potencia y yo puedo comenzar un poquito para hablar de funciones porque el título del capítulo era conjuntos y funciones ahora yo tengo que comenzar a hablar de funciones ok entonces vimos que hay muchos tipos de objetos matemáticos vimos el tipo numérico los tipos de geométricos, no hablamos mucho de los objetos geométricos, vimos también que había el tipo conjunto, que hay el tipo par y eneupla, a partir de los cuales se pueden definir los productos cartesianos y ahora vamos a ver un nuevo tipo de objeto que se llama las funciones.
+1:15:00
+Entonces, ¿cuál es una función? Acá, cuidado, para los antiguos, voy a hacer un cambio de definición para las funciones. Cuidado. Ya hay gente que estaba en mi teórico anterior, en esta sala. Ya hay. Entonces, cuidado, voy a cambiar la definición de funciones. En el teórico anterior, yo había introducido la noción de función a partir de la noción de relación. Ahora vamos a olvidar la noción de relación y vamos a considerar que las funciones constituyen un nuevo tipo de objeto matemático.
+1:15:37
+Es decir, la intuición de una función es que muchas veces necesitamos una regla, un método, un algoritmo para transformar un objeto matemático en otro objeto matemático. Esto que hice acá, por ejemplo, la potencia me toma un conjunto y me da otro conjunto. El producto cartesiano me toma dos conjuntos y me construye otro conjunto.
+1:16:05
+¿Cómo, cómo?
+1:16:08
+Ya es una función también. La función par ordenado es una función. El par ordenado. El conjunto de todos los pares ordenados no es el punto de vista que vamos a adoptar. Acá vamos a adoptar el punto de vista que las funciones constituyen un nuevo tipo de objeto. Es un objeto abstracto. Corresponde en informática a los programas. a los ejecutables acá uso la intuición de la informática que me sirve mucho es decir, la intuición de una función es que es una maquinita que toma un x en entrada y que produce a partir de la información dada por x una salida que se llama f esa es la intuición de lo que es una función
+1:17:09
+Es una máquina que me toma un x y que me produce un f de x. Y en general voy a suponer que conozco el conjunto de todos los x posibles. Entonces esto va a pertenecer a un conjunto A que voy a llamar el dominio de la función. Y esto va a pertenecer a otro conjunto que voy a llamar el codominio de la función. Tienes una pregunta.
+1:17:38
+Entonces ahora voy a dar la nueva definición de funciones, que es mucho más sencilla.
+1:18:04
+Al final, este pizarrón será todo negro o todo azul. Definición de la función. Una función es definida por tres cosas.
+1:18:27
+F es definida...
+1:18:31
+por tres cosas. Es decir, si quieren definir una función tiene que dar tres ingredientes. La primera cosa es un dominio escrito DOM de F. Y es un conjunto.
+1:18:58
+Porque como una función relaciona un conjunto con otro conjunto, la primera cosa consiste en dar el conjunto de partida. Acá es el dominio.
+1:19:13
+Es decir, en qué conjunto vamos a tomar nuestras entradas.
+1:19:19
+La segunda cosa que hay que dar es un codominio.
+1:19:27
+que se escribe CODO y también es un conjunto acá en mi dibujo sería el codominio de F y después hay que dar una expresión que relaciona los A con los B es decir una definición
+1:19:57
+de la forma f igual y acá yo pongo cualquier expresión que depende de x. Es una expresión que tiene que construir un objeto matemático y tal que
+1:20:27
+Para todo x en A, f de x tiene sentido, es bien definido, y f de x tiene que pertenecer a B, al cododominio. Acá, por supuesto, A es el dominio de f.
+1:20:54
+que es el codominio en general voy a escribir A el dominio y B el codominio y esta es la opción de función que vamos a adoptar entonces es la definición muy sencilla muy práctica que vamos a usar es decir, cada vez que soy capaz de dar un dominio un codominio y una fórmula que me construye algo a partir de X Si también estoy seguro que para todo x en A, el algo construido a partir de x pertenece a B, luego tengo una función.
+1:21:33
+Eso me define una función. ¿Ok? Y yo no sé si me queda bastante tiempo. Y yo voy a continuar por la próxima vez. Vamos a continuar con las funciones. ¿Tiene una pregunta antes? ¿Sí? ¿Cuándo decís que una definición de la forma f de x es igual a una expresión que depende de x? Por ejemplo, si se toma en cuenta una función constante f de x es igual a 5. ¿Sí? No es un problema, es una expresión. ¿A cuándo digo depende? Depende posiblemente de x.
+1:22:06
+Puede que sí o puede que no. Puede que sí, puede que no. Tienes razón, posiblemente.
+

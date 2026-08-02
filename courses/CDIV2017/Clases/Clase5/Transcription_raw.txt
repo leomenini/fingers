@@ -1,0 +1,398 @@
+# Clase 5
+
+Curso: CIV
+
+Fuente: https://open.fing.edu.uy/courses/civ/5/
+
+Fecha de exportación: 7/30/2026, 10:48:44 AM
+
+---
+
+Clase: 5
+Curso: CIV
+
+Segmentos : 232
+Palabras  : 8778
+Caracteres: 48373
+
+0:16
+Buenas tardes. Vamos a continuar con los números reales.
+0:30
+OK. La vez pasada vimos una parte de los axiomas. Yo había dicho que había 15 axiomas para los números reales y ya vimos 14 axiomas. Pero el más complicado viene después, es el número 15. Entonces vimos tres grupos de axiomas. Vimos un grupo de axiomas que se llamaba 1, mayúscula de 1 a 4, que dicen básicamente, eran los axiomas de la suma, que dicen que la suma es asociativa
+1:11
+conmutativa también tiene neutro que se llama cero y cada número real x tiene opuesto y vimos que se escribe menos x y que también es único entonces vimos que el neutro para la adición es único y que el opuesto era único y todo esto nos permite sumar y restar porque la resta se definía a partir del opuesto La definición de X menos Y vimos que era X más el opuesto de Y.
+2:04
+Y a partir de esto se pueden deducir todas las propiedades de la suma y de la resta. Después vimos un segundo grupo de axiomas que eran los axiomas de producto que dicen más o menos cosas similares.
+2:22
+Es decir, el producto es asociativo
+2:27
+conmutativo distributivo es la nueva cosa respecto a la adición tiene su propio neutro que es uno y que es distinto de cero y
+2:58
+Cada elemento x distinto de 0 tiene inverso.
+3:12
+Que se escribe x a la menos 1 y también es único. Vimos esto. No voy a recordar los axiomas correspondientes. Y de mismo modo se podría definir
+3:27
+el cociente como el producto de x por el inverso de y y a partir de estas reglas tenemos todas las reglas algebraicas usuales y se dice que cuando un conjunto tiene una adición tiene un producto que cumplen todos estos axiomas. Es un conjunto donde se puede sumar, restar, multiplicar y hacer conscientes con alegría.
+4:02
+Es decir, tenemos todas las propiedades deseadas y se llama un cuerpo. Es decir, los grupos 1 y 2 dicen que R es un cuerpo.
+4:18
+Y vamos a ver después. Esta definición, un cuerpo es cualquier conjunto que tiene una adición, un producto que cumplen estos axiomas. ¿Conocen otros ejemplos de cuerpos? Sí.
+4:48
+ok acá conoces ejemplos muy avanzados el ejemplo avanzado que él dice si yo tomo un conjunto con sólo dos números que se llaman cero y uno que yo defino cero más cero igual a cero cero más uno igual a 11 más cero igual a uno y uno más uno igual a cero Si yo tomo esta adición, que es la adición módulo 2, y que yo tomo el producto usual entre 0 y 1, esto ya es un cuerpo.
+5:24
+Es el cuerpo más pequeño del universo.
+5:27
+Pero no vamos a ver este cuerpo porque no cumple los axiomas que voy a decir después. No es un cuerpo totalmente ordenado. ok entonces esto es un cuerpo y yo pensaba otros ejemplos de cuerpos q por ejemplo los racionales cumplen exactamente la misma lista de axiomas entonces los racionales me dan otro ejemplo de cuerpo y por y para los y las que ya conocen los números complejos el conjunto de los números complejos ya cumple esta lista de axiomas entonces también es un cuerpo Entonces, en la naturaleza conocemos al menos tres ejemplos de cuerpo que son Q, R y C. Y en este curso solo vamos a ver dos que son Q y R y los informáticos tienen uno más que es Z sub 2, que se escribe Z sub 2, que es el cuerpo con dos elementos.
+6:24
+Y después se puede demostrar que también hay cuerpos con tres, cinco, siete, once elementos. pero no vamos a verlo. Pero no solo hicimos esto, también había un orden, una relación de orden total. Entonces, acá voy a recordar la lista de axiomas del orden, que es muy importante. Es decir, vimos que no solo tenemos una adición y una multiplicación, pero también tenemos un orden que va a cambiar un montón de cosas. El orden dice, por ejemplo, que si yo me doy dos elementos X e Y, yo puedo siempre compararlos, es decir, que o bien hay uno, siempre hay uno que es menor que el otro.
+7:09
+¿Ok?
+7:11
+Esto es el primer axioma. El segundo axioma es el axioma de transitividad, que dice que si... Oh, yo voy a escribir con símbolos. Si yo tengo X menor a igual a Y, y si Y es menor o igual a Z, esto implica que X es menor o igual a Z. Y esto era para todos X, Y, y esto para todos X, Y y Z.
+7:39
+el axioma 3.3 era que si el orden es antisimétrico es decir si yo tengo x que es menor o igual a y pero si de mismo modo y es menor o igual a x necesariamente son iguales el axioma 4 me decía que si X es menor o igual a Y yo puedo sumar la misma cantidad en ambos lados Y más Z y esto para todos X, Y y Z y después el último axioma era que el producto de dos números positivos o nulos es positivo o nulo para todos x,y ok, era la lista de axiomas de orden y vimos que se podía definir
+8:51
+Acá es el orden amplio, es decir, es el orden que dice menor o igual o mayor o igual. Pero también se puede definir el orden estricto. El orden estricto se define como, por definición, x es menor a y por definición, si x es menor o igual a y, y si son distintos acá es una definición de menor a partir de menor o igual pero del mismo modo se puede caracterizar menor o igual a partir de menor es decir también tenemos que menor o igual se puede ver como menor o igual.
+9:52
+Acá parece raro porque la definición que parece más natural sería decir que menor o igual es menor o igual porque está incluido en el nombre y deberíamos poner axiomas no sobre menor o igual pero sobre menor. obtendríamos una presentación completamente equivalente. Solo hay que cambiar los axiomas para adaptarlos al marco del orden estricto. Entonces, la única cosa que tenemos que saber es que cuáles son las propiedades del orden amplio y las del orden estricto.
+10:29
+Y vimos que había un montón de reglas de desigualdad que yo voy a presentar.
+10:38
+Ok, entonces tenemos un montón de reglas que vienen naturalmente con el orden amplio y con el orden estricto. Reglas. Hay una regla muy sencilla.
+10:55
+Este axioma me dice que cuando yo tengo una desigualdad, yo puedo sumar una misma cantidad a la derecha sin cambiar la desigualdad. Ok. pero de mismo modo como yo puedo reemplazar z por supuesto también funciona para la resta ok entonces de hecho es una equivalencia lógica no sólo es una implicación es decir tenemos que x menor es equivalente a decir que X más Z es menor o igual a Y, y también es equivalente a decir que X menos Z, disculpa, ya me equivoqué, no será la única vez.
+11:45
+X menos Z es menor a Y menos Z, y esto siempre funciona. ¿Cómo se puede interpretar esto? se puede interpretar en términos de traslación si yo tengo sobre mi recta dos puntos x e y y que yo añado la misma cantidad voy a desplazar x acá acá es x más z y acá voy a obtener y más z es decir acá tenemos el mismo movimiento z
+12:23
+Y es claro que esto no me cambia la desigualdad. ¿Ok? Y de mismo modo, también podemos que es equivalente a menos X es mayor o igual a menos Y. Cuidado, el orden, el opuesto cambia el orden. Y acá la figura es que si yo tengo, no sé, por ejemplo, X acá y Y acá, Si yo paso al opuesto, voy a obtener menos y, y acá voy a obtener menos x, por ejemplo.
+12:59
+Esto intercambia el orden. Pero también funciona si cero se encuentra en otra parte. No depende de la posición relativa de x e y respecto a cero.
+13:12
+Y tenemos exactamente la misma cosa con esto en lugar...
+13:22
+con el orden estricto. Entonces, la moraleja es que cuando hay que sumar algo a una desigualdad, no hay que cuidar nada, siempre funciona y de modo en ambas direcciones, es decir, es un razonamiento que se puede invertir. Podemos ir de esta cosa a esta cosa, pero también podemos ir de esta cosa a esta cosa. sin problema los problemas llegan con el producto es decir ahora qué pasa si yo multiplico voy a multiplicar ambos lados de la desigualdad por z que tengo yo que poner como símbolo acá depende de z y depende de qué propiedad de z de su signo entonces habrá dos propiedades es decir si z es positivo y si z
+14:43
+es negativo, hay que intercambiar, cambiar de desigualdad.
+14:52
+Ah, pregunta. ¿Esta cosa se funciona al revés o no funciona al revés?
+14:59
+Acá escribí solo una implicación y más arriba puse una equivalencia lógica.
+15:07
+Entonces, ¿tengo yo derecho a poner la implicación en esta dirección?
+15:14
+depende de z y de mismo modo si z es nulo imaginemos lo que pasa si z es nulo acá puedo tomar dos números distintos pero al final voy a obtener cero menor o igual a cero entonces no podré ir al revés porque voy a perder información ok entonces cuidado las desigualdades, las implicaciones recíprocas no se cumplen pero a veces queremos que se cumplan en este caso hay que poner más información si z es positivo estrictamente porque en este caso cuando z es estrictamente positivo después yo puedo dividir por z para volver a la desigualdad anterior.
+16:12
+¿Entienden la idea? Es decir, acá tenemos una pérdida de información porque no tenemos bastante información sobre Z para ir al revés. Porque en el caso donde Z fuera nulo, yo podría escribir, esto se cumple siempre si Z es nulo. Pero si yo tomo X e Y cualesquiera, yo no podré concluir esto. Entonces, cuidado, hay un montón de trampas posibles y lo único posible es hacer pequeños dibujos. Acá, ¿a qué corresponde tal desigualdad?
+16:46
+Dice más o menos que X e Y están en este orden. ¿A qué corresponde la multiplicación? Más o menos, una multiplicación por un número positivo es o bien una dilatación del intervalo, si el número es mayor que 1, o bien una contracción del intervalo, si el número está entre 0 y 1. Ok, entonces tenemos dos dibujos posibles, o bien XZ está acá y YZ está acá y acá hicimos una dilatación, pero no cambia el orden, acá es si Z es mayor o igual a 1 y el segundo dibujo es una contracción si Z es positivo Pero, o puede ser acá nulo, y menor o igual a 1.
+17:47
+Es una contracción. Hay que entender estas cosas. Multiplicación por un número mayor que 1, voy a obtener una dilatación. Número entre 0 y 1, una contracción. ¿Y qué pasa si yo ahora hago una multiplicación por algo negativo?
+18:07
+Voy a intercambiarse. Es decir, iba a ser el mismo dibujo. Pero ahora, si x, si z es en valor absoluto mayor que 1, voy a obtener una dilatación con intercambio de posiciones. ¿Entienden? Y si z es entre 0 y menos 1, voy a obtener una contracción con intercambio de posiciones. Y esa es la razón de todo esto. Ok, entonces acá hay que... Ok.
+18:52
+Tenemos las desigualdades centrales.
+18:57
+De mismo modo, yo podría escribir la cosa para el cociente.
+19:02
+Acá, de hecho, acá también puedo yo escribir la misma cosa para el cociente. X sobre Z es menor a Y sobre Z. Y X sobre Z es mayor a Y sobre Z. Y acá, si Z es positivo y si Z es negativo.
+19:26
+¿Ok?
+19:28
+Ejercicio, escribir las reglas similares pero con estrictamente menor.
+19:36
+No van a cambiar muchas cosas. Estas dos cosas van a desaparecer porque para mantener el menor estrictamente no podemos aceptar el caso cero. que fusiona ambos números entonces en el caso estrictamente menor hay que sacar las dos primeras reglas que son inútiles y en las otras reglas reemplazar mayor o igual o menor o igual por mayor o menor ¿ok? y obtenemos reglas similares para menor.
+20:08
+Entonces es muy importante entender la significación geométrica de lo que es una adición. Una adición es una traslación, no me cambia el orden de los números. Una multiplicación es una dilatación o una contracción, pero a veces con intercambio de posiciones. Si el número es positivo, no se cambian las posiciones. Entonces, número mayor que 1, diatación. Número menor que 1, pero mayor que 0, diatación. contracción, etcétera.
+20:40
+Tienen que tener todas estas reglas, estas ideas en la cabeza. Esas son las cosas más importantes. No van a sobrevivir en análisis si piensan que la matemática solo es una cosa que consiste en hacer cuentas sin entender el contenido geométrico. Es decir, este curso, de hecho, también se podría llamar geométrica analítica o algo así para decir que vamos a hablar de geometría con números. Entonces, por favor, nunca olviden la significación geométrica de lo que hacen.
+21:20
+Ahora, yo tenía que hablar un poquito del inverso. Acá, las reglas del inverso. Orden y el inverso.
+21:49
+acá hay que entender todo esto ahora supongo que yo tengo x es menor o igual a y cuando puedo tener yo que puedo decir yo sobre x e y inversa si yo inverso ambos números qué me permite mantener la desigualdad y en qué situación tengo yo que cambiar la desigualdad acá es claro que la primera cosa es que X e Y tienen que ser no nulos porque si hay alguien que es nulo lo que escribo acá no tiene sentido y el profesor me saca los puntos ok entonces cada vez que tienen que tienen algo con un verso cuidado hay que verificar que la cosa está bien definida si no no hay puntos pero que se pueden decir sobre las cosas acá es una cosa muy peligrosa porque tenemos que verificar si queremos mantener el orden
+23:12
+Tenemos que verificar no solo que X e Y son nómulos, pero también tienen que tener el mismo signo.
+23:30
+Es decir, tienen que tener el mismo signo.
+23:35
+Y cuando es el caso, podemos a la vez ir al revés. porque se puede aplicar la inversa de nuevo. Vamos a ver con un ejemplo geométrico.
+24:04
+Cuidado, por supuesto me equivoqué, ya me equivoqué.
+24:09
+Por supuesto ya me equivoqué. Es al revés, por supuesto. Era para ver si siguen. Y yo puedo observar que no había mucha gente que seguía.
+24:26
+Por supuesto, era al revés. El inverso es como el opuesto. Es una operación que intercambia las cosas. Entonces, vamos a ver un dibujo entre dos casos. En el primer caso, yo voy a tomar 0, 1, 2 y 3. Tengo el derecho de decir que 2 es menor o igual a 3, ¿no? ¿Están de acuerdo? Y son números y tienen el mismo signo. ¿Qué se puede decir ahora si yo tomo los inversos?
+24:59
+Voy a tomar 0, 1. Un medio será acá y un tercero más o menos será acá. Y acá se puede ver que un tercero es... Ahora, un medio es mayor que un tercero. ¿Ok? Pueden ver que esto funciona cuando ambos números son positivos.
+25:26
+Acá tienen que tener estas ideas. Es decir... Cuando yo les doy una recta con algunos puntos, yo podría hacer la pregunta, ok, ahora tenemos X, Y y Z, y ahora, ¿dónde estaría más o menos 1 sobre X? ¿Dónde estaría más o menos 1 sobre Y? ¿Entienden la idea? Hay que saber posicionar intuitivamente las cosas. Acá es claro que un medio es un número mayor que un tercero. Y también podemos observar con los negativos.
+25:56
+cero voy a tomar espacio menos uno menos dos menos tres ahora yo puedo decir que menos tres es menor o igual a menos dos yo voy a invertir ahora yo obtengo en esta parte cero menos uno acá obtengo menos un medio y acá obtengo menos un tercero y es claro que ahora menos un tercero es mayor que menos un medio ok pueden ver que esto funciona acá correspondía a este caso donde ambos números son negativos pero qué pasa si son de signos distintos si son de signos distintos qué va a pasar
+26:57
+Se mantiene la desigualdad. Si yo tomo, por ejemplo, no sé, voy a tomar menos 2 y acá voy a tomar 3.
+27:10
+Menos un medio voy a obtener acá y acá voy a tomar un tercero y se va a mantener el orden. Cuidado. entonces no voy a poner ningún tercer caso porque es el caso difícil la moraleja es que cuando hay que trabajar con el inverso en una desigualdad hay que verificar que ambos lados son nulos y que tienen el mismo signo ok muy importante nunca olvidar esto ok ahora Vamos a hablar un poquito, algo que ya hablé, pero ahora vamos a precisar, vamos a hablar de signos.
+28:00
+Sabemos que para todos los números reales tenemos que o bien x es menor que y, o bien, acá es un o exclusivo, voy a escribirlo así, o bien x es igual a y, o bien... x es mayor que y ok en particular yo tengo que para todo x o bien x es negativo o bien es nulo o bien es positivo ok Es el caso particular donde i es igual a cero.
+28:51
+Esto me divide naturalmente la recta real en tres partes. Una parte negativa, una parte positiva y el cero que está excluido porque nadie lo quiere. Era considerado como un tipo muy malo cero. Tuvimos un montón de tiempo antes de legalizar el cero.
+29:17
+Tuvimos que esperar, yo creo, hasta el siglo XVII o XVIII para legalizar el cero. Porque es un tipo que es terrible, porque es un tipo que es muy suave con la adición. Si yo añado, si yo sumo cero, no cambia nada. Entonces, es un tipo muy limpio. Es un ecologista. Pero con respecto a la multiplicación, si yo multiplico algo por cero, es la bomba atómica. Te destruye todo. Esta razón es porque es un tipo peligroso.
+29:57
+¿Sí? Sí. Acá es una convención que vi en el mundo hispanohablante, pero no estoy seguro que esté la buena convención. Es que cuando se pone una tilde acá, significa o exclusivo.
+30:12
+Acá cuando yo uso este símbolo, para mí es el o inclusivo sin tilde.
+30:22
+como así una raya está claro pero los matemáticos no siguen la rae y te vas a ver por ejemplo la rae dice que la palabra sobre directiva existe pero la palabra sobrejección no existe pero yo voy a usar sobrejección
+30:49
+Yo sé, ya sé, es una convención de los matemáticos acá. Ya vi que viene el liceo y cosas así, voy a seguir.
+30:57
+Yo usaría otra dotación, pero no soy hispanohablante al principio, entonces. Descubrí llegando acá, cuando me capturaron. Y, ok, entonces, esto nos permite definir tres partes de R. podemos definir por comprensión R más R más acá es un cuidado ya vimos la noción de definición por comprensión acá es un ejemplo R más es el conjunto de todos los reales que son positivos y del mismo modo R menos es el conjunto de los reales que son negativos y yo tengo la descomposición fundamental que es que R es igual a la unión de R menos con el conjunto unitario aislado porque nadie lo quiere cero con R más esa descomposición y después diré que la gente acá son los números positivos la gente acá son los números negativos y cero no tiene nacionalidad fija
+32:08
+Acá es un cambio entre el mundo hispanohablante y la Francia. Porque nosotros somos mucho más inclusivos y consideramos que cero es a la vez positivo y negativo. Tiene la doble nacionalidad. Acá es un cambio de convención. Solo es un problema de convención. Ahora tenemos los signos y por supuesto hay las reglas de los signos. Voy a tomar un minuto para hablar de reglas de signos.
+32:52
+regla de los signos es decir que pasa cuando yo sumo o multiplico dos números positivos o nulos o negativos regla de los signos entonces es una pequeña tabla que tiene esta cosa acá es la suma acá es el producto
+33:23
+Y voy a hacer la suma de un número positivo con un negativo y de un positivo con un negativo. Y acá el producto de un positivo con negativo, positivo con negativo. ¿Qué pasa cuando yo hago la suma de positivo con positivo? Positivo. Positivo con negativo.
+33:49
+depende de quién es el más grande entonces voy a poner esto porque depende misma cosa para negativo y positivo y negativo más negativo negativo ok ahora positivo por positivo positivo positivo por negativo negativo negativo por positivo negativo y negativo por negativo Positivo. Todas estas cosas no salen del cielo, no caen del cielo.
+34:26
+Son consecuencias de las acciones anteriores. Es decir, hay que demostrar esas cosas. Todo esto sigue de las cosas anteriores. Porque en los axiomas nunca hablamos de reglas de signo, ¿no? No hay axioma que dice esto. Pero esto sigue de las propiedades algebraicas. Es muy interesante porque cuando son niños, en general, y al menos era mi caso, yo tenía dificultades para entender por qué negativo por negativo es positivo.
+35:03
+Es una locura, ¿no? Pero todo esto sigue de las reglas algebraicas. Es decir, que cuando aceptamos las reglas algebraicas, estamos forzados para aceptar esta regla. Y es una cosa que fue descubierta alrededor del año 1000 por los árabes. Y era un tiempo donde los europeanos no aceptaban ni el cero ni los negativos porque eran obra del demonio. pero los árabes no tenían ningún problema para añadir, restar, sumar con números negativos y nulos y descubrieron la cosa es que si aceptamos todas las reglas algebraicas usuales que vienen de los axiomas, automáticamente va a salir que un negativo por un negativo es un positivo.
+35:53
+Ejercicio, demostrar que si X es negativo y si Y es negativo, entonces su producto es positivo y eso sale de los axiomas. Es una descubierta de los árabes alrededor del año 1000 y los europeos esperaron hasta el siglo XVII, es decir, más o menos 700 años para entender que no se podía aceptar los negativos y el cero.
+36:20
+Ok, acá era un poquito de historia, es muy interesante, porque depende, la aceptación de un concepto matemático depende de los prejuicios de la gente. Pero de hecho los signos negativos no fueron inventados por los árabes, porque ya existían desde el siglo VII en India y existía en China desde el siglo I, porque para los chinos no era un problema de demonio, era un problema de yin y de yang. Y era una cosa muy natural que las cosas se compensan para ellos.
+36:53
+Entonces, esa razón por la que inventaron los signos negativos, porque para ellos era una cosa tan natural como respirar. Pero en otro lado, los europeos tuvieron un montón de dificultades para aceptarlo. Terminamos con los signos y más generalmente se pueden definir los intervalos.
+37:17
+Acá, un día yo voy a escribir una pequeña historia de los números. Es muy divertido ver cómo los prejuicios de la gente influenzan su visión del mundo. Intervalos.
+37:31
+Acá, ahora que tenemos todo esto, podemos definir los intervalos.
+37:38
+Por ejemplo, yo puedo definir el intervalo AB como el conjunto de las X reales, definición por comprensión, tal que A es menor o igual a X es menor o igual a B. Y del mismo modo, yo puedo definir el intervalo abierto con el orden estricto. y de mismo modo se definen el intervalo semi cerrado, semi abierto y acá el otro acá es un ejercicio completar la definición de mismo modo yo puedo definir los intervalos semi infinitos
+38:39
+Acá, cuidado, esta definición tiene sentido solo si a es menor o igual a b. Porque si a no es menor o igual a b, ¿qué va a dar este conjunto?
+38:50
+Será vacío. Porque si a es mayor que b, no existirá ningún x a la vez mayor que a y a la vez menor que b.
+39:00
+Entonces, cuando a es mayor que b, esta definición es vacía, pero existe.
+39:08
+Y de mismo modo se definen los intervalos semi-infinitos, es decir, menos infinito hasta A. Es el conjunto de los X en R tales que X es menor o igual a A. Y de mismo modo se define AA excluido, misma cosa con esto.
+39:33
+Y de mismo modo A más infinito...
+39:44
+tal que x es mayor o igual a a y con menor voy a poner a más infinito ok y espero que no me equivoque en general en esta definición que es repetitiva yo me equivoco ok
+40:11
+tenemos ocho tipos de intervalos yo tengo que añadir dos nuevos tipos de intervalos hay el intervalo un poquito estúpido que es menos infinito más infinito que es otro nombre para R por supuesto sólo es una notación y yo debería decir vamos a ver después que hay un Un décimo intervalo, que es el vacío, que se puede considerar también como un intervalo.
+40:42
+El conjunto vacío es un intervalo también, pero no tiene dotación propia como intervalo.
+40:50
+Ok, y tenemos todos los intervalos y podemos jugar con los intervalos. Ahora, por ejemplo. Ok, podemos, por ejemplo, mirar cuál es en general la intersección entre dos intervalos.
+41:17
+vamos a calcular la intersección entre dos intervalos ¿cuál es en general la intersección entre dos intervalos?
+41:37
+ahora yo supongo implícitamente que a es menor o igual a b y que c es menor o igual a d entonces ¿cuál es la intersección?
+41:48
+La buena respuesta es esperemos antes de dar una respuesta. Es decir, depende de las posiciones de A, B, C y D. Entonces, vamos a ver todas las posibilidades posibles.
+42:06
+Vamos a ver los casos posibles. Primer caso, tengo A acá, B acá, C acá, D acá. ¿Qué pasa? Es vacío. Entonces, si B es estrictamente menor que B, C, entonces es vacío. Ahora, ¿qué pasa si yo tengo esto?
+42:46
+Es C, B.
+42:49
+CB, si A es menor o igual a C, que es menor o igual a B, es menor o igual a D, etc., habría que distinguir un montón de casos distintos.
+43:09
+Depende de las posiciones relativas.
+43:13
+Entonces, yo voy a darles la fórmula general. Hay una fórmula general.
+43:21
+Entonces es fácil, es igual a el máximo, es el intervalo entre el máximo de A y de C y el mínimo de B y de D si esto es menor o igual a esto.
+44:02
+Y si no, es igual al vacío.
+44:10
+Ejercicio. Demostrar considerando todos los casos posibles.
+44:16
+Acá es mi experiencia de informático. Es decir, cuando tenemos que intersectar dos intervalos, en general, se intersectan dos rectángulos. cuando se programan videojuegos, por ejemplo, para decir si se necesita dibujar un personaje, una figura, se necesita hacer un test de intersección entre rectángulos y acá para hacer un test de rectángulos se descomponen test de intersección de intervalos y se hace con esta fórmula.
+44:50
+pueden verificar hay que distinguir todos los casos posibles ejercicio no voy a hacerlo porque hay un montón de casos para verificar y acá solo verifique dos casos posibles pero hay mucho más casos entonces cuidado la intersección de intervalos es mucho más complicada que pueden pensar en general ok Terminé todo lo que yo tenía que decir sobre los intervalos. Ahora vamos a tomar un poquito más de distancia y voy a hablar de las estructuras de cuerpo totalmente ordenado.
+45:50
+Entonces, cuerpo totalmente ordenado. ¿Cuál es la significación de esta insulta?
+46:01
+Especie de cuerpo totalmente ordenado, ¿no? ¿Funciona? Ya vimos que es un cuerpo R. Es decir, es un conjunto donde se puede sumar, restar, multiplicar, dividir con alegría. Pero los axiomas de orden también nos dicen que es un cuerpo totalmente ordenado. Es decir, tenemos dos niveles de estructura. Si solo se cuenta la suma y el producto, solo podemos hacer operaciones algebraicas.
+46:36
+Se llaman cuerpos. Pero si además tenemos un orden total que cumple los axiomas del grupo 3, entonces se dice que R es un cuerpo totalmente ordenado. Es la clasificación, porque tenemos un montón de conjuntos en matemática y se necesitan palabras para clasificarlos. Como en un zoo. Cada matemático tiene su zoo en su cabeza. Tengo un zoo con un montón de animales y yo necesito poner cajas y una clasificación para poner cada animal en la buena caja.
+47:13
+Si no, todos se van a mezclar y se van a comer.
+47:21
+Ok, entonces R cumple los axiomas 1 de 1 a 4, 2 de 1 a 5 y 3 de 1 a 5 y es un cuerpo totalmente ordenado.
+47:52
+Es decir, los 14 axiomas que di y que tomé un montón de tiempo para escribir sobre el pizarrón la vez pasada, un matemático va a decir sencillamente, ah, pero es un cuerpo totalmente ordenado. Terminado. Es una única frase que captura los 14 axiomas. Cuerpo totalmente ordenado. Ahora, ¿conocen otros ejemplos de cuerpos totalmente ordenados?
+48:23
+Los racionales. Y de hecho, es el único que conocemos. Porque C no es un cuerpo totalmente ordenado, porque no tiene orden total. Y el ejemplo de los números 0 y 1 que diste, tampoco es totalmente ordenado. Entonces, Q también es un cuerpo totalmente ordenado.
+48:58
+Pero al final, ¿qué va a distinguir QDR? ¿Por qué? ¿Qué va a distinguir? La completitud. Es un spoiler. Es un spoiler. No hay que hacerlo. Es grave. Destruiste el sentido de la película. Es un spoiler. Sí, por supuesto, voy a hacer el spoiler en forma de teaser. Es decir, hay el axioma 4 y ahora yo voy a escribirlo, que es el axioma que no presenté aún.
+49:34
+Es el último axioma y es él que va a hacer la diferencia entre R y Q. porque toda la lista anterior no permite distinguir Q y R. Esa razón porque para ellos, como en general sólo manipulan los axiomas algebraicos y los axiomas de orden, no tienen bien claro en la cabeza cuál es la diferencia entre R y Q. Pero cuando vamos a introducir el último axioma vamos a ver que no tienen nada que ver.
+50:05
+que Q no consigue cumplir este axioma. El axioma dice que todo teaser, todo subconjunto no vacío de R y superiormente acotado
+50:36
+tiene un supremo. Y acá podemos ver que es una presentación con muchas abrigaturas y para los nuevos normalmente... ¿Cuáles son los nuevos que entienden el sentido de esta palabra?
+51:01
+Perfecto, es normal. No pueden entender porque hay un montón de vocabulario nuevo. Las dos palabras que pueden entender son subconjunto, es un subconjunto de R y no vacío. Y les faltan las palabras superiormente acotado y tiene un supremo. No vamos a definir hoy lo que son, pero es un teaser. es un teaser, es para una próxima vez, cuando vamos a presentar el axioma de completitud, yo tendré que definir ambas expresiones para que entiendan el sentido de estas palabras.
+51:39
+Entonces, gracias por su honestitud, o su honestidad, ser honestos, porque a veces tengo problemas.
+51:53
+Y podrían intentar dar clases en Francia y yo podría ver lo que pasaría.
+52:01
+Y ahora sería yo quien me reiría. OK. Entonces, tenemos esto y una próxima vez vamos a ver este sentido. Vamos a ver, yo creo, lunes. El próximo lunes vamos a decodificar esta frase. Pero antes de hacer esto, se necesita investigar algunos subconjuntos notables de R. Es decir, voy a hablar de N, de Z y de Q como subconjuntos de R y voy a comenzar para N. Ok.
+52:39
+El conjunto N de los enteros naturales. Ok. El conjunto...
+53:11
+Rn, disculpa, de los enteros naturales.
+53:23
+Ahora, mi objetivo en esta parte es, ya vimos una definición floja de los centros naturales, era n igual llave 0,1,2, puntitos, llave que cierra. Y era una definición horrible, porque todos los naturales, casi todos, estaban adentro de los puntitos.
+53:50
+Ahora vamos a ver una definición más limpia. Ok, entonces ahora queremos definir el subconjunto. Tenemos R, que ya cumple una lista de axiomas. Y queremos extraer a partir de R un subconjunto que podríamos llamar N. Ahora tenemos que definir qué significa ser un entero natural. tenemos que dar una definición a partir de las acciones anteriores entonces nuestro problema es capturar la propiedad ser un entero natural ok y para esto yo voy a definir a voy a considerar la siguiente función sea la función sucesor que es una función de r de r definida por
+54:40
+Por definición voy a llamar el sucesor de x es x más 1. No hay nada difícil acá. ¿Ok? Y la primera cosa que se puede observar es que ya sabemos que n intuitivamente es definido a partir de 0 aplicando de modo repetido la función sucesor.
+55:03
+¿No? Es decir, a partir de 0 yo puedo definir 1. Entonces ya tenemos...
+55:13
+0 y 1 en R y también y después se definen 2 por definición es el sucesor de 1 es decir es igual a 1 más 1 3 es por definición el sucesor de 2 por definición es 2 más 1 4 es el sucesor de 3 y es 3 más 1, etc.
+55:50
+Ejercicio, continuar la lista de definición hasta un millón. Hasta que entiendan lo que pasa. Entonces ya tenemos un montón de abreviaturas. Ahora queremos capturar un conjunto que sólo contiene estos números. y que no contiene más entonces voy a definir la noción de conjunto inductivo definición se dice que un subconjunto A en R
+56:39
+Es inductivo cuando cumple dos propiedades. Primera propiedad que tiene que cumplir es que 0 tiene que pertenecer a A.
+56:59
+Primera condición para hacer un conjunto inductivo. Tiene que contener el elemento cero. Segunda condición es que si X pertenece a A, entonces también su sucesor pertenece a A.
+57:18
+Y esta condición, vamos a decir que esta condición, si X pertenece a A, entonces su sucesor pertenece a A. Vamos a decir que A es estable por sucesor.
+57:39
+Es decir, que cada vez que tomamos un elemento de A y que aplicamos el sucesor, no salimos del conjunto A. Nos quedamos adentro de A. Entonces, acá hay que dar ejemplos y contraejemplos de conjuntos inductivos y no inductivos.
+58:08
+Acá es una definición perfecta. Es una definición, no hay puntitos en la definición. Mi idea es definir n sin puntitos, porque no me gustan los puntitos, es una broma. Ejemplos. Los conjuntos, por ejemplo, voy a dar ejemplos de conjuntos inductivos. ¿Qué ejemplos puse? ¿Qué ejemplos puse? acá ejemplos de conjuntos inductivos.
+58:41
+Por ejemplo, el conjunto de cero a más infinito, ¿es inductivo o no es inductivo?
+58:52
+Es inductivo porque contiene cero. Y si yo tomo un número positivo o nulo y que calculo su sucesor, también es positivo o nulo, ¿no?
+59:01
+¿Sí? ¿Cómo? ¿Cómo?
+59:08
+Acá es la definición, no entiendo.
+59:15
+Pero así como dice la definición, no te vas a decir quiénes están en el conjunto del principio y después ya te queda el conjunto del principio. Yo voy a decir después, yo voy a explicar después esto. O sea, podrías decir así, el cero está y el medio está. Ah, claro, el medio, sí, sí, un conjunto inductivo puede contener un montón de gente adentro. Claro, pero vos solamente con decir quiénes son los que están en el principio, ya tenés todo el conjunto. No, pero la idea es que el conjunto inductivo no es lo mismo que n. No, no, pero por ejemplo, ese conjunto inductivo, acabo de decir, no es cero, regresa al cero.
+59:48
+Sí, claro, claro. Un medio, uno más un medio. Sí, claro. Y después te genera otras cosas, claro. Lo que él dice es que, por ejemplo, podríamos considerar el conjunto siguiente. Cero, un medio, uno, tres medios, dos, cinco medios, etcétera. es un conjunto inductivo porque cada vez cero está adentro y cada vez que yo sumo uno a cualquier elemento obtengo otro elemento del mismo conjunto si pero acá ya estás usando la inducción y mi objetivo es llegar a la inducción tu definición es una definición inductiva sin decirlo ok
+1:00:35
+acá entonces este conjunto es inductivo ¿Z es inductivo o no es inductivo? ¿Z contiene cero? sí ¿y es estable por sucesor? sí, claro, entonces es inductivo ¿Q es inductivo? ¿por qué no? si yo tomo cualquier número racional yo hago la suma, también obtengo un número racional y contiene cero entonces por supuesto que es inductivo ok entonces son inductivos y voy a dar otros ejemplos los conjuntos por ejemplo r más es inductivo o no es inductivo porque no contiene cero el conjunto por ejemplo no sé voy a dar voy a decir de 0 a 42 ¿Es inductivo o no es inductivo?
+1:01:37
+¿Por qué? Por ejemplo, 42 está adentro, pero su sucesor 43 está afuera. No funciona, no es estable por sucesor. Ah, pero el problema venía de 42, entonces voy a sacar 42. ¿Qué pasa acá? ¿Es inductivo o no es inductivo? ¿Por qué?
+1:02:05
+exactamente ahora 41 está adentro pero su sucesor 42 no está entonces no son inductivos ok ahora tengo la buena definición para definir yo puedo entonces yo tengo un montón de conjuntos inductivos por definición voy a llamar un entero natural cada número real que pertenece a todos los conjuntos inductivos
+1:02:36
+Esa es la definición. Entonces, definición.
+1:02:40
+Definición se llama un entero natural.
+1:02:55
+Y acá necesito otro marcador.
+1:03:02
+Disculpa, disculpa, te maté. especialmente conmigo todavía tenés un pie se llama un entero natural todo real que pertenece
+1:03:31
+a todos los subconjuntos inductivos es decir ahora yo puedo definir n n es el conjunto de los reales que pertenecen a todos los conjuntos inductivos
+1:04:03
+definición de n son los x en r tales que para todo subconjunto de r si a es inductivo entonces x pertenece a a y ahora cuál es el milagro desaparecieron los puntitos.
+1:04:34
+Es una definición sin puntitos.
+1:04:40
+Por supuesto, es una definición más complicada, pero ahora tenemos una definición formal. Intuitivamente, esto es la intersección de todos los subconjuntos inductivos. Es decir, yo tomo la conexión de todos los subconjuntos inductivos, todos los que ya vimos, y vamos a intersectarlos. Y tomar lo que se queda en común. Es decir, intuitivamente, esta intersección para todos los subconjuntos inductivos
+1:05:14
+definición abstracta pero es la buena definición la definición con los puntitos era muy bien para los niños que fueron en los años pasados pero ahora es una definición de adulto ok, es la definición de n ahora vamos a ver que todo esto todo el resto sigue de esta definición, todas las propiedades de los naturales hay una propiedad fundamental que es que por construcción el conjunto que definí acá también es inductivo pero es el inductivo más pequeño por construcción, proposición N es el subconjunto inductivo de R más pequeño y cuando digo más pequeño es en el sentido de la relación de inclusión es decir, digo dos cosas
+1:06:41
+digo primera cosa es que n es inductivo es decir no sólo esta intersección de todos los conjuntos inductivos pero también él es un conjunto inductivo y es el más pequeño es decir está incluido en todos los otros conjuntos inductivos n está incluido en a para todo subconjunto
+1:07:19
+Es decir, es el más pequeño en el sentido de la inclusión. ¿Entienden la idea? Entonces, ahora tienen una mejor definición. N es el subconjunto inductivo más pequeño.
+1:07:38
+Ok, entonces, ahora tenemos que demostrarlo. Voy a hacer con las manos...
+1:07:45
+Hay que demostrar que N es inductivo. Entonces, hay que demostrar que 0 está dentro de N. ¿Cómo se demuestra que 0 está dentro de N? Por definición, un natural es alguien que está en todos los subconjuntos inductivos. Pero 0 pertenece a todos los subconjuntos inductivos por definición de la noción de conjunto inductivo. Entonces, 0 pertenece a N. ¿Claro? Ahora vamos a demostrar que... N es estable por sucesor.
+1:08:17
+Supongamos que X sea un entero natural. ¿Qué significa que X es un entero natural? Significa que X pertenece a todos los subconjuntos inductivos. Pero como cada subconjunto inductivo es estable por sucesor, yo puedo decir que el sucesor de X también pertenece a A. Y eso para todos los subconjuntos inductivos. Como el sucesor de X pertenece a todos los subconjuntos inductivos, deduzco que sucesor de X es un natural.
+1:08:52
+Entonces, a partir de la hipótesis, sea X un entero natural, entonces X está dentro de todos los subconjuntos inductivos, también es el caso para su sucesor, y por definición significa que su sucesor es un entero natural. Entonces, mostré que los enteros naturales son estables por sucesor, contienen cero, entonces es un conjunto inductivo. ¿Claro?
+1:09:18
+y el segundo punto es trivial porque es por definición es claro que n está incluido en la intersección de todos los subconjuntos inductivos entonces por construcción es más pequeño que todos los subconjuntos inductivos ok entonces lo que hay que memorizar es que n es el subconjunto inductivo más pequeño y es la buena definición de los naturales y ahora si se siguen todas las propiedades de los naturales y cuál es la propiedad más importante de los naturales que los antiguos conocen desde más de mil años quizás más cuál es la cosa más importante en los naturales por favor La inducción completa, por supuesto.
+1:10:07
+La inducción completa es el principio más importante de todo en los naturales. Y la inducción completa ahora está escondida adentro de la definición. Vamos a demostrar el principio de inducción completa.
+1:10:24
+Ahora hay que ser honestos. ¿Quién no conoce todavía el principio de inducción completa?
+1:10:32
+Hay algunos, ok, gracias por ser honestos. Entonces voy a explicar el principio de inducción completa.
+1:10:52
+Y para vos, viste que ahora estamos definiendo la inducción a partir de la noción de inductivo. Esa razón porque yo no quería hablar de tu ejemplo que ya usaba implícitamente tal intersección.
+1:11:07
+Sí. Claro. Sí.
+1:11:16
+Sí. Sí.
+1:11:23
+Claro, pero no sería n, sería otra cosa. Lo que él dice es que de hecho es un método muy general para definir un conjunto generado. Esto me dice que el conjunto n está generado por cero y sucesor. Es decir, yo considero todas las cosas que contienen cero y estables por sucesor y yo hago la intersección. Y esto me da la cosa más pequeña que es generada por 0 y sucesor. Y lo que él dice es que podríamos cambiar.
+1:11:55
+Podríamos, por ejemplo, reemplazar 0 por 5 y reemplazar, por ejemplo, el sucesor por la función cuadrado, no sé qué. o el sucesor a partir de 5 y cada vez obtendríamos una nueva cosa generada pero sería otra cosa que los naturales ahora voy a hablar de los naturales porque ya hay un montón de cosas que decir sobre los naturales y es la definición inductiva más general en este estado ok voy a hablar de inducción completa entonces ¿cuál es el principio de inducción completa?
+1:12:31
+principio de inducción completa
+1:12:47
+principio de inducción completa me dice lo siguiente principio me dice lo siguiente sea de n un enunciado sobre un natural cualquier Es decir, supongo que yo tengo un enunciado matemático, es decir, una frase que me habla de n. Es decir, es una propiedad que depende de n. A veces es falsa, a veces es verdadera.
+1:13:23
+Dos cosas. Si, primera cosa, si la propiedad se cumple para cero. Cuando yo escribo p de cero, es decir, escribo que la propiedad se cumple para cero. Y la segunda cosa, si... para todo natural n cada vez que se cumple para n se cumple para el sucesor de n ¿qué pasa?
+1:13:55
+supongo que yo tengo una propiedad que se cumple para cero y cada vez que yo observo que hay uno que cumple la propiedad entonces también se cumple la propiedad para su sucesor ¿qué podría decir yo? se va a cumplir para todos los centros naturales. Entonces, para todo N en N, se cumple la propia Alpe. Es el principio de inducción completa y esto se llama el caso peligroso, caso de base.
+1:14:35
+Yo quería hablar de dominos que caen, pero no soy un domino.
+1:14:42
+Y acá se llama el paso de inducción. ¿Y cuál es la intuición? La intuición no es la intuición de los profesores que caen, pero de los dominos que caen.
+1:15:00
+Es decir, imaginemos que tenemos una sucesión de dominos, Conocen este juego. Hacen una sucesión gigantesca de dominos que se siguen.
+1:15:16
+Y en general hay que poner dibujos, montañas rusas y cosas así. ¿Y qué pasa cuando yo empujo el primer domino?
+1:15:25
+Todos van a caer. Y es el principio de inducción completa. si el primer dominio cae, si entre dos dominios consecutivos hay una distancia bastante pequeña para que la caída del primero implica la caída del segundo, del siguiente, entonces estoy seguro que todos van a caer.
+1:15:49
+Es el principio de inducción completa. esta intuición por supuesto hay dos ingredientes muy importantes para que funcione primera cosa es importante que tengamos el caso de base porque si hay nadie que empuja el primer dominó no va a caer nadie ok y la otra cosa importante es que no tengamos ninguna ruptura de caída si en un momento no se cumple la implicación para un número es decir, no tenemos este caso implica el siguiente entonces sabemos que se va a caer hasta acá pero que después no se va a caer entonces tenemos que verificar dos cosas tenemos que verificar que el primer domino va a caer tenemos que verificar que cada vez que tenemos un domino estemos seguros que el siguiente va a caer es el principio de inducción completa Y por supuesto ahora se puede demostrar, es una consecuencia de la definición de n. Ahora no es una cosa mágica, es una cosa que sale naturalmente de la definición de n. Yo voy a demostrar el principio de inducción completa.
+1:17:03
+Demostremos el principio de inducción completa.
+1:17:26
+Principio de inducción completa, demostración.
+1:17:33
+Ok, yo quiero estudiar quién cae y quién no cae. Es decir, cuáles son los objetos que caen según mi propiedad P. Voy a definir un conjunto.
+1:17:50
+Voy a considerar el conjunto de los dominos que caen.
+1:17:57
+Ok, ahora voy a decir que P significa caer, pero por supuesto yo puedo reemplazar por cualquier otra propiedad que cumple las hipótesis deseadas.
+1:18:09
+Sea A el conjunto de los entornos naturales que caen. ¿Qué se puede decir sobre tal conjunto? ¿Contiene o no contiene cero? ¿Por qué contiene cero? Porque la propiedad se cumple. ¿Cómo la propiedad se cumple? ¿Por qué? Yo sé que cero pertenece a A, es la definición del conjunto por comprensión. Entonces tenemos que cero pertenece a A, pues la propiedad se cumple por hipótesis.
+1:18:41
+Ahora yo supongo que mi propiedad cumple esto. Se cumple para cero y es estable por sucesor. Pero, ¿están de acuerdo? ¿No? Supuse que, quizás no fui claro. Yo quiero demostrar esta implicación. Entonces, voy a suponer que esto se cumple y esto se cumple. Y tengo que demostrar que esto se cumple.
+1:19:12
+Acá es mi punto de partida 1, punto de partida 2 y acá es mi punto de llegada.
+1:19:20
+Yo quiero demostrar esta implicación. Esto y esto implica esto. ¿Ok?
+1:19:27
+Entonces, como yo sé que esto es una hipótesis, se cumple, entonces 0 pertenece a A. Y si yo tengo que X pertenece a A, ¿qué significa si X pertenece a A? Significa que cumple la propiedad N. ¿No? Por definición. Pero si cumple la propiedad N, ¿qué se puede decir sobre su sucesor? También cumple la propiedad por hipótesis.
+1:19:59
+Pero por definición, ¿qué significa? Significa que X más 1 pertenece a A.
+1:20:04
+Y esto es el sucesor. ¿Qué significa esto?
+1:20:11
+Que A es estable por sucesor. ¿Qué se puede concluir sobre el conjunto A? Es... La palabra que falta es... Es un conjunto inductivo. Luego, A es un conjunto inductivo. Demostramos que A es un conjunto inductivo. ¿Ok?
+1:20:38
+Pero ya vimos que N es más pequeño que todos los conjuntos inductivos, entonces ya vemos que N está dentro de A.
+1:20:53
+N está incluido en A porque N es el subconjunto inductivo más pequeño. Está incluido en cualquier otro conjunto inductivo. Y acá mostré un ejemplo particular de conjunto inductivo. Y ahora, ¿qué se puede decir? N incluido significa que para todo N en N tenemos que N pertenece a A, pero por definición de A significa que para todo N en L tenemos que P de N terminado.
+1:21:24
+Esto demuestra la conclusión. La conclusión está acá, disculpa. Es una demostración del principio de inducción. Y vamos a ver ahora ejemplos de inducción. Yo no sé si tengo tiempo para hacer un ejemplo de inducción. Voy a dar una variante del... principio de inducción que no voy a demostrar variante del principio de inducción entonces variante sea dos cosas p una propiedad un enunciado
+1:22:25
+sobre un natural y me doy un natural n sub cero fijado ok entonces acá es la variante si el dominio número n sub cero cae y si a partir del n sub cero
+1:22:54
+todo n mayor o igual a n sub cero si la caída del dominio n implica la caída del dominio n más uno entonces todos los números los dominios de rango mayores o igual a n sub cero van a caer
+1:23:17
+Es decir, es casi el mismo principio, pero en lugar de comenzar a partir del dominio cero, comienzo a partir del dominio n sub cero. Pero es una variante. Porque a veces se hacen inducciones a partir de uno, o a veces a partir de dos, o a veces a partir de tres. Y es una variante, y no voy a demostrarla, pero se puede demostrar de modo similar. Y ahora vamos a ver ejemplos la próxima vez. Gracias.
+

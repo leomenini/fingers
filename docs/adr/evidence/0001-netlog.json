@@ -1,0 +1,464 @@
+{
+  "_nota": "Evidencia del ADR-0001. Trafico observado al cargar /courses/civ/9/ con probe.mjs (media/image/font bloqueados). Los parametros de query de Matomo fueron removidos: contenian un identificador de sesion.",
+  "url": "https://open.fing.edu.uy/courses/civ/9/",
+  "capturadoEl": "2026-08-02T02:40:11.639Z",
+  "requests": [
+    {
+      "url": "https://open.fing.edu.uy/courses/civ/9/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://open.fing.edu.uy/sass/common.25c6255c7c18fda699608b7ea5196b9d961420fc5d120dc3999c106d834a47e0.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://open.fing.edu.uy/sass/header.10e3f592670f0601cb3cbd46b28fb1058a352fd1bdbcb9d6158cfc170a09add4.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://open.fing.edu.uy/sass/video.a6a0aed2b763320f72a743d2d11e2fd8744473bd8b6fbc516a14e11c34a0f479.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://open.fing.edu.uy/sass/course.5d78efd589f602f90d04aec8311e69e83182474b7a43e01536d761672819369a.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://open.fing.edu.uy/sass/media-controls.5c5379807a6f3aa713ce749e46b7c0d06782d3cfba2ee85f5a72441817ed78b0.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/lang/es.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/index.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/index.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/sass/transcripcion.61e963ba6954d79d61499ddfa68a43d87c529d130640b1c9a9ceda83c31cec49.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 17477,
+      "sha256": "61e963ba6954d79d61499ddfa68a43d87c529d130640b1c9a9ceda83c31cec49"
+    },
+    {
+      "url": "https://open.fing.edu.uy/js/hamburguesa.30ff05707ae9680c56799ca3058c91108360f550e36d9e38a63777f9a52396c9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/js/apariencia.d59ea0f6adc9d8ad033b1676eb33274f4c327a959c7bd6226835b8d2a0555019.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/pwa.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/openfing.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://www.fing.edu.uy/matomo/matomo.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/i18n.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/constants.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/time.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/transcripcion.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 18965,
+      "sha256": "fe37a8dd6c0b6f5314a6b270a842aad571898b10966d48823e5419f6075c6aa4"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-controller.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-airplay-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-cast-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-chrome-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-chrome-range.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-chrome-dialog.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-control-bar.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-duration-display.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-fullscreen-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-gesture-receiver.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-keyboard-shortcuts-dialog.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-error-dialog.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-captions-button.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 6196,
+      "sha256": "a8163bc57b6b2936593b5050728458feea6f995a8bd179eb754e6f0518562b49"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-live-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-loading-indicator.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-pip-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-mute-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-play-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-playback-rate-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-poster-image.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-preview-chapter-display.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-preview-time-display.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-seek-backward-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-preview-thumbnail.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-seek-forward-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-time-display.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-time-range.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-tooltip.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-volume-range.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-text-display.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-container.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-loop-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-chrome-menu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-settings-menu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-settings-menu-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-settings-menu-item.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-chrome-menu-item.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-audio-track-menu-button.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 2767,
+      "sha256": "54124253c21b12ab08608a8e58a8645c00fd7278b22cf14bdcd95d9c6c5c5441"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-audio-track-menu.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 4825,
+      "sha256": "5241fc8a5a2d87de75b550c1f6b63aebe5cb4a633364856a6e7e6f0bb19b7d2c"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-captions-menu.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 7674,
+      "sha256": "bb580a41b4e281a8e3faa74f9d0e4da9869203428b2a561439eaa1a1956f7645"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-rendition-menu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-playback-rate-menu-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-rendition-menu-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-chrome-menu-button.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-playback-rate-menu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-captions-menu-button.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 6416,
+      "sha256": "45ba375ffbb3d75bbca6b46d7dd390ca67dcee538154f05531ab168feca4ea36"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-context-menu-item.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/menu/media-context-menu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/utils.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/server-safe-globals.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/lang/en.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://www.fing.edu.uy/matomo/matomo.php?<query-de-analitica-removida>",
+      "status": 204,
+      "contentType": "",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media/civ/civ_09_transcription.vtt",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "bytes": 60439,
+      "sha256": "c392bbc231fc3bf5340e68a4a58473f67df879b24cce94b95bacc4db5ef7d876"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/attribute-token-list.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/resize-observer.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/element-utils.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-store/media-store.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/labels/labels.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/range-animation.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/anchor-utils.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/events.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/captions.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 2938,
+      "sha256": "b18b41e2f5c40e88d059b78104e3206fca65c8646b71791aabca748783850cee"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media/civ/civ_09_thumbnails.vtt",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "bytes": 41654,
+      "sha256": "06b900fd81c77cf91eadff2882036dae02c4a719b6107b82b1c116462a82b6e4"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-store/util.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-store/state-mediator.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/media-store/request-map.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/platform-tests.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "https://open.fing.edu.uy/media-chrome/dist/utils/fullscreen-api.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    }
+  ]
+}

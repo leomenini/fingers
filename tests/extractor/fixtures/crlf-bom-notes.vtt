@@ -1,0 +1,11 @@
+﻿WEBVTT
+
+NOTE Este bloque debe ignorarse
+
+cue-identificador-1
+00:00:01.000 --> 00:00:04.000 align:start position:10%
+<v Docente>Primera linea con tag inline y settings.
+
+00:00:05.000 --> 00:00:08.000
+Segunda linea, partida
+en dos renglones del mismo cue.

@@ -1,0 +1,56 @@
+% Clase 5 --- Intersección de intervalos (§7.2). El docente comenta la
+% aplicación a la detección de colisiones de rectángulos en videojuegos vía
+% esta misma fórmula; acá se ilustra el caso con solape parcial que motiva
+% max(a,c)/min(b,d).
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- guías verticales punteadas (dibujadas ANTES que las etiquetas,
+  %      para que las etiquetas con fill=white las tapen limpiamente) ----
+  \draw[figaux] (0,1.6) -- (0,-1.6);
+  \draw[figaux] (5,1.6) -- (5,-1.6);
+  \draw[figaux] (3,1.6) -- (3,-1.6);
+  \draw[figaux] (8,1.6) -- (8,-1.6);
+
+  % ---------- Fila superior: [a,b] ----------
+  \begin{scope}[yshift=1.6cm]
+    \draw[figaux] (-0.6,0) -- (8.6,0);
+    \draw[figintervalo] (0,0) -- (5,0);
+    \node[figptocerrado] at (0,0) {};
+    \node[figptocerrado] at (5,0) {};
+    \node[figlbl, below=2pt, fill=white, inner sep=1.5pt] at (0,-0.05) {$a$};
+    \node[figlbl, below=2pt, fill=white, inner sep=1.5pt] at (5,-0.05) {$b$};
+    \node[figlbl, figblue, left] at (-0.8,0) {$[a,b]$};
+  \end{scope}
+
+  % ---------- Fila media: [c,d] ----------
+  \begin{scope}[yshift=0cm]
+    \draw[figaux] (-0.6,0) -- (8.6,0);
+    \draw[figintervalo] (3,0) -- (8,0);
+    \node[figptocerrado] at (3,0) {};
+    \node[figptocerrado] at (8,0) {};
+    \node[figlbl, below=2pt, fill=white, inner sep=1.5pt] at (3,-0.05) {$c$};
+    \node[figlbl, below=2pt, fill=white, inner sep=1.5pt] at (8,-0.05) {$d$};
+    \node[figlbl, figblue, left] at (-0.8,0) {$[c,d]$};
+  \end{scope}
+
+  % ---------- Fila inferior: intersección ----------
+  \begin{scope}[yshift=-1.6cm]
+    \draw[figaux] (-0.6,0) -- (8.6,0);
+    \draw[figred, line width=2.2pt] (3,0) -- (5,0);
+    \node[figptoZ] (mc) at (3,0) {};
+    \node[figptoZ] (mb) at (5,0) {};
+    \node[figlbl, figred, below=2pt, anchor=north east, xshift=-3pt,
+          fill=white, inner sep=1.5pt] at (3,-0.05) {$\max(a,c)$};
+    \node[figlbl, figred, below=2pt, anchor=north west, xshift=3pt,
+          fill=white, inner sep=1.5pt] at (5,-0.05) {$\min(b,d)$};
+    \node[figlbl, figred, left] at (-0.8,0) {$[a,b]\cap[c,d]$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Caso con solape parcial ($a<c<b<d$): el intervalo
+intersección (fila roja) empieza en el \textbf{mayor} de los dos extremos
+izquierdos, $\max(a,c)=c$, y termina en el \textbf{menor} de los dos
+extremos derechos, $\min(b,d)=b$. Si $\max(a,c) > \min(b,d)$ (los
+intervalos no se solapan) la intersección es directamente $\emptyset$.}
+\end{center}

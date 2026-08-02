@@ -1,0 +1,58 @@
+% Clase 5 --- Los diez tipos de intervalo (§7.1). Catálogo visual de los
+% cuatro casos más representativos: cerrado, abierto, semiabierto y no
+% acotado. Misma geometría base (a=1, b=4) en las cuatro filas; solo cambia
+% el tipo de extremo.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---------- Fila 1: cerrado [a,b] ----------
+  \begin{scope}[yshift=0cm]
+    \draw[figaux] (-0.6,0) -- (5.6,0);
+    \draw[figintervalo] (1,0) -- (4,0);
+    \node[figptocerrado] at (1,0) {};
+    \node[figptocerrado] at (4,0) {};
+    \node[figlbl, below=2pt] at (1,-0.05) {$a$};
+    \node[figlbl, below=2pt] at (4,-0.05) {$b$};
+    \node[figlbl, figblue, left] at (-0.8,0) {$[a,b]$};
+  \end{scope}
+
+  % ---------- Fila 2: abierto ]a,b[ ----------
+  \begin{scope}[yshift=-1.6cm]
+    \draw[figaux] (-0.6,0) -- (5.6,0);
+    \draw[figintervalo] (1,0) -- (4,0);
+    \node[figptoabierto] at (1,0) {};
+    \node[figptoabierto] at (4,0) {};
+    \node[figlbl, below=2pt] at (1,-0.05) {$a$};
+    \node[figlbl, below=2pt] at (4,-0.05) {$b$};
+    \node[figlbl, figblue, left] at (-0.8,0) {$\mathopen]a,b\mathclose[$};
+  \end{scope}
+
+  % ---------- Fila 3: semiabierto [a,b[ ----------
+  \begin{scope}[yshift=-3.2cm]
+    \draw[figaux] (-0.6,0) -- (5.6,0);
+    \draw[figintervalo] (1,0) -- (4,0);
+    \node[figptocerrado] at (1,0) {};
+    \node[figptoabierto] at (4,0) {};
+    \node[figlbl, below=2pt] at (1,-0.05) {$a$};
+    \node[figlbl, below=2pt] at (4,-0.05) {$b$};
+    \node[figlbl, figblue, left] at (-0.8,0) {$[a,b\mathclose[$};
+  \end{scope}
+
+  % ---------- Fila 4: no acotado [a,+infty[ ----------
+  \begin{scope}[yshift=-4.8cm]
+    \draw[figaux] (-0.6,0) -- (5.6,0);
+    \draw[figintervalo, -{Latex[length=2.6mm,width=1.9mm]}] (1,0) -- (5.4,0);
+    \node[figptocerrado] at (1,0) {};
+    \node[figlbl, below=2pt] at (1,-0.05) {$a$};
+    \node[figlbl, above=1pt] at (5.4,0.12) {$+\infty$};
+    \node[figlbl, figblue, left] at (-0.8,0) {$[a,+\infty\mathclose[$};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Cuatro de los diez tipos de intervalo, misma geometría
+($a=1$, $b=4$) en las cuatro filas: el círculo \textbf{lleno} marca un
+extremo \textbf{incluido}, el círculo \textbf{vacío} uno \textbf{excluido};
+la flecha abierta hacia $+\infty$ indica que no hay extremo superior real.
+Los diez tipos surgen de combinar extremo izquierdo/derecho abierto o
+cerrado, más los dos semi-infinitos, $\mathbb{R}$ y $\emptyset$.}
+\end{center}
