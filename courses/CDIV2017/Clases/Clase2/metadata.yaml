@@ -1,0 +1,70 @@
+title: Clase 2
+id: civ-2017-1-02
+
+course: Cálculo 1
+academic_year: 2017
+semester: 1
+
+teacher: Alexandre Miquel
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:16"
+    end: "01:22:06"
+
+stats:
+  transcript_words: 8333
+  summary_words: 3824
+  diagrams_pending: 0
+  equations: 24
+
+topics:
+  - Construcción de conjuntos por comprensión
+  - Predicados y variables ligadas
+  - Intervalos de R (notación inglesa vs. francesa, intervalos infinitos)
+  - Conjunto solución de una ecuación
+  - Operaciones booleanas: unión, intersección, diferencia
+  - Conmutatividad y la excepción de la diferencia
+  - Reducción de intersección y diferencia a comprensión
+  - Unión disjunta y descomposición de la unión
+  - Distributividad de la unión respecto a la intersección (diagramas de Venn)
+  - Dualidad unión-intersección
+  - Pares ordenados vs. pares no ordenados
+  - Producto cartesiano (definición, cardinal, representación geométrica)
+  - Generalización a n-uplas
+  - Conjunto potencia y su cardinal 2^n
+  - "Cardinalidad infinita: |P(N)| = |R|"
+  - Nueva definición de función (dominio, codominio, regla)
+
+bibliography: []
+
+prerequisites:
+  - Igualdad e inclusión de conjuntos (Clase 1)
+  - Construcción de conjuntos por extensión (Clase 1)
+  - Nociones intuitivas de N, Z, Q, R (Clase 1, sin definición formal)
+  - Lógica proposicional básica (conectivas Y/O, cuantificadores)
+
+next_topics:
+  - Imagen de una función
+  - Inyectividad y sobreyectividad
+  - Composición de funciones
+  - Números reales (segundo capítulo del temario)
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-30
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

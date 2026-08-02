@@ -1,0 +1,40 @@
+% Clase 5 --- El inverso y el orden (§5). El docente dibuja explícitamente
+% "un dibujo entre dos casos" tomando 0,1,2,3 sobre la recta para comparar
+% x, y y sus inversos, y remarca que hay que "saber posicionar
+% intuitivamente" 1/x y 1/y. Esta figura junta ambos casos (mismo signo)
+% en una sola recta con dos ramas.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % recta con las dos ramas
+  \draw[figaxis] (-3.4,0) -- (3.4,0);
+  \node[figpto, fill=figgray] (o) at (0,0) {};
+  \node[figlblaux, below=4pt] at (0,-0.05) {$0$};
+  \node[figlblaux] at (-2.3,0.55) {$\mathbb{R}^-$};
+  \node[figlblaux] at (2.3,0.55) {$\mathbb{R}^+$};
+
+  % rama positiva: x > 0 y su inverso 1/x, mismo signo
+  \node[figptocerrado] (xp) at (2.4,0) {};
+  \node[figptocerrado] (ixp) at (0.8,0) {};
+  \node[figlbl, below=2pt] at (2.4,-0.05) {$x$};
+  \node[figlbl, below=2pt] at (0.8,-0.05) {$\dfrac{1}{x}$};
+  \draw[figvec] (xp.north) to[bend left=45] (ixp.north);
+  \node[figlbl, figred, fill=white, inner sep=1.5pt] at (1.6,0.85) {inverso};
+
+  % rama negativa: x < 0 y su inverso 1/x, mismo signo
+  \node[figptocerrado] (xn) at (-2.4,0) {};
+  \node[figptocerrado] (ixn) at (-0.8,0) {};
+  \node[figlbl, below=2pt] at (-2.4,-0.05) {$x$};
+  \node[figlbl, below=2pt] at (-0.8,-0.05) {$\dfrac{1}{x}$};
+  \draw[figvec] (xn.north) to[bend right=45] (ixn.north);
+  \node[figlbl, figred, fill=white, inner sep=1.5pt] at (-1.6,0.85) {inverso};
+
+  \node[figlbl, figblue, align=center] at (0,-1.7)
+    {si $x$ y $1/x$ tienen el \textbf{mismo signo}, ninguno cruza el $0$:\\
+     $1/x$ queda en la \textbf{misma rama} que $x$ (más lejos si $|x|<1$, más cerca si $|x|>1$)};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape En ambos casos (positivo y negativo) el inverso permanece
+del mismo lado del $0$: por eso la comparación $0<x\leq y \implies 1/y \leq
+1/x$ (y su análoga para negativos) tiene sentido sin cruces. Cuando $x,y$
+tienen \textbf{signos distintos}, en cambio, el orden entre $1/x$ y $1/y$ se
+\textbf{mantiene} automáticamente porque $1/x<0<1/y$.}
+\end{center}

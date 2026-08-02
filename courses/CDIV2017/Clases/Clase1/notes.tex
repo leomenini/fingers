@@ -1,0 +1,613 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (gráficas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 1: Presentación del curso y nuevo programa} \\[0.3em]
+        \large{Zoología de objetos matemáticos, conjuntos: pertenencia, igualdad e inclusión}}
+\author{Transcripto y expandido --- Curso Cálculo 1 (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Presentación y organización del curso}
+
+\subsection{Docentes y anuncios prácticos}
+
+El docente responsable del teórico de la tarde es \textbf{Alexandre Miquel};
+el coordinador del curso y responsable del teórico de la mañana es Marcos
+Barrios. El curso se llama oficialmente \textbf{Cálculo DIR} (Cálculo
+Diferencial e Integral con una Variable), nombre que corresponde a un
+\textbf{nuevo programa} que el docente presenta en esta primera clase.
+
+Anuncios organizativos de la clase:
+
+\begin{itemize}
+  \item Registrarse en el sitio \textbf{Eva} del curso.
+  \item Hay \textbf{seis grupos de prácticos}; como no existe teórico
+    nocturno, el práctico del grupo 1 (nocturno) dura dos horas y media en
+    lugar de una hora y media, y en él se hacen repasos de teórico para
+    quienes no pueden asistir de día.
+  \item Los prácticos llevan, en general, \textbf{una semana de retraso}
+    respecto al teórico (es una edición nueva del curso y se están
+    ajustando los tiempos).
+  \item Habrá un \textbf{cuestionario semanal en línea}, sin valor para la
+    nota (no puntúa de forma directa), pensado como termómetro de
+    aprendizaje tanto para los estudiantes como para los docentes.
+  \item Todavía no hay apuntes nuevos completos: para los temas que no
+    cambian respecto al programa anterior se puede seguir usando el
+    material viejo; para los temas que sí cambian, el docente producirá
+    capítulos específicos.
+\end{itemize}
+
+\begin{notebox}[Régimen de exámenes: aún sin definir]
+Preguntas de la clase sobre el régimen de exámenes (si las demostraciones
+``antiguas'' siguen siendo válidas, si exonerar habilita a dar el examen de
+Cálculo 2 viejo, si habrá más parciales que teóricos, etc.) quedaron sin
+resolver: el docente respondió explícitamente ``no sé'' en varios casos,
+porque es la primera edición del programa nuevo y los detalles de examen
+todavía se están coordinando entre los docentes. Un dato que sí quedó
+fijado: quien apruebe Cálculo 1 nuevo queda habilitado para dar el examen de
+Cálculo 2 nuevo, no el de Cálculo 2 viejo.
+\end{notebox}
+
+\subsection{El nuevo programa: ``Cálculo 1 nuevo''}
+
+La reorganización responde a un cambio en los programas de liceo, que dejó
+un salto demasiado grande entre el liceo y el temario tradicional de
+Cálculo 1. La solución fue \textbf{aligerar Cálculo 1} trasladando temas a
+Cálculo 2 y superiores. Importante: los temas no desaparecen del plan de
+estudios, solo se \textbf{reubican}.
+
+\textbf{Temas que se van de Cálculo 1} (pasan a Cálculo 2 o cursos
+posteriores):
+
+\begin{itemize}
+  \item Números complejos.
+  \item Sucesiones y series.
+  \item Integrales impropias.
+\end{itemize}
+
+El nuevo temario se organiza en \textbf{ocho capítulos}:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}clp{7cm}@{}}
+\toprule
+\# & Capítulo & Observación \\
+\midrule
+1 & Conjuntos y funciones & Repaso de notaciones (esta clase) \\
+2 & Números reales & Sin cambios respecto al programa anterior; dos semanas \\
+3 & \textbf{Integrales} & Tema central de la nueva edición; cambia mucho \\
+4 & Continuidad & Cambia mucho (nuevas demostraciones) \\
+5 & Funciones trigonométricas & Sin cambios; se dicta justo antes del primer parcial \\
+6 & Derivadas & No cambia demasiado \\
+7 & Desarrollo de Taylor & --- \\
+8 & Métodos de integración & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+El cambio conceptual más importante es que las \textbf{integrales pasan a
+ser el tema central} del curso desde el capítulo 3, en vez de dictarse
+recién al final (donde antes solía faltar tiempo para cubrirlas bien). Esto
+obliga a repensar la presentación, porque en el capítulo 3 todavía no se
+dispone ni de sucesiones, ni de continuidad, ni de derivada:
+
+\begin{itemize}
+  \item La integral se presenta a partir de la \textbf{teoría de Riemann
+    usando solo supremos e ínfimos} (noción que se construye en el
+    capítulo 2, números reales), sin necesitar el teorema fundamental del
+    cálculo ni la noción de función continua.
+  \item Se introduce un teorema nuevo en este enfoque: \textbf{toda función
+    monótona es integrable}, que permite construir ejemplos de integrales
+    sin pasar por la continuidad.
+  \item La integral se entiende, en esta etapa, como el \textbf{área
+    algebraica} de la superficie definida por una curva.
+  \item El primer parcial cubre normalmente los capítulos 1 a 4.
+\end{itemize}
+
+\begin{sloppypar}
+En continuidad también hay cambios profundos: los grandes teoremas
+clásicos (\textbf{Bolzano}, \textbf{Weierstrass}) se demostraban
+tradicionalmente apoyándose en sucesiones. Pero como las sucesiones se
+retiraron del programa, hace falta producir \textbf{demostraciones
+nuevas que no usen sucesiones}.
+\end{sloppypar}
+
+Otra simplificación deliberada: \textbf{no habrá topología de la recta}. El
+curso solo considera funciones definidas en intervalos, así que la única
+noción topológica necesaria es distinguir intervalo abierto, cerrado,
+semiabierto y semicerrado.
+
+Por la centralidad de las integrales, el tema se reparte en varios
+capítulos en vez de concentrarse en uno solo: aparece en el capítulo 3
+(teoría básica), otra vez en el capítulo 4 (para mostrar que toda función
+continua es localmente integrable) y de nuevo en el capítulo 6, derivadas,
+donde recién ahí se presenta el \textbf{teorema fundamental del cálculo}.
+
+\section{Zoología de los objetos matemáticos}
+
+Antes de definir conjuntos, el docente hace un repaso de los \textbf{tipos
+de objetos matemáticos} que se van a manipular en el curso, usando la
+imagen de una ``zoología'' de objetos:
+
+\begin{itemize}
+  \item \textbf{Números}: los conjuntos numéricos que se usarán son los
+    \textbf{naturales} ($\mathbb{N}$), \textbf{enteros} ($\mathbb{Z}$),
+    \textbf{racionales} ($\mathbb{Q}$) y \textbf{reales} ($\mathbb{R}$);
+    los \textbf{complejos quedan fuera del programa}. Ejemplos de números:
+    $0, 1, 2, -1, 3, \tfrac{1}{2}, \sqrt{2}, \pi, e$.
+  \item \textbf{Objetos geométricos}: puntos, rectas, triángulos,
+    círculos. En este curso se usan casi exclusivamente como
+    \textbf{herramienta para dibujar} funciones, no como objeto de estudio
+    en sí.
+  \item \textbf{Objetos compuestos}: se construyen agrupando objetos de
+    base. Ejemplos: \textbf{funciones} (reglas que transforman un número
+    en otro número), matrices, \textbf{pares} $(a,b)$, y \textbf{n-uplas}
+    (pares generalizados con cualquier cantidad de componentes).
+  \item \textbf{Conjuntos}: la noción central de esta clase, presentada al
+    final ``porque es la mejor para el final''.
+\end{itemize}
+
+\begin{notebox}[Analogía informática]
+La mejor intuición de un conjunto (al menos uno finito) es una
+\textbf{carpeta}: contiene ``archivos'' (los elementos). Hay dos
+diferencias clave con las carpetas de una computadora: (1) las carpetas
+tienen nombre, los \textbf{conjuntos son anónimos} (se identifican
+únicamente por lo que contienen); (2) las carpetas son necesariamente
+finitas por limitaciones de hardware, mientras que \textbf{los conjuntos
+pueden ser infinitos}. El docente aclara que esta cercanía no es
+casualidad: cuando se inventó la noción informática de carpeta, se tomó
+como modelo la noción matemática de conjunto.
+\end{notebox}
+
+\begin{notebox}[Buena práctica, no obligación lógica]
+Aunque en teoría un conjunto puede mezclar tipos de objetos distintos
+(números, puntos, rectas, etc.), en la práctica se considera \textbf{mala
+práctica} hacerlo. El curso trabajará con conjuntos ``tipados'': conjuntos
+de números, conjuntos de puntos, etc., sin mezclarlos.
+\end{notebox}
+
+\section{Conjuntos: pertenencia e igualdad}
+
+\subsection{Relación de pertenencia y diagramas de Venn}
+
+La noción de conjunto es \textbf{primitiva}: no se define, se observa a
+través de una relación, la \textbf{pertenencia}:
+\[
+x \in A
+\]
+que se lee ``$x$ es un elemento de $A$'', y su negación
+\[
+x \notin A.
+\]
+
+\begin{notebox}[Asimetría de la notación]
+A la derecha del símbolo $\in$ siempre debe haber un \textbf{conjunto}; a
+la izquierda, $x$ puede ser \textbf{cualquier objeto matemático} (número,
+punto, recta, matriz, función, o incluso otro conjunto --- así como una
+carpeta puede contener otras carpetas).
+\end{notebox}
+
+Los conjuntos se representan con \textbf{diagramas de Venn} (en Francia,
+informalmente, ``diagramas patatoidales'' por su forma de papa): un óvalo
+que contiene los elementos adentro; si $x \in A$ se dibuja adentro y si
+$y \notin A$ se dibuja afuera.
+
+\input{assets/clase1-pertenencia.tex}
+
+\subsection{Igualdad de conjuntos}
+
+La igualdad entre dos conjuntos se \textbf{define} mediante la
+pertenencia:
+\[
+A = B \;:\Longleftrightarrow\; \forall x,\; (x \in A \Longleftrightarrow x \in B)
+\]
+
+Es decir, dos conjuntos son iguales si y solo si \textbf{tienen exactamente
+los mismos elementos}, sin importar el orden en que se listen ni cuántas
+veces se repita cada uno.
+
+\begin{notebox}[Sobre la notación de definición]
+El docente distingue la \textbf{igualdad} (relación entre dos \emph{objetos}
+matemáticos, que dice que son idénticos) de la \textbf{equivalencia
+definicional} (relación entre dos \emph{frases} o enunciados, que dice que
+tienen el mismo significado). Como $A = B$ es en sí mismo un enunciado (no
+un objeto), no tiene sentido escribir una ``igualdad de igualdades''; por
+eso se usa un símbolo distinto ($:\Leftrightarrow$) para introducir la
+definición. Quien lo prefiera puede reemplazarlo por un $\Leftrightarrow$
+ordinario ``de definición'' --- el significado es el mismo.
+\end{notebox}
+
+\begin{notebox}[Cuantificador $\forall x$ sin relativizar]
+En esta definición, ``para todo $x$'' cuantifica sobre \textbf{todo el
+universo matemático}, no sobre un conjunto particular --- es, en palabras
+del docente, ``una cuantificación terrible''.
+\end{notebox}
+
+Otra diferencia con las carpetas informáticas: dos carpetas con el mismo
+contenido pero distinto nombre son objetos distintos en una computadora;
+en teoría de conjuntos, como los conjuntos son anónimos, \textbf{dos
+conjuntos con el mismo contenido son el mismo conjunto}.
+
+\section{Inclusión}
+
+\subsection{Definición y cuantificadores relativizados}
+
+La \textbf{inclusión} (subconjunto) se define:
+\[
+A \subset B \;:\Longleftrightarrow\; \forall x,\; (x \in A \Longrightarrow x \in B)
+\]
+
+Nótese que solo cambia un símbolo ($\Rightarrow$ en vez de
+$\Leftrightarrow$) respecto de la definición de igualdad. Intuitivamente,
+$A \subset B$ dice que todo elemento de $A$ es también elemento de $B$
+(``$A$ está incluido en $B$''), en analogía con el orden $\le$ sobre
+números.
+
+Esta definición motiva la introducción de los \textbf{cuantificadores
+relativizados}, abreviaturas de uso constante en el curso:
+\[
+\forall x \in A,\; (\ldots) \quad:\Longleftrightarrow\quad \forall x,\; (x \in A \Rightarrow (\ldots))
+\]
+\[
+\exists x \in A,\; (\ldots) \quad:\Longleftrightarrow\quad \exists x,\; (x \in A \;\wedge\; (\ldots))
+\]
+
+\begin{notebox}[Cuantificación relativizada vs. no relativizada]
+Diferencia entre cuantificador ``no relativizado'' (sobre todo el
+universo) y ``relativizado'' (restringido a los elementos de un conjunto
+$A$): el segundo es abreviatura del primero combinado con $\Rightarrow$
+(para ``para todo'') o $\wedge$ (para ``existe''). El docente insiste en
+el símbolo universal $\wedge$ para ``y'' (independiente del idioma, a
+diferencia de ``and'', ``et'', ``y''), y en que ``existe'' en matemática
+significa \textbf{existe al menos uno}, no ``existen todos''.
+\end{notebox}
+
+\subsection{Propiedades de la inclusión}
+
+Para todos los conjuntos $A, B, C$:
+
+\begin{enumerate}
+  \item \textbf{Reflexividad}: $A \subset A$ (todo conjunto se incluye a
+    sí mismo).
+  \item \textbf{Transitividad}: si $A \subset B$ y $B \subset C$,
+    entonces $A \subset C$.
+  \item \textbf{Antisimetría}: si $A \subset B$ y $B \subset A$, entonces
+    $A = B$.
+\end{enumerate}
+
+La propiedad (3) es el contenido del
+
+\begin{keybox}[Método estándar para probar igualdad de conjuntos]
+\[
+\boxed{A = B \iff (A \subset B \;\wedge\; B \subset A)}
+\]
+Para probar $A = B$ se hacen \textbf{dos demostraciones independientes},
+primero $A \subset B$ y luego $B \subset A$, y de ambas se concluye la
+igualdad. Este método se usará repetidamente a lo largo del curso.
+\end{keybox}
+
+\begin{notebox}[Analogía con el orden numérico]
+La inclusión comparte estructura con la relación $\le$ sobre los números:
+reflexiva, transitiva y antisimétrica son exactamente los axiomas de un
+\textbf{orden (parcial)}.
+\end{notebox}
+
+\section{Los conjuntos de base: N, Z, Q, R}
+
+El curso trabajará principalmente con cuatro conjuntos numéricos de base,
+relacionados por inclusiones:
+\[
+\boxed{\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}}
+\]
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{@{}llXX@{}}
+\toprule
+Conjunto & Notación & Descripción informal & Definición rigurosa \\
+\midrule
+Naturales & $\mathbb{N}$ & $0, 1, 2, 3, \ldots$ (en este curso empiezan en $0$) & Pendiente (cap. 2) \\
+Enteros relativos & $\mathbb{Z}$ & $\ldots, -2, -1, 0, 1, 2, \ldots$ & Pendiente (cap. 2) \\
+Racionales & $\mathbb{Q}$ & Fracciones & $\mathbb{Q} = \{\, \tfrac{n}{p} : n, p \in \mathbb{Z},\ p \neq 0 \,\}$ \\
+Reales & $\mathbb{R}$ & --- & Se define recién en el capítulo 2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{warnbox}[Notaciones ``flojas'' con puntos suspensivos]
+Escribir $\mathbb{N} = \{0, 1, 2, 3, \ldots\}$ no es una definición
+matemática precisa porque los puntos suspensivos ocultan una cantidad
+infinita de elementos que nunca se terminarían de listar (el docente
+ilustra la idea con la imagen, en broma, de escribir naturales hasta
+destruir las paredes del salón y dar la vuelta al planeta, sin terminar
+nunca). $\mathbb{Z}$ es ``una broma doble'' porque tiene infinitos en dos
+direcciones, y $\mathbb{Q}$ es peor todavía porque además hay una cantidad
+infinita de racionales entre dos racionales cualesquiera. Por eso
+$\mathbb{Q}$ sí admite una definición por comprensión rigurosa (fracciones
+de enteros con denominador no nulo), mientras que $\mathbb{N}$ y
+$\mathbb{Z}$ requieren una construcción más cuidadosa que se pospone al
+capítulo 2.
+\end{warnbox}
+
+Sobre $\mathbb{R}$, el docente adelanta que la diferencia con $\mathbb{Q}$
+no es solo agregar ``algunos números para completar'' (idea que trae el
+estudiante típico del liceo, y que es \textbf{falsa}): hay
+\textbf{infinitamente más} números en $\mathbb{R}$ que en $\mathbb{Q}$.
+Ejemplos de reales no racionales: $\sqrt{2}$, $\sqrt{3}$, $-\sqrt{2}$,
+$\pi$, $e$.
+
+\begin{notebox}[Nota histórica]
+El docente sitúa el nacimiento del análisis matemático (la disciplina de
+Cálculo 1) en los trabajos de \textbf{Leibniz} hacia fines del siglo XVII
+(contemporáneo de Bach y Händel). En esa época aún no se sabía qué era
+rigurosamente un número real, lo que generó ``cuentas flojas'' y
+paradojas; la definición precisa y moderna de $\mathbb{R}$ es la tarea del
+capítulo 2 (dos semanas de curso), a partir de la cual $\mathbb{N}$,
+$\mathbb{Z}$ y $\mathbb{Q}$ se recuperan como subconjuntos particulares.
+\end{notebox}
+
+\section{Construcción de conjuntos por extensión}
+
+Sin ejemplos de conjuntos concretos aún, el docente introduce dos métodos
+generales para \textbf{construir} conjuntos, empezando por la
+\textbf{construcción por extensión}: dar la lista finita de todos sus
+elementos.
+
+Dados objetos cualesquiera $a_1, \ldots, a_n$, se define
+\[
+\{a_1, \ldots, a_n\}
+\]
+por la propiedad
+\[
+\forall x,\; \big(x \in \{a_1,\ldots,a_n\} \iff x = a_1 \lor x = a_2 \lor \cdots \lor x = a_n\big).
+\]
+
+\begin{notebox}[La disyunción $\lor$ es inclusiva por defecto]
+El símbolo $\lor$ (disyunción) es, en la convención matemática por
+defecto, \textbf{inclusivo}: ``$A$ o $B$'' admite que ambas se cumplan a
+la vez. Es el símbolo ``dual'' de $\wedge$: gráficamente, $\wedge$
+invertido da $\lor$. Cuando se necesita disyunción exclusiva, se escribe
+la palabra completa ``exclusivo'', porque no hay símbolo estándar para
+ella.
+\end{notebox}
+
+\textbf{Defecto de este método}: solo permite construir \textbf{conjuntos
+finitos} (hay que poder listar todos los elementos), y en principio no
+impone ninguna restricción sobre el tipo de los $a_i$ (podrían mezclarse
+números, puntos, conjuntos, etc. --- aunque en la práctica no se hace, por
+las razones de ``buena práctica'' ya mencionadas en la Sección 2).
+
+Como un conjunto no puede contener dos veces el mismo elemento, listar un
+objeto repetido en la construcción no cambia el resultado: $\{a, a\} =
+\{a\}$.
+
+El docente distingue tres \textbf{casos particulares} según la cantidad
+$n$ de elementos listados.
+
+\subsection{Caso $n=0$: el conjunto vacío}
+
+\begin{keybox}[Definición del conjunto vacío]
+\[
+\boxed{\varnothing := \{\,\} \quad\text{tal que}\quad \forall x,\; x \notin \varnothing}
+\]
+\end{keybox}
+
+El vacío es, por definición, el conjunto construido por extensión a
+partir de una \textbf{lista vacía}. Corresponde a una \textbf{disyunción
+vacía}, que por convención (análoga a la de una sumatoria vacía igual a
+$0$) se toma como \textbf{falsa} --- el elemento neutro de la disyunción.
+
+\subsection{Caso $n=1$: el conjunto unitario}
+
+$\{a\}$ se llama \textbf{conjunto unitario}.
+
+\begin{warnbox}[$a$ y $\{a\}$ son objetos distintos]
+Frecuente fuente de confusión en las pruebas: $a$ y $\{a\}$ son objetos
+\textbf{distintos} --- como la diferencia entre un archivo $a$ y una
+carpeta que contiene únicamente el archivo $a$ (o entre una manzana y una
+bolsa que contiene una manzana). Esto vale \textbf{incluso cuando $a$ es
+en sí mismo un conjunto}: el ejemplo canónico es
+\[
+\varnothing \neq \{\varnothing\},
+\]
+el conjunto vacío frente al conjunto unitario que contiene al vacío. El
+primero no tiene elementos; el segundo tiene exactamente un elemento (que
+resulta ser el conjunto vacío). Distinguir estos ``niveles'' es, según el
+docente, una de las sutilezas más comunes de confundir por quien empieza
+a estudiar teoría de conjuntos.
+\end{warnbox}
+
+\subsection{Caso $n=2$: el par no ordenado}
+
+$\{a, b\}$ se llama \textbf{par no ordenado}, porque
+\[
+\{a, b\} = \{b, a\}
+\]
+dado que ambos conjuntos tienen los mismos elementos (el orden en que se
+listan los elementos de un conjunto es irrelevante, igual que el orden de
+los archivos dentro de una carpeta). Como caso límite,
+\[
+\{a, a\} = \{a\},
+\]
+es decir, listar el mismo objeto dos veces produce el conjunto unitario,
+no un ``conjunto con dos copias''.
+
+\section{Construcción de conjuntos por comprensión}
+
+El método por extensión no sirve para conjuntos infinitos, que son los de
+mayor interés en matemática. El segundo método, \textbf{construcción por
+comprensión}, resuelve esto: dado un conjunto $A$ ya formado y un
+\textbf{enunciado} (frase, no objeto matemático) $P(x)$ que depende de una
+variable $x$, se define
+\[
+\{\, x \in A : P(x) \,\}
+\]
+por la propiedad
+\[
+\forall y,\; \big(y \in \{x \in A : P(x)\} \iff (y \in A \;\wedge\; P(y))\big).
+\]
+
+\begin{notebox}[El símbolo $x$ está ligado]
+El símbolo $x$ dentro de las llaves está \textbf{ligado}: solo tiene
+sentido dentro de la notación $\{x \in A : P(x)\}$, igual que la variable
+ligada por $\forall$ o $\exists$, o como la $x$ en la definición de una
+función ``$x \mapsto 3x$''. El conjunto resultante \textbf{no depende de
+$x$}, solo de $A$ y de la frase $P$; se puede sustituir $x$ por cualquier
+nombre sin cambiar el conjunto (y se puede evaluar la pertenencia de
+cualquier objeto concreto, no solo de una variable, p.\,ej.\ $3 \in \{x
+\in A: P(x)\} \iff 3 \in A \wedge P(3)$).
+\end{notebox}
+
+\textbf{Interpretación geométrica}: la propiedad $P$ traza una
+\textbf{frontera} en el universo matemático, separando los objetos que la
+cumplen de los que no. La construcción por comprensión ``recorta'', dentro
+de $A$, exactamente los elementos que caen del lado de la frontera donde
+$P$ es verdadera.
+
+\input{assets/clase1-comprension.tex}
+
+\begin{notebox}[Los dos ingredientes son indispensables]
+No se puede prescindir de $A$ y tomar ``todos los objetos del universo que
+cumplen $P$'', porque en general esa colección sería demasiado grande. Si
+$A$ es finito, el conjunto resultante también lo es; si $A$ es infinito,
+el resultado puede ser finito o infinito según la propiedad $P$.
+\end{notebox}
+
+\textbf{Ejemplos trabajados en clase} (todos con $A = \mathbb{N}$):
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Propiedad $P(n)$ & Conjunto resultante & ¿Finito o infinito? \\
+\midrule
+$n$ es par & $\{0, 2, 4, 6, \ldots\}$ & Infinito \\
+$n$ es impar & $\{1, 3, 5, 7, \ldots\}$ & Infinito (complementario del anterior) \\
+$n$ es primo & $\{2, 3, 5, 7, 11, 13, \ldots\}$ & Infinito (estructura fina aún conjetural) \\
+$n$ es primo y par & $\{2\}$ & Finito (un único elemento) \\
+$n$ es par y $n$ es impar & $\varnothing$ & Vacío \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{notebox}[El vacío también se construye por comprensión]
+El último ejemplo muestra que \textbf{el conjunto vacío también puede
+construirse por comprensión}: basta una propiedad que ningún objeto del
+universo satisface. También se señaló, a partir de una pregunta de la
+clase, que \textbf{negar la propiedad} $P$ (usar $\neg P$ en vez de $P$)
+produce el \textbf{conjunto complementario} dentro de $A$ --- como en el
+par par/impar de arriba, que son complementarios entre sí dentro de
+$\mathbb{N}$.
+\end{notebox}
+
+La clase termina en este punto (``vamos a continuar con la comprensión la
+próxima vez''), habiendo cubierto pertenencia, igualdad, inclusión, los
+conjuntos numéricos de base y los dos métodos de construcción de conjuntos
+(extensión y comprensión), como preparación para retomar funciones y
+avanzar hacia la definición rigurosa de $\mathbb{R}$ en el capítulo 2.
+
+\emph{Continúa en la Clase 2 con más ejemplos de construcción por
+comprensión y, previsiblemente, la noción de función.}
+
+\end{document}

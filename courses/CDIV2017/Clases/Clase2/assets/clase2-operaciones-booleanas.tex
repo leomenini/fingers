@@ -1,0 +1,56 @@
+% Clase 2 --- Las tres operaciones booleanas sobre los mismos A, B (§2).
+% El docente literalmente dibuja los tres diagramas uno al lado del otro en el
+% pizarrón ("acá voy a hacer el dibujo... acá es A menos B... y ahora yo voy a
+% dibujar B menos A"), corrigiéndose sobre la marcha. Misma geometría de dos
+% óvalos en los tres paneles; sólo cambia la región sombreada.
+\begin{center}
+\begin{tikzpicture}
+  % ---------------- Panel (a): unión A cup B ----------------
+  \begin{scope}
+    \fill[figblue!18] (-0.7,0) ellipse (1.35 and 1.05);
+    \fill[figblue!18] (0.7,0) ellipse (1.35 and 1.05);
+    \draw[figline] (-0.7,0) ellipse (1.35 and 1.05);
+    \draw[figred, line width=0.9pt] (0.7,0) ellipse (1.35 and 1.05);
+    \node[figlbl, figblue] at (-1.55,1.25) {$A$};
+    \node[figlbl, figred] at (1.55,1.25) {$B$};
+    \node[figlbl] at (0,-1.55) {$A\cup B$};
+    \node[figlblaux] at (0,-2.05) {(a)};
+  \end{scope}
+
+  % ---------------- Panel (b): intersección A cap B ----------------
+  \begin{scope}[xshift=5.0cm]
+    \draw[figline] (-0.7,0) ellipse (1.35 and 1.05);
+    \draw[figred, line width=0.9pt] (0.7,0) ellipse (1.35 and 1.05);
+    \begin{scope}
+      \clip (-0.7,0) ellipse (1.35 and 1.05);
+      \fill[figamber!45] (0.7,0) ellipse (1.35 and 1.05);
+    \end{scope}
+    \draw[figline] (-0.7,0) ellipse (1.35 and 1.05);
+    \draw[figred, line width=0.9pt] (0.7,0) ellipse (1.35 and 1.05);
+    \node[figlbl, figblue] at (-1.55,1.25) {$A$};
+    \node[figlbl, figred] at (1.55,1.25) {$B$};
+    \node[figlbl] at (0,-1.55) {$A\cap B$};
+    \node[figlblaux] at (0,-2.05) {(b)};
+  \end{scope}
+
+  % ---------------- Panel (c): diferencia A - B ----------------
+  \begin{scope}[xshift=10.0cm]
+    \begin{scope}
+      \clip (-0.7,0) ellipse (1.35 and 1.05);
+      \fill[figblue!30] (-0.7,0) ellipse (1.35 and 1.05);
+      \fill[white] (0.7,0) ellipse (1.35 and 1.05);
+    \end{scope}
+    \draw[figline] (-0.7,0) ellipse (1.35 and 1.05);
+    \draw[figred, line width=0.9pt] (0.7,0) ellipse (1.35 and 1.05);
+    \node[figlbl, figblue] at (-1.55,1.25) {$A$};
+    \node[figlbl, figred] at (1.55,1.25) {$B$};
+    \node[figlbl] at (0,-1.55) {$A-B$};
+    \node[figlblaux] at (0,-2.05) {(c)};
+  \end{scope}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Las tres operaciones booleanas sobre los mismos dos conjuntos
+$A$, $B$: sólo cambia la región sombreada. (a) la unión cubre todo lo
+alcanzado por $A$ o por $B$ (el ``o'' inclusivo); (b) la intersección es sólo
+el solapamiento; (c) la diferencia $A-B$ es la ``luna'' de $A$ sin la parte
+compartida con $B$ --- por eso no es conmutativa: $B-A$ sería la luna de $B$.}
+\end{center}

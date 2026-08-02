@@ -1,0 +1,73 @@
+title: Clase 5
+id: civ-2017-1-05
+
+course: Cálculo 1
+academic_year: 2017
+semester: 1
+
+teacher: Alexandre Miquel
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:16"
+    end: "01:23:17"
+
+stats:
+  transcript_words: 8778
+  summary_words: 3709
+  diagrams_pending: 4
+  equations: 16
+
+topics:
+  - Recapitulación de los axiomas de cuerpo (grupos 1 y 2)
+  - Ejemplos de cuerpos (Z2, Q, R, C)
+  - Axiomas de orden total (grupo 3)
+  - Orden amplio vs. orden estricto
+  - Reglas de las desigualdades con la suma (traslación)
+  - Reglas de las desigualdades con el producto (dilatación y contracción)
+  - Reglas de las desigualdades con el cociente
+  - El inverso y el orden (mismo signo, no nulos)
+  - Signos: R+, R-, descomposición de R
+  - Regla de los signos (suma y producto)
+  - Historia de los números negativos
+  - Intervalos: los diez tipos
+  - Intersección de intervalos (fórmula general)
+  - Cuerpo totalmente ordenado
+  - Axioma de completitud (adelanto sin definir)
+  - Función sucesor
+  - Conjuntos inductivos
+  - Definición formal de N (sin puntos suspensivos)
+  - N es el subconjunto inductivo más pequeño
+  - Principio de inducción completa (enunciado y demostración)
+  - Variante del principio de inducción desde n0
+
+bibliography: []
+
+prerequisites:
+  - Axiomas de cuerpo de R (suma y producto, Clase 4)
+  - Noción de conjunto y definición por comprensión
+  - Definición floja de N con puntos suspensivos
+
+next_topics:
+  - Axioma de completitud (cota superior, supremo)
+  - Ejemplos de demostraciones por inducción
+  - Subconjuntos Z y Q de R
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-30
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

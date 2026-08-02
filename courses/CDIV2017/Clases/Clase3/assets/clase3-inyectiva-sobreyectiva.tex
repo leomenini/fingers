@@ -1,0 +1,62 @@
+% Clase 3 --- Diagramas de Venn: inyectividad, sobreyectividad, biyectividad
+% (§10.3). El docente dibuja en el pizarrón cuatro funciones A -> B contando,
+% para cada elemento de B, cuántas flechas (preimágenes) recibe:
+%   (a) un punto de B con 5 preimágenes, otro con 0        -> ni iny. ni sobre.
+%   (b) cada punto de B con 0 o 1 preimagen (nunca más)    -> inyectiva, no sobre.
+%   (c) un punto de B con 3 preimágenes, todos con >= 1    -> sobreyectiva, no iny.
+%   (d) cada punto de B con exactamente 1 preimagen        -> biyectiva.
+% Se apilan en 2x2 (2 filas de 2 paneles) para que quepan en 16 cm sin que las
+% flechas de un panel se acerquen a las del panel vecino.
+
+% ---- Sub-dibujo reusado: un panel A/B con puntos y flechas ----
+% #1 = lista de puntos de A "nombre/y", #2 = lista de puntos de B "nombre/y",
+% #3 = lista de flechas "origen/destino"
+\providecommand{\panelfuncion}[3]{%
+  \draw[figset] (-1.1,-0.3) ellipse (0.75 and 1.8);
+  \draw[figsetB] (2.1,-0.3) ellipse (0.75 and 1.8);
+  \node[figlbl] at (-1.1,1.75) {$A$};
+  \node[figlbl] at (2.1,1.75) {$B$};
+  \foreach \nm/\y in {#1} { \node[figptoY, label={left:\scriptsize\nm}] (\nm) at (-1.1,\y) {}; }
+  \foreach \nm/\y in {#2} { \node[figptoZ, label={right:\scriptsize\nm}] (\nm) at (2.1,\y) {}; }
+  \foreach \src/\dst in {#3} { \draw[figvec] (\src) -- (\dst); }
+}
+
+\begin{center}
+% ---------------------------------------------------------------
+% Fila 1: paneles (a) y (b)
+% ---------------------------------------------------------------
+\begin{tikzpicture}
+  \begin{scope}
+    \panelfuncion{a1/0.9,a2/0.3,a3/-0.3,a4/-0.9,a5/-1.5}{b1/0.9,b2/-0.3,b3/-1.5}
+    {a1/b1,a2/b1,a3/b1,a4/b1,a5/b1}
+    \node[figlbl, below] at (2.1,-2.5) {\scriptsize $b_2$ sin preimagen};
+  \end{scope}
+  \begin{scope}[xshift=6.2cm]
+    \panelfuncion{a1/0.9,a2/0.3,a3/-0.3,a4/-0.9,a5/-1.5}{b1/0.9,b2/0.3,b3/-0.3,b4/-0.9,b5/-1.5}
+    {a1/b1,a2/b2,a3/b3,a4/b4}
+    \node[figlbl, below] at (4.2,-2.5) {\scriptsize $b_5$ sin preimagen};
+  \end{scope}
+  \node[figlbl, below] at (0,-3.0) {\small (a) $f$ no inyectiva y no sobreyectiva};
+  \node[figlbl, below] at (6.2,-3.0) {\small (b) $f$ inyectiva pero no sobreyectiva};
+\end{tikzpicture}\\[1.1em]
+{\small\itshape (a) el punto $b_1$ recibe las cinco flechas de $A$ (no inyectiva) y $b_2$ no recibe ninguna (no sobreyectiva). (b) cada punto de $B$ recibe a lo sumo una flecha (inyectiva), pero $b_5$ queda sin preimagen (no sobreyectiva).}
+\\[1.6em]
+% ---------------------------------------------------------------
+% Fila 2: paneles (c) y (d)
+% ---------------------------------------------------------------
+\begin{tikzpicture}
+  \begin{scope}
+    \panelfuncion{a1/0.9,a2/0.3,a3/-0.3,a4/-0.9,a5/-1.5}{b1/0.9,b2/-0.3,b3/-1.5}
+    {a1/b1,a2/b1,a3/b1,a4/b2,a5/b3}
+    \node[figlbl, below] at (2.1,-2.5) {\scriptsize todos con $\geq 1$ preimagen};
+  \end{scope}
+  \begin{scope}[xshift=6.2cm]
+    \panelfuncion{a1/0.9,a2/0.3,a3/-0.3,a4/-0.9}{b1/0.9,b2/0.3,b3/-0.3,b4/-0.9}
+    {a1/b1,a2/b2,a3/b3,a4/b4}
+    \node[figlbl, below] at (4.2,-2.5) {\scriptsize cada $b_i$ con exactamente 1};
+  \end{scope}
+  \node[figlbl, below] at (0,-3.0) {\small (c) $f$ sobreyectiva pero no inyectiva};
+  \node[figlbl, below] at (6.2,-3.0) {\small (d) $f$ biyectiva};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape (c) el punto $b_1$ recibe tres flechas (no inyectiva), pero todos los $b_i$ reciben al menos una (sobreyectiva). (d) correspondencia exacta uno a uno entre $A$ y $B$: cada elemento de $B$ tiene exactamente una preimagen (inyectiva y sobreyectiva a la vez).}
+\end{center}

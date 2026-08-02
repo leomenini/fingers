@@ -1,0 +1,50 @@
+% Clase 4 --- La suma en la recta: construcción por paralelogramos (§8.1).
+% O, I, Y, X marcados sobre la recta principal R (coordenadas: O=0, I=1,
+% Y=1.8, X=3). El punto suma Z=X+Y=4.8 se lee sobre R, pero se justifica
+% con un paralelogramo auxiliar levantado a altura h=1.4: se traslada el
+% vector u=OY (mismo vector, dos copias) para que arranque en X, y su
+% extremo, bajado verticalmente, da Z sobre la recta.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---- recta principal R ----
+  \draw[figaxis] (-0.6,0) -- (5.5,0) node[right, figlbl] {$R$};
+
+  % ---- puntos sobre R ----
+  \node[figptocerrado] (O) at (0,0)   {};
+  \node[figptocerrado] (I) at (1,0)   {};
+  \node[figptocerrado] (Y) at (1.8,0) {};
+  \node[figptocerrado] (X) at (3,0)   {};
+  \node[figptocerrado] (Z) at (4.8,0) {};
+
+  \node[figlbl, below=3pt] at (O) {$O$};
+  \node[figlbl, below=3pt] at (I) {$I$};
+  \node[figlbl, below=3pt] at (Y) {$Y$};
+  \node[figlbl, below=3pt] at (X) {$X$};
+  \node[figlbl, below=3pt] at (Z) {$X{+}Y$};
+
+  % ---- paralelogramo auxiliar (levantado a altura 1.4) ----
+  \node[figptoabierto] (Yp) at (1.8,1.4) {};
+  \node[figptoabierto] (Zp) at (4.8,1.4) {};
+
+  % lados que trasladan el vector u = OY hasta arrancar en X
+  \draw[figvec] (O) -- (Yp) node[figlblaux, midway, left=1pt] {$u$};
+  \draw[figvec] (X) -- (Zp) node[figlblaux, midway, right=1pt] {$u$};
+
+  % lado superior: copia trasladada del segmento OX (paralela y de igual
+  % longitud), cierra el paralelogramo O, X, Z', Y'
+  \draw[figline] (Yp) -- (Zp);
+
+  % bajada auxiliar: se proyecta Z' verticalmente sobre R para leer X+Y
+  \draw[figaux] (Zp) -- (Z);
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Construcción de $x+y$ por traslación de vectores: el
+paralelogramo $O,X,(X{+}Y)',Y'$ (levantado por claridad; en la
+construcción real vive sobre la propia recta $R$, donde el
+``paralelogramo'' degenera en un segmento) traslada el vector
+$u=\overrightarrow{OY}$ hasta que arranca en $X$; su extremo, proyectado de
+vuelta sobre $R$, es el punto $X{+}Y$. La suma es una operación
+\textbf{lineal}: no requiere conocer la unidad $I$ (marcada aquí solo como
+referencia).}
+\end{center}
