@@ -1,0 +1,50 @@
+% Clase 2 --- Distributividad de la unión respecto a la intersección (§3.2).
+% Ancla: "y lo único que me va a quedar es esta parte acá dibujo A unión B
+% intersectado con C [...] idéntico a hacer primeramente la intersección entre
+% A y C [...] Se llama un razonamiento con diagrama de Venn."
+% Dos paneles con los mismos tres círculos A, B, C: la región sombreada final
+% es idéntica en ambos, lo que muestra de un vistazo que
+% (A cup B) cap C = (A cap C) cup (B cap C).
+\begin{center}
+\begin{tikzpicture}
+  % ---------------- Panel (a): (A cup B) cap C ----------------
+  \begin{scope}
+    \begin{scope}
+      \clip (0,-0.75) circle (1.5);
+      \fill[figamber!45] (-0.9,0.5) circle (1.5);
+      \fill[figamber!45] (0.9,0.5) circle (1.5);
+    \end{scope}
+    \draw[figline] (-0.9,0.5) circle (1.5);
+    \draw[figred, line width=0.9pt] (0.9,0.5) circle (1.5);
+    \draw[figsetC] (0,-0.75) circle (1.5);
+    \node[figlbl, figblue] at (-2.15,1.55) {$A$};
+    \node[figlbl, figred] at (2.15,1.55) {$B$};
+    \node[figlbl, color=figamber, fill=white, inner sep=1.5pt] at (0,-2.35) {$C$};
+    \node[figlbl] at (0,-2.95) {$(A\cup B)\cap C$};
+    \node[figlblaux] at (0,-3.45) {(a)};
+  \end{scope}
+
+  % ---------------- Panel (b): (A cap C) cup (B cap C) ----------------
+  \begin{scope}[xshift=6.2cm]
+    \begin{scope}
+      \clip (0,-0.75) circle (1.5);
+      \fill[figamber!45] (-0.9,0.5) circle (1.5);
+      \fill[figamber!45] (0.9,0.5) circle (1.5);
+    \end{scope}
+    \draw[figline] (-0.9,0.5) circle (1.5);
+    \draw[figred, line width=0.9pt] (0.9,0.5) circle (1.5);
+    \draw[figsetC] (0,-0.75) circle (1.5);
+    \node[figlbl, figblue] at (-2.15,1.55) {$A$};
+    \node[figlbl, figred] at (2.15,1.55) {$B$};
+    \node[figlbl, color=figamber, fill=white, inner sep=1.5pt] at (0,-2.35) {$C$};
+    \node[figlbl] at (0,-2.95) {$(A\cap C)\cup(B\cap C)$};
+    \node[figlblaux] at (0,-3.45) {(b)};
+  \end{scope}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Mismos tres conjuntos $A$, $B$, $C$ en los dos paneles, y
+\textbf{la misma región queda sombreada}: (a) se arma tomando primero
+$A\cup B$ y recortándola con $C$; (b) se arma tomando por separado $A\cap C$ y
+$B\cap C$ y uniéndolas. Que el resultado visual coincida es exactamente lo que
+prueba la distributividad, sin necesitar la demostración formal por doble
+inclusión.}
+\end{center}

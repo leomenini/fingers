@@ -1,0 +1,69 @@
+% courses/CDIV2017/Clases/assets/tikzstyles.tex
+% ---------------------------------------------------------------------------
+% Estilos compartidos para los diagramas del curso Cálculo 1 (CDIV2017).
+% Fuente única del "look" visual (colores, grosores, escalas) para que todas
+% las figuras (TikZ / pgfplots: conjuntos, rectas numéricas, gráficas de
+% funciones) sean consistentes entre clases.
+%
+% Uso: la clase debe cargar antes `tikz` y `pgfplots` (bloque §6.3 del
+%      CLAUDE.md del curso), y luego
+%      \input{../assets/tikzstyles.tex}
+% (compilar desde el directorio de la clase para que la ruta relativa resuelva).
+%
+% Paleta propia de este curso (no se reusa la de courses/Fisica3): mismos
+% tonos base (azul/rojo/ámbar) para alinear con keybox/notebox/warnbox, pero
+% archivo independiente, sin dependencia cruzada entre cursos.
+% ---------------------------------------------------------------------------
+
+% ---- Paleta (alineada con las cajas del preámbulo: keybox/notebox/warnbox) ----
+\definecolor{figblue}{HTML}{1F4E79}   % azul principal (líneas, keybox, conjuntos)
+\definecolor{figred}{HTML}{B03A2E}    % rojo de énfasis (warnbox, región resaltada)
+\definecolor{figamber}{HTML}{B8860B}  % ámbar (notebox)
+\definecolor{figgray}{HTML}{555555}   % auxiliares, ejes, guías, universo
+
+% ---- TikZ: librerías y estilos reutilizables ----
+% Nota: las puntas se declaran como `-{Latex[...]}` y no como `->`. La forma
+% con llaves NO contiene un `>` literal, así que es inmune al `>` activo que
+% introduce babel español (de todos modos se carga \usetikzlibrary{babel} en
+% el bloque §6.3 para cubrir cualquier `->` suelto).
+\usetikzlibrary{arrows.meta,calc,angles,quotes,patterns}
+
+\tikzset{
+  figline/.style={figblue, line width=0.9pt},
+  figaux/.style={figgray, dashed, line width=0.6pt},
+  figaxis/.style={figgray, line width=0.7pt, -{Latex[length=2.2mm,width=1.5mm]}},
+  % conjuntos (diagramas de Venn / patatoidales)
+  figset/.style={figline, fill=figblue!6},
+  figsetB/.style={figred, line width=0.9pt, fill=figred!6},
+  figsetC/.style={figamber, line width=0.9pt, fill=figamber!10},
+  figuniverso/.style={figgray, line width=0.7pt},
+  % puntos de la recta / conjuntos numéricos
+  figpto/.style={circle, inner sep=0pt, minimum size=5pt, draw=none},
+  figptoabierto/.style={circle, inner sep=0pt, minimum size=5pt, draw=figblue, line width=0.9pt, fill=white},
+  figptocerrado/.style={circle, inner sep=0pt, minimum size=5pt, draw=figblue, line width=0.9pt, fill=figblue},
+  figptoY/.style={figpto, fill=figblue},
+  figptoZ/.style={figpto, fill=figred},
+  % segmentos gruesos para intervalos sobre la recta
+  figintervalo/.style={figblue, line width=2.2pt},
+  % vectores/flechas de transformación (traslación, dilatación)
+  figvec/.style={figred, line width=1pt, -{Latex[length=2.2mm,width=1.6mm]}},
+  % etiquetas
+  figlbl/.style={font=\small},
+  figlblaux/.style={font=\footnotesize, figgray},
+}
+
+% ---- pgfplots: estilo base de las gráficas de funciones ----
+\pgfplotsset{
+  calcfig/.style={
+    width=10cm, height=6cm,
+    axis lines=middle,
+    xlabel style={font=\small, at={(axis description cs:1,0.5)}, anchor=west},
+    ylabel style={font=\small, at={(axis description cs:0.5,1)}, anchor=south},
+    tick label style={font=\footnotesize},
+    every axis plot/.append style={line width=1.1pt, figblue},
+    grid=none,
+    legend cell align=left,
+    legend style={font=\footnotesize, draw=figgray!40},
+    clip=false,
+  },
+}

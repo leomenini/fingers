@@ -1,0 +1,487 @@
+# Clase 3
+
+Curso: CIV
+
+Fuente: https://open.fing.edu.uy/courses/civ/3/
+
+Fecha de exportación: 7/30/2026, 10:47:32 AM
+
+---
+Clase: 3
+Curso: CIV
+
+Segmentos : 277
+Palabras  : 8825
+Caracteres: 48174
+
+0:17
+Vamos a continuar con los conjuntos y funciones. Conjuntos y funciones. Y vamos a hablar hoy, para esta última clase sobre los conjuntos y las funciones, Es la última clase porque lunes vamos a empezar con los números reales.
+0:48
+Pero hoy vamos a hablar de funciones.
+0:56
+Entonces, una función. Una función es definida por tres cosas.
+1:09
+Un dominio.
+1:15
+que se escribe DOM de f y mi función voy a llamarla f. Una función f es definida por un dominio que es el conjunto de partida, es decir, cuando vamos a entregar algo en la función tendrá que estar adentro del dominio. Y un codominio
+1:41
+que voy a escribir code de F. De hecho, voy a usar estas notaciones de modo raro. Es decir, casi nunca voy a usarlas porque voy a introducir inmediatamente otra notación que es más cómoda.
+1:56
+OK. Y después, la cosa más importante es una definición
+2:11
+De la siguiente forma, f de x igual a una expresión que puede depender de x.
+2:31
+La vez pasada hay uno de ustedes que me hizo la observación que a veces la función no depende de x, y es claro, a veces se ocurre, y esto significa que la función es constante, no depende de su argumento. Y es un caso posible.
+2:51
+Y es una definición que puede ser posiblemente por casos. Y vamos a ver ejemplos después.
+2:59
+Por casos...
+3:02
+Y tal que, para todo x en el dominio, la expresión f de x es bien definida
+3:29
+Y f de x pertenece al codominio.
+3:35
+Entonces, cuando se define una función, hay que hacer tres cosas. Decir, OK, una función intuitivamente es una máquina.
+3:47
+Tiene input y output. Y el input es el x. Y cada vez que yo entrego un x, me sale... Algo que se llama f de x. Y x tiene que pertenecer al dominio.
+4:04
+Y la respuesta siempre pertenece al codominio.
+4:09
+¿Ok?
+4:13
+¿Y qué hay que decir? Entonces, esa intuición, una función es una máquina. Es una pequeña máquina que transforma una cosa en otra cosa. Con mi analogía con la informática, es la cosa equivalente a la noción de programa. Pero es una visión muy antigua de la noción de programa donde hay que entregar los datos, hacer funcionar la máquina, esperar dos días y después obtener la respuesta.
+4:45
+Es decir, es como se hacía en los años 60. Entonces, ahora sabemos que la informática es una cosa un poquito más complicada. pero en matemática mantenemos esta definición porque conceptualmente es muy sencilla y que de todo modo incluso cuando se trata de analizar un programa siempre podemos mantener este punto de vista considerando que lo que se hace en el teclado es parte de las entradas y lo que obtenemos en la pantalla es parte de la salida Entonces, cuando se hace una moderación de este fenómeno, solo basta usar funciones.
+5:30
+Entonces tenemos esto, y lo que digo es que para definir una función, yo tengo que definir el formato de datos que están en input. Y después tengo que definir el formato de los datos que van a salir, son el dominio y el codominio, y después hay que explicar el algoritmo. Y el algoritmo es una expresión que puede depender de x. Depender de x.
+6:00
+Y tal que para todo x la expresión sea bien definida. Y el problema es que nunca defino lo que significa ser bien definido, pero vamos a aceptar esta definición parcial. Ok. Ah, y hay una notación muy importante. Notación muy importante es que si f es una función de dominio a y de condominio,
+6:43
+B se escribe, y ahora vamos a preferir esta notación, F es una función de A en B.
+6:53
+Esta notación. Es decir, cuando yo voy a introducir una función, siempre voy a escribir CAF, la función de A en B, es decir, F dos puntos A flechita B, que dice, es una función que me transforma cualquier A en otro objeto en B.
+7:17
+Esta es la notación estándar y ahora vamos a ver ejemplos. Ejemplos, primer ejemplo.
+7:26
+Vamos a ver ejemplos de definición de función. Por ejemplo, definición sencilla.
+7:42
+Sea f de r en r. Acá defino el dominio y que es igual al codominio, son iguales a r. Y después definirla por, y acá solo tengo que dar la fórmula, f de x igual, por ejemplo, x cubo menos 3x más 1.
+8:11
+Acá es una definición sencilla, solo hay un único caso. Y acá yo puedo observar que acá yo tengo que verificar que la función está bien definida. Y como yo lo verifico, yo considero un x cualquiera en R. Y yo verifico lo que funciona acá. Acá x cubo siempre tiene sentido. Menos 3x también. 1, yo puedo añadir, hacer la suma de todo esto. Y todo esto me construye un número real.
+8:43
+Y entonces todo esto, es claro que cuando esto pertenece a R, esto siempre es bien definido y pertenece a R también. Entonces es una función bien definida. Ahora, como yo tengo experiencia de la corrección de pruebas, yo sé que a veces hacen malas definiciones. Entonces vamos a escribir una mala definición de función. Entonces, ejemplo de mala definición.
+9:17
+Sea, yo voy a considerar también una función de r en r, definida por, y acá doy mi fórmula, f de x igual a la raíz cuadrada de x cuadrado menos 1. ¿Qué pasa acá? ¿Por qué es una mala definición? Porque... Ah, tenés razón. Acá hay dos puntos de vista posibles.
+9:50
+Entonces voy a explicar los dos puntos de vista posibles. El primer punto de vista es que si se trabaja adentro de R, es claro que cuando X está entre menos 1 y 1, esta cosa es negativa. ¿Y qué pasa con la raíz cuadrada? Raíz cuadrada es la cosa negativa. Entonces acá hay dos respuestas posibles, pero que van a llevar a la misma conclusión, que mi función está mal definida. Primera respuesta posible. Estamos trabajando en R y la raíz cuadrada nunca es definida para los números negativos.
+10:26
+Entonces acá esta cosa no tiene sentido nunca.
+10:36
+cuando x pertenece al intervalo .
+10:44
+Es decir, cuando x en valor absoluto es menor que 1, x cuadrado es menor que 1 y la diferencia es negativa y no se puede tomar la raíz cuadrada. Entonces es un caso particular. Entonces, no funciona. Hay otra respuesta posible, que es la que me diste, que es sí, siempre tiene sentido, pero la respuesta es un número complejo. Pero en este caso, el codominio es incorrecto.
+11:15
+Entonces, o bien tenemos la respuesta que dice el dominio es incorrecto, o bien el codominio es incorrecto. Entonces, hay que arreglar. Y en este curso no vamos a trabajar con los números complejos. Entonces, no vamos a arreglar el codominio, pero vamos a arreglar el dominio. Y se puede arreglar diciendo lo siguiente.
+11:48
+CAF Y ahora yo voy a restringir el dominio para asegurarme que la notación siempre tenga sentido. Entonces voy a decir que es una función definida entre menos infinito y menos uno. Unión, acá uso mi símbolo de unión. Uno y más infinito en R. Y después yo mantengo la misma definición. Y ahora es una definición correcta. ¿Ok? Entonces, el primer caso, cuidado con los dominios de definición y voy a volver a este punto después porque es un punto especialmente importante en cálculo.
+12:33
+Ahora hay que ver otros ejemplos y hay un ejemplo de definición por casos.
+12:40
+Definición por casos. Ejemplo de definición por casos.
+12:53
+El ejemplo es la función valor absoluto, que es una función definida por casos. Entonces, sea la función barra punto barra, después voy a explicar mi notación extraña, de r a r, la función definida
+13:24
+y acá pongo la definición f de x y voy a hacer por casos voy a decir que es igual a x si x es mayor o igual a 0 y si no es menos x si x es menor a 0 ok y acá se puede observar lo siguiente hay que explicar esta notación la idea no es f disculpa por supuesto Acá esta función, valor absoluto.
+13:55
+Esa definición de valor absoluto es una función. El valor absoluto es una función. Pero al contrario de funciones tales que el seno, el coseno o el logaritmo, no tiene nombre en letras. Y esta razón porque uso este truco para dar un nombre. Cuando yo tengo una cosa... que no tiene nombre, yo uso el símbolo y reemplazo el nombre de la variable por un punto o bien por una barra no sé. Algo que dice es la operación valor absoluto.
+14:30
+Y este punto representa el lugar donde yo tengo que poner mi argumento.
+14:38
+Y esto es una buena definición, ¿por qué? Porque, primera cosa, es que hay que verificar que ambos casos son disjuntos. Y es el caso. Es decir, un número real no puede ser a la vez mayor o igual a cero y menor a cero. Es decir, no hay ninguna ambigüedad entre los dos miembros de la definición. La segunda cosa que hay que verificar, hay que verificar que todos los casos cubren el dominio.
+15:11
+Y el dominio siendo R, es claro acá que se puede dividir R en dos partes, la parte de los números mayores o iguales a cero y la parte de los números menores a cero. Entonces, buena definición porque acá tenemos el subdominio
+15:34
+que el subdominio va de menos infinito a cero, y acá el subdominio va de cero, acá es un corchete, de cero a más infinito. Y es claro que estos dos conjuntos son disjuntos y además su unión me hacen R, es decir, el dominio. Entonces tengo una definición que es una buena definición.
+16:06
+A veces... Es para verificar que siguen. Era intencional.
+16:23
+Es esto y esto, ¿no?
+16:30
+Ok. Entonces tenemos la función valor absoluto. Es un ejemplo de definición. A veces vamos a hacer cosas flojas. Entonces a veces, porque acá lo que no me gusta en esta definición es que entienden la idea que hay que definir casos que sean disjuntos y que cubran todo. ¿Entienden la idea de definición por casos? Yo tengo que definir la función para todo número real.
+17:01
+Pero como yo tengo dos casos, hay que dividir mi conjunto R en dos partes. Y acá elegí dividir R en estas dos partes. Quizás a veces vamos a usar casos donde hay una intersección. Por ejemplo, yo podría escribir esto solo para hacer énfasis sobre la simetría de la definición.
+17:27
+Y acá hay un problema. Es claro que estos dos conjuntos, ahora hay que reemplazar esto por esto,
+17:37
+Estos dos conjuntos no son más disjuntos. ¿Qué pasa? ¿Es una buena definición o una mala definición?
+17:47
+Probablemente es una mala definición, pero se puede verificar que la función da el mismo resultado en ambos casos. ¿Cuál es el punto de función acá? Es cero. Si yo considero lo que pasa con x igual a cero en esta definición, yo obtengo cero. Pero si yo pongo x igual a cero en esta definición, también yo obtengo cero. Entonces voy a considerar que es una buena definición, pero en este caso hay que verificar que cuando los casos se cubren, que tienen intersección, hay que verificar que la función da el mismo resultado en ambos casos.
+18:27
+Entonces, cuidado acá, definición peligrosa.
+18:35
+Y si no están seguros, hay que quedarse en el caso donde los casos son disjuntos.
+18:45
+Acá es una definición peligrosa, pero que acá funciona. Funciona porque cuando los dos casos se intersectan, obtenemos la misma respuesta en ambos casos. Es el caso de la función valor absoluto. Y vamos a ver otra definición de función por caso. Por ejemplo, voy a tomar la función signo.
+19:21
+La función signo, que voy a escribir SGN de R en R, esta función signo, es definida por signo, de x por definición será igual a 1 si x es positivo 0 si x es igual a 0 y menos 1 si x es negativo y acá tenemos una definición en tres casos pero es una definición que funciona bien porque los tres casos son disjuntos a pares Es decir, acá tengo tres dominios disjuntos, que son el dominio de este caso es R-, el dominio es el conjunto unitario cero, y acá el dominio es R+.
+20:24
+Y es claro que R se puede descomponer en la unión disjunta de estos tres conjuntos. ¿Ok?, Entonces es una buena definición y acá pueden ver que en cada caso la función es constante. Es una función constante por trozos o bien seccionalmente constante. Es una función que vale menos uno sobre todos los negativos y en cero de repente pasa a cero y después cuando pasa después de cero pasa a uno.
+20:55
+Entonces es una función cuya gráfica es esta. Ah, acá no tengo colores. Acá voy a poner una flecha por decir que... Ah, disculpa, por supuesto, me equivoqué. Como siempre. Acá una flecha para decir que la gráfica va hasta acá, pero no alcanza a este punto. En este punto tengo esto y después tengo otra gráfica acá.
+21:28
+¿Sí? ¿Los dominios de R, más R menos R?
+21:34
+Gracias.
+21:36
+Cada vez me equivoco. Es para verificar que siguen. Es cómo transformar sus defectos en herramientas pedagógicas.
+21:56
+¿Entienden esta definición? Ahora vamos a ver otro caso. Otro caso importante. es el problema de la definición de función de modo implícito ok, ah no, primera cosa es el dominio implícito, primera observación ahora estamos mirando ejemplos de definiciones de funciones
+22:32
+Ok. Observación. Que es definición implícita del dominio.
+22:49
+Y solo para las funciones numéricas.
+23:01
+Ah. no definí lo que es una función numérica una función numérica es muy fácil es una función cuyo dominio es un conjunto de números y cuyo codominio también es un conjunto de números y esto se llama una función numérica muchas veces muy frecuentemente se da una definición de la forma muy frecuentemente Consecuentemente, se escribe f de x igual a y, mi expresión, sin precisar ni el dominio ni el codominio.
+23:57
+Y la razón es porque los matemáticos a veces son perezosos. Son perezosos. Y como son perezosos, no escriben ni el dominio ni el codominio. ¿Ok? Es para ahorrar su fuerza de trabajo. En ese caso, es el lector... que tiene el deber dar el dominio y el codominio. Entonces, hay trucos. En este caso, en general, el codominio en esta clase siempre será R.
+24:31
+El codominio. Porque cuando vamos a hacer funciones numéricas, el conjunto de valores posibles será R. Entonces, no tendremos problema. El problema es el dominio. Y en este caso, la convención es considerar todos los X para los cuales la escritura, el lado derecho, tiene sentido. Y para estos X, vamos a decir que forman el dominio. Entonces, por convención, el dominio...
+25:09
+es el conjunto más grande para el cual la función es bien definida.
+25:35
+Esta convención que vamos a adoptar, es decir, cuando estaré cansado, escribiré a veces f de x igual, sin decir lo que es el dominio ni el condominio, y en general su trabajo será, ok, ahora para cuáles valores de x el lado derecho tiene sentido, y esto va a definir el dominio. Entonces vamos a ver un par de ejemplos.
+26:19
+¿Ok? Ejemplos. Entonces hay un montón de ejemplos. Y voy a comenzar por las cosas básicas.
+26:35
+Primer ejemplo. f de x igual a 1 sobre x. ¿Cuál es el dominio?
+26:44
+r menos 0.
+26:47
+dominio de F es igual a R menos el conjunto cero.
+26:54
+Cuidado, es una sustracción entre dos conjuntos. Yo tendría que poner acá la raya diagonal.
+27:07
+¿Ok? Es decir, tiene sentido para todos los números salvo para cero. Segundo ejemplo.
+27:15
+f de x igual a la raíz cuadrada de x ¿cuál es el dominio?
+27:23
+y r más y más cero entonces ese intervalo ese intervalo cerrado cero más infinito ¿ok? después, tercer ejemplo f de x igual a, por ejemplo, no sé, por ejemplo, voy a tomar... Ah, no, el logaritmo, por supuesto, hay un ejemplo sencillo.
+28:01
+El logaritmo. ¿Cuál es el dominio? Ahora es cero abierto más infinito. Es decir, el dominio es una función que sólo tiene sentido sobre los números reales positivos. ¿Ok? Acá son ejemplos sencillos. Después hay ejemplos más complejos. Por ejemplo, f de x igual a 1 sobre x cuadrado menos 1.
+28:43
+¿R menos 1? ¿Y qué pasa cuando X es igual a menos 1?
+28:49
+Entonces, acá, ¿qué hay que hacer? Para estudiar cuál es el dominio de definición, hay que estudiar cuándo esta definición tiene sentido. Ok, ¿dónde puede ocurrir el problema? El problema puede ocurrir con la división, porque ya se sabe que nunca dividirás por cero. Esa cosa prohibida en el curso de matemática. No se puede dividir por cero, sino guillotina. Ah, es el precio a pagar.
+29:26
+Entonces, no se puede dividir por 0. Entonces, tenemos que prohibir que esta función tenga el valor 0. Entonces, hay que resolver la ecuación cuando esta ecuación tiene el valor 0. Y tiene el valor 0 si sólo si x cuadrado es igual a 1. Es decir, si sólo si x es igual a más o menos 1. Entonces, los dos valores prohibidos son 1. menos 1 y 1 y a veces hay ejemplos más complicados por ejemplo acá pongo mi ecuación favorita y ahora cuál es el dominio
+30:23
+hay que estudiar el signo de esta cosa, que es una curva cúbica que hay que resolver y de hecho no hay soluciones que se expresan de modo fácil. Entonces es muy complicado y en este caso voy a escribir que el dominio de F es igual, no sé, no lo calculé antes de venir. Entonces, la cosa importante es que a veces hay problemas. Es decir, si yo pongo una función bastante complicada, voy a obtener un dominio que será muy difícil para determinar.
+30:59
+Entonces, acá realmente es una trampa del profesor. Si un profesor pone esto, realmente es difícil para ustedes. Porque incluso para mí es difícil. Hay que resolver esta ecuación del tercer grado. Y solo puse en tercer grado. De hecho, ya sé que esta función tiene tres soluciones. Entonces, ya sé cuál es la forma del codominio. Ya sé más o menos cuál es el valor de 0. Acá, 0 menos 0 más 1, 0 me da esto.
+31:32
+Y yo sé que esta función como es, etcétera, tiene de arriba algo. Yo pienso que esto me da algo, así. ¿OK? Entonces, es positiva en este intervalo y en este intervalo.
+31:56
+Más o menos. Entonces, el dominio será de la forma, ya sé que será de la forma AB unión C infinito, pero después hay que determinar A, B y C. Son las tres soluciones de la ecuación. Acá hay que trabajar.
+32:20
+Sí, pero no son los valores exactos. Son aproximaciones. Pero gracias. ¿Tenemos al menos ideas?
+32:30
+Yo te voy a dar. Y esto parece a mi curva. Me parece raro que tenga esta forma.
+32:36
+Sí. No sé, ni idea. OK. No voy a confiar en tus soluciones porque no confío en la curva. No confío en la gráfica. OK. Pero esto es para decir que a veces es una mala idea olvidar dar el dominio. Pero en los casos frecuentes es fácil, se resuelve fácilmente. Otro problema que puede ocurrir en la definición de una función es la definición implícita de función. Entonces, definición implícita de función.
+33:15
+Acá estamos mirando todos los casos posibles.
+33:20
+Definición implícita de función.
+33:29
+a veces se define una función en este caso tenemos que dar explícitamente el dominio y el condominio por sea acá es la frase que voy a usar f el único objeto y en b Tal que E de X, Y.
+34:06
+Donde E de X, Y es un enunciado que depende de X e Y. Entonces, acá, la idea es que voy a poner una frase. Es una frase que depende de X e Y. Y voy a decir, más o menos, tengo una frase que relaciona X a Y. Y lo que yo digo es que a veces para todo X existe un único Y que verifica la proposición. Y esto me define una función.
+34:39
+Donde E de X, Y es un enunciado que relaciona X en A a Y en B.
+34:57
+Y tal que, y acá, para todo X existe un único Y que cumple la propiedad.
+35:07
+Para todo X en A existe un único Y en B tal que se cumpla la fórmula LXY. Y en este caso se considera que la función es bien definida. Es una definición implícita. Y vamos a ver ejemplos. Entonces, ejemplo de definición implícita.
+35:35
+Vamos a ver algunos ejemplos.
+35:38
+Voy a ver lo que pasa.
+35:43
+Implícita. Ejemplos, primer ejemplo. Hay una función muy útil que es definido de hecho de modo implícito.
+35:50
+Entonces, ejemplo. Ejemplo.
+35:55
+Perdón, una pregunta. Cuando acá pones f de x sea f de x el único objeto, arriba, en el entrecomillador, lo estás diciendo como f de x es una imagen, ¿no? Exactamente. Estoy definiendo f de x como el único, siendo el único y que cumple la propiedad. en función de x, porque la propiedad no solo depende de y, pero también depende de x. Es una propiedad que relaciona dos objetos en un universo. Pero para que tal definición funcione, yo tengo que verificar que para todo x existe un único y.
+36:29
+Es decir, para tener el derecho de definir la función, yo tengo que demostrar esta propiedad.
+36:37
+¿Ok? Cuando demostré la propiedad, yo sé que a todo x se puede asociar un único y, esto me define automágicamente una función. Entonces voy a dar un ejemplo, el ejemplo que ya conocen, pero en general no son conscientes que ya conocen este ejemplo, que viene de un teorema. Ejemplo. Entonces voy a considerar dos ejemplos.
+37:04
+Ejemplos. Primer ejemplo. Se observa que para todo x en el intervalo 0, infinito, si yo me doy un x que es positivo o nulo, yo puedo decir que existe un único... Ah, disculpa, no es un para todo, es un existe. Para todo x en este, yo puedo decir que existe un único y en R que cumple ambas condiciones. Y...
+37:37
+es positivo o nulo, y el cuadrado de y es igual a x.
+37:45
+Lo que digo es que cuando yo tengo... ¿Qué pasa si yo olvido la condición y es positivo o nulo?
+37:55
+Lo que yo quiero hacer es resolver la ecuación y cuadrado igual a x, x es mi parámetro y mi incógnita es y. ¿Cuántas soluciones tengo yo en general?
+38:09
+Dos. O una si x vale cero. Pero en general tengo dos. Entonces no puedo decir que es única la solución. Esa razón por qué añadí esta condición. Esto me asegura que la solución sea única. Es decir, que cuando yo tengo las raíces cuadradas de X, hay dos, pero si solo considero las raíces cuadradas positivas, obtendré solo una. Entonces, yo tengo el derecho de decir que para todo X existe un único Y.
+38:44
+Entonces, se escribe...
+38:49
+raíz cuadrada, que es una función de cero más infinito a r, la función correspondiente.
+39:04
+Esto me define una función.
+39:08
+Y esa definición formal de la raíz cuadrada. Es decir, por definición, la raíz cuadrada de un número x es la única solución positiva o nula a la ecuación y cuadrado igual a x. ¿Ok? Es un ejemplo de definición implícita de función. Segundo ejemplo. Segundo ejemplo. Yo voy a usar esta cosa.
+39:45
+segundo ejemplo muy conocido es la siguiente observación se puede observar que para todo X ahora en R existe un único Y en R que cumple ambas condiciones acá olvidé decir que por supuesto esta cosa era mi enunciado Y de XY ¿ok? existe un único objeto que cumple ambas condiciones primera cosa, y tiene que ser un entero relativo y después es que x está entre y e y más 1
+40:38
+¿Conocen este resultado? Cuando yo tengo un número real, yo siempre puedo achar un entero relativo que es a la vez menor que x, menor o igual, pero que es el más grande que sea menor o igual. Porque el entero siguiente es mayor que x.
+40:58
+Es la función parte entera. Es la función parte entera.
+41:03
+¿Entienden la idea? A cada x, yo asocio el único entero relativo, y, tal que x esté entre y inclusivo e y más 1 exclusivo. ¿Ok? Entonces, esto define la función en parte entera.
+41:25
+Acá es mi enunciado que relaciona y de x, y. Y esto define la función en parte entera.
+41:45
+Y esta función es una función que yo escribo así, entre dos semicorchetes, es una función de r a r, y tal que, por definición, dos cosas. La parte entera de x tiene que ser un entero relativo, y es menor o igual a x, y es estrictamente menor, x está entre la parte entera y la parte entera más 1.
+42:17
+Esa es la definición de la parte entera. Es otro ejemplo de definición implícita. Y ahora voy a decir que a veces voy a usar otro tipo, pero no voy a escribirlo porque normalmente debería estar afuera del programa. Pero quizás que voy a usarlo a veces. A veces, lo que me interesa... es que a veces no consigo demostrar que para todo x existe un único y.
+42:55
+Pero a veces no es único, pero a veces solo pueden existir varios. Entonces, a veces no tenemos un único, un i único. En este caso, existe un axioma de la matemática, que se llama el axioma de la elección, que, sin embargo, permite definir la función. Es decir, que cuando en la situación donde el Y no es único, siempre se puede decidir, ok, existe alguien que me elige un Y para cada X.
+43:31
+Y eso me define una función. Se llama el axioma de la elección.
+43:36
+Ok, no voy a decir más cosas sobre el tema, pero a veces voy a usar, es decir, esta cosa es optativa.
+43:48
+La existencia es una cosa obligatoria, pero la unicidad es optativa porque cuando no es única, podemos suponer que hay alguien que nos elige un i para cada x. Y se llama el axioma de elección. Entonces, a veces voy a definir funciones por elección.
+44:13
+Ahora tenemos otras cosas que decir. Ah, el vocabulario. Vocabulario. ¿Sí? Ah, acá no hay ningún problema. La idea es que una función es una cosa muy asimétrica. Es decir, hay el input y el output. No se pueden poner al revés en general. Entonces, es claro que cada input tiene que tener un único output. pero dos inputs distintos pueden llevar al mismo output, sin problema.
+44:51
+Y vamos a ver un montón de ejemplos.
+44:54
+Por ejemplo, la función de valor absoluto. Yo tomo el número 3, el número menos 3, y al final obtengo el mismo valor absoluto. No es un problema. Ok, entonces, vocabulario.
+45:27
+sean f una función de a en b si yo me doy dos objetos uno adentro del dominio y otro adentro del codominio son tales que y es igual a f de x se dice que dos cosas se dice que y es la imagen imagen de x por f pero también se dice que x es una pre imagen de y por f ok y acá las palabras importantes son los determinantes la y una porque la razón es que cuando yo tengo un x su imagen es única y existe siempre pero en otro lado si yo parto del objeto del codominio quizás que tiene cero pre imagen quizás que tiene una pre imagen quizás que tiene varias pre imágenes
+46:51
+Entonces, siempre puedo decir que cada X tiene una imagen única, pero en otro lado, un Y puede tener cero, una o varias preimágenes. Es muy importante entender que acá la relación hecha por la función es asimétrica por construcción. Las funciones que son simétricas se llaman las biyecciones. Vamos a ver después. ok y hay una definición porque quizás que hay algunos elementos que no tienen para imagen entonces esa definición dado una función f de a en b se escribe se llama su imagen
+47:50
+o su recorrido.
+47:55
+El conjunto, definido así, es el conjunto que se escribe IMG, depende de las notaciones de F, es el conjunto de todos los elementos del codominio que tienen al menos una preimagen. Es decir, es el conjunto.
+48:20
+Voy a usar otro pizarrón porque voy a hacer un montón de comentarios acá sobre esta definición.
+48:31
+Acá la definición de la imagen.
+48:36
+La definición estricta es el conjunto de todos los objetos del condominio que tienen al menos una preimagen.
+48:49
+Esto significa los i en B para los cuales existe al menos un objeto del dominio cuya imagen sea i. ¿Entienden esta frase?
+49:04
+Esto dice más o menos y es la imagen de X para algún X. ¿Entienden la definición? Y de mismo modo se puede escribir también de modo más rápido, es el conjunto de todos los f cuando x recorre el dominio a.
+49:45
+Voy a considerar que estas dos notaciones son iguales y esta es una notación nueva, pero se define como esto y es una definición por comprensión.
+49:58
+Pueden ver que es una definición por comprensión. es un subconjunto de B formado a partir de una fórmula, que es la imagen de al menos algún X. Es el recorrido. Y por construcción, esto es un subconjunto de B.
+50:28
+Y por construcción es un subconjunto de B, que es igual al codominio de F. ¿Ok?
+50:38
+Y esto me analiza lo que recorre la función cuando X varía entre... adentro de A, que recorre f de x. Y es un subconjunto del condominio. Y es claro que para los objetos en la imagen, todos los objetos de la imagen, por definición, tienen al menos una preimagen. Y de hecho, son los objetos del condominio que tienen al menos una preimagen.
+51:10
+Después hay que hablar de representaciones.
+51:15
+Voy a ir rápido. Representación de una función.
+51:29
+Hay esencialmente tres modos para representar una función.
+51:35
+Primera representación es por diagramas de Venn.
+51:46
+¿OK?
+51:48
+Ejemplo, un diagrama de Ben.
+51:58
+Es, ¿saben? Es mi representación patato-viral. Tengo A, tengo B, y la idea es que yo tengo varios elementos adentro de A. varios elementos adentro de B, y voy a asociar a este, voy a asociar a este, a este voy a asociar a este, a este A también voy a asociar a este, a este voy a asociar, no sé, a este, y a este voy a asociar a este.
+52:33
+Esto es un diagrama de Venn y es una representación posible para una función finita. ¿Ok? Acá, ¿qué se observa? Es que cada elemento del dominio tiene imagen única. Esto viene automáticamente con una función. Y si tienen una función, ¿qué pasa si tienen una función donde hay un elemento del dominio que tiene dos imágenes? ¿Qué pasa con tal función?
+53:00
+Es que no es una función. La respuesta es que se equivocaron. No es una función. Porque viene con la definición de función, entonces si tienen algo que me dan dos imágenes, terminado no es una función, se llama una relación.
+53:15
+Pero en otro lado, acá pueden ver que este elemento tiene pre-imagen única, este elemento y este elemento tienen dos pre-imágenes cada uno, y estos elementos no tienen pre-imagen. Pueden ver cómo la noción de función no es una noción simétrica. Hay una asimetría muy importante en la definición.
+53:41
+Segunda representación son por tablas de valores.
+53:49
+Por tabla de valores. Es fácil. Cuando tienen una función finita, la primera representación funciona muy bien para las funciones finitas. Y está muy bien también para hacer contraejemplos. Es decir, hacer pequeños dibujos pueden ayudarles a tener ideas.
+54:11
+Entonces, estos dibujos que parecen muy infantiles pueden ser muy útiles para construir contraejemplos.
+54:21
+Entonces, el tema de valores... Es una cosa fácil, es la cosa más seria. En general, los ingenieros nunca escriben tales cosas porque no parecen serios cuando escriben esto. Es una ventaja de los matemáticos que pueden tener derecho de usar diagramas infantiles. Pero los ingenieros lo que hacen en general es hacer una tabla de valor que es otra representación. Es decir, yo escribo una tabla con dos filas. Primera fila es el argumento.
+54:51
+Segunda fila yo pongo f de x. Y acá yo pongo un valor, su resultado, un valor, su resultado, etc. Y yo escribo las cosas. ¿Ok? Para una cantidad finita de objetos. Y es una descripción posible, una representación posible de una función, dar algunos valores posibles. Cuando la función es finita, es una perfecta definición. Es decir, asociar. Acá yo pongo todos los elementos del dominio y a cada elemento del dominio yo asocio su imagen.
+55:27
+Entonces acá quizás que es 0, 0, 1. Por ejemplo, yo podría decir 0, 0, 1, 1, menos 1, 1, 2, 2, menos 2, 2. Y yo estoy definiendo el valor absoluto.
+55:42
+Y la tercera representación, por supuesto, es por gráfica. Y acá voy a definir lo que es la gráfica de una función f. Por definición, la gráfica de f, que voy a escribir gr , es un conjunto de pares, es el conjunto de todos los pares en el producto cartesiano a por d, que cumplen la condición y es igual a f .
+56:18
+Y esto es la gráfica de F, es un conjunto de pares de reales, pero a través de la identificación entre los pares de reales y el plano, se puede ver como una curva en el plano.
+56:35
+Es decir, por gráfica, y acá es solo, estas dos cosas son solo en el caso numérico.
+56:48
+Entonces, por gráfica, y acá, por ejemplo, el ejemplo de la función anterior, que era esta función, que es f de x igual a x cubo menos 3x más 1.
+57:07
+¿Ok? Y no voy a insistir mucho porque normalmente ya saben dibujar una gráfica, ¿no? De una función numérica. Y en general lo que se hace antes de dibujar la gráfica es estudiar el dominio de definición, construir una primera tabla de valores que va a permitir construir algunos puntos, estudiar la continuidad, si es monótona, creciente, decreciente y cosas así para ver cuál es la forma de la gráfica.
+57:39
+Entonces son las tres representaciones posibles de las funciones. Y ahora voy a decir, no tengo mucho tiempo, entonces voy a decir, hablar un poquito de las operaciones sobre las funciones.
+57:55
+Todo esto es normalmente, yo lo considero como más o menos un repaso de cosas que ya vieron en el liceo. Al menos para los nuevos. Y yo sé que no hay tantos, no hay muchos nuevos.
+58:12
+diremos que los otros son falsos nuevos.
+58:18
+O bien son nuevamente nuevos.
+58:28
+Es como se puede decir con delicadeza. OK.
+58:40
+Ahora, operaciones con las funciones. Acá voy a escribir esencialmente dos operaciones y después vendrá una tercera operación. Primera cosa es, acá voy a hablar de las operaciones que funcionan para todas las funciones. En lo siguiente, cuando voy a introducir las funciones numéricas, voy a añadir nuevas operaciones, tales que la suma del producto, etcétera, etcétera.
+59:16
+Pero, cuando tenemos conjuntos abstractos, siempre existe la función identidad en A.
+59:31
+Y es una notación, es la función y de sub a, que es una función de a en a, y por definición es definida por la identidad en a de x es x. Es la función que no cambia nada.
+59:53
+Entonces, ahora normalmente hay un montón de dudas, Porque la pregunta natural sería, ¿pero a qué sirve una función que no cambia su argumento? Teóricamente, vamos a ver que hay un montón de propiedades. Primera cosa es que la función de identidad en R tiene gráfica. Es una recta diagonal. Entonces, esta función siempre existe, pero existe para cualquier conjunto. Y la segunda cosa, que es la otra operación, está compuesta...
+1:00:29
+de dos funciones f que va de a en b y g que va de b en c y la compuesta de dos funciones así se escribe y acá cuidado hay una trampa se escribe g círculo f es decir al revés Y es una función de a en c y es definida por g círculo f de x por definición es igual a g de f de x.
+1:01:15
+Y acá tenemos un problema porque había que elegir una notación. Y la función que yo aplico en primer lugar es f. Y después de haber aplicado la función f, aplico ahora la función g. Pero se escribe g círculo f y no f círculo g. Se escribe al revés. Y esto viene de la definición, porque g círculo f es igual a g de f de x. Y acá lo que se ve es que realmente la función que se aplica en primer lugar es f. Y después de haber aplicado f, se aplica g. ¿Ok?
+1:01:58
+Son las dos operaciones usuales. Ok, y hay un montón de propiedades que ya vienen de modo automático.
+1:02:06
+Con esas dos definiciones.
+1:02:14
+¿Cuál es la intuición? Acá es una intuición de ingeniero.
+1:02:21
+Un ingeniero...
+1:02:24
+sabe que una máquina, en general, no sirve de modo aislado, pero que hay que poner una cadena de máquinas, cada una que hace un poco del trabajo. Y acá es la misma intuición. Lo que yo digo es que tengo mi máquina F, la compongo con una máquina G y obtengo una nueva supermaquina que se llama G círculo F, cuidado al orden.
+1:03:07
+Y de mismo modo se pueden observar un montón de cosas. ¿Cómo yo podría representar la máquina identidad BA? Acá se puede ver como un circuito. Yo enchufo el circuito G después de la salida del circuito F. ¿Cómo podría yo representar la identidad en ese diagrama?
+1:03:33
+Con un cable. La identidad es un cable, no cambia nada.
+1:03:40
+Lo que yo pongo adentro, la señal que yo pongo en entrada de mi cable, sale de modo idéntico. Entonces, la identidad es la máquina que no hace nada. es este cable, y después se pueden estudiar cuáles son las propiedades de los métodos para enchufar los circuitos adentro. Entonces hay dos propiedades esenciales, que son las siguientes, es que si yo compongo, por ejemplo, dado tres funciones, F que va de A en B, G que va de B en C, y H que va de C en D tenemos que ¿qué pasa si yo aplico la identidad de A y que después yo aplico F?
+1:04:31
+es decir, yo pongo un cable y después yo pongo el circuito F ¿a qué va a ser equivalente? a F pero también yo podría hacer F que va de A en B y después poner un cable
+1:04:49
+a que va a ser equivalente también a f y ahora como puedo yo componer tres máquinas yo puedo decir lo que yo quiero componer f g y h primera cosa yo compongo f y g y cuando he terminado después compongo al revés después la función h pueden observar que yo escribo las cosas al revés en el orden de composición pero hay otra posibilidad yo puedo primeramente formar la máquina g con h y después antes de esta máquina yo pongo f qué se puede decir sobre tales máquinas
+1:05:41
+Son idénticas.
+1:05:44
+Entonces, son iguales. Son las propiedades importantes que dice, más o menos, la identidad actúa como un elemento neutro para la composición y la composición de funciones es asociativa. Es decir, el orden, la posición de las paréntesis no cuenta. Entonces son las propiedades que hay que saber para estas dos operaciones.
+1:06:13
+Y al final voy a hablar un poquito de... Ah, y muy importante, olvidé decir algo importante. Cuidado, la operación de composición no es conmutativa.
+1:06:43
+Porque en análisis a veces vamos a componer las funciones. Entonces hay que saber que esta operación no es conmutativa. Entonces, cuidado.
+1:06:53
+La operación G círculo F no es conmutativa. En general. Hay casos particulares donde es.
+1:07:12
+Es decir, en general tenemos que G círculo F es distinto de F círculo G, en general. ¿Cuáles son las razones?
+1:07:24
+Hay una primera razón que viene del dominio y del condominio. Acá si yo tengo F que vale A en B y G que vale B en C, se pueden componer en este orden. Yo puedo definir G círculo F. Pero si yo intercambio mis dos funciones, ¿qué va a pasar? Yo quiero aplicar primeramente G. G me toma un B y me produce un C. Pero F toma un A. Y si hay ningún vínculo entre C y A, yo no puedo escribir la composición.
+1:08:00
+Es decir, muchas veces se pueden componer dos funciones en una dirección, pero no se pueden componer al revés.
+1:08:10
+No se pueden componer al revés. Pero a veces se pueden componer en ambas direcciones. Lo que pasa típicamente cuando los tres dominos son iguales. Acá se pueden definir ambas composiciones, pero incluso en este caso, en general, no es conmutativo. Es decir, contraejemplo.
+1:08:35
+Yo tomo dos funciones f y g que van de r a r. Acá no tendré ningún problema para componerlas porque yo podré componer en las dos direcciones. Voy a definir f de x es igual a x cuadrado y g de x es igual a x más 1.
+1:09:00
+Acá tomé dos funciones sencillas. Yo puedo calcular g círculo f de x es igual a g de f de x, f de x es igual a x cuadrado, y g de x cuadrado es x cuadrado más 1.
+1:09:20
+Ahora yo compongo al revés. Yo obtengo f círculo g de x es igual a f g de x es x más 1, Y f de x más 1 es x más 1 cuadrado. Es decir, ¿qué obtengo yo al final? Obtengo x cuadrado más 2x más 1. Y no son funciones idénticas. ¿Ok? Entonces, cuidado con la compuesta de funciones.
+1:09:53
+Importa mucho el orden donde se componen las funciones. Ok, acá hay oportunidades de trampas gigantescas y oportunidades maravillosas para armar ejercicios de parciales que van a matar toda la gente.
+1:10:14
+Pero si saben que son dos cosas distintas, no se van a equivocar. Hay que mantenerlo en la cabeza.
+1:10:21
+Ok, y voy a terminar con algunas propiedades básicas de las funciones. Y voy a definir lo que son funciones injectivas, sobreinjectivas y bijectivas.
+1:10:52
+Ok. Ok, definición. Entonces, funciones notables.
+1:11:00
+digo que una función f que va de a en b es primera cosa inyectiva si ¿qué pasa? todas las funciones tienen única imagen Es decir, si yo tomo dos objetos distintos, tienen imágenes distintas.
+1:11:40
+Si yo tomo dos objetos en A. Ah, pero ¿cómo sé yo que son distintos? Hay que añadir la condición que sean distintos.
+1:11:50
+Esto implica que sus imágenes son distintas.
+1:11:58
+Es decir, dos objetos distintos del dominio tienen imágenes distintas. Pero esto es equivalente, acá es la definición intuitiva, pero no es así que se usa en la matemática.
+1:12:14
+Se usa exactamente con el contrarrecíproco. Es decir, esto es idéntico a decir que si yo tengo dos objetos x y x', cualesquiera, cuando tienen la misma imagen, esto implica que también son iguales. Y son dos definiciones equivalentes.
+1:12:49
+acá esto viene de una propiedad de la matemática que se llama la fórmula que es el contrarrecíproco digo que en matemática si yo tengo un enunciado de la forma e implica f siempre es lógicamente equivalente a la negación de f implica la negación de e acá este símbolo es la negación no
+1:13:18
+Esta colectiva lógica es este símbolo que dice no. La palabra más importante para los niños. No. Es decir, si E implica F, es lo mismo que decir que no F implica no E. Ah, sí, gracias.
+1:13:43
+Ok, ¿entienden? Ahora voy a dar ejemplos. Para entender esta cosa. E implica F. Si hoy llueve, voy al cine. Entonces voy al cine.
+1:13:59
+Ah, pero no estás en el cine. Entonces hoy no llueve. ¿Pueden entender? ¿Ok? Por ejemplo, si soy un hombre... entonces soy mortal contra recíproco dios es inmortal entonces no es un hombre y estas dos frases en lógica siempre son equivalentes es decir cuando yo pongo una implicación algo implica otra cosa es idéntico a decir que la otra la negación a otra cosa implica la negación de la primera cosa Y es lo que utilizo acá.
+1:14:46
+Es decir, yo intercambio ambas fórmulas y reemplazo esas dos fórmulas por su negación. Es exactamente este mecanismo. Entonces tenemos dos definiciones para inyectiva. Y lo que digo es que en la práctica, cuando se trata de demostrar que una función es inyectiva, es mucho mejor usar la segunda.
+1:15:10
+Es mucho más cómoda. ¿Y por qué? ¿Por qué es más cómoda en la práctica? Porque es una igualdad. Y sabemos hacer un montón de cosas con igualdades, pero en general no se sabe hacer muchas cosas con negaciones de igualdad.
+1:15:26
+La igualdad tiene excelentes propiedades, pero la negación de la igualdad en general no se sabe hacer muchas cosas.
+1:15:34
+Después se dice que es sobreyectiva. Segundo caso, una función sobreyectiva
+1:15:48
+Si todo elemento del codominio tiene al menos una imagen, una pre-imagen, disculpa. Todo elemento del codominio tiene al menos una imagen, una pre-imagen, disculpa, una pre-imagen. Acá yo parto del codominio y tengo que ir al revés. Y es exactamente lo mismo que decir que todos los puntos del codominio están recorridos por la función.
+1:16:25
+Es decir, la imagen, o bien el recorrido de la función, es igual a B. Ya vimos que la imagen... Acá era IMG. Ya pueden ver que yo cambio mis notaciones todos los minutos. IMG. La imagen es el conjunto de todos los puntos del codominio que tienen al menos una preimagen.
+1:16:59
+Pero cuando la función es sobreyectiva es lo mismo que decir que todos los objetos del codominio tienen una preimagen. Es decir que es igual al recorrido. El codominio es igual al recorrido. Ok, y son cosas idénticas. Y al final se dice que una función es biyectiva si es a la vez inyectiva y sobreyectiva.
+1:17:42
+Ok.
+1:17:47
+Ahora vamos a ver algunos ejemplos.
+1:17:53
+Ahora voy a hacer ejemplos con gráficas, solo para mostrar.
+1:17:59
+La idea es que para determinar si una función es inyectiva, sobreyectiva o biyectiva, hay que contar para cada elemento del codominio la cantidad de preimágenes que tiene. Si cada elemento del codominio tiene a lo sumo una preimagen, la función es inyectiva. Si tiene al menos una preimagen, es sobreinyectiva. Si tiene exactamente una preimagen, es inyectiva. Voy a hacer dibujos.
+1:18:30
+Acá voy a dibujar productos cartesianos. Acá es mi conjunto A, acá es mi conjunto B. Voy a hacer una gráfica. ¿Qué piensan, por ejemplo, de esta función? ¿Es inyectiva o no? ¿Por qué? Por ejemplo, podemos tomar este punto y tiene uno, dos, tres, cuatro, cinco preimágenes. La función no es inyectiva.
+1:19:01
+¿Y por qué no es sobreinyectiva?
+1:19:06
+hay un punto que no tiene pre-imagen. Por ejemplo, si yo tomo este punto acá, I', no tiene pre-imagen. Es una función ni inyectiva ni sobre-inyectiva. Después, yo puedo hacer esto, por ejemplo. Acá, esta función.
+1:19:27
+¿Qué se puede decir? ¿Es sobre-inyectiva? Es inyectiva. Porque cada vez, o bien tengo cero preimagen, como acá, o bien tengo una preimagen y una sola.
+1:19:44
+Entonces, es una función inyectiva.
+1:19:48
+Entonces, acá es ni inyectiva ni sobreinyectiva. Y acá es inyectiva, pero no sobreinyectiva.
+1:20:03
+Ahora voy a continuar.
+1:20:06
+Esta función, por ejemplo.
+1:20:13
+Exactamente. No es inyectiva porque, por ejemplo, este i tiene tres preimágenes.
+1:20:25
+Pero lo que es claro es que cada i tiene al menos una preimagen. Entonces es sobreinyectiva
+1:20:35
+pero no inyectiva. Y al final tenemos el caso perfecto, que es este caso, por ejemplo, que se puede decir sobre tal función, es a la vez sobreyectiva e inyectiva, entonces es biyectiva.
+1:21:02
+Y ahora, y solo en este caso, cuando tenemos una biyección, ahora la noción de función se vuelve simétrica. Es decir, cada elemento del dominio tiene una única imagen, pero al revés, cada elemento del codominio tiene una única preimagen y esto corresponde a la noción de circuito inversible. se puede invertir la función y en este caso se puede definir la inversa de la función y voy a concluir con esto y cuando f es bijectiva
+1:21:56
+subjetiva, se puede definir su inversa. Y esta función que se escribe f-1, que va de b en a, es decir, su intercambio b y a, y ahora esta función que a cada i me asocia el x correspondiente, es decir, definida por f menos 1 de y es el único, y ahora uso una definición implícita, el único x en a tal que f de x sea igual a y.
+1:22:38
+Y acá es una definición implícita. Y por construcción, ¿entienden la idea? Yo puedo invertir la función. Lo que corresponde es decir, en este caso, en lugar de tomar un x y calcular y en función de x, también yo puedo partir de un y y calcular x en función de y. Y la función puesta al revés se llama la inversa. Y por construcción...
+1:23:08
+¿Qué pasa si yo aplico F y después su inversa? ¿Qué voy a obtener?
+1:23:15
+La identidad. ¿De qué conjunto? ¿Del dominio o del codominio de F?
+1:23:23
+Del dominio, porque acá estamos en el dominio. Después llegamos en el codominio y después volvemos en el dominio. Entonces, la identidad del dominio. ¿Y qué pasa si yo pongo primeramente f-1 y después f? ¿Qué voy a hacer? La identidad del codominio.
+1:23:45
+Y esta razón porque se llama la inversa. Es decir, tenemos dos circuitos que se anulan.
+1:23:52
+Es decir, cuando yo pongo una función y después su recíproca o su inversa, se llama a la vez la inversa o la recíproca. Es decir, si yo pongo f y después su inversa, es igual a un cable. Se anula. ¿Ok? Y lo mismo cuando se ponen al revés.
+1:24:24
+Acá son ejemplos de funciones que se pueden componer en ambas direcciones y que me dan la identidad. Entonces, disculpa, fui muy rápido para terminar, pero vamos a ver todas estas cosas con muchos ejemplos en lo siguiente. Y lunes vamos a comenzar con los números reales. Muchas gracias.
+

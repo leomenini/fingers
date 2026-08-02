@@ -1,0 +1,501 @@
+# Clase 4
+
+Curso: CIV
+
+Fuente: https://open.fing.edu.uy/courses/civ/4/
+
+Fecha de exportación: 7/30/2026, 10:48:12 AM
+
+---
+Clase: 4
+Curso: CIV
+
+Segmentos : 284
+Palabras  : 9599
+Caracteres: 51785
+
+0:20
+Buenas tardes. Hoy vamos a hablar de un tema muy importante para cálculo en general, para el análisis en general. Un tema casi mágico para mí es el tema de los números reales.
+0:45
+Entonces voy a comenzar por una introducción para entender por qué es un tema difícil y por qué es un tema muy importante. Y acá es importante entender que hay un cambio de punto de vista que vamos a hacer con respecto al punto de vista visto, por ejemplo, en liceo.
+1:06
+Entonces vamos a comenzar por intuiciones, una introducción o una intuición.
+1:14
+La intuición fundamental de los números reales es que son los números que corresponden a los puntos de una recta. Es una intuición que viene de la geometría. Es decir, son los números que sirven para indicar los puntos de la recta. Entonces, vamos a comenzar por esta idea.
+1:44
+Números reales.
+1:47
+son los números que permiten representar todos, y acá la palabra importante es todos, los puntos de una recta.
+2:17
+Y ese problema, ¿cuáles son los números que tienen tal propiedad? ¿Sí? Ah, yo voy a intentar.
+2:25
+Voy a intentar. No sé si voy a conseguir. OK. Entonces, los números reales son los números que permiten representar todos los puntos de una recta. Y, por supuesto, incluyen un montón de números ya conocidos. Entonces, incluyen.
+2:46
+los enteros naturales porque por supuesto se pueden representar los enteros naturales sobre una recta los enteros reactivos tengo que escribir más grande y después los números racionales ok
+3:17
+Pero ya sabemos que en una recta hay mucho más números que hay números racionales. Por ejemplo, si le doy 0 acá en una recta, 1 acá, que dibujo este cuadrado del lado 1, que formo la diagonal. ¿Cuál es la diagonal? Raíz de 2.
+3:43
+Y si yo tomo mi compás, voy a obtener acá raíz de 2. Y es un número que es un número en la recta. Yo sé construir tal número. Pero no es un racional. Vamos a demostrarlo. No esta clase, pero en una clase ulterior.
+4:00
+Entonces, y mucho más números como
+4:14
+por ejemplo, la raíz de 2, el número pi, el número e, pero también números tales que el logaritmo de 2, etcétera. Y puede ser una paradoja porque acá escribí solo cuatro números irracionales y acá ya sabemos que los enteros naturales, los enteros relativos, los números racionales son infinitos. pero de hecho hay mucho más números irracionales que hay números racionales.
+4:51
+El problema es que no tenemos ahora la herramienta para demostrarlo, pero es un resultado de la segunda mitad del siglo XIX que el infinito de los números irracionales es infinitamente más grande que el infinito de los números racionales. Entonces hay mucho más números irracionales y todo el problema es cómo capturarlos. Y es el problema. Entonces acá partimos de esta idea y es claro que tenemos una intuición geométrica de lo que pasa.
+5:23
+Es decir, por ejemplo, si yo me doy una recta R, y acá ya demuestro que no sé dibujar una recta,
+5:41
+ok tampoco pero no importa la idea es muy sencilla es que cada vez que me doy un sistema de coordenadas un sistema de coordenadas en una recta son dos puntos distintos un punto que va a servir para representar 0 y otro punto la unidad que va a servir para representar 1 y después cada vez que yo tengo un número real x
+6:11
+yo puedo asociar el punto X mayúscula en la recta tal que el vector OX sea igualmente exactamente el producto externo de X por el vector OI por ejemplo X puede estar acá y acá tengo el vector OI acá tengo el vector OX y OX es exactamente X mi número real por el vector OI que es el vector unitario por convención por supuesto no hay ningún sistema que yo prefiero a otro sistema pero hay que fijar un sistema de coordenadas y la cosa importante es que esta correspondencia entre los números reales y los puntos de la recta es biyectiva es decir hay la misma cantidad de reales que de números reales esto implica en particular
+7:12
+Que esto implica que todas las rectas están en biyección con R. Es decir, todas las rectas tienen intuitivamente la misma forma, la misma cantidad de puntos. ¿Ok? Y esta razón porque vamos a llamar R, a veces voy a decir que R es la recta real. ¿Ok? ¿Ok?
+7:43
+Esa razón. Es decir, dicho de otro modo, la recta real es una recta ideal que representa todas las rectas posibles.
+7:54
+Y es el sentido profundo de los números reales. Ahora el problema es que esto es más o menos el punto de vista que nos viene de la antigüedad. En la antigüedad, de hecho, en la egipcia antigua, creían que todos los números eran racionales. Y son los griegos antiguos que descubrieron que raíz de 2 no era un racional. Entonces tenían que extender la noción de número para incluir estos números.
+8:29
+De hecho, los griegos antiguos distinguían dos tipos de objetos, los números que solo contenían los racionales y los objetos geométricos que correspondían a todos los reales. Entonces tenían menos números que de puntos de recta y es razón porque cuando se habla de aritmética y de teoría de números en los elementos de Euclides, usa siempre figuras, siempre representa los números por los puntos de recta porque no tiene un sistema de notación para notar tales números.
+9:06
+Y después vino la idea que había que identificar la noción de número con la noción de punto de la recta. Es decir, tener un sistema de números que sea exactamente el mismo que el de los puntos de recta. De hecho, todo esto incitó a los matemáticos a precisar a la vez la noción de número, pero a la vez la noción de recta. Porque es claro que si hacemos más precisa lo que es un número, vamos a hacer más preciso lo que es el sentido de una recta.
+9:40
+Y hubo un montón de intentos. Es decir, el problema, por ejemplo, la materia cálculo, que se llama, su nombre real no es cálculo, es análisis. nació al final del siglo XVII y por Leibniz, un alemán, filósofo y matemático alemán, Leibniz, que inventó el cálculo diferencial y el cálculo integral, e inventó todo. Casi todo lo que van a ver en cálculo 1 y cálculo 2 es un único tipo que inventó todo esto. Hay genios a veces.
+10:13
+Y él inventó un montón de otras cosas.
+10:17
+Y... La idea es que cuando él inventó el cálculo integral y el cálculo diferencial, no tenía una definición precisa de la noción de número real. Pero es claro que cuando, entonces surgieron un montón de problemas. No tenía ninguna noción de límite, ninguna noción de ínfimo, ninguna noción de supremo. no tenía las herramientas básicas. Entonces, fue un motor gigantesco para desarrollar tales nociones que solo aparecieron en el siglo XIX.
+10:48
+Y en el siglo XIX, una pregunta central era cómo definir precisamente los números reales. Y hubo dos métodos para resolver ese problema. El método de la construcción y el método de la axiomatización.
+11:11
+Y acá voy a hablar un poquito de lo que significan estos dos enfoques.
+11:21
+La idea era, construcción consiste en decir, ok, supongamos que estamos viviendo en un mundo sin los números reales, ¿cómo reconstruirlos? A partir de nada.
+11:34
+Y es lo que hizo básicamente el matemático alemán Dede Kindt,
+11:42
+y que inventó un método. Básicamente él partió de los números reales, acá es una cosa bien entendida, y él mostró cómo a partir de los números reales se pueden construir los enteros relativos y después se pueden construir Q, pero la parte más difícil era pasar de Q a R. Y este paso fue hecho por Deleuquín.
+12:10
+Y no voy a presentar la construcción porque es gigantesca. Consiste más o menos a considerar partes de racionales particulares o bien sucesiones particulares de racionales y construir un objeto que funciona como R, como si no existiera y que tendríamos que reconstruirlo. Entonces, fue el primer método. El segundo método consistía en decir, ok, pero quizás que se puede capturar las propiedades de los reales por algunas fórmulas sencillas.
+12:43
+Es decir, ¿cómo los axiomas de la geometría? Por ejemplo, los axiomas de la geometría existen desde el siglo V o VI a.C., Entonces es una cosa muy antigua. Pero la idea es decir, de mismo modo que los matemáticos griegos antiguos introdujeron axiomas para los objetos geométricos, hay que introducir axiomas para los números reales. Entonces, hubo dos direcciones de trabajo. Y al final, hubo una confluencia, que es una buena noticia en general.
+13:18
+Es decir, los matemáticos descubrieron dos resultados. El primer resultado es que la construcción hecha, por ejemplo, por Deleuquin, pero también hubo otra construcción hecha por Cauchy, satisfacía todos los axiomas de la axiomatización. Entonces, era una buena construcción para la axiomatización. Pero, de otro lado, demostraron que si existe un objeto que satisface la lista de axiomas acá, entonces este objeto es único.
+13:53
+Es decir, mostraron que si existe una recta real, es única a menos de isomorfismo. Acá no voy a definir a menos de isomorfismo, voy a tomar como siempre una analogía que viene de la informática. Digo que, por ejemplo, cuando en informática quieren implementar una estructura de datos, tienen varias opciones posibles. Si yo quiero, por ejemplo, representar un conjunto finito con una computadora, yo puedo usar listas finitas, yo puedo usar árboles binarios o árboles cualesquiera, etc., etc., y la misma estructura se puede tener tiene un montón de representaciones pero al final todas estas representaciones que construyen objetos que tienen exactamente las mismas propiedades y esto que digo cuando r es único a menos de un isomorfismo hay varias construcciones posibles de r pero al final obtenemos dos
+14:54
+nociones de números reales, pero que son isomorfas, tienen la misma forma, tienen las mismas propiedades. Es decir, es por esta razón que vamos a considerar que existe un único cuerpo real. ¿Ok? Y, por supuesto, sería muy difícil ver la construcción y voy a presentar una axiomatización. Es decir, voy a dar una lista de axiomas y voy, vamos a admitir que existe un único objeto que se llama R que satisface toda la lista de axiomas. ¿Ok? Es el principio.
+15:28
+Voy a dividir mi pizarrón. No sé si yo tengo bastante espacio para escribir todo, pero vamos a ver. Porque yo voy a mantener una parte del pizarrón para los axiomas.
+15:41
+Entonces, el principio es que R viene con... Entonces, ahora yo supongo que existe un conjunto que se llama R y que viene con algunas estructuras.
+15:55
+viene con dos operaciones y con una relación.
+16:03
+Entonces, una operación x más y, que es la suma,
+16:17
+Acá, es decir, yo supongo que existe, técnicamente esta operación es una función de R por R hasta R. Es una función que toma dos argumentos y que me devuelve un resultado. Otra operación que es el producto, que acá tenemos un montón de modos para escribirlo, o bien se puede escribir x por y, o bien se puede escribir x punto y, o bien se puede escribir x y, y es el producto.
+16:52
+Y al final tenemos una relación...
+17:02
+una relación binaria que se escribe así x menor o igual a y o bien también escrita la misma relación también se escribe y es mayor o igual a x es decir yo considero estas notaciones como sinónimas Ok, cuando yo escribo x es menor o igual a y, es lo mismo que decir que y es mayor o igual a x.
+17:34
+No hay ninguna definición, solo son dos notaciones para la misma relación. Ok, y ahora vamos a suponer que satisface una lista de 15 axiomas.
+17:57
+la siguiente lista 15 axiomas ok ahora tengo mi pizarrón acá y voy a poner los 15 axiomas entonces voy a dividir mis 15 axiomas en cuatro grupos
+18:25
+los axiomas 1.1 hasta 4 los axiomas 2 de 1 hasta 5 los axiomas 3 de 1 hasta 5 y después un axioma aislado que es 4 y estos serán los axiomas para suma estos los axiomas para el producto
+18:54
+Esto, los axiomas para el orden. Y ahora, el axioma que es el motor de la máquina, es el axioma de completitud.
+19:09
+Ok, y ahora yo tengo que dar los 15 axiomas. Ok, axiomas de la suma. Voy a comenzar por la suma.
+19:29
+Axiomas de la suma, 1.1.
+19:35
+La suma es asociativa, es decir, tenemos que x más y más z es igual a x más y más z para todos x y z en R.
+19:52
+Segundo axioma de la suma. Acá, disculpa, yo tengo que escribir pequeño porque yo tengo que poner 15 axiomas acá. Porque es la parte que no voy a borrar.
+20:05
+X más Y. Segundo axioma dice que la suma es conmutativa. Y más X. Para todos X e Y. Tercer axioma.
+20:23
+Tercer axioma, ¿existe? ¿Sí? ¿Cómo, cómo, cómo? No entiendo lo que pasó. Ah, disculpa. Sí, sí, sí, disculpa.
+20:46
+El problema es que yo tengo que concentrarme sobre esto y olvido esto. Gracias.
+20:54
+Ok, entonces, 1.3. Existe un elemento neutro para la edición, es decir, existe un elemento. Existe, yo voy a decir, existe un objeto, voy a escribir directamente su nombre, se llama cero, tal que x más cero es igual a x y esto para todo x.
+21:25
+Es decir, existe un número global, cero, que no depende de x, tal que para todo x, x más cero es igual a x. 1.4, para todo x en R, existe un opuesto que voy a escribir menos x, tal que x más menos x es igual a cero. Todo un número real. Acá son las axiomas de la suma.
+21:59
+Después, axiomas del producto. Son muy cercanos.
+22:05
+Acá, asociatividad. XI por Z es igual a X por IZ. Creo que es 2.5. 2.1 ahora. 2.1 porque... Gracias. 2, 2. x, y es igual a i, x. Acá no tengo nada que decir. Son reglas similares como para la suma. Ahora, 2, 3.
+22:40
+Existe un neutro que se llama 1 y que es distinto de 0.
+22:53
+x por 1 es igual a x y esto para todo x es decir tenemos un número que es neutro con respecto a la multiplicación 2, 4 para todo x en R Existe y en r, no, existe para todos, disculpa, para todo x en r, x distinto de 0 y hasta cosa que cambia.
+23:28
+Lo que voy a decir es que todo número x que no es nulo tiene un inverso.
+23:34
+¿Qué voy a escribir? Existe un número que se llama x a la menos 1, tal que,
+23:44
+x por x a la menos 1 sea igual a 1 ok después 2.5 tengo que x más y por z es igual a xz más y por z y termine con los axiomas de la del producto ahora acción más del orden no sé si voy a conseguir poner todo en un único pizarrón ok entonces Ahora, axiomas de orden.
+24:46
+Para todo x e y, yo tengo que o bien x es menor o igual a y, o bien y es menor o igual a x. Y acá es un o inclusivo, porque por supuesto, cuando x es igual a y, ambas desigualdades se cumplen.
+25:09
+Esto es para todo, eso dice que la orden es total.
+25:16
+El segundo axioma me dice que si yo tengo x es menor o igual a y, y y es menor o igual a z, entonces x es menor o igual a z. Este axioma me dice que el orden es una cosa transitiva. ¿Ok?
+25:38
+El tercer axioma me dice que si X es menor a Y y Y es menor o igual a X, entonces X es igual a Y. ¿Ok? Acá esta cosa es la propiedad de antisimetría.
+26:01
+Dice que si yo tengo X menor o igual a Y y Y menor o igual a X, entonces son iguales.
+26:09
+Cuarta propiedad es que si x es menor a y y si no, esto implica directamente que x más z es menor o igual a y más z. Es decir, cuando yo tengo una desigualdad, yo puedo añadir cualquier cantidad a la derecha sin cambiar la desigualdad. Y acá el último, el 3.5, es si x es positivo o nulo.
+26:44
+Y si y es positivo o nulo, entonces el producto es positivo o nulo. ¿Cómo, cómo? ¿Cerrar qué? La cortina. Ah, sí, la cortina.
+27:08
+El 3-1, sí. Dice que...
+27:18
+Esto me dice que cuando yo me doy dos números, siempre yo puedo compararlos. Y el 3, es decir, si yo me doy cualquier par de números, siempre hay un orden entre ambos.
+27:32
+El 3-3 dice cuando yo tengo ambos órdenes, entonces son iguales.
+27:42
+Y acá me falta espacio para escribir el último axioma. Pero es la buena noticia del día, no vamos a ver dicho axioma hoy. Pero falta el axioma 4. Falta este axioma, el axioma de completitud. Pero hoy solo vamos a hablar del axioma, de los axiomas acá.
+28:08
+Entonces hay que hacer comentarios sobre los axiomas.
+28:13
+Esto dice que... No, yo creo, yo voy a presentar... Vamos a hablar de esto después. Ok. Ahora vamos a ver lo que se puede hacer. Entonces, ahora es nuestra tabla de las leyes. Lo que voy a decir es que todo lo que se puede demostrar en R es consecuencia de esta lista más el famoso axioma 4 que vamos a presentar en una semana. Ok. Entonces, es la tabla de las leyes.
+28:43
+Y es muy importante que entiendan cómo funcionan los números reales, porque vamos a hacer un montón de cuentas con los números reales. Y acá es la tabla que permite justificar todo. Es decir, todas las cuentas que van a hacer son consecuencias de esas leyes. Y vamos a ver ahora, vamos a presentar algunas de estas consecuencias.
+29:25
+Acá yo tengo que verificar si no hay nada falso. Porque soy muy fuerte para equivocarme. Pero me parece correcto, ¿no? ¿Es correcto o solo es un parecido?
+29:40
+Ok, vamos a ver.
+29:44
+Ahora vamos a hablar de las propiedades de la suma.
+29:56
+Ahora yo voy a hacer las cosas de modo informal, no voy a hacer casi ninguna demostración y todas las demostraciones serán en ejercicio. Todas las demostraciones es demostrar la ley que yo voy a presentar a partir de dichas reglas. Y son cuentas algebraicas sencillas. Propiedades de la suma. Esta cosa me dice que cuando yo escribo una suma con varios sumandos, no necesito poner paréntesis, porque el orden en el cual agrupamos las cosas no importa.
+30:35
+Entonces, el primer axioma nos dice que no se necesita poner paréntesis cuando hacemos sumas.
+30:45
+El segundo axioma nos dice que el orden no cuenta. Y después vamos a hablar del tercer axioma. Entonces, gracias a los axiomas 1, 2, yo puedo escribir, por ejemplo, x más y más z es lo mismo que y más z más x, etc. Y yo no necesito poner paréntesis, porque el orden no cuenta.
+31:15
+El axioma...
+31:18
+1.3 elemento neutro acá hay un primer problema que hay que arreglar es que digo que existe un neutro pero que quizás que existen varios neutros hay que verificar que es único entonces el neutro es único en efecto Supongamos que tengamos dos neutros, es decir, si cero y cero prima fueran dos neutros, dos elementos neutros para la adición, para la suma, tendríamos que
+32:20
+Primera cosa, es claro que sería cero más cero prima, sería igual a qué? Sería igual, ¿por qué sería igual a cero?
+32:32
+¿Quién es neutro? ¿Qué propiedad de neutro usas acá? Acá el problema es que si yo digo que cero es neutro, entonces esto es igual a cero prima. es igual al otro. Pero si yo digo que es cero prima el neutro, entonces es igual al otro. Terminado. Demostré que mis dos neutros, si yo tengo dos neutros, son iguales.
+33:03
+Entonces, es la razón por la que introducemos una constante para cero, porque sabemos que si existe tal número, es único. Segunda cosa, después hay que hablar del inverso. Del opuesto, disculpa. El opuesto también es único. Y esto se puede demostrar.
+33:26
+Es decir, el punto que llame menos x es definido por la propiedad que cuando yo lo sumo a x obtengo el neutro. También es único. Y, de hecho, hay una proposición muy interesante que me dice lo siguiente. Proposición. Para todos X e Y en R, tenemos lo siguiente. X más Y es igual a cero, si solo si.
+33:54
+X es igual a menos Y, si solo si. Y es igual a menos X.
+34:03
+Esto se sigue de esta propiedad. esto implica que es único que el opuesto es único acá hay que demostrarlo ejercicio lo que es claro es que si yo tengo la primera equivalencia por conmutatividad intercambiando x e y yo voy a obtener de mismo modo la segunda igualdad claro por simetría
+34:32
+Entonces, solo hay que demostrar que esto implica esto y que esto implica esto. ¿Necesito yo hacerlo o vamos a admitirlo? Es un ejercicio que pueden hacer. Pero gracias a esa cosa, se pueden demostrar todas las propiedades usuales del opuesto. Es decir, consecuencia.
+34:56
+o consecuencias, porque hay varias consecuencias. Por ejemplo, es que el opuesto de x más y es igual a la suma de los opuestos.
+35:07
+Es una primera consecuencia.
+35:10
+Y otra consecuencia es que el opuesto del opuesto es igual a x.
+35:19
+Y otra consecuencia es que el opuesto de cero es igual a cero. Todo esto sigue de esta equivalencia y esta equivalencia se sigue del axioma 3.
+35:36
+Entonces, vamos a deducir todas las reglas usuales.
+35:42
+Acá dije todo lo que yo tenía que decir sobre la suma. Ah, no. Me olvidé introducir una noción importante, que es la resta. La resta se define a partir de la suma y del opuesto.
+36:09
+Entonces definición, la resta, la resta es definida x menos y por definición es x más menos y. Terminado. Y todas las propiedades de la resta se siguen de la definición, usando las propiedades del opuesto y la suma. no voy a escribir las propiedades de la resta entonces ahora su ejercicio es tomar todas las reglas algebraicas que conocen y hay una lista gigantesca que conocen de reglas algebraicas y deducirlas de esta lista de acción ver que son consecuencias después propiedades del producto propiedades del producto
+36:57
+Acá tengo exactamente el mismo fenómeno como para la suma. Es decir, cuando yo tengo productos múltiples, yo puedo sacar las paréntesis. Es el primer axioma que me dice. Y también yo puedo intercambiar el orden. Es el segundo axioma que me lo dice. Pero también tengo un neutro que se llama 1. Y también es único y la demostración es similar. Ya hicimos la demostración que 0 es neutro para la suba. Y de mismo modo se demuestra que el neutro 1, que es el neutro para el producto, también es único.
+37:34
+Pero acá, cuidado, el axioma dice algo más. Dice que no solo existe el neutro, pero que es distinto de 0. Cuidado porque si yo saco esta parte, es muy fácil demostrar que R solo tiene un punto.
+37:53
+Es el axioma que en práctica, esta cosa en el cuadrado, es la parte de todo esto que me asegura que R esté infinito. Si no, yo podría decir que todos los números reales son iguales a cero y todas las reglas funcionarían.
+38:14
+El axioma 4 me dice que todo número real no nulo tiene inverso. Es decir que existe un inverso. Y de mismo modo se demuestra que el inverso es único. Y, por ejemplo, propiedades del inverso. Entonces voy a mostrar algunas propiedades. Por ejemplo, una propiedad que se puede deducir es que x por 0 es igual a 0 por x y es igual a 0. Acá es muy interesante porque los axiomas nunca dicen que 0 es absorbente para la multiplicación.
+38:52
+No lo dicen. Pero es una consecuencia. ¿Saben cómo demostrarlo que cero es absorbente para la multiplicación? Porque no aparece acá. Nunca se escribe cero por algo. Pero es una consecuencia. Vamos a verlo. Vamos a demostrar que cero es absorbente.
+39:19
+Ok, voy a escribir 0 por x. 0 por x es igual a 0 más 0 por x. ¿Qué regla usé?
+39:30
+Usé que 0 es neutro, entonces 0 más 0 es igual a 0. Ok, ahora yo puedo usar el axioma de distributividad.
+39:40
+Ok, este axioma. Entonces yo digo que es lo mismo que 0x más 0x. Pero eso también es lo mismo que 0 más 0x.
+39:54
+Es un juego muy infantil, ¿no? Es decir, usa los axiomas para deducir esto. Pero solo usa los axiomas. Acá es, use que 0 es neutro, use que 0 también es neutro, use la distributividad. Y ahora yo puedo simplificar por 0x. Es decir, yo puedo decir que 0 más 0x menos 0x es igual a 0x más 0x menos 0x. Y esto se simplifica y obtengo que 0 es igual a 0x.
+40:27
+Entonces, esa es la razón, porque no hay ningún axioma que dice que cero es absorbente, porque es una consecuencia del resto. Y entonces, cero es absorbente. De hecho, se puede demostrar que una cosa muy importante, que un producto es nulo si solo si alguno de sus factores es igual a cero. Propiedad muy importante. Y al final, una propiedad que es la propiedad similar que ya vimos para el opuesto, que es un producto es igual a 1 si solo si.
+41:09
+Cuando es igual a 1, como 1 es distinto de 0, estamos seguros que ni x ni y son nulos.
+41:18
+Entonces podemos invertirlos. ¿Claro? Gracias a esto, yo sé que cuando un producto no es nulo, entonces ningún de sus factores es nulo. Entonces, yo puedo decir, es lo mismo que decir que x es el universo de y, y es idéntico a decir que y es el universo de x.
+41:40
+Y a partir de esto, yo puedo deducir todas las reglas usuales del producto y del universo. ¿OK?
+41:51
+Voy a hacer un poquito más reglas. ¿Sí? ¿Ese O que pusiste no es el exclusivo? El O acá no es exclusivo, es inclusivo. Porque quizás que X e Y son nulos a la vez. No, pero el símbolo, digo. El símbolo es, por definición, este símbolo es inclusivo, siempre. El O, por defecto de matemática, cuando yo no digo nada, es inclusivo. El O exclusivo es una cosa para informáticos, pero el O matemático es un O inclusivo, salvo cuando yo indico que hay una excepción.
+42:35
+Tenemos esto. Vimos que cero es apropiante. Hay un montón de reglas inducidas. A partir de esto se pueden demostrar un montón de cosas. A partir, por ejemplo, de la distributividad se pueden demostrar las identidades notables, por ejemplo. Por ejemplo. Ejemplo de cuentas que se pueden hacer.
+43:07
+x más y cuadrado. Ah. Un número cuadrado es lo mismo que el número multiplicado por el mismo. Entonces, por la definición, es x más y por x más y. Acá es la definición del cuadrado.
+43:29
+Y después puedo aplicar la distributividad. Es lo mismo que x por x más y más y por x más y. Y yo aplico de nuevo la distributividad, obtengo xx más ix más, no, más xy, disculpa, más ix más iy. Ok, esto es lo mismo que x cuadrado.
+44:00
+Estas dos cosas son iguales, entonces son 2xy más i cuadrado. Todo esto se sigue de los axiomas. Ah, olvidé definir una cosa. ¿Qué olvidé definir en esta expresión?
+44:19
+No, cuadrado es definido, no lo escribí, pero el cuadrado es definido así. Es x, x. ¿Qué olvidé definir?
+44:35
+Olvidé definir esta cosa. No aparece en los axiomas.
+44:41
+Hay que seguir. Nunca definí esta cosa. Es un nuevo símbolo. Entonces voy a definir. Definición.
+44:50
+Por definición voy a escribir 2 es definido como 1 más 1. Y voy a continuar 3 igual a 2 más 1. 4 es definido como 3 más 1, etcétera.
+45:05
+Y en general conocen el resto de la letra de la canción.
+45:12
+Pero hay que definirlos. Esos números hay que definirlos. Son abreviaturas. Para mí 2 es una abreviatura para 1 más 1. Y 15 es una abreviatura para 14 más 1.
+45:30
+Y hay que verificar que esto es igual a esto. Vamos a demostrarlo que esto es igual a esto.
+45:38
+Es un juego infantil, es decir, tenemos un juego de ladrillos y hay que enchufar todo para verificar que se obtiene todo lo que ya sabemos.
+45:50
+Entonces voy a hacer este juego infantil. XI más IX por conmutatividad es igual a XI más XI es igual a 1 por XI más 1 por XI por el axioma de neutro. Y ahora yo puedo aplicar la distributividad. Es lo mismo que 1 más 1 por XI y esto es la definición de 2. Terminado.
+46:23
+Ok. Pueden ver cómo se descomponen las reglas usuales. No hay nada difícil acá. Solo es un juego. Ok. Y después, por supuesto, hay que definir el cociente. Definición, cociente.
+46:47
+Y se define de modo similar a la resta.
+47:00
+se define el cociente que se escribe o bien x sobre y, o bien x verticalmente sobre y, es definido por x por el inverso de y. Si y es distinto de 0. ¿Ok? Cuidado, 0 no tiene inverso. Entonces, si me escriben...
+47:25
+ser algo x a la menos uno sin verificar que este algo no es nulo, se van directamente al infierno. Directamente.
+47:36
+Antes de dar el examen. Y el castigo es dar la prueba de cálculo uno para la eternidad sin nunca salvarla. Acá es mi visión del infierno.
+47:59
+Ok, entonces, esa definición. Y ahora se pueden deducir todas las reglas usuales. En particular, reglas muy importantes que son las reglas de reducción al mismo denominador.
+48:11
+Y entonces, consecuencias.
+48:16
+Tenemos, por ejemplo, si yo quiero sumar dos fracciones...
+48:23
+Tengo que poner al mismo denominador, y esto se justifica, es lo mismo que XU sobre ZU, más IZ sobre UZ, es lo mismo que XU más IZ sobre UZ, o ZU. ¿Ok? Que es la regla de reducción al mismo denominador, que son cosas que ya conocen normalmente. Y todas las reglas usuales de las fracciones se deducen a partir de la definición del cociente y de las propiedades y de los axiomas del producto.
+49:05
+Y no voy a insistir sobre tales reglas porque normalmente ya la conocen. Acá hay que decir una palabra. Esta regla de reducción al mismo denominador no solo es una regla que se cumple para los racionales, Es una regla cómoda para los racionales. Pero también se cumple para los reales. Entonces puede servir a hacer muchas cosas. Voy a mostrar ejemplos. Entonces, primer ejemplo.
+49:39
+De reducción al mismo denominador.
+49:45
+El ejemplo idiota. 1 sobre 2 más 1 sobre 3 es lo mismo que voy a reducir el denominador 6, es decir, 3 sobre 6 más 2 sobre 6. Esto es igual a que es igual a 5 sobre 6. Terminado. Acá es un caso donde use la regla de reducción del mismo denominador para números racionales. Pero también se puede usar para números reales. Ahora voy a anticipar sobre la existencia de la raíz cuadrada.
+50:17
+Cuidado, los axiomas anteriores no me dicen nada sobre la raíz cuadrada, porque es una consecuencia del último axioma, que es la completitud. Pero ya saben que existe, entonces ya podemos usarla. Entonces, anticipando sobre la existencia de la raíz cuadrada,
+50:46
+Se puede observar, yo puedo también sumar 1 sobre raíz cuadrada de 2 más 1 sobre raíz cuadrada de 3. Y no son irracionales. Y también yo voy a efectuar una reducción al mismo denominador.
+51:01
+Voy a decir que es raíz de 3 sobre el producto de raíz de 2 por raíz de 3 más raíz de 2 sobre el producto de raíz de 2 más por raíz de 3.
+51:15
+¿Claro?
+51:18
+Y esto yo obtengo, por ejemplo, que es igual a raíz de 2 más raíz de 3 sobre, y esto es igual a raíz de 6.
+51:35
+Es una reducción al mismo denominador que no involucra números racionales. Y siempre vamos a usar tales cuentas. Pero esto también se puede simplificar. ¿Qué no me gusta acá en esta escritura? el raíz de 6 abajo, no me gusta voy a multiplicar todo por raíz de 6 obtengo raíz de 2 por raíz de 3 multiplicado por raíz de 6 sobre raíz de 6 por raíz de 6 y es igual a raíz de 12 más raíz de 18 sobre 6 es mucho mejor ¿me equivoqué?
+52:17
+después voy a simplificar Sí, sí, claro. 12 es igual a 4 por 3. Entonces, raíz de 12 es igual a 2 raíz de 3. 18 son 9 por 2. Es decir, este son 3 raíz de 2 sobre 6.
+52:39
+Pueden ver cómo se hacen simplificaciones con raíces usando la reducción al mismo denominador. Entonces, idea importante, la reducción al mismo denominador no sólo involucra racionales, se puede usar en muchas otras situaciones posibles.
+52:58
+Ahora, antes de describir los axiomas de orden, voy a hablar un poquito de geometría.
+53:08
+ahora el ejercicio es cuál es la interpretación geométrica de las operaciones a la cosa importante es que por supuesto voy a suponer que salieron del liceo entonces que saben hacer tales cuentas muy fácilmente, sin problema, sin duda.
+53:42
+¿OK? No, no es el caso. Tales cuentas hay que saber hacerlo muy rápidamente. Acá el único tema es mostrar que esas cuentas se deducen de esta lista de acción. ¿OK? Pero hay que saber hacer cuentas. Entonces, si todavía no saben hacer cuentas, hay que entrenarse. ¿OK?
+54:08
+Ahora, vamos a hablar de la interpretación geométrica.
+54:22
+De la suma y del producto, y también voy a interpretar el universo, porque es una cosa interesante. ¿A qué corresponde sobre la recta la suma de dos reales?
+54:36
+¿A qué corresponde? A la suma de vectores. ¿No? Entonces, si yo me doy una recta cero, un punto x y un punto y. ¿Cómo formo yo el punto que representa la suma? Por ejemplo, esto. ¿Ok? Estoy de acuerdo. Es una construcción posible.
+55:08
+O al revés, también.
+55:12
+Acá es mi vector u, acá es el mismo vector u. Y esto me define el punto z que representa la suma. ¿Ok?
+55:23
+Yo puedo hacerlo de modo geométrico del siguiente modo. Yo me doy una recta paralela.
+55:32
+Yo me doy una recta paralela, pero no una recta paralela ebria. Ah, es mejor.
+55:41
+Y yo me doy copias del punto, no sé, por ejemplo, del punto 0, formando un paralelograma.
+55:57
+Y voy a llamar I' y O'. En mi recta R'. Es decir, en mi recta R' que es paralela a R, yo elijo un punto O' y formo el paralelograma O' I' I O. Lo que me define el punto I'.
+56:18
+Y después, lo que yo puedo hacer es esto. Formar un nuevo paralelograma. Y esto me define Z. Construcción geométrica a la regla y al compás de la suma. Ejercicio definir a la construcción, a la regla y al compás del opuesto. Es fácil. ¿Ok? Ahora vamos a hacer a la regla y al compás el producto.
+56:51
+Mucho más interesante. Acá pueden ver que hay un punto que no dibujé. ¿Cuál es el punto que no dibujé? La unidad. Nunca dibujé la unidad. Porque cuando se trata de hacer sumas, no se necesita conocer la unidad.
+57:06
+Y la razón viene de que la suma es una operación lineal. Ahora vamos a ver el producto. Producto. Yo quiero definir el producto.
+57:24
+Acá es para mostrar que se puede definir... De hecho, se podría definir R sólo por... Antes del siglo XVII se podía definir R a partir de tales construcciones. Acá es una construcción que me define la suma. Y después, con razonamientos geométricos, se podían deducir todas esas reglas allá. Ahora vamos a hacer el producto. Y ahora vamos a necesitar la unidad.
+57:52
+yo me doy mi recta R, que contiene un punto O, la unidad, un punto X, por ejemplo, acá, y un punto Y, por ejemplo, acá. Ok.
+58:08
+Ahora, ¿qué voy a hacer yo? Yo quiero, entonces, X tiene coordenada X minúscula, y Y, que es Y mayúscula, tiene coordenada Y minúscula. Y yo quiero dibujar el punto que representa el producto.
+58:24
+Estoy casi seguro que no conocen estas construcciones.
+58:31
+Ok. Primera cosa, voy a tomar una recta secante en cero. R'. Elijo cualquier punto que voy a llamar mi unidad duplicada.
+58:51
+Ok. Esto me forma un triángulo.
+58:56
+Portales tomó la paralela.
+59:00
+Acá aparece el punto I. Y acá no es paralela.
+59:13
+Yo sé por tales que la razón entre OI' y OI', ah, son dos I, disculpa, es el problema, OG' y OI' es la misma que la razón entre OI, OG y OI. ¿Ok? Pero ahora yo puedo hacer lo mismo entre I' y X.
+59:39
+Tomar la paralela.
+59:43
+y acá obtengo un punto zeta y yo sé que la razón entre OI' y OG' es la misma que la razón entre OX y OZ. Y esto me define el producto. Construcción a la regla y al compás del producto.
+1:00:03
+Si eran dos puntos sobre la recta, una unidad, una origen, yo sé construir el producto a la regla y al compás. Ejercicio Usando esta construcción como fuente de inspiración, definir la construcción para el inverso.
+1:00:25
+Se hace de modo similar. Acá es un ejercicio de imaginación. ¿Cuál sería? Usa las mismas propiedades. La cosa interesante es que acá para la suma use paralelogramas y acá para el producto use triángulos y el teorema de Tales. Acá se usa tales. Lo que justifica todo es el teorema de tales.
+1:00:46
+¿Ok? Entonces, ejercicio.
+1:00:50
+¿Cuál sería la construcción? ¿Quieren que yo muestre la construcción? Sí. Sí, tenés razón. Yo vi...
+1:01:03
+Entonces, la construcción para el universo es muy similar. Ah, vamos, no, yo dejo como ejercicio para ustedes. Es un ejercicio de creatividad mental. Nunca va a terminar hecho. ¿Cómo? Nunca va a terminar hecho. Usa las mismas ideas, solo hay que cambiar los puntos. Es decir, lo que quieres al final es que el producto Z sea igual a Y. Y es definir Y en función de Z y de Y.
+1:01:32
+Entonces te vas a obtener ideas similares. Hay que hallar un poquito. Lo que yo pienso es que si tienen una inteligencia razonable, en una media hora, a lo subo una hora, van a hallar la solución. Pero usa el mismo truco. Teorema de Tales, teorema de Tales. Y como antes, habrá que considerar una recta secante. ¿OK?
+1:01:55
+Pueden intentar. Es interesante. Y vamos a ver que hay un montón de construcciones geométricas que permiten definir otras cosas. Por ejemplo, vamos a ver, no esta clase, pero yo voy a anticipar una construcción. Si yo pongo, por ejemplo, cero, y, x, ok, ahora yo pongo el simétrico, que es j, que corresponde a menos uno.
+1:02:31
+Y ahora yo tomo esta distancia como diámetro de un círculo.
+1:02:43
+Y yo tomo, ahora que yo tomo esto, ¿qué voy a hacer yo? Voy a tomar el punto que corresponde a esto.
+1:02:57
+Y yo puedo reportar este número. Z, ¿cuál sería la coordenada de Z?
+1:03:05
+Sería raíz de X. Es una construcción de la raíz cuadrada arreglada del compás. Vamos a ver una próxima vez. Eso ahí sería tipo apoyando el compás en J. Sí. Acá, es decir, acá, la idea es que yo tomo cero la unidad y X. Yo formo el simétrico J. Después, el segmento JX... me da un diámetro de un círculo y yo pongo la perpendicular en cero y veo cuál sería la intersección y está esta distancia es la raíz cuadrada de x es una construcción de la raíz cuadrada de la regla y el compás Cuidado, esta construcción no se puede expresar con esos axiomas porque todavía no vimos cómo se definía la raíz cuadrada.
+1:04:00
+Solo es para mostrar el punto de vista de los griegos antiguos, cuando razonaban sobre los números, solo hacían figuras. Por ejemplo, cuando Euclides hace la demostración que existe una cantidad infinita de números primos, no hace productos y no usa algebra, solo usa dibujos así. y hace todas las construcciones con dibujitos. Entonces, es un libro gigantesco porque hay un montón de dibujos en todas las partes. Porque no tenían números.
+1:04:31
+Hacían todo con la geometría, con esas ideas. El problema es que todo no es satisfactorio. Es decir, que faltan un montón de cosas que no sabemos hacer. Y esa es la razón del último axioma. Pero antes de esto, yo tengo que hablar del orden. Voy a terminar esta clase hablando de orden.
+1:04:52
+Propiedades de orden. Entonces, ¿qué dicen ahora los axiomas 3? El tercer grupo.
+1:05:03
+Yo sé que acá son construcciones nuevas, pero es muy importante para ustedes que sepan que cada vez que se hace una cosa con números o expresiones algebraicas, que esto corresponde a una construcción geométrica. Es decir, que pueden ver, mirar los reales en su cabeza. Son cosas que tienen un contenido geométrico muy grande. Y esa razón porque se pierden en sus cuentas en general. Porque hacen cuentas como si fueran fórmulas esotéricas, ¿no?
+1:05:39
+Como si fueran fórmulas mágicas. Manipulan las fórmulas matemáticas como cosas de magia negra. Pero no es magia negra, es magia blanca. Entonces, tienen intuiciones, no salen de nada. ¿Ok?
+1:06:01
+Vamos a ver esto. Ahora, ¿qué dice el primer axioma? Él dice que el orden es total. Es decir, que cuando yo tomo dos puntos cualesquiera, siempre yo puedo compararlos. ¿Conocen un orden que no es total, el universo? Ah, pero no tienen orden. No existe exactamente un orden. Hay un montón de órdenes para los complejos. Pero existe un orden natural que no es total.
+1:06:32
+Ya conocen una relación de orden. Es la inclusión.
+1:06:38
+La inclusión entre dos conjuntos es un orden. Es transitivo, es reflexivo, es antisimétrico, pero no es total.
+1:06:49
+Es decir, cuando yo me doy dos conjuntos, no puedo yo compararlos siempre. Pero para los números siempre se pueden comparar. ¿Y por qué? Porque es una recta. Es decir, hay un orden en una recta y cuando yo tengo dos puntos, yo puedo decir, y cuando yo tengo, por ejemplo, un sistema de coordenadas, yo puedo decir, ok, tal punto está a la izquierda de tal otro punto. Es lo que dice el axioma 1. El axioma 1 implica en particular que x es siempre menor o igual a x.
+1:07:23
+Si yo tomo el caso particular donde x es igual a y, el axioma 1 me dice x es menor o igual a x o x es menor o igual a x. Pero si yo digo que llueve hoy o llueve hoy, es lo mismo que decir que llueve hoy.
+1:07:42
+Entonces, te mostré como caso particular que x es menor o igual a x.
+1:07:48
+Segunda regla dice que el orden es transitivo. que es una cosa muy intuitiva. Si X es menor a Y, si Y es menor a Z, entonces X es menor a Z, punto.
+1:07:58
+Tercer cosa, dice que el orden es antisimétrico. Es decir, si X es menor o igual a Y, y si Y es menor o igual a X, entonces son iguales.
+1:08:12
+Esta cosa es quizás el axioma de orden más importante de todo el universo. ¿Por qué? ¿Por qué? Es una cosa que parte de hipótesis que nos hablan de orden.
+1:08:25
+Y la conclusión es una igualdad. Es decir, algo que tiene que ver con los axiomas anteriores. Entonces, gracias a este axioma, tenemos un nuevo método para demostrar que dos cosas son iguales.
+1:08:40
+Sin este axioma, los únicos métodos que tenemos para demostrar que dos cosas son iguales es hacer cuentas. Pero gracias a este método, y que vamos a usar muy frecuentemente, vamos a tener la posibilidad para demostrar una igualdad, de decir, ok, yo quiero demostrar que este número es igual a este número, y los razonamientos algebraicos no funcionan, pero puedo usar el orden. Voy a decir, ok, voy a mostrar en primer lugar que x es menor o igual a y, y en segundo lugar voy a mostrar que y es menor o igual a x, y al final podré concluir que son iguales.
+1:09:15
+Es una herramienta muy fundamental para demostrar igualdades.
+1:09:20
+Entonces, cuarta regla. Ah, olvidé decir una cosa. Por supuesto, voy a definir cuando yo tengo, ¿qué puedo yo borrar? Esto.
+1:09:52
+Ok, ¿qué quería decir? Ah, sí. Olvidé decir que, por supuesto, acá axiomaticé el orden amplio, pero también se puede definir el orden estricto a partir del orden amplio. Definición.
+1:10:10
+Yo voy a decir que x es menor estrictamente a y, si y solo si de definición. porque no les gusta mi símbolo con tres rayas, entonces cambié y adopté el símbolo de sí, sólo sí de definición. La definición es si x es menor o igual a y, y x es distinto de y. Esa definición. Acá es una definición del orden estricto a partir del orden amplio.
+1:10:45
+Pero también se puede hacer al revés. Entonces, de tal modo que también tenemos que x es menor o igual a y si y solo si x es estrictamente menor que y o x es igual a y. es decir cuando yo tengo el orden amplio yo puedo definir el orden estricto y al revés si me das el orden estricto yo puedo definir el orden amplio entonces para axiomatizar el orden yo tenía dos opciones o bien axiomatizar el orden estricto o bien axiomatizar el amplio pero son equivalentes al final entonces las propiedades del orden amplio son las siguientes Entonces, propiedades, orden estricto, disculpa.
+1:11:39
+Primera cosa es que nunca se cumple que x es menor que x. Es decir, x menor que x nunca se cumple.
+1:11:49
+Segunda propiedad, si x es menor que y, y si y es menor que z, entonces x es menor que z. y otra propiedad es que para todos pares de números tengo la tricotomía o bien x es menor que y o bien y acá es un o exclusivo por primera vez x es igual a y o bien x es mayor que y y x mayor que y por supuesto es esto ok y esto sigue de esta cosa En particular, podré dividir los números reales en tres cosas.
+1:12:36
+Los números mayores que cero, que voy a llamar los positivos. Los números menores que cero, que voy a llamar los negativos. Y los números iguales a cero, y disculpa, solo hay uno, se llama cero. Entonces, esto me define la división en positivos, negativos y nulos.
+1:12:58
+Ok, y a partir de esto se pueden deducir todas las reglas de manipulación de desigualdades. Y acá voy a concluir dando un par de tales desigualdades. Por ejemplo, vamos a hablar de orden y de suma.
+1:13:27
+Entonces, disculpa, es una clase de recordatorio de cosas que ya vieron desde la primaria. Pero hay que explicar de dónde sale. ¿Por qué en la segunda proposición no es solo sí? ¿Por qué no es un sí de los sí? En esta cosa, ¿por qué no es un sí, solo sí? Por la razón que, por ejemplo, si yo parto de esta hipótesis, ¿cómo no habla de y?
+1:14:01
+Y podría ser cualquiera. Y podría tener nada que ver con el problema.
+1:14:08
+Por ejemplo, no estás de acuerdo que no es un sí o solo sí. Voy a tomar un ejemplo. Entonces, tu pregunta es, Acá es para la cámara. Buenas tardes, cámara. Y la pregunta era, ¿por qué esto no es un sí o solo sí? Es una buena pregunta. Voy a mostrar un contraejemplo.
+1:14:36
+Yo puedo decir, por ejemplo, que si 1 es menor que menos 3, y si menos 3 es menor que 2, Entonces, 1 es menor que 2. ¿Se cumple o no se cumple esta implicación?
+1:15:03
+Vamos a calcular su valor de verdad. ¿Qué se puede decir sobre este enunciado? ¿Verdadero o falso? Falso. ¿Ese enunciado?
+1:15:13
+Verdadero.
+1:15:16
+Falso y verdadero. ¿Qué me da? Entonces, toda esta cosa es falsa. ¿Y ese enunciado?
+1:15:28
+Verdadero.
+1:15:33
+¿Y cuál es la verdad de un falso implica verdadero?
+1:15:40
+Es verdadero. El falso implica cualquier otra cosa. La implicación es el orden entre el verdadero y el falso. Cuando yo escribo que algo implica algo, digo que la parte derecha es al menos tan verdadera como la anterior.
+1:16:03
+El falso implica el verdadero.
+1:16:09
+es muy importante entenderlo en matemática porque cuando yo digo cuando yo digo porque es importante entender esto cuando yo digo esto digo que es que para todos x y z pero si yo digo que esta implicación se cumple para todos x y z en particular yo puedo tomar x igual a 1 yo puedo tomar y igual a menos 3 y z igual a 2 son un caso particular no Es la significación de una implicación.
+1:16:42
+Yo sé que tienen un montón de dificultades con esto. Hay que acostumbrarse a la idea que la implicación es un mecanismo de restricción, es un test. Esto dice que cada vez que este test se cumple, entonces se puede decir que este test se cumple. Pero quizás que este test no se cumple y no se puede dilucir nada sobre esto. Es decir, en el caso donde esto es falso, esta cosa de derecha puede ser verdadera o falsa.
+1:17:16
+Sin problema. Y es claro que si pondríamos al revés, el verdadero no puede implicar el falso. Esa razón porque la recíproca no se cumple.
+1:17:28
+ok acá cuidado hay que acostumbrarse a estos trucos de lógica porque soy un matemático tengo la costumbre a usarlo de modo como yo respiro y el problema es que a veces olvidó que hay problemas porque para mí son cosas naturales entonces hay que acostumbrarse a tales cosas La matemática no prohíbe el falso. Es muy importante. Tenemos derecho a escribir cosas falsas. Cuando digo que una proposición es verdadera, no digo que todas las subfórmulas que aparecen son verdaderas.
+1:18:06
+Algunas pueden ser falsas. Acá esta implicación es una proposición correcta porque la implicación total es verdadera, pero el lado izquierdo es falso. Y no es un problema. Tenemos derecho a escribir cosas falsas.
+1:18:22
+La única cosa que nos importa es que al final las fórmulas globales sean verdaderas, pero pueden contener elementos falsos. Entonces tenemos esto. ¿Qué quería decir yo? Olvidé. Ahora hay que ver cuáles son las consecuencias de estas cosas. Entonces acá, la consecuencia, la regla que dice que X es menor o igual a Y, No, que si x es menor o igual a y, yo puedo sumarle z. Es una cosa muy universal.
+1:19:02
+Y de hecho, esto es equivalente. Es decir, si x es menor o igual a y, es equivalente a decir que x más z es menor o igual a y más z. Y es equivalente también a decir que x menos z es equivalente a y menos z. Y para todo z. Entonces, es la buena noticia del día. No tenemos que testear nada sobre z. Es la fiesta.
+1:19:30
+Porque el problema va a ocurrir con el producto. Y acá tendremos un montón de problemas con el producto. Y de mismo modo, es equivalente a decir que menos x es mayor o igual a menos y. Es decir, cuando tomo el opuesto, yo tengo que cambiar la dirección del orden. ¿Ok? Todo esto se deduce a lo anterior. Ahora, ¿qué pasa con el producto? Ah, y misma cosa con las desigualdades estrictas.
+1:20:01
+Es decir... ¿Ok? Y ya normalmente conocen estas reglas. Los problemas llegan con el producto, malo producto. Es el feo producto.
+1:20:32
+Es responsable del 90% de los errores de los estudiantes y esa razón porque no salvan cálculo 1 después. Entonces, es la culpa del producto. No es la culpa de los profesores de matemática, es la culpa del producto. Y vamos a ver por qué. Porque, por ejemplo, el producto, ¿cuál es el problema?
+1:20:53
+Si X es menor que Y, tengo el derecho de decir que esto implica, no voy a poner un sí, solo sí, porque es peligroso acá. Que XZ es menor o igual a YZ.
+1:21:11
+Hay que verificar si que Z es positivo o nulo, puede ser nulo. Si x es positivo o nulo.
+1:21:27
+Si no, esta implicación no funciona. Ah, zeta, disculpa.
+1:21:36
+Si zeta es positivo o nulo. Si no, no funciona. Pero ¿qué pasa si zeta es negativo o nulo?
+1:21:46
+Entonces hay que intercambiar el orden.
+1:21:59
+Y acá, cuidado, misma cosa. Si es igual, funciona también. Porque acá es O igual. Acá capturo también el caso de igualdad. Entonces, yo puedo poner menor o igual, mayor o igual, no hay ningún problema. Entonces, ya sé que en el primer facial voy a ver más de la mitad de las pruebas que pasan de esto a esto sin verificar que Z es positivo o nulo.
+1:22:33
+Yo no puedo poner puntos en este caso porque tenemos dos implicaciones y hay que justificar en cuál caso estamos.
+1:22:42
+Es decir, cada vez que usan este razonamiento o este razonamiento, hay que decirme, ah, yo tengo derecho a hacerlo porque yo sé que z es positivo o nulo. ¿Y por qué? ¿Ok? ¿Sí? No hay ningún problema. Acá, en este caso...
+1:23:07
+acá este no hay ningún problema yo puedo sumar restar sin pensar esa buena noticia hay un error puse un error x y x z y z no x menos así
+1:23:38
+Es horrible. Es el problema de la universidad que no tiene bastante plata para comprar un profesor que sabe hablar español y que sabe hacer cuentas. Ok. Y podemos continuar con esto. Ejemplo, ahora con desigualdades estrictas.
+1:24:07
+Funciona así. ¿Qué tengo yo que suponer sobre z para deducir esto?
+1:24:17
+Ahora, ¿positivo o nulo o positivo? Positivo. Si es nulo, vamos a obtener la igualdad.
+1:24:38
+Entonces, cada vez que me hacen tales razonamientos, por favor, cada vez que multiplican una desigualdad por un número, hay que decirme algo sobre el signo de dicho número. Si no, no vale nada. ¿Cómo? Acá no se puede hacer nada si es cero. No hay ningún caso para cero, porque si no son iguales. Si quieres obtener esto, yo te voy a dar el último caso. Si xz es igual a iz, si z es igual a 0.
+1:25:14
+Entonces pueden mirar que cuando se multiplican desigualdades hay que ser muy cuidadoso sobre lo que van a hacer. Por favor, hay que justificar las cosas y en general olviden la mitad de los detalles de las cosas que nunca hay que decir. Y yo creo que me voy a parar para hoy y nos vemos miércoles. Gracias.
+

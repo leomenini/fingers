@@ -1,0 +1,72 @@
+% Clase 5 --- Interpretación geométrica de las reglas de las desigualdades
+% (§4.1--4.2). El docente dibuja explícitamente estos tres casos en el
+% pizarrón ("se puede interpretar en términos de traslación...", "tenemos
+% dos dibujos posibles [dilatación/contracción]...", "voy a intercambiarse").
+% Misma geometría base (recta con x<y) en los tres paneles; solo cambia la
+% operación aplicada.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+  % ---------- Panel (a): Traslación (suma) ----------
+  \begin{scope}[yshift=0cm]
+    \draw[figaxis] (-0.8,0) -- (5.6,0);
+    \node[figptocerrado] (x) at (0.5,0) {};
+    \node[figptocerrado] (y) at (2,0) {};
+    \node[figlbl, below=2pt] at (0.5,-0.05) {$x$};
+    \node[figlbl, below=2pt] at (2,-0.05) {$y$};
+    \node[figptocerrado] (xz) at (3,0) {};
+    \node[figptocerrado] (yz) at (4.5,0) {};
+    \node[figlbl, below=2pt] at (3,-0.05) {$x+z$};
+    \node[figlbl, below=2pt] at (4.5,-0.05) {$y+z$};
+    \draw[figvec] (x.north) to[bend left=35] node[figlbl, above, pos=0.5] {$+z$} (xz.north);
+    \draw[figvec] (y.north) to[bend left=35] node[figlbl, above, pos=0.5] {$+z$} (yz.north);
+    \node[figlbl, figblue, right, align=left] at (5.7,0)
+      {(a) \textbf{traslación}: mismo\\ desplazamiento $z$ para\\ ambos, el orden se preserva};
+  \end{scope}
+
+  % ---------- Panel (b): Dilatación (producto, z>0) ----------
+  \begin{scope}[yshift=-2.6cm]
+    \draw[figaxis] (-0.8,0) -- (5.6,0);
+    \node[figpto, fill=figgray] (o) at (0,0) {};
+    \node[figlblaux, below=2pt] at (0,-0.05) {$0$};
+    \node[figptocerrado] (x) at (1,0) {};
+    \node[figptocerrado] (y) at (2,0) {};
+    \node[figlbl, below=2pt] at (1,-0.05) {$x$};
+    \node[figlbl, below=2pt] at (2,-0.05) {$y$};
+    \node[figptocerrado] (xz) at (3,0) {};
+    \node[figptocerrado] (yz) at (5,0) {};
+    \node[figlbl, below=2pt] at (3,-0.05) {$xz$};
+    \node[figlbl, below=2pt] at (5,-0.05) {$yz$};
+    \draw[figvec] (x.north) to[bend left=20] node[figlbl, above, pos=0.5] {$\times z$} (xz.north);
+    \draw[figvec] (y.north) to[bend left=20] node[figlbl, above, pos=0.5] {$\times z$} (yz.north);
+    \node[figlbl, figblue, right, align=left] at (5.7,0)
+      {(b) \textbf{dilatación} ($z>1$):\\ ambos se alejan del $0$,\\ el orden se preserva};
+  \end{scope}
+
+  % ---------- Panel (c): Contracción con inversión (producto, z<0) ----------
+  \begin{scope}[yshift=-5.4cm]
+    \draw[figaxis] (-3.2,0) -- (3.2,0);
+    \node[figpto, fill=figgray] (o) at (0,0) {};
+    \node[figlblaux, below=2pt] at (0,-0.05) {$0$};
+    \node[figptocerrado] (x) at (1,0) {};
+    \node[figptocerrado] (y) at (2,0) {};
+    \node[figlbl, below=2pt] at (1,-0.05) {$x$};
+    \node[figlbl, below=2pt] at (2,-0.05) {$y$};
+    \node[figptoZ] (xz) at (-1,0) {};
+    \node[figptoZ] (yz) at (-2,0) {};
+    \node[figlbl, figred, below=2pt] at (-1,-0.05) {$xz$};
+    \node[figlbl, figred, below=2pt] at (-2,-0.05) {$yz$};
+    \draw[figvec] (x.north) to[bend left=30] (xz.north);
+    \draw[figvec] (y.north) to[bend left=50] (yz.north);
+    \node[figlbl, figred] at (0,1.55) {$\times z$};
+    \node[figlbl, figred, right, align=left] at (3.3,0)
+      {(c) $z<0$: los puntos\\ \textbf{cruzan} el $0$ y el\\ \textbf{orden se invierte}\\ ($xz>yz$)};
+  \end{scope}
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Misma recta base en los tres paneles ($x<y$): sumar $z$
+(a) traslada ambos puntos por igual y nunca cambia el orden; multiplicar por
+$z>0$ (b) los aleja o acerca del origen sin cambiar el orden; multiplicar por
+$z<0$ (c) los hace cruzar el origen e \textbf{invierte} el orden --- el
+origen de la mayoría de los errores con desigualdades.}
+\end{center}

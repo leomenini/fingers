@@ -1,0 +1,451 @@
+# Clase 1
+
+Curso: CIV
+
+Fuente: https://open.fing.edu.uy/courses/civ/1/
+
+Fecha de exportación: 7/30/2026, 10:40:10 AM
+
+---
+Clase: 1
+Curso: CIV
+
+Segmentos : 259
+Palabras  : 9699
+Caracteres: 54737
+
+0:16
+Buenas tardes. Yo me voy a presentar. Me llamo Alexandre Miquel. Y ya comienzan las cosas difíciles.
+0:29
+Yo tengo un nombre que parece como un apellido y un apellido que parece como un nombre. Entonces, nombre más apellido. Y la razón es que soy francés, como se puede oír. Disculpa, me capturaron acá y nunca me dejaron partir.
+0:59
+Ok, soy el responsable del curso y el coordinador es Marcos Barrios, que hace también el otro teórico, el teórico de mañana. Barrios. Y acá, map.
+1:24
+Entonces hay dos teóricos, como ya lo saben. El primer teórico es hecho por Marcos Barrios en la mañana y yo voy a hacer este teórico de la tarde. Y hay un par de anuncios que hay que hacer. Entonces...
+1:42
+El primer anuncio es que hay que, normalmente conocen el sitio Eva, entonces hay que registrarse en dicho sitio, si todavía no lo hicieron. Y el cálculo se llama, el curso se llama Cálculo DIR, es su nombre. No sé por qué, si es Cálculo Diferencial e Integral con una Variable. ¿Por qué corresponde a un nuevo programa que voy a presentar después?
+2:16
+Entonces, un par de anuncios. Hay seis grupos de prácticos, como ya lo saben. Y como no hay ninguna clase de noche, no hay ningún teórico de noche, entonces para compensar habrá el práctico de noche, que es yo creo el práctico uno, el grupo número uno. el grupo de noche durará dos horas y media en lugar de una hora y media y se harán repasos de teórico para la gente que no puede asistir ok y vamos a poner entonces los prácticos se van técnicamente vamos a hacer los prácticos una semana vamos a intentar porque es una nueva edición del curso entonces vamos a arreglar un par de cosas Entonces, los prácticos tendrán una semana de retraso con respecto al teórico, normalmente.
+3:09
+Y vamos a poner en línea un cuestionario semanal para que ustedes y nosotros tengan idea continua de cómo va el teórico, cómo aprende las cosas. Cuidado, no corresponden a ningún punto para el curso, es decir, no cuestan nada, solo es para ustedes. Entonces poder hacerlos o no hacerlos no van a cambiar nada sobre el puntaje de modo directo, pero de modo indirecto sí, por supuesto, porque esto les va a ayudar.
+3:45
+Ok, y el otro problema que yo tengo que decir es que todavía no tenemos nuevos apuntes listos. Es decir, cada vez que voy a hacer un tema nuevo, voy a presentar cuáles son las referencias. Para la mayoría de los temas no hay muchos cambios respecto a los temas anteriores, entonces pueden seguir trabajando con los apuntes anteriores. Pero hay algunos cambios y para estos cambios voy a producir capítulos específicos.
+4:23
+¿Ok? Entonces, ahora, voy a presentar el nuevo programa del curso de Cálculo 1. Ah, yo necesito hacer un pequeño sonido. ¿Cuáles son los antiguos que ya cursaron la materia? ¡Uh! Entonces, es último lo que voy a hacer. Entonces, ¿cuáles son los pequeños nuevos? Sí, gracias por ser venidos.
+4:59
+Gracias por ser venidos, los pequeños nuevos. Y de vez en cuando, porque a veces voy a hacer analogías con la informática, me gustaría saber cuáles son los informáticos en la sala. Ah, gracias por ser venido. Entonces, esto me va a ayudar, porque a veces hay vínculos con la informática. Ok, voy a presentar el nuevo temario. Entonces, cálculo 1 nuevo.
+5:34
+Voy a empezar por los temas que, buenas noticias, hay un montón de temas que van a desaparecer. Los temas que desaparecen.
+5:53
+Por supuesto, solo van a desaparecer de modo temporario. No matamos a estos temas. Todavía existen, pero se van a dar en cálculo 2. Los temas que desaparecen son los números complejos. Ya veo unos que están felices. Números complejos. Van a desaparecer sucesiones y series.
+6:32
+Acá es muy importante hacer esta observación. Es que, ¿sí? ¿Cómo, cómo? Sí, sí, en calculos. Es decir, ahora son temas que se mueven de cálculo 1 a cálculo 2. La idea es que debido al cambio de los programas en el liceo, había un salto demasiado grande entre el liceo y el temario de cálculo 1. Entonces, aligeramos el temario de cálculo 1 y pusimos algunos temas en cálculo 2, etc. Y de un mismo modo pusimos algunos temas en cálculo 3, etc., etc.
+7:12
+¿Es fácil? ¿Cómo? Sí, va a ser otro cálculo que se llamará, no sé, pero cálculo 5 o 4. Entonces, desaparecen sucesiones y series y también desaparecen las integrales impropias. Y esto me gusta mucho porque es el tema que no me gustaba.
+7:40
+Ok, ahora, pero también, ahora hay nuevos, no hay exactamente nuevos temas, pero nuevo enfoque para presentación de los temas usuales y cambio de orden de presentación. Entonces voy a presentar, se va a dividir en ocho capítulos. Primer capítulo para esta semana es conjuntos y funciones.
+8:12
+Conjuntos y funciones, es decir, solo para hacer un recordatorio sobre las notaciones matemáticas usuales.
+8:22
+Después, números reales.
+8:28
+Y acá será una semana. Y acá dos semanas. Números reales. ¿Ok? Esto no cambia con respecto al programa anterior. Es decir, pueden usar todo el material anterior. No hay ningún cambio. La cosa que es nueva... Es que el tercer tema, que era antes límites y continuidad o sucesiones, no me acuerdo, ahora el tercer tema es el tema central del curso, de la nueva edición, son integrales.
+9:00
+Es decir, antes la parte de integrales, que es la cosa realmente nueva para ustedes, lo hacíamos solo al final del curso y en general nos faltaba tiempo para hacerlo. Ahora vamos a empezar directamente con las integrales, pero por supuesto, como no tenemos ni sucesiones, ni continuidad, ni derivada, entonces vamos a cambiar la presentación. Vamos a hacer una presentación adaptada. Al final van a obtener los mismos teoremas que ya conocen. Pero hay algunas demostraciones que van a cambiar.
+9:40
+Integrales. Entonces ahora es el tema central.
+9:45
+De la nueva edición. Es decir, vamos a hacer múltiples integrales en los otros capítulos. Es decir, la justificación de cálculo 1 es un curso que sirve para calcular integrales. ¿Ok? Es la justificación. Después, 4 vamos a hablar de continuidad. Y acá, cuidado...
+10:15
+Algunas demostraciones cambian. ¿Se va a hablar de continuidad uniforme? Sí, también.
+10:30
+cuando se cambia la presentación, porque la integral, para la definición de Riemann, sólo usa supremos e ínfimos. Entonces, a partir de que tenemos supremos e ínfimos, que vamos a obtener acá, se puede decir directamente la integral. Pero, por supuesto, no se puede dar el teorema fundamental. Porque todavía no tenemos las funciones continuas. Entonces, lo que vamos a hacer es presentar la teoría de la integral como una teoría del área algebraica de las superficies definidas a partir de curvas. Y vamos a introducir un nuevo teorema que es que todas las funciones monótonas son integrables.
+11:08
+Que es el caso. Y no se necesita hablar de continuidad. Continuidad. Continuidad. Después, funciones trigonométricas. Y normalmente todo esto se va al primer parcial. Es decir, el problema del primer parcial será normalmente de 1 a 4. Y la semana justo antes del premio parcial vamos a hablar de funciones trigonométricas.
+11:53
+Y seis, ahora, para vos no se quieren, dos, derivadas. Y este tema no va a cambiar mucho. Porque ahora que tenemos todas esas cosas, es claro que no se va a cambiar mucho.
+12:03
+Siete, desarrollo de Taylor.
+12:10
+Y para concluir, métodos de integración. ¿Ok? Entonces, ahora voy a poner estrechas en los temas que cambian mucho.
+12:28
+Integrales, por supuesto, se va a cambiar mucho porque es una nueva presentación. Continuidad también se va a cambiar. ¿Y por qué? Porque, como ya lo saben los antiguos, la mayoría de los grandes teoremas de continuidad dependen de la noción de sucesión. Es decir, el teorema de Bolzano, el teorema de Weierstrass, son teoremas cuyas demostraciones usan un montón de sucesiones.
+13:00
+Pero ahora no tenemos más sucesiones. Entonces, vamos a cambiar todas las demostraciones y vamos a hacer demostraciones gratis de sucesiones sin sucesiones. Entonces...
+13:15
+Y, por supuesto, funciones trigonométricas no va a cambiar. Derivadas, vamos a presentar el teorema fundamental acá. Más teorema fundamental.
+13:34
+Es decir, vamos a hablar de integrales en varios capítulos. Vamos a hablar de integrales en el capítulo 3. Vamos a hablar de integrales un poquito en el capítulo 4 para mostrar que todas las funciones continuas son localmente integrables. Y después vamos a volver sobre el tema de las integrales en el capítulo derivadas para hablar del teorema fundamental. Es decir, como es la noción más difícil para ustedes, no vamos a ponerla en todo un capítulo, pero vamos a ponerla en varios capítulos.
+14:04
+Ahora terminé. ¿Preguntas? Topología de la recta no habrá. Es decir, el principio de este curso es simplificar lo que se hacía antes. En particular, en este curso, solo vamos a considerar funciones definidas en intervalos. Entonces, la única topología que tienen que conocer es la diferencia entre un intervalo abierto y un intervalo cerrado. y semiabierto, semicerrado, etc., etc.
+14:36
+¿Todas las demostraciones que conocemos de antes en los parciales son válidas o no válidas? Ah, es una buena pregunta y todavía no sé. Yo creo que como la cantidad de créditos del curso cambio habrá dos exámenes. Habrá el examen para la edición antigua y donde se van a aceptar las demostraciones antiguas y también tendremos un examen para la edición nueva. ¿No puedes dar los dos exámenes?
+15:07
+No sé, no sé, realmente no sé. Ahí tienes dos chances. Ah, pues quizás, pero no es la misma cantidad de créditos. Pero pueden dar los dos exámenes. Gracias para sobrecargarnos. Una pregunta, ¿exonerar este cálculo nuevo te deja dar el examen de cálculo 2 viejo? No pienso, pero te da el derecho a dar el examen de cálculo 2 nuevo.
+15:36
+Porque después, el próximo año va a haber cálculo 2 nuevo y después, etcétera. Y una pregunta sobre los parciales. ¿Va a haber tanto teórico así como el semestre pasado que fue re teórico, teórico, teórico? ¿O va a haber un poco más de parciales? No sé. Todavía no sé por qué no arreglamos las cosas entre nosotros.
+15:58
+Sobre los parciales es muy fácil, mi respuesta es no sé. Parciales, exámenes, no sé. No sé aún. ¿Las materias que piden cálculo 1 viejo? Sí, las materias, acá normalmente hubo cambios de previas en todas las materias que piden cálculo 1 antiguo. Y ahora yo sé, al menos para la informática, que ahora basta tener cálculo 1 nuevo. Es decir, ahora se pueden intercambiar para las otras materias, para las otras carreras.
+16:35
+Ok, entonces voy a comenzar con la moción de conjuntos y funciones.
+16:45
+Ok, ahora vamos a hacer un poquito de zoología. Saben que los matemáticos, para construir moderaciones de los problemas en las otras ciencias naturales, por ejemplo en la física, en la química, en la informática, Necesitan introducir un montón de animales matemáticos, de objetos matemáticos. Tenemos un sol bastante grande. Y ahora voy a hacer un pequeño repaso sobre los objetos, los tipos de objetos matemáticos que vamos a considerar.
+17:22
+¿Cuáles son los distintos tipos de objetos matemáticos que conocen?
+17:30
+No es un tipo de objeto. La suma es una operación.
+17:35
+El conjunto es el que voy a presentar al final. Pero, ¿los objetos más sencillos de la matemática son qué? Los números. Entonces, el primer tipo, entonces tenemos una zoología. Tenemos distintos tipos de objetos matemáticos.
+18:03
+Entonces tenemos, por ejemplo, los números. Y vamos a ver en este curso los números naturales. ¿Ya conocen esta letra? El conjunto de los números naturales. Vamos a ver los números enteros. Vamos a ver los números racionales. Y vamos a ver los números reales. Y no vamos a ver los complejos que están afuera del programa.
+18:33
+Ok, entonces hay un montón de tipos de números y tenemos números tales que 0, 1, 2, menos 1, 3, medio, raíz de 2, pi o el famoso número e. Todos son números. Es un primer tipo de objeto, somos números. También tenemos objetos geométricos.
+19:05
+Es decir, los objetos son las cosas que vamos a manipular. ¿Ok? Tenemos los puntos, las rectas, los triángulos, etc. Rectas, triángulos, los círculos, círculos,
+19:34
+Ok, tenemos todo esto.
+19:39
+No vamos a usar mucho los objetos geométricos, salvo para hacer dibujos. Y es un curso donde hay un montón de dibujos.
+19:50
+Y además tenemos objetos, lo que voy a llamar objetos compuestos.
+19:57
+Acá se pueden ver como los objetos de base. Los números, o bien los objetos geométricos. Y en este curso, esencialmente vamos a manipular números.
+20:10
+Y los objetos geométricos solo serán una herramienta para representar las funciones que vamos a manipular.
+20:19
+Y los objetos compuestos...
+20:27
+Hay un montón en matemática. Tenemos las funciones, por ejemplo.
+20:35
+Las funciones se construyen agrupando objetos, construyendo una regla, un método que transforma un número en otro número. Es un objeto compuesto.
+20:49
+Funciones, los que hacen Gal1, hay las matrices.
+20:57
+que también son objetos compuestos, es decir, que se construyen a partir de números. Pero también tenemos objetos compuestos más sencillos, como los pares, ¿saben? Los pares AB, es un nuevo tipo de objeto compuesto. Tenemos las eneúplas, que son pares generalizados,
+21:24
+con una cantidad cualquiera de componentes. Y por supuesto, al final, dejé el mejor para el final, la noción central, que es la noción de conjunto.
+21:39
+Y la idea es que los conjuntos son muy importantes en matemática porque sirven para clasificar y construir nuevos objetos matemáticos. Acá voy a comenzar por una analogía con la informática. Una buena intuición de lo que es un conjunto, al menos un conjunto finito, es como una carpeta informática. Es una carpeta y tiene archivos adentro. Y esos archivos son los objetos matemáticos que contiene dicho conjunto.
+22:10
+Y además, como en informática, a veces las carpetas contienen otras carpetas. Entonces, a veces, en matemática tendremos conjuntos que son elementos de otros conjuntos. ¿Ok? Entonces, acá la intuición de conjunto igual a carpeta funciona muy bien con dos diferencias. Hay dos diferencias entre la noción de conjunto en matemática y la noción de carpeta en informática. La primera diferencia es que las carpetas en informática tienen un nombre.
+22:44
+No es el caso para los conjuntos. Para identificar un conjunto, solo se puede mirar lo que tiene adentro. Son carpetas anónimas. Y otra diferencia es que... Otra diferencia es que las carpetas solo pueden ser finitas debido a las limitaciones de las computadoras. Pero los conjuntos en matemática pueden ser infinitos. ¿Ok? Esa es una diferencia. Si no...
+23:15
+no hay ninguna otra diferencia en general en la teoría de conjuntos la respuesta es sí, sin duda pero en matemática se considera que es una mala práctica mezclar los tipos de elementos adentro de un conjunto aunque sea posible entonces podemos tener varios tipos de objetos adentro de un conjunto pero en general no vamos a hacerlo, es decir, vamos a considerar conjuntos tipados, conjuntos de números, conjuntos de puntos, conjuntos de rectas, pero en general no vamos a mezclar puntos y números adentro del mismo conjunto, que es considerado como una mala práctica.
+24:06
+Y hay una observación que hacer. Es una coincidencia que la informática tenga una noción muy cercana de la noción de conjunto, Por supuesto que no. Cuando los informáticos inventaron la noción de carpeta, tenían la noción de conjunto en la mente. Entonces usaron la noción de conjunto como modelo para inventar la noción de carpeta.
+24:28
+¿Ok? Ahora voy a presentar las cosas básicas sobre los conjuntos.
+24:38
+Y noción de conjunto, pertenencia e igualdad.
+24:48
+Ok, intuitivamente un conjunto es una conexión de objetos. No hay ninguna definición de la noción de conjuntos porque es una noción primitiva.
+25:01
+Pero, ¿cómo se observa un conjunto? Con una relación particular que se llama la precedencia. Es decir, la noción de conjunto viene con la relación de precedencia.
+25:30
+Y esta se escribe X pertenece a A y significa que X es un elemento de A. ¿Ok? Esta es la relación de pertenencia.
+25:49
+Y además, antes de hacer mi observación, hay la negación de relación de presencia que se escribe con una barra. Hay que tachar el símbolo. Y la negación de la relación X pertenece a A se escribe X no pertenece a A.
+26:20
+Y acá hay que hacer observaciones sobre esta noción.
+26:27
+Hay que saber que esta noción es asimétrica porque cada vez que yo voy a escribir X pertenece a A o bien X no pertenece a A, implícitamente voy a considerar que A es un conjunto. Es decir, esta relación sólo tiene sentido cuando A es un conjunto. Es decir, no se puede poner otra cosa a la derecha del símbolo de pertenencia que un conjunto.
+26:58
+Pero en otro lado, X puede ser cualquier objeto matemático. Puede ser un número, puede ser un punto, una recta, puede ser una matriz, puede ser una función y también puede ser un conjunto. Es decir, a veces vamos a considerar conjuntos que son elementos de otros conjuntos, del mismo modo que hay carpetas que contienen subcarpetas adentro. ¿Ok?
+27:27
+Entonces, acá la cosa importante es que X es un objeto cualquiera. Y A es un conjunto. Cuando se escribe esto. Ok. Y es muy importante no confundirlos.
+27:50
+Ok, tenemos esto. Y ahora vamos a hablar así. Antes de hablar del resto, hay que hacer un dibujo. En general, se dibujan los conjuntos así, con los elementos adentro, acá. Entonces tenemos, por ejemplo, X y los elementos afuera, H. Y acá es claro que tenemos que, si A es mi conjunto, tenemos que X pertenece a A, mientras Y no pertenece a A.
+28:31
+¿Ok? Y se llamaban, entonces, estos diagramas se llaman los diagramas de Venn. Es un nombre porque hay gente que trabajó sobre tales diagramas. Entonces son diagramas de Venn.
+28:53
+Y en Francia se llaman diagramas patatoidales. Es decir, diagramas que tienen forma de papa. Ok.
+29:13
+Y ahora hay que hablar de igualdad.
+29:17
+La igualdad...
+29:22
+entre dos conjuntos A y B es definida por A es igual a B por definición acá voy a poner una igualdad con tres barras que voy a explicar después Si para todo objeto en el universo, X pertenece a A, si y solo si X pertenece a B.
+29:56
+Es decir, acá esto dice que A y B tienen los mismos elementos. Es decir, vamos como los conjuntos, no tienen nombres cada vez que veremos dos conjuntos que tienen exactamente los mismos elementos vamos a decir que son iguales acá es otra diferencia con las carpetas a veces yo puedo hacer una copia de una carpeta tienen exactamente el mismo contenido pero como no tienen el mismo nombre son distintas Pero en teoría de conjunto, los conjuntos, carpetas, no tienen nombre.
+30:40
+Entonces, cuando tienen exactamente el mismo contenido, vamos a decir que son iguales. ¿Ok? Acá hay que explicar estos símbolos. Acá es un para todo. Para todo X. Acá pongo, después de cada cuantificación, voy a poner una coma, en general, para separar con el resto. Para todo X, X pertenece a A, sí y sólo sí, esto es un sí y sólo sí, es una flecha doble, y de hecho es una doble flecha doble, porque hay dos barras y dos direcciones, es una doble implicación, sí y sólo sí, X pertenece a B.
+31:20
+¿Sí? ¿Pregunta? ¿Pregunta? Exactamente, acá hay un palito más, voy a explicar después Primeramente explico, entonces, después voy a explicar este símbolo, ahora explico esta fórmula Esta fórmula, entonces acá es el símbolo de equivalencia lógica y expresa una doble implicación Dice que si X está en A, entonces también está en B Y recíprocamente, si X está en B, entonces X está en A.
+31:51
+Y esto se cumple para todos los objetos del universo matemático. Cuando yo pongo para todo X, esto significa para todo objeto matemático de todo el universo. Es una cuantificación terrible, porque expresa una propiedad para todo el universo matemático. Y después acá, puse una definición, y acá es un símbolo, Depende de los profesores. Acá voy a usar ese símbolo para expresar que este enunciado, que es la igualdad entre dos conjuntos, está definido a partir de este enunciado.
+32:28
+Es el símbolo de definición de un nuevo enunciado. No es una igualdad porque la igualdad es una relación entre dos objetos matemáticos. A y B son objetos matemáticos, pero la igualdad A es igual a B no es un objeto matemático, es un enunciado, es una frase. Entonces acá es un símbolo que relaciona dos frases.
+32:58
+Acá yo prefiero usar el dos puntos igual cuando son dos objetos.
+33:05
+Pero acá no son objetos, son fórmulas. Entonces prefiero usar este símbolo. Pero si tienen dificultades, pueden reemplazar este símbolo por un sí, sólo sí, porque tiene la misma significación que un sí, sólo sí, pero es un sí, sólo sí de definición.
+33:24
+¿Ok? Es un sí, solo sí por definición. Acá la diferencia entre la igualdad es que la igualdad es una cosa que relaciona un objeto con otro objeto y que dice que son idénticos. Y el sí, solo sí, o bien la equivalencia definicional... Es una relación entre dos frases. Dice que tal frase tiene el mismo sentido que otra frase. Entonces, si no les gusta ese símbolo, pueden reemplazar por ese símbolo que funciona igualmente.
+33:57
+¿Y cómo se lee? No se lee. Ese es el problema. Yo digo sí, sólo sí, o por definición es. ¿Y el otro le va a gustar? ¿Este? No. Quizás, depende de mi humor.
+34:14
+En general voy a cambiar notaciones porque no tengo las ideas muy claras sobre cuál es la notación mejor. Entonces depende de si suele o no suele el día correspondiente. Ahora vamos a hablar de inclusión, que es la próxima relación muy importante.
+34:38
+Inclusión.
+34:46
+Ah, y como no tengo ideas fijadas, ¿qué símbolo prefieren? ¿Este o bien este? ¿El segundo prefieren el segundo? Ok, voy a usar el segundo. Ahora. Disculpe, esa igualdad, ¿con el diagrama cómo sería? Acá es difícil, es decir que yo tendría, técnicamente con el diagrama, yo tendría que poner, por ejemplo, un conjunto con tres elementos y nada más. Y otro conjunto con los mismos tres elementos, pero quizás en otro orden. Y voy a decir que este conjunto es igual a este conjunto.
+35:23
+Exactamente. Acá, esta cosa dice A es igual a B si y solo si A y B tienen los mismos elementos. Pero en la matemática se escribe así. A y B tienen los mismos elementos. Tenemos una simbología que hay que aprender.
+35:39
+Inclusión. Se define por...
+35:44
+Ahora voy a usar este símbolo, porque prefieren este símbolo. A está incluida en B, si y solo si, por definición, si y solo si, para todo X, Si X pertenece a A, entonces X pertenece a B. Entonces se puede ver, esto pueden ver que solo hay un símbolo de diferencia entre la igualdad entre dos conjuntos y la inclusión.
+36:19
+Una inclusión es como menor o igual. ¿Ok? Es decir, dice que para todo objeto en el universo... Si X pertenece a A, entonces X pertenece a B igualmente. ¿Ok?
+36:38
+Y esto también se escribe para todo X que pertenece a A, tenemos que X pertenece a B. Es decir, son dos expresiones que representan la misma significación. ¿Ok? ¿Ok?
+36:59
+Entonces, acá la inclusión con los diagramas de Bell es una cosa fácil.
+37:10
+La inclusión expresa lo siguiente. Expresa que un conjunto está incluido en otro, por ejemplo. Un conjunto, un segundo conjunto. A, B. Acá yo tengo X, Y, Z. Y acá tengo nuevos elementos U y B.
+37:29
+Acá no es muy preciso este conjunto, este dibujo no es muy preciso porque no se sabe si A es un elemento de B o bien si es un subconjunto de B. Entonces acá quizás podríamos usar las notaciones de los informáticos. Es decir, yo tengo una primera carpeta A. que tiene tres archivos x, y, y, z una segunda carpeta B que tiene cinco archivos x, u, y, z, y, b y yo puedo observar que cualquier archivo que pertenece a la primera carpeta también está en la segunda carpeta entonces tenemos la inclusión esa definición Entonces, es la relación menor o igual para los conjuntos.
+38:26
+¿Ok? Y va a compartir un montón de propiedades comunes con la relación menor o igual en general.
+38:34
+¿Ok? Está definición de la inclusión y acá hay que hacer una pequeña observación. La pequeña observación que voy a hacer es que esta notación, vimos que hay dos notaciones, no es una coincidencia, la observación es que en general... observación la notación para todo X en A algo y acá hay puntitos significa que para todo objeto del universo X si X pertenece a A entonces tenemos esto ¿Ok?
+39:19
+Es una abreviatura. Es decir, acá tenemos dos tipos de cuantificaciones en matemática. La cuantificación que se llama la cuantificación no relativizada. Y la cuantificación relativizada, que dice que cuando yo quiero decir, no para todos los objetos del universo, pero solo para los objetos de A. Es equivalente a decir, para todo objeto del universo, si solo considero los objetos de A, entonces tengo la propiedad que me interesa.
+39:52
+Y de mismo modo, tendremos la otra abreviatura que vamos a usar frecuentemente. Que es, de mismo modo, existe X. Acá es el cuantificador existencial. Dice que existe al menos algo. Existe X en A tal que algo. Significa...
+40:15
+que existe X en el universo, existe un objeto en todo el universo, al menos uno. Cuando digo existe en matemática, significa existe al menos uno. Quizás que todos cumplen la propiedad, pero si yo soy capaz de achar al menos uno, terminado, ya sé que existe. Por ejemplo, existe al menos un ser humano. Y acá hay varios ejemplos en la sala. Y esto significa que X pertenece a A, disculpa, y la propiedad que yo quiero, y acá es el símbolo Y, es el Y lógico, y acá es el implica.
+41:01
+¿Ok? Solo son abayaturas que vamos a usar frecuentemente. Y las propiedades de la implicación...
+41:12
+Es decir, cuando tienen una duda sobre si algo existe en A o bien si algo se cumple para todos los X en A, o bien si algo existe en A, pueden usar estas cosas que son realmente equivalentes en todos los contextos.
+41:30
+Y la propiedad importante es que la inclusión satisface tres propiedades importantes. Primero, para todos los conjuntos.
+41:44
+todos los conjuntos a b y c tenemos que primera cosa siempre está incluido en a que es obvio es decir la inclusión tiene un sentido de menor o igual la igualdad es un caso particular de inclusión y vamos a decir que la inclusión es reflexiva
+42:16
+Segunda cosa, si A está incluido en B y B está incluido en C, entonces A está incluido en C. Y vamos a decir que es transitiva. Acá hay que decodificar los símbolos. Esto es el I matemático. Es decir, el i matemático a veces lo escribiré i así o bien i así.
+42:47
+Pero en la simbología matemática tenemos un símbolo, que es un símbolo universal, que no depende del idioma. Es el interés de la simbología matemática, es una cosa universal. Porque esto es y, el problema es que hay otra gente que los escribe así, and, y hay otra gente que también los escribe así, o bien otra gente que los escribe así, depende del idioma. Y en matemática la notación es común y se escribe así.
+43:21
+Y es el mismo símbolo que acá. Es decir, si A está incluido en B y B incluido en C, entonces se puede deducir que A está incluido en C. ¿Ok? Es una relación transitiva como el orden sobre los números reales. Y al final es una relación antisimétrica, es decir, si A está incluido en B y si B está incluido en A, entonces, ¿qué se puede decir sobre A y B? Son iguales. Y se dice que la relación es antisimétrica.
+43:57
+Y con estas tres propiedades casi saben todo lo que hay que saber sobre la inclusión.
+44:03
+Ok, entonces es una relación antisimétrica y en particular tenemos que... ¿Qué piensan sobre esta implicación? ¿Qué pasa sobre la recíproca? ¿Se cumple o no se cumple? Se cumple porque si A es igual a B, entonces A está incluido en B porque son iguales. Y del mismo modo, B está incluido en A.
+44:34
+Entonces, en particular, tenemos que A es igual a B si y sólo si A está incluido en B y B está incluido en A. Y es un método muy importante para demostrar que dos conjuntos son iguales. Y de hecho, en la mayoría de los casos, es así que vamos a mostrar que dos conjuntos son iguales. Es decir, cuando se trata de demostrar que dos conjuntos A y B son iguales, hacemos dos demostraciones. Primera demostración, se demuestra que A está incluido en B.
+45:06
+Y segunda demostración, se demuestra que B está incluido en A. Y gracias a esta equivalencia, se concluye que A es igual a B. ¿Ok?
+45:18
+Entonces tenemos el método estándar. Después voy a hablar de los conjuntos de base. El problema es que ahora no vimos aún ningún ejemplo de conjunto. Entonces no vamos a quedarnos desnudos y vamos a introducir un par de conjuntos para tener ejemplos. Y voy a comenzar con los conjuntos de base y los conjuntos de números. Entonces los conjuntos de base.
+45:49
+Y en este curso vamos a considerar principalmente cuatro conjuntos de base.
+45:57
+Entonces, primer conjunto es el conjunto de los enteros naturales.
+46:10
+Es decir, vamos a escribirlo en una barra vertical doble. Y intuitivamente es el conjunto.
+46:20
+Ahora en este curso vamos a decir que los naturales empiezan a partir de cero. Cero, uno, dos, tres, puntitos. Y por supuesto no es una definición porque acá son notaciones flojas. Porque son flojas debido a los puntitos. Entonces, decir que n es igual a 0, 1, 2, 3.2 es una broma. Es una broma, porque ¿cuántos naturales me faltan en mi definición?
+46:53
+Una cantidad infinita. Entonces, quizás que yo podría continuar hasta... la derecha de la sala y después yo tendría que destruir la pared y continuar y después destruir la pared de la próxima sala y después continuar y hacer todo, ir alrededor del planeta y voy a volver acá y todavía ha escrito una cantidad finita de naturales. Entonces, es el conjunto infinito y por definición no se puede representar de modo adecuado.
+47:29
+Es decir, solo vamos a hacer aproximaciones. Y es la cosa interesante de la matemática, es que vamos a hablar de cosas que no se pueden representar. Vamos a hablar de objetos infinitos. Entonces, son objetos conceptuales que no existen en ningún otro lugar que en nuestra cabeza. Y esta cosa interesante, la cosa matemática, es que trabajamos con objetos conceptuales. Ok. Después vamos a usar el conjunto de los enteros relativos.
+48:07
+Z se llama. Y contiene los enteros a la vez positivos y negativos.
+48:14
+Puntitos. Menos 2, menos 1, 0, 1, 2, etcétera, puntitos. Y por supuesto acá es de vuelta una broma, pero una broma doble. Porque ahora tenemos dos direcciones para infinito. Entonces es una broma horrible.
+48:37
+Pero vamos a ver bromas peores. Ok, el conjunto de los centros relativos. Después, el conjunto de los números racionales.
+48:59
+Acá se puede definir más fácilmente porque el conjunto de los racionales es el conjunto de todas las fracciones entre dos enteros cualesquiera, pero cuando el denominador no es nulo. Es decir, es el conjunto de todas las fracciones n sobre p, tal es que n y p pertenezcan a z y p sea distinto de cero.
+49:32
+Y acá, si yo quiero poner todas las fracciones, será igual. Peor. ¿Por qué será peor? Porque voy a obtener una cantidad infinita a la izquierda, una cantidad infinita a la derecha, pero también entre dos raciones, cuando hay fracciones, también una cantidad infinita.
+49:54
+Es decir, ahora tenemos el infinito en cualquier parte. ¿Ok?
+50:01
+Vamos a continuar.
+50:06
+el conjunto de los números reales y voy a escribirlo R y acá ahora no tenemos aún ninguna definición y esa razón porque será el tema del segundo capítulo porque ¿qué es la diferencia entre R y Q? Hay raíz de 2, por ejemplo, que está adentro de R, pero que no es un racional.
+50:42
+Vamos a verlo. Que no tenés una manera de identificar a cada racional. Es claro que no tenemos una manera para identificar cada real. Al contrario, las fracciones. Es claro. Es decir, en R tenemos muchos elementos más. La raíz de 2, también la raíz de 3. Por supuesto, menos raíz de 2. Pero tenemos números raros, tales que pi. Y el número E, por ejemplo, que son reales, que no son racionales.
+51:14
+En general, cuando salen del liceo tienen una idea falsa de lo que es un número real. Piensan que los reales son los racionales más algunos números para completar. No. Hay infinitamente más veces números adentro de R que en Q. Es decir, la cosa salvaje es R. Y esa razón porque el análisis, es decir, el tema de cálculo 1, comenzó al final del siglo XVII.
+51:48
+Es decir, se puede decir que el análisis comienza con los trabajos de Leibniz en Alemania. en, no me acuerdo, algo así, yo creo que es el comienzo del análisis, este año. Es un año después del nacimiento de Johann Sebastian Bach, de Georg Friedrich Händel, los compositores, para decir en qué partida de la historia pertenecía. Y Leibniz produjo su libro importante que era el comienzo del análisis moderno.
+52:20
+Pero al tiempo de Leibniz no se sabía lo que era un número real. Entonces hacían un montón de cosas flojas, con cuentas flojas, pero tuvieron un montón de ideas geniales. Y después, como habían paradojas que surgieron... tuvieron que definir precisamente, entendieron que el problema era definir los números reales, y vamos a usar dos semanas para definir de modo limpio la noción de número real, porque es una cosa muy importante, y en estas dos semanas vamos a definir también estos subconjuntos.
+52:55
+Porque es claro también que estos cuatro conjuntos, Son relacionados por las inclusiones N incluido en Z, incluido en Q, incluido en R. ¿Ok?
+53:12
+Es decir, lo que vamos a hacer a partir de la próxima semana será definir R y ver después los otros como subconjuntos particulares. ¿Ok?
+53:28
+Ahora terminamos con la inclusión y podemos continuar con los métodos para formar nuevos conjuntos. Y vamos a ver dos métodos, la construcción por extensión y por comprensión.
+53:50
+Construcción por extensión.
+53:58
+Y por comprensión. Espero que no me equivoco demasiado al pizarrón. Porque mi problema es que cuando yo estoy enfrente del pizarrón, tengo la nariz pegada al pizarrón. Entonces, cuando yo me equivoco con las palabras, yo no lo veo. Gracias por avisarme si hay algún error.
+54:26
+Construcción por extensión y por comprensión. Entonces, hay esencialmente dos métodos para construir un conjunto. La construcción por extensión consiste en dar la lista finita de todos sus elementos. Entonces, construcción por extensión.
+54:46
+Dados objetos, me doy objetos a sub 1 hasta a sub n. objetos cualesquiera se puede definir el conjunto que se escribe con chaves a sub 1 hasta a sub n y se llama un conjunto construido por extensión es decir, es una construcción por extensión ok es decir para construir un conjunto por extensión solo tengo que darme una lista finita de objetos y digo por definición son los elementos de mi conjunto y no hay ningún otro elemento adentro ok es decir consiste en agrupar un par de archivos y fabricar una carpeta ok
+55:54
+Entonces, es una terminología pedántica para una cosa muy sencilla. ¿Cuál es el defecto de tal construcción?
+56:06
+Hay que dar todo y el problema que pasa cuando es infinito, no se puede usar. Es decir, esta construcción solo sirve para construir conjuntos finitos. Entonces ese es el defecto de esta conclusión. Y acá también vimos que yo supuse nada sobre los objetos. Son cualesquiera. Entonces, en teoría, yo podría mezclar números con puntos, con conjuntos, con rectas, con funciones y matrices. En la práctica no lo voy a hacer porque será un quilombro.
+56:40
+Y es exactamente cuando se organiza el espacio de trabajo.
+56:46
+Es como cuando se organiza el espacio de trabajo. Se necesita definir algunas reglas para no mezclar todo. Y es exactamente del mismo modo que vamos a hacer en la matemática. Las reglas absolutas de la matemática nos dicen puedes construir cualquier conjunto que quieras. Pero en la práctica, si queremos... mantener todo en orden es mejor no mezclar las entidades adentro. Ok. Y por definición tenemos que tenemos que para todo objeto matemático X, X pertenece a este conjunto construido por extensión sí, sólo sí.
+57:32
+Sí, sólo sí. ¿Qué se puede decir sobre X? ¿Cuál es la condición para X pertenezca a mi conjunto construido por extensión?
+57:42
+Es decir, X tiene que ser uno de los A sub 1 hasta A sub n. ¿Cómo se escribe? ¿Cómo? El problema es que acá yo no tengo derecho a escribir un conjunto. Porque yo quiero definir este conjunto. Entonces no tengo derecho a poner otro conjunto a la derecha.
+58:07
+¿Es igual a qué?
+58:14
+¿Es igual a todos? ¿Alguno? Entonces es un O. ¿Entienden? Entonces voy a escribirlo así. X es igual o bien a A sub 1, O, y acá es el símbolo para el O matemático, sin tile, o bien, etc., X es igual a A sub n.
+58:37
+Y acá es el símbolo dual al símbolo que ya presenté para el i. Pueden ver cómo es lindo. Este símbolo es el i y si yo lo pongo al revés obtengo el o. Y en matemática la convención que es por defecto el o, este o, es un o inclusivo. Es decir que quizás que dos igualdades se pueden cumplir al mismo tiempo. Y en este caso, porque por ejemplo, nunca dije que los a1 hasta a sub r tenían que ser distintos.
+59:15
+Quizás que hay repeticiones en mi lista. No hay ningún problema. Entonces voy a formar el conjunto con dos veces el mismo elemento, pero al final estará acá solo una vez. Es decir, un conjunto solo puede contener una vez un elemento. Y esa razón porque se pone una disyunción inclusiva. ¿Ok? Y hay otra disyunción que es la exclusiva y en general no hay...
+59:45
+El problema es que en matemática tenemos un símbolo para la conjunción, el i. Tenemos un símbolo para la disyunción y por defecto la disyunción es inclusiva. ¿Entienden la diferencia entre disyunción inclusiva y exclusiva? Inclusiva es decir, cuando yo tengo A o B, quizás que A y B se cumplen a la vez. Pero no es un problema. Cuando yo digo, por ejemplo, ahora somos la tarde y...
+1:00:20
+hace un tiempo grise, también yo puedo decir que hoy somos la tarde, ahora somos la tarde, o hace un tiempo grise. Y también se cumple.
+1:00:34
+De hecho, no es la frase más precisa que yo podría decir, pero todavía se cumple. Es decir, cuando voy a usar este símbolo será el O inclusivo. Y cuando será un O exclusivo, como no hay ninguna anotación fijada para el O exclusivo, voy a escribir exclusivo en todas las letras. Será más sencillo.
+1:00:55
+Ok, esa definición, entonces, por definición, para todo objeto matemático, x pertenece al conjunto construido por extensión a partir de la lista a sub 1 hasta a sub n. Si, sólo si, tenemos que o bien x es igual a 1, o bien x es igual a a sub 2, o bien x es igual a a sub 3, etc. O bien x es igual a a sub n. Ok, y hay casos particulares que tenemos que estudiar. Ok, tenemos entonces esta frase que parece complicada, dice intuitivamente que x es 1 de los a sub 1, a sub n. Ahora vamos a ver ejemplos de casos particulares de construcción por extensión.
+1:01:52
+Hay tres casos interesantes.
+1:01:56
+Porque, por supuesto, esta construcción no solo depende de a sub 1 y de a sub n, pero también depende de la cantidad de elementos. Entonces voy a considerar tres casos interesantes cuando n es igual a 0, n es igual a 1 y n es igual a 2. Caso particular.
+1:02:21
+n igual a cero ¿qué pasa cuando yo tengo n igual a cero? obtengo este conjunto sin elemento ¿ok? es una confusión por extensión perfectamente hecha por definición es un conjunto que tiene ningún elemento y vamos a usar este símbolo se llama el vacío ¿ok? Para mí, el vacío solo es un conjunto construido por extensión a partir de una lista vacía de elementos.
+1:02:53
+¿Ok? Y por construcción, o por definición, tenemos que no hay ningún elemento adentro del vacío. Es decir, para toda X en el objeto, en el universo matemático, X no está adentro del vacío.
+1:03:14
+Esto corresponde a una disjunción vacía.
+1:03:23
+Acá, para los lógicos, si hay en la sala, se puede ver que el falso es el elemento neutro para la disjunción. Entonces, exactamente del mismo modo, cuando tenemos una sumatoria vacía, por convención decimos que es igual a cero. Y de mismo modo, cuando tenemos una disyunción vacía, vamos a poner que es el falso. Porque el falso OA es igual a A.
+1:03:54
+Es el neutro para disyunción. Es una observación.
+1:04:00
+Solo para la gente interesada. Caso particular, N igual a 1. Esto tenemos un conjunto que se llama un conjunto unitario.
+1:04:27
+¿O qué es un conjunto unitario?
+1:04:30
+¿Ya conocen la terminología? Se llama un conjunto unitario. Y la única cosa peligrosa es que, cuidado, no hay que confundir el conjunto unitario A con A. Son objetos distintos. Es decir, cuidado. ¿Entienden este símbolo? Es cuidado.
+1:04:55
+Cuidado. En general, A es distinto. No son el mismo objeto.
+1:05:03
+Acá hay que entender que se diferencia entre el archivo A y una carpeta que solo contiene el archivo A. Son cosas distintas, ¿no? Conceptualmente, no es lo mismo que tener, no sé, una manzana y una bolsilla que contiene una manzana adentro. No son cosas idénticas. Al final voy a comer lo mismo, pero no son cosas idénticas.
+1:05:34
+Entonces, cuidado. Hay mucha gente que hace un montón de confusiones entre A y... y el conjunto unitario A, y en general A puede ser un conjunto, pero en la mayoría de los casos no es un conjunto, pero por construcción el conjunto unitario siempre es un conjunto. ¿En ese caso de que A puede ser un conjunto, si justo es el conjunto vacío? La pregunta que haces es, ¿qué pasa cuando A ya es un conjunto? Entonces, todavía son cosas distintas.
+1:06:06
+Es decir, incluso...
+1:06:10
+cuando A es un conjunto por ejemplo, voy a hacer un ejemplo el conjunto vacío es distinto del conjunto unitario que contiene el vacío y acá hay que hacer las carpetas para entender lo que pasa acá tenemos una carpeta vacía y no hay nada adentro Y no es lo mismo que tener una carpeta que tiene un archivo que de hecho también es una carpeta y una carpeta vacía.
+1:06:51
+Son cosas distintas. ¿Y qué distingue estos dos objetos? Es que ambos son conjuntos ahora. Ahora tenemos un conjunto de conjuntos y acá es otro conjunto. ¿Pero por qué son distintos? Porque este conjunto es vacío. Mientras este conjunto no es vacío. Contiene un elemento, que es el conjunto vacío. ¿Entienden la diferencia de arquitectura? Son cosas sutiles, pero en sus pruebas en general se confunden todo.
+1:07:23
+Pero si mantienen la intuición entre un conjunto es una carpeta, cuando tienen dudas pueden usar esta representación y les va a ayudar. De hecho, yo puedo confesar un secreto, no sé si se va a mantener en el vídeo, pero es un secreto. Soy especialista de teoría de conjuntos. Mi dominio de trabajo es la lógica. Y soy más o menos un especialista de teoría de conjuntos. Y aprendí la teoría de conjuntos, la completa, con todos sus axiomas, cuando yo tenía más o menos su edad.
+1:07:53
+Yo tenía 18 cuando aprendí esto. Y aprendí los archivos matemáticos exactamente en el mismo tiempo. Usé por primera vez computadoras con archivos matemáticos. Era en el milenio antiguo. Ok, entonces, y vi inmediatamente el vínculo entre ambas funciones. Y durante toda mi carrera, adopté la visión que un conjunto era una carpeta. Y me ayudó mucho incluso para los trabajos de investigación.
+1:08:25
+Entonces, yo puedo asegurarles que es una buena analogía, que funciona muy bien en la práctica.
+1:08:34
+Y esto permite distinguir los niveles. Ok, vimos estos conjuntos. Ah, y olvidé decir el último ejemplo, que es por supuesto el último caso particular. Tenemos el caso particular de que es n igual a 2 del par no ordenado.
+1:09:08
+¿O qué? El par no ordenado.
+1:09:12
+Es decir, es un conjunto con dos elementos. Y se llama un par no ordenado. ¿Y por qué se dice que es no ordenado? Porque es igual el conjunto A y B. Exactamente. Es decir, es no ordenado. Se dice que es no ordenado porque es no ordenado. Es decir, tenemos que, como dijiste, el conjunto A... El par no ordenado AB es igual al par ordenado BA. ¿Y por qué? Porque tienen los mismos elementos. Es decir, cuando se dibuja un conjunto, son como esas carpetas.
+1:09:45
+El orden y los archivos adentro no importan. Entonces, en términos de contenidos, son idénticos. Y como los conjuntos son definidos a partir solo de sus contenidos, entonces son iguales. entonces es muy importante y en particular tenemos si yo formo este conjunto AA el par no ordenado que contiene A y A es igual a que al conjunto unitario A ¿no?
+1:10:22
+¿no? Son iguales. Tienen el mismo contenido. Es decir, no podemos poner dos veces el mismo archivo. Entonces, cuando se escribe dos veces el mismo archivo, es como si lo hubiéramos puesto solo una vez.
+1:10:42
+Es el primer método para construir conjuntos. Construcción por extensión. Voy a verificar que no olvide nada. Ah, y vamos a terminar con los conjuntos construidos por comprensión. Construcción por comprensión.
+1:11:11
+Construcción por comprensión. Entonces, necesito otro método de construcción porque el problema con este método es que el método anterior es que solo me permite construir conjuntos finitos. Y en matemática, en general, lo que nos gusta es los conjuntos infinitos. Entonces, el método de construcción por comprensión es el siguiente.
+1:11:35
+Dado un conjunto...
+1:11:42
+A, ya formado, es decir, un conjunto que ya existe. Y una propiedad, voy a decir un enunciado. P de X que depende de X.
+1:12:05
+¿Qué digo yo acá? Yo digo que P de X es una frase que depende de la variable X. Es cualquier frase. Acá tengo dos cosas distintas. Acá tengo un objeto matemático, que es un conjunto, pero esta cosa no es un objeto matemático. Es un objeto lingüístico. Es decir, es una frase matemática. Entonces acá es un enunciado, es un objeto lingüístico.
+1:12:40
+Y la cosa interesante es que cada vez que yo tengo un conjunto y una frase que depende de la letra X, yo puedo formar un nuevo objeto. Se puede formar
+1:13:02
+que se escribe así, el conjunto de los X que pertenecen a A, tal es que se cumple la frase P sub X, y se llama una construcción por comprensión. ¿Ok? Esa es la definición.
+1:13:31
+Y voy a dar ejemplos. Voy a dar ejemplos. Y por definición, tenemos que para todo objeto y en el universo, y pertenece a este conjunto, sí, sólo sí, y pertenece a A, y se cumple la frase, acá voy a usar el I matemático, P sub I, P de I.
+1:14:13
+Ahora hay que explicar porque hay un montón de letras y normalmente se van a confundir. Voy a explicar. Acá es muy importante que esta dotación es una dotación que liga la variable x. Es como cuando yo escribo para todo o existe. Es decir, la variable x existe solo adentro de las chaves y hace una referencia a la variable x acá. Esta cosa no depende de x.
+1:14:44
+Es exactamente cuando yo escribo, por ejemplo, la función x que me da 3x es un objeto matemático que no depende de x. Se dice que es un símbolo ligador. Es exactamente cuando yo digo para todo x, x es igual a 3. Es una frase que tiene un sentido que no depende de x. Es decir, el x solo existe... Y cuando aparece el pontificador, él define límites donde X no tiene más sentido, afuera.
+1:15:21
+Entonces, esta notación, el X que está acá, solo refiere a este X. Pero este conjunto solo depende de A. Y al final lo que digo es que para pertenecer a este conjunto, si un elemento pertenece a este conjunto, si o si cumple dos cosas, tiene que existir adentro de A y también tiene que cumplir la propiedad.
+1:15:53
+¿Cómo? Las dos cosas, es un I. Tiene que verificar. Entonces voy a hacer un dibujo. Un dibujo es muy sencillo. Supongo que yo tengo un conjunto A. ¿Y qué va a ser una propiedad? Una propiedad me va a dividir el universo matemático en dos partes. Los objetos que cumplen la propiedad y los objetos que no cumplen la propiedad. Entonces mi propiedad...
+1:16:24
+Me va a dividir el universo en dos partes. Todo el universo matemático. No es un conjunto, es todo el universo matemático. Los que cumplen acá esa frontera, p de x, y los que no cumplen.
+1:16:44
+Px. ¿Y qué dice esta acción? Este método de construcción dice que cada vez que yo puedo definir una frontera en el universo matemático mediante una frase, yo puedo definir un nuevo conjunto. Es decir, yo tomo A y yo digo, ahora esto me forma adentro de A Un nuevo conjunto que captura exactamente los elementos de A que cumplen la propiedad P. ¿Ok?
+1:17:17
+Y voy a hacer ejemplos para que sea más concreto. Y esta construcción es la más frecuente en la matemática. Construcción por comprensión. Y vamos a hacer ejemplos. Y hay que tener cuidado. Cuando se usa esta construcción, se necesitan dos ingredientes. Y no se puede olvidar el conjunto A. Porque en general, cuando tenemos una propiedad cualquiera en el universo matemático, no se puede considerar el conjunto correspondiente.
+1:17:48
+En general, sería demasiado largo. ¿Ok? ¿El conjunto A siempre es un conjunto infinito? ¿Cómo? ¿El conjunto A siempre es un conjunto infinito? Se va a depender la propiedad y se va a depender el conjunto A. Es claro que si A es finito, este conjunto será más pequeño. Entonces será también finito. Pero si A es infinito, a veces te vas a obtener un conjunto finito y a veces te vas a obtener un conjunto infinito. Esto va a depender de la propiedad P. ¿Sí?
+1:18:21
+¿Esa frase de ahí son los Y? Sí, los objetos que... Los Y. Sí, los X. Yo debería escribir esto, tenés razón. Los X que no cumplen P de X. Es decir, cada vez que yo tengo una frase que depende de X, esto me divide el universo en dos partes. Me define una frontera.
+1:18:45
+¿Cuáles serían los elementos que están dentro de A pero que no cumplen P de X? Un elemento acá, por ejemplo. Por ejemplo, puedes imaginar este elemento Y que cumple P de X y este elemento Z que no cumple P de X.
+1:19:04
+Voy a dar ejemplos y van a ver que es muy sencillo en la práctica. ¿La P de Y puede ser no cumplir P de X? Y te da el otro conjunto. El problema es que, ¿cómo lo definís acá? Sí, sí, yo veo lo que quieras hacer.
+1:19:20
+Quieres hacer una cosa imposible, ¿no? Quieres poner una propiedad que nunca se cumple. Acá yo lo puedo poner, no está dentro de X porque hubiera un círculo vicioso.
+1:19:39
+No, yo digo los Y que están en A y no cumplen P de X. Ah, ok. Ahora te vas a decir otro conjunto por comprensión. Ok, es el complementario. Es el complementario y también existe. Ah, no es el mismo conjunto que te vas a obtener al final. Lo que dice es que en lugar de tomar la propiedad de PDX, se puede reemplazar por no PDX. Y obtenemos otro conjunto y será el complemento.
+1:20:10
+¿No?
+1:20:12
+Pero también se puede poner, por ejemplo, voy a dar ejemplos. Voy a dar ejemplos porque es una cosa fácil.
+1:20:21
+Los ejemplos explican todo. Ejemplos.
+1:20:28
+Voy a tomar el conjunto de los naturales, tal es que, por ejemplo, n es par.
+1:20:41
+Tengo todos los naturales y ahora corto con la frontera ser par o impar. ¿Qué voy a obtener?
+1:20:49
+Un conjunto infinito o finito. Infinito. Infinito, que contiene, ¿cuál es el primer elemento par? Dos. Dos, no, cero. Cero es el primer par porque es un doble. Cero es igual a dos por cero. Entonces cero es par. Después, 2, 4, 6, 8, etc. Es un conjunto infinito.
+1:21:16
+Pero la propiedad negada de ser par es ser impar. Vamos a hacer lo mismo con impar.
+1:21:33
+Voy a obtener 1, 3, 5, 7, 9, etc. ¿Ok? Y es un complementario. Esa cosa exactamente con ese dibujo.
+1:21:49
+Pero también yo puedo considerar otras propiedades. Por ejemplo, los n en n tal que n es un número primo. ¿Ok?
+1:22:01
+Pueden ver que cada vez se usa un conjunto y acá hay una frase. Una frase que depende de la variable.
+1:22:10
+Es igual a qué. ¿Cuál es el primer número primo? Dos. Después, tres, cinco, siete, once, trece, etcétera. Y acá es complicado. No conocemos exactamente la estructura de tal conjunto. Todavía hay conjeturas sobre tal conjunto.
+1:22:36
+Lo único que se sabe es que es no. Sabemos un montón de cosas sobre dicho conjunto, pero al menos sabemos que es infinito. Pero también yo podría decir, por ejemplo, n pertenece a n, y yo digo que n es primo...
+1:22:56
+Y n es par. Es otra frase. Es el conjunto de todos los enteros naturales, primos y pares.
+1:23:08
+¿Qué es? Solo hay dos. ¿Viste?
+1:23:12
+¿Pueden ver? Cambiando de frase, obtuve un conjunto refinito.
+1:23:18
+¿Ok? Yo puedo hacer peor.
+1:23:23
+El conjunto de los n en n, tal que n es par y n es impar. ¿Cuáles son los números naturales que son a la vez pares e impares? No hay. Entonces, ¿qué voy a obtener a la derecha? El conjunto vacío. Entonces, también se puede construir el vacío por comprensión.
+1:23:49
+El conjunto vacío es un conjunto que se puede construir por comprensión. Solo hay que poner una propiedad que se cumple para ningún objeto en un universo. Pero vos ahí estás hablando de i afuera y de x adentro. Eso es lo que no me queda claro. Allá. Acá, la idea es que esta razón porque acá este i refiere a la vez a este i y a este i y a este i. Es decir, yo puedo reemplazar por cualquier objeto.
+1:24:21
+Yo puedo decir, por ejemplo, 3 pertenece a este conjunto, si y solo si 3 pertenece a A, y P se cumple para 3. También yo puedo decir, raíz cuadrada de 2 pertenece a este conjunto, si y solo si raíz cuadrada de 2 pertenece a A, y la propiedad se cumple para raíz cuadrada de 2. Y esto me cambia esta notación, que es fijada. ¿Ok? Y ahora es la hora ya.
+1:24:52
+Ah, sí. Entonces vamos a continuar con la comprensión la próxima vez. Muchas gracias.
+

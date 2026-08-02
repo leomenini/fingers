@@ -1,0 +1,37 @@
+% Clase 2 --- Producto cartesiano como grilla, caso discreto (§5.5).
+% Ancla: "Acá el primer conjunto son 2,3,4,5 y acá tengo 4,5,6 que voy a
+% obtener una grilla. Una grilla de puntos [...] ¿Y cuántos puntos tiene mi
+% grilla? 12, es decir 4 por 3." Contraste directo con clase2-producto-
+% cartesiano.tex (continuo): acá NO hay área sombreada, sólo puntos sueltos.
+\begin{center}
+\begin{tikzpicture}
+  % Ejes
+  \draw[figaxis] (-0.6,0) -- (4.8,0);
+  \draw[figaxis] (0,-0.6) -- (0,3.8);
+
+  % Conjunto A = {2,3,4,5} sobre el eje x
+  \foreach \xx/\lbl in {1/2, 2/3, 3/4, 4/5} {
+    \node[figptoY] at (\xx,0) {};
+    \node[figlbl, below] at (\xx,-0.05) {$\lbl$};
+  }
+
+  % Conjunto B = {4,5,6} sobre el eje y
+  \foreach \yy/\lbl in {1/4, 2/5, 3/6} {
+    \node[figptoZ] at (0,\yy) {};
+    \node[figlbl, left] at (-0.05,\yy) {$\lbl$};
+  }
+
+  % Grilla de puntos: A x B, 4 x 3 = 12 puntos
+  \foreach \xx in {1,2,3,4} {
+    \foreach \yy in {1,2,3} {
+      \node[figpto, fill=figgray] at (\xx,\yy) {};
+    }
+  }
+
+  \node[figlbl] at (2.5,3.35) {$A\times B$};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Cuando $A=\{2,3,4,5\}$ y $B=\{4,5,6\}$ son finitos, $A\times B$
+ya no es un área continua sino una \textbf{grilla de $|A|\cdot|B|=4\cdot 3=12$
+puntos sueltos}: el mismo patrón de la figura anterior (rectángulo), pero
+discretizado. Contraste directo con \texttt{clase2-producto-cartesiano.tex}.}
+\end{center}
