@@ -22,7 +22,7 @@ HTTP directo, sin ejecutar JavaScript ([ADR-0001](docs/adr/0001-extraccion-por-v
 [ADR-0002](docs/adr/0002-representacion-de-la-transcripcion.md)). El extractor
 **todavía no está completo de punta a punta** (falta el paso índice del
 curso → por clase → manifiesto, idempotente y resumible); hoy existen
-`scripts/extractor/probe.mjs` (descubrimiento) y `scripts/extractor/vtt.mjs` (parser de VTT,
+`scripts/extractor/probe.js` (descubrimiento) y `scripts/extractor/vtt.js` (parser de VTT,
 probado contra fixtures), pero ninguna clase del corpus real se produjo
 todavía con este extractor.
 
@@ -40,7 +40,7 @@ fingers/
     CDIV2017/         # 5/42 clases, ver courses/CDIV2017/CLAUDE.md
   docs/               # visión, arquitectura, modelo de datos, ADRs, bitácora
   scripts/
-    extractor/        # módulo Extractor: probe.mjs, vtt.mjs — ya no es userscript
+    extractor/        # módulo Extractor: probe.js, vtt.js — ya no es userscript
   tests/
     extractor/fixtures/   # fixtures del parser de VTT
   package.json        # raíz: npm lo necesita acá

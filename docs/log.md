@@ -115,7 +115,7 @@ escribieron.
 
 ## 7. `stats.transcript_words` no es reproducible desde el archivo — ABIERTA (2026-08-02)
 
-Detectada al correr `scripts/extractor/diff-oraculo.mjs` sobre las 28 clases
+Detectada al correr `scripts/extractor/diff-oraculo.js` sobre las 28 clases
 de Física III.
 
 **Las 28 clases tienen `stats.transcript_words` distinto del conteo real de
@@ -161,7 +161,7 @@ sincronización de documentación posterior al rediseño del proyecto (ver
 ADR-0002 (2026-08-02) ya decidió el esquema de dos representaciones
 derivadas del VTT, con esos nombres. El corpus real (28 clases de Física III
 + 5 de CDIV2017) todavía usa el nombre y formato viejos: el extractor nuevo
-existe (`scripts/extractor/vtt.mjs`) pero todavía no produjo ninguna clase real del
+existe (`scripts/extractor/vtt.js`) pero todavía no produjo ninguna clase real del
 corpus. Falta decidir si la migración es retroactiva sobre las 33 clases
 existentes o sólo aplica de acá en adelante, dejando convivir dos
 convenciones. Diferido, no resuelto en esta sesión.
