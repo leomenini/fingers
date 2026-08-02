@@ -19,7 +19,7 @@ archivos:
 > **Layout del repo (reorg 2026-07-25; renombrado a `Fisica3-2015` por
 > ADR-0003 el 2026-08-02):** las 28 clases viven en
 > `courses/Fisica3-2015/Clases/ClaseN/`; el `assets/` global en
-> `courses/Fisica3-2015/Clases/assets/`. `build.sh`, `CLAUDE.md` y ` PDFiter1/`
+> `courses/Fisica3-2015/Clases/assets/`. `build.sh`, `CLAUDE.md` y `PDFiter1/`
 > (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3-2015/`.
 
 ---
@@ -513,9 +513,15 @@ asistente genera los PDF end-to-end; el usuario revisa.
   sólo esas. Deja el PDF **in situ** en `Clases/ClaseN/notes.pdf` (tectonic no deja
   `.aux/.log`). Compila desde cada `Clases/ClaseN/` para que `\input{../assets/…}`
   resuelva. Salida ~40–85 KB por clase; el curso entero < 2 MB.
-- La carpeta ` PDFiter1/` (con espacio) es el **snapshot de iteración 1 del
-  usuario** — **no tocar**. Los recompilados viven por clase, no en un `pdf/`
-  central.
+- La carpeta `PDFiter1/` es el **snapshot de iteración 1 del usuario** —
+  **no tocar**. Desde el 2026-08-02 vive **fuera de Git** (`.gitignore`): son
+  28 PDF superados, 6,5 MB, y su único valor es comparar en local contra la
+  iteración actual. Tenía un espacio al principio del nombre, que se quitó en
+  la misma fecha. Los recompilados viven por clase, no en un `pdf/` central.
+- **`notes.pdf` tampoco se versiona** desde esa fecha: es artefacto de
+  `build.sh`, se regenera con tectonic. Antes estaba trackeado *y* listado en
+  `.gitignore` a la vez, así que cada recompilación ensuciaba el diff con 28
+  binarios.
 
 ### 7.2 Loop de edición dirigida por PDF
 
