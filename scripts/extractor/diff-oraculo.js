@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /**
- * diff-oraculo.mjs — compara la salida del extractor contra el oráculo.
+ * diff-oraculo.js — compara la salida del extractor contra el oráculo.
  *
- *   node diff-oraculo.mjs <curso> [clase...]
+ *   node diff-oraculo.js <curso> [clase...]
  *
- *   node diff-oraculo.mjs Fisica3-2015 1 14 23   # sólo esas clases
- *   node diff-oraculo.mjs Fisica3-2015           # todas las del curso
+ *   node diff-oraculo.js Fisica3-2015 1 14 23   # sólo esas clases
+ *   node diff-oraculo.js Fisica3-2015           # todas las del curso
  *
  * El "oráculo" son los `Transcription_raw.txt` que produjo el userscript de
  * Tampermonkey antes de ADR-0001. Son 28 casos de Física III con contenido
  * verificado a mano, y sirven para responder una pregunta que ningún test
  * sintético puede: ¿el extractor nuevo reproduce lo que producía el viejo?
  *
- * Baja el VTT de OpenFING (no lo guarda: ADR-0004), lo parsea con vtt.mjs y
+ * Baja el VTT de OpenFING (no lo guarda: ADR-0004), lo parsea con vtt.js y
  * compara contra el `Transcription_raw.txt` de esa clase.
  *
  * Sale con código 1 si alguna clase queda por debajo del umbral de similitud.
@@ -22,7 +22,7 @@ import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseVtt, formatTimestamp } from './vtt.mjs';
+import { parseVtt, formatTimestamp } from './vtt.js';
 
 const RAIZ = fileURLToPath(new URL('../..', import.meta.url));
 
@@ -134,7 +134,7 @@ const SLUGS = { 'Fisica3-2015': 'f3', CDIV2017: 'civ' };
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [, , curso, ...args] = process.argv;
   if (!curso) {
-    console.error('uso: diff-oraculo.mjs <curso> [clase...]');
+    console.error('uso: diff-oraculo.js <curso> [clase...]');
     process.exit(64);
   }
   const slug = SLUGS[curso];
