@@ -167,6 +167,10 @@ cross-módulo (ver sección 9).
   `formatTimestamp`. CLI produce `transcript.txt`, `transcript.timed.txt`,
   `transcript.stats.json`, y sale con código 2 si la entrada no es una
   transcripción. Corrido contra `civ_09`: 0 advertencias.
+- **`scripts/extractor/diff-oraculo.mjs`** — compara la salida del extractor
+  contra los `Transcription_raw.txt` del userscript. Baja el VTT, no lo
+  guarda (ADR-0004), y reporta cues, palabras y similitud por clase. Sale con
+  código 1 si alguna baja de 0,97. Ver sección 6.c.
 - **`scripts/extractor/README.md`** — cómo se invoca cada script y qué
   produce. (Hasta 2026-08-02 tenía por error una copia del README de
   fixtures.)
@@ -180,6 +184,47 @@ cross-módulo (ver sección 9).
 
 Ambos scripts son ESM (`.mjs`). Como el `package.json` ya declara
 `"type": "module"`, pueden renombrarse a `.js` sin tocar el código.
+
+---
+
+## 6.c El extractor está validado contra el oráculo (2026-08-02)
+
+`scripts/extractor/diff-oraculo.mjs` compara la salida del extractor contra
+los `Transcription_raw.txt` que produjo el userscript. Son 28 casos con
+contenido revisado a mano: el único test con oráculo real que tiene el
+proyecto.
+
+Resultado sobre las 28 clases de Física III:
+
+| Similitud | Clases |
+| --- | --- |
+| **1.000 exacto** | 21 |
+| 0,993–0,998 | 4 (2, 22, 23 y 1 más) |
+| 0,976–0,978 | 3 (**10, 14, 20**) |
+
+**El userscript no transformaba el texto.** La pregunta que abría este punto
+—qué hacía el userscript que nunca se documentó— tiene respuesta: nada al
+contenido. 21 clases reproducen palabra por palabra.
+
+Las tres diferencias reales, ninguna de las cuales exige cambiar el parser:
+
+1. **Etiqueta de locutor (clases 10, 14 y 20).** El oráculo trae
+   `Nicolás Wschebor ` al principio de casi cada cue; los VTT de hoy no traen
+   ningún tag `<v>`. La aritmética cierra exacto: en Clase14,
+   9 819 − (213 cues × 2 palabras) = 9 393, el conteo del parser.
+   `parseVtt` ya stripea tags inline, así que si volvieran estaría cubierto.
+2. **OpenFING re-segmentó varios VTT.** Clase1 (249 → 221 cues), Clase25
+   (248 → 201) y Clase26 (297 → 217) tienen **el mismo conteo de palabras**
+   con distinta cantidad de cues. Cambió dónde corta, no qué dice. Por eso el
+   diff compara bolsas de palabras y no cue a cue.
+3. **Retoques de ASR.** Clases 2, 22 y 23 difieren en decenas de palabras
+   (p. ej. `OpenFin` → `OpenFing`). La fuente se regeneró; no es un bug del
+   parser.
+
+**Consecuencia para el benchmark:** el oráculo sirve para validar el
+extractor, pero **no es estable en el tiempo** — OpenFING regenera sus
+transcripciones. Cualquier métrica que dependa de un conteo exacto de
+palabras de la fuente tiene que fecharse.
 
 ---
 
@@ -216,10 +261,9 @@ npx playwright install chromium
    lo que pasa a ser evidencia de un ADR o fixture. Todo lo demás se borra:
    si el criterio es "lo guardo por las dudas", en un año hay diez netlogs y
    ninguno indexado.
-1. Correr `vtt.mjs` sobre una clase de Física III y **diffear** contra su
-   `Transcription_raw.txt`. Es un test con oráculo real y 28 casos disponibles.
-   La diferencia revela qué transformación hacía el userscript que nunca se
-   documentó.
+1. ~~Correr `vtt.mjs` contra los `Transcription_raw.txt` de Física III.~~
+   **HECHO (2026-08-02).** Ver sección 6.c: el extractor está validado contra
+   las 28 clases y el userscript no transformaba el texto.
 2. Completar el módulo Extractor: índice del curso → por clase, `og:video` →
    `.vtt` → parse → manifest. Idempotente y resumible (con 42 clases, algo va
    a fallar en la 27).
