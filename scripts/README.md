@@ -11,7 +11,7 @@ El pipeline es todavía mayormente manual. Lo automatizado es el primer paso
 
 | # | Paso | Cómo se hace hoy | Comando |
 | --- | --- | --- | --- |
-| 1 | Transcripción | **Automatizado** | `npm run vtt -- <archivo.vtt>` |
+| 1 | Transcripción | **Automatizado, de punta a punta** | `npm run fetch -- <curso> --write` |
 | 2 | `summary.md` | **A mano** (LLM + revisión) | — |
 | 3 | `notes.tex` | **A mano** (LLM + revisión) | — |
 | 4 | `metadata.yaml` | **A mano** | — |
@@ -19,9 +19,13 @@ El pipeline es todavía mayormente manual. Lo automatizado es el primer paso
 | 6 | PDF | **Automatizado** | `./build.sh` (por curso) |
 | 7 | Revisión humana | **A mano**, y no es opcional | — |
 
-El paso 1 todavía **no baja el VTT solo**: `vtt.js` parsea un archivo que ya
-tenés. El fetch (índice del curso → `og:video` → `.vtt` → manifiesto) está
-pendiente, es el próximo trabajo del módulo. Ver `CLAUDE.md` §7.
+El paso 1 va solo desde el 2026-08-08: `fetch` recorre el índice del curso,
+deriva el `.vtt` de cada clase del `og:video` y escribe la transcripción, las
+métricas y el manifiesto. Es idempotente y resumible — repetir el comando
+salta lo que ya está y retoma lo que falló.
+
+**Sin `--write` no escribe nada**: lista qué haría y termina. Es el default a
+propósito, porque escribe directo en `courses/<Curso>/Clases/ClaseN/`.
 
 Los pasos 2 a 5 tienen sus convenciones en el `CLAUDE.md` **del curso**
 (`courses/<Curso>/CLAUDE.md`), no acá: cada corpus tiene su estilo, su
@@ -33,14 +37,26 @@ Todos se corren desde la raíz del repo. `package.json` vive ahí porque npm lo
 necesita ahí.
 
 ```bash
-npm run vtt  -- <archivo.vtt> [dir-salida]   # parsea una transcripción
+npm run fetch -- <curso> [clases] [--write]  # extrae un curso entero
+npm run vtt  -- <archivo.vtt> [dir-salida]   # parsea un .vtt que ya tenés
 npm run diff -- <curso> [clase...]           # valida contra el oráculo
 npm run probe -- <url-de-clase> <dir>        # diagnóstico, casi nunca
 ```
 
+Selección de clases: un número, un rango o una lista.
+
+```bash
+npm run fetch -- CDIV2017                      # dry-run del curso entero
+npm run fetch -- CDIV2017 --write              # baja las que faltan
+npm run fetch -- CDIV2017 9 --write            # una sola
+npm run fetch -- CDIV2017 6-42 --write         # un rango
+npm run fetch -- CDIV2017 9,14,20-23 --write   # una mezcla
+```
+
 | Comando | Cuándo se usa | Necesita red |
 | --- | --- | --- |
-| `vtt` | Cada vez que entra una clase nueva. Es producción. | No |
+| `fetch` | Cada vez que entra una clase nueva. Es producción. | Sí |
+| `vtt` | Sólo para reparsear un `.vtt` local sin volver a bajarlo. | No |
 | `diff` | Al tocar el parser, para no romper lo que ya andaba. | Sí |
 | `probe` | Sólo si OpenFING cambia y el extractor deja de encontrar el `.vtt`. | Sí |
 
@@ -61,9 +77,12 @@ Requiere `tectonic` en el `PATH` o en `~/.local/bin`.
 ```text
 scripts/
   extractor/     # único módulo con código hoy
-    probe.js
-    vtt.js
+    fetch.js       # CLI de punta a punta
+    openfing.js    # la capa de red (lo único que toca HTTP)
+    cursos.js      # registro de cursos: slug y datos fijos
+    vtt.js         # parser, funciones puras
     diff-oraculo.js
+    probe.js
     README.md    # detalle de cada script
 tests/
   extractor/

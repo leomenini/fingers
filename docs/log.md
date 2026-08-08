@@ -156,15 +156,27 @@ Registrado el mismo día que se resolvió el punto 6, durante la sesión de
 sincronización de documentación posterior al rediseño del proyecto (ver
 `CLAUDE.md` §7 y §10).
 
-### Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
+### Rename `Transcription_raw.txt` → `transcript.txt` — RESUELTA (2026-08-08)
 
-ADR-0002 (2026-08-02) ya decidió el esquema de dos representaciones
-derivadas del VTT, con esos nombres. El corpus real (28 clases de Física III
-+ 5 de CDIV2017) todavía usa el nombre y formato viejos: el extractor nuevo
-existe (`scripts/extractor/vtt.js`) pero todavía no produjo ninguna clase real del
-corpus. Falta decidir si la migración es retroactiva sobre las 33 clases
-existentes o sólo aplica de acá en adelante, dejando convivir dos
-convenciones. Diferido, no resuelto en esta sesión.
+**Forward-only.** Toda clase que produzca el extractor usa los nombres de
+ADR-0002 (`transcript.txt`, `transcript.timed.txt`, `transcript.stats.json`,
+`manifest.json`). Las 33 clases del corpus viejo conservan
+`Transcription_raw.txt` hasta que se decida migrarlas.
+
+Razón: migrar retroactivamente es un trabajo aparte —toca 33 clases,
+`docs/SPECS.md` y los `CLAUDE.md` de los dos cursos— y no bloquea la
+recolección, que era lo urgente. Se pagó el precio de tener dos convenciones
+conviviendo un tiempo, a cambio de que el extractor naciera alineado con el
+ADR en vez de heredar el nombre viejo.
+
+Consecuencia operativa ya implementada: `fetch.js` considera "ya extraída" a
+una clase que tenga **cualquiera** de los dos nombres. Sin eso le dejaría al
+lado una segunda copia del mismo texto a las 33 clases viejas.
+
+La migración retroactiva queda como pendiente separado, y conviene resolverla
+junto con [ADR-0005](adr/0005-retencion-transcripcion-derivada.md): si la
+transcripción sale de Git, renombrar archivos que van a dejar de versionarse
+es trabajo perdido.
 
 ### Riesgo CC BY-NC-ND de la transcripción derivada ya commiteada
 

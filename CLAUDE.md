@@ -39,9 +39,9 @@ Dos frentes abiertos, en este orden:
 
 1. **Automatizar la extracción.** Motivado por el segundo corpus: Cálculo
    Diferencial e Integral en una Variable, `civ` (Teórico 2017, Alexandre
-   Miquel), **42 clases** (5 con transcripción, resumen, notas y metadata ya
-   commiteadas en `courses/CDIV2017/`; faltan 37). Existe también `cdiv-2022`,
-   una segunda edición.
+   Miquel), **42 clases**. Desde el 2026-08-08 las 42 tienen transcripción y
+   `metadata.yaml` esqueleto (§6.d); 5 tienen además resumen y notas. Existe
+   también `cdiv-2022`, una segunda edición.
 2. **Instrumentar métricas**, como paso previo a un benchmark.
 
 La revisión humana de Física III (28 clases en `draft`) sigue pendiente y es el
@@ -161,6 +161,19 @@ cross-módulo (ver sección 9).
   `netlog.json`. Se conserva para re-descubrir el patrón si OpenFING cambia, o
   para incorporar una fuente nueva. Requiere
   `npm i playwright && npx playwright install chromium`.
+- **`scripts/extractor/fetch.js`** — el extractor de punta a punta, y el
+  comando que se usa en producción. Índice del curso → por clase, `og:video`
+  → `.vtt` → parse → transcripción, métricas y manifiesto. Selección por
+  número, rango o lista (`9,14,20-23`). Dry-run por defecto: sin `--write` no
+  toca el disco. Idempotente y resumible. No calcula métricas propias: se las
+  pide a `vtt.js`.
+- **`scripts/extractor/openfing.js`** — la capa de red, y lo único que toca
+  HTTP: `indiceDelCurso`, `metaDeClase`, `urlDelVtt`, `bajarTexto` (con
+  reintento y `sha256`). El HTML del índice viene **minificado y con
+  atributos sin comillas**, así que los regex las tratan como opcionales.
+- **`scripts/extractor/cursos.js`** — registro de cursos: slug de OpenFING
+  (que el nombre del directorio no dice, ADR-0003) y los datos fijos que
+  `metadata.yaml` necesita y la transcripción no contiene.
 - **`scripts/extractor/vtt.js`** — parser de WebVTT. Exporta funciones
   **puras**: `parseVtt`, `validarTranscripcion`, `aTextoPlano`,
   `aTextoConTiempo`, `metricas`, `detectarSolapeTextual`, `parseTimestamp`,
@@ -229,6 +242,41 @@ palabras de la fuente tiene que fecharse.
 
 ---
 
+## 6.d El extractor corre de punta a punta (2026-08-08)
+
+`npm run fetch -- CDIV2017 --write` bajó **las 42 clases sin un solo error**.
+36 escritas en esa corrida (5 ya estaban del corpus viejo, 1 de la prueba
+previa). 307 280 palabras nuevas de transcripción.
+
+Lo que la corrida confirmó:
+
+- **`civ_09` reproduce exactamente los números de §4** — 279 cues, 9 301
+  palabras, 50 990 chars, 4,7 % de overhead, 0 advertencias. La medición de
+  aquel día era correcta y el pipeline la reproduce.
+- **El `_thumbnails.vtt` sigue siendo la trampa que era.** 548 cues, 0
+  advertencias, WebVTT impecable. Sólo lo agarra `validarTranscripcion`
+  mirando el contenido.
+- **Coste real:** 2 peticiones por clase, concurrencia 2. Sin Playwright.
+
+Dos cosas que se descubrieron escribiendo el `fetch`:
+
+1. **El HTML del índice está minificado y sin comillas en los atributos**
+   (`href=/courses/civ/1/`, `class=clase-numero`). Los `<meta>` sí vienen
+   entrecomillados — por eso el `urlDelVtt` viejo funcionaba — pero no hay
+   garantía de que sigan así. Los regex de `openfing.js` tratan las comillas
+   como opcionales.
+2. **Hay que anclar en `<a class=clase-enlace>`, no en un `href` suelto.** El
+   índice trae antes un nav con los otros cursos, y un regex que arranque por
+   `href` se come ese enlace y se lo asigna a la clase 1. Pasó, y el síntoma
+   era silencioso: la clase 1 apuntaba a `/courses/civ/`.
+
+**El oráculo sigue verde después del refactor**: `npm run diff -- Fisica3-2015`
+da ninguna clase bajo 0,97 y las mismas tres en 0,976–0,978 (10, 14, 20). Sí
+se movió el reparto de la banda alta: hoy son **22 clases en 1.000 exacto y 3
+en 0,99x**, donde §6.c registraba 21 y 4. Es exactamente la inestabilidad que
+§6.c predijo —OpenFING regenera transcripciones—, no una regresión. Confirma
+que cualquier medición sobre la fuente hay que fecharla.
+
 ## 6.b Entorno local
 
 Node v20.20.2. El repo vive en `~/Desktop/Files/Transcripciones` (el directorio
@@ -259,12 +307,10 @@ npx playwright install chromium
 
 **Lo próximo, en orden**
 
-1. **Completar el módulo Extractor de punta a punta.** Es el trabajo real que
-   queda: índice del curso → por clase, `og:video` → `.vtt` → parse →
-   manifiesto. Idempotente y resumible (con 42 clases, algo va a fallar en la
-   27). Hoy `vtt.js` parsea un archivo que ya tenés; **falta el `fetch`**.
-   El arnés para validarlo ya existe: `diff-oraculo.js` sobre las 42 de
-   CDIV2017.
+1. ~~**Completar el módulo Extractor de punta a punta.**~~ **Hecho el
+   2026-08-08.** `fetch.js` hace índice → `og:video` → `.vtt` → parse →
+   manifiesto, es idempotente y resumible, y se corrió sobre CDIV2017: las
+   42 clases bajaron sin un solo error. Ver §6.d.
 2. **Actualizar `docs/SPECS.md`.** Sigue diciendo que `Transcription_raw.txt`
    es "dado, no se edita" (línea 30). ADR-0002 lo convirtió en salida del
    parser y esto nunca se corrigió — es lo único de la documentación que

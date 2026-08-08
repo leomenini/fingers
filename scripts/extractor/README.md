@@ -12,11 +12,55 @@ trabajo está en `CLAUDE.md` §3–§6 de la raíz.
 
 | Archivo | Rol |
 | --- | --- |
-| `vtt.js` | Parser de WebVTT. Producción. |
-| `probe.js` | Descubrimiento con Playwright. **Diagnóstico, no producción.** |
+| `fetch.js` | CLI de punta a punta: curso → clases → transcripción. Producción. |
+| `openfing.js` | La capa de red. **Lo único que toca HTTP.** |
+| `cursos.js` | Registro de cursos: slug de OpenFING y datos fijos del curso. |
+| `vtt.js` | Parser de WebVTT, funciones puras. Producción. |
 | `diff-oraculo.js` | Valida el extractor contra el corpus del userscript. |
+| `probe.js` | Descubrimiento con Playwright. **Diagnóstico, no producción.** |
 
-Ambos son ESM y se ejecutan con Node (v20 en el entorno actual).
+Todos son ESM y se ejecutan con Node (v20 en el entorno actual).
+
+## `fetch.js` — el comando que usás
+
+```bash
+npm run fetch -- CDIV2017                      # dry-run del curso entero
+npm run fetch -- CDIV2017 --write              # baja las que faltan
+npm run fetch -- CDIV2017 9,14,20-23 --write   # una selección
+```
+
+Flags: `--write` (sin él es dry-run), `--force` (rehace lo ya extraído),
+`--concurrency N` (default 2), `--no-metadata`.
+
+Por clase hace 2 peticiones —la página, para el `og:video`; después el
+`.vtt`— y escribe en `courses/<Curso>/Clases/ClaseN/`:
+
+| Archivo | Qué es |
+| --- | --- |
+| `transcript.txt` | párrafos sin marcas (entrada al LLM) |
+| `transcript.timed.txt` | los mismos párrafos con `[m:ss]` |
+| `transcript.stats.json` | métricas del parseo |
+| `manifest.json` | procedencia: URL, `sha256`, fecha, versión (ADR-0004) |
+| `metadata.yaml` | sólo si no existe, y sólo los campos mecánicos |
+
+**No calcula ninguna métrica propia.** Baja el texto y se lo pasa a las
+funciones puras de `vtt.js`; lo único que sale de la capa de red es la
+procedencia, y va al `manifest.json`, no al `stats.json`. Por eso las
+métricas son reproducibles: reparsear el mismo `.vtt` da idéntico.
+
+**Idempotente y resumible**, que con 42 clases no es opcional: salta las que
+ya están (con cualquiera de las dos convenciones de nombre — el rename de
+ADR-0002 es *forward-only* y las clases viejas conservan
+`Transcription_raw.txt`), y un fallo en la clase 27 no tira las 15 que
+faltan: se acumulan, se reportan al final y se retoman corriendo el mismo
+comando.
+
+Sobre `metadata.yaml`: rellena lo que se puede derivar mecánicamente
+(`title`, `id`, datos fijos del curso, `video.start`/`end` del primer y
+último cue, `stats.transcript_words`) y deja vacío lo que exige leer la
+clase (`topics`, `prerequisites`, `next_topics`, `equations`). **`llm.model`
+queda vacío a propósito**: es trazabilidad y todavía no corrió ningún modelo.
+Nunca pisa un `metadata.yaml` existente sin `--force`.
 
 ## `vtt.js` — parser
 
@@ -24,9 +68,17 @@ Ambos son ESM y se ejecutan con Node (v20 en el entorno actual).
 npm run vtt -- <archivo.vtt> [directorio-salida]   # salida por defecto: ./out
 ```
 
+Con `fetch.js` andando, el CLI de `vtt.js` es para reparsear un `.vtt` que ya
+tenés en disco sin volver a pedírselo a OpenFING. Las funciones que exporta,
+en cambio, son el corazón del extractor: las usa `fetch.js`.
+
 Exporta funciones **puras**, sin red ni estado: `parseVtt`,
 `validarTranscripcion`, `aTextoPlano`, `aTextoConTiempo`, `metricas`,
-`detectarSolapeTextual`, `parseTimestamp`, `formatTimestamp`.
+`detectarSolapeTextual`, `parseTimestamp`, `formatTimestamp`, `formatHHMMSS`.
+
+Hay dos formatos de tiempo y no son intercambiables: `formatTimestamp` da
+`[m:ss]` para la transcripción con marcas, y `formatHHMMSS` da `"HH:MM:SS"`,
+que es lo que pide `video.start`/`end` de `metadata.yaml`.
 
 Por CLI produce tres archivos en el directorio de salida:
 
