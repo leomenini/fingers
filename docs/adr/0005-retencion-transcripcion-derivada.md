@@ -1,11 +1,10 @@
 # ADR-0005 · Retención de la transcripción derivada
 
-- **Estado:** Propuesto
-- **Fecha:** 2026-08-08
+- **Estado:** Aceptado
+- **Fecha:** 2026-08-08 (levantado y decidido el mismo día, ver *Decisión*)
 - **Afecta a:** modelo de datos de la clase · `docs/SPECS.md` · `docs/log.md` ·
   todas las clases del corpus
 - **Depende de:** ADR-0002, ADR-0004
-- **Bloqueado por:** el `fetch` del extractor (`CLAUDE.md` §7, punto 1)
 
 ## Contexto
 
@@ -52,32 +51,42 @@ siempre.
 
 ## Decisión
 
-**Ninguna todavía.** Este ADR queda en `Propuesto` a propósito.
+**La transcripción no se versiona. Se adopta la alternativa A.**
 
-La razón del diferimiento es concreta, no dilatoria: la alternativa A sólo es
-real si cualquiera puede regenerar la transcripción con un comando, y el
-`fetch` del extractor todavía no existe (`CLAUDE.md` §7, punto 1). Decidir hoy
-sería elegir entre una opción implementada y una hipotética, que es una forma
-elegante de decidir por B sin admitirlo.
+Este ADR se levantó en estado `Propuesto` esa misma mañana, difiriendo la
+decisión hasta que existiera el `fetch`, con esta condición escrita: *"no se
+acepta A sin que `npm run fetch -- <curso>` reconstruya una clase completa
+desde cero"*. El `fetch` se completó ese mismo día y se corrió sobre las 42
+clases de CDIV2017 sin un solo error (`CLAUDE.md` §6.d). **La condición se
+cumplió**, y con ella desapareció la razón del diferimiento: A dejó de ser una
+opción hipotética.
 
-**Criterio de desempate, fijado ahora para no discutirlo bajo presión después:**
+Concretamente:
 
-1. **Disparador.** Se resuelve cuando el `fetch` esté completo y validado
-   contra CDIV2017, o antes si llega un takedown o se suma un colaborador
-   externo. Lo que ocurra primero.
-2. **Condición de la alternativa A.** No se acepta A sin que
-   `npm run fetch -- <curso>` reconstruya una clase completa desde cero. Sin
-   eso, A no cierra el agujero: lo transforma en pérdida de contenido.
-3. **Precedencia.** Esta decisión manda sobre el `filter-repo` de `CLAUDE.md`
-   §7. No se reescribe el historial antes de resolverla, porque el
-   `filter-repo` destruye el oráculo de §6.c de forma irreversible.
-4. **Alcance.** Lo que se decida aplica a los **dos** cursos y a los que
-   vengan. No se acepta una regla que valga para CDIV2017 y no para
-   Física III: el corpus tendría dos modelos de datos.
+1. **No se commitea `transcript.txt` ni `transcript.timed.txt`.** Están en el
+   `.gitignore`. Viven en el disco de quien corrió la extracción.
+2. **Sí se versionan los artefactos derivados que no reproducen la obra:**
+   `manifest.json` (procedencia, ADR-0004), `transcript.stats.json` (métricas)
+   y `metadata.yaml`. Ninguno contiene texto del docente.
+3. **Regla de alcance:** vale para los **dos** cursos y los que vengan. Una
+   regla que valiera para CDIV2017 y no para Física III dejaría el corpus con
+   dos modelos de datos.
+4. **Lo ya commiteado sale del historial.** Ignorar no destrackea: las
+   308 452 palabras de `Transcription_raw.txt` de las 33 clases existentes
+   siguen en Git hasta que se reescriba la historia. Eso se hace en la pasada
+   de `git filter-repo` que `CLAUDE.md` §7 ya tenía agendada por peso; ahora
+   esa pasada tiene dos motivos y un solo pase.
+
+**El razonamiento que cerró la discusión** no fue el legal sino el de alcance:
+el producto de este módulo es la *herramienta que reproduce* la transcripción,
+no la transcripción. Con el `fetch` andando, el payload es un artefacto
+intermedio regenerable, y versionarlo es guardar la salida de un comando
+determinista. Que además cierre el problema de licencia es una consecuencia,
+no la premisa.
 
 ## Alternativas consideradas
 
-### A — La transcripción sale de Git; queda `manifest.json`
+### A — La transcripción sale de Git; queda `manifest.json` — **ELEGIDA**
 
 Extiende ADR-0004 un escalón: se versiona sólo el manifiesto (URL, `sha256`,
 fecha de extracción, versión del extractor) y el texto se regenera con
@@ -117,20 +126,30 @@ del producto y no un lindo a tener.
 
 ## Consecuencias
 
-Mientras este ADR siga en `Propuesto`:
-
-- El corpus sigue como está. **No se agregan clases nuevas asumiendo que la
-  transcripción se versiona para siempre**: el extractor debe escribir el
-  `manifest.json` de ADR-0004 desde el día uno, que es lo que mantiene viva la
-  alternativa A.
-- No se corre `git filter-repo` (punto 3 del criterio de desempate).
-- `docs/log.md` y `CLAUDE.md` §7 dejan de describir el riesgo y pasan a
-  apuntar acá. La descripción vive en un solo lugar.
-
-Cuando se resuelva, este ADR se edita **sólo** para cambiar el estado a
-`Aceptado` y agregar la decisión y su fecha; si la resolución contradijera lo
-escrito acá, se escribe un ADR nuevo que lo supersede
-(`docs/adr/README.md`).
+- **La clase deja de ser autocontenida**, y eso contradice a `docs/SPECS.md`
+  ("cada clase representa una instancia académica autocontenida") y a su lista
+  de cuatro archivos obligatorios. `SPECS.md` hay que corregirlo: pasa a tres
+  versionados (`summary.md`, `notes.tex`, `metadata.yaml`) más `manifest.json`
+  y `transcript.stats.json`, con la transcripción como insumo local.
+- **Clonar el repo ya no alcanza para trabajar.** Hace falta red y que
+  OpenFING siga sirviendo el curso. Reproducibilidad *verificable*, no
+  *hermética*: el `sha256` del manifiesto permite confirmar que el texto que
+  tenés es el que se usó, pero no recuperarlo sin la fuente.
+- **El oráculo de `CLAUDE.md` §6.c es una baja real.** Los 28
+  `Transcription_raw.txt` de Física III son el único test con oráculo real del
+  proyecto, y el `filter-repo` los borra del historial de forma irreversible.
+  Antes de correrlo hay que decidir explícitamente si se conserva una copia
+  fuera de Git; si se pierde, `diff-oraculo.js` queda sin nada contra qué
+  comparar. **Su hallazgo principal ya está registrado** en §6.c (el userscript
+  no transformaba el texto), así que lo que se pierde es la capacidad de
+  re-verificarlo, no el resultado.
+- **Física III queda a medio camino** hasta que se le corra el `fetch`: sus 28
+  clases tienen `Transcription_raw.txt` (que va a salir del repo) pero todavía
+  no tienen `manifest.json`. Sin manifiesto no hay procedencia verificable, que
+  es justamente lo que este ADR compra. Correr `fetch` sobre Física III es
+  ahora un prerrequisito del `filter-repo`, no una tarea opcional.
+- Las métricas del corpus que dependan de contar palabras de la fuente pasan a
+  salir de `transcript.stats.json`, no de los archivos.
 
 ## Evidencia
 
@@ -152,6 +171,13 @@ git ls-files -z 'courses/<Curso>/*Transcription_raw.txt' | xargs -0 wc -w
 | **Total de transcripción literal (33 clases, 1,8 MB)** | **308 452** |
 | `summary.md` (33 clases, fuera de alcance) | 78 707 |
 | `notes.tex` (33 clases, fuera de alcance) | 63 781 |
+
+**La condición de aceptación, verificada el mismo día.** `npm run fetch --
+CDIV2017 --write` reconstruyó las 42 clases del curso desde cero, sin un solo
+error, en 85 peticiones (`CLAUDE.md` §6.d). `civ_09` reprodujo exactamente los
+números medidos en §4 (279 cues, 9 301 palabras, 50 990 chars, 0
+advertencias), que es lo que hace de la regeneración algo determinista y no
+una aproximación.
 
 **Sobre el número que circula en la documentación.** `CLAUDE.md` §7,
 `docs/log.md` y ADR-0004 citan *271 057 palabras* para Física III; `wc -w` da

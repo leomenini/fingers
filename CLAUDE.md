@@ -358,31 +358,37 @@ las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
 
 **Decisiones abiertas**
 
-- **¿La transcripción derivada (`Transcription_raw.txt`) debe salir de Git
-  también?** → **ADR-0005**, en estado `Propuesto` (2026-08-08). El
-  expediente está levantado: contexto, tres alternativas y la evidencia
-  medida (308 452 palabras literales en las 33 clases de los dos cursos, bajo
-  CC BY-NC-ND). La decisión se difiere hasta que exista el `fetch`, porque
-  sacar la transcripción de Git sólo es viable si se puede regenerar con un
-  comando. Mientras tanto rige una consecuencia operativa: **el extractor
-  escribe el `manifest.json` de ADR-0004 desde el día uno**, que es lo que
-  mantiene viva esa alternativa.
+- ~~**¿La transcripción derivada debe salir de Git?**~~ → **ADR-0005,
+  `Aceptado`** (2026-08-08). **No se versiona.** `transcript.txt` y
+  `transcript.timed.txt` al `.gitignore`; se versionan `manifest.json`,
+  `transcript.stats.json` y `metadata.yaml`. El argumento que cerró la
+  discusión es de alcance, no legal: el producto de este módulo es la
+  herramienta que reproduce la transcripción, no la transcripción. Que además
+  cierre el problema CC BY-NC-ND es consecuencia, no premisa.
 - **Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
   en el corpus real.** ADR-0002 ya decidió el esquema de dos
   representaciones, pero el corpus (Física III y las 5 clases de CDIV2017)
   todavía usa el nombre y formato viejos — el extractor nuevo existe pero
   todavía no produjo ninguna clase real del corpus. Pendiente de decidir si
   se migra retroactivamente o sólo aplica de acá en adelante.
-- **Peso muerto en el historial de Git.** Tres cosas ya destrackeadas cuyos
-  objetos siguen pesando: `Resnick.pdf` (69 MB), los 28 `notes.pdf` (3,3 MB) y
-  `PDFiter1/` (6,5 MB) — ~79 MB en total. Sacarlos exige `git filter-repo`,
-  que reescribe historia ya pusheada. No es urgente; el disparador es antes de
-  que clonar se ponga lento o se sume gente nueva. Limpieza de repo, no ADR.
-  Cuanto más se acumula, más rentable es hacer una sola pasada.
-  **Bloqueado por ADR-0005:** los 28 `Transcription_raw.txt` son el oráculo de
-  §6.c. Si salen de Git, sobreviven en el historial — pero el `filter-repo`
-  los borraría del todo, y de forma irreversible. Primero se resuelve
-  ADR-0005.
+- **Pasada de `git filter-repo`.** Dejó de ser sólo limpieza de peso: con
+  ADR-0005 aceptado, es **la única forma de ejecutar esa decisión**, porque
+  ignorar no destrackea. Un solo pase, dos objetivos:
+  1. **Los 33 `Transcription_raw.txt`** (308 452 palabras) — ADR-0005.
+  2. **~79 MB de peso muerto** ya destrackeado pero vivo en el historial:
+     `Resnick.pdf` (69 MB), los 28 `notes.pdf` (3,3 MB) y `PDFiter1/` (6,5 MB).
+
+  **Dos prerrequisitos, ninguno opcional:**
+  - **Correr `fetch` sobre Física III.** Sus 28 clases no tienen
+    `manifest.json`. Si se les borra la transcripción sin dejar procedencia,
+    quedan sin nada: ni el texto ni de dónde salió.
+  - **Decidir qué pasa con el oráculo de §6.c.** Esos mismos 28 archivos son
+    el único test con oráculo real del proyecto, y el `filter-repo` los borra
+    de forma irreversible. Su hallazgo ya está registrado en §6.c; lo que se
+    pierde es poder re-verificarlo. Si se quiere conservar, hay que copiarlos
+    fuera de Git **antes**.
+
+  Reescribe historia ya pusheada: hay que coordinar con cualquier clon.
 - **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
   enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
 - **Representación canónica del contenido.** Ver sección 8.
