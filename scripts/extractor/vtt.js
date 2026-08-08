@@ -33,6 +33,15 @@ export function formatTimestamp(seg) {
   return `${h ? `${h}:` : ''}${mm}:${String(s).padStart(2, '0')}`;
 }
 
+/**
+ * segundos → "01:24:52". Formato de `video.start`/`video.end` en
+ * metadata.yaml, que es distinto del `[m:ss]` de la transcripción con marcas.
+ */
+export function formatHHMMSS(seg) {
+  const p = (x) => String(Math.floor(x)).padStart(2, '0');
+  return `${p(seg / 3600)}:${p((seg % 3600) / 60)}:${p(seg % 60)}`;
+}
+
 const RE_TIEMPO = /^(\S+)\s+-->\s+(\S+)/;
 
 /**

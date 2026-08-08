@@ -23,6 +23,8 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseVtt, formatTimestamp } from './vtt.js';
+import { resolverCurso, CURSOS } from './cursos.js';
+import { urlDelVttDeClase, bajarTexto } from './openfing.js';
 
 const RAIZ = fileURLToPath(new URL('../..', import.meta.url));
 
@@ -80,25 +82,15 @@ export function similitud(a, b) {
   return total ? (2 * comun) / total : 1;
 }
 
-/** Deriva la URL del VTT del `og:video` de la página de la clase (ADR-0001). */
-async function urlDelVtt(urlClase) {
-  const res = await fetch(urlClase);
-  if (!res.ok) throw new Error(`${urlClase} → HTTP ${res.status}`);
-  const html = await res.text();
-  const m = html.match(/og:video"\s+content="([^"]+\.mp4)"/);
-  if (!m) throw new Error(`no encontré og:video en ${urlClase}`);
-  return m[1].replace(/\.mp4$/, '_transcription.vtt');
-}
-
 async function comparar(dirCurso, n, urlBase) {
   const dirClase = join(RAIZ, 'courses', dirCurso, 'Clases', `Clase${n}`);
   const rutaOraculo = join(dirClase, 'Transcription_raw.txt');
   if (!existsSync(rutaOraculo)) return { n, error: 'sin Transcription_raw.txt' };
 
-  const vttUrl = await urlDelVtt(`${urlBase}/${n}/`);
-  const res = await fetch(vttUrl);
-  if (!res.ok) return { n, error: `VTT → HTTP ${res.status}` };
-  const { cues, warnings } = parseVtt(await res.text());
+  // La derivación del VTT vive en openfing.js: la comparte con fetch.js, así
+  // el oráculo valida exactamente el mismo camino que corre en producción.
+  const vttUrl = await urlDelVttDeClase(`${urlBase}/${n}/`);
+  const { cues, warnings } = parseVtt((await bajarTexto(vttUrl)).texto);
 
   const oraculo = parseOraculo(await readFile(rutaOraculo, 'utf8'));
 
@@ -128,22 +120,20 @@ async function clasesDe(dirCurso) {
     .sort((a, b) => a - b);
 }
 
-/** slug de OpenFING por curso; el directorio del repo no lo dice (ADR-0003). */
-const SLUGS = { 'Fisica3-2015': 'f3', CDIV2017: 'civ' };
-
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [, , curso, ...args] = process.argv;
   if (!curso) {
     console.error('uso: diff-oraculo.js <curso> [clase...]');
+    console.error(`cursos conocidos: ${Object.keys(CURSOS).join(', ')}`);
     process.exit(64);
   }
-  const slug = SLUGS[curso];
-  if (!slug) {
-    console.error(`no conozco el slug de OpenFING para "${curso}".`);
-    console.error(`conocidos: ${Object.keys(SLUGS).join(', ')}`);
+  let urlBase;
+  try {
+    ({ urlBase } = resolverCurso(curso));
+  } catch (e) {
+    console.error(e.message);
     process.exit(64);
   }
-  const urlBase = `https://open.fing.edu.uy/courses/${slug}`;
   const clases = args.length ? args.map(Number) : await clasesDe(curso);
 
   console.log(`${curso} · ${clases.length} clase(s) · ${urlBase}\n`);
