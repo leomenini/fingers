@@ -168,13 +168,19 @@ convenciones. Diferido, no resuelto en esta sesión.
 
 ### Riesgo CC BY-NC-ND de la transcripción derivada ya commiteada
 
-[ADR-0004](adr/0004-retencion-payload-vtt.md) resolvió que el `.vtt` crudo no
-se commitea, pero **no** resolvió esto: el repo ya commitea 271 057 palabras
-de transcripción literal de OpenFING (`Transcription_raw.txt` de las 28
-clases de Física III), bajo una licencia CC BY-NC-ND que no cubre
-redistribución. El riesgo concreto no es una demanda sino un takedown de
-GitHub. Es una decisión sobre el modelo de datos de todas las clases del
-repo, no sólo del extractor — queda para un ADR propio.
+Tiene expediente propio desde el 2026-08-08:
+**[ADR-0005](adr/0005-retencion-transcripcion-derivada.md)**, en estado
+`Propuesto`. Ahí viven el contexto, las tres alternativas, la evidencia
+medida (308 452 palabras literales en 33 clases) y el criterio de desempate.
+No se repite acá.
+
+La decisión está **diferida a propósito** hasta que exista el `fetch` del
+extractor: sacar la transcripción de Git sólo es viable si cualquiera puede
+regenerarla con un comando. Dos consecuencias operativas mientras tanto: el
+extractor debe escribir el `manifest.json` de
+[ADR-0004](adr/0004-retencion-payload-vtt.md) desde el día uno, y **no se
+corre `git filter-repo`** antes de resolverla (borraría el oráculo de
+`CLAUDE.md` §6.c de forma irreversible).
 
 ### `Resnick.pdf` (69 MB) en el historial de git
 

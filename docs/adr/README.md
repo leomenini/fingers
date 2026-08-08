@@ -27,6 +27,7 @@ registro: explica por qué el proyecto es como es.
 | [0002](0002-representacion-de-la-transcripcion.md) | Separación fetch/parse y doble representación de la transcripción | Aceptado |
 | [0003](0003-convencion-nombres-curso-edicion.md) | Convención de nombres para curso/edición | Aceptado |
 | [0004](0004-retencion-payload-vtt.md) | Retención del payload VTT crudo | Aceptado |
+| [0005](0005-retencion-transcripcion-derivada.md) | Retención de la transcripción derivada | Propuesto |
 
 ## Evidencia
 

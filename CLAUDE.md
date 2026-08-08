@@ -313,13 +313,14 @@ las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
 **Decisiones abiertas**
 
 - **¿La transcripción derivada (`Transcription_raw.txt`) debe salir de Git
-  también?** ADR-0004 resolvió el `.vtt` crudo, pero **no** esto: el repo hoy
-  commitea 271 057 palabras de transcripción literal de OpenFING (CC
-  BY-NC-ND) en las 28 clases de Física III, y ADR-0004 no lo toca. El riesgo
-  real no es una demanda sino un takedown en GitHub, y es un agujero de
-  procedencia en un proyecto cuyo producto es la trazabilidad. Requiere ADR
-  propio — es una decisión sobre el modelo de datos de **todas** las clases,
-  no sólo del extractor.
+  también?** → **ADR-0005**, en estado `Propuesto` (2026-08-08). El
+  expediente está levantado: contexto, tres alternativas y la evidencia
+  medida (308 452 palabras literales en las 33 clases de los dos cursos, bajo
+  CC BY-NC-ND). La decisión se difiere hasta que exista el `fetch`, porque
+  sacar la transcripción de Git sólo es viable si se puede regenerar con un
+  comando. Mientras tanto rige una consecuencia operativa: **el extractor
+  escribe el `manifest.json` de ADR-0004 desde el día uno**, que es lo que
+  mantiene viva esa alternativa.
 - **Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
   en el corpus real.** ADR-0002 ya decidió el esquema de dos
   representaciones, pero el corpus (Física III y las 5 clases de CDIV2017)
@@ -332,6 +333,10 @@ las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
   que reescribe historia ya pusheada. No es urgente; el disparador es antes de
   que clonar se ponga lento o se sume gente nueva. Limpieza de repo, no ADR.
   Cuanto más se acumula, más rentable es hacer una sola pasada.
+  **Bloqueado por ADR-0005:** los 28 `Transcription_raw.txt` son el oráculo de
+  §6.c. Si salen de Git, sobreviven en el historial — pero el `filter-repo`
+  los borraría del todo, y de forma irreversible. Primero se resuelve
+  ADR-0005.
 - **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
   enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
 - **Representación canónica del contenido.** Ver sección 8.
