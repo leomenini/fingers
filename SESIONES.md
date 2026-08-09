@@ -9,6 +9,67 @@ relato: qué se hizo, qué se descubrió y qué quedó abierto.
 
 ---
 
+## 2026-08-08 — El extractor de punta a punta, y el repo sin transcripción
+
+Rama: `chore/estructura`. El día empezó con `vtt.js` parseando un archivo que
+ya tenías en disco y terminó con 70 clases extraídas por comando y un
+historial de Git sin una palabra de transcripción.
+
+### Lo que se construyó
+
+- **`fetch.js`**, el extractor de punta a punta: índice del curso → `og:video`
+  → `.vtt` → transcripción, métricas y manifiesto. Selección por número, rango
+  o lista (`9,14,20-23`). Dry-run por defecto. Idempotente y resumible.
+- **`openfing.js`** (la capa de red, lo único que toca HTTP) y **`cursos.js`**
+  (slug + datos fijos). No hizo falta escribir código de red nuevo: `urlDelVtt`
+  y el mapa de slugs ya existían enterrados en `diff-oraculo.js`. Se
+  extrajeron y ahora los comparten, así el oráculo valida el mismo camino que
+  corre en producción.
+- **ADR-0005**, levantado y aceptado el mismo día.
+
+### Los tres hallazgos que importan
+
+**1. Filtrar por nombre exacto no alcanza.** La primera pasada de
+`filter-repo` dejó adentro cuatro transcripciones con el nombre mal escrito
+(`Transciption_raw.txt`, `transcript_raw.txt` ×2, `transcrip_raw.txt`): unas
+40 000 palabras que una verificación por nombre canónico no encuentra. La
+pregunta correcta no es *"¿queda algún `Transcription_raw.txt`?"* sino
+*"¿queda algún `.txt`?"*. Detalle en `CLAUDE.md` §7.b.
+
+**2. `--force` no debe significar "borrá lo que escribí".** El `fetch` pisaba
+`metadata.yaml` con `--force`, y correrlo sobre Física III —prerrequisito del
+`filter-repo`— habría borrado `topics`, `review` y `llm.model` de 28 clases.
+`llm.model` es trazabilidad y el extractor no puede reconstruirlo. Ahora
+`metadata.yaml` sólo se crea si falta, nunca se pisa.
+
+**3. El HTML del índice de OpenFING viene minificado y sin comillas en los
+atributos**, y hay que anclar en `<a class=clase-enlace>`: un regex que
+arranque por `href` se come el nav de otros cursos y le asigna esa URL a la
+clase 1. Fallaba en silencio.
+
+### Números
+
+| | |
+| --- | --- |
+| Clases extraídas | 70 (28 Física III + 42 CDIV2017), 0 errores |
+| CDIV2017 con transcripción | 5/42 → **42/42** |
+| Clases con procedencia (`manifest.json`) | 0 → **70/70** |
+| `.git` | 82 MB → **1,7 MB** |
+| Transcripción literal versionada | 308 452 palabras → **0** |
+
+### Qué quedó abierto
+
+`docs/SPECS.md` es ahora lo más urgente: ADR-0005 rompió *"cada clase es
+autocontenida"* y su lista de cuatro archivos obligatorios. Después,
+instrumentar métricas.
+
+> **Nota de método.** El oráculo de §6.c ya no está en el repo. Para volver a
+> correr `diff-oraculo.js` hay que copiar los 28 `Transcription_raw.txt` desde
+> `~/Desktop/Files/respaldo-fingers-borrados/` al working tree. Está anotado
+> en el README de esa carpeta.
+
+---
+
 ## 2026-08-02 — Automatización de la extracción
 
 **12 commits · 3 PR · 367 archivos · +11 553 / −340** (sin contar PDF).

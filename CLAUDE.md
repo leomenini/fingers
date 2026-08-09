@@ -311,13 +311,56 @@ npx playwright install chromium
    2026-08-08.** `fetch.js` hace índice → `og:video` → `.vtt` → parse →
    manifiesto, es idempotente y resumible, y se corrió sobre CDIV2017: las
    42 clases bajaron sin un solo error. Ver §6.d.
-2. **Actualizar `docs/SPECS.md`.** Sigue diciendo que `Transcription_raw.txt`
-   es "dado, no se edita" (línea 30). ADR-0002 lo convirtió en salida del
-   parser y esto nunca se corrigió — es lo único de la documentación que
-   quedó desalineado.
+2. **Actualizar `docs/SPECS.md`.** Ahora son **dos** desalineos y es lo más
+   urgente de la documentación. (a) La línea 30 sigue diciendo que
+   `Transcription_raw.txt` es "dado, no se edita"; ADR-0002 lo convirtió en
+   salida del parser. (b) ADR-0005 rompió *"cada clase es autocontenida"* y la
+   lista de cuatro archivos obligatorios: hoy son tres versionados
+   (`summary.md`, `notes.tex`, `metadata.yaml`) más `manifest.json` y
+   `transcript.stats.json`, con la transcripción como insumo local no
+   versionado.
 3. **Instrumentar métricas** (ver sección 9). El paso previo al benchmark.
-4. **Pasada de `git filter-repo`.** Limpieza de repo, no ADR. Ver *Decisiones
-   abiertas*.
+4. ~~**Pasada de `git filter-repo`.**~~ **Hecha el 2026-08-08.** Ver §7.b.
+
+## 7.b El historial se reescribió (2026-08-08)
+
+`git filter-repo` ejecutó ADR-0005 —ignorar no destrackea— y de paso limpió el
+peso muerto. Un solo pase conceptual, cuatro objetivos:
+
+| Salió del historial | Motivo |
+| --- | --- |
+| 33 `Transcription_raw.txt` (+ 4 variantes, ver abajo) | ADR-0005 |
+| `Resnick.pdf` (67 MB) | peso muerto |
+| 28 `notes.pdf` · `PDFiter1/` (56 PDF) | peso muerto |
+| `NotasCA.pdf` | peso muerto |
+
+**`.git`: 82 MB → 1,7 MB. Commits: 35 → 33** (dos quedaron vacíos al filtrar:
+sólo agregaban PDF). Hoy no queda en el historial ni un `.txt` ni un `.pdf`;
+los únicos binarios son los 12 fixtures `.vtt` de `tests/`, que ADR-0004
+contempla explícitamente.
+
+**La lección, y el motivo de que hiciera falta una segunda pasada:** filtrar
+por el nombre exacto del archivo **no alcanza**. La primera pasada dejó
+adentro cuatro transcripciones de la época temprana del repo con el nombre mal
+escrito —`Transciption_raw.txt`, `transcript_raw.txt` (×2),
+`transcrip_raw.txt`—, unas 40 000 palabras que una verificación por nombre
+canónico nunca habría encontrado. **Verificar por extensión, no por nombre**:
+la pregunta correcta no es *"¿queda algún `Transcription_raw.txt`?"* sino
+*"¿queda algún `.txt` en el historial?"*.
+
+Dos cosas más que hay que saber:
+
+- **Las rutas cambian con el tiempo.** Los filtros tuvieron que cubrir
+  `courses/Fisica3/` **y** `courses/Fisica3-2015/` (ADR-0003 renombró el
+  directorio a mitad de camino), y `PDFiter1/` lleva un espacio inicial en el
+  nombre, que git entrecomilla y un archivo de rutas se come en silencio.
+- **El force-push no borra los objetos del lado de GitHub.** Siguen
+  alcanzables por SHA hasta que GitHub corra su recolección. Cerrar el riesgo
+  del todo exige pedírselo a Support o recrear el repo.
+
+Todo lo borrado está en `~/Desktop/Files/respaldo-fingers-borrados/`, con un
+README que dice qué es cada cosa. El oráculo de §6.c vive ahí: para volver a
+correr `diff-oraculo.js` hay que copiar esos 28 archivos al working tree.
 
 **Política de retención (vigente, ya aplicada)**
 
@@ -371,24 +414,6 @@ las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
   todavía usa el nombre y formato viejos — el extractor nuevo existe pero
   todavía no produjo ninguna clase real del corpus. Pendiente de decidir si
   se migra retroactivamente o sólo aplica de acá en adelante.
-- **Pasada de `git filter-repo`.** Dejó de ser sólo limpieza de peso: con
-  ADR-0005 aceptado, es **la única forma de ejecutar esa decisión**, porque
-  ignorar no destrackea. Un solo pase, dos objetivos:
-  1. **Los 33 `Transcription_raw.txt`** (308 452 palabras) — ADR-0005.
-  2. **~79 MB de peso muerto** ya destrackeado pero vivo en el historial:
-     `Resnick.pdf` (69 MB), los 28 `notes.pdf` (3,3 MB) y `PDFiter1/` (6,5 MB).
-
-  **Dos prerrequisitos, ninguno opcional:**
-  - **Correr `fetch` sobre Física III.** Sus 28 clases no tienen
-    `manifest.json`. Si se les borra la transcripción sin dejar procedencia,
-    quedan sin nada: ni el texto ni de dónde salió.
-  - **Decidir qué pasa con el oráculo de §6.c.** Esos mismos 28 archivos son
-    el único test con oráculo real del proyecto, y el `filter-repo` los borra
-    de forma irreversible. Su hallazgo ya está registrado en §6.c; lo que se
-    pierde es poder re-verificarlo. Si se quiere conservar, hay que copiarlos
-    fuera de Git **antes**.
-
-  Reescribe historia ya pusheada: hay que coordinar con cualquier clon.
 - **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
   enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
 - **Representación canónica del contenido.** Ver sección 8.

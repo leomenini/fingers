@@ -186,24 +186,17 @@ van al `.gitignore`; se versionan `manifest.json`, `transcript.stats.json` y
 `metadata.yaml`, que no reproducen la obra. El contexto, las alternativas y la
 evidencia están en el ADR y no se repiten acá.
 
-Queda **una tarea abierta que el ADR crea**: ignorar no destrackea. Las
-308 452 palabras ya commiteadas salen del historial con la pasada de
-`git filter-repo`, y esa pasada tiene ahora dos prerrequisitos —correr el
-`fetch` sobre Física III para que sus 28 clases tengan `manifest.json`, y
-decidir si el oráculo de `CLAUDE.md` §6.c se conserva fuera de Git antes de
-que la reescritura lo borre.
+**Ejecutada el mismo día.** Ignorar no destrackea, así que las 308 452
+palabras salieron del historial con `git filter-repo` (`CLAUDE.md` §7.b). Los
+dos prerrequisitos se cumplieron antes: se corrió el `fetch` sobre Física III
+—sus 28 clases ya tienen `manifest.json`— y el oráculo se copió a
+`~/Desktop/Files/respaldo-fingers-borrados/`.
 
-### `Resnick.pdf` (69 MB) en el historial de git
+### `Resnick.pdf` (69 MB) en el historial de git — RESUELTA (2026-08-08)
 
-No es un problema de documentación ni de modelo de datos, es limpieza de
-repositorio: el archivo está borrado del working tree pero sus objetos siguen
-en `.git`, y sacarlos requiere `git filter-repo` (reescribe todo el
-historial; la rama ya está pusheada a `origin`). Detectado y anotado en
-`/home/leo/devTools/Transcripciones/ROADMAP/DetallesRepo2-08-2026.md`. No es
-urgente hoy; el disparador ya está escrito ahí: antes de que clonar el repo
-se ponga notablemente lento, o antes de sumar colaboradores nuevos que lo
-clonen. Se agenda como el próximo paso concreto después de esta sesión de
-documentación (no un ADR).
+Salió con la misma pasada de `git filter-repo`, junto al resto del peso
+muerto (`notes.pdf`, `PDFiter1/`, `NotasCA.pdf`). `.git` pasó de 82 MB a
+1,7 MB. Detalle y lecciones en `CLAUDE.md` §7.b.
 
 ## Pendientes
 
