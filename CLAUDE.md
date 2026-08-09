@@ -177,7 +177,7 @@ cross-módulo (ver sección 9).
 - **`scripts/extractor/vtt.js`** — parser de WebVTT. Exporta funciones
   **puras**: `parseVtt`, `validarTranscripcion`, `aTextoPlano`,
   `aTextoConTiempo`, `metricas`, `detectarSolapeTextual`, `parseTimestamp`,
-  `formatTimestamp`. CLI produce `transcript.txt`, `transcript.timed.txt`,
+  `formatTimestamp`, `formatHHMMSS`. CLI produce `transcript.txt`, `transcript.timed.txt`,
   `transcript.stats.json`, y sale con código 2 si la entrada no es una
   transcripción. Corrido contra `civ_09`: 0 advertencias.
 - **`scripts/extractor/diff-oraculo.js`** — compara la salida del extractor
@@ -193,9 +193,10 @@ cross-módulo (ver sección 9).
   que resume cada uno. Hoy: `0001-netlog.json` (tráfico observado en el
   descubrimiento, parámetros de Matomo removidos).
 - **`docs/adr/`** — ADR-0001 (extracción), ADR-0002 (representación),
-  ADR-0003 (nombres de curso/edición), ADR-0004 (retención del VTT).
+  ADR-0003 (nombres de curso/edición), ADR-0004 (retención del VTT),
+  ADR-0005 (retención de la transcripción derivada).
 
-Los tres scripts son ESM con extensión `.js`: el `package.json` declara
+Los seis scripts son ESM con extensión `.js`: el `package.json` declara
 `"type": "module"`, así que Node los trata como módulos sin necesidad de
 `.mjs`. (Fueron `.mjs` hasta el 2026-08-02.)
 

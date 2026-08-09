@@ -48,6 +48,14 @@ funciones puras de `vtt.js`; lo único que sale de la capa de red es la
 procedencia, y va al `manifest.json`, no al `stats.json`. Por eso las
 métricas son reproducibles: reparsear el mismo `.vtt` da idéntico.
 
+**No ensucia el repo al re-extraer.** Si el `sha256` del payload no cambió,
+conserva el `manifest.json` existente en vez de regrabar `extractedAt`; sin
+eso, correr el `fetch` sobre un curso ya bajado dejaba 70 archivos
+modificados con diffs de sólo la fecha. Lo que el manifiesto fecha es cuándo
+se vio **ese** contenido: si no cambió, la fecha original sigue siendo la
+verdadera. Cuando OpenFING regenera una transcripción, el `sha256` cambia y el
+manifiesto se actualiza — que es exactamente cuando querés verlo en el diff.
+
 **Idempotente y resumible**, que con 42 clases no es opcional: salta las que
 ya están (con cualquiera de las dos convenciones de nombre — el rename de
 ADR-0002 es *forward-only* y las clases viejas conservan

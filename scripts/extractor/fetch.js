@@ -19,7 +19,7 @@
  * (salvo --force) y un fallo en la clase 27 no tira las 15 que faltan.
  */
 
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -275,6 +275,22 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       // "borrá lo que escribí".
       if (!conMetadata || existsSync(join(dir, 'metadata.yaml'))) {
         delete archivos['metadata.yaml'];
+      }
+
+      // Si el payload es el mismo, se conserva el manifiesto existente. El
+      // `extractedAt` cambia en cada corrida, así que sin esto re-extraer un
+      // curso ya bajado ensucia los 70 manifiestos con diffs de sólo la
+      // fecha. Lo que fecha el manifiesto es cuándo se vio ESTE contenido; si
+      // no cambió, la fecha original sigue siendo la verdadera.
+      const rutaManifiesto = join(dir, 'manifest.json');
+      if (existsSync(rutaManifiesto)) {
+        try {
+          const previo = JSON.parse(await readFile(rutaManifiesto, 'utf8'));
+          const nuevo = JSON.parse(archivos['manifest.json']);
+          if (previo.sha256 === nuevo.sha256) delete archivos['manifest.json'];
+        } catch {
+          // manifiesto ilegible: se reescribe
+        }
       }
 
       if (escribir) {

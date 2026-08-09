@@ -59,9 +59,16 @@ clase 1. Fallaba en silencio.
 
 ### Qué quedó abierto
 
-`docs/SPECS.md` es ahora lo más urgente: ADR-0005 rompió *"cada clase es
-autocontenida"* y su lista de cuatro archivos obligatorios. Después,
-instrumentar métricas.
+`docs/SPECS.md` se corrigió el mismo día, junto con `README.md`,
+`docs/ARCHITECTURE.md`, `docs/FUNDATIONS.md` y los `CLAUDE.md` de los dos
+cursos: ADR-0005 había roto *"cada clase es autocontenida"* y la lista de
+cuatro archivos obligatorios, y los de curso eran los peores —su paso 1
+mandaba leer un archivo que ya no existe.
+
+Queda **instrumentar métricas** (§9), el paso previo al benchmark. Y una
+decisión que no es técnica: los objetos viejos siguen en los servidores de
+GitHub hasta que corra su recolección; cerrarlo del todo exige un ticket a
+Support o recrear el repo.
 
 > **Nota de método.** El oráculo de §6.c ya no está en el repo. Para volver a
 > correr `diff-oraculo.js` hay que copiar los 28 `Transcription_raw.txt` desde

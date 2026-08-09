@@ -7,41 +7,109 @@ arquitectura no depende de una fuente específica (ver
 [`docs/FUNDATIONS.md`](docs/FUNDATIONS.md) y
 [`docs/VISION.md`](docs/VISION.md)).
 
-> **Este README es un TL;DR, no la documentación final.** El proyecto está en
-> medio de una migración (pipeline manual → extractor automatizado, ver
-> ADR-0001) y este archivo se va a seguir reescribiendo mientras eso avance.
-> Para el detalle real: `CLAUDE.md` (raíz) y `docs/`.
+> **Este README es un TL;DR, no la documentación final.** Para el detalle
+> real: `CLAUDE.md` (raíz) y `docs/`.
 
 ---
 
-## Estado (WIP)
+## Empezar
 
-La transcripción se obtenía a mano con un userscript de Tampermonkey. Eso se
-reemplazó por un extractor que lee el WebVTT estático que sirve OpenFING vía
-HTTP directo, sin ejecutar JavaScript ([ADR-0001](docs/adr/0001-extraccion-por-vtt-estatico.md),
-[ADR-0002](docs/adr/0002-representacion-de-la-transcripcion.md)). El extractor
-**todavía no está completo de punta a punta** (falta el paso índice del
-curso → por clase → manifiesto, idempotente y resumible); hoy existen
-`scripts/extractor/probe.js` (descubrimiento) y `scripts/extractor/vtt.js` (parser de VTT,
-probado contra fixtures), pero ninguna clase del corpus real se produjo
-todavía con este extractor.
+### Qué necesitás instalado
+
+| Para | Herramienta | Nota |
+|---|---|---|
+| **Extraer transcripciones** | **Node ≥ 20** y git | Es todo. El extractor **no tiene dependencias**: sólo builtins de Node, no hace falta `npm install`. |
+| Compilar los PDF | [`tectonic`](https://tectonic-typesetting.github.io/) | En el `PATH` o en `~/.local/bin`. |
+| Re-descubrir la fuente (casi nunca) | Playwright + Chromium | `npm i && npx playwright install chromium` (~150 MB). Sólo para `probe`. |
+
+```bash
+git clone git@github.com:leomenini/fingers.git
+cd fingers
+node --version          # v20 o superior
+```
+
+### Extraer las transcripciones
+
+**La transcripción no está en el repo** ([ADR-0005](docs/adr/0005-retencion-transcripcion-derivada.md)):
+clonar no alcanza, hay que bajarla. Un comando por curso.
+
+```bash
+npm run fetch -- CDIV2017                      # dry-run: qué haría, sin tocar el disco
+npm run fetch -- CDIV2017 --write              # baja las que falten
+```
+
+**Sin `--write` no escribe nada.** Es el default a propósito, porque escribe
+directo en `courses/<Curso>/Clases/ClaseN/`.
+
+Para elegir clases: un número, un rango, una lista, o una mezcla.
+
+```bash
+npm run fetch -- CDIV2017 9 --write            # sólo la 9
+npm run fetch -- CDIV2017 6-42 --write         # un rango
+npm run fetch -- CDIV2017 9,14,20-23 --write   # una mezcla
+npm run fetch -- Fisica3-2015 --write          # el otro curso
+```
+
+Cursos disponibles: `CDIV2017` y `Fisica3-2015`. Para agregar otro, editá
+[`scripts/extractor/cursos.js`](scripts/extractor/cursos.js).
+
+**Repetir el comando es seguro.** Salta lo que ya está y retoma lo que falló,
+así que si se corta a mitad de las 42, lo volvés a correr y sigue donde quedó.
+`--force` rehace lo ya bajado; nunca pisa tu `metadata.yaml`.
+
+Qué te deja en cada `ClaseN/`:
+
+| Archivo | Qué es | ¿En git? |
+|---|---|---|
+| `transcript.txt` | la transcripción, sin marcas — **esto es lo que le das al LLM** | no |
+| `transcript.timed.txt` | la misma, con `[m:ss]` para trazabilidad | no |
+| `transcript.stats.json` | métricas: cues, palabras, overhead de timestamps | sí |
+| `manifest.json` | procedencia: URL, `sha256`, fecha | sí |
+| `metadata.yaml` | esqueleto con los campos mecánicos, **sólo si falta** | sí |
+
+### Y después
+
+Los pasos 2 a 5 (resumen, notas, metadatos, figuras) son manuales, con un LLM
+y revisión humana; sus convenciones están en el `CLAUDE.md` **del curso**.
+Para compilar los PDF:
+
+```bash
+cd courses/CDIV2017 && ./build.sh        # todas las clases
+cd courses/CDIV2017 && ./build.sh 1 5    # sólo esas
+```
+
+La tabla completa de qué está automatizado y qué se hace a mano está en
+[`scripts/README.md`](scripts/README.md).
+
+---
+
+## Estado
+
+La transcripción se obtenía a mano con un userscript de Tampermonkey. Hoy la
+baja un extractor que lee el WebVTT estático que sirve OpenFING vía HTTP
+directo, sin ejecutar JavaScript
+([ADR-0001](docs/adr/0001-extraccion-por-vtt-estatico.md),
+[ADR-0002](docs/adr/0002-representacion-de-la-transcripcion.md)). Está
+completo de punta a punta desde el 2026-08-08 y se corrió sobre los dos
+cursos: **70 clases, cero errores**.
 
 | Curso | Clases | Estado |
 |---|---|---|
 | `courses/Fisica3-2015/` — Física III, OpenFING, Nicolás Wschebor | 28/28 | Resumen, notas y 184 figuras completos. Revisión humana pendiente (mueve `review.state`/`editorial_status`). |
-| `courses/CDIV2017/` — Cálculo 1, OpenFING, Alexandre Miquel | 5/42 | En curso. Sin figuras todavía (lote actual no las necesita). |
+| `courses/CDIV2017/` — Cálculo 1, OpenFING, Alexandre Miquel | 42/42 transcritas · 5/42 con notas | Las 37 restantes esperan resumen y notas. Sin figuras todavía. |
 
 ## Estructura (resumen)
 
 ```text
 fingers/
   courses/
-    Fisica3-2015/    # 28 clases, ver courses/Fisica3-2015/CLAUDE.md
-    CDIV2017/         # 5/42 clases, ver courses/CDIV2017/CLAUDE.md
+    Fisica3-2015/     # 28 clases, ver courses/Fisica3-2015/CLAUDE.md
+    CDIV2017/         # 42 clases, ver courses/CDIV2017/CLAUDE.md
   docs/               # visión, arquitectura, modelo de datos, ADRs, bitácora
   scripts/
     README.md         # ← qué se ejecuta y qué se hace a mano
-    extractor/        # módulo Extractor: probe.js, vtt.js, diff-oraculo.js
+    extractor/        # fetch.js, openfing.js, cursos.js, vtt.js,
+                      # diff-oraculo.js, probe.js
   tests/
     extractor/fixtures/   # fixtures del parser de VTT
   package.json        # raíz: npm lo necesita acá
@@ -50,9 +118,6 @@ fingers/
 
 `scripts/` y `tests/` se espejan por módulo del pipeline. Hoy sólo existe
 `extractor/`; los demás módulos aparecerán cuando haya código, no antes.
-
-**Si no sabés por dónde empezar a ejecutar**, [`scripts/README.md`](scripts/README.md)
-tiene la tabla de qué paso está automatizado y cuál es manual.
 
 Los PDF (`notes.pdf` y el snapshot `PDFiter1/`) **no se versionan**: son
 artefactos de `build.sh` y se regeneran con tectonic.
@@ -89,7 +154,7 @@ limpieza del historial de git se cerraron el 2026-08-08.
 - [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) — cómo colaborar.
 - [`docs/log.md`](docs/log.md) — bitácora de decisiones de nomenclatura y
   esquema.
-- [`docs/adr/`](docs/adr/) — decisiones de arquitectura (ADR-0001 a 0004).
+- [`docs/adr/`](docs/adr/) — decisiones de arquitectura (ADR-0001 a 0005).
 - [`SESIONES.md`](SESIONES.md) — bitácora de trabajo: qué se hizo cada sesión
   y qué quedó abierto.
 - [`scripts/README.md`](scripts/README.md) — qué se ejecuta y qué se hace a
@@ -100,8 +165,14 @@ limpieza del historial de git se cerraron el 2026-08-08.
 
 ## Fuentes y alcance
 
-Las transcripciones provienen hoy de clases públicas de **OpenFING**. El
-contenido de este repositorio lo redactan sus colaboradores; las fuentes
-sirven para verificar y respaldar afirmaciones, no para ser reproducidas. No
-se distribuye material protegido por derechos de autor más allá de lo que ya
-está anotado como riesgo abierto en `docs/log.md`.
+Las transcripciones provienen hoy de clases públicas de **OpenFING**, que
+publica su contenido bajo **CC BY-NC-ND**. El contenido de este repositorio lo
+redactan sus colaboradores; las fuentes sirven para verificar y respaldar
+afirmaciones, no para ser reproducidas.
+
+**Este repositorio no distribuye transcripciones.** Versiona su procedencia
+—URL, `sha256`, fecha— y el código que las vuelve a obtener de la fuente
+original. Es una decisión de diseño, no sólo de licencia: el producto de este
+proyecto es la herramienta que reproduce el material y la documentación
+derivada, no el material
+([ADR-0005](docs/adr/0005-retencion-transcripcion-derivada.md)).
