@@ -11,30 +11,52 @@ relato: qué se hizo, qué se descubrió y qué quedó abierto.
 
 ## 2026-08-08 — El extractor de punta a punta, y el repo sin transcripción
 
-Rama: `chore/estructura`. El día empezó con `vtt.js` parseando un archivo que
-ya tenías en disco y terminó con 70 clases extraídas por comando y un
-historial de Git sin una palabra de transcripción.
+**9 commits** en `chore/estructura`, todos pusheados. El día empezó con
+`vtt.js` parseando un archivo que ya tenías en disco y terminó con 70 clases
+extraídas por comando, el historial de Git reescrito y la documentación
+alineada con un modelo de datos nuevo.
+
+### El arco de la sesión
+
+Cuatro cosas, en este orden, y cada una habilitó la siguiente:
+
+1. **Se levantó ADR-0005** sobre si la transcripción debía seguir versionada,
+   en estado `Propuesto`, difiriendo la decisión hasta que existiera el
+   `fetch` — con la condición escrita de no aceptar la alternativa de sacarla
+   sin poder regenerarla con un comando.
+2. **Se completó el `fetch`**, y con eso la condición se cumplió el mismo día.
+3. **ADR-0005 pasó a `Aceptado`**: la transcripción no se versiona.
+4. **`git filter-repo`** ejecutó esa decisión —ignorar no destrackea— y de
+   paso limpió 79 MB de peso muerto.
+
+Después, la documentación: `SPECS.md` y todo lo que arrastraba, y un TL;DR de
+instalación y uso en el README.
 
 ### Lo que se construyó
 
-- **`fetch.js`**, el extractor de punta a punta: índice del curso → `og:video`
-  → `.vtt` → transcripción, métricas y manifiesto. Selección por número, rango
-  o lista (`9,14,20-23`). Dry-run por defecto. Idempotente y resumible.
+- **`fetch.js`** — el extractor de punta a punta y el comando de producción.
+  Índice del curso → `og:video` → `.vtt` → transcripción, métricas y
+  manifiesto. Selección por número, rango o lista (`9,14,20-23`). Dry-run por
+  defecto. Idempotente y resumible.
 - **`openfing.js`** (la capa de red, lo único que toca HTTP) y **`cursos.js`**
-  (slug + datos fijos). No hizo falta escribir código de red nuevo: `urlDelVtt`
-  y el mapa de slugs ya existían enterrados en `diff-oraculo.js`. Se
-  extrajeron y ahora los comparten, así el oráculo valida el mismo camino que
-  corre en producción.
-- **ADR-0005**, levantado y aceptado el mismo día.
+  (slug de OpenFING + datos fijos del curso).
+- **`formatHHMMSS`** en `vtt.js` — `metadata.yaml` pide `"HH:MM:SS"` y el
+  `[m:ss]` de la transcripción con marcas no sirve.
+- **ADR-0005**, levantado y aceptado.
 
-### Los tres hallazgos que importan
+**No hizo falta escribir código de red nuevo.** `urlDelVtt` y el mapa de slugs
+ya existían enterrados en `diff-oraculo.js`. Se extrajeron a módulos y ahora
+los comparten, así el oráculo valida exactamente el camino que corre en
+producción.
+
+### Los hallazgos que importan
 
 **1. Filtrar por nombre exacto no alcanza.** La primera pasada de
-`filter-repo` dejó adentro cuatro transcripciones con el nombre mal escrito
-(`Transciption_raw.txt`, `transcript_raw.txt` ×2, `transcrip_raw.txt`): unas
-40 000 palabras que una verificación por nombre canónico no encuentra. La
-pregunta correcta no es *"¿queda algún `Transcription_raw.txt`?"* sino
-*"¿queda algún `.txt`?"*. Detalle en `CLAUDE.md` §7.b.
+`filter-repo` dejó adentro cuatro transcripciones con el nombre mal escrito de
+la época temprana del repo —`Transciption_raw.txt`, `transcript_raw.txt` (×2),
+`transcrip_raw.txt`—, unas 40 000 palabras. La pregunta correcta no es *"¿queda
+algún `Transcription_raw.txt`?"* sino ***"¿queda algún `.txt`?"***: verificar
+por extensión, no por nombre canónico. Detalle en `CLAUDE.md` §7.b.
 
 **2. `--force` no debe significar "borrá lo que escribí".** El `fetch` pisaba
 `metadata.yaml` con `--force`, y correrlo sobre Física III —prerrequisito del
@@ -42,38 +64,120 @@ pregunta correcta no es *"¿queda algún `Transcription_raw.txt`?"* sino
 `llm.model` es trazabilidad y el extractor no puede reconstruirlo. Ahora
 `metadata.yaml` sólo se crea si falta, nunca se pisa.
 
-**3. El HTML del índice de OpenFING viene minificado y sin comillas en los
-atributos**, y hay que anclar en `<a class=clase-enlace>`: un regex que
-arranque por `href` se come el nav de otros cursos y le asigna esa URL a la
-clase 1. Fallaba en silencio.
+**3. El HTML del índice de OpenFING viene minificado y sin comillas** en los
+atributos, y hay que anclar en `<a class=clase-enlace>`: un regex que arranque
+por `href` se come el nav de otros cursos y le asigna esa URL a la clase 1.
+Fallaba en silencio.
+
+**4. Probar el tutorial encontró un bug.** Al verificar el README en un clon
+limpio, `git status` quedaba sucio: `manifest.json` se reescribía en cada
+corrida por el `extractedAt`. Cualquiera que clonara y bajara las
+transcripciones —lo que el README acababa de mandar hacer— se encontraba con
+70 archivos modificados con diffs de sólo la fecha. Ahora, si el `sha256` no
+cambió, se conserva el manifiesto.
+
+**5. El oráculo se movió, como estaba previsto.** Hoy son **22 clases en 1.000
+exacto y 3 en 0,99x**, donde §6.c registraba 21 y 4. No es una regresión: es la
+inestabilidad que ese mismo apartado predijo —OpenFING regenera sus
+transcripciones—. Confirma que toda medición sobre la fuente lleva fecha.
 
 ### Números
 
-| | |
-| --- | --- |
-| Clases extraídas | 70 (28 Física III + 42 CDIV2017), 0 errores |
-| CDIV2017 con transcripción | 5/42 → **42/42** |
-| Clases con procedencia (`manifest.json`) | 0 → **70/70** |
-| `.git` | 82 MB → **1,7 MB** |
-| Transcripción literal versionada | 308 452 palabras → **0** |
+| | Antes | Después |
+| --- | --- | --- |
+| Clases con transcripción | 33 | **70** (0 errores en las dos corridas) |
+| CDIV2017 transcrito | 5/42 | **42/42** |
+| Clases con procedencia (`manifest.json`) | 0 | **70/70** |
+| Transcripción literal versionada | 308 452 palabras | **0** |
+| `.git` | 82 MB | **1,7 MB** ↓ |
+| Commits en el historial | 35 | 33 ↓ |
 
-### Qué quedó abierto
+↓ Medido **justo después del filtrado**. Los commits de documentación
+posteriores lo dejaron en ~2 MB y 36 commits; el orden de magnitud es el que
+importa. Dos commits desaparecieron porque quedaron vacíos al filtrar: sólo
+agregaban PDF.
 
-`docs/SPECS.md` se corrigió el mismo día, junto con `README.md`,
+### Lo que costó, y hay que tener presente
+
+- **El oráculo ya no está en el repo.** Para correr `npm run diff` hay que
+  restaurarlo primero:
+  ```bash
+  cp -r ~/Desktop/Files/respaldo-fingers-borrados/courses/. courses/
+  ```
+  Está en el `.gitignore`, así que no se re-commitea solo. Documentado en
+  `scripts/extractor/README.md`.
+- **La clase dejó de ser autocontenida.** Clonar ya no alcanza para trabajar:
+  hace falta red y que OpenFING siga sirviendo el curso. Es reproducibilidad
+  *verificable*, no *hermética*, y fue una elección consciente.
+- **GitHub todavía conserva los objetos viejos.** El force-push no los borra;
+  siguen alcanzables por SHA hasta que corra su recolección. Cerrarlo del todo
+  exige un ticket a Support o recrear el repo. **Es la única parte de ADR-0005
+  que quedó sin ejecutar**, y no es técnica.
+
+### Documentación realineada
+
+ADR-0005 rompió dos afirmaciones que estaban repartidas por todo el repo:
+*"cada clase es autocontenida"* y la lista de cuatro archivos obligatorios.
+Se corrigió `docs/SPECS.md` y se propagó a `README.md`,
 `docs/ARCHITECTURE.md`, `docs/FUNDATIONS.md` y los `CLAUDE.md` de los dos
-cursos: ADR-0005 había roto *"cada clase es autocontenida"* y la lista de
-cuatro archivos obligatorios, y los de curso eran los peores —su paso 1
-mandaba leer un archivo que ya no existe.
+cursos.
 
-Queda **instrumentar métricas** (§9), el paso previo al benchmark. Y una
-decisión que no es técnica: los objetos viejos siguen en los servidores de
-GitHub hasta que corra su recolección; cerrarlo del todo exige un ticket a
-Support o recrear el repo.
+Los de curso eran los más dañinos: su paso 1 mandaba leer un archivo que ya no
+existe y sacar `stats.transcript_words` de una cabecera que la representación
+nueva no tiene. Cualquiera que siguiera esa guía se trababa en el primer paso.
 
-> **Nota de método.** El oráculo de §6.c ya no está en el repo. Para volver a
-> correr `diff-oraculo.js` hay que copiar los 28 `Transcription_raw.txt` desde
-> `~/Desktop/Files/respaldo-fingers-borrados/` al working tree. Está anotado
-> en el README de esa carpeta.
+Se cerraron además tres pendientes: el rename `Transcription_raw.txt` →
+`transcript.txt` (resuelto por eliminación: las 70 clases usan la convención
+nueva), la granularidad del comando (resuelta por implementación) y la
+limpieza del historial.
+
+---
+
+## Próximo paso: instrumentar métricas, **antes** de escribir los 37 resúmenes
+
+Es lo único que queda en el roadmap (`CLAUDE.md` §7 y §9), y el orden importa
+más de lo que parece.
+
+**La situación.** Las 37 clases nuevas de CDIV2017 tienen transcripción y
+`metadata.yaml` esqueleto, y no tienen `summary.md` ni `notes.tex`. Ese es el
+trabajo de contenido que sigue.
+
+**El riesgo de hacerlo primero.** `CLAUDE.md` §9 lo dice sin vueltas: *el costo
+y los tokens sólo existen en el momento de la llamada*. Si esos 37 resúmenes
+se generan copiando y pegando en un chat, se pierden para siempre los datos
+del único lote grande y homogéneo que va a tener el proyecto. Después no se
+reconstruyen.
+
+**Por dónde empezar, concretamente:**
+
+1. **Un script que llame a la API** y escriba un log append-only en `runs/`
+   con timestamp, módulo, entrada, salida, modelo, tokens, costo y duración.
+   La unidad de registro es **la corrida, no la clase**: `metadata.yaml`
+   asume un `llm.model` por clase y no soporta N corridas — conserva identidad
+   y estado, y apunta a la corrida vigente.
+2. **Correrlo sobre 2 o 3 clases primero**, no sobre las 37, y mirar si el log
+   sirve para lo que se quiere responder.
+3. **Recién ahí, el lote.** Con eso queda instrumentado el experimento que
+   §8 propone como primero: mezclar modelos entre la etapa A (transcripción →
+   `summary.md`) y la B (`summary.md` → `notes.tex`), que es donde está el
+   ahorro real con 42 clases.
+
+**Dos cosas que conviene tener presentes al empezar:**
+
+- **No comparar modelos con los datos retroactivos.** Los 19 `opus-4-8` /
+  5 `deepseek-v4-flash` / 4 `opus-5` de Física III no se asignaron al azar, así
+  que cualquier diferencia está confundida con qué clases le tocaron a cada
+  uno (§9).
+- **`stats.transcript_words` ya tiene la fuente correcta:**
+  `transcript.stats.json` → `words`, escrito por el extractor. Los números
+  heredados del userscript tienen errores de hasta +36 % (`docs/log.md` §7).
+  Al generar los `metadata.yaml` de las 37, no copiar nada de una cabecera.
+
+Lo demás abierto: el ticket a GitHub Support (arriba), la revisión humana de
+las 28 clases de Física III —que sigue siendo el cuello de botella del
+contenido y no lo desbloquea ninguna automatización—, y el problema del §8:
+si `summary.md` es descartable y la corrección se hace en el `.tex`, hay que
+decidir qué archivo bendice el gold standard **antes** de empezar a revisar.
 
 ---
 
