@@ -113,6 +113,27 @@ agregaban PDF.
   siguen alcanzables por SHA hasta que corra su recolección. Cerrarlo del todo
   exige un ticket a Support o recrear el repo. **Es la única parte de ADR-0005
   que quedó sin ejecutar**, y no es técnica.
+- **Dos ramas desaparecieron del remoto:** `pipeline/extractor` y
+  `pipeline/oraculo`. El remoto pasó de 6 ramas a 4 en algún momento después
+  del force-push, y el push siguiente reportó `chore/estructura` como
+  `[new branch]`. Ningún comando de la sesión borra ramas remotas; lo más
+  probable es que las haya eliminado GitHub al reescribirse la historia.
+
+  **Se decidió dejarlo así.** Las dos siguen completas en local
+  (`pipeline/extractor`: 7 commits fuera de `main`; `pipeline/oraculo`: 10) y
+  su contenido ya está en `main` — fueron mergeadas por PR el 2026-08-02;
+  sus SHAs no figuran como ancestros sólo porque el `filter-repo` reescribió
+  todo. Son ramas de trabajo ya integradas y republicarlas devuelve ruido al
+  listado. Si alguna vez hacen falta:
+  ```bash
+  git push origin pipeline/extractor pipeline/oraculo
+  ```
+
+  > **Lo que sí conviene recordar:** una reescritura de historia puede tener
+  > efectos en el remoto que no salen en la salida de ningún comando. Después
+  > de un force-push, comparar `git ls-remote --heads origin` contra las ramas
+  > locales — apareció por casualidad al verificar un push, no por un error
+  > visible.
 
 ### Documentación realineada
 
