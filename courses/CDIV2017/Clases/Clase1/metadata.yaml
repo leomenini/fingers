@@ -1,0 +1,65 @@
+title: Clase 1
+id: civ-2017-1-01
+
+course: Cálculo 1
+academic_year: 2017
+semester: 1
+
+teacher: Alexandre Miquel
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:16"
+    end: "01:24:52"
+
+stats:
+  transcript_words: 9699
+  summary_words: 3355
+  diagrams_pending: 0
+  equations: 17
+
+topics:
+  - Presentación del curso y del docente
+  - Anuncios organizativos (Eva, prácticos, cuestionario semanal, apuntes)
+  - Presentación del nuevo programa "Cálculo 1 nuevo" (ocho capítulos)
+  - Temas que pasan a Cálculo 2 (complejos, sucesiones y series, integrales impropias)
+  - Cambio de enfoque de integrales como tema central del curso
+  - Zoología de los objetos matemáticos (números, objetos geométricos, objetos compuestos, conjuntos)
+  - Analogía entre conjuntos y carpetas informáticas
+  - Relación de pertenencia y diagramas de Venn
+  - Igualdad de conjuntos
+  - Inclusión de conjuntos y cuantificadores relativizados
+  - Propiedades de la inclusión (reflexiva, transitiva, antisimétrica)
+  - Método estándar para demostrar igualdad de conjuntos
+  - Conjuntos de base N, Z, Q, R
+  - Construcción de conjuntos por extensión
+  - Casos particulares por extensión (vacío, unitario, par no ordenado)
+  - Construcción de conjuntos por comprensión
+
+bibliography: []
+
+prerequisites: []
+
+next_topics:
+  - Más ejemplos de construcción por comprensión
+  - Noción de función
+  - Números reales (capítulo 2)
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-30
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

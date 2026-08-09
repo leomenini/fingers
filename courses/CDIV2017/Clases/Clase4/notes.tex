@@ -1,0 +1,691 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 4: Los números reales} \\[0.3em]
+        \large{Axiomática de cuerpo ordenado: suma, producto y orden}}
+\author{Transcripto y expandido --- Curso Cálculo 1 (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introducción: la recta real como intuición geométrica}
+
+La clase abre con un cambio de punto de vista respecto al liceo: en vez de
+dar por sentado qué es $\mathbb{R}$, se pregunta por qué es un tema difícil.
+La intuición fundamental es que los \textbf{números reales son los números
+que permiten representar todos los puntos de una recta} --- y la palabra
+clave es \emph{todos}. Fijado un sistema de coordenadas en una recta (un
+punto $O$ para el cero y un punto $I$ para la unidad), cada número real $x$
+se asocia biunívocamente a un punto $X$ tal que $\vec{OX} = x \cdot
+\vec{OI}$.
+
+\begin{notebox}[Biyección con toda recta]
+Esta correspondencia es \textbf{biyectiva}: hay tantos reales como puntos en
+la recta. En consecuencia, \textbf{todas las rectas están en biyección con
+$\mathbb{R}$}: todas tienen la misma cantidad de puntos. Por eso se habla de
+\emph{la} recta real, entendida como una recta ideal que representa a todas
+las rectas posibles.
+\end{notebox}
+
+$\mathbb{R}$ contiene, por supuesto, a los naturales, los enteros y los
+racionales. Pero ya se sabe que hay más puntos en la recta que racionales:
+el ejemplo clásico es $\sqrt{2}$, construible con compás como la diagonal de
+un cuadrado de lado $1$, y que no es racional (demostración diferida a una
+clase futura). A esta lista se agregan $\pi$, $e$, $\log 2$, etc. Aunque
+parezca paradójico escribir solo cuatro irracionales frente a infinitos
+racionales, es un resultado de la segunda mitad del siglo XIX que
+\textbf{el infinito de los irracionales es estrictamente más grande} que el
+de los racionales (la herramienta para probarlo --- cardinalidad --- no está
+disponible todavía en el curso).
+
+\begin{notebox}[Nota histórica: griegos antiguos]
+Los griegos antiguos distinguían dos tipos de objetos: los \emph{números}
+(solo los racionales) y los \emph{objetos geométricos} (que cubrían todos
+los reales). Como no tenían notación para los irracionales, Euclides
+representa siempre los números por puntos de recta --- de ahí que los
+\emph{Elementos} estén llenos de figuras.
+\end{notebox}
+
+\section{Dos caminos hacia una definición rigurosa: construcción y axiomatización}
+
+El cálculo diferencial e integral nace a fines del siglo XVII con
+\textbf{Leibniz}, quien inventó de una vez el cálculo diferencial, el
+integral, y buena parte de lo que se ve en Cálculo 1 y 2 --- sin tener, sin
+embargo, una definición precisa de número real, ni noción de límite, ínfimo
+o supremo. Esa carencia fue el motor que llevó, en el siglo XIX, a precisar
+la noción de número real por dos vías:
+
+\begin{itemize}
+  \item \textbf{Construcción}: partir de ``la nada'' (o de los racionales
+    $\mathbb{Q}$) y construir un objeto que funcione como $\mathbb{R}$. El
+    paso de los enteros a $\mathbb{Q}$ es sencillo; el paso difícil de
+    $\mathbb{Q}$ a $\mathbb{R}$ lo resolvió el matemático alemán
+    \textbf{Dedekind} (cortes de racionales), y también hubo una
+    construcción alternativa de \textbf{Cauchy} (sucesiones).
+  \item \textbf{Axiomatización}: capturar las propiedades de $\mathbb{R}$
+    mediante una lista de fórmulas sencillas, al estilo de los axiomas de la
+    geometría de Euclides (siglo V-VI a.C.).
+\end{itemize}
+
+Lo notable es que \textbf{ambos programas confluyeron}: se demostró que las
+construcciones de Dedekind y Cauchy satisfacen todos los axiomas de la
+axiomatización, y que \textbf{si existe un objeto que satisface la lista de
+axiomas, es único a menos de isomorfismo}. La analogía con informática que
+da el docente: así como una misma estructura de datos (un conjunto finito,
+por ejemplo) puede implementarse con listas o con árboles binarios sin que
+cambien sus propiedades observables, todas las construcciones posibles de
+$\mathbb{R}$ son isomorfas entre sí.
+
+\begin{notebox}[Por qué se admite $\mathbb{R}$ sin construirlo]
+Por esta razón el curso admite la existencia de un único cuerpo
+$\mathbb{R}$ que satisface la lista de axiomas, sin presentar la
+construcción (``es gigantesca'').
+\end{notebox}
+
+\section{La estructura de $\mathbb{R}$: quince axiomas en cuatro grupos}
+
+Se postula que existe un conjunto $\mathbb{R}$ dotado de dos
+\textbf{operaciones}, $x+y$ (suma) y $x\cdot y$ (producto, también escrito
+$xy$), y una \textbf{relación} binaria $x\le y$ (equivalente a escribir
+$y\ge x$ --- mera notación sinónima, no una definición nueva), que satisface
+\textbf{15 axiomas}, agrupados así:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}clp{7cm}@{}}
+\toprule
+Grupo & Rango & Tema \\
+\midrule
+1 & 1.1 -- 1.4 & Suma \\
+2 & 2.1 -- 2.5 & Producto \\
+3 & 3.1 -- 3.5 & Orden \\
+4 & único & Completitud (motor de toda la teoría) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Axiomas de la suma}
+
+\begin{align}
+\textbf{1.1 (asociatividad)} &\quad (x+y)+z = x+(y+z), \ \forall x,y,z \\
+\textbf{1.2 (conmutatividad)} &\quad x+y = y+x, \ \forall x,y \\
+\textbf{1.3 (neutro)} &\quad \exists\, 0 : \ x + 0 = x, \ \forall x \\
+\textbf{1.4 (opuesto)} &\quad \forall x, \ \exists\, (-x) : \ x + (-x) = 0
+\end{align}
+
+\subsection{Axiomas del producto}
+
+\begin{align}
+\textbf{2.1 (asociatividad)} &\quad (xy)z = x(yz) \\
+\textbf{2.2 (conmutatividad)} &\quad xy = yx \\
+\textbf{2.3 (neutro)} &\quad \exists\, 1 \ne 0 : \ x \cdot 1 = x, \ \forall x \\
+\textbf{2.4 (inverso)} &\quad \forall x \ne 0, \ \exists\, x^{-1} : \ x\cdot x^{-1} = 1 \\
+\textbf{2.5 (distributividad)} &\quad (x+y)z = xz + yz
+\end{align}
+
+\begin{warnbox}[El axioma 2.3 dice más de lo que parece]
+No solo exige que exista un neutro para el producto, sino que sea
+\textbf{distinto de $0$}. Sin esa cláusula sería trivial demostrar que
+$\mathbb{R}$ tiene un único punto (todo sería igual a $0$ y todas las demás
+reglas seguirían cumpliéndose vacuamente). Es, en la práctica, el axioma que
+garantiza que $\mathbb{R}$ sea infinito.
+\end{warnbox}
+
+\subsection{Axiomas de orden}
+
+\begin{align}
+\textbf{3.1 (total)} &\quad x\le y \ \text{ó} \ y \le x, \ \forall x,y \\
+\textbf{3.2 (transitivo)} &\quad x\le y \ \text{y} \ y\le z \implies x\le z \\
+\textbf{3.3 (antisimétrico)} &\quad x\le y \ \text{y} \ y\le x \implies x=y \\
+\textbf{3.4 (comp.\ con suma)} &\quad x\le y \implies x+z \le y+z \\
+\textbf{3.5 (comp.\ con producto)} &\quad x\ge 0 \ \text{y} \ y\ge 0 \implies xy \ge 0
+\end{align}
+
+\begin{notebox}[El ``ó'' es inclusivo]
+En 3.1, el ``ó'' es inclusivo: cuando $x=y$ ambas desigualdades se cumplen a
+la vez, y eso no es una contradicción.
+\end{notebox}
+
+\subsection{El axioma que falta: completitud}
+
+Queda un axioma más, el \textbf{4}, el axioma de \textbf{completitud} ---
+descrito como ``el motor de la máquina''. No se presenta en esta clase; se
+pospone a la próxima semana. Sin él se puede razonar con las reglas
+algebraicas y de orden usuales, pero \textbf{no} se puede todavía justificar
+la existencia de $\sqrt{2}$ ni de ningún ínfimo o supremo: esa es
+precisamente la razón de ser del axioma 4.
+
+\section{Consecuencias de los axiomas de la suma}
+
+\subsection{Unicidad del neutro y del opuesto}
+
+El axioma 1.3 dice que \emph{existe} un neutro, pero no dice que sea único:
+hay que demostrarlo. Supongamos que $0$ y $0'$ son ambos neutros para la
+suma. Entonces
+\[
+0 + 0' = 0' \quad (\text{porque } 0 \text{ es neutro}), \qquad
+0 + 0' = 0 \quad (\text{porque } 0' \text{ es neutro}),
+\]
+de donde $0=0'$. Por esto se puede hablar \emph{del} neutro $0$ (una
+constante), y no de \emph{un} neutro cualquiera. El mismo argumento
+(dejado como ejercicio) da la \textbf{unicidad del opuesto}.
+
+De la unicidad del opuesto se obtiene la siguiente proposición, usada
+constantemente en lo que sigue:
+
+\begin{keybox}[Caracterización del opuesto]
+\[
+\boxed{x+y = 0 \iff x = -y \iff y = -x}
+\]
+\end{keybox}
+
+La primera equivalencia y la segunda son la misma afirmación leída con los
+papeles de $x$ e $y$ intercambiados (por conmutatividad); solo hace falta
+demostrar una de las dos implicaciones no triviales, lo cual queda como
+ejercicio. De esta proposición se deducen inmediatamente tres consecuencias
+muy usadas:
+\[
+-(x+y) = (-x) + (-y), \qquad -(-x) = x, \qquad -0 = 0.
+\]
+
+\subsection{La resta}
+
+La resta \textbf{no es un axioma}: se \textbf{define} a partir de la suma y
+el opuesto.
+
+\begin{keybox}[Definición de la resta]
+\[
+\boxed{x - y \ := \ x + (-y)}
+\]
+\end{keybox}
+
+Todas las propiedades usuales de la resta (las que se manejan desde la
+primaria) se deducen de esta definición combinada con las propiedades del
+opuesto y de la suma --- el ejercicio propuesto es tomar la lista de reglas
+algebraicas conocidas y deducirlas una por una a partir de los axiomas.
+
+\section{Consecuencias de los axiomas del producto}
+
+\subsection{Unicidad del neutro y del inverso}
+
+El mismo argumento de la sección anterior (sustituyendo $+$ por $\cdot$ y
+$0$ por $1$) demuestra que el neutro $1$ del producto es único, y de la
+misma manera el inverso $x^{-1}$ de un elemento no nulo es único.
+
+\subsection{Cero es absorbente: la demostración completa}
+
+Ningún axioma dice explícitamente que $0\cdot x = 0$: \textbf{es una
+consecuencia}, y la clase la demuestra paso a paso como ejemplo de cómo se
+``juega'' con la lista de axiomas (``un juego infantil... pero solo usa los
+axiomas''):
+\begin{align}
+0x &= 0 + 0x &&\text{(1.3: } 0 \text{ es neutro, sumado a la izquierda)} \\
+   &= (0+0)x &&\text{(1.3: } 0+0=0\text{, sustituyendo)} \\
+   &= 0x + 0x &&\text{(2.5: distributividad)}
+\end{align}
+Combinando las dos cadenas se obtiene $0x = 0x+0x$. Sumando $-(0x)$ a ambos
+lados y usando 1.4,
+\[
+0 = 0x + 0x - 0x = 0x.
+\]
+
+\begin{keybox}[Cero es absorbente]
+\[
+\boxed{x \cdot 0 = 0 \cdot x = 0}
+\]
+\end{keybox}
+
+\begin{notebox}[Modelo de demostración]
+Este es el primer ejemplo completo de demostración a partir de la lista de
+axiomas, y sirve de modelo para todas las demás: nunca se usa nada que no
+esté en la lista.
+\end{notebox}
+
+\subsection{Producto nulo y producto unitario}
+
+A partir de la absorción de $0$ se puede demostrar (queda para ejercicio) la
+propiedad central:
+
+\begin{keybox}[Producto nulo]
+\[
+\boxed{xy = 0 \iff x=0 \ \text{ó} \ y=0}
+\]
+\end{keybox}
+
+y, de modo simétrico a la proposición para la suma,
+\[
+xy = 1 \iff x = y^{-1} \iff y = x^{-1}.
+\]
+Como $1\ne 0$ (axioma 2.3), si $xy=1$ entonces ni $x$ ni $y$ pueden ser
+nulos, así que ambos son invertibles. De aquí se deducen todas las reglas
+usuales de manipulación de productos e inversos.
+
+\section{Los naturales como abreviaturas}
+
+Al desarrollar $(x+y)^2$ con la distributividad aparece el símbolo $2$, que
+\textbf{no está definido por ningún axioma}. Se introduce entonces por
+definición:
+
+\begin{keybox}[Definición de los enteros mayores que 1]
+\[
+\boxed{2 := 1+1, \quad 3 := 2+1, \quad 4:=3+1, \ \ldots}
+\]
+\end{keybox}
+
+Cada entero mayor que $1$ es, formalmente, una \textbf{abreviatura}
+construida a partir del $1$ del axioma 2.3 y la suma. El docente ilustra que
+estas abreviaturas son consistentes con las reglas que ya se conocen
+probando que $x+x=2x$:
+\begin{align}
+x + x &= 1\cdot x + 1\cdot x && \text{(2.3: neutro)} \\
+&= (1+1)x && \text{(2.5: distributividad)} \\
+&= 2x && \text{(definición de } 2\text{)}
+\end{align}
+
+Con esta maquinaria, el desarrollo del cuadrado de un binomio queda
+completamente justificado:
+\[
+(x+y)^2 = (x+y)(x+y) = x^2 + xy + yx + y^2 = x^2 + 2xy + y^2.
+\]
+
+\section{El cociente y la reducción al mismo denominador}
+
+\subsection{Definición y el peligro de dividir entre cero}
+
+Al igual que la resta, el cociente \textbf{se define}, no es un axioma:
+
+\begin{keybox}[Definición del cociente]
+\[
+\boxed{\dfrac{x}{y} := x \cdot y^{-1}, \quad \text{si } y \ne 0}
+\]
+\end{keybox}
+
+\begin{warnbox}[No dividir sin verificar el denominador]
+Escribir $y^{-1}$ (o $x/y$) sin verificar antes que $y\ne 0$ es un error
+grave --- ``se van directamente al infierno... antes de dar el examen'',
+con el castigo cómico de repetir el curso de Cálculo 1 por la eternidad. El
+chiste subraya un punto serio: $0$ no tiene inverso, y toda manipulación
+con cocientes debe justificar explícitamente que el denominador no se
+anula.
+\end{warnbox}
+
+\subsection{Ejemplos: racionales e irracionales}
+
+De la definición de cociente y de las propiedades del producto se deduce la
+regla de \textbf{reducción al mismo denominador}, familiar desde la
+primaria:
+
+\begin{keybox}[Reducción al mismo denominador]
+\[
+\boxed{\dfrac{x}{a} + \dfrac{y}{b} = \dfrac{xb + ya}{ab}}
+\]
+\end{keybox}
+
+El docente insiste en un punto conceptual importante: esta regla \textbf{no
+es exclusiva de los racionales}. Se cumple igual para cualquier par de
+reales, con denominadores racionales o irracionales.
+
+\textbf{Caso racional} (el ``ejemplo idiota''):
+\[
+\frac{1}{2}+\frac{1}{3} = \frac{3}{6}+\frac{2}{6} = \frac{5}{6}.
+\]
+
+\textbf{Caso irracional}, anticipando la existencia de $\sqrt2$ y $\sqrt3$
+(garantizada en rigor solo por el axioma de completitud, todavía no
+presentado, pero ya utilizable informalmente):
+\[
+\frac{1}{\sqrt2}+\frac{1}{\sqrt3} = \frac{\sqrt3}{\sqrt2\sqrt3}+\frac{\sqrt2}{\sqrt2\sqrt3} = \frac{\sqrt2+\sqrt3}{\sqrt6}.
+\]
+Para eliminar la raíz del denominador, se multiplica numerador y
+denominador por $\sqrt6$:
+\[
+\frac{\sqrt2+\sqrt3}{\sqrt6} = \frac{(\sqrt2+\sqrt3)\sqrt6}{6} = \frac{\sqrt{12}+\sqrt{18}}{6}
+= \frac{2\sqrt3 + 3\sqrt2}{6},
+\]
+usando $\sqrt{12}=\sqrt{4\cdot3}=2\sqrt3$ y $\sqrt{18}=\sqrt{9\cdot2}=3\sqrt2$.
+
+\begin{notebox}[Idea a retener]
+La reducción al mismo denominador es una consecuencia algebraica pura de
+los axiomas del producto y de la definición de cociente; por eso funciona
+igual de bien racionalizando denominadores irracionales.
+\end{notebox}
+
+\section{Interpretación geométrica de las operaciones}
+
+Antes de pasar a los axiomas de orden, se hace una pausa para mostrar que
+\textbf{toda cuenta algebraica tiene un correlato geométrico} --- el
+mensaje explícito es que quien maneja los números reales solo como
+``fórmulas esotéricas'' o ``magia negra'' se pierde, mientras que quien los
+piensa como puntos de una recta tiene intuición (``magia blanca'').
+
+\subsection{La suma: construcción por paralelogramos}
+
+Dados $0$, $x$ y $y$ en la recta $R$, se construye el punto suma $z=x+y$ sin
+necesidad de conocer la unidad (la suma es una operación \textbf{lineal},
+no requiere escala):
+
+\begin{enumerate}
+  \item Se toma una recta paralela $R'$ y un punto $O'$ arbitrario en ella.
+  \item Se copia el segmento de referencia formando el paralelogramo
+    $O'I'IO$, lo que define $I'$.
+  \item Se repite la construcción de paralelogramos para trasladar el
+    punto $y$ a partir de $x$, obteniendo $z$.
+\end{enumerate}
+
+Es la construcción a regla y compás de la suma mediante traslaciones de
+vectores (paralelogramos). Queda como ejercicio la construcción análoga
+para el opuesto.
+
+\subsection{El producto: el teorema de Tales}
+
+A diferencia de la suma, el producto \textbf{sí necesita la unidad} $I$.
+Dados $O$, $I$, $x$ e $y$ sobre la recta $R$:
+
+\begin{enumerate}
+  \item Se traza una recta secante $R'$ por $O$ y se marca en ella un
+    punto arbitrario $I'$ (la ``unidad duplicada'').
+  \item Se traza el segmento $I'I$ y se ubica, sobre $R'$, un punto llamado
+    $G'$ trazando la paralela adecuada, de modo que por el
+    \textbf{teorema de Tales} se establece una razón de referencia entre
+    los segmentos $OI'$, $OG'$ y $OI$.
+  \item Repitiendo la construcción entre $I'$ y $X$ (trazando la paralela
+    correspondiente) se obtiene un punto $Z$ tal que, otra vez por Tales,
+    \[
+    \frac{OI'}{OG'} = \frac{OX}{OZ},
+    \]
+    y $Z$ es exactamente el punto que representa $x\cdot y$.
+\end{enumerate}
+
+\begin{notebox}[Paralelogramos vs.\ triángulos semejantes]
+La diferencia conceptual entre las dos construcciones: la suma usa
+\textbf{paralelogramos} (geometría afín, sin necesidad de escala); el
+producto usa \textbf{triángulos semejantes y el teorema de Tales}
+(geometría con escala, por eso hace falta la unidad).
+\end{notebox}
+
+Como ejercicio se propone construir, con la misma idea, el \textbf{inverso}
+$y^{-1}$ a partir de $O$, $I$ e $y$: se trata de invertir los papeles en la
+relación de Tales de modo que el producto de $y$ por el punto buscado dé
+$1$.
+
+\subsection{Adelanto: la raíz cuadrada con regla y compás}
+
+Como anticipo (no demostrado con los axiomas vistos, solo ilustrado
+geométricamente): dados $O$ (cero), $I$ (uno) y $X$ sobre la recta, se marca
+el simétrico $J$ de $X$ respecto de $O$ (que representa $-1$ en la escala de
+$X$). Tomando el segmento $JX$ como \textbf{diámetro de una circunferencia}
+y trazando la perpendicular a la recta por $O$, el punto de intersección
+$Z$ con la circunferencia cumple
+\[
+OZ = \sqrt{OX},
+\]
+una construcción clásica basada en el teorema del cateto / ángulo inscrito
+en semicircunferencia.
+
+\begin{warnbox}[Esta construcción todavía no está justificada]
+La construcción de la raíz cuadrada \textbf{no se puede justificar todavía}
+con los 15 axiomas vistos, porque la existencia de la raíz cuadrada es
+consecuencia del axioma de completitud (axioma 4), que se verá recién la
+próxima clase. Se muestra únicamente para ilustrar el punto de vista griego
+antiguo: sin notación algebraica para los irracionales, Euclides (por
+ejemplo, en la demostración de que hay infinitos primos) razonaba
+enteramente con figuras.
+\end{warnbox}
+
+\section{Axiomas de orden en detalle}
+
+\subsection{Totalidad, transitividad, antisimetría}
+
+\begin{itemize}
+  \item \textbf{3.1 (total)}: dados $x,y$ cualesquiera, siempre se puede
+    comparar: $x\le y$ o $y\le x$. Tomando $x=y$ se obtiene como caso
+    particular la \textbf{reflexividad}: $x\le x$ para todo $x$.
+  \item \textbf{3.2 (transitivo)}: $x\le y$ y $y\le z \implies x\le z$.
+  \item \textbf{3.3 (antisimétrico)}: $x\le y$ y $y\le x \implies x=y$.
+\end{itemize}
+
+\begin{notebox}[El orden no siempre es total: la inclusión]
+No todo orden es total: la \textbf{inclusión entre conjuntos} es un orden
+(transitivo, reflexivo, antisimétrico) que \textbf{no} es total --- dados
+dos conjuntos cualesquiera, no siempre uno está incluido en el otro. En
+cambio, el orden de $\mathbb{R}$ sí es total, precisamente porque
+corresponde a la disposición de puntos sobre una recta (``a la izquierda
+de'' siempre se puede decidir).
+\end{notebox}
+
+\begin{keybox}[El axioma más importante: antisimetría como método de prueba]
+El axioma 3.3 es, según el docente, ``quizás el axioma de orden más
+importante de todo el universo'': parte de hipótesis sobre el
+\textbf{orden} y concluye una \textbf{igualdad}. Gracias a él aparece un
+\textbf{método nuevo para demostrar igualdades} que no depende de
+manipulaciones algebraicas: para probar $x=y$ basta mostrar por separado
+$x\le y$ \textbf{y} $y\le x$. Este recurso se usará con mucha frecuencia
+más adelante en el curso.
+\end{keybox}
+
+\subsection{Orden estricto y tricotomía}
+
+El orden estricto se define a partir del amplio (y viceversa):
+
+\begin{keybox}[Orden estricto]
+\[
+\boxed{x < y \ :\Longleftrightarrow\ x\le y \ \text{y} \ x\ne y}
+\qquad\qquad
+x \le y \iff (x<y \ \text{ó} \ x=y).
+\]
+\end{keybox}
+
+De aquí se deducen las propiedades del orden estricto:
+
+\begin{itemize}
+  \item \textbf{Irreflexividad}: nunca se cumple $x<x$.
+  \item \textbf{Transitividad}: $x<y$ y $y<z \implies x<z$.
+  \item \textbf{Tricotomía}: para todo par $x,y$, se cumple
+    \textbf{exactamente una} de las tres opciones
+    \[
+    x<y \quad \text{ó} \quad x=y \quad \text{ó} \quad x>y,
+    \]
+    y aquí el ``ó'' es, por primera vez en la clase, \textbf{exclusivo}.
+\end{itemize}
+
+La tricotomía permite clasificar a $\mathbb{R}$ en tres partes disjuntas:
+
+\begin{keybox}[Clasificación por signo]
+\[
+\boxed{\text{positivos } (x>0), \quad \text{negativos } (x<0), \quad \text{nulo } (x=0)}
+\]
+\end{keybox}
+
+\section{Un aparte de lógica: la implicación material}
+
+Al discutir por qué la transitividad ($x<y \wedge y<z \implies x<z$)
+\textbf{no} es un ``si y solo si'', surge la pregunta de por qué la
+implicación no se puede invertir. El docente construye un contraejemplo con
+valores concretos:
+\[
+\underbrace{1 < -3}_{\text{falso}} \quad \text{y} \quad \underbrace{-3 < 2}_{\text{verdadero}}
+\qquad \Longrightarrow \qquad \underbrace{1<2}_{\text{verdadero}}.
+\]
+
+La hipótesis (falso $\wedge$ verdadero $=$ falso) implica la conclusión
+(verdadero), y la implicación completa es \textbf{verdadera} --- porque
+\textbf{lo falso implica cualquier cosa}. Esto no es un capricho: es la
+definición estándar de la implicación material, y sirve para entender por
+qué un enunciado universal ($\forall x,y,z$) puede evaluarse como
+verdadero aun sustituyendo valores que hacen falsa la hipótesis.
+
+\begin{notebox}[Puntos remarcados por el docente]
+\begin{itemize}
+  \item La matemática \textbf{no prohíbe lo falso}: una proposición puede
+    ser verdadera aunque contenga subfórmulas falsas, siempre que la
+    implicación global sea verdadera.
+  \item Si a la izquierda de un ``$\implies$'' hay algo falso, a la derecha
+    puede haber \textbf{cualquier cosa} (verdadero o falso) sin violar la
+    implicación.
+  \item Lo verdadero, en cambio, \textbf{nunca puede implicar} lo falso ---
+    por eso la recíproca de una implicación válida no tiene por qué
+    cumplirse.
+\end{itemize}
+\end{notebox}
+
+\section{Orden compatible con la suma y con el producto}
+
+\subsection{Suma: sin restricciones}
+
+Del axioma 3.4 (y su combinación con los demás) se obtiene una equivalencia
+completa, sin ninguna condición sobre $z$:
+
+\begin{keybox}[Compatibilidad del orden con la suma]
+\[
+\boxed{x\le y \iff x+z \le y+z \iff x-z \le y-z, \quad \text{para todo } z}
+\]
+\end{keybox}
+
+y, al tomar el opuesto, el orden se invierte:
+\[
+x\le y \iff -x \ge -y.
+\]
+Las mismas equivalencias valen con desigualdad estricta. El docente lo
+resume como ``la fiesta'': sumar o restar una cantidad cualquiera a ambos
+lados de una desigualdad \textbf{nunca} requiere verificar nada sobre esa
+cantidad.
+
+\subsection{Producto: el origen del 90\% de los errores}
+
+Con el producto la historia es distinta, y el docente es explícito: es
+\textbf{responsable del 90\% de los errores de los estudiantes} en
+Cálculo 1. La tabla resume los casos, todos derivados del axioma 3.5 y de
+la tricotomía:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lp{8cm}@{}}
+\toprule
+Hipótesis sobre $z$ & Conclusión a partir de $x\le y$ \\
+\midrule
+$z \ge 0$ & $xz \le yz$ (se conserva el sentido) \\
+$z \le 0$ & $xz \ge yz$ (se \textbf{invierte} el sentido) \\
+$z = 0$ & $xz = yz = 0$ (caso degenerado, ninguna desigualdad estricta sobreviene) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Con desigualdad \textbf{estricta} el caso $z=0$ deja de ser inofensivo: si
+$x<y$ y $z=0$, entonces $xz=yz$ (una \textbf{igualdad}, no una desigualdad
+estricta), así que la implicación estricta exige $z>0$ (estrictamente):
+
+\begin{keybox}[Compatibilidad del orden con el producto (versión estricta)]
+\[
+\boxed{x<y \ \text{y} \ z>0 \implies xz<yz}
+\]
+\[
+x<y \ \text{y} \ z<0 \implies xz>yz.
+\]
+\end{keybox}
+
+\begin{warnbox}[Advertencia central de la clase]
+Nunca se debe multiplicar (ni dividir) una desigualdad por una cantidad sin
+\textbf{antes} declarar y justificar su signo. El docente insiste en que
+buena parte de las pruebas del primer parcial contendrá pasos de este tipo
+hechos sin esa verificación, y que es exactamente el tipo de error que hace
+perder el curso.
+\end{warnbox}
+
+\emph{Próxima clase: el axioma 4 (completitud), el que permite finalmente
+justificar la existencia de $\sqrt{2}$, del ínfimo y del supremo.}
+
+\end{document}

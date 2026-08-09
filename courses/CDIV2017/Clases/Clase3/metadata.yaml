@@ -1,0 +1,66 @@
+title: Clase 3
+id: civ-2017-1-03
+
+course: Cálculo 1
+academic_year: 2017
+semester: 1
+
+teacher: Alexandre Miquel
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:17"
+    end: "01:24:24"
+
+stats:
+  transcript_words: 8825
+  summary_words: 3472
+  diagrams_pending: 0
+  equations: 28
+
+topics:
+  - Definición de función (dominio, codominio, regla de asignación)
+  - Notación estándar f: A → B y la intuición de función como "máquina"
+  - Buenas y malas definiciones (cuidado con el dominio de definición)
+  - Definición de funciones por casos (valor absoluto, función signo)
+  - Casos con solapamiento en una definición por casos
+  - Convención de dominio implícito para funciones numéricas
+  - Definición implícita de función (raíz cuadrada, parte entera)
+  - Mención del axioma de elección
+  - Vocabulario: imagen, preimagen, imagen/recorrido de una función
+  - Representaciones de una función (diagramas de Venn, tablas de valores, gráficas)
+  - Función identidad y composición de funciones
+  - No conmutatividad de la composición de funciones
+  - Funciones inyectivas, sobreyectivas y biyectivas
+  - Función inversa
+
+bibliography: []
+
+prerequisites:
+  - Definición de conjunto y operaciones básicas (unión, intersección, diferencia, conjunto vacío)
+  - Notación de intervalos reales y de subconjuntos (⊆)
+  - Lógica proposicional elemental (implicación, negación) vista en clases previas
+
+next_topics:
+  - Números reales (clase siguiente, comienzo de la unidad)
+  - Más ejemplos de funciones inyectivas, sobreyectivas y biyectivas
+  - Operaciones adicionales sobre funciones numéricas (suma, producto, etc.)
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-07-30
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

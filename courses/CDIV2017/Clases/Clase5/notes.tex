@@ -1,0 +1,665 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (gráficas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 5: Orden en los reales, signos e intervalos} \\[0.3em]
+        \large{Construcción de $\mathbb{N}$ por inducción}}
+\author{Transcripto y expandido --- Curso Cálculo 1 (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Recapitulación: $\mathbb{R}$ es un cuerpo}
+
+La clase retoma la lista de 15 axiomas de $\mathbb{R}$ presentada la clase
+anterior, de la cual ya se habían visto 14. El \textbf{grupo 1} (axiomas 1.1
+a 1.4) es el de la suma: \textbf{asociativa}, \textbf{conmutativa}, con
+\textbf{neutro} $0$ y con \textbf{opuesto} $-x$ único para cada $x$. A partir
+del opuesto se define la resta:
+$$x - y := x + (-y).$$
+
+El \textbf{grupo 2} (axiomas 2.1 a 2.5) es el del producto: asociativo,
+conmutativo, \textbf{distributivo} respecto de la suma (la novedad frente al
+grupo 1), con neutro $1 \neq 0$, y cada $x \neq 0$ tiene \textbf{inverso}
+único $x^{-1}$. El cociente se define análogamente:
+$$\frac{x}{y} := x \cdot y^{-1}.$$
+
+Cuando un conjunto tiene una suma y un producto que cumplen los grupos 1 y 2,
+se dice que es un \textbf{cuerpo}: se puede sumar, restar, multiplicar y
+dividir sin restricciones. $\mathbb{R}$ es un cuerpo, pero no es el único
+ejemplo. El docente repasa candidatos propuestos por la clase:
+
+\begin{itemize}
+  \item $\mathbb{Z}_2 = \{0,1\}$ con la suma módulo 2 ($0+0=0$, $0+1=1+0=1$,
+    $1+1=0$) y el producto usual: es efectivamente un cuerpo (el más pequeño
+    posible), pero no se trabajará con él porque le falta el orden total.
+  \item $\mathbb{Q}$: cumple exactamente la misma lista de axiomas, luego es
+    cuerpo.
+  \item $\mathbb{C}$: también cumple la lista, luego es cuerpo.
+\end{itemize}
+
+\begin{notebox}[Cuerpos vistos en el curso]
+En este curso solo se usarán $\mathbb{Q}$ y $\mathbb{R}$. Se menciona que
+existen cuerpos finitos con 3, 5, 7, 11 elementos (en general, con $p$
+elementos si $p$ es primo), pero no se estudiarán.
+\end{notebox}
+
+\section{Axiomas de orden total}
+
+El \textbf{grupo 3} agrega una relación de orden $\leq$ (orden
+\textbf{amplio}) sobre $\mathbb{R}$, con cinco axiomas:
+
+\begin{enumerate}
+  \item \textbf{Totalidad (tricotomía comparativa)}: para todo $x,y$, o bien
+    $x \leq y$ o bien $y \leq x$ (siempre son comparables).
+  \item \textbf{Transitividad}: $x \leq y$ y $y \leq z$ implican $x \leq z$,
+    para todo $x,y,z$.
+  \item \textbf{Antisimetría}: $x \leq y$ y $y \leq x$ implican $x = y$.
+  \item \textbf{Compatibilidad con la suma}: $x \leq y$ implica
+    $x + z \leq y + z$, para todo $x,y,z$.
+  \item \textbf{Compatibilidad con el producto de no negativos}: si
+    $x \geq 0$ y $y \geq 0$, entonces $xy \geq 0$.
+\end{enumerate}
+
+Estos cinco axiomas, junto con los 9 algebraicos de los grupos 1 y 2, forman
+la lista completa de 14 axiomas vista hasta ahora. Falta un decimoquinto
+(sección \ref{sec:completitud}), que es el que realmente distingue a
+$\mathbb{R}$ de $\mathbb{Q}$.
+
+\section{Orden amplio y orden estricto}
+
+El orden \textbf{estricto} se define a partir del amplio:
+$$x < y \; :\Longleftrightarrow\; x \leq y \ \text{y} \ x \neq y.$$
+
+Recíprocamente, el orden amplio se puede recuperar del estricto:
+$$x \leq y \; \Longleftrightarrow\; x < y \ \text{o} \ x = y.$$
+
+\begin{notebox}[¿Cuál orden es el primitivo?]
+Podría parecer más natural tomar $\leq$ como abreviatura de ``$<$ o $=$''
+(el nombre lo sugiere), y de hecho se podría construir toda la teoría
+axiomatizando el orden estricto en vez del amplio; se obtendría una
+presentación completamente equivalente, solo cambiando la forma de los
+axiomas. Lo importante es tener claras las propiedades de ambos, no cuál se
+toma como primitivo.
+\end{notebox}
+
+\section{Reglas de las desigualdades}
+
+\subsection{Suma: una traslación}
+
+De los axiomas de orden y su combinación con la suma se obtiene una
+\textbf{equivalencia lógica} (no solo una implicación en un sentido):
+$$x \leq y \;\Longleftrightarrow\; x + z \leq y + z \;\Longleftrightarrow\; x - z \leq y - z, \qquad \forall x,y,z.$$
+
+\textbf{Interpretación geométrica}: sumar $z$ a ambos miembros es
+\textbf{trasladar} los dos puntos $x$ e $y$ de la recta por el mismo
+desplazamiento $z$; como es el mismo movimiento para los dos, el orden
+relativo entre ellos no cambia. Esto vale sea cual sea la posición de $0$
+respecto de $x,y$.
+
+También se tiene, tomando el opuesto:
+$$x \leq y \;\Longleftrightarrow\; -y \leq -x.$$
+
+\begin{warnbox}[El opuesto invierte el orden]
+El paso al opuesto invierte el orden. Si $x$ está a la izquierda de $y$ en
+la recta, $-x$ queda a la derecha de $-y$. Esta propiedad no depende de las
+posiciones relativas de $x$, $y$ respecto de $0$. Las mismas dos
+equivalencias valen reemplazando $\leq$ por $<$.
+\end{warnbox}
+
+La moraleja: sumar (o restar) una cantidad a una desigualdad nunca da
+problemas: es una equivalencia lógica, y el razonamiento se puede invertir
+en ambos sentidos.
+
+\subsection{Producto: dilatación y contracción}
+
+Multiplicar ambos miembros de una desigualdad por $z$ sí es delicado: el
+resultado depende del \textbf{signo de $z$}.
+
+\begin{itemize}
+  \item Si $z > 0$: $x \leq y \implies xz \leq yz$ (no se invierte el
+    orden).
+  \item Si $z < 0$: $x \leq y \implies xz \geq yz$ (se invierte el orden).
+  \item Si $z = 0$: $x \leq y \implies xz \leq yz$ es cierto pero inútil,
+    porque siempre da $0 \leq 0$: se pierde información y no se puede
+    recuperar la desigualdad original dividiendo, porque no existe
+    $0^{-1}$.
+\end{itemize}
+
+$$
+\boxed{
+\begin{aligned}
+z>0 &: \quad x \leq y \iff xz \leq yz \\
+z<0 &: \quad x \leq y \iff xz \geq yz
+\end{aligned}}
+$$
+
+La implicación recíproca (ir ``de vuelta'', dividiendo por $z$) solo es
+lícita cuando $z$ es estrictamente positivo o estrictamente negativo, nunca
+cuando $z=0$: en ese caso cualquier par $x \ne y$ colapsa a $0 \leq 0$, y no
+hay forma de reconstruir la desigualdad de partida.
+
+\textbf{Lectura geométrica} (para $z$ positivo): multiplicar por $z>1$ es
+una \textbf{dilatación} del segmento $[x,y]$; multiplicar por $0<z\leq 1$
+es una \textbf{contracción}. Para $z$ negativo se obtiene el mismo efecto
+de escala pero además con \textbf{intercambio de posiciones} (lo que estaba
+más a la izquierda pasa a estar más a la derecha):
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llc@{}}
+\toprule
+Caso & Efecto & ¿Intercambia posiciones? \\
+\midrule
+$z \geq 1$ & dilatación & no \\
+$0 \leq z \leq 1$ & contracción & no \\
+$z \leq -1$ & dilatación & sí \\
+$-1 \leq z \leq 0$ & contracción & sí \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\input{assets/clase5-traslacion-dilatacion.tex}
+
+\begin{notebox}[Geometría antes que álgebra]
+El docente insiste en que estas ideas geométricas (traslación para la suma,
+dilatación/contracción con o sin intercambio para el producto) son más
+importantes que la manipulación simbólica: ``no van a sobrevivir en
+análisis si piensan que la matemática solo consiste en hacer cuentas sin
+entender el contenido geométrico''. El curso podría llamarse igual de bien
+``geometría analítica con números''.
+\end{notebox}
+
+\subsection{Cociente}
+
+Las mismas reglas valen para el cociente entre ambos miembros de una
+desigualdad (con $z \ne 0$):
+$$
+z>0: \; x \leq y \iff \frac{x}{z} \leq \frac{y}{z}, \qquad
+z<0: \; x \leq y \iff \frac{x}{z} \geq \frac{y}{z}.
+$$
+
+\begin{notebox}[Ejercicio propuesto en clase]
+Reescribir todas estas reglas con el orden estricto $<$. Cambian poco: los
+casos con $z=0$ simplemente desaparecen (no tienen sentido para $<$, porque
+$z=0$ fusiona a $x$ e $y$ en $0$), y en el resto basta reemplazar $\leq$ por
+$<$ y $\geq$ por $>$.
+\end{notebox}
+
+\section{El inverso y el orden}
+
+Invertir ($x \mapsto x^{-1}$) es, como el opuesto, una operación que puede
+intercambiar el orden --- pero con una condición extra crucial: ambos
+números deben ser no nulos y tener el mismo signo.
+
+$$
+\boxed{0 < x \leq y \;\Longrightarrow\; \frac{1}{y} \leq \frac{1}{x}}
+\qquad\text{y análogamente para } x \leq y < 0.
+$$
+
+Cuando se cumple esta hipótesis (mismo signo, ambos no nulos), la relación
+también se puede invertir de nuevo (aplicando el inverso una segunda vez se
+recupera la desigualdad original).
+
+\textbf{Verificación geométrica} con ejemplos concretos:
+
+\begin{itemize}
+  \item Positivos: $2 \leq 3 \implies \tfrac12 \geq \tfrac13$ (el orden se
+    invierte).
+  \item Negativos: $-3 \leq -2 \implies -\tfrac13 \geq -\tfrac12$ (también
+    se invierte).
+  \item Signos distintos: $-2 \leq 3 \implies -\tfrac12 \leq \tfrac13$ ---
+    acá el orden se mantiene, porque el inverso de un negativo sigue siendo
+    negativo y el de un positivo sigue siendo positivo, así que
+    $1/x < 0 < 1/y$ automáticamente.
+\end{itemize}
+
+\input{assets/clase5-inverso-signo.tex}
+
+\begin{warnbox}[Cuidado con el inverso]
+Cada vez que aparece un inverso en una desigualdad hay que verificar dos
+cosas antes de concluir nada: que ambos lados son no nulos (si no, la
+expresión ni siquiera está bien definida) y que tienen el mismo signo (si
+no, no hay regla fija de inversión salvo el caso ``signos distintos''
+descrito arriba). El docente lo remarca como fuente típica de errores:
+``cuidado, hay un montón de trampas posibles, lo único posible es hacer
+pequeños dibujos''.
+\end{warnbox}
+
+\section{Signos: $\mathbb{R}^+$, $\mathbb{R}^-$ y la regla de los signos}
+
+Para todo $x \in \mathbb{R}$ vale la \textbf{tricotomía}: exactamente una de
+las tres opciones se cumple,
+$$x < 0 \quad \text{o bien} \quad x = 0 \quad \text{o bien} \quad x > 0.$$
+
+Esto parte a la recta real en tres piezas: la parte negativa, el cero, y la
+parte positiva. Se definen por comprensión:
+$$\mathbb{R}^+ = \{x \in \mathbb{R} : x > 0\}, \qquad \mathbb{R}^- = \{x \in \mathbb{R} : x < 0\},$$
+con la \textbf{descomposición fundamental}
+$$\mathbb{R} = \mathbb{R}^- \cup \{0\} \cup \mathbb{R}^+.$$
+
+\begin{notebox}[Convención sobre el signo de 0]
+El docente cuenta que el cero tardó siglos en ser aceptado (``es muy suave
+con la adición pero es la bomba atómica con la multiplicación''). Sobre la
+convención de signo de $0$: en Francia se lo considera ni positivo ni
+negativo (la descomposición de arriba, con $0$ excluido de ambos
+conjuntos), mientras que en el mundo hispanohablante suele adoptarse la
+convención inclusiva, donde ``positivo'' significa $x\geq 0$ y ``negativo''
+significa $x \leq 0$, de modo que el $0$ tiene ``doble nacionalidad''. Es
+solo una cuestión de convención, sin contenido matemático de fondo.
+\end{notebox}
+
+De los axiomas (no hay ningún axioma que lo postule directamente) se
+\textbf{deducen} las reglas de los signos, tanto para la suma como para el
+producto:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+Suma & Resultado & Producto & Resultado \\
+\midrule
+$+ + +$ & $+$ & $+ \times +$ & $+$ \\
+$+ + -$ & depende de cuál es mayor & $+ \times -$ & $-$ \\
+$- + -$ & $-$ & $- \times +$ & $-$ \\
+& & $- \times -$ & $+$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{notebox}[Por qué se demuestra y no se memoriza]
+Ninguno de los 14 axiomas menciona directamente ``negativo por negativo es
+positivo''; es una consecuencia de las reglas algebraicas y de orden ya
+vistas (ejercicio propuesto: demostrar que si $x<0$ e $y<0$ entonces
+$xy>0$). El docente cuenta que este hecho --- contraintuitivo incluso para
+niños --- fue descubierto por los matemáticos árabes hacia el año 1000
+(aunque los números negativos ya existían antes, en India desde el siglo
+VII y en China desde el siglo I, donde se entendían naturalmente en
+términos de yin y yang), y que Europa tardó unos 700 años más, hasta el
+siglo XVII, en aceptar los números negativos y el cero, por prejuicios
+culturales (``obra del demonio'').
+\end{notebox}
+
+\section{Intervalos}
+
+\subsection{Los diez tipos de intervalo}
+
+Con el orden ya establecido se definen los intervalos por comprensión.
+Dados $a \leq b$:
+$$
+[a,b] = \{x \in \mathbb{R} : a \leq x \leq b\}, \qquad
+]a,b[ \ = \{x \in \mathbb{R} : a < x < b\},
+$$
+y de modo análogo los semiabiertos $[a,b[$ y $]a,b]$. Los semi-infinitos:
+$$
+\;]-\infty,a] = \{x : x \leq a\}, \quad ]-\infty,a[\ = \{x : x < a\},
+$$
+$$
+[a,+\infty[\ = \{x : x \geq a\}, \quad ]a,+\infty[\ = \{x : x > a\}.
+$$
+A estos se agregan dos casos particulares: $]-\infty,+\infty[\ = \mathbb{R}$
+(otro nombre, otra notación para $\mathbb{R}$) y el conjunto vacío
+$\emptyset$, que también se considera un intervalo (aunque sin notación
+propia como tal). En total, \textbf{diez tipos} de intervalo.
+
+\begin{warnbox}[La hipótesis $a \leq b$ es esencial]
+La definición de $[a,b]$ (o cualquiera de sus variantes) solo tiene el
+sentido ``esperado'' cuando $a \leq b$. Si $a > b$, no existe ningún $x$
+que sea a la vez $\geq a$ y $\leq b$, así que el conjunto que resulta de la
+fórmula es simplemente $\emptyset$ --- vacío pero perfectamente bien
+definido, no un error.
+\end{warnbox}
+
+\input{assets/clase5-intervalos-recta.tex}
+
+\subsection{Intersección de intervalos}
+
+Se plantea calcular, en general, la intersección $[a,b] \cap [c,d]$ (con
+$a\leq b$, $c \leq d$). El docente hace notar que la respuesta depende de
+las posiciones relativas de $a,b,c,d$ (si $b < c$ da vacío; si se solapan,
+da otra cosa; etc.), y da la fórmula única que cubre todos los casos:
+
+$$
+\boxed{[a,b] \cap [c,d] =
+\begin{cases}
+[\max(a,c), \min(b,d)] & \text{si } \max(a,c) \leq \min(b,d) \\
+\emptyset & \text{en caso contrario}
+\end{cases}}
+$$
+
+\input{assets/clase5-interseccion-intervalos.tex}
+
+\begin{notebox}[Aplicación: intersección de rectángulos]
+Ejercicio propuesto: demostrar la fórmula considerando todos los casos
+posibles de posición relativa. El docente comenta su aplicación práctica en
+informática: al programar videojuegos, decidir si dos rectángulos (p. ej.
+dos personajes) se superponen se reduce a intersectar sus intervalos de
+coordenadas $x$ e $y$ con exactamente esta fórmula. Advierte que ``la
+intersección de intervalos es mucho más complicada de lo que uno podría
+pensar'' --- hay muchos casos a distinguir, de los cuales en clase solo se
+verificaron dos.
+\end{notebox}
+
+\section{Cuerpo totalmente ordenado y el axioma que falta}
+\label{sec:completitud}
+
+Cuando un conjunto cumple simultáneamente los axiomas de cuerpo (grupos 1 y
+2) y los de orden total compatible (grupo 3), se dice que es un
+\textbf{cuerpo totalmente ordenado}. Es una etiqueta que resume de una sola
+vez los 14 axiomas ya vistos: en vez de enumerarlos uno por uno, un
+matemático simplemente dice ``$\mathbb{R}$ es un cuerpo totalmente
+ordenado''.
+
+$\mathbb{Q}$ también es un cuerpo totalmente ordenado (cumple exactamente
+la misma lista de 14 axiomas). $\mathbb{C}$, en cambio, no lo es, porque no
+admite un orden total compatible con su estructura de cuerpo; tampoco lo es
+$\mathbb{Z}_2$.
+
+Esto deja una pregunta abierta: si $\mathbb{Q}$ y $\mathbb{R}$ satisfacen
+exactamente la misma lista de 14 axiomas, ¿qué los distingue? La respuesta,
+presentada como \emph{teaser} (adelanto sin desarrollar), es el
+\textbf{decimoquinto axioma}, el \textbf{axioma de completitud}:
+
+\begin{keybox}[Axioma de completitud (adelanto)]
+Todo subconjunto no vacío de $\mathbb{R}$ y superiormente acotado tiene un
+supremo.
+\end{keybox}
+
+$\mathbb{Q}$ no cumple este axioma (de ahí la diferencia esencial entre
+ambos cuerpos), pero las nociones de ``superiormente acotado'' y
+``supremo'' no se definen todavía --- quedan para la clase siguiente ---;
+solo se identifican las palabras nuevas del enunciado (todo el resto,
+``subconjunto'' y ``no vacío'', ya es conocido).
+
+\section{Construcción de $\mathbb{N}$}
+
+Con la estructura de cuerpo totalmente ordenado ya establecida, la clase
+pasa a construir formalmente algunos subconjuntos notables de
+$\mathbb{R}$, comenzando por $\mathbb{N}$.
+
+\subsection{La función sucesor}
+
+Se define la función \textbf{sucesor} $s: \mathbb{R} \to \mathbb{R}$,
+$$s(x) := x + 1.$$
+
+Intuitivamente, $\mathbb{N}$ se construye a partir de $0$ aplicando el
+sucesor repetidas veces: $1 = s(0) = 0+1$, $2 = s(1) = 1+1$,
+$3 = s(2) = 2+1$, etc. La definición ``de toda la vida''
+$\mathbb{N} = \{0,1,2,\ldots\}$ es calificada de ``floja'': casi todos los
+elementos quedan escondidos detrás de los puntos suspensivos. El objetivo
+de la clase es dar una definición sin puntitos.
+
+\subsection{Conjuntos inductivos}
+
+\begin{keybox}[Definición: conjunto inductivo]
+Un subconjunto $A \subseteq \mathbb{R}$ es \textbf{inductivo} cuando cumple
+dos condiciones:
+\begin{enumerate}
+  \item $0 \in A$.
+  \item $A$ es \textbf{estable por sucesor}: $x \in A \implies x+1 \in A$.
+\end{enumerate}
+\end{keybox}
+
+Ejemplos discutidos en clase:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{@{}lcX@{}}
+\toprule
+Conjunto & ¿Inductivo? & Razón \\
+\midrule
+$[0,+\infty[$ & sí & contiene $0$; si $x\geq 0$ entonces $x+1\geq 0$ \\
+$\{0,\tfrac12,1,\tfrac32,2,\ldots\}$ & sí & contiene $0$; sumar $1$ a cualquier elemento da otro elemento de la lista \\
+$\mathbb{Z}$ & sí & contiene $0$ y es estable por sucesor \\
+$\mathbb{Q}$ & sí & contiene $0$; la suma de un racional con $1$ es racional \\
+positivos estrictos ($x>0$) & no & no contiene $0$ \\
+$[0,42]$ & no & $42$ está, pero $s(42)=43$ no está \\
+$[0,41]$ & no & $41$ está, pero $s(41)=42$ no está \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{notebox}[Cuidado circular]
+El propio ejemplo de $\{0,\tfrac12,1,\tfrac32,\ldots\}$ generó una
+discusión en clase: un estudiante lo propuso como conjunto inductivo, a lo
+que el docente respondió que, efectivamente, lo es, pero que describirlo
+así (con puntos suspensivos, generándolo paso a paso) ya usa implícitamente
+la idea de inducción que se busca fundamentar, no presuponer.
+\end{notebox}
+
+\subsection{Definición de $\mathbb{N}$ sin puntos suspensivos}
+
+Con la noción de conjunto inductivo ya disponible, se define:
+
+$$
+\boxed{n \text{ es un \textbf{entero natural}} \;:\Longleftrightarrow\; n \text{ pertenece a \emph{todos} los subconjuntos inductivos de } \mathbb{R}}
+$$
+
+y en consecuencia:
+$$
+\mathbb{N} := \{x \in \mathbb{R} : \forall A \subseteq \mathbb{R},\ (A \text{ inductivo} \implies x \in A)\}.
+$$
+
+Intuitivamente, $\mathbb{N}$ es la intersección de todos los subconjuntos
+inductivos de $\mathbb{R}$: se toman todos los candidatos (el docente ya
+exhibió varios) y se queda solo lo que está en común a todos ellos. Es una
+definición más abstracta que la de ``puntitos'', pero formal y sin
+ambigüedad.
+
+\subsection{$\mathbb{N}$ es el subconjunto inductivo más pequeño}
+
+\begin{keybox}[Proposición]
+$\mathbb{N}$ es inductivo, y además es el más pequeño de los conjuntos
+inductivos en el sentido de la inclusión: $\mathbb{N} \subseteq A$ para
+todo $A$ inductivo.
+\end{keybox}
+
+\textbf{Demostración.}
+
+\emph{Parte 1: $\mathbb{N}$ es inductivo.}
+\begin{itemize}
+  \item $0 \in \mathbb{N}$: por definición de conjunto inductivo, $0$
+    pertenece a todo conjunto inductivo $A$; por lo tanto $0$ cumple la
+    condición que define a $\mathbb{N}$ (pertenecer a todos los
+    inductivos), luego $0 \in \mathbb{N}$.
+  \item $\mathbb{N}$ estable por sucesor: sea $x \in \mathbb{N}$, es decir,
+    $x$ pertenece a todo conjunto inductivo $A$. Como cada $A$ es, en
+    particular, estable por sucesor, se tiene $x+1 \in A$ para ese mismo
+    $A$. Como esto vale para cualquier inductivo $A$, se concluye que $x+1$
+    pertenece a todos los inductivos, es decir, $x + 1 \in \mathbb{N}$.
+\end{itemize}
+
+\emph{Parte 2: $\mathbb{N} \subseteq A$ para todo $A$ inductivo.} Es
+inmediata de la definición: $\mathbb{N}$ se definió exactamente como el
+conjunto de los elementos que están en todos los inductivos, así que en
+particular está contenido en cada uno de ellos. $\blacksquare$
+
+\begin{notebox}[Frase para memorizar]
+``$\mathbb{N}$ es el subconjunto inductivo más pequeño de $\mathbb{R}$''
+resume, de una sola frase, tanto la definición formal como su relación con
+todos los demás conjuntos inductivos vistos en los ejemplos.
+\end{notebox}
+
+\section{Principio de inducción completa}
+
+\subsection{Enunciado}
+
+Sea $P(n)$ un enunciado (una propiedad, a veces verdadera y a veces falsa)
+sobre un natural cualquiera $n$. Si se cumplen:
+
+\begin{enumerate}
+  \item \textbf{Caso base}: $P(0)$ es verdadero.
+  \item \textbf{Paso inductivo}: para todo $n \in \mathbb{N}$,
+    $P(n) \implies P(n+1)$.
+\end{enumerate}
+
+entonces:
+$$
+\boxed{\forall n \in \mathbb{N},\ P(n) \text{ es verdadero.}}
+$$
+
+\subsection{Intuición: los dominós}
+
+La imagen que propone el docente es la de una fila de dominós: si el
+primero cae (caso base) y la distancia entre dominós consecutivos es tal
+que la caída de uno siempre provoca la caída del siguiente (paso
+inductivo), entonces todos los dominós de la fila terminan cayendo.
+
+\begin{notebox}[Los dos ingredientes son necesarios]
+Sin caso base ``nadie empuja el primer dominó y no cae ninguno''; y si en
+algún punto se rompe la implicación (algún dominó no logra tumbar al
+siguiente), la caída se detiene ahí y no se puede concluir nada sobre los
+que siguen.
+\end{notebox}
+
+\subsection{Demostración}
+
+A diferencia de la intuición informal, el principio de inducción se
+demuestra a partir de la definición de $\mathbb{N}$ como el subconjunto
+inductivo más chico (sección anterior); no es un axioma adicional.
+
+\textbf{Demostración.} Se define
+$$A := \{n \in \mathbb{N} : P(n) \text{ es verdadero}\}$$
+(el ``conjunto de los dominós que caen''). Se muestra que $A$ es inductivo:
+
+\begin{itemize}
+  \item $0 \in A$: por hipótesis (1), $P(0)$ es verdadero, así que $0$
+    cumple la condición que define a $A$.
+  \item $A$ estable por sucesor: sea $x \in A$, es decir, $P(x)$ es
+    verdadero. Por hipótesis (2), $P(x) \implies P(x+1)$, luego $P(x+1)$
+    también es verdadero, es decir, $x + 1 \in A$.
+\end{itemize}
+
+Por lo tanto $A$ es un conjunto inductivo. Pero $\mathbb{N}$ es el
+subconjunto inductivo más pequeño, así que $\mathbb{N} \subseteq A$. Por
+otro lado, por construcción $A \subseteq \mathbb{N}$ (los elementos de $A$
+son naturales que además cumplen $P$). De ambas inclusiones,
+$A = \mathbb{N}$, es decir:
+$$\forall n \in \mathbb{N},\ n \in A \iff \forall n \in \mathbb{N},\ P(n) \text{ verdadero.} \qquad \blacksquare$$
+
+\begin{notebox}[No es magia]
+El punto conceptual central: la inducción no cae del cielo ni es un axioma
+separado; es una consecuencia directa de que $\mathbb{N}$ se definió como
+el inductivo más pequeño.
+\end{notebox}
+
+\subsection{Variante desde un $n_0$ arbitrario}
+
+Se enuncia (sin demostrar en clase, aunque se indica que la demostración es
+análoga) una variante útil: sea $P(n)$ una propiedad y $n_0 \in \mathbb{N}$
+fijo. Si $P(n_0)$ es verdadero y, para todo $n \geq n_0$,
+$P(n) \implies P(n+1)$, entonces $P(n)$ es verdadero para todo $n \geq
+n_0$.
+
+\begin{notebox}[Misma idea, otro punto de partida]
+Es exactamente el mismo principio, pero arrancando la cadena de dominós en
+$n_0$ en vez de en $0$ --- útil porque en la práctica muchas inducciones
+empiezan en $1$, $2$ o cualquier otro valor conveniente, no necesariamente
+en $0$.
+\end{notebox}
+
+\bigskip
+\noindent\emph{La próxima clase (lunes) retomará el axioma de completitud
+--- definiendo ``superiormente acotado'' y ``supremo'' --- y se verán
+ejemplos concretos de demostraciones por inducción.}
+
+\end{document}

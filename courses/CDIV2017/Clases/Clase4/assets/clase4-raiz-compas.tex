@@ -1,0 +1,58 @@
+% Clase 4 --- Adelanto: la raíz cuadrada con regla y compás (§8.3).
+% J es el simétrico de LA UNIDAD I respecto de O (J representa -1; el
+% docente lo dice explícito en la transcripción: "el simétrico... que
+% corresponde a menos uno"). El segmento J-X (de longitud 1+x) es diámetro
+% de una semicircunferencia; O divide ese diámetro en JO=1 y OX=x. La
+% perpendicular a la recta en O corta la semicircunferencia en Z, con
+% OZ=raíz(1*x)=raíz(x) por el teorema de la altura (media geométrica) en
+% el triángulo rectángulo J-Z-X inscrito en la semicircunferencia.
+% Valor ilustrativo: x=4 (para que raíz(x)=2 sea verificable a ojo).
+\begin{center}
+\begin{tikzpicture}[scale=1.05]
+
+  % ---- recta principal ----
+  \draw[figaxis] (-1.7,0) -- (4.7,0) node[right, figlbl] {$R$};
+
+  % ---- puntos clave sobre la recta ----
+  \node[figptocerrado] (J) at (-1,0) {};
+  \node[figptocerrado] (O) at (0,0)  {};
+  \node[figptocerrado] (I) at (1,0)  {};
+  \node[figptocerrado] (X) at (4,0)  {};
+
+  \node[figlbl, below=3pt] at (J) {$J$};
+  \node[figlbl, below=3pt] at (O) {$O$};
+  \node[figlbl, below=3pt] at (I) {$I$};
+  \node[figlbl, below=3pt] at (X) {$X$};
+
+  % ---- semicircunferencia de diámetro JX (centro M, radio 2.5) ----
+  \draw[figline] (1.5,0) ++(180:2.5) arc (180:0:2.5);
+
+  % ---- Z: intersección de la perpendicular en O con la semicircunferencia ----
+  \coordinate (Z) at (0,2);
+  \node[figptocerrado, draw=figred, fill=figred] at (Z) {};
+  \node[figlbl, figred, above=3pt] at (Z) {$Z$};
+
+  % ---- perpendicular O-Z, remarcada como el segmento resultado ----
+  \draw[figred, line width=1.5pt] (O) -- (Z);
+  \node[figlbl, figred, right=2pt] at (0,1) {$\sqrt{x}$};
+
+  % ---- triángulo rectángulo inscrito J-Z-X (auxiliar, justifica el "por qué") ----
+  \draw[figaux] (Z) -- (J);
+  \draw[figaux] (Z) -- (X);
+
+  % ---- marca de ángulo recto en Z (cuadrado pequeño, lados hacia J y X) ----
+  \coordinate (ru) at ($(Z)!{0.18/(2*sqrt(5))}!(X)$);
+  \coordinate (rv) at ($(Z)!{0.18/sqrt(5)}!(J)$);
+  \coordinate (rc) at ($(ru)+(rv)-(Z)$);
+  \draw[figgray] (rv) -- (rc) -- (ru);
+
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Media geométrica con regla y compás: $J$ es el simétrico de
+la unidad $I$ respecto de $O$ (representa $-1$), de modo que el segmento
+$JX$ --- diámetro de la semicircunferencia --- mide $1+x$ y $O$ lo divide en
+$JO=1$ y $OX=x$. Como $JZX$ es un triángulo rectángulo inscrito en la
+semicircunferencia (ángulo recto en $Z$), el teorema de la altura da
+$OZ=\sqrt{JO\cdot OX}=\sqrt{x}$ (aquí, a modo de ilustración, $OX=4$ y
+$OZ=2$). Válido solo como anticipo geométrico: la existencia de $\sqrt{x}$
+recién queda justificada con el axioma de completitud (próxima clase).}
+\end{center}
