@@ -1,0 +1,48 @@
+title: Clase 23
+id: civ-2017-1-23
+
+course: Cálculo 1
+academic_year: 2017
+semester: 1
+
+teacher: Alexandre Miquel
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:16"
+    end: "01:25:07"
+
+stats:
+  transcript_words: 8958
+  summary_words: 0
+  diagrams_pending: 0
+  equations: 0
+
+# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
+# la clase. Completar antes de marcar status.summary como done.
+
+topics: []
+
+bibliography: []
+
+prerequisites: []
+
+next_topics: []
+
+status:
+  transcript: done
+  summary: pending
+  latex: pending
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer: []
+  date: 2026-08-08
+
+llm:
+  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+
+editorial_status: draft

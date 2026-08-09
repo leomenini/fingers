@@ -1,0 +1,20 @@
+{
+  "source": "https://open.fing.edu.uy/media/f3/f3_05_transcription.vtt",
+  "cues": 226,
+  "words": 8690,
+  "charsPlain": 49248,
+  "charsTimed": 51166,
+  "timestampOverheadPct": 3.9,
+  "estTokensPlain": 12312,
+  "estTokensTimed": 12792,
+  "speechSeconds": 4268.3,
+  "spanSeconds": 5053.4,
+  "speechRatio": 0.845,
+  "avgCueSeconds": 18.9,
+  "rollingOverlapCues": 0,
+  "warnings": [
+    "solapamiento temporal en 18:09",
+    "solapamiento temporal en 22:55",
+    "solapamiento temporal en 35:14"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source": "https://open.fing.edu.uy/media/civ/civ_38_transcription.vtt",
+  "cues": 213,
+  "words": 6196,
+  "charsPlain": 31703,
+  "charsTimed": 33445,
+  "timestampOverheadPct": 5.5,
+  "estTokensPlain": 7926,
+  "estTokensTimed": 8361,
+  "speechSeconds": 3076.2,
+  "spanSeconds": 4179.6,
+  "speechRatio": 0.736,
+  "avgCueSeconds": 14.4,
+  "rollingOverlapCues": 1,
+  "warnings": []
+}
