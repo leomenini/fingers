@@ -9,10 +9,13 @@ notes.pdf
 
 # La transcripción no se versiona: es contenido de OpenFING (CC BY-NC-ND) y
 # lo reproduce `npm run fetch` a partir del manifiesto. Ver ADR-0005.
-# Los Transcription_raw.txt ya commiteados NO los cubre esta regla: salen del
-# repo con la pasada de git filter-repo, no ignorándolos.
 transcript.txt
 transcript.timed.txt
+
+# Nombre viejo del userscript. Ya salió del historial con git filter-repo,
+# pero el oráculo de CLAUDE.md §6.c se restaura a mano desde el respaldo para
+# correr `npm run diff`. Ignorarlo evita que vuelva a entrar por accidente.
+Transcription_raw.txt
 
 # snapshot histórico de la iteración 1 de Física III (28 PDF, 6,5 MB).
 # Se conserva en disco, fuera de Git: son PDF superados y su único valor es

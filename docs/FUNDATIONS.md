@@ -34,9 +34,14 @@ revisa. Ningún artefacto generado se considera definitivo por sí solo.
 
 ## 4. La clase es la unidad mínima
 
-Cada clase es un objeto académico autocontenido — contenido, metadatos,
-recursos, estado editorial — que puede evolucionar sin afectar al resto del
-curso.
+Cada clase es un objeto académico completo en sí mismo — contenido,
+metadatos, procedencia, recursos, estado editorial — que puede evolucionar sin
+afectar al resto del curso.
+
+> Completo no es lo mismo que autocontenido. El material de terceros que sirve
+> de insumo (la transcripción de la fuente) **no** se versiona: el repositorio
+> guarda su procedencia y cómo regenerarlo, no una copia. Ver ADR-0004 y
+> ADR-0005.
 
 ## 5. Todo contenido debe ser reproducible
 

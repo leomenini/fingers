@@ -2,19 +2,30 @@
 
 
 Guía para generar las notas de cada clase a partir de su transcripción. Cada
-carpeta `Clases/ClaseN/` documenta una clase del curso y debe contener **cuatro**
-archivos:
+carpeta `Clases/ClaseN/` documenta una clase del curso.
 
 | Archivo | Origen | Descripción |
 |---------|--------|-------------|
-| `Transcription_raw.txt` | dado | Transcripción cruda exportada de OpenFING (no editar). |
+| `transcript.txt` | **no versionado** | Transcripción sin marcas de tiempo. La produce `npm run fetch`; no se edita. |
+| `transcript.timed.txt` | **no versionado** | La misma, con marcas `[m:ss]`. Para trazabilidad y revisión. |
 | `summary.md` | generado | Resumen estructurado en Markdown. |
 | `notes.tex` | generado | El mismo resumen traducido a LaTeX. |
 | `metadata.yaml` | generado | Metadatos de la clase (esquema estricto, ver abajo). |
+| `manifest.json` | extractor | Procedencia: URL, `sha256`, fecha. No editar. |
+| `transcript.stats.json` | extractor | Métricas del parseo. No editar. |
 
-> El nombre del archivo de transcripción es **`Transcription_raw.txt`** en las
-> 28 clases (unificado el 2026-07-25; antes había cuatro variantes históricas,
-> ver `docs/log.md` §2).
+> **`Transcription_raw.txt` ya no existe.** Era el nombre del userscript de
+> Tampermonkey; ADR-0002 lo reemplazó por las dos representaciones de arriba y
+> ADR-0005 sacó la transcripción de Git. Se regenera:
+>
+> ```bash
+> npm run fetch -- Fisica3-2015 <N> --write
+> ```
+>
+> Ojo con una diferencia real: los VTT de hoy **no traen la etiqueta de
+> locutor** (`Nicolás Wschebor`) que sí traía el userscript en las clases 10,
+> 14 y 20. El texto del docente es el mismo; cambia sólo esa etiqueta
+> (`CLAUDE.md` raíz §6.c).
 
 > **Layout del repo (reorg 2026-07-25; renombrado a `Fisica3-2015` por
 > ADR-0003 el 2026-08-02):** las 28 clases viven en
@@ -26,8 +37,11 @@ archivos:
 
 ## 1. Flujo de trabajo para una clase nueva
 
-1. Leer `Clases/ClaseN/Transcription_raw.txt`. La cabecera trae `Palabras : NNNN` →
-   ese número es `stats.transcript_words`.
+1. Leer `Clases/ClaseN/transcript.txt` (si falta, `npm run fetch --
+   Fisica3-2015 N --write`). **`stats.transcript_words` sale de
+   `transcript.stats.json` → `words`**, que ya viene escrito por el extractor.
+   No copiar ningún conteo de una cabecera: los números heredados del
+   userscript tienen errores de hasta +36 % (`docs/log.md` §7).
 2. Escribir `summary.md` siguiendo §2.
 3. Traducir a `notes.tex` siguiendo §3 (preámbulo **verbatim**).
 4. Escribir `metadata.yaml` siguiendo §4 (esquema **exacto**).

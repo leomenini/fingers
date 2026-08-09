@@ -57,20 +57,26 @@ tiene la tabla de qué paso está automatizado y cuál es manual.
 Los PDF (`notes.pdf` y el snapshot `PDFiter1/`) **no se versionan**: son
 artefactos de `build.sh` y se regeneran con tectonic.
 
-Cada clase (`courses/<Curso>/Clases/ClaseN/`) es autocontenida: cuatro
-archivos obligatorios (`Transcription_raw.txt`, `summary.md`, `notes.tex`,
-`metadata.yaml`) y un `assets/` opcional, creado recién con la primera
-figura. El esquema completo está en [`docs/SPECS.md`](docs/SPECS.md) y, con
-más autoridad, en el `CLAUDE.md` de cada curso.
+Cada clase (`courses/<Curso>/Clases/ClaseN/`) versiona cinco archivos:
+`summary.md`, `notes.tex`, `metadata.yaml`, `manifest.json` y
+`transcript.stats.json`, más un `assets/` opcional creado con la primera
+figura.
+
+**La transcripción no se versiona** ([ADR-0005](docs/adr/0005-retencion-transcripcion-derivada.md)):
+es contenido de OpenFING (CC BY-NC-ND) y la reproduce `npm run fetch` a partir
+del `manifest.json`, que guarda URL, `sha256` y fecha. Clonar el repo no
+alcanza para tener el texto — hace falta un comando. El esquema completo está
+en [`docs/SPECS.md`](docs/SPECS.md) y, con más autoridad, en el `CLAUDE.md` de
+cada curso.
 
 ## Qué sigue
 
 El roadmap operativo vive en `CLAUDE.md` §7 (raíz), no acá — repetirlo en dos
-lugares garantiza que uno de los dos quede desactualizado. En resumen: completar
-el extractor de punta a punta, instrumentar métricas, y las decisiones
-abiertas listadas ahí (rename de `Transcription_raw.txt`, riesgo de licencia
-de la transcripción ya commiteada, limpieza de `Resnick.pdf` del historial de
-git).
+lugares garantiza que uno de los dos quede desactualizado. En resumen:
+**instrumentar métricas**, que es el paso previo al benchmark.
+
+El extractor, el riesgo de licencia de la transcripción (ADR-0005) y la
+limpieza del historial de git se cerraron el 2026-08-08.
 
 ## Documentación
 

@@ -125,6 +125,17 @@ casos de contenido revisado a mano: el único test con **oráculo real** del
 proyecto. Este script baja el VTT de cada clase, lo parsea y compara el
 resultado contra ese archivo.
 
+> ⚠ **El oráculo ya no está en el repo.** ADR-0005 lo sacó del historial el
+> 2026-08-08. Antes de correr `diff` hay que restaurarlo al working tree:
+>
+> ```bash
+> cp -r ~/Desktop/Files/respaldo-fingers-borrados/courses/. courses/
+> ```
+>
+> Los archivos están en el `.gitignore`, así que no se re-commitean solos.
+> Si falta el respaldo, el script reporta `sin Transcription_raw.txt` por
+> clase y no compara nada.
+
 Compara **bolsas de palabras, no cue a cue**, a propósito: OpenFING
 re-segmentó varios VTT desde que se exportó el corpus, así que los cortes no
 coinciden aunque el texto sea idéntico. Lo que se mide es si el contenido

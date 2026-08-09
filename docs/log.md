@@ -160,8 +160,13 @@ sincronización de documentación posterior al rediseño del proyecto (ver
 
 **Forward-only.** Toda clase que produzca el extractor usa los nombres de
 ADR-0002 (`transcript.txt`, `transcript.timed.txt`, `transcript.stats.json`,
-`manifest.json`). Las 33 clases del corpus viejo conservan
-`Transcription_raw.txt` hasta que se decida migrarlas.
+`manifest.json`).
+
+> **La convivencia de dos convenciones duró horas.** El mismo día, la pasada
+> de `git filter-repo` de ADR-0005 borró los 33 `Transcription_raw.txt` del
+> disco y del historial, así que hoy **las 70 clases usan la convención
+> nueva** y no queda nada que migrar retroactivamente. La migración
+> retroactiva que este punto dejaba pendiente se resolvió por eliminación.
 
 Razón: migrar retroactivamente es un trabajo aparte —toca 33 clases,
 `docs/SPECS.md` y los `CLAUDE.md` de los dos cursos— y no bloquea la

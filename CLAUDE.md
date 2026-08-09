@@ -311,14 +311,13 @@ npx playwright install chromium
    2026-08-08.** `fetch.js` hace índice → `og:video` → `.vtt` → parse →
    manifiesto, es idempotente y resumible, y se corrió sobre CDIV2017: las
    42 clases bajaron sin un solo error. Ver §6.d.
-2. **Actualizar `docs/SPECS.md`.** Ahora son **dos** desalineos y es lo más
-   urgente de la documentación. (a) La línea 30 sigue diciendo que
-   `Transcription_raw.txt` es "dado, no se edita"; ADR-0002 lo convirtió en
-   salida del parser. (b) ADR-0005 rompió *"cada clase es autocontenida"* y la
-   lista de cuatro archivos obligatorios: hoy son tres versionados
-   (`summary.md`, `notes.tex`, `metadata.yaml`) más `manifest.json` y
-   `transcript.stats.json`, con la transcripción como insumo local no
-   versionado.
+2. ~~**Actualizar `docs/SPECS.md`.**~~ **Hecho el 2026-08-08.** Se corrigieron
+   los dos desalineos: `Transcription_raw.txt` como "dado" (ADR-0002) y la
+   clase como autocontenida con cuatro archivos obligatorios (ADR-0005). Hoy
+   son **cinco versionados** —`summary.md`, `notes.tex`, `metadata.yaml`,
+   `manifest.json`, `transcript.stats.json`— con la transcripción como insumo
+   local. Se propagó a `README.md`, `docs/ARCHITECTURE.md`,
+   `docs/FUNDATIONS.md` y los `CLAUDE.md` de los dos cursos.
 3. **Instrumentar métricas** (ver sección 9). El paso previo al benchmark.
 4. ~~**Pasada de `git filter-repo`.**~~ **Hecha el 2026-08-08.** Ver §7.b.
 
@@ -408,14 +407,14 @@ las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
   discusión es de alcance, no legal: el producto de este módulo es la
   herramienta que reproduce la transcripción, no la transcripción. Que además
   cierre el problema CC BY-NC-ND es consecuencia, no premisa.
-- **Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
-  en el corpus real.** ADR-0002 ya decidió el esquema de dos
-  representaciones, pero el corpus (Física III y las 5 clases de CDIV2017)
-  todavía usa el nombre y formato viejos — el extractor nuevo existe pero
-  todavía no produjo ninguna clase real del corpus. Pendiente de decidir si
-  se migra retroactivamente o sólo aplica de acá en adelante.
-- **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
-  enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
+- ~~**Rename `Transcription_raw.txt` → `transcript.txt`.**~~ Resuelto
+  *forward-only* y, el mismo día, resuelto del todo por eliminación: el
+  `filter-repo` borró los 33 archivos viejos, así que **las 70 clases usan la
+  convención nueva** y no quedó nada que migrar (`docs/log.md`).
+- ~~**Granularidad del comando**: ¿una clase o un curso?~~ Resuelto por
+  implementación: `fetch` toma un curso y acepta selección por número, rango o
+  lista (`9,14,20-23`), así que las dos granularidades salen del mismo
+  comando.
 - **Representación canónica del contenido.** Ver sección 8.
 
 **Más adelante**
@@ -497,9 +496,10 @@ obliga a llamar la API desde código. Ya está decidido ir por API.
 Son cosas distintas y se parecen sólo de lejos.
 
 - **BDD** (`cucumber-js`) exige `Then` decidibles por máquina. Sirve para el
-  contrato estructural del pipeline: los cuatro archivos obligatorios,
-  `Transcription_raw.txt` intacto, `assets/` sólo si hay figuras, esquema del
-  YAML, `notes.tex` compila. **No** puede evaluar *"el resumen es fiel"*.
+  contrato estructural del pipeline: los cinco archivos versionados
+  obligatorios, `assets/` sólo si hay figuras, esquema del YAML, `notes.tex`
+  compila, y —desde ADR-0005— que el `sha256` del `manifest.json` corresponda
+  a la fuente. **No** puede evaluar *"el resumen es fiel"*.
 - **Evals** es la disciplina de evaluar salidas de modelos. Vocabulario para
   buscar: *rubric-based evaluation*, *LLM-as-a-judge*,
   *inter-annotator agreement*.
