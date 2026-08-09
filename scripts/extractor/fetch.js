@@ -268,8 +268,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         curso, n: c.n, urlClase: c.url, titulo: c.titulo,
       });
       const archivos = { ...r.archivos };
-      // metadata.yaml no se pisa NUNCA sin --force: es trabajo humano.
-      if (!conMetadata || (existsSync(join(dir, 'metadata.yaml')) && !forzar)) {
+      // metadata.yaml no se pisa NUNCA, ni con --force. Sólo se crea si falta.
+      // Es trabajo humano (topics, review) y contiene trazabilidad que el
+      // extractor no puede reconstruir: llm.model dice qué modelo generó el
+      // resumen. `--force` significa "volvé a bajar la transcripción", no
+      // "borrá lo que escribí".
+      if (!conMetadata || existsSync(join(dir, 'metadata.yaml'))) {
         delete archivos['metadata.yaml'];
       }
 

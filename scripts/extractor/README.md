@@ -60,7 +60,11 @@ Sobre `metadata.yaml`: rellena lo que se puede derivar mecánicamente
 último cue, `stats.transcript_words`) y deja vacío lo que exige leer la
 clase (`topics`, `prerequisites`, `next_topics`, `equations`). **`llm.model`
 queda vacío a propósito**: es trazabilidad y todavía no corrió ningún modelo.
-Nunca pisa un `metadata.yaml` existente sin `--force`.
+
+**Nunca pisa un `metadata.yaml` existente, ni con `--force`.** Sólo lo crea si
+falta. `--force` significa "volvé a bajar la transcripción", no "borrá lo que
+escribí": ese archivo tiene trabajo humano (`topics`, `review`) y trazabilidad
+que el extractor no puede reconstruir (`llm.model`).
 
 ## `vtt.js` — parser
 
