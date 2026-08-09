@@ -44,7 +44,7 @@ Esto implica dos peticiones por clase (página de la clase para metadatos y
 entrega en el HTML servido la lista completa de clases con sus títulos.
 
 **Playwright queda como herramienta de diagnóstico, no de producción.** Se
-conserva `scripts/extractor/probe.mjs` para volver a descubrir el patrón el día que
+conserva `scripts/extractor/probe.js` para volver a descubrir el patrón el día que
 OpenFING cambie su infraestructura, o para incorporar una fuente nueva cuyo
 mecanismo de entrega se desconozca.
 
@@ -81,7 +81,7 @@ subtítulos es mucho más estable.
 - El módulo puede probarse sin red a partir de payloads guardados (ver
   ADR-0002).
 - Cuando OpenFING cambie su esquema de assets, el extractor falla de forma
-  ruidosa y hay que volver a correr `probe.mjs`. Es un costo aceptado y
+  ruidosa y hay que volver a correr `probe.js`. Es un costo aceptado y
   acotado a un módulo.
 - Los timestamps del VTT quedan disponibles como subproducto; su tratamiento se
   decide en ADR-0002.
@@ -91,7 +91,7 @@ subtítulos es mucho más estable.
 
 ## Evidencia
 
-Corrida de `probe.mjs` sobre `https://open.fing.edu.uy/courses/civ/9/`
+Corrida de `probe.js` sobre `https://open.fing.edu.uy/courses/civ/9/`
 (2026-08-02), con bloqueo de recursos `media`, `image` y `font`. El volcado
 completo del tráfico está en
 [`evidence/0001-netlog.json`](evidence/0001-netlog.json), resumido en el

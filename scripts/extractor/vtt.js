@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * vtt.mjs — parser de WebVTT para el pipeline de Fingers.
+ * vtt.js — parser de WebVTT para el pipeline de Fingers.
  *
- *   node vtt.mjs <archivo.vtt> [dir-salida]
+ *   node vtt.js <archivo.vtt> [dir-salida]
  *
  * Produce dos representaciones del mismo contenido:
  *   transcript.txt        sin marcas de tiempo  → es lo que se le manda al LLM
@@ -172,7 +172,7 @@ export function metricas(cues, warnings) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [, , entrada, salida = './out'] = process.argv;
   if (!entrada) {
-    console.error('uso: node vtt.mjs <archivo.vtt> [dir-salida]');
+    console.error('uso: node vtt.js <archivo.vtt> [dir-salida]');
     process.exit(1);
   }
 

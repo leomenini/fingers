@@ -88,7 +88,7 @@ transcripción: /media/{slug}/{slug}_{NN}_transcription.vtt
   scrubbing. **Es un WebVTT válido** — 548 cues, cero advertencias — cuyos
   cues son referencias a sprites (`civ_09_thumbnails_001.jpg#xywh=…`). Un
   parser genérico lo acepta en silencio. Distinguir por nombre **y** validar
-  el contenido: `validarTranscripcion()` en `vtt.mjs`.
+  el contenido: `validarTranscripcion()` en `vtt.js`.
 - El **índice del curso sí viene en el HTML servido**: los 42 títulos con
   número y link, sin ejecutar JS.
 
@@ -155,18 +155,22 @@ raíz — npm los necesita ahí y bajarlos exigiría workspaces, que no se
 justifica con un módulo. `tests/` en la raíz queda libre para la suite BDD
 cross-módulo (ver sección 9).
 
-- **`scripts/extractor/probe.mjs`** — descubrimiento con Playwright. Abre una
+- **`scripts/extractor/probe.js`** — descubrimiento con Playwright. Abre una
   clase, bloquea `media`/`image`/`font`, escucha todo el tráfico, guarda
   candidatos a transcripción, extrae meta tags, y escribe `manifest.json` +
   `netlog.json`. Se conserva para re-descubrir el patrón si OpenFING cambia, o
   para incorporar una fuente nueva. Requiere
   `npm i playwright && npx playwright install chromium`.
-- **`scripts/extractor/vtt.mjs`** — parser de WebVTT. Exporta funciones
+- **`scripts/extractor/vtt.js`** — parser de WebVTT. Exporta funciones
   **puras**: `parseVtt`, `validarTranscripcion`, `aTextoPlano`,
   `aTextoConTiempo`, `metricas`, `detectarSolapeTextual`, `parseTimestamp`,
   `formatTimestamp`. CLI produce `transcript.txt`, `transcript.timed.txt`,
   `transcript.stats.json`, y sale con código 2 si la entrada no es una
   transcripción. Corrido contra `civ_09`: 0 advertencias.
+- **`scripts/extractor/diff-oraculo.js`** — compara la salida del extractor
+  contra los `Transcription_raw.txt` del userscript. Baja el VTT, no lo
+  guarda (ADR-0004), y reporta cues, palabras y similitud por clase. Sale con
+  código 1 si alguna baja de 0,97. Ver sección 6.c.
 - **`scripts/extractor/README.md`** — cómo se invoca cada script y qué
   produce. (Hasta 2026-08-02 tenía por error una copia del README de
   fixtures.)
@@ -178,8 +182,50 @@ cross-módulo (ver sección 9).
 - **`docs/adr/`** — ADR-0001 (extracción), ADR-0002 (representación),
   ADR-0003 (nombres de curso/edición), ADR-0004 (retención del VTT).
 
-Ambos scripts son ESM (`.mjs`). Como el `package.json` ya declara
-`"type": "module"`, pueden renombrarse a `.js` sin tocar el código.
+Los tres scripts son ESM con extensión `.js`: el `package.json` declara
+`"type": "module"`, así que Node los trata como módulos sin necesidad de
+`.mjs`. (Fueron `.mjs` hasta el 2026-08-02.)
+
+---
+
+## 6.c El extractor está validado contra el oráculo (2026-08-02)
+
+`scripts/extractor/diff-oraculo.js` compara la salida del extractor contra
+los `Transcription_raw.txt` que produjo el userscript. Son 28 casos con
+contenido revisado a mano: el único test con oráculo real que tiene el
+proyecto.
+
+Resultado sobre las 28 clases de Física III:
+
+| Similitud | Clases |
+| --- | --- |
+| **1.000 exacto** | 21 |
+| 0,993–0,998 | 4 (2, 22, 23 y 1 más) |
+| 0,976–0,978 | 3 (**10, 14, 20**) |
+
+**El userscript no transformaba el texto.** La pregunta que abría este punto
+—qué hacía el userscript que nunca se documentó— tiene respuesta: nada al
+contenido. 21 clases reproducen palabra por palabra.
+
+Las tres diferencias reales, ninguna de las cuales exige cambiar el parser:
+
+1. **Etiqueta de locutor (clases 10, 14 y 20).** El oráculo trae
+   `Nicolás Wschebor ` al principio de casi cada cue; los VTT de hoy no traen
+   ningún tag `<v>`. La aritmética cierra exacto: en Clase14,
+   9 819 − (213 cues × 2 palabras) = 9 393, el conteo del parser.
+   `parseVtt` ya stripea tags inline, así que si volvieran estaría cubierto.
+2. **OpenFING re-segmentó varios VTT.** Clase1 (249 → 221 cues), Clase25
+   (248 → 201) y Clase26 (297 → 217) tienen **el mismo conteo de palabras**
+   con distinta cantidad de cues. Cambió dónde corta, no qué dice. Por eso el
+   diff compara bolsas de palabras y no cue a cue.
+3. **Retoques de ASR.** Clases 2, 22 y 23 difieren en decenas de palabras
+   (p. ej. `OpenFin` → `OpenFing`). La fuente se regeneró; no es un bug del
+   parser.
+
+**Consecuencia para el benchmark:** el oráculo sirve para validar el
+extractor, pero **no es estable en el tiempo** — OpenFING regenera sus
+transcripciones. Cualquier métrica que dependa de un conteo exacto de
+palabras de la fuente tiene que fecharse.
 
 ---
 
@@ -196,9 +242,10 @@ npm i -D playwright
 npx playwright install chromium
 ```
 
-- `"type": "module"` está puesto, así que `probe.mjs` y `vtt.mjs` pueden
-  renombrarse a `.js` sin tocar el código (usar `git mv`).
-- Scripts definidos: `npm run probe -- <url> <dir>` y `npm run vtt -- <archivo>`.
+- `"type": "module"` está puesto; los scripts son `.js` y Node los trata como
+  ESM sin más.
+- Scripts definidos: `npm run probe -- <url> <dir>`,
+  `npm run vtt -- <archivo>` y `npm run diff -- <curso> [clase...]`.
 - Playwright avisa `BEWARE: your OS is not officially supported` y baja el
   build de `ubuntu24.04-x64`. Es inocuo. Si falta alguna librería del sistema:
   `npx playwright install-deps` (pide sudo).
@@ -211,15 +258,14 @@ npx playwright install chromium
 
 **Inmediato**
 
-0. **Política de retención ya aplicada:** la salida de `probe.mjs` es efímera
+0. **Política de retención ya aplicada:** la salida de `probe.js` es efímera
    (`/probe-out/` y `/out/` en `.gitignore`). De ahí sólo se promueve a mano
    lo que pasa a ser evidencia de un ADR o fixture. Todo lo demás se borra:
    si el criterio es "lo guardo por las dudas", en un año hay diez netlogs y
    ninguno indexado.
-1. Correr `vtt.mjs` sobre una clase de Física III y **diffear** contra su
-   `Transcription_raw.txt`. Es un test con oráculo real y 28 casos disponibles.
-   La diferencia revela qué transformación hacía el userscript que nunca se
-   documentó.
+1. ~~Correr `vtt.js` contra los `Transcription_raw.txt` de Física III.~~
+   **HECHO (2026-08-02).** Ver sección 6.c: el extractor está validado contra
+   las 28 clases y el userscript no transformaba el texto.
 2. Completar el módulo Extractor: índice del curso → por clase, `og:video` →
    `.vtt` → parse → manifest. Idempotente y resumible (con 42 clases, algo va
    a fallar en la 27).
@@ -271,7 +317,7 @@ npx playwright install chromium
 **Más adelante**
 
 - BDD con `cucumber-js`. Los `Then` decidibles ya tienen función que los
-  responde en `vtt.mjs`. Se posterga porque su valor aparece cuando hay
+  responde en `vtt.js`. Se posterga porque su valor aparece cuando hay
   automatización que pueda romperse.
 - Instrumentación de métricas (ver sección 9).
 - OCR de apuntes manuscritos.
