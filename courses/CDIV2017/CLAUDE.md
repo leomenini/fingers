@@ -1,19 +1,26 @@
 # CLAUDE.md — Curso Cálculo 1 (OpenFING)
 
 Guía para generar las notas de cada clase a partir de su transcripción. Cada
-carpeta `Clases/ClaseN/` documenta una clase del curso y debe contener **cuatro**
-archivos:
+carpeta `Clases/ClaseN/` documenta una clase del curso.
 
 | Archivo | Origen | Descripción |
 |---------|--------|-------------|
-| `Transcription_raw.txt` | dado | Transcripción cruda exportada de OpenFING (no editar). |
+| `transcript.txt` | **no versionado** | Transcripción sin marcas de tiempo. La produce `npm run fetch`; no se edita. |
+| `transcript.timed.txt` | **no versionado** | La misma, con marcas `[m:ss]`. Para trazabilidad y revisión. |
 | `summary.md` | generado | Resumen estructurado en Markdown. |
 | `notes.tex` | generado | El mismo resumen traducido a LaTeX. |
 | `metadata.yaml` | generado | Metadatos de la clase (esquema estricto, ver abajo). |
+| `manifest.json` | extractor | Procedencia: URL, `sha256`, fecha. No editar. |
+| `transcript.stats.json` | extractor | Métricas del parseo. No editar. |
 
-> El nombre del archivo de transcripción es **`Transcription_raw.txt`**, igual
-> que en el resto del repo (ver `courses/Fisica3-2015/CLAUDE.md` y
-> `docs/log.md` §2, donde se unificó para todos los cursos).
+> **`Transcription_raw.txt` ya no existe.** Era el nombre del userscript de
+> Tampermonkey; ADR-0002 lo reemplazó por las dos representaciones de arriba y
+> ADR-0005 sacó la transcripción de Git. Si la carpeta de una clase no tiene
+> `transcript.txt`, no está perdida — se regenera:
+>
+> ```bash
+> npm run fetch -- CDIV2017 <N> --write
+> ```
 
 > **Layout**: las clases viven en `courses/CDIV2017/Clases/ClaseN/`; el
 > `assets/` global (compartido, para consistencia visual) en
@@ -33,8 +40,11 @@ archivos:
 
 ## 1. Flujo de trabajo para una clase nueva
 
-1. Leer `Clases/ClaseN/Transcription_raw.txt`. La cabecera trae `Palabras : NNNN` →
-   ese número es `stats.transcript_words`.
+1. Leer `Clases/ClaseN/transcript.txt` (si falta, `npm run fetch -- CDIV2017 N
+   --write`). **`stats.transcript_words` sale de
+   `transcript.stats.json` → `words`**, que ya viene escrito por el extractor.
+   No copiar ningún conteo de una cabecera: los números heredados del
+   userscript tienen errores de hasta +36 % (`docs/log.md` §7).
 2. Escribir `summary.md` siguiendo §2.
 3. Traducir a `notes.tex` siguiendo §3 (preámbulo **verbatim**, ver §3.1).
 4. Escribir `metadata.yaml` siguiendo §4 (esquema **exacto**).

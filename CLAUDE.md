@@ -39,9 +39,9 @@ Dos frentes abiertos, en este orden:
 
 1. **Automatizar la extracción.** Motivado por el segundo corpus: Cálculo
    Diferencial e Integral en una Variable, `civ` (Teórico 2017, Alexandre
-   Miquel), **42 clases** (5 con transcripción, resumen, notas y metadata ya
-   commiteadas en `courses/CDIV2017/`; faltan 37). Existe también `cdiv-2022`,
-   una segunda edición.
+   Miquel), **42 clases**. Desde el 2026-08-08 las 42 tienen transcripción y
+   `metadata.yaml` esqueleto (§6.d); 5 tienen además resumen y notas. Existe
+   también `cdiv-2022`, una segunda edición.
 2. **Instrumentar métricas**, como paso previo a un benchmark.
 
 La revisión humana de Física III (28 clases en `draft`) sigue pendiente y es el
@@ -161,10 +161,23 @@ cross-módulo (ver sección 9).
   `netlog.json`. Se conserva para re-descubrir el patrón si OpenFING cambia, o
   para incorporar una fuente nueva. Requiere
   `npm i playwright && npx playwright install chromium`.
+- **`scripts/extractor/fetch.js`** — el extractor de punta a punta, y el
+  comando que se usa en producción. Índice del curso → por clase, `og:video`
+  → `.vtt` → parse → transcripción, métricas y manifiesto. Selección por
+  número, rango o lista (`9,14,20-23`). Dry-run por defecto: sin `--write` no
+  toca el disco. Idempotente y resumible. No calcula métricas propias: se las
+  pide a `vtt.js`.
+- **`scripts/extractor/openfing.js`** — la capa de red, y lo único que toca
+  HTTP: `indiceDelCurso`, `metaDeClase`, `urlDelVtt`, `bajarTexto` (con
+  reintento y `sha256`). El HTML del índice viene **minificado y con
+  atributos sin comillas**, así que los regex las tratan como opcionales.
+- **`scripts/extractor/cursos.js`** — registro de cursos: slug de OpenFING
+  (que el nombre del directorio no dice, ADR-0003) y los datos fijos que
+  `metadata.yaml` necesita y la transcripción no contiene.
 - **`scripts/extractor/vtt.js`** — parser de WebVTT. Exporta funciones
   **puras**: `parseVtt`, `validarTranscripcion`, `aTextoPlano`,
   `aTextoConTiempo`, `metricas`, `detectarSolapeTextual`, `parseTimestamp`,
-  `formatTimestamp`. CLI produce `transcript.txt`, `transcript.timed.txt`,
+  `formatTimestamp`, `formatHHMMSS`. CLI produce `transcript.txt`, `transcript.timed.txt`,
   `transcript.stats.json`, y sale con código 2 si la entrada no es una
   transcripción. Corrido contra `civ_09`: 0 advertencias.
 - **`scripts/extractor/diff-oraculo.js`** — compara la salida del extractor
@@ -180,9 +193,10 @@ cross-módulo (ver sección 9).
   que resume cada uno. Hoy: `0001-netlog.json` (tráfico observado en el
   descubrimiento, parámetros de Matomo removidos).
 - **`docs/adr/`** — ADR-0001 (extracción), ADR-0002 (representación),
-  ADR-0003 (nombres de curso/edición), ADR-0004 (retención del VTT).
+  ADR-0003 (nombres de curso/edición), ADR-0004 (retención del VTT),
+  ADR-0005 (retención de la transcripción derivada).
 
-Los tres scripts son ESM con extensión `.js`: el `package.json` declara
+Los seis scripts son ESM con extensión `.js`: el `package.json` declara
 `"type": "module"`, así que Node los trata como módulos sin necesidad de
 `.mjs`. (Fueron `.mjs` hasta el 2026-08-02.)
 
@@ -229,6 +243,41 @@ palabras de la fuente tiene que fecharse.
 
 ---
 
+## 6.d El extractor corre de punta a punta (2026-08-08)
+
+`npm run fetch -- CDIV2017 --write` bajó **las 42 clases sin un solo error**.
+36 escritas en esa corrida (5 ya estaban del corpus viejo, 1 de la prueba
+previa). 307 280 palabras nuevas de transcripción.
+
+Lo que la corrida confirmó:
+
+- **`civ_09` reproduce exactamente los números de §4** — 279 cues, 9 301
+  palabras, 50 990 chars, 4,7 % de overhead, 0 advertencias. La medición de
+  aquel día era correcta y el pipeline la reproduce.
+- **El `_thumbnails.vtt` sigue siendo la trampa que era.** 548 cues, 0
+  advertencias, WebVTT impecable. Sólo lo agarra `validarTranscripcion`
+  mirando el contenido.
+- **Coste real:** 2 peticiones por clase, concurrencia 2. Sin Playwright.
+
+Dos cosas que se descubrieron escribiendo el `fetch`:
+
+1. **El HTML del índice está minificado y sin comillas en los atributos**
+   (`href=/courses/civ/1/`, `class=clase-numero`). Los `<meta>` sí vienen
+   entrecomillados — por eso el `urlDelVtt` viejo funcionaba — pero no hay
+   garantía de que sigan así. Los regex de `openfing.js` tratan las comillas
+   como opcionales.
+2. **Hay que anclar en `<a class=clase-enlace>`, no en un `href` suelto.** El
+   índice trae antes un nav con los otros cursos, y un regex que arranque por
+   `href` se come ese enlace y se lo asigna a la clase 1. Pasó, y el síntoma
+   era silencioso: la clase 1 apuntaba a `/courses/civ/`.
+
+**El oráculo sigue verde después del refactor**: `npm run diff -- Fisica3-2015`
+da ninguna clase bajo 0,97 y las mismas tres en 0,976–0,978 (10, 14, 20). Sí
+se movió el reparto de la banda alta: hoy son **22 clases en 1.000 exacto y 3
+en 0,99x**, donde §6.c registraba 21 y 4. Es exactamente la inestabilidad que
+§6.c predijo —OpenFING regenera transcripciones—, no una regresión. Confirma
+que cualquier medición sobre la fuente hay que fecharla.
+
 ## 6.b Entorno local
 
 Node v20.20.2. El repo vive en `~/Desktop/Files/Transcripciones` (el directorio
@@ -251,32 +300,94 @@ npx playwright install chromium
   `npx playwright install-deps` (pide sudo).
 - El Chromium no vive en `node_modules` sino en `~/.cache/ms-playwright`
   (~150 MB), y se comparte entre proyectos.
-- El repo **no tenía `.gitignore`** hasta 2026-08-02. Debe contener
-  `node_modules/`, `/probe-out/` y `/out/`.
+- El repo **no tenía `.gitignore`** hasta 2026-08-02. Contiene
+  `node_modules/`, `out/`, `probe-out/`, `notes.pdf` y `PDFiter1/`. Los dos
+  últimos son artefactos de compilación: están en disco pero fuera de Git.
 
 ## 7. Qué sigue
 
-**Inmediato**
+**Lo próximo, en orden**
 
-0. **Política de retención ya aplicada:** la salida de `probe.js` es efímera
-   (`/probe-out/` y `/out/` en `.gitignore`). De ahí sólo se promueve a mano
-   lo que pasa a ser evidencia de un ADR o fixture. Todo lo demás se borra:
-   si el criterio es "lo guardo por las dudas", en un año hay diez netlogs y
-   ninguno indexado.
-1. ~~Correr `vtt.js` contra los `Transcription_raw.txt` de Física III.~~
-   **HECHO (2026-08-02).** Ver sección 6.c: el extractor está validado contra
-   las 28 clases y el userscript no transformaba el texto.
-2. Completar el módulo Extractor: índice del curso → por clase, `og:video` →
-   `.vtt` → parse → manifest. Idempotente y resumible (con 42 clases, algo va
-   a fallar en la 27).
-3. Actualizar `docs/SPECS.md`: `Transcription_raw.txt` deja de ser el artefacto
-   crudo de la clase y pasa a ser una salida del parser.
-4. Actualizar el README: eliminar Fase 1 del Roadmap, generalizar el paso 1 del
-   pipeline, y `scripts/` deja de ser "userscript".
-5. `scripts/tampermonkeyV0.1.js` está borrado en el working tree pero sin
-   commitear. Al commitear, que el mensaje diga que se elimina **por ADR-0001**,
-   así el `git log` y los ADR cuentan la misma historia. Git conserva el
-   historial; el ADR lo menciona como pieza histórica, no como archivo vivo.
+1. ~~**Completar el módulo Extractor de punta a punta.**~~ **Hecho el
+   2026-08-08.** `fetch.js` hace índice → `og:video` → `.vtt` → parse →
+   manifiesto, es idempotente y resumible, y se corrió sobre CDIV2017: las
+   42 clases bajaron sin un solo error. Ver §6.d.
+2. ~~**Actualizar `docs/SPECS.md`.**~~ **Hecho el 2026-08-08.** Se corrigieron
+   los dos desalineos: `Transcription_raw.txt` como "dado" (ADR-0002) y la
+   clase como autocontenida con cuatro archivos obligatorios (ADR-0005). Hoy
+   son **cinco versionados** —`summary.md`, `notes.tex`, `metadata.yaml`,
+   `manifest.json`, `transcript.stats.json`— con la transcripción como insumo
+   local. Se propagó a `README.md`, `docs/ARCHITECTURE.md`,
+   `docs/FUNDATIONS.md` y los `CLAUDE.md` de los dos cursos.
+3. **Instrumentar métricas** (ver sección 9). El paso previo al benchmark.
+4. ~~**Pasada de `git filter-repo`.**~~ **Hecha el 2026-08-08.** Ver §7.b.
+
+## 7.b El historial se reescribió (2026-08-08)
+
+`git filter-repo` ejecutó ADR-0005 —ignorar no destrackea— y de paso limpió el
+peso muerto. Un solo pase conceptual, cuatro objetivos:
+
+| Salió del historial | Motivo |
+| --- | --- |
+| 33 `Transcription_raw.txt` (+ 4 variantes, ver abajo) | ADR-0005 |
+| `Resnick.pdf` (67 MB) | peso muerto |
+| 28 `notes.pdf` · `PDFiter1/` (56 PDF) | peso muerto |
+| `NotasCA.pdf` | peso muerto |
+
+**`.git`: 82 MB → 1,7 MB. Commits: 35 → 33** (dos quedaron vacíos al filtrar:
+sólo agregaban PDF). Hoy no queda en el historial ni un `.txt` ni un `.pdf`;
+los únicos binarios son los 12 fixtures `.vtt` de `tests/`, que ADR-0004
+contempla explícitamente.
+
+**La lección, y el motivo de que hiciera falta una segunda pasada:** filtrar
+por el nombre exacto del archivo **no alcanza**. La primera pasada dejó
+adentro cuatro transcripciones de la época temprana del repo con el nombre mal
+escrito —`Transciption_raw.txt`, `transcript_raw.txt` (×2),
+`transcrip_raw.txt`—, unas 40 000 palabras que una verificación por nombre
+canónico nunca habría encontrado. **Verificar por extensión, no por nombre**:
+la pregunta correcta no es *"¿queda algún `Transcription_raw.txt`?"* sino
+*"¿queda algún `.txt` en el historial?"*.
+
+Dos cosas más que hay que saber:
+
+- **Las rutas cambian con el tiempo.** Los filtros tuvieron que cubrir
+  `courses/Fisica3/` **y** `courses/Fisica3-2015/` (ADR-0003 renombró el
+  directorio a mitad de camino), y `PDFiter1/` lleva un espacio inicial en el
+  nombre, que git entrecomilla y un archivo de rutas se come en silencio.
+- **El force-push no borra los objetos del lado de GitHub.** Siguen
+  alcanzables por SHA hasta que GitHub corra su recolección. Cerrar el riesgo
+  del todo exige pedírselo a Support o recrear el repo.
+
+Todo lo borrado está en `~/Desktop/Files/respaldo-fingers-borrados/`, con un
+README que dice qué es cada cosa. El oráculo de §6.c vive ahí: para volver a
+correr `diff-oraculo.js` hay que copiar esos 28 archivos al working tree.
+
+**Política de retención (vigente, ya aplicada)**
+
+La salida de `probe.js` y `vtt.js` es efímera (`out/`, `probe-out/` en
+`.gitignore`). De ahí se promueve **a mano** sólo lo que pasa a ser evidencia
+de un ADR o fixture; todo lo demás se borra. Si el criterio es "lo guardo por
+las dudas", en un año hay diez netlogs y ninguno indexado. Aplicada el
+2026-08-02: se borró `scripts/out/` una vez promovido su netlog a
+`docs/adr/evidence/`.
+
+**Hecho el 2026-08-02** (ver `SESIONES.md` para el detalle)
+
+- ~~Correr `vtt.js` contra los `Transcription_raw.txt` de Física III.~~
+  Sección 6.c: el extractor está validado contra las 28 clases y **el
+  userscript no transformaba el texto**.
+- ~~Actualizar el README~~ (Fase 1 del Roadmap eliminada, `scripts/` ya no es
+  "userscript"), ~~eliminar `scripts/tampermonkeyV0.1.js`~~ (commit `dbef60c`,
+  por ADR-0001).
+- ~~Convención de nombres curso/edición~~ → **ADR-0003**. `courses/Fisica3/`
+  pasó a `courses/Fisica3-2015/`. Regla: sufijo `-<año>` cuando hace falta
+  desambiguar ediciones o el slug ya termina en dígito (evita `Fisica32015`).
+- ~~Retención del payload VTT~~ → **ADR-0004**. El `.vtt` crudo no se
+  commitea; sólo el manifiesto (URL, `sha256`, fecha, versión del extractor).
+  Resuelve el `Pendiente` de ADR-0002.
+- ~~Los PDF salen de Git.~~ Los 28 `notes.pdf` estaban trackeados *y* en
+  `.gitignore` a la vez; `PDFiter1/` cargaba 6,5 MB de PDF superados y tenía
+  un espacio inicial en el nombre. Ambos fuera de Git, ambos en disco.
 
 **Resueltas (2026-08-02)**
 
@@ -290,28 +401,21 @@ npx playwright install chromium
 
 **Decisiones abiertas**
 
-- **¿La transcripción derivada (`Transcription_raw.txt`) debe salir de Git
-  también?** ADR-0004 resolvió el `.vtt` crudo, pero **no** esto: el repo hoy
-  commitea 271 057 palabras de transcripción literal de OpenFING (CC
-  BY-NC-ND) en las 28 clases de Física III, y ADR-0004 no lo toca. El riesgo
-  real no es una demanda sino un takedown en GitHub, y es un agujero de
-  procedencia en un proyecto cuyo producto es la trazabilidad. Requiere ADR
-  propio — es una decisión sobre el modelo de datos de **todas** las clases,
-  no sólo del extractor.
-- **Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
-  en el corpus real.** ADR-0002 ya decidió el esquema de dos
-  representaciones, pero el corpus (Física III y las 5 clases de CDIV2017)
-  todavía usa el nombre y formato viejos — el extractor nuevo existe pero
-  todavía no produjo ninguna clase real del corpus. Pendiente de decidir si
-  se migra retroactivamente o sólo aplica de acá en adelante.
-- **`Resnick.pdf` (69 MB) sigue pesando en el historial de Git** aunque el
-  archivo esté borrado del working tree — borrarlo requiere `git filter-repo`
-  (reescribe historia, la rama ya está pusheada). No es urgente; el
-  disparador es antes de que el clon se ponga lento o se sume gente nueva al
-  repo. Limpieza de repo, no ADR — agendada como próximo paso concreto
-  después de esta sesión de documentación.
-- **Granularidad del comando**: ¿`extract` toma una clase o un curso? Con el
-  enfoque HTTP el costo de arranque desapareció, así que pesa menos que antes.
+- ~~**¿La transcripción derivada debe salir de Git?**~~ → **ADR-0005,
+  `Aceptado`** (2026-08-08). **No se versiona.** `transcript.txt` y
+  `transcript.timed.txt` al `.gitignore`; se versionan `manifest.json`,
+  `transcript.stats.json` y `metadata.yaml`. El argumento que cerró la
+  discusión es de alcance, no legal: el producto de este módulo es la
+  herramienta que reproduce la transcripción, no la transcripción. Que además
+  cierre el problema CC BY-NC-ND es consecuencia, no premisa.
+- ~~**Rename `Transcription_raw.txt` → `transcript.txt`.**~~ Resuelto
+  *forward-only* y, el mismo día, resuelto del todo por eliminación: el
+  `filter-repo` borró los 33 archivos viejos, así que **las 70 clases usan la
+  convención nueva** y no quedó nada que migrar (`docs/log.md`).
+- ~~**Granularidad del comando**: ¿una clase o un curso?~~ Resuelto por
+  implementación: `fetch` toma un curso y acepta selección por número, rango o
+  lista (`9,14,20-23`), así que las dos granularidades salen del mismo
+  comando.
 - **Representación canónica del contenido.** Ver sección 8.
 
 **Más adelante**
@@ -393,9 +497,10 @@ obliga a llamar la API desde código. Ya está decidido ir por API.
 Son cosas distintas y se parecen sólo de lejos.
 
 - **BDD** (`cucumber-js`) exige `Then` decidibles por máquina. Sirve para el
-  contrato estructural del pipeline: los cuatro archivos obligatorios,
-  `Transcription_raw.txt` intacto, `assets/` sólo si hay figuras, esquema del
-  YAML, `notes.tex` compila. **No** puede evaluar *"el resumen es fiel"*.
+  contrato estructural del pipeline: los cinco archivos versionados
+  obligatorios, `assets/` sólo si hay figuras, esquema del YAML, `notes.tex`
+  compila, y —desde ADR-0005— que el `sha256` del `manifest.json` corresponda
+  a la fuente. **No** puede evaluar *"el resumen es fiel"*.
 - **Evals** es la disciplina de evaluar salidas de modelos. Vocabulario para
   buscar: *rubric-based evaluation*, *LLM-as-a-judge*,
   *inter-annotator agreement*.

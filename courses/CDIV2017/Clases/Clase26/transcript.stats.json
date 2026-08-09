@@ -1,0 +1,16 @@
+{
+  "source": "https://open.fing.edu.uy/media/civ/civ_26_transcription.vtt",
+  "cues": 185,
+  "words": 8803,
+  "charsPlain": 48217,
+  "charsTimed": 49776,
+  "timestampOverheadPct": 3.2,
+  "estTokensPlain": 12054,
+  "estTokensTimed": 12444,
+  "speechSeconds": 4299.5,
+  "spanSeconds": 4778.6,
+  "speechRatio": 0.9,
+  "avgCueSeconds": 23.2,
+  "rollingOverlapCues": 0,
+  "warnings": []
+}

@@ -7,9 +7,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "probe": "node scripts/extractor/probe.js",
+    "fetch": "node scripts/extractor/fetch.js",
     "vtt": "node scripts/extractor/vtt.js",
-    "diff": "node scripts/extractor/diff-oraculo.js"
+    "diff": "node scripts/extractor/diff-oraculo.js",
+    "probe": "node scripts/extractor/probe.js"
   },
   "keywords": [],
   "author": "",

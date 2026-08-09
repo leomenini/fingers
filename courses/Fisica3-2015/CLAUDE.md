@@ -2,32 +2,46 @@
 
 
 Guía para generar las notas de cada clase a partir de su transcripción. Cada
-carpeta `Clases/ClaseN/` documenta una clase del curso y debe contener **cuatro**
-archivos:
+carpeta `Clases/ClaseN/` documenta una clase del curso.
 
 | Archivo | Origen | Descripción |
 |---------|--------|-------------|
-| `Transcription_raw.txt` | dado | Transcripción cruda exportada de OpenFING (no editar). |
+| `transcript.txt` | **no versionado** | Transcripción sin marcas de tiempo. La produce `npm run fetch`; no se edita. |
+| `transcript.timed.txt` | **no versionado** | La misma, con marcas `[m:ss]`. Para trazabilidad y revisión. |
 | `summary.md` | generado | Resumen estructurado en Markdown. |
 | `notes.tex` | generado | El mismo resumen traducido a LaTeX. |
 | `metadata.yaml` | generado | Metadatos de la clase (esquema estricto, ver abajo). |
+| `manifest.json` | extractor | Procedencia: URL, `sha256`, fecha. No editar. |
+| `transcript.stats.json` | extractor | Métricas del parseo. No editar. |
 
-> El nombre del archivo de transcripción es **`Transcription_raw.txt`** en las
-> 28 clases (unificado el 2026-07-25; antes había cuatro variantes históricas,
-> ver `docs/log.md` §2).
+> **`Transcription_raw.txt` ya no existe.** Era el nombre del userscript de
+> Tampermonkey; ADR-0002 lo reemplazó por las dos representaciones de arriba y
+> ADR-0005 sacó la transcripción de Git. Se regenera:
+>
+> ```bash
+> npm run fetch -- Fisica3-2015 <N> --write
+> ```
+>
+> Ojo con una diferencia real: los VTT de hoy **no traen la etiqueta de
+> locutor** (`Nicolás Wschebor`) que sí traía el userscript en las clases 10,
+> 14 y 20. El texto del docente es el mismo; cambia sólo esa etiqueta
+> (`CLAUDE.md` raíz §6.c).
 
 > **Layout del repo (reorg 2026-07-25; renombrado a `Fisica3-2015` por
 > ADR-0003 el 2026-08-02):** las 28 clases viven en
 > `courses/Fisica3-2015/Clases/ClaseN/`; el `assets/` global en
-> `courses/Fisica3-2015/Clases/assets/`. `build.sh`, `CLAUDE.md` y ` PDFiter1/`
+> `courses/Fisica3-2015/Clases/assets/`. `build.sh`, `CLAUDE.md` y `PDFiter1/`
 > (snapshot iter1, no tocar) quedan a nivel `courses/Fisica3-2015/`.
 
 ---
 
 ## 1. Flujo de trabajo para una clase nueva
 
-1. Leer `Clases/ClaseN/Transcription_raw.txt`. La cabecera trae `Palabras : NNNN` →
-   ese número es `stats.transcript_words`.
+1. Leer `Clases/ClaseN/transcript.txt` (si falta, `npm run fetch --
+   Fisica3-2015 N --write`). **`stats.transcript_words` sale de
+   `transcript.stats.json` → `words`**, que ya viene escrito por el extractor.
+   No copiar ningún conteo de una cabecera: los números heredados del
+   userscript tienen errores de hasta +36 % (`docs/log.md` §7).
 2. Escribir `summary.md` siguiendo §2.
 3. Traducir a `notes.tex` siguiendo §3 (preámbulo **verbatim**).
 4. Escribir `metadata.yaml` siguiendo §4 (esquema **exacto**).
@@ -513,9 +527,15 @@ asistente genera los PDF end-to-end; el usuario revisa.
   sólo esas. Deja el PDF **in situ** en `Clases/ClaseN/notes.pdf` (tectonic no deja
   `.aux/.log`). Compila desde cada `Clases/ClaseN/` para que `\input{../assets/…}`
   resuelva. Salida ~40–85 KB por clase; el curso entero < 2 MB.
-- La carpeta ` PDFiter1/` (con espacio) es el **snapshot de iteración 1 del
-  usuario** — **no tocar**. Los recompilados viven por clase, no en un `pdf/`
-  central.
+- La carpeta `PDFiter1/` es el **snapshot de iteración 1 del usuario** —
+  **no tocar**. Desde el 2026-08-02 vive **fuera de Git** (`.gitignore`): son
+  28 PDF superados, 6,5 MB, y su único valor es comparar en local contra la
+  iteración actual. Tenía un espacio al principio del nombre, que se quitó en
+  la misma fecha. Los recompilados viven por clase, no en un `pdf/` central.
+- **`notes.pdf` tampoco se versiona** desde esa fecha: es artefacto de
+  `build.sh`, se regenera con tectonic. Antes estaba trackeado *y* listado en
+  `.gitignore` a la vez, así que cada recompilación ensuciaba el diff con 28
+  binarios.
 
 ### 7.2 Loop de edición dirigida por PDF
 

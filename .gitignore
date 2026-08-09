@@ -4,5 +4,20 @@ node_modules/
 out/
 probe-out/
 
-# generado por build.sh
+# artefactos de build.sh: se regeneran con tectonic, no se versionan
 notes.pdf
+
+# La transcripción no se versiona: es contenido de OpenFING (CC BY-NC-ND) y
+# lo reproduce `npm run fetch` a partir del manifiesto. Ver ADR-0005.
+transcript.txt
+transcript.timed.txt
+
+# Nombre viejo del userscript. Ya salió del historial con git filter-repo,
+# pero el oráculo de CLAUDE.md §6.c se restaura a mano desde el respaldo para
+# correr `npm run diff`. Ignorarlo evita que vuelva a entrar por accidente.
+Transcription_raw.txt
+
+# snapshot histórico de la iteración 1 de Física III (28 PDF, 6,5 MB).
+# Se conserva en disco, fuera de Git: son PDF superados y su único valor es
+# poder comparar contra la iteración actual en local.
+PDFiter1/

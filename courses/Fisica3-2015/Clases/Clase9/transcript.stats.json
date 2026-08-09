@@ -1,0 +1,16 @@
+{
+  "source": "https://open.fing.edu.uy/media/f3/f3_09_transcription.vtt",
+  "cues": 214,
+  "words": 8137,
+  "charsPlain": 46649,
+  "charsTimed": 48436,
+  "timestampOverheadPct": 3.8,
+  "estTokensPlain": 11662,
+  "estTokensTimed": 12109,
+  "speechSeconds": 4009.7,
+  "spanSeconds": 4843.8,
+  "speechRatio": 0.828,
+  "avgCueSeconds": 18.7,
+  "rollingOverlapCues": 0,
+  "warnings": []
+}

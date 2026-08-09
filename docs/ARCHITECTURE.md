@@ -166,15 +166,21 @@ courses/<Curso>/
 
     ClaseXX/
 
-      Transcription_raw.txt
       summary.md
       notes.tex
       metadata.yaml
+      manifest.json          # procedencia de la fuente
+      transcript.stats.json  # métricas del parseo
+
+      transcript.txt         # NO versionado, lo produce `npm run fetch`
+      transcript.timed.txt   # NO versionado
+
       assets/          # opcional, ver abajo
 ```
 
-Cada carpeta de clase debe ser autocontenida: los cuatro archivos son
-obligatorios.
+Los cinco archivos versionados son obligatorios. La clase **no** es
+autocontenida: la transcripción es un insumo local que se regenera con
+`npm run fetch` (ADR-0005). Ver `docs/SPECS.md`.
 
 La carpeta `assets/` de una clase **se crea on demand**, al producir su primera
 figura. No se crean carpetas vacías ni subcarpetas por tipo de recurso: los

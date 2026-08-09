@@ -1,0 +1,19 @@
+{
+  "source": "https://open.fing.edu.uy/media/civ/civ_17_transcription.vtt",
+  "cues": 185,
+  "words": 8370,
+  "charsPlain": 44805,
+  "charsTimed": 46346,
+  "timestampOverheadPct": 3.4,
+  "estTokensPlain": 11201,
+  "estTokensTimed": 11587,
+  "speechSeconds": 4125.5,
+  "spanSeconds": 4557.5,
+  "speechRatio": 0.905,
+  "avgCueSeconds": 22.3,
+  "rollingOverlapCues": 0,
+  "warnings": [
+    "solapamiento temporal en 38:19",
+    "solapamiento temporal en 49:34"
+  ]
+}

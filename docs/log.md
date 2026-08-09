@@ -156,37 +156,52 @@ Registrado el mismo día que se resolvió el punto 6, durante la sesión de
 sincronización de documentación posterior al rediseño del proyecto (ver
 `CLAUDE.md` §7 y §10).
 
-### Rename `Transcription_raw.txt` → `transcript.txt`/`transcript.timed.txt`
+### Rename `Transcription_raw.txt` → `transcript.txt` — RESUELTA (2026-08-08)
 
-ADR-0002 (2026-08-02) ya decidió el esquema de dos representaciones
-derivadas del VTT, con esos nombres. El corpus real (28 clases de Física III
-+ 5 de CDIV2017) todavía usa el nombre y formato viejos: el extractor nuevo
-existe (`scripts/extractor/vtt.js`) pero todavía no produjo ninguna clase real del
-corpus. Falta decidir si la migración es retroactiva sobre las 33 clases
-existentes o sólo aplica de acá en adelante, dejando convivir dos
-convenciones. Diferido, no resuelto en esta sesión.
+**Forward-only.** Toda clase que produzca el extractor usa los nombres de
+ADR-0002 (`transcript.txt`, `transcript.timed.txt`, `transcript.stats.json`,
+`manifest.json`).
 
-### Riesgo CC BY-NC-ND de la transcripción derivada ya commiteada
+> **La convivencia de dos convenciones duró horas.** El mismo día, la pasada
+> de `git filter-repo` de ADR-0005 borró los 33 `Transcription_raw.txt` del
+> disco y del historial, así que hoy **las 70 clases usan la convención
+> nueva** y no queda nada que migrar retroactivamente. La migración
+> retroactiva que este punto dejaba pendiente se resolvió por eliminación.
 
-[ADR-0004](adr/0004-retencion-payload-vtt.md) resolvió que el `.vtt` crudo no
-se commitea, pero **no** resolvió esto: el repo ya commitea 271 057 palabras
-de transcripción literal de OpenFING (`Transcription_raw.txt` de las 28
-clases de Física III), bajo una licencia CC BY-NC-ND que no cubre
-redistribución. El riesgo concreto no es una demanda sino un takedown de
-GitHub. Es una decisión sobre el modelo de datos de todas las clases del
-repo, no sólo del extractor — queda para un ADR propio.
+Razón: migrar retroactivamente es un trabajo aparte —toca 33 clases,
+`docs/SPECS.md` y los `CLAUDE.md` de los dos cursos— y no bloquea la
+recolección, que era lo urgente. Se pagó el precio de tener dos convenciones
+conviviendo un tiempo, a cambio de que el extractor naciera alineado con el
+ADR en vez de heredar el nombre viejo.
 
-### `Resnick.pdf` (69 MB) en el historial de git
+Consecuencia operativa ya implementada: `fetch.js` considera "ya extraída" a
+una clase que tenga **cualquiera** de los dos nombres. Sin eso le dejaría al
+lado una segunda copia del mismo texto a las 33 clases viejas.
 
-No es un problema de documentación ni de modelo de datos, es limpieza de
-repositorio: el archivo está borrado del working tree pero sus objetos siguen
-en `.git`, y sacarlos requiere `git filter-repo` (reescribe todo el
-historial; la rama ya está pusheada a `origin`). Detectado y anotado en
-`/home/leo/devTools/Transcripciones/ROADMAP/DetallesRepo2-08-2026.md`. No es
-urgente hoy; el disparador ya está escrito ahí: antes de que clonar el repo
-se ponga notablemente lento, o antes de sumar colaboradores nuevos que lo
-clonen. Se agenda como el próximo paso concreto después de esta sesión de
-documentación (no un ADR).
+La migración retroactiva queda como pendiente separado, y conviene resolverla
+junto con [ADR-0005](adr/0005-retencion-transcripcion-derivada.md): si la
+transcripción sale de Git, renombrar archivos que van a dejar de versionarse
+es trabajo perdido.
+
+### Riesgo CC BY-NC-ND de la transcripción derivada — RESUELTA (2026-08-08)
+
+**[ADR-0005](adr/0005-retencion-transcripcion-derivada.md)**, `Aceptado`: la
+transcripción **no se versiona**. `transcript.txt` y `transcript.timed.txt`
+van al `.gitignore`; se versionan `manifest.json`, `transcript.stats.json` y
+`metadata.yaml`, que no reproducen la obra. El contexto, las alternativas y la
+evidencia están en el ADR y no se repiten acá.
+
+**Ejecutada el mismo día.** Ignorar no destrackea, así que las 308 452
+palabras salieron del historial con `git filter-repo` (`CLAUDE.md` §7.b). Los
+dos prerrequisitos se cumplieron antes: se corrió el `fetch` sobre Física III
+—sus 28 clases ya tienen `manifest.json`— y el oráculo se copió a
+`~/Desktop/Files/respaldo-fingers-borrados/`.
+
+### `Resnick.pdf` (69 MB) en el historial de git — RESUELTA (2026-08-08)
+
+Salió con la misma pasada de `git filter-repo`, junto al resto del peso
+muerto (`notes.pdf`, `PDFiter1/`, `NotasCA.pdf`). `.git` pasó de 82 MB a
+1,7 MB. Detalle y lecciones en `CLAUDE.md` §7.b.
 
 ## Pendientes
 
