@@ -15,6 +15,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join, basename } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 /** "00:01:17.268" | "01:17.268" → segundos */
 export function parseTimestamp(s) {
@@ -178,7 +179,7 @@ export function metricas(cues, warnings) {
 }
 
 // --- CLI ---
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [, , entrada, salida = './out'] = process.argv;
   if (!entrada) {
     console.error('uso: node vtt.js <archivo.vtt> [dir-salida]');

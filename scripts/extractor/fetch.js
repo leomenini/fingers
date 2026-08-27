@@ -19,10 +19,10 @@
  * (salvo --force) y un fallo en la clase 27 no tira las 15 que faltan.
  */
 
-import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile, rename } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { resolverCurso } from './cursos.js';
 import { indiceDelCurso, metaDeClase, urlDelVtt, bajarTexto } from './openfing.js';
@@ -186,7 +186,7 @@ async function enParalelo(items, limite, fn) {
 }
 
 // --- CLI ---
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const argv = process.argv.slice(2);
 
   // Las opciones con valor se sacan primero, o su valor se cuela como número
@@ -296,7 +296,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       if (escribir) {
         await mkdir(dir, { recursive: true });
         for (const [nombre, contenido] of Object.entries(archivos)) {
-          await writeFile(join(dir, nombre), contenido, 'utf8');
+          const rutaFinal = join(dir, nombre);
+          const rutaTmp = join(dir, `.${nombre}.tmp.${Date.now()}`);
+          await writeFile(rutaTmp, contenido, 'utf8');
+          await rename(rutaTmp, rutaFinal);
         }
       }
       hechas++;
