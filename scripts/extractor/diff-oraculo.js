@@ -21,7 +21,7 @@
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parseVtt, formatTimestamp } from './vtt.js';
 import { resolverCurso, CURSOS } from './cursos.js';
 import { urlDelVttDeClase, bajarTexto } from './openfing.js';
@@ -120,7 +120,7 @@ async function clasesDe(dirCurso) {
     .sort((a, b) => a - b);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [, , curso, ...args] = process.argv;
   if (!curso) {
     console.error('uso: diff-oraculo.js <curso> [clase...]');

@@ -137,7 +137,7 @@ resultado contra ese archivo.
 > 2026-08-08. Antes de correr `diff` hay que restaurarlo al working tree:
 >
 > ```bash
-> cp -r ~/Desktop/Files/respaldo-fingers-borrados/courses/. courses/
+> cp -r ../respaldo-fingers-borrados/courses/. courses/
 > ```
 >
 > Los archivos están en el `.gitignore`, así que no se re-commitean solos.

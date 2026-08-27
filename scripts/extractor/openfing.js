@@ -25,14 +25,17 @@ export const sha256 = (buf) => createHash('sha256').update(buf).digest('hex');
 const attr = (nombre) => `${nombre}=(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`;
 const valor = (m) => m?.[1] ?? m?.[2] ?? m?.[3] ?? null;
 
-const UA = 'fingers-extractor/1.0 (+https://github.com/leomenini; contacto vía repo)';
+export let USER_AGENT = 'fingers-extractor/1.0 (+https://github.com/leomenini; contacto vía repo)';
 
 /** GET con reintento y backoff. Devuelve { texto, bytes, sha256, url }. */
-export async function bajarTexto(url, { intentos = 3, esperaMs = 1000 } = {}) {
+export async function bajarTexto(url, { intentos = 3, esperaMs = 1000, timeoutMs = 15000 } = {}) {
   let ultimo;
   for (let i = 0; i < intentos; i++) {
     try {
-      const res = await fetch(url, { headers: { 'user-agent': UA } });
+      const res = await fetch(url, {
+        headers: { 'user-agent': USER_AGENT },
+        signal: AbortSignal.timeout(timeoutMs)
+      });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const buf = Buffer.from(await res.arrayBuffer());
       return {

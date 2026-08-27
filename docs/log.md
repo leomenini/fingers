@@ -195,7 +195,7 @@ evidencia están en el ADR y no se repiten acá.
 palabras salieron del historial con `git filter-repo` (`CLAUDE.md` §7.b). Los
 dos prerrequisitos se cumplieron antes: se corrió el `fetch` sobre Física III
 —sus 28 clases ya tienen `manifest.json`— y el oráculo se copió a
-`~/Desktop/Files/respaldo-fingers-borrados/`.
+`../respaldo-fingers-borrados/`.
 
 ### `Resnick.pdf` (69 MB) en el historial de git — RESUELTA (2026-08-08)
 
