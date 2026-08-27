@@ -280,8 +280,7 @@ que cualquier medición sobre la fuente hay que fecharla.
 
 ## 6.b Entorno local
 
-Node v20.20.2. El repo vive en `~/Desktop/Files/Transcripciones` (el directorio
-se llama distinto que el proyecto; el `package.json` dice `fingers`).
+Node v20.20.2. El repo vive en la raíz del proyecto (el directorio local puede llamarse distinto que el paquete; `package.json` dice `fingers`).
 
 ```
 npm init -y
@@ -358,7 +357,7 @@ Dos cosas más que hay que saber:
   alcanzables por SHA hasta que GitHub corra su recolección. Cerrar el riesgo
   del todo exige pedírselo a Support o recrear el repo.
 
-Todo lo borrado está en `~/Desktop/Files/respaldo-fingers-borrados/`, con un
+Todo lo borrado está en un directorio de respaldo local exterior (ej. `../respaldo-fingers-borrados/`), con un
 README que dice qué es cada cosa. El oráculo de §6.c vive ahí: para volver a
 correr `diff-oraculo.js` hay que copiar esos 28 archivos al working tree.
 

@@ -102,7 +102,7 @@ agregaban PDF.
 - **El oráculo ya no está en el repo.** Para correr `npm run diff` hay que
   restaurarlo primero:
   ```bash
-  cp -r ~/Desktop/Files/respaldo-fingers-borrados/courses/. courses/
+  cp -r ../respaldo-fingers-borrados/courses/. courses/
   ```
   Está en el `.gitignore`, así que no se re-commitea solo. Documentado en
   `scripts/extractor/README.md`.
