@@ -1,0 +1,630 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 7: Polinomios de Legendre y separación de variables en esféricas} \\[0.3em]
+        \large{La esfera conductora en un campo uniforme}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+
+\section{Dónde estamos}
+
+El conjunto de soluciones de una ecuación diferencial lineal \textbf{homogénea}
+---incluidas las que son en derivadas parciales, como Laplace--- forma un espacio
+vectorial. Sobre esa base, la clase anterior aplicó el \textbf{método de
+separación de variables} a la ecuación de Laplace en coordenadas esféricas con
+simetría azimutal, buscando soluciones de la forma $\phi(r,\theta) = Z(r)\,P(\theta)$
+---no la solución general, sino \textbf{una base} de soluciones---. Eso separó el
+problema en dos ecuaciones diferenciales \textbf{ordinarias}:
+
+\[
+\dv{r}\big(r^2 Z'(r)\big) = K\,Z(r)
+\qquad\qquad
+\dv{\theta}\big(\sin\theta\,P'(\theta)\big) + K\sin\theta\,P(\theta) = 0
+\]
+
+y el cambio $u = \cos\theta$ llevó la angular a la \textbf{ecuación de Legendre}:
+
+\[
+(1-u^2)\,P''(u) - 2u\,P'(u) + K\,P(u) = 0
+\]
+
+con el interés puesto en $\theta\in[0,\pi]$, es decir $u\in[-1,1]$.
+
+\begin{warnbox}[El obstáculo]
+Es lineal y homogénea, pero \textbf{no de coeficientes constantes}. Con
+coeficientes constantes las soluciones son exponenciales ---o combinaciones
+complejas de ellas, que dan senos y cosenos---, y se hallan con el polinomio
+característico: es la ecuación del resorte, la carga y descarga de un
+condensador. Acá los coeficientes dependen de $u$, así que ese camino no existe.
+\end{warnbox}
+
+\section{Resolver Legendre por serie de potencias}
+
+\subsection{El método}
+
+El truco es \textbf{buscar la solución como serie de potencias} alrededor de un
+punto cómodo. El intervalo de interés es $[-1,1]$, cuyo punto natural del medio
+es $u=0$. En lugar de calcular la solución, se calcula su \textbf{desarrollo de
+Taylor} alrededor de $u=0$.
+
+\begin{notebox}[Es dos cosas a la vez]
+Como \textbf{método numérico} es muy práctico: se calculan términos sucesivos
+hasta donde llegue la paciencia y se reemplaza la función desconocida por su
+polinomio. Pero acá se va más lejos: se construye la \textbf{serie de Taylor}
+completa y se estudia si converge. Ahí aparece el arte del asunto ---la serie
+puede converger o no, portarse bien o mal---.
+\end{notebox}
+
+Se propone entonces $P(u) = \sum_{m=0}^{\infty} a_m\,u^{m}$ y se deriva término a
+término:
+
+\[
+P'(u) = \sum_{m=0}^{\infty} a_m\,m\,u^{m-1}
+\qquad
+P''(u) = \sum_{m=0}^{\infty} a_m\,m(m-1)\,u^{m-2}
+\]
+
+\textbf{Reindexado.} En $P''$ los términos $m=0$ y $m=1$ son nulos, así que la
+suma arranca realmente en $m=2$. Definiendo $m' = m-2$ y volviendo a llamar $m$
+al índice ---es un \textbf{índice mudo}, como en un cambio de variable de una
+integral---:
+
+\[
+P''(u) = \sum_{m=0}^{\infty} a_{m+2}\,(m+2)(m+1)\,u^{m}
+\]
+
+que ya tiene la misma potencia $u^m$ que los demás términos.
+
+\subsection{La relación de recurrencia}
+
+Sustituyendo los cuatro términos de la ecuación, todos escritos con $u^m$:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Término} & \textbf{Queda} \\
+    \midrule
+    $P''$      & $\sum_m a_{m+2}(m+2)(m+1)\,u^m$ \\
+    $-u^2 P''$ & $-\sum_m a_m\,m(m-1)\,u^m$ \\
+    $-2u\,P'$  & $-2\sum_m a_m\,m\,u^m$ \\
+    $K\,P$     & $K\sum_m a_m\,u^m$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{keybox}[El argumento clave]
+Si la suma vale $0$ \textbf{para todo $u$}, entonces \textbf{cada coeficiente de
+$u^m$ vale cero por separado}. Es el mismo razonamiento que con un polinomio: si
+un polinomio es idénticamente nulo, todos sus coeficientes lo son.
+\end{keybox}
+
+Igualando a cero el coeficiente de $u^m$:
+
+\[
+a_{m+2}\,(m+2)(m+1) = a_m\big[m(m-1) + 2m - K\big] = a_m\big[m(m+1) - K\big]
+\]
+
+\[
+\boxed{\;a_{m+2} = a_m\,\frac{m(m+1) - K}{(m+1)(m+2)}\;}
+\]
+
+Ésta es la \textbf{relación de recurrencia}, y \textbf{salta de dos en dos}.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase7-recurrencia-paridad.tex}
+  \caption*{\small\itshape Las dos consecuencias del salto de dos, en una sola
+  imagen: las cadenas no se comunican, y una de ellas se corta cuando
+  $K=n(n+1)$.}
+\end{figure}
+
+\subsection{Primera observación: pares e impares no se hablan}
+
+Como el salto es de 2, $a_0$ genera $a_2, a_4, a_6,\dots$ y $a_1$ genera
+$a_3, a_5, a_7,\dots$, \textbf{sin mezclarse nunca}. El espacio de soluciones se
+parte en dos subespacios que no se comunican: el de las funciones \textbf{pares}
+y el de las \textbf{impares}.
+
+\begin{notebox}[Es una clasificación, no una restricción]
+Sin pérdida de generalidad se puede tomar $a_1=0$ (soluciones pares) o $a_0=0$
+(soluciones impares). La solución general será una combinación lineal y por lo
+tanto mezclará ambas, pero \textbf{como base se pueden separar}.
+\end{notebox}
+
+\subsection{Segunda observación: cuando la serie se corta}
+
+Mirando el numerador de la recurrencia: si para algún entero $n$ ocurre que
+$K = n(n+1)$, entonces al llegar a $m=n$ el numerador se anula, $a_{n+2}=0$, y
+\textbf{todos los coeficientes siguientes son nulos}. La serie deja de ser
+infinita: es un \textbf{polinomio}.
+
+\[
+\boxed{\;K = n(n+1)\quad\Longrightarrow\quad a_m = 0 \;\;\text{para todo } m > n\;}
+\]
+
+(unos se anulan por la recurrencia, otros por paridad).
+
+\begin{keybox}[Y eso es una ganancia enorme]
+En este caso no hay ninguna aproximación: la solución es \textbf{exacta}, y un
+polinomio está definido en todo $\mathbb{R}$ ---en particular en todo el intervalo
+$[-1,1]$ que interesa, extremos incluidos---. «Ahí ya no a lo físico o ingeniero,
+ahí posta a lo matemático.»
+\end{keybox}
+
+\section{Los polinomios de Legendre}
+
+\subsection{Cálculo de los primeros}
+
+Todos salen de aplicar la recurrencia con $K = n(n+1)$. Nótese que \textbf{la
+solución tiene siempre la misma paridad que $n$}.
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{@{}c c X l@{}}
+    \toprule
+    $n$ & $K$ & \textbf{Recurrencia} & \textbf{Solución} \\
+    \midrule
+    0 & 0  & $a_2 = 0$ & $P_0(u) = a_0$ (constante) \\[0.3em]
+    1 & 2  & $a_3 = 0$ & $P_1(u) = a_1\,u$ \\[0.3em]
+    2 & 6  & $a_2 = a_0\dfrac{0-6}{1\cdot2} = -3a_0$,\ \ $a_4=0$
+        & $P_2(u) = a_0\,(1 - 3u^2)$ \\[0.7em]
+    3 & 12 & $a_3 = a_1\dfrac{1\cdot2-12}{2\cdot3} = -\tfrac{5}{3}a_1$,\ \ $a_5=0$
+        & $P_3(u) = a_1\left(u - \tfrac{5}{3}u^3\right)$ \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{notebox}[La constante]
+La solución constante ($n=0$) es solución, aunque «no es tan obvio: hay que hacer
+una cuentita para darse cuenta».
+\end{notebox}
+
+En general, para cada entero $n$ hay una solución polinomial de \textbf{grado
+$n$} y de \textbf{la misma paridad que $n$}. Son infinitas: los \textbf{polinomios
+de Legendre}.
+
+\subsection{Normalización}
+
+Como la ecuación es lineal y homogénea, cualquier múltiplo de una solución es
+solución: todas las de arriba quedaron a menos de una constante multiplicativa
+($a_0$ o $a_1$). Para fijarla, la literatura adopta la convención
+
+\[
+\boxed{\;P_n(1) = 1\;}
+\]
+
+Con ella, los primeros son
+
+\[
+P_0(u) = 1
+\qquad
+P_1(u) = u
+\qquad
+P_2(u) = \tfrac{1}{2}\left(3u^2 - 1\right)
+\qquad
+P_3(u) = \tfrac{1}{2}\left(5u^3 - 3u\right)
+\]
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase7-polinomios-legendre.tex}
+  \caption*{\small\itshape Los cuatro primeros. Lo que la figura hace visible es
+  la normalización ---el punto común en $u=1$--- y que cada uno tiene un grado
+  distinto, que es de donde saldrá la independencia lineal.}
+\end{figure}
+
+\begin{notebox}[La comprobación es directa]
+En $P_2$, la forma $a_0(1-3u^2)$ evaluada en $u=1$ da $-2a_0$, así que hay que
+elegir $a_0 = -\tfrac12$.
+\end{notebox}
+
+\begin{notebox}[Sobre el rol de todo esto]
+«Alguien puede decir: esto no tiene nada de física, es sólo matemática.» Y en
+parte es cierto. Lo que hay que llevarse no son estas soluciones particulares sino
+\textbf{el método}: separación de variables, reducción a ecuaciones ordinarias, y
+resolución de ésas por desarrollo en serie de potencias.
+\end{notebox}
+
+\section{Por qué las demás soluciones no sirven}
+
+Falta el caso $K \neq n(n+1)$, en el que la serie \textbf{no se corta nunca}.
+
+\subsection{Convergencia por el criterio del cociente}
+
+Se aplica el \textbf{criterio de D'Alembert} (del cociente). La serie no es a
+priori de términos positivos porque $u$ puede ser negativo, pero basta estudiar la
+de los valores absolutos; y de hecho, como las soluciones son puras pares o puras
+impares, sacando el primer término de factor sólo quedan potencias de $u^2$.
+
+\[
+\left|\frac{a_{m+2}\,u^{m+2}}{a_m\,u^{m}}\right|
+= \left|\frac{m(m+1)-K}{(m+1)(m+2)}\right|\,u^{2}
+\;\xrightarrow[m\to\infty]{}\; u^{2}
+\]
+
+Por lo tanto la serie \textbf{converge absolutamente si $|u| < 1$}, y en
+$u = \pm1$ el criterio \textbf{no decide}.
+
+\begin{warnbox}[Y $u=\pm1$ es justamente donde hace falta]
+$u=1$ corresponde a $\theta = 0$ y $u=-1$ a $\theta = \pi$, los dos polos, que
+forman parte del dominio del problema.
+\end{warnbox}
+
+\begin{notebox}[Ejercicio dejado en clase]
+Explícitamente fuera del parcial ---«háganlo porque es divertido»---: probar que si
+$K \neq n(n+1)$ con $n$ entero, la serie \textbf{no converge} en $u = \pm 1$. La
+divergencia es \textbf{logarítmica}.
+\end{notebox}
+
+\begin{keybox}[Conclusión]
+Sólo sirven las \textbf{soluciones polinomiales}. Es una divergencia afortunada:
+todas las soluciones no polinomiales están mal definidas justo en el borde, así
+que se pueden descartar. Lo que empezó como una restricción matemática ($K$ no
+puede ser cualquier cosa) resulta ser una \textbf{condición física}.
+\end{keybox}
+
+\subsection{El caso \texorpdfstring{$K=0$}{K=0}, resuelto exactamente}
+
+Para muestra vale un botón: se resuelve exactamente el caso más simple. Con $K=0$
+y usando la forma compacta de la ecuación,
+
+\[
+\dv{u}\left[(1-u^2)\dv{P}{u}\right] = 0
+\qquad\Longrightarrow\qquad
+(1-u^2)\,P'(u) = A
+\qquad\Longrightarrow\qquad
+P'(u) = \frac{A}{1-u^2}
+\]
+
+Primitivando:
+
+\[
+\boxed{\;P(u) = \frac{A}{2}\ln\!\left(\frac{1+u}{1-u}\right) + B\;}
+\]
+
+\textbf{Verificación} de que la primitiva está bien:
+
+\[
+\dv{u}\left[\frac{A}{2}\ln\frac{1+u}{1-u}\right]
+= \frac{A}{2}\left[\frac{1}{1+u} + \frac{1}{1-u}\right]
+= \frac{A}{2}\cdot\frac{(1-u)+(1+u)}{1-u^2}
+= \frac{A}{1-u^2}
+\]
+
+Esta solución general es una \textbf{combinación lineal de dos soluciones}: la
+\textbf{constante} $B$, que es la polinomial ($P_0$), y el término logarítmico,
+perfectamente definido en el intervalo abierto $(-1,1)$ pero que \textbf{explota
+en $u=\pm1$}.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase7-divergencia-borde.tex}
+  \caption*{\small\itshape El caso exhibe en concreto lo que pasa en general: las
+  soluciones no polinomiales están bien definidas en el interior y revientan
+  exactamente donde el problema las necesita.}
+\end{figure}
+
+\section{La ecuación radial y la base de soluciones}
+
+Con la angular resuelta, se vuelve a la radial, ya sabiendo que $K = n(n+1)$:
+
+\[
+\dv{r}\big(r^2 Z'(r)\big) = n(n+1)\,Z(r)
+\]
+
+Otra vez es lineal, de segundo orden, con coeficientes que dependen de la
+variable, pero \textbf{ésta no es difícil}.
+
+\begin{notebox}[Ejercicio con pista]
+Hacer el cambio de variable $v = \ln r$.
+\end{notebox}
+
+El resultado es una combinación de dos potencias:
+
+\[
+\boxed{\;Z_n(r) = A_n\,r^{\,n} + B_n\,r^{-(n+1)}\;}
+\]
+
+Juntando ambas piezas, la \textbf{base de soluciones} de la ecuación de Laplace en
+coordenadas esféricas con simetría azimutal es:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}cl@{}}
+    \toprule
+    $n$ & \textbf{Soluciones (dos por cada $n$)} \\
+    \midrule
+    0 & $1$ \quad;\quad $\dfrac{1}{r}$ \\[0.6em]
+    1 & $r\cos\theta$ \quad;\quad $\dfrac{\cos\theta}{r^{2}}$ \\[0.6em]
+    2 & $r^{2}P_2(\cos\theta)$ \quad;\quad $\dfrac{P_2(\cos\theta)}{r^{3}}$ \\[0.6em]
+    $n$ & $r^{\,n}P_n(\cos\theta)$ \quad;\quad $\dfrac{P_n(\cos\theta)}{r^{\,n+1}}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\[
+\boxed{\;\phi(r,\theta) = \sum_{n=0}^{\infty}\left[A_n\,r^{\,n} + \frac{C_n}{r^{\,n+1}}\right]P_n(\cos\theta)\;}
+\]
+
+\begin{keybox}[Lo que hay que llevarse del método]
+Elegir las coordenadas que convengan al problema, proponer soluciones producto, y
+así \textbf{reducir una ecuación en derivadas parciales a ecuaciones ordinarias}.
+Que resolver esas ordinarias haya dado trabajo es otra cuestión; el problema
+original era más difícil.
+\end{keybox}
+
+\section{Ejemplo: esfera conductora en un campo uniforme}
+
+\subsection{Planteo y condiciones de borde}
+
+Una \textbf{esfera conductora descargada} de radio $a$, colocada en un campo
+eléctrico uniforme $\vec E_0 = E_0\hat z$. Se quiere el potencial para $r \ge a$.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase7-esfera-campo.tex}
+  \caption*{\small\itshape Las dos condiciones de borde no alcanzan: el dato de
+  que la esfera está descargada entra por una vía distinta, el desarrollo
+  multipolar de las clases 4 y 5.}
+\end{figure}
+
+\begin{notebox}[Por qué vale Laplace]
+Dentro de la esfera el campo es nulo (conductor en equilibrio) y el potencial es
+constante: la solución interior es trivial y no interesa. Y en el exterior no hay
+carga volumétrica.
+
+El problema tiene simetría azimutal ---girar alrededor de $Oz$ no cambia nada---,
+así que $\phi = \phi(r,\theta)$ y se aplica la base recién construida.
+\end{notebox}
+
+\textbf{Condición 1 --- en la superficie.} Un conductor en equilibrio es
+\textbf{equipotencial}: todos sus puntos tienen el mismo potencial. Entonces
+
+\[
+\phi(a,\theta) = \phi_0 \qquad\text{para todo }\theta
+\]
+
+\textbf{Condición 2 --- en el infinito.} Lejos de la esfera su efecto desaparece y
+se recupera el campo uniforme. Como el campo uniforme corresponde a un potencial
+que varía \textbf{linealmente}, y $\vec E_0$ va según $\hat z$:
+
+\[
+\phi \;\xrightarrow[r\to\infty]{}\; -E_0\,z = -E_0\,r\cos\theta
+\]
+
+usando $z = r\cos\theta$.
+
+\begin{notebox}[Sobre el signo menos]
+Como $\vec E = -\grad\phi$, un campo que apunta según $+\hat z$ significa
+potencial decreciente hacia $+z$. Físicamente: las cargas que crean el campo son
+positivas de un lado y negativas del otro, y el potencial va de más a menos.
+\end{notebox}
+
+\subsection{Imponer la condición en el infinito}
+
+En la serie general, cuando $r\to\infty$, todos los términos $C_n/r^{n+1}$
+\textbf{tienden a cero} y de los términos $A_n r^n$ domina el de mayor $n$. Pero
+el comportamiento pedido es \textbf{lineal en $r$}. Luego ningún término puede
+crecer más rápido:
+
+\[
+A_n = 0 \qquad\text{para todo } n \ge 2
+\]
+
+Queda el término $n=1$, con $P_1(\cos\theta) = \cos\theta$:
+
+\[
+A_1\,r\cos\theta \;\equiv\; -E_0\,r\cos\theta
+\qquad\Longrightarrow\qquad
+\boxed{\;A_1 = -E_0\;}
+\]
+
+\begin{notebox}[Coincide exactamente en la forma]
+Y no es casualidad: el potencial de un campo uniforme \emph{es} el elemento $n=1$
+de la base.
+\end{notebox}
+
+Queda $A_0$, que multiplica a $P_0 = 1$: es una \textbf{constante aditiva}. No la
+fija ninguna condición de borde porque el potencial está definido a menos de una
+constante. \textbf{Se elige} $A_0 = 0$ ---una opción, no un dato---. El potencial
+va quedando
+
+\[
+\phi(r,\theta) = -E_0\,r\cos\theta + \sum_{n=0}^{\infty}\frac{C_n}{r^{\,n+1}}P_n(\cos\theta)
+\]
+
+\subsection{Imponer la condición en la superficie}
+
+Evaluando en $r=a$:
+
+\[
+-E_0\,a\cos\theta + \sum_{n=0}^{\infty}\frac{C_n}{a^{\,n+1}}P_n(\cos\theta) = \phi_0
+\qquad\text{para todo }\theta
+\]
+
+\textbf{El argumento decisivo es de álgebra lineal:} los $P_n$ son polinomios
+\textbf{todos de grado distinto}, y por lo tanto son \textbf{linealmente
+independientes}. Así que se pueden identificar los coeficientes término a
+término, escribiendo cada lado como desarrollo en la base $\{P_n\}$ ---no en la
+base de monomios---.
+
+\begin{warnbox}[Esta parte generó discusión en clase y vale precisarla]
+El punto \textbf{no} es que los $P_n$ sean monomios (no lo son: $P_2$ tiene
+término constante). El punto es que, teniendo grados distintos, forman una
+\textbf{base del espacio de polinomios}, distinta de $\{1,u,u^2,\dots\}$ pero
+igual de válida. Si una combinación lineal de ellos es idénticamente nula, se
+anula primero el coeficiente del de mayor grado, luego el siguiente, y así hacia
+abajo --- todos los coeficientes son cero.
+\end{warnbox}
+
+Identificando, con $\phi_0 = \phi_0\,P_0$ y $\cos\theta = P_1(\cos\theta)$:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Orden} & \textbf{Ecuación} & \textbf{Resultado} \\
+    \midrule
+    $P_0$ & $\dfrac{C_0}{a} = \phi_0$ & $C_0 = \phi_0\,a$ \\[0.7em]
+    $P_1$ & $-E_0\,a + \dfrac{C_1}{a^{2}} = 0$ & $C_1 = E_0\,a^{3}$ \\[0.7em]
+    $P_n$, $n\ge2$ & $\dfrac{C_n}{a^{\,n+1}} = 0$ & $C_n = 0$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+De una base infinita sobrevivieron \textbf{dos términos}. El docente lo llama, con
+razón, una «solución de juguete».
+
+\subsection{El dato que faltaba: la esfera está descargada}
+
+Con las dos condiciones impuestas, \textbf{$\phi_0$ sigue sin determinarse}. Falta
+usar un dato del enunciado que todavía no se usó: la esfera está
+\textbf{descargada}.
+
+El argumento es a través del \textbf{desarrollo multipolar} de las clases 4 y 5.
+Lejos de la esfera hay dos contribuciones al campo: la del campo externo
+$\vec E_0$, ya incorporada, y la de las cargas inducidas sobre la esfera. Esas
+cargas forman una \textbf{distribución localizada}, así que su potencial admite
+desarrollo multipolar, cuyo primer término va como $Q/4\pi\varepsilon_0 r$.
+
+Pero la esfera está \textbf{polarizada, no cargada}: hay carga negativa de un lado
+y positiva del otro, con \textbf{carga total nula}. Entonces el término en $1/r$
+tiene que anularse, y ese término es exactamente $C_0/r$:
+
+\[
+C_0 = \phi_0\,a = 0 \qquad\Longrightarrow\qquad \phi_0 = 0
+\]
+
+\[
+\boxed{\;\phi(r,\theta) = -E_0\left(r - \frac{a^{3}}{r^{2}}\right)\cos\theta
+\qquad (r \ge a)\;}
+\]
+
+\begin{notebox}[Verificación inmediata]
+En $r=a$ el paréntesis se anula y $\phi = 0$ para todo $\theta$, que es
+exactamente la condición de equipotencial. Y para $r\to\infty$ el segundo término
+desaparece y queda $-E_0 r\cos\theta$, el campo uniforme.
+
+\textbf{Si la esfera estuviera cargada} con carga $Q$, el razonamiento sería el
+mismo pero el coeficiente del término $1/r$ no sería nulo: valdría
+$Q/4\pi\varepsilon_0$.
+\end{notebox}
+
+\begin{keybox}[Por qué esto importa]
+Es el \textbf{primer problema del curso que no se podía resolver con las
+herramientas de Física III}: la posición de las cargas era parte de la incógnita y
+aun así el método la determinó. Es, en palabras del docente, «algo
+cualitativamente más poderoso» --- aunque el caso concreto haya salido fácil.
+\end{keybox}
+
+\bigskip
+\noindent\emph{Continúa en la Clase 8, calculando el campo eléctrico y la carga de
+polarización inducida sobre la esfera, y pasando después a la misma técnica en
+coordenadas cilíndricas.}
+
+\end{document}

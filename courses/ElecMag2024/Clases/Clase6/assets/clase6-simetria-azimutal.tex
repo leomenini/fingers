@@ -1,0 +1,56 @@
+% Clase 6 — que significa simetria azimutal, y por que el problema de la esfera
+% en campo uniforme la tiene. Lo que importa aca no es la polarizacion (eso es
+% la figura de la Clase 5) sino cual rotacion deja el problema invariante.
+% Los arcos de rotacion van DEBAJO de donde terminan las lineas de campo: puestos
+% a su altura se cruzan con ellas y con sus propios rotulos.
+\begin{tikzpicture}[scale=1]
+
+% ---------------- (a) rotacion alrededor de z: invariante ----------------
+\begin{scope}
+  \draw[figaxis] (0,-1.35) -- (0,2.3);
+  \node[figlblaux] at (0,2.52) {$z$};
+  \foreach \xx in {-1.75,-1.1,1.1,1.75}{
+    \draw[figvecaux] (\xx,-1.2) -- (\xx,1.85);
+  }
+  \node[figlblaux] at (-1.75,2.1) {$\vec E_0$};
+  \fill[figgray!25] (0,0) circle (0.72);
+  \draw[figline] (0,0) circle (0.72);
+  \coordinate (P) at (1.15,1.28);
+  \node[figneutra] at (P) {};
+  \draw[figvec] (0,0) -- (P);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0.82,0.98) {$r$};
+  \draw[figgray, line width=0.6pt] (0,0.95) arc (90:48:0.95);
+  \node[figlblaux] at (0.36,1.08) {$\theta$};
+  % rotacion alrededor de z, debajo de todo
+  \draw[figred, line width=0.9pt] (-0.9,-1.85) arc (180:360:0.9 and 0.3);
+  \draw[figred, line width=0.9pt, -{Latex[length=2mm,width=1.5mm]}]
+    (0.9,-1.85) arc (0:22:0.9 and 0.3);
+  \node[figlbl, figred] at (0,-2.42) {rotar en $\varphi$};
+  \node[figlbl] at (0,-3.05) {(a) invariante};
+\end{scope}
+
+% ---------------- (b) rotacion alrededor de otro eje: NO ----------------
+\begin{scope}[xshift=6.9cm]
+  \draw[figaxis] (0,-1.35) -- (0,2.3);
+  \node[figlblaux] at (0,2.52) {$z$};
+  \foreach \s in {-1,1}{
+    \draw[figvecaux] ({\s*1.75-0.6},-1.2) -- ({\s*1.75+0.6},1.85);
+    \draw[figvecaux] ({\s*1.1-0.6},-1.2) -- ({\s*1.1+0.6},1.85);
+  }
+  \node[figlblaux] at (-1.0,2.1) {$\vec E_0$ rotado};
+  \fill[figgray!25] (0,0) circle (0.72);
+  \draw[figline] (0,0) circle (0.72);
+  % rotacion alrededor de un eje horizontal, tambien abajo
+  \draw[figred, line width=0.9pt] (-0.9,-1.85) arc (180:360:0.9 and 0.3);
+  \draw[figred, line width=0.9pt, -{Latex[length=2mm,width=1.5mm]}]
+    (0.9,-1.85) arc (0:22:0.9 and 0.3);
+  \node[figlbl, figred] at (0,-2.42) {rotar en otro eje};
+  \node[figlbl] at (0,-3.05) {(b) el campo se mueve};
+\end{scope}
+
+\node[figlbl, align=center] at (3.45,-3.95)
+  {La esfera es sim\'etrica bajo cualquier rotaci\'on; el campo uniforme, s\'olo
+   bajo las de eje $z$.\\[0.2em]
+   Por eso $\phi=\phi(r,\theta)$: depende de dos variables, no de una ni de tres.};
+
+\end{tikzpicture}

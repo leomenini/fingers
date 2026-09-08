@@ -1,0 +1,53 @@
+% Clase 6 — que problemas quedan dentro del analisis y cuales no. El casquete
+% esferico tiene simetria azimutal igual, pero theta no recorre todo [0,pi], y
+% eso cambia el conjunto de soluciones de Legendre.
+% El barrido de theta va por FUERA de la esfera y punteado: dibujado encima se
+% confunde con el radio y con el propio contorno.
+\begin{tikzpicture}[scale=1]
+
+% ---------------- (a) esfera completa: theta en [0,pi] ----------------
+\begin{scope}
+  \draw[figaxis] (0,-1.75) -- (0,2.1); \node[figlblaux] at (0,2.32) {$z$};
+  \draw[figline] (0,0) circle (1.15);
+  \draw[figaux] (0,0) ellipse (1.15 and 0.37);
+  \node[figneutra] at (0,0) {};
+  \draw[figvecres] (0,0) -- (58:1.15);
+  \draw[figred, line width=0.8pt] (0,0.62) arc (90:58:0.62);
+  \node[figlblaux, figred] at (0.3,0.76) {$\theta$};
+  % barrido, por fuera del contorno
+  \draw[figgray, dashed, line width=0.8pt, -{Latex[length=2mm,width=1.5mm]}]
+    (0,1.62) arc (90:-90:0.42 and 1.62);
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (1.15,-1.42) {$\theta$ barre};
+  \node[figlbl] at (0,-2.3) {(a) $\theta\in[0,\pi]$};
+  \node[figlbl, figblue] at (0,-2.9) {$u=\cos\theta\in[-1,1]$};
+\end{scope}
+
+% ---------------- (b) casquete: theta en [0,alfa] ----------------
+\begin{scope}[xshift=6.6cm]
+  \draw[figaxis] (0,-1.75) -- (0,2.1); \node[figlblaux] at (0,2.32) {$z$};
+  \node[figneutra] at (0,0) {};
+  % casquete: arco entre 40 y 140 grados
+  \draw[figline, line width=1.3pt] (40:1.15) arc (40:140:1.15);
+  \draw[figaux] (0,0) -- (40:1.15);
+  \draw[figaux] (0,0) -- (140:1.15);
+  \draw[figaux] (0,0.881) ellipse (0.739 and 0.24);
+  \draw[figred, line width=0.8pt] (0,0.62) arc (90:40:0.62);
+  \node[figlblaux, figred, fill=white, inner sep=1.2pt] at (0.3,0.42) {$\alpha$};
+  % barrido acotado, tambien por fuera
+  \draw[figgray, dashed, line width=0.8pt, -{Latex[length=2mm,width=1.5mm]}]
+    (0,1.62) arc (90:40:0.42 and 1.62);
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (1.78,0.42) {s\'olo hasta $\alpha$};
+  \draw[figvecaux] (1.32,0.5) -- (0.72,0.92);
+  \node[figlbl] at (0,-2.3) {(b) $\theta\in[0,\alpha]$};
+  \node[figlbl, figred] at (0,-2.9) {queda fuera del an\'alisis};
+\end{scope}
+
+% Pie en tres lineas cortas: el texto de los nodos NO escala con `scale`, asi que
+% una linea larga desborda el margen aunque se achique la geometria (CLAUDE.md 6.5.6).
+\node[figlbl, align=center] at (3.3,-3.75)
+  {Los dos tienen simetr\'ia azimutal. Pero cuanto m\'as\\[0.2em]
+   restringido est\'a el recorrido de $u$, \emph{m\'as} soluciones\\[0.2em]
+   admite Legendre: pedir el intervalo completo es lo\\[0.2em]
+   que deja el problema simple.};
+
+\end{tikzpicture}

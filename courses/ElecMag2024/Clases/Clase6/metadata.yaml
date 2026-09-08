@@ -1,0 +1,67 @@
+title: Clase 6
+id: em-2024-2-06
+
+course: Electromagnetismo
+academic_year: 2024
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:24:18"
+
+stats:
+  transcript_words: 9643
+  summary_words: 2678
+  diagrams_pending: 0
+  equations: 31
+
+topics:
+  - Gradiente, divergencia y laplaciano en coordenadas cilíndricas
+  - Gradiente, divergencia y laplaciano en coordenadas esféricas
+  - Deducción del gradiente en cilíndricas por regla de la cadena
+  - Ecuación de Laplace con dependencia en una sola variable
+  - Condensador de placas paralelas, esfera cargada y línea infinita
+  - Simetría azimutal
+  - Búsqueda de una base de soluciones y base de Hilbert
+  - Método de separación de variables
+  - Constante de separación
+  - Ecuación de Legendre
+
+bibliography:
+  - title: "Reitz & Milford"
+    verified: false
+
+prerequisites:
+  - Ecuaciones de Poisson y Laplace (Clase 5)
+  - Linealidad y unicidad de las soluciones de Laplace
+  - Regla de la cadena y cambio de variables
+  - Coordenadas polares, cilíndricas y esféricas
+  - Espacios vectoriales y bases
+  - Ecuaciones diferenciales ordinarias de segundo orden
+
+next_topics:
+  - Resolución de la ecuación de Legendre
+  - Polinomios de Legendre
+  - Ecuación radial y solución general con simetría azimutal
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-09-06
+
+llm:
+  model: claude-opus-5
+
+editorial_status: draft

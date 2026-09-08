@@ -1,0 +1,16 @@
+{
+  "source": "https://open.fing.edu.uy/media/em-2024/em-2024_17_transcription.vtt",
+  "cues": 238,
+  "words": 9712,
+  "charsPlain": 52115,
+  "charsTimed": 54149,
+  "timestampOverheadPct": 3.9,
+  "estTokensPlain": 13029,
+  "estTokensTimed": 13537,
+  "speechSeconds": 4557,
+  "spanSeconds": 5286.5,
+  "speechRatio": 0.862,
+  "avgCueSeconds": 19.1,
+  "rollingOverlapCues": 0,
+  "warnings": []
+}

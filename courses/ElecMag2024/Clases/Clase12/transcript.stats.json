@@ -1,0 +1,18 @@
+{
+  "source": "https://open.fing.edu.uy/media/em-2024/em-2024_12_transcription.vtt",
+  "cues": 231,
+  "words": 8698,
+  "charsPlain": 48344,
+  "charsTimed": 50313,
+  "timestampOverheadPct": 4.1,
+  "estTokensPlain": 12086,
+  "estTokensTimed": 12578,
+  "speechSeconds": 4367.8,
+  "spanSeconds": 5150.9,
+  "speechRatio": 0.848,
+  "avgCueSeconds": 18.9,
+  "rollingOverlapCues": 0,
+  "warnings": [
+    "solapamiento temporal en 12:14"
+  ]
+}

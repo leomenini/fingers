@@ -1,0 +1,182 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\\bfseries,
+  title={#1}}
+}
+
+\newtcolorbox{warnbox}[1][]{{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\\bfseries,
+  title={#1}}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+
+% ---- Title ----
+\title{\textbf{Clase 14: Propiedades algebraicas de la integral}\\\large{Resumen y desarrollo}}
+\author{Transcripto y expandido --- Curso Cálculo 1 (OpenFING)}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introducción}
+En la clase se retomó la noción de integral de Riemann y se mostró que el conjunto de funciones integrables forma un \textbf{subespacio vectorial} del espacio de todas las funciones acotadas.  Esta observación permite aplicar la lógica del álgebra lineal dentro del cálculo, en especial al estudiar cómo se comporta la integral frente a sumas y a multiplicaciones por escalares.
+
+\section{Propiedad de aditividad}
+
+\subsection{Enunciado de aditividad}
+\begin{keybox}[Propiedad (Aditividad)]
+Si $f$ y $g$ son funciones integrables en el intervalo $[a,b]$, entonces
+\[
+\int_{a}^{b} \bigl(f(x)+g(x)\bigr)\,dx = \int_{a}^{b} f(x)\,dx + \int_{a}^{b} g(x)\,dx.
+\]
+\end{keybox}
+
+\subsection{Lema preliminar}
+Se necesitó un lema que compara los ínfimos y supremos de la suma con la suma de los ínfimos y supremos:
+\begin{itemize}
+  \item Para cualquier subintervalo $[c,d]\subset[a,b]$:
+  \[
+  \inf_{x\in[c,d]}\bigl(f(x)+g(x)\bigr) \ge \inf_{x\in[c,d]} f(x) + \inf_{x\in[c,d]} g(x),
+  \]
+  \[
+  \sup_{x\in[c,d]}\bigl(f(x)+g(x)\bigr) \le \sup_{x\in[c,d]} f(x) + \sup_{x\in[c,d]} g(x).
+  \]
+Este hecho es una consecuencia directa de la \textbf{desigualdad triangular} aplicada a las funciones.
+\end{itemize}
+
+\subsection{Demostración de aditividad}
+\begin{enumerate}
+  \item Se consideró una partición $P$ del intervalo $[a,b]$ y se definieron las sumas inferiores y superiores de $f$, $g$ y $f+g$.
+  \item Usando el lema anterior se obtuvo,
+  \[
+  S_{P}^{\,\inf}(f+g) \ge S_{P}^{\,\inf}(f) + S_{P}^{\,\inf}(g),
+  \]
+  \[
+  S_{P}^{\,\sup}(f+g) \le S_{P}^{\,\sup}(f) + S_{P}^{\,\sup}(g).
+  \]
+  \item Al pasar al \textbf{supremo} de todas las sumas inferiores y al \textbf{ínfimo} de todas las sumas superiores se obtuvo la cadena de desigualdades
+  \[
+  \int_{a}^{b} f + \int_{a}^{b} g \le \int_{a}^{b} (f+g) \le \int_{a}^{b} f + \int_{a}^{b} g,
+  \]
+  lo que implica igualdad.
+\end{enumerate}
+\begin{keybox}[Resultado clave]
+\[\boxed{\int_{a}^{b} (f+g)\,dx = \int_{a}^{b} f\,dx + \int_{a}^{b} g\,dx}\]
+\end{keybox}
+
+\section{Propiedad de homogeneidad}
+
+\subsection{Caso $\alpha = 0$}
+Si $\alpha = 0$ la función $\alpha f$ es la función nula, cuya integral es 0. Por tanto
+\[
+\int_{a}^{b} 0\,dx = 0 = 0\cdot \int_{a}^{b} f\,dx.
+\]
+
+\subsection{Caso $\alpha > 0$}
+\begin{itemize}
+  \item Los ínfimos y supremos de $\alpha f$ se multiplican por $\alpha$ sin cambiar de sentido.
+  \item Por el mismo razonamiento que en la aditividad se obtiene
+  \[
+  \int_{a}^{b} (\alpha f)\,dx = \alpha\int_{a}^{b} f\,dx.
+  \]
+\end{itemize}
+
+\subsection{Caso $\alpha < 0$}
+Multiplicar por un número negativo invierte el orden de las desigualdades, de modo que los ínfimos se convierten en supremos y viceversa. Se muestra que
+\[
+\int_{a}^{b} (\alpha f)\,dx = \alpha\int_{a}^{b} f\,dx,
+\]
+manteniendo la igualdad porque la integral inferior coincide con la superior para funciones integrables.
+\begin{keybox}[Resultado clave]
+\[\boxed{\int_{a}^{b} (\alpha f)\,dx = \alpha\int_{a}^{b} f\,dx}\]
+\end{keybox}
+
+\section{Consecuencias estructurales}
+Del hecho de que la integral sea lineal se deduce que el conjunto
+\[
+\mathcal{I}=\{f\,|\,f\text{ integrable en }[a,b]\}\
+\]
+es un \textbf{subespacio vectorial} de $\mathcal{F}=\{f\,|\,f\text{ acotada en }[a,b]\}$.  Además, el operador integral
+\[
+\mathcal{T}:\mathcal{I}\to\mathbb{R},\qquad \mathcal{T}(f)=\int_{a}^{b} f(x)\,dx
+\]
+es una \textbf{transformación lineal}.
+
+Esta observación será útil más adelante cuando se estudien operadores como la derivada, que también resultan lineales sobre los subespacios apropiados.
+
+\section{Comentarios finales y vista a la siguiente clase}
+\begin{notebox}{Observación}
+Se enfatizó que el razonamiento subyacente a las demostraciones es esencial: no basta con citar el resultado, sino que hay que seguir la cadena de desigualdades y justificar cada paso.
+\end{notebox}
+En la próxima clase se continuará con la \textbf{construcción del Teorema Fundamental del Cálculo}, mostrando cómo la linealidad permite definir la antiderivada y conectar integrales con derivadas.
+
+\end{document}

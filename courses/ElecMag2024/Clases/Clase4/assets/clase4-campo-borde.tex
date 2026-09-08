@@ -1,0 +1,53 @@
+% Clase 4 — campo justo afuera de un conductor, en dos pasos.
+% (a) curva cerrada C achatada a caballo del borde: circulacion nula => E_t=0.
+% (b) cilindrito gaussiano chato: solo aporta la tapa exterior => E_n=sigma/eps0.
+\begin{tikzpicture}[scale=1]
+
+% ---------------- panel (a) ----------------
+\begin{scope}
+  \fill[figgray!18] (-2.1,-1.5) rectangle (2.1,0);
+  \draw[figline] (-2.1,0) -- (2.1,0);
+  \node[figlblaux] at (0,-1.15) {conductor: $\vec E=0$};
+  % curva C achatada, a caballo del borde
+  \draw[figred, line width=1pt] (-0.9,0.3) -- (0.9,0.3) -- (0.9,-0.3) -- (-0.9,-0.3) -- cycle;
+  \node[figlbl, figred] at (1.2,0.3) {$C$};
+  % componente tangencial exterior, sobre el lado de afuera
+  \draw[figvec] (-0.45,0.3) -- (0.5,0.3);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0.02,0.56) {$E_t$};
+  % cota del lado largo
+  \draw[figaux] (-0.9,0.86) -- (-0.9,1.24);
+  \draw[figaux] (0.9,0.86) -- (0.9,1.24);
+  \draw[figvecaux] (-0.9,1.06) -- (0.9,1.06);
+  \draw[figvecaux] (0.9,1.06) -- (-0.9,1.06);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0,1.06) {$\Delta\ell$};
+  \node[figlbl] at (0,-2.25) {(a) $\oint_C\vec E\cdot d\vec\ell=E_t\,\Delta\ell=0$};
+  \node[figlbl] at (0,-2.85) {$\Rightarrow\ E_t=0$ (no usa Gauss)};
+\end{scope}
+
+% ---------------- panel (b) ----------------
+\begin{scope}[xshift=7.4cm]
+  \fill[figgray!18] (-2.1,-1.5) rectangle (2.1,0);
+  \draw[figline] (-2.1,0) -- (2.1,0);
+  \node[figlblaux] at (0,-1.15) {conductor: $\vec E=0$};
+  % densidad superficial sobre el borde
+  \foreach \xx in {-0.72,-0.43,-0.14,0.14,0.43,0.72}{\node[figpos] at (\xx,0) {};}
+  \node[figlbl, figred] at (1.55,-0.3) {$\sigma$};
+  \draw[figvecaux] (1.42,-0.24) -- (0.9,-0.04);
+  % cilindrito chato
+  \draw[figred, line width=1pt] (-0.9,0.24) -- (0.9,0.24) -- (0.9,-0.24) -- (-0.9,-0.24) -- cycle;
+  \node[figlbl, figred] at (1.2,0.35) {$S$};
+  % tapa exterior: la unica que aporta flujo
+  \draw[figvecres] (-0.45,0.24) -- (-0.45,1.1);
+  \draw[figvecres] (0.45,0.24) -- (0.45,1.1);
+  \node[figlbl] at (0,1.3) {$E_n$};
+  % cota de la tapa
+  \draw[figaux] (-0.9,-0.42) -- (-0.9,-0.86);
+  \draw[figaux] (0.9,-0.42) -- (0.9,-0.86);
+  \draw[figvecaux] (-0.9,-0.68) -- (0.9,-0.68);
+  \draw[figvecaux] (0.9,-0.68) -- (-0.9,-0.68);
+  \node[figlbl, fill=figgray!18, inner sep=1.5pt] at (0,-0.68) {$\Delta S$};
+  \node[figlbl] at (0,-2.25) {(b) $E_n\,\Delta S=\sigma\,\Delta S/\varepsilon_0$};
+  \node[figlbl] at (0,-2.85) {$\Rightarrow\ E_n=\sigma/\varepsilon_0$};
+\end{scope}
+
+\end{tikzpicture}

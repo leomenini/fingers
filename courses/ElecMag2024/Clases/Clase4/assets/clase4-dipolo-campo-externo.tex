@@ -1,0 +1,53 @@
+% Clase 4 — dipolo rigido ("barrita") en un campo externo.
+% (a) campo uniforme: las fuerzas se cancelan, fuerza neta nula (queda torque).
+% (b) campo inhomogeneo: los modulos difieren y aparece fuerza neta.
+% Los rotulos de carga van ARRIBA/ABAJO de la carga y los de fuerza PEGADOS a su
+% flecha: puestos a la misma altura se leen como un solo bloque (pasa en el render,
+% no en el codigo).
+\begin{tikzpicture}[scale=1]
+
+% ---------------- panel (a) ----------------
+\begin{scope}
+  \foreach \yy in {-1.65,-0.95,0.95,1.65}{
+    \draw[figvecaux] (-2.4,\yy) -- (2.4,\yy);
+  }
+  \node[figlblaux] at (0,2.1) {$\vec E_{\text{ext}}$ uniforme};
+  \draw[figline, line width=1.4pt] (-0.7,-0.42) -- (0.7,0.42);
+  \node[figneg] (a) at (-0.7,-0.42) {};
+  \node[figpos] (b) at (0.7,0.42) {};
+  \node[figlbl, figred,  fill=white, inner sep=1.5pt] at (0.62,0.8)  {$+Q$};
+  \node[figlbl, figblue, fill=white, inner sep=1.5pt] at (-0.62,-0.8) {$-Q$};
+  \node[figlbl, fill=white, inner sep=1.5pt] at (-0.08,0.16) {$\vec L$};
+  % fuerzas: igual modulo, sentidos opuestos
+  \draw[figvecres] (b) -- ++(1.2,0);
+  \draw[figvecres] (a) -- ++(-1.2,0);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (1.5,0.14)  {$Q\vec E$};
+  \node[figlbl, fill=white, inner sep=1.5pt] at (-1.5,-0.14) {$-Q\vec E$};
+  \node[figlbl] at (0,-2.6) {(a) fuerza neta $=0$};
+\end{scope}
+
+% ---------------- panel (b) ----------------
+\begin{scope}[xshift=7.4cm]
+  \draw[figvecaux] (-2.4,1.65) -- (2.4,0.9);
+  \draw[figvecaux] (-2.4,0.95) -- (2.4,0.52);
+  \draw[figvecaux] (-2.4,-0.95) -- (2.4,-0.52);
+  \draw[figvecaux] (-2.4,-1.65) -- (2.4,-0.9);
+  \node[figlblaux] at (0,2.1) {$\vec E_{\text{ext}}$ inhomog\'eneo};
+  \draw[figline, line width=1.4pt] (-0.7,-0.42) -- (0.7,0.42);
+  \node[figneg] (c) at (-0.7,-0.42) {};
+  \node[figpos] (d) at (0.7,0.42) {};
+  \node[figlbl, figred,  fill=white, inner sep=1.5pt] at (0.62,0.8)  {$+Q$};
+  \node[figlbl, figblue, fill=white, inner sep=1.5pt] at (-0.62,-0.8) {$-Q$};
+  % fuerzas de distinto modulo: no se cancelan
+  \draw[figvecres] (d) -- ++(1.6,0);
+  \draw[figvecres] (c) -- ++(-0.6,0);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (1.7,0.14)  {$Q\vec E$};
+  \node[figlbl, fill=white, inner sep=1.5pt] at (-1.28,-0.14) {$-Q\vec E$};
+  \node[figlbl] at (0,-2.6) {(b) fuerza neta $\neq0$};
+\end{scope}
+
+\node[figlbl, align=center] at (3.7,-3.55)
+  {$U=-\vec p\cdot\vec E_{\text{ext}}$,\quad $\vec F=-\nabla U$.\ \ La aproximaci\'on pide\\[0.2em]
+   $L\ll H$, con $H$ la escala en que var\'ia $\vec E_{\text{ext}}$};
+
+\end{tikzpicture}

@@ -1,0 +1,54 @@
+% Clase 7 — el problema resuelto: esfera conductora descargada de radio a en un
+% campo uniforme. Se marcan las DOS condiciones de borde y el dato extra (Q=0)
+% que hizo falta para cerrar la constante.
+% Las dos CB van SIMETRICAS a media altura y con relleno blanco: apiladas arriba
+% se comen el arco de theta y el rotulo de r (pasa en el render, no en el codigo).
+\begin{tikzpicture}[scale=1]
+
+  \draw[figaxis] (0,-2.5) -- (0,3.4);
+  \node[figlblaux] at (0,3.62) {$z$};
+
+  \foreach \xx in {-3.5,-2.85,2.85,3.5}{
+    \draw[figvecaux] (\xx,-2.3) -- (\xx,2.9);
+  }
+  \node[figlblaux] at (-3.5,3.22) {$\vec E_0$};
+
+  % esfera conductora
+  \fill[figgray!25] (0,0) circle (1.0);
+  \draw[figline, line width=1.1pt] (0,0) circle (1.0);
+  \node[figlblaux] at (0,-0.36) {$\vec E=0$};
+  \draw[figvecaux] (0,0) -- (218:1.0);
+  \node[figlblaux, fill=figgray!25, inner sep=1.2pt] at (-0.4,-0.06) {$a$};
+  \foreach \ang in {62,76,90,104,118}{\node[figpos] at (\ang:1.0) {};}
+  \foreach \ang in {242,256,270,284,298}{\node[figneg] at (\ang:1.0) {};}
+
+  % punto de observacion, bien arriba, con r y theta libres de las CB
+  \coordinate (P) at (1.15,2.55);
+  \node[figneutra] at (P) {};
+  \draw[figvec] (0,0) -- (P);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0.98,1.72) {$r$};
+  \draw[figgray, line width=0.6pt] (0,1.95) arc (90:65.7:1.95);
+  \node[figlblaux, fill=white, inner sep=1.2pt] at (0.3,2.12) {$\theta$};
+
+  % las dos condiciones de borde, simetricas y a media altura
+  \node[figlbl, figred, fill=white, inner sep=2pt] at (-2.55,0.9) {\textbf{CB 1}};
+  \node[figlblaux, align=center, fill=white, inner sep=2pt] at (-2.55,0.28)
+    {$\phi(a,\theta)=\phi_0$\\ (equipotencial)};
+  \draw[figvecaux] (-1.78,0.5) -- (-0.88,0.42);
+
+  \node[figlbl, figred, fill=white, inner sep=2pt] at (2.75,0.9) {\textbf{CB 2}};
+  \node[figlblaux, align=center, fill=white, inner sep=2pt] at (2.75,0.28)
+    {$\phi\to-E_0\,r\cos\theta$\\ cuando $r\to\infty$};
+
+  % el dato extra
+  \node[figlbl, align=center] at (0,-3.2)
+    {\textbf{Dato extra que hace falta:} la esfera est\'a \emph{descargada}, $Q=0$.};
+  \node[figlblaux, align=center] at (0,-3.95)
+    {Sin \'el $\phi_0$ queda libre: cierran el problema las dos CB\\[0.15em]
+     \emph{m\'as} el desarrollo multipolar (el t\'ermino en $1/r$ vale $Q/4\pi\varepsilon_0$).};
+
+  \node[figlbl, align=center] at (0,-4.95)
+    {$\phi(r,\theta)=-E_0\left(r-\dfrac{a^{3}}{r^{2}}\right)\cos\theta
+     \qquad (r\ge a)$};
+
+\end{tikzpicture}

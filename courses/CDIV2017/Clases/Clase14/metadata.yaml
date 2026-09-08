@@ -16,33 +16,57 @@ video:
 
 stats:
   transcript_words: 8204
-  summary_words: 0
+  summary_words: 2800
   diagrams_pending: 0
-  equations: 0
+  equations: 32
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
-
-topics: []
+topics:
+  - Propiedades algebraicas de las integrales
+  - Teorema de linealidad (aditividad y homogeneidad)
+  - Espacio vectorial de funciones integrables y operador integral como funcional lineal
+  - Jerarquía de subespacios de funciones según regularidad
+  - Lema de ínfimos y supremos para la suma de funciones
+  - Desigualdades de sumas de Darboux para la suma de funciones
+  - Demostración de la aditividad de la integral mediante particiones refinadas y argumento eps/2
+  - Demostración de la homogeneidad de la integral (casos alfa = 0, alfa > 0, alfa < 0)
+  - Corolario para combinaciones lineales generales
+  - Cálculo de áreas entre gráficas de funciones
+  - Área algebraica versus área geométrica
+  - Integración y valor absoluto de una función
+  - Descomposición funcional en parte positiva y parte negativa
+  - Integrabilidad de las partes positiva y negativa
+  - Integrabilidad de la función valor absoluto
+  - Desigualdad triangular continua para integrales
+  - Restricción de la integrabilidad a subintervalos
+  - Definición de función localmente integrable en intervalos generales
+  - Teorema de aditividad respecto al intervalo (relación de Chasles para tres puntos ordenados)
 
 bibliography: []
 
-prerequisites: []
+prerequisites:
+  - Definición de integral de Riemann y sumas de Darboux
+  - Integrales superior e inferior
+  - Criterio de integrabilidad de Darboux / Cauchy (a menos de epsilon)
+  - Refinamiento de particiones y comportamiento monótono de sumas de Darboux
+  - Nociones básicas de espacios vectoriales y transformaciones lineales (GAL 1)
 
-next_topics: []
+next_topics:
+  - Extensión de la noción de integral para extremos invertidos o coincidentes
+  - Generalización de la relación de Chasles a puntos arbitrarios
+  - Teorema fundamental del cálculo y función integral
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
   reviewer: []
-  date: 2026-08-08
+  date: 2026-09-01
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: ""
 
 editorial_status: draft

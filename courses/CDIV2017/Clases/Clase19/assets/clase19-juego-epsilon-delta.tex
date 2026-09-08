@@ -1,0 +1,53 @@
+% Clase 19 --- El juego epsilon/delta y el entorno reducido (§1.3).
+% El docente: "si un usuario me da un epsilon esto me define una banda
+% horizontal, una banda de precisión... el juego es hallar un delta bastante
+% pequeño, pero no nulo, tal que la imagen de la banda de radio delta esté
+% adentro de la banda horizontal... yo no podría tomar delta acá, porque esta
+% parte de la función se va afuera de la banda". Y además: "nunca se examina
+% el valor de f en el punto x sub cero".
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    calcfig,
+    axis lines=left,
+    width=12cm, height=7cm,
+    domain=1.2:6.8, samples=100,
+    xmin=0.8, xmax=7.6, ymin=1.4, ymax=5.4,
+    xtick={4}, xticklabels={$x_0$},
+    ytick={3}, yticklabels={$L$},
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={font=\small, at={(axis description cs:1,0)}, anchor=north},
+    ylabel style={font=\small, at={(axis description cs:0,1)}, anchor=east},
+  ]
+  % banda horizontal de precisión: L +- epsilon
+  \fill[figamber!18] (axis cs:0.8,2.4) rectangle (axis cs:7.05,3.6);
+  % banda vertical que SÍ funciona: radio delta
+  \fill[figblue!14] (axis cs:3.1,1.4) rectangle (axis cs:4.9,5.05);
+  % radio demasiado grande: la imagen se escapa de la banda de precisión
+  \draw[figred, dashed, line width=0.8pt] (axis cs:1.8,1.4) -- (axis cs:1.8,5.05);
+  \draw[figred, dashed, line width=0.8pt] (axis cs:6.2,1.4) -- (axis cs:6.2,5.05);
+
+  \addplot[figblue, line width=1.1pt] {3 + 0.6*(x-4) + 0.08*(x-4)^2};
+
+  % guías del punto y del valor irrelevante f(x_0)
+  \draw[figaux] (axis cs:0.8,3) -- (axis cs:4,3);
+  \node[figptoabierto] at (axis cs:4,3) {};
+  \node[figpto, fill=figred, minimum size=5.5pt] at (axis cs:4,4.6) {};
+  \node[figlbl, figred, right=3pt] at (axis cs:4,4.6) {$f(x_0)$};
+
+  % rótulos
+  \node[figlbl, figamber, right] at (axis cs:7.08,3.42) {$L+\varepsilon$};
+  \node[figlbl, figamber, right] at (axis cs:7.08,2.58) {$L-\varepsilon$};
+  \node[figlblaux, align=center] at (axis cs:4,1.75)
+    {radio $\delta_\varepsilon$\\ (sirve)};
+  \node[figlbl, figred, align=center, anchor=south] at (axis cs:6.2,5.10)
+    {radio demasiado grande};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Una precisión $\varepsilon$ define la banda horizontal
+$L\pm\varepsilon$; el juego consiste en devolver un radio $\delta_\varepsilon$
+tal que la imagen de la banda vertical caiga entera adentro de la horizontal.
+El radio punteado en rojo fracasa: parte de la gráfica se escapa. El valor
+$f(x_0)$ puede estar en cualquier lado --- el entorno es \emph{reducido} y
+nunca se lo mira.}
+\end{center}

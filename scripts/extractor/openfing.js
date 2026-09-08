@@ -27,7 +27,15 @@ const valor = (m) => m?.[1] ?? m?.[2] ?? m?.[3] ?? null;
 
 export let USER_AGENT = 'fingers-extractor/1.0 (+https://github.com/leomenini; contacto vía repo)';
 
-/** GET con reintento y backoff. Devuelve { texto, bytes, sha256, url }. */
+/**
+ * GET con reintento y backoff. Devuelve { texto, bytes, sha256, url }.
+ *
+ * Los 4xx NO se reintentan: un 404 no se vuelve un 200 esperando un segundo.
+ * Reintentarlo costaba 3 peticiones y ~3 s por clase inexistente, y con el
+ * sondeo de candidatos de `resolverVtt` ese desperdicio se multiplica. Se
+ * siguen reintentando 5xx, timeouts y errores de red, que sí son transitorios.
+ * El error lleva `.status` para que quien llama pueda distinguirlos.
+ */
 export async function bajarTexto(url, { intentos = 3, esperaMs = 1000, timeoutMs = 15000 } = {}) {
   let ultimo;
   for (let i = 0; i < intentos; i++) {
@@ -36,7 +44,11 @@ export async function bajarTexto(url, { intentos = 3, esperaMs = 1000, timeoutMs
         headers: { 'user-agent': USER_AGENT },
         signal: AbortSignal.timeout(timeoutMs)
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        const e = new Error(`HTTP ${res.status}`);
+        e.status = res.status;
+        throw e;
+      }
       const buf = Buffer.from(await res.arrayBuffer());
       return {
         url,
@@ -49,10 +61,13 @@ export async function bajarTexto(url, { intentos = 3, esperaMs = 1000, timeoutMs
       };
     } catch (e) {
       ultimo = e;
+      if (e.status >= 400 && e.status < 500) break;
       if (i < intentos - 1) await new Promise((r) => setTimeout(r, esperaMs * 2 ** i));
     }
   }
-  throw new Error(`${url} → ${ultimo.message}`);
+  const err = new Error(`${url} → ${ultimo.message}`);
+  err.status = ultimo.status;
+  throw err;
 }
 
 /**
@@ -140,4 +155,79 @@ export function urlDelVtt(ogVideo) {
 /** Atajo para quien sólo tiene la URL de la clase (lo que usa diff-oraculo). */
 export async function urlDelVttDeClase(urlClase) {
   return urlDelVtt((await metaDeClase(urlClase)).ogVideo);
+}
+
+/**
+ * Candidatos a URL del VTT, en orden de preferencia.
+ *
+ * El primero SIEMPRE es `urlDelVtt(ogVideo)`: el `og:video` sigue siendo la
+ * fuente de verdad (ADR-0001) y esto no la reemplaza. Los demás son un seguro
+ * contra un caso observado en `em-2024`: OpenFING inserta en un curso clases
+ * regrabadas otro año, y ahí el año del archivo deja de coincidir con el del
+ * curso (clase 9 → `em-2025_09.mp4` dentro de `media/em-2024/`).
+ *
+ * Es una heurística de recuperación DESPUÉS del fallo, no una fuente nueva:
+ * si la canónica baja, ninguna variante se llega a probar. Y no resuelve el
+ * caso que la motivó —para esas dos clases el VTT no existe con ningún
+ * nombre—, así que su valor es cubrir la variante en que sí exista.
+ *
+ * Sin año de 4 dígitos no genera variantes: `civ_09.mp4` devuelve un solo
+ * candidato y el recorrido es idéntico al de siempre.
+ */
+export function candidatosDeVtt(ogVideo) {
+  const canonica = urlDelVtt(ogVideo);
+  const urls = [canonica];
+  const agregar = (u) => { if (u && !urls.includes(u)) urls.push(u); };
+
+  const corte = canonica.lastIndexOf('/');
+  const dir = canonica.slice(0, corte);
+  const archivo = canonica.slice(corte + 1);
+
+  // Nada de `\b`: en `em-2025_09` el guión bajo es carácter de palabra, así
+  // que `\b` después del año no matchea y la variante nunca se generaba.
+  const anio = /(?<![0-9])(?:19|20)\d{2}(?![0-9])/;
+  const variar = (s, d) => {
+    const m = s.match(anio);
+    return m ? s.slice(0, m.index) + (Number(m[0]) + d) + s.slice(m.index + 4) : null;
+  };
+
+  // Año del nombre del archivo: em-2025_09_… → em-2024_09_…, em-2026_09_…
+  for (const d of [-1, 1]) {
+    const v = variar(archivo, d);
+    if (v) agregar(`${dir}/${v}`);
+  }
+
+  // Año del directorio: media/em-2024/… → media/em-2025/…
+  // Sólo el último segmento: el año no puede salir del host ni de `media/`.
+  const cortePadre = dir.lastIndexOf('/');
+  for (const d of [-1, 1]) {
+    const v = variar(dir.slice(cortePadre + 1), d);
+    if (v) agregar(`${dir.slice(0, cortePadre)}/${v}/${archivo}`);
+  }
+
+  return urls;
+}
+
+/**
+ * Baja el VTT probando los candidatos en orden.
+ *
+ * Devuelve `{ payload, vttUrl, viaFallback }`. Si TODOS dan 404 el error sale
+ * marcado `sinFuente`: la transcripción no está publicada, y reintentar no la
+ * va a hacer aparecer. Cualquier otra falla (5xx, timeout, red) se propaga
+ * como error normal, que sí conviene reintentar.
+ */
+export async function resolverVtt(ogVideo, opciones) {
+  const urls = candidatosDeVtt(ogVideo);
+  for (const [i, url] of urls.entries()) {
+    try {
+      return { payload: await bajarTexto(url, opciones), vttUrl: url, viaFallback: i > 0 };
+    } catch (e) {
+      if (!(e.status >= 400 && e.status < 500)) throw e;
+    }
+  }
+  const e = new Error(
+    `sin transcripción publicada (probé ${urls.length}: ${urls.map((u) => u.slice(u.lastIndexOf('/') + 1)).join(', ')})`,
+  );
+  e.sinFuente = true;
+  throw e;
 }

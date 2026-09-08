@@ -1,0 +1,525 @@
+# Resumen Clase 19 — Límites: ejemplos y contraejemplos
+
+## Índice
+
+1. [La definición de límite, repasada](#1-la-definición-de-límite-repasada)
+   - 1.1 [Un punto de lógica: los cuantificadores son símbolos](#11-un-punto-de-lógica-los-cuantificadores-son-símbolos)
+   - 1.2 [El juego entre el implementor y el usuario](#12-el-juego-entre-el-implementor-y-el-usuario)
+   - 1.3 [Lectura gráfica: banda de precisión y radio de seguridad](#13-lectura-gráfica-banda-de-precisión-y-radio-de-seguridad)
+2. [Continuidad](#2-continuidad)
+   - 2.1 [Los dos tipos de discontinuidad](#21-los-dos-tipos-de-discontinuidad)
+   - 2.2 [Continuidad en un intervalo: cuatro cuantificadores](#22-continuidad-en-un-intervalo-cuatro-cuantificadores)
+3. [Catálogo intuitivo de comportamientos](#3-catálogo-intuitivo-de-comportamientos)
+4. [Ejemplo 1: la función identidad](#4-ejemplo-1-la-función-identidad)
+5. [Ejercicio: la identidad modificada](#5-ejercicio-la-identidad-modificada)
+   - 5.1 [Cambiar la función en finitos puntos no cambia los límites](#51-cambiar-la-función-en-finitos-puntos-no-cambia-los-límites)
+   - 5.2 [Achicar el radio: qué significa "suficientemente pequeño"](#52-achicar-el-radio-qué-significa-suficientemente-pequeño)
+6. [Ejemplo 2: la raíz cuadrada es continua](#6-ejemplo-2-la-raíz-cuadrada-es-continua)
+   - 6.1 [Caso fácil: $x_0 = 0$](#61-caso-fácil-x_0--0)
+   - 6.2 [Caso difícil: $x_0 > 0$](#62-caso-difícil-x_0--0)
+   - 6.3 [Moraleja: para eso están los teoremas](#63-moraleja-para-eso-están-los-teoremas)
+7. [Negar la definición: qué significa no tener límite](#7-negar-la-definición-qué-significa-no-tener-límite)
+8. [Contraejemplo: la función signo no tiene límite en 0](#8-contraejemplo-la-función-signo-no-tiene-límite-en-0)
+   - 8.1 [La estrategia: $\varepsilon$ es la mitad del salto](#81-la-estrategia-varepsilon-es-la-mitad-del-salto)
+   - 8.2 [Caso $L \geq 0$](#82-caso-l-geq-0)
+   - 8.3 [Caso $L < 0$](#83-caso-l--0)
+
+---
+
+## 1. La definición de límite, repasada
+
+La clase abre recordando la definición dada la clase anterior, que el docente
+califica sin rodeos como **la definición más difícil de todo el curso** y la
+única que hay que memorizar si sólo se memoriza una cosa.
+
+El marco es el de siempre en este capítulo: una función $f : I \to \mathbb{R}$
+definida en un **intervalo $I$ de interior no vacío**, y un punto
+$x_0 \in \bar I$, la **clausura** de $I$. Que el punto se tome en la clausura y
+no en $I$ significa que $x_0$ puede estar adentro del intervalo o ser uno de
+sus dos extremos, incluso si esos extremos no pertenecen a $I$. Es un regalo
+gratis: la clausura agrega a lo sumo dos puntos más donde la noción de límite
+tiene sentido, y si los extremos ya estaban adentro no cambia nada.
+
+Dado además un número $L \in \mathbb{R}$, las dos notaciones
+
+$$\lim_{x \to x_0} f(x) = L \qquad \text{y} \qquad f(x) \to L \ \text{ cuando } \ x \to x_0$$
+
+son **sinónimas**, y significan por definición:
+
+$$\boxed{\ \forall \varepsilon > 0,\ \exists \delta_\varepsilon > 0,\ \forall x \in I,\quad 0 < |x - x_0| < \delta_\varepsilon \ \Longrightarrow\ |f(x) - L| < \varepsilon\ }$$
+
+Cada pedazo dice algo preciso. La condición $0 < |x - x_0|$ **no dice nada más
+que $x \neq x_0$**: no hay ninguna sutileza escondida ahí. Junto con
+$|x-x_0| < \delta$, lo que expresa es que $x$ pertenece al **entorno reducido**
+de centro $x_0$ y radio $\delta$, y es reducido precisamente porque el punto
+$x_0$ está prohibido. La conclusión, en cambio, usa un entorno normal:
+$f(x)$ pertenece al entorno de centro $L$ y radio $\varepsilon$. En notación de
+entornos:
+
+$$x \in E^{*}_{\delta}(x_0) \ \Longrightarrow\ f(x) \in E_{\varepsilon}(L).$$
+
+Todo esto formaliza matemáticamente una idea intuitiva que conviene tener
+siempre presente: **$f(x)$ es arbitrariamente cercano a $L$ con tal de que $x$
+sea suficientemente cercano a $x_0$**.
+
+### 1.1 Un punto de lógica: los cuantificadores son símbolos
+
+El docente hace un paréntesis a raíz de observaciones que recibió sobre su
+notación. Él escribe `∀ε > 0,` y `∃δ > 0,` usando una coma, que se lee
+"tenemos que" después de un para todo y "tal que" después de un existe. Muchos
+profesores —en Francia y en Uruguay por igual— escriben en cambio
+`∃δ > 0 / …` o `∃δ > 0 tal que …`, agregando el "tal que" al lado del símbolo.
+
+> Eso **está mal**, y la razón es una confusión entre **símbolo** y
+> **abreviatura**. El signo $\exists$ no es una estenografía de la palabra
+> "existe": es un símbolo matemático, y contiene más palabras adentro. La
+> analogía es el signo de integral: $\int$ tampoco abrevia la palabra
+> "integral". Si lo fuera, habría que escribir "la $\int$ de $a$ a $b$ de
+> $f(x)\,dx$", y no es así como se escribe.
+
+Cuando se escribe en lenguaje natural, con palabras, el "tal que" **sí** se
+restaura: "sea $x$ tal que…" es correcto, exactamente igual que decir "la
+integral de $a$ a $b$ de $f$". Lo que está mal es mezclar el símbolo con la
+locución. Sobre el signo de puntuación: hay dos convenciones en lógica, o bien
+paréntesis sin puntuación, o bien coma (o punto) sin paréntesis; en el curso se
+usa la segunda, que es más cómoda.
+
+### 1.2 El juego entre el implementor y el usuario
+
+La dificultad real de la definición es la **alternancia de cuantificadores**:
+un para todo, después un existe, después otro para todo. La forma de entenderla
+es leerla como un juego entre dos jugadores, o —para el público informático de
+la sala— como una **especificación de software**, que tiene dos sentidos de
+lectura según de qué lado se esté.
+
+| | Elige $\varepsilon$ | Construye $\delta_\varepsilon$ | Elige el $x$ de prueba |
+|---|---|---|---|
+| **Implementor** (demuestra que hay límite) | no, lo recibe | **sí** | no, lo recibe |
+| **Usuario** (usa el límite como hipótesis) | **sí** | no, lo recibe | **sí** |
+
+El **implementor** es quien tiene que demostrar que la función tiene límite.
+Desde su lugar, alguien de afuera le da un $\varepsilon$ sobre el cual no tiene
+ningún control, y su trabajo es **construir** un $\delta$ en función de ese
+$\varepsilon$. Por eso está bien —y el docente lo hace sistemáticamente—
+escribir $\delta_\varepsilon$ con subíndice: **el radio depende de la
+precisión**. Construir esa dependencia es literalmente definir una función
+$\varepsilon \mapsto \delta_\varepsilon$, y en cada ejemplo de la clase esa
+función se exhibe explícitamente. Después el usuario le da un $x$ cualquiera
+para testear si el $\delta$ devuelto aguanta; por eso el $\delta$ tiene que ser
+**genérico**, tiene que servir para todos los $x$ a la vez.
+
+El **usuario** tiene el punto de vista dual. Cuando la propiedad del límite
+aparece como hipótesis de un teorema, ahora es él quien elige el $\varepsilon$
+que le conviene, recibe un $\delta_\varepsilon$ sobre el cual no decide nada, y
+después elige el $x$ con el que va a explotar la información.
+
+> Es la misma asimetría que en una función de un programa: el implementor
+> acepta el argumento sin control sobre su valor y tiene que hacer algo con él;
+> el usuario elige el argumento libremente pero no controla lo que la función
+> devuelve. Los conceptos de la informática ayudan mucho a leer razonamientos
+> matemáticos de este tipo.
+
+### 1.3 Lectura gráfica: banda de precisión y radio de seguridad
+
+El límite $L$ vive en el eje vertical (es un valor con el que se compara
+$f(x)$), y $x_0$ en el horizontal. Un $\varepsilon$ dado define una **banda
+horizontal de precisión** de semiancho $\varepsilon$ alrededor de $L$. El juego
+consiste en hallar un $\delta$ **pequeño pero no nulo** tal que la imagen de la
+banda vertical de radio $\delta$ alrededor de $x_0$ quede íntegramente dentro
+de la banda horizontal. Un $\delta$ demasiado grande falla porque parte de la
+gráfica se escapa por arriba o por abajo de la banda de precisión; achicarlo lo
+arregla.
+
+> **En este dibujo nunca se examina el valor $f(x_0)$.** Ésa es exactamente la
+> razón de tomar entornos **reducidos**: la noción de límite intenta predecir
+> lo que pasa en $x_0$ **sin mirar** lo que pasa en $x_0$. El valor $f(x_0)$
+> puede estar en cualquier otro lado del plano y el límite no cambia.
+
+---
+
+## 2. Continuidad
+
+Sobre la definición de límite se monta un caso particular, ya visto la clase
+anterior. Ahora se exige $x_0 \in I$ —**no** en la clausura—, porque hay que
+poder hablar del valor $f(x_0)$:
+
+$$\boxed{\ f \text{ es continua en } x_0 \in I \iff \lim_{x \to x_0} f(x) \ \text{existe y vale} \ f(x_0)\ }$$
+
+Escribir $\lim_{x\to x_0} f(x) = f(x_0)$ afirma implícitamente **dos** cosas: que
+el límite existe, y que coincide con la imagen.
+
+### 2.1 Los dos tipos de discontinuidad
+
+De ahí salen exactamente dos maneras de que una función **no** sea continua en
+un punto:
+
+1. **Por ausencia de límite.** La función no tiene límite en $x_0$ (oscila
+   demasiado rápido, o los límites laterales difieren).
+2. **Porque el límite existe pero es distinto del valor.** Hay límite $L$, pero
+   $f(x_0) \neq L$.
+
+El segundo caso es el más engañoso, porque nada falla "cerca" del punto: la
+función se acerca ordenadamente a $L$ y el único problema es el valor aislado
+que toma exactamente en $x_0$.
+
+### 2.2 Continuidad en un intervalo: cuatro cuantificadores
+
+$$f \text{ es continua en } I \iff f \text{ es continua en todo punto de } I.$$
+
+Desplegada, esta definición lleva **una cuantificación más** encima de la del
+límite: $\forall x_0 \in I,\ \forall \varepsilon > 0,\ \exists \delta > 0,\
+\forall x \in I, \dots$ Cuatro cuantificadores anidados.
+
+> Todo el interés del capítulo es verificar que esta maquinaria corresponde a
+> la idea superintuitiva de una función *cuya gráfica es de una sola pieza*.
+> Hace falta la formalización porque sin ella no hay manera de decidir si una
+> función complicada es o no continua: la intuición del dibujo no alcanza.
+
+---
+
+## 3. Catálogo intuitivo de comportamientos
+
+Antes de los ejemplos formales, el docente hace dibujos, porque en general al
+ver la gráfica ya se puede **predecir** si hay límite o no, y eso orienta el
+razonamiento posterior. Los casos que aparecen en el pizarrón:
+
+| Comportamiento en $x_0$ | ¿Tiene límite? | ¿Es continua? |
+|---|---|---|
+| La gráfica pasa por el límite | sí | sí |
+| Salto: hay límite pero $f(x_0)$ está en otro lado | sí | no |
+| Oscilación infinitamente rápida | no | no |
+| Límites laterales distintos | no | no |
+
+El ejemplo típico de oscilación es
+
+$$f(x) = \begin{cases} \sin\!\left(\dfrac{1}{x}\right) & \text{si } x \neq 0, \\[0.6em] 42 & \text{si } x = 0,\end{cases}$$
+
+donde el valor en $0$ hay que ponerlo para completar la definición y da
+exactamente igual cuál sea (el docente elige $42$ "porque es la respuesta del
+universo"). Esta función **no tiene límite en $0$**, y el problema no viene del
+valor asignado en $0$ sino de que la función oscila demasiado rápido en torno
+al origen: no hay ningún $L$ al que se acerque.
+
+El ejemplo típico de límites laterales distintos es la **función signo**: por
+la izquierda tiende a $-1$, por la derecha a $+1$, y como ambos límites
+laterales difieren, no hay límite en $0$. Es el contraejemplo que se demuestra
+formalmente en la sección 8.
+
+---
+
+## 4. Ejemplo 1: la función identidad
+
+Empieza la parte formal, con la función más sencilla después de las constantes.
+
+**Proposición.** Sea $f : \mathbb{R} \to \mathbb{R}$, $f(x) = x$. Entonces
+
+$$\forall x_0 \in \mathbb{R}, \quad \lim_{x \to x_0} f(x) = x_0 = f(x_0),$$
+
+es decir, $f$ es continua en todo punto de $\mathbb{R}$, y por lo tanto continua
+en $\mathbb{R}$.
+
+**Demostración.** Sea $\varepsilon > 0$ (lo da el usuario). Se **define**
+
+$$\boxed{\delta_\varepsilon := \varepsilon}$$
+
+—por simetría del dibujo: la banda de precisión y la de radio son la misma—.
+Sea ahora $x \in \mathbb{R}$ tal que $0 < |x - x_0| < \delta_\varepsilon$. La
+desigualdad izquierda no se usa para nada, así que se descarta. Por definición
+de $\delta_\varepsilon$,
+
+$$|x - x_0| < \varepsilon,$$
+
+y como $f(x) = x$ por definición de $f$, esto es exactamente
+
+$$|f(x) - x_0| < \varepsilon. \qquad \blacksquare$$
+
+> Nótese dónde se usa la definición de $f$: en el último paso, al reemplazar
+> $x$ por $f(x)$. En toda demostración de límite hay que usar en algún momento
+> la definición de la función; acá, como la función es trivial, el razonamiento
+> también lo es. Nótese también que el límite $L$ vale $x_0$: una vez fijado
+> $x_0$, el valor del límite **ya está determinado y no depende de $x$**.
+
+---
+
+## 5. Ejercicio: la identidad modificada
+
+Propuesto en clase para hacer en casa, con las ideas discutidas en el pizarrón.
+Sea
+
+$$f(x) = \begin{cases} x & \text{si } x \neq 0, \\ 42 & \text{si } x = 0.\end{cases}$$
+
+Se plantean tres preguntas: ¿tiene límite en $0$? (sí, vale $0$); ¿tiene límite
+en un $x_0 \neq 0$? (sí, vale $x_0$); ¿qué se deduce sobre la continuidad? La
+función tiene límite en **todo** punto y ese límite vale siempre $x_0$; pero en
+$x_0 = 0$ el límite $0$ no coincide con el valor $f(0) = 42$. Conclusión:
+
+$$\boxed{f \text{ es continua en todo punto salvo en } 0, \text{ donde hay discontinuidad del segundo tipo.}}$$
+
+### 5.1 Cambiar la función en finitos puntos no cambia los límites
+
+El ejercicio ilustra una propiedad general importante:
+
+> Si se modifica una función en una **cantidad finita de puntos**, sus
+> propiedades de límite no cambian.
+
+La demostración se parte en dos casos, y son de dificultad muy distinta:
+
+- **$x_0 = 0$**: no hay ningún trabajo extra. Como la definición usa un entorno
+  **reducido**, el punto $0$ está excluido y el valor $42$ nunca se mira. Sirve
+  el mismo $\delta_\varepsilon = \varepsilon$ que en la identidad.
+- **$x_0 \neq 0$**: acá sí hay que trabajar un poco, porque si $\varepsilon$ es
+  grande el entorno de radio $\varepsilon$ alrededor de $x_0$ puede **contener
+  al $0$**, y ahí adentro la función salta a $42$. Hay que achicar el radio
+  para esquivar el punto problemático:
+
+$$\boxed{\delta_\varepsilon := \min\left(\varepsilon,\ |x_0|\right)}$$
+
+### 5.2 Achicar el radio: qué significa "suficientemente pequeño"
+
+Detrás de ese $\min$ hay un argumento completamente general, que ya se podía
+observar en el ejemplo de la identidad:
+
+> **Si un radio $\delta$ funciona, cualquier radio más chico también
+> funciona.** En la identidad se podía haber tomado $\varepsilon/2$,
+> $\varepsilon/42$ o $\varepsilon/1000$ en lugar de $\varepsilon$ y la
+> demostración andaba igual.
+
+Eso es exactamente lo que quiere decir la expresión **"existe un radio
+suficientemente pequeño"**: existe un radio, y la propiedad se conserva al
+reemplazarlo por cualquier otro más chico. Es una libertad que se va a usar
+sistemáticamente, y en la sección siguiente aparece también del lado de
+$\varepsilon$.
+
+---
+
+## 6. Ejemplo 2: la raíz cuadrada es continua
+
+Ahora, en palabras del docente, un ejemplo "para adultos". Sea
+
+$$f : [0, +\infty) \to \mathbb{R}, \qquad f(x) = \sqrt{x}.$$
+
+Nótese que el dominio ya **no** es todo $\mathbb{R}$: es un intervalo no
+trivial, los reales positivos o nulos. La gráfica es la media parábola
+conocida.
+
+**Proposición.** $\displaystyle \forall x_0 \in [0,+\infty),\ \lim_{x \to x_0}\sqrt{x} = \sqrt{x_0} = f(x_0)$; es decir, $\sqrt{\ }$ es continua.
+
+La demostración es **artesanal** y se parte en dos casos de dificultad muy
+desigual.
+
+### 6.1 Caso fácil: $x_0 = 0$
+
+Acá $L = \sqrt{0} = 0$, y hay una simplificación gratis: como la función es
+positiva, la mitad inferior de la banda de precisión nunca se usa. La idea
+geométrica para elegir el radio es que **para ir del eje $x$ al eje $y$ se
+aplica la raíz, así que para ir al revés hay que aplicar el cuadrado**. Se
+define entonces
+
+$$\boxed{\delta_\varepsilon := \varepsilon^{2} > 0}$$
+
+Sea $x \in [0,+\infty)$ tal que $0 < |x - 0| < \delta_\varepsilon$. Como $x$ es
+positivo el valor absoluto se puede sacar, y queda
+
+$$0 < x < \varepsilon^{2}.$$
+
+Como la raíz cuadrada es **estrictamente monótona** y los tres números son
+positivos o nulos, se le puede aplicar la raíz a toda la cadena:
+
+$$0 < \sqrt{x} < \sqrt{\varepsilon^{2}} = \varepsilon.$$
+
+Y si $\sqrt x$ está entre $0$ y $\varepsilon$, entonces $|\sqrt{x}| <
+\varepsilon$; escribiendo $|\sqrt{x} - 0| < \varepsilon$ —restar el límite $0$
+no cuesta nada— se tiene exactamente la definición del límite. $\blacksquare$
+
+### 6.2 Caso difícil: $x_0 > 0$
+
+**El objetivo, y el razonamiento hacia atrás.** Lo que se quiere obtener es
+
+$$\sqrt{x_0} - \varepsilon < \sqrt{x} < \sqrt{x_0} + \varepsilon,$$
+
+y de ahí hay que **extraer** cuál es el $\delta$ que lo garantiza. Lo natural es
+elevar al cuadrado para deshacerse de las raíces. Pero elevar al cuadrado sólo
+preserva desigualdades **entre números positivos o nulos**, y ahí aparece el
+problema: $\sqrt{x_0} + \varepsilon$ es positivo sin discusión, y $x$ también,
+pero **$\sqrt{x_0} - \varepsilon$ puede ser negativo**, porque nada le prohíbe
+al usuario pedir una precisión enorme (¿por qué no medir una raíz cuadrada con
+precisión de un millón?).
+
+**La reducción de precisión.** La salida es achicar $\varepsilon$, usando la
+libertad de la sección 5.2 aplicada del otro lado: si el razonamiento funciona
+para una precisión más fina, con más razón funciona para la original, porque la
+banda más chica está contenida en la más grande. Se define
+
+$$\boxed{\varepsilon' := \min\left(\varepsilon,\ \sqrt{x_0}\right) > 0}$$
+
+que es positivo porque $\varepsilon > 0$ y $x_0 > 0$ por hipótesis. El $\min$
+—no el promedio, como se preguntó en clase— cumple **dos** cosas a la vez, y
+las dos hacen falta: $\varepsilon' \leq \sqrt{x_0}$ garantiza que
+$\sqrt{x_0} - \varepsilon' \geq 0$, y $\varepsilon' \leq \varepsilon$ es lo que
+va a permitir concluir al final.
+
+> Se puede achicar $\varepsilon$ cuando haga falta; **nunca** agrandarlo.
+
+Con $\varepsilon'$ todos los números en juego son positivos o nulos, y ahora sí
+vale la **equivalencia lógica**
+
+$$\sqrt{x_0} - \varepsilon' < \sqrt{x} < \sqrt{x_0} + \varepsilon' \iff \left(\sqrt{x_0} - \varepsilon'\right)^{2} < x < \left(\sqrt{x_0} + \varepsilon'\right)^{2}.$$
+
+**El radio.** El objetivo quedó expresado como un intervalo alrededor de $x$ que
+**no es simétrico** respecto de $x_0$: las distancias de $x_0$ a cada extremo
+son distintas. Como el radio de seguridad tiene que caber en ambos lados, se
+toma el mínimo:
+
+$$\boxed{\ \delta_\varepsilon := \min\Big\{ \left(\sqrt{x_0} + \varepsilon'\right)^{2} - x_0,\ \ x_0 - \left(\sqrt{x_0} - \varepsilon'\right)^{2} \Big\}\ }$$
+
+**Hay que verificar que este número es positivo**, y no es obvio a la vista.
+El argumento es económico: la equivalencia de arriba vale para cualquier
+número, en particular para $x = x_0$, y ahí el lado izquierdo es trivialmente
+cierto ($\sqrt{x_0}$ está entre $\sqrt{x_0}-\varepsilon'$ y
+$\sqrt{x_0}+\varepsilon'$). Luego vale el lado derecho, o sea que $x_0$ está
+estrictamente entre los dos cuadrados, y por lo tanto **ambas diferencias son
+positivas** — y su mínimo también.
+
+**Verificación.** Sea $x \in [0,+\infty)$ con $0 < |x - x_0| < \delta_\varepsilon$.
+Esa desigualdad dice que $x$ está entre $x_0 - \delta_\varepsilon$ y
+$x_0 + \delta_\varepsilon$. Se acota cada lado por separado usando que
+$\delta_\varepsilon$ es el mínimo:
+
+- Por arriba: $x < x_0 + \delta_\varepsilon \leq x_0 + \left[\left(\sqrt{x_0}+\varepsilon'\right)^{2} - x_0\right] = \left(\sqrt{x_0}+\varepsilon'\right)^{2}$.
+- Por abajo: $\delta_\varepsilon \leq x_0 - \left(\sqrt{x_0}-\varepsilon'\right)^{2}$, y al cambiar de signo se **invierte** la desigualdad, de donde $x > x_0 - \delta_\varepsilon \geq \left(\sqrt{x_0}-\varepsilon'\right)^{2}$.
+
+Pegando ambas:
+
+$$\left(\sqrt{x_0} - \varepsilon'\right)^{2} < x < \left(\sqrt{x_0} + \varepsilon'\right)^{2}.$$
+
+Los tres números son positivos o nulos, así que se les puede tomar raíz
+cuadrada, y por la equivalencia de antes:
+
+$$\sqrt{x_0} - \varepsilon' < \sqrt{x} < \sqrt{x_0} + \varepsilon' \quad\Longrightarrow\quad \left|\sqrt{x} - \sqrt{x_0}\right| < \varepsilon' \leq \varepsilon.$$
+
+Que es exactamente $|f(x) - L| < \varepsilon$. $\blacksquare$
+
+### 6.3 Moraleja: para eso están los teoremas
+
+> El $\delta_\varepsilon$ horrible de arriba **fue construido únicamente para
+> que este razonamiento cerrara**. No es intuitivo, no se adivina: sale de
+> hacer el razonamiento al revés desde el objetivo.
+
+El docente es explícito sobre por qué hizo esto: *"es la última vez que voy a
+hacer las cosas a mano"*. La razón de que existan tantos teoremas sobre límites
+es que demostrarlos a mano es difícil incluso para funciones sencillas —con la
+función cuadrado el trabajo sería parecido—, y hacer esto para cada función
+sería inviable. Pero hay que hacerlo **una vez en la vida**: para justificar
+que los teoremas hacen falta, primero hay que sufrir su ausencia. A partir de
+la clase siguiente vienen las herramientas que evitan el trabajo artesanal.
+
+---
+
+## 7. Negar la definición: qué significa no tener límite
+
+Hasta acá sólo se vieron ejemplos **positivos**. Para los contraejemplos hace
+falta negar la fórmula, aplicando las reglas usuales de negación de
+cuantificadores. Partiendo de
+
+$$f(x) \to L \ \text{ cuando } x \to x_0 \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ \forall x \in E^{*}_{\delta}(x_0),\ f(x) \in E_{\varepsilon}(L),$$
+
+la negación intercambia cada $\forall$ por un $\exists$ y viceversa:
+
+$$\boxed{\ f(x) \not\to L \iff \exists \varepsilon > 0,\ \forall \delta > 0,\ \exists x \in E^{*}_{\delta}(x_0),\quad |f(x) - L| \geq \varepsilon\ }$$
+
+En palabras: **existe una precisión que fracasa**, en el sentido de que para
+cualquier radio que se proponga hay un **contraejemplo** — un punto del entorno
+reducido cuya imagen se sale de la banda.
+
+Pero eso niega que $L$ sea *el* límite. Para afirmar que la función **no tiene
+límite** hay que negarlo para todos los candidatos a la vez:
+
+$$f \text{ no tiene límite en } x_0 \iff \forall L \in \mathbb{R},\ \exists \varepsilon > 0,\ \forall \delta > 0,\ \exists x \in E^{*}_{\delta}(x_0),\ |f(x) - L| \geq \varepsilon.$$
+
+Son **cuatro niveles de cuantificación**. Leída como juego: para todo intento
+de límite que proponga el usuario, hay que exhibir una precisión que no
+funciona para ningún radio.
+
+> Un alumno pregunta por qué aparece $\geq$ y no $>$: porque la negación de
+> "menor estricto" es "mayor o igual". De todos modos, si en un caso concreto
+> se consigue la desigualdad estricta, mejor — *lo que puede más puede menos*.
+
+---
+
+## 8. Contraejemplo: la función signo no tiene límite en 0
+
+$$\operatorname{sgn} : \mathbb{R} \to \mathbb{R}, \qquad \operatorname{sgn}(x) = \begin{cases} 1 & \text{si } x > 0, \\ 0 & \text{si } x = 0, \\ -1 & \text{si } x < 0.\end{cases}$$
+
+**Proposición.** $\operatorname{sgn}$ no tiene límite en $x_0 = 0$. En todo
+punto negativo tiene límite $-1$ y en todo punto positivo tiene límite $1$, de
+modo que es **continua en todo $\mathbb{R}$ salvo en $0$**, donde ni siquiera
+hay límite.
+
+Lo que hay que demostrar es la fórmula de la sección 7 instanciada en esta
+función y en $x_0 = 0$: para todo $L \in \mathbb{R}$ existe $\varepsilon > 0$
+tal que para todo $\delta > 0$ existe $x$ con
+
+$$0 < |x| < \delta \quad \textbf{y} \quad \left|\operatorname{sgn}(x) - L\right| \geq \varepsilon.$$
+
+> Ese "y" es el mismo símbolo lógico de siempre, pero acá **se lee "pero"**: en
+> matemática $\wedge$ se lee indistintamente "y" o "pero"; sólo cambia la
+> intención, no el significado.
+
+### 8.1 La estrategia: $\varepsilon$ es la mitad del salto
+
+El orden del trabajo lo fija la alternancia de cuantificadores: se recibe un
+$L$ cualquiera, se **construye** un $\varepsilon$, se recibe un $\delta$
+cualquiera, se **construye** un $x$ en función de todo lo anterior, y se
+verifica. Igual que antes, demostrar cosas sobre límites es construir
+funciones; sólo que ahora se construye un contraejemplo.
+
+> **El truco, y es general:** cuando hay dos límites laterales distintos, el
+> $\varepsilon$ que funciona es **la mitad de la distancia entre ellos**. Acá
+> los laterales son $-1$ y $1$, a distancia $2$, así que se toma
+> $$\boxed{\varepsilon := 1}$$
+> Ni siquiera es una precisión fina: se va a mostrar que ya con precisión $1$
+> ningún $L$ sirve.
+
+Sea entonces $\delta > 0$ cualquiera. Para construir el $x$ se distinguen dos
+casos según el signo de $L$; la idea en ambos es **irse hacia el lado opuesto a
+$L$**, donde el valor de la función queda lejos.
+
+### 8.2 Caso $L \geq 0$
+
+Si $L$ es positivo o nulo, hay que ir a la parte **negativa**, donde el signo
+vale $-1$. Se toma
+
+$$x := -\frac{\delta}{2},$$
+
+que cumple la condición del entorno reducido por construcción, ya que
+$0 < |x| = \delta/2 < \delta$. Como $x < 0$, se tiene
+$\operatorname{sgn}(x) = -1$, y entonces
+
+$$\left|\operatorname{sgn}(x) - L\right| = \left|-1 - L\right| = \left|L + 1\right| = L + 1 \geq 1 = \varepsilon,$$
+
+donde el valor absoluto se saca porque $L + 1$ es positivo (al ser $L \geq 0$).
+
+### 8.3 Caso $L < 0$
+
+Simétricamente, se va a la parte **positiva**. Se toma
+
+$$x := \frac{\delta}{2},$$
+
+que de nuevo cumple $0 < |x| < \delta$. Como $x > 0$, es
+$\operatorname{sgn}(x) = 1$, y
+
+$$\left|\operatorname{sgn}(x) - L\right| = \left|1 - L\right| = 1 - L > 1 = \varepsilon,$$
+
+porque $L < 0$ implica $-L > 0$, así que $1 - L$ es positivo (se puede sacar el
+valor absoluto) y mayor que $1$: **uno menos un número negativo es mayor que
+uno**.
+
+En los dos casos se encontró el contraejemplo pedido, para cualquier $L$ y
+cualquier $\delta$. Luego $\operatorname{sgn}$ no tiene límite en $0$.
+$\blacksquare$
+
+---
+
+*La próxima clase abandona el trabajo artesanal: se demuestran las propiedades
+algebraicas de los límites (suma, producto, cociente), que permiten calcular
+límites de funciones complicadas sin volver nunca a la definición $\varepsilon$-$\delta$.*

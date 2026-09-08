@@ -25,7 +25,7 @@ import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { resolverCurso } from './cursos.js';
-import { indiceDelCurso, metaDeClase, urlDelVtt, bajarTexto } from './openfing.js';
+import { indiceDelCurso, metaDeClase, resolverVtt } from './openfing.js';
 import {
   parseVtt,
   validarTranscripcion,
@@ -128,8 +128,7 @@ editorial_status: draft
 /** Baja y parsea una clase. No escribe nada: devuelve qué habría que escribir. */
 export async function extraerClase({ curso, n, urlClase, titulo }) {
   const meta = await metaDeClase(urlClase);
-  const vttUrl = urlDelVtt(meta.ogVideo);
-  const payload = await bajarTexto(vttUrl);
+  const { payload, vttUrl, viaFallback } = await resolverVtt(meta.ogVideo);
 
   const { cues, warnings } = parseVtt(payload.texto);
   const v = validarTranscripcion(cues);
@@ -141,6 +140,8 @@ export async function extraerClase({ curso, n, urlClase, titulo }) {
   return {
     n,
     stats,
+    viaFallback,
+    vttUrl,
     archivos: {
       'transcript.txt': aTextoPlano(cues),
       'transcript.timed.txt': aTextoConTiempo(cues),
@@ -245,6 +246,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   const dirDe = (n) => join(RAIZ, 'courses', curso.nombre, 'Clases', `Clase${n}`);
   const fallos = [];
+  const sinFuente = [];
   let hechas = 0;
   let saltadas = 0;
 
@@ -308,7 +310,20 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
           `${String(r.stats.cues).padStart(4)}  ${String(r.stats.words).padStart(8)}  ` +
           `${String(r.stats.warnings.length).padStart(4)}  ${c.titulo}`,
       );
+      // Un acierto silencioso del fallback es justo el bug que no se ve: la
+      // URL canónica falló y se bajó otra cosa. Se avisa siempre.
+      if (r.viaFallback) {
+        console.log(`${' '.repeat(7)}↳ ojo: la URL canónica dio 404; se usó ${r.vttUrl}`);
+      }
     } catch (e) {
+      // Que el origen no haya publicado la transcripción no es un fallo del
+      // extractor ni algo que reintentar: es un hueco de OpenFING. Se lista
+      // aparte para que no ensucie el conteo de errores ni el exit code.
+      if (e.sinFuente) {
+        sinFuente.push({ n: c.n, error: e.message });
+        console.log(`${String(c.n).padStart(5)}  SIN FUENTE${' '.repeat(18)}  ${c.titulo}`);
+        return;
+      }
       fallos.push({ n: c.n, error: e.message });
       console.log(`${String(c.n).padStart(5)}  ERROR     ${e.message}`);
     }
@@ -316,13 +331,23 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   console.log(
     `\n${hechas} ${escribir ? 'escrita(s)' : 'lista(s)'} · ` +
-      `${saltadas} saltada(s) · ${fallos.length} con error`,
+      `${saltadas} saltada(s) · ${sinFuente.length} sin fuente · ` +
+      `${fallos.length} con error`,
   );
   if (saltadas && !forzar) {
     console.log('las saltadas ya estaban extraídas; usá --force para rehacerlas.');
   }
+  if (sinFuente.length) {
+    console.log(
+      `\nclases sin transcripción en el origen: ${sinFuente.map((f) => f.n).sort((a, b) => a - b).join(', ')}`,
+    );
+    console.log(
+      'OpenFING no publicó el .vtt de esas clases. Volver a correr no cambia ' +
+        'nada hasta que lo suba; no es un error del extractor.',
+    );
+  }
   if (fallos.length) {
-    console.log(`\nclases con error: ${fallos.map((f) => f.n).join(', ')}`);
+    console.log(`\nclases con error: ${fallos.map((f) => f.n).sort((a, b) => a - b).join(', ')}`);
     console.log('volvé a correr el mismo comando: las que salieron bien se saltan.');
     process.exit(1);
   }

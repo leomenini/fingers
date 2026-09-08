@@ -1,0 +1,46 @@
+% Clase 5 — geometria del teorema de unicidad: resolver Laplace en la region B
+% (rayada) entre una superficie exterior S0 y superficies interiores S1, S2, ...
+% En cada una se da Dirichlet o Von Neumann, y pueden ser de distinto tipo.
+\begin{tikzpicture}[scale=1.15]
+
+  % region B, rayada, entre S0 y las Si
+  \begin{scope}
+    \clip plot[smooth cycle, tension=0.8]
+      coordinates {(-2.5,0.9) (-0.6,2.25) (1.9,1.6) (2.5,-0.5) (0.7,-2.1) (-1.9,-1.3)};
+    \fill[figgray!12] (-3,-3) rectangle (3,3);
+    \foreach \xx in {-3.4,-3.1,...,3.4}{
+      \draw[figgray!35, line width=0.35pt] (\xx,-3) -- (\xx+2.6,3);
+    }
+    % huecos: las regiones interiores no forman parte de B
+    \fill[white] (-0.95,0.45) circle (0.68);
+    \fill[white] (1.05,-0.75) circle (0.55);
+    \fill[white] (0.85,1.05) circle (0.42);
+  \end{scope}
+
+  % superficie exterior S0
+  \draw[figline, line width=1.1pt] plot[smooth cycle, tension=0.8]
+    coordinates {(-2.5,0.9) (-0.6,2.25) (1.9,1.6) (2.5,-0.5) (0.7,-2.1) (-1.9,-1.3)};
+  \node[figlbl, figblue] at (-2.35,1.72) {$S_0$};
+
+  % superficies interiores
+  \draw[figred, line width=1pt] (-0.95,0.45) circle (0.68);
+  \draw[figred, line width=1pt] (1.05,-0.75) circle (0.55);
+  \draw[figred, line width=1pt] (0.85,1.05) circle (0.42);
+  \node[figlbl, figred] at (-0.95,0.45) {$S_1$};
+  \node[figlbl, figred] at (1.05,-0.75) {$S_2$};
+  \node[figlbl, figred] at (0.85,1.05) {$S_3$};
+
+  % rotulo de la region
+  \node[figlbl, fill=white, inner sep=2pt] at (-0.85,-1.15) {$B$: $\nabla^2\phi=0$};
+
+  % condiciones de borde: una por superficie, pueden ser de distinto tipo
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (-0.4,-2.75)
+    {Dirichlet: $\phi\big|_{S_i}$ dado \qquad Von Neumann: $\nabla\phi\cdot\hat n\,\big|_{S_i}$ dado};
+  \node[figlblaux, fill=white, inner sep=1.5pt, align=left] at (1.15,-2.75)
+    {Von Neumann: $\nabla\phi\cdot\hat n\,\big|_{S_i}$ dado};
+
+  \node[figlbl, align=center] at (-0.4,-3.55)
+    {En cada superficie se da \emph{una} de las dos, y no tienen\\[0.2em]
+     por qu\'e ser del mismo tipo en todas.};
+
+\end{tikzpicture}

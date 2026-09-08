@@ -1,0 +1,49 @@
+% Clase 5 — la jerarquia que el desarrollo formaliza: que domina a gran distancia
+% segun cuales momentos se anulen. Configuraciones minimas y su decaimiento.
+\begin{tikzpicture}[scale=1]
+
+% ---- monopolo ----
+\begin{scope}
+  \node[figpos] at (0,0) {};
+  \node[figlbl] at (0,-1.3) {monopolo};
+  \node[figlbl] at (0,-1.9) {$Q\neq0$};
+  \node[figlbl, figblue] at (0,-2.5) {$\phi\sim 1/r$};
+\end{scope}
+
+% ---- dipolo ----
+\begin{scope}[xshift=4.4cm]
+  \node[figpos] at (-0.45,0) {};
+  \node[figneg] at (0.45,0) {};
+  \node[figlblaux] at (-0.45,0.42) {$+$};
+  \node[figlblaux] at (0.45,0.42) {$-$};
+  \node[figlbl] at (0,-1.3) {dipolo};
+  \node[figlbl] at (0,-1.9) {$Q=0$, $\vec p\neq0$};
+  \node[figlbl, figblue] at (0,-2.5) {$\phi\sim 1/r^{2}$};
+\end{scope}
+
+% ---- cuadrupolo ----
+\begin{scope}[xshift=9.6cm]
+  \node[figpos] at (-0.45,0.45) {};
+  \node[figneg] at (0.45,0.45) {};
+  \node[figneg] at (-0.45,-0.45) {};
+  \node[figpos] at (0.45,-0.45) {};
+  \node[figlblaux] at (-0.82,0.45) {$+$};
+  \node[figlblaux] at (0.82,0.45) {$-$};
+  \node[figlblaux] at (-0.82,-0.45) {$-$};
+  \node[figlblaux] at (0.82,-0.45) {$+$};
+  \node[figlbl] at (0,-1.3) {cuadrupolo};
+  \node[figlbl] at (0,-1.9) {$Q=0$, $\vec p=0$};
+  \node[figlbl, figblue] at (0,-2.5) {$\phi\sim 1/r^{3}$};
+\end{scope}
+
+% flecha de jerarquia
+\draw[figvecaux] (1.3,-0.62) -- (3.1,-0.62);
+\draw[figvecaux] (5.7,-0.62) -- (8.1,-0.62);
+\node[figlblaux, fill=white, inner sep=1.5pt] at (2.2,-0.34) {si $Q=0$};
+\node[figlblaux, fill=white, inner sep=1.5pt] at (6.9,-0.34) {si adem\'as $\vec p=0$};
+
+\node[figlbl, align=center] at (4.8,-3.35)
+  {Cada orden entra reci\'en cuando los anteriores se anulan;\\[0.2em]
+   la serie sigue con el momento octopolar ($\phi\sim 1/r^{4}$) y as\'i.};
+
+\end{tikzpicture}

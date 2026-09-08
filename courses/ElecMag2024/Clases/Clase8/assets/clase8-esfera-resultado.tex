@@ -1,0 +1,64 @@
+% Clase 8 — el resultado del problema de la esfera, en sus dos caras:
+% (a) las lineas de campo, que llegan NORMALES a la superficie (el dibujo que el
+%     docente hizo en el pizarron disculpandose por su calidad);
+% (b) la densidad inducida sigma(theta), que cambia de signo y da carga total nula.
+\begin{tikzpicture}[scale=1]
+
+% ---------------- (a) lineas de campo ----------------
+\begin{scope}
+  % lineas lejanas: no tocan la esfera
+  \foreach \yy in {-1.75,1.75}{
+    \draw[figvecaux] plot[smooth, tension=0.9]
+      coordinates {(-2.4,\yy) (-1.0,\yy) (0,\yy) (1.0,\yy) (2.4,\yy)};
+  }
+  % lineas que se deforman y llegan normales
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(-2.4,1.05) (-1.35,1.05) (-0.62,0.88)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(0.62,0.88) (1.35,1.05) (2.4,1.05)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(-2.4,-1.05) (-1.35,-1.05) (-0.62,-0.88)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(0.62,-0.88) (1.35,-1.05) (2.4,-1.05)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(-2.4,0.35) (-1.5,0.35) (-1.02,0.28)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(1.02,0.28) (1.5,0.35) (2.4,0.35)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(-2.4,-0.35) (-1.5,-0.35) (-1.02,-0.28)};
+  \draw[figvecaux] plot[smooth, tension=0.85]
+    coordinates {(1.02,-0.28) (1.5,-0.35) (2.4,-0.35)};
+  % esfera
+  \fill[figgray!25] (0,0) circle (1.06);
+  \draw[figline, line width=1.1pt] (0,0) circle (1.06);
+  % normales en los puntos de llegada
+  \draw[figvecres] (152:1.06) -- (152:1.62);
+  \draw[figvecres] (-152:1.06) -- (-152:1.62);
+  \node[figlblaux, figred, fill=white, inner sep=1.2pt] at (-2.05,0.92) {normal};
+  \node[figlbl, align=center] at (0,-2.65) {(a) l\'ineas de campo};
+  \node[figlblaux, align=center] at (0,-3.35)
+    {paralelas lejos, deformadas cerca,\\ normales al llegar};
+\end{scope}
+
+% ---------------- (b) densidad inducida ----------------
+\begin{scope}[xshift=6.6cm, yshift=-0.4cm]
+  \begin{axis}[emfig, width=6.4cm, height=4.6cm, anchor=center, at={(0,0)},
+    xlabel={$\theta$}, ylabel={$\sigma$},
+    domain=0:pi, samples=90,
+    xmin=-0.18, xmax=3.5, ymin=-1.35, ymax=1.35,
+    xtick={0,1.5708,3.1416}, xticklabels={$0$,$\pi/2$,$\pi$},
+    ytick=\empty,
+    axis lines=middle,
+    xlabel style={anchor=north west, yshift=-3pt}]
+    \addplot[figblue] {cos(deg(x))};
+    \addplot[figred, only marks, mark=*, mark size=1.6pt, forget plot]
+      coordinates {(1.5708,0)};
+    \node[figlblaux, figred]  at (axis cs:0.42,0.42)  {$\sigma>0$};
+    \node[figlblaux, figblue] at (axis cs:2.42,-0.62) {$\sigma<0$};
+  \end{axis}
+  \node[figlbl, align=center] at (0,-2.25) {(b) $\sigma=3\varepsilon_0E_0\cos\theta$};
+  \node[figlblaux, align=center] at (0,-2.95)
+    {cambia de signo en $\theta=\pi/2$;\\ la integral sobre la esfera da $Q=0$};
+\end{scope}
+
+\end{tikzpicture}

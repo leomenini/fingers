@@ -1,0 +1,72 @@
+% courses/ElecMag2024/Clases/assets/tikzstyles.tex
+% ---------------------------------------------------------------------------
+% Estilos compartidos para los diagramas del curso Electromagnetismo (2024).
+% Fuente única del "look" visual (colores, grosores, escalas) para que todas
+% las figuras (TikZ / pgfplots / CircuiTikz) sean consistentes entre clases.
+%
+% Es una COPIA de courses/Fisica3-2015/Clases/assets/tikzstyles.tex: mismo
+% dominio, misma paleta. Copia y no symlink para que cada curso sea
+% autocontenido y la paleta de Física III pueda evolucionar aparte.
+%
+% Uso: la clase debe cargar antes `tikz` y `pgfplots` (y `circuitikz` si la
+%      clase tiene circuitos), y luego \input{../assets/tikzstyles.tex}
+% (compilar desde el directorio de la clase para que la ruta relativa resuelva).
+% ---------------------------------------------------------------------------
+
+% ---- Paleta (alineada con las cajas del preámbulo: keybox/notebox/warnbox) ----
+\definecolor{figblue}{HTML}{1F4E79}   % azul principal (líneas, keybox)
+\definecolor{figred}{HTML}{C0392B}    % rojo de énfasis (warnbox)
+\definecolor{figamber}{HTML}{B8860B}  % ámbar (notebox)
+\definecolor{figgray}{HTML}{555555}   % auxiliares, ejes, guías
+
+% ---- CircuiTikz: escala y grosor de los componentes ----
+% Guarda \ifdefined: la electrostática (Clases 1-14) no carga `circuitikz`, y
+% sin la guarda el \input revienta con `Undefined control sequence \ctikzset`.
+% Cuando el curso llegue a circuitos, el bloque se activa solo.
+\ifdefined\ctikzset
+  \ctikzset{
+    bipoles/thickness=1,
+    resistors/scale=0.9,
+    capacitors/scale=0.9,
+  }
+\fi
+
+% ---- TikZ: estilos reutilizables ----
+% Nota: las puntas se declaran como `-{Latex[...]}` y no como `->`. La forma
+% con llaves NO contiene un `>` literal, así que es inmune al `>` activo que
+% introduce babel español (ver CLAUDE.md §7.3.3).
+\usetikzlibrary{arrows.meta,calc,angles,quotes}
+
+\tikzset{
+  figline/.style={figblue, line width=0.9pt},
+  figaux/.style={figgray, dashed, line width=0.6pt},
+  % vectores
+  figvec/.style={figblue, line width=0.9pt, -{Latex[length=2.2mm,width=1.6mm]}},
+  figvecres/.style={figred, line width=1.3pt, -{Latex[length=2.6mm,width=1.9mm]}},
+  figvecaux/.style={figgray, line width=0.7pt, -{Latex[length=1.8mm,width=1.3mm]}},
+  figaxis/.style={figgray, line width=0.6pt, -{Latex[length=2mm,width=1.4mm]}},
+  % cargas puntuales
+  figcarga/.style={circle, inner sep=0pt, minimum size=5.4pt, draw=none},
+  figpos/.style={figcarga, fill=figred},
+  figneg/.style={figcarga, fill=figblue},
+  figneutra/.style={figcarga, fill=figgray},
+  % etiquetas
+  figlbl/.style={font=\small},
+  figlblaux/.style={font=\footnotesize, figgray},
+}
+
+% ---- pgfplots: estilo base de las gráficas ----
+\pgfplotsset{
+  emfig/.style={
+    width=11cm, height=6.5cm,
+    axis lines=left,
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    tick label style={font=\footnotesize},
+    every axis plot/.append style={line width=1pt},
+    grid=major,
+    grid style={figgray!20},
+    legend cell align=left,
+    legend style={font=\footnotesize, draw=figgray!40},
+  },
+}

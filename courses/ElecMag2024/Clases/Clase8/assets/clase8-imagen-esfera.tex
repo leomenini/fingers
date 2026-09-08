@@ -1,0 +1,53 @@
+% Clase 8 — el espejo curvo: carga q frente a una esfera conductora. La imagen
+% sigue siendo puntual pero cambia de posicion Y de valor, y para el caso
+% DESCARGADO hace falta una segunda imagen, en el centro.
+\begin{tikzpicture}[scale=1]
+
+  % esfera conductora
+  \fill[figgray!25] (0,0) circle (1.15);
+  \draw[figline, line width=1.2pt] (0,0) circle (1.15);
+
+  \draw[figaxis] (-2.0,0) -- (4.4,0);
+  \node[figlblaux] at (4.6,0) {$x$};
+
+  % radio a
+  \draw[figvecaux] (0,0) -- (118:1.15);
+  \node[figlblaux, fill=figgray!25, inner sep=1.2pt] at (-0.32,0.68) {$a$};
+
+  % carga real
+  \node[figpos] at (3.3,0) {};
+  \node[figlbl, figred] at (3.3,0.44) {$+q$};
+
+  % carga imagen, dentro de la esfera
+  \node[figneg] at (0.68,0) {};
+  \node[figlbl, figblue, fill=figgray!25, inner sep=1.2pt] at (0.78,0.46) {$q'$};
+
+  % la segunda imagen, en el centro
+  \node[figpos] at (0,0) {};
+  \draw[figvecaux] (-1.42,1.55) -- (-0.16,0.14);
+  \node[figlbl, align=center, fill=white, inner sep=2pt] at (-1.9,2.05)
+    {2.\textsuperscript{a} imagen: $+q\,a/d$\\ \emph{en el centro}};
+
+  % cotas, abajo y separadas
+  \draw[figaux] (0,-0.22) -- (0,-1.85);
+  \draw[figaux] (0.68,-0.22) -- (0.68,-1.15);
+  \draw[figaux] (3.3,-0.22) -- (3.3,-1.85);
+  \draw[figvecaux] (0,-0.95) -- (0.68,-0.95);
+  \node[figlblaux, fill=white, inner sep=1.2pt] at (0.34,-0.72) {$d'$};
+  \draw[figvecaux] (0,-1.65) -- (3.3,-1.65);
+  \draw[figvecaux] (3.3,-1.65) -- (0,-1.65);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (1.65,-1.65) {$d$};
+
+  % resultados
+  \node[figlbl] at (1.2,-2.65)
+    {$\boxed{\,d'=\dfrac{a^{2}}{d}\,}\qquad
+      \boxed{\,q'=-\,q\dfrac{a}{d}\,}$};
+  \node[figlblaux, align=center] at (1.2,-3.85)
+    {Como $d>a$ resulta $d'<a$: la imagen cae \emph{dentro} de la esfera,\\[0.2em]
+     fuera de la regi\'on donde se resuelve el problema.};
+  \node[figlblaux, align=center] at (1.2,-5.15)
+    {Con s\'olo $q'$ la esfera queda \emph{cargada}; la carga del centro la
+     descarga\\[0.2em] sin romper la equipotencial (la lleva a otra constante,
+     ya no cero).};
+
+\end{tikzpicture}

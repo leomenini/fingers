@@ -1,0 +1,46 @@
+% Clase 4 — planteo del desarrollo multipolar: distribucion localizada rho(r') en
+% un volumen B de tamano tipico a, origen dentro de B, observacion en P con r >> a.
+% Ojo: r y r-r' son casi colineales por construccion (r >> a), asi que sus rotulos
+% se separan perpendicularmente, uno debajo de la flecha y otro encima de la punteada.
+\begin{tikzpicture}[scale=1.15]
+
+  % volumen B
+  \fill[figblue!12] plot[smooth cycle, tension=0.85]
+    coordinates {(-1.0,0.5) (-0.1,1.05) (0.95,0.6) (1.05,-0.4) (0.1,-0.95) (-0.95,-0.45)};
+  \draw[figline] plot[smooth cycle, tension=0.85]
+    coordinates {(-1.0,0.5) (-0.1,1.05) (0.95,0.6) (1.05,-0.4) (0.1,-0.95) (-0.95,-0.45)};
+  \node[figlbl] at (-1.5,1.15) {$B$};
+  \node[figlbl] at (0.42,-1.85) {$\rho(\vec r\,')$};
+  \draw[figvecaux] (0.42,-1.62) -- (0.32,-0.62);
+
+  % esfera de tamano tipico a: la cota va a la izquierda, lejos de r' y de rho
+  \draw[figaux] (0.02,0.02) circle (1.22);
+  \draw[figvecaux] (0.02,0.02) -- (-1.2,0.02);
+  \node[figlblaux, fill=figblue!12, inner sep=1.5pt] at (-0.62,0.02) {$a$};
+
+  % origen dentro de B
+  \node[figneutra] at (0,0) {};
+  \node[figlbl, fill=figblue!12, inner sep=1.5pt] at (-0.02,-0.34) {$O$};
+
+  % punto fuente dentro de la distribucion
+  \node[figneutra] (s) at (0.6,0.52) {};
+  \draw[figvec] (0,0) -- (s);
+  \node[figlbl, fill=figblue!12, inner sep=1.5pt] at (0.16,0.62) {$\vec r\,'$};
+
+  % punto de observacion, lejos
+  \node[figneutra] (P) at (5.6,2.3) {};
+  \node[figlbl] at (5.85,2.5) {$P$};
+  \draw[figvec] (0,0) -- (P);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (2.3,0.62) {$\vec r$};
+  \draw[figaux] (2.3,0.8) -- (2.3,0.93);
+
+  % separacion, casi colineal con r: su rotulo va del otro lado
+  \draw[figline, dashed] (s) -- (P);
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (3.6,2.05) {$|\vec r-\vec r\,'|$};
+  \draw[figaux] (3.6,1.88) -- (3.6,1.66);
+
+  \node[figlbl, align=center] at (2.6,-2.75)
+    {Distribuci\'on localizada: $\rho$ despreciable fuera de $B$.\\[0.2em]
+     El desarrollo es en $r'/r$, acotado por $a/r\ll1$};
+
+\end{tikzpicture}

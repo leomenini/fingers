@@ -1,0 +1,54 @@
+% Clase 19 --- La raíz cuadrada: el radio asimetrico del caso x_0 > 0 (§6.2).
+% El docente: "acá voy a tener una distancia entre este número y la raíz de X
+% sub cero, y la distancia entre este número y la raíz de X sub cero. Si yo
+% tomo el mínimo, esto me va a dar el radio de seguridad." La precisión se
+% achica antes a epsilon' = min(epsilon, raíz de x_0) para que
+% raíz(x_0) - epsilon' no sea negativo.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    calcfig,
+    axis lines=left,
+    width=12cm, height=7cm,
+    xmin=0, xmax=3.2, ymin=0, ymax=1.95,
+    xtick=\empty, ytick={0.9149,1.2649,1.6149},
+    yticklabels={$\sqrt{x_0}-\varepsilon'$, $\sqrt{x_0}$, $\sqrt{x_0}+\varepsilon'$},
+    yticklabel style={font=\footnotesize},
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={font=\small, at={(axis description cs:1,0)}, anchor=north},
+    ylabel style={font=\small, at={(axis description cs:0,1)}, anchor=east},
+  ]
+  % banda horizontal de precision (ya achicada a epsilon')
+  \fill[figamber!18] (axis cs:0,0.9149) rectangle (axis cs:3.05,1.6149);
+  % radio de seguridad: el minimo de las dos distancias, centrado en x_0
+  \fill[figblue!16] (axis cs:0.8371,0) rectangle (axis cs:2.3629,1.95);
+
+  \addplot[domain=0:3.2, samples=120, figblue, line width=1.1pt] {sqrt(x)};
+
+  % los dos cuadrados que recorta la banda de precision
+  \draw[figaux] (axis cs:0.8371,0) -- (axis cs:0.8371,0.9149);
+  \draw[figaux] (axis cs:2.6079,0) -- (axis cs:2.6079,1.6149);
+  \draw[figaux] (axis cs:1.6,0) -- (axis cs:1.6,1.2649);
+
+  % las dos distancias, en alturas distintas para que no choquen
+  \draw[figvec] (axis cs:1.6,0.30) -- (axis cs:0.8371,0.30);
+  \node[figlbl, figred, anchor=south] at (axis cs:1.20,0.33) {$d_-$};
+  \draw[figvec] (axis cs:1.6,0.62) -- (axis cs:2.6079,0.62);
+  \node[figlbl, figred, anchor=south] at (axis cs:2.11,0.65) {$d_+$};
+
+  \node[figlbl, anchor=north] at (axis cs:1.6,-0.16) {$x_0$};
+  \node[figlblaux, anchor=north, align=center] at (axis cs:0.8371,-0.03)
+    {$(\sqrt{x_0}-\varepsilon')^2$};
+  \node[figlblaux, anchor=north, align=center] at (axis cs:2.6079,-0.03)
+    {$(\sqrt{x_0}+\varepsilon')^2$};
+  \node[figlblaux, anchor=south, align=center] at (axis cs:1.6,1.68)
+    {$\delta_\varepsilon = \min(d_-,d_+)$};
+\end{axis}
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La banda de precisión $\sqrt{x_0}\pm\varepsilon'$ recorta
+sobre el eje $x$ un intervalo que \emph{no} es simétrico respecto de $x_0$: las
+dos distancias $d_-=x_0-(\sqrt{x_0}-\varepsilon')^2$ y
+$d_+=(\sqrt{x_0}+\varepsilon')^2-x_0$ son distintas. Como el radio tiene que
+caber de los dos lados, se toma $\delta_\varepsilon=\min(d_-,d_+)$ --- de ahí
+viene la fórmula horrible de la demostración.}
+\end{center}

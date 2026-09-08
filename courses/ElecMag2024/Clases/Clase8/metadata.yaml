@@ -1,0 +1,68 @@
+title: Clase 8
+id: em-2024-2-08
+
+course: Electromagnetismo
+academic_year: 2024
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:32:45"
+
+stats:
+  transcript_words: 10397
+  summary_words: 3028
+  diagrams_pending: 0
+  equations: 29
+
+topics:
+  - Campo eléctrico de la esfera conductora en campo uniforme
+  - Verificación de que el campo es normal a la superficie
+  - Densidad superficial de carga inducida
+  - Carga total nula por paridad del integrando
+  - Líneas de campo alrededor de la esfera
+  - Separación de variables en coordenadas cilíndricas
+  - Periodicidad angular y cuantización de la constante de separación
+  - Base de soluciones en cilíndricas
+  - Método de las imágenes, plano conductor
+  - Método de las imágenes, dos espejos perpendiculares
+  - Método de las imágenes, esfera conductora
+
+bibliography:
+  - title: "Reitz & Milford"
+    verified: false
+
+prerequisites:
+  - Potencial de la esfera conductora en campo uniforme (Clase 7)
+  - Gradiente en coordenadas esféricas y cilíndricas
+  - Campo normal a la superficie de un conductor y E_n = sigma/eps0 (Clase 4)
+  - Elemento de superficie en esféricas
+  - Método de separación de variables (Clase 6)
+  - Teorema de unicidad de la ecuación de Laplace (Clase 5)
+  - Desarrollo multipolar de una distribución localizada (Clase 5)
+
+next_topics:
+  - Más aplicaciones del método de las imágenes
+  - Medios dieléctricos y polarización
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-09-06
+
+llm:
+  model: claude-opus-5
+
+editorial_status: draft

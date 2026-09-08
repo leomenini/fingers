@@ -1,0 +1,41 @@
+% Clase 4 — geometria del dipolo: -Q en r', +Q en r'+L, punto de observacion P en r.
+% Es el dibujo que el docente conserva en el pizarron durante todo el desarrollo.
+% Los vectores r' y r se dibujan con angulo bien separado a proposito: si quedan
+% casi colineales, r', L, r y r-r' se encinan y la figura no se lee.
+\begin{tikzpicture}[scale=1.15]
+
+  % origen
+  \node[figneutra] at (0,0) {};
+  \node[figlbl] at (-0.32,-0.2) {$O$};
+
+  % cargas del dipolo, abajo a la derecha del origen
+  \node[figneg] (mq) at (1.85,-0.95) {};
+  \node[figpos] (pq) at (2.72,-0.42) {};
+  \node[figlbl, figblue] at (1.72,-1.32) {$-Q$};
+  \node[figlbl, figred]  at (3.02,-0.72) {$+Q$};
+
+  % vectores de posicion de cada carga
+  \draw[figvec] (0,0) -- (mq);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0.85,-0.62) {$\vec r\,'$};
+  \draw[figvecaux] (0,0) -- (pq);
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (1.12,0.05) {$\vec r\,'+\vec L$};
+
+  % vector L, de la negativa a la positiva
+  \draw[figvecres] (mq) -- (pq);
+  \node[figlbl, figred, fill=white, inner sep=1.5pt] at (2.34,-0.95) {$\vec L$};
+
+  % punto de observacion, bien separado angularmente
+  \node[figneutra] (P) at (4.35,2.75) {};
+  \node[figlbl] at (4.6,2.95) {$P$};
+  \draw[figvec] (0,0) -- (P);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (1.75,1.35) {$\vec r$};
+
+  % separacion r - r'
+  \draw[figline, dashed] (mq) -- (P);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (3.62,1.15) {$\vec r-\vec r\,'$};
+
+  \node[figlbl, align=center] at (2.2,-2.35)
+    {Desarrollo de Taylor para $L\ll|\vec r-\vec r\,'|$;\\[0.2em]
+     momento dipolar $\vec p=Q\vec L$};
+
+\end{tikzpicture}

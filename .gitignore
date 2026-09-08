@@ -7,10 +7,12 @@ probe-out/
 # artefactos de build.sh: se regeneran con tectonic, no se versionan
 notes.pdf
 
-# La transcripción no se versiona: es contenido de OpenFING (CC BY-NC-ND) y
-# lo reproduce `npm run fetch` a partir del manifiesto. Ver ADR-0005.
-transcript.txt
-transcript.timed.txt
+# SANDBOX: acá la transcripción SÍ se versiona. En el repo real está ignorada
+# por ADR-0005 (es reproducible desde el manifiesto), pero la salida de ASR no
+# es reproducible ni barata, y es justamente el artefacto bajo estudio: sin
+# versionarla no se pueden diffear las iteraciones.
+#   transcript.txt
+#   transcript.timed.txt
 
 # Nombre viejo del userscript. Ya salió del historial con git filter-repo,
 # pero el oráculo de CLAUDE.md §6.c se restaura a mano desde el respaldo para
@@ -21,3 +23,14 @@ Transcription_raw.txt
 # Se conserva en disco, fuera de Git: son PDF superados y su único valor es
 # poder comparar contra la iteración actual en local.
 PDFiter1/
+
+# Notas personales y borradores de ideas. Se ignora de aca en adelante; el
+# IdeasAGY.md que estaba en la raiz sale del arbol pero queda en disco.
+ideas/
+
+# Audio y video intermedios del experimento: pesados y regenerables.
+*.mp4
+*.wav
+*.flac
+scripts/asr/.venv/
+scripts/asr/trabajo/

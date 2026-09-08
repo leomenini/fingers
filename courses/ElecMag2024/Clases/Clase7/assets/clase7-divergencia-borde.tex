@@ -1,0 +1,27 @@
+% Clase 7 — el caso K=0 resuelto exacto: la solucion general es la constante
+% (polinomial) mas un logaritmo que explota justo en u=+-1, que son los polos.
+% Es el botón que muestra por que solo sirven las soluciones polinomiales.
+\begin{tikzpicture}
+\begin{axis}[emfig, width=10.5cm, height=6.6cm,
+  xlabel={$u=\cos\theta$}, ylabel={$P(u)$},
+  domain=-0.97:0.97, samples=200,
+  xmin=-1.2, xmax=1.2, ymin=-2.8, ymax=2.8,
+  xtick={-1,-0.5,0,0.5,1}, ytick={-2,-1,0,1,2},
+  axis lines=middle,
+  % OJO: `axis lines=middle` REDEFINE `every axis x label`, asi que el estilo
+  % del rotulo tiene que ir DESPUES o queda centrado sobre la linea del eje
+  % (y el `=` se lee como `\neq`).
+  xlabel style={anchor=north west, yshift=-3pt},
+  legend style={at={(0.5,-0.16)}, anchor=north, legend columns=2, draw=figgray!40}]
+  \addplot[figblue]  {1};                          \addlegendentry{$P_0=1$ (polinomial)}
+  \addplot[figred]   {0.5*ln((1+x)/(1-x))};        \addlegendentry{$\tfrac12\ln\frac{1+u}{1-u}$}
+  % asintotas en los polos
+  \addplot[figgray, dashed, forget plot] coordinates {(-1,-2.8) (-1,2.8)};
+  \addplot[figgray, dashed, forget plot] coordinates {(1,-2.8) (1,2.8)};
+\end{axis}
+\node[figlblaux, text=figgray, fill=white, inner sep=1.5pt] at (0.62,5.35) {$\theta=\pi$};
+\node[figlblaux, text=figgray, fill=white, inner sep=1.5pt] at (9.75,5.35) {$\theta=0$};
+\node[figlbl, align=center] at (5.2,-2.35)
+  {La divergencia cae exactamente en los dos polos, que \emph{s\'i} pertenecen al\\[0.2em]
+   dominio del problema. Por eso las soluciones no polinomiales se descartan.};
+\end{tikzpicture}

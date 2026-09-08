@@ -1,0 +1,39 @@
+% Clase 6 — los tres casos de una sola variable y el perfil de potencial que da
+% cada uno. El valor del ejercicio es de verificacion: Laplace reproduce lo que
+% ya se sabia de Fisica III.
+\begin{tikzpicture}
+
+\begin{axis}[emfig, name=plano, width=4.15cm, height=4.2cm,
+  xlabel={$x$}, ylabel={$\phi$}, domain=0:1, samples=2,
+  xtick=\empty, ytick=\empty, ymin=0, ymax=1.15, xmin=0, xmax=1.1,
+  title={\small cartesianas}, title style={font=\small}]
+  \addplot[figblue] {0.15+0.85*x};
+\end{axis}
+\node[figlbl] at (2.05,-0.75) {$\phi = Ax+B$};
+\node[figlblaux, align=center] at (2.05,-1.35) {condensador\\ de placas planas};
+
+\begin{axis}[emfig, name=esf, at={(plano.east)}, anchor=west, xshift=0.8cm,
+  width=4.15cm, height=4.2cm,
+  xlabel={$r$}, ylabel={$\phi$}, domain=0.28:1.1, samples=80,
+  xtick=\empty, ytick=\empty, ymin=0, ymax=3.9, xmin=0, xmax=1.2,
+  title={\small esf\'ericas}, title style={font=\small}]
+  \addplot[figblue] {1/x};
+\end{axis}
+\node[figlbl] at (7.0,-0.75) {$\phi = -A/r + B$};
+\node[figlblaux, align=center] at (7.0,-1.35) {carga puntual,\\ esfera cargada};
+
+\begin{axis}[emfig, name=cil, at={(esf.east)}, anchor=west, xshift=0.8cm,
+  width=4.15cm, height=4.2cm,
+  xlabel={$r$}, ylabel={$\phi$}, domain=0.12:1.1, samples=80,
+  xtick=\empty, ytick=\empty, ymin=-2.6, ymax=0.6, xmin=0, xmax=1.2,
+  title={\small cil\'indricas}, title style={font=\small}]
+  \addplot[figblue] {ln(x)};
+\end{axis}
+\node[figlbl] at (11.9,-0.75) {$\phi = A\ln r + B$};
+\node[figlblaux, align=center] at (11.9,-1.35) {l\'inea infinita,\\ condensador cil\'indrico};
+
+\node[figlbl, align=center] at (7.0,-2.35)
+  {En los tres casos la EDP colapsa a una EDO y las dos constantes\\[0.2em]
+   quedan fijadas por los potenciales en los dos bordes.};
+
+\end{tikzpicture}

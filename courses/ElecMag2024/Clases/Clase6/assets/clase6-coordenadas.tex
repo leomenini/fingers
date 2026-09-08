@@ -1,0 +1,74 @@
+% Clase 6 — los dos sistemas de coordenadas, dibujados como en el pizarron.
+% (a) cilindricas: r y theta se miden sobre la PROYECCION P' en el plano xy.
+% (b) esfericas: r al punto, theta desde el eje z, phi azimutal sobre la proyeccion.
+% Se dibujan juntos a proposito: es la unica forma de ver que e_r y theta no son
+% lo mismo en un sistema y en el otro.
+% Los versores van cortos y con el rotulo bien afuera: dibujados largos y con el
+% rotulo pegado, se comen los nombres de P y P' (pasa en el render, no en el codigo).
+\begin{tikzpicture}[scale=1.25]
+
+% ---------------- (a) cilindricas ----------------
+\begin{scope}
+  \draw[figaxis] (0,0) -- (2.6,0);            \node[figlblaux] at (2.82,-0.02) {$x$};
+  \draw[figaxis] (0,0) -- (-1.25,-1.05);      \node[figlblaux] at (-1.48,-1.22) {$y$};
+  \draw[figaxis] (0,0) -- (0,2.5);            \node[figlblaux] at (-0.02,2.72) {$z$};
+  \node[figlbl] at (-0.26,0.18) {$O$};
+  \coordinate (Pp) at (1.5,-0.7);
+  \coordinate (P)  at (1.5,1.15);
+  \node[figneutra] at (Pp) {};
+  \node[figneutra] at (P) {};
+  \node[figlbl] at (1.28,1.38) {$P$};
+  \node[figlbl] at (1.25,-0.95) {$P'$};
+  \draw[figaux] (P) -- (Pp);
+  % r sobre la proyeccion
+  \draw[figvec] (0,0) -- (Pp);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0.78,-0.2) {$r$};
+  \draw[figgray, line width=0.6pt] (0.62,0) arc (0:-25:0.62);
+  \node[figlblaux] at (0.9,-0.36) {$\theta$};
+  % versores, cortos
+  \draw[figvecres] (Pp) -- ++(0.5,-0.23);
+  \node[figlbl, figred] at (2.34,-1.14) {$\hat e_r$};
+  \draw[figvecres] (Pp) -- ++(0.23,0.5);
+  \node[figlbl, figred] at (2.06,-0.02) {$\hat e_\theta$};
+  \draw[figvecres] (P) -- ++(0,0.5);
+  \node[figlbl, figred] at (1.5,1.88) {$\hat k$};
+  \node[figlbl] at (0.6,-2.2) {(a) cil\'indricas};
+  \node[figlblaux, align=center] at (0.6,-2.8)
+    {$x=r\cos\theta$, $y=r\sin\theta$, $z=z$\\ $r$ y $\theta$ se miden sobre $P'$};
+\end{scope}
+
+% ---------------- (b) esfericas ----------------
+\begin{scope}[xshift=6.9cm]
+  \draw[figaxis] (0,0) -- (2.6,0);            \node[figlblaux] at (2.82,-0.02) {$x$};
+  \draw[figaxis] (0,0) -- (-1.25,-1.05);      \node[figlblaux] at (-1.48,-1.22) {$y$};
+  \draw[figaxis] (0,0) -- (0,2.5);            \node[figlblaux] at (-0.02,2.72) {$z$};
+  \node[figlbl] at (-0.26,0.18) {$O$};
+  \coordinate (Qp) at (1.5,-0.7);
+  \coordinate (Q)  at (1.5,1.15);
+  \node[figneutra] at (Qp) {};
+  \node[figneutra] at (Qp) {};
+  \node[figneutra] at (Q) {};
+  \node[figlbl] at (1.25,1.4) {$P$};
+  \node[figlbl] at (1.25,-0.95) {$P'$};
+  \draw[figaux] (Q) -- (Qp);
+  \draw[figaux] (0,0) -- (Qp);
+  % r al punto, en el espacio
+  \draw[figvec] (0,0) -- (Q);
+  \node[figlbl, fill=white, inner sep=1.5pt] at (0.62,0.72) {$r$};
+  \draw[figgray, line width=0.6pt] (0,0.95) arc (90:37.5:0.95);
+  \node[figlblaux] at (0.36,1.12) {$\theta$};
+  \draw[figgray, line width=0.6pt] (0.68,0) arc (0:-25:0.68);
+  \node[figlblaux] at (0.96,-0.36) {$\varphi$};
+  % versores, cortos y con el rotulo afuera
+  \draw[figvecres] (Q) -- ++(0.4,0.31);
+  \node[figlbl, figred] at (2.22,1.62) {$\hat e_r$};
+  \draw[figvecres] (Q) -- ++(0.31,-0.4);
+  \node[figlbl, figred] at (2.24,0.58) {$\hat e_\theta$};
+  \draw[figvecres] (Q) -- ++(-0.2,-0.46);
+  \node[figlbl, figred] at (0.78,0.5) {$\hat e_\varphi$};
+  \node[figlbl] at (0.6,-2.2) {(b) esf\'ericas};
+  \node[figlblaux, align=center] at (0.6,-2.8)
+    {$z=r\cos\theta$, $x=r\sin\theta\cos\varphi$\\ $\theta$ se mide desde el eje $z$};
+\end{scope}
+
+\end{tikzpicture}

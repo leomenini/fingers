@@ -1,3 +1,16 @@
+> # ⚠ ESTO NO ES EL REPO — ES UN SANDBOX
+>
+> El repo real vive en `/home/leo/Desktop/Files/Transcripciones`. Esta es una
+> copia para el **experimento de ASR** (transcribir con Whisper las clases que
+> OpenFING no publicó). Acá no rigen los ADR ni las convenciones de commits:
+> es un cuaderno, no el proyecto.
+>
+> **Nada de acá se promueve al repo sin un ADR de procedencia.** Ver
+> `EXPERIMENTO.md` en esta misma carpeta.
+>
+> Todo lo que sigue es la copia del `CLAUDE.md` real al 2026-09-08 y puede
+> haber quedado viejo. Si necesitás la verdad del proyecto, mirá el repo.
+
 
 
 # CLAUDE.md — contexto del módulo Extractor
@@ -91,6 +104,19 @@ transcripción: /media/{slug}/{slug}_{NN}_transcription.vtt
   el contenido: `validarTranscripcion()` en `vtt.js`.
 - El **índice del curso sí viene en el HTML servido**: los 42 títulos con
   número y link, sin ejecutar JS.
+- **Un curso puede tener clases regrabadas en otro año.** En `em-2024` las
+  clases 9 y 10 son grabaciones de 2025 insertadas en el curso de 2024: su
+  `og:video` dice `em-2025_09.mp4` dentro de `media/em-2024/`, y el
+  `data-transcripcion-src` de la misma página dice `em-2024_09…`. **El año del
+  archivo no se deduce del año del curso.** Peor: esas clases pueden no tener
+  ningún asset derivado — ni transcripción, ni pista de subtítulos, ni
+  thumbnails— aunque el `.mp4` exista. Detalle en
+  `courses/ElecMag2024/CLAUDE.md` §0.
+- **Que una clase no tenga transcripción no es un error del extractor.**
+  `fetch.js` la reporta como `SIN FUENTE`, no cuenta para el exit code, y
+  antes de rendirse prueba el año ±1 (`candidatosDeVtt` en `openfing.js`).
+  Distinguir siempre *falla transitoria* (reintentable) de *fuente
+  inexistente* (no lo es): los 4xx no se reintentan.
 
 **Coste por curso:** 1 petición al índice + 2 por clase (página para
 `og:video` y metadatos, luego el `.vtt`). Para `civ`: ~85 peticiones.

@@ -150,6 +150,52 @@ exacto — no usarlo como base de ninguna métrica del benchmark.
 
 ---
 
+## 8. Clases sin transcripción en el origen — RESUELTA (2026-09-08)
+
+**Síntoma:** `npm run fetch -- ElecMag2024` fallaba con `ERROR ... HTTP 404`
+en las clases 9 y 10, y el mensaje final invitaba a reintentar.
+
+**Causa:** son clases **regrabadas en 2025 e insertadas en el curso de 2024**
+(`release_date` 2025-09-04 y 2025-09-09). Su `og:video` apunta a
+`media/em-2024/em-2025_09.mp4` —que existe— pero OpenFING nunca generó los
+assets derivados: faltan los tres VTT (`_transcription`, `_thumbnails` y la
+pista del `<track>`). Barrido de las 29 clases: son las únicas dos así. **No
+es un bug del extractor**; `urlDelVtt` derivó del `og:video` como manda
+ADR-0001.
+
+**Decisión, en dos partes:**
+
+1. **Estado `sin fuente`** en `fetch.js`, separado de `error`: no cuenta para
+   el exit code y su mensaje aclara que reintentar no cambia nada hasta que la
+   fuente publique el archivo. Es lo que efectivamente resuelve el síntoma.
+2. **Fallback de año ±1** (`candidatosDeVtt` en `openfing.js`): si la URL
+   canónica da 404, se prueba el año ±1 en el nombre de archivo y en el
+   directorio. **No rescata a 9 y 10** —ahí no hay archivo bajo ningún
+   nombre—, pero para la clase 9 genera `em-2024_09_transcription.vtt`, que es
+   justo lo que declara el `data-transcripcion-src` de la página. Es un seguro
+   contra el caso en que el año del `og:video` se despegue del año del asset y
+   el asset sí exista.
+
+De paso: **los 4xx dejan de reintentarse**. `bajarTexto` reintentaba 3 veces
+con backoff ante cualquier fallo, así que cada 404 quemaba 3 peticiones y ~3 s;
+un 404 no es transitorio. Se siguen reintentando 5xx, timeouts y errores de red.
+
+**Sin ADR nuevo:** el `og:video` sigue siendo la fuente de verdad y se prueba
+siempre primero; el fallback es recuperación posterior al fallo.
+
+**Pendiente derivado — `data-transcripcion-src`.** El HTML de la clase trae ese
+atributo con la URL del VTT **sin derivarla del `og:video`**, y es inmune a
+este desalineo de años. Sería una fuente más directa que la derivación actual,
+pero cambiarla toca la decisión de ADR-0001, así que **exige ADR nuevo**. No se
+tocó.
+
+**Pendiente derivado — ASR.** Recuperar esas dos clases desde el audio es el
+único camino que queda, y también exige ADR nuevo (procedencia en el
+manifiesto). Idea desarrollada, con datos medidos y punteros:
+`ideas/asr-runpod-whisper.md`. No decidida.
+
+---
+
 ## Pendientes (2026-08-02)
 
 Registrado el mismo día que se resolvió el punto 6, durante la sesión de

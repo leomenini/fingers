@@ -1,0 +1,66 @@
+title: Clase 7
+id: em-2024-2-07
+
+course: Electromagnetismo
+academic_year: 2024
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:24:51"
+
+stats:
+  transcript_words: 9488
+  summary_words: 2578
+  diagrams_pending: 0
+  equations: 24
+
+topics:
+  - Resolución de la ecuación de Legendre por serie de potencias
+  - Relación de recurrencia entre coeficientes
+  - Independencia de las cadenas par e impar
+  - Polinomios de Legendre y su normalización
+  - Criterio de D'Alembert y divergencia en los polos
+  - Por qué sólo sirven las soluciones polinomiales
+  - Ecuación radial y sus dos potencias
+  - Base de soluciones en esféricas con simetría azimutal
+  - Esfera conductora descargada en un campo uniforme
+  - Independencia lineal de los polinomios de Legendre
+
+bibliography:
+  - title: "Reitz & Milford"
+    verified: false
+
+prerequisites:
+  - Método de separación de variables (Clase 6)
+  - Ecuación de Legendre y cambio de variable u = cos(theta)
+  - Desarrollo y serie de Taylor
+  - Criterios de convergencia de series
+  - Desarrollo multipolar y momento dipolar (Clases 4 y 5)
+  - Conductor en equilibrio como equipotencial
+
+next_topics:
+  - Campo eléctrico y carga de polarización de la esfera conductora
+  - Separación de variables en coordenadas cilíndricas
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-09-06
+
+llm:
+  model: claude-opus-5
+
+editorial_status: draft

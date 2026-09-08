@@ -1,0 +1,47 @@
+% Clase 5 — el problema motivador del capitulo 2: esfera conductora en un campo
+% externo uniforme. La carga se redistribuye sola, asi que no se sabe donde esta
+% y la integral de Coulomb no sirve.
+\begin{tikzpicture}[scale=1]
+
+% ---------------- panel (a): antes ----------------
+\begin{scope}
+  \foreach \yy in {-1.5,-0.75,0,0.75,1.5}{
+    \draw[figvecaux] (-1.9,\yy) -- (1.9,\yy);
+  }
+  \node[figlblaux] at (0,1.95) {$\vec E_0$ uniforme};
+  \node[figlbl] at (0,-2.35) {(a) campo externo dado};
+\end{scope}
+
+% ---------------- panel (b): despues ----------------
+\begin{scope}[xshift=6.4cm]
+  % lineas de campo que rodean la esfera
+  \draw[figvecaux] (-2.3,1.5) -- (2.3,1.5);
+  \draw[figvecaux] (-2.3,-1.5) -- (2.3,-1.5);
+  \draw[figvecaux] plot[smooth, tension=0.8]
+    coordinates {(-2.3,0.75) (-1.2,0.78) (0,1.12) (1.2,0.78) (2.3,0.75)};
+  \draw[figvecaux] plot[smooth, tension=0.8]
+    coordinates {(-2.3,-0.75) (-1.2,-0.78) (0,-1.12) (1.2,-0.78) (2.3,-0.75)};
+  % tramos que entran y salen de la esfera (el interior esta apantallado)
+  \draw[figvecaux] (-2.3,0) -- (-0.95,0);
+  \draw[figvecaux] (0.95,0) -- (2.3,0);
+  % esfera conductora
+  \fill[figgray!25] (0,0) circle (0.92);
+  \draw[figline] (0,0) circle (0.92);
+  \node[figlblaux] at (0,0) {$\vec E=0$};
+  % carga inducida: negativa a la izquierda, positiva a la derecha
+  \foreach \ang in {150,165,180,195,210}{
+    \node[figneg] at (\ang:0.92) {};
+  }
+  \foreach \ang in {-30,-15,0,15,30}{
+    \node[figpos] at (\ang:0.92) {};
+  }
+  \node[figlbl, figblue, fill=white, inner sep=1.5pt] at (-1.55,0.5) {$\sigma<0$};
+  \node[figlbl, figred, fill=white, inner sep=1.5pt] at (1.55,0.5) {$\sigma>0$};
+  \node[figlbl] at (0,-2.35) {(b) esfera conductora: se polariza};
+\end{scope}
+
+\node[figlbl, align=center] at (3.2,-3.4)
+  {La densidad inducida $\sigma$ \textbf{es parte de la inc\'ognita}: no se puede\\[0.2em]
+   escribir la integral de Coulomb porque no se sabe d\'onde est\'an las cargas.};
+
+\end{tikzpicture}

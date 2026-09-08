@@ -1,0 +1,65 @@
+title: Clase 4
+id: em-2024-2-04
+
+course: Electromagnetismo
+academic_year: 2024
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:26:03"
+
+stats:
+  transcript_words: 9643
+  summary_words: 3422
+  diagrams_pending: 0
+  equations: 27
+
+topics:
+  - Ley de Gauss aplicada a la carga puntual
+  - Conductores en equilibrio, campo y densidad de carga interiores
+  - Conductor con hueco, carga en el borde exterior
+  - Campo justo afuera de un conductor, componentes tangencial y normal
+  - Idea del desarrollo multipolar
+  - Dipolo eléctrico, campo y potencial a gran distancia
+  - Momento dipolar eléctrico
+  - Energía y fuerza de un dipolo en un campo externo
+  - Desarrollo de Taylor de 1/|r-r'| al orden cuadrático
+
+bibliography:
+  - title: "Reitz & Milford"
+    verified: false
+
+prerequisites:
+  - Ley de Gauss en forma integral y diferencial
+  - Teorema de la divergencia
+  - Circulación nula del campo electrostático
+  - Potencial electrostático y su relación con el campo
+  - Desarrollo de Taylor en una y varias variables
+
+next_topics:
+  - Desarrollo multipolar propiamente dicho
+  - Momento cuadrupolar
+  - Ecuaciones de Poisson y Laplace
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-09-06
+
+llm:
+  model: claude-opus-5
+
+editorial_status: draft

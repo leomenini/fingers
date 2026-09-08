@@ -1,0 +1,68 @@
+title: Clase 5
+id: em-2024-2-05
+
+course: Electromagnetismo
+academic_year: 2024
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:21:25"
+
+stats:
+  transcript_words: 8951
+  summary_words: 3228
+  diagrams_pending: 0
+  equations: 26
+
+topics:
+  - Cierre del desarrollo multipolar de una distribución continua
+  - Delta de Kronecker como herramienta de factorización
+  - Carga total, momento dipolar y momento cuadrupolar
+  - Jerarquía de comportamientos a gran distancia
+  - Dependencia de los momentos con el origen de coordenadas
+  - Versión discreta del desarrollo multipolar
+  - Problemas con la posición de la carga como incógnita
+  - Ecuación de Poisson y operador laplaciano
+  - Ecuación de Laplace, linealidad de sus soluciones
+  - Condiciones de borde de Dirichlet y de Von Neumann
+  - Teorema de unicidad de la ecuación de Laplace
+
+bibliography:
+  - title: "Reitz & Milford"
+    verified: false
+
+prerequisites:
+  - Desarrollo de Taylor de 1/|r-r'| al orden cuadrático (Clase 4)
+  - Momento dipolar de dos cargas puntuales
+  - Ley de Gauss en forma diferencial
+  - Teorema de la divergencia
+  - Ecuaciones diferenciales lineales de segundo orden
+  - Densidad de energía electrostática
+
+next_topics:
+  - Ecuación de Laplace en coordenadas cilíndricas y esféricas
+  - Resolución de la ecuación de Laplace en casos simples
+  - Método de separación de variables
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer:
+    - Leandro
+  date: 2026-09-06
+
+llm:
+  model: claude-opus-5
+
+editorial_status: draft

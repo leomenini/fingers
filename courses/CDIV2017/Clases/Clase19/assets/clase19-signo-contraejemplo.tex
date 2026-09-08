@@ -1,0 +1,47 @@
+% Clase 19 --- El contraejemplo de la función signo (§8).
+% El docente: "como hay una distancia de 2 hay que tomar la mitad... se toma
+% epsilon igual a 1... si yo quiero mostrar que este número L no es límite,
+% para obtener un contraejemplo yo tengo que ir muy lejos de L. Voy a tomar un
+% punto negativo, porque el valor asociado será menos uno, que estará lejos
+% de L."
+\begin{center}
+\begin{tikzpicture}[x=2.0cm, y=1.25cm]
+  % banda de precision L +- epsilon, con epsilon = 1
+  \fill[figamber!18] (-1.75,-0.4) rectangle (1.75,1.6);
+  % banda del radio delta alrededor de 0
+  \fill[figblue!14] (-0.7,-1.75) rectangle (0.7,1.9);
+
+  % ejes
+  \draw[figaxis] (-1.85,0) -- (1.95,0) node[figlbl, below right] {$x$};
+  \draw[figaxis] (0,-1.85) -- (0,2.1) node[figlbl, above left] {$y$};
+
+  % la funcion signo
+  \draw[figline] (-1.75,-1) -- (-0.04,-1);
+  \draw[figline] (0.04,1) -- (1.75,1);
+  \node[figptoabierto] at (0,-1) {};
+  \node[figptoabierto] at (0,1) {};
+  \node[figptocerrado] at (0,0) {};
+  \node[figlbl, right=3pt] at (1.75,1) {$1$};
+  \node[figlbl, left=3pt] at (-1.75,-1) {$-1$};
+
+  % el intento de limite L (positivo o nulo) y su banda
+  \draw[figred, dashed, line width=0.8pt] (-1.85,0.6) -- (1.95,0.6);
+  \node[figlbl, figred, right=2pt] at (1.95,0.6) {$L$};
+  \node[figlblaux, figamber, anchor=west] at (1.78,1.6) {$L+\varepsilon$};
+  \node[figlblaux, figamber, anchor=west] at (1.78,-0.4) {$L-\varepsilon$};
+
+  % el contraejemplo x = -delta/2
+  \node[figpto, fill=figred, minimum size=5.5pt] (cx) at (-0.35,-1) {};
+  \draw[figaux] (-0.35,0) -- (cx);
+  \node[figlbl, figred, anchor=north, align=center] at (-0.35,-1.15)
+    {$x=-\dfrac{\delta}{2}$};
+  \node[figlblaux, anchor=south] at (-0.7,1.92) {$-\delta$};
+  \node[figlblaux, anchor=south] at (0.7,1.92) {$\delta$};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape Sea cual sea el intento de límite $L$, la precisión
+$\varepsilon=1$ --- la mitad de la distancia entre los dos límites laterales ---
+fracasa. Para $L\geq 0$ basta ir al lado negativo, donde el signo vale $-1$: el
+punto $x=-\delta/2$ está en el entorno reducido de radio $\delta$ pero su
+imagen queda fuera de la banda $L\pm 1$, ya que $|-1-L|=L+1\geq 1$. Para $L<0$
+se toma $x=\delta/2$ y el argumento es simétrico.}
+\end{center}

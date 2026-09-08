@@ -16,33 +16,57 @@ video:
 
 stats:
   transcript_words: 8503
-  summary_words: 0
+  summary_words: 4107
   diagrams_pending: 0
-  equations: 0
+  equations: 34
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
-
-topics: []
+topics:
+  - Repaso de la definición de límite con entornos reducidos
+  - Notación lógica: los cuantificadores son símbolos, no abreviaturas
+  - El juego entre el implementor y el usuario de la definición
+  - Lectura gráfica: banda de precisión y radio de seguridad
+  - Continuidad en un punto y los dos tipos de discontinuidad
+  - Continuidad en un intervalo (cuatro cuantificadores anidados)
+  - Catálogo intuitivo de comportamientos en un punto
+  - Oscilación sin límite: sen(1/x) en el origen
+  - Ejemplo: la función identidad es continua (delta = epsilon)
+  - Ejercicio: la identidad modificada y el radio mín(epsilon, |x0|)
+  - Cambiar la función en finitos puntos no altera los límites
+  - Qué significa "un radio suficientemente pequeño"
+  - Ejemplo: la raíz cuadrada es continua, caso x0 = 0
+  - Ejemplo: la raíz cuadrada es continua, caso x0 > 0 (radio asimétrico)
+  - Reducción de la precisión a epsilon' = mín(epsilon, raíz de x0)
+  - Negación de la definición de límite
+  - Contraejemplo: la función signo no tiene límite en 0
 
 bibliography: []
 
-prerequisites: []
+prerequisites:
+  - Definición epsilon-delta de límite (Clase 18)
+  - Entornos y entornos reducidos
+  - Valor absoluto como distancia
+  - Negación de fórmulas con cuantificadores alternados
+  - Monotonía estricta de la raíz cuadrada
+  - Intervalos y clausura de un intervalo
 
-next_topics: []
+next_topics:
+  - Propiedades algebraicas de los límites (suma, producto, cociente)
+  - Límites laterales
+  - Monotonía y teorema del sándwich
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-08-08
+  reviewer:
+    - Leandro
+  date: 2026-08-31
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5
 
 editorial_status: draft

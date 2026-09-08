@@ -1,0 +1,38 @@
+% Clase 5 — los momentos dependen del origen elegido. Geometria del dibujo con
+% que el docente prueba que p es independiente del origen cuando Q=0.
+\begin{tikzpicture}[scale=1.2]
+
+  % volumen B
+  \fill[figblue!12] plot[smooth cycle, tension=0.85]
+    coordinates {(-1.05,0.5) (-0.1,1.05) (0.95,0.6) (1.05,-0.4) (0.1,-0.95) (-1.0,-0.45)};
+  \draw[figline] plot[smooth cycle, tension=0.85]
+    coordinates {(-1.05,0.5) (-0.1,1.05) (0.95,0.6) (1.05,-0.4) (0.1,-0.95) (-1.0,-0.45)};
+  \node[figlbl] at (-1.5,1.05) {$B$};
+
+  % punto fuente
+  \node[figneutra] (s) at (0.5,0.35) {};
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (1.62,0.72) {$\rho(\vec r\,')$};
+  \draw[figvecaux] (1.3,0.62) -- (0.62,0.44);
+
+  % origen O
+  \node[figneutra] (O) at (-0.7,-0.2) {};
+  \node[figlbl, fill=figblue!12, inner sep=1.5pt] at (-1.0,-0.02) {$O$};
+  \draw[figvec] (O) -- (s);
+  \node[figlbl, fill=figblue!12, inner sep=1.5pt] at (-0.12,-0.08) {$\vec r\,'$};
+
+  % origen Obarra
+  \node[figneutra] (Ob) at (0.55,-1.55) {};
+  \node[figlbl] at (0.55,-1.88) {$\bar O$};
+  \draw[figvecres] (Ob) -- (s);
+  \node[figlbl, figred, fill=white, inner sep=1.5pt] at (0.92,-0.62) {$\vec r\,''$};
+
+  % vector entre origenes
+  \draw[figvecaux] (O) -- (Ob);
+  \node[figlblaux, fill=white, inner sep=1.5pt] at (-0.72,-1.02) {$\vec{O\bar O}$};
+
+  \node[figlbl, align=center] at (0.0,-2.85)
+    {$\vec r\,''=\vec r\,'-\vec{O\bar O}
+      \ \Longrightarrow\ \vec p_{\bar O}=\vec p_{O}-\vec{O\bar O}\,Q$\\[0.25em]
+     Con $Q=0$ los dos or\'igenes dan el mismo $\vec p$.};
+
+\end{tikzpicture}

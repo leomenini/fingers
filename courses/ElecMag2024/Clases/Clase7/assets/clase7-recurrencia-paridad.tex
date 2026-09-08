@@ -1,0 +1,44 @@
+% Clase 7 — la relacion de recurrencia salta de 2 en 2: pares e impares forman
+% cadenas independientes, y cuando K = n(n+1) la cadena se corta y queda un polinomio.
+\begin{tikzpicture}[scale=1,
+  coef/.style={draw=figblue, fill=figblue!8, rounded corners=2pt,
+               minimum width=0.86cm, minimum height=0.56cm, font=\small},
+  coefcero/.style={draw=figgray!60, fill=figgray!12, rounded corners=2pt,
+               minimum width=0.86cm, minimum height=0.56cm, font=\small, text=figgray}]
+
+% ---- cadena par ----
+\node[coef] (a0) at (0,0.9)   {$a_0$};
+\node[coef] (a2) at (2.0,0.9) {$a_2$};
+\node[coef] (a4) at (4.0,0.9) {$a_4$};
+\node[coefcero] (a6) at (6.0,0.9) {$a_6$};
+\node[coefcero] (a8) at (8.0,0.9) {$a_8$};
+\draw[figvec] (a0) -- (a2);
+\draw[figvec] (a2) -- (a4);
+\draw[figvec] (a4) -- (a6);
+\draw[figvec] (a6) -- (a8);
+\node[figlbl] at (-1.15,0.9) {pares};
+
+% ---- cadena impar ----
+\node[coefcero] (a1) at (0,-0.9)   {$a_1$};
+\node[coefcero] (a3) at (2.0,-0.9) {$a_3$};
+\node[coefcero] (a5) at (4.0,-0.9) {$a_5$};
+\node[coefcero] (a7) at (6.0,-0.9) {$a_7$};
+\node[coefcero] (a9) at (8.0,-0.9) {$a_9$};
+\draw[figvecaux] (a1) -- (a3);
+\draw[figvecaux] (a3) -- (a5);
+\draw[figvecaux] (a5) -- (a7);
+\draw[figvecaux] (a7) -- (a9);
+\node[figlbl, text=figgray] at (-1.15,-0.9) {impares};
+
+% el corte
+\draw[figred, line width=1.1pt] (5.0,1.72) -- (5.0,0.08);
+\node[figlbl, figred, align=center] at (5.0,2.25) {$K=n(n+1)$\\ corta ac\'a};
+
+\node[figlblaux, align=center] at (4.0,-1.75)
+  {Con $a_1=0$ toda la cadena impar es nula: se elige una paridad y se trabaja en ella.};
+
+\node[figlbl, align=center] at (4.0,-2.7)
+  {$a_{m+2}=a_m\,\dfrac{m(m+1)-K}{(m+1)(m+2)}$\ : el salto de dos deja dos cadenas que\\[0.3em]
+   no se comunican, y el numerador se anula justo en $m=n$ cuando $K=n(n+1)$.};
+
+\end{tikzpicture}

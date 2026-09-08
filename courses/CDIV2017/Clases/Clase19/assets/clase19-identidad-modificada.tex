@@ -1,0 +1,50 @@
+% Clase 19 --- La identidad modificada y el radio recortado (§5).
+% El docente: "voy a tomar la identidad si x es distinto de 0, pero en 0 voy a
+% cambiar el valor... voy a poner 42... cuando se va a considerar un punto acá,
+% habrá que reducir un poquito el delta para evitar este valor problemático...
+% tomaremos el mínimo entre epsilon y el valor absoluto de x sub 0".
+\begin{center}
+\begin{tikzpicture}[x=1.25cm, y=1.25cm]
+  % banda horizontal de precisión alrededor de L = x_0
+  \fill[figamber!18] (-2.35,1.25) rectangle (3.0,2.55);
+  % banda vertical de radio delta = min(epsilon, |x_0|): no llega a tocar el 0
+  \fill[figblue!14] (1.25,-0.75) rectangle (2.55,3.0);
+
+  % ejes
+  \draw[figaxis] (-2.5,0) -- (3.25,0) node[figlbl, below right] {$x$};
+  \draw[figaxis] (0,-2.5) -- (0,3.35) node[figlbl, above left] {$y$};
+
+  % la recta y = x, con el punto 0 excluido
+  \draw[figline] (-2.35,-2.35) -- (-0.07,-0.07);
+  \draw[figline] (0.07,0.07) -- (2.95,2.95);
+  \node[figptoabierto] at (0,0) {};
+  \node[figlblaux, anchor=north east] at (-0.06,-0.06) {$0$};
+
+  % corte de escala en el eje y, y el valor problemático f(0) = 42
+  \draw[figgray, line width=0.7pt] (-0.11,2.86) -- (0.11,3.02);
+  \draw[figgray, line width=0.7pt] (-0.11,3.00) -- (0.11,3.16);
+  \node[figpto, fill=figred, minimum size=5.5pt] (p42) at (0,3.28) {};
+  \node[figlbl, figred, right=4pt] at (p42) {$f(0)=42$};
+
+  % punto de observación x_0 y su imagen
+  \draw[figaux] (1.9,0) -- (1.9,1.9) -- (0,1.9);
+  \node[figptocerrado] at (1.9,1.9) {};
+  \node[figlbl, anchor=south west] at (1.94,0.06) {$x_0$};
+  \node[figlbl, anchor=south east] at (-0.06,1.94) {$x_0$};
+
+  % el radio, medido abajo de todo
+  \draw[figred, line width=1pt, {Latex[length=2.2mm,width=1.6mm]}-{Latex[length=2.2mm,width=1.6mm]}]
+    (1.25,-0.5) -- (2.55,-0.5);
+  \draw[figred, line width=0.7pt] (1.25,-0.62) -- (1.25,-0.38);
+  \draw[figred, line width=0.7pt] (2.55,-0.62) -- (2.55,-0.38);
+  \node[figlbl, figred, anchor=north] at (1.9,-0.62)
+    {$\delta_\varepsilon=\min(\varepsilon,|x_0|)$};
+\end{tikzpicture}\\[0.5em]
+{\small\itshape La identidad con el valor cambiado en un único punto. En
+$x_0=0$ no hay ningún trabajo extra: el entorno reducido excluye el $0$ y el
+valor $42$ nunca se mira (de ahí el corte de escala en el eje), así que el
+límite vale $0$. En un $x_0 \neq 0$ hay que recortar el radio a
+$\min(\varepsilon,|x_0|)$ para que la banda vertical no llegue a tocar el punto
+problemático. La función tiene límite en todo punto, pero es discontinua
+en $0$.}
+\end{center}

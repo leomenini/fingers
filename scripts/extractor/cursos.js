@@ -29,6 +29,14 @@ export const CURSOS = {
     semester: 2,
     teacher: 'Nicolás Wschebor',
   },
+  'ElecMag2024': {
+    slug: 'em-2024',
+    idPrefix: 'em-2024-2',
+    course: 'Electromagnetismo',
+    academic_year: 2024,
+    semester: 2,
+    teacher: 'Nicolás Wschebor',
+  },
 };
 
 export const urlBaseDe = (slug) => `https://open.fing.edu.uy/courses/${slug}`;
