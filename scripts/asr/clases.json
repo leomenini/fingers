@@ -1,0 +1,31 @@
+{
+  "curso": "ElecMag2024",
+  "slug": "em-2024",
+  "preparadoEn": "2026-09-08T16:29:29.098Z",
+  "clases": [
+    {
+      "n": 8,
+      "titulo": "Ecuación de Laplace en Coordenadas Cilíndricas y Método de las Imágenes (versión borrador)",
+      "paginaUrl": "https://open.fing.edu.uy/courses/em-2024/8/",
+      "mp4": "https://open.fing.edu.uy/media/em-2024/em-2024_08.mp4",
+      "duracionSeg": 5566,
+      "releaseDate": "2024-08-29T00:00:00-03:00"
+    },
+    {
+      "n": 9,
+      "titulo": "Polarización y Ley de Gauss en medios dieléctricos (versión borrador)",
+      "paginaUrl": "https://open.fing.edu.uy/courses/em-2024/9/",
+      "mp4": "https://open.fing.edu.uy/media/em-2024/em-2025_09.mp4",
+      "duracionSeg": 6760,
+      "releaseDate": "2025-09-04T00:00:00-03:00"
+    },
+    {
+      "n": 10,
+      "titulo": "Condiciones en la frontera entre dos medios dieléctricos y ejemplos de solución de Laplace (versión borrador)",
+      "paginaUrl": "https://open.fing.edu.uy/courses/em-2024/10/",
+      "mp4": "https://open.fing.edu.uy/media/em-2024/em-2025_10.mp4",
+      "duracionSeg": 5203,
+      "releaseDate": "2025-09-09T00:00:00-03:00"
+    }
+  ]
+}
