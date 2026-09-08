@@ -22,30 +22,69 @@ video:
 
 stats:
   transcript_words: 12027
-  summary_words: 0
+  summary_words: 3571
   diagrams_pending: 0
-  equations: 0
+  equations: 26
 
-topics: []
+topics:
+  - Por qué un dieléctrico importa aunque no tenga cargas libres
+  - Moléculas polares y apolares, dipolo inducido
+  - La caricatura de la alineación molecular y su desmentida
+  - Reemplazo de la molécula por un dipolo vía desarrollo multipolar
+  - Definición del vector polarización como momento dipolar por unidad de volumen
+  - El volumen mesoscópico y el abuso de notación del límite
+  - Potencial de un dieléctrico polarizado, fuera del material
+  - El truco del gradiente primado
+  - La identidad de la divergencia de un producto y el teorema de la divergencia
+  - Densidad volumétrica de carga de polarización
+  - Densidad superficial de carga de polarización
+  - El campo eléctrico sale de Coulomb sin complicación adicional
+  - Por qué siempre aparece carga superficial en el borde
+  - El condensador con dieléctrico como ejemplo
+  - Verificación de que la carga de polarización total es cero
+  - La regla mnemotécnica de los signos
+  - Campo microscópico contra campo macroscópico
+  - El promedio con función de peso y el argumento del voltímetro
+  - El campo macroscópico es irrotacional
+  - La cavidad en forma de aguja
+  - El papel de la isotropía en el argumento de la cavidad
+  - Ley de Gauss en presencia de dieléctricos
+  - El vector desplazamiento eléctrico
+  - La ecuación constitutiva y por qué el curso no la deduce
+  - Susceptibilidad eléctrica y permitividad
+  - Materiales lineales y el argumento de Taylor
+  - Constante dieléctrica
 
-bibliography: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-prerequisites: []
+prerequisites:
+  - Desarrollo multipolar de una distribución localizada (Clase 5)
+  - Potencial de un dipolo puntual
+  - Teorema de la divergencia
+  - Ley de Gauss en forma integral y diferencial
+  - El campo eléctrico deriva de un potencial en electrostática
+  - Circulación nula del campo eléctrico sobre curvas cerradas
 
-next_topics: []
+next_topics:
+  - Signo de la susceptibilidad y cota de la constante dieléctrica
+  - Esfera cargada rodeada de un dieléctrico
+  - Condiciones de borde entre dos medios
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
+  reviewer:
+    - Leandro
   date: 2026-09-08
 
 llm:
-  model: ""
+  model: claude-opus-5
 
 editorial_status: draft

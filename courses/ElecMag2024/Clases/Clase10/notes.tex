@@ -1,0 +1,614 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 10: Condiciones de frontera entre dieléctricos y Laplace con dos medios} \\[0.3em]
+        \large{El signo de la susceptibilidad, la esfera en un dieléctrico y el cilindro en campo uniforme}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Consecuencias del signo de la susceptibilidad}
+
+La clase anterior definió susceptibilidad y permitividad para materiales
+homogéneos, isótropos y \textbf{lineales}, entendiendo por lineal que $\chi$ no
+depende del campo aplicado y por lo tanto la relación entre $\vec P$ y $\vec E$
+---o entre $\vec D$ y $\vec E$--- es de proporcionalidad.
+
+Falta una observación elemental que tiene consecuencias fuertes. Si hay un campo
+externo, está asociado a cargas exteriores positivas y negativas. La parte
+negativa de cada molécula tiende a acercarse a la carga \textbf{positiva}
+externa, y la positiva a la negativa. El momento dipolar que se genera apunta
+entonces en el mismo sentido que el campo aplicado, y como la polarización es el
+momento dipolar por unidad de volumen:
+
+\begin{keybox}[Tres cotas encadenadas]
+\[
+\vec P \ \text{tiene el mismo sentido que}\ \vec E
+\quad\Longrightarrow\quad
+\boxed{\ \chi \ge 0\ }
+\]
+y usando $\varepsilon = \varepsilon_0(1+\chi)$,
+\[
+\boxed{\ \varepsilon \ge \varepsilon_0
+\qquad\text{y}\qquad
+K = \frac{\varepsilon}{\varepsilon_0} \ge 1 \ }
+\]
+\end{keybox}
+
+\begin{notebox}[Origen trivial, conclusión no trivial]
+El argumento es que las cargas negativas son atraídas por las positivas. Pero la
+conclusión no es menor: \textbf{la constante dieléctrica no puede ser cualquier
+cosa}, siempre es mayor o igual que uno.
+\end{notebox}
+
+\subsection{Materiales anisótropos}
+
+En algunos sólidos el material no es isótropo. La generalización es casi la
+misma, pero la susceptibilidad deja de ser un escalar y pasa a ser una
+\textbf{matriz} ---un tensor--- que a un campo aplicado le asocia una
+polarización que \textbf{no tiene por qué ser colineal} con él. Ese caso no se
+trata en el curso; se menciona sólo para que se sepa que existe.
+
+\subsection{Valores típicos}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{lc}
+    \toprule
+    Material & $K$ \\
+    \midrule
+    Azufre                          & 4,0 \\
+    Cuarzo                          & 4,3 \\
+    Cloruro de sodio (sal de mesa)  & 6,1 \\
+    Agua destilada (\SI{20}{\celsius}) & 80,1 \\
+    Aire (presión normal)           & $\approx 1$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Valores indicativos del tamaño del efecto.}
+\end{table}
+
+\begin{notebox}[Dos lecturas de la tabla]
+Primero: \textbf{el aire y el vacío son lo mismo} a los efectos de este curso
+---distinguirlos exigiría una precisión que nunca se va a usar---. Segundo: para
+materiales nada exóticos el efecto es \textbf{significativo}, con factores de 6 o
+10.
+\end{notebox}
+
+\begin{warnbox}[Agua destilada, no agua con sales]
+El agua con sales disueltas \textbf{no} es un aislante sino un conductor. El
+valor de la tabla corresponde a agua destilada, y depende algo de la temperatura.
+\end{warnbox}
+
+\section{Primer ejemplo: esfera cargada en un dieléctrico}
+
+El ejemplo más simple posible, con simetría esférica y dependencia de una sola
+coordenada. Una \textbf{esfera conductora} de radio $a$ con carga total $Q$,
+rodeada de un medio dieléctrico de constante $K$ (homogéneo, isótropo y lineal
+--- todo lo que la frase «constante $K$» implica).
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase10-esfera-dielectrico.tex}
+  \caption{El material dieléctrico es el que está \emph{afuera}, así que la
+  normal que sale de él apunta al centro: $\hat n = -\hat e_r$. De ahí que
+  $\sigma_p<0$, y que la carga total que ve $\vec E$ sea $Q/K$ en vez de $Q$.}
+\end{figure}
+
+\subsection{Campo y polarización}
+
+Se toma una \textbf{superficie gaussiana esférica} $S$ de radio $r > a$. Dentro
+del conductor no hay campo, así que la región interesante es la exterior. Por
+simetría esférica, $\vec E$, $\vec P$ y $\vec D$ son todos radiales y paralelos
+entre sí ---el material es lineal e isótropo---, y sus módulos son constantes
+sobre $S$. Aplicando Gauss para dieléctricos:
+\[
+\oiint_S \vec D \cdot \hat n \, dS = D \cdot 4\pi r^2 = Q
+\quad\Longrightarrow\quad
+\boxed{\ D = \frac{Q}{4\pi r^2}\ }
+\]
+donde $Q$ es la \textbf{carga libre}, que en este problema es toda la carga del
+conductor: la que uno deposita y a la que tiene acceso.
+
+Ahora hace falta volver a $\vec E$, y para eso se usa la relación constitutiva
+del medio lineal, $\vec D = \varepsilon \vec E = \varepsilon_0 K \vec E$:
+
+\begin{keybox}[Campo en el dieléctrico]
+\[
+\boxed{\ E = \frac{Q}{4\pi\varepsilon_0 K r^2}\ }
+\]
+menor que en el vacío, exactamente por un factor $K$.
+\end{keybox}
+
+\begin{notebox}[Por qué hacía falta la relación constitutiva]
+Sin ella se podía calcular $\vec D$ por simetría, pero no habría servido de
+mucho: la magnitud que ejerce la fuerza electrostática es $\vec E$, no $\vec D$.
+\end{notebox}
+
+Para la polarización se usa la otra forma de la relación,
+$\vec D = \varepsilon_0 \vec E + \vec P$:
+\[
+\vec P = \vec D - \varepsilon_0 \vec E
+= \varepsilon_0 (K-1) \vec E
+\quad\Longrightarrow\quad
+\boxed{\ P = \frac{(K-1)\,Q}{4\pi K r^2}\ }
+\]
+
+\begin{notebox}[Coherencia]
+Si $K = 1$ estamos en el vacío y $P = 0$, como debe ser. Y como $K > 1$,
+$\vec P$ tiene el mismo sentido que $\vec E$ ---que es lo que se argumentó en la
+sección anterior, ahora recorrido en la dirección inversa---. $\vec P$ tiene las
+mismas unidades que $\vec D$: $\si{\coulomb\per\metre\squared}$.
+\end{notebox}
+
+\subsection{Cargas de polarización}
+
+Para la densidad volumétrica hay que usar la divergencia en \textbf{coordenadas
+esféricas}, no la derivada radial a secas:
+\[
+\rho_p = -\div \vec P
+= -\frac{1}{r^2}\pdv{r}\left(r^2 P_r\right).
+\]
+
+\begin{warnbox}[El $1/r^2$ que uno se come]
+Es justamente el factor que se pierde si se escribe la fórmula de memoria. No hay
+componentes según $\hat e_\theta$ ni $\hat e_\phi$, pero el $r^2$ sí está.
+\end{warnbox}
+
+Y ahí ocurre la cancelación: $P_r \propto 1/r^2$, así que $r^2 P_r$ es una
+\textbf{constante} y su derivada se anula:
+\[
+\boxed{\ \rho_p = 0\ }
+\]
+
+\begin{notebox}[No era obvio]
+Es la compensación de un $r^2$ con otro $r^2$, y no siempre tiene por qué pasar.
+\end{notebox}
+
+Para la densidad superficial, $\sigma_p = \vec P \cdot \hat n$ con $\hat n$
+\textbf{saliente del material}. Acá está la sutileza del ejemplo: el material
+dieléctrico está \textbf{afuera} de la esfera, de modo que la normal saliente del
+material sobre la superficie $r=a$ apunta hacia el centro:
+\[
+\hat n = -\hat e_r
+\quad\Longrightarrow\quad
+\boxed{\ \sigma_p = -\frac{(K-1)\,Q}{4\pi K a^2}\ }
+\]
+
+\begin{warnbox}[Siempre hay dos normales]
+La que va en la definición de $\sigma_p$ es la que \textbf{sale del material}, y
+como acá el material está afuera, ese vector apunta hacia adentro. El signo menos
+no es un descuido: es el contenido físico del resultado.
+\end{warnbox}
+
+Es \textbf{negativa} si $Q$ es positiva, y es razonable: frente a una carga
+positiva, las moléculas se orientan de modo que quede su lado negativo hacia
+ella. Todo el resto se compensa. La carga de polarización total, con densidad
+uniforme sobre la esfera de radio $a$:
+\[
+Q_p = \sigma_p \cdot 4\pi a^2 = -\frac{K-1}{K}\,Q
+= -\left(1 - \frac{1}{K}\right) Q .
+\]
+
+\subsection{Por qué el campo es menor}
+
+Con esto se cierra el argumento físico que quedó pendiente. La carga
+\textbf{total} que ve el campo eléctrico no es $Q$ sino
+
+\begin{keybox}[La carga que se ve]
+\[
+Q + Q_p = Q - \left(1-\frac{1}{K}\right) Q = \frac{Q}{K},
+\]
+la carga original dividida por $K$ --- exactamente el factor por el que se redujo
+$E$.
+\end{keybox}
+
+La imagen es la caricatura de siempre: la carga $+Q$ queda rodeada de cargas
+negativas de polarización pegadas a ella, y la carga neta que se «ve» desde
+afuera es menor.
+
+\begin{notebox}[$\vec D$ no cuenta la polarización, $\vec E$ sí]
+Para $\vec D$ la fuente es sólo la carga libre; para $\vec E$ hay que poner la
+carga total, que es menor. De ahí que $D$ no lleve $K$ y $E$ sí.
+\end{notebox}
+
+Es un ejemplo de juguete ---podría haberse hecho en Física III--- pero fija las
+ideas antes de pasar a los problemas propios de este curso.
+
+\section{Condiciones de borde entre dos medios}
+
+Los ejemplos que vienen usan la ecuación de Laplace, y ahí aparece un problema
+nuevo: cuando hay \textbf{dos medios} ---dos dieléctricos, o un conductor y un
+dieléctrico--- la ecuación no vale en la frontera. Hay que saber cómo se pegan
+las soluciones de un lado y del otro.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase10-condiciones-borde.tex}
+  \caption{Dos construcciones sobre la misma interfaz: una superficie cerrada
+  controla la componente normal, una curva cerrada la tangencial. $\vec E$ sí
+  puede saltar al cruzar, aun con $\sigma_{\text{libre}}=0$, si $K_1 \neq K_2$;
+  pero el salto es finito, y una función con derivada acotada es continua, que
+  es por lo que $\phi_1 = \phi_2$ puede reemplazar a la condición sobre $E_t$.}
+\end{figure}
+
+\subsection{La componente normal de \texorpdfstring{$\vec D$}{D}}
+
+Se construye una \textbf{cápsula gaussiana} (un cilindro chato a caballo de la
+interfaz) con tapa $S_1$ en el medio 1, tapa $S_2$ en el medio 2 y superficie
+lateral. Tomándola suficientemente pequeña, la superficie se puede reemplazar por
+un plano y $\vec D$ por una constante sobre cada tapa. La lateral es despreciable
+frente a las tapas.
+
+Aplicando Gauss para dieléctricos, con $\hat n$ el vector que va del medio 2 al 1:
+\[
+D_{1n}\,\Delta S - D_{2n}\,\Delta S = \sigma_{\text{libre}}\,\Delta S
+\quad\Longrightarrow\quad
+\boxed{\ D_{1n} - D_{2n} = \sigma_{\text{libre}}\ }
+\]
+
+\begin{warnbox}[La convención de signos importa]
+Se puede elegir cualquiera de las dos normales, pero hay que ser consistente o
+los signos cambian.
+\end{warnbox}
+
+Si no hay densidad superficial de carga \textbf{libre}, la componente normal de
+$\vec D$ es continua.
+
+\subsection{La componente tangencial de \texorpdfstring{$\vec E$}{E}}
+
+Con la componente normal no alcanza: hace falta también la tangencial. Se toma un
+\textbf{rectángulo pequeño} $C$ a caballo de la interfaz y se usa que la
+circulación del campo eléctrico sobre cualquier curva cerrada es nula. Haciendo
+tender a cero la altura del rectángulo:
+\[
+\boxed{\ E_{1t} = E_{2t}\ }
+\]
+
+En rigor no es una sola condición sino varias: vale para cualquier vector
+tangencial, y a priori hay dos direcciones tangenciales independientes.
+
+\subsection{La continuidad del potencial}
+
+La condición tangencial admite un reemplazo más cómodo. Las dos condiciones
+anteriores dicen que $\vec E$ \textbf{puede saltar} al cruzar la interfaz: aun
+con $\sigma_{\text{libre}} = 0$, si las constantes dieléctricas difieren, la
+continuidad de $D_n$ obliga a $E_n$ a dar un salto.
+
+Pero lo importante es que esas discontinuidades son \textbf{finitas}. Y una
+función cuya derivada tiene discontinuidades finitas es \textbf{continua}: se la
+puede ver como la primitiva de esa derivada, y la primitiva es continua aunque no
+derivable ---tendrá un pico, nada más---.
+
+\begin{keybox}[Continuidad del potencial]
+\[
+\boxed{\ \phi_1 = \phi_2 \ \text{en la interfaz}\ }
+\]
+\end{keybox}
+
+\begin{warnbox}[Es esencial que sea una superficie]
+Cerca de una carga puntual el campo diverge; cerca de una línea de carga diverge
+también, más suavemente, como un logaritmo. A través de una \textbf{superficie}
+la discontinuidad es finita, y por eso el potencial es continuo.
+\end{warnbox}
+
+En la práctica se usa el par $\{\phi$ continuo, $D_n$ continua$\}$: la primera
+condición es más fácil de imponer que la tangencial de $\vec E$, y la condición
+sobre $D_n$ \textbf{no} se puede reemplazar.
+
+\section{Poisson y Laplace en un dieléctrico}
+
+En una zona ocupada por un medio homogéneo, isótropo y lineal de permitividad
+$\varepsilon$, con $\vec D = \varepsilon \vec E$ y $\vec E = -\grad \phi$ (el
+problema sigue siendo electrostático), la forma diferencial de Gauss da
+$\div(\varepsilon \vec E) = \rho_{\text{libre}}$. Como $\varepsilon$ es
+constante, sale de la divergencia:
+
+\begin{keybox}[Poisson en un dieléctrico]
+\[
+\boxed{\ \laplacian \phi = -\frac{\rho_{\text{libre}}}{\varepsilon}\ }
+\]
+idéntica a la usual, con $\varepsilon$ donde antes había $\varepsilon_0$.
+\end{keybox}
+
+\begin{notebox}[Sólo carga libre]
+De la carga de polarización no hay que ocuparse: ya está escondida en
+$\varepsilon$.
+\end{notebox}
+
+En particular, si no hay carga libre ---aunque el medio \textbf{sí} esté
+polarizado--- vale la ecuación de Laplace:
+\[
+\rho_{\text{libre}} = 0 \quad\Longrightarrow\quad \laplacian \phi = 0 .
+\]
+
+Aparece entonces una familia de problemas nueva: electrostática en presencia de
+dieléctricos, donde sigue valiendo Laplace pero hay más de una región.
+
+\section{Segundo ejemplo: cilindro en campo uniforme}
+
+Un \textbf{cilindro muy largo} de radio $a$, de material dieléctrico de constante
+$K$ y \textbf{descargado}, colocado en un campo eléctrico uniforme $\vec E_0$
+perpendicular a su eje. Se pide el campo eléctrico en todo el espacio, adentro y
+afuera.
+
+\begin{notebox}[Dos campos, no uno]
+El material se polariza, así que el campo deja de ser uniforme: tendrá la
+contribución aplicada más el efecto de la polarización. Y como no es un
+conductor, hay campo \textbf{adentro y afuera}. El ejemplo con esfera ya está
+publicado en OpenFING de años anteriores; acá se hace con cilindro para variar,
+con la misma estructura de razonamiento.
+\end{notebox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase10-cilindro-campo.tex}
+  \caption{El planteo: dos zonas separadas por $r=a$, dos potenciales incógnita,
+  y las coordenadas del problema. Las cinco condiciones de borde y dónde se
+  aplica cada una están en la tabla de la sección siguiente.}
+\end{figure}
+
+\subsection{Las dos zonas}
+
+Al ser un cilindro muy largo el problema no depende de $z$, y $\theta$ recorre de
+$0$ a $2\pi$. La solución general de Laplace en cilíndricas bajo esas hipótesis
+---los \textbf{armónicos cilíndricos}, vistos clases atrás--- es
+\[
+\phi(r,\theta) = a_0 + b_0 \ln r
++ \sum_{n=1}^{\infty} \left(a_n r^n + b_n r^{-n}\right)
+\left(c_n \cos n\theta + d_n \sin n\theta\right).
+\]
+
+Como la permitividad cambia abruptamente en $r=a$, hacen falta \textbf{dos}
+soluciones, con el mismo formato pero coeficientes distintos: $\phi_1$ afuera
+(medio 1, $\varepsilon_0$) y $\phi_2$ adentro (medio 2, $\varepsilon$).
+
+\subsection{Las cinco condiciones}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{clc}
+    \toprule
+     & Condición & Dónde \\
+    \midrule
+    \textbf{A} & $\phi_1 \sim -E_0\, r\cos\theta$      & $r \to \infty$ \\
+    \textbf{B} & $b_0^{(1)} = 0$                       & $r \to \infty$ \\
+    \textbf{C} & $\phi_2$ regular                      & $r \to 0$ \\
+    \textbf{D} & $\phi_1(a,\theta) = \phi_2(a,\theta)$ & $r = a$ \\
+    \textbf{E} & $D_{1n} = D_{2n}$                     & $r = a$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\textbf{A.} A gran distancia el campo debe tender al aplicado, cuyo potencial es
+$-E_0 x = -E_0\, r\cos\theta$.
+
+\textbf{B.} El término logarítmico es el potencial de una línea cargada, con
+coeficiente proporcional a la carga por unidad de longitud. Como el cilindro está
+descargado, ese coeficiente es nulo.
+
+\begin{warnbox}[Por qué A no implica B]
+Es un punto donde la intuición falla fácil. La condición A es un
+\textbf{equivalente}, no un límite, y el logaritmo es \textbf{subdominante}
+frente a $r$: crece mucho más despacio. Por eso A \textbf{no dice nada} sobre el
+término logarítmico y hace falta B aparte. Lo que A sí mata son los términos que
+crecen más rápido que $r$ ($r^2$, $r^3$, \dots).
+\end{warnbox}
+
+\begin{notebox}[Si el cilindro estuviera cargado]
+B se reemplazaría por la condición de que a gran distancia se comporte como un
+cilindro infinitamente fino: de lejos no se le ve el ancho.
+\end{notebox}
+
+\textbf{C.} En el origen no hay carga libre ni carga concentrada de ninguna
+clase, y sólo una carga concentrada puede producir una divergencia. Por lo tanto
+$\phi_2$ no diverge en $r \to 0$.
+
+\textbf{D} y \textbf{E} son las condiciones de frontera de la sección anterior,
+con $\sigma_{\text{libre}}=0$ porque el cilindro está descargado.
+
+\begin{notebox}[La polarización superficial no cuenta acá]
+Sí habrá densidad superficial \emph{de polarización}, pero esa no entra en la
+condición sobre $\vec D$: ahí sólo cuenta la carga libre.
+\end{notebox}
+
+\subsection{Imposición y resultado}
+
+\textbf{Con A y B}, en la zona exterior mueren $b_0^{(1)}$ y todos los
+$a_n^{(1)}$ con $n \ge 2$. Del término lineal queda
+$a_1^{(1)} r \left(c_1^{(1)}\cos\theta + d_1^{(1)}\sin\theta\right)
+\sim -E_0 r\cos\theta$, que obliga a $d_1^{(1)} = 0$ y
+$a_1^{(1)} c_1^{(1)} = -E_0$. Queda
+\[
+\phi_1(r,\theta) = a_0^{(1)} - E_0\, r\cos\theta
++ \sum_{n=1}^{\infty} \frac{b_n^{(1)}}{r^{n}}
+\left(c_n^{(1)} \cos n\theta + d_n^{(1)} \sin n\theta\right).
+\]
+
+\textbf{Con C}, en la zona interior mueren $b_0^{(2)}$ y \textbf{todos} los
+$b_n^{(2)}$ ---el logaritmo y todas las potencias negativas:
+\[
+\phi_2(r,\theta) = a_0^{(2)}
++ \sum_{n=1}^{\infty} a_n^{(2)} r^{n}
+\left(c_n^{(2)} \cos n\theta + d_n^{(2)} \sin n\theta\right).
+\]
+
+\begin{notebox}[La constante que sí se puede elegir]
+En cada zona se mató la mitad de los coeficientes. Además, el potencial está
+definido a menos de una constante, así que se puede elegir $a_0^{(1)} = 0$ ---
+pero sólo una de las dos: $a_0^{(2)}$ queda determinado por las condiciones.
+\end{notebox}
+
+\textbf{Con D}, se evalúan ambas en $r=a$ y se igualan para todo $\theta$. Como
+$\{1, \cos n\theta, \sin n\theta\}$ son \textbf{linealmente independientes}, se
+puede igualar coeficiente a coeficiente. Eso da $a_0^{(2)} = 0$, una ecuación por
+cada seno, una por cada coseno con $n\ge 2$, y un caso aparte para $n=1$:
+\[
+-E_0\,a + \frac{b_1^{(1)} c_1^{(1)}}{a} = a_1^{(2)} c_1^{(2)}\, a .
+\]
+
+\begin{notebox}[Todavía no alcanza]
+Son infinitas ecuaciones y sólo determinan las constantes de la zona 2 en
+términos de las de la zona 1. Falta la condición E.
+\end{notebox}
+
+\textbf{Con E}, la componente normal es la radial, así que la condición es
+$\varepsilon_0 \left.\pdv{\phi_1}{r}\right|_{r=a}
+= \varepsilon \left.\pdv{\phi_2}{r}\right|_{r=a}$. Derivando ambas series e
+igualando coeficiente a coeficiente aparece el mismo juego, ahora con los
+factores $\varepsilon_0$ y $\varepsilon$ a cada lado.
+
+Y ahí llegan las buenas noticias: combinando las ecuaciones de D y E, para cada
+$n$ queda un sistema \textbf{sobredeterminado} cuya única solución es la trivial:
+\[
+d_n^{(1)} = d_n^{(2)} = 0 \ \ \forall n,
+\qquad
+c_n^{(1)} = c_n^{(2)} = 0 \ \ \forall n \ge 2 .
+\]
+
+Sobreviven únicamente los coeficientes de $n=1$, cuyas dos ecuaciones son
+\[
+-E_0\,a + \frac{b_1^{(1)} c_1^{(1)}}{a} = a\, a_1^{(2)} c_1^{(2)},
+\qquad
+-E_0 - \frac{b_1^{(1)} c_1^{(1)}}{a^2} = K\, a_1^{(2)} c_1^{(2)} .
+\]
+
+Sumando y restando convenientemente se despejan las dos incógnitas.
+
+\begin{keybox}[Solución]
+\[
+\boxed{\ \phi_1(r,\theta) = -E_0\, r\cos\theta
++ a^2 E_0\,\frac{K-1}{K+1}\,\frac{\cos\theta}{r}\ }
+\]
+\[
+\boxed{\ \phi_2(r,\theta) = -\frac{2 E_0}{K+1}\, r\cos\theta\ }
+\]
+\end{keybox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase10-solucion-estructura.tex}
+  \caption{Qué dice cada uno de los dos potenciales.}
+\end{figure}
+
+\begin{notebox}[El método, más allá de las cuentas]
+Hubo que hacer muchas cuentas, pero en el principio es el mismo tipo de problema
+ya resuelto antes. La única diferencia es que hay dos zonas: se resuelve en cada
+una y se imponen los bordes. Y en el borde se imponen normalmente dos
+condiciones, una de continuidad y otra sobre una derivada.
+\end{notebox}
+
+\begin{notebox}[Por qué no hizo falta imponer $E_t$ continua]
+Esa condición se escribe como la derivada respecto de $\theta$, y una vez
+impuesta la continuidad de $\phi$ para todo $\theta$, la continuidad de
+$\partial\phi/\partial\theta$ sale automáticamente. Las dos que se impusieron
+---continuidad y derivada radial--- ya dan todo.
+\end{notebox}
+
+\vspace{1em}
+\noindent\emph{La discusión de esta solución ---cómo queda el campo eléctrico y
+cómo quedan las cargas--- queda explícitamente postergada para la clase
+siguiente.}
+
+\end{document}

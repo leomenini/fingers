@@ -1,0 +1,53 @@
+% Clase 10 — el planteo del problema del cilindro.
+% VERSION 2. La primera intentaba anclar las cinco condiciones A-E sobre el
+% dibujo, y fue un error por dos motivos: (a) los cinco rotulos mas los de medio
+% no entran sin pisarse, y (b) la tabla del texto ya las lista con su ubicacion,
+% asi que era redundante. La figura se queda con lo que solo ella puede dar: la
+% GEOMETRIA. Dos medios, dos potenciales, y las coordenadas.
+% El docente aclara que "en el dibujo no se nota pero es un cilindro": de ahi la
+% insinuacion del eje y la nota de que es muy largo.
+\begin{tikzpicture}[scale=1]
+
+  % zona exterior
+  \fill[figblue!5] (-5.0,-2.7) rectangle (5.0,2.7);
+
+  % campo aplicado
+  \foreach \y in {-2.1,-1.05,0,1.05,2.1}{
+    \draw[figvecaux] (-4.8,\y) -- (-3.5,\y);}
+  \node[figlbl, figgray] at (-4.15,2.45) {$\vec E_0$};
+
+  % cilindro visto de frente
+  \fill[figamber!14] (0,0) circle (1.3);
+  \draw[figamber, line width=1.0pt] (0,0) circle (1.3);
+
+  % insinuacion del eje: es un cilindro largo, no un disco
+  \draw[figaux] (-0.65,1.13) -- (0.35,1.82);
+  \draw[figaux] (0.65,-1.13) -- (1.65,-0.44);
+  \draw[figaux] (0.35,1.82) arc (115:-115:0.3 and 1.13);
+
+  % medio exterior
+  \node[figlbl, figblue] at (-2.75,1.15) {medio 1};
+  \node[figlbl, figblue] at (-2.75,0.62) {$\varepsilon_0$};
+  \node[figlbl, figblue] at (-2.75,0.05) {$\phi_1$};
+
+  % medio interior
+  \node[figlbl, figamber] at (0,-0.42) {$\phi_2$};
+  \node[figlbl, figamber] at (3.15,-1.65) {medio 2:\ $\varepsilon$,\ $K$};
+  \draw[figaux] (2.35,-1.5) -- (0.95,-0.95);
+
+  % coordenadas, todas en el cuadrante superior derecho para no competir
+  \draw[figaxis] (0,0) -- (3.3,0);
+  \node[figlblaux] at (3.55,-0.05) {$x$};
+  \draw[figvecaux] (0,0) -- (58:2.35);
+  \node[figlblaux, fill=figblue!5, inner sep=1pt] at (58:1.95) {$r$};
+  \draw[figgray, line width=0.5pt] (0.7,0) arc (0:58:0.7);
+  \node[figlblaux] at (26:0.95) {$\theta$};
+
+  % radio
+  \draw[figvecaux] (0,0) -- (215:1.3);
+  \node[figlblaux, fill=figamber!14, inner sep=1pt] at (215:0.75) {$a$};
+
+  \node[figlblaux, align=center] at (2.7,2.15)
+    {cilindro muy largo:\\ nada depende de $z$};
+
+\end{tikzpicture}

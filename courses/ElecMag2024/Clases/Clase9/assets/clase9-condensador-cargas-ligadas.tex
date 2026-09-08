@@ -1,0 +1,45 @@
+% Clase 9 — por que aparece carga superficial de polarizacion y no volumetrica.
+% Es el ejemplo del condensador con dielectrico. El contenido de la figura es la
+% CANCELACION: en el interior cada carga negativa de un dipolo queda pegada a la
+% positiva del siguiente, y lo unico que sobra son las dos caras.
+% Los dipolos se dibujan en columnas alineadas a proposito (es la caricatura del
+% campo uniforme) y el sombreado marca la region donde todo se compensa.
+\begin{tikzpicture}[scale=1]
+
+  % placas del condensador
+  \draw[figline, line width=1.6pt, figred] (-3.2,2.1) -- (3.2,2.1);
+  \draw[figline, line width=1.6pt, figblue] (-3.2,-2.1) -- (3.2,-2.1);
+  \foreach \x in {-2.6,-1.3,0,1.3,2.6}{
+    \node[figlbl, figred] at (\x,2.42) {$+$};
+    \node[figlbl, figblue] at (\x,-2.45) {$-$};}
+  \node[figlblaux, figred] at (-4.0,2.1) {carga libre};
+  \node[figlblaux, figblue] at (-4.0,-2.1) {carga libre};
+
+  % dielectrico
+  \fill[figamber!10] (-2.9,-1.55) rectangle (2.9,1.55);
+  \draw[figamber, line width=0.8pt] (-2.9,-1.55) rectangle (2.9,1.55);
+
+  % zona de cancelacion
+  \fill[figgray!10] (-2.6,-1.05) rectangle (2.6,1.05);
+
+  % dipolos alineados (caricatura del campo uniforme)
+  \foreach \x in {-2.2,-1.1,0,1.1,2.2}{
+    \foreach \y in {-1.0,0.0,1.0}{
+      \begin{scope}[shift={(\x,\y)}]
+        \draw[figline, line width=0.7pt] (0,-0.3) -- (0,0.3);
+        \node[figneg, minimum size=4.4pt] at (0,-0.3) {};
+        \node[figpos, minimum size=4.4pt] at (0,0.3) {};
+      \end{scope}}}
+
+  % lo que sobra en las caras
+  \node[figlblaux, figblue, fill=white, inner sep=1.4pt] at (0,1.33) {$\sigma_p<0$};
+  \node[figlblaux, figred, fill=white, inner sep=1.4pt] at (0,-1.33) {$\sigma_p>0$};
+  % Nada de rotular rho_p=0 aca: el unico hueco libre es donde va la flecha de
+  % E, y el caption ya lo dice. La figura muestra la cancelacion; el texto la
+  % nombra.
+
+  % campo aplicado
+  \draw[figvecaux] (3.75,1.4) -- (3.75,-1.4);
+  \node[figlbl, figgray] at (4.15,0) {$\vec E$};
+
+\end{tikzpicture}

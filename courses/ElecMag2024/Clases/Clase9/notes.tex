@@ -1,0 +1,670 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 9: Polarización, cargas ligadas y ley de Gauss en dieléctricos} \\[0.3em]
+        \large{El vector polarización, las cargas de polarización, el campo macroscópico y el vector desplazamiento}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Por qué un aislante sí importa}
+
+Hasta ahora todo el curso transcurrió en el vacío, con la única excepción de los
+conductores. Empieza el capítulo 3: qué pasa cuando hay \textbf{materiales
+dieléctricos}.
+
+Un dieléctrico, por definición, \textbf{no contiene cargas libres}: no tiene
+cargas que puedan moverse distancias macroscópicas de un lado a otro. La reacción
+inmediata sería concluir que entonces es electrostáticamente irrelevante. Es
+falsa, y el motivo es que las cargas sí pueden moverse \textbf{distancias
+microscópicas}.
+
+Un plástico está formado por un número enorme de moléculas y, frecuentemente,
+cada una de ellas está polarizada: el baricentro de las cargas positivas no
+coincide con el de las negativas, de modo que la molécula tiene un \textbf{momento
+dipolar} propio y una dirección preferencial.
+
+Al aplicar un campo eléctrico externo, cada dipolo tiende a orientarse: la carga
+negativa quiere acercarse a las cargas positivas que generaron el campo, y la
+positiva a las negativas. El resultado no es un alineamiento perfecto ---las
+moléculas siguen con su agitación térmica--- pero \textbf{en promedio} el efecto
+se acumula, y esa acumulación sobre un número enorme de moléculas produce un
+efecto macroscópico: la \textbf{polarización}.
+
+\begin{warnbox}[La figura de las moléculas alineadas es mentira]
+El docente insiste en que el dibujo de todas las moléculas alineadas es una
+\textbf{caricatura}. En la realidad las moléculas siguen casi tan desordenadas
+como antes; están sólo \emph{levemente} orientadas. Lo que ocurre es que sin
+campo el promedio da cero y con campo no.
+\end{warnbox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase9-caricatura-polarizacion.tex}
+  \caption{La caricatura y su desmentida. El efecto macroscópico no viene del
+  alineamiento perfecto sino de un sesgo minúsculo sobre un número enorme de
+  moléculas.}
+\end{figure}
+
+\subsection{Moléculas polares y apolares}
+
+También existen moléculas \textbf{apolares}, sin momento dipolar propio. Todo lo
+que sigue vale igual para ellas, pero por una razón más sofisticada: el propio
+campo aplicado deforma la molécula y le genera un \textbf{dipolo inducido}. El
+efecto es mucho más chico y el tratamiento más complicado.
+
+\begin{notebox}[Alcance]
+La clase se restringe a \textbf{moléculas polares}, tomando los dipolos como dato
+y sin considerar la deformación de la molécula por el campo aplicado.
+\end{notebox}
+
+\subsection{De la molécula al dipolo puntual}
+
+Una molécula real no es un dipolo: es neutra, pero tiene momentos cuadrupolares,
+octopolares y todo lo demás. La simplificación viene de que las moléculas son
+\textbf{chiquitas}: su tamaño típico es el nanómetro, y cualquier distancia
+macroscópica ---aunque sea una micra--- ya es enormemente mayor.
+
+Por el desarrollo multipolar, un objeto de \textbf{carga neta nula} visto a
+distancias mucho mayores que su tamaño se comporta como un \textbf{dipolo}: los
+demás momentos decaen más rápido. Entonces, a efectos macroscópicos, cada
+molécula puede reemplazarse por su momento dipolar y toda la demás información se
+descarta.
+
+\section{El vector polarización}
+
+Lo que le pasa a cada molécula individual no interesa: a escala molecular el
+problema es intratable. Lo que interesa es el \textbf{efecto promediado} de
+muchas moléculas en un volumen pequeño.
+
+Se toma un volumen $\Delta V$ \textbf{grande respecto de la escala molecular y
+pequeño respecto de la macroscópica} ---por ejemplo un cubo de una micra de lado
+dentro de un objeto de \SI{20}{\centi\metre}---, que contiene una cantidad enorme
+de moléculas. Su momento dipolar total es
+\[
+\Delta \vec p = \sum_{i \in \Delta V} \vec p_i,
+\qquad
+\vec p_i = \int_{\text{molécula}} \rho(\vec r_i)\, \vec r_i \, dV .
+\]
+
+Pero $\Delta\vec p$ no sirve como magnitud local: en un material homogéneo, al
+duplicar el volumen se duplica el momento dipolar. Lo que sí tiene límite es la
+densidad.
+
+\begin{keybox}[Campo de polarización]
+\[
+\boxed{\ \vec P(\vec r) = \lim_{\Delta V \to 0} \frac{\Delta \vec p}{\Delta V}\ }
+\]
+el momento dipolar por unidad de volumen.
+\end{keybox}
+
+\begin{warnbox}[El límite es un abuso de notación]
+$\Delta V \to 0$ significa pequeño \textbf{macroscópicamente}, nunca
+microscópicamente. A escala molecular la polarización deja de tener sentido,
+porque se pone a variar de molécula a molécula.
+\end{warnbox}
+
+Si el material es homogéneo, $\vec P$ no depende de la posición; si es
+inhomogéneo, varía suavemente a escala macroscópica.
+
+\section{Potencial de un dieléctrico polarizado}
+
+El problema que se plantea es el inverso del que uno esperaría: \textbf{la
+polarización se da como dato}. No se pregunta todavía cómo se polarizó el
+material, sino qué campo eléctrico produce una polarización conocida.
+
+Se considera un material que ocupa un volumen $V_0$, con polarización
+$\vec P(\vec r\,')$, y se observa el potencial en un punto $\vec r$ \textbf{fuera
+del material}. Cada elemento de volumen $dV'$ tiene momento dipolar
+$\vec P(\vec r\,')\,dV'$ y aporta un potencial dipolar. Sumando:
+
+\begin{keybox}[Potencial generado por una polarización conocida]
+\[
+\boxed{\ \phi(\vec r) = \frac{1}{4\pi\varepsilon_0}
+\int_{V_0} \frac{\vec P(\vec r\,') \cdot (\vec r - \vec r\,')}
+{|\vec r - \vec r\,'|^3}\, dV' \ }
+\]
+\end{keybox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase9-geometria-potencial.tex}
+  \caption{Se integra sobre $\vec r\,'$, que recorre el material; el punto de
+  observación $\vec r$ queda fijo. La deducción vale, por ahora, sólo con
+  $\vec r$ fuera de $V_0$.}
+\end{figure}
+
+\begin{notebox}[Por qué la aproximación dipolar es legítima para todas]
+Estando $\vec r$ fuera del material, incluso la molécula más cercana está a una
+distancia macroscópica, enormemente mayor que su propio tamaño.
+\end{notebox}
+
+Este es sólo el potencial \textbf{producido por la polarización}. Si además hay
+cargas libres ---las que uno deposita o manipula--- sus potenciales se suman
+aparte.
+
+\subsection{El truco del gradiente primado}
+
+Se define $\nabla'$ como el gradiente respecto de las coordenadas de
+$\vec r\,'$. La observación clave es
+\[
+\nabla' \frac{1}{|\vec r - \vec r\,'|}
+= \frac{\vec r - \vec r\,'}{|\vec r - \vec r\,'|^3},
+\]
+que es el mismo objeto que aparece en el campo de una carga puntual, salvo el
+signo que introduce derivar respecto de la variable primada en lugar de la no
+primada. Con eso el integrando se escribe como
+$\vec P \cdot \nabla'\!\left(1/|\vec r - \vec r\,'|\right)$.
+
+\begin{notebox}[Por qué el gradiente primado y no el otro]
+Para aplicar el teorema de la divergencia hacen falta derivadas respecto de la
+\textbf{misma} variable sobre la que se integra, no respecto de una variable que
+queda afuera de la integral.
+\end{notebox}
+
+Eso todavía no es una divergencia, pero se parece. Usando la identidad
+\[
+\div(f\vec A) = \grad f \cdot \vec A + f \, \div \vec A
+\]
+leída al revés, el integrando se parte en dos:
+\[
+\phi(\vec r) = \frac{1}{4\pi\varepsilon_0} \int_{V_0}
+\left[ \nabla' \cdot \frac{\vec P(\vec r\,')}{|\vec r - \vec r\,'|}
+- \frac{\nabla' \cdot \vec P(\vec r\,')}{|\vec r - \vec r\,'|} \right] dV' .
+\]
+
+Al primer término ---y sólo a ese--- se le aplica el teorema de la divergencia,
+que lo convierte en una integral sobre la superficie $S_0$ que bordea $V_0$:
+\[
+\phi(\vec r) = \frac{1}{4\pi\varepsilon_0} \oiint_{S_0}
+\frac{\vec P(\vec r\,') \cdot \hat n'}{|\vec r - \vec r\,'|}\, dS'
++ \frac{1}{4\pi\varepsilon_0} \int_{V_0}
+\frac{-\nabla' \cdot \vec P(\vec r\,')}{|\vec r - \vec r\,'|}\, dV' .
+\]
+
+\subsection{Las cargas de polarización}
+
+Las dos integrales tienen exactamente la forma coulombiana del potencial de una
+densidad superficial y de una densidad volumétrica de carga. Eso permite
+\textbf{bautizar} lo que aparece arriba.
+
+\begin{keybox}[Densidades de carga de polarización]
+\[
+\boxed{\ \rho_p(\vec r) = -\div \vec P
+\qquad\text{y}\qquad
+\sigma_p(\vec r) = \vec P \cdot \hat n \ }
+\]
+con $\hat n$ \textbf{saliente del material}. La orientación queda bien definida
+porque la polarización está asociada a un material, que tiene un adentro y un
+afuera.
+\end{keybox}
+
+Con estos nombres el potencial queda idéntico al de cualquier distribución de
+carga:
+\[
+\phi(\vec r) = \frac{1}{4\pi\varepsilon_0} \oiint_{S_0}
+\frac{\sigma_p(\vec r\,')}{|\vec r - \vec r\,'|}\, dS'
++ \frac{1}{4\pi\varepsilon_0} \int_{V_0}
+\frac{\rho_p(\vec r\,')}{|\vec r - \vec r\,'|}\, dV' .
+\]
+
+\begin{notebox}[Nombre y apellido]
+Estas cargas «tienen nombre carga y apellido polarización»: si uno se olvida del
+apellido, la fórmula es la usual. La única particularidad es que $\rho_p$ y
+$\sigma_p$ \textbf{no son arbitrarias}, sino que se expresan de manera precisa en
+términos de $\vec P$.
+\end{notebox}
+
+El campo eléctrico se obtiene entonces sin ninguna complicación adicional, porque
+\textbf{Coulomb sigue valiendo para todas las cargas}:
+\[
+\vec E(\vec r) = \frac{1}{4\pi\varepsilon_0} \int_{V_0}
+\rho_p(\vec r\,') \frac{\vec r - \vec r\,'}{|\vec r - \vec r\,'|^3}\, dV'
++ \frac{1}{4\pi\varepsilon_0} \oiint_{S_0}
+\sigma_p(\vec r\,') \frac{\vec r - \vec r\,'}{|\vec r - \vec r\,'|^3}\, dS' .
+\]
+
+Las cargas de polarización son producto de la reorientación local de las
+moléculas, pero no por eso dejan de ser cargas.
+
+\section{Por qué siempre aparece carga superficial}
+
+Que aparezca una densidad \textbf{superficial} en un dieléctrico puede
+sorprender: es el tipo de cosa que uno asocia a conductores. La razón es que en
+el borde hay un \textbf{cambio abrupto}.
+
+El ejemplo es un condensador con carga libre positiva en una placa y un
+dieléctrico en el medio. Con campo aplicado uniforme, las moléculas se orientan
+todas igual (caricatura mediante): en cualquier región interior hay tantas cargas
+positivas como negativas y \textbf{no queda densidad volumétrica}, pero sobra un
+excedente de carga negativa de un lado y positiva del otro.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase9-condensador-cargas-ligadas.tex}
+  \caption{Con campo aplicado uniforme, en el interior cada carga negativa queda
+  pegada a la positiva de su vecina y todo se compensa: no hay densidad
+  volumétrica y sólo sobran las dos caras. Con campo inhomogéneo aparecen las
+  dos densidades.}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Campo aplicado & $\rho_p$ & $\sigma_p$ \\
+    \midrule
+    Uniforme      & $0$                   & $\neq 0$ \\
+    Inhomogéneo   & en general $\neq 0$   & en general $\neq 0$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{El caso uniforme, con sólo carga superficial, es el que se veía en
+  Física III. Ahora aparecen las dos, y la superficial no se puede olvidar.}
+\end{table}
+
+\section{La carga de polarización total es cero}
+
+Tiene que serlo: la polarización es producto de dipolos y cada dipolo tiene carga
+neta nula. Pero conviene verificarlo, porque si a uno le dieran un $\rho$ y un
+$\sigma$ cualesquiera no habría motivo para que la suma se anulara. Que se anule
+es consecuencia de que \textbf{no son cualesquiera}.
+\[
+Q_p = \int_{V_0} \rho_p \, dV' + \oiint_{S_0} \sigma_p \, dS'
+= \int_{V_0} \left(-\div' \vec P\right) dV'
++ \oiint_{S_0} \vec P \cdot \hat n'\, dS' .
+\]
+
+Aplicando el teorema de la divergencia al primer término se obtiene
+$-\oiint_{S_0} \vec P \cdot \hat n'\, dS'$, que cancela exactamente al segundo:
+
+\begin{keybox}[Neutralidad de la polarización]
+\[
+\boxed{\ Q_p = 0\ }
+\]
+\end{keybox}
+
+\begin{notebox}[Regla mnemotécnica]
+Uno se puede olvidar cuál de las dos definiciones lleva el signo menos, pero
+\textbf{una lleva más y la otra menos}, y es justamente por esta cancelación.
+\end{notebox}
+
+\section{El campo macroscópico}
+
+Todo lo anterior se dedujo observando desde \textbf{fuera} del material. Adentro
+hay que ser mucho más cuidadoso con \emph{qué} campo eléctrico se está nombrando.
+
+El campo \textbf{microscópico} dentro del material varía salvajemente: cerca de
+una carga positiva se dispara, cerca de una negativa se dispara para el otro
+lado, y además depende fuertemente del tiempo porque las moléculas se agitan sin
+parar. No es ese el campo de interés.
+
+El campo de interés es el que uno \textbf{mediría con un aparato}. Un voltímetro
+con sus agujas metidas en el material da una diferencia de potencial estable, que
+no oscila: la punta de la aguja, aunque sea fina macroscópicamente, abarca una
+cantidad enorme de moléculas y \textbf{promedia} sobre todas ellas.
+
+Formalmente se define, con una función de peso $f$,
+\[
+\vec E_{\text{macro}}(\vec r) = \int_V f(\vec r\,')\,
+\vec E_{\text{micro}}(\vec r + \vec r\,')\, dV',
+\qquad \int_V f(\vec r\,')\, dV' = 1,
+\]
+donde $f$ está concentrada cerca de $\vec r$ y decae al alejarse, y $V$ es grande
+frente a la escala molecular y pequeño frente a la macroscópica. El peso total es
+1 para no sesgar el promedio.
+
+\begin{notebox}[El detalle del promedio no importa]
+Se puede tomar $f$ uniforme ($1/V$), pero tiene el defecto del salto abrupto en
+el borde; conviene una función suave. Otra opción equivalente es promediar con
+una carga de prueba pequeña macroscópicamente pero grande molecularmente, que
+promedia sola. \textbf{En el límite de mirar de lejos, el resultado no depende
+del detalle del promedio.}
+\end{notebox}
+
+\subsection{El campo macroscópico es irrotacional}
+
+No es automático que el campo macroscópico herede las propiedades del
+microscópico, así que hay que verificarlo. Tomando el rotacional respecto de
+$\vec r$:
+\[
+\curl \vec E_{\text{macro}}(\vec r) = \int_V dV' \, f(\vec r\,')\,
+\curl \vec E_{\text{micro}}(\vec r + \vec r\,') ,
+\]
+porque $f$ no depende de $\vec r$. Y un desplazamiento del origen no cambia las
+derivadas: con $\vec r\,'' = \vec r + \vec r\,'$, el rotacional respecto de
+$\vec r$ es el rotacional respecto de $\vec r\,''$, que es cero.
+
+\begin{keybox}[El campo macroscópico deriva de un potencial]
+\[
+\boxed{\ \curl \vec E_{\text{macro}} = 0
+\quad\Longrightarrow\quad
+\vec E_{\text{macro}} = -\grad \phi \ }
+\]
+y también $\oint_C \vec E \cdot d\vec l = 0$ sobre toda curva cerrada.
+\end{keybox}
+
+A partir de acá el subíndice se elimina: el único campo que interesa es el
+macroscópico. En el vacío ambos coinciden. La ventaja es que el campo
+macroscópico es \textbf{suave}, mientras que el microscópico varía sin control en
+cuanto uno se mueve a escalas intermedias.
+
+\subsection{La cavidad en forma de aguja}
+
+Falta el paso que permite usar dentro del material la expresión deducida fuera.
+Se considera un material \textbf{isótropo} ---sin direcciones privilegiadas--- y
+se le practica una \textbf{cavidad en forma de aguja}, pequeña macroscópicamente
+pero grande microscópicamente (por ejemplo, una micra de ancho por cien de
+largo). La cavidad tiene dos tapas $S_1$, $S_2$ y una superficie lateral $S_L$.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase9-cavidad-aguja.tex}
+  \caption{Sobre $C$, $\oint \vec E\cdot d\vec l = 0$ da
+  $E^{\text{cav}}_t = E^{\text{diel}}_t$; eligiendo la aguja paralela a $\vec E$,
+  la tangencial es el campo entero. En $S_L$ se tiene $\hat n \perp \vec P$, así
+  que $\sigma_p = 0$: no hay carga concentrada y se puede tomar el límite
+  $S_1, S_2, S_L \to 0$.}
+\end{figure}
+
+Sobre una curva cerrada $C$ que recorre la aguja a lo largo,
+$\oint_C \vec E \cdot d\vec l = 0$, lo que da
+$E^{\text{cav}}_t = E^{\text{diel}}_t$. Ahora se elige la cavidad
+\textbf{paralela al campo} en el dieléctrico, con lo que la componente tangencial
+es el campo entero: $E^{\text{cav}}_t = E^{\text{diel}}$.
+
+\begin{warnbox}[Acá y sólo acá entra la isotropía]
+Hasta este punto no se usó. Se usa ahora, y es el paso que cierra el argumento:
+como el problema no tiene ninguna otra dirección privilegiada, el campo dentro de
+la cavidad no puede apuntar en otra dirección que la del campo del dieléctrico
+---si tuviera componente normal, ¿por qué hacia un lado y no hacia el otro?
+\end{warnbox}
+
+Además, por isotropía $\vec P$ es paralela al campo, de modo que sobre la
+superficie lateral $\sigma_p = \vec P \cdot \hat n = 0$: no hay carga concentrada
+en las paredes de la aguja. Sin nada singular, se puede hacer tender $S_1$, $S_2$
+y $S_L$ a cero y concluir que $\vec E^{\text{cav}} = \vec E^{\text{diel}}$.
+
+Pero el campo dentro de la cavidad ya se sabe calcular, porque \textbf{está fuera
+del material} ---a una distancia macroscópica de la molécula más cercana, aunque
+microscópicamente esté pegado.
+
+\begin{keybox}[Conclusión]
+Las expresiones de $\phi$ y $\vec E$ deducidas fuera \textbf{valen también
+dentro} del dieléctrico, con la restricción de que el material sea isótropo.
+\end{keybox}
+
+\section{Ley de Gauss en presencia de dieléctricos}
+
+La ley de Gauss usual sigue valiendo, pero exige \textbf{toda} la carga, libre y
+de polarización. Y ahí está el problema: la carga de polarización es en general
+una incógnita, se genera sola y no se controla. Se busca entonces una ley de
+Gauss escrita sólo en términos de las cargas libres.
+
+\begin{warnbox}[«Carga libre» es un nombre confuso]
+No significa que se pueda mover. Una carga depositada sobre un dieléctrico está
+fija y es libre. \textbf{Carga libre es la que no es de polarización}; por eso a
+veces se prefiere «carga externa», la que uno accede externamente.
+\end{warnbox}
+
+Se toma una superficie gaussiana $S$ \textbf{dentro} del dieléctrico, cuyo
+material está bordeado por superficies $S_1, S_2, S_3, \dots$. La ley de Gauss da
+\[
+\oiint_S \vec E \cdot \hat n \, dS = \frac{Q + Q_p}{\varepsilon_0}.
+\]
+
+La carga de polarización encerrada se escribe con sus definiciones:
+\[
+Q_p = \int_V \left(-\div \vec P\right) dV
++ \int_{S_1 \cup S_2 \cup S_3} \vec P \cdot \hat n \, dS ,
+\]
+donde $V$ es el volumen de material encerrado ---que \textbf{no} incluye lo que
+está fuera del dieléctrico--- y las $\hat n$ son salientes del material.
+Aplicando el teorema de la divergencia al primer término aparece una integral
+sobre \emph{toda} la frontera de $V$, es decir $S \cup S_1 \cup S_2 \cup S_3$, y
+las contribuciones de los bordes del material se cancelan contra el segundo
+término. Sobrevive únicamente
+\[
+Q_p = -\oiint_S \vec P \cdot \hat n \, dS .
+\]
+
+\begin{notebox}[Eso no es una densidad superficial de verdad]
+En la superficie gaussiana no hay nada. Es el sobrante que queda al compensarse
+las integrales de los bordes reales del material.
+\end{notebox}
+
+Sustituyendo y pasando el término al miembro izquierdo:
+\[
+\oiint_S \left(\varepsilon_0 \vec E + \vec P\right)\cdot \hat n \, dS = Q .
+\]
+
+\begin{keybox}[Vector desplazamiento y ley de Gauss en dieléctricos]
+\[
+\boxed{\ \vec D = \varepsilon_0 \vec E + \vec P \ }
+\]
+\[
+\boxed{\ \oiint_S \vec D \cdot \hat n \, dS = Q_{\text{libre}}
+\qquad\Longleftrightarrow\qquad
+\div \vec D = \rho_{\text{libre}} \ }
+\]
+\end{keybox}
+
+La forma diferencial sale del mismo argumento de volumen pequeño que se usó para
+$\vec E$: donde había $\vec E$ ahora hay $\vec D$, y donde había
+$Q/\varepsilon_0$ ahora hay $Q$.
+
+\begin{warnbox}[Barrer la mugre bajo la alfombra]
+Advertencia explícita del docente: \textbf{no se resolvió nada}. La carga de
+polarización molestaba y no se tiró: se escondió dentro de $\vec D$. La
+polarización sigue ahí. Es un acto de prestidigitación; estéticamente se avanzó,
+pero el problema sigue vigente.
+\end{warnbox}
+
+Y el problema es concreto: falta alguien que diga cuánto vale $\vec D$ dado
+$\vec E$. Sin eso no se puede volver a $\vec E$, que es el campo que realmente se
+observa y el único que deriva de un potencial.
+
+\section{La ecuación constitutiva}
+
+Lo que falta se llama \textbf{ecuación constitutiva} del material: la relación
+entre $\vec P$ y $\vec E$ o, equivalentemente, entre $\vec D$ y $\vec E$. Conocer
+una es conocer la otra.
+
+Deducirla desde primeros principios es un problema muy difícil. Un pedacito de
+materia tiene del orden de $10^{22}$--$10^{23}$ moléculas, y hay que tratar la
+interacción de todas ellas con el campo y entre sí. Si cada molécula «habla» sólo
+con el campo aplicado y no con las demás, el problema es abordable con
+\textbf{mecánica estadística} ---una rama de la física que no se dicta en la
+Facultad de Ingeniería---. Si las moléculas interactúan entre sí, es mucho más
+difícil.
+
+\begin{warnbox}[Lo que este curso no va a hacer]
+El docente dice explícitamente que \textbf{hallar la ecuación constitutiva no se
+va a hacer}. Se la toma como dato, medida experimentalmente, y con ella se
+resuelven problemas de electrostática ---por ejemplo, un cilindro de material
+dentro de un campo eléctrico---. Se usan entonces \textbf{relaciones
+constitutivas fenomenológicas}: no deducidas, sino extraídas de experimentos.
+\end{warnbox}
+
+\subsection{Susceptibilidad y permitividad}
+
+Se restringe a materiales \textbf{homogéneos}, \textbf{isótropos} y \textbf{sin
+polarización espontánea} (si se apaga $\vec E$, se apaga $\vec P$).
+
+\begin{notebox}[Ferroeléctricos y ferromagnéticos]
+Los materiales con polarización espontánea existen y se llaman
+\textbf{ferroeléctricos}, pero son poco comunes. El fenómeno análogo sí es
+frecuentísimo en magnetismo: los imanes conservan la magnetización tras apagar el
+campo. Son propiedades distintas: hay muchos ferromagnéticos ---hierro, níquel,
+cobalto--- que no son ferroeléctricos.
+\end{notebox}
+
+Por isotropía, $\vec P$ no puede apuntar en otra dirección que $\vec E$, y por
+homogeneidad la relación es la misma en todo punto. Queda entonces una única
+función escalar.
+
+\begin{keybox}[Susceptibilidad y permitividad]
+\[
+\boxed{\ \vec P = \chi(|\vec E|)\, \vec E \ }
+\]
+\[
+\vec D = \varepsilon_0 \vec E + \vec P
+= \left[\varepsilon_0 + \chi(|\vec E|)\right] \vec E
+\equiv \varepsilon(|\vec E|)\, \vec E
+\]
+$\chi$ es la \textbf{susceptibilidad eléctrica} y $\varepsilon$ la
+\textbf{permitividad eléctrica} del material.
+\end{keybox}
+
+\begin{notebox}[El nombre es adecuado]
+Una persona susceptible es la que reacciona mucho ante una perturbación pequeña.
+Acá, cuanto mayor es $\chi$, mayor es la polarización para un campo dado.
+\end{notebox}
+
+La relación se supone \textbf{local}: la polarización en un punto depende del
+campo en ese punto. Existen relaciones no locales, pero son poco comunes y, en
+todo caso, el acoplamiento ocurre a distancias microscópicas: a escala
+macroscópica la aproximación local es excelente.
+
+\subsection{Por qué tantos materiales son lineales}
+
+Un material es \textbf{lineal} cuando $\chi$ ---o equivalentemente
+$\varepsilon$--- no depende de $\vec E$, es decir es una constante:
+\[
+\vec P = \chi \vec E, \qquad \vec D = \varepsilon \vec E .
+\]
+
+Muchísimos materiales realistas lo son, y el motivo se conecta con la advertencia
+sobre la caricatura: \textbf{cuando se aplica un campo realista de laboratorio, a
+las moléculas casi no les pasa nada}. Siguen desordenadas y oscilando por
+agitación térmica, y apenas se alinean una porción minúscula.
+
+Como el efecto es tan pequeño, se puede desarrollar $\chi(|\vec E|)$ en serie de
+Taylor alrededor de cero, y la primera corrección resulta de orden $E^2$:
+\[
+\chi(E) \simeq \chi(0) + \mathcal{O}(E^2),
+\]
+despreciable porque los campos aplicables en un laboratorio son muy pequeños
+comparados con los campos característicos a escala molecular. La susceptibilidad
+vale, en la práctica, siempre lo que valdría en el límite $E \to 0$.
+
+\begin{keybox}[Constante dieléctrica]
+\[
+\boxed{\ K = \frac{\varepsilon}{\varepsilon_0}\ }
+\]
+\end{keybox}
+
+\begin{warnbox}[Decir «material de constante dieléctrica $K$» ya lo dice todo]
+Esa frase sólo tiene sentido si $K$ es efectivamente una constante, y eso exige
+que el material sea homogéneo, isótropo, sin polarización espontánea y lineal.
+Muchas veces el enunciado de un ejercicio no lista esas hipótesis: al dar $K$,
+las está dando implícitamente.
+\end{warnbox}
+
+\vspace{1em}
+\noindent\emph{La clase siguiente arranca por las consecuencias de esta
+definición ---el signo de $\chi$ y la cota $K \ge 1$--- y pasa a los primeros
+ejemplos con dieléctricos.}
+
+\end{document}

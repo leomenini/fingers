@@ -229,6 +229,71 @@ clase 8 vive en `scripts/asr/control/`, que es su lugar.
 Quince centavos, y un tercio se fue en el pod que hubo que tirar por el
 problema de transporte. Ambos borrados y confirmados con 404.
 
+---
+
+## Resultado 4: las notas de las clases 9 y 10
+
+Producidas siguiendo `courses/ElecMag2024/CLAUDE.md`, igual que las de las
+clases 4–8. Compilan con `tectonic` sin errores y **sin un solo `Overfull`**.
+
+| | Clase 9 | Clase 10 |
+| --- | --- | --- |
+| Transcripción (ASR) | 12 027 palabras | 9 446 |
+| Resumen | 3571 | 3047 |
+| Ratio resumen/transcripción | 29,7 % | 32,3 % |
+| Ecuaciones display | 26 | 23 |
+| Figuras TikZ | 4 | 4 |
+| Páginas del PDF | 14 | 13 |
+
+El ratio es el dato que importa para la pregunta del experimento: la clase 8,
+escrita desde el **VTT oficial**, dio 29,1 %. Las dos escritas desde ASR dan
+29,7 % y 32,3 %. **El texto del ASR no obligó a resumir distinto.**
+
+### La respuesta a «cuán complicado es»
+
+Ninguna de las dificultades vino del ASR. Con `large-v3` la transcripción es
+utilizable tal cual: no hubo un solo pasaje donde el texto fuera tan ambiguo
+como para no poder reconstruir el razonamiento. Los problemas que sí aparecieron
+son los de siempre al componer figuras, y ya están catalogados en el
+`CLAUDE.md` de Física III §6.5.
+
+El único rastro real del ASR fueron errores de vocabulario aislados y fáciles de
+corregir en silencio (*«macrópica»* → macroscópica), exactamente lo que
+`courses/ElecMag2024/CLAUDE.md` §2.1 ya anticipaba para las transcripciones
+oficiales.
+
+### Lo que costó de verdad: las figuras
+
+**Compilar sin errores no es garantía de nada.** Las ocho figuras compilaron
+limpias en el primer intento y **cinco tenían colisiones de rótulos** que sólo
+se ven leyendo el PDF:
+
+- texto explicativo cayendo **encima** de los dipolos del condensador;
+- `ê_r` y `n̂ = -ê_r` dibujados en el mismo ángulo, con los rótulos superpuestos
+  hasta ser ilegibles (nacen del mismo punto y en la misma recta: hay que
+  separarlos angularmente aunque la colinealidad sea real);
+- cinco anclajes de condiciones de borde amontonados sobre un cilindro,
+  pisándose entre sí **y** duplicando la tabla que estaba tres párrafos más
+  abajo.
+
+Y un error de coherencia que sólo aparece releyendo: al sacar los anclajes de esa
+figura, su `\caption` siguió diciendo «cinco condiciones ancladas».
+
+**El patrón que se repitió:** poner prosa explicativa dentro de la figura *y* en
+el `\caption`. Además de redundante, la prosa interna era la que competía por el
+espacio con los rótulos. La regla que salió de acá: **la figura muestra, el
+caption explica**; adentro sólo van rótulos y anotaciones cortas.
+
+### Costo comparado
+
+El ASR fueron 512 segundos de GPU y USD 0,155 por tres clases. La composición de
+dos clases fue el grueso del trabajo, y dentro de ella la mayor parte se fue en
+la verificación visual de las figuras, no en el texto.
+
+**Conclusión provisional:** terminar lo que OpenFING no hizo es perfectamente
+viable, y el cuello de botella **no es la transcripción**. Con `large-v3` el
+insumo alcanza. Lo caro es lo mismo que ya era caro en las otras 27 clases.
+
 ## Pendiente
 
 - [x] ~~Autenticación de RunPod.~~
@@ -236,7 +301,7 @@ problema de transporte. Ambos borrados y confirmados con 404.
 - [x] ~~`comparar.js` sobre la clase 8 → **0,917**.~~
 - [x] ~~`integrar.js --write` → clases 9 y 10 marcadas como `asr`.~~
 - [ ] Notas de la clase 8 por las dos vías, mismo prompt → medición 2.
-- [ ] Notas de las clases 9 y 10.
+- [x] ~~Notas de las clases 9 y 10.~~
 - [ ] Costo y tiempo reales del pod; `delete-pod` y `get-billing`.
 
 ## Mediciones (se completa a medida que salen)
@@ -248,4 +313,6 @@ problema de transporte. Ambos borrados y confirmados con 404.
 | Velocidad `tiny` int8 CPU (4 núcleos) | **14,7× tiempo real** |
 | Velocidad `large-v3` fp16 GPU (RTX 4090) | **~34× tiempo real** |
 | Costo total de los pods | **USD 0,155** |
-| Correcciones a mano en las notas | — |
+| Ratio resumen/transcripción, VTT oficial (clase 8) | **29,1 %** |
+| Ratio resumen/transcripción, ASR (clases 9 y 10) | **29,7 %** y **32,3 %** |
+| Figuras con colisiones detectadas al leer el PDF | **5 de 8** |

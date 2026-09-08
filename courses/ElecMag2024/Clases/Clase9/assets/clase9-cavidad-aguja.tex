@@ -1,0 +1,52 @@
+% Clase 9 — la cavidad en forma de aguja: el argumento que extiende hacia
+% ADENTRO del material un resultado deducido afuera.
+% Lo que la figura tiene que mostrar es por que la aguja se elige PARALELA al
+% campo: asi la componente tangencial (la unica que la circulacion controla) es
+% el campo entero. Y por que sigma_p se anula en la pared lateral: ahi P es
+% perpendicular a la normal.
+% La aguja va exagerada en grosor para que entren los rotulos; la nota al pie
+% aclara la proporcion real, que es 1:100.
+\begin{tikzpicture}[scale=1]
+
+  % material dielectrico
+  \fill[figblue!8] (-4.2,-1.9) rectangle (4.2,1.9);
+  \draw[figline, line width=0.8pt] (-4.2,-1.9) rectangle (4.2,1.9);
+  \node[figlbl, figblue] at (-3.4,1.5) {diel\'ectrico};
+  \node[figlblaux, align=center] at (-3.35,0.95) {is\'otropo};
+
+  % campo en el dielectrico
+  \foreach \y in {-1.35,1.35}{
+    \draw[figvecaux] (-2.2,\y) -- (-0.6,\y);}
+  \node[figlbl, figgray] at (-1.4,1.72) {$\vec E^{\text{diel}}$};
+
+  % la cavidad (aguja), paralela al campo
+  \fill[white] (-1.6,-0.42) rectangle (2.4,0.42);
+  \draw[figred, line width=1.0pt] (-1.6,-0.42) rectangle (2.4,0.42);
+  \node[figlblaux, figred] at (2.55,1.45) {cavidad (vac\'io)};
+  \draw[figaux] (2.25,1.28) -- (1.75,0.5);
+
+  % tapas y lateral
+  \node[figlbl, figred] at (-1.95,0) {$S_1$};
+  \node[figlbl, figred] at (2.75,0) {$S_2$};
+  \node[figlblaux, figred] at (0.4,-0.72) {$S_L$};
+
+  % curva cerrada C
+  \draw[figvecres, line width=1.0pt] (-1.2,-0.18) -- (1.9,-0.18);
+  \draw[figvecres, line width=1.0pt] (1.9,0.18) -- (-1.2,0.18);
+  \node[figlbl, figred, fill=white, inner sep=1.2pt] at (0.35,0.05) {$C$};
+
+  % campo dentro de la cavidad
+  \draw[figvec] (0.9,-0.9) -- (2.3,-0.9);
+  \node[figlbl, figblue] at (1.6,-1.28) {$\vec E^{\text{cav}}$};
+
+  % P paralela a E, normal lateral perpendicular
+  \draw[figvec, figamber] (-3.3,-1.35) -- (-2.2,-1.35);
+  \node[figlbl, figamber] at (-2.75,-1.72) {$\vec P$};
+  \draw[figvecaux] (0.4,0.42) -- (0.4,0.95);
+  \node[figlblaux, figgray] at (0.85,0.72) {$\hat n$};
+
+  \node[figlblaux, align=center] at (0,-2.55)
+    {(El grosor est\'a exagerado: la aguja real es del orden de 1 micra de ancho
+     por 100 de largo.)};
+
+\end{tikzpicture}

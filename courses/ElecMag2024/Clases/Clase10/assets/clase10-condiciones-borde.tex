@@ -1,0 +1,66 @@
+% Clase 10 — las dos construcciones de las condiciones de borde, lado a lado.
+% Van juntas a proposito: son dos superficies distintas (una cerrada, una curva)
+% sobre la MISMA interfaz, y lo que las distingue es que una controla la
+% componente normal y la otra la tangencial. Separarlas pierde el contraste.
+% Las construcciones se dibujan MAS GRANDES que la version anterior: cuando la
+% capsula media 1,2 x 0,8 los rotulos S1/S2/lateral no entraban y se montaban
+% sobre la interfaz. Con mas aire cada uno tiene su lugar.
+% La prosa explicativa va en el \caption; adentro solo las dos conclusiones.
+\begin{tikzpicture}[scale=1]
+
+  % ---------- panel izquierdo: capsula gaussiana -> D_n ----------
+  \begin{scope}[shift={(0,0)}]
+    \fill[figblue!8] (-2.5,0) .. controls (-1.1,0.34) and (1.1,-0.34) .. (2.5,0)
+      -- (2.5,2.1) -- (-2.5,2.1) -- cycle;
+    \fill[figamber!12] (-2.5,0) .. controls (-1.1,0.34) and (1.1,-0.34) .. (2.5,0)
+      -- (2.5,-2.1) -- (-2.5,-2.1) -- cycle;
+    \draw[figline, line width=1.0pt]
+      (-2.5,0) .. controls (-1.1,0.34) and (1.1,-0.34) .. (2.5,0);
+    \node[figlbl, figblue] at (-1.75,1.72) {medio 1};
+    \node[figlbl, figamber] at (-1.75,-1.72) {medio 2};
+
+    % capsula, con aire suficiente para los rotulos
+    \draw[figred, line width=1.0pt] (-0.85,-0.62) rectangle (0.85,0.55);
+    \node[figlblaux, figred, fill=figblue!8, inner sep=1.5pt] at (-1.35,0.55) {$S_1$};
+    \draw[figaux] (-1.05,0.55) -- (-0.6,0.55);
+    \node[figlblaux, figred, fill=figamber!12, inner sep=1.5pt] at (-1.35,-0.62) {$S_2$};
+    \draw[figaux] (-1.05,-0.62) -- (-0.6,-0.62);
+    \node[figlblaux, figred] at (1.78,0.55) {lateral};
+    \draw[figaux] (1.4,0.48) -- (0.9,0.1);
+
+    \draw[figvecres] (-0.42,0.55) -- (-0.42,1.18);
+    \node[figlbl, figred] at (-0.75,1.02) {$\hat n$};
+
+    \node[figlbl, align=center] at (0,-2.75) {Gauss para diel\'ectricos};
+    \node[figlbl, align=center] at (0,-3.4)
+      {$D_{1n}-D_{2n}=\sigma_{\text{libre}}$};
+  \end{scope}
+
+  % ---------- panel derecho: curva cerrada -> E_t ----------
+  \begin{scope}[shift={(6.8,0)}]
+    \fill[figblue!8] (-2.5,0) .. controls (-1.1,0.34) and (1.1,-0.34) .. (2.5,0)
+      -- (2.5,2.1) -- (-2.5,2.1) -- cycle;
+    \fill[figamber!12] (-2.5,0) .. controls (-1.1,0.34) and (1.1,-0.34) .. (2.5,0)
+      -- (2.5,-2.1) -- (-2.5,-2.1) -- cycle;
+    \draw[figline, line width=1.0pt]
+      (-2.5,0) .. controls (-1.1,0.34) and (1.1,-0.34) .. (2.5,0);
+    \node[figlbl, figblue] at (-1.75,1.72) {medio 1};
+    \node[figlbl, figamber] at (-1.75,-1.72) {medio 2};
+
+    % rectangulo de altura pequena
+    \draw[figvecres] (-0.85,0.26) -- (0.85,0.2);
+    \draw[figvecres] (0.85,0.2) -- (0.85,-0.28);
+    \draw[figvecres] (0.85,-0.28) -- (-0.85,-0.22);
+    \draw[figvecres] (-0.85,-0.22) -- (-0.85,0.26);
+    \node[figlbl, figred, fill=figblue!8, inner sep=1.5pt] at (0,0.72) {$C$};
+    \node[figlblaux, figred] at (1.85,0.62) {alto $\to 0$};
+    \draw[figaux] (1.42,0.52) -- (0.95,0.12);
+
+    \draw[figvecaux] (-0.85,-0.85) -- (0.85,-0.85);
+    \node[figlblaux, figgray] at (0,-1.18) {$\hat l$};
+
+    \node[figlbl, align=center] at (0,-2.75) {$\oint_C \vec E\cdot d\vec l=0$};
+    \node[figlbl, align=center] at (0,-3.4) {$E_{1t}=E_{2t}$};
+  \end{scope}
+
+\end{tikzpicture}

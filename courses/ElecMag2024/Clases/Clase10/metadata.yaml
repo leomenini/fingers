@@ -22,30 +22,68 @@ video:
 
 stats:
   transcript_words: 9446
-  summary_words: 0
+  summary_words: 3047
   diagrams_pending: 0
-  equations: 0
+  equations: 23
 
-topics: []
+topics:
+  - La polarización tiene el mismo sentido que el campo aplicado
+  - La susceptibilidad es no negativa
+  - La permitividad es mayor o igual que la del vacío
+  - La constante dieléctrica es mayor o igual que uno
+  - Materiales anisótropos y la susceptibilidad como tensor
+  - Tabla de constantes dieléctricas de materiales comunes
+  - El aire y el vacío son equivalentes a los efectos del curso
+  - Esfera conductora cargada rodeada de un dieléctrico
+  - Gauss para dieléctricos con simetría esférica
+  - El campo en el dieléctrico es menor por un factor K
+  - Polarización de la esfera en el dieléctrico
+  - La divergencia en esféricas y la cancelación de la carga volumétrica
+  - La normal saliente del material y el signo de la carga superficial
+  - La carga total efectiva es Q sobre K
+  - Condiciones de borde entre dos medios
+  - La cápsula gaussiana y la componente normal del desplazamiento
+  - La curva cerrada y la componente tangencial del campo
+  - La continuidad del potencial y por qué reemplaza a la tangencial
+  - Ecuación de Poisson en un dieléctrico
+  - Laplace cuando no hay carga libre
+  - Cilindro dieléctrico descargado en campo uniforme
+  - Armónicos cilíndricos y las dos zonas
+  - Las cinco condiciones de borde del problema
+  - Por qué el comportamiento asintótico no fija el término logarítmico
+  - Independencia lineal de senos y cosenos para igualar coeficiente a coeficiente
+  - El sistema sobredeterminado y la muerte de todos los modos salvo n igual a uno
+  - Los dos potenciales solución
 
-bibliography: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-prerequisites: []
+prerequisites:
+  - Susceptibilidad, permitividad y medios lineales (Clase 9)
+  - Ley de Gauss para dieléctricos y vector desplazamiento (Clase 9)
+  - Densidades de carga de polarización (Clase 9)
+  - Divergencia en coordenadas esféricas
+  - Armónicos cilíndricos como solución de Laplace
+  - Separación de variables en coordenadas cilíndricas (Clase 6)
 
-next_topics: []
+next_topics:
+  - Discusión de la solución del cilindro, campo eléctrico y cargas
+  - Más problemas de contorno con dieléctricos
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
+  reviewer:
+    - Leandro
   date: 2026-09-08
 
 llm:
-  model: ""
+  model: claude-opus-5
 
 editorial_status: draft

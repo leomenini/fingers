@@ -1,0 +1,66 @@
+% Clase 9 — la caricatura de la orientacion molecular, y su desmentida.
+% El docente dibuja las moleculas alineadas y ACTO SEGUIDO aclara que es
+% mentira ("ojo, ojo, imagen, caricatura"). La figura tiene que mostrar las dos
+% cosas o repite el error que el se preocupa por corregir: de ahi el tercer
+% panel, que es el que dice la verdad.
+% Los dipolos se dibujan como un par de puntos unidos; el angulo de cada uno se
+% fija a mano y no al azar, para que el panel "realista" se vea desordenado pero
+% con un sesgo leve y reproducible.
+\begin{tikzpicture}[scale=1]
+
+  % ---------- panel 1: sin campo ----------
+  \begin{scope}[shift={(0,0)}]
+    \draw[figgray!45, line width=0.6pt] (-1.5,-1.5) rectangle (1.5,1.5);
+    \foreach \x/\y/\a in {-1.0/1.0/25, -0.1/1.05/200, 0.9/0.95/110,
+                          -1.05/0.1/300, -0.05/0.0/70, 1.0/0.15/160,
+                          -0.95/-1.0/135, 0.0/-1.05/340, 1.05/-0.95/55}{
+      \begin{scope}[shift={(\x,\y)}, rotate=\a]
+        \draw[figline, line width=0.7pt] (-0.22,0) -- (0.22,0);
+        \node[figneg, minimum size=4pt] at (-0.22,0) {};
+        \node[figpos, minimum size=4pt] at (0.22,0) {};
+      \end{scope}}
+    \node[figlbl] at (0,-1.95) {sin campo};
+    \node[figlblaux, align=center] at (0,-2.6) {orientaciones\\ aleatorias};
+  \end{scope}
+
+  % ---------- panel 2: la caricatura ----------
+  \begin{scope}[shift={(4.4,0)}]
+    \draw[figgray!45, line width=0.6pt] (-1.5,-1.5) rectangle (1.5,1.5);
+    \foreach \x in {-1.0,0.0,1.0}{
+      \foreach \y in {-1.0,0.0,1.0}{
+        \begin{scope}[shift={(\x,\y)}, rotate=90]
+          \draw[figline, line width=0.7pt] (-0.22,0) -- (0.22,0);
+          \node[figneg, minimum size=4pt] at (-0.22,0) {};
+          \node[figpos, minimum size=4pt] at (0.22,0) {};
+        \end{scope}}}
+    \node[figlbl] at (0,-1.95) {la caricatura};
+    \node[figlblaux, figred, align=center] at (0,-2.6) {\emph{no} es lo que pasa};
+  \end{scope}
+
+  % ---------- panel 3: lo que realmente pasa ----------
+  \begin{scope}[shift={(8.8,0)}]
+    \draw[figgray!45, line width=0.6pt] (-1.5,-1.5) rectangle (1.5,1.5);
+    % mismos angulos que el panel 1, sesgados ~15 grados hacia la vertical
+    \foreach \x/\y/\a in {-1.0/1.0/40, -0.1/1.05/195, 0.9/0.95/105,
+                          -1.05/0.1/295, -0.05/0.0/85, 1.0/0.15/150,
+                          -0.95/-1.0/125, 0.0/-1.05/335, 1.05/-0.95/70}{
+      \begin{scope}[shift={(\x,\y)}, rotate=\a]
+        \draw[figline, line width=0.7pt] (-0.22,0) -- (0.22,0);
+        \node[figneg, minimum size=4pt] at (-0.22,0) {};
+        \node[figpos, minimum size=4pt] at (0.22,0) {};
+      \end{scope}}
+    \node[figlbl] at (0,-1.95) {lo que pasa};
+    \node[figlblaux, align=center] at (0,-2.6) {casi igual de desordenadas,\\ apenas sesgadas};
+  \end{scope}
+
+  % ---------- campo aplicado, comun a los paneles 2 y 3 ----------
+  \foreach \x in {3.2,5.6,7.6,10.0}{
+    \draw[figvecaux] (\x,-1.5) -- (\x,1.5);}
+  \node[figlbl, figgray] at (6.6,1.85) {$\vec E$ aplicado};
+
+  \node[figlbl, align=center] at (4.4,-3.6)
+    {El promedio del panel 1 da cero; el del panel 3, no. \textbf{Ese} promedio no nulo};
+  \node[figlbl, align=center] at (4.4,-4.15)
+    {es la polarizaci\'on --- no el alineamiento perfecto del panel 2.};
+
+\end{tikzpicture}

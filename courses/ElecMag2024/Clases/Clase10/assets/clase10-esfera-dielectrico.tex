@@ -1,0 +1,61 @@
+% Clase 10 — esfera conductora cargada rodeada de dielectrico.
+% El punto delicado del ejemplo, y el motivo de la figura, es la NORMAL: el
+% material es el de afuera, asi que la normal saliente del material apunta hacia
+% el centro, y de ahi el signo menos de sigma_p.
+% CUIDADO CON LOS DOS VERSORES: e_r y n = -e_r nacen del mismo punto y en la
+% misma recta, asi que dibujarlos en el mismo angulo hace que los rotulos se
+% pisen (paso, y era ilegible). Van en angulos SEPARADOS, cada uno con su
+% rotulo lejos del otro. La colinealidad no es el contenido aca --- el contenido
+% es que apuntan al reves --- asi que separarlos no miente.
+% La prosa explicativa va en el \caption, no adentro: adentro competia por el
+% mismo espacio que los vectores.
+\begin{tikzpicture}[scale=1]
+
+  % dielectrico (corona)
+  \fill[figamber!10] (0,0) circle (3.4);
+  \draw[figamber, line width=0.8pt] (0,0) circle (3.4);
+  \node[figlbl, figamber] at (-1.75,2.75) {diel\'ectrico $K$};
+
+  % conductor
+  \fill[figgray!25] (0,0) circle (1.1);
+  \draw[figline, line width=1.0pt] (0,0) circle (1.1);
+  \node[figlbl] at (0,0.28) {$Q$};
+  \draw[figvecaux] (0,0) -- (160:1.1);
+  \node[figlblaux, fill=figgray!25, inner sep=1pt] at (160:0.6) {$a$};
+
+  % superficie gaussiana
+  \draw[figline, dashed, line width=0.9pt, figblue] (0,0) circle (2.3);
+  \node[figlbl, figblue, fill=figamber!10, inner sep=1.5pt] at (118:2.62) {$S$};
+  \draw[figvecaux] (0,0) -- (300:2.3);
+  \node[figlblaux, fill=figamber!10, inner sep=1pt] at (300:1.62) {$r$};
+
+  % campo radial: solo donde no molesta a los versores
+  \foreach \a in {90,140,190,270}{
+    \draw[figvec] (\a:1.25) -- (\a:2.05);}
+  \node[figlbl, figblue, fill=figamber!10, inner sep=1.5pt] at (163:2.95)
+    {$\vec E,\ \vec D,\ \vec P$};
+
+  % dipolos orientados, en un sector libre
+  \foreach \a in {205,220,235}{
+    \begin{scope}[shift={(\a:1.62)}, rotate=\a]
+      \draw[figline, line width=0.7pt] (-0.16,0) -- (0.16,0);
+      \node[figneg, minimum size=4pt] at (-0.16,0) {};
+      \node[figpos, minimum size=4pt] at (0.16,0) {};
+    \end{scope}}
+
+  % versor radial: angulo 55
+  \draw[figvecaux] (55:1.15) -- (55:2.0);
+  \node[figlblaux, figgray, fill=figamber!10, inner sep=1.5pt] at (55:2.3)
+    {$\hat e_r$};
+
+  % normal saliente DEL MATERIAL: angulo 15, apunta al centro
+  \draw[figvecres] (15:1.1) -- (15:0.42);
+  \node[figlbl, figred, fill=figamber!10, inner sep=1.5pt] at (15:2.35)
+    {$\hat n=-\hat e_r$};
+  \draw[figaux] (15:1.95) -- (15:1.2);
+
+  % sigma_p en la superficie del conductor
+  \node[figlblaux, figblue, fill=figgray!25, inner sep=1.5pt] at (0,-0.72)
+    {$\sigma_p<0$};
+
+\end{tikzpicture}

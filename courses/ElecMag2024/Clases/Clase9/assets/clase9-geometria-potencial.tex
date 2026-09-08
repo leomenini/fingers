@@ -1,0 +1,46 @@
+% Clase 9 — la geometria del potencial de un dielectrico polarizado.
+% Es el dibujo que el docente rehace al empezar la clase ("teniamos un volumen
+% B0 ... el origen aca y un vector R'"). Lo que la figura tiene que dejar claro
+% es CUAL de los tres vectores se integra: r' recorre el material, r esta fijo.
+% El punto de observacion se pone bien afuera y con una nota: la deduccion
+% empieza valiendo solo fuera del material, y recien la cavidad en forma de
+% aguja la extiende hacia adentro.
+\begin{tikzpicture}[scale=1]
+
+  % cuerpo dielectrico, forma irregular a proposito (no es una esfera)
+  \draw[figline, fill=figblue!8]
+    plot[smooth cycle, tension=0.8]
+    coordinates {(-2.5,0.2) (-1.7,1.5) (-0.2,1.8) (1.0,1.1) (0.9,-0.4)
+                 (-0.1,-1.3) (-1.6,-1.2)};
+  \node[figlbl, figblue] at (-1.9,1.15) {$V_0$};
+  \node[figlblaux] at (-0.55,-1.75) {superficie $S_0$};
+
+  % origen
+  \node[figneutra] at (-3.6,-2.3) {};
+  \node[figlblaux] at (-3.95,-2.5) {$O$};
+
+  % elemento de volumen y su dipolo
+  \coordinate (fuente) at (-0.9,0.55);
+  \fill[figblue!30] (fuente) circle (0.11);
+  \node[figlblaux, align=center] at (-0.95,1.02) {$dV'$};
+  \draw[figvec, figred, line width=0.8pt] ($(fuente)+(-0.28,-0.18)$) -- ($(fuente)+(0.28,0.18)$);
+  \node[figlbl, figred] at (-0.15,0.38) {$\vec P(\vec r\,')$};
+
+  % punto de observacion
+  \node[figneutra] at (3.3,1.35) {};
+  \node[figlbl] at (3.62,1.55) {$\vec r$};
+
+  % los tres vectores
+  \draw[figvecaux] (-3.6,-2.3) -- (fuente);
+  \node[figlbl, figgray, fill=white, inner sep=1.2pt] at (-2.55,-0.95) {$\vec r\,'$};
+
+  \draw[figvec] (-3.6,-2.3) -- (3.3,1.35);
+  \node[figlbl, figblue, fill=white, inner sep=1.2pt] at (1.35,-0.95) {$\vec r$};
+
+  \draw[figvecres] (fuente) -- (3.3,1.35);
+  \node[figlbl, figred, fill=white, inner sep=1.2pt] at (1.5,1.35) {$\vec r-\vec r\,'$};
+
+  \node[figlblaux, align=center] at (0.4,-2.9)
+    {$\vec r$ \emph{fuera} de $V_0$: por ahora la deducci\'on vale s\'olo ah\'i.};
+
+\end{tikzpicture}
