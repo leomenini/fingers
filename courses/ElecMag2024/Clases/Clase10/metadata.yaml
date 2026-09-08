@@ -1,0 +1,51 @@
+title: Clase 10
+id: em-2024-2-10
+
+course: Electromagnetismo
+academic_year: 2024
+semester: 2
+
+teacher: Nicolás Wschebor
+
+source:
+  - OpenFING
+
+# ATENCION: esta transcripcion NO la publico OpenFING. La genero large-v3
+# sobre el audio del video. No es de la misma procedencia ni de la misma calidad
+# que las demas clases del curso, y sus metricas no son comparables con ellas
+# (segmenta distinto). Ver manifest.json -> asr.
+transcriptionSource: asr
+
+video:
+  - start: "00:00:03"
+    end: "01:26:39"
+
+stats:
+  transcript_words: 9446
+  summary_words: 0
+  diagrams_pending: 0
+  equations: 0
+
+topics: []
+
+bibliography: []
+
+prerequisites: []
+
+next_topics: []
+
+status:
+  transcript: done
+  summary: pending
+  latex: pending
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer: []
+  date: 2026-09-08
+
+llm:
+  model: ""
+
+editorial_status: draft

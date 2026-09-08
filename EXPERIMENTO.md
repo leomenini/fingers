@@ -153,13 +153,88 @@ Ninguno de los tres se puede descubrir en frío. Es el argumento a favor de
 haber preparado todo antes: se pagaron GPU-minutos sólo por estos tres, no
 por el pipeline entero.
 
+---
+
+## Resultado 2: `large-v3` sirve. El número es 0,917
+
+Clase 8, contra el VTT oficial de OpenFING sobre el mismo audio:
+
+| | cues | palabras | s/cue | habla |
+| --- | --- | --- | --- | --- |
+| OpenFING | 253 | 10 397 | 18,7 | 85 % |
+| `large-v3` propio | 1456 | 10 383 | 3,4 | 88 % |
+
+**Similitud por bolsa de palabras: 0,917** (contra 0,632 de `tiny`). El conteo
+de palabras difiere en **14 sobre 10 397 — 0,13 %**.
+
+Y el pasaje que `tiny` destrozaba sale bien:
+
+> **OpenFING:** «…la ecuación de **Laplace** […] en **esféricas**, en
+> coordenadas **esféricas**…»
+> **`large-v3`:** «…la ecuación de **Laplace** […] en **esféricas**, en
+> coordenadas **esféricas**…»
+
+Parte del 8 % restante **no son errores**: `large-v3` normaliza disfluencias
+(«las variables en... en esféricas» → «las variables en esféricas»). Es texto
+distinto del oficial y en algunos casos mejor. El 0,917 es, por eso, una cota
+inferior de la fidelidad real.
+
+**Lo que el número NO dice:** nada sobre puntuación ni segmentación. Whisper
+corta cada 3,4 s contra los 18,7 s de OpenFING —5× más fino—, así que las
+métricas de `transcript.stats.json` **no son comparables entre procedencias**.
+Es exactamente el problema que el ADR de procedencia tiene que dejar escrito.
+
+### Sobre el "solape" no nulo
+
+`integrar.js` reportó 7 / 1 / 3 solapes. **No es alucinación**: revisados los
+finales de las tres clases, terminan naturalmente («dejamos por acá», «nos
+vemos la semana que viene»). `detectarSolapeTextual` detecta subtitulado
+*rolling*, y con cues de 3,4 s son coincidencias legítimas del docente
+repitiéndose: 7 sobre 1456 es 0,5 %. El criterio de "debe dar 0" que estaba en
+el plan era mio y estaba mal: esa función no mide lo que yo creía.
+
+---
+
+## Resultado 3: las dos clases que faltaban existen
+
+| Clase | Segmentos | Palabras | Cómputo | Velocidad |
+| --- | --- | --- | --- | --- |
+| 8 (control) | 1456 | 10 383 | 169 s | 32,8× |
+| **9** | 1229 | **12 027** | 195 s | 34,7× |
+| **10** | 1055 | **9 446** | 148 s | 35,1× |
+
+**21 473 palabras que no existían en ningún lado.** 512 s de GPU en total
+(~8,5 min) para 3 h 19 min de audio: **~34× tiempo real**, el doble de lo que
+estimé.
+
+Los artefactos de las clases 9 y 10 están en `courses/ElecMag2024/Clases/`,
+marcados con `transcriptionSource: asr` en `metadata.yaml` y con el bloque
+`asr` completo en `manifest.json` (sha256 del audio, modelo, parámetros).
+
+**La clase 8 se restauró a su versión oficial.** Al integrarla se le piso el
+`transcript.txt` con el del ASR, lo que contaminaba el control: su
+`summary.md` y `notes.tex` vienen del texto oficial. El VTT propio de la
+clase 8 vive en `scripts/asr/control/`, que es su lugar.
+
+---
+
+## Costo real
+
+| | USD |
+| --- | --- |
+| Pod 1 (community, descartado) | 0,028 |
+| Pod 2 (secure, el que sirvió) | 0,127 |
+| **Total** | **0,155** |
+
+Quince centavos, y un tercio se fue en el pod que hubo que tirar por el
+problema de transporte. Ambos borrados y confirmados con 404.
+
 ## Pendiente
 
-- [ ] **Alto administrativo:** autenticación de RunPod. El pod no se crea sin
-      visto bueno explícito.
-- [ ] Run real: `large-v3`, float16, clases 8/9/10.
-- [ ] `comparar.js` sobre la clase 8 completa → el número que importa.
-- [ ] `integrar.js --write` → artefactos con `transcriptionSource: asr`.
+- [x] ~~Autenticación de RunPod.~~
+- [x] ~~Run real: `large-v3`, float16, clases 8/9/10.~~
+- [x] ~~`comparar.js` sobre la clase 8 → **0,917**.~~
+- [x] ~~`integrar.js --write` → clases 9 y 10 marcadas como `asr`.~~
 - [ ] Notas de la clase 8 por las dos vías, mismo prompt → medición 2.
 - [ ] Notas de las clases 9 y 10.
 - [ ] Costo y tiempo reales del pod; `delete-pod` y `get-billing`.
@@ -169,8 +244,8 @@ por el pipeline entero.
 | Métrica | Valor |
 | --- | --- |
 | Similitud ASR vs oficial, clase 8, 90 s, `tiny` | **0,632** |
-| Similitud ASR vs oficial, clase 8 completa, `large-v3` | — |
+| Similitud ASR vs oficial, clase 8 completa, `large-v3` | **0,917** |
 | Velocidad `tiny` int8 CPU (4 núcleos) | **14,7× tiempo real** |
-| Velocidad `large-v3` fp16 GPU | — |
-| Costo del pod | — |
+| Velocidad `large-v3` fp16 GPU (RTX 4090) | **~34× tiempo real** |
+| Costo total de los pods | **USD 0,155** |
 | Correcciones a mano en las notas | — |

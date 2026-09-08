@@ -1,0 +1,16 @@
+{
+  "source": "asr:large-v3",
+  "cues": 1229,
+  "words": 12027,
+  "charsPlain": 69796,
+  "charsTimed": 80762,
+  "timestampOverheadPct": 15.7,
+  "estTokensPlain": 17449,
+  "estTokensTimed": 20191,
+  "speechSeconds": 6061.2,
+  "spanSeconds": 6754.8,
+  "speechRatio": 0.897,
+  "avgCueSeconds": 4.9,
+  "rollingOverlapCues": 1,
+  "warnings": []
+}

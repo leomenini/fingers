@@ -1,0 +1,24 @@
+{
+  "course": "ElecMag2024",
+  "class": 10,
+  "sourceUrl": "https://open.fing.edu.uy/courses/em-2024/10/",
+  "sourceTitle": "Condiciones en la frontera entre dos medios dieléctricos y ejemplos de solución de Laplace (versión borrador)",
+  "transcriptionSource": "asr",
+  "asr": {
+    "mp4Url": "https://open.fing.edu.uy/media/em-2024/em-2025_10.mp4",
+    "audioSha256": "0da88d2091d872359ac0067216c9ab897d003d17842720b0b460c8f85ce37c4a",
+    "audioFormato": "wav pcm_s16le 16000 Hz mono",
+    "modelo": "large-v3",
+    "computeType": "float16",
+    "beamSize": 5,
+    "vadFilter": true,
+    "conditionOnPreviousText": false,
+    "idiomaDetectado": "es",
+    "segundosDeComputo": 148.4,
+    "factorTiempoReal": 35.05,
+    "generadoEn": "2026-09-08T18:18:52Z"
+  },
+  "releaseDate": "2025-09-09T00:00:00-03:00",
+  "durationSec": 5203,
+  "extractedAt": "2026-09-08T18:20:52.201Z"
+}

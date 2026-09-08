@@ -1,0 +1,5826 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:05.680
+La vez pasada empezamos a ver cómo resolver la ecuación de Laplace
+
+2
+00:00:05.680 --> 00:00:12.160
+utilizando bases que se pueden construir utilizando el método de separación de variables.
+
+3
+00:00:12.160 --> 00:00:25.060
+Lo vimos en el caso de la utilización de variables para problemas con simetría,
+
+4
+00:00:25.060 --> 00:00:35.300
+en los cuales lo natural fueron las variables en esféricas, en coordenadas esféricas,
+
+5
+00:00:35.660 --> 00:00:43.820
+pero vamos a ver ahora, en un ratito, algo más general, otros ejemplos en otras coordenadas.
+
+6
+00:00:43.820 --> 00:00:50.400
+Pero antes de hacer eso, quiero retomar un poco el potencial al que llegamos
+
+7
+00:00:50.400 --> 00:01:01.060
+y ver cómo queda el campo eléctrico, cómo quedan otras propiedades físicas de ese problema que vimos.
+
+8
+00:01:01.180 --> 00:01:04.040
+Entonces les recuerdo, el problema que estábamos viendo es este,
+
+9
+00:01:04.040 --> 00:01:20.230
+es un campo eléctrico uniforme, es cero, en el cual ubicamos una esfera conductora descargada.
+
+10
+00:01:20.230 --> 00:01:25.880
+y lo que nos interesa, la esfera tiene radio A
+
+11
+00:01:25.880 --> 00:01:28.840
+y nos interesamos al caso de R mayor que A
+
+12
+00:01:28.840 --> 00:01:31.680
+porque vimos que en realidad para R menor que A
+
+13
+00:01:31.680 --> 00:01:34.100
+la solución es muy aburrida, es una constante
+
+14
+00:01:34.100 --> 00:01:36.680
+dentro de un problema electrostático
+
+15
+00:01:36.680 --> 00:01:44.510
+un conductor dentro, el potencial dentro de un conductor
+
+16
+00:01:44.510 --> 00:01:47.770
+en el caso electrostático es simplemente una constante
+
+17
+00:01:47.770 --> 00:01:50.110
+y vimos que para R mayor que A
+
+18
+00:01:50.110 --> 00:01:53.890
+bueno, tomamos el origen aquí
+
+19
+00:01:53.890 --> 00:02:07.310
+Aquí definimos el eje Z en esta dirección, R es la distancia al centro de la esfera y teta es el ángulo que forma con el eje Z.
+
+20
+00:02:07.490 --> 00:02:12.930
+Vimos que el problema tiene simetría simutal, que es el que no cambia cuando uno lo rota alrededor del eje OZ.
+
+21
+00:02:12.930 --> 00:02:17.310
+y vimos que entonces el potencial es una función de r y de θ
+
+22
+00:02:17.310 --> 00:02:22.610
+que contiene primero que nada la parte que habría sin esfera
+
+23
+00:02:22.610 --> 00:02:26.650
+que es menos E0 por r coseno de θ
+
+24
+00:02:26.650 --> 00:02:30.010
+r coseno de θ no es otra cosa que z
+
+25
+00:02:30.010 --> 00:02:35.250
+y después hay otro término que es también proporcional a E0
+
+26
+00:02:35.250 --> 00:02:40.310
+por a al cubo dividido por r cuadrado por coseno de θ
+
+27
+00:02:41.170 --> 00:02:48.950
+Obviamente, como les comenté la vez pasada, el potencial está definido a menos de una constante aditiva que uno siempre puede agregar.
+
+28
+00:02:50.050 --> 00:02:56.530
+Y acá elegimos la constante para que fuera así, pero uno podría haber elegido otra constante aditiva, ¿verdad?
+
+29
+00:02:56.890 --> 00:03:10.290
+Con esta convención que tomamos, el potencial es cero en la esfera, pero si tomáramos otra constante podría haber otro potencial diferente.
+
+30
+00:03:10.310 --> 00:03:14.550
+bien, muy bien
+
+31
+00:03:14.550 --> 00:03:18.490
+entonces bueno, primero que nada calculemos el campo eléctrico
+
+32
+00:03:18.490 --> 00:03:28.810
+el campo eléctrico tendrá dos componentes
+
+33
+00:03:28.810 --> 00:03:34.530
+tendrá la componente radial E sub r según el vector E sub r
+
+34
+00:03:34.530 --> 00:03:41.750
+y tendrá la componente E sub teta según el versor E sub teta
+
+35
+00:03:41.750 --> 00:03:43.470
+que ya definimos oportunamente
+
+36
+00:03:43.470 --> 00:03:50.010
+y vimos que el campo eléctrico se escribe como menos el gradiente de phi,
+
+37
+00:03:50.910 --> 00:03:53.430
+que en coordenadas esféricas se escribe así.
+
+38
+00:03:54.090 --> 00:03:58.910
+Es uR, será simplemente entonces menos la derivada de phi,
+
+39
+00:03:59.030 --> 00:04:00.550
+el menos es simplemente este, ¿no?
+
+40
+00:04:00.970 --> 00:04:02.030
+Con respecto a R.
+
+41
+00:04:03.090 --> 00:04:10.990
+Y es sub teta, es menos 1 sobre R por la derivada de phi respecto de teta.
+
+42
+00:04:13.640 --> 00:04:13.920
+¿Bien?
+
+43
+00:04:13.920 --> 00:04:20.400
+Entonces vamos a calcular esas dos componentes del campo eléctrico.
+
+44
+00:04:22.680 --> 00:04:24.580
+La componente es VR.
+
+45
+00:04:27.140 --> 00:04:30.760
+Un consejo, no de física, pero sí de vida.
+
+46
+00:04:32.400 --> 00:04:39.920
+Este signo es la fuente principal de errores de cálculo que hay en los cursos de física 3 y electromagnetismo.
+
+47
+00:04:41.000 --> 00:04:44.020
+¿Por qué? Porque uno dice, ah, ese es un signo súper fácil.
+
+48
+00:04:44.020 --> 00:04:45.320
+Entonces lo pongo al final.
+
+49
+00:04:46.080 --> 00:04:49.380
+Pero no, haces una cuenta que es complicada, llena de derivadas, no sé qué otra cosa.
+
+50
+00:04:49.620 --> 00:04:51.700
+Y al final te olvidaste que había un signo.
+
+51
+00:04:52.840 --> 00:04:56.000
+Porque hiciste lo difícil y todo es lo fácil, ya te olvidaste.
+
+52
+00:04:56.500 --> 00:05:00.200
+Entonces el consejo que les quiero dar, porque yo también me equivoco en ese signo,
+
+53
+00:05:00.660 --> 00:05:03.920
+es cuando van a hacer la cuenta, no digan al final agrego el signo, no.
+
+54
+00:05:04.360 --> 00:05:08.960
+Lo ponen al principio de todo, hagan lo fácil primero, antes de olvidarse,
+
+55
+00:05:09.040 --> 00:05:10.960
+y luego hacen la cuenta, porque si no después se van a olvidar.
+
+56
+00:05:10.960 --> 00:05:11.520
+¿Se entiende?
+
+57
+00:05:11.520 --> 00:05:17.620
+O otra cosa típica es poner el signo en el primer término de la derivada y no en el segundo término de la derivada.
+
+58
+00:05:17.720 --> 00:05:19.120
+La mitad del cálculo se olvida del signo.
+
+59
+00:05:19.200 --> 00:05:25.660
+Ponen el signo primero en factor de todo el mundo, hacen la derivada y luego sí distribuyen a lo que tengan que hacer.
+
+60
+00:05:26.300 --> 00:05:31.460
+Si no, se van a equivocar porque no es un error conceptual, es un error de distracción, pero muy común.
+
+61
+00:05:31.740 --> 00:05:33.900
+Entonces les recomiendo que procedan de esa manera.
+
+62
+00:05:34.260 --> 00:05:36.860
+Entonces derivamos, tenemos dos términos para derivar.
+
+63
+00:05:36.860 --> 00:05:38.920
+el primero, fíjense
+
+64
+00:05:38.920 --> 00:05:40.320
+tengo un signo menos, tengo
+
+65
+00:05:40.320 --> 00:05:42.080
+menos E0
+
+66
+00:05:42.080 --> 00:05:45.040
+estoy derivando con respecto a R
+
+67
+00:05:45.040 --> 00:05:46.400
+por coseno de teta
+
+68
+00:05:46.400 --> 00:05:48.500
+y el segundo
+
+69
+00:05:48.500 --> 00:05:50.640
+tengo un R cuadrado en el denominador
+
+70
+00:05:50.640 --> 00:05:52.400
+así que me va a quedar menos 2
+
+71
+00:05:52.400 --> 00:05:54.120
+E0
+
+72
+00:05:54.120 --> 00:05:57.450
+por A al cubo
+
+73
+00:05:57.450 --> 00:06:00.730
+dividido R al cubo
+
+74
+00:06:00.730 --> 00:06:02.310
+por coseno de teta
+
+75
+00:06:02.310 --> 00:06:04.130
+bien
+
+76
+00:06:04.130 --> 00:06:06.370
+entonces ahora si utilizo
+
+77
+00:06:06.370 --> 00:06:07.650
+el signo y me va a quedar
+
+78
+00:06:07.650 --> 00:06:20.830
+Un E0 en factor, sin signos menos, el coseno de teta también me queda en factor, me queda 1 más 2A al cubo sobre R al cubo.
+
+79
+00:06:22.770 --> 00:06:38.430
+El 1 sería simplemente lo que tendríamos si no estuviera la esfera conductora descargada y el otro término es el que es el producto de la polarización de la esfera.
+
+80
+00:06:46.060 --> 00:06:48.720
+Entonces, primera componente del campo eléctrico.
+
+81
+00:06:50.340 --> 00:06:53.800
+Déjenme verificar que no me equivoqué en las cuentas, pero creo que está bien.
+
+82
+00:06:55.540 --> 00:06:55.840
+Sí.
+
+83
+00:06:56.580 --> 00:06:59.040
+Entonces ahora veamos el E sub teta.
+
+84
+00:07:00.480 --> 00:07:04.040
+Mismo consejo, empezamos por poner los prefactores fáciles.
+
+85
+00:07:05.200 --> 00:07:09.900
+Ponemos el menos 1 sobre R adelante de todo y abrimos un corchete.
+
+86
+00:07:10.260 --> 00:07:11.880
+Y recién ahí hacemos la derivada.
+
+87
+00:07:12.680 --> 00:07:15.020
+Entonces la derivada del coseno es menos seno.
+
+88
+00:07:15.340 --> 00:07:21.560
+Se me va este signo acá, entonces me queda E0 por R por seno de teta.
+
+89
+00:07:23.660 --> 00:07:35.580
+Y en el otro caso también tengo un coseno, así que me queda menos E0 por A al cubo sobre R al cuadrado por seno de teta.
+
+90
+00:07:37.180 --> 00:07:44.120
+O, simplificando, me queda...
+
+91
+00:07:44.120 --> 00:07:47.760
+Meto el 1 sobre R para adentro y saco el E0 para afuera.
+
+92
+00:07:47.760 --> 00:08:04.730
+me queda menos E0 por seno de teta por 1 menos A al cubo sobre R al cubo.
+
+93
+00:08:05.650 --> 00:08:13.880
+Esa es la fórmula de la componente según teta del campo eléctrico.
+
+94
+00:08:13.980 --> 00:08:20.520
+Entonces hemos calculado el campo eléctrico en todo punto fuera de la esfera conductora.
+
+95
+00:08:20.560 --> 00:08:23.180
+¿Cómo es el campo eléctrico dentro de la esfera conductora?
+
+96
+00:08:23.180 --> 00:08:25.720
+cero, el potencial es
+
+97
+00:08:25.720 --> 00:08:27.420
+constante, entonces cuando
+
+98
+00:08:27.420 --> 00:08:28.960
+tomo el gradiente me hace
+
+99
+00:08:28.960 --> 00:08:31.560
+bueno, una cosa importante
+
+100
+00:08:31.560 --> 00:08:33.580
+como tiene, ya vimos como tiene que ser
+
+101
+00:08:33.580 --> 00:08:35.840
+el campo eléctrico justo en la
+
+102
+00:08:35.840 --> 00:08:37.780
+superficie del conductor, como tiene que ser
+
+103
+00:08:37.780 --> 00:08:39.760
+normal
+
+104
+00:08:39.760 --> 00:08:41.700
+a la superficie, quiere decir que
+
+105
+00:08:41.700 --> 00:08:43.580
+que componente se tiene que anular
+
+106
+00:08:43.580 --> 00:08:45.860
+es subteta, verdad
+
+107
+00:08:45.860 --> 00:08:47.100
+subteta es la componente
+
+108
+00:08:47.100 --> 00:08:49.800
+digamos, si yo tengo este punto así
+
+109
+00:08:49.800 --> 00:08:51.780
+es subteta, tiene esta
+
+110
+00:08:51.780 --> 00:08:52.420
+dirección
+
+111
+00:08:52.420 --> 00:08:55.580
+E sub R tiene esta dirección
+
+112
+00:08:55.580 --> 00:08:57.620
+entonces cuando yo me ubico
+
+113
+00:08:57.620 --> 00:08:58.920
+en R igual a A
+
+114
+00:08:58.920 --> 00:09:00.360
+E sub teta se tiene que anular
+
+115
+00:09:00.360 --> 00:09:03.180
+y efectivamente si yo pongo R igual a K
+
+116
+00:09:03.180 --> 00:09:05.260
+R igual a A se me anula
+
+117
+00:09:05.260 --> 00:09:06.720
+entonces observación
+
+118
+00:09:06.720 --> 00:09:09.850
+observación
+
+119
+00:09:09.850 --> 00:09:16.630
+en R igual a A
+
+120
+00:09:16.630 --> 00:09:18.270
+E sub teta
+
+121
+00:09:18.270 --> 00:09:19.910
+vale 0 como debe ser
+
+122
+00:09:19.910 --> 00:09:22.210
+y E sub R
+
+123
+00:09:22.210 --> 00:09:24.610
+es igual
+
+124
+00:09:24.610 --> 00:09:25.310
+a
+
+125
+00:09:25.310 --> 00:09:26.730
+es 0
+
+126
+00:09:26.730 --> 00:09:31.050
+a 3
+
+127
+00:09:31.050 --> 00:09:33.430
+es 0 por coseno de t
+
+128
+00:09:33.430 --> 00:09:39.560
+entonces
+
+129
+00:09:39.560 --> 00:09:41.340
+allí
+
+130
+00:09:41.340 --> 00:09:43.620
+el campo
+
+131
+00:09:43.620 --> 00:09:46.040
+es
+
+132
+00:09:46.040 --> 00:09:47.180
+normal
+
+133
+00:09:47.180 --> 00:09:54.680
+a la superficie
+
+134
+00:09:54.680 --> 00:09:56.980
+y lo cumple, nuestra solución
+
+135
+00:09:56.980 --> 00:09:58.180
+pasa ese test
+
+136
+00:09:58.180 --> 00:10:00.220
+eso es conveniente verificarlo
+
+137
+00:10:00.220 --> 00:10:01.840
+ustedes hacen una cantidad de cuentas
+
+138
+00:10:01.840 --> 00:10:04.660
+se pueden verificar en un factor 2 en algún lado
+
+139
+00:10:04.660 --> 00:10:07.880
+y al final no les queda normal como tenía que quedarles.
+
+140
+00:10:08.620 --> 00:10:12.460
+Y bueno, están en medio del parcial, capaz que encuentran el factor 2, capaz que no lo encuentran.
+
+141
+00:10:12.940 --> 00:10:18.140
+Si lo encuentran, chiche, si no lo encuentran, le comentan al corrector,
+
+142
+00:10:18.320 --> 00:10:19.760
+miren, yo sé que esto es normal.
+
+143
+00:10:20.300 --> 00:10:24.040
+Acá me equivoqué en las cuentas, no estoy cometiendo el error conceptual de no saber que es normal.
+
+144
+00:10:24.040 --> 00:10:26.900
+Yo sé que es normal, pero en las cuentas no me dieron porque me equivoqué,
+
+145
+00:10:27.100 --> 00:10:29.920
+pero no me estoy morfando la física del asunto.
+
+146
+00:10:32.470 --> 00:10:33.210
+¿Cómo es?
+
+147
+00:10:33.210 --> 00:10:46.770
+Entonces ahora está perfecto, calculamos esto y lo otro que podemos calcular es la densidad de carga en la superficie del conductor
+
+148
+00:10:46.770 --> 00:10:55.150
+Porque vimos que la carga dentro del conductor en el volumen va a ser cero pero en la superficie se nos va a generar una carga
+
+149
+00:10:55.150 --> 00:11:15.850
+Y la podemos calcular porque sabemos que en la superficie del conductor, de cualquier conductor, sabemos que la componente normal, en este caso E sub R, es igual a sigma sobre epsilon cero.
+
+150
+00:11:17.170 --> 00:11:19.430
+¿Se acuerdan? Eso es un resultado general que vimos.
+
+151
+00:11:20.550 --> 00:11:29.270
+Entonces, en este caso sigma es igual a epsilon cero por E sub R, que lo calculamos allá arriba.
+
+152
+00:11:29.270 --> 00:11:34.510
+Nos queda 3 epsilon 0 por E0 por coseno de teta.
+
+153
+00:11:35.330 --> 00:11:43.270
+Esta es la densidad superficial de carga, que como pueden ver no es uniforme porque depende de teta.
+
+154
+00:11:43.650 --> 00:11:52.050
+Para distintos ángulos tienen distinto valor de la densidad de superficie.
+
+155
+00:11:52.170 --> 00:11:57.450
+La densidad de superficie, por ejemplo, para teta igual a 0, en la dirección esta, es 0.
+
+156
+00:11:59.270 --> 00:12:01.610
+Se polariza distinto en las distintas direcciones.
+
+157
+00:12:01.850 --> 00:12:03.870
+No es una densidad superficial uniforme.
+
+158
+00:12:06.290 --> 00:12:08.050
+Y por ejemplo, cambia de signo.
+
+159
+00:12:08.410 --> 00:12:13.150
+Del lado de los tetas entre 0 y pi sobre 2 es positiva.
+
+160
+00:12:14.250 --> 00:12:18.870
+Y del lado de los tetas entre pi sobre 2 y pi es negativa.
+
+161
+00:12:19.610 --> 00:12:21.090
+Porque el coseno cambia de signo.
+
+162
+00:12:21.490 --> 00:12:21.870
+Y eso es razonable.
+
+163
+00:12:22.770 --> 00:12:25.870
+Esperamos que de este lado se nos ubiquen las cargas negativas.
+
+164
+00:12:26.910 --> 00:12:28.770
+Eso es en los ángulos entre pi sobre 2.
+
+165
+00:12:28.770 --> 00:12:30.590
+El ángulo lo medimos de acá.
+
+166
+00:12:31.090 --> 00:12:38.170
+Entre pi sobre 2 y pi la densidad de carga es negativa y entre 0 y pi sobre 2 es positiva.
+
+167
+00:12:38.650 --> 00:12:39.990
+Y justo en pi sobre 2 se anula.
+
+168
+00:12:40.750 --> 00:12:42.250
+Y efectivamente cumple eso.
+
+169
+00:12:42.670 --> 00:12:44.850
+¿Y cómo tiene que ser la carga total de la esfera?
+
+170
+00:12:46.210 --> 00:12:46.990
+0, ¿verdad?
+
+171
+00:12:47.350 --> 00:12:48.450
+Bueno, verifiquemos.
+
+172
+00:12:50.430 --> 00:12:51.330
+Carga total.
+
+173
+00:12:54.880 --> 00:12:58.420
+Claro, hay que calcular en toda la superficie.
+
+174
+00:12:58.420 --> 00:13:08.660
+La carga total Q será la integral de la densidad de carga, sigma, que en este caso solo depende de teta,
+
+175
+00:13:08.780 --> 00:13:20.980
+integrada entre 0 y pi por el Jacobiano de una medida angular, seno de teta por d teta,
+
+176
+00:13:20.980 --> 00:13:22.660
+por
+
+177
+00:13:22.660 --> 00:13:24.460
+en phi
+
+178
+00:13:24.460 --> 00:13:25.200
+que les queda
+
+179
+00:13:25.200 --> 00:13:27.900
+integral entre 0 y 2pi
+
+180
+00:13:27.900 --> 00:13:29.220
+de d phi
+
+181
+00:13:29.220 --> 00:13:31.000
+y no hay que olvidarse
+
+182
+00:13:31.000 --> 00:13:33.180
+que el elemento de superficie
+
+183
+00:13:33.180 --> 00:13:35.040
+tiene un radio al cuadrado
+
+184
+00:13:35.040 --> 00:13:36.680
+en este caso un a al cuadrado
+
+185
+00:13:36.680 --> 00:13:38.180
+¿si?
+
+186
+00:13:39.560 --> 00:13:40.740
+elemento de superficie
+
+187
+00:13:40.740 --> 00:13:41.200
+les recuerdo
+
+188
+00:13:41.200 --> 00:13:43.220
+en coordenadas esféricas
+
+189
+00:13:43.220 --> 00:13:44.360
+es r al cuadrado
+
+190
+00:13:44.360 --> 00:13:45.580
+por seno de teta
+
+191
+00:13:45.580 --> 00:13:46.460
+de teta por d phi
+
+192
+00:13:46.460 --> 00:13:47.160
+¿se acuerdan de eso?
+
+193
+00:13:48.780 --> 00:13:50.240
+la integral en d phi
+
+194
+00:13:50.240 --> 00:13:51.820
+es medio fácil, ¿verdad? ¿Cuánto da?
+
+195
+00:13:53.380 --> 00:13:54.040
+2pi, porque
+
+196
+00:13:54.040 --> 00:13:55.980
+simplemente no depende de phi,
+
+197
+00:13:56.080 --> 00:13:57.840
+entonces simplemente hay que multiplicar por 2pi. Entonces nos queda
+
+198
+00:13:57.840 --> 00:14:00.380
+a al cuadrado por 2pi
+
+199
+00:14:00.380 --> 00:14:02.340
+por la integral de 0
+
+200
+00:14:02.340 --> 00:14:03.880
+a pi de
+
+201
+00:14:03.880 --> 00:14:06.120
+sigma, que lo voy a reemplazar por
+
+202
+00:14:06.120 --> 00:14:08.180
+lo que es, es 3epsilon0
+
+203
+00:14:08.180 --> 00:14:10.160
+es 0 por coseno
+
+204
+00:14:10.160 --> 00:14:12.260
+de teta por seno de teta
+
+205
+00:14:12.260 --> 00:14:13.200
+y todo
+
+206
+00:14:13.200 --> 00:14:15.080
+integrado en teta.
+
+207
+00:14:15.980 --> 00:14:17.080
+¿Y esta integral cuánto da?
+
+208
+00:14:19.390 --> 00:14:21.670
+0, tiene que dar 0, pero ¿se acuerdan cómo se hace?
+
+209
+00:14:21.750 --> 00:14:34.040
+Cambio de variable, pongamos la variable u igual a coseno de teta, du es igual a menos seno de teta de teta.
+
+210
+00:14:35.180 --> 00:14:46.780
+Entonces cuando teta vale 0, implica u vale 1 y cuando teta vale pi, u vale menos 1.
+
+211
+00:14:46.780 --> 00:14:50.020
+así que esto es la integral
+
+212
+00:14:50.020 --> 00:14:52.300
+2pi por a al cuadrado
+
+213
+00:14:52.300 --> 00:14:55.080
+de la integral entre 1 y menos 1
+
+214
+00:14:55.080 --> 00:14:58.340
+acá me aparece un signo
+
+215
+00:14:58.340 --> 00:15:00.140
+que le pongo acá adelante
+
+216
+00:15:00.140 --> 00:15:04.200
+el seno de teta por teta
+
+217
+00:15:04.200 --> 00:15:06.280
+me queda el de u menos del signo que ya puse
+
+218
+00:15:06.280 --> 00:15:07.700
+el coseno de teta es un u
+
+219
+00:15:07.700 --> 00:15:10.200
+y después tengo 3epsilon0
+
+220
+00:15:11.020 --> 00:15:12.600
+por e0
+
+221
+00:15:12.600 --> 00:15:23.210
+y bueno, fíjense, esta es la integral
+
+222
+00:15:23.210 --> 00:15:24.650
+de una variable
+
+223
+00:15:24.650 --> 00:15:27.170
+impar en un intervalo
+
+224
+00:15:27.170 --> 00:15:28.010
+centrado en 0
+
+225
+00:15:28.010 --> 00:15:31.730
+si quieren lo pueden calcular
+
+226
+00:15:31.730 --> 00:15:32.370
+esto sería
+
+227
+00:15:32.370 --> 00:15:35.230
+menos pi al cuadrado
+
+228
+00:15:35.230 --> 00:15:37.390
+3 epsilon 0
+
+229
+00:15:37.390 --> 00:15:38.130
+es 0
+
+230
+00:15:38.130 --> 00:15:40.070
+por u al cuadrado
+
+231
+00:15:40.070 --> 00:15:42.350
+entre menos 1 y 1
+
+232
+00:15:42.350 --> 00:15:43.450
+pero esto es 0
+
+233
+00:15:43.450 --> 00:15:57.130
+que era lo que esperábamos
+
+234
+00:15:57.130 --> 00:15:58.170
+esto es una verificación
+
+235
+00:15:58.170 --> 00:16:00.310
+no nos sorprende el resultado
+
+236
+00:16:00.310 --> 00:16:03.570
+pero vale la pena
+
+237
+00:16:03.570 --> 00:16:06.030
+confirmarlo, es una verificación
+
+238
+00:16:06.030 --> 00:16:07.870
+pero el resultado que obtuvimos
+
+239
+00:16:07.870 --> 00:16:09.770
+entonces es lindo, y bueno, y capaz que
+
+240
+00:16:09.770 --> 00:16:11.490
+vale la pena hacer un dibujito de cómo quedó
+
+241
+00:16:11.490 --> 00:16:13.890
+el campo eléctrico, el campo eléctrico si tiene la esfera
+
+242
+00:16:13.890 --> 00:16:15.490
+acá y arranca
+
+243
+00:16:15.490 --> 00:16:18.050
+si hacemos las líneas de campo
+
+244
+00:16:18.050 --> 00:16:19.750
+lo que tiene que suceder
+
+245
+00:16:19.750 --> 00:16:21.790
+es que lleguen
+
+246
+00:16:21.790 --> 00:16:23.790
+normales a la superficie, van a hacer
+
+247
+00:16:23.790 --> 00:16:27.930
+una cosa así, y van a salir
+
+248
+00:16:27.930 --> 00:16:29.430
+del otro lado de manera simétrica
+
+249
+00:16:29.430 --> 00:16:36.080
+y bueno, en algunas que están más alejadas
+
+250
+00:16:36.080 --> 00:16:38.160
+no tocarán la esfera, van a hacer una cosa así
+
+251
+00:16:38.160 --> 00:16:47.080
+¿bien?
+
+252
+00:16:47.680 --> 00:16:51.720
+Es la forma de las líneas del campo eléctrico
+
+253
+00:16:51.720 --> 00:16:53.940
+Es siempre una buena representación
+
+254
+00:16:53.940 --> 00:16:55.700
+Entonces ven
+
+255
+00:16:55.700 --> 00:16:58.280
+Cuando están lejos son todas paralelas
+
+256
+00:16:58.280 --> 00:17:00.540
+X distribuidas
+
+257
+00:17:00.540 --> 00:17:01.640
+Porque el campo es uniforme
+
+258
+00:17:01.640 --> 00:17:03.980
+Cuando nos acercamos a la esfera se deforman
+
+259
+00:17:03.980 --> 00:17:05.340
+Y llegan normales
+
+260
+00:17:05.340 --> 00:17:07.780
+No apruebo
+
+261
+00:17:07.780 --> 00:17:11.620
+Dibujo de primero de escuela
+
+262
+00:17:11.620 --> 00:17:12.280
+Pero no importa
+
+263
+00:17:12.280 --> 00:17:14.240
+El concepto creo que queda claro
+
+264
+00:17:14.240 --> 00:17:15.540
+Igual en la gráfica
+
+265
+00:17:15.540 --> 00:17:25.520
+Digo, capaz que para mí cuando estaba chiquito y la maestra me rezongaba era más un problema,
+
+266
+00:17:25.520 --> 00:17:29.540
+pero ahora ya no es un problema. Ustedes no se animan a rezongar.
+
+267
+00:17:31.630 --> 00:17:33.030
+¿Bien? ¿Se entendió?
+
+268
+00:17:35.810 --> 00:17:41.210
+Bárbaro. Entonces, preguntas. Voy a pasar a repetir todo lo que hicimos,
+
+269
+00:17:41.450 --> 00:17:46.850
+repetir no, pero mostrarles que lo que hicimos es general en otra situación,
+
+270
+00:17:46.850 --> 00:17:49.370
+pero antes de hacerlo, quiero ver si tienen alguna pregunta.
+
+271
+00:17:50.730 --> 00:17:52.370
+¿Bien? ¿No? ¿Sí?
+
+272
+00:18:00.440 --> 00:18:04.340
+No, pero es que no tenés esa elección, porque las variables en esféricas,
+
+273
+00:18:05.640 --> 00:18:10.040
+phi siempre varía de 0 a 2pi y teta entre 0 a pi.
+
+274
+00:18:11.000 --> 00:18:16.380
+Si vos no mapeás el espacio usando ese rango de variables,
+
+275
+00:18:16.700 --> 00:18:18.320
+no tenés opción de cómo recorrer.
+
+276
+00:18:19.880 --> 00:18:22.220
+Para recorrer el espacio uno a uno.
+
+277
+00:18:22.220 --> 00:18:43.610
+A ver, el elemento de integración en una superficie, el elemento de superficie de una esfera es el radio de la esfera por el elemento, ¿se acuerdan?
+
+278
+00:18:43.810 --> 00:18:50.990
+En esféricas les queda seno de teta por d teta por d teta por d phi.
+
+279
+00:18:51.070 --> 00:18:55.630
+¿Se acuerdan que esto es el elemento de superficie en esféricas?
+
+280
+00:18:55.630 --> 00:18:58.170
+y esto es lo que usé, lo único que queda es radio, vale A
+
+281
+00:18:58.170 --> 00:19:00.570
+estamos en la superficie de radio A
+
+282
+00:19:00.570 --> 00:19:01.830
+y está todo lo otro
+
+283
+00:19:01.830 --> 00:19:04.730
+¿había otra pregunta?
+
+284
+00:19:09.540 --> 00:19:10.280
+ah bueno, si no
+
+285
+00:19:10.280 --> 00:19:12.600
+estuviera descargada, habría un término
+
+286
+00:19:12.600 --> 00:19:13.800
+extra en el potencial
+
+287
+00:19:13.800 --> 00:19:15.060
+¿sí?
+
+288
+00:19:17.180 --> 00:19:19.420
+y que toda esta parte igual
+
+289
+00:19:19.420 --> 00:19:20.940
+seguiría integrando a cero
+
+290
+00:19:20.940 --> 00:19:23.260
+y habría un término extra que no se integra a cero
+
+291
+00:19:23.260 --> 00:19:23.940
+¿está?
+
+292
+00:19:24.500 --> 00:19:26.280
+de hecho el término extra es una cosa
+
+293
+00:19:26.280 --> 00:19:29.020
+vimos que era algo así como
+
+294
+00:19:29.020 --> 00:19:29.840
+una constante
+
+295
+00:19:29.840 --> 00:19:31.980
+sobre R, ¿se acuerdan?
+
+296
+00:19:32.020 --> 00:19:33.100
+que vimos que era una cosa así
+
+297
+00:19:33.100 --> 00:19:35.900
+entonces todo esto se integra a cero
+
+298
+00:19:35.900 --> 00:19:37.840
+pero el término extra
+
+299
+00:19:37.840 --> 00:19:39.520
+cuando lo integran
+
+300
+00:19:39.520 --> 00:19:41.700
+les va a quedar, no sé
+
+301
+00:19:41.700 --> 00:19:42.480
+4 pi
+
+302
+00:19:42.480 --> 00:19:45.280
+se va al epsilon cero, no sé qué
+
+303
+00:19:45.280 --> 00:19:46.220
+entonces
+
+304
+00:19:46.220 --> 00:19:49.220
+este sería término
+
+305
+00:19:49.220 --> 00:19:53.120
+si hubiera carga
+
+306
+00:19:53.120 --> 00:19:58.740
+y bueno, la constante dependería de la carga
+
+307
+00:19:58.740 --> 00:19:59.100
+¿sí?
+
+308
+00:20:11.100 --> 00:20:12.720
+siempre vale superposición
+
+309
+00:20:12.720 --> 00:20:17.400
+siempre vale la superposición de que el campo es producto de los campos
+
+310
+00:20:17.400 --> 00:20:20.580
+producidos por todas las contribuciones lo que sucede en este caso que es no
+
+311
+00:20:20.580 --> 00:20:27.540
+trivial es que la densidad superficial de carga es inducida por el propio campo
+
+312
+00:20:27.540 --> 00:20:32.720
+externo quiere decir que a priori no sabes la carga acá
+
+313
+00:20:32.720 --> 00:20:38.620
+entonces no puedes aplicar eso es decir si podés pero pero pero necesitas la
+
+314
+00:20:38.620 --> 00:20:41.700
+solución para aplicarlo entonces no te ayuda porque no sabes cuál es la
+
+315
+00:20:41.700 --> 00:20:46.620
+densidad de carga pero efectivamente la carga que está en el campo eléctrico
+
+316
+00:20:46.620 --> 00:20:49.620
+estamos tomando es en la superposición de un campo eléctrico uniforme que es
+
+317
+00:20:49.620 --> 00:20:55.020
+éste el campo eléctrico es uniforme potencial no pero el potencial el campo
+
+318
+00:20:55.020 --> 00:20:58.940
+es uniforme más el campo producido por un dipolo
+
+319
+00:20:58.940 --> 00:21:04.880
+que la esfera lo que está generando es un campo estrictamente dipolar entonces
+
+320
+00:21:04.880 --> 00:21:09.000
+si vale superposición pero lo que sucedía es que a priori no sabíamos que
+
+321
+00:21:09.000 --> 00:21:10.960
+iba a ser así, porque no sabíamos cómo
+
+322
+00:21:10.960 --> 00:21:11.900
+se iba a ubicar la esfera
+
+323
+00:21:11.900 --> 00:21:15.200
+la carga en la esfera no sabíamos cómo se iba a ubicar
+
+324
+00:21:15.200 --> 00:21:16.920
+pero ahora vimos que para que se
+
+325
+00:21:16.920 --> 00:21:18.980
+cumpla la plaza afuera de la esfera no había
+
+326
+00:21:18.980 --> 00:21:20.840
+opción, tenía que ser así
+
+327
+00:21:20.840 --> 00:21:22.880
+porque escribimos la base general
+
+328
+00:21:22.880 --> 00:21:24.860
+y de toda la solución de combinación
+
+329
+00:21:24.860 --> 00:21:26.700
+de elementos de la base que teníamos
+
+330
+00:21:26.700 --> 00:21:28.960
+lo único que sobrevivió a esto y esto cumple
+
+331
+00:21:28.960 --> 00:21:30.200
+todas las condiciones de borde
+
+332
+00:21:30.200 --> 00:21:32.700
+por unicidad esta es la solución correcta
+
+333
+00:21:32.700 --> 00:21:34.700
+¿bien? y entonces
+
+334
+00:21:34.700 --> 00:21:37.060
+vemos que efectivamente
+
+335
+00:21:37.060 --> 00:21:38.260
+va a la superposición pero
+
+336
+00:21:38.260 --> 00:21:42.020
+pero no lo podías aplicar a priori
+
+337
+00:21:42.020 --> 00:21:44.240
+porque justamente la densidad superficial de carga
+
+338
+00:21:44.240 --> 00:21:45.840
+la obtuvimos al final de todo
+
+339
+00:21:45.840 --> 00:21:47.760
+si la hubieras sabido esta
+
+340
+00:21:47.760 --> 00:21:49.220
+podías haberlo hecho desde el principio
+
+341
+00:21:49.220 --> 00:21:51.800
+¿más preguntas?
+
+342
+00:21:53.760 --> 00:21:55.300
+bueno, entonces lo que voy a hacer ahora
+
+343
+00:21:55.300 --> 00:21:57.820
+es repetir
+
+344
+00:21:57.820 --> 00:21:59.740
+yo les dije que el método de separación
+
+345
+00:21:59.740 --> 00:22:01.100
+de variables es general
+
+346
+00:22:01.100 --> 00:22:03.520
+lo pueden aplicar para cualquier ecuación
+
+347
+00:22:03.520 --> 00:22:05.280
+diferencial en derivadas parciales
+
+348
+00:22:05.280 --> 00:22:07.240
+lineal y homogénea
+
+349
+00:22:07.240 --> 00:22:11.580
+que son muchas, parecen muchos adjetivos, pero en realidad hay muchas ecuaciones de ese tipo.
+
+350
+00:22:12.300 --> 00:22:17.940
+Voy a seguir aplicando la ecuación de Laplace, pero en lugar de aplicarlo en coordenadas esféricas,
+
+351
+00:22:17.960 --> 00:22:22.520
+como hicimos la clase pasada y al comienzo de esta, voy a aplicarlo en coordenadas cilíndricas,
+
+352
+00:22:22.580 --> 00:22:25.020
+para ver que el método es general, que lo puedo volver a aplicar.
+
+353
+00:22:25.100 --> 00:22:28.800
+Entonces, ahí, capaz que cuando hayan visto un segundo ejemplo, dicen,
+
+354
+00:22:28.880 --> 00:22:32.000
+ya empecé a agarrarle la mano, ya entendí cuál es la lógica.
+
+355
+00:22:33.080 --> 00:22:34.540
+Entonces, lo vamos a ir haciendo juntos.
+
+356
+00:22:34.540 --> 00:22:37.660
+Yo les voy comentando y les hago preguntas a ver si van agarrando de la mano.
+
+357
+00:22:59.450 --> 00:23:02.410
+Entonces el punto 2.6.
+
+358
+00:23:10.880 --> 00:23:30.620
+Resolución de la ecuación de Laplace en coordenadas cilíndricas.
+
+359
+00:23:38.480 --> 00:23:43.060
+Pero nuevamente, así como en el caso de coordenadas esféricas no tratamos el caso más general,
+
+360
+00:23:43.620 --> 00:23:46.480
+porque nos limitamos a problemas con simetría asimutal,
+
+361
+00:23:46.480 --> 00:23:54.540
+Asimutal. Ahora voy a suponer problemas en los cuales hay invariancia por traslaciones en la dirección z.
+
+362
+00:23:54.980 --> 00:24:02.580
+Es decir, el problema es plano. Voy a suponer el caso en que el potencial no es una función de z,
+
+363
+00:24:02.580 --> 00:24:10.040
+solo depende de r y teta. r y teta ahora son coordenadas polares, cilíndricas.
+
+364
+00:24:10.040 --> 00:24:37.670
+Vamos a limitarnos a problemas en que phi es una función de r y de teta, donde estas son las coordenadas cilíndricas.
+
+365
+00:24:37.670 --> 00:24:45.070
+Ojo, usamos la misma letra, pero son otras. Es decir, la derivada de phi respecto de z es cero.
+
+366
+00:24:46.790 --> 00:24:49.130
+¿De acuerdo?
+
+367
+00:24:49.130 --> 00:24:52.570
+entonces un ejemplo de problema de este tipo
+
+368
+00:24:52.570 --> 00:24:56.530
+el dibujo es igual
+
+369
+00:24:56.530 --> 00:24:58.630
+que el que hicimos pero el problema es diferente
+
+370
+00:24:58.630 --> 00:25:00.510
+es nuevamente un campo eléctrico
+
+371
+00:25:00.510 --> 00:25:01.510
+uniforme
+
+372
+00:25:01.510 --> 00:25:04.330
+es un campo eléctrico uniforme
+
+373
+00:25:04.330 --> 00:25:06.570
+y en el campo
+
+374
+00:25:06.570 --> 00:25:07.750
+eléctrico uniforme pongo
+
+375
+00:25:07.750 --> 00:25:10.270
+perpendicular al plano del
+
+376
+00:25:10.270 --> 00:25:12.810
+pizarrón un cilindro
+
+377
+00:25:12.810 --> 00:25:14.370
+el dibujo es igual pero es un
+
+378
+00:25:14.370 --> 00:25:16.650
+objeto completamente distinto, es un cilindro
+
+379
+00:25:16.650 --> 00:25:18.150
+cilindro
+
+380
+00:25:18.150 --> 00:25:20.760
+conductor
+
+381
+00:25:20.760 --> 00:25:24.740
+para simplificar pongamos descargado
+
+382
+00:25:24.740 --> 00:25:29.370
+de radio A
+
+383
+00:25:29.370 --> 00:25:30.850
+fíjense que el dibujo es igual
+
+384
+00:25:30.850 --> 00:25:32.110
+pero es un problema distinto
+
+385
+00:25:32.110 --> 00:25:33.990
+es un cilindro que viene así
+
+386
+00:25:33.990 --> 00:25:36.530
+lo tomamos muy largo
+
+387
+00:25:36.530 --> 00:25:37.690
+muy largo
+
+388
+00:25:37.690 --> 00:25:41.190
+si no fuera muy largo
+
+389
+00:25:41.190 --> 00:25:43.710
+entonces el potencial dependería de Z
+
+390
+00:25:43.710 --> 00:25:45.790
+Z es la dirección perpendicular al pizarrón
+
+391
+00:25:45.790 --> 00:25:47.990
+pero si es muy largo es un problema
+
+392
+00:25:47.990 --> 00:25:49.330
+que no depende de Z
+
+393
+00:25:49.330 --> 00:25:50.250
+es un problema plano
+
+394
+00:25:50.250 --> 00:25:52.230
+¿de acuerdo?
+
+395
+00:25:52.230 --> 00:25:57.090
+Este problema nuevamente lo podemos tratar en coordenadas cilíndricas de manera muy natural
+
+396
+00:25:57.090 --> 00:26:02.770
+Y el potencial va a depender solo de r, de la distancia y del ángulo con el horizonte
+
+397
+00:26:02.770 --> 00:26:10.220
+Bueno, y entonces la idea es aplicar el método de separación de variables
+
+398
+00:26:10.220 --> 00:26:12.980
+La idea es la misma que aplicamos en la clase pasada
+
+399
+00:26:12.980 --> 00:26:15.840
+Pero ahora para las coordenadas cilíndricas
+
+400
+00:26:15.840 --> 00:26:28.220
+Entonces primero recordemos como es el Laplaciano en cilíndricas
+
+401
+00:26:28.220 --> 00:26:36.410
+El laplaciano en cilíndricas.
+
+402
+00:26:40.340 --> 00:26:47.520
+Dijimos que el laplaciano de phi en cilíndricas es igual a...
+
+403
+00:26:47.520 --> 00:26:48.800
+Esperen que no me acuerdo de memoria.
+
+404
+00:26:48.980 --> 00:26:49.900
+1 sobre r.
+
+405
+00:26:50.140 --> 00:26:51.380
+Vamos a escribirlo entero.
+
+406
+00:26:52.460 --> 00:26:53.780
+Sin pérdida de generalidad.
+
+407
+00:26:58.880 --> 00:27:00.220
+Es 1 sobre r.
+
+408
+00:27:03.240 --> 00:27:04.560
+1 sobre r.
+
+409
+00:27:05.200 --> 00:27:07.240
+Derivada con respecto de r.
+
+410
+00:27:08.380 --> 00:27:11.440
+De r derivada de phi respecto de r.
+
+411
+00:27:11.440 --> 00:27:19.700
+Más 1 sobre r al cuadrado por la derivada segunda de phi respecto de theta al cuadrado
+
+412
+00:27:19.700 --> 00:27:23.900
+Más la derivada segunda de phi respecto de z al cuadrado
+
+413
+00:27:23.900 --> 00:27:27.080
+Este es el Laplaciano en general
+
+414
+00:27:27.080 --> 00:27:33.460
+En nuestro caso va a ser más simple porque el último término es 0 porque no depende de z
+
+415
+00:27:33.460 --> 00:27:36.940
+Tomamos casos en que no dependa de z
+
+416
+00:27:36.940 --> 00:28:06.160
+Entonces vamos a buscar una base de soluciones, buscamos una base de soluciones, no es la solución más general, es una base de soluciones, insisto, con la forma phi de r y de teta, será una función que le llamaré y de r y s de teta.
+
+417
+00:28:06.160 --> 00:28:09.320
+no hay dependencia en Z
+
+418
+00:28:09.320 --> 00:28:10.460
+porque hicimos
+
+419
+00:28:10.460 --> 00:28:12.840
+no estamos restringiendo un problema con dos variables
+
+420
+00:28:12.840 --> 00:28:13.660
+para no hacerlo más complicado
+
+421
+00:28:13.660 --> 00:28:15.920
+se pueden tratar con el mismo método
+
+422
+00:28:15.920 --> 00:28:17.440
+el tema cuando también depende de Z
+
+423
+00:28:17.440 --> 00:28:19.380
+pero no lo voy a hacer para no agregar complejidad
+
+424
+00:28:19.380 --> 00:28:24.240
+entonces si busco una solución de esta forma
+
+425
+00:28:24.240 --> 00:28:26.520
+lo sustituyo en esto igual a 0
+
+426
+00:28:26.520 --> 00:28:28.420
+entonces la ecuación de Laplace
+
+427
+00:28:28.420 --> 00:28:34.250
+que es Laplaciano de phi
+
+428
+00:28:34.250 --> 00:28:35.170
+igual a 0
+
+429
+00:28:35.170 --> 00:28:39.430
+queda, fíjense
+
+430
+00:28:39.430 --> 00:28:42.930
+El primer término, lo único que depende de R es Y.
+
+431
+00:28:43.510 --> 00:28:45.510
+Entonces S sale para afuera de las derivadas.
+
+432
+00:28:45.670 --> 00:28:50.790
+Queda S de teta sobre R, derivada con respecto a R.
+
+433
+00:28:51.490 --> 00:28:55.550
+No, ahora son derivadas normales, porque ya las variables dependen de una sola variable.
+
+434
+00:28:55.670 --> 00:29:01.570
+Así que queda derivada con respecto a R de RY'.
+
+435
+00:29:01.570 --> 00:29:03.250
+¿Sí?
+
+436
+00:29:04.330 --> 00:29:07.470
+Más 1 sobre R al cuadrado.
+
+437
+00:29:07.470 --> 00:29:09.970
+Y sale para afuera
+
+438
+00:29:09.970 --> 00:29:12.270
+Porque la derivada es solo con respecto a teta
+
+439
+00:29:12.270 --> 00:29:14.250
+Derivada segunda de teta
+
+440
+00:29:14.250 --> 00:29:15.190
+Igual a cero
+
+441
+00:29:15.190 --> 00:29:20.010
+Utilicé
+
+442
+00:29:20.010 --> 00:29:23.350
+Que las derivadas solo golpean
+
+443
+00:29:23.350 --> 00:29:25.390
+En la función que depende de esa variable
+
+444
+00:29:25.390 --> 00:29:26.030
+Y no de la otra
+
+445
+00:29:26.030 --> 00:29:27.850
+Esto es una función de R
+
+446
+00:29:27.850 --> 00:29:31.930
+No de teta
+
+447
+00:29:31.930 --> 00:29:35.210
+Repito
+
+448
+00:29:35.210 --> 00:29:36.750
+No estoy buscando la solución más general
+
+449
+00:29:36.750 --> 00:29:39.050
+Estoy buscando una solución suficientemente general
+
+450
+00:29:39.050 --> 00:29:41.130
+como para armar una base
+
+451
+00:29:41.130 --> 00:29:43.510
+yo les dije, en general esto funciona
+
+452
+00:29:43.510 --> 00:29:44.730
+buscar productos
+
+453
+00:29:44.730 --> 00:29:47.210
+de funciones que dependen cada una
+
+454
+00:29:47.210 --> 00:29:48.050
+de una sola variable
+
+455
+00:29:48.050 --> 00:30:03.890
+bueno, y ahora hacemos
+
+456
+00:30:03.890 --> 00:30:06.510
+lo que propiamente se llama separar variables
+
+457
+00:30:06.510 --> 00:30:07.790
+que es escribir todo
+
+458
+00:30:07.790 --> 00:30:10.330
+de tal manera en que cada término
+
+459
+00:30:10.330 --> 00:30:12.150
+va a depender de una sola variable
+
+460
+00:30:12.150 --> 00:30:12.910
+entonces, ¿cómo hago?
+
+461
+00:30:13.630 --> 00:30:16.570
+bueno, la dependencia, puedo multiplicar
+
+462
+00:30:16.570 --> 00:30:17.350
+dividir acá
+
+463
+00:30:17.350 --> 00:30:19.410
+por Y sobre R
+
+464
+00:30:19.410 --> 00:30:21.910
+y también dividido sobre S
+
+465
+00:30:21.910 --> 00:30:32.290
+Entonces me queda. Sí, sí, cada función depende de una sola variable. En este caso es la derivada segunda respecto de teta.
+
+466
+00:30:33.210 --> 00:30:36.350
+Acá también, cuando puse prima, es la derivada con respecto a r.
+
+467
+00:30:39.840 --> 00:30:53.320
+Entonces me queda, fíjense, me queda r sobre y de r por la derivada con respecto a r de r y' de r,
+
+468
+00:30:53.320 --> 00:30:59.880
+más S segunda de teta
+
+469
+00:30:59.880 --> 00:31:01.540
+dividido S de teta
+
+470
+00:31:01.540 --> 00:31:03.820
+igual a cero.
+
+471
+00:31:08.930 --> 00:31:09.050
+¿Sí?
+
+472
+00:31:10.390 --> 00:31:12.250
+Despeje para poner de un lado
+
+473
+00:31:12.250 --> 00:31:17.550
+en un término lo que depende de teta
+
+474
+00:31:17.550 --> 00:31:19.650
+y en otro término lo que no depende de teta.
+
+475
+00:31:24.730 --> 00:31:25.290
+O si quieren,
+
+476
+00:31:25.770 --> 00:31:26.830
+puedo hacerlo de otra manera,
+
+477
+00:31:26.990 --> 00:31:29.230
+puedo escribir que esto es igual a menos esto.
+
+478
+00:31:30.290 --> 00:31:30.790
+Paso a parar.
+
+479
+00:31:32.710 --> 00:31:32.850
+¿Sí?
+
+480
+00:31:35.130 --> 00:31:35.370
+¿Sí?
+
+481
+00:31:36.250 --> 00:31:48.060
+despeje pregunta este término de que variable depende de ninguna no cayeron
+
+482
+00:31:48.060 --> 00:31:54.180
+en la trampa y éste tampoco porque éste a priori dependería de r pero como está
+
+483
+00:31:54.180 --> 00:31:57.080
+igual a una cosa que sólo depende de teta no puede depender ni de la una ni
+
+484
+00:31:57.080 --> 00:32:03.780
+de la otra como esto no depende de r esto no puede depender de r porque están
+
+485
+00:32:03.780 --> 00:32:10.020
+igualados. Así que cada uno de ellos es una constante, que llamaría K, que se llama
+
+486
+00:32:10.020 --> 00:32:21.770
+constante de separación. Nuevamente, haber separado lo que depende de R y de teta nos
+
+487
+00:32:21.770 --> 00:32:27.110
+asegura que hay una única constante. Y bueno, entonces ya tenemos a priori muchas soluciones
+
+488
+00:32:27.110 --> 00:32:35.310
+posibles, cada una dependiendo de K, y nuevamente ahora nos interesaremos en ver soluciones
+
+489
+00:32:35.310 --> 00:32:36.630
+que
+
+490
+00:32:36.630 --> 00:32:39.790
+cuáles son las soluciones
+
+491
+00:32:39.790 --> 00:32:41.890
+físicamente razonables y me voy a restringir
+
+492
+00:32:41.890 --> 00:32:43.770
+a una familia de soluciones en las cuales
+
+493
+00:32:43.770 --> 00:32:46.170
+teta puede variar entre 0 y 2pi
+
+494
+00:32:46.170 --> 00:32:47.130
+puede dar la vuelta entera
+
+495
+00:32:47.130 --> 00:32:50.030
+entonces nos vamos a restringir
+
+496
+00:32:50.030 --> 00:32:59.540
+a problemas
+
+497
+00:32:59.540 --> 00:33:03.850
+en que
+
+498
+00:33:03.850 --> 00:33:07.510
+teta recorre
+
+499
+00:33:07.510 --> 00:33:11.730
+0 a 2pi
+
+500
+00:33:11.730 --> 00:33:15.230
+en el práctico
+
+501
+00:33:15.230 --> 00:33:17.070
+tienen un ejemplo donde esto no es así
+
+502
+00:33:17.070 --> 00:33:19.270
+ojo
+
+503
+00:33:19.270 --> 00:33:25.340
+este problema que les voy a dibujar
+
+504
+00:33:25.340 --> 00:33:28.780
+donde, por ejemplo,
+
+505
+00:33:28.960 --> 00:33:30.200
+pongamos phi vale cero acá
+
+506
+00:33:30.200 --> 00:33:32.560
+y phi vale phi cero acá
+
+507
+00:33:32.560 --> 00:33:33.860
+tiene el origen acá
+
+508
+00:33:33.860 --> 00:33:35.200
+este es un problema
+
+509
+00:33:35.200 --> 00:33:38.320
+pongamos que acá tiene un ángulo alfa
+
+510
+00:33:38.320 --> 00:33:41.400
+este es un problema que aparece en el práctico
+
+511
+00:33:41.400 --> 00:33:44.160
+y este problema no está en esta familia
+
+512
+00:33:44.160 --> 00:33:45.100
+porque acá
+
+513
+00:33:45.100 --> 00:33:47.700
+teta varía solo entre cero y alfa
+
+514
+00:33:47.700 --> 00:33:51.260
+es un problema que se describe bien en simetría
+
+515
+00:33:51.260 --> 00:33:54.380
+Estos son dos planos, ¿verdad? Dos planos semi-infinitos.
+
+516
+00:33:54.900 --> 00:33:56.580
+Y quieren hallar phi acá en el medio.
+
+517
+00:33:57.460 --> 00:34:02.560
+Está claro que se escribe bien en simetrías, en coordenadas cilíndricas.
+
+518
+00:34:04.660 --> 00:34:09.760
+Acá adentro vale la plaza, pero no es cierto que el ángulo theta pueda variar entre 0 y 2pi,
+
+519
+00:34:09.900 --> 00:34:11.260
+que está en una región restringida.
+
+520
+00:34:11.520 --> 00:34:13.640
+Entonces lo que voy a hacer ahora no vale para este caso,
+
+521
+00:34:13.740 --> 00:34:17.160
+porque voy a buscar solo las soluciones donde theta pueda variar entre 0 y 2pi,
+
+522
+00:34:17.480 --> 00:34:18.780
+como en este ejemplo que tenemos acá.
+
+523
+00:34:18.780 --> 00:34:22.460
+cuando no vale eso
+
+524
+00:34:22.460 --> 00:34:24.680
+tienen que retomar el análisis y ver que pasa
+
+525
+00:34:24.680 --> 00:34:25.760
+porque van a tener más soluciones
+
+526
+00:34:25.760 --> 00:34:28.440
+que no corresponden a lo que yo voy a hacer
+
+527
+00:34:28.440 --> 00:34:30.520
+son soluciones distintas
+
+528
+00:34:30.520 --> 00:34:31.940
+porque voy a usar que puede
+
+529
+00:34:31.940 --> 00:34:33.540
+dar vuelta de 0 a 2
+
+530
+00:34:33.540 --> 00:34:40.970
+tiene que poder recorrer
+
+531
+00:34:40.970 --> 00:34:47.760
+no, no, no
+
+532
+00:34:47.760 --> 00:34:50.440
+tengo que autorizar todo el recorrido
+
+533
+00:34:50.440 --> 00:34:51.140
+de teta
+
+534
+00:34:51.140 --> 00:34:58.000
+claro, son condiciones de borde distintas
+
+535
+00:34:58.000 --> 00:34:59.720
+acá hay que poner condiciones de borde
+
+536
+00:34:59.720 --> 00:35:00.580
+distintas, lo que voy a hacer
+
+537
+00:35:00.580 --> 00:35:06.260
+La condición de borde que yo voy a imponer es que cuando doy la vuelta entera, vuelvo a lo mismo.
+
+538
+00:35:07.480 --> 00:35:10.620
+Pero acá no puedo imponer eso porque no puedo dar la vuelta entera.
+
+539
+00:35:10.800 --> 00:35:11.160
+¿Me explico?
+
+540
+00:35:11.420 --> 00:35:14.520
+Cuando no puedo dar la vuelta entera, hay que analizarlo aparte.
+
+541
+00:35:14.580 --> 00:35:14.960
+¿Me explico?
+
+542
+00:35:15.960 --> 00:35:19.460
+Entonces, si puedo dar la vuelta entera, ¿sí?
+
+543
+00:35:19.560 --> 00:35:22.580
+Entonces, ¿cómo tiene que ser una función periódica?
+
+544
+00:35:23.240 --> 00:35:25.140
+Porque cuando yo vuelvo, vuelvo al mismo punto de partida.
+
+545
+00:35:25.500 --> 00:35:29.420
+Quiere decir que la función S de teta es una función periódica.
+
+546
+00:35:29.760 --> 00:35:30.200
+¿Sí?
+
+547
+00:35:30.580 --> 00:35:32.440
+¿Periódica de qué periodo?
+
+548
+00:35:33.000 --> 00:35:34.020
+2pi.
+
+549
+00:35:35.120 --> 00:35:47.140
+Entonces, si puedo, si teta recorre todo el intervalo 0, 2pi,
+
+550
+00:35:48.560 --> 00:36:05.370
+entonces S de teta es una función periódica de periodo 2pi.
+
+551
+00:36:07.780 --> 00:36:08.240
+¿Bien?
+
+552
+00:36:09.720 --> 00:36:10.280
+¿De acuerdo?
+
+553
+00:36:16.480 --> 00:36:21.700
+Si teta no recorre todo el intervalo, entonces no tiene por qué ser una función periódica de periodo 2pi.
+
+554
+00:36:21.800 --> 00:36:23.380
+Ahí hay más soluciones posibles.
+
+555
+00:36:25.780 --> 00:36:27.680
+Pero voy a restringirme a este caso.
+
+556
+00:36:29.440 --> 00:36:31.160
+Los otros casos ustedes los pueden hacer.
+
+557
+00:36:31.420 --> 00:36:37.560
+Simplemente les estoy mostrando ejemplos de cómo proceder este programa, pero pueden hacerlo más genial.
+
+558
+00:36:38.060 --> 00:36:40.120
+Bueno, entonces resolvamos primero la ecuación angular.
+
+559
+00:36:40.120 --> 00:36:41.140
+ecuación angular
+
+560
+00:36:41.140 --> 00:36:49.910
+entonces la ecuación angular les queda
+
+561
+00:36:49.910 --> 00:36:51.950
+S segunda de teta
+
+562
+00:36:51.950 --> 00:36:55.090
+más K por S de teta
+
+563
+00:36:55.090 --> 00:36:58.260
+igual a cero
+
+564
+00:36:58.260 --> 00:37:00.330
+¿sí?
+
+565
+00:37:01.950 --> 00:37:03.290
+¿cómo son las soluciones?
+
+566
+00:37:03.510 --> 00:37:05.870
+esta ecuación es bien facilonga, ustedes la conocen bien
+
+567
+00:37:05.870 --> 00:37:07.070
+¿cómo son las soluciones?
+
+568
+00:37:15.450 --> 00:37:17.290
+bueno, entonces acá tengo dos versiones
+
+569
+00:37:17.290 --> 00:37:18.990
+cuando tengo esta ecuación según
+
+570
+00:37:18.990 --> 00:37:20.090
+como sea K
+
+571
+00:37:20.090 --> 00:37:23.590
+¿sí? esto puede ser o exponenciales
+
+572
+00:37:23.590 --> 00:37:25.230
+o funciones senos y cosenos
+
+573
+00:37:25.230 --> 00:37:29.610
+¿verdad? bueno, sí
+
+574
+00:37:29.610 --> 00:37:32.450
+una son exponenciales reales
+
+575
+00:37:32.450 --> 00:37:34.390
+y las otras son exponenciales
+
+576
+00:37:34.390 --> 00:37:35.290
+imaginarias puras
+
+577
+00:37:35.290 --> 00:37:40.330
+¿cuál de las dos familias me interesa?
+
+578
+00:37:40.430 --> 00:37:42.430
+¿las soluciones que son exponenciales reales
+
+579
+00:37:42.430 --> 00:37:44.310
+o las que son senos y cosenos?
+
+580
+00:37:45.570 --> 00:37:46.570
+senos y cosenos
+
+581
+00:37:46.570 --> 00:37:48.410
+porque yo lo que quiero no es la función
+
+582
+00:37:48.410 --> 00:37:49.070
+en general
+
+583
+00:37:49.070 --> 00:37:50.490
+si K
+
+584
+00:37:50.490 --> 00:37:53.170
+fuera negativo
+
+585
+00:37:53.170 --> 00:37:55.850
+si K fuera negativo
+
+586
+00:37:55.850 --> 00:37:58.150
+las soluciones serían exponenciales reales
+
+587
+00:37:58.150 --> 00:38:04.690
+Pero la combinación de exponenciales reales no me da una función periódica.
+
+588
+00:38:05.090 --> 00:38:06.630
+Así que esas no me sirven.
+
+589
+00:38:07.450 --> 00:38:09.970
+Solo me sirven las que sean periódicas.
+
+590
+00:38:10.570 --> 00:38:21.120
+Entonces, si K es negativo, las soluciones son exponenciales reales.
+
+591
+00:38:25.540 --> 00:38:27.100
+Entonces, no son periódicas.
+
+592
+00:38:32.770 --> 00:38:33.530
+Entonces, no nos sirve.
+
+593
+00:38:33.530 --> 00:38:37.510
+Entonces, concluimos que K tiene que ser mayor o igual a 0.
+
+594
+00:38:37.670 --> 00:38:38.290
+Primera cosa.
+
+595
+00:38:39.030 --> 00:38:42.310
+¿Sí? De las soluciones que nos interesan, k tiene que ser mayor o igual a cero.
+
+596
+00:38:42.790 --> 00:38:43.490
+Primera cosa.
+
+597
+00:38:44.150 --> 00:38:44.970
+Segunda cosa.
+
+598
+00:38:47.080 --> 00:38:55.860
+Bueno, entonces, si k es mayor o igual a cero, lo voy a escribir como k igual a lambda al cuadrado.
+
+599
+00:38:55.860 --> 00:39:01.320
+O mejor, lo voy a escribir como omega al cuadrado.
+
+600
+00:39:01.880 --> 00:39:02.820
+Que eso le suena a algo.
+
+601
+00:39:03.440 --> 00:39:04.900
+¿Sí? ¿De acuerdo?
+
+602
+00:39:05.880 --> 00:39:11.840
+Entonces la ecuación queda S segunda más omega al cuadrado S.
+
+603
+00:39:11.940 --> 00:39:14.320
+Igual a cero. Entonces, ¿cómo es la solución de esta ecuación?
+
+604
+00:39:18.560 --> 00:39:28.800
+Entonces, S de teta se escribe como A coseno de omega teta más B seno de omega teta.
+
+605
+00:39:29.100 --> 00:39:32.220
+Esto ustedes lo saben bien, porque es la ecuación del resorte.
+
+606
+00:39:33.240 --> 00:39:34.760
+La han visto muchas veces.
+
+607
+00:39:36.300 --> 00:39:40.680
+Entonces, una función, ahora son periódicas, pero queremos que sean periódicas, pero no de cualquier periodo.
+
+608
+00:39:40.760 --> 00:39:42.500
+¿De qué periodo? Dos pi.
+
+609
+00:39:42.500 --> 00:39:44.320
+Entonces
+
+610
+00:39:44.320 --> 00:39:47.240
+Omega
+
+611
+00:39:47.240 --> 00:39:50.140
+Entonces para que el periodo sea 2pi
+
+612
+00:39:50.140 --> 00:39:59.120
+No
+
+613
+00:39:59.120 --> 00:40:02.590
+Omega igual a
+
+614
+00:40:02.590 --> 00:40:05.820
+1 es una solución
+
+615
+00:40:05.820 --> 00:40:06.740
+Si yo pongo 1
+
+616
+00:40:06.740 --> 00:40:11.150
+Claro, un entero
+
+617
+00:40:11.150 --> 00:40:12.570
+Entonces omega es n
+
+618
+00:40:12.570 --> 00:40:15.330
+Es igual a n con entero
+
+619
+00:40:15.330 --> 00:40:17.510
+Cualquier n entero
+
+620
+00:40:17.510 --> 00:40:19.610
+Nos da una solución
+
+621
+00:40:19.610 --> 00:40:21.510
+Entonces concluimos
+
+622
+00:40:21.510 --> 00:40:24.310
+Que las únicas soluciones respetables son
+
+623
+00:40:24.310 --> 00:40:26.210
+Con k igual a n al cuadrado
+
+624
+00:40:26.210 --> 00:40:27.070
+Con n entero
+
+625
+00:40:27.070 --> 00:40:29.030
+n entero
+
+626
+00:40:29.030 --> 00:40:31.670
+todas esas nos van a dar
+
+627
+00:40:31.670 --> 00:40:34.010
+funciones periódicas de periodo 2pi
+
+628
+00:40:34.010 --> 00:40:35.670
+¿si? y son las únicas
+
+629
+00:40:35.670 --> 00:40:37.930
+que nos sirven porque dijimos que podamos dar la vuelta entera
+
+630
+00:40:37.930 --> 00:40:38.850
+¿si?
+
+631
+00:40:41.560 --> 00:40:43.100
+bueno, bárbaro
+
+632
+00:40:43.100 --> 00:40:45.640
+esto en algún sentido fue más fácil que lo que vimos
+
+633
+00:40:45.640 --> 00:40:47.980
+para los polinomios de Yandre
+
+634
+00:40:47.980 --> 00:40:48.520
+y todo eso
+
+635
+00:40:48.520 --> 00:40:51.700
+entonces volvamos al caso radial
+
+636
+00:40:51.700 --> 00:40:53.000
+ecuación radial
+
+637
+00:40:53.000 --> 00:41:07.720
+ecuación radial
+
+638
+00:41:07.720 --> 00:41:16.740
+entonces ahora retomo la ecuación radial pero ahora usando
+
+639
+00:41:16.740 --> 00:41:18.520
+que K vale N al cuadrado
+
+640
+00:41:18.520 --> 00:41:19.460
+la ecuación me queda
+
+641
+00:41:19.460 --> 00:41:22.460
+R derivada con respecto de R
+
+642
+00:41:22.460 --> 00:41:24.020
+de R
+
+643
+00:41:24.020 --> 00:41:25.200
+Y de R
+
+644
+00:41:25.200 --> 00:41:33.430
+es igual a
+
+645
+00:41:33.430 --> 00:41:35.810
+N al cuadrado por Y de R
+
+646
+00:41:35.810 --> 00:41:37.450
+esta es la ecuación que tenemos
+
+647
+00:41:37.450 --> 00:41:39.010
+¿si?
+
+648
+00:41:40.490 --> 00:41:41.630
+esta es una ecuación
+
+649
+00:41:41.630 --> 00:41:43.670
+diferencial lineal de segundo orden
+
+650
+00:41:43.670 --> 00:41:46.050
+pero nuevamente los coeficientes
+
+651
+00:41:46.050 --> 00:41:48.910
+no son independientes de R
+
+652
+00:41:48.910 --> 00:41:50.490
+entonces ejercicio
+
+653
+00:41:50.490 --> 00:41:53.940
+resolverla
+
+654
+00:41:53.940 --> 00:42:13.510
+Y les doy una pista, como la vez pasada. Resolverla usando cambio de variables v igual a logaritmo de r.
+
+655
+00:42:15.670 --> 00:42:27.780
+Si usan esa variable, ¿sí? Ah, perdón, es y' sí, sí, gracias. Me morfé un''. Gracias.
+
+656
+00:42:28.780 --> 00:42:33.140
+Está ya el' que quedó disimulado. Gracias.
+
+657
+00:42:34.880 --> 00:42:42.460
+Esa ecuación se puede resolver, en el caso general, y el resultado va a ser así.
+
+658
+00:42:43.200 --> 00:42:53.700
+Entonces, si n es mayor o igual a 1, les queda que y de r es una combinación lineal de,
+
+659
+00:42:56.220 --> 00:43:02.680
+llamémosle una constante a por r a la menos n, más otra constante b por r a la n.
+
+660
+00:43:02.680 --> 00:43:11.820
+el caso
+
+661
+00:43:11.820 --> 00:43:14.560
+si n igual a 0 es el otro caso
+
+662
+00:43:14.560 --> 00:43:17.220
+que no hemos descartado
+
+663
+00:43:17.220 --> 00:43:21.080
+fíjense que el caso
+
+664
+00:43:21.080 --> 00:43:22.660
+n igual a 0 acá nos daba
+
+665
+00:43:22.660 --> 00:43:24.360
+también nos da una solución
+
+666
+00:43:24.360 --> 00:43:26.600
+en lugar de 2 nos da una sola
+
+667
+00:43:26.600 --> 00:43:27.580
+que es la constante
+
+668
+00:43:27.580 --> 00:43:30.800
+si yo pongo omega igual a 0
+
+669
+00:43:30.800 --> 00:43:31.680
+me queda una constante
+
+670
+00:43:31.680 --> 00:43:33.180
+esto me da 0 y esto me da una constante
+
+671
+00:43:33.180 --> 00:43:34.120
+tenemos otra posibilidad
+
+672
+00:43:34.120 --> 00:43:37.960
+entonces si n igual a 0
+
+673
+00:43:37.960 --> 00:43:45.060
+entonces fíjense nos queda la ecuación derivada con respecto a R de RY' igual a 0
+
+674
+00:43:45.060 --> 00:43:49.740
+entonces RY' es una constante llamémosle C
+
+675
+00:43:49.740 --> 00:44:00.720
+entonces Y' es C sobre R y entonces Y es igual a C logaritmo de R más D
+
+676
+00:44:00.720 --> 00:44:06.820
+entonces la solución en el caso en igual a 0 es la combinación de un logaritmo con una constante
+
+677
+00:44:06.820 --> 00:44:11.720
+yo solo conozco los logaritmos neperianos
+
+678
+00:44:11.720 --> 00:44:13.400
+todos los otros sé que existen
+
+679
+00:44:13.400 --> 00:44:15.060
+pero no los uso
+
+680
+00:44:15.060 --> 00:44:17.260
+en realidad si los conozco
+
+681
+00:44:17.260 --> 00:44:18.860
+pero he dado cuenta que no existen
+
+682
+00:44:18.860 --> 00:44:20.400
+porque son para problema
+
+683
+00:44:20.400 --> 00:44:23.000
+todos mis logaritmos son neperianos
+
+684
+00:44:23.000 --> 00:44:27.540
+así que tenemos una base de soluciones
+
+685
+00:44:27.540 --> 00:44:40.060
+y podemos concluir
+
+686
+00:44:40.060 --> 00:44:41.780
+entonces fíjense lo siguiente
+
+687
+00:44:41.780 --> 00:44:43.280
+entonces
+
+688
+00:44:43.280 --> 00:44:45.640
+fi de r y de teta
+
+689
+00:44:45.640 --> 00:44:47.360
+se escribirá como combinación lineal
+
+690
+00:44:47.360 --> 00:44:48.320
+de elementos de la base
+
+691
+00:44:48.320 --> 00:44:51.540
+entonces tenemos primero esto que está acá
+
+692
+00:44:51.540 --> 00:44:54.180
+esto multiplicado por una constante pero no agrega nada
+
+693
+00:44:54.180 --> 00:44:55.100
+porque ya puse constante
+
+694
+00:44:55.100 --> 00:44:59.720
+entonces tengo C logaritmo de R
+
+695
+00:44:59.720 --> 00:45:01.400
+más D
+
+696
+00:45:01.400 --> 00:45:04.460
+una constante siempre solución
+
+697
+00:45:04.460 --> 00:45:08.600
+y después tengo suma desde N igual a 1 hasta infinito
+
+698
+00:45:08.600 --> 00:45:17.700
+de A sub N por R a la N
+
+699
+00:45:17.700 --> 00:45:23.480
+más b sub n por r a la menos n
+
+700
+00:45:23.480 --> 00:45:30.540
+multiplicado por a chica sub n coseno de n teta
+
+701
+00:45:30.540 --> 00:45:36.400
+más b sub n seno de n teta.
+
+702
+00:45:38.930 --> 00:45:40.830
+Hace infinita, pero...
+
+703
+00:45:40.830 --> 00:45:44.350
+Acá hay un listo de escritura que dice un poco una redundancia,
+
+704
+00:45:44.350 --> 00:45:48.230
+porque está claro que no tengo cuatro coeficientes independientes acá,
+
+705
+00:45:48.230 --> 00:45:53.150
+sino solo tres, porque yo podría agarrar una constante común acá y absorberla acá.
+
+706
+00:45:54.330 --> 00:45:59.610
+Si a sub n, por ejemplo, fuera distinto de cero, lo puedo meter en estas dos constantes.
+
+707
+00:46:01.170 --> 00:46:02.330
+Entonces hay un poco una redundancia.
+
+708
+00:46:02.450 --> 00:46:05.670
+Está escrito de una manera que sobra un poco de constante, pero no importa.
+
+709
+00:46:06.490 --> 00:46:07.530
+El que puede más puede menos.
+
+710
+00:46:07.830 --> 00:46:11.330
+Pueden escribirlo así y después algunas constantes son las que dan los productos.
+
+711
+00:46:11.330 --> 00:46:25.940
+Entonces esta es la misma idea, es el mismo tipo de cosa que hicimos en el caso de simetría asimutal con coordenadas esféricas
+
+712
+00:46:25.940 --> 00:46:35.920
+Y les dejo como ejercicio aplicar todo lo mismo que hicimos la vez pasada para el problema este que les mencioné hace un rato
+
+713
+00:46:35.920 --> 00:46:53.420
+del campo eléctrico uniforme, con un cilindro conductor cilíndrico descargado muy largo.
+
+714
+00:46:56.240 --> 00:46:57.220
+Pongamos de radio A.
+
+715
+00:46:58.520 --> 00:46:59.480
+Entonces, ¿qué hacen?
+
+716
+00:47:00.020 --> 00:47:04.820
+Adentro del cilindro es una constante, afuera imponen condiciones de borde
+
+717
+00:47:04.820 --> 00:47:09.680
+y sustituyen la solución general y van determinando todos los coeficientes.
+
+718
+00:47:11.360 --> 00:47:15.240
+Ese ejercicio está en el práctico, así que no se van a escapar.
+
+719
+00:47:15.780 --> 00:47:20.580
+Más allá de las cuentas
+
+720
+00:47:20.580 --> 00:47:21.940
+¿Se entendió el concepto?
+
+721
+00:47:23.040 --> 00:47:25.540
+La idea es hallar una base de soluciones
+
+722
+00:47:25.540 --> 00:47:26.920
+¿Cómo hago?
+
+723
+00:47:27.320 --> 00:47:28.860
+Busco soluciones que sean producto
+
+724
+00:47:28.860 --> 00:47:30.320
+De dos funciones
+
+725
+00:47:30.320 --> 00:47:32.540
+Cada una dependiendo de solo una variable
+
+726
+00:47:32.540 --> 00:47:36.020
+Y luego tengo ecuaciones diferenciales ordinarias
+
+727
+00:47:36.020 --> 00:47:38.380
+Y me remango y las resuelvo
+
+728
+00:47:38.380 --> 00:47:40.160
+En este caso eran bastante fáciles
+
+729
+00:47:40.160 --> 00:47:41.500
+Y las resuelvo
+
+730
+00:47:41.500 --> 00:47:46.180
+¿Preguntas?
+
+731
+00:47:47.560 --> 00:47:47.760
+¿No?
+
+732
+00:47:48.260 --> 00:47:50.570
+¿Cómo?
+
+733
+00:47:56.370 --> 00:47:56.750
+Claro
+
+734
+00:47:56.750 --> 00:48:03.530
+Bueno, no les spoileo la solución
+
+735
+00:48:03.530 --> 00:48:04.590
+Piénsenle un poco
+
+736
+00:48:04.590 --> 00:48:07.190
+Eso va a aparecer ahí
+
+737
+00:48:07.190 --> 00:48:12.130
+Fíjense que acá es un poquito más delicado
+
+738
+00:48:12.130 --> 00:48:12.950
+Que en el caso anterior
+
+739
+00:48:12.950 --> 00:48:15.150
+Porque esta distribución de carga
+
+740
+00:48:15.150 --> 00:48:18.270
+No está acotada en el espacio
+
+741
+00:48:18.270 --> 00:48:19.970
+Porque está infinitamente alargada
+
+742
+00:48:19.970 --> 00:48:22.190
+Entonces no pueden aplicar
+
+743
+00:48:22.190 --> 00:48:23.290
+El desarrollo multipolar
+
+744
+00:48:23.290 --> 00:48:25.650
+No pueden aplicar así directo
+
+745
+00:48:25.650 --> 00:48:26.690
+El desarrollo multipolar
+
+746
+00:48:26.690 --> 00:48:32.350
+porque el desalto multipolar es para distribuciones que están en una región finita.
+
+747
+00:48:32.650 --> 00:48:34.390
+Y esta vez están en una región infinita.
+
+748
+00:48:35.090 --> 00:48:36.290
+Entonces es un poco diferente.
+
+749
+00:48:36.890 --> 00:48:40.310
+Al final todo funciona igual, pero hay que pensar un poquito más.
+
+750
+00:48:47.120 --> 00:48:51.540
+Claro, podés estar muy lejos respecto al radio, pero no respecto a la otra dimensión.
+
+751
+00:48:52.380 --> 00:48:55.460
+Entonces ahí, bueno, al final funciona, pero hay que pensarlo un poco más.
+
+752
+00:48:59.440 --> 00:48:59.880
+¿Preguntas?
+
+753
+00:49:02.720 --> 00:49:04.760
+Bueno, yo les enseñé...
+
+754
+00:49:04.760 --> 00:49:11.000
+¿Cómo, perdón?
+
+755
+00:49:11.000 --> 00:49:18.780
+claro, en cada término
+
+756
+00:49:18.780 --> 00:49:20.680
+tengo combinaciones lineales
+
+757
+00:49:20.680 --> 00:49:22.420
+de 2 y combinaciones lineales de 2
+
+758
+00:49:22.420 --> 00:49:24.000
+para cada n
+
+759
+00:49:24.000 --> 00:49:26.680
+tengo, pero yo les comentaba que en realidad
+
+760
+00:49:26.680 --> 00:49:28.960
+no hay 4 coeficientes, son solo 3 independientes
+
+761
+00:49:28.960 --> 00:49:30.600
+porque si este fuera distinto de 0
+
+762
+00:49:30.600 --> 00:49:31.740
+lo puedo agrupar con esto
+
+763
+00:49:31.740 --> 00:49:38.490
+preguntas
+
+764
+00:49:38.490 --> 00:49:42.090
+si no voy a retomar
+
+765
+00:49:42.090 --> 00:49:43.830
+un concepto que les dije hace un par
+
+766
+00:49:43.830 --> 00:49:45.330
+de clases, que es que
+
+767
+00:49:45.330 --> 00:49:47.250
+para resolver la ecuación de Laplace
+
+768
+00:49:47.250 --> 00:49:48.370
+como tenemos el teorema
+
+769
+00:49:48.370 --> 00:49:52.150
+de unicidad, todos los golpes están permitidos.
+
+770
+00:49:52.710 --> 00:49:58.230
+Entonces, mientras más golpes sepamos, si sabemos el uppercut o no sé qué,
+
+771
+00:49:58.310 --> 00:50:02.730
+distintas maneras de boxear, le podemos pegar más duro a la ecuación.
+
+772
+00:50:03.210 --> 00:50:09.550
+Entonces, yo ahora les enseñé en la clase del martes y la de hoy, algunos métodos.
+
+773
+00:50:09.770 --> 00:50:12.970
+Ahora vamos a seguir con otros métodos, porque mientras más métodos tengan, mejor.
+
+774
+00:50:12.970 --> 00:50:18.870
+Entonces, vamos a hablar de un método que se llama el método de las imágenes.
+
+775
+00:50:46.150 --> 00:50:51.970
+Método de las imágenes.
+
+776
+00:50:56.530 --> 00:51:02.050
+Entonces, puedo introducir ese método de las imágenes de una manera conceptual, teórica, yo qué sé.
+
+777
+00:51:02.490 --> 00:51:05.550
+Voy a hacerlo de manera más simple.
+
+778
+00:51:06.130 --> 00:51:07.250
+Vamos a empezar con un ejemplo.
+
+779
+00:51:14.050 --> 00:51:17.530
+Suponga que ustedes tienen un plano acá, conductor.
+
+780
+00:51:17.530 --> 00:51:33.870
+plano conductor. Pongámoslo infinito para simplificar, muy grande. Y acá a una distancia
+
+781
+00:51:33.870 --> 00:51:49.130
+¿qué letra usé? Una distancia D, ubicó una carga Q. ¿Y qué hay del otro plano, del otro lado del espejo?
+
+782
+00:51:49.130 --> 00:51:55.690
+Porque, a ver, un plano conductor, una manera de llamarle, es un espejo.
+
+783
+00:51:55.790 --> 00:51:59.090
+Porque la mayor parte, muchos espejos se construyen así, con un plano conductor.
+
+784
+00:52:00.730 --> 00:52:05.890
+Entonces, pensemos en el plano conductor como un espejo que es lo que es.
+
+785
+00:52:06.850 --> 00:52:08.850
+¿Qué hay del otro lado del espejo?
+
+786
+00:52:09.610 --> 00:52:12.490
+Vayan a preguntarle a Lewis Carroll.
+
+787
+00:52:13.210 --> 00:52:16.150
+Lean Alicia al otro lado del espejo.
+
+788
+00:52:17.130 --> 00:52:21.130
+Pero en nuestro problema, vamos a decir, no hay nada del otro lado del espejo.
+
+789
+00:52:21.910 --> 00:52:31.130
+Quiero resolver la plaza de este lado.
+
+790
+00:52:33.900 --> 00:52:36.120
+Lo que pasa del otro lado no me interesa.
+
+791
+00:52:37.280 --> 00:52:40.200
+Así que no estoy buscando soluciones de la plaza en todos lados.
+
+792
+00:52:40.200 --> 00:52:45.780
+Estoy buscando soluciones de la plaza del espejo para acá.
+
+793
+00:52:47.360 --> 00:52:47.880
+¿Bien?
+
+794
+00:52:50.950 --> 00:53:05.220
+como está claro que si yo pongo la carga acá se me va a polarizar este espejo se
+
+795
+00:53:05.220 --> 00:53:10.440
+van a distribuir las caras en el espejo porque es un conductor bien entonces
+
+796
+00:53:10.440 --> 00:53:24.960
+cómo son las condiciones de borde a ver cómo va a ser el potencial a lo largo a
+
+797
+00:53:24.960 --> 00:53:31.900
+lo largo del plano conductor el potencial constante porque es un
+
+798
+00:53:31.900 --> 00:53:36.980
+conductor los conductores estamos mirando problemas electrostáticos los
+
+799
+00:53:36.980 --> 00:53:39.700
+conductores en situaciones electrostáticos tienen un potencial
+
+800
+00:53:39.700 --> 00:53:44.360
+electrostático constante que son equipotenciales bien así que este es un
+
+801
+00:53:44.360 --> 00:53:49.800
+equipotencial valor queremos hallar una solución que cumpla
+
+802
+00:53:49.800 --> 00:53:54.120
+que esto es un equipotencial y después necesitamos cosas del tipo de que vaya a
+
+803
+00:53:54.120 --> 00:53:59.380
+cero en el infinito porque tenemos una carga ahí localizada
+
+804
+00:53:59.380 --> 00:54:12.970
+a ver por qué perfecto podemos matar una mosca con un cañón vamos a decir está yo
+
+805
+00:54:12.970 --> 00:54:20.090
+Yo sé resolver este problema. Es un problema que puedo resolver con simetría asimutal, ¿verdad?
+
+806
+00:54:21.470 --> 00:54:27.810
+Pero tenés la serie infinita y además es complicado porque tenés un punto singular donde no vale la plaza.
+
+807
+00:54:28.530 --> 00:54:33.070
+Entonces vas a tener que resolver en esta región para acá, en esta región para acá, fitear y fitear acá.
+
+808
+00:54:33.610 --> 00:54:38.590
+Es una pesadilla. Se puede hacer, se puede hacer. Es muy difícil, pero hay una solución mucho más fácil.
+
+809
+00:54:38.590 --> 00:54:46.140
+Repito, esto es un espejo
+
+810
+00:54:46.140 --> 00:54:47.960
+Si yo me paro acá
+
+811
+00:54:47.960 --> 00:54:51.180
+Yo estoy parado acá
+
+812
+00:54:51.180 --> 00:54:52.960
+Y miro el problema, ¿qué voy a ver?
+
+813
+00:54:54.990 --> 00:54:55.970
+¿Cuántas cargas voy a ver?
+
+814
+00:54:56.070 --> 00:54:57.370
+Si yo estoy mirando el problema
+
+815
+00:54:57.370 --> 00:54:59.910
+Dos cargas, ¿dónde está la otra carga?
+
+816
+00:55:03.020 --> 00:55:04.300
+Al otro lado del espejo
+
+817
+00:55:04.300 --> 00:55:06.640
+Yo estoy mirando un espejo y una carga
+
+818
+00:55:06.640 --> 00:55:08.460
+Entonces, la solución del problema
+
+819
+00:55:08.460 --> 00:55:10.640
+Salvo que yo mire muy bien y me dé cuenta
+
+820
+00:55:10.640 --> 00:55:11.780
+Ah, no, esto es un espejo
+
+821
+00:55:11.780 --> 00:55:14.780
+Va a ser la misma, tiene que ser la misma
+
+822
+00:55:14.780 --> 00:55:17.220
+Solución que el problema de dos cargas
+
+823
+00:55:17.220 --> 00:55:24.440
+Una carga acá y una carga ficticia, porque no es que realmente no se crea lo que dice el espejo.
+
+824
+00:55:24.500 --> 00:55:26.580
+El espejo es solo una imagen, de ahí el nombre.
+
+825
+00:55:28.080 --> 00:55:35.440
+El espejo me va a decir que de este otro lado tengo una carga Q', ¿sí?
+
+826
+00:55:35.860 --> 00:55:39.220
+Alguna carga Q' a misma distancia acá de...
+
+827
+00:55:39.800 --> 00:55:41.580
+Y que esto tiene que ser solución del problema.
+
+828
+00:55:41.580 --> 00:55:52.500
+Es decir, yo podría reemplazar el espejo por todo un espacio de este lado, y la solución, obviamente de este lado, me va a dar cualquier cosa,
+
+829
+00:55:52.880 --> 00:55:57.360
+pero la solución de este lado tiene que ser la misma, porque si yo miro el problema es como que yo tuviera una carga con un espejo.
+
+830
+00:55:57.800 --> 00:55:59.380
+Entonces lo que voy a ver son dos cargas.
+
+831
+00:56:00.680 --> 00:56:04.820
+Entonces lo que quiero imponer es que en este, llamémosle a esta dirección X,
+
+832
+00:56:04.820 --> 00:56:08.120
+quiero imponer
+
+833
+00:56:08.120 --> 00:56:10.420
+que la carga, que en el plano
+
+834
+00:56:10.420 --> 00:56:12.560
+este, el potencial
+
+835
+00:56:12.560 --> 00:56:13.360
+sea constante
+
+836
+00:56:13.360 --> 00:56:16.800
+con dos cargas
+
+837
+00:56:16.800 --> 00:56:18.760
+y si hice eso
+
+838
+00:56:18.760 --> 00:56:20.460
+gané, porque cumplí las condiciones de borde
+
+839
+00:56:20.460 --> 00:56:22.100
+entonces voy a escribir que phi
+
+840
+00:56:22.100 --> 00:56:24.560
+en x, y, z
+
+841
+00:56:24.560 --> 00:56:26.320
+lo escribo en cartesiana, pongamos
+
+842
+00:56:26.320 --> 00:56:27.720
+va a ser igual a q
+
+843
+00:56:27.720 --> 00:56:30.400
+sobre 4pi epsilon 0
+
+844
+00:56:30.400 --> 00:56:32.360
+vamos a poner
+
+845
+00:56:32.360 --> 00:56:33.860
+1 sobre 4pi epsilon 0
+
+846
+00:56:33.860 --> 00:56:38.580
+Q y acá a un punto dado le voy a poner coordenadas X, Y y Z
+
+847
+00:56:38.580 --> 00:56:40.700
+Este tiene coordenadas D, 0, 0
+
+848
+00:56:40.700 --> 00:56:46.840
+Entonces voy a hacer Q sobre X menos D al cuadrado
+
+849
+00:56:46.840 --> 00:56:50.020
+Más Y al cuadrado más Z al cuadrado
+
+850
+00:56:50.020 --> 00:56:54.160
+Que es la distancia que tengo de un punto P acá a este punto que está acá
+
+851
+00:56:54.160 --> 00:56:59.380
+Esta distancia que está acá es raíz cuadrada de X menos D al cuadrado
+
+852
+00:56:59.380 --> 00:57:02.420
+Más Y al cuadrado más Z al cuadrado
+
+853
+00:57:02.420 --> 00:57:07.340
+y después tendré más Q' que por ahora no sé cuánto vale
+
+854
+00:57:07.340 --> 00:57:10.540
+por la distancia a ese otro punto
+
+855
+00:57:10.540 --> 00:57:13.480
+pero si sabemos como es un espejo que está a la distancia
+
+856
+00:57:13.480 --> 00:57:15.420
+está del otro lado, así que queda
+
+857
+00:57:15.420 --> 00:57:19.400
+X más D al cuadrado
+
+858
+00:57:19.400 --> 00:57:21.440
+más Y al cuadrado más Z al cuadrado
+
+859
+00:57:21.440 --> 00:57:26.020
+así que si el plano conductor hace lo que tiene que hacer
+
+860
+00:57:26.020 --> 00:57:27.540
+que es comportarse como un espejo
+
+861
+00:57:27.540 --> 00:57:32.300
+entonces tengo que poder satisfacer las condiciones de borde
+
+862
+00:57:32.300 --> 00:57:36.560
+imponiendo que en x igual a 0 esto sea una constante.
+
+863
+00:57:40.480 --> 00:57:41.000
+¿De acuerdo?
+
+864
+00:57:41.480 --> 00:57:43.640
+Bueno, evaluemos en x igual a 0.
+
+865
+00:57:59.620 --> 00:58:04.180
+En x igual a 0, como el plano es conductor,
+
+866
+00:58:12.890 --> 00:58:18.370
+phi de x igual a 0, y, z es constante.
+
+867
+00:58:21.780 --> 00:58:27.400
+Entonces evaluemos phi en x igual a 0, y, z.
+
+868
+00:58:27.400 --> 00:58:32.450
+lo evaluamos en x igual a 0 y nos queda
+
+869
+00:58:32.450 --> 00:58:34.690
+1 sobre 4 pi epsilon 0
+
+870
+00:58:34.690 --> 00:58:39.240
+q sobre raíz cuadrada
+
+871
+00:58:39.240 --> 00:58:41.080
+de d al cuadrado
+
+872
+00:58:41.080 --> 00:58:42.180
+más y al cuadrado
+
+873
+00:58:42.180 --> 00:58:43.580
+más z al cuadrado
+
+874
+00:58:43.580 --> 00:58:44.820
+más q prima
+
+875
+00:58:44.820 --> 00:58:48.500
+dividido raíz cuadrada de d al cuadrado
+
+876
+00:58:48.500 --> 00:58:49.840
+más y al cuadrado
+
+877
+00:58:49.840 --> 00:58:50.840
+más z al cuadrado
+
+878
+00:58:50.840 --> 00:58:53.240
+y esto tiene que ser igual a
+
+879
+00:58:53.240 --> 00:58:54.540
+una constante
+
+880
+00:58:54.540 --> 00:59:01.120
+entonces ¿cuánto tiene que variar q prima
+
+881
+00:59:01.120 --> 00:59:02.060
+para que esto se cumpla?
+
+882
+00:59:02.060 --> 00:59:06.580
+les doy una pista más, lo puedo escribir
+
+883
+00:59:06.580 --> 00:59:08.600
+así, 1 sobre 4
+
+884
+00:59:08.600 --> 00:59:09.620
+pi epsilon 0
+
+885
+00:59:09.620 --> 00:59:12.800
+puedo sacar para afuera 1 sobre raíz cuadrada
+
+886
+00:59:12.800 --> 00:59:15.000
+d al cuadrado más y al cuadrado
+
+887
+00:59:15.000 --> 00:59:15.960
+más z al cuadrado
+
+888
+00:59:15.960 --> 00:59:18.720
+por q más q prima
+
+889
+00:59:18.720 --> 00:59:21.040
+y esto tiene que ser una constante
+
+890
+00:59:21.040 --> 00:59:26.770
+para que sea una constante
+
+891
+00:59:26.770 --> 00:59:28.350
+para que no dependa de y y z
+
+892
+00:59:28.350 --> 00:59:29.790
+¿cuánto tiene que valer q prima?
+
+893
+00:59:32.190 --> 00:59:34.430
+entonces concluimos que
+
+894
+00:59:34.430 --> 00:59:36.490
+fi 0 igual a 0
+
+895
+00:59:36.490 --> 00:59:38.970
+y q' igual a menos q
+
+896
+00:59:38.970 --> 00:59:46.020
+entonces ganamos
+
+897
+00:59:46.020 --> 00:59:48.460
+porque fíjense, nos queda la solución siguiente
+
+898
+00:59:48.460 --> 00:59:50.220
+phi de x, y, z
+
+899
+00:59:50.220 --> 00:59:51.820
+igual a q
+
+900
+00:59:51.820 --> 00:59:53.880
+sobre 4 pi epsilon 0
+
+901
+00:59:53.880 --> 00:59:58.000
+por 1 sobre raíz cuadrada
+
+902
+00:59:58.000 --> 01:00:00.400
+de x menos d al cuadrado
+
+903
+01:00:00.400 --> 01:00:01.600
+más y al cuadrado
+
+904
+01:00:01.600 --> 01:00:03.540
+más z al cuadrado
+
+905
+01:00:03.540 --> 01:00:05.960
+más 1 sobre, perdón, menos
+
+906
+01:00:05.960 --> 01:00:08.320
+raíz cuadrada
+
+907
+01:00:08.320 --> 01:00:09.780
+de x más d
+
+908
+01:00:09.780 --> 01:00:12.260
+al cuadrado más y al cuadrado
+
+909
+01:00:12.260 --> 01:00:13.000
+más z al cuadrado
+
+910
+01:00:13.000 --> 01:00:30.920
+Y este potencial cumple todo lo que necesitamos, porque en el borde acá es una constante, cerca de esta carga se va a comportar como el potencial de la carga, y eso efectivamente es así.
+
+911
+01:00:30.920 --> 01:00:42.680
+Cuando yo me acerco al punto, este es mucho más grande que este, así que es despreciable, y además tiene la propiedad de que el potencial tiende a cero para distancia grande, lo cual está bien porque la carga está localizada acá, está en un solo lugar.
+
+912
+01:00:42.680 --> 01:00:46.940
+alguien puede decir, no, en realidad
+
+913
+01:00:46.940 --> 01:00:48.240
+la carga en el plano acá puede estar
+
+914
+01:00:48.240 --> 01:00:50.840
+desparcida, pero nosotros sabemos que va a estar en esta región
+
+915
+01:00:50.840 --> 01:00:52.060
+muy lejos no va a haber carga
+
+916
+01:00:52.060 --> 01:00:54.840
+y efectivamente
+
+917
+01:00:54.840 --> 01:00:56.500
+es lo que pasa, el potencial
+
+918
+01:00:56.500 --> 01:00:57.980
+obtuvimos una solución
+
+919
+01:00:57.980 --> 01:01:00.540
+si encontramos una solución que cumple
+
+920
+01:01:00.540 --> 01:01:02.780
+todas las condiciones de borde, ganamos
+
+921
+01:01:02.780 --> 01:01:03.940
+ojo
+
+922
+01:01:03.940 --> 01:01:06.580
+esta es la solución de este lado
+
+923
+01:01:06.580 --> 01:01:08.320
+del espejo, del otro lado del espejo
+
+924
+01:01:08.320 --> 01:01:10.120
+ya les dije, vayan a hablar con Lewis Carroll
+
+925
+01:01:10.120 --> 01:01:12.800
+del otro lado es otra historia
+
+926
+01:01:13.740 --> 01:01:17.900
+De hecho sabemos, si todo esto es espejo masivo, ¿cuál es el potencial?
+
+927
+01:01:19.480 --> 01:01:20.520
+Cero, constante.
+
+928
+01:01:21.220 --> 01:01:22.800
+Cero en el borde, sigue siendo cero en el borde.
+
+929
+01:01:23.180 --> 01:01:26.640
+Si el espejo después se termina y pasa otra cosa, pues no pasará lo que tenga que pasar.
+
+930
+01:01:26.980 --> 01:01:27.620
+Eso no sabemos.
+
+931
+01:01:31.840 --> 01:01:33.440
+Ese es el método de las imágenes.
+
+932
+01:01:33.980 --> 01:01:37.920
+Cuando ustedes tienen que resolver una región con una geometría relativamente simple,
+
+933
+01:01:38.620 --> 01:01:41.840
+completan con cargas afuera de la región,
+
+934
+01:01:41.840 --> 01:01:46.900
+adecuadamente elegidas para satisfacer todas las condiciones de borde.
+
+935
+01:01:47.700 --> 01:01:52.060
+No es un procedimiento científico, es un procedimiento artístico.
+
+936
+01:01:52.620 --> 01:01:55.300
+No hay regla para encontrar la solución.
+
+937
+01:01:55.740 --> 01:01:59.260
+Pero si uno tiene cierta experiencia, le agarra la mano, ¿me explico?
+
+938
+01:01:59.840 --> 01:02:07.760
+Decís, ah, puedo hacer lo que propuso aquel, agarro los armónicos de zona,
+
+939
+01:02:07.760 --> 01:02:11.500
+los polinomios de Lejean, me pongo a sumar y no sé qué, y lo encuentro.
+
+940
+01:02:11.840 --> 01:02:16.160
+Está, pero te querés morir. En cambio acá, era sumar dos cargas.
+
+941
+01:02:17.420 --> 01:02:20.380
+A ver si entendieron la idea. Vamos a ver otro ejemplo.
+
+942
+01:02:25.340 --> 01:02:26.900
+Ah, perdón, perdón. Una cosa que no dije.
+
+943
+01:02:27.540 --> 01:02:31.860
+La carga que se genera acá es negativa.
+
+944
+01:02:32.860 --> 01:02:33.900
+¿Es razonable eso?
+
+945
+01:02:38.900 --> 01:02:41.260
+Claro, es razonable. A ver, esta es una carga.
+
+946
+01:02:41.380 --> 01:02:44.140
+Si esta es positiva, dije positiva, sumamos que esta es positiva.
+
+947
+01:02:44.540 --> 01:02:47.100
+Está claro que esto va a traer cargas negativas.
+
+948
+01:02:47.100 --> 01:02:49.920
+y como pusimos que el conductor es infinito
+
+949
+01:02:49.920 --> 01:02:51.760
+allá a lo lejos quedarán las cargas positivas
+
+950
+01:02:51.760 --> 01:02:53.220
+pero lo que hace es atraer cargas negativas
+
+951
+01:02:53.220 --> 01:02:54.080
+es razonable
+
+952
+01:02:54.080 --> 01:02:55.540
+¿se entiende?
+
+953
+01:02:57.340 --> 01:02:59.690
+de hecho podemos
+
+954
+01:02:59.690 --> 01:03:03.110
+calcular como lo hicimos antes
+
+955
+01:03:03.110 --> 01:03:04.830
+la densidad de carga
+
+956
+01:03:04.830 --> 01:03:06.930
+en la superficie capaz que vale la pena
+
+957
+01:03:06.930 --> 01:03:08.250
+hagámoslo
+
+958
+01:03:08.250 --> 01:03:11.170
+calculemos el campo eléctrico en el plano
+
+959
+01:03:11.170 --> 01:03:11.750
+¿está?
+
+960
+01:03:15.080 --> 01:03:16.500
+veamos como queda el campo eléctrico
+
+961
+01:03:16.500 --> 01:03:19.420
+el campo eléctrico en el plano tiene que quedar normal
+
+962
+01:03:19.420 --> 01:03:19.940
+¿si?
+
+963
+01:03:19.940 --> 01:03:25.420
+normal quiere decir en la dirección x
+
+964
+01:03:25.420 --> 01:03:26.900
+entonces voy a calcular e sub x
+
+965
+01:03:26.900 --> 01:03:28.580
+calculemos
+
+966
+01:03:28.580 --> 01:03:32.760
+e sub x
+
+967
+01:03:32.760 --> 01:03:35.540
+e sub x va a ser igual
+
+968
+01:03:35.540 --> 01:03:38.160
+a menos la derivada
+
+969
+01:03:38.160 --> 01:03:39.260
+con respecto a x
+
+970
+01:03:39.260 --> 01:03:41.680
+de phi de x
+
+971
+01:03:41.680 --> 01:03:42.920
+y z
+
+972
+01:03:42.920 --> 01:03:48.350
+entonces esto es igual a q sobre 4 pi
+
+973
+01:03:48.350 --> 01:03:49.070
+y epsilon 0
+
+974
+01:03:49.070 --> 01:03:52.310
+bueno, ven, ya estoy haciendo lo que les dije que no voy a hacer
+
+975
+01:03:52.310 --> 01:03:54.790
+primero ponen el signo menos, porque si no después se lo van a olvidar
+
+976
+01:03:54.790 --> 01:03:56.510
+este signo menos lo ponen primero
+
+977
+01:03:56.510 --> 01:03:59.050
+Cuatro pillos hicieron cero y ahora se ponen a derivar.
+
+978
+01:03:59.770 --> 01:04:07.900
+Entonces, el primer término me queda, tengo a la menos un medio,
+
+979
+01:04:07.960 --> 01:04:13.740
+así que me queda menos un medio de x menos d al cuadrado,
+
+980
+01:04:13.740 --> 01:04:18.460
+más y más z al cuadrado, a la tres medios.
+
+981
+01:04:19.160 --> 01:04:23.060
+Y luego tengo que derivar lo que está acá arriba, me queda 2x menos d.
+
+982
+01:04:23.760 --> 01:04:27.700
+Y el otro término tengo un signo menos, pero voy a tener un signo más al derivar,
+
+983
+01:04:27.760 --> 01:04:39.380
+Me queda más 1 medio de x menos d al cuadrado más y de toda la 3 medios por 2x más d.
+
+984
+01:04:46.680 --> 01:04:47.940
+Sí, gracias.
+
+985
+01:04:49.600 --> 01:04:50.280
+Perfecto.
+
+986
+01:04:50.980 --> 01:04:51.120
+Bien.
+
+987
+01:04:53.530 --> 01:04:53.770
+¿Cómo?
+
+988
+01:04:54.390 --> 01:04:57.550
+Más d, más d abajo.
+
+989
+01:04:58.370 --> 01:04:58.690
+Gracias.
+
+990
+01:04:59.790 --> 01:05:00.470
+Muchos errores.
+
+991
+01:05:00.470 --> 01:05:14.010
+Entonces ahora, si calculo la densidad superficial, la densidad superficial será epsilon cero por e sub x en x igual a cero.
+
+992
+01:05:14.270 --> 01:05:15.430
+Esa será la densidad superficial.
+
+993
+01:05:16.730 --> 01:05:21.650
+Entonces evaluemos aquello en x igual a cero.
+
+994
+01:05:21.650 --> 01:05:32.530
+Entonces tengo menos Q sobre 4 pi epsilon 0, y acá, cuando hago igual a 0, esto se me va,
+
+995
+01:05:32.610 --> 01:05:42.710
+me queda menos por menos, me queda más, el 2 se me va con el 2, y me queda D sobre raíz cuadrada de D al cuadrado,
+
+996
+01:05:43.230 --> 01:05:49.830
+no, raíz cuadrada no, esa es la potencia de 3 medios, D cuadrado más Y al cuadrado más Z al cuadrado a la 3 medios.
+
+997
+01:05:49.830 --> 01:05:54.660
+y abajo me queda igual
+
+998
+01:05:54.660 --> 01:05:55.880
+me queda la misma cantidad
+
+999
+01:05:55.880 --> 01:05:57.020
+queda un 2
+
+1000
+01:05:57.020 --> 01:06:05.340
+entonces ejercicio
+
+1001
+01:06:05.340 --> 01:06:11.760
+la integral
+
+1002
+01:06:11.760 --> 01:06:13.860
+de menos infinito a más infinito
+
+1003
+01:06:13.860 --> 01:06:16.480
+de dx y de menos infinito
+
+1004
+01:06:16.480 --> 01:06:17.280
+a más infinito
+
+1005
+01:06:17.280 --> 01:06:19.980
+de dy de sigma
+
+1006
+01:06:19.980 --> 01:06:22.320
+es igual
+
+1007
+01:06:22.320 --> 01:06:23.000
+a menos q
+
+1008
+01:06:23.000 --> 01:06:26.180
+perdón, acá me olvidé el epsilon 0
+
+1009
+01:06:26.180 --> 01:06:27.900
+el epsilon 0 se tiene que ir como
+
+1010
+01:06:27.900 --> 01:06:28.960
+se va de hecho
+
+1011
+01:06:28.960 --> 01:06:36.020
+hay que hacer esa integral
+
+1012
+01:06:36.020 --> 01:06:38.700
+truco pasar a polares
+
+1013
+01:06:38.700 --> 01:06:39.300
+obviamente
+
+1014
+01:06:39.300 --> 01:06:41.320
+y se hace
+
+1015
+01:06:41.320 --> 01:06:42.800
+como tiene que ser
+
+1016
+01:06:42.800 --> 01:06:45.360
+la carga de acá no es otra cosa
+
+1017
+01:06:45.360 --> 01:06:47.240
+que es equivalente a la carga de este bicho
+
+1018
+01:06:47.240 --> 01:06:51.360
+distribuida en la superficie
+
+1019
+01:06:51.360 --> 01:06:54.320
+bueno veamos
+
+1020
+01:06:54.320 --> 01:06:57.720
+si entendieron
+
+1021
+01:06:57.720 --> 01:06:59.080
+la movida
+
+1022
+01:06:59.080 --> 01:07:01.380
+supongamos que yo ahora quiero
+
+1023
+01:07:01.380 --> 01:07:03.700
+resolver este otro problema
+
+1024
+01:07:03.700 --> 01:07:13.170
+¿Sí? Sí, sí, sí, sí, perdón, perdón. Y y Z. Gracias.
+
+1025
+01:07:16.760 --> 01:07:21.180
+Hoy le estoy errando mucho. Es para que ustedes estén atentos.
+
+1026
+01:07:23.570 --> 01:07:27.150
+Bueno. Bien. Está bárbaro. Gracias.
+
+1027
+01:07:28.150 --> 01:07:42.960
+Entonces hagamos lo siguiente. Veamos si empezaron a entender cómo viene la mano.
+
+1028
+01:07:43.100 --> 01:07:46.360
+Supongamos que yo ahora tengo dos espejos. Así.
+
+1029
+01:07:46.360 --> 01:08:00.850
+Y pongamos que tengo una carga acá. Q. Otro ejemplo.
+
+1030
+01:08:00.990 --> 01:08:16.620
+Entonces quiero resolver, resolvamos, resolver la plaza en esta región.
+
+1031
+01:08:19.870 --> 01:08:22.550
+Lo que pasa del otro lado de los espejos no me interesa.
+
+1032
+01:08:23.790 --> 01:08:26.390
+Entonces, ¿dónde tendré que ubicar las cargas imagen?
+
+1033
+01:08:37.460 --> 01:08:42.740
+Pongamos que esto sea la posición Y y esto sea la posición X.
+
+1034
+01:08:43.580 --> 01:08:49.700
+Voy a tener una carga a la distancia Y que será...
+
+1035
+01:08:49.700 --> 01:08:51.560
+Bueno, ahora solo digo dónde están ubicadas.
+
+1036
+01:08:52.440 --> 01:08:53.420
+Tendría otra carga acá.
+
+1037
+01:08:54.700 --> 01:08:59.860
+Y después voy a tener que ubicar una que sea la imagen de las imágenes.
+
+1038
+01:09:00.080 --> 01:09:00.360
+Acá.
+
+1039
+01:09:01.440 --> 01:09:01.580
+¿Sí?
+
+1040
+01:09:07.060 --> 01:09:07.540
+Claro.
+
+1041
+01:09:08.200 --> 01:09:12.120
+Porque efectivamente, si una persona ve ahí con dos espejos, va a ver tres cargas.
+
+1042
+01:09:12.360 --> 01:09:12.480
+¿Sí?
+
+1043
+01:09:13.160 --> 01:09:13.360
+¿Sí?
+
+1044
+01:09:14.340 --> 01:09:16.800
+Y bueno, esta carga, ¿cuánto va a valer?
+
+1045
+01:09:19.340 --> 01:09:19.980
+Menos Q.
+
+1046
+01:09:21.020 --> 01:09:21.780
+¿Y esta?
+
+1047
+01:09:23.280 --> 01:09:23.940
+Menos Q.
+
+1048
+01:09:23.940 --> 01:09:24.540
+¿Y esta?
+
+1049
+01:09:25.680 --> 01:09:26.260
+Más Q.
+
+1050
+01:09:26.320 --> 01:09:37.220
+Y está claro que si yo sumo, por la misma cuenta que hicimos recién, si yo sumo esta con esta, la contribución de esto me da una constante en este plano.
+
+1051
+01:09:38.160 --> 01:09:40.640
+Y si sumo esta con esta, me da una constante en este plano.
+
+1052
+01:09:41.020 --> 01:09:45.360
+Así que, que esto sea una constante en este plano ya lo satisfica.
+
+1053
+01:09:47.960 --> 01:09:51.640
+Y lo mismo de acá, por simetría.
+
+1054
+01:09:54.710 --> 01:09:56.410
+Entonces cumplí las condiciones de borde.
+
+1055
+01:09:57.010 --> 01:10:00.110
+Cumplí las condiciones de borde, teorema de unicidad, soy Gardel.
+
+1056
+01:10:00.290 --> 01:10:03.430
+Bien, tenemos la solución.
+
+1057
+01:10:04.170 --> 01:10:06.790
+Ahora la suma no de dos cargas, sino de cuatro cargas.
+
+1058
+01:10:06.950 --> 01:10:11.250
+Y repito, es la solución acá, de este otro lado no es la solución.
+
+1059
+01:10:11.370 --> 01:10:14.030
+Es la solución en esta región.
+
+1060
+01:10:16.130 --> 01:10:20.110
+Ese es el truco que se llama método de las imágenes.
+
+1061
+01:10:21.490 --> 01:10:28.790
+Y veamos cómo nos queda de tiempo para ver si podemos usarlo en un problema un poco más divertido.
+
+1062
+01:10:29.770 --> 01:10:31.430
+¿Se entiende el concepto?
+
+1063
+01:10:40.840 --> 01:10:44.760
+No, a ver, sí, en el práctico les va a aparecer algún ejemplo, pero no cualquier.
+
+1064
+01:10:44.920 --> 01:10:51.200
+Tienen que ser cosas con simetría suficientemente simple como para que ustedes sepan la imagen que está del otro lado.
+
+1065
+01:10:51.200 --> 01:10:51.560
+¿Verdad?
+
+1066
+01:11:05.820 --> 01:11:11.500
+Claro, y además, si la carga en el volumen original está distribuida de una manera rara, bueno, en fin.
+
+1067
+01:11:11.500 --> 01:11:14.740
+Pero bueno, vamos a ver un ejemplo
+
+1068
+01:11:14.740 --> 01:11:17.460
+Son unos comilones
+
+1069
+01:11:17.460 --> 01:11:19.660
+Les estoy mostrando dos ejemplos de juguete
+
+1070
+01:11:19.660 --> 01:11:20.680
+Y ahora ya quieren hacer
+
+1071
+01:11:20.680 --> 01:11:22.560
+Vamos pasito a pasito
+
+1072
+01:11:22.560 --> 01:11:23.920
+Les voy a dar un ejemplo un poquito más difícil
+
+1073
+01:11:23.920 --> 01:11:33.240
+Para que se cumplan todas las condiciones de borde
+
+1074
+01:11:33.240 --> 01:11:34.660
+A ver, si yo esta con esta
+
+1075
+01:11:34.660 --> 01:11:36.240
+Me hace que todo este plano
+
+1076
+01:11:36.240 --> 01:11:37.600
+Sea una constante
+
+1077
+01:11:37.600 --> 01:11:39.140
+Como es igual que lo que hicimos recién
+
+1078
+01:11:39.140 --> 01:11:41.100
+Pero quiero que sea
+
+1079
+01:11:41.100 --> 01:11:43.500
+Que todas las contribuciones me sigan cumpliendo esto
+
+1080
+01:11:43.500 --> 01:11:44.920
+Si yo agrego solo esta
+
+1081
+01:11:44.920 --> 01:11:45.780
+Y no esta
+
+1082
+01:11:45.780 --> 01:11:48.060
+Esa ya no me va a hacer que se cumplan
+
+1083
+01:11:48.060 --> 01:11:49.800
+en un plano, porque estas dos me dan una constante
+
+1084
+01:11:49.800 --> 01:11:51.420
+esta ya no me da una constante en este plano
+
+1085
+01:11:51.420 --> 01:11:54.200
+entonces para que siga constante en este plano
+
+1086
+01:11:54.200 --> 01:11:55.980
+tengo que agregar otra que sea el espejo
+
+1087
+01:11:55.980 --> 01:11:56.560
+del anterior
+
+1088
+01:11:56.560 --> 01:11:58.920
+y lo mismo para este plano
+
+1089
+01:11:58.920 --> 01:12:01.000
+esta con esta me da una constante
+
+1090
+01:12:01.000 --> 01:12:03.780
+pero si yo no le agrego esta, esta ya no me da
+
+1091
+01:12:03.780 --> 01:12:04.740
+una constante en este plano
+
+1092
+01:12:04.740 --> 01:12:07.700
+y aparte está bueno
+
+1093
+01:12:07.700 --> 01:12:09.340
+porque efectivamente si uno mirara
+
+1094
+01:12:09.340 --> 01:12:11.400
+el problema de este lado, ve cuatro cargas
+
+1095
+01:12:11.400 --> 01:12:13.940
+si vos tenés dos espejos así, ves cuatro imágenes
+
+1096
+01:12:13.940 --> 01:12:14.600
+¿me explico?
+
+1097
+01:12:15.220 --> 01:12:17.480
+pasa efectivamente lo que uno esperaría que pase
+
+1098
+01:12:17.480 --> 01:12:26.730
+¿Me explico? Bueno, entonces el ejemplo que les voy a mostrar ahora, un poquito más sofisticado, es el siguiente.
+
+1099
+01:12:42.320 --> 01:12:55.510
+Entonces carga, carga en la cercanía de una esfera conductora.
+
+1100
+01:13:02.310 --> 01:13:10.650
+Entonces el ejemplo es así. Tomo acá una esfera, pongamos de radio A, pongo el origen acá,
+
+1101
+01:13:10.650 --> 01:13:12.850
+pongo una distancia
+
+1102
+01:13:12.850 --> 01:13:15.130
+D de la esfera
+
+1103
+01:13:15.130 --> 01:13:16.270
+del centro de la esfera
+
+1104
+01:13:16.270 --> 01:13:16.710
+D
+
+1105
+01:13:16.710 --> 01:13:17.870
+pongo una carga
+
+1106
+01:13:17.870 --> 01:13:19.850
+más Q
+
+1107
+01:13:19.850 --> 01:13:21.230
+y esto es una esfera
+
+1108
+01:13:21.230 --> 01:13:23.090
+esfera
+
+1109
+01:13:23.090 --> 01:13:25.130
+conductora
+
+1110
+01:13:25.130 --> 01:13:28.840
+no digo si está cargada
+
+1111
+01:13:28.840 --> 01:13:29.900
+o está descargada
+
+1112
+01:13:29.900 --> 01:13:31.380
+lo único que voy a decir
+
+1113
+01:13:31.380 --> 01:13:34.900
+voy a suponer
+
+1114
+01:13:34.900 --> 01:13:36.400
+caso simple
+
+1115
+01:13:36.400 --> 01:13:44.800
+potencial en R igual a A
+
+1116
+01:13:44.800 --> 01:13:46.280
+igual a 0
+
+1117
+01:13:46.280 --> 01:13:47.740
+voy a considerar ese caso
+
+1118
+01:13:47.740 --> 01:13:50.480
+está claro que para que esto se cumpla
+
+1119
+01:13:50.480 --> 01:13:51.140
+la carga
+
+1120
+01:13:51.140 --> 01:13:54.060
+en general voy a necesitar que la esfera
+
+1121
+01:13:54.060 --> 01:13:54.820
+esté cargada
+
+1122
+01:13:54.820 --> 01:13:58.100
+si no, el potencial en la esfera
+
+1123
+01:13:58.100 --> 01:13:59.240
+tendrá otro valor
+
+1124
+01:13:59.240 --> 01:14:05.170
+si ustedes tienen
+
+1125
+01:14:05.170 --> 01:14:08.110
+un conductor que ya no es plano
+
+1126
+01:14:08.110 --> 01:14:09.050
+sino esférico
+
+1127
+01:14:09.050 --> 01:14:10.550
+y ven la carga
+
+1128
+01:14:10.550 --> 01:14:12.010
+¿qué va a pasar?
+
+1129
+01:14:13.750 --> 01:14:14.810
+si no ven el problema
+
+1130
+01:14:14.810 --> 01:14:16.250
+nuevamente, quiero el problema
+
+1131
+01:14:16.250 --> 01:14:17.710
+resolver la plaza
+
+1132
+01:14:17.710 --> 01:14:25.550
+fuera de la esfera
+
+1133
+01:14:29.480 --> 01:14:33.080
+Como ya dijimos, dentro de la esfera no es interesante porque el potencial es una constante.
+
+1134
+01:14:34.660 --> 01:14:36.180
+Quiero hallar la solución afuera.
+
+1135
+01:14:36.780 --> 01:14:42.660
+Si yo miro el problema de una carga cercana a una esfera conductora, el observador externo,
+
+1136
+01:14:42.740 --> 01:14:46.040
+¿qué es lo que va a ver si no se da cuenta de que esto en realidad es un espejo?
+
+1137
+01:14:56.020 --> 01:15:00.140
+Vamos, si tiene un espejo que en lugar de ser plano es curvo, ¿qué van a ver?
+
+1138
+01:15:07.750 --> 01:15:10.570
+No, si ustedes están acá van a ver una esfera, van a ver una carga.
+
+1139
+01:15:12.790 --> 01:15:14.750
+¿Ustedes han visto alguna vez espejos curvos?
+
+1140
+01:15:14.850 --> 01:15:19.790
+¿Sí? Les da una imagen, pero es una imagen deformada.
+
+1141
+01:15:20.190 --> 01:15:24.550
+¿Verdad? Entonces lo que va a pasar es que, por simetría, como el problema tiene valencia por rotación,
+
+1142
+01:15:24.630 --> 01:15:27.130
+la carga que va a tener que estar en este eje, ¿verdad?
+
+1143
+01:15:27.410 --> 01:15:29.750
+Pongamos por acá, llamemos esta distancia D'.
+
+1144
+01:15:29.750 --> 01:15:32.790
+¿Sí? Y va a aparecer la carga Q'.
+
+1145
+01:15:32.790 --> 01:15:39.190
+¿Sí? ¿Dónde está D' y cuánto vale Q'? No lo sabemos.
+
+1146
+01:15:39.690 --> 01:15:43.510
+Pero ustedes saben que si tienen un espejo así y tienen una cosa,
+
+1147
+01:15:43.690 --> 01:15:45.510
+lo que les aparece es una imagen de lo mismo.
+
+1148
+01:15:45.950 --> 01:15:48.070
+Vos hace un rato estabas mucho más conveniente, querías un volumen.
+
+1149
+01:15:48.070 --> 01:15:51.350
+Bueno, acá un puntito se va a reflejar en un puntito.
+
+1150
+01:15:51.470 --> 01:15:54.150
+¿Dónde? Bueno, sabemos que está sobre el eje por simetría,
+
+1151
+01:15:54.230 --> 01:15:57.810
+porque si yo miro justo acá no se puede desimetrizar, ¿verdad?
+
+1152
+01:15:57.810 --> 01:15:58.770
+El problema tiene simetría.
+
+1153
+01:16:00.670 --> 01:16:02.610
+Y entonces lo que podemos hacer es preguntarnos,
+
+1154
+01:16:03.350 --> 01:16:08.650
+¿cuál es el valor de D' y de Q' para que el potencial sobre la esfera sea,
+
+1155
+01:16:09.190 --> 01:16:29.090
+0. Bueno, hagámoslo, phi en x, y, z, en un punto cualquiera acá, un punto de coordenadas x, y, z,
+
+1156
+01:16:29.730 --> 01:16:42.880
+el potencial se escribirá como q, como 1 sobre 4 pi epsilon 0, ahora escribo el que generaba por la carga que sí conozco,
+
+1157
+01:16:42.880 --> 01:16:51.540
+que es Q sobre raíz cuadrada de X menos D al cuadrado, más Y al cuadrado, más Z al cuadrado.
+
+1158
+01:16:52.960 --> 01:16:59.480
+Y después tendré otro, más Q prima, que no sé cuánto vale, más X menos D prima,
+
+1159
+01:16:59.600 --> 01:17:03.020
+no sabemos dónde está D prima, más Y al cuadrado, más Z al cuadrado.
+
+1160
+01:17:03.100 --> 01:17:05.880
+Cuando era un espejo plano era fácil, porque nos dábamos cuenta enseguida
+
+1161
+01:17:06.580 --> 01:17:10.420
+de dónde estaba la imagen simétrica, pero acá no es tan obvio.
+
+1162
+01:17:10.420 --> 01:17:17.140
+y lo que queremos imponer es que cuando
+
+1163
+01:17:17.140 --> 01:17:21.120
+x más x cuadrado más y cuadrado más z cuadrado
+
+1164
+01:17:21.120 --> 01:17:24.480
+vale a
+
+1165
+01:17:24.480 --> 01:17:28.320
+c, entonces el potencial sea 0
+
+1166
+01:17:28.320 --> 01:17:42.640
+pero en toda la esfera, entonces evaluemos el potencial
+
+1167
+01:17:42.640 --> 01:17:46.220
+en la esfera, fi evaluado en
+
+1168
+01:17:46.220 --> 01:17:50.260
+raíz cuadrada de x cuadrado más y cuadrado más z cuadrado
+
+1169
+01:17:50.260 --> 01:17:51.800
+igual a A
+
+1170
+01:17:51.800 --> 01:17:52.820
+ese es el
+
+1171
+01:17:52.820 --> 01:17:56.000
+que esto lo queremos que sea
+
+1172
+01:17:56.000 --> 01:17:58.560
+cero, dijimos que esa era la condición
+
+1173
+01:17:58.560 --> 01:18:02.860
+de borde, entonces
+
+1174
+01:18:02.860 --> 01:18:04.760
+esto es lo mismo que poner
+
+1175
+01:18:04.760 --> 01:18:07.300
+el 4 pi epsilon cero, como estoy igualando a cero ya no me
+
+1176
+01:18:07.300 --> 01:18:08.740
+importa, porque estoy igualado a cero
+
+1177
+01:18:08.740 --> 01:18:11.840
+me queda Q sobre raíz cuadrada
+
+1178
+01:18:11.840 --> 01:18:13.280
+y voy a
+
+1179
+01:18:13.280 --> 01:18:15.580
+desarrollar este cuadrado, me queda X cuadrado
+
+1180
+01:18:15.580 --> 01:18:17.420
+menos 2
+
+1181
+01:18:17.420 --> 01:18:19.340
+X por D, más D
+
+1182
+01:18:19.340 --> 01:18:21.360
+al cuadrado, más Y al cuadrado
+
+1183
+01:18:21.360 --> 01:18:22.800
+más
+
+1184
+01:18:22.800 --> 01:18:24.920
+z al cuadrado
+
+1185
+01:18:24.920 --> 01:18:26.880
+más
+
+1186
+01:18:26.880 --> 01:18:28.960
+será igual, digamos
+
+1187
+01:18:28.960 --> 01:18:30.820
+a menos q'
+
+1188
+01:18:31.120 --> 01:18:33.860
+dividido raíz cuadrada
+
+1189
+01:18:33.860 --> 01:18:35.480
+de x cuadrado
+
+1190
+01:18:35.480 --> 01:18:39.680
+menos 2x
+
+1191
+01:18:39.680 --> 01:18:41.420
+de prima, más de prima
+
+1192
+01:18:41.420 --> 01:18:43.640
+al cuadrado, más y al cuadrado
+
+1193
+01:18:43.640 --> 01:18:44.680
+más z al cuadrado
+
+1194
+01:18:44.680 --> 01:18:47.020
+todo esto evaluado en
+
+1195
+01:18:47.020 --> 01:18:49.340
+raíz cuadrada
+
+1196
+01:18:49.340 --> 01:18:51.060
+de x cuadrado más y al cuadrado
+
+1197
+01:18:51.060 --> 01:18:53.040
+más z al cuadrado igual a a
+
+1198
+01:18:53.040 --> 01:18:54.240
+y lo mismo
+
+1199
+01:18:54.240 --> 01:19:06.720
+Pero fíjense, al desarrollar me quedó la combinación acá
+
+1200
+01:19:06.720 --> 01:19:08.760
+X cuadrado más Y cuadrado más Z cuadrado
+
+1201
+01:19:08.760 --> 01:19:11.060
+Parece que estuviera hecho a propósito
+
+1202
+01:19:11.060 --> 01:19:14.300
+Entonces, esto me queda
+
+1203
+01:19:14.300 --> 01:19:25.040
+Q sobre raíz cuadrada de A al cuadrado más D' al cuadrado menos 2D por X
+
+1204
+01:19:25.040 --> 01:19:33.660
+es igual a menos Q' sobre raíz cuadrada de A al cuadrado
+
+1205
+01:19:33.660 --> 01:19:35.920
+perdón, acá no era D', era D
+
+1206
+01:19:35.920 --> 01:19:40.960
+más D' al cuadrado menos 2D' por X
+
+1207
+01:19:40.960 --> 01:19:46.160
+pero eso tiene que ser así para todo X, ¿verdad?
+
+1208
+01:19:46.160 --> 01:19:48.860
+es decir, cualquier punto de la esfera
+
+1209
+01:19:48.860 --> 01:19:51.980
+yo me puedo mover y va a tener distintos valores de X
+
+1210
+01:19:51.980 --> 01:19:53.720
+para todo valor de X tiene que valer esto
+
+1211
+01:19:53.720 --> 01:19:54.980
+para todo X
+
+1212
+01:19:54.980 --> 01:19:57.860
+entonces veamos si podemos satisfacer eso
+
+1213
+01:19:57.860 --> 01:20:00.240
+no es obvio porque yo tengo dos funciones igualadas
+
+1214
+01:20:00.240 --> 01:20:01.380
+y solo tengo
+
+1215
+01:20:01.380 --> 01:20:03.600
+dos parámetros para determinar que son
+
+1216
+01:20:03.600 --> 01:20:04.900
+Q' y D'
+
+1217
+01:20:05.200 --> 01:20:08.120
+pero por la geometría del problema
+
+1218
+01:20:08.120 --> 01:20:09.960
+uno esperaría que efectivamente la imagen
+
+1219
+01:20:09.960 --> 01:20:11.840
+de una carga sea una carga, entonces vamos a tratar de determinar
+
+1220
+01:20:11.840 --> 01:20:13.620
+entonces despejo
+
+1221
+01:20:13.620 --> 01:20:15.160
+y tomo el cuadrado, entonces me queda
+
+1222
+01:20:15.160 --> 01:20:15.980
+Q'
+
+1223
+01:20:16.540 --> 01:20:19.000
+por A al cuadrado
+
+1224
+01:20:19.000 --> 01:20:21.440
+más D' al cuadrado
+
+1225
+01:20:21.440 --> 01:20:22.580
+menos 2D'
+
+1226
+01:20:22.900 --> 01:20:24.200
+por X
+
+1227
+01:20:24.200 --> 01:20:29.240
+es igual a Q' al cuadrado
+
+1228
+01:20:29.240 --> 01:20:31.300
+por A al cuadrado
+
+1229
+01:20:31.300 --> 01:20:32.940
+más D al cuadrado
+
+1230
+01:20:32.940 --> 01:20:35.420
+menos 2DX
+
+1231
+01:20:35.420 --> 01:20:40.380
+entonces
+
+1232
+01:20:40.380 --> 01:20:44.400
+pasé esto para este lado
+
+1233
+01:20:44.400 --> 01:20:45.640
+pasé esto para el otro lado
+
+1234
+01:20:45.640 --> 01:20:46.480
+y tomé el cuadrado
+
+1235
+01:20:46.480 --> 01:20:58.590
+bueno, esto para todo X
+
+1236
+01:20:58.590 --> 01:20:59.850
+entonces tiene que valer
+
+1237
+01:20:59.850 --> 01:21:02.150
+la parte constante tiene que ser igual
+
+1238
+01:21:02.150 --> 01:21:03.030
+y la parte
+
+1239
+01:21:03.030 --> 01:21:06.350
+y la parte
+
+1240
+01:21:06.350 --> 01:21:10.270
+no constante
+
+1241
+01:21:10.270 --> 01:21:12.930
+la parte lineal
+
+1242
+01:21:12.930 --> 01:21:14.250
+en X también tiene que ser igual
+
+1243
+01:21:14.250 --> 01:21:15.410
+¿está?
+
+1244
+01:21:16.230 --> 01:21:18.370
+vejemos entonces, esto nos queda de este sistema
+
+1245
+01:21:18.370 --> 01:21:19.690
+nos queda
+
+1246
+01:21:19.690 --> 01:21:23.870
+Q cuadrado A cuadrado
+
+1247
+01:21:23.870 --> 01:21:26.030
+más D prima al cuadrado
+
+1248
+01:21:26.030 --> 01:21:27.630
+es igual
+
+1249
+01:21:27.630 --> 01:21:29.130
+a Q
+
+1250
+01:21:29.130 --> 01:21:31.590
+prima al cuadrado
+
+1251
+01:21:31.590 --> 01:21:34.430
+por A al cuadrado más D al cuadrado
+
+1252
+01:21:34.430 --> 01:21:36.210
+y del otro lado
+
+1253
+01:21:36.210 --> 01:21:36.730
+me queda
+
+1254
+01:21:36.730 --> 01:21:40.350
+q cuadrado por d prima
+
+1255
+01:21:40.350 --> 01:21:45.350
+es igual a q prima al cuadrado por d
+
+1256
+01:21:45.350 --> 01:21:50.950
+bueno, ya casi terminamos
+
+1257
+01:21:50.950 --> 01:21:54.630
+tengo dos ecuaciones, dos incógnitas
+
+1258
+01:21:54.630 --> 01:21:57.210
+tengo chance de que haya una solución
+
+1259
+01:21:57.210 --> 01:21:58.690
+tratemos de encontrarla
+
+1260
+01:21:58.690 --> 01:22:05.700
+de la ecuación de abajo
+
+1261
+01:22:05.700 --> 01:22:08.820
+de la ecuación que está más abajo
+
+1262
+01:22:08.820 --> 01:22:09.980
+puedo despejar d prima
+
+1263
+01:22:09.980 --> 01:22:13.520
+puedo escribir que d prima es igual
+
+1264
+01:22:13.520 --> 01:22:17.920
+a d
+
+1265
+01:22:17.920 --> 01:22:21.860
+por q' al cuadrado
+
+1266
+01:22:21.860 --> 01:22:23.240
+sobre q al cuadrado
+
+1267
+01:22:23.240 --> 01:22:34.260
+si esto
+
+1268
+01:22:34.260 --> 01:22:35.880
+es un polinomio en x
+
+1269
+01:22:35.880 --> 01:22:37.380
+y esto es un polinomio en x
+
+1270
+01:22:37.380 --> 01:22:44.370
+x cuadrado
+
+1271
+01:22:44.370 --> 01:22:47.170
+esto está evaluado en raíz cuadrada
+
+1272
+01:22:47.170 --> 01:22:48.250
+x cuadrado más y cuadrado
+
+1273
+01:22:48.250 --> 01:22:49.630
+igual a a cuadrado
+
+1274
+01:22:49.630 --> 01:22:51.990
+y x cuadrado más y cuadrado más z cuadrado
+
+1275
+01:22:51.990 --> 01:22:53.230
+lo reemplacé por a al cuadrado
+
+1276
+01:22:53.230 --> 01:23:08.470
+no voy a hacer así
+
+1277
+01:23:08.470 --> 01:23:09.850
+como dije, perdón
+
+1278
+01:23:09.850 --> 01:23:13.210
+voy a espejar más bien las cargas
+
+1279
+01:23:13.210 --> 01:23:15.710
+voy a decir que Q' al cuadrado
+
+1280
+01:23:15.710 --> 01:23:20.240
+es igual a Q al cuadrado
+
+1281
+01:23:20.240 --> 01:23:21.820
+por
+
+1282
+01:23:21.820 --> 01:23:26.580
+D' sobre D
+
+1283
+01:23:26.580 --> 01:23:30.960
+y en la otra ecuación entonces
+
+1284
+01:23:30.960 --> 01:23:32.440
+utilizo esto
+
+1285
+01:23:32.440 --> 01:23:34.140
+me queda Q al cuadrado
+
+1286
+01:23:34.140 --> 01:23:36.880
+por A al cuadrado
+
+1287
+01:23:36.880 --> 01:23:37.660
+más
+
+1288
+01:23:37.660 --> 01:23:42.620
+D' al cuadrado
+
+1289
+01:23:42.620 --> 01:23:48.950
+es igual a Q al cuadrado
+
+1290
+01:23:48.950 --> 01:23:50.150
+por D'
+
+1291
+01:23:50.150 --> 01:23:55.790
+D' sobre D por A al cuadrado más D al cuadrado.
+
+1292
+01:24:04.380 --> 01:24:07.580
+Entonces, Q cuadrado se me simplifica en la ecuación de arriba.
+
+1293
+01:24:12.030 --> 01:24:19.530
+Yo voy a resolver la ecuación de arriba que me permite hallar D' en función de D y de A.
+
+1294
+01:24:20.930 --> 01:24:29.950
+La ecuación de arriba me queda D' al cuadrado más menos D' por A al cuadrado más D al cuadrado.
+
+1295
+01:24:30.610 --> 01:24:41.900
+más d' al cuadrado igual a cero. Perdón, perdón, perdón. Acá hay un sobre d.
+
+1296
+01:24:44.260 --> 01:24:50.800
+Si no, hay un problema dimensional. Y acá estoy cometiendo un error.
+
+1297
+01:24:51.760 --> 01:24:59.390
+Déjenme ver un poquito. q'. No, eso está bien.
+
+1298
+01:24:59.390 --> 01:25:03.350
+de prima
+
+1299
+01:25:03.350 --> 01:25:11.410
+acá este
+
+1300
+01:25:11.410 --> 01:25:15.840
+no
+
+1301
+01:25:15.840 --> 01:25:18.280
+este es un
+
+1302
+01:25:18.280 --> 01:25:20.140
+de prima
+
+1303
+01:25:20.140 --> 01:25:25.340
+no, lo que me falta es un a cuadrado
+
+1304
+01:25:25.340 --> 01:25:26.600
+nada más, gracias
+
+1305
+01:25:26.600 --> 01:25:29.140
+entonces ahora de prima
+
+1306
+01:25:29.140 --> 01:25:31.020
+es fácil de resolver
+
+1307
+01:25:31.020 --> 01:25:31.640
+les queda
+
+1308
+01:25:31.640 --> 01:25:34.880
+menos esto, me queda a cuadrado
+
+1309
+01:25:34.880 --> 01:25:36.540
+más d al cuadrado sobre d
+
+1310
+01:25:36.540 --> 01:25:39.760
+más menos raíz cuadrada
+
+1311
+01:25:39.760 --> 01:25:41.480
+de esto mismo
+
+1312
+01:25:41.480 --> 01:25:43.740
+a cuadrado más d al cuadrado
+
+1313
+01:25:43.740 --> 01:25:44.560
+sobre d
+
+1314
+01:25:44.560 --> 01:25:46.940
+menos 4
+
+1315
+01:25:46.940 --> 01:25:51.430
+a al cuadrado
+
+1316
+01:25:51.430 --> 01:25:53.230
+todo dividido 2
+
+1317
+01:25:53.230 --> 01:26:07.420
+esto al cuadrado
+
+1318
+01:26:07.420 --> 01:26:14.100
+no hay dos soluciones
+
+1319
+01:26:14.100 --> 01:26:14.780
+vamos a encontrar
+
+1320
+01:26:14.780 --> 01:26:18.040
+por ahora parece haber solo dos soluciones
+
+1321
+01:26:18.040 --> 01:26:18.880
+pero hay una sola
+
+1322
+01:26:18.880 --> 01:26:21.920
+entonces puedo sacar el d para afuera
+
+1323
+01:26:21.920 --> 01:26:24.480
+me queda a al cuadrado más d al cuadrado
+
+1324
+01:26:24.480 --> 01:26:26.200
+más menos
+
+1325
+01:26:26.200 --> 01:26:28.700
+raíz cuadrada de a al cuadrado
+
+1326
+01:26:28.700 --> 01:26:29.740
+más d al cuadrado
+
+1327
+01:26:29.740 --> 01:26:31.580
+al cuadrado, menos 4
+
+1328
+01:26:31.580 --> 01:26:33.320
+a cuadrado d al cuadrado
+
+1329
+01:26:33.320 --> 01:26:34.700
+dividido 2d
+
+1330
+01:26:34.700 --> 01:26:39.100
+pero fíjense, acá completo un cuadrado
+
+1331
+01:26:39.100 --> 01:26:44.650
+acá completo un cuadrado, esto me queda
+
+1332
+01:26:44.650 --> 01:26:46.970
+a al cuadrado, más d al cuadrado
+
+1333
+01:26:46.970 --> 01:26:48.830
+más menos raíz cuadrada
+
+1334
+01:26:48.830 --> 01:26:50.390
+de a menos d
+
+1335
+01:26:50.390 --> 01:26:52.770
+al cuadrado, sobre 2d
+
+1336
+01:26:52.770 --> 01:26:59.850
+o lo que es lo mismo
+
+1337
+01:26:59.850 --> 01:27:02.430
+a cuadrado
+
+1338
+01:27:02.430 --> 01:27:03.490
+más d al cuadrado
+
+1339
+01:27:03.490 --> 01:27:17.780
+acá son cuadrados
+
+1340
+01:27:17.780 --> 01:27:18.680
+perdón
+
+1341
+01:27:18.680 --> 01:27:19.960
+gracias
+
+1342
+01:27:19.960 --> 01:27:22.520
+Más menos
+
+1343
+01:27:22.520 --> 01:27:25.300
+Valor absoluto de a al cuadrado
+
+1344
+01:27:25.300 --> 01:27:26.100
+Menos de a al cuadrado
+
+1345
+01:27:26.100 --> 01:27:27.840
+Todo sobre 2d
+
+1346
+01:27:27.840 --> 01:27:34.730
+Ahora, d es mayor que a
+
+1347
+01:27:34.730 --> 01:27:36.210
+Fíjense el problema
+
+1348
+01:27:36.210 --> 01:27:37.610
+D es esta distancia
+
+1349
+01:27:37.610 --> 01:27:40.370
+Y a es esta, entonces d es mayor que a
+
+1350
+01:27:40.370 --> 01:27:41.570
+Así que esto que está acá
+
+1351
+01:27:41.570 --> 01:27:44.450
+Este valor absoluto no es otra cosa que d al cuadrado
+
+1352
+01:27:44.450 --> 01:27:45.310
+Menos a al cuadrado
+
+1353
+01:27:45.310 --> 01:27:48.650
+Así que esto nos da
+
+1354
+01:27:48.650 --> 01:27:50.310
+Dos soluciones, si es un más
+
+1355
+01:27:50.310 --> 01:27:52.190
+Si es un más
+
+1356
+01:27:52.190 --> 01:27:53.830
+me queda
+
+1357
+01:27:53.830 --> 01:27:55.650
+D al cuadrado
+
+1358
+01:27:55.650 --> 01:27:58.830
+2D al cuadrado sobre 2D
+
+1359
+01:27:58.830 --> 01:28:00.050
+entonces una solución es D
+
+1360
+01:28:00.050 --> 01:28:02.550
+y la otra solución
+
+1361
+01:28:02.550 --> 01:28:04.970
+es cuando resto, se me va el D
+
+1362
+01:28:04.970 --> 01:28:06.150
+y me queda
+
+1363
+01:28:06.150 --> 01:28:08.510
+A al cuadrado sobre D
+
+1364
+01:28:08.510 --> 01:28:12.180
+¿la solución esta es posible?
+
+1365
+01:28:15.030 --> 01:28:15.930
+no, claro, porque
+
+1366
+01:28:15.930 --> 01:28:18.290
+esta carga tiene que estar adentro de la esfera
+
+1367
+01:28:18.290 --> 01:28:21.610
+no, no la podes sacar para afuera
+
+1368
+01:28:21.610 --> 01:28:24.330
+la carga esta tiene que estar adentro de la esfera
+
+1369
+01:28:24.330 --> 01:28:24.690
+¿se entiende?
+
+1370
+01:28:24.690 --> 01:28:34.750
+Pero esta no es posible, no es posible, pues D' es menor que A.
+
+1371
+01:28:35.490 --> 01:28:36.670
+Entonces queda esta otra.
+
+1372
+01:28:37.910 --> 01:28:48.780
+Lo primero que hicimos fue hallar D', que es A cuadrado sobre D.
+
+1373
+01:28:48.780 --> 01:29:07.730
+Y ahora, sustituyendo acá, nos dice que Q' al cuadrado es igual a Q al cuadrado por A al cuadrado sobre D al cuadrado.
+
+1374
+01:29:11.650 --> 01:29:17.750
+O lo que es lo mismo, Q' es igual a más menos Q A sobre D.
+
+1375
+01:29:19.710 --> 01:29:21.350
+¿Y cuál será el signo correcto?
+
+1376
+01:29:28.360 --> 01:29:31.840
+¿Cómo? Menos. Se va a formar una carga negativa.
+
+1377
+01:29:31.840 --> 01:29:35.440
+Porque fíjense, la carga está de este lado
+
+1378
+01:29:35.440 --> 01:29:37.200
+Quiere decir que de este lado
+
+1379
+01:29:37.200 --> 01:29:38.320
+Tendremos carga positiva
+
+1380
+01:29:38.320 --> 01:29:40.520
+Entonces, si no me equivoqué
+
+1381
+01:29:40.520 --> 01:29:41.880
+El resultado es
+
+1382
+01:29:41.880 --> 01:29:44.100
+Q' es igual a menos Q
+
+1383
+01:29:44.100 --> 01:29:45.200
+A sobre D
+
+1384
+01:29:45.200 --> 01:29:56.300
+¿Se entiende?
+
+1385
+01:29:56.900 --> 01:29:58.340
+¿Se entiende por qué es negativa?
+
+1386
+01:29:58.440 --> 01:30:00.740
+Porque esta carga está más cerca
+
+1387
+01:30:00.740 --> 01:30:01.720
+De esta superficie
+
+1388
+01:30:01.720 --> 01:30:02.660
+¿No es verdad?
+
+1389
+01:30:04.400 --> 01:30:06.520
+Entonces, tiene que ser negativa
+
+1390
+01:30:06.520 --> 01:30:07.820
+Para que esté compensando
+
+1391
+01:30:07.820 --> 01:30:09.220
+Encontramos la solución
+
+1392
+01:30:09.220 --> 01:30:11.000
+que está dado por esto
+
+1393
+01:30:11.000 --> 01:30:13.120
+entonces encontramos una solución
+
+1394
+01:30:13.120 --> 01:30:15.660
+que cumple que phi vale
+
+1395
+01:30:15.660 --> 01:30:16.760
+cero en el borde
+
+1396
+01:30:16.760 --> 01:30:19.740
+pero fíjense, es una solución
+
+1397
+01:30:19.740 --> 01:30:21.540
+que no es la que probablemente
+
+1398
+01:30:21.540 --> 01:30:23.440
+nos interesa, porque este espejo
+
+1399
+01:30:23.440 --> 01:30:25.220
+¿está cargado o está descargado?
+
+1400
+01:30:28.620 --> 01:30:28.740
+¿eh?
+
+1401
+01:30:30.440 --> 01:30:32.080
+está cargado, tiene una carga
+
+1402
+01:30:32.080 --> 01:30:32.640
+neta q'
+
+1403
+01:30:32.920 --> 01:30:35.540
+es equivalente a poner una carga q' acá
+
+1404
+01:30:35.540 --> 01:30:36.640
+¿está?
+
+1405
+01:30:37.320 --> 01:30:39.980
+entonces supongamos que ese no es el problema que en general nos hace
+
+1406
+01:30:39.980 --> 01:30:41.780
+interesar. Lo que nos va a interesar es poner una carga Q
+
+1407
+01:30:41.780 --> 01:30:43.800
+en un espejo descargado.
+
+1408
+01:30:43.920 --> 01:30:45.780
+Lo normal es que nos va a dar un espejo que no esté cargado.
+
+1409
+01:30:46.600 --> 01:30:47.960
+¿Cómo podemos hacer para agregar
+
+1410
+01:30:47.960 --> 01:30:48.880
+una carga extra
+
+1411
+01:30:48.880 --> 01:30:52.080
+para que la carga de esto
+
+1412
+01:30:52.080 --> 01:30:54.140
+para que
+
+1413
+01:30:54.140 --> 01:30:55.500
+sigamos respetando que esto
+
+1414
+01:30:55.500 --> 01:30:57.420
+sea un potencial constante
+
+1415
+01:30:57.420 --> 01:30:59.420
+pero que la carga neta sea cero?
+
+1416
+01:31:02.410 --> 01:31:02.490
+No.
+
+1417
+01:31:03.810 --> 01:31:05.390
+Hay que agregar una segunda
+
+1418
+01:31:05.390 --> 01:31:07.170
+carga imagen, pero ¿dónde la ubicamos?
+
+1419
+01:31:11.820 --> 01:31:12.020
+No.
+
+1420
+01:31:13.680 --> 01:31:15.700
+No, si la ponés simétricamente
+
+1421
+01:31:15.700 --> 01:31:17.440
+está frito porque ahí ya no va a cumplir
+
+1422
+01:31:17.440 --> 01:31:21.020
+esto otro. Tiene que ser una
+
+1423
+01:31:21.020 --> 01:31:23.000
+carga que, a ver, les doy una
+
+1424
+01:31:23.000 --> 01:31:24.760
+pista. Tiene que haber una carga que
+
+1425
+01:31:24.760 --> 01:31:27.060
+mantenga un potencial constante en una
+
+1426
+01:31:27.060 --> 01:31:28.420
+esfera. ¿Dónde pueden poner una carga?
+
+1427
+01:31:29.080 --> 01:31:30.120
+En el centro.
+
+1428
+01:31:30.860 --> 01:31:31.760
+Si quieren,
+
+1429
+01:31:32.720 --> 01:31:34.060
+en lugar
+
+1430
+01:31:34.060 --> 01:31:37.710
+de phi igual a cero,
+
+1431
+01:31:38.390 --> 01:31:40.550
+en r igual a
+
+1432
+01:31:40.550 --> 01:31:41.890
+a, pedimos
+
+1433
+01:31:41.890 --> 01:31:45.190
+esfera
+
+1434
+01:31:45.190 --> 01:31:48.090
+descargada, que es lo
+
+1435
+01:31:48.090 --> 01:31:51.500
+razonable, entonces
+
+1436
+01:31:51.500 --> 01:31:58.550
+hay que agregar una carga
+
+1437
+01:31:58.550 --> 01:32:01.530
+para compensar esta, ¿no?
+
+1438
+01:32:01.970 --> 01:32:04.350
+una carga QA
+
+1439
+01:32:04.350 --> 01:32:06.690
+sobre D en el origen
+
+1440
+01:32:06.690 --> 01:32:09.720
+si hacemos eso
+
+1441
+01:32:09.720 --> 01:32:11.920
+el potencial en la superficie sigue siendo
+
+1442
+01:32:11.920 --> 01:32:14.260
+una constante, es otra constante
+
+1443
+01:32:14.260 --> 01:32:15.120
+¿si?
+
+1444
+01:32:16.560 --> 01:32:17.960
+cumple nuevamente todas las
+
+1445
+01:32:17.960 --> 01:32:21.870
+condiciones de borde y además
+
+1446
+01:32:21.870 --> 01:32:23.070
+por lo que acabamos de ver
+
+1447
+01:32:23.070 --> 01:32:25.450
+va a ser de carga total
+
+1448
+01:32:25.450 --> 01:32:27.190
+cero, porque la carga
+
+1449
+01:32:27.190 --> 01:32:29.470
+metida acá adentro, serán las dos cargas
+
+1450
+01:32:29.470 --> 01:32:31.610
+que son unas cuprimas y otras menos cuprimas.
+
+1451
+01:32:33.510 --> 01:32:34.490
+¿Vieron que no es
+
+1452
+01:32:34.490 --> 01:32:37.430
+que hay una parte de arte?
+
+1453
+01:32:37.430 --> 01:32:39.870
+De ser astuto
+
+1454
+01:32:39.870 --> 01:32:41.210
+de donde uno ubica las cargas.
+
+1455
+01:32:41.290 --> 01:32:42.710
+Pero uno le va agarrando la mano a esto.
+
+1456
+01:32:43.130 --> 01:32:44.790
+Bueno, dejamos por acá, capaz que estoy pasado de hora.
+

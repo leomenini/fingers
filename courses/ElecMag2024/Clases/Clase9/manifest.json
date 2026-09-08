@@ -1,0 +1,24 @@
+{
+  "course": "ElecMag2024",
+  "class": 9,
+  "sourceUrl": "https://open.fing.edu.uy/courses/em-2024/9/",
+  "sourceTitle": "Polarización y Ley de Gauss en medios dieléctricos (versión borrador)",
+  "transcriptionSource": "asr",
+  "asr": {
+    "mp4Url": "https://open.fing.edu.uy/media/em-2024/em-2025_09.mp4",
+    "audioSha256": "622c45c10e0927fffbced0e4c6a8a51ae8dd27d55deb5b06e015cc665635828b",
+    "audioFormato": "wav pcm_s16le 16000 Hz mono",
+    "modelo": "large-v3",
+    "computeType": "float16",
+    "beamSize": 5,
+    "vadFilter": true,
+    "conditionOnPreviousText": false,
+    "idiomaDetectado": "es",
+    "segundosDeComputo": 194.6,
+    "factorTiempoReal": 34.74,
+    "generadoEn": "2026-09-08T18:18:52Z"
+  },
+  "releaseDate": "2025-09-04T00:00:00-03:00",
+  "durationSec": 6760,
+  "extractedAt": "2026-09-08T18:20:52.166Z"
+}
