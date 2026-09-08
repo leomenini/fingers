@@ -78,7 +78,7 @@ def bajar(url, destino):
         return destino.stat().st_size
     t0 = time.time()
     subprocess.run(
-        ["curl", "-fL", "--retry", "3", "--retry-delay", "2",
+        ["curl", "-fL", "--no-progress-meter", "--retry", "3", "--retry-delay", "2",
          "-C", "-", "-A", USER_AGENT, "-o", str(destino), url],
         check=True,
     )

@@ -98,6 +98,61 @@ importa es el de `large-v3`, y ese todavía no se midió.
 
 ---
 
+---
+
+## 2026-09-08 · El run en RunPod
+
+Pod: RTX 4090 24 GB, **secure cloud**, EU-CZ-1, USD 0,74/h.
+
+### Hallazgo 1: el pod de community cloud no sirve para automatizar
+
+El primero se creó en community cloud (USD 0,34/h) y **hubo que tirarlo**. Sin
+IP pública sólo queda el proxy `ssh.runpod.io`, que:
+
+- exige PTY (`Error: Your SSH client doesn't support PTY`), y
+- aun con `-tt` **no ejecuta comandos no-interactivos**: se cuelga.
+
+La autenticación funcionaba perfecto (`Server accepts key`), así que el
+síntoma engaña: parece un problema de credenciales y es de transporte.
+**Para manejar un pod por script hace falta secure cloud**, que sí da IP
+pública y mapea el 22/tcp. El doble de precio compra que la cosa sea
+automatizable.
+
+### Hallazgo 2: OpenFING limita por conexión, no en total
+
+Medido desde EU-CZ-1:
+
+| | velocidad |
+| --- | --- |
+| 1 conexión | 275 KB/s |
+| 4 conexiones en paralelo | ~270 KB/s **cada una** (~1,1 MB/s agregado) |
+
+Es un límite **por conexión**. Con una sola, bajar las tres clases son **2,7 h
+con la GPU parada y pagándose**; con cuatro, ~40 min. De ahí `prefetch.sh`,
+que baja por rangos en paralelo y deja los `.wav` listos antes de tocar la GPU.
+
+Cuatro es un techo deliberado: es lo que abre cualquier navegador. La idea es
+no desperdiciar GPU, no exprimirle el ancho de banda a un servidor
+universitario.
+
+### Tres bugs que sólo aparecen sobre el pod
+
+1. **PEP 668.** Ubuntu 24.04 marca el Python del sistema como *externally
+   managed* y `pip` se niega. Resuelto con `--break-system-packages`: el pod
+   es efímero y de un solo uso.
+2. **`nvidia.cudnn` es un namespace package**, así que `__file__` da `None` y
+   la detección de cuDNN fallaba. Hay que preguntarle al `spec` por sus rutas
+   de búsqueda, con un `find` como respaldo.
+3. **`pkill -f` se suicida.** El shell remoto tiene el nombre del script en su
+   propia línea de comando, así que `pkill -f transcribir.py` mata la sesión
+   SSH que lo ejecuta. El truco del corchete (`[t]ranscribir`) tampoco alcanza
+   si el resto del comando menciona el archivo: hay que aislar el `pkill` en
+   su propia invocación.
+
+Ninguno de los tres se puede descubrir en frío. Es el argumento a favor de
+haber preparado todo antes: se pagaron GPU-minutos sólo por estos tres, no
+por el pipeline entero.
+
 ## Pendiente
 
 - [ ] **Alto administrativo:** autenticación de RunPod. El pod no se crea sin
