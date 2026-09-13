@@ -1,0 +1,59 @@
+title: Clase 11
+id: metn-2023-2-11
+
+course: Métodos Numéricos
+academic_year: 2023
+semester: 2
+
+teacher: Juan Pablo Borthagaray
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:03"
+    end: "01:21:40"
+
+stats:
+  transcript_words: 9700
+  summary_words: 1500
+  diagrams_pending: 0
+  equations: 10
+
+# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
+# la clase. Completar antes de marcar status.summary como done.
+
+topics:
+  - Cierre de métodos iterativos: criterio del residuo y criterio de diferencia entre iterados, con red de contención
+  - Planteo del problema de interpolación: existencia de infinitas soluciones sin restringir la clase de funciones
+  - Motivación de la interpolación polinomial (integración/derivación de datos discretos, CAD)
+  - Teorema de existencia y unicidad del polinomio interpolante, demostrado por inducción completa
+  - Construcción por la matriz de Vandermonde
+  - Mal condicionamiento creciente de Vandermonde con el número de puntos
+  - Falta de incrementalidad de Vandermonde al agregar o corregir puntos
+
+bibliography: []
+
+prerequisites:
+  - Número de Condición (Clase 8): la desigualdad error-residuo reaparece en el criterio de parada
+  - Métodos iterativos matriciales (Jacobi, Gauss-Seidel), vistos en clases previas no incluidas en este lote (Clases 9-10)
+
+next_topics:
+  - Error de Interpolación (Clase 12)
+  - Construcciones alternativas del polinomio interpolante (bases de Lagrange y Newton, mencionadas pero no desarrolladas acá)
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer: []
+  date: 2026-09-13
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

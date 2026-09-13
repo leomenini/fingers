@@ -1,0 +1,259 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 11: Polinomio Interpolante} \\[0.3em]
+        \large{Criterios de parada, existencia-unicidad, y la construcción de Vandermonde}}
+\author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Cierre de métodos iterativos: criterios de parada}
+
+Dado un método iterativo matricial (Jacobi, Gauss-Seidel, relajaciones),
+¿con qué criterio se detiene?
+
+\subsection{Criterio del residuo}
+
+Parar cuando $\|r_k\| = \|Ax_k - b\| < \text{tol}$.
+
+\begin{notebox}[Se conecta con el número de condición]
+$\dfrac{\|e_k\|}{\|x^\star\|} \leq \kappa(A)\cdot\dfrac{\|r_k\|}{\|b\|}$
+(Clase 8). Usando tolerancia $\varepsilon\|b\|$: parar cuando
+$\|r_k\|<\varepsilon\|b\|$ garantiza
+$\dfrac{\|e_k\|}{\|x^\star\|}<\varepsilon\,\kappa(A)$. Si $A$ no está muy
+mal condicionada, el criterio es confiable.
+\end{notebox}
+
+\subsection{Criterio de la diferencia entre iterados}
+
+Parar cuando $\|x_{k+1}-x_k\| < \text{tol}$.
+
+\textbf{Análisis}: de $x_{k+1}=Qx_k+r$ y $x^\star=Qx^\star+r$, restando:
+$e_{k+1}=Qe_k$. Sumando y restando $x_{k+1}$:
+$$e_k = (x_k - x_{k+1}) + (x_{k+1} - x^\star) = (x_k-x_{k+1}) + Qe_k$$
+Tomando norma y desigualdad triangular:
+$$\|e_k\| \leq \|x_{k+1}-x_k\| + \|Q\|\,\|e_k\|$$
+Despejando (válido si $\|Q\|<1$):
+
+\begin{keybox}
+$$\|e_k\| \leq \frac{\|x_{k+1}-x_k\|}{1-\|Q\|} < \frac{\varepsilon}{1-\|Q\|}$$
+\end{keybox}
+
+\begin{warnbox}[Cuidado]
+Exige que la norma con la que se mide $Q$ cumpla $\|Q\|<1$ — no cualquier
+norma matricial sirve, aunque el método converja (convergencia garantiza
+radio espectral $<1$, un ínfimo sobre normas, no que toda norma dé $<1$).
+\end{warnbox}
+
+\subsection{Red de contención}
+
+Ambos criterios pueden no alcanzarse nunca en tiempo razonable si la matriz
+está muy mal condicionada (ejemplo: matrices de Hilbert). Se combina
+cualquier criterio con un tope máximo de iteraciones ($k<10\,000$) como red
+de seguridad.
+
+\section{Interpolación: el problema}
+
+\textbf{Interpolar} = unir puntos con una función. Dados $n+1$ puntos
+$(x_i,y_i)$, $i=0,\dots,n$, con \textbf{abscisas distintas dos a dos},
+hallar $\varphi:\mathbb{R}\to\mathbb{R}$ tal que $\varphi(x_i)=y_i$ para
+todo $i$.
+
+\begin{notebox}
+Sin restricciones adicionales, el problema tiene infinitas soluciones (mal
+planteado). Este curso trabaja \textbf{interpolación polinomial}
+($\varphi$ = polinomio algebraico); existe también interpolación con
+polinomios trigonométricos (Fourier), teoría distinta, no cubierta acá.
+\end{notebox}
+
+\subsection{Por qué interpolar: motivación}
+
+\begin{itemize}
+  \item Pasar de datos discretos a un objeto continuo, para integrar,
+  derivar, o encontrar ceros.
+  \item \textbf{CAD}: las fuentes de texto vectorial almacenan puntos de
+  control, no un dibujo — el trazo se reconstruye por interpolación
+  polinomial (por eso no se pixela al hacer zoom). Origen en el diseño
+  industrial de los años 60.
+\end{itemize}
+
+\section{Existencia y unicidad del polinomio interpolante}
+
+\begin{keybox}[Teorema]
+Dados $n+1$ puntos en el plano con abscisas distintas, existe un único
+polinomio $p_n$ de grado $\leq n$ tal que $p_n(x_i)=y_i$ para todo $i$
+(el \textbf{polinomio interpolante}).
+\end{keybox}
+
+\begin{notebox}
+1 punto $\to$ grado 0; 2 puntos $\to$ grado 1; en general, puntos = grado+1.
+El ``$\leq$'' es necesario: con 2 puntos a la misma altura, la recta que
+pasa por ambos degenera en constante.
+\end{notebox}
+
+\subsection{Demostración por inducción completa}
+
+\textbf{Paso base} ($n=0$): único punto $(x_0,y_0)$. El único polinomio de
+grado 0 con $p_0(x_0)=y_0$ es $p_0(x)\equiv y_0$.
+
+\textbf{Paso inductivo}: suponiendo el teorema válido para $n-1$ (existe un
+único $p_{n-1}$ de grado $\leq n-1$ que interpola los primeros $n$ puntos),
+se escribe
+$$p_n(x) = p_{n-1}(x) + q(x)$$
+
+Para no arruinar el trabajo de $p_{n-1}$, $q$ debe anularse en
+$x_0,\dots,x_{n-1}$ ($n$ raíces para un polinomio de grado $\leq n$):
+$$q(x) = a_n\prod_{i=0}^{n-1}(x-x_i)$$
+
+Imponiendo $p_n(x_n)=y_n$:
+$$y_n = p_{n-1}(x_n) + a_n\prod_{i=0}^{n-1}(x_n-x_i)$$
+
+\begin{notebox}[Acá se usa que las abscisas son distintas]
+Ningún factor $(x_n-x_i)$ es cero, así que se despeja
+$$a_n = \frac{y_n - p_{n-1}(x_n)}{\prod_{i=0}^{n-1}(x_n-x_i)}$$
+\end{notebox}
+
+$a_n$ queda determinado de forma única: existencia y unicidad probadas a
+la vez. $\blacksquare$
+
+\section{Construcción por Vandermonde}
+
+\textbf{Base monomial}: $p_n(x) = c_0+c_1x+\dots+c_nx^n$. Imponer
+$p_n(x_i)=y_i$ da el sistema lineal
+$$Bc = y, \qquad B_{ij} = x_i^{\,j}$$
+
+$B$ es la \textbf{matriz de Vandermonde}, invertible porque el teorema de
+§3 ya garantiza solución única (equivalentemente: abscisas iguales
+producirían columnas iguales, $B$ singular).
+
+En Octave: \texttt{B = vander(x)} (columnas en orden inverso),
+\texttt{c = B \textbackslash\ y}.
+
+\subsection{El problema de condicionamiento de Vandermonde}
+
+\textbf{Experimento en clase}: $\kappa(B)$ para $n$ puntos equiespaciados en
+$[0,1]$ crece muy rápido — de orden constante para pocos puntos a
+$\sim 4\times 10^{16}$ con 20 puntos, y overflow con 55.
+
+\begin{warnbox}[Ejemplo: interpolar $f\equiv 1$]
+Con 25 puntos, el polinomio (vía \texttt{backslash}) \textbf{evalúa
+razonablemente bien} (entre $0{,}99$ y $1{,}00$ algo) pero sus
+\textbf{coeficientes son un desastre} — números enormes que casi se
+cancelan. Con 55 puntos, hasta las evaluaciones se rompen.
+\end{warnbox}
+
+\begin{notebox}[Por qué pasa esto]
+La eliminación gaussiana con pivoteo parcial siempre da residuos chicos
+(Clase 8) — de ahí evaluaciones razonables —, pero con $\kappa(B)$ enorme
+el error en los coeficientes queda sin control. Residuo chico y error
+grande conviven, igual que en las rectas casi paralelas de la Clase 8.
+\end{notebox}
+
+\subsection{El problema de no incrementalidad}
+
+Si se agrega o corrige un punto, hay que rearmar la matriz de Vandermonde
+entera y resolver el sistema de nuevo — no hay forma de reutilizar el
+cálculo anterior.
+
+\begin{keybox}[Motivación de la clase siguiente]
+Mal condicionamiento creciente y falta de incrementalidad motivan dos
+formas alternativas de escribir el polinomio interpolante (bases de
+Lagrange y de Newton), que evitan ambos defectos.
+\end{keybox}
+
+\end{document}
