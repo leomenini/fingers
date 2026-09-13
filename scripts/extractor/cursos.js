@@ -37,6 +37,14 @@ export const CURSOS = {
     semester: 2,
     teacher: 'Nicolás Wschebor',
   },
+  'MetNum2023': {
+    slug: 'metn-2023',
+    idPrefix: 'metn-2023-2',
+    course: 'Métodos Numéricos',
+    academic_year: 2023,
+    semester: 2,
+    teacher: 'Juan Pablo Borthagaray',
+  },
 };
 
 export const urlBaseDe = (slug) => `https://open.fing.edu.uy/courses/${slug}`;
