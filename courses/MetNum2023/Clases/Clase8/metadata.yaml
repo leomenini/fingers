@@ -1,0 +1,59 @@
+title: Clase 8
+id: metn-2023-2-08
+
+course: Métodos Numéricos
+academic_year: 2023
+semester: 2
+
+teacher: Juan Pablo Borthagaray
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:01"
+    end: "01:27:24"
+
+stats:
+  transcript_words: 9852
+  summary_words: 1717
+  diagrams_pending: 0
+  equations: 15
+
+# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
+# la clase. Completar antes de marcar status.summary como done.
+
+topics:
+  - Motivación: sistema con residuo chico pero error enorme (rectas casi paralelas)
+  - Del par de desigualdades residuo-error al número de condición kappa(A) = ||A|| ||A^-1||
+  - Por qué el determinante no mide el condicionamiento (contraejemplo alpha*I)
+  - Caracterización geométrica: cociente entre estiramiento máximo y contracción mínima
+  - Análisis de perturbaciones: en el lado derecho b y en la matriz A
+  - Teorema de Wilkinson: la solución computada resuelve exactamente un sistema perturbado
+  - Mensaje final: el residuo relativo siempre es chico; el error relativo depende de kappa(A)
+
+bibliography: []
+
+prerequisites:
+  - Normas de Matrices (Clase 7): compatibilidad, submultiplicatividad, r = A*e
+  - Descomposición LU (Clase 6): eliminación gaussiana con pivoteo parcial
+
+next_topics:
+  - Cierra la unidad de Sistemas Lineales (Clases 5-8)
+  - Interpolación (retomada en Clase 11 de este lote; Clases 9-10 no incluidas)
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: pending
+
+review:
+  state: needs-review
+  reviewer: []
+  date: 2026-09-13
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft

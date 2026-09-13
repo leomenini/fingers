@@ -1,0 +1,302 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 8: Número de Condición} \\[0.3em]
+        \large{$\kappa(A) = \|A\|\|A^{-1}\|$, perturbaciones, y el teorema de Wilkinson}}
+\author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Motivación: un sistema que engaña al residuo}
+
+Computadora hipotética de \textbf{tres cifras significativas}, eliminación
+gaussiana \textbf{con pivoteo parcial}. Solución computada
+$\bar{x} = (-0{,}443,\ 1)$, residuo del orden de $5{,}41\times 10^{-4}$ en
+norma infinito.
+
+Solución exacta $x^\star = (1,-1)$. Error en norma infinito
+$\|\bar{x}-x^\star\|_\infty \approx 2{,}2$ — enorme.
+
+\begin{warnbox}[Se hizo todo bien]
+Eliminación gaussiana con pivoteo parcial, la mejor herramienta disponible,
+y aun así el resultado es inútil.
+\end{warnbox}
+
+\subsection{Interpretación geométrica: rectas casi paralelas}
+
+Un sistema $2\times 2$ es la intersección de dos rectas. Graficando, las dos
+rectas son \textbf{casi paralelas}. El punto calculado está cerca de ambas
+(residuo chico), pero si dos rectas casi paralelas están muy próximas,
+\textbf{estar cerca de ambas no implica estar cerca de su intersección}.
+
+\begin{keybox}[La culpa es del sistema]
+Si las rectas fueran muy distintas en dirección (caso extremo, ortogonales),
+estar cerca de ambas sí obligaría a estar cerca de la intersección: sistema
+``bueno''. Cuanto más cerca de ser linealmente dependiente, más peligroso.
+\end{keybox}
+
+\section{De la relación residuo--error al número de condición}
+
+De $r=Ae$ (Clase 7) y compatibilidad en ambas direcciones ($r=Ae$ y
+$e=A^{-1}r$):
+$$\|r\| \leq \|A\|\,\|e\|, \qquad \|e\| \leq \|A^{-1}\|\,\|r\|$$
+
+Repitiendo con $b=Ax^\star$ para normalizar por el tamaño de la solución:
+$$\|b\| \leq \|A\|\,\|x^\star\|, \qquad \|x^\star\| \leq \|A^{-1}\|\,\|b\|$$
+
+Combinando ambos pares:
+$$\boxed{\frac{1}{\kappa(A)}\cdot\frac{\|r\|}{\|b\|} \;\leq\; \frac{\|e\|}{\|x^\star\|} \;\leq\; \kappa(A)\cdot\frac{\|r\|}{\|b\|}}$$
+
+\subsection{Definición}
+
+\begin{keybox}[Número de condición]
+$$\kappa(A) := \|A\|\,\|A^{-1}\|$$
+\end{keybox}
+
+\begin{notebox}
+Si $\kappa(A)$ es moderado, residuo relativo chico $\iff$ error relativo
+chico. Si $\kappa(A)$ es enorme, un residuo relativo chico no dice nada
+sobre el error relativo.
+\end{notebox}
+
+\begin{notebox}[Depende de la norma, no del orden de magnitud]
+Para una matriz razonable, $\kappa$ con $L^1$, $L^2$, $L^\infty$ da el mismo
+orden de magnitud. Octave: \texttt{cond(A,p)} (exacto, caro);
+\texttt{condest(A)} (estimación barata, norma $L^1$); \texttt{cond(A)} sin
+especificar usa $L^2$.
+
+Para la matriz de §1: $\kappa_1 \approx 2{,}6\times 10^6$, $\kappa_2 \approx
+2{,}19\times 10^6$, $\kappa_\infty \approx 2{,}6\times 10^6$ — todos
+$\sim 10^6$. Con residuo relativo $\sim 10^{-4}$, el error relativo sólo
+queda acotado hasta $10^{6}\times 10^{-4} = 10^{2}$: inútil.
+\end{notebox}
+
+\section{Por qué no alcanza con el determinante}
+
+\textbf{Contraejemplo}: $A = \alpha I$ con $\alpha=10^{-5}$ en $3\times 3$.
+$\det(A) = \alpha^3 = 10^{-15}$ — diminuto. Sin embargo $\kappa(A) = 1$ (el
+mínimo posible): computacionalmente trivial y estable.
+
+\begin{warnbox}
+El determinante no mide lo que importa. Importa cuánto estira $A$ en unas
+direcciones comparado con cuánto contrae en otras (§4), no qué tan chico es
+el producto de sus valores propios.
+\end{warnbox}
+
+\section{Caracterización geométrica: estiramiento máximo sobre contracción mínima}
+
+$$\kappa(A) = \|A\| \cdot \|A^{-1}\| = \frac{\displaystyle\max_{x\neq 0}\|Ax\|/\|x\|}{\displaystyle\min_{x\neq 0}\|Ax\|/\|x\|}$$
+
+\textit{Demostración} de $\|A^{-1}\| = 1/\min_{x\neq 0}\|Ax\|/\|x\|$: usando
+$1/\min(f) = \max(1/f)$,
+$$\frac{1}{\min\limits_{x\neq0} \|Ax\|/\|x\|} = \max_{x\neq0} \frac{\|x\|}{\|Ax\|}$$
+Cambio de variable $y=Ax$ (biyectivo en $\mathbb{R}^n\setminus\{0\}$,
+$A$ invertible), $x=A^{-1}y$:
+$$\max_{y\neq0} \frac{\|A^{-1}y\|}{\|y\|} = \|A^{-1}\|$$
+por definición de norma operador. $\blacksquare$
+
+\begin{notebox}[Lectura geométrica]
+Sobre la bola unitaria, $\kappa(A)$ compara la dirección que $A$ más estira
+contra la que más contrae, sin importar el signo del estiramiento.
+\end{notebox}
+
+\begin{keybox}[Corolario]
+Para cualquier norma operador, $\kappa(\alpha I) = 1$.
+\end{keybox}
+
+\textbf{Ejemplo}: $A = \begin{pmatrix}\alpha & 0 \\ 0 & 1/\alpha\end{pmatrix}$
+con $\alpha=1000$: estira por $1000$ en una dirección, contrae por $1000$
+en la otra: $\kappa(A) = 10^6$.
+
+Si $A$ es singular, el mínimo estiramiento es $0$, así que $\kappa(A) =
+\infty$.
+
+\subsection{Costo de calcularlo}
+
+Exige recorrer todas las direcciones — caro, salvo que se conozcan de
+antemano los valores propios/singulares de $A$. En la práctica se usan
+estimaciones baratas (\texttt{condest}).
+
+\section{Análisis de perturbaciones}
+
+El número de condición cumple, para sistemas lineales, el mismo rol de
+\textbf{sensibilidad} que el número de condición de una función.
+
+\subsection{Perturbación en el lado derecho \texorpdfstring{$b$}{b}}
+
+$Ax=b+\delta b \Rightarrow$ solución $x+\delta x$. Restando y usando
+linealidad: $A\,\delta x = \delta b$. Repitiendo el argumento de §2:
+
+\begin{keybox}
+$$\frac{\|\delta x\|}{\|x\|} \leq \kappa(A)\cdot\frac{\|\delta b\|}{\|b\|}$$
+\end{keybox}
+
+\begin{notebox}
+Si $A$ está bien condicionada, un cambio chico en $b$ produce un cambio
+chico en $x$. Si está mal condicionada, un cambio chiquito en $b$ puede
+mandar la solución ``al demonio''.
+\end{notebox}
+
+\subsection{Perturbación en la matriz \texorpdfstring{$A$}{A}}
+
+$(A+\delta A)(x+\delta x) = b \Rightarrow$ restando y usando linealidad:
+$$A\,\delta x + \delta A\,(x+\delta x) = 0 \implies \delta x = -A^{-1}\,\delta A\,(x+\delta x)$$
+
+Tomando norma, con compatibilidad y submultiplicatividad:
+$$\|\delta x\| \leq \|A^{-1}\|\,\|\delta A\|\,\|x+\delta x\|$$
+
+Multiplicando y dividiendo por $\|A\|$:
+
+\begin{keybox}
+$$\frac{\|\delta x\|}{\|x+\delta x\|} \leq \kappa(A)\cdot\frac{\|\delta A\|}{\|A\|}$$
+\end{keybox}
+
+Mismo mensaje: el error relativo en la salida se controla con $\kappa(A)$
+y el tamaño relativo de la perturbación.
+
+\section{El teorema de Wilkinson}
+
+\textit{(Enunciado y aceptado sin demostración — resultado clásico de los
+años 60, James H. Wilkinson, pionero del álgebra lineal numérica.)}
+
+\begin{keybox}[Teorema (Wilkinson)]
+Al resolver $Ax=b$ con eliminación gaussiana con pivoteo parcial, la
+solución computada $\bar{x}$ es la solución \textbf{exacta} de un sistema
+\textbf{perturbado}:
+$$(A+E)\,\bar{x} = b$$
+donde los elementos de $E$ son del orden del error de representación de los
+coeficientes de $A$: en alguna norma matricial,
+$$\|E\| \lesssim (\text{factor}\sim10)\cdot \varepsilon_{\text{máq}} \cdot \|A\|$$
+\end{keybox}
+
+\subsection{Consecuencia: error relativo controlado por el número de condición}
+
+Identificando $E$ con $\delta A$ y $\bar{x}$ con $x+\delta x$ (§5.2):
+$$\frac{\|\delta x\|}{\|\bar{x}\|} \leq \kappa(A)\cdot\frac{\|E\|}{\|A\|} \lesssim \kappa(A)\cdot(\text{factor}\sim10)\cdot\varepsilon_{\text{máq}}$$
+
+\begin{keybox}
+Si $\kappa(A)$ no es muy grande, eliminación gaussiana con pivoteo parcial
+da errores relativos chicos.
+\end{keybox}
+
+Ejemplo: $\kappa(A)\sim 20$, factor $\sim 10$: error relativo esperado
+$\sim \varepsilon_{\text{máq}} \times 200 \sim 10^{-14}$.
+
+\subsection{El mensaje final: el residuo siempre es chico, el error no siempre}
+
+Incluso si $\kappa(A)$ es grande, la eliminación gaussiana con pivoteo
+parcial produce siempre \textbf{residuos relativos chicos}.
+
+\textit{Derivación}: de $(A+E)\bar x = b \Rightarrow A\bar x - b = -E\bar
+x = r$:
+$$\frac{\|r\|}{\|A\|\,\|\bar{x}\|} = \frac{\|{-E\bar{x}}\|}{\|A\|\,\|\bar{x}\|} \leq \frac{\|E\|}{\|A\|} \lesssim (\text{factor}\sim10)\cdot\varepsilon_{\text{máq}}$$
+
+\begin{keybox}
+El residuo relativo de la eliminación gaussiana con pivoteo parcial es
+siempre del orden de $\varepsilon_{\text{máq}}$, sin importar $\kappa(A)$.
+\end{keybox}
+
+\begin{notebox}[Mensaje final de la unidad]
+El residuo relativo es \textbf{siempre} pequeño con eliminación gaussiana
+con pivoteo parcial. Si esa pequeñez se traduce en un error pequeño
+\textbf{depende exclusivamente del número de condición de la matriz},
+fuera del control del algoritmo. Un residuo chico no es evidencia de nada
+si $\kappa(A)$ es grande.
+\end{notebox}
+
+\end{document}
