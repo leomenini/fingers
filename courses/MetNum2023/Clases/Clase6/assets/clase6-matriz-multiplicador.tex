@@ -1,0 +1,31 @@
+% clase6-matriz-multiplicador.tex — estructura de una matriz de multiplicadores M_k
+% (identidad con la columna k, por debajo de la diagonal, reemplazada por
+% -L_{jk}). Matriz 5x5, k=3. Ver notes.tex Clase6 §3.2.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \def\n{5}
+  \def\kcol{3}
+  \foreach \row in {1,...,5} {
+    \foreach \col in {1,...,5} {
+      \pgfmathsetmacro{\xx}{\col}
+      \pgfmathsetmacro{\yy}{6-\row}
+      \ifnum\row=\col
+        \node[matnz] at (\xx,\yy) {$1$};
+      \else
+        \ifnum\col=\kcol
+          \ifnum\row>\kcol
+            \node[matpivote] at (\xx,\yy) {\scriptsize $-L_{\row,\kcol}$};
+          \else
+            \node[matcero] at (\xx,\yy) {$0$};
+          \fi
+        \else
+          \node[matcero] at (\xx,\yy) {$0$};
+        \fi
+      \fi
+    }
+  }
+  \draw[figgray, line width=0.6pt] (0.5,0.5) rectangle (5.5,5.5);
+  \node[figlblaux] at (3,6.2) {columna $k=3$};
+  \draw[figamber, line width=1pt, -{Latex[length=2mm,width=1.4mm]}] (3,5.9) -- (3,5.55);
+\end{tikzpicture}
+\end{center}
