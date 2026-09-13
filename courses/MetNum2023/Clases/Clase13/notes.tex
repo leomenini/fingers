@@ -1,0 +1,419 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 13: Interpolación a Trozos} \\[0.3em]
+        \large{Interpolación lineal y cúbica a trozos, fenómeno de Runge, interpolación de Hermite}}
+\author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Motivación: el fenómeno de Runge}
+
+La clase retoma el teorema de error de interpolación probado la clase
+anterior (Clase 12): dado un polinomio interpolante $p_n$ de grado $\le n$
+por $n+1$ nodos $x_0,\dots,x_n \in [a,b]$,
+\[
+f(x) - p_n(x) = \frac{f^{(n+1)}(\gamma_x)}{(n+1)!}\,\omega_n(x), \qquad \omega_n(x) = \prod_{i=0}^n (x-x_i),
+\]
+para cierto $\gamma_x$ no controlable. La cota resultante depende de tres
+factores: la derivada de orden $n+1$ de $f$, el factorial $(n+1)!$ (que
+ayuda, porque crece muy rápido) y el \textbf{polinomio nodal} $\omega_n$
+(que puede ayudar o no, según cómo se elijan los nodos).
+
+Se retoma el ejemplo de la \textbf{función de Runge},
+\[
+f(x) = \frac{1}{1+25x^2}, \qquad x \in [-1,1],
+\]
+interpolada con nodos equiespaciados de grado creciente. A diferencia del
+ejemplo anterior ($\mathrm{sen}(x)\cos(x)$, donde la interpolante convergía
+muy bien), acá la interpolante \textbf{no converge} en norma del supremo:
+para $n$ grande aparecen oscilaciones violentas cerca de los extremos del
+intervalo (el fenómeno se ve con claridad al graficar, aunque en el centro
+del intervalo la aproximación es buena).
+
+\begin{notebox}[Por qué pasa esto]
+Con nodos equiespaciados, el polinomio nodal $\omega_n$ no ayuda ni
+perjudica ``a propósito'': simplemente puede volverse enorme. Para la
+función de Runge, las derivadas de orden alto crecen tan rápido que ni el
+factorial $(n+1)!$ del denominador alcanza para compensar, y la cota (y el
+error real) diverge.
+\end{notebox}
+
+\noindent\textbf{Mensaje general:} si una función tiene derivadas de orden
+alto que crecen rápido, hacer interpolación polinomial de grado alto es mala
+idea.
+
+\section{Dos salidas: mejores nodos o interpolar a trozos}
+
+Como el factor $f^{(n+1)}$ y el factorial $(n+1)!$ no son negociables (son
+datos del problema), la única palanca disponible es el polinomio nodal
+$\omega_n$. Se mencionan dos estrategias:
+
+\begin{enumerate}
+  \item \textbf{Elegir mejor los nodos} --- los \textbf{nodos de Chebyshev}
+  (construidos proyectando una partición uniforme de un círculo sobre el
+  diámetro) minimizan $\|\omega_n\|_\infty$ y evitan el fenómeno de Runge
+  cerca de los bordes. La clase los muestra brevemente (con 5, 20 y 50 nodos
+  la curva mejora notoriamente), pero \textbf{no se desarrollan más}: quedan
+  mencionados como una alternativa válida, sin demostración ni fórmula de
+  error propia en esta clase.
+  \item \textbf{Interpolar a trozos con grado bajo} --- en vez de un único
+  polinomio de grado alto (con mucha ``libertad para oscilar''), particionar
+  el intervalo en subintervalos chicos y usar un polinomio de grado bajo en
+  cada uno. Caso extremo: una función \textbf{lineal} no puede tener un
+  máximo local, así que no puede oscilar. Ésta es la estrategia que
+  desarrolla el resto de la clase.
+\end{enumerate}
+
+\begin{notebox}[Cuándo vale la pena]
+Para una función ``linda'' como $\mathrm{sen}(x)\cos(x)$, interpolar a
+trozos no aporta nada --- conviene el interpolante global de grado alto. La
+interpolación a trozos se justifica cuando \textbf{no se pueden elegir los
+nodos} (o cuando elegirlos como Chebyshev no alcanza) y la función tiene
+derivadas de orden alto grandes.
+\end{notebox}
+
+\section{Interpolación lineal a trozos}
+
+\subsection{Definición}
+
+Dados $(x_i, y_i)$, $i=0,\dots,n$, con $x_0 < x_1 < \dots < x_n$, se define
+la interpolante lineal a trozos $L: [x_0,x_n] \to \mathbb{R}$ como la
+función que, restringida a cada subintervalo $[x_i, x_{i+1}]$, es el (único)
+polinomio de grado $\le 1$ que interpola $(x_i,y_i)$ y $(x_{i+1},y_{i+1})$:
+\[
+L(x) = y_i + (x - x_i)\,\frac{y_{i+1}-y_i}{x_{i+1}-x_i}, \qquad x \in [x_i, x_{i+1}].
+\]
+Es literalmente ``unir los puntos con segmentos de recta'' --- la
+existencia no plantea ningún problema porque ya se sabe interpolar por dos
+puntos.
+
+\subsection{Continuidad sin derivabilidad}
+
+$L$ es \textbf{continua} por construcción (los segmentos comparten
+extremos), pero \textbf{no es derivable} en los nodos interiores en general
+(salvo que $f$ sea constante) --- hay un ``pico'' en cada $x_i$.
+
+\subsection{Cota del error}
+
+Si los $(x_i,y_i)$ provienen de evaluar una función $f$, se reutiliza el
+teorema de error de interpolación de la clase anterior, pero
+\textbf{aplicado localmente}: para $x \in [x_i,x_{i+1}]$ existe $\gamma_x
+\in (x_i,x_{i+1})$ tal que
+\[
+f(x) - L(x) = \frac{f''(\gamma_x)}{2}\,(x-x_i)(x-x_{i+1}).
+\]
+Es exactamente el teorema de la clase anterior particularizado a $n=1$ en el
+subintervalo $[x_i,x_{i+1}]$ en vez de en todo $[a,b]$.
+
+Acotando: $(x-x_i)(x-x_{i+1})$ (con signo cambiado para que sea positivo) es
+una parábola que vale $0$ en ambos extremos y, por simetría, alcanza su
+máximo en el punto medio, donde vale $\frac{(x_{i+1}-x_i)^2}{4}$. Tomando el
+peor caso sobre todos los subintervalos:
+\begin{keybox}[Cota del error --- interpolación lineal a trozos]
+\[
+\|f - L\|_\infty \;\le\; \frac{\|f''\|_{\infty,[x_0,x_n]}}{8}\,h^2,
+\qquad h = \max_i (x_{i+1}-x_i).
+\]
+\end{keybox}
+
+\noindent\textit{De dónde sale el 8:} sale de combinar el $2$ del $2!$ en el
+denominador del teorema con el $4$ del máximo de la parábola
+$(x-x_i)(x-x_{i+1})$.
+
+\subsection{Aplicación a la función de Runge}
+
+Con $n+1$ nodos equiespaciados en $[-1,1]$, $h = \dfrac{2}{n}$. La derivada
+segunda de la función de Runge,
+\[
+f''(x) = \frac{50\,(75x^2-1)}{(1+25x^2)^3},
+\]
+alcanza su máximo en valor absoluto en $x=0$, donde vale $50$ (dato que se
+da sin demostrarlo formalmente en la clase --- se justifica
+cualitativamente mirando el gráfico: la derivada segunda mide ``cuán rápido
+cambia la pendiente'', y eso es máximo en el centro, donde la función pasa
+de crecer a decrecer más bruscamente; hacia los extremos la función se
+parece a una recta y $f''$ es chica).
+\[
+\|f - L\|_\infty \;\le\; \frac{50}{8}\cdot\frac{4}{n^2} \;=\; \frac{25}{n^2}
+\;\xrightarrow[n\to\infty]{}\; 0.
+\]
+
+\input{assets/clase13-runge-lineal.tex}
+
+\begin{keybox}[Contraste clave con la clase anterior]
+Con los mismos nodos equiespaciados que producían el fenómeno de Runge en la
+interpolación global de grado alto, la interpolación \textbf{lineal a
+trozos} converge uniformemente. El precio es una curva visualmente ``tosca''
+(llena de picos), pero cumple el objetivo de convergencia en norma infinito.
+\end{keybox}
+
+\section{De lineal a cúbica a trozos}
+
+\subsection{Por qué no cuadrática}
+
+Se busca ahora un interpolante a trozos \textbf{derivable}, no solo
+continuo: que en cada nodo interior $x_i$ coincidan tanto el valor como la
+derivada por izquierda y por derecha. Para un intervalo interior
+$[x_i,x_{i+1}]$ eso son \textbf{cuatro condiciones}:
+\[
+p(x_i)=y_i,\quad p(x_{i+1})=y_{i+1},\quad p'(x_i)=d_i,\quad p'(x_{i+1})=d_{i+1}.
+\]
+Un polinomio cuadrático tiene sólo \textbf{tres} grados de libertad --- no
+alcanzan para las cuatro condiciones. Un polinomio \textbf{cúbico} tiene
+exactamente cuatro coeficientes, así que el sistema queda determinado (y es
+a lo sumo un sistema $4\times 4$, resoluble por ejemplo a la Vandermonde,
+aunque no se resuelve en el pizarrón).
+
+\subsection{Por qué grado impar}
+
+En general estos interpolantes a trozos se toman de \textbf{grado impar}:
+un polinomio de grado impar tiene una cantidad \textbf{par} de coeficientes,
+lo que encaja con imponer pares de condiciones (valor + derivadas de
+distintos órdenes) en cada extremo del subintervalo.
+
+\begin{notebox}
+Se menciona además, sin desarrollarlo, que una ventaja práctica de trabajar
+a trozos (frente a un interpolante global) es que agregar un nodo nuevo
+sólo obliga a recalcular el (o los) subintervalo(s) afectados, no toda la
+interpolante.
+\end{notebox}
+
+\section{La interpolante cúbica a trozos}
+
+\subsection{El problema, con los \texorpdfstring{$d_i$}{di} dados}
+
+Se plantea el problema suponiendo, por ahora, que además de los datos
+$(x_i,y_i)$ también se conocen valores deseados de la derivada en cada
+nodo, $d_i$ (de dónde salen esos $d_i$ es la pregunta que se responde en la
+sección \ref{sec:tres-formas}). El problema es: hallar
+$P:[x_0,x_n]\to\mathbb{R}$ tal que, en cada subintervalo, $P$ sea un
+polinomio de grado $\le 3$ con
+\[
+P(x_i)=y_i, \qquad P'(x_i)=d_i \qquad \text{para todo } i.
+\]
+
+\subsection{Fórmula explícita (base de Hermite)}
+
+Con $s = x-x_i$ la variable local dentro del subintervalo y $h_i =
+x_{i+1}-x_i$ su longitud, la interpolante en $[x_i,x_{i+1}]$ es
+\begin{keybox}[Interpolante cúbica a trozos]
+\[
+P(x) = y_i\,\frac{(h_i-s)^2(h_i+2s)}{h_i^3}
+     \;+\; y_{i+1}\,\frac{s^2(3h_i-2s)}{h_i^3}
+     \;+\; d_i\,\frac{s(s-h_i)^2}{h_i^2}
+     \;+\; d_{i+1}\,\frac{s^2(s-h_i)}{h_i^2}.
+\]
+\end{keybox}
+
+\noindent\textit{Verificación en los extremos} (como se hace en clase): en
+$s=0$ sobreviven sólo los términos sin $s$, y queda $P=y_i$; en $s=h_i$
+sobrevive sólo el término de $y_{i+1}$, y queda $P=y_{i+1}$ --- consistente
+con lo pedido. (Puede verificarse igual de mecánicamente que
+$P'(x_i)=d_i$ y $P'(x_{i+1})=d_{i+1}$, aunque la clase no hace esa cuenta
+explícita.)
+
+Es, en palabras del docente, ``una de esas fórmulas que escribís una vez,
+la copiás y la pegás'': una vez fijados los $d_i$ (por cualquiera de los
+tres métodos de la sección \ref{sec:tres-formas}), esta fórmula da el
+interpolante cúbico a trozos completo.
+
+\section{Tres formas de elegir los \texorpdfstring{$d_i$}{di}}
+\label{sec:tres-formas}
+
+La clase anuncia (y desarrolla en las próximas clases, ``entre hoy y el
+miércoles'') tres estrategias distintas para fijar los $d_i$, con preguntas
+distintas asociadas a cada una:
+
+\begin{enumerate}
+  \item \textbf{Interpolación de Hermite} --- los $d_i$ \emph{vienen
+  dados}: si los datos provienen de una función conocida $f$, se toma
+  $d_i = f'(x_i)$. La pregunta relevante es cuán bien aproxima el
+  interpolante a $f$ (se desarrolla en la sección \ref{sec:hermite}).
+  \item \textbf{Splines} --- los $d_i$ \textbf{no} vienen dados; se eligen
+  de forma que la función resultante tenga \textbf{derivada segunda
+  continua} (sea de clase $C^2$). No se desarrolla en esta clase.
+  \item \textbf{Interpolación que preserva forma (\texttt{pchip})} --- los
+  datos son puntos sueltos, sin función subyacente conocida; los $d_i$ se
+  eligen con fórmulas heurísticas para que la curva ``se vea linda'' (es lo
+  que hace la función \texttt{pchip} de MATLAB/Octave). No se desarrolla en
+  esta clase; para estos dos últimos casos no se plantea una pregunta de
+  error contra una $f$ (no hay $f$), sino de estética de la curva.
+\end{enumerate}
+
+\section{Interpolación de Hermite cúbica a trozos}
+\label{sec:hermite}
+
+\subsection{Definición}
+
+Dada $f:[x_0,x_n]\to\mathbb{R}$ derivable y nodos $x_0<\dots<x_n$, la
+\textbf{interpolante de Hermite cúbica a trozos} es la función $P$ dada en
+cada subintervalo por la fórmula de la sección anterior con $y_i = f(x_i)$
+y $d_i = f'(x_i)$. Por construcción, $P$ es continua, con derivada
+continua, coincide con $f$ en los nodos y su derivada coincide con $f'$ en
+los nodos.
+
+\subsection{Teorema del error}
+
+A diferencia de la interpolante lineal a trozos, acá se dispone de más
+información (los valores de la derivada), y la fórmula de error de la
+Clase 12 ``se queda corta'': sólo explota la coincidencia de valores, no de
+derivadas. El teorema (enunciado primero para un único intervalo $[a,b]$,
+antes de pegar subintervalos):
+
+\begin{keybox}[Teorema --- error de la interpolación de Hermite cúbica]
+Sea $f$ de clase $C^4$ en $[a,b]$ y sea $P$ el polinomio de grado $\le 3$
+tal que $P(a)=f(a)$, $P(b)=f(b)$, $P'(a)=f'(a)$, $P'(b)=f'(b)$. Entonces
+para todo $x\in[a,b]$ existe $\gamma_x \in (a,b)$ tal que
+\[
+f(x)-P(x) \;=\; \frac{f^{(4)}(\gamma_x)}{24}\,(x-a)^2(x-b)^2.
+\]
+\end{keybox}
+
+Comparado con el teorema de la clase anterior (con nodos simples), acá el
+polinomio nodal aparece \textbf{al cuadrado}, aparece la derivada
+\textbf{cuarta} (no la $n+1$-ésima genérica) y el denominador es $24$ (no
+un factorial genérico). El docente es explícito en que el valor concreto
+del ``24'' no importa memorizarlo --- lo que importa es la técnica de la
+demostración.
+
+\subsection{Idea de la demostración}
+
+Es la misma técnica que en la Clase 12 (función auxiliar + Rolle
+repetido), con un ajuste. Se define, para el $x$ fijado,
+\[
+g(t) = f(t) - P(t) - E(x)\cdot \frac{(t-a)^2(t-b)^2}{(x-a)^2(x-b)^2}, \qquad E(x) := f(x)-P(x),
+\]
+donde el factor $(t-a)^2(t-b)^2$ (en vez de $(t-a)(t-b)$, como en la clase
+anterior) es la clave del ajuste: al elevarlo al cuadrado, \textbf{su
+derivada también se anula} en $a$ y en $b$ (no sólo la función).
+Concretamente:
+
+\begin{itemize}
+  \item $g$ se anula en $a$, $b$ y en $x$ $\to$ \textbf{tres} raíces de
+  $g$.
+  \item Además $g'(a)=0$ y $g'(b)=0$: el término $f'-P'$ se cancela porque
+  $P'(a)=f'(a)$ y $P'(b)=f'(b)$ (por definición de $P$), y el término que
+  viene del factor cuadrático también se anula en $a$ y $b$ porque su
+  derivada tiene un factor $(t-a)(t-b)$.
+\end{itemize}
+
+Con esto, $g'$ tiene \textbf{cuatro} raíces en $(a,b)$ (dos entre $a$-$x$ y
+$x$-$b$ por Rolle aplicado a $g$, más $a$ y $b$ mismos como raíces directas
+de $g'$). Aplicando Rolle sucesivamente: $g''$ tiene al menos 3 raíces,
+$g'''$ al menos 2, y $g^{(4)}$ al menos 1 --- llamada $\gamma_x$. Igualando
+$g^{(4)}(\gamma_x)=0$ y despejando se obtiene la fórmula del teorema.
+
+\begin{notebox}[La diferencia con la demostración anterior]
+Está toda concentrada en ese cambio del factor lineal al cuadrático: ganar
+dos raíces adicionales de $g'$ (en $a$ y en $b$) es lo que permite llegar
+hasta la derivada cuarta en vez de quedarse en la $(n+1)$-ésima genérica
+del caso simple.
+\end{notebox}
+
+\vspace{1em}
+\noindent\textit{Clase que viene: splines cúbicos (elegir los $d_i$ para
+$C^2$) e interpolación que preserva forma (\texttt{pchip}).}
+
+\end{document}

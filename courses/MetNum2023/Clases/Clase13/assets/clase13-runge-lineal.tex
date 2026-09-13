@@ -1,0 +1,35 @@
+% assets/clase13-runge-lineal.tex
+% Función de Runge f(x)=1/(1+25x^2) en [-1,1] vs. su interpolante lineal a
+% trozos con 9 nodos equiespaciados. Ilustra §3.4 del summary: a diferencia
+% de la interpolación global de grado alto (Clase 12), la lineal a trozos
+% no oscila cerca de los bordes.
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[interpfig,
+      xlabel={$x$}, ylabel={$y$},
+      xmin=-1.05, xmax=1.05, ymin=-0.05, ymax=1.05,
+      legend pos=north east,
+    ]
+      \addplot[figblue, line width=1.1pt, domain=-1:1, samples=200, forget plot]
+        {1/(1+25*x^2)};
+      \addlegendimage{figblue, line width=1.1pt}
+      \addlegendentry{$f(x)=\dfrac{1}{1+25x^2}$}
+
+      \addplot[figred, line width=1pt, mark=none]
+        coordinates {
+          (-1,0.038462) (-0.75,0.066390) (-0.5,0.137931) (-0.25,0.390244)
+          (0,1) (0.25,0.390244) (0.5,0.137931) (0.75,0.066390) (1,0.038462)
+        };
+      \addlegendentry{Interpolante lineal a trozos ($n=8$)}
+
+      \addplot[only marks, mark=*, mark size=2pt, mark options={fill=figamber, draw=figblue}, forget plot]
+        coordinates {
+          (-1,0.038462) (-0.75,0.066390) (-0.5,0.137931) (-0.25,0.390244)
+          (0,1) (0.25,0.390244) (0.5,0.137931) (0.75,0.066390) (1,0.038462)
+        };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Función de Runge y su interpolante lineal a trozos con 9 nodos equiespaciados. A diferencia del interpolante polinomial global (Clase 12), no hay oscilación cerca de los bordes.}
+  \label{fig:clase13-runge-lineal}
+\end{figure}

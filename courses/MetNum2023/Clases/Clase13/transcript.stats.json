@@ -1,0 +1,16 @@
+{
+  "source": "https://open.fing.edu.uy/media/metn-2023/metn-2023_13_transcription.vtt",
+  "cues": 279,
+  "words": 9752,
+  "charsPlain": 51161,
+  "charsTimed": 53533,
+  "timestampOverheadPct": 4.6,
+  "estTokensPlain": 12790,
+  "estTokensTimed": 13383,
+  "speechSeconds": 4077.7,
+  "spanSeconds": 5136.8,
+  "speechRatio": 0.794,
+  "avgCueSeconds": 14.6,
+  "rollingOverlapCues": 0,
+  "warnings": []
+}

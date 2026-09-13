@@ -1,0 +1,60 @@
+title: Clase 13
+id: metn-2023-2-13
+
+course: Métodos Numéricos
+academic_year: 2023
+semester: 2
+
+teacher: Juan Pablo Borthagaray
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:01"
+    end: "01:25:38"
+
+stats:
+  transcript_words: 9752
+  summary_words: 2106
+  diagrams_pending: 0
+  equations: 13
+
+# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
+# la clase. Completar antes de marcar status.summary como done.
+
+topics:
+  - Motivación: el fenómeno de Runge con nodos equiespaciados
+  - Dos salidas: nodos de Chebyshev vs. interpolar a trozos
+  - Interpolación lineal a trozos: definición, continuidad sin derivabilidad, cota de error O(h^2)
+  - Aplicación de la interpolación lineal a trozos a la función de Runge
+  - Por qué cúbica (no cuadrática) y por qué grado impar
+  - Interpolante cúbica a trozos: fórmula explícita en base de Hermite
+  - Tres formas de elegir las derivadas d_i (Hermite, splines, pchip)
+  - Interpolación de Hermite cúbica a trozos: teorema del error e idea de la demostración
+
+bibliography: []
+
+prerequisites:
+  - Polinomio Interpolante (Clase 11)
+  - Error de Interpolación (Clase 12): teorema de error reutilizado y extendido acá
+
+next_topics:
+  - Splines cúbicos (elegir los d_i para continuidad C^2)
+  - Interpolación que preserva forma (pchip)
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer: []
+  date: 2026-09-13
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft
