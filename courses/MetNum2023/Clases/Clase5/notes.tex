@@ -1,0 +1,328 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Pseudocódigo ----
+\usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e}
+\SetKwInput{KwEntrada}{Entrada}
+\SetKwInput{KwSalida}{Salida}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 5: Sistemas Lineales, Introducción} \\[0.3em]
+        \large{Métodos directos, costo computacional y el problema del pivoteo}}
+\author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{El problema y el enfoque del curso}
+
+Cierra la unidad de errores, punto flotante y redondeo, y arranca la unidad
+de \textbf{sistemas de ecuaciones lineales}, el primer problema concreto del
+curso. El objetivo es dar un \textbf{enfoque algorítmico}: entender cómo
+resolver un sistema grande y cuánto cuesta hacerlo.
+
+El problema formal:
+$$Ax = b, \qquad A \in \mathbb{R}^{n\times n}, \quad b \in \mathbb{R}^n$$
+
+$A$ y $b$ son los datos; $x \in \mathbb{R}^n$ es la incógnita.
+
+\begin{keybox}[Existencia y unicidad]
+El sistema tiene solución única si y solamente si $\det(A) \neq 0$. El curso
+asume desde acá que se trabaja siempre en esa situación (sistema compatible
+determinado). Los sistemas rectangulares se posponen para después de los
+parciales.
+\end{keybox}
+
+\section{Métodos directos vs. métodos iterativos}
+
+\begin{itemize}
+  \item \textbf{Método directo}: después de una cantidad finita de pasos,
+  produce la solución \textbf{exacta} del problema. Ejemplos: eliminación
+  gaussiana, regla de Cramer.
+  \item \textbf{Método iterativo}: genera una sucesión de vectores
+  $x^{(k)} \in \mathbb{R}^n$ tal que
+  $$x^{(k)} \xrightarrow[k \to \infty]{} x^\star$$
+  donde $x^\star$ es la solución exacta. Se fija una tolerancia y se detiene
+  el cómputo cuando la aproximación se considera suficientemente buena.
+\end{itemize}
+
+\begin{notebox}[Motivación de los iterativos]
+Un sistema $3\times 3$ es trivial para cualquier método. Un ingeniero se
+enfrenta a sistemas mucho más grandes, donde un método directo puede ser
+demasiado costoso y conviene algo más rápido que dé una solución aceptable a
+menos de una tolerancia. Esta clase y la próxima se dedican íntegramente a
+un método \textbf{directo}: la eliminación gaussiana.
+\end{notebox}
+
+\section{La regla de Cramer y por qué se descarta}
+
+$$x_i = \frac{\det(A_i)}{\det(A)}$$
+
+donde $A_i$ es la matriz que se obtiene sustituyendo la columna $i$-ésima de
+$A$ por el vector $b$.
+
+\subsection{Ejemplo trabajado en clase}
+
+$$\begin{pmatrix} 3 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 5 \\ -1 \end{pmatrix}$$
+
+$$\det(A) = -4, \qquad \det(A_1) = -4, \qquad \det(A_2) = -8$$
+
+$$x_1 = \frac{-4}{-4} = 1, \qquad x_2 = \frac{-8}{-4} = 2$$
+
+\subsection{Flops: la unidad de costo}
+
+Un \textbf{flop} es una operación aritmética de punto flotante (suma, resta,
+multiplicación o división). El curso mide costo computacional contando el
+\textbf{orden de magnitud} de flops en función de $n$, no el tiempo de reloj
+real.
+
+\subsection{Costo de Cramer}
+
+Resolver un sistema $n\times n$ por Cramer requiere $n+1$ determinantes.
+Calculando cada uno por desarrollo por filas/columnas, cada uno cuesta del
+orden de $n!$ flops (el desarrollo anida determinantes más chicos dentro de
+determinantes más grandes):
+
+$$\text{Costo}_{\text{Cramer}} \sim (n+1)\cdot n! = (n+1)!$$
+
+\begin{warnbox}[Cramer escala pésimo]
+Implementar Cramer ingenuamente sobre una matriz de $20\times 20$ ``funde la
+computadora''. Aun con formas más eficientes de calcular determinantes,
+Cramer sigue siendo más caro que la eliminación gaussiana —que ya es cara,
+$O(n^3)$ (§\ref{sec:costo-gauss})—. Por eso no se usa en la práctica.
+\end{warnbox}
+
+\section{Sistemas triangulares}
+
+\subsection{Definición y determinante}
+
+$A$ es \textbf{triangular superior} si $a_{ij} = 0$ para todo $i > j$. $A$ es
+\textbf{triangular inferior} si $a_{ij} = 0$ para todo $j > i$.
+
+\begin{keybox}[Determinante de una matriz triangular]
+$$\det(A) = \prod_{i=1}^n a_{ii}$$
+En particular, $\det(A) \neq 0 \iff a_{ii} \neq 0$ para todo $i$ — esto
+garantiza que la sustitución (§\ref{sec:sustitucion}) nunca divide por cero,
+bajo la hipótesis de solución única.
+\end{keybox}
+
+\subsection{Sustitución hacia adelante y hacia atrás}
+\label{sec:sustitucion}
+
+Los sistemas triangulares se resuelven despejando una incógnita a la vez,
+\textbf{secuencialmente}.
+
+\textbf{Sustitución hacia adelante} ($A$ triangular inferior): desde $x_1$
+hacia $x_n$.
+$$x_1 = \frac{b_1}{a_{11}}, \qquad x_i = \frac{b_i - \displaystyle\sum_{j=1}^{i-1} a_{ij}x_j}{a_{ii}} \quad (i = 2,\dots,n)$$
+
+\textbf{Sustitución hacia atrás} ($A$ triangular superior): el mismo
+procedimiento empezando por $x_n$ y avanzando hacia $x_1$.
+
+\subsection{Costo de la sustitución: \texorpdfstring{$O(n^2)$}{O(n\texttwosuperior)}}
+
+Calcular $x_1$ cuesta 1 flop. Calcular $x_i$ ($i>1$) cuesta $2i-1$ flops
+($(i-1)$ productos, $(i-1)$ restas, 1 división). Sumando:
+$$\sum_{i=1}^{n} (2i-1) = 2\cdot\frac{n(n+1)}{2} - n \sim n^2$$
+
+\begin{notebox}[Truco para estimar $\sum i^\alpha$]
+Pensar $\sum_{i=1}^n i^\alpha$ como una suma de Riemann que acota (por arriba
+y por abajo) a $\int_0^n x^\alpha\,dx = \frac{n^{\alpha+1}}{\alpha+1}$: la
+suma es del orden de $n^{\alpha+1}$. Herramienta general, no específica de
+esta cuenta.
+\end{notebox}
+
+\begin{keybox}[Costo de la sustitución]
+Sustitución hacia adelante o hacia atrás cuesta $O(n^2)$. Duplicar $n$
+multiplica el costo por 4.
+\end{keybox}
+
+\section{Eliminación gaussiana sin pivoteo}
+\label{sec:costo-gauss}
+
+¿Cuánto cuesta \textbf{llevar} un sistema cualquiera a forma triangular?
+
+\subsection{La idea: multiplicadores y combinaciones lineales}
+
+Se trabaja sobre la matriz ampliada $[A \mid b]$, haciendo ceros columna por
+columna debajo de la diagonal mediante combinaciones lineales de filas que no
+cambian el conjunto solución ni el determinante.
+
+En el paso $k$-ésimo, asumiendo $a_{kk}^{(k)} \neq 0$ (el \textbf{pivote}),
+se definen los \textbf{multiplicadores}:
+$$l_{ik} = \frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}, \qquad i = k+1,\dots,n$$
+y se actualizan las filas $i = k+1,\dots,n$:
+$$a_{ij}^{(k+1)} = a_{ij}^{(k)} - l_{ik}\,a_{kj}^{(k)}, \qquad b_i^{(k+1)} = b_i^{(k)} - l_{ik}\,b_k^{(k)}$$
+para $j = k+1,\dots,n$. Por construcción $a_{ik}^{(k+1)} = 0$ para todo
+$i>k$.
+
+\subsection{Pseudocódigo}
+
+\begin{algorithm}[H]
+\KwEntrada{$A \in \mathbb{R}^{n\times n}$, $b \in \mathbb{R}^n$}
+\KwSalida{$A$, $b$ transformados: sistema triangular superior equivalente}
+\For{$k \gets 1$ \KwTo $n-1$}{
+  \For{$i \gets k+1$ \KwTo $n$}{
+    $l_{ik} \gets a_{ik} / a_{kk}$\;
+    \For{$j \gets k+1$ \KwTo $n$}{
+      $a_{ij} \gets a_{ij} - l_{ik}\,a_{kj}$\;
+    }
+    $b_i \gets b_i - l_{ik}\,b_k$\;
+  }
+}
+\caption{Eliminación gaussiana sin pivoteo}
+\end{algorithm}
+
+\subsection{Costo: \texorpdfstring{$O(n^3)$}{O(n\textthreesuperior)}}
+
+Fijado $k$: para cada $i$ (hay $n-k$ valores), calcular $l_{ik}$ cuesta 1
+flop, el loop interno en $j$ cuesta $2(n-k)$ flops, más 2 flops para
+$b_i$. Total por $i$: $3 + 2(n-k)$, repetido $n-k$ veces:
+$$\text{Costo}(k) \sim 3(n-k) + 2(n-k)^2$$
+Sumando sobre $k = 1,\dots,n-1$:
+$$\sum_{k=1}^{n-1} \left[3(n-k) + 2(n-k)^2\right] \sim \frac{2}{3}n^3$$
+
+\begin{keybox}[Costo total]
+$$\text{Costo total (gaussiana + sustitución)} = \frac{2}{3}n^3 + O(n^2) \sim O(n^3)$$
+Duplicar $n$ multiplica el costo por 8. El término $n^3$ domina: la
+eliminación gaussiana es mucho más cara que la sustitución que le sigue.
+\end{keybox}
+
+\section{Pivoteo: qué es y por qué hace falta}
+
+\textbf{Pivotear = intercambiar filas.} En álgebra lineal I, la regla
+enseñada era: pivotear \emph{sólo si} el pivote candidato $a_{kk}^{(k)}$ es
+exactamente $0$.
+
+\begin{warnbox}[La regla clásica no alcanza en punto flotante]
+No basta con pivotear sólo cuando el pivote es exactamente cero. Un pivote
+\textbf{cercano a cero} —aunque matemáticamente válido— puede ser igual de
+peligroso en una computadora con precisión finita, porque genera
+multiplicadores $l_{ik}$ muy grandes que amplifican el error de redondeo.
+Se ilustra en §\ref{sec:ejemplo}.
+\end{warnbox}
+
+\section{Ejemplo numérico: cuando un pivote chico rompe todo}
+\label{sec:ejemplo}
+
+Computadora hipotética de \textbf{5 cifras significativas} (con
+truncamiento). La solución exacta del sistema trabajado en clase es
+$x = (0,-1,1)$.
+
+Tras el primer paso de eliminación, queda un pivote candidato
+$a_{22}^{(2)} = -0{,}01$ — muy cercano a cero pero no exactamente cero.
+Siguiendo la regla clásica se lo usa igual, produciendo un multiplicador
+enorme:
+$$l_{32} = \frac{-2{,}5}{-0{,}01} = -2500$$
+
+Al propagar este multiplicador aparece una resta de números de magnitud muy
+distinta ($15\,002$ vs.\ $15\,004{,}5$) que la máquina de 5 cifras trunca en
+cada paso, perdiendo precisión. El resultado final es
+
+$$x_3 \approx 0{,}99993, \qquad x_2 \approx -1{,}4, \qquad x_1 \approx -0{,}28$$
+
+muy lejos de $(0,-1,1)$.
+
+\begin{notebox}[El mensaje central]
+El error no vino de la computadora ``fallando'', sino de una mala elección
+de pivote que la regla clásica de álgebra lineal no detecta. Un pivote
+pequeño genera multiplicadores grandes que amplifican el error de redondeo.
+\emph{Clase siguiente}: se retoma este mismo ejemplo para mostrar la
+estrategia de pivoteo (parcial) que evita el problema — tema de la
+descomposición LU.
+\end{notebox}
+
+\end{document}
