@@ -1,0 +1,291 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Title ----
+\title{\textbf{Clase 7: Normas de Matrices} \\[0.3em]
+        \large{Normas operador, la fórmula para $\|\cdot\|_\infty$, y error vs. residuo}}
+\author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Cierre de matrices dispersas y tridiagonales}
+
+Se define informalmente la \textbf{densidad} de $A \in \mathbb{R}^{n\times
+n}$ como el cociente entre su cantidad de entradas no nulas y $n^2$
+(\textbf{dispersidad} = $1$ menos eso); una matriz es \textbf{dispersa}
+cuando su dispersidad es cercana a $1$. Para esas matrices conviene
+almacenar sólo las ternas $(i,j,a_{ij})$ no nulas.
+
+\begin{notebox}[Matrices de banda / tridiagonales]
+$A$ es tridiagonal si $a_{ij}=0$ para todo $|i-j|>1$. Si se le avisa al
+código esta estructura, la eliminación gaussiana con pivoteo parcial se hace
+en \textbf{tiempo lineal} en vez de $O(n^3)$: cada paso pivotea comparando
+sólo con la fila de abajo, y las actualizaciones son de costo constante por
+fila. \textbf{Si no se avisa la estructura, el algoritmo cae en $O(n^3)$
+igual}, aunque la matriz sea tridiagonal.
+\end{notebox}
+
+\section{Normas vectoriales: repaso de axiomas}
+
+Una \textbf{norma} en un espacio vectorial $V$ sobre $\mathbb{R}$ es
+$\|\cdot\|: V \to \mathbb{R}$ tal que:
+\begin{enumerate}
+  \item $\|v\| \geq 0$, y $\|v\| = 0 \iff v = 0$.
+  \item $\|\alpha v\| = |\alpha|\,\|v\|$ para todo escalar $\alpha$.
+  \item Desigualdad triangular: $\|u+v\| \leq \|u\| + \|v\|$.
+\end{enumerate}
+
+\subsection{La familia de normas \texorpdfstring{$L^p$}{Lp} en \texorpdfstring{$\mathbb{R}^n$}{Rn}}
+
+Para $p \geq 1$:
+$$\|x\|_p = \left(\sum_{i=1}^n |x_i|^p\right)^{1/p}$$
+
+\begin{itemize}
+  \item $p=2$: norma \textbf{euclídea}.
+  \item $p=1$: norma del \textbf{taxi} / \textbf{Manhattan}: $\|x\|_1 = \sum_i |x_i|$.
+  \item $p=\infty$ (límite formal): norma \textbf{infinito} / \textbf{de
+  Chebyshev}: $\|x\|_\infty = \max_i |x_i|$.
+\end{itemize}
+
+\begin{notebox}[Bolas unitarias]
+En $\mathbb{R}^2$: $\|x\|_1=1$ es un rombo, $\|x\|_2=1$ es la circunferencia
+usual, y a medida que $p$ crece las bolas se ``inflan'' hasta el cuadrado
+$\|x\|_\infty=1$.
+\end{notebox}
+
+\section{Normas de matrices}
+
+Las matrices cuadradas también forman un espacio vectorial, así que
+admiten norma.
+
+\subsection{Norma de Frobenius}
+
+``Desatar'' la matriz en un vector de $n^2$ entradas y aplicar una norma
+$L^p$ vectorial. Para $p=2$ se llama \textbf{norma de Frobenius}; para otros
+$p$ no tiene uso conocido.
+
+\begin{warnbox}[Limitación]
+Para lo que busca esta unidad (relacionar residuo y error, condicionamiento),
+las normas tipo Frobenius no son las útiles. El camino que importa es el de
+las normas operador.
+\end{warnbox}
+
+\subsection{Normas operador (inducidas)}
+
+Identificando $A$ con $x \mapsto Ax$, y dada una norma vectorial
+$\|\cdot\|_B$, se define la \textbf{norma matricial inducida}:
+$$\|A\|_M = \max_{x \neq 0} \frac{\|Ax\|_B}{\|x\|_B} = \max_{\|x\|_B \leq 1} \|Ax\|_B = \max_{\|x\|_B = 1} \|Ax\|_B$$
+
+\begin{notebox}
+No se parece a las normas $L^p$ ``ingenuas'': no combina entradas de $A$
+directamente, sino que mide el máximo estiramiento que $A$ produce sobre un
+vector unitario.
+\end{notebox}
+
+\section{La norma inducida por \texorpdfstring{$L^\infty$}{L-infinito}: máximo de las normas \texorpdfstring{$L^1$}{L1} de las filas}
+
+\begin{keybox}[Proposición]
+$$\|A\|_\infty = \max_{1\leq i\leq n} \sum_{j=1}^n |a_{ij}|$$
+\end{keybox}
+
+\subsection{Demostración}
+
+Se prueban las dos desigualdades por separado.
+
+\textbf{($\leq$)}: Sea $x$ con $\|x\|_\infty = 1$. Entonces
+$$\|Ax\|_\infty = \max_i \left|\sum_{j=1}^n a_{ij}x_j\right| \leq \max_i \sum_{j=1}^n |a_{ij}||x_j| \leq \max_i \sum_{j=1}^n |a_{ij}|$$
+usando la desigualdad triangular y $|x_j|\leq 1$. Tomando máximo sobre esos
+$x$: $\|A\|_\infty \leq \max_i \sum_j |a_{ij}|$.
+
+\textbf{($\geq$)}: Sea $i_0$ la fila que alcanza el máximo. Si $A=0$ no hay
+nada que probar. Si $A\neq 0$, se construye
+$$\hat{x}_j = \operatorname{sg}(a_{i_0 j}), \qquad j = 1,\dots,n$$
+Como $\hat{x}_j \in \{-1,0,1\}$, $\|\hat{x}\|_\infty = 1$. Entonces:
+$$\|A\hat{x}\|_\infty = \max_i \left|\sum_j a_{ij}\hat{x}_j\right| \geq \left|\sum_j a_{i_0 j}\hat{x}_j\right| = \sum_j |a_{i_0 j}| = \max_i \sum_j |a_{ij}|$$
+donde se usó que $a_{i_0 j}\cdot\operatorname{sg}(a_{i_0 j}) = |a_{i_0 j}|$.
+Como $\|A\|_\infty$ es el máximo sobre todos los $x$ unitarios, es
+$\geq$ lo obtenido con $\hat{x}$.
+
+\begin{notebox}[Técnica general]
+Una desigualdad con máximo suele salir directo de la definición; la otra
+exige exhibir un vector particular que alcanza la cota.
+\end{notebox}
+
+\section{Otras normas operador (enunciadas, no probadas en clase)}
+
+\begin{itemize}
+  \item \textbf{Inducida por $L^1$}: $\|A\|_1 = \max_j \sum_i |a_{ij}|$
+  (máximo de las normas $L^1$ de las \textbf{columnas}) — corolario vía
+  $\|A\|_\infty = \|A^T\|_1$. Demostración análoga, ejercicio.
+  \item \textbf{Inducida por $L^2$}: $\|A\|_2$ es el \textbf{primer valor
+  singular} de $A$. $A^TA$ es simétrica semidefinida positiva
+  (diagonalizable, valores propios $\lambda_i \geq 0$); los valores
+  singulares son $\sqrt{\lambda_i}$. Prueba en los apuntes, no desarrollada
+  en clase (útil en compresión de datos e imágenes vía SVD, más adelante en
+  el curso).
+\end{itemize}
+
+\section{Compatibilidad y submultiplicatividad}
+
+Sea $\|\cdot\|_M$ una norma matricial inducida por $\|\cdot\|_B$.
+
+\begin{keybox}[Compatibilidad]
+Para toda $A$ y todo $x\in\mathbb{R}^n$:
+$$\|Ax\|_B \leq \|A\|_M \|x\|_B$$
+\end{keybox}
+
+\textit{Demostración}: si $x=0$ es trivial. Si $x\neq 0$,
+$\frac{\|Ax\|_B}{\|x\|_B} \leq \max_{y\neq 0} \frac{\|Ay\|_B}{\|y\|_B} = \|A\|_M$
+por definición de máximo; multiplicando por $\|x\|_B$ se obtiene el
+resultado.
+
+\begin{keybox}[Submultiplicatividad]
+Para toda $A,B$ matrices:
+$$\|AB\|_M \leq \|A\|_M \|B\|_M$$
+\end{keybox}
+
+\textit{Demostración}: aplicando compatibilidad dos veces (viendo $Bx$ como
+un vector al que se le aplica $A$):
+$$\|AB\|_M = \max_{x\neq0} \frac{\|A(Bx)\|_B}{\|x\|_B} \leq \max_{x\neq0} \frac{\|A\|_M\|Bx\|_B}{\|x\|_B} \leq \max_{x\neq0} \frac{\|A\|_M\|B\|_M\|x\|_B}{\|x\|_B} = \|A\|_M\|B\|_M$$
+
+\begin{notebox}[Corolario]
+Para toda norma operador: $\|A^k\| \leq \|A\|^k$ (inducción, aplicando
+submultiplicatividad con $B=A$ repetidamente).
+\end{notebox}
+
+\begin{warnbox}[Advertencia]
+Estas dos propiedades valen para \textbf{cualquier norma operador}
+(inducida por una norma vectorial) — no necesariamente para cualquier norma
+matricial. No está establecido que la norma de Frobenius (§3.1) las cumpla.
+\end{warnbox}
+
+\section{Error vs. residuo: la motivación de fondo}
+
+Al resolver $Ax=b$ con eliminación gaussiana con pivoteo parcial en una
+computadora de precisión finita, se obtiene $\bar{x}$, distinta en general de
+la solución exacta $x^\star$.
+
+\begin{itemize}
+  \item \textbf{Error}: $e = \bar{x} - x^\star$.
+  \item \textbf{Residuo}: $r = A\bar{x} - b$.
+\end{itemize}
+
+\begin{warnbox}[El error no es computable]
+Para calcularlo hace falta conocer $x^\star$, justo lo que no se tiene en un
+problema real.
+\end{warnbox}
+
+\begin{keybox}[El residuo sí es computable]
+Sólo requiere $A$, $b$ y la salida $\bar{x}$ del algoritmo.
+\end{keybox}
+
+\textbf{Relación}: como $b = Ax^\star$,
+$$r = A\bar{x} - Ax^\star = A(\bar{x}-x^\star) = A\,e$$
+$$\boxed{\text{el residuo es la matriz } A \text{ aplicada al error}}$$
+
+Si $A$ es invertible, $r=0 \iff e=0$ (porque $e = A^{-1}r$): en aritmética
+exacta, residuo nulo garantiza error nulo. En la práctica el residuo casi
+nunca da exactamente cero.
+
+\begin{notebox}[La pregunta que abre la clase siguiente]
+Si el residuo tiene norma chica, ¿el error también es chico? \textbf{No hay
+por qué} — no es obvio en absoluto. Es la pregunta que determina si un
+método es ``bueno''. La Clase 8 (Número de Condición) da la respuesta usando
+las herramientas de este capítulo.
+\end{notebox}
+
+\end{document}
