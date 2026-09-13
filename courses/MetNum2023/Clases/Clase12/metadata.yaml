@@ -1,0 +1,57 @@
+title: Clase 12
+id: metn-2023-2-12
+
+course: Métodos Numéricos
+academic_year: 2023
+semester: 2
+
+teacher: Juan Pablo Borthagaray
+
+source:
+  - OpenFING
+
+video:
+  - start: "00:00:00"
+    end: "01:26:20"
+
+stats:
+  transcript_words: 10041
+  summary_words: 1548
+  diagrams_pending: 0
+  equations: 14
+
+# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
+# la clase. Completar antes de marcar status.summary como done.
+
+topics:
+  - Forma de Lagrange del polinomio interpolante: base adaptada a los nodos, pros y contras frente a Vandermonde
+  - Forma de Newton: coeficientes vía diferencias divididas, incremental por construcción
+  - Norma del supremo para funciones y convergencia uniforme
+  - Teorema de error de interpolación: f(x) - p_n(x) = f^(n+1)(gamma_x)/(n+1)! * omega_n(x), demostrado con función auxiliar + Rolle repetido
+  - Corolario: cota práctica vía max de la derivada (n+1) y norma del polinomio nodal
+  - Competencia entre el factorial (n+1)! y el crecimiento de la derivada (n+1) al agregar puntos
+  - Ejemplo sin(x)cos(x) en [0,1]: el error decrece superexponencialmente con n
+
+bibliography: []
+
+prerequisites:
+  - Polinomio Interpolante (Clase 11): existencia-unicidad, construcción de Vandermonde y sus problemas
+
+next_topics:
+  - Fenómeno de Runge (clase siguiente): caso donde agregar puntos empeora la aproximación
+
+status:
+  transcript: done
+  summary: done
+  latex: done
+  assets: done
+
+review:
+  state: needs-review
+  reviewer: []
+  date: 2026-09-13
+
+llm:
+  model: claude-sonnet-5
+
+editorial_status: draft
