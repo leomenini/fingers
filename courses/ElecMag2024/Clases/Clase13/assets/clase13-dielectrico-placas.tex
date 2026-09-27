@@ -1,0 +1,37 @@
+% Clase 13 — dielectrico que entra en un condensador conectado a una bateria.
+% Vista de costado: largo L, separacion D (el ancho W va hacia adentro de la
+% hoja). Tramo x en vacio a la izquierda, L-x con dielectrico. La fuerza va hacia
+% la izquierda: achica x, es decir, chupa el dielectrico.
+\begin{tikzpicture}[scale=1]
+
+  % dielectrico (sobresale a la derecha)
+  \fill[figamber!20] (2.4,0.06) rectangle (7.6,1.44);
+  \draw[figamber, line width=0.8pt] (2.4,0.06) rectangle (7.6,1.44);
+  \node[figlbl, figamber!80!black] at (4.2,0.75) {$K$};
+
+  % placas
+  \draw[figline, line width=2pt] (0,1.5) -- (6,1.5);
+  \draw[figline, line width=2pt] (0,0) -- (6,0);
+
+  % bateria
+  \draw[figline] (0,1.5) -- (-1.2,1.5) -- (-1.2,0.95);
+  \draw[figline] (-1.2,0.55) -- (-1.2,0) -- (0,0);
+  \draw[figline, line width=1.2pt] (-1.55,0.95) -- (-0.85,0.95);
+  \draw[figline, line width=1.2pt] (-1.38,0.55) -- (-1.02,0.55);
+  \node[figlbl] at (-2.05,0.75) {$\Delta\phi$};
+
+  % fuerza sobre el dielectrico
+  \draw[figvecres] (7.3,0.75) -- (6.3,0.75);
+  \node[figlbl, figred] at (6.8,1.08) {$F$};
+
+  % cotas
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (0,-0.45) -- (2.4,-0.45);
+  \node[figlbl, fill=white, inner sep=1pt] at (1.2,-0.45) {$x$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (2.4,-0.45) -- (6,-0.45);
+  \node[figlbl, fill=white, inner sep=1pt] at (4.2,-0.45) {$L-x$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (0,-1.0) -- (6,-1.0);
+  \node[figlbl, fill=white, inner sep=1pt] at (3,-1.0) {$L$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (1.1,0.12) -- (1.1,1.38);
+  \node[figlbl] at (1.4,0.75) {$D$};
+
+\end{tikzpicture}

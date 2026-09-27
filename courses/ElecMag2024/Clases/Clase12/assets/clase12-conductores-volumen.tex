@@ -1,0 +1,41 @@
+% Clase 12 — geometria de la deduccion de la densidad de energia.
+% El punto delicado son las DOS normales: n sale del conductor (la que da
+% sigma = D.n) y n' sale del volumen V (la del teorema de la divergencia). Sobre
+% cada S_i son opuestas; sobre S' solo existe n'. Van en conductores DISTINTOS
+% (n en S_1, n' en S_3): en un mismo punto, sobre S_2, se pisaban con el
+% rotulo del conductor y se leian como una sola flecha. n' se dibuja desde V
+% hasta la superficie, para que se vea que sale de V y entra al conductor.
+\begin{tikzpicture}[scale=1]
+
+  % S' y el volumen V
+  \fill[figamber!8] (0,0) circle (3.4);
+  \draw[figline, dashed] (0,0) circle (3.4);
+  \node[figlbl, figblue, fill=figamber!8, inner sep=1pt] at (128:3.05) {$S'$};
+
+  % conductores
+  \fill[figgray!25, draw=figblue, line width=0.9pt]
+    plot[smooth cycle, tension=0.8] coordinates {(-2.2,0.4) (-1.5,1.3) (-0.6,0.9) (-0.9,-0.1) (-1.8,-0.4)};
+  \node[figlbl] at (-1.45,0.45) {$S_1$};
+  \fill[figgray!25, draw=figblue, line width=0.9pt]
+    plot[smooth cycle, tension=0.8] coordinates {(0.7,1.1) (1.6,1.9) (2.3,1.2) (1.6,0.5)};
+  \node[figlbl] at (1.55,1.2) {$S_2$};
+  \fill[figgray!25, draw=figblue, line width=0.9pt]
+    plot[smooth cycle, tension=0.8] coordinates {(-0.4,-1.3) (0.6,-0.9) (1.5,-1.5) (0.6,-2.3) (-0.3,-2.1)};
+  \node[figlbl] at (0.35,-1.6) {$S_3$};
+
+  % V
+  \node[figlbl, figamber!80!black] at (-1.9,-1.9) {$V$};
+
+  % normal saliente del conductor (S_1, hacia la izquierda)
+  \draw[figvecres] (-2.2,0.4) -- (-3.0,0.55);
+  \node[figlbl, figred] at (-2.75,0.9) {$\hat n$};
+
+  % normal saliente de V sobre un conductor (S_3): apunta HACIA el conductor
+  \draw[figvec] (2.35,-1.55) -- (1.52,-1.5);
+  \node[figlbl, figblue, fill=figamber!8, inner sep=1pt] at (1.95,-1.15) {$\hat n'$};
+
+  % normal saliente de V sobre S'
+  \draw[figvec] (-35:3.4) -- (-35:4.2);
+  \node[figlbl, figblue] at (-35:4.5) {$\hat n'$};
+
+\end{tikzpicture}

@@ -16,33 +16,62 @@ video:
 
 stats:
   transcript_words: 8698
-  summary_words: 0
+  summary_words: 2462
   diagrams_pending: 0
-  equations: 0
+  equations: 23
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Energía de cargas puntuales como suma sobre parejas
+  - La autointeracción no se cuenta
+  - Energía en términos de las cargas y los potenciales
+  - Qué fórmula vale sólo en el vacío y cuál con dieléctricos lineales
+  - Energía de una distribución continua de carga
+  - Carga cuasiestática con todas las cargas creciendo proporcionalmente
+  - La linealidad del medio y el origen del factor un medio
+  - La paradoja de la autoenergía y su resolución
+  - Energía de un conductor como un medio de carga por potencial
+  - Hipótesis para la densidad de energía
+  - Divergencia de un producto y teorema de la divergencia
+  - Normal saliente del conductor y normal saliente del volumen
+  - El término de superficie en el infinito tiende a cero
+  - Densidad de energía un medio de D escalar E
+  - Sustraer la autoenergía con cargas puntuales
+  - Coeficientes de potencial
+  - Prueba de la relación lineal entre potenciales y cargas por superposición
+  - Energía de un conjunto de conductores como forma cuadrática
+  - Capacitancia en términos de los coeficientes de potencial
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Energía de un sistema de cargas puntuales (Clase 11)
+  - Ley de Gauss para el desplazamiento y medios lineales (Clases 9 y 11)
+  - Teorema de la divergencia
+  - Conductores en equilibrio electrostático
+  - Principio de superposición y linealidad de Laplace (Clase 6)
+  - Energía de un condensador (Física III)
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Propiedades de los coeficientes de potencial
+  - Definición general de condensador
+  - Capacitancia, condensadores en serie y en paralelo
+  - Fuerzas y torques a partir de la energía
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-09-26
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

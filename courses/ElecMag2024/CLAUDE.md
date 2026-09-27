@@ -131,6 +131,19 @@ las otras 27, y exige ADR nuevo (toca 0001, 0002 y 0004); desarrollada en
 extractor las levanta solo**, sin tocar código. `27/29` es el número correcto
 para este curso; no buscar el hueco de nuevo.
 
+**Clases 11–13 documentadas (2026-09-26):** `summary.md`, `notes.tex`, 3 figuras
+cada una y `metadata.yaml` completo, desde el VTT oficial. Con eso quedan
+documentadas de la 4 a la 13 (la 9 y la 10 desde ASR, en el sandbox).
+
+> **La 10 y la 11 no se continúan.** La clase 11 (2024) abre repasando «lo que les
+> presentó **Julia** la semana pasada» y resuelve la **esfera** dieléctrica en
+> campo uniforme; la clase 10 del corpus es la regrabación de **2025**, que
+> termina con el **cilindro** y anuncia discutir su solución. Esa discusión no
+> aparece en la 11. O sea: las clases 9 y 10 de 2024 las dio otra persona y lo que
+> hay en el corpus son las de 2025. Al escribir `prerequisites` de la 11 en
+> adelante, citar los temas (dieléctricos, condiciones de borde), no «lo que se
+> vio en la clase 10» como si fuera la misma secuencia.
+
 ---
 
 ## 1. Flujo de trabajo para una clase nueva
@@ -494,8 +507,9 @@ Los diagramas se autoran en **formato vectorial**, nunca raster. Regla de oro:
   cargas imagen, interfaces dieléctricas) → **`tikz` plano** con los estilos de
   `assets/tikzstyles.tex`, o **SVG** editable → **PDF** para
   `\includegraphics` si es muy irregular.
-- **Circuitos** → `circuitikz` con `europeanresistors`. **Todavía no aplica**:
-  el curso no llega a circuitos hasta ~Clase 15.
+- **Circuitos** → `circuitikz` con `europeanresistors`. Lo carga sólo la clase
+  que tiene circuitos: la primera es la **Clase 13** (condensadores en serie y en
+  paralelo); el grueso llega con corriente eléctrica.
 - **Nunca** PNG/JPG/WebP para line-art. El pipeline canónico
   (**tectonic/XeTeX**) sólo incluye PDF/PNG/JPG; SVG no es válido para
   `\includegraphics`.
@@ -533,7 +547,7 @@ Agregar, después del bloque de `tcolorbox` de §3.1:
 > TikZ revienta con `Argument of \language@active@arg> has an extra }`. El error
 > es silencioso hasta que se compila.
 >
-> Cuando el curso llegue a circuitos (~Clase 15), agregar arriba de `pgfplots`:
+> Las clases con circuitos (desde la 13) agregan arriba de `pgfplots`:
 > `\usepackage[europeanresistors]{circuitikz}`. El `tikzstyles.tex` ya lo
 > contempla con su guarda `\ifdefined`.
 >
@@ -614,6 +628,33 @@ En geometría, los dos patrones que más sirvieron en este corpus:
   **perpendicularmente**, uno debajo de la flecha y otro encima de la punteada,
   con una línea de llamada corta (`clase4-distribucion-localizada`). Mover los
   puntos no alcanza: la colinealidad *es* el contenido de la figura.
+
+#### 6.5.3 Casos propios de este curso (Clases 11–13, 2026-09-26)
+
+1. **Las líneas de campo se calculan, no se dibujan a ojo.**
+   `clase11-lineas-campo` sale de integrar con RK4 el campo exacto (uniforme +
+   dipolo, $K=4$) y espejar $z\to-z$; el script es Python puro (en la máquina no
+   hay numpy) y los parámetros quedan en el comentario de la figura para
+   regenerarla. Dibujadas a mano, la densidad de líneas adentro y afuera miente.
+2. **Si el pizarrón contradice la física, la figura dibuja la física y el texto lo
+   dice.** El docente dibujó las líneas interiores de la esfera dieléctrica «más
+   apretadas»; con $K>1$ el campo interior es menor que $E_0$, así que las de
+   $\vec E$ van más separadas (las que se concentran son las de $\vec D$). La
+   figura dibuja $\vec E$ y un `notebox` explica la diferencia, sin corregir al
+   docente en silencio.
+3. **Dos normales opuestas van en superficies distintas.** En
+   `clase12-conductores-volumen`, $\hat n$ (saliente del conductor) y $\hat n'$
+   (saliente de $V$) en el mismo punto de $S_2$ se pisaban con el rótulo del
+   conductor. Quedaron $\hat n$ en $S_1$ y $\hat n'$ en $S_3$, y la relación
+   $\hat n' = -\hat n$ va en el caption. Es la misma lección que
+   `clase10-esfera-dielectrico`, ahora con dos flechas en vez de dos rótulos.
+4. **`clase13-serie-paralelo` es el primer `circuitikz` del curso.** Dos cosas
+   que costaron: (a) con `capacitors/scale=0.9` las placas quedan a ~0,2 una de
+   otra, así que los rótulos $\pm Q$ **no entran entre placas**: van por fuera
+   (arriba en serie, a la derecha en paralelo), con `anchor=east`/`west` pegados a
+   cada placa; (b) un `-- (x,y)` encadenado **después** de un `to[C]` en el mismo
+   `\draw` salió con trazo más fino que el resto: cerrar el circuito en un
+   `\draw` aparte.
 
 #### 6.5.1 Qué figuras hacer (y cuántas)
 

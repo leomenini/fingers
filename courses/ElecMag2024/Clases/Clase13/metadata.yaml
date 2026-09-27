@@ -16,33 +16,58 @@ video:
 
 stats:
   transcript_words: 9288
-  summary_words: 0
+  summary_words: 2715
   diagrams_pending: 0
-  equations: 0
+  equations: 26
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Simetría de los coeficientes de potencial
+  - Prueba de la simetría variando una carga de dos maneras
+  - Coeficientes de potencial no negativos y dominancia de la diagonal
+  - Esfera conductora y conductor puntual por simetría de los coeficientes
+  - Definición general de condensador
+  - Un conductor dentro de la cavidad de otro
+  - Placas muy grandes como caso particular
+  - Capacitancia en términos de los coeficientes de potencial
+  - Unidades de la capacitancia
+  - Energía de un condensador
+  - Condensador de placas paralelas
+  - Condensadores en serie y en paralelo
+  - Fuerza y torque en un sistema aislado
+  - Fuerza y torque con baterías a potencial constante
+  - El trabajo de la batería es el doble de la variación de energía
+  - Dieléctrico atraído al interior de un condensador
+  - Definición de corriente eléctrica y convención de signos
+  - Tipos de conducción
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Coeficientes de potencial y energía de conductores (Clase 12)
+  - Energía de una distribución de carga (Clase 12)
+  - Conductores en equilibrio y cavidades
+  - Ley de Gauss para el plano infinito
+  - Condensadores en Física III
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Corriente eléctrica y densidad de corriente
+  - Resistencia y ley de Ohm
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-09-26
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

@@ -1,0 +1,30 @@
+% Clase 11 — trabajo de la fuerza electrostatica entre A y B.
+% Dos curvas y no una: el contenido de la figura es que el resultado NO depende
+% de cual se tome. El elemento dl va tangente a C.
+\begin{tikzpicture}[scale=1]
+
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5.2,0.9);
+
+  % curva C
+  \draw[figline, line width=1pt] (A) .. controls (1.2,2.4) and (3.6,2.6) .. (B)
+    coordinate[pos=0.5] (M);
+  \node[figlbl, figblue] at (0.35,1.35) {$C$};
+
+  % curva C' (alternativa)
+  \draw[figline, figgray, dashed, line width=0.8pt] (A) .. controls (1.4,-1.6) and (3.8,-1.2) .. (B);
+  \node[figlbl, figgray] at (2.8,-1.45) {$C'$};
+
+  % elemento de desplazamiento, tangente a C en M
+  \draw[figvecres] (M) -- ++(0.95,0.14);
+  \node[figlbl, figred] at ($(M)+(0.5,0.45)$) {$d\vec l$};
+
+  % carga q sobre C
+  \node[figpos] at (M) {};
+  \node[figlbl] at ($(M)+(0,-0.42)$) {$q$};
+
+  % extremos
+  \fill (A) circle (1.8pt) node[left, figlbl] {$A$};
+  \fill (B) circle (1.8pt) node[right, figlbl] {$B$};
+
+\end{tikzpicture}

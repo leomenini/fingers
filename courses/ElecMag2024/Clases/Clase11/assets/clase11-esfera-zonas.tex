@@ -1,0 +1,39 @@
+% Clase 11 — planteo de la esfera dielectrica en campo uniforme.
+% Lo que la figura tiene que mostrar: las DOS zonas (1 afuera, 2 adentro), el
+% escalon de permitividad en r = a, y las coordenadas (r, theta) medidas desde
+% el eje z, que es la direccion de E0. Las condiciones de borde van en la tabla
+% del texto, no aca.
+\begin{tikzpicture}[scale=1]
+
+  % campo aplicado (lejos, a la izquierda)
+  \foreach \yy in {-1.6,-0.8,0,0.8,1.6}{
+    \draw[figvec] (-4.6,\yy) -- (-3.5,\yy);}
+  \node[figlbl, figblue] at (-4.05,2.15) {$\vec E_0$};
+
+  % esfera
+  \fill[figamber!12] (0,0) circle (1.6);
+  \draw[figamber, line width=0.9pt] (0,0) circle (1.6);
+
+  % eje z
+  \draw[figaxis] (-2.6,0) -- (3.4,0) node[right, figlbl, figgray] {$z$};
+
+  % radio a
+  \draw[figvecaux] (0,0) -- (250:1.6);
+  \node[figlblaux, fill=figamber!12, inner sep=1pt] at (236:0.95) {$a$};
+
+  % punto de campo y coordenadas
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (40:2.8);
+  \draw[figvec] (O) -- (P);
+  \fill[figblue] (P) circle (1.6pt);
+  \node[figlbl, figblue, fill=white, inner sep=1pt] at ($(O)!0.62!(P)+(0.05,0.3)$) {$r$};
+  \draw[figgray, line width=0.6pt] (0.75,0) arc (0:40:0.75);
+  \node[figlblaux] at (20:1.05) {$\theta$};
+
+  % zonas
+  \node[figlbl, figamber!80!black] at (-0.55,0.75) {zona 2};
+  \node[figlblaux, figamber!80!black] at (-0.55,0.35) {$\varepsilon$};
+  \node[figlbl] at (2.55,-1.55) {zona 1};
+  \node[figlblaux] at (2.55,-1.95) {$\varepsilon_0$};
+
+\end{tikzpicture}

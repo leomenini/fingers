@@ -16,33 +16,65 @@ video:
 
 stats:
   transcript_words: 9434
-  summary_words: 0
+  summary_words: 3430
   diagrams_pending: 0
-  equations: 0
+  equations: 27
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Repaso de dieléctricos y ley de Gauss para el desplazamiento
+  - Carga libre o externa frente a carga de polarización
+  - Materiales isótropos, homogéneos y lineales
+  - Por qué la relación entre D y E suele ser lineal
+  - Materiales inhomogéneos, anisótropos y ferroeléctricos
+  - Ecuación de Poisson en un dieléctrico
+  - Laplace vale aunque haya carga de polarización
+  - Esfera dieléctrica descargada en campo uniforme
+  - Las dos zonas y el escalón de permitividad en el borde
+  - Las cinco condiciones de borde del problema
+  - La carga neta de polarización nula y el término monopolar
+  - La constante aditiva se elige una sola vez
+  - Identificación término a término con polinomios de Legendre
+  - Todos los modos con n mayor o igual a dos son nulos
+  - Solución para n igual a uno y los dos potenciales
+  - Campo, desplazamiento y polarización uniformes adentro
+  - El campo exterior es uniforme más dipolar
+  - El campo no es radial en el borde de un dieléctrico
+  - Ansatz reducido y teorema de unicidad
+  - Trabajo de la fuerza electrostática independiente del camino
+  - La energía potencial es del sistema, no de una partícula
+  - Energía de un sistema de cargas puntuales
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Polarización, desplazamiento y constante dieléctrica (Clase 9)
+  - Condiciones de borde entre dos medios (Clase 10)
+  - Solución de Laplace con simetría azimutal y polinomios de Legendre (Clase 7)
+  - Esfera conductora en campo uniforme (Clases 7 y 8)
+  - Desarrollo multipolar de una distribución localizada (Clase 5)
+  - Teorema de unicidad de la ecuación de Laplace (Clase 5)
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Energía de cargas puntuales en términos de los potenciales
+  - Energía de una distribución continua de carga
+  - Densidad de energía electrostática
+  - Energía de un sistema de conductores cargados
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-09-26
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

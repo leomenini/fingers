@@ -1,0 +1,586 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (circuitos, gráficas y esquemas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 13: Coeficientes de potencial, condensadores y fuerzas} \\[0.3em]
+        \large{Simetría de los $P_{ij}$, capacitancia, fuerzas a partir de la energía y primeros pasos en corriente eléctrica}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Repaso: conductores cargados}
+
+La clase anterior terminó con un conjunto de $n$ conductores con cargas
+$Q_1, Q_2, \dots$ rodeados de vacío o de dieléctricos \textbf{lineales}. En ese
+escenario el potencial de cada conductor es una combinación lineal de las cargas
+de todos, con los \textbf{coeficientes de potencial} $P_{ij}$, y la energía es una
+forma cuadrática en las cargas:
+\[
+\phi_i = \sum_{j=1}^{n} P_{ij}\,Q_j,
+\qquad
+U = \frac12\sum_{i=1}^{n}\sum_{j=1}^{n} P_{ij}\,Q_i\,Q_j .
+\]
+El ejemplo fue el condensador de dos placas aisladas de todo lo demás; más
+adelante en esta clase aparece un concepto más general de condensador.
+
+\section{Propiedades de los coeficientes de potencial}
+
+Son tres. El docente prueba sólo la primera, «que es la que vamos a usar más».
+
+\subsection{Simetría}
+
+\begin{keybox}[Los coeficientes de potencial son simétricos]
+\[
+\boxed{\ P_{ij} = P_{ji}\ }
+\]
+\end{keybox}
+
+\textbf{Prueba.} Se dejan fijas todas las cargas salvo $Q_1$, que pasa de $Q_1$ a
+$Q_1+\delta Q_1$. La variación de la energía se puede calcular de dos maneras.
+
+\textbf{Primera: derivando la forma cuadrática.} $Q_1$ aparece en los dos
+índices, así que
+\[
+\delta U = \frac12\sum_{j} Q_j\,P_{1j}\,\delta Q_1 + \frac12\sum_{i} Q_i\,P_{i1}\,\delta Q_1 .
+\]
+Como $i$ y $j$ son \textbf{índices mudos}, se renombra uno y se juntan:
+\[
+\delta U = \frac12\sum_i \left(P_{1i}+P_{i1}\right) Q_i\,\delta Q_1 .
+\]
+Tiene que dar algo simétrico: es una forma cuadrática.
+
+\textbf{Segunda: como trabajo.} El sistema es conservativo, así que $\delta U$ es
+el trabajo necesario para traer $\delta Q_1$ desde el infinito hasta el
+conductor~1, que es su potencial por la carga traída:
+\[
+\delta U = \phi_1\,\delta Q_1 = \sum_i P_{1i}\,Q_i\,\delta Q_1 .
+\]
+\textbf{Comparando}, y como las $Q_i$ son arbitrarias, coeficiente a coeficiente:
+\[
+P_{1i} = \frac12\left(P_{1i}+P_{i1}\right)
+\quad\Longrightarrow\quad
+P_{1i} = P_{i1}.
+\]
+Lo mismo se hace variando cualquier otra carga, y de ahí el resultado general.
+
+\begin{notebox}[No es obvio]
+Por definición, $P_{ij}$ mide el potencial que una carga en el conductor $j$
+genera en el $i$. Que sea igual al que una carga en $i$ genera en $j$ no sale de
+la definición.
+\end{notebox}
+
+\begin{notebox}[Contexto]
+Es un caso particular de la \textbf{teoría de la respuesta lineal}: a los
+$P_{ij}$ se les llama a veces coeficientes de respuesta, y hay un teorema general
+según el cual, en sistemas en equilibrio, las funciones de respuesta están
+ligadas a cantidades naturalmente simétricas (funciones de correlación). El
+docente lo menciona sin desarrollarlo.
+\end{notebox}
+
+\subsection{Las otras dos propiedades}
+
+Se enuncian y se \textbf{admiten sin demostración}: probarlas «da un poquito de
+trabajo» y no se van a usar lo suficiente.
+\[
+P_{ij} \ge 0,
+\qquad
+P_{ii} \ge P_{ij} .
+\]
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    Propiedad & Intuición \\
+    \midrule
+    $P_{ij}\ge 0$ & Con el cero del potencial en el infinito, agregar una carga positiva tiende a \textbf{subir} el potencial en todos lados, no a bajarlo \\
+    $P_{ii}\ge P_{ij}$ & Agregar carga a un conductor modifica más su \textbf{propio} potencial que el de los demás \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{Ejemplo: esfera conductora y conductor puntual}
+
+Para que no parezca todo abstracto: una \textbf{esfera conductora} de radio $a$
+(el conductor 1) y un \textbf{conductor puntual} (el 2), a una distancia $d$
+entre centros. Hay un problema fácil y uno difícil.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase13-esfera-puntual.tex}
+  \caption{Esfera conductora de radio $a$ y conductor puntual a distancia $d$ de
+  su centro. En la transcripción radio y distancia aparecen con la misma letra;
+  el resultado sólo involucra $d$.}
+\end{figure}
+
+\textbf{El fácil: el potencial que genera la esfera en el punto.} Se olvida la
+carga puntual y se carga sólo la esfera con $Q$. Por Gauss, afuera de una esfera
+conductora el campo es el de una carga puntual en el centro, y el potencial
+también. En la posición del conductor puntual:
+\[
+\phi_2 = \frac{Q}{4\pi\varepsilon_0 d}
+\quad\Longrightarrow\quad
+P_{21} = \frac{1}{4\pi\varepsilon_0 d}.
+\]
+
+\textbf{El difícil: el potencial que genera el conductor puntual en la esfera.} Si
+la esfera está descargada y el conductor puntual tiene carga $q$, la esfera se
+polariza con una distribución de carga difícil de calcular: habría que resolver
+Laplace en una geometría complicada. Pero por la simetría:
+
+\begin{keybox}[Resultado en dos líneas]
+\[
+P_{12} = P_{21} = \frac{1}{4\pi\varepsilon_0 d}
+\quad\Longrightarrow\quad
+\boxed{\ \phi_{\text{esfera}} = \frac{q}{4\pi\varepsilon_0 d}\ }
+\]
+\end{keybox}
+
+\begin{warnbox}[Qué es y qué no es este potencial]
+Es el potencial \textbf{del conductor}, que es uno solo en toda la esfera; no es
+«el potencial en el centro». Las distancias de $q$ a cada punto de la esfera son
+distintas, pero el potencial es el mismo en todos. Por eso tampoco importa si la
+esfera es maciza o un cascarón: la carga sólo se ubica en la superficie.
+\end{warnbox}
+
+\begin{notebox}[«Es raro el resultado, pero es correcto»]
+Que la esfera genere ese potencial en el punto es obvio; al revés, no lo es. Con
+los coeficientes de potencial se prueba en dos líneas, y resulta más fácil
+conseguir los potenciales \textbf{sólo en los conductores} que hallar el potencial
+en todo el espacio.
+\end{notebox}
+
+\section{Condensadores}
+
+Después de la parte abstracta, una que es «como un descansito»: repaso de
+Física~3, pero con alguna vuelta de tuerca (sección 4.5). El curso, dice el
+docente, alterna entre cosas avanzadas con ecuaciones diferenciales y repasos.
+
+\subsection{Una definición más general}
+
+En Física 3 un condensador es un dispositivo para almacenar energía en un campo
+eléctrico, y concretamente \textbf{dos placas conductoras} a cierta distancia,
+implícitamente \textbf{aisladas del resto del mundo}: lo bastante lejos de
+cualquier otra carga como para que nada afecte sus potenciales.
+
+\begin{keybox}[Definición del curso]
+Un \textbf{condensador} (o capacitor) es un dispositivo compuesto por \textbf{dos
+conductores} separados tales que la \textbf{diferencia de potencial entre ellos
+no depende de las cargas de otros conductores cercanos}.
+\end{keybox}
+
+Contiene a la de Física 3 como caso particular ---si no hay nada cerca, no se
+puede depender de ello---, pero es más útil: en un circuito real dos condensadores
+pueden estar cerca, y se quiere que cada uno conserve sus propiedades. En un
+circuito, además, las cargas suelen estar en placas, no «boyando» por ahí. Hay dos
+maneras típicas de conseguirlo, y una es caso particular de la otra.
+
+\subsection{Un conductor dentro del otro}
+
+El conductor 1 tiene una \textbf{cavidad}, y adentro está el conductor 2. Afuera
+hay otros, por ejemplo el 3 y el 4.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase13-cavidad.tex}
+  \caption{El conductor 2 está en la cavidad del 1. Cuando $Q_2 = 0$ ---que es la
+  situación en que se calculan $P_{13}$ y $P_{14}$--- toda la región encerrada
+  por el 1 es equipotencial, y por eso $\phi_1 - \phi_2$ no depende de $Q_3$ ni de
+  $Q_4$.}
+\end{figure}
+
+\textbf{Cómo se calcula $P_{13}$:} se apagan todas las cargas salvo $Q_3$ y se
+mira el potencial en 1. Pero entonces, en particular, \textbf{$Q_2 = 0$}. Sin
+carga adentro de la cavidad, toda la región encerrada por el conductor 1
+---cavidad y conductor 2 incluidos--- tiene campo nulo y \textbf{el mismo
+potencial}. Entonces $\phi_1 = \phi_2$ en esa situación, y
+\[
+P_{13} = P_{23},\qquad P_{14} = P_{24}.
+\]
+La diferencia de potencial entre 1 y 2 es
+\[
+\phi_1-\phi_2 = (P_{11}-P_{21})\,Q_1 + (P_{12}-P_{22})\,Q_2
++ \underbrace{(P_{13}-P_{23})}_{0}\,Q_3 + \underbrace{(P_{14}-P_{24})}_{0}\,Q_4 ,
+\]
+que \textbf{no depende de $Q_3$ ni de $Q_4$}. Con 28 conductores afuera sería lo
+mismo.
+
+\begin{notebox}[Receta de ingeniería]
+Para un condensador «fiable», poner una placa dentro de la otra. Los
+condensadores de ferretería son conductores \textbf{enrollados}: no están
+totalmente uno dentro del otro, pero casi.
+\end{notebox}
+
+\subsection{Placas muy grandes}
+
+El otro caso típico, «el caso de escuela», son \textbf{dos placas muy grandes}
+comparadas con la distancia entre ellas. Es un caso particular del anterior: como
+no se llegan a ver los bordes, podría ser que allá lejos las placas dieran la
+vuelta y una quedara encerrada en la otra, y el resultado no puede depender del
+borde.
+
+\begin{notebox}[La analogía del docente]
+Parados acá no sabemos si la Tierra es plana o esférica, porque el borde está tan
+lejos que puede haberse curvado.
+\end{notebox}
+
+Las dos maneras de \textbf{apantallar} lo que pasa afuera son, entonces, una
+dentro de la otra o placas muy grandes. En Física 3 este problema «se ponía abajo
+de la alfombra».
+
+\subsection{Capacitancia y energía}
+
+Los condensadores se usan con \textbf{carga neta nula}: $Q_1 = Q$, $Q_2 = -Q$.
+Usando $P_{21} = P_{12}$:
+\[
+\Delta\phi = \phi_1-\phi_2 = \left(P_{11} - 2P_{12} + P_{22}\right) Q .
+\]
+La diferencia de potencial es proporcional a la carga de una de las placas, como
+se sabía de Física 3, y el coeficiente define la \textbf{capacitancia}:
+
+\begin{keybox}[Capacitancia]
+\[
+\boxed{\ C = \frac{1}{P_{11}+P_{22}-2P_{12}}\ },
+\qquad
+\boxed{\ \Delta\phi = \frac{Q}{C}\ } .
+\]
+No depende de la carga sino de la \textbf{geometría} y de los
+\textbf{dieléctricos} del entorno. La única hipótesis usada es que esos
+dieléctricos sean \textbf{lineales}.
+\end{keybox}
+
+\textbf{Unidades.} $C = Q/\Delta\phi$ se mide en coulomb por volt, el
+\textbf{farad} (F). Es una unidad enorme ---el volt es de laboratorio, el coulomb
+no---: los condensadores reales son de micro-, nano- o picofarads.
+
+\textbf{Energía.} Con la simetría, la fórmula de la clase pasada se simplifica:
+\[
+U = \frac12\left(P_{11}+P_{22}-P_{12}-P_{21}\right)Q^2
+= \frac12\left(P_{11}+P_{22}-2P_{12}\right)Q^2
+= \boxed{\ \frac{Q^2}{2C}\ } .
+\]
+
+\subsection{Condensador de placas paralelas}
+
+Placas de área $A$ a distancia $d$, con vacío entre ellas. Por invariancia de
+traslación a lo largo del plano, las densidades son uniformes, $+\sigma$ y
+$-\sigma$. Por Gauss el campo entre placas es uniforme:
+\[
+E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{A\,\varepsilon_0},
+\qquad
+\Delta\phi = E\,d = \frac{Q\,d}{\varepsilon_0 A}
+\quad\Longrightarrow\quad
+\boxed{\ C = \frac{\varepsilon_0 A}{d}\ } .
+\]
+
+\begin{notebox}
+Con Laplace o el método de las imágenes ahora se pueden hallar capacitancias de
+geometrías más difíciles que las de Física 3; eso queda para el práctico.
+\end{notebox}
+
+\subsection{Serie y paralelo}
+
+Más repaso, «porque estaban oxidados».
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase13-serie-paralelo.tex}
+  \caption{Los mismos dos condensadores, conectados de dos maneras. En serie, el
+  tramo punteado está aislado del resto y es neutro, así que las placas que
+  encierra llevan $-Q$ y $+Q$: la carga es la misma en los dos y las diferencias
+  de potencial se suman. En paralelo, la diferencia de potencial es la misma y
+  las cargas se suman.}
+\end{figure}
+
+\textbf{En serie.} Dos condensadores $C_1$ y $C_2$ uno detrás del otro, con
+$\Delta\phi$ aplicada a los extremos. Aparece $Q$ en una placa del primero y $-Q$
+en la otra; el tramo que une los dos condensadores es neutro, así que el segundo
+también tiene $\pm Q$. La diferencia de potencial total es la suma:
+\[
+\Delta\phi = \frac{Q}{C_1} + \frac{Q}{C_2}
+\quad\Longrightarrow\quad
+\boxed{\ \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\ } .
+\]
+
+\textbf{En paralelo.} Unidos por cables ideales ---o simplemente en equilibrio---,
+los dos tienen la \textbf{misma} $\Delta\phi$, y la carga total es la suma,
+$Q = Q_1 + Q_2 = C_1\Delta\phi + C_2\Delta\phi$:
+\[
+\boxed{\ C = C_1 + C_2\ } .
+\]
+
+\begin{notebox}
+Para quien se acuerda a medias: con las resistencias la relación es \textbf{al
+revés}. Las resistencias aparecen en la clase siguiente.
+\end{notebox}
+
+\section{Fuerzas y momentos electrostáticos}
+
+Para cerrar el capítulo 4 (sección 4.6): cómo reconstruir fuerzas y torques a
+partir de la energía.
+
+\subsection{Sistema aislado}
+
+Un sistema electrostático \textbf{aislado}: nada le aporta energía desde afuera.
+Se imagina que todo está quieto salvo una parte, que se desplaza $d\vec r$. El
+trabajo electrostático es $dW = \vec F\cdot d\vec r$. Como el sistema es estático
+no cambia la energía cinética, no hay fuerzas externas, y el trabajo es a costa de
+la energía potencial: $dW = -dU$. Entonces
+
+\begin{keybox}[Sistema aislado]
+\[
+\boxed{\ \vec F = -\grad U\ },
+\qquad
+\boxed{\ \tau_n = -\pdv{U}{\theta}\ } .
+\]
+La segunda, para una \textbf{rotación} de ángulo $d\theta$ alrededor de un eje de
+versor $\hat n$, con $dW = \tau_n\,d\theta$.
+\end{keybox}
+
+Conocer la energía permite calcular no sólo fuerzas sino también torques.
+
+\subsection{Baterías que mantienen los potenciales}
+
+Si el sistema no está aislado «puede pasar de todo»: hay que decir cuáles son las
+fuerzas externas, y el caso general no se puede tratar. Se estudia un caso
+particular: \textbf{baterías} que mantienen \textbf{constantes} los potenciales de
+los conductores (fijado el cero en el infinito, tiene sentido hablar de
+potenciales y no sólo de diferencias).
+
+Ahora el trabajo tiene dos partes: la asociada a la energía potencial, y la que
+aporta la batería. Con $U = \tfrac12\sum_i\phi_i Q_i$ y los potenciales fijos,
+sólo cambian las cargas:
+\[
+dU\big|_{\phi} = \frac12\sum_i \phi_i\,dQ_i .
+\]
+La batería mantiene los potenciales moviendo cargas $dQ_i$ a cada conductor, y el
+trabajo que hace es
+\[
+dW_{\text{bat}} = \sum_i \phi_i\,dQ_i = 2\,dU .
+\]
+Esa «coincidencia grata» decide todo: el trabajo total es
+$\vec F\cdot d\vec r = -dU + dW_{\text{bat}} = +dU$. Las fórmulas son las del
+sistema aislado \textbf{con el signo al revés}:
+
+\begin{keybox}[Potenciales fijos por baterías]
+\[
+\boxed{\ \vec F = +\grad U\big|_{\phi}\ },
+\qquad
+\boxed{\ \tau_n = +\pdv{U}{\theta}\bigg|_{\phi}\ } .
+\]
+\end{keybox}
+
+\begin{warnbox}[No viola nada]
+El sistema no está aislado: la batería aporta energía, y justo el doble de la
+variación de la energía potencial. Una contribución va para un lado y la otra
+para el otro.
+\end{warnbox}
+
+\begin{notebox}
+El docente admite que la primera vez le resultó «re extraño», y que no conoce una
+explicación más simple que la cuenta misma: a potencial fijo, el trabajo de la
+batería es el doble de la variación de la energía potencial.
+\end{notebox}
+
+\subsection{Ejemplo: un dieléctrico entre las placas}
+
+Un condensador de placas paralelas rectangulares, de largo $L$ y ancho $W$,
+separadas $D$, conectado a una batería que mantiene $\Delta\phi$ fijo. Entre las
+placas hay un bloque de dieléctrico (lineal, homogéneo, isótropo, constante $K$)
+que puede entrar o salir: un tramo de largo $x$ queda en vacío y el resto,
+$L-x$, con dieléctrico. \textbf{¿La fuerza lo chupa hacia adentro o lo expulsa?}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase13-dielectrico-placas.tex}
+  \caption{Vista de costado; el ancho $W$ de las placas va hacia adentro de la
+  hoja. Con la batería manteniendo $\Delta\phi$, la fuerza sobre el dieléctrico
+  apunta hacia adentro del condensador.}
+\end{figure}
+
+Se \textbf{desprecian los efectos de borde}: si $L\gg D$, las zonas de borde son
+del ancho de $D$ y el grueso de la energía está en las regiones interiores, que
+es proporcional a $x$ o a $L-x$. Así el sistema son \textbf{dos condensadores en
+paralelo}:
+\[
+C_0 = \frac{\varepsilon_0\, x\,W}{D},
+\qquad
+C_K = \frac{K\varepsilon_0\,(L-x)\,W}{D}.
+\]
+Usando $\Delta\phi = Q/C$, cada energía se escribe $\tfrac12 C\,\Delta\phi^2$:
+\[
+U = \frac12\left(C_0 + C_K\right)\Delta\phi^2
+= \frac{\Delta\phi^2}{2}\,\frac{\varepsilon_0 W}{D}\left[x + K(L-x)\right].
+\]
+Con $\Delta\phi$ fijo por la batería, la fuerza es \textbf{más} la derivada:
+\[
+F_x = +\pdv{U}{x} = \frac{\Delta\phi^2}{2}\,\frac{\varepsilon_0 W}{D}\,(1-K) .
+\]
+
+\begin{keybox}[El condensador chupa el dieléctrico]
+Como $K>1$, $F_x<0$: la fuerza tiende a achicar el tramo en vacío. El dieléctrico
+es atraído hacia el interior.
+\end{keybox}
+
+\begin{notebox}[Ejercicio]
+¿Qué pasa si el condensador está cargado pero \textbf{desconectado} de la
+batería? Entonces $\Delta\phi$ ya no es fijo, pero la carga sí, porque nadie
+aporta carga. ¿El dieléctrico tiende a entrar o a salir?
+\end{notebox}
+
+\begin{warnbox}[Por qué acá el signo es $+$]
+Porque el sistema no está aislado. Si lo estuviera, sería $-\grad U$. Los dos
+casos fáciles de tratar son el aislado y el de potenciales fijos.
+\end{warnbox}
+
+\section{Corriente eléctrica}
+
+Con los minutos que quedan arranca el \textbf{capítulo 5}: por primera vez en el
+curso las cargas se mueven.
+
+\subsection{Definición}
+
+Se toma una superficie $S$ y cargas que la cruzan. La \textbf{carga que cruza $S$
+por unidad de tiempo} es la \textbf{corriente eléctrica}:
+\[
+\boxed{\ I = \frac{dQ}{dt}\ } .
+\]
+
+\begin{warnbox}[Convención de signos]
+Se cuenta \textbf{carga}, no partículas, y hay que elegir qué sentido de cruce es
+positivo. La corriente va siempre en el sentido de hipotéticas cargas
+\textbf{positivas} en movimiento: si lo que se mueve son cargas negativas, la
+corriente va en sentido opuesto a su movimiento.
+\end{warnbox}
+
+\textbf{Unidad:} coulomb por segundo, el \textbf{ampere} (A).
+
+\subsection{Tipos de conducción}
+
+\begin{enumerate}
+  \item \textbf{Electrones en un metal.} Se mueven los electrones de valencia en
+    una red cristalina iónica. En los semiconductores a veces se mueven
+    \textbf{huecos}, ausencias de electrones que van para el otro lado; su
+    naturaleza no tiene sentido clásico. Cualitativamente sirve pensar el metal
+    como una caja con electrones que se mueven, aunque en realidad la red vibra y
+    tiene impurezas.
+  \item \textbf{Electrolitos en un fluido.} Iones disueltos en un líquido.
+  \item \textbf{Transporte hidrodinámico en un plasma.} En el Sol, por ejemplo, la
+    materia está tan caliente que electrones e iones están separados: es un fluido
+    cargado, y lo que se mueve es \textbf{el propio medio}, no cargas dentro de
+    él.
+\end{enumerate}
+
+\begin{notebox}[Lo que no se estudia]
+El tercero: habría que acoplar las ecuaciones del electromagnetismo con las de la
+hidrodinámica (las de Navier--Stokes para un fluido neutro), y cada una complica a
+la otra. Es la única vez que el curso menciona los plasmas.
+\end{notebox}
+
+\medskip
+\noindent\emph{La clase siguiente continúa con la corriente eléctrica y las
+resistencias.}
+
+\end{document}

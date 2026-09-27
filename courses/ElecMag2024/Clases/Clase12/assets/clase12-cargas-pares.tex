@@ -1,0 +1,24 @@
+% Clase 12 — cuatro cargas puntuales y las distancias entre ellas.
+% Se dibujan las SEIS parejas (4 sobre 2) porque ese es el contenido: la suma va
+% sobre parejas, no sobre "una con todas". Solo dos distancias rotuladas; las
+% seis juntas saturaban el dibujo y no agregaban nada.
+\begin{tikzpicture}[scale=1]
+
+  \coordinate (Q1) at (0,0);
+  \coordinate (Q2) at (3.2,1.9);
+  \coordinate (Q3) at (5.4,-0.3);
+  \coordinate (Q4) at (2.0,-2.0);
+
+  % parejas
+  \foreach \a/\b in {Q1/Q2,Q1/Q3,Q2/Q3,Q2/Q4,Q3/Q4}{
+    \draw[figaux] (\a) -- (\b);}
+  \draw[figline] (Q1) -- (Q4) node[midway, left, figlbl, figblue, xshift=-2pt] {$r_{14}$};
+  \draw[figline] (Q2) -- (Q3) node[midway, right, figlbl, figblue, xshift=3pt, yshift=3pt] {$r_{23}$};
+
+  % cargas
+  \node[figpos] at (Q1) {}; \node[figlbl] at ($(Q1)+(-0.35,0.25)$) {$q_1$};
+  \node[figpos] at (Q2) {}; \node[figlbl] at ($(Q2)+(0,0.35)$) {$q_2$};
+  \node[figneg] at (Q3) {}; \node[figlbl] at ($(Q3)+(0.4,0.1)$) {$q_3$};
+  \node[figpos] at (Q4) {}; \node[figlbl] at ($(Q4)+(0,-0.4)$) {$q_4$};
+
+\end{tikzpicture}

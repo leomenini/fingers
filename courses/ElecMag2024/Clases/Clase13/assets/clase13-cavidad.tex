@@ -1,0 +1,32 @@
+% Clase 13 — condensador "uno dentro del otro".
+% El 2 esta en la cavidad del 1; el 3 y el 4 afuera. El contenido es que la
+% region encerrada por el 1 (cavidad + conductor 2) queda equipotencial cuando
+% Q2 = 0, que es la situacion en que se calculan P13 y P14.
+\begin{tikzpicture}[scale=1]
+
+  % conductor 1 con cavidad (even odd)
+  \fill[figgray!25, even odd rule]
+    plot[smooth cycle, tension=0.7] coordinates {(-2.2,0) (-1.6,1.6) (0.3,2.0) (2.0,1.2) (2.1,-0.9) (0.6,-1.9) (-1.4,-1.6)}
+    plot[smooth cycle, tension=0.7] coordinates {(-1.3,0) (-0.9,1.0) (0.4,1.2) (1.2,0.5) (1.1,-0.6) (0.1,-1.1) (-0.8,-0.9)};
+  \draw[figline, line width=1pt]
+    plot[smooth cycle, tension=0.7] coordinates {(-2.2,0) (-1.6,1.6) (0.3,2.0) (2.0,1.2) (2.1,-0.9) (0.6,-1.9) (-1.4,-1.6)};
+  \draw[figline, line width=1pt]
+    plot[smooth cycle, tension=0.7] coordinates {(-1.3,0) (-0.9,1.0) (0.4,1.2) (1.2,0.5) (1.1,-0.6) (0.1,-1.1) (-0.8,-0.9)};
+  \node[figlbl] at (1.55,-1.25) {$1$};
+
+  % conductor 2 en la cavidad
+  \fill[figgray!45, draw=figblue, line width=0.9pt]
+    plot[smooth cycle, tension=0.8] coordinates {(-0.4,0.1) (0,0.55) (0.55,0.3) (0.45,-0.35) (-0.15,-0.4)};
+  \node[figlbl] at (0.05,0.05) {$2$};
+
+  % conductores 3 y 4 afuera
+  \fill[figgray!25, draw=figblue, line width=0.9pt]
+    plot[smooth cycle, tension=0.8] coordinates {(3.3,1.3) (4.0,1.9) (4.7,1.4) (4.1,0.8)};
+  \node[figlbl] at (4.0,1.35) {$3$};
+  \node[figlbl] at (5.2,1.35) {$Q_3$};
+  \fill[figgray!25, draw=figblue, line width=0.9pt]
+    plot[smooth cycle, tension=0.8] coordinates {(3.2,-1.2) (3.9,-0.8) (4.6,-1.3) (4.0,-1.9)};
+  \node[figlbl] at (3.9,-1.3) {$4$};
+  \node[figlbl] at (5.15,-1.3) {$Q_4$};
+
+\end{tikzpicture}

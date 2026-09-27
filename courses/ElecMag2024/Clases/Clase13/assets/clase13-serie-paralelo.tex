@@ -1,0 +1,46 @@
+% Clase 13 — condensadores en serie y en paralelo (primer circuitikz del curso).
+% Mismos C1 y C2 en los dos paneles; cambia solo la conexion. En (a) el
+% recuadro punteado es el argumento de la clase: ese tramo esta aislado y es
+% neutro, asi que las dos placas que encierra llevan -Q y +Q. Adentro solo
+% rotulos; lo que se comparte y lo que se suma va en el caption.
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) serie ===============
+  \begin{scope}[line width=0.9pt, color=figblue]
+    \draw (0,0) to[battery1] (0,2.2);
+    \draw (0,2.2) to[C] (2.4,2.2) to[C] (4.8,2.2);
+    \draw (4.8,2.2) -- (4.8,0) -- (0,0);
+  \end{scope}
+  \node[figlbl, anchor=east] at (-0.45,1.1) {$\Delta\phi$};
+  \node[figlbl, figblue] at (1.2,1.3) {$C_1$};
+  \node[figlbl, figblue] at (3.6,1.3) {$C_2$};
+  % cargas en las placas (placas en x = 1,1 | 1,3 y 3,5 | 3,7)
+  \node[figlblaux, figred, anchor=east] at (1.1,2.95) {$+Q$};
+  \node[figlblaux, figblue, anchor=west] at (1.3,2.95) {$-Q$};
+  \node[figlblaux, figred, anchor=east] at (3.5,2.95) {$+Q$};
+  \node[figlblaux, figblue, anchor=west] at (3.7,2.95) {$-Q$};
+  % tramo aislado y neutro: encierra las dos placas interiores
+  \draw[figaux] (1.2,1.65) rectangle (3.6,2.75);
+  \node[figlbl, anchor=north] at (2.4,-0.35) {(a) serie};
+
+  % =============== (b) paralelo ===============
+  \begin{scope}[xshift=6.6cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0) to[battery1] (0,2.2) -- (4.2,2.2);
+      \draw (1.8,2.2) to[C] (1.8,0);
+      \draw (4.2,2.2) to[C] (4.2,0);
+      \draw (4.2,0) -- (0,0);
+      \fill (1.8,2.2) circle (2pt);
+      \fill (1.8,0) circle (2pt);
+    \end{scope}
+    \node[figlbl, anchor=east] at (-0.45,1.1) {$\Delta\phi$};
+    \node[figlbl, figblue, anchor=east] at (1.35,1.1) {$C_1$};
+    \node[figlbl, figblue, anchor=east] at (3.75,1.1) {$C_2$};
+    \node[figlblaux, figred, anchor=west] at (2.2,1.45) {$+Q_1$};
+    \node[figlblaux, figblue, anchor=west] at (2.2,0.75) {$-Q_1$};
+    \node[figlblaux, figred, anchor=west] at (4.6,1.45) {$+Q_2$};
+    \node[figlblaux, figblue, anchor=west] at (4.6,0.75) {$-Q_2$};
+    \node[figlbl, anchor=north] at (2.1,-0.35) {(b) paralelo};
+  \end{scope}
+
+\end{tikzpicture}
