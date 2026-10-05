@@ -1,7 +1,7 @@
 {
   "name": "fingers",
   "version": "1.0.0",
-  "description": "Una base de conocimiento académico abierta, versionada y revisada por la comunidad: cada afirmación puede rastrearse hasta sus fuentes y cada cambio tiene historial.",
+  "description": "Servidor MCP (en construcción) que guía a un LLM por los cursos de OpenFING y cita el tramo exacto del video.",
   "directories": {
     "doc": "docs"
   },

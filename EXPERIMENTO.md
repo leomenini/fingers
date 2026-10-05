@@ -9,6 +9,10 @@ otras 27, generando la transcripción por cuenta propia?
 **Dónde:** este sandbox. No es el repo. Nada de acá se promueve sin un ADR de
 procedencia.
 
+> **2026-10-05:** promovido al repo con su ADR de procedencia,
+> [ADR-0007](docs/adr/0007-procedencia-transcripciones-asr.md). Las
+> transcripciones ASR no se versionan y quedan fuera del conector MCP.
+
 ---
 
 ## Diseño

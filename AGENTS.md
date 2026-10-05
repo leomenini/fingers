@@ -1,5 +1,13 @@
 # AGENTS.md — encargo para agentes
 
+> **Estado (2026-10-05):** este encargo es para **escribir notas de una clase**,
+> un pipeline que [ADR-0006](docs/adr/0006-fingers-como-mcp-guia.md) congeló:
+> fingers pasa a ser un MCP que guía por los cursos, y escribir notas nuevas es
+> curaduría opcional que se mide antes de servirse. El encargo sigue vigente
+> para esa curaduría y para las comparaciones a ciegas entre agentes. Para
+> trabajar en el conector, el contexto está en `CLAUDE.md` y
+> `docs/ARCHITECTURE.md`.
+
 Este archivo es el encargo que reciben **todos** los agentes que trabajan en este
 repo. Es idéntico para todos a propósito: si cada uno recibe instrucciones
 distintas, lo que se compara es el encargo y no el agente.

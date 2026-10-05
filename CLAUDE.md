@@ -1,15 +1,21 @@
-> # ⚠ ESTO NO ES EL REPO — ES UN SANDBOX
->
-> El repo real vive en `/home/leo/Desktop/Files/Transcripciones`. Esta es una
-> copia para el **experimento de ASR** (transcribir con Whisper las clases que
-> OpenFING no publicó). Acá no rigen los ADR ni las convenciones de commits:
-> es un cuaderno, no el proyecto.
->
-> **Nada de acá se promueve al repo sin un ADR de procedencia.** Ver
-> `EXPERIMENTO.md` en esta misma carpeta.
->
-> Todo lo que sigue es la copia del `CLAUDE.md` real al 2026-09-08 y puede
-> haber quedado viejo. Si necesitás la verdad del proyecto, mirá el repo.
+# ⚠ Leer primero: fingers cambió de rumbo (2026-10-05)
+
+fingers ya no es un repositorio de apuntes: pasa a ser una **herramienta**,
+un servidor MCP que guía a un LLM por los cursos de OpenFING
+([ADR-0006](docs/adr/0006-fingers-como-mcp-guia.md)). Lo que sigue en este
+archivo es el contexto del **extractor**, que sigue vigente y es la base del
+conector. Donde hable del pipeline de notas como objetivo, manda ADR-0006:
+ese pipeline está congelado y el corpus queda como contenido curado y como
+referencia de evaluación.
+
+- Lo próximo es la **evaluación** (unas 20 preguntas sobre Física III con su
+  respuesta esperada: clase y tramo de tiempo), y después el servidor MCP v1.
+  Ver `docs/ARCHITECTURE.md`.
+- El experimento de ASR (`EXPERIMENTO.md`, `scripts/asr/`) se integró desde
+  un sandbox con su ADR de procedencia
+  ([ADR-0007](docs/adr/0007-procedencia-transcripciones-asr.md)). Queda fuera
+  del conector.
+- **Commits:** el único autor es Leo. Sin trailers de coautoría.
 
 
 
@@ -568,7 +574,11 @@ que la duda dejó de ser económica. Misma clase, mismo modelo, con y sin marcas
 
 ---
 
-## 10. Cambio de narrativa (pendiente de redactar)
+## 10. Cambio de narrativa (superado por ADR-0006)
+
+> **Resuelto el 2026-10-05.** El giro fue otro: fingers pasa a ser un MCP que
+> guía por los cursos, sólo con OpenFING. Lo de abajo queda como registro del
+> razonamiento previo.
 
 El proyecto deja de presentarse como extractor de OpenFING y pasa a ser una
 herramienta multi-módulo para extraer contenido de fuentes educativas y

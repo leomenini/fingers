@@ -28,6 +28,8 @@ registro: explica por qué el proyecto es como es.
 | [0003](0003-convencion-nombres-curso-edicion.md) | Convención de nombres para curso/edición | Aceptado |
 | [0004](0004-retencion-payload-vtt.md) | Retención del payload VTT crudo | Aceptado |
 | [0005](0005-retencion-transcripcion-derivada.md) | Retención de la transcripción derivada | Aceptado |
+| [0006](0006-fingers-como-mcp-guia.md) | fingers pasa de repositorio de apuntes a MCP que guía por los cursos | Propuesto |
+| [0007](0007-procedencia-transcripciones-asr.md) | Procedencia de las transcripciones generadas por ASR | Aceptado |
 
 ## Evidencia
 

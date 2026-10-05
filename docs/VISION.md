@@ -1,66 +1,46 @@
 # VISION.md
 
-# Visión
+## Visión
 
-La universidad genera una enorme cantidad de conocimiento cada semestre.
+OpenFING tiene cientos de horas de clases grabadas. El contenido está, pero
+encontrarlo no es fácil. ¿En qué clase se vio Taylor? ¿Qué hay que saber antes
+de la clase 14? ¿En qué minuto el docente demuestra el teorema? Para
+responderlo hay que mirar las clases.
 
-Ese conocimiento suele quedar distribuido entre clases grabadas, apuntes personales, libros, ejercicios, pizarrones y documentos aislados.
+Los LLM pueden explicar casi cualquier tema, pero no saben **qué se dijo en
+esta clase, en este curso, en este minuto**. fingers quiere ser ese puente: una
+herramienta que le da al LLM el mapa de los cursos y lo devuelve siempre a la
+fuente, con el tramo exacto del video.
 
-Con el paso del tiempo gran parte de ese trabajo se pierde o resulta difícil de reutilizar.
+## Misión
 
-Este proyecto nace con el objetivo de construir una base de conocimiento académico abierta, versionada y revisada por la comunidad.
+Construir un conector (un servidor MCP) que guíe a quien estudia a través de
+los cursos de OpenFING, con respuestas que siempre se puedan verificar contra
+la clase original.
 
-No pretende reemplazar las clases, los docentes ni la bibliografía.
+## Principios
 
-Busca preservar y organizar el conocimiento generado por ellos.
+- **El mapa, no el territorio.** fingers escribe el mapa (temas, orden,
+  prerrequisitos, procedencia). Las clases son de OpenFING, y el conector
+  apunta a ellas en lugar de reemplazarlas.
+- **Toda respuesta cita su fuente.** Clase y tramo de video, con un enlace.
+- **Herramienta, no producto terminado.** Lo que no se puede medir no se
+  presenta como resultado. Primero la evaluación, después la afirmación.
+- **Determinista donde se pueda.** El conector arma pasajes y enlaces con
+  código reproducible. El razonamiento lo pone el LLM del cliente.
+- **Un conector, un objetivo.** Guiar por los cursos. Lo demás espera su
+  propio ADR.
 
----
+## Lo que este proyecto NO busca
 
-# Misión
+- Reemplazar a los docentes, las clases o la bibliografía.
+- Redistribuir el material de OpenFING.
+- Ser un repositorio de apuntes terminados: las notas que existen son
+  contenido curado y referencia de evaluación, no el objetivo.
+- Dar respuestas sin fuente.
 
-Construir un repositorio abierto donde el conocimiento académico pueda evolucionar mediante contribuciones verificables, manteniendo siempre la trazabilidad hacia las fuentes originales y la revisión humana.
+## Horizonte
 
----
-
-# Principios
-
-* El conocimiento pertenece a la comunidad.
-* Las fuentes originales son la autoridad.
-* La inteligencia artificial es una herramienta editorial.
-* Toda afirmación importante debe poder verificarse.
-* Todo cambio debe tener un historial.
-* El conocimiento debe permanecer accesible mediante formatos abiertos.
-
----
-
-# Objetivos
-
-## Corto plazo
-
-Construir un flujo editorial reproducible para transformar clases universitarias en apuntes revisados.
-
-## Mediano plazo
-
-Crear repositorios completos de materias.
-
-## Largo plazo
-
-Desarrollar una base de conocimiento colaborativa mantenida por estudiantes y docentes.
-
----
-
-# Lo que este proyecto NO busca
-
-* reemplazar profesores;
-* sustituir bibliografía oficial;
-* distribuir material protegido por derechos de autor;
-* generar respuestas automáticas sin revisión.
-
----
-
-# Filosofía
-
-La inteligencia artificial acelera el trabajo editorial.
-
-Las personas construyen el conocimiento.
-
+- **Ahora:** un conector útil para el autor mientras estudia.
+- **Después:** que cualquier estudiante de FING lo use, y que usarlo cueste
+  pegar un enlace.
