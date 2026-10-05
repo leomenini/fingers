@@ -34,3 +34,6 @@ ideas/
 *.flac
 scripts/asr/.venv/
 scripts/asr/trabajo/
+
+# Notas anotadas a mano: personales, fuera de Git como todo PDF.
+notesWithComments.pdf
