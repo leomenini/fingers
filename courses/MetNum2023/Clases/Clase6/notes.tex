@@ -74,6 +74,17 @@
   title={#1}
 }
 
+
+% ---- Pseudocódigo ----
+\usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e}
+\SetKwInput{KwEntrada}{Entrada}
+\SetKwInput{KwSalida}{Salida}
+% ---- Diagramas (gráficas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -87,416 +98,317 @@
 \usepackage{textcomp}
 \usepackage[bottom]{footmisc}
 
-% ---- Pseudocódigo ----
-\usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e}
-\SetKwInput{KwEntrada}{Entrada}
-\SetKwInput{KwSalida}{Salida}
-
-% ---- Diagramas (gráficas) ----
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
-\input{../assets/tikzstyles.tex}
-
 % ---- Title ----
-\title{\textbf{Clase 6: Descomposición LU} \\[0.3em]
-        \large{Pivoteo parcial, matrices de multiplicadores y el teorema $PA=LU$}}
+\title{\textbf{Clase 6: Métodos Numéricos} \\[0.3em]
+        \large{Pivoteo parcial y construcción de la factorización LU}}
 \author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
 \date{}
 
 \begin{document}
-
 \maketitle
 \thispagestyle{empty}
 \newpage
-
 \tableofcontents
 \newpage
 
-\section{Motivación: por qué falla la eliminación gaussiana sin pivoteo}
+\section{Multiplicadores grandes y pivoteo parcial}
 
-Retomamos un ejemplo de la clase anterior: un sistema $Ax=b$ que \textbf{no
-tiene ninguna dificultad especial}, resuelto con eliminación gaussiana
-\textbf{sin pivoteo} en una máquina hipotética de 5 cifras significativas. El
-resultado numérico queda muy lejos de la solución real.
+\subsection{Retomar el ejemplo de precisión limitada}
 
-Diagnóstico paso a paso:
+La clase vuelve al ejemplo de cinco cifras significativas de la clase anterior. El primer paso de eliminación había sido exacto; el problema apareció al reemplazar la tercera fila por la tercera más $2500$ veces la segunda. Con la convención $F_j\leftarrow F_j-\ell_{jk}F_k$, el multiplicador es $\ell_{32}=-2500$.
 
-\begin{itemize}
-  \item En el segundo paso de la eliminación aparece un multiplicador
-  $L_{32} \approx 2500$ — mucho más grande que el orden de magnitud de los
-  coeficientes del sistema (del orden de $1$).
-  \item Al calcular $b_3 \leftarrow b_3 + L_{32}\cdot(\text{fila }2)$, ese
-  multiplicador gigante amplifica cualquier error relativo pequeño (de
-  redondeo, inevitable en 5 cifras) hasta convertirlo en un error
-  \textbf{absoluto grande} frente a la magnitud real de los coeficientes.
-  \item El error se arrastra a la sustitución hacia atrás: al despejar $x_2$
-  (multiplicado por un coeficiente chico), un error absoluto que ya era
-  grande se magnifica todavía más.
-\end{itemize}
+El cálculo señalado es la actualización $2.5+2500\cdot6.001$ del lado derecho. Un producto del orden de quince mil tiene un error absoluto de truncamiento que puede ser importante comparado con coeficientes originales del orden de uno. No hace falta que el multiplicador mismo esté mal calculado: su magnitud hace peligrosas las operaciones posteriores.
 
-\begin{notebox}[Idea clave]
-No es que \enquote{dividir} o el pivote en sí sean malos — la división por un
-pivote no introduce error relativo grande. El problema es puramente de
-\textbf{magnitud de los multiplicadores}: si $L_{jk}$ es grande, cualquier
-error de redondeo en los datos se amplifica al multiplicarlo.
+Durante la sustitución hacia atrás, $x_3$ tiene un error pequeño, pero $x_2$ está multiplicado por un coeficiente pequeño. Al despejar $x_2$, el error que parecía inocuo se amplifica; el error en $x_2$ afecta luego a $x_1$. No se concluye que la eliminación sea inútil ni que el sistema sea intrínsecamente malo: la estrategia elegida es la que produce el problema.
+
+\begin{notebox}[Alcance y precisiones]
+El docente no vuelve a escribir la matriz completa ni repite todas las cuentas. La transcripción sólo determina la operación destacada y su interpretación; no se añade una reconstrucción numérica de la matriz original.
 \end{notebox}
 
-\[
-\boxed{\text{Multiplicadores grandes} \implies \text{amplificación de error de redondeo}}
-\]
+\subsection{Elegir un pivote respecto de su columna}
 
-\section{Pivoteo parcial}
-
-\subsection{Estrategia}
-
-En el paso $k$-ésimo, en vez de usar $A_{kk}$ como pivote sin más, se mira
-toda la columna $k$ de la parte no reducida (filas $k,\dots,n$) y se elige
-como pivote el elemento de mayor valor absoluto:
+En el paso $k$, los multiplicadores son
 
 \[
-p = \operatorname*{argmax}_{j \geq k} |A_{jk}|
+\ell_{jk}=\frac{a_{jk}^{(k)}}{a_{kk}^{(k)}},\qquad j=k+1,\ldots,n.
 \]
 
-(si hay empate, cualquier índice que alcance el máximo sirve). Se intercambia
-la fila $k$ con la fila $p$. Esto acota todos los multiplicadores:
+Para que no sean grandes, se elige un elemento máximo en valor absoluto dentro de la parte no reducida de la columna $k$. El \textbf{pivoteo parcial} consiste en escoger
 
 \[
-\boxed{|L_{jk}| \leq 1 \quad \text{para todo } j > k}
+p\in\operatorname*{arg\,max}_{k\le j\le n}|a_{jk}^{(k)}|
 \]
 
-lo que evita exactamente el problema de la Sección 1.
-
-\begin{notebox}[Alcance del curso]
-Solo se trabaja con pivoteo \textbf{de filas} (pivoteo parcial). Existe
-también pivoteo de columnas o pivoteo total, pero no se desarrolla: alcanza
-y sobra para los efectos del curso.
-\end{notebox}
-
-\subsection{Costo adicional}
-
-Elegir el pivote en el paso $k$ cuesta del orden de $n-k-1$ comparaciones.
-Sumando sobre todos los pasos:
+ e intercambiar las filas $k$ y $p$ antes de calcular los multiplicadores. Puede haber varios máximos; cualquiera sirve. Tras el intercambio, si el pivote no es cero,
 
 \[
-\sum_{k=1}^{n-1} (n-k-1) = O(n^2)
+\boxed{|\ell_{jk}|\le1\quad(j>k)}.
 \]
 
-frente al costo de la eliminación en sí, $O(n^3)$ (más precisamente
-$\tfrac{2}{3}n^3$).
+La referencia es relativa a los demás elementos de la columna, no un umbral absoluto de cercanía a cero. El método mitiga el mecanismo observado de amplificación por multiplicadores grandes; no se demuestra aquí una garantía universal de ausencia de errores. El pivoteo por columnas se menciona, pero no se estudia.
 
-\begin{keybox}[Costo de pivotear]
-El costo de eliminación gaussiana con pivoteo parcial es comparable al de la
-eliminación sin pivoteo: no se paga mucho más por la seguridad adicional. El
-intercambio de filas en sí también es $O(n^2)$ en total (lineal en $n$ por
-cada uno de los $n-1$ pasos) — tampoco cambia el orden dominante.
-\end{keybox}
+\subsection{Búsqueda, intercambio y costo}
 
-\section{Codificar la eliminación como producto de matrices}
+La búsqueda se puede hacer conservando el mejor candidato encontrado:
 
-La eliminación gaussiana con pivoteo parcial —vista antes como una receta de
-pasos— se reinterpreta como una sucesión de multiplicaciones de $A$ por
-matrices especiales. Esto es lo que permite después probar el teorema de la
-descomposición LU.
+\begin{algorithm}[H]
+\small\DontPrintSemicolon
+\hspace*{0.0em}\texttt{p = k}\;
+\hspace*{0.0em}\texttt{Para j = k+1, ..., n:}\;
+\hspace*{0.7em}\texttt{Si abs(A[j,k]) > abs(A[p,k]):}\;
+\hspace*{1.4em}\texttt{p = j}\;
+\hspace*{0.0em}\texttt{Intercambiar filas k y p de A y del lado derecho}\;
+\hspace*{0.0em}\texttt{Continuar con los multiplicadores de la etapa k}\;
+\end{algorithm}
 
-\subsection{Matrices de permutación}
+Inicializar con $p=k$ incluye la posibilidad de no intercambiar. Cada comparación pregunta si la nueva fila ofrece un pivote mayor; con la comparación estricta se conserva el primer máximo en caso de empate, una convención de esta escritura. El lado derecho debe seguir la misma permutación para preservar el sistema.
 
-Una \textbf{matriz de permutación} $P$ se obtiene intercambiando filas (o
-columnas) de la identidad. Multiplicar por una matriz de permutación permuta
-filas o columnas:
+Hay $n-k$ comparaciones en este recorrido y un intercambio de longitud a lo sumo $n$. Al sumar sobre $k$, ambas tareas adicionales cuestan $O(n^2)$. La eliminación sigue dominando con $O(n^3)$, cuyo término principal era $2n^3/3$. El conteo oral vacila en una unidad, pero el argumento de orden es inequívoco: pivotear no agrega otro costo cúbico.
 
-\begin{itemize}
-  \item $P \cdot A$ permuta \textbf{filas} de $A$.
-  \item $A \cdot P$ permuta \textbf{columnas} de $A$.
-\end{itemize}
+\section{Permutar filas mediante matrices}
 
-El producto de matrices de permutación es una matriz de permutación.
+\subsection{Matriz y vector de permutación}
 
-\begin{notebox}[Detalle de implementación]
-Una matriz de permutación $n\times n$ tiene $n^2$ entradas pero solo $n$ son
-información (dónde están los unos). En Octave conviene guardar un
-\textbf{vector de permutación}: por ejemplo, intercambiar las filas 1 y 3 de
-una identidad $4\times 4$ se guarda como el vector $(3,2,1,4)$, y entonces
-$P\cdot A$ se escribe \texttt{A(p,:)} y $A \cdot P$ se escribe \texttt{A(:,p)}.
-\end{notebox}
+Una \textbf{matriz de permutación} se obtiene reordenando filas de la identidad. Multiplicar $PA$ permuta filas de $A$; multiplicar a la derecha permuta columnas. Por ejemplo, el intercambio de filas 1 y 3 de una matriz de tamaño cuatro se representa como
 
-\subsection{Matrices de multiplicadores}
+\[
+P=\begin{pmatrix}
+0&0&1&0\\0&1&0&0\\1&0&0&0\\0&0&0&1
+\end{pmatrix},\qquad
+PA=\begin{pmatrix}F_3(A)\\F_2(A)\\F_1(A)\\F_4(A)\end{pmatrix}.
+\]
 
-El paso $k$ de la eliminación (restar a cada fila $j>k$ un múltiplo $L_{jk}$
-de la fila $k$) se escribe como multiplicar $A$ por una matriz $M_k$:
+La notación $F_i(A)$ representa aquí la fila completa. Si no se intercambia nada, $P=I$. El producto de matrices de permutación vuelve a ser una matriz de permutación: simplemente encadena reordenamientos.
 
-\begin{itemize}
-  \item $M_k$ es la identidad, salvo que en la \textbf{columna $k$}, por
-  debajo de la diagonal, tiene las entradas $-L_{k+1,k},\dots,-L_{n,k}$.
-  \item Es decir: $M_k$ es triangular inferior, con unos en la diagonal, y
-  todos sus elementos no nulos fuera de la diagonal están en \textbf{una
-  sola columna}.
-\end{itemize}
+No hace falta almacenar los dieciséis números del ejemplo. El vector $p=(3,2,1,4)$ indica qué fila original ocupa cada posición nueva. En la notación de Octave mostrada, \texttt{A(p,:)} realiza ese reordenamiento. Se almacenan $n$ índices en lugar de $n^2$ números. Para el intercambio del ejemplo, \texttt{A(:,p)} reordena las columnas correspondientes.
 
-\begin{figure}[H]
+\subsection{Ejemplo de multiplicación a izquierda y derecha}
+
+En la demostración con computadora se usa la matriz de entradas 1 a 9 y el intercambio de posiciones 1 y 2. Desplegar los resultados permite ver qué lado del producto importa:
+
+\[
+A=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix},\qquad
+P=\begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix},
+\]
+
+\[
+PA=\begin{pmatrix}4&5&6\\1&2&3\\7&8&9\end{pmatrix},\qquad
+AP=\begin{pmatrix}2&1&3\\5&4&6\\8&7&9\end{pmatrix}.
+\]
+
+En el primer producto cambian filas enteras; en el segundo, las dos primeras entradas de cada fila intercambian posición. Para representar la eliminación se necesitan operaciones por la izquierda.
+
+\section{Matrices de eliminación y sus operaciones}
+
+\subsection{Una columna que codifica las combinaciones entre filas}
+
+La operación $F_j\leftarrow F_j-\ell_{jk}F_k$ para todas las filas $j>k$ se representa multiplicando por una matriz $M_k$: es la identidad con los negativos de los multiplicadores debajo de la diagonal, solamente en la columna $k$.
+
+Por ejemplo, en tamaño cuatro, las dos primeras etapas tienen la estructura
+
+\[
+M_1=\begin{pmatrix}
+1&0&0&0\\-\ell_{21}&1&0&0\\-\ell_{31}&0&1&0\\-\ell_{41}&0&0&1
+\end{pmatrix},\qquad
+M_2=\begin{pmatrix}
+1&0&0&0\\0&1&0&0\\0&-\ell_{32}&1&0\\0&-\ell_{42}&0&1
+\end{pmatrix}.
+\]
+
 \input{assets/clase6-matriz-multiplicador.tex}
-\caption{Estructura de una matriz de multiplicadores $M_k$ ($n=5$, $k=3$):
-identidad salvo la columna $k$ por debajo de la diagonal, donde aparecen los
-multiplicadores $-L_{j,k}$.}
-\end{figure}
+Estas matrices se escriben simbólicamente para mostrar la estructura dictada; no sustituyen con cifras nuevas los ejemplos proyectados. En $M_1A$, la primera fila es $F_1(A)$ y la fila $j$ es $F_j(A)-\ell_{j1}F_1(A)$. Los signos negativos son los de la operación de eliminación; después aparecerán signos positivos en el factor $L$.
 
-Dos propiedades, verificables \enquote{mirando} las matrices (sin hacer
-cuentas), que son la clave técnica de la demostración:
-
-\begin{enumerate}
-  \item El producto de dos matrices de multiplicadores de pasos distintos se
-  obtiene \textbf{pegando} las columnas no nulas de cada una.
-  \item La inversa de una matriz de multiplicadores es la misma matriz con
-  el signo de los multiplicadores cambiado (invertir, en general, cuesta
-  resolver $n$ sistemas; acá es trivial).
-\end{enumerate}
-
-\subsection{La relación de conmutación \texorpdfstring{$PM = \tilde{M}P$}{PM = M-tilde P}}
-
-Cuando una matriz de permutación \textbf{de un paso posterior} multiplica a
-una matriz de multiplicadores de un paso anterior, se puede pasar la
-permutación al otro lado, a costa de permutar también las entradas de la
-matriz de multiplicadores:
+En la computadora se muestra otro ejemplo con pivote 6 y multiplicadores $1/6$ y $2/3$. La matriz correspondiente es
 
 \[
-P \cdot M = \tilde{M} \cdot P
+M_1=\begin{pmatrix}1&0&0\\-1/6&1&0\\-2/3&0&1\end{pmatrix}.
 \]
 
-donde $\tilde{M}$ tiene la misma estructura que $M$, solo que con los
-multiplicadores reordenados según $P$. Esta relación permite, más adelante,
-separar todas las $P$ de un lado y todas las $M$ del otro en la cadena de
-productos.
+El producto anula las entradas inferiores de la primera columna. El docente observa que esa matriz de ejemplo es singular, pero eso no impide ilustrar la operación. El audio no enumera el resto de sus entradas, por lo que no se fabrica el producto numérico completo.
 
-\section{El teorema de descomposición LU}
+\subsection{Inversas y orden de los productos}
 
-\subsection{Demostración (constructiva)}
-
-La eliminación gaussiana con pivoteo parcial, vista como producto de
-matrices, se escribe (para $A$ de $n\times n$):
+La inversa de una matriz de eliminación tiene la misma estructura y cambia el signo de los multiplicadores. Por ejemplo,
 
 \[
-M_{n-1} P_{n-1} \cdots M_2 P_2\, M_1 P_1\, A = U
+M_2^{-1}=\begin{pmatrix}
+1&0&0&0\\0&1&0&0\\0&\ell_{32}&1&0\\0&\ell_{42}&0&1
+\end{pmatrix}.
 \]
 
-donde cada $P_k$ es la matriz de permutación del paso $k$ (la identidad si
-no hubo que pivotear) y cada $M_k$ es la matriz de multiplicadores de ese
-paso. $U$ queda triangular superior (aunque $A$ sea singular, se llega
-igual a una triangular superior, eventualmente con algún cero en la
-diagonal).
-
-Usando la asociatividad del producto de matrices y la relación de
-conmutación de la Sección 3.3 repetidamente, se agrupan todas las $P_k$ a la
-izquierda (formando una única $P$) y todas las $M_k$ transformadas del otro
-lado. Pasando las matrices de multiplicadores al otro lado de la igualdad
-(invirtiéndolas, lo cual es solo cambiar signos) y multiplicándolas entre sí
-(pegando columnas), se llega a:
+El docente verifica estas propiedades con ejemplos en computadora y omite desarrollar todas las multiplicaciones. También muestra que, con las columnas en el orden apropiado, multiplicar estas matrices equivale a pegar sus columnas modificadas:
 
 \[
-P\,A = L\,U
+\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&a&1&0\\0&b&0&1\end{pmatrix}
+\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&c&1\end{pmatrix}
+=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&a&1&0\\0&b&c&1\end{pmatrix}.
 \]
 
-donde $P$ es de permutación, $U$ es la triangular superior de la
-eliminación, y $L$ es triangular inferior con unos en la diagonal, cuyas
-entradas fuera de la diagonal son literalmente los multiplicadores $L_{jk}$
-de la eliminación (con el efecto de las permutaciones incorporado).
+Aquí $a,b,c$ representan las entradas de las columnas modificadas. La primera matriz corresponde a una etapa anterior a la segunda. Esta precisión de orden es esencial: la multiplicación matricial no es conmutativa y no se autoriza a pegar columnas en cualquier orden.
 
-\begin{keybox}[Teorema de descomposición LU]
-Para toda matriz cuadrada $A$, existen $P$ (permutación), $L$ (triangular
-inferior con unos en la diagonal) y $U$ (triangular superior) tales que
+\subsection{Pasar una permutación posterior a la derecha}
+
+Para reunir las permutaciones, se necesita la relación $PM_1=\widetilde M_1P$ cuando $P$ intercambia filas de una etapa posterior. En el ejemplo, $P$ intercambia las filas 2 y 4 y deja fija la primera. Entonces
+
 \[
-PA = LU.
+M_1=\begin{pmatrix}1&0&0&0\\a&1&0&0\\b&0&1&0\\c&0&0&1\end{pmatrix},\qquad
+\widetilde M_1=\begin{pmatrix}1&0&0&0\\c&1&0&0\\b&0&1&0\\a&0&0&1\end{pmatrix},
 \]
-\end{keybox}
 
-\subsection{Comentarios sobre el enunciado}
+\[
+PM_1=\widetilde M_1P
+=\begin{pmatrix}1&0&0&0\\c&0&0&1\\b&0&1&0\\a&1&0&0\end{pmatrix}.
+\]
 
-\begin{itemize}
-  \item \textbf{La $P$ es necesaria en general}: no toda matriz cuadrada se
-  puede escribir como $A=LU$ sin permutar filas.
-  \item \textbf{$\det A$ puede ser cualquiera}: el teorema no exige
-  $\det A \neq 0$. Si $A$ es singular, $U$ sale con algún cero en la
-  diagonal (y eso revela que $A$ es singular). El curso trabaja
-  mayormente con $A$ no singular porque interesa resolver sistemas, pero el
-  teorema en sí no lo necesita.
-  \item \textbf{Costo}: como la demostración es constructiva y ligada al
-  algoritmo, calcular $P,L,U$ cuesta como mucho lo mismo que la eliminación
-  con pivoteo parcial: $O(n^3)$ (del orden de $\tfrac{2}{3}n^3$).
-\end{itemize}
+Se intercambian los multiplicadores de esas filas en la primera columna, mientras la identidad de $\widetilde M_1$ se conserva. El producto $PM_1$ solo ya no es triangular. La relación permite trasladar $P$ hacia la derecha, pero exige cambiar $M_1$: no es una conmutación libre. La clase motiva esta identidad mediante el ejemplo; no desarrolla una demostración general entrada por entrada.
 
-\subsection{No unicidad}
+\section{De la eliminación a PA igual LU}
 
-La factorización $PA=LU$ \textbf{no es única}: depende de qué pivoteo se
-hizo (libertad al resolver empates en el máximo), y aun fijando \enquote{unos
-en la diagonal de $L$} (ya una elección), un empate entre candidatos a
-pivote deja libertad de pivotear o no, lo que cambia $P,L,U$.
+\subsection{Encadenar las operaciones}
 
-\begin{notebox}
-No confundir con la factorización de Cholesky (Sección 7), que sí es única
-bajo sus hipótesis — son construcciones distintas.
-\end{notebox}
+Se comienza con $A$. En cada etapa primero se permuta, si hace falta, y después se elimina. Por eso el producto total se lee desde la derecha:
 
-\section{Resolver sistemas usando la LU}
+\[
+M_{n-1}P_{n-1}\cdots M_2P_2M_1P_1A=U,
+\]
 
-Dada $PA=LU$ con $A$ no singular, resolver $Ax=b$ se reduce a dos sistemas
-triangulares: multiplicar por $P$ ($PAx=Pb \Rightarrow LUx=Pb$), definir
-$y:=Ux$, y resolver $Ly=Pb$ (sustitución hacia adelante) seguido de $Ux=y$
-(sustitución hacia atrás).
+con $U$ triangular superior. Usando la relación anterior, se pasa $P_2$ a la derecha de $M_1$, cambiando sus multiplicadores. Luego se hace lo mismo con $P_3$ y las matrices de eliminación anteriores. Continuando se llega a
+
+\[
+\widehat M_{n-1}\cdots\widehat M_2\widehat M_1\,PA=U,
+\qquad P=P_{n-1}\cdots P_1.
+\]
+
+Los sombreros indican que algunas filas de los multiplicadores fueron reordenadas. El producto de las $P_k$ es una sola permutación. Se despeja multiplicando por las inversas en orden inverso al producto:
+
+\[
+PA=\underbrace{\widehat M_1^{-1}\widehat M_2^{-1}\cdots
+\widehat M_{n-1}^{-1}}_{L}\,U.
+\]
+
+Cada inversa devuelve el signo de los multiplicadores calculados. En este orden, las columnas se ensamblan en una triangular inferior con diagonal de unos:
+
+\[
+L=\begin{pmatrix}
+1&0&\cdots&0\\
+\widehat\ell_{21}&1&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+\widehat\ell_{n1}&\widehat\ell_{n2}&\cdots&1
+\end{pmatrix},\qquad \boxed{PA=LU}.
+\]
+
+Así, $P$ registra los intercambios, $U$ es el resultado de triangularizar y $L$ conserva la historia de multiplicadores, ajustada por los intercambios posteriores. Esta construcción es el centro del argumento: no basta con conocer el nombre de la factorización.
+
+\subsection{Alcance del resultado}
+
+El docente enuncia que toda matriz cuadrada admite esa descomposición con $P$ de permutación, $L$ triangular inferior unitaria y $U$ triangular superior. Aclara que la singularidad no impide la existencia: en ese caso $U$ tiene algún cero diagonal. Para resolver un sistema con solución única sí se exige invertibilidad.
+
+No toda matriz admite $A=LU$ sin permutaciones; no se puede borrar $P$ del enunciado general. La factorización tampoco es única en la generalidad presentada: incluso el pivoteo parcial puede encontrar máximos empatados. La clase da una construcción motivada por operaciones y ejemplos, sin formalizar todos los casos. Calcularla tiene costo $O(n^3)$, comparable al de la eliminación que la produce.
+
+\section{Resolver y reutilizar una factorización}
+
+\subsection{Dos sistemas triangulares}
+
+Si ya se conocen $P,L,U$ y $A$ es invertible, se transforma
+
+\[
+A\mathbf x=\mathbf b
+\quad\Longrightarrow\quad
+LU\mathbf x=P\mathbf b.
+\]
+
+Introducir $\mathbf y=U\mathbf x$ permite separar dos tareas:
+
+\[
+\boxed{L\mathbf y=P\mathbf b\quad\text{y luego}\quad U\mathbf x=\mathbf y}.
+\]
+
+Primero se permuta el lado derecho. Después se resuelve hacia adelante para $\mathbf y$; finalmente se resuelve hacia atrás para $\mathbf x$. El orden no es intercambiable: el segundo sistema necesita la salida del primero. No se forman inversas de $L$ ni de $U$ para hacer estas sustituciones.
 
 \begin{algorithm}[H]
-\SetAlgoLined
-\KwEntrada{$L,U$ triangulares, vector de permutación $p$, $b \in \mathbb{R}^n$}
-\KwSalida{$x$ tal que $Ax=b$}
-$b' \gets b(p)$ \tcp*{reordenar $b$ según la permutación}
-\tcp{sustitución hacia adelante: $Ly=b'$}
-\For{$i \gets 1$ \KwTo $n$}{
-  $y_i \gets \left(b'_i - \sum_{j=1}^{i-1} L_{ij}\, y_j\right)$\;
-}
-\tcp{sustitución hacia atrás: $Ux=y$}
-\For{$i \gets n, n-1, \dots, 1$}{
-  $x_i \gets \left(y_i - \sum_{j=i+1}^{n} U_{ij}\, x_j\right) / U_{ii}$\;
-}
-\caption{Resolver $Ax=b$ a partir de una factorización $PA=LU$ ya calculada}
+\small\DontPrintSemicolon
+\hspace*{0.0em}\texttt{Entrada: P, L, U con P*A = L*U; b}\;
+\hspace*{0.0em}\texttt{c = P*b                         (permutar entradas)}\;
+\hspace*{0.0em}\texttt{y = sustitucion\_adelante(L, c)}\;
+\hspace*{0.0em}\texttt{x = sustitucion\_atras(U, y)}\;
+\hspace*{0.0em}\texttt{Salida: x}\;
 \end{algorithm}
 
-Cada sustitución cuesta $O(n^2)$.
+Cada sustitución cuesta $O(n^2)$. Si la factorización fue entregada, resolver un nuevo lado derecho cuesta $O(n^2)$; obtenerla inicialmente no es gratis.
+
+\subsection{Muchas cargas, una misma matriz}
+
+El ejemplo conceptual es un puente: $\mathbf x$ representa desplazamientos, $\mathbf b$ las fuerzas y $A$ relaciona sus grados de libertad. Interesa ensayar muchas cargas con la misma estructura. Se dibuja un puente y se plantean distintos vehículos o pesos, sin precisar una geometría numérica.
+
+\input{assets/clase6-cargas-reutilizacion.tex}
+Para $m$ lados derechos, repetir la eliminación cuesta $O(mn^3)$. Factorizar una vez y reutilizar cuesta
 
 \[
-\boxed{\text{Con } P,L,U \text{ ya calculados, resolver } Ax=b \text{ cuesta } O(n^2), \text{ no } O(n^3)}
+\boxed{O(n^3)+O(mn^2)}.
 \]
 
-\section{Cuándo conviene calcular la LU}
+Si $m$ es comparable con $n$, se pasa de orden $n^4$ a orden $n^3$. El ahorro surge de separar el trabajo que depende de $A$ del que cambia con cada $\mathbf b$.
 
-Calcular $P,L,U$ cuesta $O(n^3)$, el mismo orden que resolver el sistema una
-vez por eliminación directa. La ventaja aparece cuando hay que resolver
-$Ax=b$ para \textbf{muchos $b$ distintos} con la misma $A$.
+\section{Qué hacen los códigos mostrados}
 
-\textbf{Ejemplo (ingeniería civil):} un puente modelado por $Ax=b$, donde
-$A$ depende de la estructura (fija) y $b$ representa distintas
-configuraciones de carga. Si hay $m$ configuraciones a evaluar:
+\subsection{Estructura antes de fuerza bruta}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Estrategia} & \textbf{Costo total} \\
-\midrule
-Eliminación gaussiana completa para cada $b$ & $O(n^3 \cdot m)$ \\
-Calcular $P,L,U$ una vez + sustitución para cada $b$ & $O(n^3 + n^2 \cdot m)$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+Antes de mostrar una versión didáctica de la contrabarra de MATLAB/Octave, se menciona \textbf{Cholesky}. Para matrices simétricas con la positividad apropiada puede escribirse $A=CC^T$, con $C$ triangular inferior; su diagonal no está normalizada a unos. La clase relaciona positividad con los signos de los valores propios y no deriva el algoritmo, que remite al práctico.
 
-Si $m$ es comparable a $n$: $O(n^4)$ contra $O(n^3)$ — se gana un orden de
-magnitud completo.
-
-\begin{keybox}[Regla práctica]
-Si la matriz se reutiliza muchas veces con distintos lados derechos,
-conviene factorizar una sola vez y reutilizar $L$ y $U$.
-\end{keybox}
-
-\section{Nota al margen: la factorización de Cholesky}
-
-Si $A$ es simétrica ($A=A^T$), por el teorema espectral es diagonalizable en
-$\mathbb{R}$ con $n$ valores propios reales. Si además todos son $\geq 0$,
-$A$ se dice semidefinida positiva (definida positiva si son estrictamente
-$>0$). Para esas matrices existe una factorización distinta de la LU:
-
-\[
-A = R^T R
-\]
-
-con $R$ triangular (\textbf{Cholesky}) — no tiene unos en la diagonal, no
-tiene que ver con eliminación gaussiana, y es un poco más barata de calcular
-que la LU.
-
-\begin{notebox}
-No confundir con la descomposición LU de la Sección 4: son construcciones
-distintas, con hipótesis distintas sobre $A$. No se desarrolla en esta
-clase (queda para el práctico).
+\begin{notebox}[Alcance y precisiones]
+La exposición menciona semidefinidas positivas al hablar de la factorización. Para usarla como resolución única mediante sustituciones se necesita además no singularidad. La simetría sola no basta para aplicar Cholesky. El código proyectado no se recupera íntegro del audio; no se atribuye al programa real una selección basada únicamente en simetría.
 \end{notebox}
 
-\section{El operador backslash en MATLAB/Octave}
-
-El operador \textbf{backslash} (\texttt{x = A \textbackslash\ b}) decide
-internamente qué método usar según la estructura de $A$. La clase muestra
-una versión \enquote{de juguete} tomada del libro de \textbf{Cleve Moler},
-uno de los fundadores de MATLAB —autor de uno de los libros de referencia
-del curso, con muchos ejemplos de código (el ejemplo de la máquina de 5
-dígitos de la Sección 1 sale de ese mismo libro).
-
-\begin{notebox}[Nota de transcripción]
-El audio transcribe el nombre del autor como \enquote{Cliff Moller}; el
-autor real de \emph{Numerical Computing with MATLAB} es \textbf{Cleve B.
-Moler}. Se corrige por ser un dato verificable (fundador de MATLAB, autor
-del libro con el ejemplo citado en clase), no una invención.
-\end{notebox}
-
-Lógica del backslash de juguete:
-
-\begin{enumerate}
-  \item Si $A$ es triangular inferior $\to$ sustitución hacia adelante directa.
-  \item Si $A$ es triangular superior $\to$ sustitución hacia atrás directa.
-  \item Si $A$ es simétrica $\to$ intentar Cholesky (más barato que LU).
-  \item Si nada de lo anterior aplica $\to$ calcular la LU (eliminación con
-  pivoteo parcial) y resolver como en la Sección 5.
-\end{enumerate}
+La lógica narrada de la versión de juguete de \texttt{A\textbackslash{}b} es detectar estructura económica antes de factorizar una matriz general:
 
 \begin{algorithm}[H]
-\SetAlgoLined
-\KwEntrada{Matriz $A \in \mathbb{R}^{n\times n}$}
-\KwSalida{$A$ sobrescrita: parte triangular inferior estricta $=L-I$, parte
-triangular superior (con diagonal) $=U$; vector de permutación $p$}
-$p \gets (1,2,\dots,n)$\;
-\For{$k \gets 1$ \KwTo $n-1$}{
-  $j^\ast \gets \operatorname*{argmax}_{j \geq k} |A_{jk}|$\;
-  \If{$j^\ast \neq k$}{
-    intercambiar filas $k$ y $j^\ast$ de $A$\;
-    intercambiar $p_k \leftrightarrow p_{j^\ast}$\;
-  }
-  \If{$A_{kk} \neq 0$}{
-    \For{$j \gets k+1$ \KwTo $n$}{
-      $A_{jk} \gets A_{jk} / A_{kk}$ \tcp*{multiplicador $L_{jk}$, guardado in-place}
-      \For{$i \gets k+1$ \KwTo $n$}{
-        $A_{ji} \gets A_{ji} - A_{jk}\cdot A_{ki}$\;
-      }
-    }
-  }
-}
-\caption{Descomposición LU con pivoteo parcial (versión de juguete, almacenamiento in-place, según Moler)}
+\small\DontPrintSemicolon
+\hspace*{0.0em}\texttt{Entrada: A, b (sistema con solucion unica)}\;
+\hspace*{0.0em}\texttt{Si A es triangular inferior: resolver hacia adelante}\;
+\hspace*{0.0em}\texttt{Si A es triangular superior: resolver hacia atras}\;
+\hspace*{0.0em}\texttt{Si corresponde Cholesky: usar esa factorizacion}\;
+\hspace*{0.0em}\texttt{En el caso general:}\;
+\hspace*{0.7em}\texttt{calcular P, L, U}\;
+\hspace*{0.7em}\texttt{resolver L*y = P*b}\;
+\hspace*{0.7em}\texttt{resolver U*x = y}\;
+\hspace*{0.0em}\texttt{Salida: x}\;
 \end{algorithm}
 
-\begin{notebox}[Detalle de implementación]
-Los multiplicadores se guardan directamente en la parte de $A$ que la
-eliminación va dejando en ceros lógicamente: no hace falta memoria extra
-para $L$ y $U$ por separado. Al terminar, la parte triangular inferior
-estricta de la matriz sobrescrita son los multiplicadores ($L-I$) y la
-parte triangular superior (con diagonal) es $U$.
+Esto resume las ramas explicadas, no reproduce el código real de una biblioteca. La rama de Cholesky se deja condicionada a su aplicabilidad porque los detalles del chequeo no se leen en la transcripción. El docente menciona un libro de uno de los fundadores de MATLAB, pero no proporciona su título: la bibliografía estructurada queda sin completar.
+
+\subsection{LU almacenada en un solo arreglo}
+
+La versión de juguete de LU inicializa un vector de permutaciones. En cada columna busca pivote, intercambia filas y actualiza ese vector. Calcula luego los multiplicadores y los guarda en posiciones inferiores de la matriz que ya no necesita para representar $U$. Finalmente separa el triángulo superior y el inferior, agregando unos a la diagonal de $L$.
+
+\begin{algorithm}[H]
+\small\DontPrintSemicolon
+\hspace*{0.0em}\texttt{Entrada: A cuadrada}\;
+\hspace*{0.0em}\texttt{p = (1, ..., n)}\;
+\hspace*{0.0em}\texttt{Para k = 1, ..., n-1:}\;
+\hspace*{0.7em}\texttt{buscar q de maximo abs(A[q,k]), q >= k}\;
+\hspace*{0.7em}\texttt{Si A[q,k] = 0: continuar con la siguiente columna}\;
+\hspace*{0.7em}\texttt{intercambiar filas k y q de A}\;
+\hspace*{0.7em}\texttt{intercambiar p[k] y p[q]}\;
+\hspace*{0.7em}\texttt{Para i = k+1, ..., n:}\;
+\hspace*{1.4em}\texttt{A[i,k] = A[i,k] / A[k,k]}\;
+\hspace*{1.4em}\texttt{Para j = k+1, ..., n:}\;
+\hspace*{2.0999999999999996em}\texttt{A[i,j] = A[i,j] - A[i,k] * A[k,j]}\;
+\hspace*{0.0em}\texttt{L = identidad + parte estrictamente inferior de A}\;
+\hspace*{0.0em}\texttt{U = parte triangular superior de A}\;
+\hspace*{0.0em}\texttt{Salida: L, U, p; la fila i de P*A es la fila p[i] original}\;
+\end{algorithm}
+
+Es una reconstrucción del procedimiento verbal, con índices explicitados editorialmente. Si el máximo es cero, toda la parte buscada es cero y se evita dividir. Intercambiar filas completas también reordena multiplicadores de columnas anteriores: eso materializa las permutaciones que aparecían con sombreros en la deducción. En el recorrido interior $A[i,k]$ ya contiene el multiplicador, no el coeficiente original. Guardar ahí un cero destruiría la información necesaria para $L$.
+
+\section{Matrices dispersas y almacenamiento}
+
+Una matriz \textbf{dispersa} tiene muchos ceros. En redes, un nodo suele conectarse con pocos otros; en el ejemplo mecánico, algunos desplazamientos se relacionan directamente sólo con vecinos. No todos los grados de libertad interactúan con todos, por lo que almacenar una matriz llena de ceros desperdicia memoria.
+
+La demostración muestra con color las posiciones no nulas y usa \texttt{sparse} para almacenar sus valores y coordenadas. La matriz presentada es de tamaño $50\times50$: su almacenamiento denso ocupa 20000 bytes y la versión dispersa ocupa aproximadamente ocho veces menos. El ahorro pertenece a ese ejemplo, no es una constante universal.
+
+\begin{notebox}[Alcance y precisiones]
+El patrón exacto proyectado no se determina por el audio. Se conserva la explicación del almacenamiento y sus cifras; no se inventa una matriz dispersa de cincuenta filas para reproducir la imagen.
 \end{notebox}
 
-\section{Matrices dispersas (introducción)}
-
-En muchas aplicaciones (redes/grafos, sistemas estructurales como el
-ejemplo del puente) las matrices tienen muchos ceros: una variable no está
-directamente relacionada con todas las demás, solo con sus vecinas. Estas
-se llaman \textbf{matrices dispersas} (sparse).
-
-\begin{itemize}
-  \item Almacenar una matriz dispersa como si fuera densa (los $n^2$
-  números, incluyendo todos los ceros) es un desperdicio de memoria.
-  \item En Octave, el comando \texttt{sparse} permite guardar solo las
-  coordenadas y valores de las entradas no nulas. Ejemplo de clase: una
-  matriz $50\times 50$ densa ocupa 20\,000 bytes; su versión dispersa, unas
-  8 veces menos.
-  \item La eliminación gaussiana (con o sin pivoteo) siempre funciona
-  mientras $A$ sea no singular —es \enquote{la red de seguridad}— pero es
-  $O(n^3)$ sin aprovechar ninguna estructura. Para matrices dispersas
-  existen métodos más eficientes, que el curso no desarrolla en esta clase.
-\end{itemize}
-
-\begin{notebox}
-Continúa la clase siguiente retomando este tema y avanzando hacia el
-análisis de cuán bueno es, en la práctica, el método de eliminación con
-pivoteo parcial (normas de matrices y número de condición — Clases 7 y 8).
-\end{notebox}
-
+La próxima clase retomará matrices especiales y la manera de cuantificar errores vectoriales y matriciales.
 \end{document}

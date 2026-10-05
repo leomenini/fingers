@@ -1,0 +1,15 @@
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+\begin{axis}[width=10.5cm,height=6cm,axis lines=left,xmin=-0.1,xmax=2.2,ymin=0,ymax=3.3,xtick={0,1,2},xticklabels={$x_0$,$x_1$,$x_2$},ytick=\empty,xlabel={$x$},clip=false]
+\addplot[figgray,dashed,domain=0:2.1,forget plot]{1};
+\addplot[figblue,thick,domain=0:2.1,forget plot]{1+x*(x-1)};
+\addplot[figamber,densely dashdotted,line width=1pt,domain=0:2.1,forget plot]{1+0.5*x*(x-1)};
+\addplot[only marks,mark=*,mark options={fill=figred,draw=figred},forget plot] coordinates {(0,1)(1,1)(2,3)};
+\node[anchor=east,font=\small] at (axis cs:1.95,3.05){$(x_2,y_2)$};
+\node[anchor=west,font=\small,figgray] at (axis cs:2.12,1){$p_1$};
+\node[anchor=west,font=\small,figblue] at (axis cs:2.12,3.31){$p_2$};
+\node[anchor=west,font=\small,figamber] at (axis cs:2.12,2.155){otro $a_2$};
+\end{axis}
+\end{tikzpicture}
+\caption{Mecanismo de la inducción: sumar $a_2(x-x_0)(x-x_1)$ mantiene los dos primeros valores y permite ajustar el tercero. Coordenadas ilustrativas elegidas para representar la familia descrita, no datos numéricos del pizarrón.}
+\end{figure}

@@ -1,60 +1,43 @@
 title: Clase 6
 id: metn-2023-2-06
-
 course: Métodos Numéricos
 academic_year: 2023
 semester: 2
-
 teacher: Juan Pablo Borthagaray
-
 source:
-  - OpenFING
-
+- OpenFING
 video:
-  - start: "00:00:02"
-    end: "01:20:54"
-
+- start: "00:00:02"
+  end: "01:20:54"
 stats:
   transcript_words: 9437
-  summary_words: 2700
+  summary_words: 2381
   diagrams_pending: 0
-  equations: 18
-
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
-
+  equations: 20
 topics:
-  - Por qué falla la eliminación gaussiana sin pivoteo (multiplicadores grandes amplifican error de redondeo)
-  - Pivoteo parcial: estrategia, cota |L_jk| <= 1, costo adicional O(n^2)
-  - Codificar la eliminación como producto de matrices (permutación y multiplicadores)
-  - Teorema de descomposición PA = LU (demostración constructiva, no unicidad)
-  - Resolver sistemas usando la LU ya calculada (costo O(n^2))
-  - Cuándo conviene calcular la LU (reutilización con múltiples lados derechos)
-  - Nota al margen sobre la factorización de Cholesky
-  - El operador backslash de MATLAB/Octave (lógica de despacho)
-  - Matrices dispersas (introducción)
-
+- Multiplicadores grandes y pivoteo parcial
+- Permutar filas mediante matrices
+- Matrices de eliminación y sus operaciones
+- De la eliminación a PA igual LU
+- Resolver y reutilizar una factorización
+- Qué hacen los códigos mostrados
+- Matrices dispersas y almacenamiento
 bibliography: []
-
 prerequisites:
-  - Sistemas Lineales, Introducción (Clase 5): eliminación gaussiana sin pivoteo, multiplicadores, costo O(n^3)
-
+- Sistemas Lineales, Introducción (Clase 5): eliminación gaussiana sin pivoteo, multiplicadores, costo
+    O(n^3)
 next_topics:
-  - Normas de Matrices (Clase 7)
-  - Número de Condición (Clase 8)
-
+- Normas de Matrices (Clase 7)
+- Número de Condición (Clase 8)
 status:
   transcript: done
   summary: done
   latex: done
   assets: done
-
 review:
   state: needs-review
   reviewer: []
-  date: 2026-09-13
-
+  date: 2026-09-15
 llm:
-  model: claude-sonnet-5
-
+  model: "GPT6-Astra"
 editorial_status: draft

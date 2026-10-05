@@ -1,31 +1,15 @@
-% clase6-matriz-multiplicador.tex — estructura de una matriz de multiplicadores M_k
-% (identidad con la columna k, por debajo de la diagonal, reemplazada por
-% -L_{jk}). Matriz 5x5, k=3. Ver notes.tex Clase6 §3.2.
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-  \def\n{5}
-  \def\kcol{3}
-  \foreach \row in {1,...,5} {
-    \foreach \col in {1,...,5} {
-      \pgfmathsetmacro{\xx}{\col}
-      \pgfmathsetmacro{\yy}{6-\row}
-      \ifnum\row=\col
-        \node[matnz] at (\xx,\yy) {$1$};
-      \else
-        \ifnum\col=\kcol
-          \ifnum\row>\kcol
-            \node[matpivote] at (\xx,\yy) {\scriptsize $-L_{\row,\kcol}$};
-          \else
-            \node[matcero] at (\xx,\yy) {$0$};
-          \fi
-        \else
-          \node[matcero] at (\xx,\yy) {$0$};
-        \fi
-      \fi
-    }
-  }
-  \draw[figgray, line width=0.6pt] (0.5,0.5) rectangle (5.5,5.5);
-  \node[figlblaux] at (3,6.2) {columna $k=3$};
-  \draw[figamber, line width=1pt, -{Latex[length=2mm,width=1.4mm]}] (3,5.9) -- (3,5.55);
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+\matrix (a) [matrix of math nodes,left delimiter=(,right delimiter=),nodes={matcelda},row sep=2pt,column sep=4pt] {
+1&0&0&0\\
+-\ell_{21}&1&0&0\\
+-\ell_{31}&0&1&0\\
+-\ell_{41}&0&0&1\\
+};
+\draw[figamber,thick,rounded corners] ($(a-2-1.north west)+(-0.08,0.08)$) rectangle ($(a-4-1.south east)+(0.08,-0.08)$);
+\node[anchor=west,font=\small] (t) at (4,0) {$F_j\gets F_j-\ell_{j1}F_1$};
+\draw[figaux] (a-3-1.west)--++(-0.7,0) node[left,font=\small] {columna 1};
+\node[font=\small] at (0,-2.4) {$M_1$: diagonal de unos};
 \end{tikzpicture}
-\end{center}
+\caption{La primera matriz de eliminación almacena los negativos de los multiplicadores en una sola columna. Multiplicarla por $A$ a la izquierda efectúa simultáneamente las combinaciones de filas; invertirla cambia esos signos.}
+\end{figure}

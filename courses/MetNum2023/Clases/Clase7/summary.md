@@ -1,230 +1,274 @@
-# Resumen Clase 7 — Normas de Matrices
+# Resumen Clase 7 — Matrices especiales, normas inducidas, error y residuo
 
 ## Índice
 
-1. [Cierre de matrices dispersas y tridiagonales](#1-cierre-de-matrices-dispersas-y-tridiagonales)
-2. [Normas vectoriales: repaso de axiomas](#2-normas-vectoriales-repaso-de-axiomas)
-   - 2.1 [La familia de normas $L^p$ en $\mathbb{R}^n$](#21-la-familia-de-normas-lp-en-mathbbrn)
-3. [Normas de matrices](#3-normas-de-matrices)
-   - 3.1 [Norma de Frobenius](#31-norma-de-frobenius)
-   - 3.2 [Normas operador (inducidas)](#32-normas-operador-inducidas)
-4. [La norma inducida por $L^\infty$: máximo de las normas $L^1$ de las filas](#4-la-norma-inducida-por-linfty-máximo-de-las-normas-l1-de-las-filas)
-   - 4.1 [Demostración](#41-demostración)
-5. [Otras normas operador (enunciadas, no probadas en clase)](#5-otras-normas-operador-enunciadas-no-probadas-en-clase)
+1. [Dispersidad y estructura de banda](#1-dispersidad-y-estructura-de-banda)
+2. [Normas vectoriales y geometría](#2-normas-vectoriales-y-geometria)
+3. [De arreglos a operadores](#3-de-arreglos-a-operadores)
+4. [Cálculo de la norma infinito inducida](#4-calculo-de-la-norma-infinito-inducida)
+5. [Normas uno y dos inducidas](#5-normas-uno-y-dos-inducidas)
 6. [Compatibilidad y submultiplicatividad](#6-compatibilidad-y-submultiplicatividad)
-7. [Error vs. residuo: la motivación de fondo](#7-error-vs-residuo-la-motivación-de-fondo)
+7. [Error y residuo de un sistema](#7-error-y-residuo-de-un-sistema)
 
----
+## 1. Dispersidad y estructura de banda
 
-## 1. Cierre de matrices dispersas y tridiagonales
+### 1.1 Qué conviene almacenar
 
-Arranque breve retomando el final de la clase anterior. Se define informalmente
-la **densidad** de una matriz $A \in \mathbb{R}^{n\times n}$ como el cociente
-entre su cantidad de entradas no nulas y $n^2$ (y **dispersidad** como
-$1$ menos eso); una matriz es **dispersa** cuando su dispersidad es cercana a
-$1$. Para esas matrices tiene sentido almacenar sólo las ternas $(i,j,a_{ij})$
-de las entradas no nulas en vez de los $n^2$ números.
+La clase retoma las **matrices dispersas**, que tienen muchos ceros. El docente propone como medida heurística la fracción de entradas no nulas y corrige su nombre durante la exposición: esa fracción es densidad; su complemento sería dispersidad. Para $A\in\mathbb R^{n\times n}$:
 
-> **Matrices de banda / tridiagonales**: $A$ es tridiagonal si $a_{ij}=0$ para
-> todo $|i-j|>1$. Si se le avisa al código que la matriz es tridiagonal, la
-> eliminación gaussiana (con pivoteo parcial) se hace en **tiempo lineal**
-> en vez de $O(n^3)$: en cada paso el pivoteo sólo compara con una fila
-> (la de abajo), y los multiplicadores y actualizaciones son de costo
-> constante por fila. La sustitución hacia adelante/atrás sobre las matrices
-> triangulares resultantes también queda lineal (ejercicio de práctico, no
-> desarrollado en clase). **Si no se avisa la estructura, el algoritmo cae en
-> $O(n^3)$ igual**, aunque la matriz sea tridiagonal.
+$$
+\text{densidad}(A)=\frac{\#\{(i,j):a_{ij}\ne0\}}{n^2},\qquad
+\text{dispersidad}(A)=1-\text{densidad}(A).
+$$
 
-## 2. Normas vectoriales: repaso de axiomas
+Ambas cantidades quedan entre cero y uno. No se fija un umbral universal que separe matrices dispersas de densas. La motivación es práctica: guardar ceros de una matriz enorme no aporta información. Una representación posible conserva ternas $(i,j,a_{ij})$ sólo para entradas no nulas. Si hay $s$ entradas de ese tipo, se almacenan $3s$ números en vez de $n^2$. En este modelo simple hay ahorro cuando $3s<n^2$.
 
-Una **norma** en un espacio vectorial $V$ (sobre $\mathbb{R}$) es una función
-$\|\cdot\|: V \to \mathbb{R}$ que cumple:
+El comando `sparse` permite construir una representación dispersa o convertir una matriz ya construida. Se menciona la posibilidad de operar eficientemente con ella, pero no se desarrolla un algoritmo general para hacerlo. La cuenta de ternas ilustra la idea de almacenamiento; no pretende describir todos los detalles internos de una biblioteca.
 
-1. $\|v\| \geq 0$, y $\|v\| = 0 \iff v = 0$.
-2. $\|\alpha v\| = |\alpha|\,\|v\|$ para todo escalar $\alpha$.
-3. **Desigualdad triangular**: $\|u+v\| \leq \|u\| + \|v\|$.
+### 1.2 La matriz tridiagonal desplegada
 
-Sirve para hablar del "tamaño" o magnitud de un vector.
+Una matriz de banda permite entradas no nulas sólo cerca de la diagonal. En particular, es **tridiagonal** cuando $a_{ij}=0$ si $|i-j|>1$. La estructura dibujada es
 
-### 2.1 La familia de normas $L^p$ en $\mathbb{R}^n$
+$$
+A=\begin{pmatrix}
+d_1&c_1&0&\cdots&0\\
+a_2&d_2&c_2&\ddots&\vdots\\
+0&a_3&d_3&\ddots&0\\
+\vdots&\ddots&\ddots&\ddots&c_{n-1}\\
+0&\cdots&0&a_n&d_n
+\end{pmatrix}.
+$$
 
-Para $p \geq 1$:
+Los símbolos $a_i,d_i,c_i$ nombran editorialmente las tres diagonales. Las entradas mostradas pueden ser cero; lo que se garantiza es la nulidad fuera de la banda. En la primera fila sólo pueden intervenir las columnas 1 y 2; en una fila interior $i$, las columnas $i-1,i,i+1$.
 
-$$\|x\|_p = \left(\sum_{i=1}^n |x_i|^p\right)^{1/p}$$
+En una eliminación general se realizan $O(n^3)$ operaciones. Con esta estructura y una implementación que la aproveche, cada etapa tiene una cantidad acotada de candidatos a pivote y de coeficientes que actualizar. El número de etapas crece con $n$, pero el trabajo por etapa permanece acotado: el costo se vuelve $O(n)$. Las sustituciones también aprovechan la estructura para tener costo lineal.
 
-Casos particulares:
+La misma idea se extiende a una banda de ancho fijo, como la pentadiagonal. El ancho debe mantenerse fijo al crecer $n$; de lo contrario no corresponde tratar el trabajo de cada etapa como constante. El docente deja el desarrollo concreto como ejercicio práctico. No se añade aquí un algoritmo de Thomas ni una deducción que no se hizo. Tampoco se afirma que cualquier implementación densa detecte y aproveche automáticamente los ceros: hay que comunicar o explotar esa estructura.
 
-- **$p=2$**: norma **euclídea**, la que viene del producto interno, "la que
-  cumple Pitágoras".
-- **$p=1$**: norma del **taxi** o de **Manhattan**: $\|x\|_1 = \sum_i |x_i|$.
-- **$p=\infty$** (límite formal cuando $p\to\infty$): norma **infinito** o
-  **del máximo** o de **Chebyshev**: $\|x\|_\infty = \max_i |x_i|$.
+## 2. Normas vectoriales y geometría
 
-> **Bolas unitarias**: en $\mathbb{R}^2$, la bola $\|x\|_1=1$ es un rombo
-> (rotado 45°), $\|x\|_2=1$ es la circunferencia usual, y a medida que $p$
-> crece las bolas se "inflan" hasta converger al cuadrado $\|x\|_\infty=1$.
+### 2.1 Medir tamaños
 
-## 3. Normas de matrices
+Para estudiar la calidad de una solución calculada se necesitan tamaños de vectores y matrices. Una **norma** en un espacio vectorial real $V$ es una función que satisface
 
-Las matrices cuadradas $\mathbb{R}^{n\times n}$ también forman un espacio
-vectorial (se suman y se multiplican por escalares), así que en principio se
-les puede poner una norma.
+$$
+\begin{aligned}
+\|v\|&\ge0,&\qquad \|v\|=0&\iff v=0,\\
+\|\lambda v\|&=|\lambda|\|v\|,\\
+\|v+w\|&\le\|v\|+\|w\|.
+\end{aligned}
+$$
 
-### 3.1 Norma de Frobenius
+La primera propiedad distingue el vector nulo; la segunda describe cómo cambia el tamaño al escalar; la tercera es la **desigualdad triangular**. El rodeo por un punto intermedio no puede resultar más corto que el trayecto directo, en la interpretación geométrica dada en clase.
 
-Una opción es "desatar" la matriz en un vector de $n^2$ entradas y aplicarle
-una norma $L^p$ vectorial. Para $p=2$ esto se llama **norma de Frobenius** y
-tiene nombre propio y uso (se retoma más adelante en el curso); para otros
-$p$ no tiene mucho sentido ni uso conocido.
+En $\mathbb R^n$, para $1\le p<\infty$ se consideran
 
-> **Limitación señalada en clase**: las normas tipo Frobenius, para lo que
-> se busca en esta unidad (relacionar residuo y error, condicionamiento), no
-> son las útiles. El camino que sí importa es el de las normas operador.
+$$
+\|\mathbf x\|_p=\left(\sum_{j=1}^n|x_j|^p\right)^{1/p},\qquad
+\|\mathbf x\|_\infty=\max_j|x_j|.
+$$
 
-### 3.2 Normas operador (inducidas)
+La norma uno suma valores absolutos y se llama del taxi o Manhattan. La norma dos es la euclídea, vinculada al producto interno y a Pitágoras. La norma infinito se llama también del máximo o de Chebyshev. No se sustituye literalmente $p=\infty$ en una fórmula con potencias: se da una definición separada. Que se recupere como límite de las normas $p$ se deja como ejercicio.
 
-Identificando cada matriz $A$ con la transformación lineal $x \mapsto Ax$ de
-$\mathbb{R}^n$ en $\mathbb{R}^n$, y dada una norma vectorial $\|\cdot\|_B$ en
-$\mathbb{R}^n$, se define la **norma matricial inducida** (u **operador**)
-por:
+### 2.2 Las fronteras unitarias
 
-$$\|A\|_M = \max_{x \neq 0} \frac{\|Ax\|_B}{\|x\|_B} = \max_{\|x\|_B \leq 1} \|Ax\|_B = \max_{\|x\|_B = 1} \|Ax\|_B$$
+En dos dimensiones, los puntos de norma uno forman un rombo con vértices $(\pm1,0)$ y $(0,\pm1)$ para $p=1$, una circunferencia para $p=2$ y el borde del cuadrado $[-1,1]^2$ para $p=\infty$. Al aumentar $p$, las fronteras dibujadas se ensanchan desde el rombo hacia el cuadrado. La bola unitaria incluye también el interior; la figura de nivel uno representa su frontera.
 
-(las tres expresiones son equivalentes — la clase lo señala como ejercicio,
-no lo demuestra). Que esto efectivamente cumple los axiomas de norma también
-se deja como ejercicio.
+Esta comparación muestra que hablar de cercanía exige elegir una norma. La misma diferencia vectorial puede recibir tamaños distintos según cómo se mida. La clase introduce estas herramientas antes de usarlas plenamente en estabilidad y convergencia.
 
-> **No se parece a las normas $L^p$ "ingenuas"**: no es combinar las entradas
-> de $A$ directamente, sino el máximo estiramiento que $A$ le produce a un
-> vector unitario.
+## 3. De arreglos a operadores
 
-## 4. La norma inducida por $L^\infty$: máximo de las normas $L^1$ de las filas
+### 3.1 La alternativa de Frobenius
 
-**Proposición** (la única probada en detalle en esta clase):
+Las matrices también forman un espacio vectorial: se suman y multiplican por escalares. Una posibilidad es ordenar sus $n^2$ entradas como un vector y usar una norma vectorial. Para la norma dos de ese vector se obtiene la **norma de Frobenius**:
 
-$$\boxed{\|A\|_\infty = \max_{1\leq i\leq n} \sum_{j=1}^n |a_{ij}|}$$
+$$
+\|A\|_F=\left(\sum_{i=1}^n\sum_{j=1}^n|a_{ij}|^2\right)^{1/2}.
+$$
 
-es decir: se recorren todas las filas de $A$, se calcula la norma $L^1$ de
-cada una (suma de valores absolutos de sus entradas), y se toma la más
-grande.
+El docente sólo presenta esta posibilidad y anuncia que volverá a ella más adelante. No desarrolla sus propiedades. Para el análisis que sigue interesa mirar a $A$ como una transformación lineal $\mathbf x\mapsto A\mathbf x$ y medir cuánto puede ampliar vectores.
 
-### 4.1 Demostración
+### 3.2 Norma matricial inducida
 
-Se prueban las dos desigualdades por separado.
+Fijada una norma vectorial $\|\cdot\|_v$, se define la norma matricial inducida, o **norma operador**, mediante
 
-**($\leq$, la fácil)**: Sea $x$ con $\|x\|_\infty = 1$ (o sea $|x_j|\leq 1$
-para todo $j$). Entonces
+$$
+\boxed{\|A\|_m=\max_{\mathbf x\ne0}
+\frac{\|A\mathbf x\|_v}{\|\mathbf x\|_v}}.
+$$
 
-$$\|Ax\|_\infty = \max_i \left|\sum_{j=1}^n a_{ij}x_j\right| \leq \max_i \sum_{j=1}^n |a_{ij}||x_j| \leq \max_i \sum_{j=1}^n |a_{ij}|$$
+El cociente normaliza el tamaño de la entrada. Se pregunta cuál es la mayor amplificación posible, considerando todas las direcciones. La norma de $A$ depende de la norma vectorial escogida: el subíndice matricial no designa una elección independiente.
 
-usando la desigualdad triangular (extendida por inducción a $n$ sumandos) y
-$|x_j|\leq 1$. Tomando máximo sobre todos esos $x$ se obtiene
-$\|A\|_\infty \leq \max_i \sum_j |a_{ij}|$.
+Se enuncian también las caracterizaciones
 
-**($\geq$, la que exige construir un vector)**: Sea $i_0$ la fila que alcanza
-el máximo $\max_i \sum_j |a_{ij}|$. Si $A=0$ no hay nada que probar. Si
-$A\neq 0$, se construye
+$$
+\|A\|_m=\max_{\|\mathbf x\|_v\le1}\|A\mathbf x\|_v
+=\max_{\|\mathbf x\|_v=1}\|A\mathbf x\|_v.
+$$
 
-$$\hat{x}_j = \operatorname{sg}(a_{i_0 j}), \qquad j = 1,\dots,n$$
+La verificación de los axiomas de norma y de estas igualdades se deja como ejercicio. La clase usa la caracterización sobre la esfera unitaria para la demostración siguiente. Estas normas no se obtienen, en general, combinando entradas de una matriz como si fueran simplemente un vector largo.
 
-(la función signo; se puede fijar $\operatorname{sg}(0)=0$). Como $\hat{x}$
-tiene todas las coordenadas en $\{-1,0,1\}$, $\|\hat{x}\|_\infty = 1$.
-Entonces:
+## 4. Cálculo de la norma infinito inducida
 
-$$\|A\hat{x}\|_\infty = \max_i \left|\sum_j a_{ij}\hat{x}_j\right| \geq \left|\sum_j a_{i_0 j}\hat{x}_j\right| = \sum_j |a_{i_0 j}| = \max_i \sum_j |a_{ij}|$$
+El resultado central demostrado es
 
-donde la penúltima igualdad usa que $a_{i_0 j}\cdot\operatorname{sg}(a_{i_0
-j}) = |a_{i_0 j}|$ (un número por su propio signo es su valor absoluto).
-Como $\|A\|_\infty$ es el máximo sobre **todos** los $x$ unitarios, en
-particular es $\geq$ lo obtenido con este $\hat{x}$ en particular.
+$$
+\boxed{\|A\|_\infty=\max_{1\le i\le n}\sum_{j=1}^n|a_{ij}|}.
+$$
 
-> **Técnica general para probar igualdades con máximos**: una desigualdad
-> suele salir directo de la definición (acotar para todos los $x$); la otra
-> exige **exhibir un vector particular que alcanza la cota** — ahí, si un
-> caso particular ya alcanza el valor, el máximo no puede ser menor.
+Se suma por columnas con la fila fija: cada suma es la norma uno de una fila. Luego se elige la fila con mayor suma. No es el máximo de las entradas individuales. Para visualizar la operación, las sumas de filas se organizan así:
 
-## 5. Otras normas operador (enunciadas, no probadas en clase)
+$$
+\begin{pmatrix}
+a_{11}&\cdots&a_{1n}\\
+\vdots&&\vdots\\
+a_{n1}&\cdots&a_{nn}
+\end{pmatrix}
+\quad\longmapsto\quad
+\begin{pmatrix}
+\sum_j|a_{1j}|\\\vdots\\\sum_j|a_{nj}|
+\end{pmatrix}
+\quad\longmapsto\quad\max_i\sum_j|a_{ij}|.
+$$
 
-- **Inducida por $L^1$**: $\|A\|_1 = \max_j \sum_i |a_{ij}|$ (máximo de las
-  normas $L^1$ de las **columnas** de $A$) — corolario de la fórmula anterior
-  vía $\|A\|_\infty = \|A^T\|_1$ (transponer cambia filas por columnas).
-  Demostración análoga, dejada como ejercicio.
-- **Inducida por $L^2$**: $\|A\|_2$ es el **primer valor singular** de $A$
-  (el mayor). Se define: $A^TA$ es simétrica y semidefinida positiva, así que
-  por el teorema espectral es diagonalizable con valores propios
-  $\lambda_1,\dots,\lambda_n \geq 0$; los **valores singulares** de $A$ son
-  $\sqrt{\lambda_i}$. La prueba de que $\|A\|_2$ es el mayor de éstos está en
-  los apuntes del curso, no se desarrolla en clase (se retoma más adelante
-  con la descomposición en valores singulares, útil en compresión de datos
-  e imágenes).
+### 4.1 Una cota que vale para cualquier vector unitario
+
+Si $\|\mathbf x\|_\infty=1$, entonces $|x_j|\le1$ para toda coordenada. Se desarrolla el producto matriz-vector y se usa la desigualdad triangular del valor absoluto:
+
+$$
+\begin{aligned}
+\|A\mathbf x\|_\infty
+&=\max_i\left|\sum_j a_{ij}x_j\right|\\
+&\le\max_i\sum_j|a_{ij}x_j|\\
+&=\max_i\sum_j|a_{ij}|\,|x_j|\\
+&\le\max_i\sum_j|a_{ij}|.
+\end{aligned}
+$$
+
+La desigualdad triangular para una suma finita se obtiene aplicando repetidamente la de dos términos. Como la cota no depende de qué vector unitario se eligió, también acota el máximo sobre todos ellos. Se obtiene así $\|A\|_\infty\le\max_i\sum_j|a_{ij}|$.
+
+### 4.2 Construir el vector que alcanza la cota
+
+Para la desigualdad opuesta no se puede invertir la desigualdad triangular. Se busca un vector especialmente diseñado. Sea $i_0$ una fila donde se alcanza la máxima suma absoluta y defínase
+
+$$
+y_j=\operatorname{sgn}(a_{i_0j}),\qquad
+\mathbf y=\begin{pmatrix}
+\operatorname{sgn}(a_{i_01})\\\vdots\\\operatorname{sgn}(a_{i_0n})
+\end{pmatrix}.
+$$
+
+Puede tomarse $\operatorname{sgn}(0)=0$. Si $A=0$, ambas partes del resultado son cero y no hay más que demostrar. Si $A\ne0$, la fila de máxima suma contiene alguna entrada no nula, de modo que al menos una coordenada de $\mathbf y$ vale $1$ o $-1$; las restantes pertenecen a $\{-1,0,1\}$. Por tanto $\|\mathbf y\|_\infty=1$.
+
+Primero se restringe el máximo sobre vectores a este candidato; después se restringe el máximo sobre coordenadas a la fila $i_0$:
+
+$$
+\begin{aligned}
+\|A\|_\infty
+&\ge\|A\mathbf y\|_\infty\\
+&=\max_i\left|\sum_j a_{ij}y_j\right|\\
+&\ge\left|\sum_j a_{i_0j}y_j\right|\\
+&=\left|\sum_j |a_{i_0j}|\right|\\
+&=\sum_j |a_{i_0j}|=\max_i\sum_j|a_{ij}|.
+\end{aligned}
+$$
+
+El paso decisivo usa $a_{i_0j}\operatorname{sgn}(a_{i_0j})=|a_{i_0j}|$. Sólo después se puede quitar el valor absoluto externo, porque todos los sumandos ya son no negativos. Meterlo dentro antes de elegir los signos cambiaría el sentido de la desigualdad y arruinaría la prueba.
+
+Las dos cotas prueban la igualdad. El docente destaca el patrón: una cota uniforme suele salir directamente de la definición; alcanzar esa cota requiere escoger un objeto especial. No alcanza con afirmar que existe un máximo: hay que construir un vector que llegue al valor propuesto.
+
+## 5. Normas uno y dos inducidas
+
+Se enuncian, sin demostración en clase, otros dos resultados. Para la norma uno:
+
+$$
+\boxed{\|A\|_1=\max_j\sum_i|a_{ij}|}.
+$$
+
+Se toman ahora las normas uno de las columnas. La prueba se deja como ejercicio análogo. Intercambiar filas y columnas mediante trasposición da $\|A^T\|_\infty=\|A\|_1$, observación surgida en la discusión.
+
+Para la norma dos:
+
+$$
+\boxed{\|A\|_2=\sigma_{\max}(A)
+=\sqrt{\lambda_{\max}(A^TA)}}.
+$$
+
+Se explica qué son los **valores singulares**: $A^TA$ es simétrica y semidefinida positiva, tiene valores propios reales no negativos y sus raíces cuadradas son los valores singulares de $A$. El mayor es la norma operador inducida por la norma euclídea. Se corrige durante la exposición la afirmación inicial de positividad estricta por semidefinida positividad.
+
+La prueba de esta fórmula se remite a las notas del curso, no se realiza en la clase. Se menciona la futura descomposición en valores singulares y su uso en compresión; no se agrega su desarrollo. La comparación con un cuadrado escalar es sólo una intuición oral: no se identifica $A^TA$ con $A^2$.
 
 ## 6. Compatibilidad y submultiplicatividad
 
-Sea $\|\cdot\|_M$ una norma matricial inducida por una norma vectorial
-$\|\cdot\|_B$. Se cumplen dos propiedades, ambas demostradas en clase a
-partir de la definición:
+### 6.1 Matriz por vector
 
-**Compatibilidad**: para toda $A$ y todo $x\in\mathbb{R}^n$,
+La **compatibilidad** de la norma inducida con su norma vectorial es
 
-$$\|Ax\|_B \leq \|A\|_M \|x\|_B$$
+$$
+\boxed{\|A\mathbf x\|_v\le\|A\|_m\|\mathbf x\|_v}.
+$$
 
-*Demostración*: si $x=0$ es trivial. Si $x\neq 0$,
-$\dfrac{\|Ax\|_B}{\|x\|_B} \leq \max_{y\neq 0} \dfrac{\|Ay\|_B}{\|y\|_B} =
-\|A\|_M$ por definición de máximo; multiplicando por $\|x\|_B$ se obtiene el
-resultado.
+Si $\mathbf x=0$, la desigualdad es inmediata. En caso contrario, se multiplica y divide por su norma, y el cociente de un vector particular se acota por el máximo:
 
-**Submultiplicatividad**: para toda $A,B$ matrices,
+$$
+\begin{aligned}
+\|A\mathbf x\|_v
+&=\frac{\|A\mathbf x\|_v}{\|\mathbf x\|_v}\|\mathbf x\|_v\\
+&\le\left(\max_{\mathbf z\ne0}
+\frac{\|A\mathbf z\|_v}{\|\mathbf z\|_v}\right)\|\mathbf x\|_v
+=\|A\|_m\|\mathbf x\|_v.
+\end{aligned}
+$$
 
-$$\|AB\|_M \leq \|A\|_M \|B\|_M$$
+La variable $\mathbf z$ es auxiliar: evita confundir el vector fijo con la variable que recorre el máximo. El argumento usa directamente la definición, sin recurrir a una desigualdad de producto interno.
 
-*Demostración*: usando la definición y la compatibilidad dos veces (viendo
-$Bx$ como un vector al que se le aplica $A$):
+### 6.2 Matriz por matriz
 
-$$\|AB\|_M = \max_{x\neq0} \frac{\|A(Bx)\|_B}{\|x\|_B} \leq \max_{x\neq0} \frac{\|A\|_M\|Bx\|_B}{\|x\|_B} \leq \max_{x\neq0} \frac{\|A\|_M\|B\|_M\|x\|_B}{\|x\|_B} = \|A\|_M\|B\|_M$$
+La **submultiplicatividad** afirma
 
-> **Corolario** (usado más adelante en el curso): para toda norma operador,
-> $$\|A^k\| \leq \|A\|^k$$
-> por inducción, aplicando submultiplicatividad con $B=A$ repetidamente.
+$$
+\boxed{\|AB\|_m\le\|A\|_m\|B\|_m}.
+$$
 
-> **Advertencia explícita del docente**: estas dos propiedades valen para
-> **cualquier norma operador** (inducida por una norma vectorial) — no
-> necesariamente para cualquier norma matricial. En particular, no está
-> establecido que la norma de Frobenius (§3.1) las cumpla.
+Por definición, se maximiza $\|AB\mathbf x\|_v/\|\mathbf x\|_v$. Como $B\mathbf x$ es un vector, se aplica primero compatibilidad a $A$ y luego a $B$:
 
-## 7. Error vs. residuo: la motivación de fondo
+$$
+\begin{aligned}
+\|AB\|_m
+&=\max_{\mathbf x\ne0}\frac{\|A(B\mathbf x)\|_v}{\|\mathbf x\|_v}\\
+&\le\max_{\mathbf x\ne0}
+\frac{\|A\|_m\|B\mathbf x\|_v}{\|\mathbf x\|_v}\\
+&\le\max_{\mathbf x\ne0}
+\frac{\|A\|_m\|B\|_m\|\mathbf x\|_v}{\|\mathbf x\|_v}
+=\|A\|_m\|B\|_m.
+\end{aligned}
+$$
 
-Cierre de la clase, que motiva el tema de la clase siguiente (número de
-condición). Al resolver $Ax=b$ con eliminación gaussiana con pivoteo parcial
-en una computadora de precisión finita, se obtiene una solución
-**computacional** $\bar{x}$, distinta en general de la solución **exacta**
-$x^\star$.
+También se podría sacar $\|A\|_m$ del máximo en la segunda línea y reconocer directamente la definición de $\|B\|_m$. La repetición de la propiedad da el corolario $\|A^k\|_m\le\|A\|_m^k$ para enteros positivos $k$.
 
-- **Error**: $e = \bar{x} - x^\star$ (o $x^\star - \bar{x}$, según
-  convención). Mide qué tan lejos está la solución obtenida de la verdadera.
-  > **El error no es computable**: para calcularlo hace falta conocer
-  > $x^\star$, que es justamente lo que no se tiene en un problema real.
-- **Residuo**: $r = A\bar{x} - b$. Mide qué tan lejos está $\bar{x}$ de
-  satisfacer las ecuaciones del sistema.
-  > **El residuo sí es computable**: sólo requiere $A$, $b$ y la salida
-  > $\bar{x}$ del algoritmo — todas cantidades disponibles al final del
-  > cómputo.
+> Estas demostraciones se hicieron para normas inducidas por una norma vectorial. La clase no decide aquí si Frobenius satisface las mismas propiedades; no se concluye ni su validez ni su invalidez a partir de lo demostrado.
 
-**Relación entre ambos**: como $b = Ax^\star$,
+## 7. Error y residuo de un sistema
 
-$$r = A\bar{x} - Ax^\star = A(\bar{x}-x^\star) = A\,e$$
+Se vuelve a $A\mathbf x=\mathbf b$, con $A$ invertible. Una eliminación con pivoteo parcial realizada en precisión finita produce $\overline{\mathbf x}$. El **error** mide la diferencia con la solución exacta:
 
-$$\boxed{\text{el residuo es la matriz } A \text{ aplicada al error}}$$
+$$
+\mathbf e=\overline{\mathbf x}-\mathbf x.
+$$
 
-Si $A$ es invertible, $r=0 \iff e=0$ (porque $e = A^{-1}r$): en aritmética
-exacta, residuo nulo garantiza error nulo. Pero en la práctica el residuo
-casi nunca da exactamente cero.
+Su norma sería una medida natural de calidad, pero calcularlo requiere conocer precisamente la solución que se intenta hallar. En cambio, el **residuo** se obtiene de la salida del programa y los datos disponibles:
 
-> **La pregunta que abre la clase siguiente**: si el residuo tiene norma
-> chica, ¿se puede concluir que el error también es chico? **No hay por qué
-> — no es obvio en absoluto**, y es la pregunta que va a determinar si un
-> método (o una solución computada) es "bueno". Con las herramientas de
-> normas operador, compatibilidad y submultiplicatividad recién probadas,
-> la Clase 8 (Número de Condición) da la respuesta.
+$$
+\mathbf r=A\overline{\mathbf x}-\mathbf b.
+$$
 
-*Clase siguiente: Número de Condición — cuantifica exactamente la relación
-entre residuo chico y error chico.*
+El error compara soluciones; el residuo pregunta cuánto incumple la aproximación las ecuaciones. Son vectores distintos. La relación entre ellos se obtiene sustituyendo $\mathbf b=A\mathbf x$:
+
+$$
+\boxed{\mathbf r=A\overline{\mathbf x}-A\mathbf x
+=A(\overline{\mathbf x}-\mathbf x)=A\mathbf e}.
+$$
+
+Si el residuo es exactamente nulo, la invertibilidad da $\mathbf e=A^{-1}\mathbf r=0$. Recíprocamente, error nulo implica residuo nulo. Esta equivalencia corresponde a aritmética exacta; un cero computado puede estar afectado por la precisión de la evaluación.
+
+La pregunta pendiente es más delicada: ¿un residuo pequeño garantiza error pequeño? La equivalencia entre ceros no responde esa pregunta. Una transformación invertible puede alterar mucho tamaños sin llevar un vector no nulo a cero. La clase termina dejando el análisis cuantitativo para la siguiente, donde se usarán las normas recién construidas.

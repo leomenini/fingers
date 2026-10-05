@@ -1,59 +1,43 @@
 title: Clase 5
 id: metn-2023-2-05
-
 course: Métodos Numéricos
 academic_year: 2023
 semester: 2
-
 teacher: Juan Pablo Borthagaray
-
 source:
-  - OpenFING
-
+- OpenFING
 video:
-  - start: "00:00:01"
-    end: "01:27:17"
-
+- start: "00:00:01"
+  end: "01:27:17"
 stats:
   transcript_words: 9000
-  summary_words: 2270
+  summary_words: 1922
   diagrams_pending: 0
-  equations: 15
-
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
-
+  equations: 21
 topics:
-  - Planteo del sistema Ax=b y condición de solución única (det(A) != 0)
-  - Métodos directos vs. métodos iterativos
-  - Regla de Cramer y su costo O((n+1)!)
-  - Conteo de costo en flops y regla de suma de Riemann para sum i^alfa
-  - Matrices triangulares y sustitución hacia adelante/hacia atrás (O(n^2))
-  - Eliminación gaussiana sin pivoteo: multiplicadores, pseudocódigo, costo O(n^3)
-  - Necesidad del pivoteo numérico (no solo evitar el cero exacto)
-
+- El problema y los dos enfoques
+- Regla de Cramer y costo computacional
+- Sistemas triangulares y sustituciones
+- Sumas y orden de crecimiento
+- Eliminación gaussiana sin pivoteo
+- Pseudocódigo y costo de la eliminación
+- Por qué no alcanza con evitar pivotes nulos
 bibliography: []
-
 prerequisites:
-  - Álgebra lineal 1 (sistemas de ecuaciones, matrices, determinantes, regla de Cramer)
-  - Errores y aritmética de punto flotante (tema de las clases previas del curso)
-
+- Álgebra lineal 1 (sistemas de ecuaciones, matrices, determinantes, regla de Cramer)
+- Errores y aritmética de punto flotante (tema de las clases previas del curso)
 next_topics:
-  - Pivoteo parcial/total (la clase siguiente retoma el ejemplo numérico de esta clase)
-  - Descomposición LU (Clase 6, "Descomposición LU")
-
+- Pivoteo parcial/total (la clase siguiente retoma el ejemplo numérico de esta clase)
+- Descomposición LU (Clase 6, "Descomposición LU")
 status:
   transcript: done
   summary: done
   latex: done
-  assets: pending
-
+  assets: done
 review:
   state: needs-review
   reviewer: []
-  date: 2026-09-13
-
+  date: 2026-09-15
 llm:
-  model: claude-sonnet-5
-
+  model: "GPT6-Astra"
 editorial_status: draft

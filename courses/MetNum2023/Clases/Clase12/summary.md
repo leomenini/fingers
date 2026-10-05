@@ -1,248 +1,292 @@
-# Resumen Clase 12 — Error de Interpolación
+# Resumen Clase 12 — Lagrange, Newton y error de interpolación
 
 ## Índice
 
-1. [La forma de Lagrange](#1-la-forma-de-lagrange)
-   - 1.1 [Ejemplo](#11-ejemplo)
-   - 1.2 [Luces y sombras de Lagrange](#12-luces-y-sombras-de-lagrange)
-2. [La forma de Newton](#2-la-forma-de-newton)
-   - 2.1 [Diferencias divididas: cómo calcular los coeficientes](#21-diferencias-divididas-cómo-calcular-los-coeficientes)
-   - 2.2 [Ventajas de Newton](#22-ventajas-de-newton)
-3. [Interpolando funciones desconocidas](#3-interpolando-funciones-desconocidas)
-   - 3.1 [La norma del supremo](#31-la-norma-del-supremo)
-4. [El teorema de error de interpolación](#4-el-teorema-de-error-de-interpolación)
-   - 4.1 [Demostración](#41-demostración)
-5. [Corolario: cota práctica del error](#5-corolario-cota-práctica-del-error)
-6. [¿Más puntos siempre es mejor? Ejemplo con $\sin(x)\cos(x)$](#6-más-puntos-siempre-es-mejor-ejemplo-con-sinxcosx)
+1. [El problema y la base de Lagrange](#1-el-problema-y-la-base-de-lagrange)
+2. [Ejemplo y evaluación](#2-ejemplo-y-evaluación)
+3. [Newton y diferencias divididas](#3-newton-y-diferencias-divididas)
+4. [Qué significa aproximar una función](#4-qué-significa-aproximar-una-función)
+5. [Teorema del error](#5-teorema-del-error)
+6. [Demostración mediante Rolle](#6-demostración-mediante-rolle)
+7. [Cotas y efecto de agregar nodos](#7-cotas-y-efecto-de-agregar-nodos)
 
----
+## 1. El problema y la base de Lagrange
 
-## 1. La forma de Lagrange
+Dados $n+1$ nodos distintos $x_0,\ldots,x_n$ y valores $y_0,\ldots,y_n$, buscamos el único polinomio $p_n$ de grado menor o igual que $n$ tal que $p_n(x_j)=y_j$. La existencia y unicidad ya se probaron. Resolver un sistema de Vandermonde en la base monomial es una posibilidad, pero su mal condicionamiento motiva otras representaciones del mismo polinomio.
 
-Segunda de tres formas de escribir el mismo polinomio interpolante, buscando
-evitar el mal condicionamiento de Vandermonde (§4 de la Clase 11). En vez de
-la base monomial, se usa una base **adaptada a los nodos** $x_0,\dots,x_n$.
+La **base de Lagrange** adapta sus elementos a los nodos. Para cada $k$ se construye un polinomio que vale uno en $x_k$ y cero en todos los demás:
 
-**Polinomio base de Lagrange** $L_n^k$: el único polinomio de grado $\leq n$
-tal que
+$$
+L_n^k(x_j)=\begin{cases}1,&j=k,\\0,&j\ne k.\end{cases}
+$$
 
-$$L_n^k(x_j) = \begin{cases} 1 & j=k \\ 0 & j\neq k\end{cases}$$
+¿Cómo se consigue? Para anularlo en cada $x_j$ con $j\ne k$, se multiplica por $x-x_j$. Este producto tiene $n$ factores, por lo tanto grado $n$. En $x_k$ no se anula, pues los nodos son distintos. Dividir por su valor en ese nodo normaliza el resultado a uno:
 
-(delta de Kronecker). Existe y es único por el teorema de existencia y
-unicidad de la Clase 11 (interpolando los datos "todos cero salvo un 1 en
-$x_k$"). Fórmula explícita:
+$$
+\boxed{L_n^k(x)=\prod_{\substack{j=0\\j\ne k}}^n\frac{x-x_j}{x_k-x_j}.}
+$$
 
-$$L_n^k(x) = \prod_{\substack{i=0\\ i\neq k}}^{n} \frac{x - x_i}{x_k - x_i}$$
+El denominador es una constante respecto de $x$. No se incluye el factor con $j=k$: además de destruir la normalización, produciría una división por cero. Las propiedades de evaluación quedan visibles en la matriz
 
-> **Por qué el denominador nunca es cero**: exactamente porque se exige
-> $x_i$ distintos dos a dos (la misma hipótesis de siempre). El numerador
-> tiene grado $n$ (correcto) y se anula en todos los nodos salvo $x_k$; el
-> denominador es sólo un factor de normalización para que valga $1$ en
-> $x_k$.
+$$
+\begin{pmatrix}
+L_n^0(x_0)&L_n^1(x_0)&\cdots&L_n^n(x_0)\\
+L_n^0(x_1)&L_n^1(x_1)&\cdots&L_n^n(x_1)\\
+\vdots&\vdots&\ddots&\vdots\\
+L_n^0(x_n)&L_n^1(x_n)&\cdots&L_n^n(x_n)
+\end{pmatrix}
+=\begin{pmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&1\end{pmatrix}.
+$$
 
-**Polinomio interpolante en base de Lagrange**:
+Esta escritura despliega las condiciones explicadas verbalmente; no requiere resolver otro sistema. Ahora se pondera cada función por el dato que debe aportar:
 
-$$\boxed{p_n(x) = \sum_{k=0}^{n} y_k\, L_n^k(x)}$$
+$$
+\boxed{p_n(x)=\sum_{k=0}^n y_k L_n^k(x).}
+$$
 
-Al evaluar en $x_j$, todos los términos se anulan salvo el $k=j$, que vale
-$y_j$: la construcción es "evidente" una vez que se tiene la base.
+Al evaluar en $x_j$, todos los sumandos salvo el de índice $j$ desaparecen. El que queda es $y_j\cdot1$. Además, la suma tiene grado a lo sumo $n$. Cumple así las condiciones que caracterizan al interpolante; por unicidad es el mismo que se obtendría con Vandermonde, aunque esté escrito de otra manera.
 
-### 1.1 Ejemplo
+## 2. Ejemplo y evaluación
 
-Mismos datos de la Clase 11: $(1/4,\,1),\ (1,\,-1),\ (5/2,\,3/2)$.
+La clase retoma los datos
 
-$$L_2^0(x) = \frac{(x-1)(x-5/2)}{(1/4-1)(1/4-5/2)}$$
+$$
+(x_0,x_1,x_2)=\left(\frac14,1,\frac52\right),\qquad
+(y_0,y_1,y_2)=\left(-\frac34,-1,\frac32\right).
+$$
 
-(denominador $=27/16$ en el cálculo de clase). Análogamente $L_2^1$,
-$L_2^2$; el polinomio final es $y_0L_2^0 + y_1L_2^1 + y_2L_2^2$, el
-**mismo** polinomio que con Vandermonde, escrito en otra base.
+Los tres polinomios de Lagrange se construyen suprimiendo sucesivamente el factor correspondiente al nodo donde deben valer uno:
 
-### 1.2 Luces y sombras de Lagrange
+$$
+\begin{aligned}
+L_2^0(x)&=\frac{(x-1)(x-5/2)}{(1/4-1)(1/4-5/2)}
+=\frac{16}{27}(x-1)(x-5/2),\\
+L_2^1(x)&=\frac{(x-1/4)(x-5/2)}{(1-1/4)(1-5/2)}
+=-\frac89(x-1/4)(x-5/2),\\
+L_2^2(x)&=\frac{(x-1/4)(x-1)}{(5/2-1/4)(5/2-1)}
+=\frac8{27}(x-1/4)(x-1).
+\end{aligned}
+$$
 
-**A favor**:
+El interpolante es
 
-- **No hay sistema que resolver** → no hay problema de condicionamiento. El
-  ejemplo patológico de la Clase 11 (interpolar $f\equiv 1$ con 25+ puntos)
-  se calcularía de forma estable con Lagrange.
-- **Corregir un dato es fácil**: si un $y_i$ está mal, sólo cambia un
-  número en la combinación lineal final.
+$$
+p_2(x)=-\frac34L_2^0(x)-L_2^1(x)+\frac32L_2^2(x)
+=-\frac49-\frac{13}{9}x+\frac89x^2.
+$$
 
-**En contra**:
+La representación cambia, no la función. En la base monomial los coeficientes son $(-4/9,-13/9,8/9)$; en la base de Lagrange son directamente los datos $(-3/4,-1,3/2)$. Los factores muestran las raíces de cada función de base y evitan perder de vista para qué se construyó cada una.
 
-- **Agregar un nodo obliga a recalcular toda la base**: cada $L_n^k$
-  depende de **todos** los puntos, así que un punto nuevo invalida todos
-  los polinomios base ya calculados.
-- **Evaluar en un punto que no es nodo es caro**: hay que computar cada
-  $L_n^k(x)$ por separado (un producto de $n$ factores cada uno), mucho más
-  trabajo que evaluar el polinomio ya expandido de Vandermonde.
-  > Esto encarece cualquier operación posterior sobre el polinomio
-  > (derivar, integrar, hallar raíces), porque todas requieren evaluarlo
-  > repetidamente.
+El siguiente pseudocódigo escribe de manera explícita la evaluación por productos y suma descrita en clase. Recibe nodos distintos, sus valores y un punto $z$; devuelve $p_n(z)$. Los índices y nombres son una convención editorial, no una transcripción literal de un programa proyectado.
 
-## 2. La forma de Newton
+```text
+valor = 0
+para k = 0,...,n:
+    base = 1
+    para j = 0,...,n:
+        si j != k:
+            base = base * (z-x[j])/(x[k]-x[j])
+    valor = valor + y[k]*base
+devolver valor
+```
 
-Tercera forma. Recupera la **estructura de la demostración por inducción**
-de la Clase 11 y la escribe explícitamente:
+La variable `base` empieza en uno porque acumula un producto. El bucle interior recorre todos los factores de $L_n^k(z)$ y omite el índice $k$. Cuando termina, se multiplica por $y_k$ y se agrega a `valor`, que acumula una suma y por eso se inicializó en cero. La salida no es un vector de coeficientes monomiales: es el valor del polinomio en el punto pedido. Para varios puntos de evaluación se repite esta operación.
 
-$$p_n(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)(x-x_1) + \dots + a_n\prod_{i=0}^{n-1}(x-x_i)$$
+Si cambian solamente los $y_k$, los polinomios de base permanecen iguales: dependen de los nodos, no de las alturas. Si se agrega un nodo, todos los productos cambian y hay que reconstruir la base. Esta diferencia motiva Newton. La clase también señala que evaluar la expresión de Lagrange requiere realizar sus productos; evitar el sistema de Vandermonde no significa que toda operación de interpolación carezca de problemas numéricos.
 
-Base: $\{1,\ (x-x_0),\ (x-x_0)(x-x_1),\ \dots\}$.
+## 3. Newton y diferencias divididas
 
-### 2.1 Diferencias divididas: cómo calcular los coeficientes
+### 3.1 Una base que permite agregar nodos
 
-Método recursivo, con notación $f[x_0,\dots,x_k]$:
+La demostración inductiva de existencia ya había construido $p_k$ corrigiendo $p_{k-1}$ mediante un producto que se anula en los nodos anteriores. Repetir esa construcción da la **forma de Newton**:
 
-- **Orden 0**: $f[x_i] = y_i$.
-- **Orden $k$**: $f[x_i,\dots,x_{i+k}] = \dfrac{f[x_{i+1},\dots,x_{i+k}] - f[x_i,\dots,x_{i+k-1}]}{x_{i+k}-x_i}$.
+$$
+\begin{aligned}
+p_n(x)={}&a_0+a_1(x-x_0)+a_2(x-x_0)(x-x_1)\\
+&+\cdots+a_n\prod_{j=0}^{n-1}(x-x_j).
+\end{aligned}
+$$
 
-Los coeficientes de Newton son $a_k = f[x_0,\dots,x_k]$.
+El término de índice $k$ no altera ninguno de los valores en $x_0,\ldots,x_{k-1}$. Si se agrega $x_{n+1}$, se mantiene todo lo calculado y se incorpora un nuevo término con el producto hasta $x_n$. Esta estructura explica la ventaja de Newton para ampliar una tabla de datos.
 
-**Ejemplo trabajado** (mismos 3 puntos): $f[x_0]=-3/4$, $f[x_1]=-1$,
-$f[x_2]=3/2$.
+El docente menciona la evaluación anidada mediante Horner y remite a los apuntes, pero no la desarrolla. Aquí se conserva esa referencia sin agregar un algoritmo de Horner que no fue explicado.
 
-$$f[x_0,x_1] = \frac{-1-(-3/4)}{1-1/4} = -\frac13, \qquad f[x_1,x_2] = \frac{3/2-(-1)}{5/2-1} = \frac53$$
+### 3.2 Construcción del árbol de diferencias
 
-$$f[x_0,x_1,x_2] = \frac{5/3-(-1/3)}{5/2-1/4} = \frac{8}{9}$$
+Los coeficientes se obtienen de las **diferencias divididas**. La columna inicial contiene los datos, y cada nivel resta dos entradas del nivel anterior y divide por la distancia entre los nodos extremos involucrados:
 
-$$a_0=-\frac34,\quad a_1=-\frac13,\quad a_2=\frac89 \implies p_2(x) = -\frac34 -\frac13(x-\tfrac14) + \frac89(x-\tfrac14)(x-1)$$
+$$
+f[x_i]=y_i,\qquad
+f[x_i,\ldots,x_{i+k}]
+=\frac{f[x_{i+1},\ldots,x_{i+k}]-f[x_i,\ldots,x_{i+k-1}]}{x_{i+k}-x_i}.
+$$
 
-(el mismo polinomio, verificable, que Vandermonde y Lagrange dieron).
+No se divide siempre por la separación de nodos consecutivos. Esa separación corresponde al primer nivel; en los siguientes se usan los extremos del grupo completo. Para los datos del ejemplo:
 
-> **Estructura de árbol**: se combinan pares consecutivos ($x_0x_1$,
-> $x_1x_2$), luego esos resultados entre sí ($x_0x_1x_2$), etc. — un
-> patrón de "pirámide" que sólo usa las diferencias ya calculadas.
+$$
+\begin{aligned}
+f[x_0,x_1]&=\frac{-1-(-3/4)}{1-1/4}=-\frac13,\\
+f[x_1,x_2]&=\frac{3/2-(-1)}{5/2-1}=\frac53,\\
+f[x_0,x_1,x_2]&=\frac{5/3-(-1/3)}{5/2-1/4}=\frac89.
+\end{aligned}
+$$
 
-### 2.2 Ventajas de Newton
+El árbol queda desplegado en una tabla triangular. Los espacios vacíos no representan ceros: son entradas que no se necesitan.
 
-- **No hay sistema que resolver** → estable, igual que Lagrange.
-- **Incremental**: agregar un punto $(x_{n+1},y_{n+1})$ sólo agrega un
-  término $a_{n+1}\prod_{i=0}^{n}(x-x_i)$ — **los coeficientes anteriores
-  no cambian**, porque cada diferencia dividida $f[x_0,\dots,x_k]$ con
-  $k<n+1$ no depende de $x_{n+1}$. Esto resuelve **ambos** problemas de
-  Vandermonde a la vez (condicionamiento y no incrementalidad), a
-  diferencia de Lagrange, que sólo resuelve el primero.
-- **Evaluación eficiente**: la forma anidada se presta al **algoritmo de
-  Horner** (mencionado, no desarrollado en clase — está en los apuntes).
+$$
+\begin{array}{c|r|r|r}
+\text{nodo}&\text{orden 0}&\text{orden 1}&\text{orden 2}\\\hline
+x_0=1/4&-3/4&-1/3&8/9\\
+x_1=1&-1&5/3&\\
+x_2=5/2&3/2&&
+\end{array}
+$$
 
-> Con pocos puntos (3, por ejemplo) cualquiera de las tres formas sirve sin
-> problema; las diferencias importan a partir de decenas de nodos.
+Tomando la entrada que empieza en $x_0$ en cada orden se obtienen $a_0=-3/4$, $a_1=-1/3$ y $a_2=8/9$. Por tanto,
 
-## 3. Interpolando funciones desconocidas
+$$
+\boxed{p_2(x)=-\frac34-\frac13(x-1/4)+\frac89(x-1/4)(x-1).}
+$$
 
-Nuevo problema, mismo marco: existe una función $f$ que **no se conoce**,
-sólo se tienen muestras $(x_i, f(x_i))$. El polinomio interpolante $p_n$ es
-lo mejor que se puede construir sin conocer $f$. Pregunta central: **¿qué
-tan lejos está $p_n$ de $f$?**
+Es el mismo polinomio que antes. La clase muestra la regla para obtener los coeficientes, pero explícitamente no demuestra que las diferencias divididas produzcan siempre los coeficientes de Newton. Se menciona la posibilidad de una demostración inductiva; no se completa aquí.
 
-> Relevante, por ejemplo, para integrar $f$: si no se conoce $f$ pero sí se
-> puede interpolarla, se integra el polinomio (que sí se sabe integrar) en
-> su lugar — y hace falta saber cuánto error introduce esa sustitución.
+### 3.3 Pseudocódigo de la tabla
 
-### 3.1 La norma del supremo
+Para hacer inequívoco el recorrido del árbol, denotamos por $D[i,k]$ la diferencia de orden $k$ que empieza en $x_i$.
 
-Para medir la distancia entre funciones $\varphi$ en un intervalo $I$:
+```text
+para i = 0,...,n:
+    D[i,0] = y[i]
+para k = 1,...,n:
+    para i = 0,...,n-k:
+        D[i,k] = (D[i+1,k-1]-D[i,k-1])/(x[i+k]-x[i])
+para k = 0,...,n:
+    a[k] = D[0,k]
+devolver a
+```
 
-$$\|\varphi\|_{\infty,I} = \sup_{x\in I} |\varphi(x)|$$
+Primero se copian los datos porque las diferencias de orden cero no requieren cuentas. Luego se avanza por orden: toda la columna $k-1$ debe estar disponible antes de construir la columna $k$. En esa columna sólo existen $n-k+1$ entradas, de ahí el límite del bucle interior. La resta combina dos grupos consecutivos, y el denominador usa el primer y último nodo de su unión. Finalmente se lee la primera entrada de cada columna para obtener la expansión que comienza en $x_0$.
 
-(la convergencia en esta norma se llama **convergencia uniforme**). Si $I$
-es cerrado y acotado (compacto) y $\varphi$ es continua, por Weierstrass el
-supremo se alcanza: es un **máximo**. El curso trabaja siempre en esas
-condiciones, así que usa "máximo" en vez de "supremo" de ahí en más.
+Agregar un nodo al final exige calcular las nuevas diferencias que lo involucran; las anteriores no cambian. La estructura triangular permite ver qué partes del cálculo se conservan. No debe confundirse esta ampliación con mover un nodo ya usado: en ese caso cambian denominadores y diferencias existentes.
 
-**El objetivo**: acotar $\|f - p_n\|_{\infty,I}$.
+## 4. Qué significa aproximar una función
 
-## 4. El teorema de error de interpolación
+Hasta aquí los $y_i$ podían ser datos sueltos. Ahora se supone $y_i=f(x_i)$ para una función dada, y se pregunta qué tan lejos queda $p_n$ de $f$ entre los nodos. Pasar exactamente por las muestras no resuelve esa pregunta: ambas curvas pueden separarse en el interior.
 
-**Teorema (clave de estas semanas)**: sea $f\in C^{n+1}([a,b])$ (derivable
-$n+1$ veces con derivada $n+1$-ésima continua), $x_0,\dots,x_n\in[a,b]$
-distintos, $p_n$ el polinomio interpolante por esos puntos. Entonces, para
-todo $x\in[a,b]$, existe $\gamma_x\in(a,b)$ tal que
+La figura conceptual muestra una curva y su interpolante que coinciden en tres puntos. La distancia relevante es vertical, $|f(x)-p_n(x)|$, a igual abscisa; no la distancia geométrica más corta entre dos curvas. El audio no identifica la fórmula de la primera curva negra dibujada, por lo que no se le atribuye una función numérica específica.
 
-$$\boxed{f(x) - p_n(x) = \frac{f^{(n+1)}(\gamma_x)}{(n+1)!}\,\omega_n(x)}, \qquad \omega_n(x) := \prod_{i=0}^{n}(x-x_i)$$
+Para medir el peor error se define
 
-donde $\omega_n$ es el **polinomio nodal** (grado $n+1$, a pesar del
-subíndice $n$ — convención heredada de los apuntes). Notación: $e_n(x) :=
-f(x)-p_n(x)$ (nótese el cambio de signo respecto a la convención de "tengo
-menos quiero" usada en Sistemas Lineales — acá conviene al revés, sólo
-importa el valor absoluto al final).
+$$
+\|\varphi\|_{\infty,I}=\sup_{x\in I}|\varphi(x)|.
+$$
 
-### 4.1 Demostración
+El supremo permite hablar de una cota superior aunque no se alcance. En adelante las funciones serán continuas y $I=[a,b]$ será cerrado y acotado; por el teorema de Weierstrass el valor máximo existe y puede escribirse `max` en lugar de `sup`. Se menciona que otras aplicaciones usan otras normas, como la norma $L^2$ en problemas de Fourier, pero el análisis de esta clase se concentra en la norma infinito.
 
-Fijado $x\in[a,b]$: si $x$ coincide con algún nodo $x_i$, ambos lados de la
-fórmula son $0$ trivialmente, así que se asume $x\neq x_i$ para todo $i$
-(necesario además para que $\omega_n(x)\neq 0$ y la división tenga
-sentido).
+El objetivo será controlar $\|f-p_n\|_{\infty,I}$. Que este número tienda a cero significa **convergencia uniforme**: un único control sirve para todos los puntos del intervalo, no sólo para cada nodo por separado.
 
-**Función auxiliar**: se define, en la variable $t$ (con $x$ fijo),
+## 5. Teorema del error
 
-$$g(t) = e_n(t) - \frac{e_n(x)}{\omega_n(x)}\,\omega_n(t)$$
+Sea $f\in C^{n+1}([a,b])$, sean $x_0,\ldots,x_n$ nodos distintos de ese intervalo y sea $p_n$ su interpolante de grado a lo sumo $n$. Entonces para cada $x\in[a,b]$ existe $\gamma_x\in(a,b)$ tal que
 
-($e_n(x)/\omega_n(x)$ es una **constante**, ya que $x$ está fijo). Como
-$e_n = f-p_n$ es diferencia de una $C^{n+1}$ y un polinomio, $g$ también es
-$C^{n+1}$.
+$$
+\boxed{f(x)-p_n(x)=\frac{f^{(n+1)}(\gamma_x)}{(n+1)!}\prod_{j=0}^n(x-x_j).}
+$$
 
-**Raíces de $g$**: en cada nodo $x_i$, $e_n(x_i)=0$ (el polinomio
-interpola exactamente ahí) y $\omega_n(x_i)=0$, así que $g(x_i)=0$. Además
-$g(x) = e_n(x) - e_n(x) = 0$ (los $\omega_n$ se cancelan). Con $n+1$ nodos
-más el propio $x$: **$g$ tiene al menos $n+2$ raíces distintas** en $[a,b]$.
+La regularidad exige derivadas continuas hasta orden $n+1$. El punto $\gamma_x$ depende de $x$ y el teorema no entrega un procedimiento para hallarlo. La igualdad es exacta, pero todavía no es la cota uniforme buscada: será el paso intermedio para conseguirla.
 
-**Rolle, repetido**: $g$ es derivable ($C^{n+1}$), así que entre cada par
-de raíces consecutivas de $g$ hay, por el teorema de Rolle, una raíz de
-$g'$: **$g'$ tiene al menos $n+1$ raíces distintas**. Aplicando Rolle de
-nuevo a $g'$: $g''$ tiene al menos $n$ raíces. Repitiendo sucesivamente
-hasta la derivada $(n+1)$-ésima: **$g^{(n+1)}$ tiene al menos $1$ raíz** —
-llamada $\gamma_x \in (a,b)$ (abierto, porque Rolle siempre produce una
-raíz estrictamente entre las dos que la generan).
+Definimos el **error** y el **polinomio nodal** por
 
-**Evaluar $g^{(n+1)}$ en $\gamma_x$**: como $e_n = f-p_n$ y $p_n$ tiene
-grado $\leq n$, su derivada $(n+1)$-ésima es $0$; entonces
-$e_n^{(n+1)} = f^{(n+1)}$. El término constante $e_n(x)/\omega_n(x)$
-sobrevive la derivación sin cambiar. $\omega_n$ tiene grado exacto $n+1$
-con coeficiente principal $1$ (es un producto de $n+1$ factores
-$(t-x_i)$), así que $\omega_n^{(n+1)}(t) \equiv (n+1)!$ (constante). Por lo
-tanto:
+$$
+e_n(x)=f(x)-p_n(x),\qquad \omega_n(x)=\prod_{j=0}^n(x-x_j).
+$$
 
-$$0 = g^{(n+1)}(\gamma_x) = f^{(n+1)}(\gamma_x) - \frac{e_n(x)}{\omega_n(x)}\,(n+1)!$$
+El signo del error es el opuesto al usado antes para sistemas lineales. Al tomar valor absoluto no afecta el análisis. Aunque el subíndice sea $n$, $\omega_n$ tiene grado $n+1$ y coeficiente principal uno. Esta distinción es decisiva al derivarlo.
 
-Despejando $e_n(x)$ se obtiene exactamente la fórmula del teorema.
-$\blacksquare$
+## 6. Demostración mediante Rolle
 
-## 5. Corolario: cota práctica del error
+### 6.1 Fijar el punto y fabricar ceros
 
-Tomando valor absoluto en la fórmula del teorema y acotando
-$|f^{(n+1)}(\gamma_x)|$ por el máximo de $|f^{(n+1)}|$ en $[a,b]$ (ya que no
-se sabe dónde cae $\gamma_x$):
+Si $x$ es uno de los nodos, tanto $e_n(x)$ como $\omega_n(x)$ son cero y la fórmula ya vale. Para los demás puntos, $\omega_n(x)\ne0$. Se fija uno de ellos y se introduce una variable distinta, $t$:
 
-$$|f(x)-p_n(x)| \leq \frac{\|f^{(n+1)}\|_{\infty,[a,b]}}{(n+1)!}\,|\omega_n(x)|, \qquad \forall x\in[a,b]$$
+$$
+g(t)=e_n(t)-\frac{e_n(x)}{\omega_n(x)}\omega_n(t).
+$$
 
-Y como esto vale para todo $x$, se puede acotar también $\omega_n(x)$ por
-su norma del supremo y tomar máximo en ambos lados:
+La razón $e_n(x)/\omega_n(x)$ es una constante respecto de $t$. No hace falta conocerla numéricamente para razonar con ella. Como $f$ es $C^{n+1}$ y se le restan polinomios, $g$ también es $C^{n+1}$.
 
-$$\boxed{\|f-p_n\|_{\infty,[a,b]} \leq \frac{\|f^{(n+1)}\|_{\infty,[a,b]}}{(n+1)!}\,\|\omega_n\|_{\infty,[a,b]}}$$
+En cada nodo, $e_n(x_i)=0$ por interpolación y $\omega_n(x_i)=0$ por construcción. Así,
 
-> **Tres ingredientes en competencia**: qué tan grande es la derivada
-> $(n+1)$-ésima de $f$, el factorial $(n+1)!$ en el denominador (siempre
-> "ayuda", crece muy rápido), y qué tan grande es el polinomio nodal.
+$$
+g(x_i)=0-\frac{e_n(x)}{\omega_n(x)}\,0=0.
+$$
 
-## 6. ¿Más puntos siempre es mejor? Ejemplo con $\sin(x)\cos(x)$
+Hay además un cero deliberadamente creado en el punto fijo:
 
-No necesariamente: el factorial $(n+1)!$ compite contra el crecimiento de
-$\|f^{(n+1)}\|_\infty$ con $n$. Si las derivadas de $f$ no crecen mucho, el
-factorial gana y agregar puntos **siempre** mejora la aproximación. Si las
-derivadas crecen muy rápido, agregar puntos puede empeorar. *(La clase
-siguiente profundiza este último caso — el fenómeno de Runge.)*
+$$
+g(x)=e_n(x)-\frac{e_n(x)}{\omega_n(x)}\omega_n(x)=0.
+$$
 
-**Ejemplo con $f(x)=\sin(x)\cos(x)$ en $I=[0,1]$**: las derivadas
-sucesivas son combinaciones de $\sin$ y $\cos$ (acotados por $1$ en valor
-absoluto), así que $\|f^{(n+1)}\|_\infty \leq 2$ para todo $n$ (cota
-uniforme, no crece). Además, tomando nodos dentro de $[0,1]$, cada factor
-$|x-x_i|\leq 1$, así que $\|\omega_n\|_\infty \leq 1$
-**independientemente de cómo se elijan los nodos**. Entonces:
+Se han encontrado $n+2$ ceros distintos. Este es el motivo de la función auxiliar: agrega un cero a los que ya proporcionaba la interpolación.
 
-$$\|f-p_n\|_{\infty,[0,1]} \leq \frac{2^{n+1}}{(n+1)!} \xrightarrow[n\to\infty]{} 0$$
+### 6.2 Contar ceros de las derivadas
 
-**Verificación numérica**: con 11 puntos (equiespaciados), el error ronda
-$10^{-11}$. La cota teórica da $\sim 10^{-5}$ para grado 10 y $\sim
-10^{-14}$ para grado 20 — agregar puntos "hace pedazos" el error en esta
-función. *(Contraste explícito con la función de Runge de la clase
-siguiente, donde el mismo razonamiento falla.)*
+Ordenamos esos $n+2$ puntos. Entre cada par consecutivo, Rolle garantiza un cero de $g'$. Los intervalos abiertos son disjuntos, de modo que se obtienen al menos $n+1$ ceros distintos. Aplicando otra vez Rolle entre ceros consecutivos de $g'$, se obtienen al menos $n$ ceros de $g''$.
+
+El dibujo de ceros intercalados permite seguir la repetición sin perder la cuenta:
+
+$$
+\begin{array}{c|ccccc}
+\text{función}&g&g'&g''&\cdots&g^{(n+1)}\\\hline
+\text{ceros garantizados}&n+2&n+1&n&\cdots&1
+\end{array}
+$$
+
+La regularidad disponible permite repetir el argumento hasta ese orden. Llamamos $\gamma_x$ a uno de los ceros de $g^{(n+1)}$. Está en el interior del intervalo porque Rolle produce puntos estrictamente entre sus extremos. No necesitamos identificarlo.
+
+### 6.3 Derivar y despejar
+
+Al derivar $e_n=f-p_n$ un total de $n+1$ veces, el polinomio $p_n$ desaparece porque tiene grado a lo sumo $n$. Por eso $e_n^{(n+1)}=f^{(n+1)}$. Por otra parte,
+
+$$
+\omega_n(t)=t^{n+1}+\text{términos de grado menor},\qquad
+\omega_n^{(n+1)}(t)=(n+1)!.
+$$
+
+Cada derivación baja un factor sucesivo $n+1,n,\ldots,1$ del término principal; los demás términos desaparecen. La constante que multiplicaba a $\omega_n$ no se deriva. Evaluar en el cero encontrado da
+
+$$
+0=g^{(n+1)}(\gamma_x)
+=f^{(n+1)}(\gamma_x)-\frac{e_n(x)}{\omega_n(x)}(n+1)!.
+$$
+
+Pasando el segundo término al otro lado y multiplicando por $\omega_n(x)/(n+1)!$, se recupera exactamente la fórmula del teorema. La técnica importante es fabricar ceros y aplicar Rolle repetidamente; será reutilizada con modificaciones para otros tipos de interpolación.
+
+## 7. Cotas y efecto de agregar nodos
+
+Tomando valores absolutos en la igualdad y usando que $\gamma_x\in I$, se obtiene primero una cota que conserva la dependencia del punto:
+
+$$
+|e_n(x)|\le\frac{\|f^{(n+1)}\|_{\infty,I}}{(n+1)!}|\omega_n(x)|.
+$$
+
+Después se acota $|\omega_n(x)|$ por su máximo en $I$. El lado derecho ya no depende de $x$; como la desigualdad vale para todo punto, se puede tomar máximo también a la izquierda:
+
+$$
+\boxed{\|f-p_n\|_{\infty,I}\le
+\frac{\|f^{(n+1)}\|_{\infty,I}\,\|\omega_n\|_{\infty,I}}{(n+1)!}.}
+$$
+
+Son dos pasos distintos: reemplazar un factor variable por una cota uniforme y luego maximizar el error. Intervienen tres cantidades: el tamaño de la derivada, el polinomio nodal y el factorial. El factorial crece y ayuda, pero las derivadas también pueden crecer con el orden; aumentar el grado no garantiza por sí solo una mejor aproximación.
+
+El ejemplo final usa $f(x)=\sin x\cos x$ en $[0,1]$; la identificación queda también explícita en el repaso inicial de la clase 13. Se da la cota $\|f^{(n+1)}\|_{\infty,[0,1]}\le2^{n+1}$. El docente ilustra la primera derivada, $\cos^2x-\sin^2x$, acotando cada término por uno, pero no desarrolla la cuenta general de derivadas sucesivas.
+
+Para cualquier elección de nodos distintos en $[0,1]$, cada $|x-x_j|\le1$. Por tanto $|\omega_n(x)|\le1$ en todo el intervalo y también $\|\omega_n\|_\infty\le1$. Resulta
+
+$$
+\boxed{\|f-p_n\|_{\infty,[0,1]}\le\frac{2^{n+1}}{(n+1)!}\longrightarrow0.}
+$$
+
+Aquí sí se garantiza convergencia uniforme al aumentar el grado. La demostración no necesita equiespaciado; la demostración gráfica posterior sí utiliza nodos equiespaciados. Se comparan dos y cuatro puntos y luego más nodos. Para once puntos se comenta un error observado del orden de $10^{-11}$, mientras que la cota teórica es del orden de $10^{-5}$. Para grado veinte se menciona una cota del orden de $10^{-14}$. Una cota superior puede ser mucho mayor que el error efectivo sin ser incorrecta.
+
+La figura final reproduce la comparación de dos y cuatro nodos a partir de la función indicada; no inventa una serie de errores medidos por el programa proyectado. La próxima clase presenta una función para la cual aumentar el grado con nodos equiespaciados tiene un comportamiento muy diferente.

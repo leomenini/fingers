@@ -8,20 +8,25 @@
   \begin{tikzpicture}
     \begin{axis}[interpfig,
       xlabel={$x$}, ylabel={$y$},
-      xmin=-1.05, xmax=1.05, ymin=-0.05, ymax=1.05,
-      legend pos=north east,
+      xmin=-1.05, xmax=1.05, ymin=-0.05, ymax=1.12,
+      % el eje x va abajo (no centrado): rótulos en la punta de cada eje
+      xlabel style={at={(ticklabel* cs:1)}, anchor=west},
+      ylabel style={at={(ticklabel* cs:1)}, anchor=south},
+      % leyenda debajo del eje, fuera de la curva
+      legend style={at={(0.5,-0.2)}, anchor=north}, legend columns=2,
+      height=5.2cm,
     ]
       \addplot[figblue, line width=1.1pt, domain=-1:1, samples=200, forget plot]
         {1/(1+25*x^2)};
       \addlegendimage{figblue, line width=1.1pt}
-      \addlegendentry{$f(x)=\dfrac{1}{1+25x^2}$}
+      \addlegendentry{$f(x)=1/(1+25x^2)$}
 
       \addplot[figred, line width=1pt, mark=none]
         coordinates {
           (-1,0.038462) (-0.75,0.066390) (-0.5,0.137931) (-0.25,0.390244)
           (0,1) (0.25,0.390244) (0.5,0.137931) (0.75,0.066390) (1,0.038462)
         };
-      \addlegendentry{Interpolante lineal a trozos ($n=8$)}
+      \addlegendentry{lineal a trozos ($n=8$)}
 
       \addplot[only marks, mark=*, mark size=2pt, mark options={fill=figamber, draw=figblue}, forget plot]
         coordinates {

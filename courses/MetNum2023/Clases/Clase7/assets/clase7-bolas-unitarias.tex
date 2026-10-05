@@ -1,0 +1,15 @@
+\begin{figure}[H]\centering
+\begin{tikzpicture}[scale=1.8]
+\draw[figaxis] (-1.4,0)--(1.5,0) node[right] {$x_1$};
+\draw[figaxis] (0,-1.35)--(0,1.45) node[above] {$x_2$};
+\draw[figblue,thick] (1,0)--(0,1)--(-1,0)--(0,-1)--cycle;
+\draw[figred,thick] (0,0) circle (1);
+\draw[figamber,thick,dashed] (-1,-1) rectangle (1,1);
+\node[font=\small,anchor=west,text=figblue] at (1.7,0.65) {$p=1$: rombo};
+\node[font=\small,anchor=west,text=figred] at (1.7,0.15) {$p=2$: circunferencia};
+\node[font=\small,anchor=west,text=figamber] at (1.7,-0.35) {$p=\infty$: cuadrado};
+\node[below right,font=\small,fill=white,inner sep=1pt] at (1,0) {$1$};
+\node[above left,font=\small,fill=white,inner sep=1pt] at (0,1) {$1$};
+\end{tikzpicture}
+\caption{Fronteras de las bolas unitarias dibujadas en clase. Todas pasan por los puntos de los ejes con coordenada no nula igual a $\pm1$; sus interiores describen nociones diferentes de tamaño menor que uno.}
+\end{figure}

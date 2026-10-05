@@ -1,0 +1,11 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=11cm,height=6cm,axis lines=left,xmin=0,xmax=4.5,ymin=0,ymax=18,xlabel={$x$},ylabel={$x^\alpha$},xtick={0,1,2,3,4},ytick=\empty,clip=false]
+\addplot[fill=figblue!12,draw=figblue,const plot,forget plot] coordinates {(0,1)(1,4)(2,9)(3,16)(4,0)} \closedcycle;
+\addplot[figred,thick,domain=0:4.15,samples=80,forget plot]{x^2};
+\node[anchor=west,font=\small,text=figred] at (axis cs:2.6,7){$x^\alpha$};
+\end{axis}
+\end{tikzpicture}
+\caption{Comparación dibujada en clase: para una potencia creciente, los rectángulos de altura $i^\alpha$ sobre $[i-1,i]$ quedan encima de la curva. Trasladados una unidad a la derecha quedan debajo de ella. Se ilustra con $\alpha=2$ y cuatro intervalos; los valores son una elección gráfica para mostrar la desigualdad general.}
+\end{figure}

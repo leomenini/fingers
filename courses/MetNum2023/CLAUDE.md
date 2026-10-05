@@ -99,7 +99,50 @@ Numéricos esto significa, en particular:
 **Nivel de detalle:** expandir el contenido de cada header, no resumir al
 mínimo. Target orientativo heredado de los otros cursos del repo:
 2000–3200 palabras (`summary_words`), sin forzar el número — depende de la
-densidad de la clase.
+densidad de la clase. No recortar algoritmos, ejemplos ni desarrollos matriciales
+para entrar en ese rango; las ecuaciones también son contenido.
+
+
+### 2.1 Algoritmos y pseudocódigo explicados
+
+Cada algoritmo expuesto debe incluir entradas, salida e hipótesis; explicar la
+inicialización, el recorrido de índices, las actualizaciones y la terminación.
+Acompañar el pseudocódigo con prosa que explique qué hace cada paso, por qué y
+cómo se relaciona con las ecuaciones. Un bloque de código sin explicación no
+cumple el requisito. Incluir costo, redondeo, pivoteo y criterios de parada
+cuando la clase los desarrolle; no añadir demostraciones ni análisis externos.
+Las convenciones editoriales necesarias (índices o nombres) se declaran; si el
+audio no permite determinar una operación, señalar el límite en vez de inventarla.
+
+### 2.2 Desarrollo matricial obligatorio
+
+Las matrices desplegadas son contenido matemático, aunque no se almacenen como
+figuras. Reconstruir sistemas, productos, bloques, patrones de ceros, pivotes y
+estados intermedios cuando sostengan el razonamiento del docente. Una identidad
+compacta como $A=LU$ no reemplaza la construcción de los factores ni las
+operaciones entre filas que la clase haya explicado. Mostrar qué cambia de un
+paso al siguiente y conservar dimensiones e índices coherentes.
+
+Usar `pmatrix`, `bmatrix`, `array` y ecuaciones alineadas para el álgebra; TikZ
+cuando sea necesario señalar bloques, bandas o pivotes. El contenido matemático
+va también en `summary.md`; las figuras gráficas viven en LaTeX. Para desarrollos
+anchos, dividir por pasos o bloques antes que reducir la letra hasta hacerla
+ilegible. No confundir una matriz triangular con la exigencia de entradas no
+nulas en toda la región triangular: señalar sólo los ceros garantizados.
+
+Si faltan valores del pizarrón, conservar la estructura que el texto determine
+y declarar los datos irrecuperables. Si el docente anuncia que no hará una cuenta
+o demostración, registrar esa omisión sin resolverla por cuenta propia.
+
+### 2.3 Control de cobertura por clase
+
+Antes de redactar, leer ambas transcripciones completas y preparar un inventario
+de temas, algoritmos, desarrollos matriciales y momentos gráficos con timestamps.
+El inventario de trabajo puede vivir fuera del repo. Cada entrada debe aparecer
+en las notas o quedar acompañada de una limitación explícita de la fuente.
+No usar las notas de una corrida anterior como fuente ni como lista de cobertura.
+La cantidad de figuras la determina la clase, no una cuota heredada del YAML.
+Al terminar, actualizar `diagrams_pending` según lo que realmente quede pendiente.
 
 ---
 
@@ -128,7 +171,7 @@ densidad de la clase.
 - Mismos `\boxed{...}` y tablas `booktabs` que el resumen.
 - **Pseudocódigo**: cuando una clase describa un algoritmo explícito
   (factorización LU, sustitución hacia adelante/atrás, evaluación de
-  Newton/Lagrange), usar el bloque `algorithm`+`algorithmic` de §3.2 — **no**
+  Newton/Lagrange), usar el bloque `algorithm2e` de §3.2 — **no**
   cargarlo en clases que no lo necesitan (mismo criterio que el bloque de
   diagramas §6.3: se agrega recién cuando la clase lo usa por primera vez).
 
@@ -478,3 +521,20 @@ Debe dar `0`. Además de compilar, **leer el PDF renderizado** antes de dar
 una clase por terminada — es el paso que en `courses/ElecMag2024/` encontró
 colisiones de etiquetas en figuras que sólo se ven en el render, no en el
 código fuente.
+
+
+### 7.1 Criterios de aceptación del contenido
+
+Además del control de compilación, cotejar el inventario de cobertura con el
+resumen y el LaTeX. Revisar entradas y salidas de cada algoritmo, índices,
+dimensiones, operaciones entre filas y ejemplos numéricos recuperables. Leer
+**todas** las páginas del PDF: matrices sin columnas cortadas, letra legible,
+pseudocódigo y explicaciones sin cortes confusos, figuras coherentes con el texto.
+Confirmar el éxito del compilador además del conteo de `Overfull`: un compilador
+que abortó no constituye una verificación válida. Parsear YAML y validar tipos,
+enums y conteos reales. Todo contenido generado conserva estado `draft` y
+`needs-review`; la revisión técnica no sustituye la revisión académica humana.
+
+En una evaluación a ciegas, `llm.model` queda en `""` y se informa el modelo
+fuera del repo, conforme a `AGENTS.md`. No se modifica la procedencia ni las
+estadísticas del extractor.

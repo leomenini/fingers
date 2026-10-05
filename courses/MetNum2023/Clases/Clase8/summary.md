@@ -1,258 +1,291 @@
-# Resumen Clase 8 — Número de Condición
+# Resumen Clase 8 — Número de condición y sensibilidad de los sistemas lineales
 
 ## Índice
 
-1. [Motivación: un sistema que engaña al residuo](#1-motivación-un-sistema-que-engaña-al-residuo)
-   - 1.1 [Interpretación geométrica: rectas casi paralelas](#11-interpretación-geométrica-rectas-casi-paralelas)
-2. [De la relación residuo–error al número de condición](#2-de-la-relación-residuo–error-al-número-de-condición)
-   - 2.1 [Definición](#21-definición)
-3. [Por qué no alcanza con el determinante](#3-por-qué-no-alcanza-con-el-determinante)
-4. [Caracterización geométrica: estiramiento máximo sobre contracción mínima](#4-caracterización-geométrica-estiramiento-máximo-sobre-contracción-mínima)
-   - 4.1 [Costo de calcularlo](#41-costo-de-calcularlo)
-5. [Análisis de perturbaciones](#5-análisis-de-perturbaciones)
-   - 5.1 [Perturbación en el lado derecho $b$](#51-perturbación-en-el-lado-derecho-b)
-   - 5.2 [Perturbación en la matriz $A$](#52-perturbación-en-la-matriz-a)
-6. [El teorema de Wilkinson](#6-el-teorema-de-wilkinson)
-   - 6.1 [Consecuencia: error relativo controlado por el número de condición](#61-consecuencia-error-relativo-controlado-por-el-número-de-condición)
-   - 6.2 [El mensaje final: el residuo siempre es chico, el error no siempre](#62-el-mensaje-final-el-residuo-siempre-es-chico-el-error-no-siempre)
-
----
-
-## 1. Motivación: un sistema que engaña al residuo
-
-Retomando el cierre de la Clase 7 (¿residuo chico implica error chico?), se
-trabaja un ejemplo con una computadora hipotética de **tres cifras
-significativas**, resolviendo $Ax=b$ con eliminación gaussiana **con
-pivoteo parcial** (ya aplicando la lección de la Clase 6).
-
-La solución computada es $\bar{x} = (-0{,}443,\ 1)$. El **residuo**
-calculado es del orden de $5{,}41\times 10^{-4}$ en norma infinito — un
-número tan chico como la propia precisión de la máquina. Todo parece
-indicar que $\bar{x}$ es una buena aproximación.
+1. [Un residuo pequeño y un error grande](#1-un-residuo-pequeno-y-un-error-grande)
+2. [Del residuo absoluto al error relativo](#2-del-residuo-absoluto-al-error-relativo)
+3. [Qué mide el número de condición](#3-que-mide-el-numero-de-condicion)
+4. [Perturbaciones del lado derecho](#4-perturbaciones-del-lado-derecho)
+5. [Perturbaciones de la matriz](#5-perturbaciones-de-la-matriz)
+6. [Interpretación del resultado de Wilkinson](#6-interpretacion-del-resultado-de-wilkinson)
 
-Sin embargo, la solución exacta (calculada a mano por un compañero) es
-$x^\star = (1,-1)$. El **error** en norma infinito es $\|\bar{x}-x^\star\|_\infty
-\approx 2{,}2$ — enorme, del orden de la magnitud misma de la solución.
+## 1. Un residuo pequeño y un error grande
 
-> **Se hizo todo bien** (eliminación gaussiana con pivoteo parcial, la mejor
-> herramienta disponible) y aun así el resultado es inútil. La pregunta es
-> quién tiene la culpa.
+### 1.1 La pregunta que quedó abierta
 
-### 1.1 Interpretación geométrica: rectas casi paralelas
+Se considera $A\mathbf x=\mathbf b$ con $A$ invertible, una aproximación computada $\overline{\mathbf x}$, el error $\mathbf e=\overline{\mathbf x}-\mathbf x$ y el residuo $\mathbf r=A\overline{\mathbf x}-\mathbf b$. La identidad $\mathbf r=A\mathbf e$ implica que error y residuo se anulan simultáneamente en aritmética exacta. No implica que sus normas sean simultáneamente pequeñas.
 
-Un sistema $2\times 2$ es la intersección de dos rectas en el plano.
-Graficando el sistema, las dos rectas resultan **casi paralelas**. El punto
-que se calculó está muy cerca de ambas rectas (de ahí el residuo chico),
-pero cuando dos rectas casi paralelas están muy próximas entre sí, **estar
-cerca de ambas no implica estar cerca de su punto de intersección**.
+El residuo se calcula a partir de los datos y la salida del programa. El error exige conocer la solución exacta. Por eso interesa saber qué se puede concluir sobre el error a partir de un residuo menor que una tolerancia. Para responder se usarán las normas operador, su compatibilidad con la norma vectorial y la submultiplicatividad, introducidas en la clase anterior.
 
-> **La culpa es del sistema, no de la computadora ni del algoritmo.** Si en
-> cambio las rectas fueran muy distintas en dirección (en el caso extremo,
-> ortogonales), estar cerca de ambas sí obligaría a estar cerca de la
-> intersección: ese sería un sistema "bueno". Cuanto más cerca esté un
-> sistema de ser linealmente dependiente, más peligroso es resolverlo
-> numéricamente.
-
-## 2. De la relación residuo–error al número de condición
+### 1.2 El ejemplo de tres cifras
 
-De $r = Ae$ (Clase 7) y, usando compatibilidad de la norma operador con
-$r=Ae$ y con $e=A^{-1}r$ (viable porque $A$ es invertible):
-
-$$\|r\| \leq \|A\|\,\|e\|, \qquad \|e\| \leq \|A^{-1}\|\,\|r\|$$
-
-Para obtener una noción de **error relativo** (dividir por el tamaño de la
-solución, ya que no se puede dividir por un vector), se repite el mismo
-argumento con $b = Ax^\star$:
-
-$$\|b\| \leq \|A\|\,\|x^\star\|, \qquad \|x^\star\| \leq \|A^{-1}\|\,\|b\|$$
+El docente presenta un sistema de dos ecuaciones, usa tres cifras significativas y aplica eliminación gaussiana con pivoteo parcial. No desarrolla sus cuentas en el pizarrón: remite al ejemplo 2.5.1 de sus apuntes. Los vectores anunciados son
 
-Combinando ambos pares de desigualdades (usando el primero para acotar
-$\|e\|$ y el segundo — invertido — para acotar $1/\|x^\star\|$):
+$$
+\mathbf b=\begin{pmatrix}0.217\\0.254\end{pmatrix},\qquad
+\overline{\mathbf x}=\begin{pmatrix}-0.443\\1\end{pmatrix},\qquad
+\mathbf x=\begin{pmatrix}1\\-1\end{pmatrix}.
+$$
 
-$$\boxed{\frac{1}{\kappa(A)}\cdot\frac{\|r\|}{\|b\|} \;\leq\; \frac{\|e\|}{\|x^\star\|} \;\leq\; \kappa(A)\cdot\frac{\|r\|}{\|b\|}}$$
+La explicación explícita de las potencias de diez da
 
-donde aparece, multiplicando, el factor $\kappa(A) = \|A\|\,\|A^{-1}\|$.
+$$
+\mathbf r\approx\begin{pmatrix}4.60\cdot10^{-4}\\-5.41\cdot10^{-4}\end{pmatrix},
+\qquad \|\mathbf r\|_\infty\approx5.41\cdot10^{-4}.
+$$
 
-### 2.1 Definición
+Sin embargo,
 
-$$\kappa(A) := \|A\|\,\|A^{-1}\|$$
+$$
+\mathbf e=\begin{pmatrix}-1.443\\2\end{pmatrix},\qquad
+\boxed{\|\mathbf e\|_\infty=2}.
+$$
 
-se llama el **número de condición** de $A$ (respecto de la norma matricial
-elegida — siempre una norma operador, inducida por una norma vectorial, ya
-que es donde valen compatibilidad y submultiplicatividad).
+El residuo parece pequeño para una computadora de tres cifras, pero la solución es mala. Esta vez no basta culpar a la falta de pivoteo: ya se aplicó la estrategia aprendida. El sistema mismo es sensible.
 
-> **Interpretación directa**: si $\kappa(A)$ es moderado (p. ej. $4$),
-> residuo relativo chico $\iff$ error relativo chico — son casi
-> equivalentes. Si $\kappa(A)$ es enorme (p. ej. $10^9$), un residuo
-> relativo chico **no dice nada** sobre el error relativo.
+> La transcripción no enumera todas las entradas de $A$ y presenta una vacilación al leer los ceros del residuo. Se conserva la aclaración posterior en potencias de diez y su norma anunciada. No se reconstruye una matriz numérica a partir de datos redondeados ni se atribuyen cuentas adicionales al docente.
 
-> **Depende de la norma elegida, pero no del orden de magnitud**: para una
-> matriz razonable, $\kappa$ calculado con distintas normas ($L^1$, $L^2$,
-> $L^\infty$) da resultados del mismo orden de magnitud. En Octave: `cond(A,
-> p)` (exacto, caro — requiere invertir $A$); `condest(A)` (estimación
-> barata asociada a la norma $L^1$). Sin especificar norma, `cond(A)` usa
-> $L^2$.
->
-> Para la matriz mala del ejemplo de §1: $\kappa_1 \approx 2{,}6\times
-> 10^6$, $\kappa_2 \approx 2{,}19\times 10^6$, $\kappa_\infty \approx
-> 2{,}6\times 10^6$ — todos del orden $10^6$. Con un residuo relativo del
-> orden $10^{-4}$, el error relativo queda acotado sólo hasta el orden
-> $10^{6}\times 10^{-4} = 10^{2}$: completamente inútil, consistente con lo
-> observado.
+### 1.3 Rectas casi paralelas
 
-## 3. Por qué no alcanza con el determinante
+Un sistema de dos ecuaciones representa la intersección de dos rectas. En el gráfico mostrado, las rectas están tan próximas que hace falta ampliar mucho para distinguirlas. Un punto puede estar cerca de ambas rectas y, al mismo tiempo, lejos de su intersección. El residuo evalúa cuánto se incumplen las ecuaciones; el error mide la diferencia respecto del punto solución.
 
-Pregunta natural: ¿no eran las matrices "malas" las de determinante chico
-(cercano a singular)? **No es así.**
+En contraste, si las rectas se cruzan con direcciones muy distintas, estar cerca de ambas obliga a estar cerca de su intersección. El docente dibuja un caso extremo aproximadamente ortogonal. Esta comparación motiva la sensibilidad, sin establecer una identificación literal entre residuo y distancia geométrica: los coeficientes de cada ecuación intervienen en su escala.
 
-**Contraejemplo**: $A = \alpha I$ con $\alpha$ muy chico (p. ej.
-$\alpha=10^{-5}$ en $3\times 3$). $\det(A) = \alpha^3 = 10^{-15}$ —
-diminuto. Sin embargo, $\kappa(A) = 1$ (el mínimo posible): desde el punto
-de vista computacional, resolver un sistema con esta matriz es trivial y
-perfectamente estable, aunque desde Álgebra Lineal I parecería "casi
-singular".
+La proximidad a una dependencia lineal resulta peligrosa, pero el tamaño del determinante no será una medida adecuada para cuantificar el problema. Se necesita una cantidad construida con normas.
 
-> **El determinante no mide lo que importa aquí.** Lo que importa es cuánto
-> estira la matriz en unas direcciones comparado con cuánto contrae en
-> otras (§4) — no qué tan chico es el producto de sus valores propios.
+## 2. Del residuo absoluto al error relativo
 
-## 4. Caracterización geométrica: estiramiento máximo sobre contracción mínima
+### 2.1 Dos cotas absolutas
 
-$$\kappa(A) = \|A\| \cdot \|A^{-1}\| = \frac{\displaystyle\max_{x\neq 0}\dfrac{\|Ax\|}{\|x\|}}{\displaystyle\min_{x\neq 0}\dfrac{\|Ax\|}{\|x\|}}$$
+Se fija una norma vectorial y se usa siempre su norma matricial inducida. Por brevedad se escribe el mismo símbolo $\|\cdot\|$; el objeto dentro determina cuál de las dos se aplica. La compatibilidad da
 
-**Demostración** de que $\|A^{-1}\| = 1/\min_{x\neq 0}\|Ax\|/\|x\|$:
+$$
+\|\mathbf r\|=\|A\mathbf e\|\le\|A\|\|\mathbf e\|.
+$$
 
-Usando que $1/\min(f) = \max(1/f)$ (el mínimo de $f$ se alcanza donde el
-máximo de $1/f$ se alcanza, en el mismo punto):
+Como $A$ es invertible, también $\mathbf e=A^{-1}\mathbf r$, de donde
 
-$$\frac{1}{\min\limits_{x\neq0} \|Ax\|/\|x\|} = \max_{x\neq0} \frac{\|x\|}{\|Ax\|}$$
+$$
+\|\mathbf e\|\le\|A^{-1}\|\|\mathbf r\|.
+$$
 
-Como $A$ es invertible, el cambio de variable $y=Ax$ (biyectivo sobre
-$\mathbb{R}^n\setminus\{0\}$) da $x = A^{-1}y$, y el máximo recorre todos
-los $y\neq 0$:
+Juntas producen
 
-$$\max_{y\neq0} \frac{\|A^{-1}y\|}{\|y\|} = \|A^{-1}\|$$
+$$
+\frac{\|\mathbf r\|}{\|A\|}
+\le\|\mathbf e\|\le\|A^{-1}\|\|\mathbf r\|.
+$$
 
-por definición de norma operador. $\blacksquare$
+Es una relación entre tamaños absolutos. La norma de la inversa no es el inverso de la norma: el exponente $-1$ permanece dentro de las barras. Sacarlo destruiría precisamente la información sobre direcciones que se quiere medir.
 
-**Lectura geométrica**: agarrando la bola unitaria de $\mathbb{R}^n$ y
-mirando $Ax$ para todo $x$ en esa bola, $\kappa(A)$ compara la dirección que
-$A$ más estira contra la que más contrae — sin importar el signo del
-estiramiento, sólo su magnitud.
+### 2.2 Normalizar sin dividir por vectores
 
-> **Corolario**: para cualquier norma operador, $\kappa(\alpha I) = 1$
-> (estira/contrae igual en toda dirección: máximo y mínimo coinciden en
-> $|\alpha|$).
->
-> **Ejemplo con estiramiento anisótropo**: $A = \begin{pmatrix}\alpha & 0 \\
-> 0 & 1/\alpha\end{pmatrix}$ con $\alpha=1000$ estira por $1000$ en una
-> dirección y contrae por $1000$ en la otra: $\kappa(A) = 10^6$.
->
-> **Si $A$ es singular**, el mínimo estiramiento es $0$ (hay una dirección
-> que $A$ manda al vector nulo), así que formalmente $\kappa(A) = \infty$.
+Un error relativo vectorial se mide dividiendo por $\|\mathbf x\|$, no por el vector $\mathbf x$. Para los cocientes siguientes se supone $\mathbf b\ne0$, equivalente aquí a $\mathbf x\ne0$. Se repite el argumento anterior usando $\mathbf b=A\mathbf x$:
 
-### 4.1 Costo de calcularlo
+$$
+\frac{\|\mathbf b\|}{\|A\|}
+\le\|\mathbf x\|\le\|A^{-1}\|\|\mathbf b\|.
+$$
 
-Esta caracterización, aunque conceptualmente más simple, exige recorrer
-**todas las direcciones posibles** — es cara, salvo que se conozcan de
-antemano los valores propios (o valores singulares) de $A$. Por eso, en la
-práctica, se usan estimaciones baratas como `condest`.
+Tomar recíprocos invierte las desigualdades, porque las cantidades son positivas:
 
-## 5. Análisis de perturbaciones
+$$
+\frac{1}{\|A^{-1}\|\|\mathbf b\|}
+\le\frac{1}{\|\mathbf x\|}
+\le\frac{\|A\|}{\|\mathbf b\|}.
+$$
 
-El número de condición cumple, para sistemas lineales, el mismo rol de
-**sensibilidad** que cumplía el número de condición de una función:
-cuantifica cómo un error en la entrada se propaga a la salida.
+Se combina la cota inferior del error con la inferior del recíproco, y las dos superiores entre sí. Aparece naturalmente el **número de condición**:
 
-### 5.1 Perturbación en el lado derecho $b$
+$$
+\boxed{\kappa(A)=\|A\|\|A^{-1}\|},
+$$
 
-Si $b$ tiene error de medición: se resuelve $Ax=b+\delta b$ en vez de
-$Ax=b$; la solución cambia a $x+\delta x$. Restando ambos sistemas y usando
-linealidad: $A\,\delta x = \delta b$. Repitiendo el mismo argumento que en
-§2 (compatibilidad en ambas direcciones, normalizando por $\|b\|$ y
-$\|x\|$ vía $b=Ax$):
+$$
+\boxed{
+\frac1{\kappa(A)}\frac{\|\mathbf r\|}{\|\mathbf b\|}
+\le\frac{\|\mathbf e\|}{\|\mathbf x\|}
+\le\kappa(A)\frac{\|\mathbf r\|}{\|\mathbf b\|}}.
+$$
 
-$$\boxed{\frac{\|\delta x\|}{\|x\|} \leq \kappa(A)\cdot\frac{\|\delta b\|}{\|b\|}}$$
+El número depende de la norma. Aunque el producto se puede definir para otras normas matriciales, estas desigualdades fueron deducidas con una norma inducida compatible con la norma de los vectores.
 
-> Si $A$ está **bien condicionada**, un cambio chico en $b$ produce un
-> cambio chico en $x$. Si está **mal condicionada** (como el ejemplo de las
-> rectas casi paralelas), un cambio chiquito en $b$ puede mandar la
-> solución "al demonio".
+Si $\kappa(A)$ fuera 4, error y residuo normalizados serían comparables dentro de ese factor. Si fuera de miles de millones, un residuo pequeño podría dar una cota enorme para el error. Una cota superior grande no prueba que todo error sea grande: significa que el residuo por sí solo deja de garantizar precisión.
 
-### 5.2 Perturbación en la matriz $A$
+## 3. Qué mide el número de condición
 
-Ahora el error está en $A$: se resuelve $(A+\delta A)(x+\delta x) = b$ en
-vez de $Ax=b$. Restando y usando linealidad:
+### 3.1 Cálculo y determinante
 
-$$A\,\delta x + \delta A\,(x+\delta x) = 0 \implies \delta x = -A^{-1}\,\delta A\,(x+\delta x)$$
+En la demostración con Octave se menciona `cond(A,p)` para distintas normas, y `condest(A)` como estimador del número de condición asociado a la norma uno. Según la explicación de clase, `cond(A)` usa la norma dos. Se señala que calcular una condición puede ser caro y que estimarla suele bastar para conocer su orden. No se explica el algoritmo interno de estas funciones.
 
-Tomando norma y usando compatibilidad **y** submultiplicatividad
-(el producto $A^{-1}\,\delta A$ es un producto de matrices):
+Para la matriz del ejemplo se anuncian aproximadamente $2.6\cdot10^6$ en normas uno e infinito y $2.19\cdot10^6$ en norma dos. El estimador da un valor del mismo orden. Lo relevante es la magnitud $10^6$, no la diferencia entre 2.6 y 2.19. Las observaciones de comparabilidad entre normas se hacen para tamaños razonables; no se extrae una cota uniforme en la dimensión.
 
-$$\|\delta x\| \leq \|A^{-1}\|\,\|\delta A\|\,\|x+\delta x\|$$
+Un contraejemplo al criterio del determinante es un múltiplo pequeño de la identidad. El ejemplo corresponde a
 
-Multiplicando y dividiendo por $\|A\|$ para que aparezca la perturbación
-normalizada de $A$:
+$$
+A=10^{-5}I_3=
+\begin{pmatrix}10^{-5}&0&0\\0&10^{-5}&0\\0&0&10^{-5}\end{pmatrix},
+\qquad \det A=10^{-15}.
+$$
 
-$$\boxed{\frac{\|\delta x\|}{\|x+\delta x\|} \leq \kappa(A)\cdot\frac{\|\delta A\|}{\|A\|}}$$
+Aun con ese determinante, su número de condición inducido es uno. La matriz no es singular: un determinante pequeño y un determinante nulo son afirmaciones diferentes. La escala absoluta de los coeficientes no decide por sí sola la sensibilidad relativa.
 
-**Mismo mensaje**: el error relativo en la salida se controla con el número
-de condición de $A$ y el tamaño relativo de la perturbación.
+### 3.2 Cociente entre mayor y menor amplificación
 
-## 6. El teorema de Wilkinson
+Para $A$ invertible se prueba la caracterización
 
-*(Enunciado y aceptado sin demostración — la clase lo presenta como un
-resultado clásico de los años 60, de James H. Wilkinson, uno de los
-pioneros del álgebra lineal numérica.)*
+$$
+\boxed{\kappa(A)=
+\frac{\displaystyle\max_{\mathbf x\ne0}\frac{\|A\mathbf x\|}{\|\mathbf x\|}}
+{\displaystyle\min_{\mathbf x\ne0}\frac{\|A\mathbf x\|}{\|\mathbf x\|}}}.
+$$
 
-**Teorema (Wilkinson)**: al resolver $Ax=b$ con eliminación gaussiana con
-pivoteo parcial en una computadora, la solución computada $\bar{x}$ es la
-solución **exacta** (en aritmética exacta) de un sistema **perturbado**:
+El numerador ya es $\|A\|$ por definición. Falta identificar el inverso del mínimo con $\|A^{-1}\|$. Para cantidades positivas, el recíproco del mínimo es el máximo de los recíprocos. Por tanto
 
-$$(A+E)\,\bar{x} = b$$
+$$
+\left(\min_{\mathbf x\ne0}\frac{\|A\mathbf x\|}{\|\mathbf x\|}\right)^{-1}
+=\max_{\mathbf x\ne0}\frac{\|\mathbf x\|}{\|A\mathbf x\|}.
+$$
 
-donde los elementos de la matriz de perturbación $E$ son, en magnitud, del
-orden del **error de representación** de los coeficientes de $A$: en
-alguna norma matricial,
+Se hace el cambio $\mathbf y=A\mathbf x$. La invertibilidad asegura que los vectores no nulos recorren exactamente los vectores no nulos, y $\mathbf x=A^{-1}\mathbf y$. Así,
 
-$$\|E\| \lesssim (\text{factor del orden de } 10)\cdot \varepsilon_{\text{máq}} \cdot \|A\|$$
+$$
+\max_{\mathbf x\ne0}\frac{\|\mathbf x\|}{\|A\mathbf x\|}
+=\max_{\mathbf y\ne0}\frac{\|A^{-1}\mathbf y\|}{\|\mathbf y\|}
+=\|A^{-1}\|.
+$$
 
-($\varepsilon_{\text{máq}} \approx 10^{-16}$ en doble precisión.)
+Son igualdades, no estimaciones por compatibilidad. El cambio de variable conserva todo el dominio del máximo; esa es la razón por la que se obtiene la caracterización exacta.
 
-### 6.1 Consecuencia: error relativo controlado por el número de condición
+Se puede pensar equivalentemente en vectores unitarios: se aplica $A$ a todas las direcciones y se compara la mayor longitud de salida con la menor. Que una dirección invierta su sentido no importa, porque se miden normas. Los vectores que producen los dos extremos pueden ser distintos.
 
-Identificando $E$ con $\delta A$ y $\bar{x}$ con $x+\delta x$ en la fórmula
-de §5.2:
+### 3.3 Dos escalas muy diferentes
 
-$$\frac{\|\delta x\|}{\|\bar{x}\|} \leq \kappa(A)\cdot\frac{\|E\|}{\|A\|} \lesssim \kappa(A)\cdot(\text{factor}\sim10)\cdot\varepsilon_{\text{máq}}$$
+Para $A=\alpha I$, con $\alpha\ne0$, toda dirección se amplifica por $|\alpha|$. El máximo y el mínimo coinciden y $\kappa(\alpha I)=1$. La observación computacional presupone que el número es representable en la máquina.
 
-$$\boxed{\text{Si } \kappa(A) \text{ no es muy grande, eliminación gaussiana con pivoteo parcial da errores relativos chicos.}}$$
+En cambio, el ejemplo diagonal
 
-Por ejemplo, con $\kappa(A)\sim 20$ y factor $\sim 10$, el error relativo
-esperado es del orden de $\varepsilon_{\text{máq}} \times 200 \sim
-10^{-14}$ — excelente.
+$$
+A=\begin{pmatrix}\alpha&0\\0&1/\alpha\end{pmatrix},\qquad \alpha=1000
+$$
 
-### 6.2 El mensaje final: el residuo siempre es chico, el error no siempre
+estira una dirección por mil y contrae la otra por mil. En las normas usuales consideradas, el cociente es $1000/(1/1000)=10^6$. La dificultad está en la diferencia entre direcciones, no en que todas sean grandes o pequeñas simultáneamente.
 
-Un resultado adicional, y el cierre de la clase: **incluso si $\kappa(A)$ es
-grande**, la eliminación gaussiana con pivoteo parcial produce siempre
-**residuos relativos chicos**, independientemente del condicionamiento.
+Si una matriz es singular, hay una dirección no nula enviada a cero; el mínimo de amplificación se anula. Esto motiva asignar condición infinita en el caso singular, aunque la definición mediante $A^{-1}$ ya no sea aplicable. La clase no desarrolla una fórmula general basada sólo en los valores propios de una matriz arbitraria.
 
-*Derivación*: $r = A\bar{x}-b$. Usando $A\bar{x}-b = -E\bar{x}$ (de la
-ecuación de Wilkinson, $(A+E)\bar x = b \Rightarrow A\bar x - b = -E\bar
-x$):
+## 4. Perturbaciones del lado derecho
 
-$$\frac{\|r\|}{\|A\|\,\|\bar{x}\|} = \frac{\|{-E\bar{x}}\|}{\|A\|\,\|\bar{x}\|} \leq \frac{\|E\|}{\|A\|} \lesssim (\text{factor}\sim10)\cdot\varepsilon_{\text{máq}}$$
+Se analiza ahora un error de medición, sin computadora ni redondeo. La matriz $A$ es exacta, pero el dato pasa de $\mathbf b$ a $\mathbf b+\delta\mathbf b$:
 
-$$\boxed{\text{El residuo relativo de la eliminación gaussiana con pivoteo parcial es siempre del orden de } \varepsilon_{\text{máq}}\text{, sin importar } \kappa(A).}$$
+$$
+\begin{aligned}
+A\mathbf x&=\mathbf b,\\
+A(\mathbf x+\delta\mathbf x)&=\mathbf b+\delta\mathbf b.
+\end{aligned}
+$$
 
-> **Mensaje final del curso sobre esta unidad**: el residuo relativo es
-> \emph{siempre} pequeño con eliminación gaussiana con pivoteo parcial —
-> eso está garantizado. Si esa pequeñez del residuo se traduce en un error
-> pequeño **depende exclusivamente del número de condición de la matriz**,
-> algo que queda **fuera del control del algoritmo**. Un residuo chico no
-> es evidencia de nada si $\kappa(A)$ es grande.
+Restar las ecuaciones cancela $A\mathbf x$ y $\mathbf b$:
 
-*Con esto se cierra la unidad de Sistemas Lineales que arrancó en la Clase
-5. El curso avanza a partir de la clase siguiente hacia Interpolación
-(Clase 11 en este lote).*
+$$
+A\delta\mathbf x=\delta\mathbf b,\qquad
+\delta\mathbf x=A^{-1}\delta\mathbf b.
+$$
+
+Es la misma estructura que relacionaba error y residuo. La compatibilidad da $\|\delta\mathbf b\|\le\|A\|\|\delta\mathbf x\|$ y $\|\delta\mathbf x\|\le\|A^{-1}\|\|\delta\mathbf b\|$. Al normalizar con las cotas derivadas de $A\mathbf x=\mathbf b$:
+
+$$
+\frac1{\kappa(A)}\frac{\|\delta\mathbf b\|}{\|\mathbf b\|}
+\le\frac{\|\delta\mathbf x\|}{\|\mathbf x\|}
+\le\kappa(A)\frac{\|\delta\mathbf b\|}{\|\mathbf b\|}.
+$$
+
+El número de condición mide sensibilidad de entrada a salida. Si es moderado, un pequeño cambio relativo en los datos garantiza un pequeño cambio relativo en la solución. Si es grande, la garantía se debilita. En el dibujo de rectas casi paralelas, cambiar ligeramente el término independiente desplaza mucho su intersección; con direcciones bien separadas, ese efecto es mucho menor.
+
+## 5. Perturbaciones de la matriz
+
+Ahora el lado derecho permanece fijo y cambian los coeficientes:
+
+$$
+A\mathbf x=\mathbf b,\qquad
+(A+\delta A)(\mathbf x+\delta\mathbf x)=\mathbf b.
+$$
+
+Se considera una solución del sistema perturbado. Al expandir y restar aparece un término que no debe omitirse:
+
+$$
+A\delta\mathbf x+\delta A(\mathbf x+\delta\mathbf x)=0.
+$$
+
+Por la invertibilidad de la matriz original,
+
+$$
+\delta\mathbf x=-A^{-1}\delta A(\mathbf x+\delta\mathbf x).
+$$
+
+Aplicar compatibilidad al producto matriz-vector y submultiplicatividad al producto de matrices da
+
+$$
+\|\delta\mathbf x\|\le\|A^{-1}\|\|\delta A\|\,
+\|\mathbf x+\delta\mathbf x\|.
+$$
+
+Se divide por la norma de la solución perturbada, suponiéndola no nula, y se multiplica y divide por $\|A\|$:
+
+$$
+\boxed{\frac{\|\delta\mathbf x\|}{\|\mathbf x+\delta\mathbf x\|}
+\le\kappa(A)\frac{\|\delta A\|}{\|A\|}}.
+$$
+
+El denominador se corrige explícitamente durante la clase: es $\|\mathbf x+\delta\mathbf x\|$, no $\|\mathbf x\|$. El docente comenta que deberían parecerse cuando el cambio es pequeño, pero eso no autoriza a identificarlos en la desigualdad. Tampoco se demuestra aquí una condición de invertibilidad de $A+\delta A$ ni otra cota con denominador modificado.
+
+## 6. Interpretación del resultado de Wilkinson
+
+### 6.1 Resolver exactamente un problema perturbado
+
+El docente atribuye a Wilkinson un resultado sobre la eliminación gaussiana con pivoteo parcial. La solución calculada se interpreta como solución exacta de un sistema cuya matriz ha cambiado:
+
+$$
+\boxed{(A+E)\overline{\mathbf x}=\mathbf b}.
+$$
+
+La matriz $E$ representa la perturbación. La clase describe sus entradas como del orden de los errores de representación de los coeficientes y resume esa idea, esquemáticamente, mediante
+
+$$
+\|E\|\lesssim c\,\varepsilon_{\mathrm{maq}}\|A\|.
+$$
+
+Se habla de un factor $c$ no muy grande, del orden de diez, para interpretar el efecto de la precisión. **El teorema no se demuestra.** La clase pide aceptarlo y estudiar sus consecuencias.
+
+> Esta es la formulación simplificada presentada en clase. No se especifican dependencias generales del factor $c$ ni se proporciona una cota universal para toda matriz y dimensión. Las conclusiones siguientes se leen bajo el control de perturbación expuesto, sin convertir la estimación informal en una garantía uniforme.
+
+### 6.2 Qué permite decir sobre el error
+
+En el análisis anterior se identifica $\delta A=E$ y $\delta\mathbf x=\overline{\mathbf x}-\mathbf x=\mathbf e$. Por eso
+
+$$
+\frac{\|\mathbf e\|}{\|\overline{\mathbf x}\|}
+\le\kappa(A)\frac{\|E\|}{\|A\|}
+\lesssim c\,\kappa(A)\varepsilon_{\mathrm{maq}}.
+$$
+
+Una matriz bien condicionada permite convertir una pequeña perturbación relativa de los datos en una pequeña diferencia relativa de soluciones. La exposición ilustra el orden con precisión cercana a $10^{-16}$, un factor cercano a diez y condición del orden de veinte: se espera un error del orden de $10^{-14}$. Se trata de una estimación de escala, no de cifras garantizadas para cualquier entrada.
+
+Si la condición es grande, el factor puede absorber la pequeñez de la precisión. Haber usado pivoteo parcial no elimina la sensibilidad del sistema. Aquí se separan dos causas: qué tan cerca queda el problema perturbado y qué tanto cambia su solución al perturbarlo.
+
+### 6.3 El residuo tiene otra normalización
+
+Para estudiar el residuo se parte directamente de la ecuación perturbada. Como $A\overline{\mathbf x}+E\overline{\mathbf x}=\mathbf b$,
+
+$$
+\mathbf r=A\overline{\mathbf x}-\mathbf b=-E\overline{\mathbf x}.
+$$
+
+La compatibilidad da $\|\mathbf r\|\le\|E\|\|\overline{\mathbf x}\|$. Se normaliza ahora por $\|A\|\|\overline{\mathbf x}\|$, en lugar de $\|\mathbf b\|$:
+
+$$
+\boxed{\frac{\|\mathbf r\|}{\|A\|\|\overline{\mathbf x}\|}
+\le\frac{\|E\|}{\|A\|}
+\lesssim c\,\varepsilon_{\mathrm{maq}}}.
+$$
+
+Se cancelan las normas de la solución computada y no aparece $\kappa(A)$. Bajo la estimación expuesta, el método produce un residuo relativamente pequeño incluso cuando la matriz está mal condicionada. Que ese residuo implique un error pequeño depende de la condición. No se confunden este cociente, el residuo absoluto y el residuo dividido por $\|\mathbf b\|$: cada normalización responde a una desigualdad diferente.

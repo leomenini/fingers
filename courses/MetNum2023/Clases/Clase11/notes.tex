@@ -74,6 +74,17 @@
   title={#1}
 }
 
+
+% ---- Pseudocódigo ----
+\usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e}
+\SetKwInput{KwEntrada}{Entrada}
+\SetKwInput{KwSalida}{Salida}
+% ---- Diagramas (gráficas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}
+\input{../assets/tikzstyles.tex}
+
 % ---- Hyperlinks & TOC ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
@@ -88,172 +99,291 @@
 \usepackage[bottom]{footmisc}
 
 % ---- Title ----
-\title{\textbf{Clase 11: Polinomio Interpolante} \\[0.3em]
-        \large{Criterios de parada, existencia-unicidad, y la construcción de Vandermonde}}
+\title{\textbf{Clase 11: Métodos Numéricos} \\[0.3em]
+        \large{Criterios de parada e interpolación polinomial}}
 \author{Transcripto y expandido --- Curso Métodos Numéricos (OpenFING)}
 \date{}
 
 \begin{document}
-
 \maketitle
 \thispagestyle{empty}
 \newpage
-
 \tableofcontents
 \newpage
 
-\section{Cierre de métodos iterativos: criterios de parada}
+\section{Cuándo detener una iteración}
 
-Dado un método iterativo matricial (Jacobi, Gauss-Seidel, relajaciones),
-¿con qué criterio se detiene?
+\subsection{Parar por residuo normalizado}
 
-\subsection{Criterio del residuo}
+La clase cierra sistemas lineales preguntando cuándo detener un método iterativo. Se mencionan Jacobi, Gauss–Seidel y variantes relajadas, ya tratadas en clases anteriores. La discusión usa el esquema
 
-Parar cuando $\|r_k\| = \|Ax_k - b\| < \text{tol}$.
+\[
+\mathbf x^{(k+1)}=Q\mathbf x^{(k)}+\mathbf c,
+\qquad \mathbf x^*=Q\mathbf x^*+\mathbf c.
+\]
 
-\begin{notebox}[Se conecta con el número de condición]
-$\dfrac{\|e_k\|}{\|x^\star\|} \leq \kappa(A)\cdot\dfrac{\|r_k\|}{\|b\|}$
-(Clase 8). Usando tolerancia $\varepsilon\|b\|$: parar cuando
-$\|r_k\|<\varepsilon\|b\|$ garantiza
-$\dfrac{\|e_k\|}{\|x^\star\|}<\varepsilon\,\kappa(A)$. Si $A$ no está muy
-mal condicionada, el criterio es confiable.
+Aquí $\mathbf c$ designa el término fijo del método para no confundirlo con el residuo $\mathbf r^{(k)}=A\mathbf x^{(k)}-\mathbf b$. La transcripción usa la misma letra para ambos y los distingue con colores.
+
+\begin{notebox}[Alcance y precisiones]
+Las clases 9 y 10 no forman parte de este lote. Se utilizan las relaciones de iteración y error recordadas en esta clase, sin reconstruir el desarrollo de los métodos anteriores.
 \end{notebox}
 
-\subsection{Criterio de la diferencia entre iterados}
+Una primera propuesta es detenerse cuando la norma del residuo es menor que una tolerancia prefijada. Para dar una interpretación relativa, el docente modifica el criterio a
 
-Parar cuando $\|x_{k+1}-x_k\| < \text{tol}$.
+\[
+\boxed{\|\mathbf r^{(k)}\|<\varepsilon\|\mathbf b\|}.
+\]
 
-\textbf{Análisis}: de $x_{k+1}=Qx_k+r$ y $x^\star=Qx^\star+r$, restando:
-$e_{k+1}=Qe_k$. Sumando y restando $x_{k+1}$:
-$$e_k = (x_k - x_{k+1}) + (x_{k+1} - x^\star) = (x_k-x_{k+1}) + Qe_k$$
-Tomando norma y desigualdad triangular:
-$$\|e_k\| \leq \|x_{k+1}-x_k\| + \|Q\|\,\|e_k\|$$
-Despejando (válido si $\|Q\|<1$):
+Se supone $\mathbf b\ne0$ y $A$ invertible. La norma matricial empleada en $\kappa(A)$ es la inducida por la norma vectorial elegida. Recordando la estimación de error y residuo:
 
-\begin{keybox}
-$$\|e_k\| \leq \frac{\|x_{k+1}-x_k\|}{1-\|Q\|} < \frac{\varepsilon}{1-\|Q\|}$$
-\end{keybox}
+\[
+\frac{\|\mathbf x^{(k)}-\mathbf x^*\|}{\|\mathbf x^*\|}
+\le\kappa(A)\frac{\|\mathbf r^{(k)}\|}{\|\mathbf b\|}
+<\kappa(A)\varepsilon.
+\]
 
-\begin{warnbox}[Cuidado]
-Exige que la norma con la que se mide $Q$ cumpla $\|Q\|<1$ — no cualquier
-norma matricial sirve, aunque el método converja (convergencia garantiza
-radio espectral $<1$, un ínfimo sobre normas, no que toda norma dé $<1$).
-\end{warnbox}
+El residuo es computable y la norma de $\mathbf b$ ya se conoce. La tolerancia no controla directamente el error relativo: interviene el número de condición. Qué tan grande es tolerable ese factor depende de la precisión que se necesite. La clase no fija una tolerancia universal.
 
-\subsection{Red de contención}
+\subsection{Parar porque los iterados cambian poco}
 
-Ambos criterios pueden no alcanzarse nunca en tiempo razonable si la matriz
-está muy mal condicionada (ejemplo: matrices de Hilbert). Se combina
-cualquier criterio con un tope máximo de iteraciones ($k<10\,000$) como red
-de seguridad.
+Otra propuesta es detenerse cuando
 
-\section{Interpolación: el problema}
+\[
+\|\mathbf x^{(k+1)}-\mathbf x^{(k)}\|<\varepsilon.
+\]
 
-\textbf{Interpolar} = unir puntos con una función. Dados $n+1$ puntos
-$(x_i,y_i)$, $i=0,\dots,n$, con \textbf{abscisas distintas dos a dos},
-hallar $\varphi:\mathbb{R}\to\mathbb{R}$ tal que $\varphi(x_i)=y_i$ para
-todo $i$.
+El hecho de moverse poco parece indicar proximidad a la solución, pero hay que justificarlo. Sea $\mathbf e^{(k)}=\mathbf x^{(k)}-\mathbf x^*$. Restando las relaciones del método y del punto fijo se obtiene $\mathbf e^{(k+1)}=Q\mathbf e^{(k)}$. Se suma y resta el siguiente iterado para hacer aparecer exactamente la cantidad controlada:
 
-\begin{notebox}
-Sin restricciones adicionales, el problema tiene infinitas soluciones (mal
-planteado). Este curso trabaja \textbf{interpolación polinomial}
-($\varphi$ = polinomio algebraico); existe también interpolación con
-polinomios trigonométricos (Fourier), teoría distinta, no cubierta acá.
+\[
+\begin{aligned}
+\mathbf e^{(k)}
+&=\mathbf x^{(k)}-\mathbf x^{(k+1)}
+  +\mathbf x^{(k+1)}-\mathbf x^*\\
+&=\mathbf x^{(k)}-\mathbf x^{(k+1)}+Q\mathbf e^{(k)}.
+\end{aligned}
+\]
+
+La desigualdad triangular debe agrupar la diferencia de iterados, no separar sus normas individuales. Después se aplica compatibilidad:
+
+\[
+\|\mathbf e^{(k)}\|
+\le\|\mathbf x^{(k)}-\mathbf x^{(k+1)}\|
++\|Q\|\|\mathbf e^{(k)}\|.
+\]
+
+Si $\|Q\|<1$, se puede pasar el último término a la izquierda y dividir por un número positivo:
+
+\[
+\boxed{\|\mathbf e^{(k)}\|
+\le\frac{\|\mathbf x^{(k+1)}-\mathbf x^{(k)}\|}{1-\|Q\|}
+<\frac{\varepsilon}{1-\|Q\|}}.
+\]
+
+La cota corresponde al error del iterado $k$ y es absoluta. Si $\|Q\|$ está cerca de uno, el factor es grande; si $\|Q\|\ge1$, este despeje no da el control buscado. Puede haber un método convergente para el que la norma elegida no satisfaga $\|Q\|<1$. El docente recuerda la relación de la convergencia con el radio espectral, pero no demuestra aquí la existencia de una norma adecuada ni un resultado sobre ínfimos de normas.
+
+Para comparar con un criterio relativo se podría escalar la tolerancia por una norma del iterado, observación mencionada sin desarrollar. No se añade una garantía relativa a la desigualdad absoluta obtenida.
+
+\subsection{El límite de iteraciones no es convergencia}
+
+Además del criterio de precisión, se fija una cantidad máxima de iteraciones para evitar que el programa continúe indefinidamente. Alcanzar ese límite sólo significa detener la ejecución, no haber alcanzado la tolerancia. Una transcripción algorítmica del criterio de residuo es:
+
+\begin{algorithm}[H]
+\small\DontPrintSemicolon
+\hspace*{0.0em}\texttt{Entrada: A, b, regla de iteracion, x inicial, epsilon, Kmax}\;
+\hspace*{0.0em}\texttt{Para k = 0, ..., Kmax:}\;
+\hspace*{0.7em}\texttt{r = A*x - b}\;
+\hspace*{0.7em}\texttt{Si norma(r) < epsilon * norma(b):}\;
+\hspace*{1.4em}\texttt{devolver x con tolerancia alcanzada}\;
+\hspace*{0.7em}\texttt{Si k = Kmax:}\;
+\hspace*{1.4em}\texttt{devolver x con limite alcanzado}\;
+\hspace*{0.7em}\texttt{x = siguiente\_iterado(x)}\;
+\end{algorithm}
+
+Se calcula el residuo del valor que se va a devolver. Sólo se actualiza si todavía no se alcanzó la tolerancia y queda presupuesto de iteraciones. Los nombres y la distinción de salidas explicitan editorialmente la red de seguridad propuesta; no son un código completo del método iterativo.
+
+En aritmética exacta, si $\mathbf x^{(k)}\to\mathbf x^*$, el residuo tiende a cero. Esa afirmación no proporciona una cantidad práctica de iteraciones ni elimina las limitaciones de precisión finita. El docente menciona las matrices de Hilbert del práctico como ejemplos problemáticos, sin desarrollar aquí sus entradas ni realizar una prueba de tiempo.
+
+\section{Planteo de la interpolación}
+
+\subsection{Unir puntos no determina una función}
+
+Dados $n+1$ puntos $(x_i,y_i)$, con $i=0,\ldots,n$ y abscisas distintas dos a dos, se busca una función real $\phi$ tal que $\phi(x_i)=y_i$. Las abscisas deben ser distintas porque dos alturas diferentes sobre una misma abscisa no pueden pertenecer al gráfico de una función. Las ordenadas sí pueden coincidir.
+
+Sin elegir una clase de funciones hay infinitas soluciones. La clase restringe el problema a \textbf{polinomios algebraicos}. Se menciona la interpolación trigonométrica, útil para señales periódicas, como otro problema con herramientas diferentes, sin desarrollarla.
+
+Los datos discretos pueden usarse para construir una función que luego se integre, derive o cuyas raíces se busquen. La interpolación conecta información puntual con problemas continuos. También se mencionan diseño asistido por computadora, curvas y letras vectoriales: representar una forma mediante puntos y reglas geométricas permite escalarla sin ampliar píxeles.
+
+\begin{notebox}[Alcance y precisiones]
+El dibujo de una letra y sus puntos de control se presenta como motivación. El audio no determina su contorno ni las coordenadas; no se reconstruye una tipografía concreta ni se afirma que todos los puntos de control sean necesariamente puntos de interpolación.
 \end{notebox}
 
-\subsection{Por qué interpolar: motivación}
+\subsection{El grado correcto es una cota}
 
-\begin{itemize}
-  \item Pasar de datos discretos a un objeto continuo, para integrar,
-  derivar, o encontrar ceros.
-  \item \textbf{CAD}: las fuentes de texto vectorial almacenan puntos de
-  control, no un dibujo — el trazo se reconstruye por interpolación
-  polinomial (por eso no se pixela al hacer zoom). Origen en el diseño
-  industrial de los años 60.
-\end{itemize}
+Un punto determina una constante. Dos puntos con abscisas distintas determinan una recta, que puede ser horizontal. Por eso la condición es grado \textbf{menor o igual} a uno, no grado exactamente uno. En general:
 
-\section{Existencia y unicidad del polinomio interpolante}
+\[
+\boxed{\begin{gathered}
+x_i\ne x_j\ (i\ne j)\quad\Longrightarrow\quad
+\exists!\ p_n\in\mathcal P_n,\\
+p_n(x_i)=y_i\quad(i=0,\ldots,n),
+\end{gathered}}
+\]
 
-\begin{keybox}[Teorema]
-Dados $n+1$ puntos en el plano con abscisas distintas, existe un único
-polinomio $p_n$ de grado $\leq n$ tal que $p_n(x_i)=y_i$ para todo $i$
-(el \textbf{polinomio interpolante}).
-\end{keybox}
+ donde $\mathcal P_n$ es el espacio de polinomios de grado a lo sumo $n$. Hay $n+1$ datos y $n$ es la cota de grado. El nombre \textbf{polinomio interpolante} se usa con esa restricción, que hace único el problema. Si se permiten grados mayores, se pierde esa unicidad.
 
-\begin{notebox}
-1 punto $\to$ grado 0; 2 puntos $\to$ grado 1; en general, puntos = grado+1.
-El ``$\leq$'' es necesario: con 2 puntos a la misma altura, la recta que
-pasa por ambos degenera en constante.
+\section{Existencia y unicidad por construcción}
+
+\subsection{Caso base y paso inductivo}
+
+La prueba hace existencia y unicidad conjuntamente por inducción. Para $n=0$ sólo hay un punto $(x_0,y_0)$ y la única constante apropiada es $p_0(x)=y_0$.
+
+Supóngase el resultado para $n$ puntos y grado a lo sumo $n-1$. Entre los $n+1$ puntos actuales, se toman los primeros $n$, de índice 0 a $n-1$. Por hipótesis hay un único $p_{n-1}$ que los interpola. Falta incorporar $(x_n,y_n)$.
+
+Se busca $p_n=p_{n-1}+q$, con $\deg q\le n$. Esto no restringe artificialmente la búsqueda: cualquier candidato $p_n\in\mathcal P_n$ puede escribirse así, definiendo $q=p_n-p_{n-1}$. Para no alterar los puntos ya correctos, debe cumplirse
+
+\[
+q(x_i)=0,\qquad i=0,\ldots,n-1.
+\]
+
+Un polinomio de grado a lo sumo $n$ con esas $n$ raíces distintas sólo puede tener la forma
+
+\[
+q(x)=a_n\prod_{i=0}^{n-1}(x-x_i).
+\]
+
+La libertad quedó reducida a una constante $a_n$. Se permite $a_n=0$: si el nuevo dato ya está sobre $p_{n-1}$, no se necesita subir efectivamente el grado.
+
+\subsection{Ajustar el nuevo punto}
+
+Se exige $p_n(x_n)=y_n$:
+
+\[
+y_n=p_{n-1}(x_n)+a_n\prod_{i=0}^{n-1}(x_n-x_i).
+\]
+
+Cada factor del producto es distinto de cero porque las abscisas son distintas. Por eso se puede despejar de forma única:
+
+\[
+\boxed{a_n=
+\frac{y_n-p_{n-1}(x_n)}{\prod_{i=0}^{n-1}(x_n-x_i)}},
+\]
+
+\[
+\boxed{p_n(x)=p_{n-1}(x)+a_n\prod_{i=0}^{n-1}(x-x_i)}.
+\]
+
+La fórmula construye un candidato que pasa por todos los puntos, lo que da existencia. Al mismo tiempo, todo candidato estaba obligado a tener ese $q$ y ese único $a_n$, lo que da unicidad. No se necesita una segunda prueba independiente con un sistema matricial.
+
+Geométricamente, de una constante se pasa a una recta agregando una función lineal que vale cero en el primer nodo. De una recta se pasa a una parábola agregando un múltiplo de $(x-x_0)(x-x_1)$: se mantienen los dos primeros puntos y se ajusta la altura del tercero. Esa familia de correcciones es la que el docente dibuja para explicar la inducción.
+
+\input{assets/clase11-correccion-inductiva.tex}
+El argumento es constructivo, pero en esta clase no se desarrolla todavía su implementación como fórmula de Newton. Lo que sigue es otra representación del mismo polinomio, mediante la base monomial.
+
+\section{El sistema de Vandermonde}
+
+\subsection{De condiciones puntuales a ecuaciones en los coeficientes}
+
+Se escribe
+
+\[
+p_n(x)=c_0+c_1x+c_2x^2+\cdots+c_nx^n.
+\]
+
+Al evaluar en cada nodo, aparecen $n+1$ ecuaciones:
+
+\[
+\begin{aligned}
+c_0+c_1x_0+c_2x_0^2+\cdots+c_nx_0^n&=y_0,\\
+c_0+c_1x_1+c_2x_1^2+\cdots+c_nx_1^n&=y_1,\\
+&\vdots\\
+c_0+c_1x_n+c_2x_n^2+\cdots+c_nx_n^n&=y_n.
+\end{aligned}
+\]
+
+Los nodos y las alturas son datos. Las incógnitas son los coeficientes $c_j$. Aunque se usan potencias de las abscisas, el sistema es lineal en esas incógnitas:
+
+\[
+\underbrace{\begin{pmatrix}
+1&x_0&x_0^2&\cdots&x_0^n\\
+1&x_1&x_1^2&\cdots&x_1^n\\
+\vdots&\vdots&\vdots&&\vdots\\
+1&x_n&x_n^2&\cdots&x_n^n
+\end{pmatrix}}_{V}
+\underbrace{\begin{pmatrix}c_0\\c_1\\\vdots\\c_n\end{pmatrix}}_{\mathbf c}
+=\underbrace{\begin{pmatrix}y_0\\y_1\\\vdots\\y_n\end{pmatrix}}_{\mathbf y}.
+\]
+
+Esta es la \textbf{matriz de Vandermonde}, de tamaño $(n+1)\times(n+1)$. Cada fila evalúa todos los monomios en un nodo; cada columna corresponde a una potencia fija. Su invertibilidad se deduce de la existencia y unicidad ya probadas, sin calcular su determinante. Si se repitieran abscisas, se repetirían filas en esta convención.
+
+\subsection{Orden de columnas en la computadora}
+
+El ejemplo usa tres abscisas $1/4,1,5/2$. En el orden creciente de potencias, la matriz es
+
+\[
+V=\begin{pmatrix}
+1&1/4&1/16\\
+1&1&1\\
+1&5/2&25/4
+\end{pmatrix}.
+\]
+
+La función \texttt{vander} mostrada ordena las columnas al revés, empezando por la mayor potencia:
+
+\[
+V_{\mathrm{desc}}=\begin{pmatrix}
+1/16&1/4&1\\
+1&1&1\\
+25/4&5/2&1
+\end{pmatrix},\qquad
+V_{\mathrm{desc}}\begin{pmatrix}c_2\\c_1\\c_0\end{pmatrix}
+=\begin{pmatrix}y_0\\y_1\\y_2\end{pmatrix}.
+\]
+
+Resolver con la contrabarra entrega los coeficientes en ese orden. Para escribir o evaluar el polinomio hay que conservar la correspondencia entre posición y potencia; invertir sólo las columnas, sin reinterpretar los coeficientes, sería otro polinomio.
+
+\begin{algorithm}[H]
+\small\DontPrintSemicolon
+\hspace*{0.0em}\texttt{Entrada: nodos distintos x[0:n], alturas y[0:n]}\;
+\hspace*{0.0em}\texttt{Construir V[i,j] = x[i]\textasciicircum{}j, con V[i,0] = 1}\;
+\hspace*{0.0em}\texttt{Resolver V*c = y}\;
+\hspace*{0.0em}\texttt{Evaluar p(t) = c[0] + c[1]*t + ... + c[n]*t\textasciicircum{}n}\;
+\hspace*{0.0em}\texttt{Salida: coeficientes y evaluaciones del interpolante}\;
+\end{algorithm}
+
+El esquema usa potencias crecientes, a diferencia de \texttt{vander}. Cada fila asegura una condición de interpolación; resolver obtiene todos los coeficientes conjuntamente y evaluar es una tarea posterior. Se añade explícitamente $V[i,0]=1$ para no confundir la columna constante cuando algún nodo es cero.
+
+\begin{notebox}[Alcance y precisiones]
+El audio no enumera las ordenadas de este ejemplo y vacila al leer los coeficientes. Se recuperan las abscisas, las dos matrices y el procedimiento, pero no se inventan la parábola ni sus coeficientes exactos.
 \end{notebox}
 
-\subsection{Demostración por inducción completa}
+\section{Condicionamiento y cambios en los datos}
 
-\textbf{Paso base} ($n=0$): único punto $(x_0,y_0)$. El único polinomio de
-grado 0 con $p_0(x_0)=y_0$ es $p_0(x)\equiv y_0$.
+\subsection{Una matriz invertible puede ser numéricamente difícil}
 
-\textbf{Paso inductivo}: suponiendo el teorema válido para $n-1$ (existe un
-único $p_{n-1}$ de grado $\leq n-1$ que interpola los primeros $n$ puntos),
-se escribe
-$$p_n(x) = p_{n-1}(x) + q(x)$$
+La facilidad conceptual de Vandermonde no garantiza buena precisión. La demostración arma nodos equiespaciados en $[0,1]$, aumenta su cantidad y estima condiciones. El gráfico logarítmico muestra un crecimiento fuerte; para veinte puntos se anuncia aproximadamente $4\cdot10^{16}$.
 
-Para no arruinar el trabajo de $p_{n-1}$, $q$ debe anularse en
-$x_0,\dots,x_{n-1}$ ($n$ raíces para un polinomio de grado $\leq n$):
-$$q(x) = a_n\prod_{i=0}^{n-1}(x-x_i)$$
+Ese factor puede destruir el control de error en los coeficientes aunque el sistema se resuelva con un procedimiento que produzca residuo pequeño. En $V\mathbf c=\mathbf y$, el residuo describe el desacuerdo al evaluar en los nodos. No controla por sí solo las evaluaciones entre ellos ni la precisión de cada coeficiente cuando $V$ está mal condicionada.
 
-Imponiendo $p_n(x_n)=y_n$:
-$$y_n = p_{n-1}(x_n) + a_n\prod_{i=0}^{n-1}(x_n-x_i)$$
-
-\begin{notebox}[Acá se usa que las abscisas son distintas]
-Ningún factor $(x_n-x_i)$ es cero, así que se despeja
-$$a_n = \frac{y_n - p_{n-1}(x_n)}{\prod_{i=0}^{n-1}(x_n-x_i)}$$
+\begin{notebox}[Alcance y precisiones]
+La transcripción no contiene la tabla completa del gráfico de condición. Se registra el procedimiento y el valor anunciado, sin dibujar una curva numérica ficticia que parezca una medición de la clase.
 \end{notebox}
 
-$a_n$ queda determinado de forma única: existencia y unicidad probadas a
-la vez. $\blacksquare$
+\subsection{Interpolar la constante uno}
 
-\section{Construcción por Vandermonde}
+Se toman nodos en $[0,1]$ y todas las alturas iguales a uno. Por unicidad, el interpolante exacto es $p(x)=1$, independientemente de cuántos nodos distintos se usen. En el orden creciente de potencias, esto significa
 
-\textbf{Base monomial}: $p_n(x) = c_0+c_1x+\dots+c_nx^n$. Imponer
-$p_n(x_i)=y_i$ da el sistema lineal
-$$Bc = y, \qquad B_{ij} = x_i^{\,j}$$
+\[
+V\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}
+=\begin{pmatrix}1\\1\\\vdots\\1\end{pmatrix}.
+\]
 
-$B$ es la \textbf{matriz de Vandermonde}, invertible porque el teorema de
-§3 ya garantiza solución única (equivalentemente: abscisas iguales
-producirían columnas iguales, $B$ singular).
+Con veinticinco puntos, la curva calculada parece próxima a uno, pero sus coeficientes ya son extraños. El docente aumenta a cincuenta y cinco puntos y observa oscilaciones grandes, valores del gráfico cercanos a nueve y coeficientes del orden de $10^{15}$. La computadora advierte que el sistema es muy problemático. No se conserva el perfil exacto de esas oscilaciones porque el audio no lo determina.
 
-En Octave: \texttt{B = vander(x)} (columnas en orden inverso),
-\texttt{c = B \textbackslash\ y}.
+El ejemplo separa el problema matemático, cuya respuesta es una constante trivial, de la representación elegida para calcularla. Resolver un sistema grande de Vandermonde puede ser una mala manera de encontrar un objeto sencillo. Tener residuos razonables en los nodos no equivale a haber obtenido coeficientes fiables.
 
-\subsection{El problema de condicionamiento de Vandermonde}
+\subsection{Agregar o corregir datos}
 
-\textbf{Experimento en clase}: $\kappa(B)$ para $n$ puntos equiespaciados en
-$[0,1]$ crece muy rápido — de orden constante para pocos puntos a
-$\sim 4\times 10^{16}$ con 20 puntos, y overflow con 55.
+Si se incorpora otro punto, cambian el tamaño de la matriz, el vector de datos y la cota de grado. El procedimiento monomial presentado exige armar y resolver de nuevo el sistema ampliado. Si cambia solamente una ordenada, la matriz permanece igual, pero hay que resolver con el nuevo lado derecho; no se cambia directamente un único coeficiente del polinomio.
 
-\begin{warnbox}[Ejemplo: interpolar $f\equiv 1$]
-Con 25 puntos, el polinomio (vía \texttt{backslash}) \textbf{evalúa
-razonablemente bien} (entre $0{,}99$ y $1{,}00$ algo) pero sus
-\textbf{coeficientes son un desastre} — números enormes que casi se
-cancelan. Con 55 puntos, hasta las evaluaciones se rompen.
-\end{warnbox}
-
-\begin{notebox}[Por qué pasa esto]
-La eliminación gaussiana con pivoteo parcial siempre da residuos chicos
-(Clase 8) — de ahí evaluaciones razonables —, pero con $\kappa(B)$ enorme
-el error en los coeficientes queda sin control. Residuo chico y error
-grande conviven, igual que en las rectas casi paralelas de la Clase 8.
-\end{notebox}
-
-\subsection{El problema de no incrementalidad}
-
-Si se agrega o corrige un punto, hay que rearmar la matriz de Vandermonde
-entera y resolver el sistema de nuevo — no hay forma de reutilizar el
-cálculo anterior.
-
-\begin{keybox}[Motivación de la clase siguiente]
-Mal condicionamiento creciente y falta de incrementalidad motivan dos
-formas alternativas de escribir el polinomio interpolante (bases de
-Lagrange y de Newton), que evitan ambos defectos.
-\end{keybox}
-
+La clase siguiente buscará otras dos formas de representar el mismo interpolante para evitar el sistema mal condicionado y facilitar cambios en los datos. No se abandona la unicidad del polinomio: se cambia la forma de construirlo y expresarlo.
 \end{document}

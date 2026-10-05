@@ -1,58 +1,42 @@
 title: Clase 7
 id: metn-2023-2-07
-
 course: Métodos Numéricos
 academic_year: 2023
 semester: 2
-
 teacher: Juan Pablo Borthagaray
-
 source:
-  - OpenFING
-
+- OpenFING
 video:
-  - start: "00:00:02"
-    end: "01:24:03"
-
+- start: "00:00:02"
+  end: "01:24:03"
 stats:
   transcript_words: 9947
-  summary_words: 1563
+  summary_words: 1921
   diagrams_pending: 0
-  equations: 12
-
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
-
+  equations: 22
 topics:
-  - Cierre de matrices dispersas y tridiagonales (eliminación gaussiana en tiempo lineal si se avisa la estructura)
-  - Repaso de axiomas de norma vectorial y la familia de normas L^p en R^n
-  - Normas de matrices: norma de Frobenius vs. normas operador (inducidas)
-  - Demostración completa de que la norma infinito inducida es el máximo de las normas L1 de las filas
-  - Normas inducidas por L1 (columnas) y L2 (primer valor singular), enunciadas sin demostrar
-  - Compatibilidad (||Ax|| <= ||A||||x||) y submultiplicatividad (||AB|| <= ||A||||B||), con demostración
-  - Motivación de cierre: diferencia entre error (no computable) y residuo (sí computable), r = A*e
-
+- Dispersidad y estructura de banda
+- Normas vectoriales y geometría
+- De arreglos a operadores
+- Cálculo de la norma infinito inducida
+- Normas uno y dos inducidas
+- Compatibilidad y submultiplicatividad
+- Error y residuo de un sistema
 bibliography: []
-
 prerequisites:
-  - Sistemas Lineales, Introducción (Clase 5) y Descomposición LU (Clase 6)
-  - Álgebra lineal 1 (espacios vectoriales, transformaciones lineales, teorema espectral)
-
+- Sistemas Lineales, Introducción (Clase 5) y Descomposición LU (Clase 6)
+- Álgebra lineal 1 (espacios vectoriales, transformaciones lineales, teorema espectral)
 next_topics:
-  - Número de Condición (Clase 8): responde si residuo chico implica error chico
-
+- Número de Condición (Clase 8): responde si residuo chico implica error chico
 status:
   transcript: done
   summary: done
   latex: done
-  assets: pending
-
+  assets: done
 review:
   state: needs-review
   reviewer: []
-  date: 2026-09-13
-
+  date: 2026-09-15
 llm:
-  model: claude-sonnet-5
-
+  model: "GPT6-Astra"
 editorial_status: draft

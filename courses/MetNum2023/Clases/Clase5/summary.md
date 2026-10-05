@@ -1,282 +1,290 @@
-# Resumen Clase 5 — Sistemas Lineales: Introducción
+# Resumen Clase 5 — Sistemas lineales, costo y eliminación gaussiana
 
 ## Índice
 
-1. [El problema y el enfoque del curso](#1-el-problema-y-el-enfoque-del-curso)
-2. [Métodos directos vs. métodos iterativos](#2-métodos-directos-vs-métodos-iterativos)
-3. [La regla de Cramer y por qué se descarta](#3-la-regla-de-cramer-y-por-qué-se-descarta)
-   - 3.1 [Flops: la unidad de costo](#31-flops-la-unidad-de-costo)
-   - 3.2 [Costo de Cramer](#32-costo-de-cramer)
-4. [Sistemas triangulares](#4-sistemas-triangulares)
-   - 4.1 [Definición y determinante](#41-definición-y-determinante)
-   - 4.2 [Sustitución hacia adelante y hacia atrás](#42-sustitución-hacia-adelante-y-hacia-atrás)
-   - 4.3 [Costo de la sustitución: $O(n^2)$](#43-costo-de-la-sustitución-on2)
-5. [Eliminación gaussiana sin pivoteo](#5-eliminación-gaussiana-sin-pivoteo)
-   - 5.1 [La idea: multiplicadores y combinaciones lineales](#51-la-idea-multiplicadores-y-combinaciones-lineales)
-   - 5.2 [Pseudocódigo](#52-pseudocódigo)
-   - 5.3 [Costo: $O(n^3)$](#53-costo-on3)
-6. [Pivoteo: qué es y por qué hace falta](#6-pivoteo-qué-es-y-por-qué-hace-falta)
-7. [Ejemplo numérico: cuando un pivote chico rompe todo](#7-ejemplo-numérico-cuando-un-pivote-chico-rompe-todo)
+1. [El problema y los dos enfoques](#1-el-problema-y-los-dos-enfoques)
+2. [Regla de Cramer y costo computacional](#2-regla-de-cramer-y-costo-computacional)
+3. [Sistemas triangulares y sustituciones](#3-sistemas-triangulares-y-sustituciones)
+4. [Sumas y orden de crecimiento](#4-sumas-y-orden-de-crecimiento)
+5. [Eliminación gaussiana sin pivoteo](#5-eliminacion-gaussiana-sin-pivoteo)
+6. [Pseudocódigo y costo de la eliminación](#6-pseudocodigo-y-costo-de-la-eliminacion)
+7. [Por qué no alcanza con evitar pivotes nulos](#7-por-que-no-alcanza-con-evitar-pivotes-nulos)
 
----
+## 1. El problema y los dos enfoques
 
-## 1. El problema y el enfoque del curso
+La clase inicia el estudio de sistemas lineales desde una perspectiva algorítmica. Los errores y el punto flotante de las clases anteriores siguen presentes: interesa tanto resolver como saber cuánto cuesta y qué pasa al calcular con precisión limitada. Los datos son una matriz cuadrada $A\in\mathbb R^{n\times n}$ y un vector $\mathbf b\in\mathbb R^n$; se busca $\mathbf x\in\mathbb R^n$ tal que
 
-Cierra la unidad de errores, punto flotante y redondeo, y arranca la unidad de
-**sistemas de ecuaciones lineales**, el primer problema concreto del curso.
-El objetivo declarado no es repetir el álgebra lineal ya conocido, sino darle
-un **enfoque algorítmico**: entender cómo resolver un sistema grande y cuánto
-cuesta hacerlo con las técnicas ya conocidas.
+$$
+A\mathbf x=\mathbf b,\qquad \det A\ne0.
+$$
 
-El problema formal:
+La hipótesis asegura solución única. Los sistemas rectangulares se anuncian para más adelante. Usaremos negrita para los vectores y superíndices entre paréntesis para pasos de un procedimiento; son convenciones editoriales para separar coordenadas y etapas.
 
-$$Ax = b, \qquad A \in \mathbb{R}^{n\times n}, \quad b \in \mathbb{R}^n$$
+Un **método directo** llega a la solución en una cantidad finita de pasos, entendiendo exactitud en aritmética exacta. La eliminación gaussiana transforma el sistema y una sustitución resuelve el sistema triangular resultante. La regla de Cramer es otro método directo. Que sean directos no protege sus implementaciones de los errores de redondeo.
 
-$A$ y $b$ son los datos; $x \in \mathbb{R}^n$ es la incógnita. La notación
-del curso **no usa flechas** para vectores (para evitar inconsistencias); si
-hay ambigüedad entre escalar y vector, se aclara en el contexto.
+Un **método iterativo** produce una sucesión de vectores $\mathbf x^{(k)}$ que se aproxima a la solución cuando $k\to\infty$. En la práctica se detiene cuando la aproximación es aceptable según una tolerancia. Para sistemas enormes puede convenir obtener una aproximación económica en lugar de realizar todas las operaciones de un método directo. Esta clase sólo presenta la distinción; no desarrolla todavía un método iterativo concreto.
 
-> El sistema tiene **solución única** si y solamente si $\det(A) \neq 0$. El
-> curso asume desde acá que se trabaja siempre en esa situación (sistema
-> compatible determinado). Los sistemas rectangulares (matrices no
-> cuadradas) se posponen para después de los parciales.
+## 2. Regla de Cramer y costo computacional
 
-## 2. Métodos directos vs. métodos iterativos
+### 2.1 Las columnas sustituidas
 
-La clase organiza todo el tema alrededor de una dicotomía:
+Si $A_i$ se obtiene reemplazando la columna $i$ de $A$ por $\mathbf b$, Cramer establece
 
-- **Método directo**: después de una cantidad **finita** de pasos, produce
-  la solución **exacta** del problema. Ejemplos: eliminación gaussiana,
-  regla de Cramer.
-- **Método iterativo**: genera una **sucesión** de vectores $x^{(k)} \in
-  \mathbb{R}^n$ tal que
+$$
+\boxed{x_i=\frac{\det A_i}{\det A}}.
+$$
 
-$$x^{(k)} \xrightarrow[k \to \infty]{} x^\star$$
+El ejemplo expuesto es completamente recuperable:
 
-  donde $x^\star$ es la solución exacta. En la práctica se fija una
-  tolerancia y se detiene el cómputo cuando la aproximación se considera
-  suficientemente buena.
+$$
+\begin{pmatrix}3&1\\1&-1\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\end{pmatrix}
+=\begin{pmatrix}5\\-1\end{pmatrix}.
+$$
 
-> La motivación de los métodos iterativos es práctica: para un sistema
-> $3\times 3$ cualquier método funciona bien, pero un ingeniero se enfrenta
-> a sistemas de tamaño mucho mayor (la clase menciona "un millón por un
-> millón"), donde un método directo puede ser demasiado costoso y conviene
-> algo más rápido que dé una solución aceptable a menos de una tolerancia.
+Se construyen las dos matrices cambiando una columna por vez:
 
-Esta clase y la siguiente semana se dedican enteramente a un método
-**directo**: la eliminación gaussiana. Los métodos iterativos se retoman más
-adelante en el curso.
+$$
+A_1=\begin{pmatrix}5&1\\-1&-1\end{pmatrix},\qquad
+A_2=\begin{pmatrix}3&5\\1&-1\end{pmatrix}.
+$$
 
-## 3. La regla de Cramer y por qué se descarta
+Sus determinantes son $\det A=-4$, $\det A_1=-4$ y $\det A_2=-8$. Por tanto $x_1=1$ y $x_2=2$. La sustitución en las ecuaciones iniciales verifica el resultado. El ejemplo muestra una receta finita, pero no dice cómo se comportará cuando $n$ sea grande.
 
-Antes de entrar en eliminación gaussiana, la clase recuerda la **regla de
-Cramer** como ejemplo de método directo alternativo, y la usa para introducir
-la noción de costo computacional.
+### 2.2 Qué se está contando
 
-**Regla de Cramer**: para $Ax = b$,
+Un **flop** es una operación aritmética básica en punto flotante: suma, resta, multiplicación o división. El objetivo del conteo es identificar el orden de crecimiento con $n$, no medir segundos en una máquina particular. El tiempo también depende del entorno de ejecución; no se identifica directamente con el número de operaciones.
 
-$$x_i = \frac{\det(A_i)}{\det(A)}$$
+Cramer requiere $n+1$ determinantes de tamaño $n\times n$. Si se calculan ingenuamente por desarrollo de filas o columnas, cada determinante requiere del orden de $n!$ operaciones: cada desarrollo llama a muchos determinantes menores y esa ramificación se repite. Así, la implementación considerada cuesta
 
-donde $A_i$ es la matriz que se obtiene sustituyendo la columna $i$-ésima de
-$A$ por el vector $b$.
+$$
+(n+1)O(n!)=O((n+1)!).
+$$
 
-**Ejemplo trabajado en clase** ($2\times 2$):
+El docente aclara que eligió deliberadamente un cálculo muy ineficiente. Hay mejores maneras de calcular determinantes y podrían aprovecharse relaciones entre las matrices. El costo factorial corresponde a esta implementación; no se presenta como una cota inevitable de toda evaluación de Cramer. La conclusión práctica es abandonar esta receta como método general de resolución y estudiar la eliminación.
 
-$$\begin{pmatrix} 3 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 5 \\ -1 \end{pmatrix}$$
+## 3. Sistemas triangulares y sustituciones
 
-$$\det(A) = -4, \qquad \det(A_1) = -4, \qquad \det(A_2) = -8$$
+### 3.1 La estructura que permite resolver secuencialmente
 
-$$x_1 = \frac{-4}{-4} = 1, \qquad x_2 = \frac{-8}{-4} = 2$$
+Una matriz es **triangular superior** si $a_{ij}=0$ para $i>j$, y **triangular inferior** si $a_{ij}=0$ para $j>i$. Los ceros se exigen estrictamente a un lado de la diagonal. Las entradas restantes pueden también ser cero: la definición no afirma que sean todas no nulas.
 
-### 3.1 Flops: la unidad de costo
+$$
+L=\begin{pmatrix}
+\ell_{11}&0&0&\cdots&0\\
+\ell_{21}&\ell_{22}&0&\cdots&0\\
+\ell_{31}&\ell_{32}&\ell_{33}&\cdots&0\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+\ell_{n1}&\ell_{n2}&\ell_{n3}&\cdots&\ell_{nn}
+\end{pmatrix},\qquad
+U=\begin{pmatrix}
+u_{11}&u_{12}&\cdots&u_{1n}\\
+0&u_{22}&\cdots&u_{2n}\\
+\vdots&\ddots&\ddots&\vdots\\
+0&\cdots&0&u_{nn}
+\end{pmatrix}.
+$$
 
-Se define **flop** como una operación aritmética de punto flotante (suma,
-resta, multiplicación o división). El curso mide costo computacional
-**contando el orden de magnitud** de flops en función de $n$ (el tamaño del
-sistema), no el tiempo de reloj real (que depende de factores externos como
-otros procesos corriendo en la máquina).
+Resolver un sistema general exige hallar incógnitas interrelacionadas. En uno triangular hay una ecuación con una sola incógnita; después de resolverla aparece otra con una sola incógnita todavía desconocida. Esa dependencia secuencial es la ventaja que busca la eliminación.
 
-### 3.2 Costo de Cramer
+### 3.2 Sustitución hacia adelante
 
-Resolver un sistema $n\times n$ por Cramer requiere calcular $n+1$
-determinantes (el de $A$ y el de cada $A_i$). Calculando cada determinante
-por **desarrollo por filas/columnas** (la forma más ingenua), cada uno cuesta
-del orden de $n!$ flops, porque el desarrollo anida el cálculo de
-determinantes más chicos dentro de determinantes más grandes.
+Para $L\mathbf x=\mathbf b$, las ecuaciones se despliegan como
 
-$$\text{Costo}_{\text{Cramer}} \sim (n+1)\cdot n! = (n+1)!$$
+$$
+\begin{aligned}
+\ell_{11}x_1&=b_1,\\
+\ell_{21}x_1+\ell_{22}x_2&=b_2,\\
+\ell_{31}x_1+\ell_{32}x_2+\ell_{33}x_3&=b_3,\\
+&\ \vdots\\
+\ell_{n1}x_1+\cdots+\ell_{nn}x_n&=b_n.
+\end{aligned}
+$$
 
-> **Kramer es un suicidio computacional** para $n$ grande: implementar Cramer
-> ingenuamente sobre una matriz de $20\times 20$ "funde la computadora". Aun
-> con formas más eficientes de calcular determinantes, Cramer sigue siendo
-> más caro que la eliminación gaussiana — y la propia eliminación gaussiana
-> ya es cara ($O(n^3)$, ver §5.3). Por eso Cramer no se usa en la práctica y
-> el curso pasa directamente a escalerización gaussiana.
+Primero se divide $b_1$ por $\ell_{11}$. Conocido $x_1$, se pasa su contribución a la derecha de la segunda ecuación y se divide por $\ell_{22}$. En el paso $i$ ya están disponibles $x_1,\ldots,x_{i-1}$:
 
-## 4. Sistemas triangulares
+$$
+x_1=\frac{b_1}{\ell_{11}},\qquad
+x_2=\frac{b_2-\ell_{21}x_1}{\ell_{22}},\qquad
+\boxed{x_i=\frac{b_i-\sum_{j=1}^{i-1}\ell_{ij}x_j}{\ell_{ii}}}.
+$$
 
-### 4.1 Definición y determinante
+¿Por qué se puede dividir? El determinante de una matriz triangular es el producto de su diagonal. La hipótesis de invertibilidad implica que ninguno de esos factores es cero. No es una condición adicional olvidada: viene de la hipótesis inicial.
 
-$A$ es **triangular superior** si $a_{ij} = 0$ para todo $i > j$ (ceros
-debajo de la diagonal). $A$ es **triangular inferior** si $a_{ij} = 0$ para
-todo $j > i$ (ceros arriba de la diagonal).
+La siguiente escritura algorítmica explicita la secuencia descrita. La variable auxiliar `s` representa el lado derecho al que se van restando contribuciones conocidas.
 
-> **Propiedad clave**: si $A$ es triangular (superior o inferior),
-> $$\det(A) = \prod_{i=1}^n a_{ii}$$
-> En particular, $\det(A) \neq 0 \iff a_{ii} \neq 0 \text{ para todo } i$ —
-> esto es lo que garantiza que la sustitución hacia adelante/atrás (§4.2)
-> nunca divide por cero, bajo la hipótesis de solución única.
+```text
+Entrada: L triangular inferior invertible, b
+Para i = 1, ..., n:
+  s = b[i]
+  Para j = 1, ..., i-1:
+    s = s - L[i,j] * x[j]
+  x[i] = s / L[i,i]
+Salida: x
+```
 
-### 4.2 Sustitución hacia adelante y hacia atrás
+El primer recorrido interior está vacío: no hay incógnitas anteriores y se obtiene directamente $x_1$. En una fila posterior se usan únicamente valores ya calculados. La división se hace después de restar todas las contribuciones, porque entonces queda $\ell_{ii}x_i=s$.
 
-Los sistemas triangulares son fáciles de resolver porque se puede despejar
-una incógnita a la vez, **secuencialmente**, en vez de resolver todas
-simultáneamente.
+### 3.3 Sustitución hacia atrás y costo
 
-**Sustitución hacia adelante** ($A$ triangular inferior): se despeja desde
-$x_1$ hacia $x_n$.
+En un sistema superior se comienza por la última ecuación. Después se asciende:
 
-$$x_1 = \frac{b_1}{a_{11}}, \qquad x_i = \frac{b_i - \displaystyle\sum_{j=1}^{i-1} a_{ij}x_j}{a_{ii}} \quad (i = 2,\dots,n)$$
+$$
+x_n=\frac{b_n}{u_{nn}},\qquad
+x_{n-1}=\frac{b_{n-1}-u_{n-1,n}x_n}{u_{n-1,n-1}},\qquad
+x_i=\frac{b_i-\sum_{j=i+1}^n u_{ij}x_j}{u_{ii}}.
+$$
 
-**Sustitución hacia atrás** ($A$ triangular superior): el mismo procedimiento
-pero empezando por $x_n$ (la última ecuación sólo involucra a $x_n$) y
-avanzando hacia $x_1$.
+```text
+Entrada: U triangular superior invertible, b
+Para i = n, n-1, ..., 1:
+  s = b[i]
+  Para j = i+1, ..., n:
+    s = s - U[i,j] * x[j]
+  x[i] = s / U[i,i]
+Salida: x
+```
 
-### 4.3 Costo de la sustitución: $O(n^2)$
+Se invierte el orden para que las incógnitas de la suma ya estén disponibles. Ambos métodos tienen el mismo costo. En la fila $i$ de la sustitución hacia adelante hay $i-1$ productos, $i-1$ sumas/restas contando la resta a $b_i$, y una división: $2i-1$ flops. Este conteo se corrige explícitamente durante la discusión en clase.
 
-Contando flops paso a paso: calcular $x_1$ cuesta 1 flop (una división).
-Calcular $x_i$ para $i>1$ cuesta $(i-1)$ productos, $(i-1)$ sumas/restas y 1
-división: en total $2i - 1$ flops en el paso $i$-ésimo. Sumando sobre todos
-los pasos:
+$$
+\sum_{i=1}^n(2i-1)=n^2,\qquad
+\boxed{\text{costo de una sustitución}=O(n^2)}.
+$$
 
-$$\sum_{i=1}^{n} (2i-1) = 2\cdot\frac{n(n+1)}{2} - n \sim n^2$$
+Conocer los coeficientes no vuelve gratuitas las multiplicaciones: los valores de $x_j$ se acaban de obtener. Esa es la razón por la que el costo no es simplemente lineal en el número de filas.
 
-> **Truco para estimar sumas $\sum i^\alpha$** (usado en clase para no tener
-> que memorizar fórmulas): pensar $\sum_{i=1}^n i^\alpha$ como una suma de
-> Riemann que acota (por arriba y por abajo) a $\int_0^n x^\alpha\,dx =
-> \frac{n^{\alpha+1}}{\alpha+1}$. Concluye que la suma es del orden de
-> $n^{\alpha+1}$. Es una herramienta general, no específica de esta cuenta.
+## 4. Sumas y orden de crecimiento
 
-**Conclusión**: sustitución hacia adelante o hacia atrás cuesta $O(n^2)$.
-Duplicar $n$ multiplica el costo por 4.
+Para estimar sumas de potencias, el docente dibuja $x^\alpha$ y compara rectángulos con integrales. Para $\alpha>0$, la función es creciente; los rectángulos de altura $i^\alpha$ son superiores en $[i-1,i]$ e inferiores en $[i,i+1]$. Por eso
+
+$$
+\frac{n^{\alpha+1}}{\alpha+1}
+=\int_0^n x^\alpha\,dx
+\le\sum_{i=1}^n i^\alpha
+\le\int_1^{n+1}x^\alpha\,dx
+=\frac{(n+1)^{\alpha+1}-1}{\alpha+1}.
+$$
+
+La suma crece como $n^{\alpha+1}$. Los factores constantes no cambian el orden, aunque conservarlos puede describir mejor el costo. Para $\alpha=1$ se recupera el comportamiento cuadrático usado en las sustituciones. Duplicar el tamaño multiplica aproximadamente por cuatro ese costo; aumentar el tamaño por diez lo multiplica aproximadamente por cien.
+
+> La comparación de rectángulos se escribe aquí bajo la condición $\alpha>0$ con la que se dibuja en clase. La observación oral sobre excluir solamente $\alpha=-1$ no basta para extender estas desigualdades a exponentes arbitrarios.
 
 ## 5. Eliminación gaussiana sin pivoteo
 
-La pregunta que motiva esta sección: ¿cuánto cuesta **llevar** un sistema
-cualquiera a forma triangular (para después aplicar §4.2)?
+### 5.1 Matriz ampliada y primera columna
 
-### 5.1 La idea: multiplicadores y combinaciones lineales
+Se parte de la matriz ampliada, porque las operaciones sobre los coeficientes deben aplicarse también al lado derecho:
 
-Se trabaja sobre la **matriz ampliada** $[A \mid b]$. El objetivo es hacer
-ceros, columna por columna, **debajo de la diagonal**, mediante combinaciones
-lineales de filas que no cambian el conjunto solución (ni el determinante,
-porque cada fila se reemplaza por sí misma más un múltiplo de otra fila).
+$$
+\left[\begin{array}{cccc|c}
+a_{11}&a_{12}&\cdots&a_{1n}&b_1\\
+a_{21}&a_{22}&\cdots&a_{2n}&b_2\\
+\vdots&\vdots&&\vdots&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nn}&b_n
+\end{array}\right].
+$$
 
-En el paso $k$-ésimo, asumiendo $a_{kk}^{(k)} \neq 0$ (el **pivote**), se
-definen los **multiplicadores**:
+Si $a_{11}\ne0$, se calculan los **multiplicadores** $\ell_{i1}=a_{i1}/a_{11}$ para $i=2,\ldots,n$ y se hace $F_i\leftarrow F_i-\ell_{i1}F_1$. La primera fila permanece fija. En la columna primera se obtiene exactamente
 
-$$l_{ik} = \frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}, \qquad i = k+1,\dots,n$$
+$$
+a_{i1}-\frac{a_{i1}}{a_{11}}a_{11}=0.
+$$
 
-y se actualizan las filas $i = k+1,\dots,n$:
+El resto de cada fila cambia. Indicando por $(2)$ el estado tras esta primera etapa:
 
-$$a_{ij}^{(k+1)} = a_{ij}^{(k)} - l_{ik}\,a_{kj}^{(k)}, \qquad b_i^{(k+1)} = b_i^{(k)} - l_{ik}\,b_k^{(k)}$$
+$$
+\left[\begin{array}{cccc|c}
+a_{11}&a_{12}&\cdots&a_{1n}&b_1\\
+0&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}&b_2^{(2)}\\
+\vdots&\vdots&&\vdots&\vdots\\
+0&a_{n2}^{(2)}&\cdots&a_{nn}^{(2)}&b_n^{(2)}
+\end{array}\right].
+$$
 
-para $j = k+1,\dots,n$. Por construcción, $a_{ik}^{(k+1)} = 0$ para todo
-$i>k$: los multiplicadores están definidos exactamente para cancelar esa
-entrada.
+La operación mantiene un sistema equivalente: se suma a una fila un múltiplo de otra sin eliminar su propia contribución. Para esta operación, cuyo coeficiente de la fila reemplazada es uno, tampoco cambia el determinante.
 
-> El nombre "pivote" viene de deporte (básquetbol/handball): es el punto
-> fijo que se usa para "rebotar" y generar los ceros de la columna.
+### 5.2 Segunda columna y paso general
 
-### 5.2 Pseudocódigo
+Ahora se usa $a_{22}^{(2)}$, no el $a_{22}$ original. Suponiéndolo no nulo, se calculan $\ell_{i2}=a_{i2}^{(2)}/a_{22}^{(2)}$ para $i\ge3$ y se resta el múltiplo correspondiente de la segunda fila. Las dos primeras filas quedan sin modificar; se conserva la primera columna ya reducida.
 
-Reconstrucción del algoritmo tal como se construyó en el pizarrón (notación
-tipo Octave, tres loops anidados):
+En el paso $k$, las columnas anteriores tienen sus ceros definitivos y sólo queda trabajar en el bloque inferior derecho:
 
+$$
+A^{(k)}=
+\left[\begin{array}{ccc|ccc}
+u_{11}&\cdots&u_{1,k-1}&*&\cdots&*\\
+0&\ddots&\vdots&\vdots&&\vdots\\
+0&0&u_{k-1,k-1}&*&\cdots&*\\\hline
+0&\cdots&0&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}\\
+\vdots&&\vdots&\vdots&&\vdots\\
+0&\cdots&0&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}
+\end{array}\right].
+$$
+
+Los asteriscos representan entradas no especificadas, no necesariamente no nulas. Para $i=k+1,\ldots,n$:
+
+$$
+\ell_{ik}=\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}},\qquad
+\begin{aligned}
+a_{ij}^{(k+1)}&=a_{ij}^{(k)}-\ell_{ik}a_{kj}^{(k)},&&j=k+1,\ldots,n,\\
+b_i^{(k+1)}&=b_i^{(k)}-\ell_{ik}b_k^{(k)}.
+\end{aligned}
+$$
+
+La entrada de columna $k$ se anula por construcción. Al terminar se tiene $U\mathbf x=\mathbf c$ y se aplica sustitución hacia atrás. Olvidar actualizar $\mathbf b$ produciría una matriz triangular, pero no el sistema equivalente que se necesita resolver.
+
+## 6. Pseudocódigo y costo de la eliminación
+
+La clase organiza el cálculo en tres recorridos anidados. Aquí se escribe actualizando los arreglos en el lugar; es una convención equivalente a los superíndices de etapa anteriores.
+
+```text
+Entrada: A, b; pivotes de cada etapa no nulos
+Para k = 1, ..., n-1:
+  Para i = k+1, ..., n:
+    l = A[i,k] / A[k,k]
+    Para j = k+1, ..., n:
+      A[i,j] = A[i,j] - l * A[k,j]
+    b[i] = b[i] - l * b[k]
+    A[i,k] = 0
+Salida: A triangular superior, b transformado
 ```
-para k = 1, 2, ..., n-1:
-    para i = k+1, ..., n:
-        l[i][k] = a[i][k] / a[k][k]
-        para j = k+1, ..., n:
-            a[i][j] = a[i][j] - l[i][k] * a[k][j]
-        b[i] = b[i] - l[i][k] * b[k]
-```
 
-### 5.3 Costo: $O(n^3)$
+El índice $k$ elige el pivote; no llega hasta $n$ porque debajo de la última fila no hay entradas por eliminar. El índice $i$ elige una fila inferior y calcula su multiplicador una sola vez. El índice $j$ recorre las entradas restantes de esa fila. La actualización de $b_i$ pertenece al recorrido de filas: se realiza una vez por fila, no una vez por columna. La asignación del cero expresa la cancelación ya conocida.
 
-Fijado $k$: para cada $i$ (hay $n-k$ valores de $i$), calcular $l_{ik}$
-cuesta 1 flop, y el loop interno en $j$ cuesta $2(n-k)$ flops (un producto y
-una resta, repetidos $n-k$ veces), más 2 flops para actualizar $b_i$. Total
-por cada $i$: $3 + 2(n-k)$ flops, repetido $n-k$ veces en $i$:
+Para $k,i$ fijos, las $n-k$ entradas requieren dos flops cada una. Se agrega una división por el multiplicador y dos operaciones por el lado derecho. Cada fila cuesta $3+2(n-k)$ y hay $n-k$ filas:
 
-$$\text{Costo}(k) \sim 3(n-k) + 2(n-k)^2$$
+$$
+C_k=3(n-k)+2(n-k)^2,\qquad
+C=\sum_{k=1}^{n-1}\bigl[3(n-k)+2(n-k)^2\bigr].
+$$
 
-Sumando sobre $k = 1,\dots,n-1$:
+La suma de cuadrados domina. El término principal es $\frac23n^3$; omitir las actualizaciones de $\mathbf b$ cambia términos de orden inferior, pero no el orden cúbico. Esta cuenta justifica el resultado mejor que afirmar que cada `for` aporta automáticamente un factor $n$.
 
-$$\sum_{k=1}^{n-1} \left[3(n-k) + 2(n-k)^2\right] \sim \frac{2}{3}n^3$$
+$$
+\boxed{\text{eliminación más sustitución}=O(n^3)+O(n^2)=O(n^3)}.
+$$
 
-**Eliminación gaussiana sin pivoteo cuesta $O(n^3)$** — específicamente
-$\frac{2}{3}n^3$ flops. Duplicar $n$ multiplica el costo por 8.
+Duplicar el tamaño implica aproximadamente ocho veces el trabajo dominante. Resolver el sistema ya triangular es barato en comparación con triangularizarlo.
 
-$$\boxed{\text{Costo total (gaussiana + sustitución)} = \frac{2}{3}n^3 + O(n^2) \sim O(n^3)}$$
+## 7. Por qué no alcanza con evitar pivotes nulos
 
-El término $n^3$ domina: la eliminación gaussiana es mucho más cara que la
-sustitución hacia atrás que le sigue.
+Un pivote nulo impide dividir, pero no demuestra que la matriz original sea singular: puede requerirse un intercambio con una fila inferior. En aritmética exacta suele enseñarse a intercambiar solamente cuando aparece un cero. En punto flotante, un pivote no nulo también puede producir multiplicadores grandes y amplificar errores.
 
-## 6. Pivoteo: qué es y por qué hace falta
+El ejemplo final usa cinco cifras significativas y truncamiento. La solución exacta anunciada es $(0,-1,1)^T$. Tras el primer paso aparece un pivote pequeño; el docente informa un multiplicador $\ell_{32}=-2500$ y explica que, al actualizar el lado derecho, se calcula
 
-**Pivotear = intercambiar filas.** En álgebra lineal I, la regla enseñada
-era: pivotear **sólo si** el pivote candidato $a_{kk}^{(k)}$ es exactamente
-$0$ (en ese caso hay que buscar, entre las filas $j>k$, una con
-$a_{jk}^{(k)} \neq 0$ e intercambiarla).
+$$
+2500\cdot6.001=15002.5
+\ \longrightarrow\ 15002,
+$$
 
-> **Diferencia clave en métodos numéricos**: no alcanza con pivotear sólo
-> cuando el pivote es exactamente cero. Un pivote **cercano a cero** —aunque
-> matemáticamente válido, "en los papeles está todo bien"— puede ser
-> igual de peligroso en una computadora con precisión finita, porque genera
-> multiplicadores $l_{ik}$ muy grandes que amplifican el error de redondeo.
-> Esto se ilustra con el ejemplo numérico de §7.
+$$
+2.5+15002=15004.5
+\ \longrightarrow\ 15004.
+$$
 
-## 7. Ejemplo numérico: cuando un pivote chico rompe todo
+Sin esos truncamientos, la actualización daría $15005$. La sustitución posterior produce un $x_3$ muy próximo a uno, pero se anuncian $x_2\approx-1.4$ y $x_1\approx-0.28$: un error inicialmente pequeño termina siendo importante.
 
-Se trabaja con una computadora hipotética de **5 cifras significativas** (con
-truncamiento) sobre el sistema
+> La enumeración oral de la matriz ampliada, el cociente del multiplicador y algunas cifras finales se contradicen en el ASR. No permiten recuperar de forma unívoca todas sus entradas ni reproducir íntegramente el cálculo. Se conservan las operaciones inequívocas de truncamiento y los resultados anunciados, sin fabricar una matriz que los reproduzca.
 
-$$\begin{pmatrix} 10 & -7 & 0 \\ \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot \end{pmatrix}$$
-
-cuya matriz ampliada inicial es $[7, 3, 9 \mid \dots]$ / $[0, 1, 6 \mid
-\dots]$ (la transcripción no deja completamente claro el sistema $3\times 3$
-completo a partir del habla sola — se reconstruye lo esencial del argumento,
-no cada entrada). La **solución exacta** del sistema es $x = (0, -1, 1)$.
-
-Tras el primer paso de eliminación (pivote $10$), queda un sistema
-intermedio con un pivote candidato $a_{22}^{(2)} = -0{,}01$ — **muy cercano a
-cero**, aunque no exactamente cero. Siguiendo la regla clásica (pivotear
-sólo si es exactamente $0$), se lo usa igual como pivote.
-
-Esto produce un multiplicador enorme:
-
-$$l_{32} = \frac{-2{,}5}{-0{,}01} = -2500$$
-
-Al propagar este multiplicador, aparece una resta de números de magnitud muy
-distinta ($15\,002 $ vs. $15\,004{,}5$) que la máquina de 5 cifras trunca en
-cada paso intermedio, perdiendo precisión. El resultado final, tras
-sustitución hacia atrás, es
-
-$$x_3 \approx 0{,}99993, \qquad x_2 \approx -1{,}4, \qquad x_1 \approx -0{,}28$$
-
-muy lejos de la solución exacta $(0,-1,1)$ — en particular $x_1$ y $x_2$
-quedan completamente arruinados.
-
-> **El mensaje central**: el error no vino de la computadora "fallando", sino
-> de una mala elección de pivote que la regla clásica de álgebra lineal no
-> detecta (porque el pivote no era exactamente cero). Un pivote pequeño
-> genera multiplicadores grandes, que amplifican el error de redondeo hasta
-> volver inútil el resultado. La clase deja planteado, para la clase
-> siguiente, que pivotear en este mismo paso (elegir la fila con el mayor
-> valor absoluto disponible en la columna, en vez de conformarse con "no
-> cero") evita el problema.
-
-*Clase siguiente: se retoma este mismo ejemplo para mostrar la estrategia de
-pivoteo (parcial) que sí evita la pérdida de precisión — tema de la
-descomposición LU.*
+La enseñanza es que el problema puede estar en el algoritmo elegido para esa precisión. El docente propone intercambiar filas en la etapa peligrosa y anuncia que así se recupera la solución con la misma computadora. La próxima clase retomará el mecanismo y el pivoteo.
