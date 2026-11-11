@@ -1,0 +1,36 @@
+% Clase 19 — dos superficies S_1 y S_2 con el mismo borde C. Las dos se
+% orientan con la regla de la mano derecha respecto del sentido de C, así que
+% sus normales apuntan "hacia el mismo lado". Juntas forman una superficie
+% cerrada; con normal saliente hay que invertir la de S_2.
+\begin{tikzpicture}[scale=1]
+
+  % S_2 (por abajo)
+  \fill[figgray!14] (-2.6,0) .. controls (-2.3,-2.3) and (2.3,-2.3) .. (2.6,0) arc (0:-180:2.6 and 0.8);
+  \draw[figaux] (-2.6,0) .. controls (-2.3,-2.3) and (2.3,-2.3) .. (2.6,0);
+
+  % S_1 (por arriba)
+  \fill[figblue!12] (-2.6,0) arc (180:360:2.6 and 0.8) .. controls (2.3,2.3) and (-2.3,2.3) .. (-2.6,0);
+  \draw[figline] (2.6,0) .. controls (2.3,2.3) and (-2.3,2.3) .. (-2.6,0);
+
+  % curva C
+  \draw[figaux] (2.6,0) arc (0:180:2.6 and 0.8);
+  \draw[figblue, line width=1.3pt] (-2.6,0) arc (180:360:2.6 and 0.8);
+  \draw[figvecres] (-0.3,-0.8) -- (0.4,-0.8);
+  \node[figlbl] at (2.95,-0.35) {$C$};
+
+  % normales
+  \draw[figvecaux] (1.3,1.28) -- (1.6,2.0);
+  \node[figlblaux] at (1.9,2.05) {$\hat n$};
+  \draw[figvecaux] (1.3,-1.42) -- (1.5,-0.72);
+  \node[figlblaux] at (1.8,-0.82) {$\hat n$};
+
+  \node[figlbl] at (-2.05,1.4) {$S_1$};
+  \node[figlbl] at (-2.05,-1.5) {$S_2$};
+
+  % lineas de campo
+  \foreach \bx in {-1.1,-0.4} {
+    \draw[figvec] (\bx,-2.6) -- (\bx,2.7);
+  }
+  \node[figlbl] at (-0.05,2.6) {$\vec B$};
+
+\end{tikzpicture}

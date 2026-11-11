@@ -1,0 +1,30 @@
+% Clase 20 — momentos dipolares microscópicos en un volumen \Delta V.
+% (a) desordenados: existen, pero promedian cero. (b) con un campo aplicado se
+% alinean en promedio "un poquito" y la magnetización deja de ser nula.
+% Los ángulos son listas fijas (no aleatorias) para que la figura sea
+% reproducible.
+\providecommand{\claseXXdipolos}[1]{%
+  \fill[figgray!10] (0,0) rectangle (3.6,3.6);
+  \draw[figline] (0,0) rectangle (3.6,3.6);
+  \foreach \px/\py/\ang in {#1} {
+    \draw[figvec] (\px,\py) ++(\ang:-0.33) -- ++(\ang:0.66);
+  }
+}
+\begin{tikzpicture}[scale=1]
+
+  \begin{scope}
+    \claseXXdipolos{0.6/0.6/20, 1.8/0.6/200, 3.0/0.6/110, 0.6/1.8/290, 1.8/1.8/65,
+                    3.0/1.8/160, 0.6/3.0/245, 1.8/3.0/335, 3.0/3.0/90}
+    \node[figlbl, anchor=north] at (1.8,-0.2) {(a) $\sum_i \vec m_i = 0$};
+    \node[figlblaux] at (0.4,3.9) {$\Delta V$};
+  \end{scope}
+
+  \begin{scope}[xshift=5.6cm]
+    \claseXXdipolos{0.6/0.6/70, 1.8/0.6/115, 3.0/0.6/40, 0.6/1.8/100, 1.8/1.8/65,
+                    3.0/1.8/125, 0.6/3.0/85, 1.8/3.0/20, 3.0/3.0/90}
+    \node[figlbl, anchor=north] at (1.8,-0.2) {(b) $\vec M \neq 0$};
+    \draw[figvecres] (4.3,0.9) -- (4.3,2.7);
+    \node[figlbl, text=figred] at (4.7,1.8) {$\vec B$};
+  \end{scope}
+
+\end{tikzpicture}

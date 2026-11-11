@@ -1,0 +1,31 @@
+% Clase 15 — el mismo dibujo, dos problemas. Dos conductores buenos y un medio
+% entre ellos: a la izquierda el medio es un conductor mediano (resistor), a la
+% derecha un dieléctrico (condensador). El campo es el mismo; cambia qué se
+% lee del flujo de E a través de S: corriente o carga.
+\providecommand{\claseXVdospaneles}[4]{%
+  % #1 rótulo del medio, #2 rótulo conductor izq, #3 rótulo conductor der, #4 pie
+  \fill[figgray!12, rounded corners=10pt] (-2.9,-1.6) rectangle (2.9,1.6);
+  \draw[figgray, line width=0.6pt, rounded corners=10pt] (-2.9,-1.6) rectangle (2.9,1.6);
+  % lineas de campo
+  \draw[figvecaux] (-1.35,0) -- (1.35,0);
+  \draw[figvecaux] (-1.5,0.45) .. controls (-0.5,1.0) and (0.5,1.0) .. (1.5,0.45);
+  \draw[figvecaux] (-1.5,-0.45) .. controls (-0.5,-1.0) and (0.5,-1.0) .. (1.5,-0.45);
+  % conductores
+  \fill[figgray!45, draw=figblue, line width=0.9pt] (-1.9,0) ellipse (0.55 and 0.75);
+  \fill[figgray!45, draw=figblue, line width=0.9pt] (1.9,0) ellipse (0.55 and 0.75);
+  \node[figlbl] at (-1.9,0) {#2};
+  \node[figlbl] at (1.9,0) {#3};
+  % superficie S
+  \draw[figred, dashed, line width=0.9pt] (0,-1.45) .. controls (0.35,-0.5) and (-0.35,0.5) .. (0,1.45);
+  \node[figlbl, text=figred] at (0.35,1.25) {$S$};
+  \node[figlbl] at (-0.75,-1.25) {#1};
+  \node[figlbl] at (0,-2.05) {#4};
+}
+\begin{tikzpicture}[scale=0.98]
+  \begin{scope}[xshift=-3.35cm]
+    \claseXVdospaneles{$g$}{$\phi_2$}{$\phi_1$}{Resistor: $\phi_2-\phi_1 = R\,I$}
+  \end{scope}
+  \begin{scope}[xshift=3.35cm]
+    \claseXVdospaneles{$\varepsilon$}{$+Q$}{$-Q$}{Condensador: $\phi_2-\phi_1 = Q/C$}
+  \end{scope}
+\end{tikzpicture}

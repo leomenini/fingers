@@ -1,0 +1,607 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 19: Potencial vector magnético} \\[0.3em]
+        \large{Desarrollo multipolar, momento dipolar magnético y campo de un dipolo}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Un ejemplo más de Ampère: cable grueso}
+
+Repaso: la clase pasada se probó que, para corrientes estacionarias
+($\div \vec J = 0$), Biot y Savart implica Ampère; eso cierra un asunto
+que en Física III «había que creer o reventar».
+
+Ejemplo de recordatorio. Un cable muy largo (se omiten los efectos de borde en
+las puntas) de radio $R$, perpendicular al pizarrón, con densidad de corriente
+$J$ \textbf{uniforme}.
+
+Mismas simetrías que el cable infinito: invariancia por rotaciones alrededor
+del eje, de modo que las líneas de campo ---cerradas e invariantes--- son
+circunferencias, y el módulo de $\vec B$ es constante sobre cada una. Tomando
+una de radio $r$ como curva amperiana, esté adentro o afuera del cable:
+
+\[
+B\,2\pi r = \mu_0\,I_{\text{adentro}},
+\qquad
+I_{\text{adentro}} =
+\begin{cases}
+J\,\pi r^2 & r<R\\[2pt]
+J\,\pi R^2 & r>R
+\end{cases}
+\]
+
+\begin{keybox}
+\[
+\boxed{\ B(r) =
+\begin{cases}
+\dfrac{\mu_0 J}{2}\,r & r<R\\[8pt]
+\dfrac{\mu_0 J}{2}\,\dfrac{R^2}{r} & r>R
+\end{cases}\ }
+\]
+\end{keybox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase19-cable-grueso.tex}
+  \caption{Módulo del campo de un cable de radio $R$ con densidad de corriente uniforme, en unidades de su valor máximo, $\mu_0 J R/2$.}
+\end{figure}
+
+El módulo crece linealmente hasta $r=R$, donde alcanza su máximo
+$B_{\max} = \mu_0 J R/2$, y afuera decrece como $1/r$.
+
+Con esto el campo magnético tiene, como el eléctrico, sus dos leyes:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+ & \textbf{Divergencia} & \textbf{Rotacional} \\
+\midrule
+$\vec B$ & $\div \vec B = 0$ (no hay monopolos) & $\curl \vec B = \mu_0\vec J$ (Ampère) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Potencial vector magnético}
+
+\subsection{Por qué no hay potencial escalar}
+
+En electrostática el campo se escribe como menos el gradiente de un potencial.
+Para $\vec B$ en general no se puede: como $\curl \vec B = \mu_0\vec J$
+no es cero, $\vec B$ \textbf{no deriva de un potencial escalar}.
+
+\begin{notebox}
+Sí se puede definir un potencial escalar magnético en regiones \textbf{sin
+corriente}. Es una situación excepcional, pero aparece en el práctico y más
+adelante en el teórico.
+\end{notebox}
+
+Hay una propiedad alternativa: la divergencia de $\vec B$ sí es cero. Eso
+permite asociarle un potencial que, en lugar de un escalar, es un \textbf{vector}.
+
+\subsection{Biot y Savart como un rotacional}
+
+Se parte de
+
+\[
+\vec B(\vec r_2) = \frac{\mu_0}{4\pi}\int_V
+\vec J(\vec r_1)\times\frac{\vec r_2-\vec r_1}{|\vec r_2-\vec r_1|^3}\,dV_1
+\]
+y se busca escribirlo no como un gradiente sino como un rotacional.
+
+\textbf{Paso 1.} El cociente es, salvo constantes, el campo de una carga puntual en
+$\vec r_1$, que es menos el gradiente de su potencial:
+
+\[
+\vnabla_2\frac{1}{|\vec r_2-\vec r_1|} = -\frac{\vec r_2-\vec r_1}{|\vec r_2-\vec r_1|^3}
+\quad\Longrightarrow\quad
+\vec B(\vec r_2) = -\frac{\mu_0}{4\pi}\int_V \vec J(\vec r_1)\times
+\vnabla_2\frac{1}{|\vec r_2-\vec r_1|}\,dV_1 .
+\]
+
+\textbf{Paso 2.} Rotacional de un escalar por un vector (otra vez «la derivada de un
+producto»; lo dudoso son los signos, que se verifican a mano o con
+Levi-Civita):
+
+\[
+\curl (f\,\vec v) = f\,\curl \vec v + \vnabla f\times\vec v .
+\]
+
+Con $f = 1/|\vec r_2-\vec r_1|$ y $\vec v = \vec J(\vec r_1)$, el primer
+término es nulo porque $\vec J(\vec r_1)$ \textbf{no depende de $\vec r_2$}:
+
+\[
+\vnabla_2\times\frac{\vec J(\vec r_1)}{|\vec r_2-\vec r_1|}
+= \vnabla_2\frac{1}{|\vec r_2-\vec r_1|}\times\vec J(\vec r_1).
+\]
+
+\textbf{Paso 3.} Eso es el integrando de arriba con los factores en el otro orden;
+el producto vectorial es anticonmutativo y el signo absorbe el menos. Y el
+rotacional, que es una derivada respecto de la variable exterior, \textbf{sale de la
+integral}:
+
+\[
+\vec B(\vec r_2) = \vnabla_2\times\left[\frac{\mu_0}{4\pi}\int_V
+\frac{\vec J(\vec r_1)}{|\vec r_2-\vec r_1|}\,dV_1\right].
+\]
+
+\subsection{Definición y analogía con el potencial escalar}
+
+\begin{keybox}
+\[
+\boxed{\ \vec A(\vec r_2) = \frac{\mu_0}{4\pi}\int_V
+\frac{\vec J(\vec r_1)}{|\vec r_2-\vec r_1|}\,dV_1,
+\qquad \vec B = \curl \vec A\ }
+\]
+\end{keybox}
+
+$\vec A$ es el \textbf{potencial vector magnético}. La expresión es casi idéntica a
+la del potencial de Coulomb:
+
+\[
+\phi(\vec r_2) = \frac{1}{4\pi\varepsilon_0}\int_V
+\frac{\rho(\vec r_1)}{|\vec r_2-\vec r_1|}\,dV_1 .
+\]
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Eléctrico} & \textbf{Magnético} \\
+\midrule
+$1/\varepsilon_0$ & $\mu_0$ \\
+$\rho$ & $\vec J$ \\
+$\phi$ (escalar) & $\vec A$ (vector) \\
+$\vec E = -\vnabla\phi$ & $\vec B = \curl \vec A$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{¿Qué se ganó?} La objeción es razonable: se pasó de un vector a otro vector,
+no de tres componentes a una como en el caso eléctrico. Igual se gana bastante:
+
+\begin{itemize}
+  \item la integral ---que es lo que da trabajo--- es \textbf{mucho más simple}: no tiene
+  productos vectoriales, y el rotacional se toma una sola vez al final;
+  \item es mnemotécnicamente cómoda: en Biot y Savart uno duda del orden de los
+  factores y de los signos; ésta se recuerda a partir de la de Coulomb.
+\end{itemize}
+
+\subsection{Qué es exacto y qué es aproximado}
+
+La deducción se apoya en Biot y Savart, que es una ley \textbf{aproximada}. Pero:
+
+\begin{notebox}[Resultado matemático (enunciado, no demostrado)]
+Todo campo vectorial que
+verifique $\div \vec B = 0$ se puede escribir como
+$\vec B = \curl \vec A$ para algún campo vectorial $\vec A$. Es análogo
+a que un campo de rotacional nulo se escribe como un gradiente, con hipótesis
+del mismo tipo sobre la región (simplemente conexa, etc.); se toma todo el
+espacio «para no hacernos lío».
+\end{notebox}
+
+Como hasta donde se sabe los experimentos nunca detectaron monopolos,
+$\div \vec B = 0$ es exacta, y entonces:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Afirmación} & \textbf{Estatus} \\
+\midrule
+$\vec B = \curl \vec A$ para algún $\vec A$ & \textbf{Exacta}; no depende de Biot y Savart \\
+La expresión integral concreta de $\vec A$ & Basada en Biot y Savart; tendrá correcciones cuando se corrija esa ley \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Resumen del docente: (1) es útil, simplifica cuentas; (2) no tanto como en el
+caso eléctrico, porque siguen siendo tres componentes; (3) $\vec B$ siempre es
+el rotacional de un potencial vector, pero la fórmula disponible está al nivel
+de aproximación de Biot y Savart; (4) se parece mucho a la del potencial
+escalar.
+
+\section{Desarrollo multipolar magnético}
+
+Pregunta: un conjunto de corrientes localizadas en una región; se quiere el
+campo magnético \textbf{lejos} de ella. Igual que en el caso eléctrico, se hace un
+desarrollo en el tamaño de la región, y conviene empezar por el potencial.
+Cada componente de $\vec A$ obedece la misma expresión que $\phi$, así que la
+cuenta es la misma, con particularidades.
+
+\subsection{Planteo para un circuito}
+
+Se trata el caso más común, corriente $I$ en un circuito $C$. Con la regla
+$\vec J\,dV\to I\,d\vec l$:
+
+\[
+\vec A(\vec r_2) = \frac{\mu_0 I}{4\pi}\oint_C
+\frac{d\vec l_1}{|\vec r_2-\vec r_1|} .
+\]
+
+Se toma el origen cerca del circuito, de modo que $|\vec r_1|$ sea del orden
+del tamaño $a$ del circuito, y se estudia $|\vec r_2|\gg|\vec r_1|$.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase19-circuito-lejano.tex}
+  \caption{El origen se toma cerca del circuito, de modo que $|\vec r_1|$ es del orden de su tamaño $a$, y se mira el campo en un punto lejano.}
+\end{figure}
+
+\subsection{Desarrollo de \texorpdfstring{$1/|\vec r_2-\vec r_1|$}{1/|r2 - r1|}}
+
+El mismo cálculo del caso eléctrico:
+
+\[
+\frac{1}{|\vec r_2-\vec r_1|}
+= \frac{1}{\left(r_2^2 + r_1^2 - 2\,\vec r_1\cdot\vec r_2\right)^{1/2}}
+= \frac{1}{r_2}\left(1 - \frac{2\,\vec r_1\cdot\vec r_2}{r_2^2}
++ \frac{r_1^2}{r_2^2}\right)^{-1/2}.
+\]
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Aproximación} & \textbf{Orden en $r_1/r_2$} & \textbf{Significado} \\
+\midrule
+Monopolar & 0 & Se reemplaza $\vec r_1$ por 0: todo el circuito en el origen \\
+Dipolar & 1 & --- \\
+Cuadrupolar & 2 & --- \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+En el caso eléctrico se llegó al cuadrupolo; acá alcanza con el \textbf{dipolar}.
+Con $(1+x)^\alpha = 1+\alpha x+\mathcal O(x^2)$ y $\alpha = -\tfrac12$ (el
+término $r_1^2/r_2^2$ ya es de segundo orden):
+
+\[
+\frac{1}{|\vec r_2-\vec r_1|} = \frac{1}{r_2}\left[1 +
+\frac{\vec r_1\cdot\vec r_2}{r_2^2} + \mathcal O\!\left(\frac{r_1^2}{r_2^2}\right)\right].
+\]
+
+Sustituyendo (con $d\vec l_1 = d\vec r_1$):
+
+\[
+\vec A(\vec r_2) = \frac{\mu_0 I}{4\pi}\left[
+\frac{1}{r_2}\oint_C d\vec r_1
++ \frac{1}{r_2^3}\oint_C d\vec r_1\,(\vec r_1\cdot\vec r_2)
++ \mathcal O\!\left(\frac{1}{r_2^3}\right)\right].
+\]
+
+El primer término decrece como $1/r_2$, el segundo como $1/r_2^2$ (hay un
+$r_2$ arriba) y el cuadrupolar, despreciado, como $1/r_2^3$.
+
+\subsection{El término monopolar es cero}
+
+\[
+\oint_C d\vec r_1 = 0 :
+\]
+la integral de línea sobre una curva cerrada se anula. \textbf{No hay término
+monopolar}, como tenía que ser: no existe el equivalente magnético de la
+carga. El campo magnético de un circuito decrece, a lo sumo, dipolarmente.
+
+\subsection{El término dipolar}
+
+Hay que calcular $\oint_C d\vec r_1\,(\vec r_1\cdot\vec r_2)$, y se quiere
+sacar $\vec r_2$ de la integral, donde está entreverado en un producto escalar.
+
+\begin{notebox}
+Este tramo del video es una \textbf{regrabación}: el docente avisa que la
+explicación original «fue un enredo inútil» y la rehace prolija.
+\end{notebox}
+
+\textbf{Ecuación (1): triple producto vectorial.}
+
+\[
+(\vec r_1\times d\vec r_1)\times\vec r_2
+= -\,\vec r_1\,(d\vec r_1\cdot\vec r_2) + d\vec r_1\,(\vec r_1\cdot\vec r_2).
+\]
+
+\textbf{Ecuación (2): un diferencial exacto.} Variando $\vec r_1$ con $\vec r_2$
+fijo:
+
+\[
+d\!\left[\vec r_1\,(\vec r_2\cdot\vec r_1)\right]
+= d\vec r_1\,(\vec r_1\cdot\vec r_2) + \vec r_1\,(\vec r_2\cdot d\vec r_1).
+\]
+
+La expresión buscada aparece en las dos, y la otra aparece con signos opuestos.
+\textbf{Sumando}:
+
+\[
+(\vec r_1\times d\vec r_1)\times\vec r_2 + d\!\left[\vec r_1\,(\vec r_2\cdot\vec r_1)\right]
+= 2\,d\vec r_1\,(\vec r_1\cdot\vec r_2).
+\]
+
+Integrando sobre la curva cerrada, el diferencial exacto da cero (se vuelve al
+punto de partida) y $\vec r_2$ sale de la integral:
+
+\[
+\oint_C d\vec r_1\,(\vec r_1\cdot\vec r_2)
+= \left[\frac12\oint_C \vec r_1\times d\vec r_1\right]\times\vec r_2 .
+\]
+
+\subsection{Momento dipolar magnético y potencial del dipolo}
+
+El corchete es el \textbf{vector área} del circuito, el mismo que apareció al
+calcular el torque sobre una espira (Clase 16):
+
+\[
+\vec{\mathcal A} = \frac12\oint_C \vec r_1\times d\vec r_1 .
+\]
+
+(Con $\mathcal A$ cursiva para no confundirlo con el potencial vector.)
+Multiplicado por la corriente es el \textbf{momento dipolar magnético}:
+
+\[
+\vec m = I\,\vec{\mathcal A} = \frac{I}{2}\oint_C \vec r_1\times d\vec r_1 .
+\]
+
+Para una curva plana, $\vec{\mathcal A}$ es el de Física III: módulo igual al
+área, dirección perpendicular al plano, sentido según la mano derecha. Para un
+circuito en el espacio es más complicado, pero la integral lo da.
+
+\begin{keybox}
+\[
+\boxed{\ \vec A(\vec r) = \frac{\mu_0}{4\pi}\,\frac{\vec m\times\vec r}{r^3}
++ \mathcal O\!\left(\frac{1}{r^3}\right)\ }
+\]
+\end{keybox}
+
+Es la \textbf{aproximación dipolar magnética} del potencial vector. Comparada con el
+dipolo eléctrico:
+
+\[
+\phi(\vec r) = \frac{1}{4\pi\varepsilon_0}\,\frac{\vec p\cdot\vec r}{r^3} + \dots
+\]
+el producto escalar pasa a ser vectorial, $1/\varepsilon_0$ pasa a $\mu_0$ y
+$\vec p$ pasa a $\vec m$.
+
+\section{Campo magnético de un dipolo}
+
+\subsection{Cálculo del rotacional}
+
+$\vec B = \curl \vec A$, con $\vec m$ \textbf{constante} (depende del dipolo,
+no del punto de observación). Usando el rotacional de un producto vectorial
+(Clase 18), sólo sobreviven los términos donde las derivadas caen sobre
+$\vec r/r^3$:
+
+\[
+\curl \left(\vec m\times\frac{\vec r}{r^3}\right)
+= \vec m\;\div \!\left(\frac{\vec r}{r^3}\right)
+- (\vec m\cdot\vnabla)\frac{\vec r}{r^3}.
+\]
+
+\textbf{Primer término.} $\vec r/r^3$ es el campo de una carga puntual: su
+divergencia es $4\pi\,\delta(\vec r)$, nula fuera del origen.
+
+\begin{warnbox}[La delta en el origen no interesa]
+La aproximación dipolar es para $r$
+grande; en $r=0$ nada de esto vale y habría que mirar el detalle de la
+distribución de corriente. Se descarta el término.
+\end{warnbox}
+
+\textbf{Segundo término.} Componente a componente. Derivando arriba y abajo:
+
+\[
+m_x\,\pdv{x}\,\frac{\vec r}{r^3}
+= \frac{m_x\,\hat\imath}{r^3} - \frac{3\,m_x\,x\;\vec r}{r^5},
+\]
+y lo mismo con $y$ y $z$. Sumando los tres:
+
+\[
+(\vec m\cdot\vnabla)\frac{\vec r}{r^3}
+= \frac{\vec m}{r^3} - \frac{3\,(\vec m\cdot\vec r)\,\vec r}{r^5}.
+\]
+
+\subsection{Resultado y cuándo falla}
+
+Con el signo menos de adelante (que el docente se había «morfado» y corrige):
+
+\begin{keybox}
+\[
+\boxed{\ \vec B(\vec r) = \frac{\mu_0}{4\pi}\left[
+\frac{3\,(\vec m\cdot\vec r)\,\vec r}{r^5} - \frac{\vec m}{r^3}\right]\ }
+\]
+\end{keybox}
+
+Es el \textbf{campo magnético dipolar}. Es casi idéntico al campo de un dipolo
+eléctrico: se pasa de uno a otro cambiando $1/\varepsilon_0\to\mu_0$ y
+$\vec p\to\vec m$. El nombre «dipolar» es totalmente apropiado.
+
+\begin{notebox}
+\textbf{Cualquier circuito, visto de lejos, se comporta así}, siempre que
+$\vec m\neq0$. En el caso eléctrico, para llegar al cuadrupolo tenían que
+anularse carga y momento dipolar; acá el término de carga se anula solo.
+\end{notebox}
+
+¿Cuándo $\vec m = 0$? Una sola curva plana nunca lo tiene nulo. Sí puede
+anularse, por ejemplo, con dos circuitos girando en sentidos opuestos, o con
+una curva que sube y vuelve por el otro lado: es como sumar dos dipolos
+opuestos.
+
+\section{Flujo magnético por superficies abiertas}
+
+Definición que hará falta más adelante, para la ley de Faraday. El flujo de
+$\vec B$ por una superficie \textbf{cerrada} es cero; pero interesa también el flujo
+por superficies abiertas.
+
+Dada una curva cerrada orientada $C$ y dos superficies $S_1$ y $S_2$ con ese
+mismo borde, cada una orientada por la \textbf{regla de la mano derecha} (la
+convención del curso):
+
+\[
+\Phi_{S_1} = \int_{S_1}\vec B\cdot\hat n\,dS,
+\qquad
+\Phi_{S_2} = \int_{S_2}\vec B\cdot\hat n\,dS .
+\]
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase19-flujo-superficies.tex}
+  \caption{Dos superficies con el mismo borde $C$, orientadas las dos con la regla de la mano derecha. Las líneas de campo que cruzan una cruzan la otra.}
+\end{figure}
+
+Son iguales. Intuitivamente: el flujo cuenta líneas de campo, y todas las que
+pasan por una pasan por la otra. Formalmente: la unión $S_1\cup S_2$ es una
+superficie cerrada, pero al tomar la normal saliente hay que invertir la de una
+de las dos:
+
+\[
+0 = \Phi_{S_1\cup S_2} = \Phi_{S_1} - \Phi_{S_2}
+\quad\Longrightarrow\quad
+\boxed{\ \Phi_{S_1} = \Phi_{S_2}\ }
+\]
+
+\textbf{El flujo magnético depende sólo del borde}, no de la superficie elegida para
+calcularlo.
+
+\begin{notebox}
+Con el campo eléctrico no pasa lo mismo: si entre las dos superficies queda
+una carga, por Gauss el flujo por la superficie cerrada no es cero. En el
+caso magnético, como no hay monopolos, vale siempre.
+\end{notebox}
+
+\section{Adelanto: Laplace fuera del electromagnetismo}
+
+Quedan ocho minutos y el docente los usa para anunciar algo de la clase
+siguiente. La ecuación de Laplace ya apareció dos veces (electrostática y
+corrientes estacionarias en medios óhmicos), y aparecerá una tercera en
+problemas magnéticos: donde $\vec J = 0$ es $\curl \vec B = 0$, se escribe
+$\vec B$ como un gradiente y, con $\div \vec B = 0$, vuelve Laplace.
+
+Pero es mucho más general: vale siempre que haya un fenómeno \textbf{lineal,
+homogéneo e isotrópico, sin fuentes}, determinado por lo que pasa en el borde.
+Dos ejemplos que se anuncian y \textbf{no se desarrollan} en esta clase:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Ejemplo} & \textbf{Qué obedece Laplace} & \textbf{Dimensión} \\
+\midrule
+Membrana tensa de un tambor (de borde cualquiera) deformada \textbf{un poquito} por un taco, en equilibrio & La altura de la membrana como función de $(x,y)$ & Plano \\
+Salón cerrado con una estufa, en régimen estacionario & El campo de temperaturas & Espacio \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Para deformaciones grandes de la membrana el problema es no lineal y más
+complicado; fuera del régimen estacionario, la temperatura obedece otra
+ecuación, la del calor.
+
+\noindent\emph{La próxima clase dedica un rato a esas aplicaciones de la ecuación de Laplace
+en otras ramas de la física.}
+
+\end{document}

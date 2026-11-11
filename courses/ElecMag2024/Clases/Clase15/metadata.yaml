@@ -16,33 +16,59 @@ video:
 
 stats:
   transcript_words: 8990
-  summary_words: 0
+  summary_words: 2783
   diagrams_pending: 0
-  equations: 0
+  equations: 18
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Resistencia y capacidad con igual geometría
+  - Relación RC igual a permitividad sobre conductividad
+  - Aproximación al equilibrio electrostático en un material óhmico
+  - Tiempo característico de relajación de la carga
+  - Órdenes de magnitud de la resistividad y el equilibrio
+  - Relajación en metales
+  - Circuitos con corriente localizada
+  - Necesidad de una fuente de energía no electrostática
+  - Generador mecánico y baterías químicas
+  - Batería ideal, batería real y resistencia interna
+  - Cables y resistores como elementos de circuito
+  - Resistores en serie y en paralelo
+  - Leyes de Kirchhoff
+  - Circuito de una malla
+  - Convención de signos del condensador
+  - Carga y descarga de un condensador en un circuito RC
+  - Límite de validez del régimen cuasi-estacionario
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Ley de Ohm y resistencia (Clase 14)
+  - Ecuación de continuidad (Clase 14)
+  - Analogía entre electrostática y conducción estacionaria (Clase 14)
+  - Ley de Gauss en un dieléctrico
+  - Capacitancia
+  - Ecuaciones diferenciales lineales de primer orden
+  - Circuitos de corriente directa en Física III
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Campo magnético
+  - Fuerza magnética entre cargas en movimiento
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-fable-5-2
 
 editorial_status: draft

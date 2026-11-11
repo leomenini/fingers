@@ -1,0 +1,44 @@
+% Clase 16 — fuerza sobre un tramo de cable. El cable es un cañito de sección
+% A; en el tramo dl la velocidad de deriva es paralela a dl. Con dl hacia la
+% derecha y B hacia arriba en el plano del papel, dF = I dl x B sale del papel.
+\begin{tikzpicture}[scale=1]
+
+  % campo B de fondo
+  \foreach \bx in {1.9,5.3,6.5} {
+    \draw[figvecaux] (\bx,0.95) -- (\bx,1.85);
+  }
+  \foreach \bx in {0.7,1.9,6.9} {
+    \draw[figvecaux] (\bx,-1.35) -- (\bx,-0.45);
+  }
+  \node[figlblaux] at (6.85,1.5) {$\vec B$};
+
+  % cable
+  \fill[figgray!14] (0,-0.4) rectangle (7.2,0.4);
+  \draw[figline] (0,0.4) -- (7.2,0.4);
+  \draw[figline] (0,-0.4) -- (7.2,-0.4);
+  \draw[figline, fill=figgray!28] (7.2,0) ellipse (0.16 and 0.4);
+  \draw[figline] (0,0.4) arc (90:270:0.16 and 0.4);
+  \node[figlbl] at (7.65,0) {$A$};
+
+  % tramo dl
+  \fill[figblue!22] (2.9,-0.4) rectangle (4.3,0.4);
+  \draw[figaux] (2.9,-0.4) -- (2.9,0.4);
+  \draw[figaux] (4.3,-0.4) -- (4.3,0.4);
+  \foreach \px/\py in {3.05/0.17, 3.2/-0.18} {
+    \node[figneg] at (\px,\py) {};
+    \draw[figvec] (\px,\py) -- ++(0.7,0);
+  }
+  \node[figlblaux] at (4.75,-0.17) {$\vec v_d$};
+
+  % dl y corriente
+  \draw[figvecres] (2.9,0.72) -- (4.3,0.72);
+  \node[figlbl, text=figred] at (3.6,1.05) {$d\vec l$};
+  \draw[figvecres] (0.2,0.72) -- (1.1,0.72);
+  \node[figlbl, text=figred] at (0.65,1.05) {$I$};
+
+  % dF saliente
+  \draw[figred, line width=0.9pt] (3.6,-0.95) circle (0.17);
+  \fill[figred] (3.6,-0.95) circle (0.05);
+  \node[figlbl, text=figred, anchor=west] at (3.9,-0.95) {$d\vec F = I\,d\vec l\times\vec B$};
+
+\end{tikzpicture}

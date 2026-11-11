@@ -1,0 +1,22 @@
+% Clase 16 — dos cargas en movimiento. r va de la carga 1 a la 2; la fuerza
+% magnética sobre la 2 hace intervenir las dos velocidades por separado (no la
+% velocidad relativa), medidas en un referencial dado.
+\begin{tikzpicture}[scale=1]
+
+  \coordinate (q1) at (0,0);
+  \coordinate (q2) at (4.6,1.6);
+
+  \draw[figaux, -{Latex[length=2mm,width=1.4mm]}] (q1) -- (q2);
+  \node[figlbl] at (2.2,1.12) {$\vec r$};
+
+  \draw[figvec] (q1) -- (1.5,-0.75);
+  \node[figlbl] at (1.8,-0.9) {$\vec v_1$};
+  \draw[figvec] (q2) -- (5.5,2.85);
+  \node[figlbl] at (5.75,3.05) {$\vec v_2$};
+
+  \node[figpos] at (q1) {};
+  \node[figpos] at (q2) {};
+  \node[figlbl] at (-0.35,0.3) {$q_1$};
+  \node[figlbl] at (4.95,1.25) {$q_2$};
+
+\end{tikzpicture}

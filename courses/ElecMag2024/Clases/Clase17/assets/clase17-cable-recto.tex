@@ -1,0 +1,38 @@
+% Clase 17 — cable recto muy largo sobre el eje x; punto de observación sobre
+% el eje y a distancia a. theta es el ángulo, en el elemento de corriente,
+% entre el cable y la recta al punto: sin(theta) = a / sqrt(a^2 + x^2).
+% Dibujado con x = -a (theta = 45 grados). El campo sale del papel (k).
+\begin{tikzpicture}[scale=1]
+
+  % ejes
+  \draw[figaxis] (0,-0.5) -- (0,3.3);
+  \node[figlbl] at (0,3.55) {$y$};
+  \node[figlbl] at (5.45,0) {$x$};
+
+  % cable
+  \draw[figblue, line width=1.6pt, -{Latex[length=2.6mm,width=1.9mm]}] (-5,0) -- (5.1,0);
+  \draw[figvecres] (2.6,0.3) -- (3.5,0.3);
+  \node[figlbl, text=figred] at (3.05,0.62) {$I$};
+
+  % elemento de corriente en x = -a
+  \draw[figred, line width=2.4pt] (-2.6,0) -- (-2.0,0);
+  \node[figlbl, text=figred] at (-2.3,-0.35) {$dx$};
+
+  % vector al punto
+  \draw[figaux, -{Latex[length=2mm,width=1.4mm]}] (-2.3,0) -- (-0.06,2.24);
+  \node[figlbl] at (-1.85,1.3) {$\vec r_2-\vec r_1$};
+
+  % angulo
+  \draw[figgray, line width=0.6pt] (-1.5,0) arc (0:45:0.8);
+  \node[figlbl] at (-1.15,0.33) {$\theta$};
+
+  % punto de observacion y campo saliente
+  \fill[figblue] (0,2.3) circle (1.6pt);
+  \node[figlbl, anchor=west] at (0.2,1.25) {$a$};
+  \draw[figred, line width=0.9pt] (0.55,2.3) circle (0.17);
+  \fill[figred] (0.55,2.3) circle (0.05);
+  \node[figlbl, text=figred, anchor=west] at (0.8,2.3) {$\vec B$};
+
+  \node[figlblaux] at (-0.22,-0.3) {$O$};
+
+\end{tikzpicture}

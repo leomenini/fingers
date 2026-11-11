@@ -1,0 +1,581 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 20: Propiedades magnéticas de la materia (parte 1)} \\[0.3em]
+        \large{La ecuación de Laplace en otras ramas de la física, magnetización y corrientes de magnetización}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Paréntesis: Laplace en otras ramas de la física}
+
+\begin{notebox}
+La grabación empieza con «un \textbf{segundo} tema que quiero avanzar»: lo que se
+haya tratado antes en esa clase no está en la transcripción.
+\end{notebox}
+
+Las ecuaciones de \textbf{Poisson y Laplace} aparecen en muchas ramas de la física, y
+no sólo de la física. El docente lo presenta como cultura general: detalla un
+ejemplo ---el calor--- y menciona otros dos.
+
+\subsection{Conducción del calor en régimen estacionario}
+
+Siempre en \textbf{régimen estacionario}: la ecuación de Laplace no tiene el tiempo.
+El ejemplo es el salón en invierno, con puertas cerradas y una estufa: al
+prenderla la temperatura varía en el tiempo y en el espacio, el calor difunde y
+al final el sistema se estabiliza. No interesa el transitorio, sino el estado
+final.
+
+Para un volumen $V$ limitado por una superficie $S$, el calor que \textbf{sale} por
+unidad de tiempo se escribe como el flujo saliente de un vector $\vec H$, el
+\textbf{flujo de calor}:
+
+\[
+\frac{dQ}{dt} = \oiint_S \vec H\cdot\hat n\,dS .
+\]
+
+Es el análogo de $I = \int\vec J\cdot\hat n\,dS$: $\vec H$ juega el papel de
+$\vec J$ y $Q$ el de la carga.
+
+\begin{warnbox}[Diferencia fundamental: el calor no es una cantidad conservada]
+La carga
+se conserva; el calor no, porque otras formas de energía se transforman en
+calor (la estufa convierte energía eléctrica). Se conserva la energía total.
+\end{warnbox}
+
+Por eso el balance tiene un término de fuente. En forma diferencial (dividiendo
+por el volumen y tomando el límite, que es lo que define la divergencia):
+
+\[
+\div \vec H = s - \pdv{u}{t},
+\]
+con $s$ el calor producido por unidad de volumen y de tiempo (por conversión de
+otra forma de energía) y $u$ la energía interna por unidad de volumen. Los
+signos dependen de la convención; acá el calor se toma saliente.
+
+\subsection{Ley de Fourier y analogía con la conducción eléctrica}
+
+El calor va de las zonas calientes a las frías. En muy buena aproximación ---no
+es exacta--- lo hace según la \textbf{ley de Fourier}:
+
+\begin{keybox}
+\[
+\boxed{\ \vec H = -k\,\vnabla T\ }
+\]
+\end{keybox}
+con $k$ la \textbf{conductividad térmica}. El signo menos hace que el flujo vaya de
+caliente a frío. Es el análogo de $\vec J = g\,\vec E$:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Conducción eléctrica} & \textbf{Conducción térmica} \\
+\midrule
+Potencial $\phi$ & Temperatura $T$ \\
+Densidad de corriente $\vec J$ & Flujo de calor $\vec H$ \\
+Campo $\vec E = -\vnabla\phi$ & $-\vnabla T$ \\
+Conductividad $g$ & Conductividad térmica $k$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Lo que no tiene análogo es el término $\partial u/\partial t$, que es \textbf{cero en
+el estado estacionario}. (Fuera de él haría falta relacionar la energía
+interna con la temperatura.)
+
+\subsection{De Poisson a Laplace}
+
+En régimen estacionario $\div \vec H = s$, y sustituyendo Fourier:
+
+\begin{keybox}
+\[
+\boxed{\ -k\,\laplacian  T = s\ }
+\]
+\end{keybox}
+
+Es la \textbf{ecuación de Poisson}, con la fuente de calor en el papel que tenían
+las cargas eléctricas. Donde no hay fuentes:
+
+\[
+\laplacian  T = 0 .
+\]
+
+En el salón, Laplace no vale en la estufa pero sí en todo el resto
+(despreciando el calor que generan las personas).
+
+\begin{notebox}[La temperatura no tiene por qué ser uniforme]
+Si los vidrios están fríos y
+la estufa suministra calor, o si la sala de al lado está calefaccionada, hay
+una temperatura en la puerta y otra en la ventana, y en el medio un gradiente
+de temperaturas dado por Laplace \textbf{con condiciones de borde} fijadas en
+esos lugares.
+\end{notebox}
+
+La razón de fondo del parecido: es un problema de conducción, con fuentes
+apagadas o localizadas, y una relación entre divergencia y fuente.
+
+\subsection{Otros dos ejemplos: el tambor y los fluidos}
+
+Mencionados sin detallar.
+
+\begin{itemize}
+  \item \textbf{Tambor estacionario.} Una lonja tensa con un borde (circular o no) a la
+  que se le aplica desde abajo un taco que la deforma. Si el estiramiento no es
+  muy grande, la \textbf{altura de la lonja} verifica Laplace: el borde está a
+  altura cero, la zona del taco (de la forma que sea; el docente dibuja un
+  hexágono) a, digamos, un centímetro, y entre medio la superficie baja
+  cumpliendo Laplace. Se lo puede pensar como un fenómeno de elasticidad y
+  relajación: el sistema quiere estar lo menos estirado posible, dentro de lo
+  que le imponen las condiciones de borde.
+  \item \textbf{Fluidos estacionarios.} La ecuación de la mecánica de fluidos
+  (Navier--Stokes) es no lineal y mucho más complicada, pero en ciertas
+  situaciones se aproxima por una lineal y se cumple Laplace: hace falta flujo
+  \textbf{irrotacional} y bastante suave. No todo flujo laminar sirve: la no
+  linealidad puede dar turbulencia, pero también características no lineales
+  del propio flujo laminar.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase20-tambor.tex}
+  \caption{Tambor con un taco, esquema cualitativo. El borde está a altura cero y la zona del taco a altura $h_0$; entre medio la lonja baja cumpliendo la ecuación de Laplace. No es una solución calculada.}
+\end{figure}
+
+\begin{notebox}[Lo robusto]
+Laplace sigue apareciendo donde hay \textbf{linealidad y respuesta
+lineal a un gradiente}.
+\end{notebox}
+
+\subsection{Para qué sirve el paréntesis}
+
+No es electromagnetismo, pero da \textbf{intuición geométrica} sobre las soluciones:
+es mucho más fácil imaginar qué le pasa a un tambor con un taco, o cómo varía
+la temperatura en un cuarto con los bordes a temperaturas fijas, que a una
+esfera con carga.
+
+\begin{notebox}
+Siempre régimen estacionario. Cuando las cosas dependen del tiempo «aparecen
+nuevos chiches».
+\end{notebox}
+
+\section{Propiedades magnéticas de la materia: motivación}
+
+\subsection{El magnetismo «posta»}
+
+Si se le pregunta a un chico qué sabe de magnetismo, no habla de circuitos:
+habla de los imanes de la heladera. El magnetismo de la experiencia cotidiana
+---el que se conoce desde la antigüedad, el más frecuente--- \textbf{no es el que se
+vino estudiando}; ése es el magnetismo de los laboratorios.
+
+El docente lo compara con el chiste del borracho que busca la llave bajo el
+farol, no donde se le cayó sino donde hay luz: se estudió el magnetismo donde
+era más simple. Con la salvedad de que no fue inútil ---los circuitos importan,
+ese magnetismo existe y se mide, y permitió avanzar---. Ahora toca el magnetismo
+\textbf{en los materiales}.
+
+\subsection{El programa: lo mismo que con los dieléctricos, con una diferencia}
+
+En el caso eléctrico, la reacción de la materia a un campo se tomó en cuenta
+con la \textbf{polarización}, y se formularon ecuaciones que «barren bajo la
+alfombra» lo que no se sabe del detalle microscópico. Lo simpático de ese caso
+es que la mayoría de los aislantes usuales son, en muy buena aproximación,
+homogéneos, isotrópicos y \textbf{lineales}: todo queda en una única constante por
+material, la constante dieléctrica (que hay que dar material por material,
+porque deducirla de las interacciones microscópicas es muy difícil).
+
+Se hará el ejercicio análogo en el caso magnético, con la \textbf{magnetización}
+$\vec M(\vec r)$ en lugar de la polarización.
+
+\begin{notebox}[La diferencia]
+En muchos materiales magnéticos la relación entre el campo
+magnético aplicado y la magnetización \textbf{no es lineal}, y eso es lo que da
+lugar a los imanes. El análogo eléctrico existe, pero es infrecuente y
+pequeño; en el caso magnético es frecuente y grande. Tarde o temprano habrá
+que ir al \textbf{ferromagnetismo}, que es más difícil y es el caso interesante
+---el de las magnetitas.
+\end{notebox}
+
+\textbf{Por qué un imán exige no linealidad:} con una relación lineal, si
+$\vec B\to0$ entonces $\vec M\to0$. Para tener $\vec M\neq0$ con $\vec B\to0$
+la relación tiene que ser no lineal (y fuertemente, en algunos casos).
+
+\section{Magnetización}
+
+\subsection{Corrientes microscópicas}
+
+La polarización se debía a que átomos o moléculas, cuya orientación sigue
+siendo casi totalmente aleatoria por el ruido térmico, se alinean \emph{en promedio
+un poquito} con el campo eléctrico. Acá pasa lo mismo con corrientes.
+
+Átomos y moléculas suelen tener \textbf{corrientes eléctricas microscópicas}, que no
+son de conducción ---no hay desplazamiento macroscópico de carga---, sino
+localizadas a escala atómica. Son de dos tipos:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Tipo} & \textbf{Descripción} \\
+\midrule
+Orbitales & Corrientes a nivel de los orbitales atómicos; el átomo puede tener un momento dipolar magnético, por ejemplo con un campo aplicado \\
+De espín & Propiedad intrínseca del electrón: se comporta «como si» rotara sobre sí mismo. Es un efecto cuántico, sin análogo clásico, y muy importante \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Los dos pueden importar según la situación, y pueden interactuar entre sí
+(interacción espín--órbita, sólo mencionada).
+
+\subsection{Cada átomo como un dipolo}
+
+Como electrones y átomos son muy pequeños, a distancia \textbf{macroscópica} el
+efecto de cada corriente microscópica se reemplaza por un campo \textbf{dipolar}:
+es el desarrollo multipolar magnético de la clase pasada. A cada átomo ---sumando
+efectos orbitales y de espín--- se le asocia un momento dipolar magnético
+$\vec m_i$.
+
+\subsection{Definición de la magnetización}
+
+No interesa dipolo por dipolo, sino la suma en un volumen $\Delta V$ \textbf{chico
+macroscópicamente pero con muchísimos átomos} (para un material de 10 cm,
+volúmenes de un milímetro cúbico):
+
+\begin{keybox}
+\[
+\boxed{\ \vec M(\vec r) = \lim_{\Delta V\to0}\frac{1}{\Delta V}
+\sum_{i\,\in\,\Delta V}\vec m_i\ }
+\]
+\end{keybox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase20-magnetizacion.tex}
+  \caption{Momentos dipolares microscópicos en un volumen $\Delta V$. Desordenados (a) promedian cero aunque cada uno exista; con un campo aplicado (b) se alinean parcialmente y la magnetización no es nula.}
+\end{figure}
+
+Es el momento dipolar magnético por unidad de volumen, definido exactamente
+como la polarización con $\vec m_i$ en lugar del momento dipolar eléctrico.
+
+\begin{itemize}
+  \item \textbf{Material desmagnetizado:} la suma de los $\vec m_i$ en un volumen
+  macroscópico es cero. No porque no haya momentos microscópicos ---siempre los
+  hay---, sino porque están desordenados y promedian cero.
+  \item \textbf{Con un $\vec B$ externo:} por lo general $\vec M\neq0$, igual que un
+  dieléctrico se polariza en un campo eléctrico.
+\end{itemize}
+
+\begin{notebox}
+Respuesta a una pregunta: magnetizarse no es propio de los conductores. Hay
+materiales aislantes magnéticos ---los imanes de cocina son, como un todo,
+plástico, aunque tengan hierro adentro---, y algunos metales juegan un papel
+importante.
+\end{notebox}
+
+\subsection{Magnetización espontánea}
+
+En general, si $\vec E\to0$ la polarización tiende a cero. En el caso magnético
+no siempre: puede ser $\vec B\to0$ con $\vec M\not\to0$. A eso se le llama
+\textbf{magnetización espontánea}.
+
+\begin{warnbox}[«Espontánea» es un término engañoso]
+No hay nada mágico ni sin causa. Un
+material isotrópico sin campo aplicado no tiene direcciones privilegiadas,
+así que no puede «elegir» una por sí solo. Lo que pasa es que \textbf{algo en el
+pasado lo orientó}, se apagaron las causas y el material guarda su historia.
+Espontánea quiere decir «sin una causa aplicada en ese momento».
+\end{warnbox}
+
+No es raro que haya cosas magnetizadas en la superficie de la Tierra: el
+planeta tiene un campo magnético que se mide con aparatos caseros. Es una causa
+posible, no la única.
+
+\section{Campo magnético producido por un material magnetizado}
+
+Mismo plan que con los dieléctricos: primero se supone una magnetización
+$\vec M(\vec r)$ \textbf{dada} y se estudia qué produce; cómo se genera viene
+después.
+
+\subsection{Potencial vector de una magnetización dada}
+
+Como $\vec M$ es momento dipolar por unidad de volumen, un volumen pequeño
+tiene momento $\Delta\vec m = \vec M\,\Delta V$. Sumando los potenciales
+vectores dipolares de cada elemento:
+
+\[
+\vec A(\vec r) = \frac{\mu_0}{4\pi}\int_V
+\frac{\vec M(\vec r\,')\times(\vec r-\vec r\,')}{|\vec r-\vec r\,'|^3}\,dV' .
+\]
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase20-material-punto.tex}
+  \caption{Cada elemento de volumen del material, en $\vec r\,'$, tiene momento dipolar $\vec M\,dV'$ y contribuye al potencial vector en $\vec r$ como un dipolo. $\hat n$ es la normal saliente en la superficie $S$.}
+\end{figure}
+
+La única suposición es que cada corriente microscópica se reemplaza por un
+dipolo, sin cuadrupolos ni órdenes superiores. Eso es excelente \textbf{fuera del
+material}, a distancia macroscópica de las moléculas.
+
+\subsection{Validez dentro del material}
+
+Interesa también el campo dentro del material.
+
+\begin{notebox}
+\textbf{Se puede probar, y no se prueba acá,} que la misma expresión vale dentro
+del material \textbf{para campos macroscópicos}. Muy cerca de una molécula no
+vale: su corriente no se puede reemplazar por un dipolo. Pero promediando en
+regiones macroscópicas la contribución de cada molécula individual pesa poco.
+Es el mismo argumento que para la polarización, que el Reitz hace en detalle;
+hacerlo acá llevaría una clase entera.
+\end{notebox}
+
+Se admite, entonces, la expresión tanto fuera como dentro del material.
+
+\subsection{Reescritura con un rotacional}
+
+Objetivo: escribir $\vec A$ en términos de \textbf{corrientes de magnetización}, así
+como la polarización se escribió en términos de cargas de polarización.
+
+\textbf{Paso 1.} Derivando respecto de la variable de integración, el signo se
+compensa:
+
+\[
+\vnabla'\frac{1}{|\vec r-\vec r\,'|} = \frac{\vec r-\vec r\,'}{|\vec r-\vec r\,'|^3}
+\quad\Longrightarrow\quad
+\vec A(\vec r) = \frac{\mu_0}{4\pi}\int_V \vec M(\vec r\,')\times
+\vnabla'\frac{1}{|\vec r-\vec r\,'|}\,dV' .
+\]
+
+\textbf{Paso 2.} Rotacional de un escalar por un vector,
+$\curl (\varphi\,\vec b) = \vnabla\varphi\times\vec b + \varphi\,\curl \vec b$.
+Los factores están en el otro orden, así que hay que cuidar el signo:
+
+\[
+\vec M\times\vnabla'\frac{1}{|\vec r-\vec r\,'|}
+= \frac{\vnabla'\times\vec M(\vec r\,')}{|\vec r-\vec r\,'|}
+- \vnabla'\times\left(\frac{\vec M(\vec r\,')}{|\vec r-\vec r\,'|}\right).
+\]
+
+\textbf{Paso 3.} Sustituyendo:
+
+\[
+\vec A(\vec r) = \frac{\mu_0}{4\pi}\int_V
+\frac{\vnabla'\times\vec M(\vec r\,')}{|\vec r-\vec r\,'|}\,dV'
+\;-\; \frac{\mu_0}{4\pi}\int_V
+\vnabla'\times\left(\frac{\vec M(\vec r\,')}{|\vec r-\vec r\,'|}\right)dV' .
+\]
+
+El primer término ya tiene la forma general de un potencial vector, con
+$\vnabla'\times\vec M$ en el lugar de $\vec J$. El segundo «se parece a un
+término de borde»: si fuera una divergencia, el teorema de la divergencia lo
+llevaría a la superficie. Pero es un rotacional.
+
+\subsection{Un teorema: la integral de volumen de un rotacional}
+
+\begin{keybox}
+\[
+\boxed{\ \int_V \curl \vec b\;dV = \oiint_S \hat n\times\vec b\;dS\ }
+\]
+\end{keybox}
+
+Es como el teorema de la divergencia, pero para rotacionales.
+
+\textbf{Prueba}, a partir del teorema de la divergencia. La igualdad es vectorial;
+para volverla escalar se la multiplica por un vector \textbf{constante} $\vec w$. En
+general,
+
+\[
+\vec w\cdot(\curl \vec b) = \div (\vec b\times\vec w) + \vec b\cdot(\curl \vec w),
+\]
+y el último término es nulo porque $\vec w$ es constante. Entonces
+
+\[
+\vec w\cdot\int_V \curl \vec b\;dV
+= \int_V \div (\vec b\times\vec w)\,dV
+= \oiint_S (\vec b\times\vec w)\cdot\hat n\,dS
+= \vec w\cdot\oiint_S \hat n\times\vec b\,dS,
+\]
+donde se usó la \textbf{propiedad cíclica del producto mixto} y que $\vec w$,
+constante, sale de la integral. Como $\vec w$ es arbitrario, se lo toma igual a
+$\hat\imath$, $\hat\jmath$ y $\hat k$, y la igualdad queda probada componente a
+componente. $\blacksquare$
+
+\subsection{Corrientes de magnetización}
+
+Aplicando el teorema al segundo término:
+
+\[
+\vec A(\vec r) = \frac{\mu_0}{4\pi}\int_V
+\frac{\vnabla'\times\vec M(\vec r\,')}{|\vec r-\vec r\,'|}\,dV'
+\;-\; \frac{\mu_0}{4\pi}\oiint_S
+\frac{\hat n\times\vec M(\vec r\,')}{|\vec r-\vec r\,'|}\,dS' .
+\]
+
+Se definen:
+
+\begin{keybox}[Densidad (volumétrica) de corriente de magnetización]
+\[
+\boxed{\ \vec J_M(\vec r\,') = \vnabla'\times\vec M(\vec r\,')\ }
+\]
+\end{keybox}
+y una \textbf{densidad superficial de corriente de magnetización} $\vec j_M$,
+construida con $\hat n$ y $\vec M$ en el borde.
+
+\begin{warnbox}[Sobre el signo de $\vec j_M$]
+La transcripción dice que se la define como
+«$\hat n$ por $\vec M$». Con el signo menos que precede a la integral de
+superficie, la combinación que entra en $\vec A$ \emph{como una corriente} ---con el
+mismo signo que $\vec J_M$ en el término de volumen--- es
+$\vec M\times\hat n = -\,\hat n\times\vec M$. El orden de los factores que el
+docente escribió en el pizarrón no se puede confirmar desde el VTT.
+\end{warnbox}
+
+Lectura: el potencial vector producido por una magnetización,
+$\vec A_M$, se puede pensar como producido por \textbf{corrientes}, en el volumen o
+en la superficie, que ya no son corrientes de conducción a las que se accede
+externamente, sino microscópicas. Es muy parecido a lo que pasaba con la
+polarización, que se veía como producida por densidades volumétricas y
+superficiales de carga que no eran cargas libres.
+
+\begin{notebox}
+\textbf{El término de superficie} sólo contribuye si hay corrientes de
+magnetización concentradas en el borde. Siempre se lo puede pensar también
+como de volumen, haciendo zoom en la pequeña capa superficial y viendo que
+tiene un perfil. Con las cargas de polarización el término de borde es muy
+importante; acá, no siempre.
+\end{notebox}
+
+\subsection{Consecuencias para el campo}
+
+El campo de magnetización es $\vec B_M = \curl \vec A_M$. Por lo tanto:
+
+\[
+\div \vec B_M = 0,
+\]
+porque la divergencia de todo rotacional es cero: el campo macroscópico en un
+material sigue siendo de divergencia nula. Y, salvo en la superficie, donde
+está el término singular,
+
+\begin{keybox}
+\[
+\boxed{\ \curl \vec B_M = \mu_0\,\vec J_M\ }
+\]
+\end{keybox}
+porque $\vec A_M$ tiene exactamente la forma del potencial vector de una
+corriente. \textbf{Sigue valiendo Ampère}, para el caso estacionario, con la
+corriente de magnetización en lugar de la de conducción.
+
+Se conserva entonces la noción de corriente, sólo que ya no asociada a cargas
+que se desplazan macroscópicamente, sino a cargas localizadas en un átomo, o
+incluso a un electrón «rotando».
+
+\noindent\emph{La próxima clase: qué uso se le da a estos campos de magnetización. Buena
+parte se parecerá mucho a lo hecho con la polarización, ahora con la
+magnetización.}
+
+\end{document}

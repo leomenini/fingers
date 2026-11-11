@@ -16,33 +16,55 @@ video:
 
 stats:
   transcript_words: 9814
-  summary_words: 0
+  summary_words: 2514
   diagrams_pending: 0
-  equations: 0
+  equations: 29
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Carga puntual como distribución muy localizada
+  - Distribuciones como límites de funciones
+  - Regularización de la delta de Dirac
+  - Regularización gaussiana
+  - Integral gaussiana
+  - Delta de Dirac en tres dimensiones
+  - Densidad de carga de una carga puntual
+  - Potencial de un conjunto de cargas puntuales
+  - Divergencia del campo de una carga puntual como delta
+  - Rotacional de un producto vectorial
+  - Ley de Ampère a partir de Biot y Savart
+  - Hipótesis de corrientes estacionarias y localizadas
+  - Forma integral de la ley de Ampère
+  - Campo de un cable infinito por Ampère
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Ley de Biot y Savart (Clase 17)
+  - Símbolo de Levi-Civita (Clase 17)
+  - Ley de Gauss y ley de Coulomb
+  - Ecuación de continuidad en régimen estacionario (Clase 14)
+  - Teorema de la divergencia y teorema de Stokes
+  - Integrales múltiples y coordenadas esféricas
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Potencial vector magnético
+  - Desarrollo multipolar magnético
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-fable-5-2
 
 editorial_status: draft

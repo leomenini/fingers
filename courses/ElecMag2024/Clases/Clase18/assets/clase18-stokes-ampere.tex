@@ -1,0 +1,28 @@
+% Clase 18 — forma integral de la ley de Ampère. Curva cerrada C que delimita
+% una superficie S, orientada con la regla de la mano derecha. La circulación
+% de B en C es mu_0 por la corriente que cruza S.
+\begin{tikzpicture}[scale=1]
+
+  % superficie (casquete)
+  \fill[figblue!12] (-2.6,0) arc (180:360:2.6 and 0.85) .. controls (2.4,2.3) and (-2.4,2.3) .. (-2.6,0);
+  \draw[figline] (2.6,0) .. controls (2.4,2.3) and (-2.4,2.3) .. (-2.6,0);
+
+  % curva C: mitad de atras punteada, mitad de adelante llena
+  \draw[figaux] (2.6,0) arc (0:180:2.6 and 0.85);
+  \draw[figblue, line width=1.3pt] (-2.6,0) arc (180:360:2.6 and 0.85);
+  \draw[figvecres] (-0.3,-0.85) -- (0.4,-0.85);
+  \node[figlbl] at (2.95,-0.45) {$C$};
+  \node[figlbl] at (-1.95,1.45) {$S$};
+
+  % normales
+  \draw[figvecaux] (-1.35,1.25) -- (-1.75,1.95);
+  \draw[figvecaux] (1.35,1.25) -- (1.75,1.95);
+  \node[figlblaux] at (2.02,2.0) {$\hat n$};
+
+  % corriente que cruza S
+  \foreach \jx in {-0.6,0,0.6} {
+    \draw[figvecres] (\jx,-0.35) -- (\jx,2.75);
+  }
+  \node[figlbl, text=figred] at (0.95,2.75) {$\vec J$};
+
+\end{tikzpicture}

@@ -1,0 +1,30 @@
+% Clase 18 — cable infinito y curva amperiana circular en un plano
+% perpendicular. Las líneas de B son cerradas (no hay monopolos) y el problema
+% es invariante por rotaciones: son círculos, y |B| es constante sobre cada uno.
+\begin{tikzpicture}[scale=1]
+
+  % cable, tramo de abajo
+  \draw[figblue, line width=1.8pt] (0,-2.1) -- (0,-0.62);
+
+  % plano
+  \fill[figgray!12] (-3.4,-0.9) -- (2.2,-0.9) -- (3.4,0.9) -- (-2.2,0.9) -- cycle;
+  \draw[figgray, line width=0.6pt] (-3.4,-0.9) -- (2.2,-0.9) -- (3.4,0.9) -- (-2.2,0.9) -- cycle;
+
+  % curva amperiana
+  \draw[figred, line width=1pt, dashed] (0,0) ellipse (1.9 and 0.6);
+  \draw[figaux] (0,0) -- (1.9,0);
+  \node[figlblaux] at (0.95,0.17) {$r$};
+
+  % campo tangente (sentido antihorario visto desde arriba)
+  \draw[figvec] (1.9,0) -- ++(0,0.62);
+  \draw[figvec] (-1.9,0) -- ++(0,-0.62);
+  \draw[figvec] (0,0.6) -- ++(-0.95,0);
+  \draw[figvec] (0,-0.6) -- ++(0.95,0);
+  \node[figlbl] at (2.25,0.55) {$\vec B$};
+
+  % cable, tramo de arriba
+  \draw[figblue, line width=1.8pt, -{Latex[length=2.8mm,width=2mm]}] (0,0) -- (0,2.3);
+  \fill[figblue] (0,0) circle (1.6pt);
+  \node[figlbl] at (0.3,2.0) {$I$};
+
+\end{tikzpicture}

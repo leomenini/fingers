@@ -1,0 +1,18 @@
+% Clase 19 — módulo del campo de un cable grueso de radio R con densidad de
+% corriente uniforme, en unidades de B_max = mu_0 J R / 2:
+% lineal adentro (r < R), como 1/r afuera (r > R).
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=11cm, height=6cm,
+    xmin=0, xmax=4.2, ymin=0, ymax=1.2,
+    xtick={0,1,2,3,4}, ytick={0,0.5,1},
+    xlabel={$r/R$}, ylabel={$B/B_{\max}$},
+  ]
+    \addplot[figaux, forget plot] coordinates {(1,0) (1,1.2)};
+    \addplot[figblue, domain=0:1, samples=2, forget plot] {x};
+    \addplot[figblue, domain=1:4.2, samples=80, forget plot] {1/x};
+    \node[font=\small, anchor=west] at (axis cs:0.08,0.55) {$\propto r$};
+    \node[font=\small, anchor=west] at (axis cs:2.2,0.62) {$\propto 1/r$};
+    \node[font=\footnotesize, text=figgray, anchor=west] at (axis cs:1.05,1.1) {borde del cable};
+  \end{axis}
+\end{tikzpicture}

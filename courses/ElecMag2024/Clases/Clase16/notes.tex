@@ -1,0 +1,607 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 16: Campo magnético} \\[0.3em]
+        \large{Fuerza entre cargas en movimiento, fuerza de Lorentz, fuerza y torque sobre circuitos}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introducción histórica al magnetismo}
+
+\subsection{De las magnetitas a las corrientes}
+
+Que las cargas en movimiento interactúan con fuerzas adicionales a las
+electrostáticas no es sorpresa; pero no fue así como se descubrió el
+magnetismo, que se conocía mucho antes de saber qué eran las cargas eléctricas.
+
+\begin{itemize}
+  \item \textbf{Antigüedad.} Las \textbf{magnetitas} ---básicamente óxidos de hierro---, colgadas
+  de un hilo o flotando en una cubeta, se orientan siempre en una misma
+  dirección. Utilidad tecnológica: las brújulas. Interpretación durante buena
+  parte de la historia: piedras mágicas.
+  \item \textbf{Siglo XIX.} El primero en advertir la naturaleza oculta del fenómeno
+  observó que el efecto de una \textbf{corriente eléctrica} es muy similar al de un
+  \textbf{imán} (una piedra magnetizada).
+\end{itemize}
+
+\begin{notebox}
+El VTT transcribe el nombre como «Hertz»/«Ertz»; el docente lo presenta como
+«muy difícil de escribir» y lo escribe en el pizarrón, que no se ve. Por el
+hecho histórico descrito se trata de \textbf{Oersted (Ørsted)}; el nombre no se
+puede confirmar desde la transcripción.
+\end{notebox}
+
+De ahí salió una línea de investigación que ocupó todo el siglo XIX, con los
+nombres que aparecerán en este capítulo y los siguientes: Ampère, Biot y
+Savart, Faraday, Henry, Maxwell.
+
+La conclusión, que es correcta: \textbf{hay un único magnetismo}. En los imanes hay,
+en algún sentido, corrientes eléctricas «escondidas». El magnetismo es una
+interacción entre \textbf{cargas en movimiento}; lo único que cambia es que en un
+caso la corriente se ve fluir macroscópicamente y en el otro es interna.
+
+\subsection{Magnetización y analogía con la polarización}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Electricidad} & \textbf{Magnetismo} \\
+\midrule
+Cargas libres, a las que se tiene acceso & Corrientes eléctricas macroscópicas \\
+Polarización & \textbf{Magnetización}: pequeñas corrientes a nivel atómico o molecular \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Con una diferencia fundamental: la mayoría de los materiales \textbf{no} tiene
+polarización espontánea (sin campo eléctrico externo, la polarización es cero),
+mientras que muchos materiales \textbf{sí tienen magnetización espontánea}: se
+mantienen como imanes sin que se les aplique ningún campo magnético.
+
+\begin{notebox}
+El docente comenta que una de sus dos líneas de investigación son justamente
+las propiedades de materiales magnéticos, y que en el curso casi no se va a
+hablar de eso.
+\end{notebox}
+
+\subsection{El espín: lo que no es clásico}
+
+Una salvedad que, según el docente, ni siquiera menciona el Reitz: \textbf{no todas
+esas corrientes son interpretables como cargas clásicas en movimiento}. En los
+materiales magnéticos el efecto principal no viene de cargas que se desplazan
+sino del \textbf{espín} de los electrones.
+
+En una primera aproximación «con muchos defectos», el electrón sería una bolita
+cargada que gira sobre sí misma: sus partes se mueven y hay una corriente. Pero
+esa imagen no admite interpretación clásica, por una razón directa: la carga
+está cuantizada y no hay carga más chica que la del electrón, así que no se lo
+puede pensar como una bola con una distribución de carga adentro. Cuando se
+intenta, se llega enseguida a absurdos.
+
+\begin{notebox}[A nivel clásico no hay magnetismo de la materia]
+La magnetización
+espontánea tiene una componente cuántica fundamental; el docente afirma que
+esto «se puede probar» y no lo prueba. Para el curso no importa el origen:
+hay una magnetización que genera efectos magnéticos, y se tratará más
+adelante.
+\end{notebox}
+
+Por ahora: interacción magnética entre cargas en movimiento y corrientes.
+
+\section{Fuerza magnética entre dos cargas}
+
+\subsection{La ley experimental}
+
+En electrostática, dos cargas $q_1$ y $q_2$ interactúan según la ley de
+Coulomb. Con $\vec r$ el vector que va de la carga 1 a la 2, la fuerza sobre
+la 2 es
+
+\[
+\vec F_{e,2} = \frac{1}{4\pi\varepsilon_0}\,\frac{q_1 q_2}{r^3}\,\vec r .
+\]
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase16-fuerza-cargas.tex}
+  \caption{Dos cargas en movimiento. $\vec r$ va de la carga 1 a la 2; las velocidades son las de cada carga en el referencial elegido.}
+\end{figure}
+
+Si las cargas se mueven, esa fuerza \textbf{sigue estando}, y se le agrega otra, la
+\textbf{fuerza magnética}:
+
+\begin{keybox}
+\[
+\boxed{\ \vec F_{m,2} = \frac{\mu_0}{4\pi}\,\frac{q_1 q_2}{r^3}\;
+\vec v_2\times\left(\vec v_1\times\vec r\right)\ }
+\]
+\end{keybox}
+
+Es una \textbf{ley experimental}. No es una alternativa a Coulomb sino un
+complemento: la suma de las dos vale también en el caso estático, donde las
+velocidades son nulas y el segundo término se anula. Hace falta que \textbf{las dos}
+cargas se muevan.
+
+\subsection{Dominio de validez y el problema del referencial}
+
+\begin{warnbox}
+\textbf{Esta forma sólo vale si $|\vec v_1|, |\vec v_2| \ll c$}, con
+$c = 2{,}9979\times10^{8}$ m/s la velocidad de la luz. Las correcciones están
+suprimidas por factores $v^2/c^2$: son órdenes superiores de un desarrollo en
+$v/c$.
+\end{warnbox}
+
+Un estudiante pregunta lo obvio: \textbf{¿velocidades en qué referencial?} Y es «muy
+raro». La mecánica newtoniana cumple el principio de Galileo ---en todo
+referencial inercial valen las mismas leyes---, y esta fórmula hace referencia a
+las velocidades en un referencial dado; peor, a las \textbf{dos velocidades por
+separado} y no a la velocidad relativa. La ley \textbf{no es invariante} ante un
+cambio de referencial.
+
+Lo que el docente dice al respecto, sin desarrollarlo:
+
+\begin{itemize}
+  \item La fórmula vale en un referencial en que ambas partículas tengan velocidad
+  chica; si no existe, no vale.
+  \item Cuando se agregan los términos que la aproximación deja afuera, «todo se
+  arregla». Entender cómo llevó un siglo: lo hizo Einstein en 1905, y es la
+  teoría de la relatividad. No alcanzaba con corregir la fuerza
+  electromagnética: hubo que cambiar la propia ley de Newton.
+  \item «Por ahora no les estoy mostrando la solución, les estoy mostrando el
+  problema.»
+\end{itemize}
+
+\begin{notebox}
+Digresión histórica del docente: el principio lo formuló antes Giordano Bruno
+(en la bodega de un gran barco en mar calmo, jugando a los dados y viendo
+volar mariposas, no se puede saber si el barco se mueve); Galileo lo hizo
+famoso.
+\end{notebox}
+
+\subsection{La constante \texorpdfstring{$\mu_0$}{mu0} y la velocidad de la luz}
+
+$\mu_0$ juega para la fuerza magnética un papel análogo al de $\varepsilon_0$
+para la eléctrica: la \textbf{permeabilidad magnética del vacío} (la transcripción
+dice «permitividad magnética»). En el Sistema Internacional vale
+
+\[
+\frac{\mu_0}{4\pi} = 10^{-7}\ \frac{\text{N}\,\text{s}^2}{\text{C}^2}
+\qquad\text{(exactamente)},
+\]
+sin ningún coeficiente raro: el sistema está elegido así, forma parte de la
+definición del coulomb. Y las dos constantes están relacionadas:
+
+\begin{keybox}
+\[
+\boxed{\ \mu_0\,\varepsilon_0 = \frac{1}{c^2}\ }
+\]
+\end{keybox}
+
+Quien hizo Física III sabe que no es coincidencia (la luz es un fenómeno
+electromagnético), pero por ahora se lo toma como un hecho útil.
+
+\section{Campo magnético y fuerza de Lorentz}
+
+Igual que en el caso eléctrico, en lugar de una acción a distancia conviene
+pensar la fuerza como el efecto de un \textbf{campo} sobre una carga. En
+electrostática se factoriza la carga que siente la fuerza:
+
+\[
+\vec F_{e,2} = q_2\,\vec E, \qquad
+\vec E = \frac{q_1}{4\pi\varepsilon_0}\,\frac{\vec r}{r^3} .
+\]
+
+En el caso magnético hay \textbf{dos} propiedades de la carga 2 en juego, su carga y
+su velocidad, y se factorizan las dos:
+
+\[
+\vec F_{m,2} = q_2\,\vec v_2\times\vec B,
+\qquad
+\boxed{\ \vec B = \frac{\mu_0}{4\pi}\,q_1\,\frac{\vec v_1\times\vec r}{r^3}\ }
+\]
+con $\vec B$ el \textbf{campo magnético} producido por la carga 1. La utilidad es la
+misma que en el caso eléctrico: todo lo hecho con la ecuación de Laplace habría
+sido muy difícil con interacción directa carga a carga.
+
+Con campos eléctrico y magnético presentes, una carga siente la \textbf{fuerza de
+Lorentz}:
+
+\begin{keybox}
+\[
+\boxed{\ \vec F = q\left(\vec E + \vec v\times\vec B\right)\ }
+\]
+\end{keybox}
+
+\begin{notebox}[¿Por qué un producto vectorial?]
+«Porque no hay remedio, porque la fuerza
+es así.» Y $\vec v_1$ en $\vec B$ \textbf{no} es una velocidad relativa: es la
+velocidad de la carga 1 en el referencial elegido.
+\end{notebox}
+
+\section{Comparación entre la fuerza magnética y la eléctrica}
+
+\subsection{La cota}
+
+Usando $\mu_0 = 1/(\varepsilon_0 c^2)$ y repartiendo un $c$ a cada velocidad:
+
+\[
+\vec F_{m,2} = \frac{1}{4\pi\varepsilon_0}\,\frac{q_1 q_2}{r^3}\;
+\frac{\vec v_2}{c}\times\left(\frac{\vec v_1}{c}\times\vec r\right).
+\]
+
+Al tomar módulos aparecen senos, que son menores o iguales que 1:
+
+\begin{keybox}
+\[
+\boxed{\ |\vec F_{m,2}| \;\le\; |\vec F_{e,2}|\;\frac{v_1}{c}\,\frac{v_2}{c}\ }
+\]
+\end{keybox}
+
+Para los fenómenos cotidianos ---un auto a 300 km/h es insignificante frente a
+$c$--- la fuerza magnética entre dos cargas es \textbf{muchísimo} menor que la
+eléctrica. El factor va entre 0 y 1 y, a velocidades normales, está «pegado a
+cero».
+
+\subsection{Por qué igual se observa el magnetismo}
+
+Si fuera sólo eso, los fenómenos magnéticos serían inobservables. No lo son
+porque no se ven en pares de cargas sino en \textbf{conjuntos grandes de cargas con
+carga neta nula y corriente no nula}.
+
+\begin{notebox}[Ejemplo clave: un cable con corriente]
+El cable es neutro, no ejerce
+fuerza de Coulomb; pero la corriente no es cero y el efecto magnético
+sobrevive. Para ver un efecto magnético a velocidades normales hace falta que
+el efecto electrostático sea cero.
+\end{notebox}
+
+Recordatorio a raíz de una pregunta: la velocidad individual de cada electrón
+en un conductor es muy alta, pero la velocidad de deriva es chica («algunos
+centímetros por hora», según el material).
+
+\section{Fuerza sobre un cable con corriente}
+
+\subsection{Un tramo de cable}
+
+Hay un campo magnético $\vec B$, producido por algo que por ahora no interesa, y
+un cable descrito por una curva $C$ con corriente $I$. Se piensa el cable como
+un cañito de sección $A$. En un tramito $d\vec l$ la velocidad de deriva es
+\textbf{paralela} a $d\vec l$.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase16-cable-campo.tex}
+  \caption{Tramo $d\vec l$ de un cable de sección $A$ en un campo magnético. Con $d\vec l$ hacia la derecha y $\vec B$ hacia arriba, la fuerza sobre el tramo sale del papel.}
+\end{figure}
+
+La fuerza sobre el tramito es la fuerza sobre un portador por el número de
+portadores que hay en él. Con $n$ portadores por unidad de volumen (un solo
+tipo de portador, como en un metal; con varios se suma sobre los tipos):
+
+\[
+d\vec F = \underbrace{q\,\vec v_d\times\vec B}_{\text{un portador}}\;
+\underbrace{n\,A\,dl}_{\text{portadores en } dl}
+= A\,n\,q\,dl\;\vec v_d\times\vec B .
+\]
+
+Como $\vec v_d$ y $d\vec l$ tienen igual dirección y sentido,
+$dl\,\vec v_d = v_d\,d\vec l$: se pasa el carácter vectorial de uno al otro.
+Y $n\,q\,v_d$ es la densidad de corriente, que por el área da la corriente
+($I = JA$ en un conductor filiforme):
+
+\begin{keybox}
+\[
+\boxed{\ d\vec F = I\,d\vec l\times\vec B\ }
+\]
+\end{keybox}
+
+\begin{notebox}
+Si además hubiera campo eléctrico, el cable no sentiría fuerza eléctrica: es
+neutro. Sólo sobrevive la magnética.
+\end{notebox}
+
+Para un circuito completo se suma sobre la curva; la corriente es la misma en
+todo el circuito y sale de la integral:
+
+\[
+\vec F = I\oint_C d\vec l\times\vec B .
+\]
+
+\subsection{Espira cerrada en un campo uniforme}
+
+Si $\vec B$ es uniforme sale de la integral ---\textbf{por la derecha}, porque el
+producto vectorial no es conmutativo---:
+
+\[
+\vec F = I\left(\oint_C d\vec l\right)\times\vec B = 0,
+\]
+porque la suma de todos los $d\vec l$ a lo largo de una curva cerrada es nula.
+
+\begin{keybox}
+\[
+\boxed{\ \text{Una espira en un campo magnético uniforme no experimenta fuerza neta.}\ }
+\]
+\end{keybox}
+
+Para que haya fuerza el campo tiene que ser \textbf{no uniforme}, de modo que partes
+distintas de la espira sientan fuerzas distintas. Es la situación normal: cerca
+de un imán el campo es más intenso que lejos, y los lados de la espira más
+próximos no se compensan con los otros.
+
+\section{Torque sobre una espira en un campo uniforme}
+
+Aun en un campo uniforme, una espira \textbf{sí} experimenta un torque. En Física III
+se vio para una espira plana rectangular; ahora se hace para \textbf{cualquier curva
+cerrada}, plana o no. (Si el campo no es uniforme hay las dos cosas, fuerza y
+torque.)
+
+\subsection{Planteo en componentes}
+
+Respecto de un origen, el torque de un elemento de fuerza es
+$d\vec\tau = \vec r\times d\vec F$:
+
+\[
+\vec\tau = I\oint_C \vec r\times\left(d\vec l\times\vec B\right).
+\]
+
+Con $d\vec l = (dx, dy, dz)$ y $\vec B = (B_x, B_y, B_z)$, por la regla del
+determinante:
+
+\[
+d\vec l\times\vec B =
+(dy\,B_z - dz\,B_y)\,\hat\imath
++ (dz\,B_x - dx\,B_z)\,\hat\jmath
++ (dx\,B_y - dy\,B_x)\,\hat k .
+\]
+
+Se calcula sólo la componente $x$; las otras salen por \textbf{permutación circular}.
+Con $\vec r = (x,y,z)$:
+
+\[
+\left[\vec r\times(d\vec l\times\vec B)\right]_x
+= y\,(dx\,B_y - dy\,B_x) - z\,(dz\,B_x - dx\,B_z).
+\]
+
+\subsection{Las cuatro integrales}
+
+Como $\vec B$ es uniforme, sus componentes salen de las integrales:
+
+\[
+\frac{\tau_x}{I} = B_y\oint_C y\,dx \;-\; B_x\oint_C y\,dy
+\;-\; B_x\oint_C z\,dz \;+\; B_z\oint_C z\,dx .
+\]
+
+\textbf{Las dos fáciles.} $\oint y\,dy = 0$ y $\oint z\,dz = 0$: en una curva cerrada
+se integra de $y_{\min}$ a $y_{\max}$ por un lado y se vuelve por el otro; lo
+que se suma a la ida se deshace a la vuelta.
+
+\textbf{Las otras dos.} $\oint_C y\,dx$ no hace intervenir $z$, así que es idéntica
+a la integral sobre $C'$, la \textbf{proyección} de $C$ en el plano $Oxy$. Ya es un
+problema plano. Se describe $C'$ con dos funciones, $y_1(x)$ por abajo e
+$y_2(x)$ por arriba, entre $x_{\min}$ y $x_{\max}$:
+
+\[
+\oint_{C'} y\,dx = \int_{x_{\min}}^{x_{\max}} y_1\,dx - \int_{x_{\min}}^{x_{\max}} y_2\,dx
+= -\,\text{área}(C') .
+\]
+
+\begin{notebox}
+No vale cero porque el integrando no tiene función potencial: $y$ cambia a
+lo largo de la curva.
+\end{notebox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase16-proyeccion-area.tex}
+  \caption{La curva proyectada $C'$ en el plano $Oxy$. Recorrida por abajo, $y_1(x)$, y de vuelta por arriba, $y_2(x)$, la integral de $y\,dx$ da menos el área encerrada.}
+\end{figure}
+
+\subsection{El vector área y el resultado}
+
+Se definen las tres áreas de las proyecciones de $C$:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Componente} & \textbf{Proyección de $C$ en el plano} & \textbf{Integral} \\
+\midrule
+$A_z$ & $Oxy$ & $\oint x\,dy = -\oint y\,dx$ \\
+$A_x$ & $Oyz$ & $\oint y\,dz = -\oint z\,dy$ \\
+$A_y$ & $Ozx$ & $\oint z\,dx = -\oint x\,dz$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Lo que se mantiene es la permutación circular $x\to y\to z\to x$; invertir el
+orden de las dos coordenadas cambia el signo, porque la proyección se recorre
+en el sentido opuesto. Con eso, $\oint y\,dx = -A_z$ y $\oint z\,dx = A_y$:
+
+\[
+\tau_x = I\left(A_y B_z - A_z B_y\right) = I\left(\vec A\times\vec B\right)_x .
+\]
+
+Y lo mismo para las otras componentes:
+
+\begin{keybox}
+\[
+\boxed{\ \vec\tau = I\,\vec A\times\vec B\ }
+\qquad\text{(curva cerrada cualquiera, } \vec B \text{ uniforme)}
+\]
+\end{keybox}
+con $\vec A = (A_x, A_y, A_z)$ el \textbf{vector área}.
+
+\begin{notebox}[Qué hay que retener]
+El resultado es el mismo de Física III, pero vale
+para curvas en el espacio. En el caso plano el vector área era «el área por
+la normal»; para una curva no plana no es obvio qué significa, y la respuesta
+es: el vector cuyas componentes cartesianas son las áreas de las proyecciones
+en los tres planos.
+\end{notebox}
+
+\begin{notebox}
+El docente tropieza varias veces con los signos en el pizarrón y deja la
+verificación como tarea. A la pregunta de cómo se orienta el área responde
+que las componentes son áreas «en el sentido usual» y que el vector queda sin
+ambigüedad; el sentido lo fijan las integrales de la tabla, que dependen del
+sentido en que se recorre la curva (el de la corriente).
+\end{notebox}
+
+\textbf{Ejercicio propuesto} (generalizar el razonamiento componente a componente):
+
+\[
+\vec A = \frac12\oint_C \vec r\times d\vec l .
+\]
+
+\begin{notebox}
+La transcripción dice «$\vec r$ escalar $d\vec l$»; para que el resultado sea
+un vector, y coincida con la tabla, tiene que ser el producto vectorial.
+\end{notebox}
+
+\subsection{Momento dipolar magnético}
+
+A la combinación
+
+\begin{keybox}
+\[
+\boxed{\ \vec m = I\,\vec A\ }
+\]
+\end{keybox}
+se la llama \textbf{momento dipolar magnético}, de modo que
+$\vec\tau = \vec m\times\vec B$.
+
+\section{Corriente distribuida en un volumen}
+
+Todo lo anterior es para cables. Se generaliza a una densidad de corriente
+$\vec J(\vec r)$ distribuida en un volumen dividiéndola en \textbf{cablecitos
+filiformes imaginarios} que siguen las líneas de corriente. En un tramito de
+uno de ellos, de sección $A$, se toma $d\vec l$ paralelo a $\vec J$, así que
+$I\,d\vec l = A\,J\,d\vec l = A\,|d\vec l|\,\vec J$:
+
+\[
+d\vec F = I\,d\vec l\times\vec B = A\,|d\vec l|\;\vec J\times\vec B
+= \vec J\times\vec B\;dV,
+\]
+porque $A\,|d\vec l|$ es el elemento de volumen. En lugar de integrar sobre una
+curva se integra sobre el volumen:
+
+\begin{keybox}
+\[
+\boxed{\ \vec F = \int_V \vec J\times\vec B\;dV\ }
+\]
+\end{keybox}
+
+Regla para recordarla: donde había $I\,d\vec l$ va $\vec J\,dV$. Con el torque
+se puede hacer lo mismo, sin sorpresas; el docente no lo escribe.
+
+\noindent\emph{La próxima clase: la ley de Biot y Savart ---cómo una distribución de corrientes
+genera un campo magnético--- y, lo que en Física III se afirmaba sin probar, la
+equivalencia entre Biot--Savart y la ley de Ampère, para lo cual hace falta
+cálculo vectorial.}
+
+\end{document}

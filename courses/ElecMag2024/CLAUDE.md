@@ -135,6 +135,12 @@ para este curso; no buscar el hueco de nuevo.
 cada una y `metadata.yaml` completo, desde el VTT oficial. Con eso quedan
 documentadas de la 4 a la 13 (la 9 y la 10 desde ASR, en el sandbox).
 
+**Clases 14–20 documentadas (2026-11-11):** `summary.md`, `notes.tex`, 3 figuras
+cada una y `metadata.yaml` completo, desde el VTT oficial. Cubren corriente
+eléctrica y circuitos (14–15) y el arranque del magnetismo: fuerza magnética,
+Biot y Savart, delta de Dirac y Ampère, potencial vector y magnetización (16–20).
+Con eso quedan documentadas de la 4 a la 20.
+
 > **La 10 y la 11 no se continúan.** La clase 11 (2024) abre repasando «lo que les
 > presentó **Julia** la semana pasada» y resuelve la **esfera** dieléctrica en
 > campo uniforme; la clase 10 del corpus es la regrabación de **2025**, que
@@ -655,6 +661,35 @@ En geometría, los dos patrones que más sirvieron en este corpus:
    cada placa; (b) un `-- (x,y)` encadenado **después** de un `to[C]` en el mismo
    `\draw` salió con trazo más fino que el resto: cerrar el circuito en un
    `\draw` aparte.
+
+#### 6.5.4 Casos propios de este curso (Clases 14–20, 2026-11-11)
+
+1. **`\max` y `\min` no van en un `\caption`.** `babel` español los redefine
+   («máx», «mín») y en un argumento móvil revientan con
+   `Argument of \es@a has an extra }`. En el cuerpo y en los rótulos de pgfplots
+   andan; en el pie, escribir «su valor máximo» o `\text{máx}`
+   (`clase19-cable-grueso`).
+2. **Una gráfica al lado de un circuito necesita aire para su `ylabel`.** En
+   `clase15-circuito-rc` el rótulo del eje vertical se montaba sobre los $\pm Q$
+   del condensador: el `xshift` del `axis` cuenta desde el eje, no desde el
+   rótulo. Dejar ~2 cm entre el último elemento del circuito y el eje.
+3. **Dos vectores casi colineales, otra vez** (`clase19-circuito-lejano`, misma
+   lección que `clase4-distribucion-localizada`): $\vec r_2$ y
+   $\vec r_2-\vec r_1$ con $r_2\gg a$. Se resolvió apuntando $\vec r_1$ hacia
+   arriba del circuito, para que la punteada quede por encima de la llena, y
+   rotulando una arriba y otra abajo.
+4. **Las líneas de corriente también se calculan** (`clase14-esfera-corriente`):
+   salen de la función de corriente exacta de la esfera no conductora,
+   $\psi = \tfrac12 J_0\rho^2(1-a^3/r^3)$, con bisección en $r$ para cada
+   $\theta$; los parámetros están en el comentario de la figura. El docente
+   sólo describió el caso cualitativamente, y el pie lo dice.
+5. **Un esquema cualitativo se rotula como tal.** `clase20-tambor` no es una
+   solución de Laplace sino un dibujo de lo que el docente describe; lo dicen el
+   comentario del asset y el pie.
+6. **En Windows** (esta tanda se hizo ahí): tectonic es
+   `~/.local/bin/tectonic.exe` y `./build.sh` lo encuentra desde Git Bash; para
+   leer el PDF hace falta rasterizarlo (se usó PyMuPDF), porque no hay
+   `pdftoppm`.
 
 #### 6.5.1 Qué figuras hacer (y cuántas)
 

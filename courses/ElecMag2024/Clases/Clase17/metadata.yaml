@@ -16,33 +16,54 @@ video:
 
 stats:
   transcript_words: 9712
-  summary_words: 0
+  summary_words: 2536
   diagrams_pending: 0
-  equations: 0
+  equations: 31
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Contexto histórico de la ley de Biot y Savart
+  - Campo magnético de una carga en movimiento
+  - Ley de Biot y Savart para una densidad de corriente
+  - Ley de Biot y Savart para corrientes en cables
+  - Ausencia de monopolos magnéticos
+  - Divergencia nula del campo magnético
+  - Símbolo de Levi-Civita
+  - Producto vectorial y rotacional con el símbolo de Levi-Civita
+  - Divergencia de un producto vectorial
+  - Campo de un cable recto muy largo
+  - Campo de una espira circular sobre su eje
+  - Solenoide finito
+  - Corrección al solenoide ideal
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Campo magnético de una carga en movimiento (Clase 16)
+  - Densidad de corriente (Clase 14)
+  - Rotacional nulo del campo de una carga puntual
+  - Teorema de la divergencia
+  - Desarrollo de Taylor
+  - Biot y Savart en Física III
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Función delta de Dirac
+  - Ley de Ampère
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-fable-5-2
 
 editorial_status: draft

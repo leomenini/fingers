@@ -1,0 +1,24 @@
+% Clase 18 — regularización gaussiana de la delta de Dirac,
+%   delta_eps(x) = exp(-x^2 / 2 eps) / sqrt(2 pi eps),
+% para eps = 1, 0.25 y 0.05: ancho ~ sqrt(eps), altura ~ 1/sqrt(eps), área 1.
+% En ámbar punteado, la sensibilidad f(x) de un aparato de medida (curva
+% ilustrativa, centrada en x_0 = 0.6): cuando eps es mucho menor que su ancho,
+% la integral sólo "ve" f(0).
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=12cm, height=6.6cm,
+    xmin=-3, xmax=3, ymin=0, ymax=1.95,
+    xtick={-3,-2,-1,0,1,2,3}, ytick={0,0.5,1,1.5},
+    xlabel={$x$}, ylabel={$\delta_\varepsilon(x)$},
+    legend style={at={(0.5,-0.38)}, anchor=north, legend columns=4, /tikz/every even column/.append style={column sep=1em}},
+  ]
+    \addplot[figblue!45, domain=-3:3, samples=121] {exp(-x^2/2)/sqrt(2*pi)};
+    \addlegendentry{$\varepsilon = 1$}
+    \addplot[figblue!75, domain=-3:3, samples=161] {exp(-x^2/0.5)/sqrt(2*pi*0.25)};
+    \addlegendentry{$\varepsilon = 0{,}25$}
+    \addplot[figblue, domain=-1.5:1.5, samples=241] {exp(-x^2/0.1)/sqrt(2*pi*0.05)};
+    \addlegendentry{$\varepsilon = 0{,}05$}
+    \addplot[figamber, dashed, domain=-3:3, samples=121] {0.75*exp(-(x-0.6)^2/2.2)};
+    \addlegendentry{$f(x)$}
+  \end{axis}
+\end{tikzpicture}

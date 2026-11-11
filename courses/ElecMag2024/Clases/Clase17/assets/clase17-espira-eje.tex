@@ -1,0 +1,38 @@
+% Clase 17 — espira circular de radio R en el plano xy; punto de observación
+% sobre el eje z a distancia a. Vista en perspectiva. Como r_2 es ortogonal al
+% plano, |r_2 - r_1| = sqrt(a^2 + R^2) para todo punto de la espira.
+\begin{tikzpicture}[scale=1]
+
+  % ejes (perspectiva)
+  \draw[figaxis] (0,0) -- (-2.3,-1.25);
+  \node[figlbl] at (-2.5,-1.4) {$x$};
+  \draw[figaxis] (0,0) -- (3.6,0);
+  \node[figlbl] at (3.85,0) {$y$};
+  \draw[figaxis] (0,0) -- (0,3.9);
+  \node[figlbl] at (0,4.15) {$z$};
+
+  % espira
+  \draw[figblue, line width=1.3pt] (0,0) ellipse (2.4 and 0.8);
+  \draw[figvecres] (-0.25,-0.8) -- (0.35,-0.8);
+  \node[figlbl, text=figred] at (0.05,-1.12) {$I$};
+
+  % r_1 y dl_1 (punto de la espira en el ángulo de 325 grados de la elipse)
+  \coordinate (P) at (1.966,-0.459);
+  \draw[figvec] (0,0) -- (P);
+  \node[figlbl] at (0.95,-0.47) {$\vec r_1$};
+  \draw[figvecres] (P) -- ++(0.62,0.3);
+  \node[figlbl, text=figred] at (2.95,-0.25) {$d\vec l_1$};
+
+  % punto de observacion
+  \coordinate (Q) at (0,2.9);
+  \draw[figaux, -{Latex[length=2mm,width=1.4mm]}] (P) -- (Q);
+  \node[figlbl] at (1.75,1.5) {$\vec r_2-\vec r_1$};
+  \fill[figblue] (Q) circle (1.6pt);
+  \node[figlbl, anchor=east] at (-0.15,1.5) {$a$};
+  \draw[figvecres] (Q) -- ++(0,0.75);
+  \node[figlbl, text=figred, anchor=east] at (-0.12,3.4) {$\vec B$};
+
+  \node[figlblaux] at (-0.75,0.5) {$R$};
+  \draw[figaux] (0,0) -- (-1.7,0.565);
+
+\end{tikzpicture}

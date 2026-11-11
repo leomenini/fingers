@@ -1,0 +1,36 @@
+% Clase 14 — condiciones de borde entre dos conductores en régimen estacionario.
+% Izquierda: curva C a caballo de la interfaz (rot E = 0 => E_t continuo).
+% Derecha: cajita chata S (no se acumula carga => J_n continuo).
+% Centro: J se quiebra al cruzar, porque J_n es continua y J_t no.
+\begin{tikzpicture}[scale=1]
+
+  % medios
+  \fill[figgray!12] (-4.2,0) rectangle (4.2,1.9);
+  \fill[figgray!28] (-4.2,-1.9) rectangle (4.2,0);
+  \draw[figline] (-4.2,0) -- (4.2,0);
+  \node[figlbl] at (-3.6,1.5) {$g_1$};
+  \node[figlbl] at (-3.6,-1.5) {$g_2$};
+
+  % curva C
+  \draw[figred, line width=0.9pt] (-3.0,-0.3) rectangle (-1.4,0.3);
+  \draw[figred, line width=0.9pt, -{Latex[length=1.8mm,width=1.3mm]}] (-2.5,0.3) -- (-2.0,0.3);
+  \draw[figred, line width=0.9pt, -{Latex[length=1.8mm,width=1.3mm]}] (-1.9,-0.3) -- (-2.4,-0.3);
+  \node[figlbl, text=figred] at (-3.3,0.3) {$C$};
+  \node[figlbl] at (-2.2,1.0) {$E_{1t} = E_{2t}$};
+
+  % densidad de corriente a los dos lados
+  \draw[figvec] (-0.55,1.55) -- (-0.15,0.45);
+  \node[figlbl] at (-0.05,1.2) {$\vec J_1$};
+  \draw[figvec] (-0.15,-0.4) -- (0.75,-1.5);
+  \node[figlbl] at (0.85,-0.85) {$\vec J_2$};
+
+  % cajita S
+  \draw[figamber, line width=0.9pt, fill=figamber!15] (1.5,-0.16) rectangle (3.3,0.16);
+  \draw[figvecaux] (2.4,0.16) -- (2.4,0.8);
+  \draw[figvecaux] (2.4,-0.16) -- (2.4,-0.8);
+  \node[figlblaux] at (2.72,0.68) {$\hat n$};
+  \node[figlblaux] at (2.72,-0.68) {$\hat n$};
+  \node[figlbl, text=figamber] at (3.6,0.32) {$S$};
+  \node[figlbl] at (2.4,1.3) {$J_{1n} = J_{2n}$};
+
+\end{tikzpicture}

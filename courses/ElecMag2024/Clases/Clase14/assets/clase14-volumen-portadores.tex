@@ -1,0 +1,34 @@
+% Clase 14 — cuántos portadores cruzan la sección A en un intervalo \Delta t.
+% Vista lateral del trozo de material. La franja sombreada es el volumen cuyos
+% portadores cruzan A en \Delta t: base A, ancho (v_d . n) \Delta t.
+% Se dibuja v_d paralela a n para no cargar la figura; el caso general sólo
+% cambia el ancho por la proyección.
+\begin{tikzpicture}[scale=1]
+
+  % trozo de material
+  \fill[figgray!12] (0,0) rectangle (7.4,2.2);
+  \draw[figline] (0,0) rectangle (7.4,2.2);
+
+  % franja que cruza A en \Delta t
+  \fill[figblue!18] (2.6,0) rectangle (4.4,2.2);
+  \draw[figaux] (2.6,0) -- (2.6,2.2);
+
+  % seccion A
+  \draw[figred, line width=1.4pt] (4.4,0) -- (4.4,2.2);
+  \node[figlbl, text=figred] at (4.4,2.5) {$A$};
+  \draw[figvecres] (4.4,1.1) -- (5.6,1.1);
+  \node[figlbl, text=figred] at (5.85,1.1) {$\hat n$};
+
+  % portadores con su velocidad de arrastre
+  \foreach \px/\py in {0.6/0.55, 1.4/1.65, 2.95/0.45, 3.2/1.75, 6.2/0.5, 6.3/1.7} {
+    \node[figneg] at (\px,\py) {};
+    \draw[figvec] (\px,\py) -- ++(0.75,0);
+  }
+  \node[figlbl] at (1.75,1.98) {$\vec v_d$};
+
+  % ancho de la franja
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}]
+    (2.6,-0.35) -- (4.4,-0.35);
+  \node[figlblaux] at (3.5,-0.72) {$(\vec v_d\cdot\hat n)\,\Delta t$};
+
+\end{tikzpicture}

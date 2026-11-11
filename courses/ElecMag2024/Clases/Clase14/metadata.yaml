@@ -16,33 +16,58 @@ video:
 
 stats:
   transcript_words: 9363
-  summary_words: 0
+  summary_words: 3155
   diagrams_pending: 0
-  equations: 0
+  equations: 27
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Velocidad de arrastre de los portadores
+  - Corriente a través de una superficie y densidad de corriente
+  - Ecuación de continuidad
+  - Conductividad en un medio homogéneo e isotrópico
+  - Materiales óhmicos y ley de Ohm
+  - Por qué la velocidad es constante y no la aceleración
+  - Resistividad, unidades y órdenes de magnitud
+  - Resistencia de un cable filiforme
+  - Ley de Ohm para un resistor de forma cualquiera
+  - Efecto Joule y potencia en un dispositivo
+  - Potencia disipada por unidad de volumen
+  - Corrientes en régimen estacionario
+  - Ecuación de Laplace en un conductor en régimen estacionario
+  - Condiciones de borde entre dos conductores
+  - Analogía entre electrostática y conducción estacionaria
+  - Prueba de la ley de Ohm para resistores
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Definición de corriente eléctrica (Clase 13)
+  - Teorema de la divergencia
+  - Ecuación de Laplace y problemas de contorno
+  - Condiciones de borde entre dieléctricos
+  - Capacitancia y coeficientes de potencial (Clase 13)
+  - Densidad de corriente y ley de Ohm en Física III
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Relación entre resistencia y capacidad
+  - Aproximación al equilibrio electrostático
+  - Circuitos con resistencias y condensadores
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-fable-5-2
 
 editorial_status: draft
