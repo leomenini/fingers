@@ -1,0 +1,17 @@
+% Clase 25 — una batería alimenta una bobina real, representada como una
+% bobina ideal L en serie con su resistencia interna R. El trabajo de la
+% batería se reparte entre el efecto Joule (R I^2 dt) y la energía acumulada
+% en la bobina, d(L I^2 / 2).
+\begin{tikzpicture}[scale=1]
+  \begin{scope}[line width=0.9pt, color=figblue]
+    \draw (0,0) to[battery1] (0,2.2);
+    \draw (0,2.2) -- (0.8,2.2) to[R] (2.8,2.2) -- (3.6,2.2);
+    \draw (3.6,2.2) to[L] (3.6,0);
+    \draw (3.6,0) -- (0,0);
+  \end{scope}
+  \node[figlbl, anchor=east] at (-0.45,1.1) {$V$};
+  \node[figlbl, figblue] at (1.8,2.65) {$R$};
+  \node[figlbl, figblue, anchor=west] at (3.95,1.1) {$L$};
+  \draw[figvecres] (2.2,-0.4) -- (1.2,-0.4);
+  \node[figlbl, text=figred, anchor=north] at (1.7,-0.45) {$I$};
+\end{tikzpicture}

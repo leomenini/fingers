@@ -1,0 +1,30 @@
+% Clase 23 — barra de largo L que se mueve con velocidad v en un campo uniforme
+% y constante que entra al papel. El campo eléctrico en la barra compensa la
+% fuerza magnética sobre los portadores: FEM de movimiento v B L. En punteado,
+% una curva cerrada que acompaña a la barra: su flujo B L x crece.
+\begin{tikzpicture}[scale=1]
+
+  % campo entrante (cruces lejos de la barra y de los rotulos)
+  \foreach \bx/\by in {1.4/1.1, 2.2/1.1, 3.0/1.1, 1.4/1.9, 2.2/1.9, 3.0/1.9,
+                       5.0/0.9, 5.8/0.9, 5.0/1.5, 5.8/1.5, 5.0/2.1, 5.8/2.1} {
+    \draw[figgray, line width=0.5pt] (\bx-0.08,\by-0.08) -- (\bx+0.08,\by+0.08)
+                                       (\bx-0.08,\by+0.08) -- (\bx+0.08,\by-0.08);
+  }
+  \node[figlblaux, anchor=north] at (5.4,0.6) {$\vec B$ (entra)};
+
+  % curva que acompana a la barra
+  \draw[figred, dashed, line width=0.9pt] (0.75,0.6) rectangle (4.1,2.4);
+  \node[figlbl, text=figred] at (0.45,2.4) {$C(t)$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (0.75,0.25) -- (4.1,0.25);
+  \node[figlblaux, fill=white, inner sep=1pt] at (2.4,0.25) {$x$};
+
+  % barra
+  \draw[figblue, line width=3pt] (4.1,0.6) -- (4.1,2.4);
+  \node[figlbl] at (4.45,1.5) {$L$};
+  \draw[figvecres] (4.3,2.75) -- (5.3,2.75);
+  \node[figlbl, text=figred] at (5.55,2.75) {$\vec v$};
+  % campo electrico en la barra
+  \draw[figvec] (3.75,1.0) -- (3.75,2.0);
+  \node[figlbl, anchor=east] at (3.65,1.5) {$\vec E$};
+
+\end{tikzpicture}

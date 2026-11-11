@@ -1,0 +1,37 @@
+% Clase 23 — toroide de sección rectangular: radio interno a, externo b, altura
+% h. Izquierda: vista de arriba con la curva amperiana de radio r. Derecha:
+% corte, con la franja dr donde el campo B = mu0 N I / (2 pi r) es casi constante.
+\begin{tikzpicture}[scale=1]
+
+  % ---------- vista de arriba ----------
+  \fill[figgray!25, even odd rule] (0,0) circle (2.0) (0,0) circle (1.1);
+  \draw[figline] (0,0) circle (2.0);
+  \draw[figline] (0,0) circle (1.1);
+  \foreach \ang in {0,30,...,330} {
+    \draw[figred, line width=0.8pt] (\ang:1.1) -- (\ang:2.0);
+  }
+  \draw[figblue, dashed, line width=0.9pt] (0,0) circle (1.55);
+  \draw[figvec] (90:1.55) arc (90:120:1.55);
+  \draw[figaux] (0,0) -- (-35:1.55);
+  \node[figlbl, fill=white, inner sep=1pt] at (-35:0.75) {$r$};
+  \node[figlbl] at (-1.95,1.85) {$\vec B$};
+  \node[figlbl, anchor=north] at (0,-2.2) {(a) vista de arriba};
+
+  % ---------- corte ----------
+  \begin{scope}[xshift=4.0cm, yshift=-1.0cm]
+    \draw[figaxis] (0,0) -- (4.3,0);
+    \node[figlbl] at (4.55,0) {$r$};
+    \fill[figgray!25] (1.1,0.2) rectangle (3.4,1.9);
+    \draw[figline] (1.1,0.2) rectangle (3.4,1.9);
+    \fill[figblue!25] (2.0,0.2) rectangle (2.25,1.9);
+    \draw[figblue, line width=0.6pt] (2.0,0.2) -- (2.0,1.9) (2.25,0.2) -- (2.25,1.9);
+    \node[figlblaux] at (2.13,2.15) {$dr$};
+    \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (3.6,0.2) -- (3.6,1.9);
+    \node[figlbl, anchor=west] at (3.65,1.05) {$h$};
+    \draw[figaux] (1.1,0) -- (1.1,0.2) (3.4,0) -- (3.4,0.2);
+    \node[figlbl, anchor=north] at (1.1,-0.05) {$a$};
+    \node[figlbl, anchor=north] at (3.4,-0.05) {$b$};
+    \node[figlbl, anchor=north] at (2.1,-1.2) {(b) corte de la sección};
+  \end{scope}
+
+\end{tikzpicture}

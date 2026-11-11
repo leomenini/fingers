@@ -16,33 +16,55 @@ video:
 
 stats:
   transcript_words: 10357
-  summary_words: 0
+  summary_words: 2742
   diagrams_pending: 0
-  equations: 0
+  equations: 16
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Potencial escalar magnético en regiones sin corriente
+  - Ecuación de Laplace para materiales lineales
+  - Ecuación de Laplace con magnetización uniforme
+  - Esfera de permeabilidad mu en un campo uniforme
+  - Imán esférico con magnetización uniforme
+  - Circuitos magnéticos y núcleos de alta permeabilidad
+  - Aproximaciones de circuito y filiforme
+  - Ley de los nudos para el flujo magnético
+  - Ley de las mallas y reluctancia
+  - Analogía con los circuitos eléctricos
+  - No linealidad y resolución iterativa
+  - Circuito magnético con imán permanente
+  - Reluctancia del entrehierro
+  - Recta de desmagnetización y solución gráfica
+  - Adelanto de la ley de Faraday
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Intensidad magnética y relación constitutiva (Clase 21)
+  - Histéresis y ferromagnetismo (Clase 21)
+  - Condiciones de borde magnéticas (Clase 21)
+  - Ecuación de Laplace y polinomios de Legendre
+  - Leyes de Kirchhoff (Clase 15)
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Ley de Faraday
+  - Inducción electromagnética
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

@@ -1,0 +1,504 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (circuitos, gráficas y esquemas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 26: Circuitos RLC} \\[0.3em]
+        \large{Validez de la aproximación cuasi-estacionaria, régimen transitorio y régimen permanente}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{¿Cuándo varía «lentamente» una corriente?}
+
+Los circuitos RLC ya se vieron en Física III; ahora se les da una segunda
+vuelta con elementos nuevos (en particular, bobinas acopladas, que se verán
+más adelante). Antes, una aclaración sobre la validez de lo que se hace.
+
+\subsection{Lo que se viene despreciando}
+
+Se ha venido usando que en una resistencia la diferencia de potencial es
+proporcional a la corriente, en un condensador a la carga, y en una bobina a la
+derivada de la corriente. Pero de Física III se sabe que eso en algún momento
+deja de valer: un circuito acoplado a una antena \textbf{pierde energía por
+radiación}, emite ondas electromagnéticas, y los circuitos tal como se los
+modela no tienen ese fenómeno.
+
+Despreciarlo es una buena aproximación cuando las corrientes \textbf{varían
+lentamente}, y equivale a ignorar el \textbf{término de desplazamiento} que Maxwell
+agregó a la ley de Ampère. La pregunta es: lento, ¿comparado con qué? La
+respuesta definitiva vendrá con las ecuaciones de Maxwell; por ahora, una
+estimación de orden de magnitud.
+
+\subsection{El criterio: tamaño frente a longitud de onda}
+
+Un circuito que oscila con frecuencia angular $\omega$ tiene período
+$T = 2\pi/\omega$, y las ondas que podría emitir tienen longitud de onda
+
+\[
+\lambda = c\,T = \frac{2\pi c}{\omega}.
+\]
+
+Para emitir de manera eficiente, el emisor tiene que tener un tamaño
+\textbf{comparable} a la longitud de onda (o mayor; quizás diez veces menor, pero no
+un millón de veces): un circuito de 10 cm difícilmente emita ondas de un
+kilómetro. Por eso las radios tienen antenas. Con $a$ el tamaño del circuito
+---\textbf{incluida} cualquier antena conectada---:
+
+\begin{keybox}
+\[
+\boxed{\ a \ll \lambda = \frac{2\pi c}{\omega}
+\quad\Longleftrightarrow\quad
+\omega \ll \frac{2\pi c}{a}\ }
+\]
+\end{keybox}
+es la condición para que la emisión sea despreciable: la corriente «varía
+lentamente».
+
+\begin{notebox}
+Si la corriente no es oscilante sino, por ejemplo, un pulso, el período se
+reemplaza por el tiempo característico de variación. Con corriente constante
+($\omega = 0$) la aproximación es perfecta.
+\end{notebox}
+
+\subsection{Órdenes de magnitud}
+
+Con $c = 3\times10^8$ m/s:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Señal} & \textbf{Frecuencia} & \textbf{$\omega$ (rad/s)} & \textbf{$\lambda$ (tamaño límite)} & \textbf{Consecuencia} \\
+\midrule
+Red eléctrica & 50 o 60 Hz & 376 (60 Hz) & $\sim5\times10^6$ m & Un circuito de 5000 km empezaría a emitir: del tamaño de una mesa o una ciudad, «ampliamente tranquilos» \\
+Radio AM & $\sim10^6$ Hz & $6{,}28\times10^6$ & 300 m & Para emitir hace falta una antena de decenas o centenas de metros \\
+Radio FM, televisión & $\sim10^8$ Hz & --- & 3 m & En un circuito de laboratorio la aproximación deja de valer \\
+Microondas & $\sim10^{10}$ Hz & --- & 3 cm & No se aplica a circuitos de mesa \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase26-longitud-onda.tex}
+  \caption{Longitud de onda $\lambda = c/f$ para las frecuencias de la tabla (azul) frente a tamaños de circuito típicos (rojo), en escala logarítmica. La aproximación cuasi-estacionaria vale cuando el circuito es mucho más chico que $\lambda$.}
+\end{figure}
+
+Consecuencias que comenta el docente:
+
+\begin{itemize}
+  \item Es más fácil recibir FM que AM en aparatos chicos: un celular no tiene antena
+  de decenas de metros. Con el cable del auricular como antena se llega a
+  algunas decenas de centímetros, no tan lejos de los 3 m de FM, y la baja
+  eficiencia se compensa con procesamiento de la señal y eliminación de ruido.
+  Lo mismo en los autos, que antes llevaban una antena de metros.
+  \item Al revés: un \textbf{horno de microondas} mide unas decenas de centímetros y por
+  eso emite muy eficientemente a esa frecuencia, que el docente asocia a una
+  resonancia de los enlaces presentes en los materiales biológicos, con la que
+  la energía electromagnética se transforma en calor.
+\end{itemize}
+
+\begin{notebox}
+La explicación del calentamiento por microondas se registra tal como la da
+el docente («el puente de hidrógeno»); no se desarrolla en clase.
+\end{notebox}
+
+Durante esta semana se supone siempre que las oscilaciones son lentas en este
+sentido; la siguiente se pasa a las ecuaciones de Maxwell y las ondas.
+
+\section{Elementos lineales e ideales}
+
+Segunda hipótesis: todos los elementos son \textbf{lineales}. Para resistencias y
+condensadores, perfecto. Para bobinas, puede fallar si el núcleo es no lineal,
+lo que no es raro, y la oscilación se vuelve no lineal: «no vamos a meternos en
+ese infierno».
+
+También \textbf{ideales}: toda resistencia (incluida la interna de las bobinas) se
+pone aparte, en una resistencia. $R$, $C$ y $L$ son constantes.
+
+Convención de signos: se escribe la diferencia de potencial \textbf{inicial menos
+final}, $\phi_A - \phi_B$, recorriendo de A a B en el sentido de la corriente:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Elemento} & \textbf{$\phi_A - \phi_B$} \\
+\midrule
+Resistencia & $R\,I$ \\
+Condensador (carga $Q$ en la placa A) & $Q/C$ \\
+Bobina ideal & $L\,dI/dt$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{notebox}
+En Física III se suele tomar final menos inicial, y al recorrer en el sentido
+de la corriente aparecen signos menos (el potencial cae). Es la misma
+convención con el signo al revés.
+\end{notebox}
+
+\section{Ecuaciones de los circuitos}
+
+Como los elementos son lineales, las ecuaciones son \textbf{diferenciales lineales}
+en la carga y sus derivadas ($I = \dot Q$). Pero hay además términos que no
+dependen de la carga ni de sus derivadas: los de las \textbf{fuentes} (baterías,
+generadores). Se los llama \textbf{segundo miembro}, y hacen que las ecuaciones no
+sean homogéneas.
+
+\subsection{El circuito RLC serie}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase26-rlc-serie.tex}
+  \caption{Circuito RLC serie con un generador $V(t)$.}
+\end{figure}
+
+Un generador $V(t)$ en serie con una resistencia, un condensador y una bobina.
+Recorriendo la malla:
+
+\[
+V(t) - R I - \frac{Q}{C} - L\frac{dI}{dt} = 0
+\quad\Longrightarrow\quad
+\boxed{\ V(t) = L\,\ddot Q + R\,\dot Q + \frac{Q}{C}\ }
+\]
+
+Es una ecuación diferencial \textbf{lineal, de segundo orden, con coeficientes
+constantes y con segundo miembro}.
+
+\subsection{Varias mallas}
+
+Con dos mallas acopladas hay \textbf{dos} ecuaciones independientes, no tres: la ley
+de los nudos (lo que entra a un nudo sale) liga las corrientes. En general hay
+una ecuación por \textbf{malla independiente}, y queda un \textbf{sistema} de ecuaciones
+diferenciales lineales con coeficientes constantes y segundo miembro.
+
+\subsection{Solución general = homogénea + particular}
+
+\begin{notebox}
+\textbf{Propiedad general de los sistemas lineales} (ni siquiera hace falta que
+los coeficientes sean constantes): la solución general es la solución general
+del sistema \textbf{homogéneo} (sin segundo miembro, con las fuentes apagadas) más
+\textbf{una} solución particular del sistema completo.
+\end{notebox}
+
+\textbf{Prueba.} El sistema es $E_i(Q, \dot Q, \ddot Q,\dots) = V_i(t)$, con $Q$ un
+vector (una carga por malla). Si $Q_1$ y $Q_2$ son dos soluciones, restando
+ecuación a ecuación y usando la linealidad ---la resta de las ecuaciones es la
+ecuación evaluada en la resta, porque la derivada de una resta es la resta de
+las derivadas---:
+
+\[
+E_i(Q_1-Q_2,\ \dot Q_1-\dot Q_2,\dots) = 0 :
+\]
+
+\textbf{la diferencia entre dos soluciones cualesquiera resuelve el homogéneo.} Toda
+solución es, entonces, una particular elegida más una homogénea.
+
+Para el RLC serie se ve directamente:
+
+\[
+L(\ddot Q_1-\ddot Q_2) + R(\dot Q_1-\dot Q_2) + \frac{Q_1-Q_2}{C} = 0 .
+\]
+
+\begin{notebox}
+Quien prefiera pensar en corrientes puede hacerlo; la carga es la primitiva
+de la corriente. Se usan cargas para sólo derivar y no tener que integrar.
+\end{notebox}
+
+\section{Régimen transitorio y régimen permanente}
+
+Salvo con superconductores, todo circuito tiene resistencias ---en el peor de los
+casos, la de los cables, chica pero no nula---. En el \textbf{homogéneo}, con todas las
+fuentes apagadas, la resistencia transforma energía eléctrica en calor: la
+energía almacenada disminuye y \textbf{corrientes y cargas tienden a cero} (también
+se descargan los condensadores).
+
+Entonces, para $t$ grande,
+
+\[
+Q(t) = Q_h(t) + Q_p(t) \;\longrightarrow\; Q_p(t):
+\]
+todas las soluciones se vuelven \textbf{idénticas}, y \textbf{no dependen de las
+condiciones iniciales}. «Tiempo grande» puede ser muy poco: un tiempo
+característico $\tau$ asociado a las resistencias (cuanto más chicas, más hay
+que esperar); y la homogénea suele decaer exponencialmente.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Régimen} & \textbf{Tiempo} & \textbf{$Q_h$} & \textbf{Depende de las condiciones iniciales} \\
+\midrule
+\textbf{Transitorio} & $t\lesssim\tau$ & $\neq0$ & Sí \\
+\textbf{Permanente} & $t\gg\tau$ & $\to0$ & No: $Q\approx Q_p$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+En la mayoría de los circuitos el transitorio es cortísimo: al prender el
+lavarropas se establece enseguida el régimen permanente, que es el que interesa.
+Es especialmente así con un forzado \textbf{periódico}, que dura mucho.
+
+\begin{notebox}[La hamaca]
+Si se empuja a un chico en una hamaca, al principio el
+movimiento depende de cómo se la soltó; después de un rato oscila
+sincronizada con el empuje, independientemente de la condición inicial. Eso
+es el régimen permanente.
+\end{notebox}
+
+\section{Ejemplo de régimen transitorio}
+
+Sección 10.3.
+
+\subsection{Ecuación para la corriente}
+
+Una \textbf{batería} de diferencia de potencial \textbf{constante} $V$, un interruptor y
+un circuito RLC serie:
+
+\[
+V = L\frac{dI}{dt} + R I + \frac{Q}{C}.
+\]
+
+Derivando respecto del tiempo, el lado izquierdo se anula:
+
+\[
+L\ddot I + R\dot I + \frac{I}{C} = 0 .
+\]
+
+La ecuación para la \textbf{corriente} es homogénea, aunque la de la carga no lo
+sea. Si se espera mucho, $I\to0$ y la carga no tiende a cero sino a una
+constante, $Q\to CV$: el condensador se carga.
+
+Las soluciones de una ecuación lineal homogénea forman un \textbf{espacio vectorial},
+y con coeficientes constantes se puede encontrar una base de \textbf{exponenciales}:
+la derivada de una exponencial es proporcional a ella misma, así que la
+dependencia temporal se factoriza. Con $I = I_0\,e^{\lambda t}$:
+
+\[
+L\lambda^2 + R\lambda + \frac1C = 0
+\quad\Longrightarrow\quad
+\boxed{\ \lambda_\pm = -\frac{R}{2L} \pm\sqrt{\frac{R^2}{4L^2}-\frac{1}{LC}}\ }
+\]
+
+(descartando la solución trivial $I_0 = 0$; el docente ubica primero mal la
+$L$ en el pizarrón y lo corrigen.)
+
+\subsection{Régimen sobreamortiguado}
+
+Si $\dfrac{R^2}{4L^2} > \dfrac{1}{LC}$, las dos raíces son \textbf{reales y
+negativas} (la raíz es, en módulo, menor que $R/2L$, así que el signo $+$ no
+alcanza a compensar el menos):
+
+\[
+I(t) = A\,e^{\lambda_+ t} + B\,e^{\lambda_- t}\ \xrightarrow[t\to\infty]{}\ 0 .
+\]
+
+Tiende a cero \textbf{sin oscilar} (a lo sumo cambia de signo una vez, según $A$ y
+$B$). Las constantes salen de \textbf{dos} condiciones iniciales ---es de segundo
+orden---, típicamente la corriente y su derivada al cerrar el interruptor; con el
+condensador inicialmente descargado, $I(0) = 0$ y la derivada sale de la
+ecuación.
+
+\subsection{Régimen subamortiguado}
+
+Si $\dfrac{R^2}{4L^2} < \dfrac{1}{LC}$, la raíz es imaginaria pura y la parte
+real sigue siendo negativa:
+
+\[
+\lambda_\pm = -\frac{R}{2L} \pm i\,\omega_0',
+\qquad
+\omega_0' = \sqrt{\frac{1}{LC}-\frac{R^2}{4L^2}},
+\]
+
+\[
+I(t) = A\,e^{-Rt/2L + i\omega_0' t} + B\,e^{-Rt/2L - i\omega_0' t}.
+\]
+
+\textbf{La corriente es real.} Imponiendo $\bar I = I$ y comparando término a
+término resulta $B = \bar A$. Escribiendo $A = |A|\,e^{i\theta}$ y usando la
+fórmula de Euler (la suma de una exponencial imaginaria pura y su conjugada es
+dos veces el coseno):
+
+\begin{keybox}
+\[
+\boxed{\ I(t) = 2|A|\,e^{-Rt/2L}\cos\!\left(\omega_0' t + \theta\right)\ }
+\]
+\end{keybox}
+
+Tiende a cero \textbf{oscilando}, dentro de una envolvente $2|A|\,e^{-Rt/2L}$. Las
+dos constantes, $|A|$ y $\theta$, salen de las condiciones iniciales.
+
+\subsection{Régimen crítico}
+
+En el borde, $\dfrac{R^2}{4L^2} = \dfrac{1}{LC}$, hay \textbf{una sola} exponencial
+y falta una solución para completar la base. Exactamente en ese valor nunca se
+está en la práctica, pero cerca de él la solución se le parece.
+
+Para encontrar la otra, se mira el caso sobreamortiguado muy cerca del
+crítico, con $\delta\lambda = \sqrt{R^2/4L^2 - 1/LC}$ real y chico:
+
+\[
+I = e^{-Rt/2L}\left(A\,e^{\delta\lambda\,t} + B\,e^{-\delta\lambda\,t}\right)
+\approx e^{-Rt/2L}\Big[(A+B) + \delta\lambda\,(A-B)\,t\Big].
+\]
+
+La base en el caso crítico es
+
+\begin{keybox}
+\[
+\boxed{\ e^{-Rt/2L},\qquad t\,e^{-Rt/2L}\ }
+\]
+\end{keybox}
+
+\begin{notebox}[Situación general]
+En las ecuaciones lineales con coeficientes constantes
+lo normal es una base de exponenciales; en los \textbf{casos críticos}, justo en el
+pasaje de una situación a otra, aparecen exponenciales multiplicadas por
+polinomios. Acá, el polinomio más simple: $t$.
+\end{notebox}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Régimen} & \textbf{Condición} & \textbf{Comportamiento} \\
+\midrule
+Sobreamortiguado & $R^2/4L^2 > 1/LC$ & Decae sin oscilar \\
+Crítico & $R^2/4L^2 = 1/LC$ & $e^{-Rt/2L}$ y $t\,e^{-Rt/2L}$ \\
+Subamortiguado & $R^2/4L^2 < 1/LC$ & Oscila con $\omega_0'$ dentro de una envolvente exponencial \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase26-amortiguamiento.tex}
+  \caption{Corriente en el régimen transitorio del RLC con batería, con el condensador inicialmente descargado, para los tres regímenes. Valores ilustrativos: $R/(2L)$ igual a $0{,}15$, $1$ y $2{,}5$ veces $1/\sqrt{LC}$.}
+\end{figure}
+
+\section{Hacia el régimen permanente sinusoidal}
+
+Para un $V(t)$ arbitrario, hallar una solución particular puede ser difícil.
+La clase siguiente se ocupa del caso más simple, un \textbf{generador sinusoidal}.
+
+No es tan restrictivo: un forzado periódico cualquiera se descompone en \textbf{serie
+de Fourier}. «No le decimos nada a los matemáticos»: aunque la serie es
+infinita, se la piensa con unos pocos términos, cada uno como un generador
+sinusoidal. Por el \textbf{principio de superposición} se resuelve cada componente
+por separado (apagando los demás generadores) y la solución es la suma.
+
+\begin{notebox}
+A la pregunta de si esto entra en el parcial: el práctico no tiene ejemplos
+con series de Fourier, así que no; pero conviene saberlo.
+\end{notebox}
+
+\noindent\emph{La próxima clase: régimen permanente con generadores sinusoidales.}
+
+\end{document}

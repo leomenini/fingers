@@ -1,0 +1,22 @@
+% Clase 29 — onda plana en una dirección cualquiera: los frentes de onda
+% (planos donde E y B son constantes) son perpendiculares al vector de onda
+% k = k \hat k; entre frentes con igual fase hay una longitud de onda.
+% E y B quedan en los frentes (ondas transversales).
+\begin{tikzpicture}[scale=1, rotate=25]
+
+  \foreach \xx in {0,1.6,3.2,4.8} {
+    \draw[figgray, line width=0.8pt] (\xx,-1.8) -- (\xx,1.8);
+  }
+  \draw[figvecres] (-0.6,0) -- (5.8,0);
+  \node[figlbl, text=figred] at (6.1,0.1) {$\vec k$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (1.6,-2.1) -- (3.2,-2.1);
+  \node[figlbl] at (2.4,-2.45) {$\lambda$};
+  % E y B en un frente
+  \draw[figvec] (3.2,0) -- (3.2,1.3);
+  \node[figlbl] at (3.55,1.25) {$\vec E$};
+  \draw[figblue, line width=0.8pt] (3.2,-0.85) circle (0.13);
+  \fill[figblue] (3.2,-0.85) circle (0.04);
+  \node[figlbl] at (3.6,-0.85) {$\vec B$};
+  \node[figlblaux, anchor=south] at (0,1.85) {frente de onda};
+
+\end{tikzpicture}

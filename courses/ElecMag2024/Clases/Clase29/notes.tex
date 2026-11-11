@@ -1,0 +1,499 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (gráficas y esquemas) ----
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 29: Ecuaciones de Maxwell y ondas electromagnéticas} \\[0.3em]
+        \large{Ecuaciones de onda, ondas planas monocromáticas y la velocidad de la luz}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{¿Por qué acertó Maxwell?}
+
+«Todo termina»: es la última clase del curso.
+
+\subsection{Simplicidad y experimento}
+
+Maxwell modificó la ley de Ampère de manera \textbf{minimalista}, para volverla
+matemáticamente consistente: tomó el campo más simple que coincidía con
+$\vec J$ en el caso estacionario y tenía divergencia nula. Eso debería
+sorprender. Lo que da valor a una ley física no es la simplicidad ni la
+estética sino que \textbf{la corroboren los experimentos}; el mundo podría haber
+dicho, como en un libro de Feynman, «a mí tu argumento no me gusta». Las leyes
+de Maxwell valían antes de que él las escribiera.
+
+Había miles de modificaciones posibles y la más simple es la correcta: un siglo
+y medio después no se conoce ningún experimento que la contradiga. Ha pasado
+varias veces en la historia de la física ---Einstein con la relatividad general
+es otro ejemplo--- que leyes elegidas por argumentos estéticos resultaran
+exitosas.
+
+\subsection{La opinión del docente: teorías vistas de lejos}
+
+\begin{notebox}
+Lo que sigue es, como él aclara, su \textbf{opinión como investigador}.
+\end{notebox}
+
+\begin{itemize}
+  \item \textbf{No es que la naturaleza dirija lo que nos resulta lindo; es al revés.} Los
+  criterios estéticos son subjetivos y se forman aprendiendo física: los
+  físicos teóricos aprenden a valorar lo que tiene chance de funcionar, y
+  terminan llamando «lindo» a eso. La versión cualitativa de esta idea es
+  «bastante falaciosa»; la que se sabe objetivar es la de las teorías
+  cuánticas de campos.
+  \item \textbf{Renormalizabilidad.} Primero con la electrodinámica cuántica y luego, en
+  los años 70 y 80, con otras teorías, se usó como guía la condición de ser
+  \textbf{renormalizables}: un criterio de consistencia matemática que obliga a las
+  teorías a ser relativamente simples.
+  \item \textbf{Weinberg.} Hacia fines de los 90, Steven Weinberg cuestionó esa idea en un
+  artículo ---«casi de divulgación, para físicos»--- cuyo título el docente traduce
+  como «¿Qué es la teoría cuántica de campos y qué es lo que creíamos que
+  era?». El docente se declara muy cercano a esa postura: \textbf{la física no es
+  particularmente simple}. Cuando una teoría tiene una escala fundamental y se
+  la mira a escalas mucho mayores, «los zapallos se van ordenando en el carro»
+  y lo que sobrevive es una teoría simple.
+  \item \textbf{El electromagnetismo} puede ser muy complicado a la escala de la teoría
+  electrodébil ---un centésimo del radio del protón---, pero se lo observa a
+  distancias muchísimo mayores, donde sólo sobrevive lo simple.
+\end{itemize}
+
+\textbf{Analogía: la Tierra y la Luna.} La Tierra es un objeto extremadamente
+complicado (con ocho mil millones de personas, y mucho más que personas). Sin
+embargo, para estudiar su interacción con la Luna alcanza con las dos masas y la
+distancia: los radios son mucho menores que la separación. Es la idea del
+\textbf{desarrollo multipolar} «del cual han sido víctimas en este curso»: un objeto
+complicado visto de lejos se comporta como uno simple.
+
+\section{Ecuaciones de onda del electromagnetismo}
+
+Uno de los grandes éxitos de las ecuaciones de Maxwell: tienen \textbf{ondas
+electromagnéticas}, y entre ellas está la luz.
+
+\subsection{Hipótesis}
+
+\begin{itemize}
+  \item Medios \textbf{lineales, homogéneos e isotrópicos}: $\vec D = \varepsilon\vec E$,
+  $\vec B = \mu\vec H$, y la ley de Ohm $\vec J = g\vec E$.
+  \item Regiones \textbf{sin densidad volumétrica de carga}, $\rho = 0$.
+\end{itemize}
+
+El docente marca en azul, en el pizarrón, los términos que vienen de la
+corrección de Maxwell, para seguirles la pista.
+
+\subsection{Ecuación de onda para H}
+
+Se toma el rotacional de la ley de Ampère--Maxwell:
+
+\[
+\curl(\curl\vec H) = \curl\vec J + \pdv{t}\left(\curl\vec D\right)
+= g\,\curl\vec E + \varepsilon\,\pdv{t}\left(\curl\vec E\right).
+\]
+
+Con la identidad, válida para cualquier campo vectorial,
+
+\[
+\curl(\curl\vec v) = \grad(\div\vec v) - \laplacian\vec v,
+\]
+que casi puede tomarse como la \textbf{definición} del laplaciano de un vector (en
+cartesianas es la suma de las derivadas segundas de cada componente; se ve en
+el práctico):
+
+\begin{itemize}
+  \item $\div\vec H = \div\vec B/\mu = 0$, porque \textbf{no hay monopolos};
+  \item $\curl\vec E = -\partial\vec B/\partial t = -\mu\,\partial\vec H/\partial t$,
+  por \textbf{Faraday}.
+\end{itemize}
+
+Sacando los signos que aparecen en todos los términos:
+
+\begin{keybox}
+\[
+\boxed{\ \laplacian\vec H = \mu g\,\pdv{\vec H}{t} + \mu\varepsilon\,\pdv[2]{\vec H}{t}\ }
+\]
+\end{keybox}
+
+\subsection{Disipación y el papel del término de Maxwell}
+
+\begin{itemize}
+  \item El término proporcional a $g$ describe la \textbf{disipación por efecto Joule}: una
+  onda que se propaga en un conductor se atenúa, y esa energía se transforma en
+  calor.
+  \item Los términos que describen propiamente la onda son el laplaciano y la
+  \textbf{derivada segunda temporal}. Si todo fuera estacionario quedaría Laplace.
+  Para tener oscilaciones en una ecuación lineal hacen falta \textbf{al menos dos
+  derivadas temporales}: con una sola salen exponenciales, no sinusoides.
+\end{itemize}
+
+\begin{notebox}[Sin el término de Maxwell no hay ondas]
+La derivada segunda temporal viene
+de $\partial\vec D/\partial t$. Sin ella, aun sin disipación, quedaría la
+ecuación de Laplace; y con disipación, una \textbf{ecuación del calor}. El término
+de desplazamiento es clave para la existencia de las ondas electromagnéticas.
+\end{notebox}
+
+\subsection{Ecuación de onda para E}
+
+El mismo razonamiento, ahora partiendo de la ecuación para el rotacional de
+$\vec E$, que es Faraday:
+
+\[
+\curl(\curl\vec E) = -\pdv{t}\left(\curl\vec B\right)
+= -\mu\,\pdv{t}\left(\vec J + \pdv{\vec D}{t}\right).
+\]
+
+Como no hay carga, $\div\vec E = \rho/\varepsilon = 0$; con la ley de Ohm y
+$\vec D = \varepsilon\vec E$:
+
+\begin{keybox}
+\[
+\boxed{\ \laplacian\vec E = \mu g\,\pdv{\vec E}{t} + \mu\varepsilon\,\pdv[2]{\vec E}{t}\ }
+\]
+\end{keybox}
+
+\textbf{Idéntica} a la de $\vec H$. En un aislante ---en particular en el vacío--- la
+conductividad es nula y el término disipativo no aparece.
+
+\subsection{Maxwell tiene más información}
+
+\begin{warnbox}[Ojo]
+Maxwell implica las ecuaciones de onda, pero \textbf{tiene más
+información} que ellas.
+\end{warnbox}
+
+A nivel de las ecuaciones de onda, $\vec E$ y $\vec B$ están desacoplados;
+pero, por ejemplo, el rotacional de $\vec E$ está ligado a la variación de
+$\vec B$: si hay un campo eléctrico variable tiene que haber uno magnético. Eso
+se ve en §4.
+
+\section{Soluciones monocromáticas}
+
+Se hace para el campo eléctrico (para el magnético es idéntico) y en el
+\textbf{vacío}. Vale igual en cualquier \textbf{aislante} ($g = 0$, sin disipación),
+reemplazando $\mu_0\varepsilon_0$ por $\mu\varepsilon$:
+
+\[
+\laplacian\vec E = \mu_0\varepsilon_0\,\pdv[2]{\vec E}{t}.
+\]
+
+\subsection{Separar el tiempo: la ecuación de Helmholtz}
+
+\textbf{Monocromáticas}: con una única frecuencia angular, como en los circuitos.
+Una fuente oscilante se descompone en Fourier y se mira un modo por vez. El
+nombre viene de que, para la luz, corresponden a un único color; la luz real es
+una superposición de colores.
+
+\[
+\vec E(\vec r, t) = e^{-i\omega t}\,\hat{\vec E}(\vec r).
+\]
+
+Como en los circuitos, se extiende el problema a los complejos y \textbf{la solución
+física es la parte real}. (El docente elige el signo menos en la exponencial.)
+
+Cada derivada temporal baja un $-i\omega$, y la exponencial se cancela:
+
+\begin{keybox}
+\[
+\boxed{\ \laplacian\hat{\vec E} = -\,\mu_0\varepsilon_0\,\omega^2\,\hat{\vec E}\ }
+\]
+\end{keybox}
+la \textbf{ecuación de Helmholtz}, para la parte espacial de la onda. Se parece
+mucho a Laplace: en lugar de igualarse a cero, el laplaciano es proporcional a
+la función.
+
+\subsection{Ecuaciones elípticas, parabólicas e hiperbólicas}
+
+Mucho de lo aprendido con Laplace sirve acá: es también una ecuación en
+derivadas parciales lineal. La clasificación, por analogía con las cónicas:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Ecuación} & \textbf{Tipo} & \textbf{Por qué} \\
+\midrule
+Laplace & \textbf{Elíptica} & Todos los coeficientes del mismo signo, como en una elipse \\
+Del calor & \textbf{Parabólica} & Una variable aparece con derivada primera \\
+De onda & \textbf{Hiperbólica} & Al pasar el término temporal de lado aparecen signos opuestos, como en una hipérbola \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+(El docente dice primero «parabólica» para la de onda y se corrige.)
+
+\subsection{Onda plana}
+
+Una \textbf{onda plana} es una idealización ---ninguna fuente real genera un campo
+exactamente plano---, pero una buena aproximación lejos de la fuente: el campo
+vale lo mismo en todo un plano. Con $x$ perpendicular a ese plano,
+$\hat{\vec E} = \hat{\vec E}(x)$ y el laplaciano es sólo la derivada segunda en
+$x$:
+
+\[
+\frac{d^2\hat{\vec E}}{dx^2} + \mu_0\varepsilon_0\,\omega^2\,\hat{\vec E} = 0 .
+\]
+
+Es la ecuación del \textbf{oscilador armónico} ---la que «capaz que más han visto»---,
+con $x$ en el lugar del tiempo. Su solución general, con dos constantes
+vectoriales $\vec a$ y $\vec b$:
+
+\[
+\hat{\vec E}(x) = \vec a\,e^{ikx} + \vec b\,e^{-ikx},
+\qquad
+\boxed{\ k^2 = \mu_0\varepsilon_0\,\omega^2\ }
+\]
+
+$k$ es el \textbf{número de ondas}, el análogo espacial de la frecuencia angular.
+Volviendo a poner el tiempo:
+
+\[
+\vec E(x,t) = \vec a\,e^{i(kx-\omega t)} + \vec b\,e^{-i(kx+\omega t)}:
+\]
+una onda que se propaga hacia $+x$ y otra hacia $-x$. (Las constantes $\vec a$
+y $\vec b$ no tienen nada que ver con el campo magnético; el docente usó otras
+letras.)
+
+\subsection{La velocidad de la luz}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Temporal} & \textbf{Espacial} \\
+\midrule
+Frecuencia angular $\omega$ & Número de ondas $k$ \\
+Período $T = 2\pi/\omega$ & Longitud de onda $\lambda = 2\pi/k$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La velocidad de una onda es la longitud de onda sobre el período:
+
+\[
+v = \frac{\lambda}{T} = \frac{\omega}{k}
+\quad\Longrightarrow\quad
+\boxed{\ v = \frac{1}{\sqrt{\mu_0\varepsilon_0}} = 2{,}9979\times10^{8}\ \text{m/s}\ }
+\]
+
+Es una velocidad de naturaleza \textbf{puramente electromagnética}, y coincide con
+la velocidad de la luz medida independientemente. Es uno de los grandes éxitos
+del electromagnetismo: refuerza la idea de que \textbf{la luz es un caso particular
+de onda electromagnética}.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase29-espectro.tex}
+  \caption{El espectro electromagnético en escala logarítmica de longitud de onda. El visible es una franja estrecha, aproximadamente entre 400 y 700 nm; los límites entre bandas son aproximados.}
+\end{figure}
+
+No toda onda electromagnética es luz: se llama luz a las que el ojo humano
+puede ver, un rango de frecuencias ---el \textbf{visible}, del rojo al violeta---. Por
+encima del violeta, el \textbf{ultravioleta}; por debajo del rojo, el
+\textbf{infrarrojo}. «Las infrarrojas en general las sentimos como calor y las
+ultravioletas las sentimos como cáncer de piel.»
+
+\section{Ondas planas monocromáticas en las ecuaciones de Maxwell}
+
+\subsection{El ansatz}
+
+Ahora se busca la onda plana directamente en las ecuaciones de Maxwell, que
+tienen más información. Con $\hat k$ un versor perpendicular a los planos de la
+onda (la dirección de propagación, cualquiera) se define el \textbf{vector de onda}
+$\vec k = k\,\hat k$, de módulo el número de ondas:
+
+\[
+\vec E(\vec r,t) = \hat{\vec E}\,e^{i(\vec k\cdot\vec r-\omega t)},
+\qquad
+\vec B(\vec r,t) = \hat{\vec B}\,e^{i(\vec k\cdot\vec r-\omega t)},
+\]
+con $\hat{\vec E}$ y $\hat{\vec B}$ vectores constantes. Con $\hat k = \hat\imath$
+se recupera la onda hacia $+x$ de §3.3, y con $\hat k = -\hat\imath$ la otra.
+
+\begin{notebox}
+Ya se puso, «adelantándose al sentido común», la \textbf{misma} dirección de
+propagación para los dos campos. No hay solución de onda plana con el campo
+eléctrico propagándose en una dirección y el magnético en otra.
+\end{notebox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase29-frentes-onda.tex}
+  \caption{Onda plana en una dirección cualquiera: los frentes de onda, donde los campos son constantes, son perpendiculares al vector de onda $\vec k$; $\vec E$ y $\vec B$ quedan en los frentes.}
+\end{figure}
+
+\subsection{Las ecuaciones de Maxwell para una onda plana}
+
+Medio lineal, \textbf{aislante} (sin corriente) y sin carga:
+
+\[
+\div\vec E = 0,\qquad \div\vec B = 0,\qquad
+\curl\vec E = -\pdv{\vec B}{t},\qquad
+\curl\vec B = \mu\varepsilon\,\pdv{\vec E}{t}.
+\]
+
+Para la onda plana, cada derivada se reemplaza por un factor:
+
+\[
+\pdv{t}\to -i\omega,\qquad \pdv{x_i}\to i\,k_i .
+\]
+
+Las ecuaciones de Maxwell quedan algebraicas (simplificando los factores $i$):
+
+\begin{keybox}
+\[
+\boxed{\ \vec k\cdot\hat{\vec E} = 0,\qquad
+\vec k\cdot\hat{\vec B} = 0,\qquad
+\vec k\times\hat{\vec E} = \omega\,\hat{\vec B},\qquad
+\vec k\times\hat{\vec B} = -\mu\varepsilon\,\omega\,\hat{\vec E}\ }
+\]
+\end{keybox}
+
+Las dos últimas \textbf{vinculan} los campos eléctrico y magnético: no son
+independientes.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase29-onda-plana.tex}
+  \caption{Onda plana monocromática que se propaga según $x$: $\vec E$ oscila según $y$ y $\vec B$ según $z$, en fase, perpendiculares entre sí y a $\vec k$, con $|\vec B| = |\vec E|/v$.}
+\end{figure}
+
+\subsection{Consecuencias}
+
+\begin{enumerate}
+  \item \textbf{Ondas transversales.} Por las dos primeras, $\hat{\vec E}$ y
+  $\hat{\vec B}$ son perpendiculares a la dirección de propagación: oscilan en
+  las direcciones transversales, nunca en la longitudinal.
+  \item \textbf{$\vec E\perp\vec B$.} Por la tercera, $\hat{\vec B} = \dfrac{1}{\omega}\,\vec k\times\hat{\vec E}$:
+  el campo magnético es perpendicular al eléctrico (y los dos a
+  $\vec k$).
+  \item \textbf{La velocidad.} Haciendo el producto vectorial de la tercera con
+  $\vec k$ y usando la cuarta:
+  \[
+  \vec k\times(\vec k\times\hat{\vec E}) = -\mu\varepsilon\,\omega^2\,\hat{\vec E}.
+  \]
+  Como $\vec k\times(\vec k\times\hat{\vec E}) = (\vec k\cdot\hat{\vec E})\,\vec k - k^2\hat{\vec E}$
+  y el primer término es nulo por la transversalidad,
+  \[
+  k^2 = \mu\varepsilon\,\omega^2
+  \quad\Longrightarrow\quad
+  \boxed{\ v^2 = \frac{\omega^2}{k^2} = \frac{1}{\mu\varepsilon}\ }
+  \]
+  para cualquier aislante; en el vacío es la velocidad de la luz.
+  \item \textbf{Las amplitudes están ligadas.} Tomando módulos en la tercera ecuación
+  (como $\vec k\perp\hat{\vec E}$, el módulo del producto vectorial es el
+  producto de los módulos):
+  \[
+  \boxed{\ |\hat{\vec B}| = \frac{k}{\omega}\,|\hat{\vec E}| = \frac{|\hat{\vec E}|}{v}\ }
+  \]
+\end{enumerate}
+
+No toda solución de onda plana de la ecuación de onda es compatible con
+Maxwell. En particular, como preguntaba un estudiante, no se puede tener sólo
+campo eléctrico o sólo campo magnético: están relacionados entre sí.
+
+\noindent\emph{Con esto termina el curso, «con 15 minutos de adelanto». Nos vemos en el
+parcial.}
+
+\end{document}

@@ -1,0 +1,27 @@
+% Clase 26 — longitud de onda lambda = 2 pi c / omega = c / f para las
+% frecuencias de la tabla de clase, frente a tamaños de circuito típicos.
+% La aproximación cuasi-estacionaria vale si el circuito es mucho más chico
+% que lambda. Escala logarítmica en metros.
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=12cm, height=5.2cm,
+    xmode=log, log basis x=10,
+    xmin=1e-3, xmax=1e8, ymin=0, ymax=1.4,
+    ytick=\empty, grid=major,
+    xlabel={longitud (m)},
+  ]
+    % lambdas
+    \addplot[only marks, mark=*, mark size=2.4pt, color=figblue, forget plot]
+      coordinates {(5e6,1) (300,1) (3,1) (0.03,1)};
+    \node[font=\footnotesize, anchor=south] at (axis cs:5e6,1.08) {red, 60 Hz};
+    \node[font=\footnotesize, anchor=south] at (axis cs:300,1.08) {AM};
+    \node[font=\footnotesize, anchor=south] at (axis cs:3,1.08) {FM};
+    \node[font=\footnotesize, anchor=south] at (axis cs:0.03,1.08) {microondas};
+    % tamanos de circuito
+    \addplot[only marks, mark=square*, mark size=2.2pt, color=figred, forget plot]
+      coordinates {(0.3,0.35) (30,0.35) (1e4,0.35)};
+    \node[font=\footnotesize, text=figred, anchor=north] at (axis cs:0.3,0.27) {mesa};
+    \node[font=\footnotesize, text=figred, anchor=north] at (axis cs:30,0.27) {antena AM};
+    \node[font=\footnotesize, text=figred, anchor=north] at (axis cs:1e4,0.27) {ciudad};
+  \end{axis}
+\end{tikzpicture}

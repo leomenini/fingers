@@ -16,33 +16,52 @@ video:
 
 stats:
   transcript_words: 9755
-  summary_words: 0
+  summary_words: 2264
   diagrams_pending: 0
-  equations: 0
+  equations: 27
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Energía magnética y fuerza magnética que no trabaja
+  - Energía en una bobina con resistencia interna
+  - Forma general y forma lineal del trabajo
+  - Energía de un conjunto de corrientes
+  - Energía de dos bobinas acopladas
+  - Prueba de la cota de la inductancia mutua
+  - Energía en términos del potencial vector
+  - Densidad de energía magnética
+  - Término de borde en el infinito
+  - Fuerzas y torques a partir de la energía
+  - Sistema aislado
+  - Fuerzas a corriente constante
+  - Núcleo de hierro dulce atraído por un solenoide
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Autoinductancia e inductancia mutua (Clases 23 y 24)
+  - Potencial vector y desarrollo multipolar (Clase 19)
+  - Energía electrostática y densidad de energía eléctrica
+  - Fuerzas en el caso eléctrico a carga o a potencial constante
+  - Intensidad magnética (Clase 21)
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Circuitos RLC
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

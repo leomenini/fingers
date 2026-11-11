@@ -1,0 +1,593 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (circuitos, gráficas y esquemas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 28: Circuitos RLC con mutuas y ecuaciones de Maxwell} \\[0.3em]
+        \large{Resonancia, convención de los puntos, transformador y corriente de desplazamiento}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Resonancia}
+
+\subsection{La idea: la hamaca}
+
+La \textbf{resonancia} es una propiedad general de cualquier sistema oscilante
+---eléctrico o mecánico---: con un forzado a ciertas frecuencias particulares, el
+oscilador oscila con amplitud \textbf{muy grande}.
+
+El ejemplo de siempre del docente: una hamaca. (No es un oscilador lineal para
+ángulos grandes, pero se piensa con oscilaciones chicas.) Sin forzado y con poco
+rozamiento tiene una \textbf{frecuencia natural}: digamos, va y vuelve una vez por
+segundo. Empujarla cuatro veces por segundo no es óptimo ---a veces se empuja a
+contramano---; empujarla una vez cada cuatro segundos desaprovecha oportunidades.
+Lo ideal es empujarla \textbf{cada vez que vuelve}: con una frecuencia igual o muy
+parecida a la natural.
+
+\begin{notebox}
+La analogía es cualitativa: la hamaca es no lineal y el empujón es periódico
+pero no sinusoidal (más bien un golpe). Lo que se conserva es la idea.
+\end{notebox}
+
+El resultado que se va a ver: la frecuencia de máxima amplitud coincide con la
+natural \textbf{sólo sin rozamiento} (sin resistencia); con resistencia son
+parecidas, no iguales.
+
+\subsection{Frecuencia de resonancia del RLC serie}
+
+El RLC serie con $V_0\cos\omega t$:
+
+\[
+I(t) = \frac{V_0}{|\hat Z|}\cos(\omega t-\theta),
+\qquad
+|\hat Z| = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2},
+\qquad
+\theta = \arctan\frac{\omega L - 1/\omega C}{R}.
+\]
+
+La amplitud de la corriente, $I_0(\omega) = V_0/|\hat Z|$, es máxima cuando
+$|\hat Z|$ es mínimo. A simple vista: $|\hat Z|^2$ es una suma de dos
+cuadrados, $R^2$ no depende de $\omega$, y el otro se puede anular. Por lo
+tanto $|\hat Z|\ge R$, con igualdad cuando \textbf{la reactancia se anula}:
+
+\[
+\omega L = \frac{1}{\omega C}
+\quad\Longrightarrow\quad
+\boxed{\ \omega_0 = \frac{1}{\sqrt{LC}}\ },
+\qquad
+I_0(\omega_0) = \frac{V_0}{R}.
+\]
+
+La \textbf{curva de resonancia} $I_0(\omega)$ arranca en cero (para $\omega\to0$ el
+condensador hace divergir $|\hat Z|$), tiene un máximo $V_0/R$ en $\omega_0$ y
+vuelve a tender a cero para $\omega\to\infty$ (diverge el término de la
+bobina).
+
+\subsection{Frecuencia natural y frecuencia de resonancia}
+
+Sin forzado, el circuito oscila a la \textbf{frecuencia natural} calculada dos
+clases atrás,
+
+\[
+\omega_0' = \sqrt{\frac{1}{LC}-\frac{R^2}{4L^2}} .
+\]
+
+Cuando $R\to0$, $\omega_0'\to\omega_0$: con resistencias pequeñas, el forzado
+óptimo está en la frecuencia natural. Con resistencia no nula, la \textbf{frecuencia
+de resonancia} $\omega_0$ y la natural no coinciden.
+
+\begin{notebox}
+Un estudiante observa que la que se mueve con $R$ es $\omega_0'$, no
+$\omega_0$, que no depende de $R$. El docente lo acepta: lo que quería decir es
+que se acercan.
+\end{notebox}
+
+Además, al bajar $R$ el máximo $V_0/R$ crece: el pico se vuelve cada vez más
+alto y angosto. En el límite $R\to0$ sería infinito, situación no física; pero
+con muy poca resistencia la resonancia puede ser muy grande.
+
+\begin{notebox}[Abuso de lenguaje estándar]
+En todo lo que sigue se dice «frecuencia» por
+\textbf{frecuencia angular}, que difiere en $2\pi$.
+\end{notebox}
+
+\subsection{Ancho de la resonancia y factor de calidad}
+
+Hay que definir qué se llama ancho; la convención es tomar las frecuencias en
+que la amplitud cae al máximo \textbf{dividido por $\sqrt2$} (es arbitrario, pero las
+cuentas quedan cómodas):
+
+\[
+\frac{I_0(\omega)}{I_0(\omega_0)} = \frac{1}{\sqrt2}
+\quad\Longleftrightarrow\quad
+|\hat Z(\omega)| = \sqrt2\,R
+\quad\Longleftrightarrow\quad
+\left|\omega L - \frac{1}{\omega C}\right| = R .
+\]
+
+\begin{notebox}
+El docente pone primero el $\sqrt2$ del lado equivocado y lo corrigen.
+\end{notebox}
+
+Se calcula sólo para \textbf{$R$ pequeño}, donde el ancho es chico:
+$\omega = \omega_0 + \Delta\omega$ con $\Delta\omega\ll\omega_0$. Con
+$(1+x)^{-1}\approx 1-x$ («dividir por 1,01 es como multiplicar por 0,99»):
+
+\[
+\frac{1}{C(\omega_0+\Delta\omega)} \approx \frac{1}{C\omega_0}\left(1-\frac{\Delta\omega}{\omega_0}\right).
+\]
+
+El término de orden cero se cancela por la condición de resonancia, y como
+$1/(C\omega_0^2) = L$:
+
+\[
+L\,\Delta\omega + L\,\Delta\omega = R
+\quad\Longrightarrow\quad
+\boxed{\ \Delta\omega = \frac{R}{2L}\ }
+\]
+
+$\Delta\omega$ es el ancho hacia cada lado; cerca del pico, con $R$ chico, la
+curva es simétrica. Tiende a cero con $R$.
+
+Se define el \textbf{factor de calidad}
+
+\begin{keybox}
+\[
+\boxed{\ \mathcal{Q} = \frac{\omega_0 L}{R} = \frac{\omega_0}{2\Delta\omega}\ }
+\]
+\end{keybox}
+
+(con la letra Q «porque se me acabaron las letras»; no es la carga). Cuanto
+mayor, más aguda la resonancia.
+
+\begin{notebox}[Por qué «calidad»]
+Una radio: la antena recibe una señal débil, que actúa
+como un generador de forzado pequeño. Las radios reales tienen amplificador,
+pero aun sin él, con un $\mathcal{Q}$ alto y bien sintonizada, ese forzado
+pequeño produce oscilaciones grandes. Un estudiante resume: es más selectivo
+y además amplifica mucho en resonancia. El costo es que exige una
+sintonización más fina. Las radios viejas sintonizaban con un condensador o
+una resistencia variable; hoy es todo electrónico, porque se miniaturiza
+mejor, aunque la física de fondo es la misma.
+\end{notebox}
+
+\subsection{La resonancia en la fase}
+
+La resonancia también se ve en la fase, $\theta = \arctan\dfrac{\omega L - 1/\omega C}{R}$:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{$\omega$} & \textbf{Argumento} & \textbf{$\theta$} \\
+\midrule
+$\to0$ & $\to-\infty$ & $\to-\pi/2$ \\
+$\omega_0$ & $0$ & $0$ \\
+$\to\infty$ & $\to+\infty$ & $\to+\pi/2$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La fase pasa de $-\pi/2$ a $\pi/2$ en una región de ancho del orden de
+$\Delta\omega$. Al bajar $R$ el pasaje se vuelve más vertical, y en el límite
+$R\to0$ es una discontinuidad.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase28-resonancia.tex}
+  \caption{Curvas de resonancia del RLC serie para tres factores de calidad: (a) amplitud, normalizada a su máximo $V_0/R$, que crece al bajar $R$; (b) fase, que pasa de $-\pi/2$ a $\pi/2$ cada vez más bruscamente.}
+\end{figure}
+
+\subsection{Varios osciladores acoplados}
+
+El fenómeno es general. Con $n$ osciladores lineales acoplados y un generador
+sinusoidal, \textbf{para resistencias pequeñas}:
+
+\begin{enumerate}
+  \item hay \textbf{$n$ frecuencias de resonancia} ($n$ picos);
+  \item cada una es cercana a una de las \textbf{$n$ frecuencias naturales} del sistema
+  sin forzar, y en el límite de resistencias nulas coinciden;
+  \item en resonancia el desfasaje se anula (estrictamente, en el límite $R\to0$) y
+  el \textbf{factor de potencia tiende a 1}; con resistencias pequeñas, «factor de
+  potencia 1» y «módulo de la impedancia mínimo» son equivalentes.
+\end{enumerate}
+
+\begin{notebox}[Por qué resistencias pequeñas]
+Con resistencias grandes el sistema sin
+forzar ni siquiera oscila: decae sin oscilar, y la noción de frecuencia
+natural pierde sentido. Cuanto mayor la resistencia, más chatos los picos,
+que pueden volverse invisibles.
+\end{notebox}
+
+Se puede probar en general; el docente no lo hace.
+
+\section{Inductancias mutuas en circuitos}
+
+\subsection{La convención de los puntos}
+
+El signo de una mutua depende de cómo están enrolladas las bobinas: dos
+bobinados en el mismo solenoide enrollados para el mismo lado dan $M>0$; al
+revés, $M<0$. En un diagrama de circuito eso no se ve. La convención:
+
+\begin{notebox}
+\textbf{Se da $M$ siempre positiva y el signo se indica en el diagrama con puntos}
+en un extremo de cada bobina.
+\end{notebox}
+
+\textbf{Regla.} Si todas las corrientes (elegidas convencionalmente) \textbf{entran por
+los puntos}, los términos de mutua llevan \textbf{signo $+$}, el mismo que las
+autoinductancias. Cada cambio de un punto al otro extremo introduce un signo
+delante de $j\omega M$; dos cambios se compensan. Si las dos corrientes entran
+por el extremo sin punto, también es $+$.
+
+\begin{notebox}
+Con varias mutuas no siempre se puede elegir que todas las corrientes entren
+por los puntos: al acomodar una, otra puede quedar al revés.
+\end{notebox}
+
+\subsection{Ejemplo: dos ramas acopladas}
+
+Un generador alimenta dos ramas en paralelo: una con $\hat Z_1$ y $L_1$, otra con
+$\hat Z_2$ y $L_2$, acopladas por $M$, con los dos puntos del mismo lado y las
+dos corrientes entrando por ellos. Malla de arriba (con el generador) y malla
+de abajo:
+
+\[
+V_0 = \hat Z_1\hat I_1 + j\omega L_1\hat I_1 + j\omega M\,\hat I_2,
+\]
+
+\[
+0 = \hat Z_2\hat I_2 + j\omega L_2\hat I_2 + j\omega M\,\hat I_1 - (\text{rama de arriba}).
+\]
+
+\begin{notebox}
+En la segunda malla el docente escribe primero $V_0$ del lado izquierdo y se
+corrige: «mezclé dos cosas». La malla de abajo no contiene el generador. El
+punto importante es el signo de los términos con $M$, que es $+$ en las dos
+porque ambas corrientes entran por los puntos.
+\end{notebox}
+
+Es un sistema lineal que se puede resolver; el docente no lo resuelve.
+
+\section{El transformador}
+
+\subsection{Transformador real}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase28-transformador.tex}
+  \caption{Transformador: primario con el generador, $R_1$ y $L_1$; secundario con $L_2$, $R_2$ y la carga $\hat Z$. Con las dos corrientes entrando por los puntos, los términos de mutua llevan signo $+$.}
+\end{figure}
+
+Un \textbf{circuito primario} con el generador $V_0\cos\omega t$, una resistencia
+$R_1$ y una bobina $L_1$, y un \textbf{circuito secundario}, sin generador, con una
+bobina $L_2$, una resistencia $R_2$ y la carga $\hat Z$ que se quiere
+alimentar. $R_1$ y $R_2$ representan las resistencias internas, inevitables, de
+los bobinados. Con las corrientes entrando por los puntos:
+
+\[
+V_0 = (R_1 + j\omega L_1)\,\hat I_1 + j\omega M\,\hat I_2,
+\]
+
+\[
+0 = j\omega M\,\hat I_1 + (R_2 + j\omega L_2 + \hat Z)\,\hat I_2 .
+\]
+
+Resolviendo el sistema $2\times2$, con
+$D = (R_1 + j\omega L_1)(\hat Z + j\omega L_2 + R_2) + \omega^2M^2$:
+
+\begin{keybox}
+\[
+\boxed{\ \hat I_1 = \frac{\hat Z + j\omega L_2 + R_2}{D}\,V_0,
+\qquad
+\hat I_2 = -\frac{j\omega M}{D}\,V_0\ }
+\]
+\end{keybox}
+
+\begin{itemize}
+  \item Si $M\to0$ (bobinas desacopladas), en el secundario no pasa nada: la
+  corriente ahí es puramente inducida.
+  \item Las dos corrientes son proporcionales a $V_0$.
+  \item Es la solución exacta de un \textbf{transformador real}: no se supuso acoplamiento
+  máximo ($M$ puede ser menor que $\sqrt{L_1L_2}$) y hay resistencias.
+\end{itemize}
+
+No hace lo que se quiere de un transformador: los cocientes de corrientes y de
+voltajes \textbf{dependen de la frecuencia}.
+
+\subsection{Transformador ideal}
+
+Un transformador ideal cambia voltaje y corriente por una constante
+\textbf{independiente de $\omega$}: multiplica el voltaje por un factor $A$ y la
+corriente por el inverso.
+
+\begin{notebox}
+En el VTT el docente dice que $\hat I_2/\hat I_1$ y $\hat V_Z/V_0$ son «la misma
+constante» $A$ (con un signo menos en la corriente), y enseguida que la
+corriente cambia «de manera inversa». Por el resultado de abajo y el del
+ejercicio, lo consistente es: voltaje por $A$, corriente por $1/A$.
+\end{notebox}
+
+Del sistema:
+
+\[
+-\frac{\hat I_1}{\hat I_2} = \frac{\hat Z + j\omega L_2 + R_2}{j\omega M},
+\]
+que se vuelve independiente de $\omega$ si
+
+\begin{keybox}
+\[
+\boxed{\ \omega L_2 \gg |\hat Z + R_2|\ }
+\quad\Longrightarrow\quad
+-\frac{\hat I_1}{\hat I_2}\approx\frac{L_2}{M}.
+\]
+\end{keybox}
+
+Es la primera condición de transformador ideal: resistencias pequeñas y una
+carga que no le exija demasiado.
+
+\textbf{Ejercicio propuesto.} Analizar el voltaje de manera similar, en el caso de
+\textbf{acoplamiento máximo}, $M^2 = L_1L_2$ (por ejemplo, dos bobinados en el mismo
+solenoide), y probar que
+
+\[
+A = \frac{N_2}{N_1},
+\]
+con $N_1$ y $N_2$ los números de espiras.
+
+\begin{notebox}
+Con $L\propto N^2$ y $M = \sqrt{L_1L_2}$, el cociente de corrientes de arriba
+da $L_2/M = N_2/N_1$, coherente con que la corriente cambie por el inverso de
+$A$.
+\end{notebox}
+
+\section{Ecuaciones de Maxwell}
+
+Capítulo 11, el último del curso.
+
+\subsection{La inconsistencia de la ley de Ampère}
+
+Un cable con corriente variable $I(t)$ que llega a un condensador. Se aplica
+Ampère a una curva $C$ alrededor del cable, con dos superficies del mismo borde:
+$S_1$, atravesada por el cable, y $S_2$, que «da la vuelta» pasando entre las
+placas.
+
+\[
+\oint_C \vec H\cdot d\vec l = \int_S \vec J\cdot\hat n\,dS =
+\begin{cases} I & \text{con } S_1\\ 0 & \text{con } S_2 \end{cases}
+\]
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase28-capacitor-maxwell.tex}
+  \caption{La inconsistencia de la ley de Ampère: con la misma curva $C$, el cable atraviesa $S_1$, mientras que $S_2$ rodea la placa y pasa entre las placas, donde no hay corriente de conducción.}
+\end{figure}
+
+Tendrían que dar lo mismo y no dan. No es extraño: Ampère se dedujo para
+corrientes estacionarias.
+
+La diferencia entre los dos cálculos es el flujo de $\vec J$ por la superficie
+cerrada formada por $S_1$ y $S_2$, que es la corriente que entra en ella, igual
+a la variación de la carga encerrada:
+
+\[
+\int_{S_1}\vec J\cdot\hat n\,dS - \int_{S_2}\vec J\cdot\hat n\,dS
+= \frac{d}{dt}\int_V\rho\,dV .
+\]
+
+El motivo de la inconsistencia: \textbf{la carga en el condensador está variando.}
+
+\subsection{Corregirla con la conservación de la carga}
+
+En forma diferencial: la divergencia de un rotacional es cero, así que
+
+\[
+\curl\vec H = \vec J
+\quad\Longrightarrow\quad
+\div\vec J = 0 :
+\]
+la ecuación \textbf{sólo es consistente si $\div\vec J = 0$}, es decir, en el caso
+estacionario.
+
+Hay que reemplazar $\vec J$ por un nuevo campo $\vec J_{\text{nuevo}}$ tal que
+
+\begin{enumerate}
+  \item $\vec J_{\text{nuevo}} = \vec J$ en el caso estacionario;
+  \item $\div\vec J_{\text{nuevo}} = 0$ \textbf{siempre}.
+\end{enumerate}
+
+No hay una única solución; se busca la más simple, que es la que encontró
+Maxwell y que además resultó la correcta, aunque «podría haber sido más
+complicada».
+
+La pista es la \textbf{conservación de la carga}. Lo que se sabe de $\div\vec J$ en
+el caso general es la ecuación de continuidad, y lo que se sabe de $\rho$ en
+términos de una divergencia es la ley de Gauss:
+
+\[
+\pdv{\rho}{t} + \div\vec J = 0,
+\qquad
+\div\vec D = \rho
+\quad\Longrightarrow\quad
+\div\left(\vec J + \pdv{\vec D}{t}\right) = 0 .
+\]
+
+$\vec J + \partial\vec D/\partial t$ cumple las dos condiciones: en el caso
+estacionario es $\vec J$, y su divergencia es siempre nula (se usaron sólo
+ecuaciones exactas).
+
+\subsection{Corriente de desplazamiento}
+
+Maxwell propone modificar la ley de Ampère:
+
+\begin{keybox}
+\[
+\boxed{\ \curl\vec H = \vec J + \pdv{\vec D}{t}\ }
+\]
+\end{keybox}
+
+\textbf{Ley de Ampère modificada por Maxwell.} (El docente dice «divergencia» en voz
+alta y escribe rotacional; lo corrige.) A $\partial\vec D/\partial t$ se lo llama
+\textbf{densidad de corriente de desplazamiento}: en Física III se hablaba de
+corriente de desplazamiento sin establecer el vínculo con el \textbf{vector
+desplazamiento} $\vec D$, que es de donde viene el nombre. La \textbf{corriente de
+desplazamiento} es
+
+\[
+I_d = \int_S \pdv{\vec D}{t}\cdot\hat n\,dS .
+\]
+
+\begin{notebox}
+A la pregunta de si Maxwell «se llevó todo el crédito»: «a Ampère le seguimos
+diciendo Ampère».
+\end{notebox}
+
+\subsection{Las cuatro ecuaciones}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Ley} & \textbf{En un medio} & \textbf{En el vacío} \\
+\midrule
+Gauss & $\div\vec D = \rho$ & $\div\vec E = \rho/\varepsilon_0$ \\
+No hay monopolos & $\div\vec B = 0$ & $\div\vec B = 0$ \\
+Faraday & $\curl\vec E = -\pdv{\vec B}{t}$ & $\curl\vec E = -\pdv{\vec B}{t}$ \\
+Ampère--Maxwell & $\curl\vec H = \vec J + \pdv{\vec D}{t}$ & $\curl\vec B = \mu_0\vec J + \mu_0\varepsilon_0\pdv{\vec E}{t}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+«Está lleno de remeras que tienen esto.» En un medio hay que agregar siempre
+las relaciones constitutivas entre $\vec D$ y $\vec E$ y entre $\vec H$ y
+$\vec B$.
+
+\subsection{¿Siguen siendo correctas?}
+
+Maxwell hizo una jugada arriesgada: buscó «al tuntún» la corrección más simple,
+y era la correcta. Hoy se piensa que las ecuaciones están bien, con dos
+modificaciones del siglo XX:
+
+\begin{enumerate}
+  \item \textbf{Efectos cuánticos.} A escalas muy chicas hay que usar el equivalente
+  cuántico de estas ecuaciones: la \textbf{electrodinámica cuántica}, que lograron
+  formular de manera coherente Feynman, Schwinger y Tomonaga (premio Nobel).
+  No cambia las ecuaciones, sino cómo se usan a nivel microscópico; para
+  objetos macroscópicos el límite es esto.
+  \item \textbf{El modelo estándar.} A distancias del orden de un centésimo del radio del
+  protón, el electromagnetismo se entrevera con las interacciones nucleares
+  débiles: la \textbf{unificación electrodébil}.
+\end{enumerate}
+
+Fuera de esas escalas, son leyes fundamentales del electromagnetismo, y con
+enormes consecuencias prácticas: tienen \textbf{soluciones en forma de ondas}. Así
+Maxwell entendió la naturaleza electromagnética de la luz y pudo calcular su
+velocidad a partir de propiedades eléctricas y magnéticas.
+
+\noindent\emph{La próxima clase: las ondas electromagnéticas.}
+
+\end{document}

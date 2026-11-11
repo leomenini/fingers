@@ -1,0 +1,31 @@
+% Clase 27 — la impedancia del RLC serie en el plano complejo: R sobre el eje
+% real, j omega L hacia arriba y 1/(j omega C) hacia abajo. Se suman como
+% vectores; |Z| es el largo de la suma y theta su argumento. Dibujado con
+% omega L > 1/(omega C) (theta > 0).
+\begin{tikzpicture}[scale=1]
+
+  \draw[figaxis] (-0.3,0) -- (5.2,0);
+  \draw[figaxis] (0,-1.6) -- (0,3.4);
+  \node[figlbl] at (5.45,0) {$\Re$};
+  \node[figlbl] at (0,3.65) {$\Im$};
+
+  % R
+  \draw[figvec] (0,0) -- (4,0);
+  \node[figlbl, anchor=north] at (2,-0.05) {$R$};
+  % j omega L
+  \draw[figvec] (4,0) -- (4,3.0);
+  \node[figlbl, anchor=west] at (4.1,2.4) {$j\omega L$};
+  % 1/(j omega C)
+  \draw[figvecaux] (4,3.0) -- (4,1.8);
+  \node[figlbl, anchor=west] at (4.1,1.15) {$\dfrac{1}{j\omega C}$};
+  % Z
+  \draw[figvecres] (0,0) -- (4,1.8);
+  \node[figlbl, text=figred, anchor=south east] at (2.0,1.0) {$\hat Z$};
+  % theta
+  \draw[figgray, line width=0.6pt] (1.2,0) arc (0:24.2:1.2);
+  \node[figlbl] at (1.5,0.3) {$\theta$};
+  % reactancia
+  \draw[figaux] (0,1.8) -- (4,1.8);
+  \node[figlblaux, anchor=east] at (-0.1,1.8) {$\omega L - \dfrac{1}{\omega C}$};
+
+\end{tikzpicture}

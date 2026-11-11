@@ -16,33 +16,55 @@ video:
 
 stats:
   transcript_words: 10151
-  summary_words: 0
+  summary_words: 3276
   diagrams_pending: 0
-  equations: 0
+  equations: 20
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Campo microscópico y campo macroscópico en un material
+  - Intensidad magnética H
+  - Ley de Ampère en un material
+  - Relación constitutiva entre B y H
+  - Forma integral de la ley de Ampère para H
+  - Susceptibilidad magnética
+  - Diamagnetismo y paramagnetismo
+  - Órdenes de magnitud de la susceptibilidad
+  - Permeabilidad magnética
+  - Origen del ferromagnetismo
+  - Curva de primera imantación
+  - Magnetización de saturación
+  - Histéresis, remanencia y coercitividad
+  - Aproximaciones para materiales ferromagnéticos
+  - Condiciones de borde para B y H
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Magnetización y corrientes de magnetización (Clase 20)
+  - Ley de Ampère (Clase 18)
+  - Teorema de Stokes
+  - Vector desplazamiento y relación constitutiva en dieléctricos
+  - Condiciones de borde en dieléctricos
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Potencial escalar magnético
+  - Circuitos magnéticos
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

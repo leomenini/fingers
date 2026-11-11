@@ -1,0 +1,542 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (circuitos, gráficas y esquemas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 25: Energía magnética} \\[0.3em]
+        \large{Energía de un conjunto de corrientes, densidad de energía y fuerzas sobre circuitos}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Almacenar energía en un campo que no trabaja}
+
+La idea parece rara de entrada. La potencia que una fuerza entrega a una carga
+es $\vec F\cdot\vec v$, y la fuerza magnética es ortogonal a la velocidad: \textbf{la
+fuerza magnética no trabaja}. ¿Cómo se almacena energía en un campo magnético?
+
+Por la \textbf{inducción}: un campo magnético variable genera un campo eléctrico
+inducido, y ése sí trabaja y puede dar o tomar energía de las cargas. Por eso,
+como se sabe de Física III, para almacenar energía en una bobina hace falta que
+las corrientes \textbf{cambien en el tiempo} durante el proceso.
+
+Así como el condensador es el dispositivo típico para almacenar energía en un
+campo eléctrico, la \textbf{bobina} o \textbf{inductor} lo es para el magnético. Pero
+cualquier distribución de corrientes genera un campo y tiene una energía
+asociada; la bobina es «particularmente llamadora» porque con muchas vueltas
+concentra mucho campo en una región. Una sola espira almacena menos, con un
+campo más desparramado.
+
+\section{Energía en una bobina}
+
+\subsection{Balance con una batería}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase25-bateria-bobina.tex}
+  \caption{Una batería alimenta una bobina real, representada como una bobina ideal $L$ en serie con su resistencia interna $R$.}
+\end{figure}
+
+Una batería alimenta una bobina, representada como una bobina ideal de
+autoinductancia $L$ en serie con su resistencia interna $R$. El trabajo de la
+batería al mover una carga $dq$ es $V\,dq$, y la diferencia de potencial es la
+caída en la resistencia más la FEM de la bobina, que por Faraday es
+$d\Phi/dt$. Si la bobina es \textbf{rígida y lineal}, $d\Phi/dt = L\,dI/dt$:
+
+\[
+V = R\,I + L\,\frac{dI}{dt}.
+\]
+
+La energía por unidad de carga no depende sólo de la corriente, sino de su
+derivada. Con $dq = I\,dt$:
+
+\[
+dW_b = R I^2\,dt + L I\,\frac{dI}{dt}\,dt
+= R I^2\,dt + d\!\left(\tfrac12 L I^2\right).
+\]
+
+\begin{itemize}
+  \item $R I^2\,dt$: lo que se disipa por \textbf{efecto Joule}, ya conocido.
+  \item $d(\tfrac12 L I^2)$: lo que se \textbf{acumula en la bobina}.
+\end{itemize}
+
+\begin{keybox}
+\[
+\boxed{\ U = \tfrac12 L I^2\ }
+\]
+\end{keybox}
+
+\subsection{Forma general y forma lineal}
+
+El término de acumulación también se escribe como $I\,d\Phi$:
+
+\[
+dW_b^{\text{(acum)}} = I\,d\Phi .
+\]
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Expresión} & \textbf{Validez} \\
+\midrule
+$I\,d\Phi$ & \textbf{General}: sale de Faraday sin suponer autoinductancia ni linealidad; vale, por ejemplo, con un núcleo no lineal \\
+$d(\tfrac12 L I^2)$ & Sólo en el caso \textbf{lineal}: al derivar se trató a $L$ como constante. Si $L$ dependiera de $I$ habría que derivarla también \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La energía aportada a la bobina puede ir a dos lugares: a \textbf{energía almacenada}
+o, en medios no lineales, a \textbf{pérdidas por histéresis}, un proceso
+irreversible que depende de la historia. Eso «desborda los propósitos del
+curso»: de acá en más se supone \textbf{medio lineal} (vacío, materiales no
+magnéticos o hierro dulce, aproximadamente lineal).
+
+\section{Energía de un conjunto de corrientes}
+
+\subsection{El trabajo de las baterías}
+
+Varias bobinas con corrientes $I_1, I_2, I_3,\dots$ Se ignora el efecto Joule
+---siempre está, pero sólo se arrastra---: baterías ideales. El trabajo es la suma
+sobre todas las bobinas, y el flujo en cada una se descompone en los flujos
+generados por todas:
+
+\[
+dW_b = \sum_i I_i\,d\Phi_i = \sum_{i,j} I_i\,d\Phi_{ij}.
+\]
+
+Hasta acá es general. Para \textbf{bobinas rígidas} lo único que cambia es la
+corriente, y para \textbf{medios lineales} $d\Phi_{ij} = M_{ij}\,dI_j$ con $M_{ij}$
+constante:
+
+\[
+dW_b = \sum_{i,j} M_{ij}\,I_i\,dI_j .
+\]
+
+\begin{notebox}[Por qué importa la linealidad]
+Si el medio es lineal, la energía está
+bien definida y no depende del camino por el que se llegó a las corrientes
+finales: se puede elegir el que se quiera. Con histéresis, los $M$ dependen
+de las corrientes, el trabajo \textbf{depende del camino} y hay ciclos
+irreversibles, «como si hubiera un rozamiento» cuando las zonas del material
+se alinean con el campo.
+\end{notebox}
+
+\subsection{Un camino cómodo: subir todas las corrientes a la vez}
+
+Como en el caso de los conductores cargados, se hacen crecer \textbf{todas las
+corrientes proporcionalmente}:
+
+\[
+I'_i = \alpha\,I_i,\qquad \alpha: 0\to1,\qquad dI'_j = I_j\,d\alpha .
+\]
+
+\[
+U = \int_0^1 \sum_{i,j} M_{ij}\,(\alpha I_i)\,(I_j\,d\alpha)
+= \sum_{i,j} M_{ij}\,I_i I_j\int_0^1\alpha\,d\alpha
+\]
+
+\begin{keybox}
+\[
+\boxed{\ U = \frac12\sum_{i,j} M_{ij}\,I_i\,I_j\ }
+\]
+\end{keybox}
+
+Es la energía almacenada en un conjunto de \textbf{bobinas rígidas en medios
+lineales}, interactuando entre sí. Si no fueran rígidas, parte del trabajo iría
+a deformarlas (trabajo mecánico); si no fueran lineales, parte iría al proceso
+irreversible de magnetización. Una magnetización lineal sí está incluida.
+
+\subsection{Ejemplos: una y dos bobinas}
+
+\textbf{Una bobina.} Un solo término, $M_{11} = L$: se recupera $U = \tfrac12 L I^2$.
+
+\textbf{Dos bobinas.} Con $M_{11} = L_1$, $M_{22} = L_2$ y los dos términos cruzados,
+que son iguales porque $M_{12} = M_{21} = M$:
+
+\begin{keybox}
+\[
+\boxed{\ U = \tfrac12 L_1 I_1^2 + \tfrac12 L_2 I_2^2 + M\,I_1 I_2\ }
+\]
+\end{keybox}
+
+\subsection{Prueba de la cota de la inductancia mutua}
+
+La cota enunciada la clase pasada sale de un argumento físico: con las
+corrientes apagadas no hay energía almacenada (nivel cero), y para llegar a
+cualquier par de corrientes hubo que \textbf{aportar} energía. Entonces
+
+\[
+U(I_1, I_2)\ \ge\ 0 \qquad\text{para todo } I_1, I_2 .
+\]
+
+\begin{notebox}
+Esta expresión \textbf{no es manifiestamente positiva}: con $M$ arbitraria podría
+ser negativa. Que tenga que serlo es la propiedad física, y de ahí sale la
+cota.
+\end{notebox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase25-energia-minimo.tex}
+  \caption{Energía de dos bobinas en función de $I_1$, con $I_2$ fijo y $L_1 = L_2$, para tres valores de la mutua. El mínimo de cada parábola vale $\tfrac{I_2^2}{2}(L_2 - M^2/L_1)$: que no sea negativo es la cota $M^2\le L_1L_2$, alcanzada con acoplamiento total.}
+\end{figure}
+
+Se fija $I_2$ y se mira $f(I_1) = U(I_1, I_2)$. Si $U\ge0$ variando todo, en
+particular el mínimo de $f$ es $\ge0$. Derivando:
+
+\[
+f'(I_1) = L_1 I_1 + M I_2 = 0
+\quad\Longrightarrow\quad
+I_1^{\min} = -\frac{M}{L_1}\,I_2 .
+\]
+
+Sustituyendo, todos los términos quedan proporcionales a $I_2^2$:
+
+\[
+f(I_1^{\min}) = I_2^2\left(\frac{M^2}{2L_1} + \frac{L_2}{2} - \frac{M^2}{L_1}\right)
+= \frac{I_2^2}{2}\left(L_2 - \frac{M^2}{L_1}\right)\ \ge\ 0 .
+\]
+
+Como $L_1 > 0$:
+
+\begin{keybox}
+\[
+\boxed{\ M^2 \le L_1\,L_2\ }
+\]
+\end{keybox}
+
+La igualdad corresponde al acoplamiento total (los dos bobinados superpuestos
+de la clase pasada); con bobinas alejadas $M$ puede ser cero, y hay todos los
+casos intermedios.
+
+\section{Densidad de energía magnética}
+
+Sección 9.2. Igual que en el caso eléctrico la energía de los conductores
+cargados podía pensarse almacenada en las cargas \textbf{o en el campo}, acá puede
+pensarse almacenada en las corrientes o \textbf{en el campo magnético}. Se reescribe
+$U$ como integral de volumen de una densidad.
+
+Hipótesis: \textbf{medio lineal} y \textbf{corrientes localizadas} ---hay una esfera finita
+fuera de la cual no hay corrientes---, como en el desarrollo multipolar. Las
+situaciones realistas son así: «no tenemos ningún cable que nos permita llevar
+energía al fin del universo».
+
+\subsection{De los flujos al potencial vector}
+
+Como $\Phi_i = \sum_j M_{ij} I_j$,
+
+\[
+U = \frac12\sum_i I_i\,\Phi_i .
+\]
+
+Y el flujo por la superficie $S_i$ que se apoya en el circuito $C_i$, usando
+$\vec B = \curl\vec A$ y el teorema de Stokes, es la circulación del potencial
+vector:
+
+\[
+\Phi_i = \int_{S_i}(\curl\vec A)\cdot\hat n\,dS = \oint_{C_i}\vec A\cdot d\vec l,
+\qquad
+U = \frac12\sum_i I_i\oint_{C_i}\vec A\cdot d\vec l .
+\]
+
+Con la regla de siempre para pasar de circuitos a corrientes distribuidas,
+$I\,d\vec l\to\vec J\,dV$ (imaginar el cable grueso como muchos cablecitos):
+
+\[
+U = \frac12\int_V \vec A\cdot\vec J\;dV,
+\]
+con $V$ un volumen que incluye todas las corrientes.
+
+\begin{notebox}
+A la pregunta de si la regla es una igualdad: es una \textbf{equivalencia}, una
+regla mnemotécnica; ninguna de las dos expresiones existe sola, siempre van
+multiplicadas por algo (acá por $\vec A$).
+\end{notebox}
+
+\subsection{De las corrientes a los campos}
+
+Por Ampère en el material, $\vec J = \curl\vec H$, donde $\vec J$ es la
+corriente \textbf{de conducción} (sin la de magnetización). Se usa la identidad
+
+\[
+\div(\vec A\times\vec H) = \vec H\cdot(\curl\vec A) - \vec A\cdot(\curl\vec H)
+\]
+
+\begin{notebox}
+El docente la escribe primero con un signo mal y se lo corrigen. Bromea con
+que los profesores del práctico están enojados por el uso de Levi-Civita.
+\end{notebox}
+
+Despejando $\vec A\cdot\curl\vec H$ y usando $\curl\vec A = \vec B$:
+
+\[
+U = \frac12\int_V \vec H\cdot\vec B\;dV
+\;-\; \frac12\oiint_S (\vec A\times\vec H)\cdot\hat n\,dS,
+\]
+con $S$ el borde de $V$. Integrar en una región más grande que la de las
+corrientes no cambia nada («quien puede más puede menos»).
+
+El primer término recuerda al eléctrico, $\tfrac12\vec D\cdot\vec E$ (en el
+vacío, $\tfrac12\varepsilon_0E^2$), y en el vacío da el $B^2/2\mu_0$ de Física
+III. Hay además, como allá, un \textbf{término de borde}.
+
+\subsection{El término de borde se anula}
+
+Como en el caso eléctrico, se toma $S$ una esfera de radio $R\to\infty$. Para
+corrientes localizadas, por el desarrollo multipolar:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Cantidad} & \textbf{Decaimiento} & \textbf{Por qué} \\
+\midrule
+$|\vec A|$ & $1/R^2$ & No hay término monopolar \\
+$|\vec B|$, $|\vec H|$ & $1/R^3$ & Rotacional de $\vec A$; $\vec H\propto\vec B$ en medio lineal \\
+Área de $S$ & $R^2$ &  \\
+Término de borde & $1/R^3$ & $\to 0$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Tiende a cero, y más rápido que en el caso eléctrico, donde el potencial iba
+como $1/R$ y $\vec D$ como $1/R^2$, y el término de borde decrecía como $1/R$.
+Integrando sobre todo el espacio:
+
+\begin{keybox}
+\[
+\boxed{\ U = \frac12\int_{\text{todo el espacio}}\vec H\cdot\vec B\;dV,
+\qquad u_B = \frac12\,\vec H\cdot\vec B\ }
+\]
+\end{keybox}
+
+Vale también con varias zonas lineales distintas (vacío, $\mu_1$, $\mu_2$\dots{}),
+usando en cada una su permeabilidad. Con un único medio, $\vec B = \mu\vec H$:
+
+\[
+u_B = \frac{B^2}{2\mu},
+\]
+que en el vacío es la fórmula de Física III.
+
+\begin{notebox}[Regla mnemotécnica]
+Del caso eléctrico al magnético, $\vec E\to\vec B$ y
+$\vec D\to\vec H$: de $\tfrac12\vec E\cdot\vec D$ a $\tfrac12\vec B\cdot\vec H$.
+\end{notebox}
+
+\begin{notebox}
+En medios no lineales la noción misma de energía magnética es complicada:
+hay una energía potencial asociada, pero también disipación por histéresis,
+y el trabajo depende del camino.
+\end{notebox}
+
+\section{Fuerzas y torques sobre circuitos rígidos}
+
+Sección 9.3. Como en el caso eléctrico (un dieléctrico que entra en un
+condensador), se calculan fuerzas y torques a partir de la energía cuando una
+parte del sistema se puede mover respecto de otra. Ejemplo típico: un solenoide
+con un núcleo de \textbf{hierro dulce} (para que sea aproximadamente lineal)
+parcialmente adentro. El sistema ya no es rígido, pero lo visto se aplica.
+
+\subsection{Balance de energía}
+
+El trabajo mecánico en un desplazamiento $d\vec l$ de una parte respecto de la
+otra sale de dos aportes: la batería y la energía almacenada.
+
+\[
+\vec F\cdot d\vec l = dW_b - dU .
+\]
+
+\subsection{Sistema aislado: un caso poco interesante}
+
+Sin batería, $dW_b = 0$ y $\vec F = -\grad U$, como en el caso eléctrico
+aislado. Pero acá \textbf{no es interesante}: sin batería, por el efecto Joule, las
+corrientes tienden a cero muy rápido. En el caso eléctrico las cargas
+electrostáticas no se disipan, y las fuerzas sobreviven sin que nadie aporte
+energía.
+
+\subsection{Corrientes constantes}
+
+El caso realista: las baterías aportan energía de modo que \textbf{las corrientes se
+mantienen constantes} (el análogo de las baterías que mantenían los potenciales
+fijos en el caso eléctrico). Entonces sólo varían los flujos:
+
+\[
+dW_b = \sum_i I_i\,d\Phi_i,
+\qquad
+dU = \frac12\sum_i I_i\,d\Phi_i
+\quad\Longrightarrow\quad
+\boxed{\ dW_b = 2\,dU\ }
+\]
+
+Igual que en el caso eléctrico a potencial fijo, la batería aporta el doble de
+lo que varía la energía almacenada. Entonces $\vec F\cdot d\vec l = 2dU - dU = dU$:
+
+\begin{keybox}
+\[
+\boxed{\ \vec F = +\left(\grad U\right)_{I},
+\qquad \tau_n = +\left(\pdv{U}{\theta}\right)_{I}\ }
+\]
+\end{keybox}
+con $\tau_n$ el torque según un eje $\hat n$ y $\theta$ el ángulo de rotación
+alrededor de él. Siempre en medio lineal.
+
+\begin{notebox}[El signo «raro»]
+En mecánica la fuerza es menos el gradiente de la
+energía potencial cuando ésa es la única fuente de energía. Acá hay dos
+aportes, y la batería, al mantener fijas las corrientes, compensa justo el
+signo.
+\end{notebox}
+
+\subsection{Ejemplo: núcleo de hierro dulce que entra en un solenoide}
+
+Un solenoide ideal de largo $\ell$, sección $A$ y $N$ vueltas, con corriente
+$I$. Un núcleo de hierro dulce lineal, de permeabilidad $\mu$, ocupa un tramo de
+largo $x$; el resto, de largo $\ell - x$, es vacío.
+
+\begin{notebox}
+El docente cambia a mitad de camino las $L$ mayúsculas de los largos por
+minúsculas, para no confundirlas con autoinductancias.
+\end{notebox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase25-nucleo-solenoide.tex}
+  \caption{Núcleo de hierro dulce que ocupa un largo $x$ dentro de un solenoide. A corriente constante, la fuerza va hacia $x$ creciente: el núcleo es atraído hacia adentro.}
+\end{figure}
+
+\textbf{Aproximación.} Si $x$ y $\ell - x$ son mucho mayores que el radio del
+solenoide, se desprecian los efectos de borde ---dos veces: al usar el campo del
+solenoide ideal y al calcular la energía---. Las zonas mal descritas son chicas,
+aportan poco, y además lo que aportan casi no depende de $x$.
+
+En cada zona $H = N I/\ell$ (las vueltas por unidad de largo son las mismas), y
+
+\[
+B_0 = \mu_0\frac{N}{\ell}I,\qquad B_1 = \mu\frac{N}{\ell}I .
+\]
+
+Con $u = B^2/2\mu$ por el volumen de cada zona:
+
+\[
+U = \frac{B_0^2}{2\mu_0}\,A\,(\ell-x) + \frac{B_1^2}{2\mu}\,A\,x
+= \frac{I^2 N^2 A}{2\ell^2}\Big[\mu_0\,(\ell-x) + \mu\,x\Big].
+\]
+
+A corriente constante, la fuerza en la dirección de $x$ creciente:
+
+\begin{keybox}
+\[
+\boxed{\ F_x = \pdv{U}{x} = \frac{I^2 N^2 A}{2\ell^2}\,(\mu-\mu_0)\ }
+\]
+\end{keybox}
+
+Como $\mu > \mu_0$, $F_x > 0$: \textbf{el núcleo es atraído hacia adentro} del
+solenoide.
+
+\noindent\emph{La próxima clase: circuitos con resistencias, inductancias y condensadores.}
+
+\end{document}

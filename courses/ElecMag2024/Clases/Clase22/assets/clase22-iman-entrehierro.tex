@@ -1,0 +1,28 @@
+% Clase 22 — circuito magnético con imán permanente, sin bobinados. Imán entre
+% A y B, hierro dulce de B a C y de D a A, entrehierro entre C y D. Sección A
+% uniforme. Domina la reluctancia del entrehierro.
+\begin{tikzpicture}[scale=1]
+
+  \fill[figgray!30, even odd rule] (0,0) rectangle (6,3.6)  (1,1) rectangle (5,2.6);
+  \draw[figline] (0,0) rectangle (6,3.6);
+  \draw[figline] (1,1) rectangle (5,2.6);
+
+  % iman en el lado izquierdo
+  \fill[figred!25] (0,1.0) rectangle (1,2.6);
+  \draw[figred, line width=0.9pt] (0,1.0) -- (1,1.0) (0,2.6) -- (1,2.6);
+  \node[figlbl] at (0.5,1.8) {imán};
+  % entrehierro en el lado derecho
+  \fill[white] (4.95,1.65) rectangle (6.05,1.95);
+  \draw[figline] (5,1.65) -- (6,1.65) (5,1.95) -- (6,1.95);
+
+  % puntos
+  \fill (0.5,1.0) circle (1.6pt); \node[figlbl, anchor=north] at (0.5,0.95) {A};
+  \fill (0.5,2.6) circle (1.6pt); \node[figlbl, anchor=south] at (0.5,2.65) {B};
+  \fill (5.5,1.95) circle (1.6pt); \node[figlbl, anchor=west] at (6.1,2.1) {C};
+  \fill (5.5,1.65) circle (1.6pt); \node[figlbl, anchor=west] at (6.1,1.5) {D};
+
+  \node[figlblaux] at (3,3.85) {hierro dulce};
+  \node[figlblaux] at (3,-0.25) {hierro dulce};
+  \node[figlblaux, anchor=west] at (6.65,1.8) {entrehierro};
+
+\end{tikzpicture}

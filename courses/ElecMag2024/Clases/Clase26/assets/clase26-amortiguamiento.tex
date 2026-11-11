@@ -1,0 +1,26 @@
+% Clase 26 — régimen transitorio de la corriente en el RLC con batería, con
+% I(0) = 0 y L dI/dt(0) = V (condensador descargado). En unidades de
+% omega_n = 1/sqrt(LC) y de V sqrt(C/L); zeta = R/(2 L omega_n):
+%   sub (zeta = 0.15): I = e^{-zeta t} sin(w' t)/w',  w' = sqrt(1 - zeta^2)
+%   crítico (zeta = 1): I = t e^{-t}
+%   sobre (zeta = 2.5): I = (e^{l+ t} - e^{l- t})/(l+ - l-),  l± = -zeta ± sqrt(zeta^2 - 1)
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=11.5cm, height=6.2cm,
+    xmin=0, xmax=20, ymin=-0.85, ymax=1.0,
+    xtick={0,5,10,15,20}, ytick={-0.5,0,0.5},
+    xlabel={$t\,/\sqrt{LC}$}, ylabel={$I\,\sqrt{L/C}\,/\,V$},
+    legend style={at={(0.5,-0.4)}, anchor=north, legend columns=3,
+      /tikz/every even column/.append style={column sep=1em}},
+  ]
+    \addplot[figaux, forget plot, domain=0:20, samples=2] {0};
+    \addplot[figblue, domain=0:20, samples=300]
+      {exp(-0.15*x)*sin(deg(sqrt(1-0.0225)*x))/sqrt(1-0.0225)};
+    \addlegendentry{subamortiguado}
+    \addplot[figred, domain=0:20, samples=150] {x*exp(-x)};
+    \addlegendentry{crítico}
+    \addplot[figamber, domain=0:20, samples=150]
+      {(exp((-2.5+sqrt(5.25))*x) - exp((-2.5-sqrt(5.25))*x))/(2*sqrt(5.25))};
+    \addlegendentry{sobreamortiguado}
+  \end{axis}
+\end{tikzpicture}

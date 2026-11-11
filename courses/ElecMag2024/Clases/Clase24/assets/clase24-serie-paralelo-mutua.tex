@@ -1,0 +1,45 @@
+% Clase 24 — dos bobinas acopladas por una mutua M, en serie y en paralelo,
+% con sus resistencias internas. En serie equivalen a una bobina L1+L2+2M; en
+% paralelo sólo si son ideales. Los puntos marcan el sentido de bobinado
+% (convención que se formaliza en la Clase 28).
+\begin{tikzpicture}[scale=1]
+
+  % =============== (a) serie ===============
+  \begin{scope}[line width=0.9pt, color=figblue]
+    \draw (0,0) -- (0.4,0) to[R] (1.9,0) to[L] (3.5,0) to[L] (5.1,0) to[R] (6.6,0) -- (7,0);
+    \draw[fill=white] (0,0) circle (1.6pt);
+    \draw[fill=white] (7,0) circle (1.6pt);
+  \end{scope}
+  \fill[figblue] (2.0,0.32) circle (1.8pt);
+  \fill[figblue] (3.6,0.32) circle (1.8pt);
+  \node[figlbl, figblue] at (1.15,0.55) {$R_1$};
+  \node[figlbl, figblue] at (2.7,0.6) {$L_1$};
+  \node[figlbl, figblue] at (4.3,0.6) {$L_2$};
+  \node[figlbl, figblue] at (5.85,0.55) {$R_2$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (2.7,-0.45) to[bend right=30] (4.3,-0.45);
+  \node[figlbl] at (3.5,-0.95) {$M$};
+  \node[figlbl, anchor=north] at (3.5,-1.35) {(a) serie};
+
+  % =============== (b) paralelo ===============
+  \begin{scope}[xshift=8.4cm, yshift=-0.2cm]
+    \begin{scope}[line width=0.9pt, color=figblue]
+      \draw (0,0.9) -- (0.6,0.9);
+      \draw (0.6,0.9) -- (0.6,1.8) to[R] (2.1,1.8) to[L] (3.7,1.8) -- (3.7,0.9);
+      \draw (0.6,0.9) -- (0.6,0) to[R] (2.1,0) to[L] (3.7,0) -- (3.7,0.9);
+      \draw (3.7,0.9) -- (4.3,0.9);
+      \fill (0.6,0.9) circle (2pt);
+      \fill (3.7,0.9) circle (2pt);
+      \draw[fill=white] (0,0.9) circle (1.6pt);
+      \draw[fill=white] (4.3,0.9) circle (1.6pt);
+    \end{scope}
+    \fill[figblue] (2.2,2.12) circle (1.8pt);
+    \fill[figblue] (2.2,0.32) circle (1.8pt);
+    \node[figlbl, figblue] at (1.35,2.35) {$R_1$};
+    \node[figlbl, figblue] at (2.9,2.4) {$L_1$};
+    \node[figlbl, figblue] at (1.35,-0.45) {$R_2$};
+    \node[figlbl, figblue] at (2.9,-0.45) {$L_2$};
+    \node[figlbl] at (3.25,0.9) {$M$};
+    \node[figlbl, anchor=north] at (2.15,-1.15) {(b) paralelo};
+  \end{scope}
+
+\end{tikzpicture}

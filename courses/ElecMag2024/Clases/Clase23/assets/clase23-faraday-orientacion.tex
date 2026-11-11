@@ -1,0 +1,23 @@
+% Clase 23 — convención de signos de la ley de Faraday: la curva C y la
+% superficie S que se apoya en ella están orientadas juntas por la regla de la
+% mano derecha. La parte de C que queda detrás de S va punteada.
+\begin{tikzpicture}[scale=1]
+
+  \fill[figblue!12] (-2.6,0) arc (180:360:2.6 and 0.85) .. controls (2.3,2.1) and (-2.3,2.1) .. (-2.6,0);
+  \draw[figline] (2.6,0) .. controls (2.3,2.1) and (-2.3,2.1) .. (-2.6,0);
+  \draw[figaux] (2.6,0) arc (0:180:2.6 and 0.85);
+  \draw[figblue, line width=1.3pt] (-2.6,0) arc (180:360:2.6 and 0.85);
+  \draw[figvecres] (-0.3,-0.85) -- (0.4,-0.85);
+  \node[figlbl] at (2.95,-0.4) {$C$};
+  \node[figlbl] at (-2.0,1.35) {$S$};
+
+  \draw[figvecaux] (-1.25,1.2) -- (-1.6,1.9);
+  \draw[figvecaux] (1.25,1.2) -- (1.6,1.9);
+  \node[figlblaux] at (1.9,1.95) {$\hat n$};
+
+  \foreach \bx in {-0.7,0,0.7} {
+    \draw[figvec] (\bx,-0.4) -- (\bx,2.6);
+  }
+  \node[figlbl] at (1.05,2.6) {$\vec B(t)$};
+
+\end{tikzpicture}

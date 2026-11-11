@@ -1,0 +1,26 @@
+% Clase 27 — voltaje del generador y corriente en régimen permanente:
+% V = V0 cos(omega t), I = (V0/|Z|) cos(omega t - theta). Dibujado con
+% theta = pi/4 y |Z| tal que la amplitud de I sea 0.6 V0 (unidades arbitrarias):
+% la corriente está atrasada theta respecto del voltaje.
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=11.5cm, height=5.6cm,
+    xmin=0, xmax=12.566, ymin=-1.3, ymax=1.55,
+    xtick={0,3.1416,6.2832,9.4248,12.566},
+    xticklabels={$0$,$\pi$,$2\pi$,$3\pi$,$4\pi$},
+    ytick={-1,0,1},
+    xlabel={$\omega t$},
+    legend style={at={(0.5,-0.4)}, anchor=north, legend columns=2,
+      /tikz/every even column/.append style={column sep=1em}},
+  ]
+    \addplot[figblue, domain=0:12.566, samples=200] {cos(deg(x))};
+    \addlegendentry{$V(t)/V_0$}
+    \addplot[figred, domain=0:12.566, samples=200] {0.6*cos(deg(x-0.7854))};
+    \addlegendentry{$I(t)$, escala arbitraria}
+    \addplot[figaux, forget plot] coordinates {(6.2832,-1.3) (6.2832,1.3)};
+    \addplot[figaux, forget plot] coordinates {(7.0686,-1.3) (7.0686,1.3)};
+    \draw[figgray, line width=0.6pt, {Latex[length=1.5mm]}-{Latex[length=1.5mm]}]
+      (axis cs:6.2832,1.15) -- (axis cs:7.0686,1.15);
+    \node[font=\small, anchor=south] at (axis cs:6.676,1.15) {$\theta$};
+  \end{axis}
+\end{tikzpicture}

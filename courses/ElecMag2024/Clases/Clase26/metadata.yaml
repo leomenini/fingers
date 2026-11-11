@@ -16,33 +16,53 @@ video:
 
 stats:
   transcript_words: 8469
-  summary_words: 0
+  summary_words: 2187
   diagrams_pending: 0
-  equations: 0
+  equations: 15
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Validez de la aproximación cuasi-estacionaria
+  - Tamaño del circuito frente a la longitud de onda
+  - Órdenes de magnitud por frecuencia
+  - Elementos lineales e ideales y convención de signos
+  - Ecuación del circuito RLC serie
+  - Sistemas de ecuaciones para varias mallas
+  - Solución homogénea más solución particular
+  - Régimen transitorio y régimen permanente
+  - Ecuación para la corriente con batería constante
+  - Régimen sobreamortiguado
+  - Régimen subamortiguado
+  - Régimen crítico
+  - Forzado periódico y series de Fourier
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Circuitos RC y leyes de Kirchhoff (Clase 15)
+  - Autoinductancia (Clase 23)
+  - Ecuaciones diferenciales lineales con coeficientes constantes
+  - Números complejos y fórmula de Euler
+  - Corriente de desplazamiento en Física III
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Régimen permanente con generadores sinusoidales
+  - Fasores e impedancia
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

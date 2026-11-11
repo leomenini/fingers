@@ -1,0 +1,30 @@
+% Clase 29 — onda plana monocromática que se propaga según x (vector de onda
+% k): E oscila según y, B según z; los dos son perpendiculares a k y entre sí,
+% en fase, con |B| = |E|/v. Perspectiva oblicua: el eje z se dibuja inclinado.
+\begin{tikzpicture}[scale=1, x={(1cm,0cm)}, y={(0cm,1cm)}, z={(-0.55cm,-0.45cm)}]
+
+  \draw[figaxis] (0,0,0) -- (8.6,0,0);
+  \node[figlbl] at (8.9,0,0) {$x$};
+  \draw[figaxis] (0,0,0) -- (0,1.9,0);
+  \node[figlbl] at (0,2.15,0) {$y$};
+  \draw[figaxis] (0,0,0) -- (0,0,2.3);
+  \node[figlbl] at (0,0,2.65) {$z$};
+
+  % E en el plano xy
+  \draw[figblue, line width=1.1pt, domain=0:8, samples=120, smooth]
+    plot (\x, {1.4*sin(deg(\x*0.7854))}, 0);
+  \foreach \xx in {0.5,1,...,7.5} {
+    \draw[figblue, line width=0.5pt] (\xx,0,0) -- (\xx,{1.4*sin(deg(\xx*0.7854))},0);
+  }
+  % B en el plano xz
+  \draw[figred, line width=1.1pt, domain=0:8, samples=120, smooth]
+    plot (\x, 0, {1.4*sin(deg(\x*0.7854))});
+  \foreach \xx in {0.5,1,...,7.5} {
+    \draw[figred, line width=0.5pt] (\xx,0,0) -- (\xx,0,{1.4*sin(deg(\xx*0.7854))});
+  }
+  \node[figlbl, text=figblue] at (2.0,1.75,0) {$\vec E$};
+  \node[figlbl, text=figred] at (2.7,0,2.0) {$\vec B$};
+  \draw[figvecres] (8.6,0.5,0) -- (9.6,0.5,0);
+  \node[figlbl, text=figred] at (9.9,0.55,0) {$\vec k$};
+
+\end{tikzpicture}

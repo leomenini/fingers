@@ -1,0 +1,24 @@
+% Clase 24 — dos bobinados superpuestos en el mismo tubo (sin material
+% magnético): N1 vueltas con I1 y N2 vueltas con I2, sección A y largo l.
+% Comparten todo el campo: acoplamiento máximo, M^2 = L1 L2.
+\begin{tikzpicture}[scale=1]
+
+  \fill[figgray!12] (0,-0.8) rectangle (7,0.8);
+  \draw[figline] (0,0.8) -- (7,0.8) (0,-0.8) -- (7,-0.8);
+  \draw[figline, fill=figgray!25] (7,0) ellipse (0.25 and 0.8);
+  \draw[figline] (0,0.8) arc (90:270:0.25 and 0.8);
+
+  % bobinado 1 (azul) y bobinado 2 (rojo), intercalados
+  \foreach \xx in {0.4,1.2,...,6.6} {
+    \draw[figblue, line width=1.1pt] (\xx,-0.86) -- (\xx+0.18,0.86);
+  }
+  \foreach \xx in {0.8,1.6,...,6.4} {
+    \draw[figred, line width=1.1pt] (\xx,-0.86) -- (\xx+0.18,0.86);
+  }
+  \node[figlbl, text=figblue, anchor=east] at (-0.35,0.35) {$N_1,\ I_1$};
+  \node[figlbl, text=figred, anchor=east] at (-0.35,-0.35) {$N_2,\ I_2$};
+  \node[figlbl] at (7.6,0) {$A$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (0,-1.15) -- (7,-1.15);
+  \node[figlbl, anchor=north] at (3.5,-1.2) {$\ell$};
+
+\end{tikzpicture}

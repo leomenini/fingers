@@ -1,0 +1,37 @@
+% Clase 21 — condiciones de borde magnéticas. Cajita chata S a caballo de la
+% interfaz (flujo de B nulo => B_n continua) y curva amperiana C con lado L0
+% en el medio 1 (Ampère en el material => salto de H_t igual a la corriente
+% superficial de conducción j, que acá sale del papel). n apunta de 2 a 1.
+\begin{tikzpicture}[scale=1]
+
+  \fill[figgray!12] (-4.2,0) rectangle (4.2,1.9);
+  \fill[figgray!28] (-4.2,-1.9) rectangle (4.2,0);
+  \draw[figline] (-4.2,0) -- (4.2,0);
+  \node[figlbl] at (-3.65,1.5) {$1$};
+  \node[figlbl] at (-3.65,-1.5) {$2$};
+
+  % normal
+  \draw[figvecaux] (-3.0,0) -- (-3.0,0.85);
+  \node[figlblaux] at (-2.7,0.75) {$\hat n$};
+
+  % cajita S
+  \draw[figamber, line width=0.9pt, fill=figamber!15] (-1.9,-0.16) rectangle (-0.3,0.16);
+  \node[figlbl, text=figamber] at (-0.05,0.35) {$S$};
+  \node[figlbl] at (-1.1,1.0) {$B_{1n} = B_{2n}$};
+
+  % curva C
+  \draw[figred, line width=0.9pt] (1.0,-0.32) rectangle (3.2,0.32);
+  \draw[figred, line width=0.9pt, -{Latex[length=1.8mm,width=1.3mm]}] (1.8,0.32) -- (2.4,0.32);
+  \draw[figred, line width=0.9pt, -{Latex[length=1.8mm,width=1.3mm]}] (2.4,-0.32) -- (1.8,-0.32);
+  \node[figlbl, text=figred] at (2.1,0.62) {$\vec L_0$};
+  \node[figlbl, text=figred] at (3.5,0.3) {$C$};
+
+  % corriente superficial saliente
+  \foreach \jx in {1.45,2.1,2.75} {
+    \draw[figblue, line width=0.8pt] (\jx,0) circle (0.09);
+    \fill[figblue] (\jx,0) circle (0.03);
+  }
+  \node[figlbl] at (2.1,1.25) {$\vec H_{1t} - \vec H_{2t} = \vec j\times\hat n$};
+  \node[figlblaux] at (2.1,-0.7) {$\vec j$ (sale del papel)};
+
+\end{tikzpicture}

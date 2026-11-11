@@ -16,33 +16,53 @@ video:
 
 stats:
   transcript_words: 8025
-  summary_words: 0
+  summary_words: 2189
   diagrams_pending: 0
-  equations: 0
+  equations: 19
 
-# Los campos de acá abajo NO los puede derivar el extractor: salen de leer
-# la clase. Completar antes de marcar status.summary como done.
+topics:
+  - Simplicidad y éxito de la corrección de Maxwell
+  - Teorías vistas a escalas grandes
+  - Ecuación de onda para H
+  - Disipación por efecto Joule en la ecuación de onda
+  - El término de Maxwell y la existencia de ondas
+  - Ecuación de onda para E
+  - Ecuaciones elípticas, parabólicas e hiperbólicas
+  - Soluciones monocromáticas y ecuación de Helmholtz
+  - Onda plana y número de ondas
+  - Velocidad de la luz
+  - Espectro electromagnético
+  - Ondas planas en las ecuaciones de Maxwell
+  - Transversalidad y ortogonalidad de E y B
+  - Relación entre las amplitudes de E y B
 
-topics: []
+bibliography:
+  - title: Reitz & Milford
+    verified: false
 
-bibliography: []
+prerequisites:
+  - Ecuaciones de Maxwell (Clase 28)
+  - Identidades de cálculo vectorial
+  - Ecuación de Laplace
+  - Oscilador armónico
+  - Desarrollo multipolar (Clase 19)
 
-prerequisites: []
-
-next_topics: []
+next_topics:
+  - Fin del curso
 
 status:
   transcript: done
-  summary: pending
-  latex: pending
-  assets: pending
+  summary: done
+  latex: done
+  assets: done
 
 review:
   state: needs-review
-  reviewer: []
-  date: 2026-09-08
+  reviewer:
+    - Leandro
+  date: 2026-11-11
 
 llm:
-  model: ""          # id del modelo que genere el resumen; es trazabilidad, no inventar
+  model: claude-opus-5-5
 
 editorial_status: draft

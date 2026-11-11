@@ -1,0 +1,579 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Encoding & Font ----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}  % XeTeX/LuaTeX (tectonic): Unicode nativo (·, —, ¿, ª, §)
+\fi
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+% ---- Page layout ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Math ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{esint}  % \oiint
+
+% ---- Graphics ----
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{caption}
+
+% ---- Tables ----
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
+% ---- Colours ----
+\usepackage{xcolor}
+\definecolor{notebg}{HTML}{FFF3CD}
+\definecolor{noteborder}{HTML}{FFC107}
+\definecolor{boxred}{HTML}{F8D7DA}
+\definecolor{boxredborder}{HTML}{F5C6CB}
+
+% ---- Boxes ----
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+
+\newtcolorbox{keybox}[1][]{
+  colback=blue!5,
+  colframe=blue!70!black,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{warnbox}[1][]{
+  colback=boxred,
+  colframe=boxredborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{notebox}[1][]{
+  colback=notebg,
+  colframe=noteborder,
+  coltitle=black!75,
+  arc=4pt,
+  boxrule=1pt,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+% ---- Hyperlinks & TOC ----
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+% ---- Enumerate ----
+\usepackage{enumitem}
+
+% ---- Miscellaneous ----
+\usepackage{icomma}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage[bottom]{footmisc}
+
+% ---- Diagramas (circuitos, gráficas y esquemas) ----
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}  % babel español activa `>`; esto evita romper las flechas `->`
+\input{../assets/tikzstyles.tex}
+
+% ---- Title ----
+\title{\textbf{Clase 27: Circuitos RLC en régimen permanente} \\[0.3em]
+        \large{Superposición, fasores, impedancia y potencia media}}
+\author{Transcripto y expandido --- Curso Electromagnetismo (OpenFING)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Repaso: basta con una solución particular}
+
+La clase pasada: la solución general es una particular más la general de la
+homogénea, y con resistencias la homogénea se desvanece, en general al cabo de
+un par de ciclos del forzado. En el \textbf{régimen permanente} no importan las
+condiciones iniciales ni hace falta la solución general: \textbf{alcanza con
+encontrar una solución}. Para un forzado general eso puede dar trabajo, y no
+hay una solución analítica general; se hace para un generador sinusoidal, que
+---se verá--- permite tratar cualquier forzado periódico.
+
+Se supone, «una última vez», que todos los elementos son \textbf{lineales} e
+\textbf{ideales} (la resistencia interna de una bobina se pone aparte).
+
+\section{Principio de superposición}
+
+\subsection{Dos generadores}
+
+Un circuito RLC serie con \textbf{dos} generadores, $V_1(t)$ y $V_2(t)$:
+
+\[
+V_1(t) + V_2(t) = L\,\dot I + R\,I + \frac{Q}{C}.
+\]
+
+Sea $I_1$ la solución con $V_2$ apagado e $I_2$ la solución con $V_1$
+apagado:
+
+\[
+V_1 = L\dot I_1 + R I_1 + \frac{Q_1}{C},
+\qquad
+V_2 = L\dot I_2 + R I_2 + \frac{Q_2}{C}.
+\]
+
+Sumando, por linealidad,
+
+\[
+V_1 + V_2 = L\,(\dot I_1+\dot I_2) + R\,(I_1+I_2) + \frac{Q_1+Q_2}{C}:
+\]
+
+\begin{keybox}
+\[
+\boxed{\ I_1 + I_2 \text{ es solución del problema completo}\ }
+\]
+\end{keybox}
+
+Es el \textbf{principio de superposición}, y es totalmente general para circuitos
+lineales: con varios generadores, se resuelve con uno solo prendido por vez y
+se suman las soluciones. Con 17 generadores son 17 problemas, «un buen
+embole», pero cada uno con un solo generador. Vale aunque los generadores no
+sean periódicos: son funciones dadas, que no dependen de la corriente.
+
+\subsection{Generadores periódicos y series de Fourier}
+
+Un generador periódico de período $T$, con $\omega = 2\pi/T$, se desarrolla en
+\textbf{serie de Fourier}:
+
+\[
+V(t) = V_0 + \sum_{n=1}^{\infty}\Big[V_n\cos(n\omega t) + \hat V_n\sin(n\omega t)\Big].
+\]
+
+Si $V$ es continua y periódica la serie converge punto a punto, y cortarla en
+algún término es una buena aproximación. La constante es una sinusoide de
+frecuencia nula. Por superposición, cada término se trata por separado.
+
+\begin{notebox}[Discontinuidades]
+Con experimentos finitos no se puede decidir si una
+función es continua o tiene una caída muy abrupta, y en la práctica da lo
+mismo: un salto se refleja en que la serie converge peor y hacen falta muchos
+más términos. En una discontinuidad finita la serie converge al valor medio,
+en un sentido generalizado.
+\end{notebox}
+
+Con superposición y Fourier, \textbf{cualquier conjunto de generadores periódicos se
+reduce a resolver con un único generador sinusoidal}. (Calcular los
+coeficientes «es parte de otra historia».)
+
+\section{El problema complejo asociado}
+
+El circuito puede tener muchas mallas, pero un único generador,
+$V(t) = V_0\cos\omega t$. Para el RLC serie:
+
+\[
+V_0\cos\omega t = L\,\dot I + R\,I + \frac{Q}{C}.
+\]
+
+\subsection{Por qué complejos}
+
+Las funciones trigonométricas dan trabajo «porque nos complicamos la vida»: son
+partes reales o imaginarias de exponenciales, y las exponenciales tienen
+propiedades muy simpáticas. En lugar de este problema real se resuelve un
+\textbf{problema asociado}, en funciones complejas:
+
+\[
+V_0\,e^{j\omega t} = L\,\dot{\hat I} + R\,\hat I + \frac{\hat Q}{C},
+\qquad \hat I = \dot{\hat Q} .
+\]
+
+\begin{notebox}[Notación]
+Siguiendo la costumbre de los ingenieros electricistas, la
+unidad imaginaria se escribe $j$, porque la $i$ (o $I$) es la corriente. El
+sombrero indica que la cantidad es compleja.
+\end{notebox}
+
+\subsection{Tomar parte real}
+
+Si se resuelve el problema complejo, se toma parte real de la ecuación. $V_0$,
+$L$, $R$ y $1/C$ son reales, así que
+
+\[
+V_0\cos\omega t = L\,\frac{d}{dt}\Re\hat I + R\,\Re\hat I + \frac{\Re\hat Q}{C}:
+\]
+
+\begin{keybox}
+\[
+\boxed{\ I(t) = \Re\,\hat I(t) \text{ es solución del problema físico}\ }
+\]
+\end{keybox}
+
+A priori parece más complicado; en realidad es más simple.
+
+\subsection{Fasor e impedancia}
+
+Como el forzado es una exponencial y las derivadas de una exponencial son
+proporcionales a ella misma, se busca \textbf{una} solución de la forma
+
+\[
+\hat I(t) = \hat I_0\,e^{j\omega t},
+\qquad
+\dot{\hat I} = j\omega\,\hat I,
+\qquad
+\hat Q = \frac{\hat I}{j\omega}.
+\]
+
+(Una constante aditiva en la primitiva no hace falta: el problema es
+oscilante.) El prefactor complejo $\hat I_0$ es el \textbf{fasor} de la corriente.
+
+\begin{notebox}
+Ante la pregunta de un estudiante, el docente aclara que $\hat I(t)$ no es un
+fasor: es una función compleja del tiempo. El fasor es el \textbf{prefactor}.
+\end{notebox}
+
+Sustituyendo, la exponencial se cancela ---«justamente toda la idea es eso»---:
+
+\[
+V_0 = \left(j\omega L + R + \frac{1}{j\omega C}\right)\hat I_0 .
+\]
+
+Se define la \textbf{impedancia}
+
+\begin{keybox}
+\[
+\boxed{\ \hat Z = R + j\omega L + \frac{1}{j\omega C},
+\qquad
+\hat I_0 = \frac{V_0}{\hat Z}\ }
+\]
+\end{keybox}
+y el problema está resuelto: $I(t) = \Re\big(\hat I_0\,e^{j\omega t}\big)$.
+
+Es una \textbf{generalización de la ley de Ohm} para los fasores, con la impedancia
+en el lugar de la resistencia: un objeto «complejo en dos sentidos», más
+complicado que una resistencia y número complejo.
+
+\section{Reglas para un circuito cualquiera}
+
+Con un único generador hay una única frecuencia. (Con dos generadores de
+frecuencias distintas el análisis no funciona tal cual, pero la superposición
+evita ese problema.) Cada elemento tiene una impedancia asociada.
+
+\subsection{Nudos, mallas e impedancias de cada elemento}
+
+\begin{enumerate}
+  \item \textbf{Ley de los nudos}: la suma de los fasores de las corrientes que entran es
+  la de las que salen.
+  \item \textbf{Ley de las mallas}: en una malla cerrada, la suma de los fasores de los
+  voltajes es cero.
+  \item \textbf{Cada elemento}: $\hat V = \hat Z\,\hat I_0$.
+\end{enumerate}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Elemento} & \textbf{Impedancia $\hat Z$} \\
+\midrule
+Resistencia & $R$ \\
+Bobina & $j\omega L$ \\
+Condensador & $\dfrac{1}{j\omega C}$ \\
+Generador & Su fasor es $V_0$ (real si se elige el origen del tiempo con un coseno) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{warnbox}[Ojo: son números complejos]
+Se suman parte real con parte real e imaginaria
+con imaginaria; \textbf{no se suman los módulos}. En el producto sí se multiplican
+los módulos (y se suman las fases).
+\end{warnbox}
+
+\begin{notebox}[Fases]
+El fasor del generador es real porque se eligió el origen del
+tiempo con un coseno. Con un seno se toma parte imaginaria en lugar de parte
+real. Con varios generadores desfasados a igual frecuencia no se puede hacer
+real a todos, y sus fasores son complejos, con la fase correspondiente; el
+docente advierte, ante una propuesta de un estudiante, que la cuenta «es un
+poquito más complicada» de lo que parece.
+\end{notebox}
+
+Cada derivada pasa a ser multiplicar por $j\omega$ y cada primitiva dividir por
+$j\omega$: con $n$ mallas independientes quedan $n$ ecuaciones \textbf{algebraicas},
+no diferenciales. Pueden ser complicadas, pero «el problema no va más allá».
+
+\subsection{Reactancia}
+
+La parte imaginaria de una impedancia es la \textbf{reactancia}:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}X}
+\toprule
+ & \textbf{Reactancia} \\
+\midrule
+Inductiva & $\omega L$ \\
+Capacitiva & $-\dfrac{1}{\omega C}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La capacitiva sale de multiplicar arriba y abajo por $j$:
+$\dfrac{1}{j\omega C} = -\dfrac{j}{\omega C}$.
+
+\subsection{Corriente real: módulo y desfasaje}
+
+Se escribe la impedancia en forma polar,
+
+\[
+\hat Z = |\hat Z|\,e^{j\theta},
+\]
+con $|\hat Z|$ la \textbf{impedancia real} ---que es el \textbf{módulo}, no la parte real:
+hay que tener cuidado--- y $\theta$ el \textbf{desfasaje}. Para el RLC serie, por
+Pitágoras en el plano complejo (la resistencia sobre el eje real; $j\omega L$ y
+$1/j\omega C$ sobre el imaginario, en sentidos opuestos):
+
+\[
+|\hat Z| = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2},
+\qquad
+\theta = \arctan\frac{\omega L - \dfrac{1}{\omega C}}{R}.
+\]
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase27-impedancia-plano.tex}
+  \caption{Impedancia del RLC serie en el plano complejo, dibujada con $\omega L > 1/\omega C$: la resistencia sobre el eje real y las reactancias sobre el imaginario. $|\hat Z|$ es el largo de la suma y $\theta$ su argumento.}
+\end{figure}
+
+Entonces $\hat I_0 = \dfrac{V_0}{|\hat Z|}\,e^{-j\theta}$ y
+
+\begin{keybox}
+\[
+\boxed{\ I(t) = \frac{V_0}{|\hat Z|}\cos(\omega t - \theta)\ }
+\]
+\end{keybox}
+
+\begin{notebox}[Convención]
+Se llama desfasaje al argumento de la \textbf{impedancia}, no al de
+la corriente: en la corriente aparece con signo menos. Hay que tener cuidado
+con hacia qué lado está desfasada la corriente respecto del voltaje.
+\end{notebox}
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase27-desfasaje.tex}
+  \caption{Voltaje del generador y corriente en régimen permanente, con $\theta = \pi/4$: la corriente está atrasada $\theta$ respecto del voltaje. La amplitud de la corriente está en escala arbitraria.}
+\end{figure}
+
+\section{Impedancias en serie y en paralelo}
+
+\subsection{Reglas}
+
+\textbf{En serie.} Misma corriente, se suman los voltajes:
+
+\[
+\hat V = \hat Z_1\hat I_0 + \hat Z_2\hat I_0
+\quad\Longrightarrow\quad
+\boxed{\ {\hat Z}_{\text{serie}} = \hat Z_1 + \hat Z_2\ }
+\]
+
+\textbf{En paralelo.} Mismo voltaje, se suman las corrientes,
+$\hat I_0 = \hat V/\hat Z_1 + \hat V/\hat Z_2$:
+
+\begin{keybox}
+\[
+\boxed{\ \frac{1}{{\hat Z}_{\text{paralelo}}} = \frac{1}{\hat Z_1} + \frac{1}{\hat Z_2}\ }
+\]
+\end{keybox}
+
+Toda el álgebra de las resistencias se traslada: impedancias en lugar de
+resistencias, fasores en lugar de corrientes y voltajes. «En realidad haciendo
+trampa, porque todos esos números son complejos.» La impedancia del RLC serie
+de §3.3 ya era, implícitamente, una suma en serie.
+
+\begin{warnbox}[Error típico]
+calcular los módulos de cada impedancia y sumarlos. Hay que
+sumar los números complejos.
+\end{warnbox}
+
+\subsection{Ejemplo con dos mallas}
+
+Un generador $V_0\cos\omega t$ y una resistencia $R_1$, en serie con un tramo
+que se abre en dos ramas: en una un condensador $C$, en la otra una
+resistencia $R_2$ en serie con una bobina $L$.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/clase27-dos-mallas.tex}
+  \caption{El ejemplo de dos mallas. En punteado, el paralelo cuya impedancia es $\hat Z_\parallel$.}
+\end{figure}
+
+La rama con $R_2$ y $L$ es una serie; las dos ramas están en paralelo; y todo
+eso, en serie con $R_1$:
+
+\[
+{\hat Z}_{\text{eq}} = R_1 + \hat Z_\parallel,
+\qquad
+\frac{1}{\hat Z_\parallel} = j\omega C + \frac{1}{R_2 + j\omega L}.
+\]
+
+Para tener módulo y fase conviene separar parte real e imaginaria. Sacando
+denominador común y multiplicando por el \textbf{conjugado} del denominador:
+
+\[
+\hat Z_\parallel = \frac{R_2 + j\omega L}{1-\omega^2LC + j\omega R_2 C}
+= \frac{(R_2 + j\omega L)\,(1-\omega^2LC - j\omega R_2 C)}{(1-\omega^2LC)^2 + \omega^2R_2^2C^2}.
+\]
+
+Desarrollando el numerador, la parte real tiene dos contribuciones,
+$R_2(1-\omega^2LC)$ y $+\omega^2 R_2 LC$ (del producto de las dos partes
+imaginarias), y la imaginaria es $\omega L(1-\omega^2LC) - \omega R_2^2 C$:
+
+\[
+{\hat Z}_{\text{eq}} = R_1 + \frac{R_2 + j\big[\omega L(1-\omega^2LC) - \omega R_2^2C\big]}{(1-\omega^2LC)^2 + \omega^2R_2^2C^2}.
+\]
+
+\begin{notebox}
+El docente deja la parte real como la suma de los dos términos y aclara que
+no verificó la cuenta; sumados, se simplifican a $R_2$, como está escrito
+arriba. «Típicamente los errores son de signo»; lo importante es el método.
+\end{notebox}
+
+Con eso, $I(t) = \dfrac{V_0}{|{\hat Z}_{\text{eq}}|}\cos(\omega t - \theta_{\text{eq}})$.
+
+\begin{notebox}[Lo que se omitió a propósito]
+las bobinas con \textbf{mutua}. Ahí no se puede
+hacer así ---se vio que dos bobinas en paralelo con mutua no siempre equivalen
+a una--- y se trata la clase siguiente.
+\end{notebox}
+
+\section{Potencia en régimen permanente}
+
+Sección 10.6.
+
+\subsection{La potencia no es lineal}
+
+Resolver el problema complejo y tomar parte real funciona para la corriente y
+para cualquier \textbf{expresión lineal} de ella, porque las dos operaciones
+conmutan. La potencia instantánea entregada a un dispositivo,
+
+\[
+P(t) = I(t)\,V(t),
+\]
+es \textbf{cuadrática} en la corriente, y la parte real de un cuadrado no es el
+cuadrado de la parte real:
+
+\[
+\Re\big(\hat I^2\big) \neq \big(\Re\hat I\big)^2 .
+\]
+
+\begin{warnbox}
+Para expresiones no lineales hay que \textbf{tomar parte real primero}.
+\end{warnbox}
+
+\subsection{Potencia media y factor de potencia}
+
+La potencia instantánea suele no interesar: un circuito conectado a la red
+oscila 50 o 60 veces por segundo y haría falta un aparato muy fino para
+seguirla. Interesa la \textbf{potencia media}, $\overline{P} = \langle I\,V\rangle$,
+promediada en un período (o en un tiempo largo, que es lo mismo).
+
+\begin{notebox}
+El docente duda entre la barra ---que también usó para el conjugado--- y los
+corchetes angulares para el promedio.
+\end{notebox}
+
+Con $V = V_0\cos\omega t$ e $I = \dfrac{V_0}{|\hat Z|}\cos(\omega t-\theta)$:
+
+\[
+\overline{P} = \frac{V_0^2}{|\hat Z|}\,\big\langle\cos\omega t\,\cos(\omega t-\theta)\big\rangle .
+\]
+
+Desarrollando el coseno de la resta (el coseno es par y el seno impar):
+
+\[
+\cos\omega t\,\cos(\omega t-\theta) = \cos\theta\cos^2\omega t + \sin\theta\,\cos\omega t\,\sin\omega t .
+\]
+
+Los promedios en un período:
+
+\begin{itemize}
+  \item $\langle\cos^2\omega t\rangle = \tfrac12$, porque
+  $\cos^2x = \tfrac12(1+\cos2x)$ y el coseno promedia cero en un número entero
+  de períodos;
+  \item $\langle\cos\omega t\,\sin\omega t\rangle = 0$.
+\end{itemize}
+
+\begin{keybox}
+\[
+\boxed{\ \overline{P} = \frac12\,\frac{V_0^2}{|\hat Z|}\cos\theta
+= \frac12\,V_0\,|\hat I_0|\cos\theta\ }
+\]
+\end{keybox}
+
+A $\cos\theta$ se lo llama \textbf{factor de potencia}. (Un estudiante comenta que
+UTE ---la empresa eléctrica--- usa otra letra para la fase; «elijan al gusto del
+consumidor».)
+
+\subsection{Con fases cualesquiera}
+
+Arriba se eligió el origen del tiempo para que el voltaje del dispositivo fuera
+real. Sin esa suposición, con fases $\theta_V$ y $\theta_I$:
+
+\[
+\overline{P} = |\hat V_0|\,|\hat I_0|\,
+\big\langle\cos(\omega t+\theta_V)\cos(\omega t+\theta_I)\big\rangle .
+\]
+
+Desarrollando los dos cosenos, los términos en $\cos^2$ y $\sin^2$ promedian
+$\tfrac12$ y los cruzados se anulan; volviendo a usar la fórmula del coseno al
+revés:
+
+\begin{keybox}
+\[
+\boxed{\ \overline{P} = \frac12\,|\hat V_0|\,|\hat I_0|\cos(\theta_V-\theta_I)
+= \frac12\,\Re\!\left(\hat V_0\,\hat I_0^{\,*}\right)\ }
+\]
+\end{keybox}
+
+Es lo mismo de antes (con $\theta_V = 0$, $\theta_I = -\theta$, y el coseno es
+par). La forma con el conjugado se usa mucho para calcular potencias.
+
+\subsection{Valores eficaces}
+
+Se definen los valores \textbf{eficaces} o \textbf{RMS}:
+
+\[
+V_{\text{rms}} = \frac{|\hat V_0|}{\sqrt2},\qquad I_{\text{rms}} = \frac{|\hat I_0|}{\sqrt2},
+\qquad
+\boxed{\ \overline{P} = V_{\text{rms}}\,I_{\text{rms}}\cos\theta\ }
+\]
+
+En una resistencia el desfasaje es cero (corriente y voltaje en fase), y la
+fórmula queda igual que en corriente continua: a los efectos de la potencia, lo
+que juega el papel de los valores de continua son los eficaces.
+
+\noindent\emph{La próxima clase: resonancia, circuitos con mutuas, y luego las ecuaciones de
+Maxwell.}
+
+\end{document}

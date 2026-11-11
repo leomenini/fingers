@@ -1,0 +1,36 @@
+% Clase 28 — transformador: circuito primario (generador, R1, L1) y secundario
+% (L2, R2, carga Z), acoplados por M. Los puntos indican que, con las dos
+% corrientes entrando por ellos, los términos de mutua llevan signo +.
+\begin{tikzpicture}[scale=1]
+  \begin{scope}[line width=0.9pt, color=figblue]
+    % primario
+    \draw (0,0) to[sV] (0,2.6);
+    \draw (0,2.6) to[R] (2.2,2.6) -- (2.8,2.6);
+    \draw (2.8,2.6) to[L] (2.8,0);
+    \draw (2.8,0) -- (0,0);
+    % secundario
+    \draw (4.0,2.6) to[L] (4.0,0);
+    \draw (4.0,2.6) -- (4.6,2.6) to[R] (6.6,2.6) -- (6.8,2.6);
+    \draw (6.8,2.6) to[generic] (6.8,0);
+    \draw (6.8,0) -- (4.0,0);
+  \end{scope}
+  % puntos
+  \fill[figblue] (2.45,2.25) circle (2pt);
+  \fill[figblue] (4.35,2.25) circle (2pt);
+  % rotulos
+  \node[figlbl, anchor=east] at (-0.55,1.3) {$V_0\cos\omega t$};
+  \node[figlbl, figblue] at (1.1,3.05) {$R_1$};
+  \node[figlbl, figblue, anchor=east] at (2.35,1.1) {$L_1$};
+  \node[figlbl, figblue, anchor=west] at (4.45,1.1) {$L_2$};
+  \node[figlbl, figblue] at (5.6,3.05) {$R_2$};
+  \node[figlbl, figblue, anchor=west] at (7.25,1.3) {$\hat Z$};
+  \draw[figgray, line width=0.6pt, {Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (2.95,1.6) -- (3.85,1.6);
+  \node[figlbl] at (3.4,1.9) {$M$};
+  % corrientes entrando por los puntos
+  \draw[figvecres] (1.9,2.95) -- (2.55,2.95);
+  \node[figlbl, text=figred] at (2.2,3.3) {$\hat I_1$};
+  \draw[figvecres] (5.0,2.95) -- (4.35,2.95);
+  \node[figlbl, text=figred] at (4.7,3.3) {$\hat I_2$};
+  \node[figlblaux, anchor=north] at (1.4,-0.2) {primario};
+  \node[figlblaux, anchor=north] at (5.4,-0.2) {secundario};
+\end{tikzpicture}

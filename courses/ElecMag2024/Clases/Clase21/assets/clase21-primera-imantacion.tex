@@ -1,0 +1,28 @@
+% Clase 21 — curva de primera imantación del hierro inicialmente desmagnetizado,
+% como la dibuja el docente: B(H) arranca casi lineal, crece más rápido y
+% satura (del orden de 1 T); mu/mu0 tiene un máximo (~6000) cerca de 200 A/m y
+% luego decrece. CUALITATIVA: las curvas son funciones de forma, no datos.
+% B = 1.75 tanh((H/180)^1.6) T, y mu/mu0 = B/(mu0 H), con máximo ~5900.
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=6.4cm, height=5cm,
+    xmin=0, xmax=600, ymin=0, ymax=2.1,
+    xtick={0,200,400}, ytick={0,0.5,1,1.5,2},
+    xlabel={$H$ (A/m)}, ylabel={$B$ (T)},
+    title={\small (a) $B(H)$},
+  ]
+    \addplot[figblue, domain=0:600, samples=120] {1.75*tanh((x/180)^1.6)};
+  \end{axis}
+  \begin{axis}[
+    emfig, width=6.4cm, height=5cm, xshift=7.2cm,
+    xmin=0, xmax=600, ymin=0, ymax=7000,
+    xtick={0,200,400}, ytick={0,2000,4000,6000},
+    scaled y ticks=false,
+    yticklabel style={/pgf/number format/1000 sep={\,}},
+    xlabel={$H$ (A/m)}, ylabel={$\mu/\mu_0$},
+    title={\small (b) $\mu(H)/\mu_0$},
+  ]
+    \addplot[figred, domain=1:600, samples=150]
+      {1.75*tanh((x/180)^1.6)/(4*pi*1e-7*x)};
+  \end{axis}
+\end{tikzpicture}

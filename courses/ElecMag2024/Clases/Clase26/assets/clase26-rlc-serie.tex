@@ -1,0 +1,18 @@
+% Clase 26 — circuito RLC serie con un generador V(t). Recorriendo la malla:
+% V(t) = L dI/dt + R I + Q/C. La corriente I va hacia la placa con carga Q.
+\begin{tikzpicture}[scale=1]
+  \begin{scope}[line width=0.9pt, color=figblue]
+    \draw (0,0) to[sV] (0,2.4);
+    \draw (0,2.4) -- (0.5,2.4) to[R] (2.4,2.4) to[L] (4.4,2.4) -- (4.8,2.4);
+    \draw (4.8,2.4) to[C] (4.8,0);
+    \draw (4.8,0) -- (0,0);
+  \end{scope}
+  \node[figlbl, anchor=east] at (-0.55,1.2) {$V(t)$};
+  \node[figlbl, figblue] at (1.45,2.85) {$R$};
+  \node[figlbl, figblue] at (3.4,2.9) {$L$};
+  \node[figlbl, figblue, anchor=east] at (4.35,1.2) {$C$};
+  \node[figlblaux, text=figred, anchor=west] at (5.2,1.5) {$+Q$};
+  \node[figlblaux, text=figblue, anchor=west] at (5.2,0.85) {$-Q$};
+  \draw[figvecres] (0.2,2.75) -- (0.9,2.75);
+  \node[figlbl, text=figred] at (0.55,3.1) {$I$};
+\end{tikzpicture}

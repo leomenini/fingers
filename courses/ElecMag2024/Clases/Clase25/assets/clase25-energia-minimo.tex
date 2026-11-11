@@ -1,0 +1,22 @@
+% Clase 25 — la energía de dos bobinas como función de I1 con I2 fijo,
+% f(I1) = L1 I1^2/2 + M I1 I2 + L2 I2^2/2: una parábola cuyo mínimo está en
+% I1 = -M I2 / L1 y vale (I2^2/2)(L2 - M^2/L1). Que el mínimo sea >= 0 es la
+% cota M^2 <= L1 L2. Valores ilustrativos: L1 = 1, L2 = 1, I2 = 1 y tres M.
+\begin{tikzpicture}
+  \begin{axis}[
+    emfig, width=10cm, height=6.2cm,
+    xmin=-2.4, xmax=1.4, ymin=-0.3, ymax=2.1,
+    xtick={-2,-1,0,1}, ytick={0,0.5,1,1.5,2},
+    xlabel={$I_1/I_2$}, ylabel={$U/(L_2 I_2^2)$},
+    legend style={at={(0.5,-0.4)}, anchor=north, legend columns=3,
+      /tikz/every even column/.append style={column sep=1em}},
+  ]
+    \addplot[figaux, forget plot, domain=-2.4:1.4, samples=2] {0};
+    \addplot[figblue!45, domain=-2.4:1.4, samples=80] {0.5*x^2 + 0.3*x + 0.5};
+    \addlegendentry{$M^2 = 0{,}09\,L_1L_2$}
+    \addplot[figblue!75, domain=-2.4:1.4, samples=80] {0.5*x^2 + 0.7*x + 0.5};
+    \addlegendentry{$M^2 = 0{,}49\,L_1L_2$}
+    \addplot[figblue, domain=-2.4:1.4, samples=80] {0.5*x^2 + 1.0*x + 0.5};
+    \addlegendentry{$M^2 = L_1L_2$}
+  \end{axis}
+\end{tikzpicture}

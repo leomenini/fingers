@@ -141,6 +141,13 @@ eléctrica y circuitos (14–15) y el arranque del magnetismo: fuerza magnética
 Biot y Savart, delta de Dirac y Ampère, potencial vector y magnetización (16–20).
 Con eso quedan documentadas de la 4 a la 20.
 
+**Clases 21–29 documentadas (2026-11-11):** lo mismo para el resto del curso:
+materiales magnéticos e histéresis (21), circuitos magnéticos (22), inducción,
+inductancias y energía magnética (23–25), circuitos RLC y régimen permanente
+(26–28) y ecuaciones de Maxwell y ondas (28–29). **El curso queda documentado
+completo, de la 4 a la 29** (las 1–3 están fuera de este trabajo; la 9 y la 10,
+desde ASR).
+
 > **La 10 y la 11 no se continúan.** La clase 11 (2024) abre repasando «lo que les
 > presentó **Julia** la semana pasada» y resuelve la **esfera** dieléctrica en
 > campo uniforme; la clase 10 del corpus es la regrabación de **2025**, que
@@ -690,6 +697,32 @@ En geometría, los dos patrones que más sirvieron en este corpus:
    `~/.local/bin/tectonic.exe` y `./build.sh` lo encuentra desde Git Bash; para
    leer el PDF hace falta rasterizarlo (se usó PyMuPDF), porque no hay
    `pdftoppm`.
+
+#### 6.5.5 Casos propios de este curso (Clases 21–29, 2026-11-11)
+
+1. **Las curvas que el docente dibuja «a mano» se rotulan como cualitativas.**
+   Primera imantación, ciclos de histéresis y la curva del imán no tienen datos
+   en la clase: se usan funciones de forma (`tanh`) cuyos parámetros quedan en
+   el comentario del asset, y el pie dice que son cualitativas. Lo que sí es
+   cuenta —la intersección de la recta desmagnetizante con el ciclo
+   (`clase22-recta-desmagnetizacion`)— se calcula (bisección) y no se ubica a
+   ojo.
+2. **Con `axis lines=middle`, los rótulos cerca del borde se recortan.** Pasó
+   con «primera imantación» y con la ecuación de la recta: el `axis` recorta
+   todo lo que sale del rectángulo. Va `clip=false` y el rótulo con una línea de
+   llamada, lejos de las curvas.
+3. **Leyendas en varias columnas necesitan aire:**
+   `/tikz/every even column/.append style={column sep=1em}`; sin eso las
+   entradas se pegan.
+4. **Qué clases cargan `circuitikz`:** 13, 15, 24, 25, 26, 27 y 28. Si una figura
+   usa `battery1` en una clase que no lo carga, el error es
+   `I do not know the key '/tikz/battery1'` (pasó en la 25).
+5. **La vista previa a 80 dpi engaña con los subíndices.** Un $\hat Z$ con
+   subíndice de texto parecía mal compuesto; a 200 dpi estaba bien. Antes de
+   «arreglar» tipografía, mirar a resolución alta.
+6. **Convención de los puntos de las mutuas** (desde la Clase 28): en los
+   esquemas con bobinas acopladas se dibuja el punto y las corrientes entrando
+   por él, para que los términos con $M$ lleven signo $+$ sin aclaraciones.
 
 #### 6.5.1 Qué figuras hacer (y cuántas)
 
