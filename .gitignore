@@ -4,8 +4,11 @@ node_modules/
 out/
 probe-out/
 
-# artefactos de build.sh: se regeneran con tectonic, no se versionan
-notes.pdf
+# Ningún PDF se versiona. Los notes.pdf son artefactos de build.sh (se
+# regeneran con tectonic) y las notas anotadas a mano (notesWithComments.pdf)
+# son personales. La regla va por extensión y no por nombre: un PDF con otro
+# nombre tampoco tiene que entrar por accidente.
+*.pdf
 
 # La transcripción no se versiona: es contenido de OpenFING (CC BY-NC-ND) y
 # lo reproduce `npm run fetch` a partir del manifiesto. Ver ADR-0005.
@@ -34,6 +37,3 @@ ideas/
 *.flac
 scripts/asr/.venv/
 scripts/asr/trabajo/
-
-# Notas anotadas a mano: personales, fuera de Git como todo PDF.
-notesWithComments.pdf
